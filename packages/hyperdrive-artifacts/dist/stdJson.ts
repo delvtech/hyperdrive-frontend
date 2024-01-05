@@ -3,12 +3,12 @@ export const StdJson =
   "abi": [],
   "bytecode": {
     "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212207c577dc298c9ae11e12fcf45c8f770d7710fcc4b0535c46d2911cc5cd068e3d664736f6c63430008130033",
-    "sourceMap": "830:5374:70:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;830:5374:70;;;;;;;;;;;;;;;;;",
+    "sourceMap": "830:5374:81:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;830:5374:81;;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
     "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212207c577dc298c9ae11e12fcf45c8f770d7710fcc4b0535c46d2911cc5cd068e3d664736f6c63430008130033",
-    "sourceMap": "830:5374:70:-:0;;;;;;;;",
+    "sourceMap": "830:5374:81:-:0;;;;;;;;",
     "linkReferences": {}
   },
   "methodIdentifiers": {},
@@ -74,22 +74,22 @@ export const StdJson =
   },
   "ast": {
     "absolutePath": "lib/forge-std/src/StdJson.sol",
-    "id": 24254,
+    "id": 27604,
     "exportedSymbols": {
       "VmSafe": [
-        29055
+        32405
       ],
       "stdJson": [
-        24253
+        27603
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "32:6173:70",
+    "src": "32:6173:81",
     "nodes": [
       {
-        "id": 23679,
+        "id": 27029,
         "nodeType": "PragmaDirective",
-        "src": "32:31:70",
+        "src": "32:31:81",
         "nodes": [],
         "literals": [
           "solidity",
@@ -102,9 +102,9 @@ export const StdJson =
         ]
       },
       {
-        "id": 23680,
+        "id": 27030,
         "nodeType": "PragmaDirective",
-        "src": "65:33:70",
+        "src": "65:33:81",
         "nodes": [],
         "literals": [
           "experimental",
@@ -112,24 +112,24 @@ export const StdJson =
         ]
       },
       {
-        "id": 23682,
+        "id": 27032,
         "nodeType": "ImportDirective",
-        "src": "100:32:70",
+        "src": "100:32:81",
         "nodes": [],
         "absolutePath": "lib/forge-std/src/Vm.sol",
         "file": "./Vm.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 24254,
-        "sourceUnit": 29528,
+        "scope": 27604,
+        "sourceUnit": 32878,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 23681,
+              "id": 27031,
               "name": "VmSafe",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 29055,
-              "src": "108:6:70",
+              "referencedDeclaration": 32405,
+              "src": "108:6:81",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -138,43 +138,43 @@ export const StdJson =
         "unitAlias": ""
       },
       {
-        "id": 24253,
+        "id": 27603,
         "nodeType": "ContractDefinition",
-        "src": "830:5374:70",
+        "src": "830:5374:81",
         "nodes": [
           {
-            "id": 23699,
+            "id": 27049,
             "nodeType": "VariableDeclaration",
-            "src": "852:92:70",
+            "src": "852:92:81",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "vm",
-            "nameLocation": "876:2:70",
-            "scope": 24253,
+            "nameLocation": "876:2:81",
+            "scope": 27603,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_VmSafe_$29055",
+              "typeIdentifier": "t_contract$_VmSafe_$32405",
               "typeString": "contract VmSafe"
             },
             "typeName": {
-              "id": 23684,
+              "id": 27034,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 23683,
+                "id": 27033,
                 "name": "VmSafe",
                 "nameLocations": [
-                  "852:6:70"
+                  "852:6:81"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 29055,
-                "src": "852:6:70"
+                "referencedDeclaration": 32405,
+                "src": "852:6:81"
               },
-              "referencedDeclaration": 29055,
-              "src": "852:6:70",
+              "referencedDeclaration": 32405,
+              "src": "852:6:81",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VmSafe_$29055",
+                "typeIdentifier": "t_contract$_VmSafe_$32405",
                 "typeString": "contract VmSafe"
               }
             },
@@ -190,14 +190,14 @@ export const StdJson =
                               "arguments": [
                                 {
                                   "hexValue": "6865766d20636865617420636f6465",
-                                  "id": 23693,
+                                  "id": 27043,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "string",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "922:17:70",
+                                  "src": "922:17:81",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_stringliteral_885cb69240a935d632d79c317109709ecfa91a80626ff3989d68f67f5b1dd12d",
                                     "typeString": "literal_string \"hevm cheat code\""
@@ -212,18 +212,18 @@ export const StdJson =
                                     "typeString": "literal_string \"hevm cheat code\""
                                   }
                                 ],
-                                "id": 23692,
+                                "id": 27042,
                                 "name": "keccak256",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": -8,
-                                "src": "912:9:70",
+                                "src": "912:9:81",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                                   "typeString": "function (bytes memory) pure returns (bytes32)"
                                 }
                               },
-                              "id": 23694,
+                              "id": 27044,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -232,7 +232,7 @@ export const StdJson =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "912:28:70",
+                              "src": "912:28:81",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_bytes32",
@@ -247,26 +247,26 @@ export const StdJson =
                                 "typeString": "bytes32"
                               }
                             ],
-                            "id": 23691,
+                            "id": 27041,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "904:7:70",
+                            "src": "904:7:81",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_uint256_$",
                               "typeString": "type(uint256)"
                             },
                             "typeName": {
-                              "id": 23690,
+                              "id": 27040,
                               "name": "uint256",
                               "nodeType": "ElementaryTypeName",
-                              "src": "904:7:70",
+                              "src": "904:7:81",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 23695,
+                          "id": 27045,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -275,7 +275,7 @@ export const StdJson =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "904:37:70",
+                          "src": "904:37:81",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -290,26 +290,26 @@ export const StdJson =
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 23689,
+                        "id": 27039,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
                         "nodeType": "ElementaryTypeNameExpression",
-                        "src": "896:7:70",
+                        "src": "896:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_uint160_$",
                           "typeString": "type(uint160)"
                         },
                         "typeName": {
-                          "id": 23688,
+                          "id": 27038,
                           "name": "uint160",
                           "nodeType": "ElementaryTypeName",
-                          "src": "896:7:70",
+                          "src": "896:7:81",
                           "typeDescriptions": {}
                         }
                       },
-                      "id": 23696,
+                      "id": 27046,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -318,7 +318,7 @@ export const StdJson =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "896:46:70",
+                      "src": "896:46:81",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint160",
@@ -333,26 +333,26 @@ export const StdJson =
                         "typeString": "uint160"
                       }
                     ],
-                    "id": 23687,
+                    "id": 27037,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "lValueRequested": false,
                     "nodeType": "ElementaryTypeNameExpression",
-                    "src": "888:7:70",
+                    "src": "888:7:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_type$_t_address_$",
                       "typeString": "type(address)"
                     },
                     "typeName": {
-                      "id": 23686,
+                      "id": 27036,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "888:7:70",
+                      "src": "888:7:81",
                       "typeDescriptions": {}
                     }
                   },
-                  "id": 23697,
+                  "id": 27047,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
@@ -361,7 +361,7 @@ export const StdJson =
                   "nameLocations": [],
                   "names": [],
                   "nodeType": "FunctionCall",
-                  "src": "888:55:70",
+                  "src": "888:55:81",
                   "tryCall": false,
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -376,18 +376,18 @@ export const StdJson =
                     "typeString": "address"
                   }
                 ],
-                "id": 23685,
+                "id": 27035,
                 "name": "VmSafe",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 29055,
-                "src": "881:6:70",
+                "referencedDeclaration": 32405,
+                "src": "881:6:81",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_type$_t_contract$_VmSafe_$29055_$",
+                  "typeIdentifier": "t_type$_t_contract$_VmSafe_$32405_$",
                   "typeString": "type(contract VmSafe)"
                 }
               },
-              "id": 23698,
+              "id": 27048,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -396,48 +396,48 @@ export const StdJson =
               "nameLocations": [],
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "881:63:70",
+              "src": "881:63:81",
               "tryCall": false,
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VmSafe_$29055",
+                "typeIdentifier": "t_contract$_VmSafe_$32405",
                 "typeString": "contract VmSafe"
               }
             },
             "visibility": "private"
           },
           {
-            "id": 23715,
+            "id": 27065,
             "nodeType": "FunctionDefinition",
-            "src": "951:141:70",
+            "src": "951:141:81",
             "nodes": [],
             "body": {
-              "id": 23714,
+              "id": 27064,
               "nodeType": "Block",
-              "src": "1045:47:70",
+              "src": "1045:47:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23710,
+                        "id": 27060,
                         "name": "json",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23701,
-                        "src": "1075:4:70",
+                        "referencedDeclaration": 27051,
+                        "src": "1075:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23711,
+                        "id": 27061,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23703,
-                        "src": "1081:3:70",
+                        "referencedDeclaration": 27053,
+                        "src": "1081:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -456,33 +456,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23708,
+                        "id": 27058,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "1062:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "1062:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23709,
+                      "id": 27059,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "1065:9:70",
+                      "memberLocation": "1065:9:81",
                       "memberName": "parseJson",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28682,
-                      "src": "1062:12:70",
+                      "referencedDeclaration": 32032,
+                      "src": "1062:12:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bytes_memory_ptr_$",
                         "typeString": "function (string memory,string memory) pure external returns (bytes memory)"
                       }
                     },
-                    "id": 23712,
+                    "id": 27062,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -491,17 +491,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1062:23:70",
+                    "src": "1062:23:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_memory_ptr",
                       "typeString": "bytes memory"
                     }
                   },
-                  "functionReturnParameters": 23707,
-                  "id": 23713,
+                  "functionReturnParameters": 27057,
+                  "id": 27063,
                   "nodeType": "Return",
-                  "src": "1055:30:70"
+                  "src": "1055:30:81"
                 }
               ]
             },
@@ -509,20 +509,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "parseRaw",
-            "nameLocation": "960:8:70",
+            "nameLocation": "960:8:81",
             "parameters": {
-              "id": 23704,
+              "id": 27054,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23701,
+                  "id": 27051,
                   "mutability": "mutable",
                   "name": "json",
-                  "nameLocation": "983:4:70",
+                  "nameLocation": "983:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23715,
-                  "src": "969:18:70",
+                  "scope": 27065,
+                  "src": "969:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -530,10 +530,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23700,
+                    "id": 27050,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "969:6:70",
+                    "src": "969:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -543,13 +543,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23703,
+                  "id": 27053,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "1003:3:70",
+                  "nameLocation": "1003:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23715,
-                  "src": "989:17:70",
+                  "scope": 27065,
+                  "src": "989:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -557,10 +557,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23702,
+                    "id": 27052,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "989:6:70",
+                    "src": "989:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -569,21 +569,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "968:39:70"
+              "src": "968:39:81"
             },
             "returnParameters": {
-              "id": 23707,
+              "id": 27057,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23706,
+                  "id": 27056,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23715,
-                  "src": "1031:12:70",
+                  "scope": 27065,
+                  "src": "1031:12:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -591,10 +591,10 @@ export const StdJson =
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 23705,
+                    "id": 27055,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1031:5:70",
+                    "src": "1031:5:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -603,46 +603,46 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "1030:14:70"
+              "src": "1030:14:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23731,
+            "id": 27081,
             "nodeType": "FunctionDefinition",
-            "src": "1098:135:70",
+            "src": "1098:135:81",
             "nodes": [],
             "body": {
-              "id": 23730,
+              "id": 27080,
               "nodeType": "Block",
-              "src": "1182:51:70",
+              "src": "1182:51:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23726,
+                        "id": 27076,
                         "name": "json",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23717,
-                        "src": "1216:4:70",
+                        "referencedDeclaration": 27067,
+                        "src": "1216:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23727,
+                        "id": 27077,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23719,
-                        "src": "1222:3:70",
+                        "referencedDeclaration": 27069,
+                        "src": "1222:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -661,33 +661,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23724,
+                        "id": 27074,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "1199:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "1199:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23725,
+                      "id": 27075,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "1202:13:70",
+                      "memberLocation": "1202:13:81",
                       "memberName": "parseJsonUint",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28698,
-                      "src": "1199:16:70",
+                      "referencedDeclaration": 32048,
+                      "src": "1199:16:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_uint256_$",
                         "typeString": "function (string memory,string memory) external returns (uint256)"
                       }
                     },
-                    "id": 23728,
+                    "id": 27078,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -696,17 +696,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1199:27:70",
+                    "src": "1199:27:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 23723,
-                  "id": 23729,
+                  "functionReturnParameters": 27073,
+                  "id": 27079,
                   "nodeType": "Return",
-                  "src": "1192:34:70"
+                  "src": "1192:34:81"
                 }
               ]
             },
@@ -714,20 +714,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "readUint",
-            "nameLocation": "1107:8:70",
+            "nameLocation": "1107:8:81",
             "parameters": {
-              "id": 23720,
+              "id": 27070,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23717,
+                  "id": 27067,
                   "mutability": "mutable",
                   "name": "json",
-                  "nameLocation": "1130:4:70",
+                  "nameLocation": "1130:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23731,
-                  "src": "1116:18:70",
+                  "scope": 27081,
+                  "src": "1116:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -735,10 +735,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23716,
+                    "id": 27066,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1116:6:70",
+                    "src": "1116:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -748,13 +748,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23719,
+                  "id": 27069,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "1150:3:70",
+                  "nameLocation": "1150:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23731,
-                  "src": "1136:17:70",
+                  "scope": 27081,
+                  "src": "1136:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -762,10 +762,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23718,
+                    "id": 27068,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1136:6:70",
+                    "src": "1136:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -774,21 +774,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "1115:39:70"
+              "src": "1115:39:81"
             },
             "returnParameters": {
-              "id": 23723,
+              "id": 27073,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23722,
+                  "id": 27072,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23731,
-                  "src": "1173:7:70",
+                  "scope": 27081,
+                  "src": "1173:7:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -796,10 +796,10 @@ export const StdJson =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 23721,
+                    "id": 27071,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1173:7:70",
+                    "src": "1173:7:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -808,46 +808,46 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "1172:9:70"
+              "src": "1172:9:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23748,
+            "id": 27098,
             "nodeType": "FunctionDefinition",
-            "src": "1239:154:70",
+            "src": "1239:154:81",
             "nodes": [],
             "body": {
-              "id": 23747,
+              "id": 27097,
               "nodeType": "Block",
-              "src": "1337:56:70",
+              "src": "1337:56:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23743,
+                        "id": 27093,
                         "name": "json",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23733,
-                        "src": "1376:4:70",
+                        "referencedDeclaration": 27083,
+                        "src": "1376:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23744,
+                        "id": 27094,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23735,
-                        "src": "1382:3:70",
+                        "referencedDeclaration": 27085,
+                        "src": "1382:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -866,33 +866,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23741,
+                        "id": 27091,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "1354:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "1354:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23742,
+                      "id": 27092,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "1357:18:70",
+                      "memberLocation": "1357:18:81",
                       "memberName": "parseJsonUintArray",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28708,
-                      "src": "1354:21:70",
+                      "referencedDeclaration": 32058,
+                      "src": "1354:21:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_array$_t_uint256_$dyn_memory_ptr_$",
                         "typeString": "function (string memory,string memory) external returns (uint256[] memory)"
                       }
                     },
-                    "id": 23745,
+                    "id": 27095,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -901,17 +901,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1354:32:70",
+                    "src": "1354:32:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
                       "typeString": "uint256[] memory"
                     }
                   },
-                  "functionReturnParameters": 23740,
-                  "id": 23746,
+                  "functionReturnParameters": 27090,
+                  "id": 27096,
                   "nodeType": "Return",
-                  "src": "1347:39:70"
+                  "src": "1347:39:81"
                 }
               ]
             },
@@ -919,20 +919,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "readUintArray",
-            "nameLocation": "1248:13:70",
+            "nameLocation": "1248:13:81",
             "parameters": {
-              "id": 23736,
+              "id": 27086,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23733,
+                  "id": 27083,
                   "mutability": "mutable",
                   "name": "json",
-                  "nameLocation": "1276:4:70",
+                  "nameLocation": "1276:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23748,
-                  "src": "1262:18:70",
+                  "scope": 27098,
+                  "src": "1262:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -940,10 +940,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23732,
+                    "id": 27082,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1262:6:70",
+                    "src": "1262:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -953,13 +953,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23735,
+                  "id": 27085,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "1296:3:70",
+                  "nameLocation": "1296:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23748,
-                  "src": "1282:17:70",
+                  "scope": 27098,
+                  "src": "1282:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -967,10 +967,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23734,
+                    "id": 27084,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1282:6:70",
+                    "src": "1282:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -979,21 +979,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "1261:39:70"
+              "src": "1261:39:81"
             },
             "returnParameters": {
-              "id": 23740,
+              "id": 27090,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23739,
+                  "id": 27089,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23748,
-                  "src": "1319:16:70",
+                  "scope": 27098,
+                  "src": "1319:16:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1002,18 +1002,18 @@ export const StdJson =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23737,
+                      "id": 27087,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1319:7:70",
+                      "src": "1319:7:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 23738,
+                    "id": 27088,
                     "nodeType": "ArrayTypeName",
-                    "src": "1319:9:70",
+                    "src": "1319:9:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                       "typeString": "uint256[]"
@@ -1022,46 +1022,46 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "1318:18:70"
+              "src": "1318:18:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23764,
+            "id": 27114,
             "nodeType": "FunctionDefinition",
-            "src": "1399:132:70",
+            "src": "1399:132:81",
             "nodes": [],
             "body": {
-              "id": 23763,
+              "id": 27113,
               "nodeType": "Block",
-              "src": "1481:50:70",
+              "src": "1481:50:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23759,
+                        "id": 27109,
                         "name": "json",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23750,
-                        "src": "1514:4:70",
+                        "referencedDeclaration": 27100,
+                        "src": "1514:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23760,
+                        "id": 27110,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23752,
-                        "src": "1520:3:70",
+                        "referencedDeclaration": 27102,
+                        "src": "1520:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -1080,33 +1080,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23757,
+                        "id": 27107,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "1498:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "1498:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23758,
+                      "id": 27108,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "1501:12:70",
+                      "memberLocation": "1501:12:81",
                       "memberName": "parseJsonInt",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28717,
-                      "src": "1498:15:70",
+                      "referencedDeclaration": 32067,
+                      "src": "1498:15:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_int256_$",
                         "typeString": "function (string memory,string memory) external returns (int256)"
                       }
                     },
-                    "id": 23761,
+                    "id": 27111,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1115,17 +1115,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1498:26:70",
+                    "src": "1498:26:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "functionReturnParameters": 23756,
-                  "id": 23762,
+                  "functionReturnParameters": 27106,
+                  "id": 27112,
                   "nodeType": "Return",
-                  "src": "1491:33:70"
+                  "src": "1491:33:81"
                 }
               ]
             },
@@ -1133,20 +1133,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "readInt",
-            "nameLocation": "1408:7:70",
+            "nameLocation": "1408:7:81",
             "parameters": {
-              "id": 23753,
+              "id": 27103,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23750,
+                  "id": 27100,
                   "mutability": "mutable",
                   "name": "json",
-                  "nameLocation": "1430:4:70",
+                  "nameLocation": "1430:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23764,
-                  "src": "1416:18:70",
+                  "scope": 27114,
+                  "src": "1416:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1154,10 +1154,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23749,
+                    "id": 27099,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1416:6:70",
+                    "src": "1416:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1167,13 +1167,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23752,
+                  "id": 27102,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "1450:3:70",
+                  "nameLocation": "1450:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23764,
-                  "src": "1436:17:70",
+                  "scope": 27114,
+                  "src": "1436:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1181,10 +1181,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23751,
+                    "id": 27101,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1436:6:70",
+                    "src": "1436:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1193,21 +1193,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "1415:39:70"
+              "src": "1415:39:81"
             },
             "returnParameters": {
-              "id": 23756,
+              "id": 27106,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23755,
+                  "id": 27105,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23764,
-                  "src": "1473:6:70",
+                  "scope": 27114,
+                  "src": "1473:6:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1215,10 +1215,10 @@ export const StdJson =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 23754,
+                    "id": 27104,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1473:6:70",
+                    "src": "1473:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -1227,46 +1227,46 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "1472:8:70"
+              "src": "1472:8:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23781,
+            "id": 27131,
             "nodeType": "FunctionDefinition",
-            "src": "1537:151:70",
+            "src": "1537:151:81",
             "nodes": [],
             "body": {
-              "id": 23780,
+              "id": 27130,
               "nodeType": "Block",
-              "src": "1633:55:70",
+              "src": "1633:55:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23776,
+                        "id": 27126,
                         "name": "json",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23766,
-                        "src": "1671:4:70",
+                        "referencedDeclaration": 27116,
+                        "src": "1671:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23777,
+                        "id": 27127,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23768,
-                        "src": "1677:3:70",
+                        "referencedDeclaration": 27118,
+                        "src": "1677:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -1285,33 +1285,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23774,
+                        "id": 27124,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "1650:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "1650:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23775,
+                      "id": 27125,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "1653:17:70",
+                      "memberLocation": "1653:17:81",
                       "memberName": "parseJsonIntArray",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28727,
-                      "src": "1650:20:70",
+                      "referencedDeclaration": 32077,
+                      "src": "1650:20:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_array$_t_int256_$dyn_memory_ptr_$",
                         "typeString": "function (string memory,string memory) external returns (int256[] memory)"
                       }
                     },
-                    "id": 23778,
+                    "id": 27128,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1320,17 +1320,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1650:31:70",
+                    "src": "1650:31:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_int256_$dyn_memory_ptr",
                       "typeString": "int256[] memory"
                     }
                   },
-                  "functionReturnParameters": 23773,
-                  "id": 23779,
+                  "functionReturnParameters": 27123,
+                  "id": 27129,
                   "nodeType": "Return",
-                  "src": "1643:38:70"
+                  "src": "1643:38:81"
                 }
               ]
             },
@@ -1338,20 +1338,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "readIntArray",
-            "nameLocation": "1546:12:70",
+            "nameLocation": "1546:12:81",
             "parameters": {
-              "id": 23769,
+              "id": 27119,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23766,
+                  "id": 27116,
                   "mutability": "mutable",
                   "name": "json",
-                  "nameLocation": "1573:4:70",
+                  "nameLocation": "1573:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23781,
-                  "src": "1559:18:70",
+                  "scope": 27131,
+                  "src": "1559:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1359,10 +1359,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23765,
+                    "id": 27115,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1559:6:70",
+                    "src": "1559:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1372,13 +1372,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23768,
+                  "id": 27118,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "1593:3:70",
+                  "nameLocation": "1593:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23781,
-                  "src": "1579:17:70",
+                  "scope": 27131,
+                  "src": "1579:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1386,10 +1386,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23767,
+                    "id": 27117,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1579:6:70",
+                    "src": "1579:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1398,21 +1398,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "1558:39:70"
+              "src": "1558:39:81"
             },
             "returnParameters": {
-              "id": 23773,
+              "id": 27123,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23772,
+                  "id": 27122,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23781,
-                  "src": "1616:15:70",
+                  "scope": 27131,
+                  "src": "1616:15:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1421,18 +1421,18 @@ export const StdJson =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23770,
+                      "id": 27120,
                       "name": "int256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1616:6:70",
+                      "src": "1616:6:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "id": 23771,
+                    "id": 27121,
                     "nodeType": "ArrayTypeName",
-                    "src": "1616:8:70",
+                    "src": "1616:8:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_int256_$dyn_storage_ptr",
                       "typeString": "int256[]"
@@ -1441,46 +1441,46 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "1615:17:70"
+              "src": "1615:17:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23797,
+            "id": 27147,
             "nodeType": "FunctionDefinition",
-            "src": "1694:141:70",
+            "src": "1694:141:81",
             "nodes": [],
             "body": {
-              "id": 23796,
+              "id": 27146,
               "nodeType": "Block",
-              "src": "1781:54:70",
+              "src": "1781:54:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23792,
+                        "id": 27142,
                         "name": "json",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23783,
-                        "src": "1818:4:70",
+                        "referencedDeclaration": 27133,
+                        "src": "1818:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23793,
+                        "id": 27143,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23785,
-                        "src": "1824:3:70",
+                        "referencedDeclaration": 27135,
+                        "src": "1824:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -1499,33 +1499,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23790,
+                        "id": 27140,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "1798:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "1798:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23791,
+                      "id": 27141,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "1801:16:70",
+                      "memberLocation": "1801:16:81",
                       "memberName": "parseJsonBytes32",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28812,
-                      "src": "1798:19:70",
+                      "referencedDeclaration": 32162,
+                      "src": "1798:19:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bytes32_$",
                         "typeString": "function (string memory,string memory) external returns (bytes32)"
                       }
                     },
-                    "id": 23794,
+                    "id": 27144,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1534,17 +1534,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1798:30:70",
+                    "src": "1798:30:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
-                  "functionReturnParameters": 23789,
-                  "id": 23795,
+                  "functionReturnParameters": 27139,
+                  "id": 27145,
                   "nodeType": "Return",
-                  "src": "1791:37:70"
+                  "src": "1791:37:81"
                 }
               ]
             },
@@ -1552,20 +1552,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "readBytes32",
-            "nameLocation": "1703:11:70",
+            "nameLocation": "1703:11:81",
             "parameters": {
-              "id": 23786,
+              "id": 27136,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23783,
+                  "id": 27133,
                   "mutability": "mutable",
                   "name": "json",
-                  "nameLocation": "1729:4:70",
+                  "nameLocation": "1729:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23797,
-                  "src": "1715:18:70",
+                  "scope": 27147,
+                  "src": "1715:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1573,10 +1573,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23782,
+                    "id": 27132,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1715:6:70",
+                    "src": "1715:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1586,13 +1586,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23785,
+                  "id": 27135,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "1749:3:70",
+                  "nameLocation": "1749:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23797,
-                  "src": "1735:17:70",
+                  "scope": 27147,
+                  "src": "1735:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1600,10 +1600,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23784,
+                    "id": 27134,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1735:6:70",
+                    "src": "1735:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1612,21 +1612,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "1714:39:70"
+              "src": "1714:39:81"
             },
             "returnParameters": {
-              "id": 23789,
+              "id": 27139,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23788,
+                  "id": 27138,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23797,
-                  "src": "1772:7:70",
+                  "scope": 27147,
+                  "src": "1772:7:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1634,10 +1634,10 @@ export const StdJson =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 23787,
+                    "id": 27137,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1772:7:70",
+                    "src": "1772:7:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1646,46 +1646,46 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "1771:9:70"
+              "src": "1771:9:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23814,
+            "id": 27164,
             "nodeType": "FunctionDefinition",
-            "src": "1841:160:70",
+            "src": "1841:160:81",
             "nodes": [],
             "body": {
-              "id": 23813,
+              "id": 27163,
               "nodeType": "Block",
-              "src": "1942:59:70",
+              "src": "1942:59:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23809,
+                        "id": 27159,
                         "name": "json",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23799,
-                        "src": "1984:4:70",
+                        "referencedDeclaration": 27149,
+                        "src": "1984:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23810,
+                        "id": 27160,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23801,
-                        "src": "1990:3:70",
+                        "referencedDeclaration": 27151,
+                        "src": "1990:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -1704,33 +1704,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23807,
+                        "id": 27157,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "1959:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "1959:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23808,
+                      "id": 27158,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "1962:21:70",
+                      "memberLocation": "1962:21:81",
                       "memberName": "parseJsonBytes32Array",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28822,
-                      "src": "1959:24:70",
+                      "referencedDeclaration": 32172,
+                      "src": "1959:24:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_array$_t_bytes32_$dyn_memory_ptr_$",
                         "typeString": "function (string memory,string memory) external returns (bytes32[] memory)"
                       }
                     },
-                    "id": 23811,
+                    "id": 27161,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1739,17 +1739,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1959:35:70",
+                    "src": "1959:35:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                       "typeString": "bytes32[] memory"
                     }
                   },
-                  "functionReturnParameters": 23806,
-                  "id": 23812,
+                  "functionReturnParameters": 27156,
+                  "id": 27162,
                   "nodeType": "Return",
-                  "src": "1952:42:70"
+                  "src": "1952:42:81"
                 }
               ]
             },
@@ -1757,20 +1757,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "readBytes32Array",
-            "nameLocation": "1850:16:70",
+            "nameLocation": "1850:16:81",
             "parameters": {
-              "id": 23802,
+              "id": 27152,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23799,
+                  "id": 27149,
                   "mutability": "mutable",
                   "name": "json",
-                  "nameLocation": "1881:4:70",
+                  "nameLocation": "1881:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23814,
-                  "src": "1867:18:70",
+                  "scope": 27164,
+                  "src": "1867:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1778,10 +1778,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23798,
+                    "id": 27148,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1867:6:70",
+                    "src": "1867:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1791,13 +1791,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23801,
+                  "id": 27151,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "1901:3:70",
+                  "nameLocation": "1901:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23814,
-                  "src": "1887:17:70",
+                  "scope": 27164,
+                  "src": "1887:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1805,10 +1805,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23800,
+                    "id": 27150,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1887:6:70",
+                    "src": "1887:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1817,21 +1817,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "1866:39:70"
+              "src": "1866:39:81"
             },
             "returnParameters": {
-              "id": 23806,
+              "id": 27156,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23805,
+                  "id": 27155,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23814,
-                  "src": "1924:16:70",
+                  "scope": 27164,
+                  "src": "1924:16:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1840,18 +1840,18 @@ export const StdJson =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23803,
+                      "id": 27153,
                       "name": "bytes32",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1924:7:70",
+                      "src": "1924:7:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
                         "typeString": "bytes32"
                       }
                     },
-                    "id": 23804,
+                    "id": 27154,
                     "nodeType": "ArrayTypeName",
-                    "src": "1924:9:70",
+                    "src": "1924:9:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                       "typeString": "bytes32[]"
@@ -1860,46 +1860,46 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "1923:18:70"
+              "src": "1923:18:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23830,
+            "id": 27180,
             "nodeType": "FunctionDefinition",
-            "src": "2007:145:70",
+            "src": "2007:145:81",
             "nodes": [],
             "body": {
-              "id": 23829,
+              "id": 27179,
               "nodeType": "Block",
-              "src": "2099:53:70",
+              "src": "2099:53:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23825,
+                        "id": 27175,
                         "name": "json",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23816,
-                        "src": "2135:4:70",
+                        "referencedDeclaration": 27166,
+                        "src": "2135:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23826,
+                        "id": 27176,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23818,
-                        "src": "2141:3:70",
+                        "referencedDeclaration": 27168,
+                        "src": "2141:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -1918,33 +1918,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23823,
+                        "id": 27173,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "2116:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "2116:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23824,
+                      "id": 27174,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "2119:15:70",
+                      "memberLocation": "2119:15:81",
                       "memberName": "parseJsonString",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28774,
-                      "src": "2116:18:70",
+                      "referencedDeclaration": 32124,
+                      "src": "2116:18:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory) external returns (string memory)"
                       }
                     },
-                    "id": 23827,
+                    "id": 27177,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1953,17 +1953,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2116:29:70",
+                    "src": "2116:29:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 23822,
-                  "id": 23828,
+                  "functionReturnParameters": 27172,
+                  "id": 27178,
                   "nodeType": "Return",
-                  "src": "2109:36:70"
+                  "src": "2109:36:81"
                 }
               ]
             },
@@ -1971,20 +1971,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "readString",
-            "nameLocation": "2016:10:70",
+            "nameLocation": "2016:10:81",
             "parameters": {
-              "id": 23819,
+              "id": 27169,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23816,
+                  "id": 27166,
                   "mutability": "mutable",
                   "name": "json",
-                  "nameLocation": "2041:4:70",
+                  "nameLocation": "2041:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23830,
-                  "src": "2027:18:70",
+                  "scope": 27180,
+                  "src": "2027:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1992,10 +1992,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23815,
+                    "id": 27165,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2027:6:70",
+                    "src": "2027:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2005,13 +2005,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23818,
+                  "id": 27168,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "2061:3:70",
+                  "nameLocation": "2061:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23830,
-                  "src": "2047:17:70",
+                  "scope": 27180,
+                  "src": "2047:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2019,10 +2019,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23817,
+                    "id": 27167,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2047:6:70",
+                    "src": "2047:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2031,21 +2031,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "2026:39:70"
+              "src": "2026:39:81"
             },
             "returnParameters": {
-              "id": 23822,
+              "id": 27172,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23821,
+                  "id": 27171,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23830,
-                  "src": "2084:13:70",
+                  "scope": 27180,
+                  "src": "2084:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2053,10 +2053,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23820,
+                    "id": 27170,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2084:6:70",
+                    "src": "2084:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2065,46 +2065,46 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "2083:15:70"
+              "src": "2083:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23847,
+            "id": 27197,
             "nodeType": "FunctionDefinition",
-            "src": "2158:157:70",
+            "src": "2158:157:81",
             "nodes": [],
             "body": {
-              "id": 23846,
+              "id": 27196,
               "nodeType": "Block",
-              "src": "2257:58:70",
+              "src": "2257:58:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23842,
+                        "id": 27192,
                         "name": "json",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23832,
-                        "src": "2298:4:70",
+                        "referencedDeclaration": 27182,
+                        "src": "2298:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23843,
+                        "id": 27193,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23834,
-                        "src": "2304:3:70",
+                        "referencedDeclaration": 27184,
+                        "src": "2304:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -2123,33 +2123,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23840,
+                        "id": 27190,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "2274:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "2274:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23841,
+                      "id": 27191,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "2277:20:70",
+                      "memberLocation": "2277:20:81",
                       "memberName": "parseJsonStringArray",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28784,
-                      "src": "2274:23:70",
+                      "referencedDeclaration": 32134,
+                      "src": "2274:23:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_array$_t_string_memory_ptr_$dyn_memory_ptr_$",
                         "typeString": "function (string memory,string memory) external returns (string memory[] memory)"
                       }
                     },
-                    "id": 23844,
+                    "id": 27194,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2158,17 +2158,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2274:34:70",
+                    "src": "2274:34:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
                       "typeString": "string memory[] memory"
                     }
                   },
-                  "functionReturnParameters": 23839,
-                  "id": 23845,
+                  "functionReturnParameters": 27189,
+                  "id": 27195,
                   "nodeType": "Return",
-                  "src": "2267:41:70"
+                  "src": "2267:41:81"
                 }
               ]
             },
@@ -2176,20 +2176,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "readStringArray",
-            "nameLocation": "2167:15:70",
+            "nameLocation": "2167:15:81",
             "parameters": {
-              "id": 23835,
+              "id": 27185,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23832,
+                  "id": 27182,
                   "mutability": "mutable",
                   "name": "json",
-                  "nameLocation": "2197:4:70",
+                  "nameLocation": "2197:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23847,
-                  "src": "2183:18:70",
+                  "scope": 27197,
+                  "src": "2183:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2197,10 +2197,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23831,
+                    "id": 27181,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2183:6:70",
+                    "src": "2183:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2210,13 +2210,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23834,
+                  "id": 27184,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "2217:3:70",
+                  "nameLocation": "2217:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23847,
-                  "src": "2203:17:70",
+                  "scope": 27197,
+                  "src": "2203:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2224,10 +2224,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23833,
+                    "id": 27183,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2203:6:70",
+                    "src": "2203:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2236,21 +2236,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "2182:39:70"
+              "src": "2182:39:81"
             },
             "returnParameters": {
-              "id": 23839,
+              "id": 27189,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23838,
+                  "id": 27188,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23847,
-                  "src": "2240:15:70",
+                  "scope": 27197,
+                  "src": "2240:15:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2259,18 +2259,18 @@ export const StdJson =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23836,
+                      "id": 27186,
                       "name": "string",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2240:6:70",
+                      "src": "2240:6:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage_ptr",
                         "typeString": "string"
                       }
                     },
-                    "id": 23837,
+                    "id": 27187,
                     "nodeType": "ArrayTypeName",
-                    "src": "2240:8:70",
+                    "src": "2240:8:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
                       "typeString": "string[]"
@@ -2279,46 +2279,46 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "2239:17:70"
+              "src": "2239:17:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23863,
+            "id": 27213,
             "nodeType": "FunctionDefinition",
-            "src": "2321:141:70",
+            "src": "2321:141:81",
             "nodes": [],
             "body": {
-              "id": 23862,
+              "id": 27212,
               "nodeType": "Block",
-              "src": "2408:54:70",
+              "src": "2408:54:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23858,
+                        "id": 27208,
                         "name": "json",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23849,
-                        "src": "2445:4:70",
+                        "referencedDeclaration": 27199,
+                        "src": "2445:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23859,
+                        "id": 27209,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23851,
-                        "src": "2451:3:70",
+                        "referencedDeclaration": 27201,
+                        "src": "2451:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -2337,33 +2337,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23856,
+                        "id": 27206,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "2425:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "2425:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23857,
+                      "id": 27207,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "2428:16:70",
+                      "memberLocation": "2428:16:81",
                       "memberName": "parseJsonAddress",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28755,
-                      "src": "2425:19:70",
+                      "referencedDeclaration": 32105,
+                      "src": "2425:19:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_address_$",
                         "typeString": "function (string memory,string memory) external returns (address)"
                       }
                     },
-                    "id": 23860,
+                    "id": 27210,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2372,17 +2372,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2425:30:70",
+                    "src": "2425:30:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 23855,
-                  "id": 23861,
+                  "functionReturnParameters": 27205,
+                  "id": 27211,
                   "nodeType": "Return",
-                  "src": "2418:37:70"
+                  "src": "2418:37:81"
                 }
               ]
             },
@@ -2390,20 +2390,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "readAddress",
-            "nameLocation": "2330:11:70",
+            "nameLocation": "2330:11:81",
             "parameters": {
-              "id": 23852,
+              "id": 27202,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23849,
+                  "id": 27199,
                   "mutability": "mutable",
                   "name": "json",
-                  "nameLocation": "2356:4:70",
+                  "nameLocation": "2356:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23863,
-                  "src": "2342:18:70",
+                  "scope": 27213,
+                  "src": "2342:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2411,10 +2411,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23848,
+                    "id": 27198,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2342:6:70",
+                    "src": "2342:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2424,13 +2424,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23851,
+                  "id": 27201,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "2376:3:70",
+                  "nameLocation": "2376:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23863,
-                  "src": "2362:17:70",
+                  "scope": 27213,
+                  "src": "2362:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2438,10 +2438,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23850,
+                    "id": 27200,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2362:6:70",
+                    "src": "2362:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2450,21 +2450,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "2341:39:70"
+              "src": "2341:39:81"
             },
             "returnParameters": {
-              "id": 23855,
+              "id": 27205,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23854,
+                  "id": 27204,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23863,
-                  "src": "2399:7:70",
+                  "scope": 27213,
+                  "src": "2399:7:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2472,10 +2472,10 @@ export const StdJson =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 23853,
+                    "id": 27203,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2399:7:70",
+                    "src": "2399:7:81",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2485,46 +2485,46 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "2398:9:70"
+              "src": "2398:9:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23880,
+            "id": 27230,
             "nodeType": "FunctionDefinition",
-            "src": "2468:160:70",
+            "src": "2468:160:81",
             "nodes": [],
             "body": {
-              "id": 23879,
+              "id": 27229,
               "nodeType": "Block",
-              "src": "2569:59:70",
+              "src": "2569:59:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23875,
+                        "id": 27225,
                         "name": "json",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23865,
-                        "src": "2611:4:70",
+                        "referencedDeclaration": 27215,
+                        "src": "2611:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23876,
+                        "id": 27226,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23867,
-                        "src": "2617:3:70",
+                        "referencedDeclaration": 27217,
+                        "src": "2617:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -2543,33 +2543,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23873,
+                        "id": 27223,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "2586:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "2586:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23874,
+                      "id": 27224,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "2589:21:70",
+                      "memberLocation": "2589:21:81",
                       "memberName": "parseJsonAddressArray",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28765,
-                      "src": "2586:24:70",
+                      "referencedDeclaration": 32115,
+                      "src": "2586:24:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_array$_t_address_$dyn_memory_ptr_$",
                         "typeString": "function (string memory,string memory) external returns (address[] memory)"
                       }
                     },
-                    "id": 23877,
+                    "id": 27227,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2578,17 +2578,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2586:35:70",
+                    "src": "2586:35:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                       "typeString": "address[] memory"
                     }
                   },
-                  "functionReturnParameters": 23872,
-                  "id": 23878,
+                  "functionReturnParameters": 27222,
+                  "id": 27228,
                   "nodeType": "Return",
-                  "src": "2579:42:70"
+                  "src": "2579:42:81"
                 }
               ]
             },
@@ -2596,20 +2596,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "readAddressArray",
-            "nameLocation": "2477:16:70",
+            "nameLocation": "2477:16:81",
             "parameters": {
-              "id": 23868,
+              "id": 27218,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23865,
+                  "id": 27215,
                   "mutability": "mutable",
                   "name": "json",
-                  "nameLocation": "2508:4:70",
+                  "nameLocation": "2508:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23880,
-                  "src": "2494:18:70",
+                  "scope": 27230,
+                  "src": "2494:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2617,10 +2617,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23864,
+                    "id": 27214,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2494:6:70",
+                    "src": "2494:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2630,13 +2630,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23867,
+                  "id": 27217,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "2528:3:70",
+                  "nameLocation": "2528:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23880,
-                  "src": "2514:17:70",
+                  "scope": 27230,
+                  "src": "2514:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2644,10 +2644,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23866,
+                    "id": 27216,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2514:6:70",
+                    "src": "2514:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2656,21 +2656,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "2493:39:70"
+              "src": "2493:39:81"
             },
             "returnParameters": {
-              "id": 23872,
+              "id": 27222,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23871,
+                  "id": 27221,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23880,
-                  "src": "2551:16:70",
+                  "scope": 27230,
+                  "src": "2551:16:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2679,19 +2679,19 @@ export const StdJson =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23869,
+                      "id": 27219,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2551:7:70",
+                      "src": "2551:7:81",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 23870,
+                    "id": 27220,
                     "nodeType": "ArrayTypeName",
-                    "src": "2551:9:70",
+                    "src": "2551:9:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -2700,46 +2700,46 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "2550:18:70"
+              "src": "2550:18:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23896,
+            "id": 27246,
             "nodeType": "FunctionDefinition",
-            "src": "2634:132:70",
+            "src": "2634:132:81",
             "nodes": [],
             "body": {
-              "id": 23895,
+              "id": 27245,
               "nodeType": "Block",
-              "src": "2715:51:70",
+              "src": "2715:51:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23891,
+                        "id": 27241,
                         "name": "json",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23882,
-                        "src": "2749:4:70",
+                        "referencedDeclaration": 27232,
+                        "src": "2749:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23892,
+                        "id": 27242,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23884,
-                        "src": "2755:3:70",
+                        "referencedDeclaration": 27234,
+                        "src": "2755:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -2758,33 +2758,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23889,
+                        "id": 27239,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "2732:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "2732:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23890,
+                      "id": 27240,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "2735:13:70",
+                      "memberLocation": "2735:13:81",
                       "memberName": "parseJsonBool",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28736,
-                      "src": "2732:16:70",
+                      "referencedDeclaration": 32086,
+                      "src": "2732:16:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bool_$",
                         "typeString": "function (string memory,string memory) external returns (bool)"
                       }
                     },
-                    "id": 23893,
+                    "id": 27243,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2793,17 +2793,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2732:27:70",
+                    "src": "2732:27:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 23888,
-                  "id": 23894,
+                  "functionReturnParameters": 27238,
+                  "id": 27244,
                   "nodeType": "Return",
-                  "src": "2725:34:70"
+                  "src": "2725:34:81"
                 }
               ]
             },
@@ -2811,20 +2811,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "readBool",
-            "nameLocation": "2643:8:70",
+            "nameLocation": "2643:8:81",
             "parameters": {
-              "id": 23885,
+              "id": 27235,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23882,
+                  "id": 27232,
                   "mutability": "mutable",
                   "name": "json",
-                  "nameLocation": "2666:4:70",
+                  "nameLocation": "2666:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23896,
-                  "src": "2652:18:70",
+                  "scope": 27246,
+                  "src": "2652:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2832,10 +2832,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23881,
+                    "id": 27231,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2652:6:70",
+                    "src": "2652:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2845,13 +2845,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23884,
+                  "id": 27234,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "2686:3:70",
+                  "nameLocation": "2686:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23896,
-                  "src": "2672:17:70",
+                  "scope": 27246,
+                  "src": "2672:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2859,10 +2859,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23883,
+                    "id": 27233,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2672:6:70",
+                    "src": "2672:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2871,21 +2871,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "2651:39:70"
+              "src": "2651:39:81"
             },
             "returnParameters": {
-              "id": 23888,
+              "id": 27238,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23887,
+                  "id": 27237,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23896,
-                  "src": "2709:4:70",
+                  "scope": 27246,
+                  "src": "2709:4:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2893,10 +2893,10 @@ export const StdJson =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 23886,
+                    "id": 27236,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2709:4:70",
+                    "src": "2709:4:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2905,46 +2905,46 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "2708:6:70"
+              "src": "2708:6:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23913,
+            "id": 27263,
             "nodeType": "FunctionDefinition",
-            "src": "2772:151:70",
+            "src": "2772:151:81",
             "nodes": [],
             "body": {
-              "id": 23912,
+              "id": 27262,
               "nodeType": "Block",
-              "src": "2867:56:70",
+              "src": "2867:56:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23908,
+                        "id": 27258,
                         "name": "json",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23898,
-                        "src": "2906:4:70",
+                        "referencedDeclaration": 27248,
+                        "src": "2906:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23909,
+                        "id": 27259,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23900,
-                        "src": "2912:3:70",
+                        "referencedDeclaration": 27250,
+                        "src": "2912:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -2963,33 +2963,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23906,
+                        "id": 27256,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "2884:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "2884:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23907,
+                      "id": 27257,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "2887:18:70",
+                      "memberLocation": "2887:18:81",
                       "memberName": "parseJsonBoolArray",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28746,
-                      "src": "2884:21:70",
+                      "referencedDeclaration": 32096,
+                      "src": "2884:21:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_array$_t_bool_$dyn_memory_ptr_$",
                         "typeString": "function (string memory,string memory) external returns (bool[] memory)"
                       }
                     },
-                    "id": 23910,
+                    "id": 27260,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2998,17 +2998,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2884:32:70",
+                    "src": "2884:32:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bool_$dyn_memory_ptr",
                       "typeString": "bool[] memory"
                     }
                   },
-                  "functionReturnParameters": 23905,
-                  "id": 23911,
+                  "functionReturnParameters": 27255,
+                  "id": 27261,
                   "nodeType": "Return",
-                  "src": "2877:39:70"
+                  "src": "2877:39:81"
                 }
               ]
             },
@@ -3016,20 +3016,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "readBoolArray",
-            "nameLocation": "2781:13:70",
+            "nameLocation": "2781:13:81",
             "parameters": {
-              "id": 23901,
+              "id": 27251,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23898,
+                  "id": 27248,
                   "mutability": "mutable",
                   "name": "json",
-                  "nameLocation": "2809:4:70",
+                  "nameLocation": "2809:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23913,
-                  "src": "2795:18:70",
+                  "scope": 27263,
+                  "src": "2795:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3037,10 +3037,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23897,
+                    "id": 27247,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2795:6:70",
+                    "src": "2795:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3050,13 +3050,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23900,
+                  "id": 27250,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "2829:3:70",
+                  "nameLocation": "2829:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23913,
-                  "src": "2815:17:70",
+                  "scope": 27263,
+                  "src": "2815:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3064,10 +3064,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23899,
+                    "id": 27249,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2815:6:70",
+                    "src": "2815:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3076,21 +3076,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "2794:39:70"
+              "src": "2794:39:81"
             },
             "returnParameters": {
-              "id": 23905,
+              "id": 27255,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23904,
+                  "id": 27254,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23913,
-                  "src": "2852:13:70",
+                  "scope": 27263,
+                  "src": "2852:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3099,18 +3099,18 @@ export const StdJson =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23902,
+                      "id": 27252,
                       "name": "bool",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2852:4:70",
+                      "src": "2852:4:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "id": 23903,
+                    "id": 27253,
                     "nodeType": "ArrayTypeName",
-                    "src": "2852:6:70",
+                    "src": "2852:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bool_$dyn_storage_ptr",
                       "typeString": "bool[]"
@@ -3119,46 +3119,46 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "2851:15:70"
+              "src": "2851:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23929,
+            "id": 27279,
             "nodeType": "FunctionDefinition",
-            "src": "2929:142:70",
+            "src": "2929:142:81",
             "nodes": [],
             "body": {
-              "id": 23928,
+              "id": 27278,
               "nodeType": "Block",
-              "src": "3019:52:70",
+              "src": "3019:52:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23924,
+                        "id": 27274,
                         "name": "json",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23915,
-                        "src": "3054:4:70",
+                        "referencedDeclaration": 27265,
+                        "src": "3054:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23925,
+                        "id": 27275,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23917,
-                        "src": "3060:3:70",
+                        "referencedDeclaration": 27267,
+                        "src": "3060:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -3177,33 +3177,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23922,
+                        "id": 27272,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "3036:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "3036:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23923,
+                      "id": 27273,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "3039:14:70",
+                      "memberLocation": "3039:14:81",
                       "memberName": "parseJsonBytes",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28793,
-                      "src": "3036:17:70",
+                      "referencedDeclaration": 32143,
+                      "src": "3036:17:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bytes_memory_ptr_$",
                         "typeString": "function (string memory,string memory) external returns (bytes memory)"
                       }
                     },
-                    "id": 23926,
+                    "id": 27276,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3212,17 +3212,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3036:28:70",
+                    "src": "3036:28:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_memory_ptr",
                       "typeString": "bytes memory"
                     }
                   },
-                  "functionReturnParameters": 23921,
-                  "id": 23927,
+                  "functionReturnParameters": 27271,
+                  "id": 27277,
                   "nodeType": "Return",
-                  "src": "3029:35:70"
+                  "src": "3029:35:81"
                 }
               ]
             },
@@ -3230,20 +3230,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "readBytes",
-            "nameLocation": "2938:9:70",
+            "nameLocation": "2938:9:81",
             "parameters": {
-              "id": 23918,
+              "id": 27268,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23915,
+                  "id": 27265,
                   "mutability": "mutable",
                   "name": "json",
-                  "nameLocation": "2962:4:70",
+                  "nameLocation": "2962:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23929,
-                  "src": "2948:18:70",
+                  "scope": 27279,
+                  "src": "2948:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3251,10 +3251,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23914,
+                    "id": 27264,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2948:6:70",
+                    "src": "2948:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3264,13 +3264,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23917,
+                  "id": 27267,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "2982:3:70",
+                  "nameLocation": "2982:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23929,
-                  "src": "2968:17:70",
+                  "scope": 27279,
+                  "src": "2968:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3278,10 +3278,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23916,
+                    "id": 27266,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2968:6:70",
+                    "src": "2968:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3290,21 +3290,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "2947:39:70"
+              "src": "2947:39:81"
             },
             "returnParameters": {
-              "id": 23921,
+              "id": 27271,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23920,
+                  "id": 27270,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23929,
-                  "src": "3005:12:70",
+                  "scope": 27279,
+                  "src": "3005:12:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3312,10 +3312,10 @@ export const StdJson =
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 23919,
+                    "id": 27269,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3005:5:70",
+                    "src": "3005:5:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -3324,46 +3324,46 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "3004:14:70"
+              "src": "3004:14:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23946,
+            "id": 27296,
             "nodeType": "FunctionDefinition",
-            "src": "3077:154:70",
+            "src": "3077:154:81",
             "nodes": [],
             "body": {
-              "id": 23945,
+              "id": 27295,
               "nodeType": "Block",
-              "src": "3174:57:70",
+              "src": "3174:57:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23941,
+                        "id": 27291,
                         "name": "json",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23931,
-                        "src": "3214:4:70",
+                        "referencedDeclaration": 27281,
+                        "src": "3214:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23942,
+                        "id": 27292,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23933,
-                        "src": "3220:3:70",
+                        "referencedDeclaration": 27283,
+                        "src": "3220:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -3382,33 +3382,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23939,
+                        "id": 27289,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "3191:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "3191:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23940,
+                      "id": 27290,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "3194:19:70",
+                      "memberLocation": "3194:19:81",
                       "memberName": "parseJsonBytesArray",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28803,
-                      "src": "3191:22:70",
+                      "referencedDeclaration": 32153,
+                      "src": "3191:22:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_array$_t_bytes_memory_ptr_$dyn_memory_ptr_$",
                         "typeString": "function (string memory,string memory) external returns (bytes memory[] memory)"
                       }
                     },
-                    "id": 23943,
+                    "id": 27293,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3417,17 +3417,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3191:33:70",
+                    "src": "3191:33:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes_memory_ptr_$dyn_memory_ptr",
                       "typeString": "bytes memory[] memory"
                     }
                   },
-                  "functionReturnParameters": 23938,
-                  "id": 23944,
+                  "functionReturnParameters": 27288,
+                  "id": 27294,
                   "nodeType": "Return",
-                  "src": "3184:40:70"
+                  "src": "3184:40:81"
                 }
               ]
             },
@@ -3435,20 +3435,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "readBytesArray",
-            "nameLocation": "3086:14:70",
+            "nameLocation": "3086:14:81",
             "parameters": {
-              "id": 23934,
+              "id": 27284,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23931,
+                  "id": 27281,
                   "mutability": "mutable",
                   "name": "json",
-                  "nameLocation": "3115:4:70",
+                  "nameLocation": "3115:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23946,
-                  "src": "3101:18:70",
+                  "scope": 27296,
+                  "src": "3101:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3456,10 +3456,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23930,
+                    "id": 27280,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3101:6:70",
+                    "src": "3101:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3469,13 +3469,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23933,
+                  "id": 27283,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "3135:3:70",
+                  "nameLocation": "3135:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23946,
-                  "src": "3121:17:70",
+                  "scope": 27296,
+                  "src": "3121:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3483,10 +3483,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23932,
+                    "id": 27282,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3121:6:70",
+                    "src": "3121:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3495,21 +3495,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "3100:39:70"
+              "src": "3100:39:81"
             },
             "returnParameters": {
-              "id": 23938,
+              "id": 27288,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23937,
+                  "id": 27287,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23946,
-                  "src": "3158:14:70",
+                  "scope": 27296,
+                  "src": "3158:14:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3518,18 +3518,18 @@ export const StdJson =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23935,
+                      "id": 27285,
                       "name": "bytes",
                       "nodeType": "ElementaryTypeName",
-                      "src": "3158:5:70",
+                      "src": "3158:5:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes_storage_ptr",
                         "typeString": "bytes"
                       }
                     },
-                    "id": 23936,
+                    "id": 27286,
                     "nodeType": "ArrayTypeName",
-                    "src": "3158:7:70",
+                    "src": "3158:7:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
                       "typeString": "bytes[]"
@@ -3538,58 +3538,58 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "3157:16:70"
+              "src": "3157:16:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23965,
+            "id": 27315,
             "nodeType": "FunctionDefinition",
-            "src": "3237:167:70",
+            "src": "3237:167:81",
             "nodes": [],
             "body": {
-              "id": 23964,
+              "id": 27314,
               "nodeType": "Block",
-              "src": "3343:61:70",
+              "src": "3343:61:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23959,
+                        "id": 27309,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23948,
-                        "src": "3377:7:70",
+                        "referencedDeclaration": 27298,
+                        "src": "3377:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23960,
+                        "id": 27310,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23950,
-                        "src": "3386:3:70",
+                        "referencedDeclaration": 27300,
+                        "src": "3386:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23961,
+                        "id": 27311,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23952,
-                        "src": "3391:5:70",
+                        "referencedDeclaration": 27302,
+                        "src": "3391:5:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -3612,33 +3612,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23957,
+                        "id": 27307,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "3360:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "3360:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23958,
+                      "id": 27308,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "3363:13:70",
+                      "memberLocation": "3363:13:81",
                       "memberName": "serializeBool",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28843,
-                      "src": "3360:16:70",
+                      "referencedDeclaration": 32193,
+                      "src": "3360:16:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_bool_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory,bool) external returns (string memory)"
                       }
                     },
-                    "id": 23962,
+                    "id": 27312,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3647,17 +3647,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3360:37:70",
+                    "src": "3360:37:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 23956,
-                  "id": 23963,
+                  "functionReturnParameters": 27306,
+                  "id": 27313,
                   "nodeType": "Return",
-                  "src": "3353:44:70"
+                  "src": "3353:44:81"
                 }
               ]
             },
@@ -3665,20 +3665,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "serialize",
-            "nameLocation": "3246:9:70",
+            "nameLocation": "3246:9:81",
             "parameters": {
-              "id": 23953,
+              "id": 27303,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23948,
+                  "id": 27298,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "3270:7:70",
+                  "nameLocation": "3270:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23965,
-                  "src": "3256:21:70",
+                  "scope": 27315,
+                  "src": "3256:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3686,10 +3686,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23947,
+                    "id": 27297,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3256:6:70",
+                    "src": "3256:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3699,13 +3699,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23950,
+                  "id": 27300,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "3293:3:70",
+                  "nameLocation": "3293:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23965,
-                  "src": "3279:17:70",
+                  "scope": 27315,
+                  "src": "3279:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3713,10 +3713,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23949,
+                    "id": 27299,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3279:6:70",
+                    "src": "3279:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3726,13 +3726,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23952,
+                  "id": 27302,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "3303:5:70",
+                  "nameLocation": "3303:5:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23965,
-                  "src": "3298:10:70",
+                  "scope": 27315,
+                  "src": "3298:10:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3740,10 +3740,10 @@ export const StdJson =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 23951,
+                    "id": 27301,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3298:4:70",
+                    "src": "3298:4:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -3752,21 +3752,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "3255:54:70"
+              "src": "3255:54:81"
             },
             "returnParameters": {
-              "id": 23956,
+              "id": 27306,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23955,
+                  "id": 27305,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23965,
-                  "src": "3328:13:70",
+                  "scope": 27315,
+                  "src": "3328:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3774,10 +3774,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23954,
+                    "id": 27304,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3328:6:70",
+                    "src": "3328:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3786,58 +3786,58 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "3327:15:70"
+              "src": "3327:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23985,
+            "id": 27335,
             "nodeType": "FunctionDefinition",
-            "src": "3410:196:70",
+            "src": "3410:196:81",
             "nodes": [],
             "body": {
-              "id": 23984,
+              "id": 27334,
               "nodeType": "Block",
-              "src": "3545:61:70",
+              "src": "3545:61:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23979,
+                        "id": 27329,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23967,
-                        "src": "3579:7:70",
+                        "referencedDeclaration": 27317,
+                        "src": "3579:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23980,
+                        "id": 27330,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23969,
-                        "src": "3588:3:70",
+                        "referencedDeclaration": 27319,
+                        "src": "3588:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23981,
+                        "id": 27331,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23972,
-                        "src": "3593:5:70",
+                        "referencedDeclaration": 27322,
+                        "src": "3593:5:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bool_$dyn_memory_ptr",
                           "typeString": "bool[] memory"
@@ -3860,33 +3860,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23977,
+                        "id": 27327,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "3562:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "3562:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23978,
+                      "id": 27328,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "3565:13:70",
+                      "memberLocation": "3565:13:81",
                       "memberName": "serializeBool",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28921,
-                      "src": "3562:16:70",
+                      "referencedDeclaration": 32271,
+                      "src": "3562:16:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_array$_t_bool_$dyn_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory,bool[] memory) external returns (string memory)"
                       }
                     },
-                    "id": 23982,
+                    "id": 27332,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3895,17 +3895,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3562:37:70",
+                    "src": "3562:37:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 23976,
-                  "id": 23983,
+                  "functionReturnParameters": 27326,
+                  "id": 27333,
                   "nodeType": "Return",
-                  "src": "3555:44:70"
+                  "src": "3555:44:81"
                 }
               ]
             },
@@ -3913,20 +3913,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "serialize",
-            "nameLocation": "3419:9:70",
+            "nameLocation": "3419:9:81",
             "parameters": {
-              "id": 23973,
+              "id": 27323,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23967,
+                  "id": 27317,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "3443:7:70",
+                  "nameLocation": "3443:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23985,
-                  "src": "3429:21:70",
+                  "scope": 27335,
+                  "src": "3429:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3934,10 +3934,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23966,
+                    "id": 27316,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3429:6:70",
+                    "src": "3429:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3947,13 +3947,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23969,
+                  "id": 27319,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "3466:3:70",
+                  "nameLocation": "3466:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23985,
-                  "src": "3452:17:70",
+                  "scope": 27335,
+                  "src": "3452:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3961,10 +3961,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23968,
+                    "id": 27318,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3452:6:70",
+                    "src": "3452:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3974,13 +3974,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23972,
+                  "id": 27322,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "3485:5:70",
+                  "nameLocation": "3485:5:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23985,
-                  "src": "3471:19:70",
+                  "scope": 27335,
+                  "src": "3471:19:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3989,18 +3989,18 @@ export const StdJson =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23970,
+                      "id": 27320,
                       "name": "bool",
                       "nodeType": "ElementaryTypeName",
-                      "src": "3471:4:70",
+                      "src": "3471:4:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "id": 23971,
+                    "id": 27321,
                     "nodeType": "ArrayTypeName",
-                    "src": "3471:6:70",
+                    "src": "3471:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bool_$dyn_storage_ptr",
                       "typeString": "bool[]"
@@ -4009,21 +4009,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "3428:63:70"
+              "src": "3428:63:81"
             },
             "returnParameters": {
-              "id": 23976,
+              "id": 27326,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23975,
+                  "id": 27325,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23985,
-                  "src": "3526:13:70",
+                  "scope": 27335,
+                  "src": "3526:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4031,10 +4031,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23974,
+                    "id": 27324,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3526:6:70",
+                    "src": "3526:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4043,58 +4043,58 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "3525:15:70"
+              "src": "3525:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 24004,
+            "id": 27354,
             "nodeType": "FunctionDefinition",
-            "src": "3612:170:70",
+            "src": "3612:170:81",
             "nodes": [],
             "body": {
-              "id": 24003,
+              "id": 27353,
               "nodeType": "Block",
-              "src": "3721:61:70",
+              "src": "3721:61:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23998,
+                        "id": 27348,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23987,
-                        "src": "3755:7:70",
+                        "referencedDeclaration": 27337,
+                        "src": "3755:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 23999,
+                        "id": 27349,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23989,
-                        "src": "3764:3:70",
+                        "referencedDeclaration": 27339,
+                        "src": "3764:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24000,
+                        "id": 27350,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23991,
-                        "src": "3769:5:70",
+                        "referencedDeclaration": 27341,
+                        "src": "3769:5:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4117,33 +4117,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 23996,
+                        "id": 27346,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "3738:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "3738:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 23997,
+                      "id": 27347,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "3741:13:70",
+                      "memberLocation": "3741:13:81",
                       "memberName": "serializeUint",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28854,
-                      "src": "3738:16:70",
+                      "referencedDeclaration": 32204,
+                      "src": "3738:16:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory,uint256) external returns (string memory)"
                       }
                     },
-                    "id": 24001,
+                    "id": 27351,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4152,17 +4152,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3738:37:70",
+                    "src": "3738:37:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 23995,
-                  "id": 24002,
+                  "functionReturnParameters": 27345,
+                  "id": 27352,
                   "nodeType": "Return",
-                  "src": "3731:44:70"
+                  "src": "3731:44:81"
                 }
               ]
             },
@@ -4170,20 +4170,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "serialize",
-            "nameLocation": "3621:9:70",
+            "nameLocation": "3621:9:81",
             "parameters": {
-              "id": 23992,
+              "id": 27342,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23987,
+                  "id": 27337,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "3645:7:70",
+                  "nameLocation": "3645:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24004,
-                  "src": "3631:21:70",
+                  "scope": 27354,
+                  "src": "3631:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4191,10 +4191,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23986,
+                    "id": 27336,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3631:6:70",
+                    "src": "3631:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4204,13 +4204,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23989,
+                  "id": 27339,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "3668:3:70",
+                  "nameLocation": "3668:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24004,
-                  "src": "3654:17:70",
+                  "scope": 27354,
+                  "src": "3654:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4218,10 +4218,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23988,
+                    "id": 27338,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3654:6:70",
+                    "src": "3654:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4231,13 +4231,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 23991,
+                  "id": 27341,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "3681:5:70",
+                  "nameLocation": "3681:5:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24004,
-                  "src": "3673:13:70",
+                  "scope": 27354,
+                  "src": "3673:13:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4245,10 +4245,10 @@ export const StdJson =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 23990,
+                    "id": 27340,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3673:7:70",
+                    "src": "3673:7:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4257,21 +4257,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "3630:57:70"
+              "src": "3630:57:81"
             },
             "returnParameters": {
-              "id": 23995,
+              "id": 27345,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23994,
+                  "id": 27344,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24004,
-                  "src": "3706:13:70",
+                  "scope": 27354,
+                  "src": "3706:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4279,10 +4279,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23993,
+                    "id": 27343,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3706:6:70",
+                    "src": "3706:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4291,58 +4291,58 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "3705:15:70"
+              "src": "3705:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 24024,
+            "id": 27374,
             "nodeType": "FunctionDefinition",
-            "src": "3788:199:70",
+            "src": "3788:199:81",
             "nodes": [],
             "body": {
-              "id": 24023,
+              "id": 27373,
               "nodeType": "Block",
-              "src": "3926:61:70",
+              "src": "3926:61:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 24018,
+                        "id": 27368,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24006,
-                        "src": "3960:7:70",
+                        "referencedDeclaration": 27356,
+                        "src": "3960:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24019,
+                        "id": 27369,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24008,
-                        "src": "3969:3:70",
+                        "referencedDeclaration": 27358,
+                        "src": "3969:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24020,
+                        "id": 27370,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24011,
-                        "src": "3974:5:70",
+                        "referencedDeclaration": 27361,
+                        "src": "3974:5:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
                           "typeString": "uint256[] memory"
@@ -4365,33 +4365,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 24016,
+                        "id": 27366,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "3943:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "3943:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 24017,
+                      "id": 27367,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "3946:13:70",
+                      "memberLocation": "3946:13:81",
                       "memberName": "serializeUint",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28933,
-                      "src": "3943:16:70",
+                      "referencedDeclaration": 32283,
+                      "src": "3943:16:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_array$_t_uint256_$dyn_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory,uint256[] memory) external returns (string memory)"
                       }
                     },
-                    "id": 24021,
+                    "id": 27371,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4400,17 +4400,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3943:37:70",
+                    "src": "3943:37:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 24015,
-                  "id": 24022,
+                  "functionReturnParameters": 27365,
+                  "id": 27372,
                   "nodeType": "Return",
-                  "src": "3936:44:70"
+                  "src": "3936:44:81"
                 }
               ]
             },
@@ -4418,20 +4418,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "serialize",
-            "nameLocation": "3797:9:70",
+            "nameLocation": "3797:9:81",
             "parameters": {
-              "id": 24012,
+              "id": 27362,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24006,
+                  "id": 27356,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "3821:7:70",
+                  "nameLocation": "3821:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24024,
-                  "src": "3807:21:70",
+                  "scope": 27374,
+                  "src": "3807:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4439,10 +4439,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24005,
+                    "id": 27355,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3807:6:70",
+                    "src": "3807:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4452,13 +4452,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24008,
+                  "id": 27358,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "3844:3:70",
+                  "nameLocation": "3844:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24024,
-                  "src": "3830:17:70",
+                  "scope": 27374,
+                  "src": "3830:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4466,10 +4466,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24007,
+                    "id": 27357,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3830:6:70",
+                    "src": "3830:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4479,13 +4479,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24011,
+                  "id": 27361,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "3866:5:70",
+                  "nameLocation": "3866:5:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24024,
-                  "src": "3849:22:70",
+                  "scope": 27374,
+                  "src": "3849:22:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4494,18 +4494,18 @@ export const StdJson =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 24009,
+                      "id": 27359,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "3849:7:70",
+                      "src": "3849:7:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 24010,
+                    "id": 27360,
                     "nodeType": "ArrayTypeName",
-                    "src": "3849:9:70",
+                    "src": "3849:9:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                       "typeString": "uint256[]"
@@ -4514,21 +4514,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "3806:66:70"
+              "src": "3806:66:81"
             },
             "returnParameters": {
-              "id": 24015,
+              "id": 27365,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24014,
+                  "id": 27364,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24024,
-                  "src": "3907:13:70",
+                  "scope": 27374,
+                  "src": "3907:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4536,10 +4536,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24013,
+                    "id": 27363,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3907:6:70",
+                    "src": "3907:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4548,58 +4548,58 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "3906:15:70"
+              "src": "3906:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 24043,
+            "id": 27393,
             "nodeType": "FunctionDefinition",
-            "src": "3993:168:70",
+            "src": "3993:168:81",
             "nodes": [],
             "body": {
-              "id": 24042,
+              "id": 27392,
               "nodeType": "Block",
-              "src": "4101:60:70",
+              "src": "4101:60:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 24037,
+                        "id": 27387,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24026,
-                        "src": "4134:7:70",
+                        "referencedDeclaration": 27376,
+                        "src": "4134:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24038,
+                        "id": 27388,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24028,
-                        "src": "4143:3:70",
+                        "referencedDeclaration": 27378,
+                        "src": "4143:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24039,
+                        "id": 27389,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24030,
-                        "src": "4148:5:70",
+                        "referencedDeclaration": 27380,
+                        "src": "4148:5:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -4622,33 +4622,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 24035,
+                        "id": 27385,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "4118:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "4118:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 24036,
+                      "id": 27386,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "4121:12:70",
+                      "memberLocation": "4121:12:81",
                       "memberName": "serializeInt",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28865,
-                      "src": "4118:15:70",
+                      "referencedDeclaration": 32215,
+                      "src": "4118:15:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_int256_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory,int256) external returns (string memory)"
                       }
                     },
-                    "id": 24040,
+                    "id": 27390,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4657,17 +4657,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4118:36:70",
+                    "src": "4118:36:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 24034,
-                  "id": 24041,
+                  "functionReturnParameters": 27384,
+                  "id": 27391,
                   "nodeType": "Return",
-                  "src": "4111:43:70"
+                  "src": "4111:43:81"
                 }
               ]
             },
@@ -4675,20 +4675,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "serialize",
-            "nameLocation": "4002:9:70",
+            "nameLocation": "4002:9:81",
             "parameters": {
-              "id": 24031,
+              "id": 27381,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24026,
+                  "id": 27376,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "4026:7:70",
+                  "nameLocation": "4026:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24043,
-                  "src": "4012:21:70",
+                  "scope": 27393,
+                  "src": "4012:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4696,10 +4696,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24025,
+                    "id": 27375,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4012:6:70",
+                    "src": "4012:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4709,13 +4709,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24028,
+                  "id": 27378,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "4049:3:70",
+                  "nameLocation": "4049:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24043,
-                  "src": "4035:17:70",
+                  "scope": 27393,
+                  "src": "4035:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4723,10 +4723,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24027,
+                    "id": 27377,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4035:6:70",
+                    "src": "4035:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4736,13 +4736,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24030,
+                  "id": 27380,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "4061:5:70",
+                  "nameLocation": "4061:5:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24043,
-                  "src": "4054:12:70",
+                  "scope": 27393,
+                  "src": "4054:12:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4750,10 +4750,10 @@ export const StdJson =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 24029,
+                    "id": 27379,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4054:6:70",
+                    "src": "4054:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -4762,21 +4762,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "4011:56:70"
+              "src": "4011:56:81"
             },
             "returnParameters": {
-              "id": 24034,
+              "id": 27384,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24033,
+                  "id": 27383,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24043,
-                  "src": "4086:13:70",
+                  "scope": 27393,
+                  "src": "4086:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4784,10 +4784,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24032,
+                    "id": 27382,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4086:6:70",
+                    "src": "4086:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4796,58 +4796,58 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "4085:15:70"
+              "src": "4085:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 24063,
+            "id": 27413,
             "nodeType": "FunctionDefinition",
-            "src": "4167:197:70",
+            "src": "4167:197:81",
             "nodes": [],
             "body": {
-              "id": 24062,
+              "id": 27412,
               "nodeType": "Block",
-              "src": "4304:60:70",
+              "src": "4304:60:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 24057,
+                        "id": 27407,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24045,
-                        "src": "4337:7:70",
+                        "referencedDeclaration": 27395,
+                        "src": "4337:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24058,
+                        "id": 27408,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24047,
-                        "src": "4346:3:70",
+                        "referencedDeclaration": 27397,
+                        "src": "4346:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24059,
+                        "id": 27409,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24050,
-                        "src": "4351:5:70",
+                        "referencedDeclaration": 27400,
+                        "src": "4351:5:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_int256_$dyn_memory_ptr",
                           "typeString": "int256[] memory"
@@ -4870,33 +4870,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 24055,
+                        "id": 27405,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "4321:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "4321:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 24056,
+                      "id": 27406,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "4324:12:70",
+                      "memberLocation": "4324:12:81",
                       "memberName": "serializeInt",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28945,
-                      "src": "4321:15:70",
+                      "referencedDeclaration": 32295,
+                      "src": "4321:15:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_array$_t_int256_$dyn_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory,int256[] memory) external returns (string memory)"
                       }
                     },
-                    "id": 24060,
+                    "id": 27410,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4905,17 +4905,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4321:36:70",
+                    "src": "4321:36:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 24054,
-                  "id": 24061,
+                  "functionReturnParameters": 27404,
+                  "id": 27411,
                   "nodeType": "Return",
-                  "src": "4314:43:70"
+                  "src": "4314:43:81"
                 }
               ]
             },
@@ -4923,20 +4923,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "serialize",
-            "nameLocation": "4176:9:70",
+            "nameLocation": "4176:9:81",
             "parameters": {
-              "id": 24051,
+              "id": 27401,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24045,
+                  "id": 27395,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "4200:7:70",
+                  "nameLocation": "4200:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24063,
-                  "src": "4186:21:70",
+                  "scope": 27413,
+                  "src": "4186:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4944,10 +4944,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24044,
+                    "id": 27394,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4186:6:70",
+                    "src": "4186:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4957,13 +4957,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24047,
+                  "id": 27397,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "4223:3:70",
+                  "nameLocation": "4223:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24063,
-                  "src": "4209:17:70",
+                  "scope": 27413,
+                  "src": "4209:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4971,10 +4971,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24046,
+                    "id": 27396,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4209:6:70",
+                    "src": "4209:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4984,13 +4984,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24050,
+                  "id": 27400,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "4244:5:70",
+                  "nameLocation": "4244:5:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24063,
-                  "src": "4228:21:70",
+                  "scope": 27413,
+                  "src": "4228:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4999,18 +4999,18 @@ export const StdJson =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 24048,
+                      "id": 27398,
                       "name": "int256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "4228:6:70",
+                      "src": "4228:6:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "id": 24049,
+                    "id": 27399,
                     "nodeType": "ArrayTypeName",
-                    "src": "4228:8:70",
+                    "src": "4228:8:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_int256_$dyn_storage_ptr",
                       "typeString": "int256[]"
@@ -5019,21 +5019,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "4185:65:70"
+              "src": "4185:65:81"
             },
             "returnParameters": {
-              "id": 24054,
+              "id": 27404,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24053,
+                  "id": 27403,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24063,
-                  "src": "4285:13:70",
+                  "scope": 27413,
+                  "src": "4285:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5041,10 +5041,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24052,
+                    "id": 27402,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4285:6:70",
+                    "src": "4285:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5053,58 +5053,58 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "4284:15:70"
+              "src": "4284:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 24082,
+            "id": 27432,
             "nodeType": "FunctionDefinition",
-            "src": "4370:173:70",
+            "src": "4370:173:81",
             "nodes": [],
             "body": {
-              "id": 24081,
+              "id": 27431,
               "nodeType": "Block",
-              "src": "4479:64:70",
+              "src": "4479:64:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 24076,
+                        "id": 27426,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24065,
-                        "src": "4516:7:70",
+                        "referencedDeclaration": 27415,
+                        "src": "4516:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24077,
+                        "id": 27427,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24067,
-                        "src": "4525:3:70",
+                        "referencedDeclaration": 27417,
+                        "src": "4525:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24078,
+                        "id": 27428,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24069,
-                        "src": "4530:5:70",
+                        "referencedDeclaration": 27419,
+                        "src": "4530:5:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -5127,33 +5127,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 24074,
+                        "id": 27424,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "4496:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "4496:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 24075,
+                      "id": 27425,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "4499:16:70",
+                      "memberLocation": "4499:16:81",
                       "memberName": "serializeAddress",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28876,
-                      "src": "4496:19:70",
+                      "referencedDeclaration": 32226,
+                      "src": "4496:19:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_address_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory,address) external returns (string memory)"
                       }
                     },
-                    "id": 24079,
+                    "id": 27429,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5162,17 +5162,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4496:40:70",
+                    "src": "4496:40:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 24073,
-                  "id": 24080,
+                  "functionReturnParameters": 27423,
+                  "id": 27430,
                   "nodeType": "Return",
-                  "src": "4489:47:70"
+                  "src": "4489:47:81"
                 }
               ]
             },
@@ -5180,20 +5180,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "serialize",
-            "nameLocation": "4379:9:70",
+            "nameLocation": "4379:9:81",
             "parameters": {
-              "id": 24070,
+              "id": 27420,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24065,
+                  "id": 27415,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "4403:7:70",
+                  "nameLocation": "4403:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24082,
-                  "src": "4389:21:70",
+                  "scope": 27432,
+                  "src": "4389:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5201,10 +5201,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24064,
+                    "id": 27414,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4389:6:70",
+                    "src": "4389:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5214,13 +5214,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24067,
+                  "id": 27417,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "4426:3:70",
+                  "nameLocation": "4426:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24082,
-                  "src": "4412:17:70",
+                  "scope": 27432,
+                  "src": "4412:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5228,10 +5228,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24066,
+                    "id": 27416,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4412:6:70",
+                    "src": "4412:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5241,13 +5241,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24069,
+                  "id": 27419,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "4439:5:70",
+                  "nameLocation": "4439:5:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24082,
-                  "src": "4431:13:70",
+                  "scope": 27432,
+                  "src": "4431:13:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5255,10 +5255,10 @@ export const StdJson =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 24068,
+                    "id": 27418,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4431:7:70",
+                    "src": "4431:7:81",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -5268,21 +5268,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "4388:57:70"
+              "src": "4388:57:81"
             },
             "returnParameters": {
-              "id": 24073,
+              "id": 27423,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24072,
+                  "id": 27422,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24082,
-                  "src": "4464:13:70",
+                  "scope": 27432,
+                  "src": "4464:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5290,10 +5290,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24071,
+                    "id": 27421,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4464:6:70",
+                    "src": "4464:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5302,58 +5302,58 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "4463:15:70"
+              "src": "4463:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 24102,
+            "id": 27452,
             "nodeType": "FunctionDefinition",
-            "src": "4549:202:70",
+            "src": "4549:202:81",
             "nodes": [],
             "body": {
-              "id": 24101,
+              "id": 27451,
               "nodeType": "Block",
-              "src": "4687:64:70",
+              "src": "4687:64:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 24096,
+                        "id": 27446,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24084,
-                        "src": "4724:7:70",
+                        "referencedDeclaration": 27434,
+                        "src": "4724:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24097,
+                        "id": 27447,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24086,
-                        "src": "4733:3:70",
+                        "referencedDeclaration": 27436,
+                        "src": "4733:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24098,
+                        "id": 27448,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24089,
-                        "src": "4738:5:70",
+                        "referencedDeclaration": 27439,
+                        "src": "4738:5:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                           "typeString": "address[] memory"
@@ -5376,33 +5376,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 24094,
+                        "id": 27444,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "4704:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "4704:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 24095,
+                      "id": 27445,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "4707:16:70",
+                      "memberLocation": "4707:16:81",
                       "memberName": "serializeAddress",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28957,
-                      "src": "4704:19:70",
+                      "referencedDeclaration": 32307,
+                      "src": "4704:19:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_array$_t_address_$dyn_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory,address[] memory) external returns (string memory)"
                       }
                     },
-                    "id": 24099,
+                    "id": 27449,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5411,17 +5411,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4704:40:70",
+                    "src": "4704:40:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 24093,
-                  "id": 24100,
+                  "functionReturnParameters": 27443,
+                  "id": 27450,
                   "nodeType": "Return",
-                  "src": "4697:47:70"
+                  "src": "4697:47:81"
                 }
               ]
             },
@@ -5429,20 +5429,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "serialize",
-            "nameLocation": "4558:9:70",
+            "nameLocation": "4558:9:81",
             "parameters": {
-              "id": 24090,
+              "id": 27440,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24084,
+                  "id": 27434,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "4582:7:70",
+                  "nameLocation": "4582:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24102,
-                  "src": "4568:21:70",
+                  "scope": 27452,
+                  "src": "4568:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5450,10 +5450,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24083,
+                    "id": 27433,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4568:6:70",
+                    "src": "4568:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5463,13 +5463,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24086,
+                  "id": 27436,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "4605:3:70",
+                  "nameLocation": "4605:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24102,
-                  "src": "4591:17:70",
+                  "scope": 27452,
+                  "src": "4591:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5477,10 +5477,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24085,
+                    "id": 27435,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4591:6:70",
+                    "src": "4591:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5490,13 +5490,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24089,
+                  "id": 27439,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "4627:5:70",
+                  "nameLocation": "4627:5:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24102,
-                  "src": "4610:22:70",
+                  "scope": 27452,
+                  "src": "4610:22:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5505,19 +5505,19 @@ export const StdJson =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 24087,
+                      "id": 27437,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "4610:7:70",
+                      "src": "4610:7:81",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 24088,
+                    "id": 27438,
                     "nodeType": "ArrayTypeName",
-                    "src": "4610:9:70",
+                    "src": "4610:9:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -5526,21 +5526,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "4567:66:70"
+              "src": "4567:66:81"
             },
             "returnParameters": {
-              "id": 24093,
+              "id": 27443,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24092,
+                  "id": 27442,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24102,
-                  "src": "4668:13:70",
+                  "scope": 27452,
+                  "src": "4668:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5548,10 +5548,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24091,
+                    "id": 27441,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4668:6:70",
+                    "src": "4668:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5560,58 +5560,58 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "4667:15:70"
+              "src": "4667:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 24121,
+            "id": 27471,
             "nodeType": "FunctionDefinition",
-            "src": "4757:173:70",
+            "src": "4757:173:81",
             "nodes": [],
             "body": {
-              "id": 24120,
+              "id": 27470,
               "nodeType": "Block",
-              "src": "4866:64:70",
+              "src": "4866:64:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 24115,
+                        "id": 27465,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24104,
-                        "src": "4903:7:70",
+                        "referencedDeclaration": 27454,
+                        "src": "4903:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24116,
+                        "id": 27466,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24106,
-                        "src": "4912:3:70",
+                        "referencedDeclaration": 27456,
+                        "src": "4912:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24117,
+                        "id": 27467,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24108,
-                        "src": "4917:5:70",
+                        "referencedDeclaration": 27458,
+                        "src": "4917:5:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -5634,33 +5634,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 24113,
+                        "id": 27463,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "4883:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "4883:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 24114,
+                      "id": 27464,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "4886:16:70",
+                      "memberLocation": "4886:16:81",
                       "memberName": "serializeBytes32",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28887,
-                      "src": "4883:19:70",
+                      "referencedDeclaration": 32237,
+                      "src": "4883:19:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_bytes32_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory,bytes32) external returns (string memory)"
                       }
                     },
-                    "id": 24118,
+                    "id": 27468,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5669,17 +5669,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4883:40:70",
+                    "src": "4883:40:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 24112,
-                  "id": 24119,
+                  "functionReturnParameters": 27462,
+                  "id": 27469,
                   "nodeType": "Return",
-                  "src": "4876:47:70"
+                  "src": "4876:47:81"
                 }
               ]
             },
@@ -5687,20 +5687,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "serialize",
-            "nameLocation": "4766:9:70",
+            "nameLocation": "4766:9:81",
             "parameters": {
-              "id": 24109,
+              "id": 27459,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24104,
+                  "id": 27454,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "4790:7:70",
+                  "nameLocation": "4790:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24121,
-                  "src": "4776:21:70",
+                  "scope": 27471,
+                  "src": "4776:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5708,10 +5708,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24103,
+                    "id": 27453,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4776:6:70",
+                    "src": "4776:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5721,13 +5721,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24106,
+                  "id": 27456,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "4813:3:70",
+                  "nameLocation": "4813:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24121,
-                  "src": "4799:17:70",
+                  "scope": 27471,
+                  "src": "4799:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5735,10 +5735,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24105,
+                    "id": 27455,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4799:6:70",
+                    "src": "4799:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5748,13 +5748,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24108,
+                  "id": 27458,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "4826:5:70",
+                  "nameLocation": "4826:5:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24121,
-                  "src": "4818:13:70",
+                  "scope": 27471,
+                  "src": "4818:13:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5762,10 +5762,10 @@ export const StdJson =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 24107,
+                    "id": 27457,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4818:7:70",
+                    "src": "4818:7:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -5774,21 +5774,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "4775:57:70"
+              "src": "4775:57:81"
             },
             "returnParameters": {
-              "id": 24112,
+              "id": 27462,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24111,
+                  "id": 27461,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24121,
-                  "src": "4851:13:70",
+                  "scope": 27471,
+                  "src": "4851:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5796,10 +5796,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24110,
+                    "id": 27460,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4851:6:70",
+                    "src": "4851:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5808,58 +5808,58 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "4850:15:70"
+              "src": "4850:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 24141,
+            "id": 27491,
             "nodeType": "FunctionDefinition",
-            "src": "4936:202:70",
+            "src": "4936:202:81",
             "nodes": [],
             "body": {
-              "id": 24140,
+              "id": 27490,
               "nodeType": "Block",
-              "src": "5074:64:70",
+              "src": "5074:64:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 24135,
+                        "id": 27485,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24123,
-                        "src": "5111:7:70",
+                        "referencedDeclaration": 27473,
+                        "src": "5111:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24136,
+                        "id": 27486,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24125,
-                        "src": "5120:3:70",
+                        "referencedDeclaration": 27475,
+                        "src": "5120:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24137,
+                        "id": 27487,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24128,
-                        "src": "5125:5:70",
+                        "referencedDeclaration": 27478,
+                        "src": "5125:5:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                           "typeString": "bytes32[] memory"
@@ -5882,33 +5882,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 24133,
+                        "id": 27483,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "5091:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "5091:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 24134,
+                      "id": 27484,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "5094:16:70",
+                      "memberLocation": "5094:16:81",
                       "memberName": "serializeBytes32",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28969,
-                      "src": "5091:19:70",
+                      "referencedDeclaration": 32319,
+                      "src": "5091:19:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_array$_t_bytes32_$dyn_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory,bytes32[] memory) external returns (string memory)"
                       }
                     },
-                    "id": 24138,
+                    "id": 27488,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5917,17 +5917,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5091:40:70",
+                    "src": "5091:40:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 24132,
-                  "id": 24139,
+                  "functionReturnParameters": 27482,
+                  "id": 27489,
                   "nodeType": "Return",
-                  "src": "5084:47:70"
+                  "src": "5084:47:81"
                 }
               ]
             },
@@ -5935,20 +5935,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "serialize",
-            "nameLocation": "4945:9:70",
+            "nameLocation": "4945:9:81",
             "parameters": {
-              "id": 24129,
+              "id": 27479,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24123,
+                  "id": 27473,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "4969:7:70",
+                  "nameLocation": "4969:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24141,
-                  "src": "4955:21:70",
+                  "scope": 27491,
+                  "src": "4955:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5956,10 +5956,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24122,
+                    "id": 27472,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4955:6:70",
+                    "src": "4955:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5969,13 +5969,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24125,
+                  "id": 27475,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "4992:3:70",
+                  "nameLocation": "4992:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24141,
-                  "src": "4978:17:70",
+                  "scope": 27491,
+                  "src": "4978:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5983,10 +5983,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24124,
+                    "id": 27474,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4978:6:70",
+                    "src": "4978:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5996,13 +5996,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24128,
+                  "id": 27478,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "5014:5:70",
+                  "nameLocation": "5014:5:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24141,
-                  "src": "4997:22:70",
+                  "scope": 27491,
+                  "src": "4997:22:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6011,18 +6011,18 @@ export const StdJson =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 24126,
+                      "id": 27476,
                       "name": "bytes32",
                       "nodeType": "ElementaryTypeName",
-                      "src": "4997:7:70",
+                      "src": "4997:7:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
                         "typeString": "bytes32"
                       }
                     },
-                    "id": 24127,
+                    "id": 27477,
                     "nodeType": "ArrayTypeName",
-                    "src": "4997:9:70",
+                    "src": "4997:9:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                       "typeString": "bytes32[]"
@@ -6031,21 +6031,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "4954:66:70"
+              "src": "4954:66:81"
             },
             "returnParameters": {
-              "id": 24132,
+              "id": 27482,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24131,
+                  "id": 27481,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24141,
-                  "src": "5055:13:70",
+                  "scope": 27491,
+                  "src": "5055:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6053,10 +6053,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24130,
+                    "id": 27480,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5055:6:70",
+                    "src": "5055:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6065,58 +6065,58 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "5054:15:70"
+              "src": "5054:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 24160,
+            "id": 27510,
             "nodeType": "FunctionDefinition",
-            "src": "5144:176:70",
+            "src": "5144:176:81",
             "nodes": [],
             "body": {
-              "id": 24159,
+              "id": 27509,
               "nodeType": "Block",
-              "src": "5258:62:70",
+              "src": "5258:62:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 24154,
+                        "id": 27504,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24143,
-                        "src": "5293:7:70",
+                        "referencedDeclaration": 27493,
+                        "src": "5293:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24155,
+                        "id": 27505,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24145,
-                        "src": "5302:3:70",
+                        "referencedDeclaration": 27495,
+                        "src": "5302:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24156,
+                        "id": 27506,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24147,
-                        "src": "5307:5:70",
+                        "referencedDeclaration": 27497,
+                        "src": "5307:5:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_memory_ptr",
                           "typeString": "bytes memory"
@@ -6139,33 +6139,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 24152,
+                        "id": 27502,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "5275:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "5275:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 24153,
+                      "id": 27503,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "5278:14:70",
+                      "memberLocation": "5278:14:81",
                       "memberName": "serializeBytes",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28909,
-                      "src": "5275:17:70",
+                      "referencedDeclaration": 32259,
+                      "src": "5275:17:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory,bytes memory) external returns (string memory)"
                       }
                     },
-                    "id": 24157,
+                    "id": 27507,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6174,17 +6174,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5275:38:70",
+                    "src": "5275:38:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 24151,
-                  "id": 24158,
+                  "functionReturnParameters": 27501,
+                  "id": 27508,
                   "nodeType": "Return",
-                  "src": "5268:45:70"
+                  "src": "5268:45:81"
                 }
               ]
             },
@@ -6192,20 +6192,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "serialize",
-            "nameLocation": "5153:9:70",
+            "nameLocation": "5153:9:81",
             "parameters": {
-              "id": 24148,
+              "id": 27498,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24143,
+                  "id": 27493,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "5177:7:70",
+                  "nameLocation": "5177:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24160,
-                  "src": "5163:21:70",
+                  "scope": 27510,
+                  "src": "5163:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6213,10 +6213,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24142,
+                    "id": 27492,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5163:6:70",
+                    "src": "5163:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6226,13 +6226,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24145,
+                  "id": 27495,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "5200:3:70",
+                  "nameLocation": "5200:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24160,
-                  "src": "5186:17:70",
+                  "scope": 27510,
+                  "src": "5186:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6240,10 +6240,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24144,
+                    "id": 27494,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5186:6:70",
+                    "src": "5186:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6253,13 +6253,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24147,
+                  "id": 27497,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "5218:5:70",
+                  "nameLocation": "5218:5:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24160,
-                  "src": "5205:18:70",
+                  "scope": 27510,
+                  "src": "5205:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6267,10 +6267,10 @@ export const StdJson =
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 24146,
+                    "id": 27496,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5205:5:70",
+                    "src": "5205:5:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -6279,21 +6279,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "5162:62:70"
+              "src": "5162:62:81"
             },
             "returnParameters": {
-              "id": 24151,
+              "id": 27501,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24150,
+                  "id": 27500,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24160,
-                  "src": "5243:13:70",
+                  "scope": 27510,
+                  "src": "5243:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6301,10 +6301,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24149,
+                    "id": 27499,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5243:6:70",
+                    "src": "5243:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6313,58 +6313,58 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "5242:15:70"
+              "src": "5242:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 24180,
+            "id": 27530,
             "nodeType": "FunctionDefinition",
-            "src": "5326:198:70",
+            "src": "5326:198:81",
             "nodes": [],
             "body": {
-              "id": 24179,
+              "id": 27529,
               "nodeType": "Block",
-              "src": "5462:62:70",
+              "src": "5462:62:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 24174,
+                        "id": 27524,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24162,
-                        "src": "5497:7:70",
+                        "referencedDeclaration": 27512,
+                        "src": "5497:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24175,
+                        "id": 27525,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24164,
-                        "src": "5506:3:70",
+                        "referencedDeclaration": 27514,
+                        "src": "5506:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24176,
+                        "id": 27526,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24167,
-                        "src": "5511:5:70",
+                        "referencedDeclaration": 27517,
+                        "src": "5511:5:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes_memory_ptr_$dyn_memory_ptr",
                           "typeString": "bytes memory[] memory"
@@ -6387,33 +6387,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 24172,
+                        "id": 27522,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "5479:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "5479:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 24173,
+                      "id": 27523,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "5482:14:70",
+                      "memberLocation": "5482:14:81",
                       "memberName": "serializeBytes",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28993,
-                      "src": "5479:17:70",
+                      "referencedDeclaration": 32343,
+                      "src": "5479:17:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_array$_t_bytes_memory_ptr_$dyn_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory,bytes memory[] memory) external returns (string memory)"
                       }
                     },
-                    "id": 24177,
+                    "id": 27527,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6422,17 +6422,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5479:38:70",
+                    "src": "5479:38:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 24171,
-                  "id": 24178,
+                  "functionReturnParameters": 27521,
+                  "id": 27528,
                   "nodeType": "Return",
-                  "src": "5472:45:70"
+                  "src": "5472:45:81"
                 }
               ]
             },
@@ -6440,20 +6440,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "serialize",
-            "nameLocation": "5335:9:70",
+            "nameLocation": "5335:9:81",
             "parameters": {
-              "id": 24168,
+              "id": 27518,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24162,
+                  "id": 27512,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "5359:7:70",
+                  "nameLocation": "5359:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24180,
-                  "src": "5345:21:70",
+                  "scope": 27530,
+                  "src": "5345:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6461,10 +6461,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24161,
+                    "id": 27511,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5345:6:70",
+                    "src": "5345:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6474,13 +6474,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24164,
+                  "id": 27514,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "5382:3:70",
+                  "nameLocation": "5382:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24180,
-                  "src": "5368:17:70",
+                  "scope": 27530,
+                  "src": "5368:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6488,10 +6488,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24163,
+                    "id": 27513,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5368:6:70",
+                    "src": "5368:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6501,13 +6501,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24167,
+                  "id": 27517,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "5402:5:70",
+                  "nameLocation": "5402:5:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24180,
-                  "src": "5387:20:70",
+                  "scope": 27530,
+                  "src": "5387:20:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6516,18 +6516,18 @@ export const StdJson =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 24165,
+                      "id": 27515,
                       "name": "bytes",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5387:5:70",
+                      "src": "5387:5:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes_storage_ptr",
                         "typeString": "bytes"
                       }
                     },
-                    "id": 24166,
+                    "id": 27516,
                     "nodeType": "ArrayTypeName",
-                    "src": "5387:7:70",
+                    "src": "5387:7:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
                       "typeString": "bytes[]"
@@ -6536,21 +6536,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "5344:64:70"
+              "src": "5344:64:81"
             },
             "returnParameters": {
-              "id": 24171,
+              "id": 27521,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24170,
+                  "id": 27520,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24180,
-                  "src": "5443:13:70",
+                  "scope": 27530,
+                  "src": "5443:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6558,10 +6558,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24169,
+                    "id": 27519,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5443:6:70",
+                    "src": "5443:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6570,58 +6570,58 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "5442:15:70"
+              "src": "5442:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 24199,
+            "id": 27549,
             "nodeType": "FunctionDefinition",
-            "src": "5530:198:70",
+            "src": "5530:198:81",
             "nodes": [],
             "body": {
-              "id": 24198,
+              "id": 27548,
               "nodeType": "Block",
-              "src": "5665:63:70",
+              "src": "5665:63:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 24193,
+                        "id": 27543,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24182,
-                        "src": "5701:7:70",
+                        "referencedDeclaration": 27532,
+                        "src": "5701:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24194,
+                        "id": 27544,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24184,
-                        "src": "5710:3:70",
+                        "referencedDeclaration": 27534,
+                        "src": "5710:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24195,
+                        "id": 27545,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24186,
-                        "src": "5715:5:70",
+                        "referencedDeclaration": 27536,
+                        "src": "5715:5:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -6644,33 +6644,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 24191,
+                        "id": 27541,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "5682:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "5682:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 24192,
+                      "id": 27542,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "5685:15:70",
+                      "memberLocation": "5685:15:81",
                       "memberName": "serializeString",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28898,
-                      "src": "5682:18:70",
+                      "referencedDeclaration": 32248,
+                      "src": "5682:18:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory,string memory) external returns (string memory)"
                       }
                     },
-                    "id": 24196,
+                    "id": 27546,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6679,17 +6679,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5682:39:70",
+                    "src": "5682:39:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 24190,
-                  "id": 24197,
+                  "functionReturnParameters": 27540,
+                  "id": 27547,
                   "nodeType": "Return",
-                  "src": "5675:46:70"
+                  "src": "5675:46:81"
                 }
               ]
             },
@@ -6697,20 +6697,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "serialize",
-            "nameLocation": "5539:9:70",
+            "nameLocation": "5539:9:81",
             "parameters": {
-              "id": 24187,
+              "id": 27537,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24182,
+                  "id": 27532,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "5563:7:70",
+                  "nameLocation": "5563:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24199,
-                  "src": "5549:21:70",
+                  "scope": 27549,
+                  "src": "5549:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6718,10 +6718,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24181,
+                    "id": 27531,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5549:6:70",
+                    "src": "5549:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6731,13 +6731,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24184,
+                  "id": 27534,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "5586:3:70",
+                  "nameLocation": "5586:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24199,
-                  "src": "5572:17:70",
+                  "scope": 27549,
+                  "src": "5572:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6745,10 +6745,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24183,
+                    "id": 27533,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5572:6:70",
+                    "src": "5572:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6758,13 +6758,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24186,
+                  "id": 27536,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "5605:5:70",
+                  "nameLocation": "5605:5:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24199,
-                  "src": "5591:19:70",
+                  "scope": 27549,
+                  "src": "5591:19:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6772,10 +6772,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24185,
+                    "id": 27535,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5591:6:70",
+                    "src": "5591:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6784,21 +6784,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "5548:63:70"
+              "src": "5548:63:81"
             },
             "returnParameters": {
-              "id": 24190,
+              "id": 27540,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24189,
+                  "id": 27539,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24199,
-                  "src": "5646:13:70",
+                  "scope": 27549,
+                  "src": "5646:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6806,10 +6806,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24188,
+                    "id": 27538,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5646:6:70",
+                    "src": "5646:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6818,58 +6818,58 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "5645:15:70"
+              "src": "5645:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 24219,
+            "id": 27569,
             "nodeType": "FunctionDefinition",
-            "src": "5734:200:70",
+            "src": "5734:200:81",
             "nodes": [],
             "body": {
-              "id": 24218,
+              "id": 27568,
               "nodeType": "Block",
-              "src": "5871:63:70",
+              "src": "5871:63:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 24213,
+                        "id": 27563,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24201,
-                        "src": "5907:7:70",
+                        "referencedDeclaration": 27551,
+                        "src": "5907:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24214,
+                        "id": 27564,
                         "name": "key",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24203,
-                        "src": "5916:3:70",
+                        "referencedDeclaration": 27553,
+                        "src": "5916:3:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24215,
+                        "id": 27565,
                         "name": "value",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24206,
-                        "src": "5921:5:70",
+                        "referencedDeclaration": 27556,
+                        "src": "5921:5:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
                           "typeString": "string memory[] memory"
@@ -6892,33 +6892,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 24211,
+                        "id": 27561,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "5888:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "5888:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 24212,
+                      "id": 27562,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "5891:15:70",
+                      "memberLocation": "5891:15:81",
                       "memberName": "serializeString",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 28981,
-                      "src": "5888:18:70",
+                      "referencedDeclaration": 32331,
+                      "src": "5888:18:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_array$_t_string_memory_ptr_$dyn_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory,string memory[] memory) external returns (string memory)"
                       }
                     },
-                    "id": 24216,
+                    "id": 27566,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6927,17 +6927,17 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5888:39:70",
+                    "src": "5888:39:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 24210,
-                  "id": 24217,
+                  "functionReturnParameters": 27560,
+                  "id": 27567,
                   "nodeType": "Return",
-                  "src": "5881:46:70"
+                  "src": "5881:46:81"
                 }
               ]
             },
@@ -6945,20 +6945,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "serialize",
-            "nameLocation": "5743:9:70",
+            "nameLocation": "5743:9:81",
             "parameters": {
-              "id": 24207,
+              "id": 27557,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24201,
+                  "id": 27551,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "5767:7:70",
+                  "nameLocation": "5767:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24219,
-                  "src": "5753:21:70",
+                  "scope": 27569,
+                  "src": "5753:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6966,10 +6966,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24200,
+                    "id": 27550,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5753:6:70",
+                    "src": "5753:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6979,13 +6979,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24203,
+                  "id": 27553,
                   "mutability": "mutable",
                   "name": "key",
-                  "nameLocation": "5790:3:70",
+                  "nameLocation": "5790:3:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24219,
-                  "src": "5776:17:70",
+                  "scope": 27569,
+                  "src": "5776:17:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6993,10 +6993,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24202,
+                    "id": 27552,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5776:6:70",
+                    "src": "5776:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -7006,13 +7006,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24206,
+                  "id": 27556,
                   "mutability": "mutable",
                   "name": "value",
-                  "nameLocation": "5811:5:70",
+                  "nameLocation": "5811:5:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24219,
-                  "src": "5795:21:70",
+                  "scope": 27569,
+                  "src": "5795:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -7021,18 +7021,18 @@ export const StdJson =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 24204,
+                      "id": 27554,
                       "name": "string",
                       "nodeType": "ElementaryTypeName",
-                      "src": "5795:6:70",
+                      "src": "5795:6:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage_ptr",
                         "typeString": "string"
                       }
                     },
-                    "id": 24205,
+                    "id": 27555,
                     "nodeType": "ArrayTypeName",
-                    "src": "5795:8:70",
+                    "src": "5795:8:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
                       "typeString": "string[]"
@@ -7041,21 +7041,21 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "5752:65:70"
+              "src": "5752:65:81"
             },
             "returnParameters": {
-              "id": 24210,
+              "id": 27560,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24209,
+                  "id": 27559,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24219,
-                  "src": "5852:13:70",
+                  "scope": 27569,
+                  "src": "5852:13:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -7063,10 +7063,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24208,
+                    "id": 27558,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5852:6:70",
+                    "src": "5852:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -7075,46 +7075,46 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "5851:15:70"
+              "src": "5851:15:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 24234,
+            "id": 27584,
             "nodeType": "FunctionDefinition",
-            "src": "5940:111:70",
+            "src": "5940:111:81",
             "nodes": [],
             "body": {
-              "id": 24233,
+              "id": 27583,
               "nodeType": "Block",
-              "src": "6007:44:70",
+              "src": "6007:44:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 24229,
+                        "id": 27579,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24221,
-                        "src": "6030:7:70",
+                        "referencedDeclaration": 27571,
+                        "src": "6030:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24230,
+                        "id": 27580,
                         "name": "path",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24223,
-                        "src": "6039:4:70",
+                        "referencedDeclaration": 27573,
+                        "src": "6039:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -7133,33 +7133,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 24226,
+                        "id": 27576,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "6017:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "6017:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 24228,
+                      "id": 27578,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "6020:9:70",
+                      "memberLocation": "6020:9:81",
                       "memberName": "writeJson",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 29000,
-                      "src": "6017:12:70",
+                      "referencedDeclaration": 32350,
+                      "src": "6017:12:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory,string memory) external"
                       }
                     },
-                    "id": 24231,
+                    "id": 27581,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7168,16 +7168,16 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6017:27:70",
+                    "src": "6017:27:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 24232,
+                  "id": 27582,
                   "nodeType": "ExpressionStatement",
-                  "src": "6017:27:70"
+                  "src": "6017:27:81"
                 }
               ]
             },
@@ -7185,20 +7185,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "write",
-            "nameLocation": "5949:5:70",
+            "nameLocation": "5949:5:81",
             "parameters": {
-              "id": 24224,
+              "id": 27574,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24221,
+                  "id": 27571,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "5969:7:70",
+                  "nameLocation": "5969:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24234,
-                  "src": "5955:21:70",
+                  "scope": 27584,
+                  "src": "5955:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -7206,10 +7206,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24220,
+                    "id": 27570,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5955:6:70",
+                    "src": "5955:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -7219,13 +7219,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24223,
+                  "id": 27573,
                   "mutability": "mutable",
                   "name": "path",
-                  "nameLocation": "5992:4:70",
+                  "nameLocation": "5992:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24234,
-                  "src": "5978:18:70",
+                  "scope": 27584,
+                  "src": "5978:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -7233,10 +7233,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24222,
+                    "id": 27572,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5978:6:70",
+                    "src": "5978:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -7245,64 +7245,64 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "5954:43:70"
+              "src": "5954:43:81"
             },
             "returnParameters": {
-              "id": 24225,
+              "id": 27575,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "6007:0:70"
+              "src": "6007:0:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 24252,
+            "id": 27602,
             "nodeType": "FunctionDefinition",
-            "src": "6057:145:70",
+            "src": "6057:145:81",
             "nodes": [],
             "body": {
-              "id": 24251,
+              "id": 27601,
               "nodeType": "Block",
-              "src": "6148:54:70",
+              "src": "6148:54:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 24246,
+                        "id": 27596,
                         "name": "jsonKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24236,
-                        "src": "6171:7:70",
+                        "referencedDeclaration": 27586,
+                        "src": "6171:7:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24247,
+                        "id": 27597,
                         "name": "path",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24238,
-                        "src": "6180:4:70",
+                        "referencedDeclaration": 27588,
+                        "src": "6180:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 24248,
+                        "id": 27598,
                         "name": "valueKey",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24240,
-                        "src": "6186:8:70",
+                        "referencedDeclaration": 27590,
+                        "src": "6186:8:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -7325,33 +7325,33 @@ export const StdJson =
                         }
                       ],
                       "expression": {
-                        "id": 24243,
+                        "id": 27593,
                         "name": "vm",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23699,
-                        "src": "6158:2:70",
+                        "referencedDeclaration": 27049,
+                        "src": "6158:2:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_VmSafe_$29055",
+                          "typeIdentifier": "t_contract$_VmSafe_$32405",
                           "typeString": "contract VmSafe"
                         }
                       },
-                      "id": 24245,
+                      "id": 27595,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "6161:9:70",
+                      "memberLocation": "6161:9:81",
                       "memberName": "writeJson",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 29009,
-                      "src": "6158:12:70",
+                      "referencedDeclaration": 32359,
+                      "src": "6158:12:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory,string memory,string memory) external"
                       }
                     },
-                    "id": 24249,
+                    "id": 27599,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7360,16 +7360,16 @@ export const StdJson =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6158:37:70",
+                    "src": "6158:37:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 24250,
+                  "id": 27600,
                   "nodeType": "ExpressionStatement",
-                  "src": "6158:37:70"
+                  "src": "6158:37:81"
                 }
               ]
             },
@@ -7377,20 +7377,20 @@ export const StdJson =
             "kind": "function",
             "modifiers": [],
             "name": "write",
-            "nameLocation": "6066:5:70",
+            "nameLocation": "6066:5:81",
             "parameters": {
-              "id": 24241,
+              "id": 27591,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24236,
+                  "id": 27586,
                   "mutability": "mutable",
                   "name": "jsonKey",
-                  "nameLocation": "6086:7:70",
+                  "nameLocation": "6086:7:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24252,
-                  "src": "6072:21:70",
+                  "scope": 27602,
+                  "src": "6072:21:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -7398,10 +7398,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24235,
+                    "id": 27585,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6072:6:70",
+                    "src": "6072:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -7411,13 +7411,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24238,
+                  "id": 27588,
                   "mutability": "mutable",
                   "name": "path",
-                  "nameLocation": "6109:4:70",
+                  "nameLocation": "6109:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24252,
-                  "src": "6095:18:70",
+                  "scope": 27602,
+                  "src": "6095:18:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -7425,10 +7425,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24237,
+                    "id": 27587,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6095:6:70",
+                    "src": "6095:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -7438,13 +7438,13 @@ export const StdJson =
                 },
                 {
                   "constant": false,
-                  "id": 24240,
+                  "id": 27590,
                   "mutability": "mutable",
                   "name": "valueKey",
-                  "nameLocation": "6129:8:70",
+                  "nameLocation": "6129:8:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24252,
-                  "src": "6115:22:70",
+                  "scope": 27602,
+                  "src": "6115:22:81",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -7452,10 +7452,10 @@ export const StdJson =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24239,
+                    "id": 27589,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6115:6:70",
+                    "src": "6115:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -7464,15 +7464,15 @@ export const StdJson =
                   "visibility": "internal"
                 }
               ],
-              "src": "6071:67:70"
+              "src": "6071:67:81"
             },
             "returnParameters": {
-              "id": 24242,
+              "id": 27592,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "6148:0:70"
+              "src": "6148:0:81"
             },
-            "scope": 24253,
+            "scope": 27603,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
@@ -7485,15 +7485,15 @@ export const StdJson =
         "contractKind": "library",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          24253
+          27603
         ],
         "name": "stdJson",
-        "nameLocation": "838:7:70",
-        "scope": 24254,
+        "nameLocation": "838:7:81",
+        "scope": 27604,
         "usedErrors": []
       }
     ],
     "license": "MIT"
   },
-  "id": 70
+  "id": 81
 } as const;

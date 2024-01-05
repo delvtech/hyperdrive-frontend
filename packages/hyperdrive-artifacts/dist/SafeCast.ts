@@ -2,17 +2,17 @@ export const SafeCast =
 {
   "abi": [],
   "bytecode": {
-    "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122003f6359628c51a48e31264f28276da1c380b9b3751b75598372f49b6f34abe7964736f6c63430008130033",
-    "sourceMap": "456:759:44:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;456:759:44;;;;;;;;;;;;;;;;;",
+    "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220777faadb618e5609e1a9fca1ada0b638048d0d6dab821ec4777b6872e5aa89ab64736f6c63430008130033",
+    "sourceMap": "456:759:54:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;456:759:54;;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122003f6359628c51a48e31264f28276da1c380b9b3751b75598372f49b6f34abe7964736f6c63430008130033",
-    "sourceMap": "456:759:44:-:0;;;;;;;;",
+    "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220777faadb618e5609e1a9fca1ada0b638048d0d6dab821ec4777b6872e5aa89ab64736f6c63430008130033",
+    "sourceMap": "456:759:54:-:0;;;;;;;;",
     "linkReferences": {}
   },
   "methodIdentifiers": {},
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Inspired by Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/SafeCastLib.sol)Inspired by OpenZeppelin (https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeCast.sol)\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Safe unsigned integer casting library that reverts on overflow.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/libraries/SafeCast.sol\":\"SafeCast\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36\",\"dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x833d56790728bfab7d35507b8584dc7ce607b26512a382e887483f61d528f6c5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3dd009d6ff5a89d1173f7330916e81a31ffd139bf6848b3f4400673652554a70\",\"dweb:/ipfs/QmXkVovZSWqhRqrt8y9FFfHt1HWhnUuP9TMecQyd89yEQ3\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85\",\"dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x837939af4a9224c5f4ea564e9b33a5612442b7d7d50b7f8bb32be6bb3ce239b3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3bfebedcb31d2edf86a69f0dfbcc5aa7b96edc2d8197b4a4681a200cb6ffe993\",\"dweb:/ipfs/Qmeq4oAGxKv3mvRRWkqYBjfdozPkhi3MqBRFNnNkmAwCtt\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6\",\"dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8\",\"dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f\",\"dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6\",\"dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0x077e800ae4f47bda111e72f8c40d50a57b10a1c5bce81f2e83bb57f94752159f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8e9433729a73747a65ececae27a8f634300a4e02a66577f796f596e5894a4bb5\",\"dweb:/ipfs/QmT2fC2xaRoFuDBURAtcwqvpqXvw1AQybSgb4khVBzit2S\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Inspired by Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/SafeCastLib.sol)Inspired by OpenZeppelin (https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeCast.sol)\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Safe unsigned integer casting library that reverts on overflow.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/libraries/SafeCast.sol\":\"SafeCast\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36\",\"dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xf62872798e8bb605416caed4df67bc933e7df0ac28db4a14104a481584ad7787\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0d4650a2428a4b5eb302c1e2c596f4ae4358be4ea098694152e7223aa6a579d8\",\"dweb:/ipfs/QmYoopLx1zWyXKEt7bzCVSpQPHTbtDQRoc3yJ7kqThThYw\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85\",\"dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x402cde9d7823ea9762f43ce326703c64c441c5feb278bedcb9e1401d0a8b733b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e12e56585cf119a544a5382df36d725daf89a21660663d1e6dd9de839fc8ff17\",\"dweb:/ipfs/QmNSyGK8eagodGUUPniBptVyC9by2n9Ff3PUxF4FHNQYXc\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6\",\"dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8\",\"dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f\",\"dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6\",\"dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0x077e800ae4f47bda111e72f8c40d50a57b10a1c5bce81f2e83bb57f94752159f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8e9433729a73747a65ececae27a8f634300a4e02a66577f796f596e5894a4bb5\",\"dweb:/ipfs/QmT2fC2xaRoFuDBURAtcwqvpqXvw1AQybSgb4khVBzit2S\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.19+commit.7dd6d404"
@@ -62,10 +62,10 @@ export const SafeCast =
         "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IHyperdrive.sol": {
-        "keccak256": "0x833d56790728bfab7d35507b8584dc7ce607b26512a382e887483f61d528f6c5",
+        "keccak256": "0xf62872798e8bb605416caed4df67bc933e7df0ac28db4a14104a481584ad7787",
         "urls": [
-          "bzz-raw://3dd009d6ff5a89d1173f7330916e81a31ffd139bf6848b3f4400673652554a70",
-          "dweb:/ipfs/QmXkVovZSWqhRqrt8y9FFfHt1HWhnUuP9TMecQyd89yEQ3"
+          "bzz-raw://0d4650a2428a4b5eb302c1e2c596f4ae4358be4ea098694152e7223aa6a579d8",
+          "dweb:/ipfs/QmYoopLx1zWyXKEt7bzCVSpQPHTbtDQRoc3yJ7kqThThYw"
         ],
         "license": "Apache-2.0"
       },
@@ -78,10 +78,10 @@ export const SafeCast =
         "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IHyperdriveRead.sol": {
-        "keccak256": "0x837939af4a9224c5f4ea564e9b33a5612442b7d7d50b7f8bb32be6bb3ce239b3",
+        "keccak256": "0x402cde9d7823ea9762f43ce326703c64c441c5feb278bedcb9e1401d0a8b733b",
         "urls": [
-          "bzz-raw://3bfebedcb31d2edf86a69f0dfbcc5aa7b96edc2d8197b4a4681a200cb6ffe993",
-          "dweb:/ipfs/Qmeq4oAGxKv3mvRRWkqYBjfdozPkhi3MqBRFNnNkmAwCtt"
+          "bzz-raw://e12e56585cf119a544a5382df36d725daf89a21660663d1e6dd9de839fc8ff17",
+          "dweb:/ipfs/QmNSyGK8eagodGUUPniBptVyC9by2n9Ff3PUxF4FHNQYXc"
         ],
         "license": "Apache-2.0"
       },
@@ -130,22 +130,22 @@ export const SafeCast =
   },
   "ast": {
     "absolutePath": "contracts/src/libraries/SafeCast.sol",
-    "id": 11429,
+    "id": 14353,
     "exportedSymbols": {
       "IHyperdrive": [
-        3759
+        4675
       ],
       "SafeCast": [
-        11428
+        14352
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "40:1176:44",
+    "src": "40:1176:54",
     "nodes": [
       {
-        "id": 11354,
+        "id": 14278,
         "nodeType": "PragmaDirective",
-        "src": "40:23:44",
+        "src": "40:23:54",
         "nodes": [],
         "literals": [
           "solidity",
@@ -154,24 +154,24 @@ export const SafeCast =
         ]
       },
       {
-        "id": 11356,
+        "id": 14280,
         "nodeType": "ImportDirective",
-        "src": "65:60:44",
+        "src": "65:60:54",
         "nodes": [],
         "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
         "file": "../interfaces/IHyperdrive.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 11429,
-        "sourceUnit": 3760,
+        "scope": 14353,
+        "sourceUnit": 4676,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 11355,
+              "id": 14279,
               "name": "IHyperdrive",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 3759,
-              "src": "74:11:44",
+              "referencedDeclaration": 4675,
+              "src": "74:11:54",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -180,24 +180,24 @@ export const SafeCast =
         "unitAlias": ""
       },
       {
-        "id": 11428,
+        "id": 14352,
         "nodeType": "ContractDefinition",
-        "src": "456:759:44",
+        "src": "456:759:54",
         "nodes": [
           {
-            "id": 11387,
+            "id": 14311,
             "nodeType": "FunctionDefinition",
-            "src": "640:190:44",
+            "src": "640:190:54",
             "nodes": [],
             "body": {
-              "id": 11386,
+              "id": 14310,
               "nodeType": "Block",
-              "src": "704:126:44",
+              "src": "704:126:54",
               "nodes": [],
               "statements": [
                 {
                   "condition": {
-                    "id": 11371,
+                    "id": 14295,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -205,7 +205,7 @@ export const SafeCast =
                     "nodeType": "UnaryOperation",
                     "operator": "!",
                     "prefix": true,
-                    "src": "718:15:44",
+                    "src": "718:15:54",
                     "subExpression": {
                       "components": [
                         {
@@ -213,18 +213,18 @@ export const SafeCast =
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 11369,
+                          "id": 14293,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 11365,
+                            "id": 14289,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11360,
-                            "src": "720:1:44",
+                            "referencedDeclaration": 14284,
+                            "src": "720:1:54",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -237,21 +237,21 @@ export const SafeCast =
                               "typeIdentifier": "t_rational_340282366920938463463374607431768211456_by_1",
                               "typeString": "int_const 3402...(31 digits omitted)...1456"
                             },
-                            "id": 11368,
+                            "id": 14292,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "leftExpression": {
                               "hexValue": "31",
-                              "id": 11366,
+                              "id": 14290,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "724:1:44",
+                              "src": "724:1:54",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_1_by_1",
                                 "typeString": "int_const 1"
@@ -262,41 +262,41 @@ export const SafeCast =
                             "operator": "<<",
                             "rightExpression": {
                               "hexValue": "313238",
-                              "id": 11367,
+                              "id": 14291,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "729:3:44",
+                              "src": "729:3:54",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_128_by_1",
                                 "typeString": "int_const 128"
                               },
                               "value": "128"
                             },
-                            "src": "724:8:44",
+                            "src": "724:8:54",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_340282366920938463463374607431768211456_by_1",
                               "typeString": "int_const 3402...(31 digits omitted)...1456"
                             }
                           },
-                          "src": "720:12:44",
+                          "src": "720:12:54",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         }
                       ],
-                      "id": 11370,
+                      "id": 14294,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "719:14:44",
+                      "src": "719:14:54",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -307,13 +307,13 @@ export const SafeCast =
                       "typeString": "bool"
                     }
                   },
-                  "id": 11378,
+                  "id": 14302,
                   "nodeType": "IfStatement",
-                  "src": "714:86:44",
+                  "src": "714:86:54",
                   "trueBody": {
-                    "id": 11377,
+                    "id": 14301,
                     "nodeType": "Block",
-                    "src": "735:65:44",
+                    "src": "735:65:54",
                     "statements": [
                       {
                         "errorCall": {
@@ -321,33 +321,33 @@ export const SafeCast =
                           "expression": {
                             "argumentTypes": [],
                             "expression": {
-                              "id": 11372,
+                              "id": 14296,
                               "name": "IHyperdrive",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3759,
-                              "src": "756:11:44",
+                              "referencedDeclaration": 4675,
+                              "src": "756:11:54",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$4675_$",
                                 "typeString": "type(contract IHyperdrive)"
                               }
                             },
-                            "id": 11374,
+                            "id": 14298,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "768:19:44",
+                            "memberLocation": "768:19:54",
                             "memberName": "UnsafeCastToUint128",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 3745,
-                            "src": "756:31:44",
+                            "referencedDeclaration": 4661,
+                            "src": "756:31:54",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_error_pure$__$returns$__$",
                               "typeString": "function () pure"
                             }
                           },
-                          "id": 11375,
+                          "id": 14299,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -356,34 +356,34 @@ export const SafeCast =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "756:33:44",
+                          "src": "756:33:54",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 11376,
+                        "id": 14300,
                         "nodeType": "RevertStatement",
-                        "src": "749:40:44"
+                        "src": "749:40:54"
                       }
                     ]
                   }
                 },
                 {
                   "expression": {
-                    "id": 11384,
+                    "id": 14308,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 11379,
+                      "id": 14303,
                       "name": "y",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11363,
-                      "src": "809:1:44",
+                      "referencedDeclaration": 14287,
+                      "src": "809:1:54",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
@@ -394,12 +394,12 @@ export const SafeCast =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 11382,
+                          "id": 14306,
                           "name": "x",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11360,
-                          "src": "821:1:44",
+                          "referencedDeclaration": 14284,
+                          "src": "821:1:54",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -413,26 +413,26 @@ export const SafeCast =
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 11381,
+                        "id": 14305,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
                         "nodeType": "ElementaryTypeNameExpression",
-                        "src": "813:7:44",
+                        "src": "813:7:54",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_uint128_$",
                           "typeString": "type(uint128)"
                         },
                         "typeName": {
-                          "id": 11380,
+                          "id": 14304,
                           "name": "uint128",
                           "nodeType": "ElementaryTypeName",
-                          "src": "813:7:44",
+                          "src": "813:7:54",
                           "typeDescriptions": {}
                         }
                       },
-                      "id": 11383,
+                      "id": 14307,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -441,49 +441,49 @@ export const SafeCast =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "813:10:44",
+                      "src": "813:10:54",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       }
                     },
-                    "src": "809:14:44",
+                    "src": "809:14:54",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
                     }
                   },
-                  "id": 11385,
+                  "id": 14309,
                   "nodeType": "ExpressionStatement",
-                  "src": "809:14:44"
+                  "src": "809:14:54"
                 }
               ]
             },
             "documentation": {
-              "id": 11358,
+              "id": 14282,
               "nodeType": "StructuredDocumentation",
-              "src": "479:156:44",
+              "src": "479:156:54",
               "text": "@notice This function safely casts a uint256 to a uint128.\n @param x The uint256 to cast to uint128.\n @return y The uint128 casted from x."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "toUint128",
-            "nameLocation": "649:9:44",
+            "nameLocation": "649:9:54",
             "parameters": {
-              "id": 11361,
+              "id": 14285,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11360,
+                  "id": 14284,
                   "mutability": "mutable",
                   "name": "x",
-                  "nameLocation": "667:1:44",
+                  "nameLocation": "667:1:54",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11387,
-                  "src": "659:9:44",
+                  "scope": 14311,
+                  "src": "659:9:54",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -491,10 +491,10 @@ export const SafeCast =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11359,
+                    "id": 14283,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "659:7:44",
+                    "src": "659:7:54",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -503,21 +503,21 @@ export const SafeCast =
                   "visibility": "internal"
                 }
               ],
-              "src": "658:11:44"
+              "src": "658:11:54"
             },
             "returnParameters": {
-              "id": 11364,
+              "id": 14288,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11363,
+                  "id": 14287,
                   "mutability": "mutable",
                   "name": "y",
-                  "nameLocation": "701:1:44",
+                  "nameLocation": "701:1:54",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11387,
-                  "src": "693:9:44",
+                  "scope": 14311,
+                  "src": "693:9:54",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -525,10 +525,10 @@ export const SafeCast =
                     "typeString": "uint128"
                   },
                   "typeName": {
-                    "id": 11362,
+                    "id": 14286,
                     "name": "uint128",
                     "nodeType": "ElementaryTypeName",
-                    "src": "693:7:44",
+                    "src": "693:7:54",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
@@ -537,27 +537,27 @@ export const SafeCast =
                   "visibility": "internal"
                 }
               ],
-              "src": "692:11:44"
+              "src": "692:11:54"
             },
-            "scope": 11428,
+            "scope": 14352,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 11427,
+            "id": 14351,
             "nodeType": "FunctionDefinition",
-            "src": "994:219:44",
+            "src": "994:219:54",
             "nodes": [],
             "body": {
-              "id": 11426,
+              "id": 14350,
               "nodeType": "Block",
-              "src": "1055:158:44",
+              "src": "1055:158:54",
               "nodes": [],
               "statements": [
                 {
                   "condition": {
-                    "id": 11411,
+                    "id": 14335,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -565,7 +565,7 @@ export const SafeCast =
                     "nodeType": "UnaryOperation",
                     "operator": "!",
                     "prefix": true,
-                    "src": "1069:49:44",
+                    "src": "1069:49:54",
                     "subExpression": {
                       "components": [
                         {
@@ -573,7 +573,7 @@ export const SafeCast =
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           },
-                          "id": 11409,
+                          "id": 14333,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -583,18 +583,18 @@ export const SafeCast =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 11401,
+                            "id": 14325,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 11395,
+                              "id": 14319,
                               "name": "x",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11390,
-                              "src": "1071:1:44",
+                              "referencedDeclaration": 14314,
+                              "src": "1071:1:54",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -606,22 +606,22 @@ export const SafeCast =
                               "expression": {
                                 "arguments": [
                                   {
-                                    "id": 11398,
+                                    "id": 14322,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
                                     "lValueRequested": false,
                                     "nodeType": "ElementaryTypeNameExpression",
-                                    "src": "1081:6:44",
+                                    "src": "1081:6:54",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_type$_t_int128_$",
                                       "typeString": "type(int128)"
                                     },
                                     "typeName": {
-                                      "id": 11397,
+                                      "id": 14321,
                                       "name": "int128",
                                       "nodeType": "ElementaryTypeName",
-                                      "src": "1081:6:44",
+                                      "src": "1081:6:54",
                                       "typeDescriptions": {}
                                     }
                                   }
@@ -633,18 +633,18 @@ export const SafeCast =
                                       "typeString": "type(int128)"
                                     }
                                   ],
-                                  "id": 11396,
+                                  "id": 14320,
                                   "name": "type",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": -27,
-                                  "src": "1076:4:44",
+                                  "src": "1076:4:54",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_metatype_pure$__$returns$__$",
                                     "typeString": "function () pure"
                                   }
                                 },
-                                "id": 11399,
+                                "id": 14323,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -653,28 +653,28 @@ export const SafeCast =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "1076:12:44",
+                                "src": "1076:12:54",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_meta_type_t_int128",
                                   "typeString": "type(int128)"
                                 }
                               },
-                              "id": 11400,
+                              "id": 14324,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "lValueRequested": false,
-                              "memberLocation": "1089:3:44",
+                              "memberLocation": "1089:3:54",
                               "memberName": "min",
                               "nodeType": "MemberAccess",
-                              "src": "1076:16:44",
+                              "src": "1076:16:54",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int128",
                                 "typeString": "int128"
                               }
                             },
-                            "src": "1071:21:44",
+                            "src": "1071:21:54",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -687,18 +687,18 @@ export const SafeCast =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 11408,
+                            "id": 14332,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 11402,
+                              "id": 14326,
                               "name": "x",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11390,
-                              "src": "1096:1:44",
+                              "referencedDeclaration": 14314,
+                              "src": "1096:1:54",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -710,22 +710,22 @@ export const SafeCast =
                               "expression": {
                                 "arguments": [
                                   {
-                                    "id": 11405,
+                                    "id": 14329,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
                                     "lValueRequested": false,
                                     "nodeType": "ElementaryTypeNameExpression",
-                                    "src": "1106:6:44",
+                                    "src": "1106:6:54",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_type$_t_int128_$",
                                       "typeString": "type(int128)"
                                     },
                                     "typeName": {
-                                      "id": 11404,
+                                      "id": 14328,
                                       "name": "int128",
                                       "nodeType": "ElementaryTypeName",
-                                      "src": "1106:6:44",
+                                      "src": "1106:6:54",
                                       "typeDescriptions": {}
                                     }
                                   }
@@ -737,18 +737,18 @@ export const SafeCast =
                                       "typeString": "type(int128)"
                                     }
                                   ],
-                                  "id": 11403,
+                                  "id": 14327,
                                   "name": "type",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": -27,
-                                  "src": "1101:4:44",
+                                  "src": "1101:4:54",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_metatype_pure$__$returns$__$",
                                     "typeString": "function () pure"
                                   }
                                 },
-                                "id": 11406,
+                                "id": 14330,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -757,48 +757,48 @@ export const SafeCast =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "1101:12:44",
+                                "src": "1101:12:54",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_meta_type_t_int128",
                                   "typeString": "type(int128)"
                                 }
                               },
-                              "id": 11407,
+                              "id": 14331,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "lValueRequested": false,
-                              "memberLocation": "1114:3:44",
+                              "memberLocation": "1114:3:54",
                               "memberName": "max",
                               "nodeType": "MemberAccess",
-                              "src": "1101:16:44",
+                              "src": "1101:16:54",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int128",
                                 "typeString": "int128"
                               }
                             },
-                            "src": "1096:21:44",
+                            "src": "1096:21:54",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
                             }
                           },
-                          "src": "1071:46:44",
+                          "src": "1071:46:54",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         }
                       ],
-                      "id": 11410,
+                      "id": 14334,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "1070:48:44",
+                      "src": "1070:48:54",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -809,13 +809,13 @@ export const SafeCast =
                       "typeString": "bool"
                     }
                   },
-                  "id": 11418,
+                  "id": 14342,
                   "nodeType": "IfStatement",
-                  "src": "1065:119:44",
+                  "src": "1065:119:54",
                   "trueBody": {
-                    "id": 11417,
+                    "id": 14341,
                     "nodeType": "Block",
-                    "src": "1120:64:44",
+                    "src": "1120:64:54",
                     "statements": [
                       {
                         "errorCall": {
@@ -823,33 +823,33 @@ export const SafeCast =
                           "expression": {
                             "argumentTypes": [],
                             "expression": {
-                              "id": 11412,
+                              "id": 14336,
                               "name": "IHyperdrive",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3759,
-                              "src": "1141:11:44",
+                              "referencedDeclaration": 4675,
+                              "src": "1141:11:54",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$4675_$",
                                 "typeString": "type(contract IHyperdrive)"
                               }
                             },
-                            "id": 11414,
+                            "id": 14338,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "1153:18:44",
+                            "memberLocation": "1153:18:54",
                             "memberName": "UnsafeCastToInt128",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 3747,
-                            "src": "1141:30:44",
+                            "referencedDeclaration": 4663,
+                            "src": "1141:30:54",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_error_pure$__$returns$__$",
                               "typeString": "function () pure"
                             }
                           },
-                          "id": 11415,
+                          "id": 14339,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -858,34 +858,34 @@ export const SafeCast =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "1141:32:44",
+                          "src": "1141:32:54",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 11416,
+                        "id": 14340,
                         "nodeType": "RevertStatement",
-                        "src": "1134:39:44"
+                        "src": "1134:39:54"
                       }
                     ]
                   }
                 },
                 {
                   "expression": {
-                    "id": 11424,
+                    "id": 14348,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 11419,
+                      "id": 14343,
                       "name": "y",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11393,
-                      "src": "1193:1:44",
+                      "referencedDeclaration": 14317,
+                      "src": "1193:1:54",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int128",
                         "typeString": "int128"
@@ -896,12 +896,12 @@ export const SafeCast =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 11422,
+                          "id": 14346,
                           "name": "x",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11390,
-                          "src": "1204:1:44",
+                          "referencedDeclaration": 14314,
+                          "src": "1204:1:54",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -915,26 +915,26 @@ export const SafeCast =
                             "typeString": "int256"
                           }
                         ],
-                        "id": 11421,
+                        "id": 14345,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
                         "nodeType": "ElementaryTypeNameExpression",
-                        "src": "1197:6:44",
+                        "src": "1197:6:54",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_int128_$",
                           "typeString": "type(int128)"
                         },
                         "typeName": {
-                          "id": 11420,
+                          "id": 14344,
                           "name": "int128",
                           "nodeType": "ElementaryTypeName",
-                          "src": "1197:6:44",
+                          "src": "1197:6:54",
                           "typeDescriptions": {}
                         }
                       },
-                      "id": 11423,
+                      "id": 14347,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -943,49 +943,49 @@ export const SafeCast =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "1197:9:44",
+                      "src": "1197:9:54",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_int128",
                         "typeString": "int128"
                       }
                     },
-                    "src": "1193:13:44",
+                    "src": "1193:13:54",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int128",
                       "typeString": "int128"
                     }
                   },
-                  "id": 11425,
+                  "id": 14349,
                   "nodeType": "ExpressionStatement",
-                  "src": "1193:13:44"
+                  "src": "1193:13:54"
                 }
               ]
             },
             "documentation": {
-              "id": 11388,
+              "id": 14312,
               "nodeType": "StructuredDocumentation",
-              "src": "836:153:44",
+              "src": "836:153:54",
               "text": "@notice This function safely casts an int256 to an int128.\n @param x The int256 to cast to int128.\n @return y The int128 casted from x."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "toInt128",
-            "nameLocation": "1003:8:44",
+            "nameLocation": "1003:8:54",
             "parameters": {
-              "id": 11391,
+              "id": 14315,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11390,
+                  "id": 14314,
                   "mutability": "mutable",
                   "name": "x",
-                  "nameLocation": "1019:1:44",
+                  "nameLocation": "1019:1:54",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11427,
-                  "src": "1012:8:44",
+                  "scope": 14351,
+                  "src": "1012:8:54",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -993,10 +993,10 @@ export const SafeCast =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 11389,
+                    "id": 14313,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1012:6:44",
+                    "src": "1012:6:54",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -1005,21 +1005,21 @@ export const SafeCast =
                   "visibility": "internal"
                 }
               ],
-              "src": "1011:10:44"
+              "src": "1011:10:54"
             },
             "returnParameters": {
-              "id": 11394,
+              "id": 14318,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11393,
+                  "id": 14317,
                   "mutability": "mutable",
                   "name": "y",
-                  "nameLocation": "1052:1:44",
+                  "nameLocation": "1052:1:54",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11427,
-                  "src": "1045:8:44",
+                  "scope": 14351,
+                  "src": "1045:8:54",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1027,10 +1027,10 @@ export const SafeCast =
                     "typeString": "int128"
                   },
                   "typeName": {
-                    "id": 11392,
+                    "id": 14316,
                     "name": "int128",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1045:6:44",
+                    "src": "1045:6:54",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int128",
                       "typeString": "int128"
@@ -1039,9 +1039,9 @@ export const SafeCast =
                   "visibility": "internal"
                 }
               ],
-              "src": "1044:10:44"
+              "src": "1044:10:54"
             },
-            "scope": 11428,
+            "scope": 14352,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
@@ -1053,22 +1053,22 @@ export const SafeCast =
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-          "id": 11357,
+          "id": 14281,
           "nodeType": "StructuredDocumentation",
-          "src": "127:329:44",
+          "src": "127:329:54",
           "text": "@notice Safe unsigned integer casting library that reverts on overflow.\n @author Inspired by Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/SafeCastLib.sol)\n @author Inspired by OpenZeppelin (https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeCast.sol)"
         },
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          11428
+          14352
         ],
         "name": "SafeCast",
-        "nameLocation": "464:8:44",
-        "scope": 11429,
+        "nameLocation": "464:8:54",
+        "scope": 14353,
         "usedErrors": []
       }
     ],
     "license": "Apache-2.0"
   },
-  "id": 44
+  "id": 54
 } as const;

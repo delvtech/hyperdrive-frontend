@@ -2,17 +2,17 @@ export const YieldSpaceMath =
 {
   "abi": [],
   "bytecode": {
-    "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122052d9e92d95cb5dd64a271481a067bd8962b0d518b6d8237f331a0b6bcf87875b64736f6c63430008130033",
-    "sourceMap": "1427:13462:45:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;1427:13462:45;;;;;;;;;;;;;;;;;",
+    "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122000106bcc31454e15c95da362e236529059536066a5721b66a03c8f367ae9e37664736f6c63430008130033",
+    "sourceMap": "1427:15088:55:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;1427:15088:55;;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122052d9e92d95cb5dd64a271481a067bd8962b0d518b6d8237f331a0b6bcf87875b64736f6c63430008130033",
-    "sourceMap": "1427:13462:45:-:0;;;;;;;;",
+    "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122000106bcc31454e15c95da362e236529059536066a5721b66a03c8f367ae9e37664736f6c63430008130033",
+    "sourceMap": "1427:15088:55:-:0;;;;;;;;",
     "linkReferences": {}
   },
   "methodIdentifiers": {},
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"It is advised for developers to attain the pre-requisite knowledge      of how this implementation works on the mathematical level. This      excerpt attempts to document this pre-requisite knowledge explaining      the underpinning mathematical concepts in an understandable manner and      relating it directly to the code implementation.      This implementation is based on a paper called \\\"YieldSpace with Yield      Bearing Vaults\\\" or more casually \\\"Modified YieldSpace\\\". It can be      found at the following link.      https://hackmd.io/lRZ4mgdrRgOpxZQXqKYlFw?view      That paper builds on the original YieldSpace paper, \\\"YieldSpace:      An Automated Liquidity Provider for Fixed Yield Tokens\\\". It can be      found at the following link:      https://yieldprotocol.com/YieldSpace.pdf\",\"kind\":\"dev\",\"methods\":{},\"title\":\"YieldSpaceMath\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Math for the YieldSpace pricing model.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/libraries/YieldSpaceMath.sol\":\"YieldSpaceMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36\",\"dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x833d56790728bfab7d35507b8584dc7ce607b26512a382e887483f61d528f6c5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3dd009d6ff5a89d1173f7330916e81a31ffd139bf6848b3f4400673652554a70\",\"dweb:/ipfs/QmXkVovZSWqhRqrt8y9FFfHt1HWhnUuP9TMecQyd89yEQ3\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85\",\"dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x837939af4a9224c5f4ea564e9b33a5612442b7d7d50b7f8bb32be6bb3ce239b3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3bfebedcb31d2edf86a69f0dfbcc5aa7b96edc2d8197b4a4681a200cb6ffe993\",\"dweb:/ipfs/Qmeq4oAGxKv3mvRRWkqYBjfdozPkhi3MqBRFNnNkmAwCtt\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6\",\"dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8\",\"dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f\",\"dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6\",\"dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0xac200bd4172e6369dc6ad06bef96e3d4ce7df36a97e80ee8f1a033e622c99639\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0add90b8957805ae8e99581b76d81dec07bdf7586fdf2a05f31d2ce91f09439d\",\"dweb:/ipfs/QmRRBbguna6QmMUvANobcSfH6HM3DydFjNXSWZZr1VDKH8\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xccfb106f6bd8829c369c19d08ef4f8ffc8ebbf5c51a9e148141733ff9bbc49f3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d11ddba27aace6aefe451d75b4403ceb10f0a71cd61163e8f812728820107e62\",\"dweb:/ipfs/QmdSZJtY5LaJVnHYRwKAofo6oiihqpazC22Q1X9aL9uNbx\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0x077e800ae4f47bda111e72f8c40d50a57b10a1c5bce81f2e83bb57f94752159f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8e9433729a73747a65ececae27a8f634300a4e02a66577f796f596e5894a4bb5\",\"dweb:/ipfs/QmT2fC2xaRoFuDBURAtcwqvpqXvw1AQybSgb4khVBzit2S\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x42a910bd6ee869fc53f18f2991cbf75a667d663ed41b4a11e18b328546ede7db\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://77345fdb9b99d0b04fa7cf719857eae63362e20db6b99da35ac886a13bf3b56a\",\"dweb:/ipfs/QmXatm27fhzsApgrMq978mye2u8fk62D89pUgV4WsjQeyH\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"It is advised for developers to attain the pre-requisite knowledge      of how this implementation works on the mathematical level. This      excerpt attempts to document this pre-requisite knowledge explaining      the underpinning mathematical concepts in an understandable manner and      relating it directly to the code implementation.      This implementation is based on a paper called \\\"YieldSpace with Yield      Bearing Vaults\\\" or more casually \\\"Modified YieldSpace\\\". It can be      found at the following link.      https://hackmd.io/lRZ4mgdrRgOpxZQXqKYlFw?view      That paper builds on the original YieldSpace paper, \\\"YieldSpace:      An Automated Liquidity Provider for Fixed Yield Tokens\\\". It can be      found at the following link:      https://yieldprotocol.com/YieldSpace.pdf\",\"kind\":\"dev\",\"methods\":{},\"title\":\"YieldSpaceMath\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Math for the YieldSpace pricing model.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/libraries/YieldSpaceMath.sol\":\"YieldSpaceMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36\",\"dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xf62872798e8bb605416caed4df67bc933e7df0ac28db4a14104a481584ad7787\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0d4650a2428a4b5eb302c1e2c596f4ae4358be4ea098694152e7223aa6a579d8\",\"dweb:/ipfs/QmYoopLx1zWyXKEt7bzCVSpQPHTbtDQRoc3yJ7kqThThYw\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85\",\"dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x402cde9d7823ea9762f43ce326703c64c441c5feb278bedcb9e1401d0a8b733b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e12e56585cf119a544a5382df36d725daf89a21660663d1e6dd9de839fc8ff17\",\"dweb:/ipfs/QmNSyGK8eagodGUUPniBptVyC9by2n9Ff3PUxF4FHNQYXc\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6\",\"dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8\",\"dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f\",\"dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6\",\"dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0xac200bd4172e6369dc6ad06bef96e3d4ce7df36a97e80ee8f1a033e622c99639\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0add90b8957805ae8e99581b76d81dec07bdf7586fdf2a05f31d2ce91f09439d\",\"dweb:/ipfs/QmRRBbguna6QmMUvANobcSfH6HM3DydFjNXSWZZr1VDKH8\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xd87293bc10dfe09707a042bf05091baf40ba344bdca141bd99b62256a7611817\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8f6eadd454c6671c26bd22095c31a3bbaea7083df9aa6548dbaba32a4907e336\",\"dweb:/ipfs/QmY1jMW9DuAk9CSfVS6MsG5onqjZHKzdBrv2TcHvj9yKj4\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0x077e800ae4f47bda111e72f8c40d50a57b10a1c5bce81f2e83bb57f94752159f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8e9433729a73747a65ececae27a8f634300a4e02a66577f796f596e5894a4bb5\",\"dweb:/ipfs/QmT2fC2xaRoFuDBURAtcwqvpqXvw1AQybSgb4khVBzit2S\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x2f9511684820be7510155adfe3c2c2ef7e2583472946bae37f379bac801fc263\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7e9a84e4168448e3320a6682c8ba248c8b51757df173b86507e9aba4b6167247\",\"dweb:/ipfs/QmSonetYBP22Fnc8HrcaTxAA1Zg2PCR5ptPiEp22sA77Ka\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.19+commit.7dd6d404"
@@ -62,10 +62,10 @@ export const YieldSpaceMath =
         "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IHyperdrive.sol": {
-        "keccak256": "0x833d56790728bfab7d35507b8584dc7ce607b26512a382e887483f61d528f6c5",
+        "keccak256": "0xf62872798e8bb605416caed4df67bc933e7df0ac28db4a14104a481584ad7787",
         "urls": [
-          "bzz-raw://3dd009d6ff5a89d1173f7330916e81a31ffd139bf6848b3f4400673652554a70",
-          "dweb:/ipfs/QmXkVovZSWqhRqrt8y9FFfHt1HWhnUuP9TMecQyd89yEQ3"
+          "bzz-raw://0d4650a2428a4b5eb302c1e2c596f4ae4358be4ea098694152e7223aa6a579d8",
+          "dweb:/ipfs/QmYoopLx1zWyXKEt7bzCVSpQPHTbtDQRoc3yJ7kqThThYw"
         ],
         "license": "Apache-2.0"
       },
@@ -78,10 +78,10 @@ export const YieldSpaceMath =
         "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IHyperdriveRead.sol": {
-        "keccak256": "0x837939af4a9224c5f4ea564e9b33a5612442b7d7d50b7f8bb32be6bb3ce239b3",
+        "keccak256": "0x402cde9d7823ea9762f43ce326703c64c441c5feb278bedcb9e1401d0a8b733b",
         "urls": [
-          "bzz-raw://3bfebedcb31d2edf86a69f0dfbcc5aa7b96edc2d8197b4a4681a200cb6ffe993",
-          "dweb:/ipfs/Qmeq4oAGxKv3mvRRWkqYBjfdozPkhi3MqBRFNnNkmAwCtt"
+          "bzz-raw://e12e56585cf119a544a5382df36d725daf89a21660663d1e6dd9de839fc8ff17",
+          "dweb:/ipfs/QmNSyGK8eagodGUUPniBptVyC9by2n9Ff3PUxF4FHNQYXc"
         ],
         "license": "Apache-2.0"
       },
@@ -126,10 +126,10 @@ export const YieldSpaceMath =
         "license": "Apache-2.0"
       },
       "contracts/src/libraries/HyperdriveMath.sol": {
-        "keccak256": "0xccfb106f6bd8829c369c19d08ef4f8ffc8ebbf5c51a9e148141733ff9bbc49f3",
+        "keccak256": "0xd87293bc10dfe09707a042bf05091baf40ba344bdca141bd99b62256a7611817",
         "urls": [
-          "bzz-raw://d11ddba27aace6aefe451d75b4403ceb10f0a71cd61163e8f812728820107e62",
-          "dweb:/ipfs/QmdSZJtY5LaJVnHYRwKAofo6oiihqpazC22Q1X9aL9uNbx"
+          "bzz-raw://8f6eadd454c6671c26bd22095c31a3bbaea7083df9aa6548dbaba32a4907e336",
+          "dweb:/ipfs/QmY1jMW9DuAk9CSfVS6MsG5onqjZHKzdBrv2TcHvj9yKj4"
         ],
         "license": "Apache-2.0"
       },
@@ -142,10 +142,10 @@ export const YieldSpaceMath =
         "license": "Apache-2.0"
       },
       "contracts/src/libraries/YieldSpaceMath.sol": {
-        "keccak256": "0x42a910bd6ee869fc53f18f2991cbf75a667d663ed41b4a11e18b328546ede7db",
+        "keccak256": "0x2f9511684820be7510155adfe3c2c2ef7e2583472946bae37f379bac801fc263",
         "urls": [
-          "bzz-raw://77345fdb9b99d0b04fa7cf719857eae63362e20db6b99da35ac886a13bf3b56a",
-          "dweb:/ipfs/QmXatm27fhzsApgrMq978mye2u8fk62D89pUgV4WsjQeyH"
+          "bzz-raw://7e9a84e4168448e3320a6682c8ba248c8b51757df173b86507e9aba4b6167247",
+          "dweb:/ipfs/QmSonetYBP22Fnc8HrcaTxAA1Zg2PCR5ptPiEp22sA77Ka"
         ],
         "license": "Apache-2.0"
       }
@@ -154,31 +154,31 @@ export const YieldSpaceMath =
   },
   "ast": {
     "absolutePath": "contracts/src/libraries/YieldSpaceMath.sol",
-    "id": 12067,
+    "id": 15105,
     "exportedSymbols": {
       "FixedPointMath": [
-        10533
+        11134
       ],
       "HyperdriveMath": [
-        11352
+        11698
       ],
       "IHyperdrive": [
-        3759
+        4675
       ],
       "ONE": [
-        9788
+        10389
       ],
       "YieldSpaceMath": [
-        12066
+        15104
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "40:14850:45",
+    "src": "40:16476:55",
     "nodes": [
       {
-        "id": 11430,
+        "id": 14354,
         "nodeType": "PragmaDirective",
-        "src": "40:23:45",
+        "src": "40:23:55",
         "nodes": [],
         "literals": [
           "solidity",
@@ -187,24 +187,24 @@ export const YieldSpaceMath =
         ]
       },
       {
-        "id": 11432,
+        "id": 14356,
         "nodeType": "ImportDirective",
-        "src": "65:60:45",
+        "src": "65:60:55",
         "nodes": [],
         "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
         "file": "../interfaces/IHyperdrive.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 12067,
-        "sourceUnit": 3760,
+        "scope": 15105,
+        "sourceUnit": 4676,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 11431,
+              "id": 14355,
               "name": "IHyperdrive",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 3759,
-              "src": "74:11:45",
+              "referencedDeclaration": 4675,
+              "src": "74:11:55",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -213,36 +213,36 @@ export const YieldSpaceMath =
         "unitAlias": ""
       },
       {
-        "id": 11435,
+        "id": 14359,
         "nodeType": "ImportDirective",
-        "src": "126:59:45",
+        "src": "126:59:55",
         "nodes": [],
         "absolutePath": "contracts/src/libraries/FixedPointMath.sol",
         "file": "./FixedPointMath.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 12067,
-        "sourceUnit": 10534,
+        "scope": 15105,
+        "sourceUnit": 11135,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 11433,
+              "id": 14357,
               "name": "FixedPointMath",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 10533,
-              "src": "135:14:45",
+              "referencedDeclaration": 11134,
+              "src": "135:14:55",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
           },
           {
             "foreign": {
-              "id": 11434,
+              "id": 14358,
               "name": "ONE",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 9788,
-              "src": "151:3:45",
+              "referencedDeclaration": 10389,
+              "src": "151:3:55",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -251,24 +251,24 @@ export const YieldSpaceMath =
         "unitAlias": ""
       },
       {
-        "id": 11437,
+        "id": 14361,
         "nodeType": "ImportDirective",
-        "src": "186:54:45",
+        "src": "186:54:55",
         "nodes": [],
         "absolutePath": "contracts/src/libraries/HyperdriveMath.sol",
         "file": "./HyperdriveMath.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 12067,
-        "sourceUnit": 11353,
+        "scope": 15105,
+        "sourceUnit": 11699,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 11436,
+              "id": 14360,
               "name": "HyperdriveMath",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 11352,
-              "src": "195:14:45",
+              "referencedDeclaration": 11698,
+              "src": "195:14:55",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -277,31 +277,31 @@ export const YieldSpaceMath =
         "unitAlias": ""
       },
       {
-        "id": 12066,
+        "id": 15104,
         "nodeType": "ContractDefinition",
-        "src": "1427:13462:45",
+        "src": "1427:15088:55",
         "nodes": [
           {
-            "id": 11441,
+            "id": 14365,
             "nodeType": "UsingForDirective",
-            "src": "1456:33:45",
+            "src": "1456:33:55",
             "nodes": [],
             "global": false,
             "libraryName": {
-              "id": 11439,
+              "id": 14363,
               "name": "FixedPointMath",
               "nameLocations": [
-                "1462:14:45"
+                "1462:14:55"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 10533,
-              "src": "1462:14:45"
+              "referencedDeclaration": 11134,
+              "src": "1462:14:55"
             },
             "typeName": {
-              "id": 11440,
+              "id": 14364,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1481:7:45",
+              "src": "1481:7:55",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -309,30 +309,30 @@ export const YieldSpaceMath =
             }
           },
           {
-            "id": 11526,
+            "id": 14450,
             "nodeType": "FunctionDefinition",
-            "src": "2079:1169:45",
+            "src": "2017:1184:55",
             "nodes": [],
             "body": {
-              "id": 11525,
+              "id": 14449,
               "nodeType": "Block",
-              "src": "2277:971:45",
+              "src": "2216:985:55",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    11460
+                    14384
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 11460,
+                      "id": 14384,
                       "mutability": "mutable",
                       "name": "k",
-                      "nameLocation": "2432:1:45",
+                      "nameLocation": "2372:1:55",
                       "nodeType": "VariableDeclaration",
-                      "scope": 11525,
-                      "src": "2424:9:45",
+                      "scope": 14449,
+                      "src": "2364:9:55",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -340,10 +340,10 @@ export const YieldSpaceMath =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 11459,
+                        "id": 14383,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "2424:7:45",
+                        "src": "2364:7:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -352,64 +352,64 @@ export const YieldSpaceMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 11468,
+                  "id": 14392,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 11462,
-                        "name": "z",
+                        "id": 14386,
+                        "name": "ze",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11444,
-                        "src": "2440:1:45",
+                        "referencedDeclaration": 14368,
+                        "src": "2380:2:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11463,
+                        "id": 14387,
                         "name": "y",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11446,
-                        "src": "2443:1:45",
+                        "referencedDeclaration": 14370,
+                        "src": "2384:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11464,
+                        "id": 14388,
                         "name": "t",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11450,
-                        "src": "2446:1:45",
+                        "referencedDeclaration": 14374,
+                        "src": "2387:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11465,
+                        "id": 14389,
                         "name": "c",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11452,
-                        "src": "2449:1:45",
+                        "referencedDeclaration": 14376,
+                        "src": "2390:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11466,
+                        "id": 14390,
                         "name": "mu",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11454,
-                        "src": "2452:2:45",
+                        "referencedDeclaration": 14378,
+                        "src": "2393:2:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -439,18 +439,18 @@ export const YieldSpaceMath =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 11461,
+                      "id": 14385,
                       "name": "kUp",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12031,
-                      "src": "2436:3:45",
+                      "referencedDeclaration": 15069,
+                      "src": "2376:3:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "id": 11467,
+                    "id": 14391,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -459,7 +459,7 @@ export const YieldSpaceMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2436:19:45",
+                    "src": "2376:20:55",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -467,22 +467,22 @@ export const YieldSpaceMath =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "2424:31:45"
+                  "src": "2364:32:55"
                 },
                 {
                   "expression": {
-                    "id": 11479,
+                    "id": 14403,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 11469,
-                      "name": "z",
+                      "id": 14393,
+                      "name": "ze",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11444,
-                      "src": "2585:1:45",
+                      "referencedDeclaration": 14368,
+                      "src": "2529:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -493,12 +493,12 @@ export const YieldSpaceMath =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 11477,
+                          "id": 14401,
                           "name": "t",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11450,
-                          "src": "2612:1:45",
+                          "referencedDeclaration": 14374,
+                          "src": "2558:1:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -519,18 +519,18 @@ export const YieldSpaceMath =
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 11474,
+                              "id": 14398,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "leftExpression": {
-                                "id": 11472,
-                                "name": "z",
+                                "id": 14396,
+                                "name": "ze",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11444,
-                                "src": "2600:1:45",
+                                "referencedDeclaration": 14368,
+                                "src": "2545:2:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -539,18 +539,18 @@ export const YieldSpaceMath =
                               "nodeType": "BinaryOperation",
                               "operator": "+",
                               "rightExpression": {
-                                "id": 11473,
+                                "id": 14397,
                                 "name": "dz",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11448,
-                                "src": "2604:2:45",
+                                "referencedDeclaration": 14372,
+                                "src": "2550:2:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "src": "2600:6:45",
+                              "src": "2545:7:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -565,33 +565,33 @@ export const YieldSpaceMath =
                               }
                             ],
                             "expression": {
-                              "id": 11470,
+                              "id": 14394,
                               "name": "mu",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11454,
-                              "src": "2589:2:45",
+                              "referencedDeclaration": 14378,
+                              "src": "2534:2:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
-                            "id": 11471,
+                            "id": 14395,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "2592:7:45",
+                            "memberLocation": "2537:7:55",
                             "memberName": "mulDown",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 9831,
-                            "src": "2589:10:45",
+                            "referencedDeclaration": 10432,
+                            "src": "2534:10:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                               "typeString": "function (uint256,uint256) pure returns (uint256)"
                             }
                           },
-                          "id": 11475,
+                          "id": 14399,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -600,29 +600,29 @@ export const YieldSpaceMath =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "2589:18:45",
+                          "src": "2534:19:55",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11476,
+                        "id": 14400,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "2608:3:45",
+                        "memberLocation": "2554:3:55",
                         "memberName": "pow",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9958,
-                        "src": "2589:22:45",
+                        "referencedDeclaration": 10559,
+                        "src": "2534:23:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 11478,
+                      "id": 14402,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -631,37 +631,37 @@ export const YieldSpaceMath =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "2589:25:45",
+                      "src": "2534:26:55",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "2585:29:45",
+                    "src": "2529:31:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 11480,
+                  "id": 14404,
                   "nodeType": "ExpressionStatement",
-                  "src": "2585:29:45"
+                  "src": "2529:31:55"
                 },
                 {
                   "expression": {
-                    "id": 11487,
+                    "id": 14411,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 11481,
-                      "name": "z",
+                      "id": 14405,
+                      "name": "ze",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11444,
-                      "src": "2670:1:45",
+                      "referencedDeclaration": 14368,
+                      "src": "2618:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -672,24 +672,24 @@ export const YieldSpaceMath =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 11484,
-                          "name": "z",
+                          "id": 14408,
+                          "name": "ze",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11444,
-                          "src": "2687:1:45",
+                          "referencedDeclaration": 14368,
+                          "src": "2636:2:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 11485,
+                          "id": 14409,
                           "name": "mu",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11454,
-                          "src": "2690:2:45",
+                          "referencedDeclaration": 14378,
+                          "src": "2640:2:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -708,33 +708,33 @@ export const YieldSpaceMath =
                           }
                         ],
                         "expression": {
-                          "id": 11482,
+                          "id": 14406,
                           "name": "c",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11452,
-                          "src": "2674:1:45",
+                          "referencedDeclaration": 14376,
+                          "src": "2623:1:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11483,
+                        "id": 14407,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "2676:10:45",
+                        "memberLocation": "2625:10:55",
                         "memberName": "mulDivDown",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9813,
-                        "src": "2674:12:45",
+                        "referencedDeclaration": 10414,
+                        "src": "2623:12:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 11486,
+                      "id": 14410,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -743,37 +743,37 @@ export const YieldSpaceMath =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "2674:19:45",
+                      "src": "2623:20:55",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "2670:23:45",
+                    "src": "2618:25:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 11488,
+                  "id": 14412,
                   "nodeType": "ExpressionStatement",
-                  "src": "2670:23:45"
+                  "src": "2618:25:55"
                 },
                 {
                   "assignments": [
-                    11490
+                    14414
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 11490,
+                      "id": 14414,
                       "mutability": "mutable",
                       "name": "_y",
-                      "nameLocation": "2861:2:45",
+                      "nameLocation": "2812:2:55",
                       "nodeType": "VariableDeclaration",
-                      "scope": 11525,
-                      "src": "2853:10:45",
+                      "scope": 14449,
+                      "src": "2804:10:55",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -781,10 +781,10 @@ export const YieldSpaceMath =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 11489,
+                        "id": 14413,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "2853:7:45",
+                        "src": "2804:7:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -793,24 +793,24 @@ export const YieldSpaceMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 11494,
+                  "id": 14418,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 11493,
+                    "id": 14417,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 11491,
+                      "id": 14415,
                       "name": "k",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11460,
-                      "src": "2866:1:45",
+                      "referencedDeclaration": 14384,
+                      "src": "2817:1:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -819,25 +819,25 @@ export const YieldSpaceMath =
                     "nodeType": "BinaryOperation",
                     "operator": "-",
                     "rightExpression": {
-                      "id": 11492,
-                      "name": "z",
+                      "id": 14416,
+                      "name": "ze",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11444,
-                      "src": "2870:1:45",
+                      "referencedDeclaration": 14368,
+                      "src": "2821:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "2866:5:45",
+                    "src": "2817:6:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "2853:18:45"
+                  "src": "2804:19:55"
                 },
                 {
                   "condition": {
@@ -845,18 +845,18 @@ export const YieldSpaceMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 11497,
+                    "id": 14421,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 11495,
+                      "id": 14419,
                       "name": "_y",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11490,
-                      "src": "2885:2:45",
+                      "referencedDeclaration": 14414,
+                      "src": "2837:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -865,42 +865,42 @@ export const YieldSpaceMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 11496,
+                      "id": 14420,
                       "name": "ONE",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9788,
-                      "src": "2891:3:45",
+                      "referencedDeclaration": 10389,
+                      "src": "2843:3:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "2885:9:45",
+                    "src": "2837:9:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": {
-                    "id": 11519,
+                    "id": 14443,
                     "nodeType": "Block",
-                    "src": "3020:122:45",
+                    "src": "2972:122:55",
                     "statements": [
                       {
                         "expression": {
-                          "id": 11517,
+                          "id": 14441,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 11509,
+                            "id": 14433,
                             "name": "_y",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11490,
-                            "src": "3104:2:45",
+                            "referencedDeclaration": 14414,
+                            "src": "3056:2:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -913,12 +913,12 @@ export const YieldSpaceMath =
                               {
                                 "arguments": [
                                   {
-                                    "id": 11514,
+                                    "id": 14438,
                                     "name": "t",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 11450,
-                                    "src": "3128:1:45",
+                                    "referencedDeclaration": 14374,
+                                    "src": "3080:1:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -933,33 +933,33 @@ export const YieldSpaceMath =
                                     }
                                   ],
                                   "expression": {
-                                    "id": 11512,
+                                    "id": 14436,
                                     "name": "ONE",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 9788,
-                                    "src": "3116:3:45",
+                                    "referencedDeclaration": 10389,
+                                    "src": "3068:3:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "id": 11513,
+                                  "id": 14437,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
-                                  "memberLocation": "3120:7:45",
+                                  "memberLocation": "3072:7:55",
                                   "memberName": "divDown",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 9849,
-                                  "src": "3116:11:45",
+                                  "referencedDeclaration": 10450,
+                                  "src": "3068:11:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 11515,
+                                "id": 14439,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -968,7 +968,7 @@ export const YieldSpaceMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "3116:14:45",
+                                "src": "3068:14:55",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -984,33 +984,33 @@ export const YieldSpaceMath =
                                 }
                               ],
                               "expression": {
-                                "id": 11510,
+                                "id": 14434,
                                 "name": "_y",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11490,
-                                "src": "3109:2:45",
+                                "referencedDeclaration": 14414,
+                                "src": "3061:2:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 11511,
+                              "id": 14435,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "3112:3:45",
+                              "memberLocation": "3064:3:55",
                               "memberName": "pow",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 9958,
-                              "src": "3109:6:45",
+                              "referencedDeclaration": 10559,
+                              "src": "3061:6:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 11516,
+                            "id": 14440,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1019,47 +1019,47 @@ export const YieldSpaceMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "3109:22:45",
+                            "src": "3061:22:55",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "3104:27:45",
+                          "src": "3056:27:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11518,
+                        "id": 14442,
                         "nodeType": "ExpressionStatement",
-                        "src": "3104:27:45"
+                        "src": "3056:27:55"
                       }
                     ]
                   },
-                  "id": 11520,
+                  "id": 14444,
                   "nodeType": "IfStatement",
-                  "src": "2881:261:45",
+                  "src": "2833:261:55",
                   "trueBody": {
-                    "id": 11508,
+                    "id": 14432,
                     "nodeType": "Block",
-                    "src": "2896:118:45",
+                    "src": "2848:118:55",
                     "statements": [
                       {
                         "expression": {
-                          "id": 11506,
+                          "id": 14430,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 11498,
+                            "id": 14422,
                             "name": "_y",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11490,
-                            "src": "2978:2:45",
+                            "referencedDeclaration": 14414,
+                            "src": "2930:2:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1072,12 +1072,12 @@ export const YieldSpaceMath =
                               {
                                 "arguments": [
                                   {
-                                    "id": 11503,
+                                    "id": 14427,
                                     "name": "t",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 11450,
-                                    "src": "3000:1:45",
+                                    "referencedDeclaration": 14374,
+                                    "src": "2952:1:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -1092,33 +1092,33 @@ export const YieldSpaceMath =
                                     }
                                   ],
                                   "expression": {
-                                    "id": 11501,
+                                    "id": 14425,
                                     "name": "ONE",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 9788,
-                                    "src": "2990:3:45",
+                                    "referencedDeclaration": 10389,
+                                    "src": "2942:3:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "id": 11502,
+                                  "id": 14426,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
-                                  "memberLocation": "2994:5:45",
+                                  "memberLocation": "2946:5:55",
                                   "memberName": "divUp",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 9899,
-                                  "src": "2990:9:45",
+                                  "referencedDeclaration": 10500,
+                                  "src": "2942:9:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 11504,
+                                "id": 14428,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -1127,7 +1127,7 @@ export const YieldSpaceMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "2990:12:45",
+                                "src": "2942:12:55",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -1143,33 +1143,33 @@ export const YieldSpaceMath =
                                 }
                               ],
                               "expression": {
-                                "id": 11499,
+                                "id": 14423,
                                 "name": "_y",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11490,
-                                "src": "2983:2:45",
+                                "referencedDeclaration": 14414,
+                                "src": "2935:2:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 11500,
+                              "id": 14424,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "2986:3:45",
+                              "memberLocation": "2938:3:55",
                               "memberName": "pow",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 9958,
-                              "src": "2983:6:45",
+                              "referencedDeclaration": 10559,
+                              "src": "2935:6:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 11505,
+                            "id": 14429,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1178,22 +1178,22 @@ export const YieldSpaceMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "2983:20:45",
+                            "src": "2935:20:55",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "2978:25:45",
+                          "src": "2930:25:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11507,
+                        "id": 14431,
                         "nodeType": "ExpressionStatement",
-                        "src": "2978:25:45"
+                        "src": "2930:25:55"
                       }
                     ]
                   }
@@ -1204,18 +1204,18 @@ export const YieldSpaceMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 11523,
+                    "id": 14447,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 11521,
+                      "id": 14445,
                       "name": "y",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11446,
-                      "src": "3235:1:45",
+                      "referencedDeclaration": 14370,
+                      "src": "3188:1:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1224,54 +1224,54 @@ export const YieldSpaceMath =
                     "nodeType": "BinaryOperation",
                     "operator": "-",
                     "rightExpression": {
-                      "id": 11522,
+                      "id": 14446,
                       "name": "_y",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11490,
-                      "src": "3239:2:45",
+                      "referencedDeclaration": 14414,
+                      "src": "3192:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "3235:6:45",
+                    "src": "3188:6:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 11458,
-                  "id": 11524,
+                  "functionReturnParameters": 14382,
+                  "id": 14448,
                   "nodeType": "Return",
-                  "src": "3228:13:45"
+                  "src": "3181:13:55"
                 }
               ]
             },
             "documentation": {
-              "id": 11442,
+              "id": 14366,
               "nodeType": "StructuredDocumentation",
-              "src": "1495:579:45",
-              "text": "@dev Calculates the amount of bonds a user will receive from the pool by\n      providing a specified amount of shares. We underestimate the amount\n      of bonds out.\n @param z Amount of share reserves in the pool\n @param y Amount of bond reserves in the pool\n @param dz Amount of shares user wants to provide\n @param t Amount of time elapsed since term start\n @param c Conversion rate between base and shares\n @param mu Interest normalization factor for shares\n @return The amount of bonds the user will receive"
+              "src": "1495:517:55",
+              "text": "@dev Calculates the amount of bonds a user will receive from the pool by\n      providing a specified amount of shares. We underestimate the amount\n      of bonds out.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param dz The amount of shares paid to the pool.\n @param t The time elapsed since the term's start.\n @param c The share price.\n @param mu The initial share price.\n @return The amount of bonds the trader receives."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "calculateBondsOutGivenSharesInDown",
-            "nameLocation": "2088:34:45",
+            "nameLocation": "2026:34:55",
             "parameters": {
-              "id": 11455,
+              "id": 14379,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11444,
+                  "id": 14368,
                   "mutability": "mutable",
-                  "name": "z",
-                  "nameLocation": "2140:1:45",
+                  "name": "ze",
+                  "nameLocation": "2078:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11526,
-                  "src": "2132:9:45",
+                  "scope": 14450,
+                  "src": "2070:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1279,10 +1279,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11443,
+                    "id": 14367,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2132:7:45",
+                    "src": "2070:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1292,13 +1292,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11446,
+                  "id": 14370,
                   "mutability": "mutable",
                   "name": "y",
-                  "nameLocation": "2159:1:45",
+                  "nameLocation": "2098:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11526,
-                  "src": "2151:9:45",
+                  "scope": 14450,
+                  "src": "2090:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1306,10 +1306,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11445,
+                    "id": 14369,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2151:7:45",
+                    "src": "2090:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1319,13 +1319,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11448,
+                  "id": 14372,
                   "mutability": "mutable",
                   "name": "dz",
-                  "nameLocation": "2178:2:45",
+                  "nameLocation": "2117:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11526,
-                  "src": "2170:10:45",
+                  "scope": 14450,
+                  "src": "2109:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1333,10 +1333,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11447,
+                    "id": 14371,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2170:7:45",
+                    "src": "2109:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1346,13 +1346,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11450,
+                  "id": 14374,
                   "mutability": "mutable",
                   "name": "t",
-                  "nameLocation": "2198:1:45",
+                  "nameLocation": "2137:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11526,
-                  "src": "2190:9:45",
+                  "scope": 14450,
+                  "src": "2129:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1360,10 +1360,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11449,
+                    "id": 14373,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2190:7:45",
+                    "src": "2129:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1373,13 +1373,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11452,
+                  "id": 14376,
                   "mutability": "mutable",
                   "name": "c",
-                  "nameLocation": "2217:1:45",
+                  "nameLocation": "2156:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11526,
-                  "src": "2209:9:45",
+                  "scope": 14450,
+                  "src": "2148:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1387,10 +1387,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11451,
+                    "id": 14375,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2209:7:45",
+                    "src": "2148:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1400,13 +1400,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11454,
+                  "id": 14378,
                   "mutability": "mutable",
                   "name": "mu",
-                  "nameLocation": "2236:2:45",
+                  "nameLocation": "2175:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11526,
-                  "src": "2228:10:45",
+                  "scope": 14450,
+                  "src": "2167:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1414,10 +1414,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11453,
+                    "id": 14377,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2228:7:45",
+                    "src": "2167:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1426,21 +1426,21 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "2122:122:45"
+              "src": "2060:123:55"
             },
             "returnParameters": {
-              "id": 11458,
+              "id": 14382,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11457,
+                  "id": 14381,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11526,
-                  "src": "2268:7:45",
+                  "scope": 14450,
+                  "src": "2207:7:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1448,10 +1448,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11456,
+                    "id": 14380,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2268:7:45",
+                    "src": "2207:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1460,38 +1460,38 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "2267:9:45"
+              "src": "2206:9:55"
             },
-            "scope": 12066,
+            "scope": 15104,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 11613,
+            "id": 14537,
             "nodeType": "FunctionDefinition",
-            "src": "3826:1099:45",
+            "src": "3719:1104:55",
             "nodes": [],
             "body": {
-              "id": 11612,
+              "id": 14536,
               "nodeType": "Block",
-              "src": "4022:903:45",
+              "src": "3916:907:55",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    11545
+                    14469
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 11545,
+                      "id": 14469,
                       "mutability": "mutable",
                       "name": "k",
-                      "nameLocation": "4177:1:45",
+                      "nameLocation": "4072:1:55",
                       "nodeType": "VariableDeclaration",
-                      "scope": 11612,
-                      "src": "4169:9:45",
+                      "scope": 14536,
+                      "src": "4064:9:55",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -1499,10 +1499,10 @@ export const YieldSpaceMath =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 11544,
+                        "id": 14468,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "4169:7:45",
+                        "src": "4064:7:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1511,64 +1511,64 @@ export const YieldSpaceMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 11553,
+                  "id": 14477,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 11547,
-                        "name": "z",
+                        "id": 14471,
+                        "name": "ze",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11529,
-                        "src": "4185:1:45",
+                        "referencedDeclaration": 14453,
+                        "src": "4080:2:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11548,
+                        "id": 14472,
                         "name": "y",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11531,
-                        "src": "4188:1:45",
+                        "referencedDeclaration": 14455,
+                        "src": "4084:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11549,
+                        "id": 14473,
                         "name": "t",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11535,
-                        "src": "4191:1:45",
+                        "referencedDeclaration": 14459,
+                        "src": "4087:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11550,
+                        "id": 14474,
                         "name": "c",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11537,
-                        "src": "4194:1:45",
+                        "referencedDeclaration": 14461,
+                        "src": "4090:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11551,
+                        "id": 14475,
                         "name": "mu",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11539,
-                        "src": "4197:2:45",
+                        "referencedDeclaration": 14463,
+                        "src": "4093:2:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1598,18 +1598,18 @@ export const YieldSpaceMath =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 11546,
+                      "id": 14470,
                       "name": "kUp",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12031,
-                      "src": "4181:3:45",
+                      "referencedDeclaration": 15069,
+                      "src": "4076:3:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "id": 11552,
+                    "id": 14476,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1618,7 +1618,7 @@ export const YieldSpaceMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4181:19:45",
+                    "src": "4076:20:55",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -1626,22 +1626,22 @@ export const YieldSpaceMath =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "4169:31:45"
+                  "src": "4064:32:55"
                 },
                 {
                   "expression": {
-                    "id": 11562,
+                    "id": 14486,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 11554,
+                      "id": 14478,
                       "name": "y",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11531,
-                      "src": "4239:1:45",
+                      "referencedDeclaration": 14455,
+                      "src": "4135:1:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1652,12 +1652,12 @@ export const YieldSpaceMath =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 11560,
+                          "id": 14484,
                           "name": "t",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11535,
-                          "src": "4256:1:45",
+                          "referencedDeclaration": 14459,
+                          "src": "4152:1:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1678,18 +1678,18 @@ export const YieldSpaceMath =
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 11557,
+                              "id": 14481,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "leftExpression": {
-                                "id": 11555,
+                                "id": 14479,
                                 "name": "y",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11531,
-                                "src": "4244:1:45",
+                                "referencedDeclaration": 14455,
+                                "src": "4140:1:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -1698,53 +1698,53 @@ export const YieldSpaceMath =
                               "nodeType": "BinaryOperation",
                               "operator": "-",
                               "rightExpression": {
-                                "id": 11556,
+                                "id": 14480,
                                 "name": "dy",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11533,
-                                "src": "4248:2:45",
+                                "referencedDeclaration": 14457,
+                                "src": "4144:2:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "src": "4244:6:45",
+                              "src": "4140:6:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             }
                           ],
-                          "id": 11558,
+                          "id": 14482,
                           "isConstant": false,
                           "isInlineArray": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "TupleExpression",
-                          "src": "4243:8:45",
+                          "src": "4139:8:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11559,
+                        "id": 14483,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "4252:3:45",
+                        "memberLocation": "4148:3:55",
                         "memberName": "pow",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9958,
-                        "src": "4243:12:45",
+                        "referencedDeclaration": 10559,
+                        "src": "4139:12:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 11561,
+                      "id": 14485,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1753,37 +1753,37 @@ export const YieldSpaceMath =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "4243:15:45",
+                      "src": "4139:15:55",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "4239:19:45",
+                    "src": "4135:19:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 11563,
+                  "id": 14487,
                   "nodeType": "ExpressionStatement",
-                  "src": "4239:19:45"
+                  "src": "4135:19:55"
                 },
                 {
                   "assignments": [
-                    11565
+                    14489
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 11565,
+                      "id": 14489,
                       "mutability": "mutable",
                       "name": "_z",
-                      "nameLocation": "4422:2:45",
+                      "nameLocation": "4318:2:55",
                       "nodeType": "VariableDeclaration",
-                      "scope": 11612,
-                      "src": "4414:10:45",
+                      "scope": 14536,
+                      "src": "4310:10:55",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -1791,10 +1791,10 @@ export const YieldSpaceMath =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 11564,
+                        "id": 14488,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "4414:7:45",
+                        "src": "4310:7:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1803,28 +1803,28 @@ export const YieldSpaceMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 11574,
+                  "id": 14498,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 11571,
+                        "id": 14495,
                         "name": "mu",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11539,
-                        "src": "4444:2:45",
+                        "referencedDeclaration": 14463,
+                        "src": "4340:2:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11572,
+                        "id": 14496,
                         "name": "c",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11537,
-                        "src": "4448:1:45",
+                        "referencedDeclaration": 14461,
+                        "src": "4344:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1849,18 +1849,18 @@ export const YieldSpaceMath =
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             },
-                            "id": 11568,
+                            "id": 14492,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 11566,
+                              "id": 14490,
                               "name": "k",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11545,
-                              "src": "4428:1:45",
+                              "referencedDeclaration": 14469,
+                              "src": "4324:1:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -1869,53 +1869,53 @@ export const YieldSpaceMath =
                             "nodeType": "BinaryOperation",
                             "operator": "-",
                             "rightExpression": {
-                              "id": 11567,
+                              "id": 14491,
                               "name": "y",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11531,
-                              "src": "4432:1:45",
+                              "referencedDeclaration": 14455,
+                              "src": "4328:1:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
-                            "src": "4428:5:45",
+                            "src": "4324:5:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           }
                         ],
-                        "id": 11569,
+                        "id": 14493,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "4427:7:45",
+                        "src": "4323:7:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 11570,
+                      "id": 14494,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "4435:8:45",
+                      "memberLocation": "4331:8:55",
                       "memberName": "mulDivUp",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9863,
-                      "src": "4427:16:45",
+                      "referencedDeclaration": 10464,
+                      "src": "4323:16:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                         "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "id": 11573,
+                    "id": 14497,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1924,7 +1924,7 @@ export const YieldSpaceMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4427:23:45",
+                    "src": "4323:23:55",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -1932,7 +1932,7 @@ export const YieldSpaceMath =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "4414:36:45"
+                  "src": "4310:36:55"
                 },
                 {
                   "condition": {
@@ -1940,18 +1940,18 @@ export const YieldSpaceMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 11577,
+                    "id": 14501,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 11575,
+                      "id": 14499,
                       "name": "_z",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11565,
-                      "src": "4464:2:45",
+                      "referencedDeclaration": 14489,
+                      "src": "4360:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1960,42 +1960,42 @@ export const YieldSpaceMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 11576,
+                      "id": 14500,
                       "name": "ONE",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9788,
-                      "src": "4470:3:45",
+                      "referencedDeclaration": 10389,
+                      "src": "4366:3:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "4464:9:45",
+                    "src": "4360:9:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": {
-                    "id": 11599,
+                    "id": 14523,
                     "nodeType": "Block",
-                    "src": "4599:122:45",
+                    "src": "4495:122:55",
                     "statements": [
                       {
                         "expression": {
-                          "id": 11597,
+                          "id": 14521,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 11589,
+                            "id": 14513,
                             "name": "_z",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11565,
-                            "src": "4683:2:45",
+                            "referencedDeclaration": 14489,
+                            "src": "4579:2:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2008,12 +2008,12 @@ export const YieldSpaceMath =
                               {
                                 "arguments": [
                                   {
-                                    "id": 11594,
+                                    "id": 14518,
                                     "name": "t",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 11535,
-                                    "src": "4707:1:45",
+                                    "referencedDeclaration": 14459,
+                                    "src": "4603:1:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -2028,33 +2028,33 @@ export const YieldSpaceMath =
                                     }
                                   ],
                                   "expression": {
-                                    "id": 11592,
+                                    "id": 14516,
                                     "name": "ONE",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 9788,
-                                    "src": "4695:3:45",
+                                    "referencedDeclaration": 10389,
+                                    "src": "4591:3:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "id": 11593,
+                                  "id": 14517,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
-                                  "memberLocation": "4699:7:45",
+                                  "memberLocation": "4595:7:55",
                                   "memberName": "divDown",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 9849,
-                                  "src": "4695:11:45",
+                                  "referencedDeclaration": 10450,
+                                  "src": "4591:11:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 11595,
+                                "id": 14519,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -2063,7 +2063,7 @@ export const YieldSpaceMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "4695:14:45",
+                                "src": "4591:14:55",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -2079,33 +2079,33 @@ export const YieldSpaceMath =
                                 }
                               ],
                               "expression": {
-                                "id": 11590,
+                                "id": 14514,
                                 "name": "_z",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11565,
-                                "src": "4688:2:45",
+                                "referencedDeclaration": 14489,
+                                "src": "4584:2:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 11591,
+                              "id": 14515,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "4691:3:45",
+                              "memberLocation": "4587:3:55",
                               "memberName": "pow",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 9958,
-                              "src": "4688:6:45",
+                              "referencedDeclaration": 10559,
+                              "src": "4584:6:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 11596,
+                            "id": 14520,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -2114,47 +2114,47 @@ export const YieldSpaceMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "4688:22:45",
+                            "src": "4584:22:55",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "4683:27:45",
+                          "src": "4579:27:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11598,
+                        "id": 14522,
                         "nodeType": "ExpressionStatement",
-                        "src": "4683:27:45"
+                        "src": "4579:27:55"
                       }
                     ]
                   },
-                  "id": 11600,
+                  "id": 14524,
                   "nodeType": "IfStatement",
-                  "src": "4460:261:45",
+                  "src": "4356:261:55",
                   "trueBody": {
-                    "id": 11588,
+                    "id": 14512,
                     "nodeType": "Block",
-                    "src": "4475:118:45",
+                    "src": "4371:118:55",
                     "statements": [
                       {
                         "expression": {
-                          "id": 11586,
+                          "id": 14510,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 11578,
+                            "id": 14502,
                             "name": "_z",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11565,
-                            "src": "4557:2:45",
+                            "referencedDeclaration": 14489,
+                            "src": "4453:2:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2167,12 +2167,12 @@ export const YieldSpaceMath =
                               {
                                 "arguments": [
                                   {
-                                    "id": 11583,
+                                    "id": 14507,
                                     "name": "t",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 11535,
-                                    "src": "4579:1:45",
+                                    "referencedDeclaration": 14459,
+                                    "src": "4475:1:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -2187,33 +2187,33 @@ export const YieldSpaceMath =
                                     }
                                   ],
                                   "expression": {
-                                    "id": 11581,
+                                    "id": 14505,
                                     "name": "ONE",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 9788,
-                                    "src": "4569:3:45",
+                                    "referencedDeclaration": 10389,
+                                    "src": "4465:3:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "id": 11582,
+                                  "id": 14506,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
-                                  "memberLocation": "4573:5:45",
+                                  "memberLocation": "4469:5:55",
                                   "memberName": "divUp",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 9899,
-                                  "src": "4569:9:45",
+                                  "referencedDeclaration": 10500,
+                                  "src": "4465:9:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 11584,
+                                "id": 14508,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -2222,7 +2222,7 @@ export const YieldSpaceMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "4569:12:45",
+                                "src": "4465:12:55",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -2238,33 +2238,33 @@ export const YieldSpaceMath =
                                 }
                               ],
                               "expression": {
-                                "id": 11579,
+                                "id": 14503,
                                 "name": "_z",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11565,
-                                "src": "4562:2:45",
+                                "referencedDeclaration": 14489,
+                                "src": "4458:2:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 11580,
+                              "id": 14504,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "4565:3:45",
+                              "memberLocation": "4461:3:55",
                               "memberName": "pow",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 9958,
-                              "src": "4562:6:45",
+                              "referencedDeclaration": 10559,
+                              "src": "4458:6:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 11585,
+                            "id": 14509,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -2273,40 +2273,40 @@ export const YieldSpaceMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "4562:20:45",
+                            "src": "4458:20:55",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "4557:25:45",
+                          "src": "4453:25:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11587,
+                        "id": 14511,
                         "nodeType": "ExpressionStatement",
-                        "src": "4557:25:45"
+                        "src": "4453:25:55"
                       }
                     ]
                   }
                 },
                 {
                   "expression": {
-                    "id": 11606,
+                    "id": 14530,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 11601,
+                      "id": 14525,
                       "name": "_z",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11565,
-                      "src": "4798:2:45",
+                      "referencedDeclaration": 14489,
+                      "src": "4694:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2317,12 +2317,12 @@ export const YieldSpaceMath =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 11604,
+                          "id": 14528,
                           "name": "mu",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11539,
-                          "src": "4812:2:45",
+                          "referencedDeclaration": 14463,
+                          "src": "4708:2:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2337,33 +2337,33 @@ export const YieldSpaceMath =
                           }
                         ],
                         "expression": {
-                          "id": 11602,
+                          "id": 14526,
                           "name": "_z",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11565,
-                          "src": "4803:2:45",
+                          "referencedDeclaration": 14489,
+                          "src": "4699:2:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11603,
+                        "id": 14527,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "4806:5:45",
+                        "memberLocation": "4702:5:55",
                         "memberName": "divUp",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9899,
-                        "src": "4803:8:45",
+                        "referencedDeclaration": 10500,
+                        "src": "4699:8:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 11605,
+                      "id": 14529,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2372,22 +2372,22 @@ export const YieldSpaceMath =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "4803:12:45",
+                      "src": "4699:12:55",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "4798:17:45",
+                    "src": "4694:17:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 11607,
+                  "id": 14531,
                   "nodeType": "ExpressionStatement",
-                  "src": "4798:17:45"
+                  "src": "4694:17:55"
                 },
                 {
                   "expression": {
@@ -2395,18 +2395,18 @@ export const YieldSpaceMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 11610,
+                    "id": 14534,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 11608,
+                      "id": 14532,
                       "name": "_z",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11565,
-                      "src": "4912:2:45",
+                      "referencedDeclaration": 14489,
+                      "src": "4809:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2415,54 +2415,54 @@ export const YieldSpaceMath =
                     "nodeType": "BinaryOperation",
                     "operator": "-",
                     "rightExpression": {
-                      "id": 11609,
-                      "name": "z",
+                      "id": 14533,
+                      "name": "ze",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11529,
-                      "src": "4917:1:45",
+                      "referencedDeclaration": 14453,
+                      "src": "4814:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "4912:6:45",
+                    "src": "4809:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 11543,
-                  "id": 11611,
+                  "functionReturnParameters": 14467,
+                  "id": 14535,
                   "nodeType": "Return",
-                  "src": "4905:13:45"
+                  "src": "4802:14:55"
                 }
               ]
             },
             "documentation": {
-              "id": 11527,
+              "id": 14451,
               "nodeType": "StructuredDocumentation",
-              "src": "3254:567:45",
-              "text": "@dev Calculates the amount of shares a user must provide the pool to\n      receive a specified amount of bonds. We overestimate the amount of\n      shares in.\n @param z Amount of share reserves in the pool\n @param y Amount of bond reserves in the pool\n @param dy Amount of bonds user wants to provide\n @param t Amount of time elapsed since term start\n @param c Conversion rate between base and shares\n @param mu Interest normalization factor for shares\n @return The amount of shares the user will pay"
+              "src": "3207:507:55",
+              "text": "@dev Calculates the amount of shares a user must provide the pool to\n      receive a specified amount of bonds. We overestimate the amount of\n      shares in.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param dy The amount of bonds paid to the trader.\n @param t The time elapsed since the term's start.\n @param c The share price.\n @param mu The initial share price.\n @return The amount of shares the trader pays."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "calculateSharesInGivenBondsOutUp",
-            "nameLocation": "3835:32:45",
+            "nameLocation": "3728:32:55",
             "parameters": {
-              "id": 11540,
+              "id": 14464,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11529,
+                  "id": 14453,
                   "mutability": "mutable",
-                  "name": "z",
-                  "nameLocation": "3885:1:45",
+                  "name": "ze",
+                  "nameLocation": "3778:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11613,
-                  "src": "3877:9:45",
+                  "scope": 14537,
+                  "src": "3770:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2470,10 +2470,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11528,
+                    "id": 14452,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3877:7:45",
+                    "src": "3770:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2483,13 +2483,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11531,
+                  "id": 14455,
                   "mutability": "mutable",
                   "name": "y",
-                  "nameLocation": "3904:1:45",
+                  "nameLocation": "3798:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11613,
-                  "src": "3896:9:45",
+                  "scope": 14537,
+                  "src": "3790:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2497,10 +2497,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11530,
+                    "id": 14454,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3896:7:45",
+                    "src": "3790:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2510,13 +2510,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11533,
+                  "id": 14457,
                   "mutability": "mutable",
                   "name": "dy",
-                  "nameLocation": "3923:2:45",
+                  "nameLocation": "3817:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11613,
-                  "src": "3915:10:45",
+                  "scope": 14537,
+                  "src": "3809:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2524,10 +2524,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11532,
+                    "id": 14456,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3915:7:45",
+                    "src": "3809:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2537,13 +2537,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11535,
+                  "id": 14459,
                   "mutability": "mutable",
                   "name": "t",
-                  "nameLocation": "3943:1:45",
+                  "nameLocation": "3837:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11613,
-                  "src": "3935:9:45",
+                  "scope": 14537,
+                  "src": "3829:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2551,10 +2551,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11534,
+                    "id": 14458,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3935:7:45",
+                    "src": "3829:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2564,13 +2564,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11537,
+                  "id": 14461,
                   "mutability": "mutable",
                   "name": "c",
-                  "nameLocation": "3962:1:45",
+                  "nameLocation": "3856:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11613,
-                  "src": "3954:9:45",
+                  "scope": 14537,
+                  "src": "3848:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2578,10 +2578,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11536,
+                    "id": 14460,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3954:7:45",
+                    "src": "3848:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2591,13 +2591,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11539,
+                  "id": 14463,
                   "mutability": "mutable",
                   "name": "mu",
-                  "nameLocation": "3981:2:45",
+                  "nameLocation": "3875:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11613,
-                  "src": "3973:10:45",
+                  "scope": 14537,
+                  "src": "3867:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2605,10 +2605,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11538,
+                    "id": 14462,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3973:7:45",
+                    "src": "3867:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2617,21 +2617,21 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "3867:122:45"
+              "src": "3760:123:55"
             },
             "returnParameters": {
-              "id": 11543,
+              "id": 14467,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11542,
+                  "id": 14466,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11613,
-                  "src": "4013:7:45",
+                  "scope": 14537,
+                  "src": "3907:7:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2639,10 +2639,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11541,
+                    "id": 14465,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4013:7:45",
+                    "src": "3907:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2651,38 +2651,38 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "4012:9:45"
+              "src": "3906:9:55"
             },
-            "scope": 12066,
+            "scope": 15104,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 11700,
+            "id": 14624,
             "nodeType": "FunctionDefinition",
-            "src": "5504:1115:45",
+            "src": "5340:1125:55",
             "nodes": [],
             "body": {
-              "id": 11699,
+              "id": 14623,
               "nodeType": "Block",
-              "src": "5702:917:45",
+              "src": "5539:926:55",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    11632
+                    14556
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 11632,
+                      "id": 14556,
                       "mutability": "mutable",
                       "name": "k",
-                      "nameLocation": "5860:1:45",
+                      "nameLocation": "5698:1:55",
                       "nodeType": "VariableDeclaration",
-                      "scope": 11699,
-                      "src": "5852:9:45",
+                      "scope": 14623,
+                      "src": "5690:9:55",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -2690,10 +2690,10 @@ export const YieldSpaceMath =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 11631,
+                        "id": 14555,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "5852:7:45",
+                        "src": "5690:7:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2702,64 +2702,64 @@ export const YieldSpaceMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 11640,
+                  "id": 14564,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 11634,
-                        "name": "z",
+                        "id": 14558,
+                        "name": "ze",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11616,
-                        "src": "5870:1:45",
+                        "referencedDeclaration": 14540,
+                        "src": "5708:2:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11635,
+                        "id": 14559,
                         "name": "y",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11618,
-                        "src": "5873:1:45",
+                        "referencedDeclaration": 14542,
+                        "src": "5712:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11636,
+                        "id": 14560,
                         "name": "t",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11622,
-                        "src": "5876:1:45",
+                        "referencedDeclaration": 14546,
+                        "src": "5715:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11637,
+                        "id": 14561,
                         "name": "c",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11624,
-                        "src": "5879:1:45",
+                        "referencedDeclaration": 14548,
+                        "src": "5718:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11638,
+                        "id": 14562,
                         "name": "mu",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11626,
-                        "src": "5882:2:45",
+                        "referencedDeclaration": 14550,
+                        "src": "5721:2:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2789,18 +2789,18 @@ export const YieldSpaceMath =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 11633,
+                      "id": 14557,
                       "name": "kDown",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12065,
-                      "src": "5864:5:45",
+                      "referencedDeclaration": 15103,
+                      "src": "5702:5:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "id": 11639,
+                    "id": 14563,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2809,7 +2809,7 @@ export const YieldSpaceMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5864:21:45",
+                    "src": "5702:22:55",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -2817,22 +2817,22 @@ export const YieldSpaceMath =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "5852:33:45"
+                  "src": "5690:34:55"
                 },
                 {
                   "expression": {
-                    "id": 11649,
+                    "id": 14573,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 11641,
+                      "id": 14565,
                       "name": "y",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11618,
-                      "src": "5924:1:45",
+                      "referencedDeclaration": 14542,
+                      "src": "5763:1:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2843,12 +2843,12 @@ export const YieldSpaceMath =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 11647,
+                          "id": 14571,
                           "name": "t",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11622,
-                          "src": "5941:1:45",
+                          "referencedDeclaration": 14546,
+                          "src": "5780:1:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2869,18 +2869,18 @@ export const YieldSpaceMath =
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 11644,
+                              "id": 14568,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "leftExpression": {
-                                "id": 11642,
+                                "id": 14566,
                                 "name": "y",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11618,
-                                "src": "5929:1:45",
+                                "referencedDeclaration": 14542,
+                                "src": "5768:1:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -2889,53 +2889,53 @@ export const YieldSpaceMath =
                               "nodeType": "BinaryOperation",
                               "operator": "-",
                               "rightExpression": {
-                                "id": 11643,
+                                "id": 14567,
                                 "name": "dy",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11620,
-                                "src": "5933:2:45",
+                                "referencedDeclaration": 14544,
+                                "src": "5772:2:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "src": "5929:6:45",
+                              "src": "5768:6:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             }
                           ],
-                          "id": 11645,
+                          "id": 14569,
                           "isConstant": false,
                           "isInlineArray": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "TupleExpression",
-                          "src": "5928:8:45",
+                          "src": "5767:8:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11646,
+                        "id": 14570,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "5937:3:45",
+                        "memberLocation": "5776:3:55",
                         "memberName": "pow",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9958,
-                        "src": "5928:12:45",
+                        "referencedDeclaration": 10559,
+                        "src": "5767:12:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 11648,
+                      "id": 14572,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2944,37 +2944,37 @@ export const YieldSpaceMath =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "5928:15:45",
+                      "src": "5767:15:55",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "5924:19:45",
+                    "src": "5763:19:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 11650,
+                  "id": 14574,
                   "nodeType": "ExpressionStatement",
-                  "src": "5924:19:45"
+                  "src": "5763:19:55"
                 },
                 {
                   "assignments": [
-                    11652
+                    14576
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 11652,
+                      "id": 14576,
                       "mutability": "mutable",
                       "name": "_z",
-                      "nameLocation": "6110:2:45",
+                      "nameLocation": "5954:2:55",
                       "nodeType": "VariableDeclaration",
-                      "scope": 11699,
-                      "src": "6102:10:45",
+                      "scope": 14623,
+                      "src": "5946:10:55",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -2982,10 +2982,10 @@ export const YieldSpaceMath =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 11651,
+                        "id": 14575,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "6102:7:45",
+                        "src": "5946:7:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2994,28 +2994,28 @@ export const YieldSpaceMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 11661,
+                  "id": 14585,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 11658,
+                        "id": 14582,
                         "name": "mu",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11626,
-                        "src": "6134:2:45",
+                        "referencedDeclaration": 14550,
+                        "src": "5978:2:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11659,
+                        "id": 14583,
                         "name": "c",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11624,
-                        "src": "6138:1:45",
+                        "referencedDeclaration": 14548,
+                        "src": "5982:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3040,18 +3040,18 @@ export const YieldSpaceMath =
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             },
-                            "id": 11655,
+                            "id": 14579,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 11653,
+                              "id": 14577,
                               "name": "k",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11632,
-                              "src": "6116:1:45",
+                              "referencedDeclaration": 14556,
+                              "src": "5960:1:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -3060,53 +3060,53 @@ export const YieldSpaceMath =
                             "nodeType": "BinaryOperation",
                             "operator": "-",
                             "rightExpression": {
-                              "id": 11654,
+                              "id": 14578,
                               "name": "y",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11618,
-                              "src": "6120:1:45",
+                              "referencedDeclaration": 14542,
+                              "src": "5964:1:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
-                            "src": "6116:5:45",
+                            "src": "5960:5:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           }
                         ],
-                        "id": 11656,
+                        "id": 14580,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "6115:7:45",
+                        "src": "5959:7:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 11657,
+                      "id": 14581,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "6123:10:45",
+                      "memberLocation": "5967:10:55",
                       "memberName": "mulDivDown",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9813,
-                      "src": "6115:18:45",
+                      "referencedDeclaration": 10414,
+                      "src": "5959:18:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                         "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "id": 11660,
+                    "id": 14584,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3115,7 +3115,7 @@ export const YieldSpaceMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6115:25:45",
+                    "src": "5959:25:55",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -3123,7 +3123,7 @@ export const YieldSpaceMath =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "6102:38:45"
+                  "src": "5946:38:55"
                 },
                 {
                   "condition": {
@@ -3131,18 +3131,18 @@ export const YieldSpaceMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 11664,
+                    "id": 14588,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 11662,
+                      "id": 14586,
                       "name": "_z",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11652,
-                      "src": "6154:2:45",
+                      "referencedDeclaration": 14576,
+                      "src": "5998:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3151,42 +3151,42 @@ export const YieldSpaceMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 11663,
+                      "id": 14587,
                       "name": "ONE",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9788,
-                      "src": "6160:3:45",
+                      "referencedDeclaration": 10389,
+                      "src": "6004:3:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "6154:9:45",
+                    "src": "5998:9:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": {
-                    "id": 11686,
+                    "id": 14610,
                     "nodeType": "Block",
-                    "src": "6294:119:45",
+                    "src": "6138:119:55",
                     "statements": [
                       {
                         "expression": {
-                          "id": 11684,
+                          "id": 14608,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 11676,
+                            "id": 14600,
                             "name": "_z",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11652,
-                            "src": "6377:2:45",
+                            "referencedDeclaration": 14576,
+                            "src": "6221:2:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -3199,12 +3199,12 @@ export const YieldSpaceMath =
                               {
                                 "arguments": [
                                   {
-                                    "id": 11681,
+                                    "id": 14605,
                                     "name": "t",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 11622,
-                                    "src": "6399:1:45",
+                                    "referencedDeclaration": 14546,
+                                    "src": "6243:1:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -3219,33 +3219,33 @@ export const YieldSpaceMath =
                                     }
                                   ],
                                   "expression": {
-                                    "id": 11679,
+                                    "id": 14603,
                                     "name": "ONE",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 9788,
-                                    "src": "6389:3:45",
+                                    "referencedDeclaration": 10389,
+                                    "src": "6233:3:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "id": 11680,
+                                  "id": 14604,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
-                                  "memberLocation": "6393:5:45",
+                                  "memberLocation": "6237:5:55",
                                   "memberName": "divUp",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 9899,
-                                  "src": "6389:9:45",
+                                  "referencedDeclaration": 10500,
+                                  "src": "6233:9:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 11682,
+                                "id": 14606,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -3254,7 +3254,7 @@ export const YieldSpaceMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "6389:12:45",
+                                "src": "6233:12:55",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -3270,33 +3270,33 @@ export const YieldSpaceMath =
                                 }
                               ],
                               "expression": {
-                                "id": 11677,
+                                "id": 14601,
                                 "name": "_z",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11652,
-                                "src": "6382:2:45",
+                                "referencedDeclaration": 14576,
+                                "src": "6226:2:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 11678,
+                              "id": 14602,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "6385:3:45",
+                              "memberLocation": "6229:3:55",
                               "memberName": "pow",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 9958,
-                              "src": "6382:6:45",
+                              "referencedDeclaration": 10559,
+                              "src": "6226:6:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 11683,
+                            "id": 14607,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -3305,47 +3305,47 @@ export const YieldSpaceMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "6382:20:45",
+                            "src": "6226:20:55",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "6377:25:45",
+                          "src": "6221:25:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11685,
+                        "id": 14609,
                         "nodeType": "ExpressionStatement",
-                        "src": "6377:25:45"
+                        "src": "6221:25:55"
                       }
                     ]
                   },
-                  "id": 11687,
+                  "id": 14611,
                   "nodeType": "IfStatement",
-                  "src": "6150:263:45",
+                  "src": "5994:263:55",
                   "trueBody": {
-                    "id": 11675,
+                    "id": 14599,
                     "nodeType": "Block",
-                    "src": "6165:123:45",
+                    "src": "6009:123:55",
                     "statements": [
                       {
                         "expression": {
-                          "id": 11673,
+                          "id": 14597,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 11665,
+                            "id": 14589,
                             "name": "_z",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11652,
-                            "src": "6250:2:45",
+                            "referencedDeclaration": 14576,
+                            "src": "6094:2:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -3358,12 +3358,12 @@ export const YieldSpaceMath =
                               {
                                 "arguments": [
                                   {
-                                    "id": 11670,
+                                    "id": 14594,
                                     "name": "t",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 11622,
-                                    "src": "6274:1:45",
+                                    "referencedDeclaration": 14546,
+                                    "src": "6118:1:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -3378,33 +3378,33 @@ export const YieldSpaceMath =
                                     }
                                   ],
                                   "expression": {
-                                    "id": 11668,
+                                    "id": 14592,
                                     "name": "ONE",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 9788,
-                                    "src": "6262:3:45",
+                                    "referencedDeclaration": 10389,
+                                    "src": "6106:3:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "id": 11669,
+                                  "id": 14593,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
-                                  "memberLocation": "6266:7:45",
+                                  "memberLocation": "6110:7:55",
                                   "memberName": "divDown",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 9849,
-                                  "src": "6262:11:45",
+                                  "referencedDeclaration": 10450,
+                                  "src": "6106:11:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 11671,
+                                "id": 14595,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -3413,7 +3413,7 @@ export const YieldSpaceMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "6262:14:45",
+                                "src": "6106:14:55",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -3429,33 +3429,33 @@ export const YieldSpaceMath =
                                 }
                               ],
                               "expression": {
-                                "id": 11666,
+                                "id": 14590,
                                 "name": "_z",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11652,
-                                "src": "6255:2:45",
+                                "referencedDeclaration": 14576,
+                                "src": "6099:2:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 11667,
+                              "id": 14591,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "6258:3:45",
+                              "memberLocation": "6102:3:55",
                               "memberName": "pow",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 9958,
-                              "src": "6255:6:45",
+                              "referencedDeclaration": 10559,
+                              "src": "6099:6:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 11672,
+                            "id": 14596,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -3464,40 +3464,40 @@ export const YieldSpaceMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "6255:22:45",
+                            "src": "6099:22:55",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "6250:27:45",
+                          "src": "6094:27:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11674,
+                        "id": 14598,
                         "nodeType": "ExpressionStatement",
-                        "src": "6250:27:45"
+                        "src": "6094:27:55"
                       }
                     ]
                   }
                 },
                 {
                   "expression": {
-                    "id": 11693,
+                    "id": 14617,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 11688,
+                      "id": 14612,
                       "name": "_z",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11652,
-                      "src": "6490:2:45",
+                      "referencedDeclaration": 14576,
+                      "src": "6334:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3508,12 +3508,12 @@ export const YieldSpaceMath =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 11691,
+                          "id": 14615,
                           "name": "mu",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11626,
-                          "src": "6506:2:45",
+                          "referencedDeclaration": 14550,
+                          "src": "6350:2:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -3528,33 +3528,33 @@ export const YieldSpaceMath =
                           }
                         ],
                         "expression": {
-                          "id": 11689,
+                          "id": 14613,
                           "name": "_z",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11652,
-                          "src": "6495:2:45",
+                          "referencedDeclaration": 14576,
+                          "src": "6339:2:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11690,
+                        "id": 14614,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "6498:7:45",
+                        "memberLocation": "6342:7:55",
                         "memberName": "divDown",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9849,
-                        "src": "6495:10:45",
+                        "referencedDeclaration": 10450,
+                        "src": "6339:10:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 11692,
+                      "id": 14616,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3563,22 +3563,22 @@ export const YieldSpaceMath =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "6495:14:45",
+                      "src": "6339:14:55",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "6490:19:45",
+                    "src": "6334:19:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 11694,
+                  "id": 14618,
                   "nodeType": "ExpressionStatement",
-                  "src": "6490:19:45"
+                  "src": "6334:19:55"
                 },
                 {
                   "expression": {
@@ -3586,18 +3586,18 @@ export const YieldSpaceMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 11697,
+                    "id": 14621,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 11695,
+                      "id": 14619,
                       "name": "_z",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11652,
-                      "src": "6606:2:45",
+                      "referencedDeclaration": 14576,
+                      "src": "6451:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3606,54 +3606,54 @@ export const YieldSpaceMath =
                     "nodeType": "BinaryOperation",
                     "operator": "-",
                     "rightExpression": {
-                      "id": 11696,
-                      "name": "z",
+                      "id": 14620,
+                      "name": "ze",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11616,
-                      "src": "6611:1:45",
+                      "referencedDeclaration": 14540,
+                      "src": "6456:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "6606:6:45",
+                    "src": "6451:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 11630,
-                  "id": 11698,
+                  "functionReturnParameters": 14554,
+                  "id": 14622,
                   "nodeType": "Return",
-                  "src": "6599:13:45"
+                  "src": "6444:14:55"
                 }
               ]
             },
             "documentation": {
-              "id": 11614,
+              "id": 14538,
               "nodeType": "StructuredDocumentation",
-              "src": "4931:568:45",
-              "text": "@dev Calculates the amount of shares a user must provide the pool to\n      receive a specified amount of bonds. We underestimate the amount of\n      shares in.\n @param z Amount of share reserves in the pool\n @param y Amount of bond reserves in the pool\n @param dy Amount of bonds user wants to provide\n @param t Amount of time elapsed since term start\n @param c Conversion rate between base and shares\n @param mu Interest normalization factor for shares\n @return The amount of shares the user will pay"
+              "src": "4829:506:55",
+              "text": "@dev Calculates the amount of shares a user must provide the pool to\n      receive a specified amount of bonds. We underestimate the amount of\n      shares in.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param dy The amount of bonds paid to the trader.\n @param t The time elapsed since the term's start.\n @param c The share price.\n @param mu The initial share price.\n @return The amount of shares the user pays."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "calculateSharesInGivenBondsOutDown",
-            "nameLocation": "5513:34:45",
+            "nameLocation": "5349:34:55",
             "parameters": {
-              "id": 11627,
+              "id": 14551,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11616,
+                  "id": 14540,
                   "mutability": "mutable",
-                  "name": "z",
-                  "nameLocation": "5565:1:45",
+                  "name": "ze",
+                  "nameLocation": "5401:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11700,
-                  "src": "5557:9:45",
+                  "scope": 14624,
+                  "src": "5393:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3661,10 +3661,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11615,
+                    "id": 14539,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5557:7:45",
+                    "src": "5393:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3674,13 +3674,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11618,
+                  "id": 14542,
                   "mutability": "mutable",
                   "name": "y",
-                  "nameLocation": "5584:1:45",
+                  "nameLocation": "5421:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11700,
-                  "src": "5576:9:45",
+                  "scope": 14624,
+                  "src": "5413:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3688,10 +3688,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11617,
+                    "id": 14541,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5576:7:45",
+                    "src": "5413:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3701,13 +3701,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11620,
+                  "id": 14544,
                   "mutability": "mutable",
                   "name": "dy",
-                  "nameLocation": "5603:2:45",
+                  "nameLocation": "5440:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11700,
-                  "src": "5595:10:45",
+                  "scope": 14624,
+                  "src": "5432:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3715,10 +3715,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11619,
+                    "id": 14543,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5595:7:45",
+                    "src": "5432:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3728,13 +3728,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11622,
+                  "id": 14546,
                   "mutability": "mutable",
                   "name": "t",
-                  "nameLocation": "5623:1:45",
+                  "nameLocation": "5460:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11700,
-                  "src": "5615:9:45",
+                  "scope": 14624,
+                  "src": "5452:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3742,10 +3742,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11621,
+                    "id": 14545,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5615:7:45",
+                    "src": "5452:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3755,13 +3755,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11624,
+                  "id": 14548,
                   "mutability": "mutable",
                   "name": "c",
-                  "nameLocation": "5642:1:45",
+                  "nameLocation": "5479:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11700,
-                  "src": "5634:9:45",
+                  "scope": 14624,
+                  "src": "5471:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3769,10 +3769,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11623,
+                    "id": 14547,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5634:7:45",
+                    "src": "5471:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3782,13 +3782,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11626,
+                  "id": 14550,
                   "mutability": "mutable",
                   "name": "mu",
-                  "nameLocation": "5661:2:45",
+                  "nameLocation": "5498:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11700,
-                  "src": "5653:10:45",
+                  "scope": 14624,
+                  "src": "5490:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3796,10 +3796,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11625,
+                    "id": 14549,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5653:7:45",
+                    "src": "5490:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3808,21 +3808,21 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "5547:122:45"
+              "src": "5383:123:55"
             },
             "returnParameters": {
-              "id": 11630,
+              "id": 14554,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11629,
+                  "id": 14553,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11700,
-                  "src": "5693:7:45",
+                  "scope": 14624,
+                  "src": "5530:7:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3830,10 +3830,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11628,
+                    "id": 14552,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5693:7:45",
+                    "src": "5530:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3842,38 +3842,38 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "5692:9:45"
+              "src": "5529:9:55"
             },
-            "scope": 12066,
+            "scope": 15104,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 11744,
+            "id": 14668,
             "nodeType": "FunctionDefinition",
-            "src": "7296:489:45",
+            "src": "7078:491:55",
             "nodes": [],
             "body": {
-              "id": 11743,
+              "id": 14667,
               "nodeType": "Block",
-              "src": "7501:284:45",
+              "src": "7284:285:55",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    11719
+                    14643
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 11719,
+                      "id": 14643,
                       "mutability": "mutable",
                       "name": "success",
-                      "nameLocation": "7516:7:45",
+                      "nameLocation": "7299:7:55",
                       "nodeType": "VariableDeclaration",
-                      "scope": 11743,
-                      "src": "7511:12:45",
+                      "scope": 14667,
+                      "src": "7294:12:55",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -3881,10 +3881,10 @@ export const YieldSpaceMath =
                         "typeString": "bool"
                       },
                       "typeName": {
-                        "id": 11718,
+                        "id": 14642,
                         "name": "bool",
                         "nodeType": "ElementaryTypeName",
-                        "src": "7511:4:45",
+                        "src": "7294:4:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -3893,13 +3893,13 @@ export const YieldSpaceMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 11720,
+                  "id": 14644,
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "7511:12:45"
+                  "src": "7294:12:55"
                 },
                 {
                   "expression": {
-                    "id": 11732,
+                    "id": 14656,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3907,38 +3907,38 @@ export const YieldSpaceMath =
                     "leftHandSide": {
                       "components": [
                         {
-                          "id": 11721,
+                          "id": 14645,
                           "name": "result",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11716,
-                          "src": "7534:6:45",
+                          "referencedDeclaration": 14640,
+                          "src": "7317:6:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 11722,
+                          "id": 14646,
                           "name": "success",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11719,
-                          "src": "7542:7:45",
+                          "referencedDeclaration": 14643,
+                          "src": "7325:7:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         }
                       ],
-                      "id": 11723,
+                      "id": 14647,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "TupleExpression",
-                      "src": "7533:17:45",
+                      "src": "7316:17:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$_t_uint256_$_t_bool_$",
                         "typeString": "tuple(uint256,bool)"
@@ -3949,72 +3949,72 @@ export const YieldSpaceMath =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 11725,
-                          "name": "z",
+                          "id": 14649,
+                          "name": "ze",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11703,
-                          "src": "7605:1:45",
+                          "referencedDeclaration": 14627,
+                          "src": "7388:2:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 11726,
+                          "id": 14650,
                           "name": "y",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11705,
-                          "src": "7620:1:45",
+                          "referencedDeclaration": 14629,
+                          "src": "7404:1:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 11727,
+                          "id": 14651,
                           "name": "dy",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11707,
-                          "src": "7635:2:45",
+                          "referencedDeclaration": 14631,
+                          "src": "7419:2:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 11728,
+                          "id": 14652,
                           "name": "t",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11709,
-                          "src": "7651:1:45",
+                          "referencedDeclaration": 14633,
+                          "src": "7435:1:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 11729,
+                          "id": 14653,
                           "name": "c",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11711,
-                          "src": "7666:1:45",
+                          "referencedDeclaration": 14635,
+                          "src": "7450:1:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 11730,
+                          "id": 14654,
                           "name": "mu",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11713,
-                          "src": "7681:2:45",
+                          "referencedDeclaration": 14637,
+                          "src": "7465:2:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -4048,18 +4048,18 @@ export const YieldSpaceMath =
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 11724,
+                        "id": 14648,
                         "name": "calculateSharesOutGivenBondsInDownSafe",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11853,
-                        "src": "7553:38:45",
+                        "referencedDeclaration": 14777,
+                        "src": "7336:38:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_bool_$",
                           "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,bool)"
                         }
                       },
-                      "id": 11731,
+                      "id": 14655,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4068,26 +4068,26 @@ export const YieldSpaceMath =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "7553:140:45",
+                      "src": "7336:141:55",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$_t_uint256_$_t_bool_$",
                         "typeString": "tuple(uint256,bool)"
                       }
                     },
-                    "src": "7533:160:45",
+                    "src": "7316:161:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 11733,
+                  "id": 14657,
                   "nodeType": "ExpressionStatement",
-                  "src": "7533:160:45"
+                  "src": "7316:161:55"
                 },
                 {
                   "condition": {
-                    "id": 11735,
+                    "id": 14659,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4095,14 +4095,14 @@ export const YieldSpaceMath =
                     "nodeType": "UnaryOperation",
                     "operator": "!",
                     "prefix": true,
-                    "src": "7707:8:45",
+                    "src": "7491:8:55",
                     "subExpression": {
-                      "id": 11734,
+                      "id": 14658,
                       "name": "success",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11719,
-                      "src": "7708:7:45",
+                      "referencedDeclaration": 14643,
+                      "src": "7492:7:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -4113,13 +4113,13 @@ export const YieldSpaceMath =
                       "typeString": "bool"
                     }
                   },
-                  "id": 11742,
+                  "id": 14666,
                   "nodeType": "IfStatement",
-                  "src": "7703:76:45",
+                  "src": "7487:76:55",
                   "trueBody": {
-                    "id": 11741,
+                    "id": 14665,
                     "nodeType": "Block",
-                    "src": "7717:62:45",
+                    "src": "7501:62:55",
                     "statements": [
                       {
                         "errorCall": {
@@ -4127,33 +4127,33 @@ export const YieldSpaceMath =
                           "expression": {
                             "argumentTypes": [],
                             "expression": {
-                              "id": 11736,
+                              "id": 14660,
                               "name": "IHyperdrive",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3759,
-                              "src": "7738:11:45",
+                              "referencedDeclaration": 4675,
+                              "src": "7522:11:55",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$4675_$",
                                 "typeString": "type(contract IHyperdrive)"
                               }
                             },
-                            "id": 11738,
+                            "id": 14662,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "7750:16:45",
+                            "memberLocation": "7534:16:55",
                             "memberName": "InvalidTradeSize",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 3742,
-                            "src": "7738:28:45",
+                            "referencedDeclaration": 4658,
+                            "src": "7522:28:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_error_pure$__$returns$__$",
                               "typeString": "function () pure"
                             }
                           },
-                          "id": 11739,
+                          "id": 14663,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -4162,16 +4162,16 @@ export const YieldSpaceMath =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "7738:30:45",
+                          "src": "7522:30:55",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 11740,
+                        "id": 14664,
                         "nodeType": "RevertStatement",
-                        "src": "7731:37:45"
+                        "src": "7515:37:55"
                       }
                     ]
                   }
@@ -4179,29 +4179,29 @@ export const YieldSpaceMath =
               ]
             },
             "documentation": {
-              "id": 11701,
+              "id": 14625,
               "nodeType": "StructuredDocumentation",
-              "src": "6625:666:45",
-              "text": "@dev Calculates the amount of shares a user will receive from the pool\n      by providing a specified amount of bonds. This function reverts if\n      an integer overflow or underflow occurs. We underestimate the\n      amount of shares out.\n @param z Amount of share reserves in the pool\n @param y Amount of bond reserves in the pool\n @param dy Amount of bonds user wants to provide\n @param t Amount of time elapsed since term start\n @param c Conversion rate between base and shares\n @param mu Interest normalization factor for shares\n @return result The amount of shares the user will receive"
+              "src": "6471:602:55",
+              "text": "@dev Calculates the amount of shares a user will receive from the pool\n      by providing a specified amount of bonds. This function reverts if\n      an integer overflow or underflow occurs. We underestimate the\n      amount of shares out.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param dy The amount of bonds paid to the pool.\n @param t The time elapsed since the term's start.\n @param c The share price.\n @param mu The initial share price.\n @return result The amount of shares the user receives."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "calculateSharesOutGivenBondsInDown",
-            "nameLocation": "7305:34:45",
+            "nameLocation": "7087:34:55",
             "parameters": {
-              "id": 11714,
+              "id": 14638,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11703,
+                  "id": 14627,
                   "mutability": "mutable",
-                  "name": "z",
-                  "nameLocation": "7357:1:45",
+                  "name": "ze",
+                  "nameLocation": "7139:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11744,
-                  "src": "7349:9:45",
+                  "scope": 14668,
+                  "src": "7131:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4209,10 +4209,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11702,
+                    "id": 14626,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7349:7:45",
+                    "src": "7131:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4222,13 +4222,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11705,
+                  "id": 14629,
                   "mutability": "mutable",
                   "name": "y",
-                  "nameLocation": "7376:1:45",
+                  "nameLocation": "7159:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11744,
-                  "src": "7368:9:45",
+                  "scope": 14668,
+                  "src": "7151:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4236,10 +4236,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11704,
+                    "id": 14628,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7368:7:45",
+                    "src": "7151:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4249,13 +4249,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11707,
+                  "id": 14631,
                   "mutability": "mutable",
                   "name": "dy",
-                  "nameLocation": "7395:2:45",
+                  "nameLocation": "7178:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11744,
-                  "src": "7387:10:45",
+                  "scope": 14668,
+                  "src": "7170:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4263,10 +4263,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11706,
+                    "id": 14630,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7387:7:45",
+                    "src": "7170:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4276,13 +4276,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11709,
+                  "id": 14633,
                   "mutability": "mutable",
                   "name": "t",
-                  "nameLocation": "7415:1:45",
+                  "nameLocation": "7198:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11744,
-                  "src": "7407:9:45",
+                  "scope": 14668,
+                  "src": "7190:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4290,10 +4290,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11708,
+                    "id": 14632,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7407:7:45",
+                    "src": "7190:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4303,13 +4303,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11711,
+                  "id": 14635,
                   "mutability": "mutable",
                   "name": "c",
-                  "nameLocation": "7434:1:45",
+                  "nameLocation": "7217:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11744,
-                  "src": "7426:9:45",
+                  "scope": 14668,
+                  "src": "7209:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4317,10 +4317,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11710,
+                    "id": 14634,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7426:7:45",
+                    "src": "7209:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4330,13 +4330,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11713,
+                  "id": 14637,
                   "mutability": "mutable",
                   "name": "mu",
-                  "nameLocation": "7453:2:45",
+                  "nameLocation": "7236:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11744,
-                  "src": "7445:10:45",
+                  "scope": 14668,
+                  "src": "7228:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4344,10 +4344,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11712,
+                    "id": 14636,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7445:7:45",
+                    "src": "7228:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4356,21 +4356,21 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "7339:122:45"
+              "src": "7121:123:55"
             },
             "returnParameters": {
-              "id": 11717,
+              "id": 14641,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11716,
+                  "id": 14640,
                   "mutability": "mutable",
                   "name": "result",
-                  "nameLocation": "7493:6:45",
+                  "nameLocation": "7276:6:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11744,
-                  "src": "7485:14:45",
+                  "scope": 14668,
+                  "src": "7268:14:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4378,10 +4378,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11715,
+                    "id": 14639,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7485:7:45",
+                    "src": "7268:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4390,38 +4390,38 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "7484:16:45"
+              "src": "7267:16:55"
             },
-            "scope": 12066,
+            "scope": 15104,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 11853,
+            "id": 14777,
             "nodeType": "FunctionDefinition",
-            "src": "8539:1314:45",
+            "src": "8246:1320:55",
             "nodes": [],
             "body": {
-              "id": 11852,
+              "id": 14776,
               "nodeType": "Block",
-              "src": "8762:1091:45",
+              "src": "8470:1096:55",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    11765
+                    14689
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 11765,
+                      "id": 14689,
                       "mutability": "mutable",
                       "name": "k",
-                      "nameLocation": "8917:1:45",
+                      "nameLocation": "8626:1:55",
                       "nodeType": "VariableDeclaration",
-                      "scope": 11852,
-                      "src": "8909:9:45",
+                      "scope": 14776,
+                      "src": "8618:9:55",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -4429,10 +4429,10 @@ export const YieldSpaceMath =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 11764,
+                        "id": 14688,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "8909:7:45",
+                        "src": "8618:7:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4441,64 +4441,64 @@ export const YieldSpaceMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 11773,
+                  "id": 14697,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 11767,
-                        "name": "z",
+                        "id": 14691,
+                        "name": "ze",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11747,
-                        "src": "8925:1:45",
+                        "referencedDeclaration": 14671,
+                        "src": "8634:2:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11768,
+                        "id": 14692,
                         "name": "y",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11749,
-                        "src": "8928:1:45",
+                        "referencedDeclaration": 14673,
+                        "src": "8638:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11769,
+                        "id": 14693,
                         "name": "t",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11753,
-                        "src": "8931:1:45",
+                        "referencedDeclaration": 14677,
+                        "src": "8641:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11770,
+                        "id": 14694,
                         "name": "c",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11755,
-                        "src": "8934:1:45",
+                        "referencedDeclaration": 14679,
+                        "src": "8644:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11771,
+                        "id": 14695,
                         "name": "mu",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11757,
-                        "src": "8937:2:45",
+                        "referencedDeclaration": 14681,
+                        "src": "8647:2:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4528,18 +4528,18 @@ export const YieldSpaceMath =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 11766,
+                      "id": 14690,
                       "name": "kUp",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12031,
-                      "src": "8921:3:45",
+                      "referencedDeclaration": 15069,
+                      "src": "8630:3:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "id": 11772,
+                    "id": 14696,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4548,7 +4548,7 @@ export const YieldSpaceMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "8921:19:45",
+                    "src": "8630:20:55",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -4556,22 +4556,22 @@ export const YieldSpaceMath =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "8909:31:45"
+                  "src": "8618:32:55"
                 },
                 {
                   "expression": {
-                    "id": 11782,
+                    "id": 14706,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 11774,
+                      "id": 14698,
                       "name": "y",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11749,
-                      "src": "8979:1:45",
+                      "referencedDeclaration": 14673,
+                      "src": "8689:1:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -4582,12 +4582,12 @@ export const YieldSpaceMath =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 11780,
+                          "id": 14704,
                           "name": "t",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11753,
-                          "src": "8996:1:45",
+                          "referencedDeclaration": 14677,
+                          "src": "8706:1:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -4608,18 +4608,18 @@ export const YieldSpaceMath =
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 11777,
+                              "id": 14701,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "leftExpression": {
-                                "id": 11775,
+                                "id": 14699,
                                 "name": "y",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11749,
-                                "src": "8984:1:45",
+                                "referencedDeclaration": 14673,
+                                "src": "8694:1:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -4628,53 +4628,53 @@ export const YieldSpaceMath =
                               "nodeType": "BinaryOperation",
                               "operator": "+",
                               "rightExpression": {
-                                "id": 11776,
+                                "id": 14700,
                                 "name": "dy",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11751,
-                                "src": "8988:2:45",
+                                "referencedDeclaration": 14675,
+                                "src": "8698:2:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "src": "8984:6:45",
+                              "src": "8694:6:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             }
                           ],
-                          "id": 11778,
+                          "id": 14702,
                           "isConstant": false,
                           "isInlineArray": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "TupleExpression",
-                          "src": "8983:8:45",
+                          "src": "8693:8:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11779,
+                        "id": 14703,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "8992:3:45",
+                        "memberLocation": "8702:3:55",
                         "memberName": "pow",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9958,
-                        "src": "8983:12:45",
+                        "referencedDeclaration": 10559,
+                        "src": "8693:12:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 11781,
+                      "id": 14705,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4683,22 +4683,22 @@ export const YieldSpaceMath =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "8983:15:45",
+                      "src": "8693:15:55",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "8979:19:45",
+                    "src": "8689:19:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 11783,
+                  "id": 14707,
                   "nodeType": "ExpressionStatement",
-                  "src": "8979:19:45"
+                  "src": "8689:19:55"
                 },
                 {
                   "condition": {
@@ -4706,18 +4706,18 @@ export const YieldSpaceMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 11786,
+                    "id": 14710,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 11784,
+                      "id": 14708,
                       "name": "k",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11765,
-                      "src": "9076:1:45",
+                      "referencedDeclaration": 14689,
+                      "src": "8786:1:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -4726,44 +4726,44 @@ export const YieldSpaceMath =
                     "nodeType": "BinaryOperation",
                     "operator": "<",
                     "rightExpression": {
-                      "id": 11785,
+                      "id": 14709,
                       "name": "y",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11749,
-                      "src": "9080:1:45",
+                      "referencedDeclaration": 14673,
+                      "src": "8790:1:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "9076:5:45",
+                    "src": "8786:5:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 11792,
+                  "id": 14716,
                   "nodeType": "IfStatement",
-                  "src": "9072:53:45",
+                  "src": "8782:53:55",
                   "trueBody": {
-                    "id": 11791,
+                    "id": 14715,
                     "nodeType": "Block",
-                    "src": "9083:42:45",
+                    "src": "8793:42:55",
                     "statements": [
                       {
                         "expression": {
                           "components": [
                             {
                               "hexValue": "30",
-                              "id": 11787,
+                              "id": 14711,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "9105:1:45",
+                              "src": "8815:1:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_0_by_1",
                                 "typeString": "int_const 0"
@@ -4772,14 +4772,14 @@ export const YieldSpaceMath =
                             },
                             {
                               "hexValue": "66616c7365",
-                              "id": 11788,
+                              "id": 14712,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "bool",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "9108:5:45",
+                              "src": "8818:5:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_bool",
                                 "typeString": "bool"
@@ -4787,41 +4787,41 @@ export const YieldSpaceMath =
                               "value": "false"
                             }
                           ],
-                          "id": 11789,
+                          "id": 14713,
                           "isConstant": false,
                           "isInlineArray": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "TupleExpression",
-                          "src": "9104:10:45",
+                          "src": "8814:10:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$_t_rational_0_by_1_$_t_bool_$",
                             "typeString": "tuple(int_const 0,bool)"
                           }
                         },
-                        "functionReturnParameters": 11763,
-                        "id": 11790,
+                        "functionReturnParameters": 14687,
+                        "id": 14714,
                         "nodeType": "Return",
-                        "src": "9097:17:45"
+                        "src": "8807:17:55"
                       }
                     ]
                   }
                 },
                 {
                   "assignments": [
-                    11794
+                    14718
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 11794,
+                      "id": 14718,
                       "mutability": "mutable",
                       "name": "_z",
-                      "nameLocation": "9288:2:45",
+                      "nameLocation": "8998:2:55",
                       "nodeType": "VariableDeclaration",
-                      "scope": 11852,
-                      "src": "9280:10:45",
+                      "scope": 14776,
+                      "src": "8990:10:55",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -4829,10 +4829,10 @@ export const YieldSpaceMath =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 11793,
+                        "id": 14717,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "9280:7:45",
+                        "src": "8990:7:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4841,28 +4841,28 @@ export const YieldSpaceMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 11803,
+                  "id": 14727,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 11800,
+                        "id": 14724,
                         "name": "mu",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11757,
-                        "src": "9310:2:45",
+                        "referencedDeclaration": 14681,
+                        "src": "9020:2:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11801,
+                        "id": 14725,
                         "name": "c",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11755,
-                        "src": "9314:1:45",
+                        "referencedDeclaration": 14679,
+                        "src": "9024:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4887,18 +4887,18 @@ export const YieldSpaceMath =
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             },
-                            "id": 11797,
+                            "id": 14721,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 11795,
+                              "id": 14719,
                               "name": "k",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11765,
-                              "src": "9294:1:45",
+                              "referencedDeclaration": 14689,
+                              "src": "9004:1:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -4907,53 +4907,53 @@ export const YieldSpaceMath =
                             "nodeType": "BinaryOperation",
                             "operator": "-",
                             "rightExpression": {
-                              "id": 11796,
+                              "id": 14720,
                               "name": "y",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11749,
-                              "src": "9298:1:45",
+                              "referencedDeclaration": 14673,
+                              "src": "9008:1:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
-                            "src": "9294:5:45",
+                            "src": "9004:5:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           }
                         ],
-                        "id": 11798,
+                        "id": 14722,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "9293:7:45",
+                        "src": "9003:7:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 11799,
+                      "id": 14723,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "9301:8:45",
+                      "memberLocation": "9011:8:55",
                       "memberName": "mulDivUp",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9863,
-                      "src": "9293:16:45",
+                      "referencedDeclaration": 10464,
+                      "src": "9003:16:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                         "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "id": 11802,
+                    "id": 14726,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4962,7 +4962,7 @@ export const YieldSpaceMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "9293:23:45",
+                    "src": "9003:23:55",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -4970,7 +4970,7 @@ export const YieldSpaceMath =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "9280:36:45"
+                  "src": "8990:36:55"
                 },
                 {
                   "condition": {
@@ -4978,18 +4978,18 @@ export const YieldSpaceMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 11806,
+                    "id": 14730,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 11804,
+                      "id": 14728,
                       "name": "_z",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11794,
-                      "src": "9330:2:45",
+                      "referencedDeclaration": 14718,
+                      "src": "9040:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -4998,42 +4998,42 @@ export const YieldSpaceMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 11805,
+                      "id": 14729,
                       "name": "ONE",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9788,
-                      "src": "9336:3:45",
+                      "referencedDeclaration": 10389,
+                      "src": "9046:3:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "9330:9:45",
+                    "src": "9040:9:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": {
-                    "id": 11828,
+                    "id": 14752,
                     "nodeType": "Block",
-                    "src": "9466:123:45",
+                    "src": "9176:123:55",
                     "statements": [
                       {
                         "expression": {
-                          "id": 11826,
+                          "id": 14750,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 11818,
+                            "id": 14742,
                             "name": "_z",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11794,
-                            "src": "9551:2:45",
+                            "referencedDeclaration": 14718,
+                            "src": "9261:2:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -5046,12 +5046,12 @@ export const YieldSpaceMath =
                               {
                                 "arguments": [
                                   {
-                                    "id": 11823,
+                                    "id": 14747,
                                     "name": "t",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 11753,
-                                    "src": "9575:1:45",
+                                    "referencedDeclaration": 14677,
+                                    "src": "9285:1:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -5066,33 +5066,33 @@ export const YieldSpaceMath =
                                     }
                                   ],
                                   "expression": {
-                                    "id": 11821,
+                                    "id": 14745,
                                     "name": "ONE",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 9788,
-                                    "src": "9563:3:45",
+                                    "referencedDeclaration": 10389,
+                                    "src": "9273:3:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "id": 11822,
+                                  "id": 14746,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
-                                  "memberLocation": "9567:7:45",
+                                  "memberLocation": "9277:7:55",
                                   "memberName": "divDown",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 9849,
-                                  "src": "9563:11:45",
+                                  "referencedDeclaration": 10450,
+                                  "src": "9273:11:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 11824,
+                                "id": 14748,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -5101,7 +5101,7 @@ export const YieldSpaceMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "9563:14:45",
+                                "src": "9273:14:55",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -5117,33 +5117,33 @@ export const YieldSpaceMath =
                                 }
                               ],
                               "expression": {
-                                "id": 11819,
+                                "id": 14743,
                                 "name": "_z",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11794,
-                                "src": "9556:2:45",
+                                "referencedDeclaration": 14718,
+                                "src": "9266:2:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 11820,
+                              "id": 14744,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "9559:3:45",
+                              "memberLocation": "9269:3:55",
                               "memberName": "pow",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 9958,
-                              "src": "9556:6:45",
+                              "referencedDeclaration": 10559,
+                              "src": "9266:6:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 11825,
+                            "id": 14749,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -5152,47 +5152,47 @@ export const YieldSpaceMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "9556:22:45",
+                            "src": "9266:22:55",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "9551:27:45",
+                          "src": "9261:27:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11827,
+                        "id": 14751,
                         "nodeType": "ExpressionStatement",
-                        "src": "9551:27:45"
+                        "src": "9261:27:55"
                       }
                     ]
                   },
-                  "id": 11829,
+                  "id": 14753,
                   "nodeType": "IfStatement",
-                  "src": "9326:263:45",
+                  "src": "9036:263:55",
                   "trueBody": {
-                    "id": 11817,
+                    "id": 14741,
                     "nodeType": "Block",
-                    "src": "9341:119:45",
+                    "src": "9051:119:55",
                     "statements": [
                       {
                         "expression": {
-                          "id": 11815,
+                          "id": 14739,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 11807,
+                            "id": 14731,
                             "name": "_z",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11794,
-                            "src": "9424:2:45",
+                            "referencedDeclaration": 14718,
+                            "src": "9134:2:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -5205,12 +5205,12 @@ export const YieldSpaceMath =
                               {
                                 "arguments": [
                                   {
-                                    "id": 11812,
+                                    "id": 14736,
                                     "name": "t",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 11753,
-                                    "src": "9446:1:45",
+                                    "referencedDeclaration": 14677,
+                                    "src": "9156:1:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -5225,33 +5225,33 @@ export const YieldSpaceMath =
                                     }
                                   ],
                                   "expression": {
-                                    "id": 11810,
+                                    "id": 14734,
                                     "name": "ONE",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 9788,
-                                    "src": "9436:3:45",
+                                    "referencedDeclaration": 10389,
+                                    "src": "9146:3:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "id": 11811,
+                                  "id": 14735,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
-                                  "memberLocation": "9440:5:45",
+                                  "memberLocation": "9150:5:55",
                                   "memberName": "divUp",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 9899,
-                                  "src": "9436:9:45",
+                                  "referencedDeclaration": 10500,
+                                  "src": "9146:9:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 11813,
+                                "id": 14737,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -5260,7 +5260,7 @@ export const YieldSpaceMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "9436:12:45",
+                                "src": "9146:12:55",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -5276,33 +5276,33 @@ export const YieldSpaceMath =
                                 }
                               ],
                               "expression": {
-                                "id": 11808,
+                                "id": 14732,
                                 "name": "_z",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11794,
-                                "src": "9429:2:45",
+                                "referencedDeclaration": 14718,
+                                "src": "9139:2:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 11809,
+                              "id": 14733,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "9432:3:45",
+                              "memberLocation": "9142:3:55",
                               "memberName": "pow",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 9958,
-                              "src": "9429:6:45",
+                              "referencedDeclaration": 10559,
+                              "src": "9139:6:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 11814,
+                            "id": 14738,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -5311,40 +5311,40 @@ export const YieldSpaceMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "9429:20:45",
+                            "src": "9139:20:55",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "9424:25:45",
+                          "src": "9134:25:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11816,
+                        "id": 14740,
                         "nodeType": "ExpressionStatement",
-                        "src": "9424:25:45"
+                        "src": "9134:25:55"
                       }
                     ]
                   }
                 },
                 {
                   "expression": {
-                    "id": 11835,
+                    "id": 14759,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 11830,
+                      "id": 14754,
                       "name": "_z",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11794,
-                      "src": "9666:2:45",
+                      "referencedDeclaration": 14718,
+                      "src": "9376:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -5355,12 +5355,12 @@ export const YieldSpaceMath =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 11833,
+                          "id": 14757,
                           "name": "mu",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11757,
-                          "src": "9680:2:45",
+                          "referencedDeclaration": 14681,
+                          "src": "9390:2:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -5375,33 +5375,33 @@ export const YieldSpaceMath =
                           }
                         ],
                         "expression": {
-                          "id": 11831,
+                          "id": 14755,
                           "name": "_z",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11794,
-                          "src": "9671:2:45",
+                          "referencedDeclaration": 14718,
+                          "src": "9381:2:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11832,
+                        "id": 14756,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "9674:5:45",
+                        "memberLocation": "9384:5:55",
                         "memberName": "divUp",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9899,
-                        "src": "9671:8:45",
+                        "referencedDeclaration": 10500,
+                        "src": "9381:8:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 11834,
+                      "id": 14758,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -5410,22 +5410,22 @@ export const YieldSpaceMath =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "9671:12:45",
+                      "src": "9381:12:55",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "9666:17:45",
+                    "src": "9376:17:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 11836,
+                  "id": 14760,
                   "nodeType": "ExpressionStatement",
-                  "src": "9666:17:45"
+                  "src": "9376:17:55"
                 },
                 {
                   "condition": {
@@ -5433,18 +5433,18 @@ export const YieldSpaceMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 11839,
+                    "id": 14763,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 11837,
-                      "name": "z",
+                      "id": 14761,
+                      "name": "ze",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11747,
-                      "src": "9775:1:45",
+                      "referencedDeclaration": 14671,
+                      "src": "9486:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -5453,45 +5453,45 @@ export const YieldSpaceMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">",
                     "rightExpression": {
-                      "id": 11838,
+                      "id": 14762,
                       "name": "_z",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11794,
-                      "src": "9779:2:45",
+                      "referencedDeclaration": 14718,
+                      "src": "9491:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "9775:6:45",
+                    "src": "9486:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 11847,
+                  "id": 14771,
                   "nodeType": "IfStatement",
-                  "src": "9771:52:45",
+                  "src": "9482:54:55",
                   "trueBody": {
-                    "id": 11846,
+                    "id": 14770,
                     "nodeType": "Block",
-                    "src": "9783:40:45",
+                    "src": "9495:41:55",
                     "statements": [
                       {
                         "expression": {
-                          "id": 11844,
+                          "id": 14768,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 11840,
+                            "id": 14764,
                             "name": "result",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11760,
-                            "src": "9797:6:45",
+                            "referencedDeclaration": 14684,
+                            "src": "9509:6:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -5504,18 +5504,18 @@ export const YieldSpaceMath =
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             },
-                            "id": 11843,
+                            "id": 14767,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 11841,
-                              "name": "z",
+                              "id": 14765,
+                              "name": "ze",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11747,
-                              "src": "9806:1:45",
+                              "referencedDeclaration": 14671,
+                              "src": "9518:2:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -5524,50 +5524,50 @@ export const YieldSpaceMath =
                             "nodeType": "BinaryOperation",
                             "operator": "-",
                             "rightExpression": {
-                              "id": 11842,
+                              "id": 14766,
                               "name": "_z",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11794,
-                              "src": "9810:2:45",
+                              "referencedDeclaration": 14718,
+                              "src": "9523:2:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
-                            "src": "9806:6:45",
+                            "src": "9518:7:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "9797:15:45",
+                          "src": "9509:16:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11845,
+                        "id": 14769,
                         "nodeType": "ExpressionStatement",
-                        "src": "9797:15:45"
+                        "src": "9509:16:55"
                       }
                     ]
                   }
                 },
                 {
                   "expression": {
-                    "id": 11850,
+                    "id": 14774,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 11848,
+                      "id": 14772,
                       "name": "success",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11762,
-                      "src": "9832:7:45",
+                      "referencedDeclaration": 14686,
+                      "src": "9545:7:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -5577,56 +5577,56 @@ export const YieldSpaceMath =
                     "operator": "=",
                     "rightHandSide": {
                       "hexValue": "74727565",
-                      "id": 11849,
+                      "id": 14773,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "bool",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "9842:4:45",
+                      "src": "9555:4:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       },
                       "value": "true"
                     },
-                    "src": "9832:14:45",
+                    "src": "9545:14:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 11851,
+                  "id": 14775,
                   "nodeType": "ExpressionStatement",
-                  "src": "9832:14:45"
+                  "src": "9545:14:55"
                 }
               ]
             },
             "documentation": {
-              "id": 11745,
+              "id": 14669,
               "nodeType": "StructuredDocumentation",
-              "src": "7791:743:45",
-              "text": "@dev Calculates the amount of shares a user will receive from the pool\n      by providing a specified amount of bonds. This function returns a\n      success flag instead of reverting. We underestimate the amount of\n      shares out.\n @param z Amount of share reserves in the pool\n @param y Amount of bond reserves in the pool\n @param dy Amount of bonds user wants to provide\n @param t Amount of time elapsed since term start\n @param c Conversion rate between base and shares\n @param mu Interest normalization factor for shares\n @return result The amount of shares the user will receive\n @return success A flag indicating whether or not the calculation succeeded."
+              "src": "7575:666:55",
+              "text": "@dev Calculates the amount of shares a user will receive from the pool\n      by providing a specified amount of bonds. This function returns a\n      success flag instead of reverting. We underestimate the amount of\n      shares out.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param dy The amount of bonds paid to the pool.\n @param t The time elapsed since the term's start.\n @param c The share price.\n @param mu The initial share price.\n @return result The amount of shares the user receives\n @return success A flag indicating if the calculation succeeded."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "calculateSharesOutGivenBondsInDownSafe",
-            "nameLocation": "8548:38:45",
+            "nameLocation": "8255:38:55",
             "parameters": {
-              "id": 11758,
+              "id": 14682,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11747,
+                  "id": 14671,
                   "mutability": "mutable",
-                  "name": "z",
-                  "nameLocation": "8604:1:45",
+                  "name": "ze",
+                  "nameLocation": "8311:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11853,
-                  "src": "8596:9:45",
+                  "scope": 14777,
+                  "src": "8303:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5634,10 +5634,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11746,
+                    "id": 14670,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8596:7:45",
+                    "src": "8303:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -5647,13 +5647,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11749,
+                  "id": 14673,
                   "mutability": "mutable",
                   "name": "y",
-                  "nameLocation": "8623:1:45",
+                  "nameLocation": "8331:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11853,
-                  "src": "8615:9:45",
+                  "scope": 14777,
+                  "src": "8323:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5661,10 +5661,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11748,
+                    "id": 14672,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8615:7:45",
+                    "src": "8323:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -5674,13 +5674,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11751,
+                  "id": 14675,
                   "mutability": "mutable",
                   "name": "dy",
-                  "nameLocation": "8642:2:45",
+                  "nameLocation": "8350:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11853,
-                  "src": "8634:10:45",
+                  "scope": 14777,
+                  "src": "8342:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5688,10 +5688,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11750,
+                    "id": 14674,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8634:7:45",
+                    "src": "8342:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -5701,13 +5701,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11753,
+                  "id": 14677,
                   "mutability": "mutable",
                   "name": "t",
-                  "nameLocation": "8662:1:45",
+                  "nameLocation": "8370:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11853,
-                  "src": "8654:9:45",
+                  "scope": 14777,
+                  "src": "8362:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5715,10 +5715,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11752,
+                    "id": 14676,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8654:7:45",
+                    "src": "8362:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -5728,13 +5728,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11755,
+                  "id": 14679,
                   "mutability": "mutable",
                   "name": "c",
-                  "nameLocation": "8681:1:45",
+                  "nameLocation": "8389:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11853,
-                  "src": "8673:9:45",
+                  "scope": 14777,
+                  "src": "8381:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5742,10 +5742,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11754,
+                    "id": 14678,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8673:7:45",
+                    "src": "8381:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -5755,13 +5755,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11757,
+                  "id": 14681,
                   "mutability": "mutable",
                   "name": "mu",
-                  "nameLocation": "8700:2:45",
+                  "nameLocation": "8408:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11853,
-                  "src": "8692:10:45",
+                  "scope": 14777,
+                  "src": "8400:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5769,10 +5769,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11756,
+                    "id": 14680,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8692:7:45",
+                    "src": "8400:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -5781,21 +5781,21 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "8586:122:45"
+              "src": "8293:123:55"
             },
             "returnParameters": {
-              "id": 11763,
+              "id": 14687,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11760,
+                  "id": 14684,
                   "mutability": "mutable",
                   "name": "result",
-                  "nameLocation": "8740:6:45",
+                  "nameLocation": "8448:6:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11853,
-                  "src": "8732:14:45",
+                  "scope": 14777,
+                  "src": "8440:14:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5803,10 +5803,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11759,
+                    "id": 14683,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8732:7:45",
+                    "src": "8440:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -5816,13 +5816,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11762,
+                  "id": 14686,
                   "mutability": "mutable",
                   "name": "success",
-                  "nameLocation": "8753:7:45",
+                  "nameLocation": "8461:7:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11853,
-                  "src": "8748:12:45",
+                  "scope": 14777,
+                  "src": "8456:12:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5830,10 +5830,10 @@ export const YieldSpaceMath =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 11761,
+                    "id": 14685,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8748:4:45",
+                    "src": "8456:4:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -5842,38 +5842,38 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "8731:30:45"
+              "src": "8439:30:55"
             },
-            "scope": 12066,
+            "scope": 15104,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 11922,
+            "id": 14853,
             "nodeType": "FunctionDefinition",
-            "src": "10390:1124:45",
+            "src": "9985:1218:55",
             "nodes": [],
             "body": {
-              "id": 11921,
+              "id": 14852,
               "nodeType": "Block",
-              "src": "10549:965:45",
+              "src": "10153:1050:55",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    11870
+                    14794
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 11870,
+                      "id": 14794,
                       "mutability": "mutable",
                       "name": "k",
-                      "nameLocation": "11036:1:45",
+                      "nameLocation": "10667:1:55",
                       "nodeType": "VariableDeclaration",
-                      "scope": 11921,
-                      "src": "11028:9:45",
+                      "scope": 14852,
+                      "src": "10659:9:55",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -5881,10 +5881,10 @@ export const YieldSpaceMath =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 11869,
+                        "id": 14793,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "11028:7:45",
+                        "src": "10659:7:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5893,64 +5893,64 @@ export const YieldSpaceMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 11878,
+                  "id": 14802,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 11872,
-                        "name": "z",
+                        "id": 14796,
+                        "name": "ze",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11856,
-                        "src": "11044:1:45",
+                        "referencedDeclaration": 14780,
+                        "src": "10677:2:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11873,
+                        "id": 14797,
                         "name": "y",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11858,
-                        "src": "11047:1:45",
+                        "referencedDeclaration": 14782,
+                        "src": "10681:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11874,
+                        "id": 14798,
                         "name": "t",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11860,
-                        "src": "11050:1:45",
+                        "referencedDeclaration": 14784,
+                        "src": "10684:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11875,
+                        "id": 14799,
                         "name": "c",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11862,
-                        "src": "11053:1:45",
+                        "referencedDeclaration": 14786,
+                        "src": "10687:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11876,
+                        "id": 14800,
                         "name": "mu",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11864,
-                        "src": "11056:2:45",
+                        "referencedDeclaration": 14788,
+                        "src": "10690:2:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5980,18 +5980,18 @@ export const YieldSpaceMath =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 11871,
-                      "name": "kUp",
+                      "id": 14795,
+                      "name": "kDown",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12031,
-                      "src": "11040:3:45",
+                      "referencedDeclaration": 15103,
+                      "src": "10671:5:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "id": 11877,
+                    "id": 14801,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6000,7 +6000,7 @@ export const YieldSpaceMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "11040:19:45",
+                    "src": "10671:22:55",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -6008,22 +6008,22 @@ export const YieldSpaceMath =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "11028:31:45"
+                  "src": "10659:34:55"
                 },
                 {
                   "assignments": [
-                    11880
+                    14804
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 11880,
+                      "id": 14804,
                       "mutability": "mutable",
-                      "name": "optimalY",
-                      "nameLocation": "11077:8:45",
+                      "name": "optimalZe",
+                      "nameLocation": "10711:9:55",
                       "nodeType": "VariableDeclaration",
-                      "scope": 11921,
-                      "src": "11069:16:45",
+                      "scope": 14852,
+                      "src": "10703:17:55",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -6031,10 +6031,10 @@ export const YieldSpaceMath =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 11879,
+                        "id": 14803,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "11069:7:45",
+                        "src": "10703:7:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6043,7 +6043,7 @@ export const YieldSpaceMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 11890,
+                  "id": 14814,
                   "initialValue": {
                     "arguments": [
                       {
@@ -6051,7 +6051,7 @@ export const YieldSpaceMath =
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 11888,
+                        "id": 14812,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -6059,12 +6059,12 @@ export const YieldSpaceMath =
                         "leftExpression": {
                           "arguments": [
                             {
-                              "id": 11885,
+                              "id": 14809,
                               "name": "mu",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11864,
-                              "src": "11106:2:45",
+                              "referencedDeclaration": 14788,
+                              "src": "10741:2:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -6079,33 +6079,33 @@ export const YieldSpaceMath =
                               }
                             ],
                             "expression": {
-                              "id": 11883,
+                              "id": 14807,
                               "name": "c",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11862,
-                              "src": "11096:1:45",
+                              "referencedDeclaration": 14786,
+                              "src": "10733:1:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
-                            "id": 11884,
+                            "id": 14808,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "11098:7:45",
-                            "memberName": "divDown",
+                            "memberLocation": "10735:5:55",
+                            "memberName": "divUp",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 9849,
-                            "src": "11096:9:45",
+                            "referencedDeclaration": 10500,
+                            "src": "10733:7:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                               "typeString": "function (uint256,uint256) pure returns (uint256)"
                             }
                           },
-                          "id": 11886,
+                          "id": 14810,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -6114,7 +6114,7 @@ export const YieldSpaceMath =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "11096:13:45",
+                          "src": "10733:11:55",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -6124,18 +6124,18 @@ export const YieldSpaceMath =
                         "nodeType": "BinaryOperation",
                         "operator": "+",
                         "rightExpression": {
-                          "id": 11887,
+                          "id": 14811,
                           "name": "ONE",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 9788,
-                          "src": "11112:3:45",
+                          "referencedDeclaration": 10389,
+                          "src": "10747:3:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "src": "11096:19:45",
+                        "src": "10733:17:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6150,33 +6150,33 @@ export const YieldSpaceMath =
                         }
                       ],
                       "expression": {
-                        "id": 11881,
+                        "id": 14805,
                         "name": "k",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11870,
-                        "src": "11088:1:45",
+                        "referencedDeclaration": 14794,
+                        "src": "10723:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 11882,
+                      "id": 14806,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "11090:5:45",
-                      "memberName": "divUp",
+                      "memberLocation": "10725:7:55",
+                      "memberName": "divDown",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9899,
-                      "src": "11088:7:45",
+                      "referencedDeclaration": 10450,
+                      "src": "10723:9:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "id": 11889,
+                    "id": 14813,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6185,7 +6185,7 @@ export const YieldSpaceMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "11088:28:45",
+                    "src": "10723:28:55",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -6193,7 +6193,7 @@ export const YieldSpaceMath =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "11069:47:45"
+                  "src": "10703:48:55"
                 },
                 {
                   "condition": {
@@ -6201,18 +6201,18 @@ export const YieldSpaceMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 11893,
+                    "id": 14817,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 11891,
-                      "name": "optimalY",
+                      "id": 14815,
+                      "name": "optimalZe",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11880,
-                      "src": "11130:8:45",
+                      "referencedDeclaration": 14804,
+                      "src": "10765:9:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -6221,42 +6221,42 @@ export const YieldSpaceMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 11892,
+                      "id": 14816,
                       "name": "ONE",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9788,
-                      "src": "11142:3:45",
+                      "referencedDeclaration": 10389,
+                      "src": "10778:3:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "11130:15:45",
+                    "src": "10765:16:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": {
-                    "id": 11915,
+                    "id": 14839,
                     "nodeType": "Block",
-                    "src": "11284:135:45",
+                    "src": "10927:134:55",
                     "statements": [
                       {
                         "expression": {
-                          "id": 11913,
+                          "id": 14837,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 11905,
-                            "name": "optimalY",
+                            "id": 14829,
+                            "name": "optimalZe",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11880,
-                            "src": "11369:8:45",
+                            "referencedDeclaration": 14804,
+                            "src": "11011:9:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -6269,12 +6269,12 @@ export const YieldSpaceMath =
                               {
                                 "arguments": [
                                   {
-                                    "id": 11910,
+                                    "id": 14834,
                                     "name": "t",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 11860,
-                                    "src": "11405:1:45",
+                                    "referencedDeclaration": 14784,
+                                    "src": "11047:1:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -6289,33 +6289,33 @@ export const YieldSpaceMath =
                                     }
                                   ],
                                   "expression": {
-                                    "id": 11908,
+                                    "id": 14832,
                                     "name": "ONE",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 9788,
-                                    "src": "11393:3:45",
+                                    "referencedDeclaration": 10389,
+                                    "src": "11037:3:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "id": 11909,
+                                  "id": 14833,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
-                                  "memberLocation": "11397:7:45",
-                                  "memberName": "divDown",
+                                  "memberLocation": "11041:5:55",
+                                  "memberName": "divUp",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 9849,
-                                  "src": "11393:11:45",
+                                  "referencedDeclaration": 10500,
+                                  "src": "11037:9:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 11911,
+                                "id": 14835,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -6324,7 +6324,7 @@ export const YieldSpaceMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "11393:14:45",
+                                "src": "11037:12:55",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -6340,33 +6340,33 @@ export const YieldSpaceMath =
                                 }
                               ],
                               "expression": {
-                                "id": 11906,
-                                "name": "optimalY",
+                                "id": 14830,
+                                "name": "optimalZe",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11880,
-                                "src": "11380:8:45",
+                                "referencedDeclaration": 14804,
+                                "src": "11023:9:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 11907,
+                              "id": 14831,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "11389:3:45",
+                              "memberLocation": "11033:3:55",
                               "memberName": "pow",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 9958,
-                              "src": "11380:12:45",
+                              "referencedDeclaration": 10559,
+                              "src": "11023:13:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 11912,
+                            "id": 14836,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -6375,47 +6375,47 @@ export const YieldSpaceMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "11380:28:45",
+                            "src": "11023:27:55",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "11369:39:45",
+                          "src": "11011:39:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11914,
+                        "id": 14838,
                         "nodeType": "ExpressionStatement",
-                        "src": "11369:39:45"
+                        "src": "11011:39:55"
                       }
                     ]
                   },
-                  "id": 11916,
+                  "id": 14840,
                   "nodeType": "IfStatement",
-                  "src": "11126:293:45",
+                  "src": "10761:300:55",
                   "trueBody": {
-                    "id": 11904,
+                    "id": 14828,
                     "nodeType": "Block",
-                    "src": "11147:131:45",
+                    "src": "10783:138:55",
                     "statements": [
                       {
                         "expression": {
-                          "id": 11902,
+                          "id": 14826,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 11894,
-                            "name": "optimalY",
+                            "id": 14818,
+                            "name": "optimalZe",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11880,
-                            "src": "11230:8:45",
+                            "referencedDeclaration": 14804,
+                            "src": "10869:9:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -6428,12 +6428,12 @@ export const YieldSpaceMath =
                               {
                                 "arguments": [
                                   {
-                                    "id": 11899,
+                                    "id": 14823,
                                     "name": "t",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 11860,
-                                    "src": "11264:1:45",
+                                    "referencedDeclaration": 14784,
+                                    "src": "10907:1:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -6448,33 +6448,33 @@ export const YieldSpaceMath =
                                     }
                                   ],
                                   "expression": {
-                                    "id": 11897,
+                                    "id": 14821,
                                     "name": "ONE",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 9788,
-                                    "src": "11254:3:45",
+                                    "referencedDeclaration": 10389,
+                                    "src": "10895:3:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "id": 11898,
+                                  "id": 14822,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
-                                  "memberLocation": "11258:5:45",
-                                  "memberName": "divUp",
+                                  "memberLocation": "10899:7:55",
+                                  "memberName": "divDown",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 9899,
-                                  "src": "11254:9:45",
+                                  "referencedDeclaration": 10450,
+                                  "src": "10895:11:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 11900,
+                                "id": 14824,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -6483,7 +6483,7 @@ export const YieldSpaceMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "11254:12:45",
+                                "src": "10895:14:55",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -6499,33 +6499,33 @@ export const YieldSpaceMath =
                                 }
                               ],
                               "expression": {
-                                "id": 11895,
-                                "name": "optimalY",
+                                "id": 14819,
+                                "name": "optimalZe",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11880,
-                                "src": "11241:8:45",
+                                "referencedDeclaration": 14804,
+                                "src": "10881:9:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 11896,
+                              "id": 14820,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "11250:3:45",
+                              "memberLocation": "10891:3:55",
                               "memberName": "pow",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 9958,
-                              "src": "11241:12:45",
+                              "referencedDeclaration": 10559,
+                              "src": "10881:13:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 11901,
+                            "id": 14825,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -6534,25 +6534,121 @@ export const YieldSpaceMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "11241:26:45",
+                            "src": "10881:29:55",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "11230:37:45",
+                          "src": "10869:41:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11903,
+                        "id": 14827,
                         "nodeType": "ExpressionStatement",
-                        "src": "11230:37:45"
+                        "src": "10869:41:55"
                       }
                     ]
                   }
+                },
+                {
+                  "expression": {
+                    "id": 14846,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 14841,
+                      "name": "optimalZe",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14804,
+                      "src": "11070:9:55",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 14844,
+                          "name": "mu",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14788,
+                          "src": "11100:2:55",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "expression": {
+                          "id": 14842,
+                          "name": "optimalZe",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14804,
+                          "src": "11082:9:55",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 14843,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "11092:7:55",
+                        "memberName": "divDown",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10450,
+                        "src": "11082:17:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
+                          "typeString": "function (uint256,uint256) pure returns (uint256)"
+                        }
+                      },
+                      "id": 14845,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "11082:21:55",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "11070:33:55",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 14847,
+                  "nodeType": "ExpressionStatement",
+                  "src": "11070:33:55"
                 },
                 {
                   "expression": {
@@ -6560,18 +6656,18 @@ export const YieldSpaceMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 11919,
+                    "id": 14850,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 11917,
-                      "name": "y",
+                      "id": 14848,
+                      "name": "optimalZe",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11858,
-                      "src": "11495:1:45",
+                      "referencedDeclaration": 14804,
+                      "src": "11182:9:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -6580,54 +6676,54 @@ export const YieldSpaceMath =
                     "nodeType": "BinaryOperation",
                     "operator": "-",
                     "rightExpression": {
-                      "id": 11918,
-                      "name": "optimalY",
+                      "id": 14849,
+                      "name": "ze",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11880,
-                      "src": "11499:8:45",
+                      "referencedDeclaration": 14780,
+                      "src": "11194:2:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "11495:12:45",
+                    "src": "11182:14:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 11868,
-                  "id": 11920,
+                  "functionReturnParameters": 14792,
+                  "id": 14851,
                   "nodeType": "Return",
-                  "src": "11488:19:45"
+                  "src": "11175:21:55"
                 }
               ]
             },
             "documentation": {
-              "id": 11854,
+              "id": 14778,
               "nodeType": "StructuredDocumentation",
-              "src": "9859:526:45",
-              "text": "@dev Calculates the maximum amount of bonds that can be purchased with\n      the specified reserves. We round so that the max buy amount is\n      underestimated.\n @param z Amount of share reserves in the pool\n @param y Amount of bond reserves in the pool\n @param t Amount of time elapsed since term start\n @param c Conversion rate between base and shares\n @param mu Interest normalization factor for shares\n @return The maximum amount of bonds that can be purchased."
+              "src": "9572:408:55",
+              "text": "@dev Calculates the share payment required to purchase the maximum\n      amount of bonds from the pool.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param t The time elapsed since the term's start.\n @param c The share price.\n @param mu The initial share price.\n @return The share payment to purchase the maximum amount of bonds."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "calculateMaxBuy",
-            "nameLocation": "10399:15:45",
+            "name": "calculateMaxBuySharesIn",
+            "nameLocation": "9994:23:55",
             "parameters": {
-              "id": 11865,
+              "id": 14789,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11856,
+                  "id": 14780,
                   "mutability": "mutable",
-                  "name": "z",
-                  "nameLocation": "10432:1:45",
+                  "name": "ze",
+                  "nameLocation": "10035:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11922,
-                  "src": "10424:9:45",
+                  "scope": 14853,
+                  "src": "10027:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6635,10 +6731,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11855,
+                    "id": 14779,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10424:7:45",
+                    "src": "10027:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -6648,13 +6744,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11858,
+                  "id": 14782,
                   "mutability": "mutable",
                   "name": "y",
-                  "nameLocation": "10451:1:45",
+                  "nameLocation": "10055:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11922,
-                  "src": "10443:9:45",
+                  "scope": 14853,
+                  "src": "10047:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6662,10 +6758,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11857,
+                    "id": 14781,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10443:7:45",
+                    "src": "10047:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -6675,13 +6771,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11860,
+                  "id": 14784,
                   "mutability": "mutable",
                   "name": "t",
-                  "nameLocation": "10470:1:45",
+                  "nameLocation": "10074:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11922,
-                  "src": "10462:9:45",
+                  "scope": 14853,
+                  "src": "10066:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6689,10 +6785,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11859,
+                    "id": 14783,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10462:7:45",
+                    "src": "10066:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -6702,13 +6798,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11862,
+                  "id": 14786,
                   "mutability": "mutable",
                   "name": "c",
-                  "nameLocation": "10489:1:45",
+                  "nameLocation": "10093:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11922,
-                  "src": "10481:9:45",
+                  "scope": 14853,
+                  "src": "10085:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6716,10 +6812,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11861,
+                    "id": 14785,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10481:7:45",
+                    "src": "10085:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -6729,13 +6825,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11864,
+                  "id": 14788,
                   "mutability": "mutable",
                   "name": "mu",
-                  "nameLocation": "10508:2:45",
+                  "nameLocation": "10112:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11922,
-                  "src": "10500:10:45",
+                  "scope": 14853,
+                  "src": "10104:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6743,10 +6839,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11863,
+                    "id": 14787,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10500:7:45",
+                    "src": "10104:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -6755,21 +6851,21 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "10414:102:45"
+              "src": "10017:103:55"
             },
             "returnParameters": {
-              "id": 11868,
+              "id": 14792,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11867,
+                  "id": 14791,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11922,
-                  "src": "10540:7:45",
+                  "scope": 14853,
+                  "src": "10144:7:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6777,10 +6873,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11866,
+                    "id": 14790,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10540:7:45",
+                    "src": "10144:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -6789,38 +6885,38 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "10539:9:45"
+              "src": "10143:9:55"
             },
-            "scope": 12066,
+            "scope": 15104,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 11997,
+            "id": 14922,
             "nodeType": "FunctionDefinition",
-            "src": "12090:1116:45",
+            "src": "11679:861:55",
             "nodes": [],
             "body": {
-              "id": 11996,
+              "id": 14921,
               "nodeType": "Block",
-              "src": "12272:934:45",
+              "src": "11847:693:55",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    11941
+                    14870
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 11941,
+                      "id": 14870,
                       "mutability": "mutable",
                       "name": "k",
-                      "nameLocation": "12711:1:45",
+                      "nameLocation": "12061:1:55",
                       "nodeType": "VariableDeclaration",
-                      "scope": 11996,
-                      "src": "12703:9:45",
+                      "scope": 14921,
+                      "src": "12053:9:55",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -6828,10 +6924,10 @@ export const YieldSpaceMath =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 11940,
+                        "id": 14869,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "12703:7:45",
+                        "src": "12053:7:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6840,64 +6936,64 @@ export const YieldSpaceMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 11949,
+                  "id": 14878,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 11943,
-                        "name": "z",
+                        "id": 14872,
+                        "name": "ze",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11925,
-                        "src": "12721:1:45",
+                        "referencedDeclaration": 14856,
+                        "src": "12069:2:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11944,
+                        "id": 14873,
                         "name": "y",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11927,
-                        "src": "12724:1:45",
+                        "referencedDeclaration": 14858,
+                        "src": "12073:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11945,
+                        "id": 14874,
                         "name": "t",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11931,
-                        "src": "12727:1:45",
+                        "referencedDeclaration": 14860,
+                        "src": "12076:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11946,
+                        "id": 14875,
                         "name": "c",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11933,
-                        "src": "12730:1:45",
+                        "referencedDeclaration": 14862,
+                        "src": "12079:1:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 11947,
+                        "id": 14876,
                         "name": "mu",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11935,
-                        "src": "12733:2:45",
+                        "referencedDeclaration": 14864,
+                        "src": "12082:2:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6927,18 +7023,18 @@ export const YieldSpaceMath =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 11942,
-                      "name": "kDown",
+                      "id": 14871,
+                      "name": "kUp",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12065,
-                      "src": "12715:5:45",
+                      "referencedDeclaration": 15069,
+                      "src": "12065:3:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "id": 11948,
+                    "id": 14877,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6947,7 +7043,7 @@ export const YieldSpaceMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "12715:21:45",
+                    "src": "12065:20:55",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -6955,22 +7051,22 @@ export const YieldSpaceMath =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "12703:33:45"
+                  "src": "12053:32:55"
                 },
                 {
                   "assignments": [
-                    11951
+                    14880
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 11951,
+                      "id": 14880,
                       "mutability": "mutable",
                       "name": "optimalY",
-                      "nameLocation": "12754:8:45",
+                      "nameLocation": "12103:8:55",
                       "nodeType": "VariableDeclaration",
-                      "scope": 11996,
-                      "src": "12746:16:45",
+                      "scope": 14921,
+                      "src": "12095:16:55",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -6978,10 +7074,10 @@ export const YieldSpaceMath =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 11950,
+                        "id": 14879,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "12746:7:45",
+                        "src": "12095:7:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6990,42 +7086,28 @@ export const YieldSpaceMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 11965,
+                  "id": 14890,
                   "initialValue": {
-                    "commonType": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    },
-                    "id": 11964,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "leftExpression": {
-                      "id": 11952,
-                      "name": "k",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 11941,
-                      "src": "12765:1:45",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_uint256",
-                        "typeString": "uint256"
-                      }
-                    },
-                    "nodeType": "BinaryOperation",
-                    "operator": "-",
-                    "rightExpression": {
-                      "arguments": [
-                        {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 14888,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
                           "arguments": [
                             {
-                              "id": 11960,
-                              "name": "t",
+                              "id": 14885,
+                              "name": "mu",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11931,
-                              "src": "12799:1:45",
+                              "referencedDeclaration": 14864,
+                              "src": "12132:2:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -7040,86 +7122,33 @@ export const YieldSpaceMath =
                               }
                             ],
                             "expression": {
-                              "arguments": [
-                                {
-                                  "id": 11957,
-                                  "name": "zMin",
-                                  "nodeType": "Identifier",
-                                  "overloadedDeclarations": [],
-                                  "referencedDeclaration": 11929,
-                                  "src": "12789:4:45",
-                                  "typeDescriptions": {
-                                    "typeIdentifier": "t_uint256",
-                                    "typeString": "uint256"
-                                  }
-                                }
-                              ],
-                              "expression": {
-                                "argumentTypes": [
-                                  {
-                                    "typeIdentifier": "t_uint256",
-                                    "typeString": "uint256"
-                                  }
-                                ],
-                                "expression": {
-                                  "id": 11955,
-                                  "name": "mu",
-                                  "nodeType": "Identifier",
-                                  "overloadedDeclarations": [],
-                                  "referencedDeclaration": 11935,
-                                  "src": "12780:2:45",
-                                  "typeDescriptions": {
-                                    "typeIdentifier": "t_uint256",
-                                    "typeString": "uint256"
-                                  }
-                                },
-                                "id": 11956,
-                                "isConstant": false,
-                                "isLValue": false,
-                                "isPure": false,
-                                "lValueRequested": false,
-                                "memberLocation": "12783:5:45",
-                                "memberName": "mulUp",
-                                "nodeType": "MemberAccess",
-                                "referencedDeclaration": 9881,
-                                "src": "12780:8:45",
-                                "typeDescriptions": {
-                                  "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
-                                  "typeString": "function (uint256,uint256) pure returns (uint256)"
-                                }
-                              },
-                              "id": 11958,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": false,
-                              "kind": "functionCall",
-                              "lValueRequested": false,
-                              "nameLocations": [],
-                              "names": [],
-                              "nodeType": "FunctionCall",
-                              "src": "12780:14:45",
-                              "tryCall": false,
+                              "id": 14883,
+                              "name": "c",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 14862,
+                              "src": "12122:1:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
-                            "id": 11959,
+                            "id": 14884,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "12795:3:45",
-                            "memberName": "pow",
+                            "memberLocation": "12124:7:55",
+                            "memberName": "divDown",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 9958,
-                            "src": "12780:18:45",
+                            "referencedDeclaration": 10450,
+                            "src": "12122:9:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                               "typeString": "function (uint256,uint256) pure returns (uint256)"
                             }
                           },
-                          "id": 11961,
+                          "id": 14886,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -7128,88 +7157,86 @@ export const YieldSpaceMath =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "12780:21:45",
+                          "src": "12122:13:55",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        {
-                          "id": 11962,
-                          "name": "mu",
+                        "nodeType": "BinaryOperation",
+                        "operator": "+",
+                        "rightExpression": {
+                          "id": 14887,
+                          "name": "ONE",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11935,
-                          "src": "12803:2:45",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_uint256",
-                            "typeString": "uint256"
-                          }
-                        }
-                      ],
-                      "expression": {
-                        "argumentTypes": [
-                          {
-                            "typeIdentifier": "t_uint256",
-                            "typeString": "uint256"
-                          },
-                          {
-                            "typeIdentifier": "t_uint256",
-                            "typeString": "uint256"
-                          }
-                        ],
-                        "expression": {
-                          "id": 11953,
-                          "name": "c",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 11933,
-                          "src": "12769:1:45",
+                          "referencedDeclaration": 10389,
+                          "src": "12138:3:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11954,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "memberLocation": "12771:8:45",
-                        "memberName": "mulDivUp",
-                        "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9863,
-                        "src": "12769:10:45",
+                        "src": "12122:19:55",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
-                          "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 14881,
+                        "name": "k",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14870,
+                        "src": "12114:1:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         }
                       },
-                      "id": 11963,
+                      "id": 14882,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
-                      "kind": "functionCall",
                       "lValueRequested": false,
-                      "nameLocations": [],
-                      "names": [],
-                      "nodeType": "FunctionCall",
-                      "src": "12769:37:45",
-                      "tryCall": false,
+                      "memberLocation": "12116:5:55",
+                      "memberName": "divUp",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 10500,
+                      "src": "12114:7:55",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_uint256",
-                        "typeString": "uint256"
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
+                        "typeString": "function (uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "src": "12765:41:45",
+                    "id": 14889,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "12114:28:55",
+                    "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "12746:60:45"
+                  "src": "12095:47:55"
                 },
                 {
                   "condition": {
@@ -7217,18 +7244,18 @@ export const YieldSpaceMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 11968,
+                    "id": 14893,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 11966,
+                      "id": 14891,
                       "name": "optimalY",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11951,
-                      "src": "12820:8:45",
+                      "referencedDeclaration": 14880,
+                      "src": "12156:8:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -7237,42 +7264,42 @@ export const YieldSpaceMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 11967,
+                      "id": 14892,
                       "name": "ONE",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9788,
-                      "src": "12832:3:45",
+                      "referencedDeclaration": 10389,
+                      "src": "12168:3:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "12820:15:45",
+                    "src": "12156:15:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": {
-                    "id": 11990,
+                    "id": 14915,
                     "nodeType": "Block",
-                    "src": "12979:132:45",
+                    "src": "12310:135:55",
                     "statements": [
                       {
                         "expression": {
-                          "id": 11988,
+                          "id": 14913,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 11980,
+                            "id": 14905,
                             "name": "optimalY",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11951,
-                            "src": "13063:8:45",
+                            "referencedDeclaration": 14880,
+                            "src": "12395:8:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -7285,12 +7312,12 @@ export const YieldSpaceMath =
                               {
                                 "arguments": [
                                   {
-                                    "id": 11985,
+                                    "id": 14910,
                                     "name": "t",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 11931,
-                                    "src": "13097:1:45",
+                                    "referencedDeclaration": 14860,
+                                    "src": "12431:1:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -7305,33 +7332,33 @@ export const YieldSpaceMath =
                                     }
                                   ],
                                   "expression": {
-                                    "id": 11983,
+                                    "id": 14908,
                                     "name": "ONE",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 9788,
-                                    "src": "13087:3:45",
+                                    "referencedDeclaration": 10389,
+                                    "src": "12419:3:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "id": 11984,
+                                  "id": 14909,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
-                                  "memberLocation": "13091:5:45",
-                                  "memberName": "divUp",
+                                  "memberLocation": "12423:7:55",
+                                  "memberName": "divDown",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 9899,
-                                  "src": "13087:9:45",
+                                  "referencedDeclaration": 10450,
+                                  "src": "12419:11:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 11986,
+                                "id": 14911,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -7340,7 +7367,7 @@ export const YieldSpaceMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "13087:12:45",
+                                "src": "12419:14:55",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -7356,33 +7383,33 @@ export const YieldSpaceMath =
                                 }
                               ],
                               "expression": {
-                                "id": 11981,
+                                "id": 14906,
                                 "name": "optimalY",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11951,
-                                "src": "13074:8:45",
+                                "referencedDeclaration": 14880,
+                                "src": "12406:8:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 11982,
+                              "id": 14907,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "13083:3:45",
+                              "memberLocation": "12415:3:55",
                               "memberName": "pow",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 9958,
-                              "src": "13074:12:45",
+                              "referencedDeclaration": 10559,
+                              "src": "12406:12:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 11987,
+                            "id": 14912,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -7391,47 +7418,47 @@ export const YieldSpaceMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "13074:26:45",
+                            "src": "12406:28:55",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "13063:37:45",
+                          "src": "12395:39:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11989,
+                        "id": 14914,
                         "nodeType": "ExpressionStatement",
-                        "src": "13063:37:45"
+                        "src": "12395:39:55"
                       }
                     ]
                   },
-                  "id": 11991,
+                  "id": 14916,
                   "nodeType": "IfStatement",
-                  "src": "12816:295:45",
+                  "src": "12152:293:55",
                   "trueBody": {
-                    "id": 11979,
+                    "id": 14904,
                     "nodeType": "Block",
-                    "src": "12837:136:45",
+                    "src": "12173:131:55",
                     "statements": [
                       {
                         "expression": {
-                          "id": 11977,
+                          "id": 14902,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 11969,
+                            "id": 14894,
                             "name": "optimalY",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11951,
-                            "src": "12923:8:45",
+                            "referencedDeclaration": 14880,
+                            "src": "12256:8:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -7444,12 +7471,12 @@ export const YieldSpaceMath =
                               {
                                 "arguments": [
                                   {
-                                    "id": 11974,
+                                    "id": 14899,
                                     "name": "t",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 11931,
-                                    "src": "12959:1:45",
+                                    "referencedDeclaration": 14860,
+                                    "src": "12290:1:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -7464,33 +7491,33 @@ export const YieldSpaceMath =
                                     }
                                   ],
                                   "expression": {
-                                    "id": 11972,
+                                    "id": 14897,
                                     "name": "ONE",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 9788,
-                                    "src": "12947:3:45",
+                                    "referencedDeclaration": 10389,
+                                    "src": "12280:3:55",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "id": 11973,
+                                  "id": 14898,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
-                                  "memberLocation": "12951:7:45",
-                                  "memberName": "divDown",
+                                  "memberLocation": "12284:5:55",
+                                  "memberName": "divUp",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 9849,
-                                  "src": "12947:11:45",
+                                  "referencedDeclaration": 10500,
+                                  "src": "12280:9:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 11975,
+                                "id": 14900,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -7499,7 +7526,7 @@ export const YieldSpaceMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "12947:14:45",
+                                "src": "12280:12:55",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -7515,33 +7542,33 @@ export const YieldSpaceMath =
                                 }
                               ],
                               "expression": {
-                                "id": 11970,
+                                "id": 14895,
                                 "name": "optimalY",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11951,
-                                "src": "12934:8:45",
+                                "referencedDeclaration": 14880,
+                                "src": "12267:8:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 11971,
+                              "id": 14896,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "12943:3:45",
+                              "memberLocation": "12276:3:55",
                               "memberName": "pow",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 9958,
-                              "src": "12934:12:45",
+                              "referencedDeclaration": 10559,
+                              "src": "12267:12:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 11976,
+                            "id": 14901,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -7550,22 +7577,22 @@ export const YieldSpaceMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "12934:28:45",
+                            "src": "12267:26:55",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "12923:39:45",
+                          "src": "12256:37:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 11978,
+                        "id": 14903,
                         "nodeType": "ExpressionStatement",
-                        "src": "12923:39:45"
+                        "src": "12256:37:55"
                       }
                     ]
                   }
@@ -7576,18 +7603,18 @@ export const YieldSpaceMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 11994,
+                    "id": 14919,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 11992,
-                      "name": "optimalY",
+                      "id": 14917,
+                      "name": "y",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11951,
-                      "src": "13187:8:45",
+                      "referencedDeclaration": 14858,
+                      "src": "12521:1:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -7596,54 +7623,54 @@ export const YieldSpaceMath =
                     "nodeType": "BinaryOperation",
                     "operator": "-",
                     "rightExpression": {
-                      "id": 11993,
-                      "name": "y",
+                      "id": 14918,
+                      "name": "optimalY",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11927,
-                      "src": "13198:1:45",
+                      "referencedDeclaration": 14880,
+                      "src": "12525:8:55",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "13187:12:45",
+                    "src": "12521:12:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 11939,
-                  "id": 11995,
+                  "functionReturnParameters": 14868,
+                  "id": 14920,
                   "nodeType": "Return",
-                  "src": "13180:19:45"
+                  "src": "12514:19:55"
                 }
               ]
             },
             "documentation": {
-              "id": 11923,
+              "id": 14854,
               "nodeType": "StructuredDocumentation",
-              "src": "11520:565:45",
-              "text": "@dev Calculates the maximum amount of bonds that can be sold with the\n      specified reserves. We round so that the max sell amount is\n      underestimated.\n @param z Amount of share reserves in the pool\n @param y Amount of bond reserves in the pool\n @param zMin The minimum share reserves.\n @param t Amount of time elapsed since term start\n @param c Conversion rate between base and shares\n @param mu Interest normalization factor for shares\n @return The maximum amount of bonds that can be sold."
+              "src": "11209:465:55",
+              "text": "@dev Calculates the maximum amount of bonds that can be purchased with\n      the specified reserves. We round so that the max buy amount is\n      underestimated.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param t The time elapsed since the term's start.\n @param c The share price.\n @param mu The initial share price.\n @return The maximum amount of bonds that can be purchased."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "calculateMaxSell",
-            "nameLocation": "12099:16:45",
+            "name": "calculateMaxBuyBondsOut",
+            "nameLocation": "11688:23:55",
             "parameters": {
-              "id": 11936,
+              "id": 14865,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11925,
+                  "id": 14856,
                   "mutability": "mutable",
-                  "name": "z",
-                  "nameLocation": "12133:1:45",
+                  "name": "ze",
+                  "nameLocation": "11729:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11997,
-                  "src": "12125:9:45",
+                  "scope": 14922,
+                  "src": "11721:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7651,10 +7678,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11924,
+                    "id": 14855,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "12125:7:45",
+                    "src": "11721:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7664,13 +7691,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11927,
+                  "id": 14858,
                   "mutability": "mutable",
                   "name": "y",
-                  "nameLocation": "12152:1:45",
+                  "nameLocation": "11749:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11997,
-                  "src": "12144:9:45",
+                  "scope": 14922,
+                  "src": "11741:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7678,10 +7705,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11926,
+                    "id": 14857,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "12144:7:45",
+                    "src": "11741:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7691,40 +7718,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11929,
-                  "mutability": "mutable",
-                  "name": "zMin",
-                  "nameLocation": "12171:4:45",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 11997,
-                  "src": "12163:12:45",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 11928,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "12163:7:45",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 11931,
+                  "id": 14860,
                   "mutability": "mutable",
                   "name": "t",
-                  "nameLocation": "12193:1:45",
+                  "nameLocation": "11768:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11997,
-                  "src": "12185:9:45",
+                  "scope": 14922,
+                  "src": "11760:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7732,10 +7732,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11930,
+                    "id": 14859,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "12185:7:45",
+                    "src": "11760:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7745,13 +7745,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11933,
+                  "id": 14862,
                   "mutability": "mutable",
                   "name": "c",
-                  "nameLocation": "12212:1:45",
+                  "nameLocation": "11787:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11997,
-                  "src": "12204:9:45",
+                  "scope": 14922,
+                  "src": "11779:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7759,10 +7759,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11932,
+                    "id": 14861,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "12204:7:45",
+                    "src": "11779:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7772,13 +7772,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 11935,
+                  "id": 14864,
                   "mutability": "mutable",
                   "name": "mu",
-                  "nameLocation": "12231:2:45",
+                  "nameLocation": "11806:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11997,
-                  "src": "12223:10:45",
+                  "scope": 14922,
+                  "src": "11798:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7786,10 +7786,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11934,
+                    "id": 14863,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "12223:7:45",
+                    "src": "11798:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7798,21 +7798,21 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "12115:124:45"
+              "src": "11711:103:55"
             },
             "returnParameters": {
-              "id": 11939,
+              "id": 14868,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 11938,
+                  "id": 14867,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 11997,
-                  "src": "12263:7:45",
+                  "scope": 14922,
+                  "src": "11838:7:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7820,10 +7820,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11937,
+                    "id": 14866,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "12263:7:45",
+                    "src": "11838:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7832,47 +7832,552 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "12262:9:45"
+              "src": "11837:9:55"
             },
-            "scope": 12066,
+            "scope": 15104,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 12031,
+            "id": 15035,
             "nodeType": "FunctionDefinition",
-            "src": "13771:272:45",
+            "src": "13167:1794:55",
             "nodes": [],
             "body": {
-              "id": 12030,
+              "id": 15034,
               "nodeType": "Block",
-              "src": "13918:125:45",
+              "src": "13387:1574:55",
               "nodes": [],
               "statements": [
                 {
-                  "documentation": "k = (c / µ) * (µ * z)^(1 - t) + y^(1 - t)",
-                  "expression": {
+                  "condition": {
                     "commonType": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
                     },
-                    "id": 12028,
+                    "id": 14946,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
+                      "id": 14944,
+                      "name": "zeta",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14927,
+                      "src": "13671:4:55",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "hexValue": "30",
+                      "id": 14945,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "13678:1:55",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "13671:8:55",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 14958,
+                  "nodeType": "IfStatement",
+                  "src": "13667:67:55",
+                  "trueBody": {
+                    "id": 14957,
+                    "nodeType": "Block",
+                    "src": "13681:53:55",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 14955,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "id": 14947,
+                            "name": "zMin",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 14931,
+                            "src": "13695:4:55",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "commonType": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            "id": 14954,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftExpression": {
+                              "id": 14948,
+                              "name": "zMin",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 14931,
+                              "src": "13702:4:55",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "nodeType": "BinaryOperation",
+                            "operator": "+",
+                            "rightExpression": {
+                              "arguments": [
+                                {
+                                  "id": 14952,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "nodeType": "UnaryOperation",
+                                  "operator": "-",
+                                  "prefix": true,
+                                  "src": "13717:5:55",
+                                  "subExpression": {
+                                    "id": 14951,
+                                    "name": "zeta",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 14927,
+                                    "src": "13718:4:55",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_int256",
+                                      "typeString": "int256"
+                                    }
+                                  },
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_int256",
+                                    "typeString": "int256"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_int256",
+                                    "typeString": "int256"
+                                  }
+                                ],
+                                "id": 14950,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "nodeType": "ElementaryTypeNameExpression",
+                                "src": "13709:7:55",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_uint256_$",
+                                  "typeString": "type(uint256)"
+                                },
+                                "typeName": {
+                                  "id": 14949,
+                                  "name": "uint256",
+                                  "nodeType": "ElementaryTypeName",
+                                  "src": "13709:7:55",
+                                  "typeDescriptions": {}
+                                }
+                              },
+                              "id": 14953,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "typeConversion",
+                              "lValueRequested": false,
+                              "nameLocations": [],
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "13709:14:55",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "src": "13702:21:55",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "13695:28:55",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 14956,
+                        "nodeType": "ExpressionStatement",
+                        "src": "13695:28:55"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "assignments": [
+                    14960
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14960,
+                      "mutability": "mutable",
+                      "name": "ze",
+                      "nameLocation": "14237:2:55",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 15034,
+                      "src": "14229:10:55",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 14959,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "14229:7:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 14966,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 14963,
+                        "name": "z",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14925,
+                        "src": "14289:1:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14964,
+                        "name": "zeta",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14927,
+                        "src": "14292:4:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 14961,
+                        "name": "HyperdriveMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11698,
+                        "src": "14242:14:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$11698_$",
+                          "typeString": "type(library HyperdriveMath)"
+                        }
+                      },
+                      "id": 14962,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "14257:31:55",
+                      "memberName": "calculateEffectiveShareReserves",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 11250,
+                      "src": "14242:46:55",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_int256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,int256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 14965,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "14242:55:55",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "14229:68:55"
+                },
+                {
+                  "assignments": [
+                    14968
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14968,
+                      "mutability": "mutable",
+                      "name": "k",
+                      "nameLocation": "14315:1:55",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 15034,
+                      "src": "14307:9:55",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 14967,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "14307:7:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 14976,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 14970,
+                        "name": "ze",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14960,
+                        "src": "14325:2:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14971,
+                        "name": "y",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14929,
+                        "src": "14329:1:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14972,
+                        "name": "t",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14933,
+                        "src": "14332:1:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14973,
+                        "name": "c",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14935,
+                        "src": "14335:1:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14974,
+                        "name": "mu",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14937,
+                        "src": "14338:2:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 14969,
+                      "name": "kDown",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15103,
+                      "src": "14319:5:55",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 14975,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "14319:22:55",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "14307:34:55"
+                },
+                {
+                  "assignments": [
+                    14978
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14978,
+                      "mutability": "mutable",
+                      "name": "optimalY",
+                      "nameLocation": "14359:8:55",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 15034,
+                      "src": "14351:16:55",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 14977,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "14351:7:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 14992,
+                  "initialValue": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 14991,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 14979,
+                      "name": "k",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14968,
+                      "src": "14370:1:55",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "-",
+                    "rightExpression": {
                       "arguments": [
                         {
                           "arguments": [
                             {
-                              "id": 12020,
+                              "id": 14987,
                               "name": "t",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 12004,
-                              "src": "14018:1:45",
+                              "referencedDeclaration": 14933,
+                              "src": "14404:1:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -7889,12 +8394,12 @@ export const YieldSpaceMath =
                             "expression": {
                               "arguments": [
                                 {
-                                  "id": 12017,
-                                  "name": "z",
+                                  "id": 14984,
+                                  "name": "zMin",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 12000,
-                                  "src": "14011:1:45",
+                                  "referencedDeclaration": 14931,
+                                  "src": "14394:4:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
                                     "typeString": "uint256"
@@ -7909,33 +8414,33 @@ export const YieldSpaceMath =
                                   }
                                 ],
                                 "expression": {
-                                  "id": 12015,
+                                  "id": 14982,
                                   "name": "mu",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 12008,
-                                  "src": "14002:2:45",
+                                  "referencedDeclaration": 14937,
+                                  "src": "14385:2:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
                                     "typeString": "uint256"
                                   }
                                 },
-                                "id": 12016,
+                                "id": 14983,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
                                 "lValueRequested": false,
-                                "memberLocation": "14005:5:45",
+                                "memberLocation": "14388:5:55",
                                 "memberName": "mulUp",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 9881,
-                                "src": "14002:8:45",
+                                "referencedDeclaration": 10482,
+                                "src": "14385:8:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                   "typeString": "function (uint256,uint256) pure returns (uint256)"
                                 }
                               },
-                              "id": 12018,
+                              "id": 14985,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -7944,29 +8449,29 @@ export const YieldSpaceMath =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "14002:11:45",
+                              "src": "14385:14:55",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
-                            "id": 12019,
+                            "id": 14986,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "14014:3:45",
+                            "memberLocation": "14400:3:55",
                             "memberName": "pow",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 9958,
-                            "src": "14002:15:45",
+                            "referencedDeclaration": 10559,
+                            "src": "14385:18:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                               "typeString": "function (uint256,uint256) pure returns (uint256)"
                             }
                           },
-                          "id": 12021,
+                          "id": 14988,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -7975,7 +8480,7 @@ export const YieldSpaceMath =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "14002:18:45",
+                          "src": "14385:21:55",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -7983,12 +8488,12 @@ export const YieldSpaceMath =
                           }
                         },
                         {
-                          "id": 12022,
+                          "id": 14989,
                           "name": "mu",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 12008,
-                          "src": "14022:2:45",
+                          "referencedDeclaration": 14937,
+                          "src": "14408:2:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -8007,33 +8512,33 @@ export const YieldSpaceMath =
                           }
                         ],
                         "expression": {
-                          "id": 12013,
+                          "id": 14980,
                           "name": "c",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 12006,
-                          "src": "13991:1:45",
+                          "referencedDeclaration": 14935,
+                          "src": "14374:1:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 12014,
+                        "id": 14981,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "13993:8:45",
+                        "memberLocation": "14376:8:55",
                         "memberName": "mulDivUp",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9863,
-                        "src": "13991:10:45",
+                        "referencedDeclaration": 10464,
+                        "src": "14374:10:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 12023,
+                      "id": 14990,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -8042,7 +8547,1048 @@ export const YieldSpaceMath =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "13991:34:45",
+                      "src": "14374:37:55",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "14370:41:55",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "14351:60:55"
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 14995,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 14993,
+                      "name": "optimalY",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14978,
+                      "src": "14425:8:55",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": ">=",
+                    "rightExpression": {
+                      "id": 14994,
+                      "name": "ONE",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10389,
+                      "src": "14437:3:55",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "14425:15:55",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "id": 15017,
+                    "nodeType": "Block",
+                    "src": "14584:132:55",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 15015,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "id": 15007,
+                            "name": "optimalY",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 14978,
+                            "src": "14668:8:55",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "arguments": [
+                              {
+                                "arguments": [
+                                  {
+                                    "id": 15012,
+                                    "name": "t",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 14933,
+                                    "src": "14702:1:55",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  ],
+                                  "expression": {
+                                    "id": 15010,
+                                    "name": "ONE",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 10389,
+                                    "src": "14692:3:55",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  },
+                                  "id": 15011,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "memberLocation": "14696:5:55",
+                                  "memberName": "divUp",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 10500,
+                                  "src": "14692:9:55",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
+                                    "typeString": "function (uint256,uint256) pure returns (uint256)"
+                                  }
+                                },
+                                "id": 15013,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "kind": "functionCall",
+                                "lValueRequested": false,
+                                "nameLocations": [],
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "14692:12:55",
+                                "tryCall": false,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "expression": {
+                                "id": 15008,
+                                "name": "optimalY",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 14978,
+                                "src": "14679:8:55",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "id": 15009,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberLocation": "14688:3:55",
+                              "memberName": "pow",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 10559,
+                              "src": "14679:12:55",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
+                                "typeString": "function (uint256,uint256) pure returns (uint256)"
+                              }
+                            },
+                            "id": 15014,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "nameLocations": [],
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "14679:26:55",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "14668:37:55",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 15016,
+                        "nodeType": "ExpressionStatement",
+                        "src": "14668:37:55"
+                      }
+                    ]
+                  },
+                  "id": 15018,
+                  "nodeType": "IfStatement",
+                  "src": "14421:295:55",
+                  "trueBody": {
+                    "id": 15006,
+                    "nodeType": "Block",
+                    "src": "14442:136:55",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 15004,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "id": 14996,
+                            "name": "optimalY",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 14978,
+                            "src": "14528:8:55",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "arguments": [
+                              {
+                                "arguments": [
+                                  {
+                                    "id": 15001,
+                                    "name": "t",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 14933,
+                                    "src": "14564:1:55",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  ],
+                                  "expression": {
+                                    "id": 14999,
+                                    "name": "ONE",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 10389,
+                                    "src": "14552:3:55",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  },
+                                  "id": 15000,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "memberLocation": "14556:7:55",
+                                  "memberName": "divDown",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 10450,
+                                  "src": "14552:11:55",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
+                                    "typeString": "function (uint256,uint256) pure returns (uint256)"
+                                  }
+                                },
+                                "id": 15002,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "kind": "functionCall",
+                                "lValueRequested": false,
+                                "nameLocations": [],
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "14552:14:55",
+                                "tryCall": false,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "expression": {
+                                "id": 14997,
+                                "name": "optimalY",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 14978,
+                                "src": "14539:8:55",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "id": 14998,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberLocation": "14548:3:55",
+                              "memberName": "pow",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 10559,
+                              "src": "14539:12:55",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
+                                "typeString": "function (uint256,uint256) pure returns (uint256)"
+                              }
+                            },
+                            "id": 15003,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "nameLocations": [],
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "14539:28:55",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "14528:39:55",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 15005,
+                        "nodeType": "ExpressionStatement",
+                        "src": "14528:39:55"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 15021,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 15019,
+                      "name": "optimalY",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14978,
+                      "src": "14862:8:55",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "id": 15020,
+                      "name": "y",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14929,
+                      "src": "14873:1:55",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "14862:12:55",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 15027,
+                  "nodeType": "IfStatement",
+                  "src": "14858:60:55",
+                  "trueBody": {
+                    "id": 15026,
+                    "nodeType": "Block",
+                    "src": "14876:42:55",
+                    "statements": [
+                      {
+                        "expression": {
+                          "components": [
+                            {
+                              "hexValue": "30",
+                              "id": 15022,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "14898:1:55",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            },
+                            {
+                              "hexValue": "66616c7365",
+                              "id": 15023,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "bool",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "14901:5:55",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              "value": "false"
+                            }
+                          ],
+                          "id": 15024,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "TupleExpression",
+                          "src": "14897:10:55",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$_t_rational_0_by_1_$_t_bool_$",
+                            "typeString": "tuple(int_const 0,bool)"
+                          }
+                        },
+                        "functionReturnParameters": 14943,
+                        "id": 15025,
+                        "nodeType": "Return",
+                        "src": "14890:17:55"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "components": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 15030,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 15028,
+                          "name": "optimalY",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14978,
+                          "src": "14935:8:55",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "-",
+                        "rightExpression": {
+                          "id": 15029,
+                          "name": "y",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14929,
+                          "src": "14946:1:55",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "14935:12:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "hexValue": "74727565",
+                        "id": 15031,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "14949:4:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "true"
+                      }
+                    ],
+                    "id": 15032,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "14934:20:55",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_bool_$",
+                      "typeString": "tuple(uint256,bool)"
+                    }
+                  },
+                  "functionReturnParameters": 14943,
+                  "id": 15033,
+                  "nodeType": "Return",
+                  "src": "14927:27:55"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 14923,
+              "nodeType": "StructuredDocumentation",
+              "src": "12546:616:55",
+              "text": "@dev Calculates the maximum amount of bonds that can be sold with the\n      specified reserves. We round so that the max sell amount is\n      underestimated.\n @param z The share reserves.\n @param zeta The share adjustment.\n @param y The bond reserves.\n @param zMin The minimum share reserves.\n @param t The time elapsed since the term's start.\n @param c The share price.\n @param mu The initial share price.\n @return The maximum amount of bonds that can be sold.\n @return A flag indicating whether or not the calculation was successful."
+            },
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateMaxSellBondsInSafe",
+            "nameLocation": "13176:27:55",
+            "parameters": {
+              "id": 14938,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14925,
+                  "mutability": "mutable",
+                  "name": "z",
+                  "nameLocation": "13221:1:55",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15035,
+                  "src": "13213:9:55",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14924,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "13213:7:55",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14927,
+                  "mutability": "mutable",
+                  "name": "zeta",
+                  "nameLocation": "13239:4:55",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15035,
+                  "src": "13232:11:55",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 14926,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "13232:6:55",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14929,
+                  "mutability": "mutable",
+                  "name": "y",
+                  "nameLocation": "13261:1:55",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15035,
+                  "src": "13253:9:55",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14928,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "13253:7:55",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14931,
+                  "mutability": "mutable",
+                  "name": "zMin",
+                  "nameLocation": "13280:4:55",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15035,
+                  "src": "13272:12:55",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14930,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "13272:7:55",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14933,
+                  "mutability": "mutable",
+                  "name": "t",
+                  "nameLocation": "13302:1:55",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15035,
+                  "src": "13294:9:55",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14932,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "13294:7:55",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14935,
+                  "mutability": "mutable",
+                  "name": "c",
+                  "nameLocation": "13321:1:55",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15035,
+                  "src": "13313:9:55",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14934,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "13313:7:55",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14937,
+                  "mutability": "mutable",
+                  "name": "mu",
+                  "nameLocation": "13340:2:55",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15035,
+                  "src": "13332:10:55",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14936,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "13332:7:55",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "13203:145:55"
+            },
+            "returnParameters": {
+              "id": 14943,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14940,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15035,
+                  "src": "13372:7:55",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14939,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "13372:7:55",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14942,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15035,
+                  "src": "13381:4:55",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 14941,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "13381:4:55",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "13371:15:55"
+            },
+            "scope": 15104,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "id": 15069,
+            "nodeType": "FunctionDefinition",
+            "src": "15456:275:55",
+            "nodes": [],
+            "body": {
+              "id": 15068,
+              "nodeType": "Block",
+              "src": "15604:127:55",
+              "nodes": [],
+              "statements": [
+                {
+                  "documentation": "k = (c / µ) * (µ * ze)^(1 - t) + y^(1 - t)",
+                  "expression": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 15066,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "arguments": [
+                        {
+                          "arguments": [
+                            {
+                              "id": 15058,
+                              "name": "t",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 15042,
+                              "src": "15706:1:55",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "expression": {
+                              "arguments": [
+                                {
+                                  "id": 15055,
+                                  "name": "ze",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 15038,
+                                  "src": "15698:2:55",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                ],
+                                "expression": {
+                                  "id": 15053,
+                                  "name": "mu",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 15046,
+                                  "src": "15689:2:55",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "id": 15054,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberLocation": "15692:5:55",
+                                "memberName": "mulUp",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 10482,
+                                "src": "15689:8:55",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
+                                  "typeString": "function (uint256,uint256) pure returns (uint256)"
+                                }
+                              },
+                              "id": 15056,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "nameLocations": [],
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "15689:12:55",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "id": 15057,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "15702:3:55",
+                            "memberName": "pow",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 10559,
+                            "src": "15689:16:55",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
+                              "typeString": "function (uint256,uint256) pure returns (uint256)"
+                            }
+                          },
+                          "id": 15059,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "15689:19:55",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "id": 15060,
+                          "name": "mu",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 15046,
+                          "src": "15710:2:55",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "expression": {
+                          "id": 15051,
+                          "name": "c",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 15044,
+                          "src": "15678:1:55",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 15052,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "15680:8:55",
+                        "memberName": "mulDivUp",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10464,
+                        "src": "15678:10:55",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
+                          "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
+                        }
+                      },
+                      "id": 15061,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "15678:35:55",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -8054,12 +9600,12 @@ export const YieldSpaceMath =
                     "rightExpression": {
                       "arguments": [
                         {
-                          "id": 12026,
+                          "id": 15064,
                           "name": "t",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 12004,
-                          "src": "14034:1:45",
+                          "referencedDeclaration": 15042,
+                          "src": "15722:1:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -8074,33 +9620,33 @@ export const YieldSpaceMath =
                           }
                         ],
                         "expression": {
-                          "id": 12024,
+                          "id": 15062,
                           "name": "y",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 12002,
-                          "src": "14028:1:45",
+                          "referencedDeclaration": 15040,
+                          "src": "15716:1:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 12025,
+                        "id": 15063,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "14030:3:45",
+                        "memberLocation": "15718:3:55",
                         "memberName": "pow",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9958,
-                        "src": "14028:5:45",
+                        "referencedDeclaration": 10559,
+                        "src": "15716:5:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 12027,
+                      "id": 15065,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -8109,50 +9655,50 @@ export const YieldSpaceMath =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "14028:8:45",
+                      "src": "15716:8:55",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "13991:45:45",
+                    "src": "15678:46:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 12012,
-                  "id": 12029,
+                  "functionReturnParameters": 15050,
+                  "id": 15067,
                   "nodeType": "Return",
-                  "src": "13984:52:45"
+                  "src": "15671:53:55"
                 }
               ]
             },
             "documentation": {
-              "id": 11998,
+              "id": 15036,
               "nodeType": "StructuredDocumentation",
-              "src": "13212:554:45",
-              "text": "@dev Calculates the YieldSpace invariant k. This invariant is given by:\n      k = (c / µ) * (µ * z)^(1 - t) + y^(1 - t)\n      This variant of the calculation overestimates the result.\n @param z Amount of share reserves in the pool.\n @param y Amount of bond reserves in the pool.\n @param t Amount of time elapsed since term start.\n @param c Conversion rate between base and shares.\n @param mu Interest normalization factor for shares.\n @return The modified YieldSpace Constant."
+              "src": "14967:484:55",
+              "text": "@dev Calculates the YieldSpace invariant k. This invariant is given by:\n      k = (c / µ) * (µ * ze)^(1 - t) + y^(1 - t)\n      This variant of the calculation overestimates the result.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param t The time elapsed since the term's start.\n @param c The share price.\n @param mu The initial share price.\n @return The YieldSpace invariant, k."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "kUp",
-            "nameLocation": "13780:3:45",
+            "nameLocation": "15465:3:55",
             "parameters": {
-              "id": 12009,
+              "id": 15047,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 12000,
+                  "id": 15038,
                   "mutability": "mutable",
-                  "name": "z",
-                  "nameLocation": "13801:1:45",
+                  "name": "ze",
+                  "nameLocation": "15486:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12031,
-                  "src": "13793:9:45",
+                  "scope": 15069,
+                  "src": "15478:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8160,10 +9706,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 11999,
+                    "id": 15037,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13793:7:45",
+                    "src": "15478:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8173,13 +9719,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 12002,
+                  "id": 15040,
                   "mutability": "mutable",
                   "name": "y",
-                  "nameLocation": "13820:1:45",
+                  "nameLocation": "15506:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12031,
-                  "src": "13812:9:45",
+                  "scope": 15069,
+                  "src": "15498:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8187,10 +9733,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 12001,
+                    "id": 15039,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13812:7:45",
+                    "src": "15498:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8200,13 +9746,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 12004,
+                  "id": 15042,
                   "mutability": "mutable",
                   "name": "t",
-                  "nameLocation": "13839:1:45",
+                  "nameLocation": "15525:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12031,
-                  "src": "13831:9:45",
+                  "scope": 15069,
+                  "src": "15517:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8214,10 +9760,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 12003,
+                    "id": 15041,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13831:7:45",
+                    "src": "15517:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8227,13 +9773,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 12006,
+                  "id": 15044,
                   "mutability": "mutable",
                   "name": "c",
-                  "nameLocation": "13858:1:45",
+                  "nameLocation": "15544:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12031,
-                  "src": "13850:9:45",
+                  "scope": 15069,
+                  "src": "15536:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8241,10 +9787,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 12005,
+                    "id": 15043,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13850:7:45",
+                    "src": "15536:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8254,13 +9800,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 12008,
+                  "id": 15046,
                   "mutability": "mutable",
                   "name": "mu",
-                  "nameLocation": "13877:2:45",
+                  "nameLocation": "15563:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12031,
-                  "src": "13869:10:45",
+                  "scope": 15069,
+                  "src": "15555:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8268,10 +9814,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 12007,
+                    "id": 15045,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13869:7:45",
+                    "src": "15555:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8280,21 +9826,21 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "13783:102:45"
+              "src": "15468:103:55"
             },
             "returnParameters": {
-              "id": 12012,
+              "id": 15050,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 12011,
+                  "id": 15049,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12031,
-                  "src": "13909:7:45",
+                  "scope": 15069,
+                  "src": "15595:7:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8302,10 +9848,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 12010,
+                    "id": 15048,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13909:7:45",
+                    "src": "15595:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8314,32 +9860,32 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "13908:9:45"
+              "src": "15594:9:55"
             },
-            "scope": 12066,
+            "scope": 15104,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 12065,
+            "id": 15103,
             "nodeType": "FunctionDefinition",
-            "src": "14609:278:45",
+            "src": "16232:281:55",
             "nodes": [],
             "body": {
-              "id": 12064,
+              "id": 15102,
               "nodeType": "Block",
-              "src": "14758:129:45",
+              "src": "16382:131:55",
               "nodes": [],
               "statements": [
                 {
-                  "documentation": "k = (c / µ) * (µ * z)^(1 - t) + y^(1 - t)",
+                  "documentation": "k = (c / µ) * (µ * ze)^(1 - t) + y^(1 - t)",
                   "expression": {
                     "commonType": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 12062,
+                    "id": 15100,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8349,12 +9895,12 @@ export const YieldSpaceMath =
                         {
                           "arguments": [
                             {
-                              "id": 12054,
+                              "id": 15092,
                               "name": "t",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 12038,
-                              "src": "14862:1:45",
+                              "referencedDeclaration": 15076,
+                              "src": "16488:1:55",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -8371,12 +9917,12 @@ export const YieldSpaceMath =
                             "expression": {
                               "arguments": [
                                 {
-                                  "id": 12051,
-                                  "name": "z",
+                                  "id": 15089,
+                                  "name": "ze",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 12034,
-                                  "src": "14855:1:45",
+                                  "referencedDeclaration": 15072,
+                                  "src": "16480:2:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
                                     "typeString": "uint256"
@@ -8391,33 +9937,33 @@ export const YieldSpaceMath =
                                   }
                                 ],
                                 "expression": {
-                                  "id": 12049,
+                                  "id": 15087,
                                   "name": "mu",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 12042,
-                                  "src": "14844:2:45",
+                                  "referencedDeclaration": 15080,
+                                  "src": "16469:2:55",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
                                     "typeString": "uint256"
                                   }
                                 },
-                                "id": 12050,
+                                "id": 15088,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
                                 "lValueRequested": false,
-                                "memberLocation": "14847:7:45",
+                                "memberLocation": "16472:7:55",
                                 "memberName": "mulDown",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 9831,
-                                "src": "14844:10:45",
+                                "referencedDeclaration": 10432,
+                                "src": "16469:10:55",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                   "typeString": "function (uint256,uint256) pure returns (uint256)"
                                 }
                               },
-                              "id": 12052,
+                              "id": 15090,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -8426,29 +9972,29 @@ export const YieldSpaceMath =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "14844:13:45",
+                              "src": "16469:14:55",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
-                            "id": 12053,
+                            "id": 15091,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "14858:3:45",
+                            "memberLocation": "16484:3:55",
                             "memberName": "pow",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 9958,
-                            "src": "14844:17:45",
+                            "referencedDeclaration": 10559,
+                            "src": "16469:18:55",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                               "typeString": "function (uint256,uint256) pure returns (uint256)"
                             }
                           },
-                          "id": 12055,
+                          "id": 15093,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -8457,7 +10003,7 @@ export const YieldSpaceMath =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "14844:20:45",
+                          "src": "16469:21:55",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -8465,12 +10011,12 @@ export const YieldSpaceMath =
                           }
                         },
                         {
-                          "id": 12056,
+                          "id": 15094,
                           "name": "mu",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 12042,
-                          "src": "14866:2:45",
+                          "referencedDeclaration": 15080,
+                          "src": "16492:2:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -8489,33 +10035,33 @@ export const YieldSpaceMath =
                           }
                         ],
                         "expression": {
-                          "id": 12047,
+                          "id": 15085,
                           "name": "c",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 12040,
-                          "src": "14831:1:45",
+                          "referencedDeclaration": 15078,
+                          "src": "16456:1:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 12048,
+                        "id": 15086,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "14833:10:45",
+                        "memberLocation": "16458:10:55",
                         "memberName": "mulDivDown",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9813,
-                        "src": "14831:12:45",
+                        "referencedDeclaration": 10414,
+                        "src": "16456:12:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 12057,
+                      "id": 15095,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -8524,7 +10070,7 @@ export const YieldSpaceMath =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "14831:38:45",
+                      "src": "16456:39:55",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -8536,12 +10082,12 @@ export const YieldSpaceMath =
                     "rightExpression": {
                       "arguments": [
                         {
-                          "id": 12060,
+                          "id": 15098,
                           "name": "t",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 12038,
-                          "src": "14878:1:45",
+                          "referencedDeclaration": 15076,
+                          "src": "16504:1:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -8556,33 +10102,33 @@ export const YieldSpaceMath =
                           }
                         ],
                         "expression": {
-                          "id": 12058,
+                          "id": 15096,
                           "name": "y",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 12036,
-                          "src": "14872:1:45",
+                          "referencedDeclaration": 15074,
+                          "src": "16498:1:55",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 12059,
+                        "id": 15097,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "14874:3:45",
+                        "memberLocation": "16500:3:55",
                         "memberName": "pow",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9958,
-                        "src": "14872:5:45",
+                        "referencedDeclaration": 10559,
+                        "src": "16498:5:55",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 12061,
+                      "id": 15099,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -8591,50 +10137,50 @@ export const YieldSpaceMath =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "14872:8:45",
+                      "src": "16498:8:55",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "14831:49:45",
+                    "src": "16456:50:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 12046,
-                  "id": 12063,
+                  "functionReturnParameters": 15084,
+                  "id": 15101,
                   "nodeType": "Return",
-                  "src": "14824:56:45"
+                  "src": "16449:57:55"
                 }
               ]
             },
             "documentation": {
-              "id": 12032,
+              "id": 15070,
               "nodeType": "StructuredDocumentation",
-              "src": "14049:555:45",
-              "text": "@dev Calculates the YieldSpace invariant k. This invariant is given by:\n      k = (c / µ) * (µ * z)^(1 - t) + y^(1 - t)\n      This variant of the calculation underestimates the result.\n @param z Amount of share reserves in the pool.\n @param y Amount of bond reserves in the pool.\n @param t Amount of time elapsed since term start.\n @param c Conversion rate between base and shares.\n @param mu Interest normalization factor for shares.\n @return The modified YieldSpace Constant."
+              "src": "15737:490:55",
+              "text": "@dev Calculates the YieldSpace invariant k. This invariant is given by:\n      k = (c / µ) * (µ * ze)^(1 - t) + y^(1 - t)\n      This variant of the calculation underestimates the result.\n @param ze The effective share reserves.\n @param y The bond reserves.\n @param t The time elapsed since the term's start.\n @param c The share price.\n @param mu The initial share price.\n @return The modified YieldSpace Constant."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "kDown",
-            "nameLocation": "14618:5:45",
+            "nameLocation": "16241:5:55",
             "parameters": {
-              "id": 12043,
+              "id": 15081,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 12034,
+                  "id": 15072,
                   "mutability": "mutable",
-                  "name": "z",
-                  "nameLocation": "14641:1:45",
+                  "name": "ze",
+                  "nameLocation": "16264:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12065,
-                  "src": "14633:9:45",
+                  "scope": 15103,
+                  "src": "16256:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8642,10 +10188,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 12033,
+                    "id": 15071,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "14633:7:45",
+                    "src": "16256:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8655,13 +10201,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 12036,
+                  "id": 15074,
                   "mutability": "mutable",
                   "name": "y",
-                  "nameLocation": "14660:1:45",
+                  "nameLocation": "16284:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12065,
-                  "src": "14652:9:45",
+                  "scope": 15103,
+                  "src": "16276:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8669,10 +10215,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 12035,
+                    "id": 15073,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "14652:7:45",
+                    "src": "16276:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8682,13 +10228,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 12038,
+                  "id": 15076,
                   "mutability": "mutable",
                   "name": "t",
-                  "nameLocation": "14679:1:45",
+                  "nameLocation": "16303:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12065,
-                  "src": "14671:9:45",
+                  "scope": 15103,
+                  "src": "16295:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8696,10 +10242,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 12037,
+                    "id": 15075,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "14671:7:45",
+                    "src": "16295:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8709,13 +10255,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 12040,
+                  "id": 15078,
                   "mutability": "mutable",
                   "name": "c",
-                  "nameLocation": "14698:1:45",
+                  "nameLocation": "16322:1:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12065,
-                  "src": "14690:9:45",
+                  "scope": 15103,
+                  "src": "16314:9:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8723,10 +10269,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 12039,
+                    "id": 15077,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "14690:7:45",
+                    "src": "16314:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8736,13 +10282,13 @@ export const YieldSpaceMath =
                 },
                 {
                   "constant": false,
-                  "id": 12042,
+                  "id": 15080,
                   "mutability": "mutable",
                   "name": "mu",
-                  "nameLocation": "14717:2:45",
+                  "nameLocation": "16341:2:55",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12065,
-                  "src": "14709:10:45",
+                  "scope": 15103,
+                  "src": "16333:10:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8750,10 +10296,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 12041,
+                    "id": 15079,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "14709:7:45",
+                    "src": "16333:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8762,21 +10308,21 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "14623:102:45"
+              "src": "16246:103:55"
             },
             "returnParameters": {
-              "id": 12046,
+              "id": 15084,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 12045,
+                  "id": 15083,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12065,
-                  "src": "14749:7:45",
+                  "scope": 15103,
+                  "src": "16373:7:55",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8784,10 +10330,10 @@ export const YieldSpaceMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 12044,
+                    "id": 15082,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "14749:7:45",
+                    "src": "16373:7:55",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8796,9 +10342,9 @@ export const YieldSpaceMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "14748:9:45"
+              "src": "16372:9:55"
             },
-            "scope": 12066,
+            "scope": 15104,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
@@ -8810,22 +10356,22 @@ export const YieldSpaceMath =
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-          "id": 11438,
+          "id": 14362,
           "nodeType": "StructuredDocumentation",
-          "src": "242:1185:45",
+          "src": "242:1185:55",
           "text": "@author DELV\n @title YieldSpaceMath\n @notice Math for the YieldSpace pricing model.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.\n @dev It is advised for developers to attain the pre-requisite knowledge\n      of how this implementation works on the mathematical level. This\n      excerpt attempts to document this pre-requisite knowledge explaining\n      the underpinning mathematical concepts in an understandable manner and\n      relating it directly to the code implementation.\n      This implementation is based on a paper called \"YieldSpace with Yield\n      Bearing Vaults\" or more casually \"Modified YieldSpace\". It can be\n      found at the following link.\n      https://hackmd.io/lRZ4mgdrRgOpxZQXqKYlFw?view\n      That paper builds on the original YieldSpace paper, \"YieldSpace:\n      An Automated Liquidity Provider for Fixed Yield Tokens\". It can be\n      found at the following link:\n      https://yieldprotocol.com/YieldSpace.pdf"
         },
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          12066
+          15104
         ],
         "name": "YieldSpaceMath",
-        "nameLocation": "1435:14:45",
-        "scope": 12067,
+        "nameLocation": "1435:14:55",
+        "scope": 15105,
         "usedErrors": []
       }
     ],
     "license": "Apache-2.0"
   },
-  "id": 45
+  "id": 55
 } as const;

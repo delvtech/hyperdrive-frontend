@@ -428,19 +428,19 @@ export const IPool =
   },
   "ast": {
     "absolutePath": "lib/yield-daddy/src/aave-v3/external/IPool.sol",
-    "id": 61674,
+    "id": 65024,
     "exportedSymbols": {
       "IPool": [
-        61673
+        65023
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "37:4392:91",
+    "src": "37:4392:102",
     "nodes": [
       {
-        "id": 61603,
+        "id": 64953,
         "nodeType": "PragmaDirective",
-        "src": "37:23:91",
+        "src": "37:23:102",
         "nodes": [],
         "literals": [
           "solidity",
@@ -450,26 +450,26 @@ export const IPool =
         ]
       },
       {
-        "id": 61673,
+        "id": 65023,
         "nodeType": "ContractDefinition",
-        "src": "162:4266:91",
+        "src": "162:4266:102",
         "nodes": [
           {
-            "id": 61607,
+            "id": 64957,
             "nodeType": "StructDefinition",
-            "src": "184:972:91",
+            "src": "184:972:102",
             "nodes": [],
             "canonicalName": "IPool.ReserveConfigurationMap",
             "members": [
               {
                 "constant": false,
-                "id": 61606,
+                "id": 64956,
                 "mutability": "mutable",
                 "name": "data",
-                "nameLocation": "1145:4:91",
+                "nameLocation": "1145:4:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61607,
-                "src": "1137:12:91",
+                "scope": 64957,
+                "src": "1137:12:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -477,10 +477,10 @@ export const IPool =
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 61605,
+                  "id": 64955,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1137:7:91",
+                  "src": "1137:7:102",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -490,49 +490,49 @@ export const IPool =
               }
             ],
             "name": "ReserveConfigurationMap",
-            "nameLocation": "191:23:91",
-            "scope": 61673,
+            "nameLocation": "191:23:102",
+            "scope": 65023,
             "visibility": "public"
           },
           {
-            "id": 61639,
+            "id": 64989,
             "nodeType": "StructDefinition",
-            "src": "1162:1321:91",
+            "src": "1162:1321:102",
             "nodes": [],
             "canonicalName": "IPool.ReserveData",
             "members": [
               {
                 "constant": false,
-                "id": 61610,
+                "id": 64960,
                 "mutability": "mutable",
                 "name": "configuration",
-                "nameLocation": "1215:13:91",
+                "nameLocation": "1215:13:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61639,
-                "src": "1191:37:91",
+                "scope": 64989,
+                "src": "1191:37:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_ReserveConfigurationMap_$61607_storage_ptr",
+                  "typeIdentifier": "t_struct$_ReserveConfigurationMap_$64957_storage_ptr",
                   "typeString": "struct IPool.ReserveConfigurationMap"
                 },
                 "typeName": {
-                  "id": 61609,
+                  "id": 64959,
                   "nodeType": "UserDefinedTypeName",
                   "pathNode": {
-                    "id": 61608,
+                    "id": 64958,
                     "name": "ReserveConfigurationMap",
                     "nameLocations": [
-                      "1191:23:91"
+                      "1191:23:102"
                     ],
                     "nodeType": "IdentifierPath",
-                    "referencedDeclaration": 61607,
-                    "src": "1191:23:91"
+                    "referencedDeclaration": 64957,
+                    "src": "1191:23:102"
                   },
-                  "referencedDeclaration": 61607,
-                  "src": "1191:23:91",
+                  "referencedDeclaration": 64957,
+                  "src": "1191:23:102",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_ReserveConfigurationMap_$61607_storage_ptr",
+                    "typeIdentifier": "t_struct$_ReserveConfigurationMap_$64957_storage_ptr",
                     "typeString": "struct IPool.ReserveConfigurationMap"
                   }
                 },
@@ -540,13 +540,13 @@ export const IPool =
               },
               {
                 "constant": false,
-                "id": 61612,
+                "id": 64962,
                 "mutability": "mutable",
                 "name": "liquidityIndex",
-                "nameLocation": "1294:14:91",
+                "nameLocation": "1294:14:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61639,
-                "src": "1286:22:91",
+                "scope": 64989,
+                "src": "1286:22:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -554,10 +554,10 @@ export const IPool =
                   "typeString": "uint128"
                 },
                 "typeName": {
-                  "id": 61611,
+                  "id": 64961,
                   "name": "uint128",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1286:7:91",
+                  "src": "1286:7:102",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint128",
                     "typeString": "uint128"
@@ -567,13 +567,13 @@ export const IPool =
               },
               {
                 "constant": false,
-                "id": 61614,
+                "id": 64964,
                 "mutability": "mutable",
                 "name": "currentLiquidityRate",
-                "nameLocation": "1378:20:91",
+                "nameLocation": "1378:20:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61639,
-                "src": "1370:28:91",
+                "scope": 64989,
+                "src": "1370:28:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -581,10 +581,10 @@ export const IPool =
                   "typeString": "uint128"
                 },
                 "typeName": {
-                  "id": 61613,
+                  "id": 64963,
                   "name": "uint128",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1370:7:91",
+                  "src": "1370:7:102",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint128",
                     "typeString": "uint128"
@@ -594,13 +594,13 @@ export const IPool =
               },
               {
                 "constant": false,
-                "id": 61616,
+                "id": 64966,
                 "mutability": "mutable",
                 "name": "variableBorrowIndex",
-                "nameLocation": "1466:19:91",
+                "nameLocation": "1466:19:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61639,
-                "src": "1458:27:91",
+                "scope": 64989,
+                "src": "1458:27:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -608,10 +608,10 @@ export const IPool =
                   "typeString": "uint128"
                 },
                 "typeName": {
-                  "id": 61615,
+                  "id": 64965,
                   "name": "uint128",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1458:7:91",
+                  "src": "1458:7:102",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint128",
                     "typeString": "uint128"
@@ -621,13 +621,13 @@ export const IPool =
               },
               {
                 "constant": false,
-                "id": 61618,
+                "id": 64968,
                 "mutability": "mutable",
                 "name": "currentVariableBorrowRate",
-                "nameLocation": "1564:25:91",
+                "nameLocation": "1564:25:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61639,
-                "src": "1556:33:91",
+                "scope": 64989,
+                "src": "1556:33:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -635,10 +635,10 @@ export const IPool =
                   "typeString": "uint128"
                 },
                 "typeName": {
-                  "id": 61617,
+                  "id": 64967,
                   "name": "uint128",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1556:7:91",
+                  "src": "1556:7:102",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint128",
                     "typeString": "uint128"
@@ -648,13 +648,13 @@ export const IPool =
               },
               {
                 "constant": false,
-                "id": 61620,
+                "id": 64970,
                 "mutability": "mutable",
                 "name": "currentStableBorrowRate",
-                "nameLocation": "1666:23:91",
+                "nameLocation": "1666:23:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61639,
-                "src": "1658:31:91",
+                "scope": 64989,
+                "src": "1658:31:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -662,10 +662,10 @@ export const IPool =
                   "typeString": "uint128"
                 },
                 "typeName": {
-                  "id": 61619,
+                  "id": 64969,
                   "name": "uint128",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1658:7:91",
+                  "src": "1658:7:102",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint128",
                     "typeString": "uint128"
@@ -675,13 +675,13 @@ export const IPool =
               },
               {
                 "constant": false,
-                "id": 61622,
+                "id": 64972,
                 "mutability": "mutable",
                 "name": "lastUpdateTimestamp",
-                "nameLocation": "1741:19:91",
+                "nameLocation": "1741:19:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61639,
-                "src": "1734:26:91",
+                "scope": 64989,
+                "src": "1734:26:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -689,10 +689,10 @@ export const IPool =
                   "typeString": "uint40"
                 },
                 "typeName": {
-                  "id": 61621,
+                  "id": 64971,
                   "name": "uint40",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1734:6:91",
+                  "src": "1734:6:102",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint40",
                     "typeString": "uint40"
@@ -702,13 +702,13 @@ export const IPool =
               },
               {
                 "constant": false,
-                "id": 61624,
+                "id": 64974,
                 "mutability": "mutable",
                 "name": "id",
-                "nameLocation": "1869:2:91",
+                "nameLocation": "1869:2:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61639,
-                "src": "1862:9:91",
+                "scope": 64989,
+                "src": "1862:9:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -716,10 +716,10 @@ export const IPool =
                   "typeString": "uint16"
                 },
                 "typeName": {
-                  "id": 61623,
+                  "id": 64973,
                   "name": "uint16",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1862:6:91",
+                  "src": "1862:6:102",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint16",
                     "typeString": "uint16"
@@ -729,13 +729,13 @@ export const IPool =
               },
               {
                 "constant": false,
-                "id": 61626,
+                "id": 64976,
                 "mutability": "mutable",
                 "name": "aTokenAddress",
-                "nameLocation": "1914:13:91",
+                "nameLocation": "1914:13:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61639,
-                "src": "1906:21:91",
+                "scope": 64989,
+                "src": "1906:21:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -743,10 +743,10 @@ export const IPool =
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 61625,
+                  "id": 64975,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1906:7:91",
+                  "src": "1906:7:102",
                   "stateMutability": "nonpayable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -757,13 +757,13 @@ export const IPool =
               },
               {
                 "constant": false,
-                "id": 61628,
+                "id": 64978,
                 "mutability": "mutable",
                 "name": "stableDebtTokenAddress",
-                "nameLocation": "1979:22:91",
+                "nameLocation": "1979:22:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61639,
-                "src": "1971:30:91",
+                "scope": 64989,
+                "src": "1971:30:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -771,10 +771,10 @@ export const IPool =
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 61627,
+                  "id": 64977,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1971:7:91",
+                  "src": "1971:7:102",
                   "stateMutability": "nonpayable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -785,13 +785,13 @@ export const IPool =
               },
               {
                 "constant": false,
-                "id": 61630,
+                "id": 64980,
                 "mutability": "mutable",
                 "name": "variableDebtTokenAddress",
-                "nameLocation": "2055:24:91",
+                "nameLocation": "2055:24:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61639,
-                "src": "2047:32:91",
+                "scope": 64989,
+                "src": "2047:32:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -799,10 +799,10 @@ export const IPool =
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 61629,
+                  "id": 64979,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2047:7:91",
+                  "src": "2047:7:102",
                   "stateMutability": "nonpayable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -813,13 +813,13 @@ export const IPool =
               },
               {
                 "constant": false,
-                "id": 61632,
+                "id": 64982,
                 "mutability": "mutable",
                 "name": "interestRateStrategyAddress",
-                "nameLocation": "2145:27:91",
+                "nameLocation": "2145:27:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61639,
-                "src": "2137:35:91",
+                "scope": 64989,
+                "src": "2137:35:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -827,10 +827,10 @@ export const IPool =
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 61631,
+                  "id": 64981,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2137:7:91",
+                  "src": "2137:7:102",
                   "stateMutability": "nonpayable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -841,13 +841,13 @@ export const IPool =
               },
               {
                 "constant": false,
-                "id": 61634,
+                "id": 64984,
                 "mutability": "mutable",
                 "name": "accruedToTreasury",
-                "nameLocation": "2237:17:91",
+                "nameLocation": "2237:17:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61639,
-                "src": "2229:25:91",
+                "scope": 64989,
+                "src": "2229:25:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -855,10 +855,10 @@ export const IPool =
                   "typeString": "uint128"
                 },
                 "typeName": {
-                  "id": 61633,
+                  "id": 64983,
                   "name": "uint128",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2229:7:91",
+                  "src": "2229:7:102",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint128",
                     "typeString": "uint128"
@@ -868,13 +868,13 @@ export const IPool =
               },
               {
                 "constant": false,
-                "id": 61636,
+                "id": 64986,
                 "mutability": "mutable",
                 "name": "unbacked",
-                "nameLocation": "2351:8:91",
+                "nameLocation": "2351:8:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61639,
-                "src": "2343:16:91",
+                "scope": 64989,
+                "src": "2343:16:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -882,10 +882,10 @@ export const IPool =
                   "typeString": "uint128"
                 },
                 "typeName": {
-                  "id": 61635,
+                  "id": 64985,
                   "name": "uint128",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2343:7:91",
+                  "src": "2343:7:102",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint128",
                     "typeString": "uint128"
@@ -895,13 +895,13 @@ export const IPool =
               },
               {
                 "constant": false,
-                "id": 61638,
+                "id": 64988,
                 "mutability": "mutable",
                 "name": "isolationModeTotalDebt",
-                "nameLocation": "2454:22:91",
+                "nameLocation": "2454:22:102",
                 "nodeType": "VariableDeclaration",
-                "scope": 61639,
-                "src": "2446:30:91",
+                "scope": 64989,
+                "src": "2446:30:102",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -909,10 +909,10 @@ export const IPool =
                   "typeString": "uint128"
                 },
                 "typeName": {
-                  "id": 61637,
+                  "id": 64987,
                   "name": "uint128",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2446:7:91",
+                  "src": "2446:7:102",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint128",
                     "typeString": "uint128"
@@ -922,19 +922,19 @@ export const IPool =
               }
             ],
             "name": "ReserveData",
-            "nameLocation": "1169:11:91",
-            "scope": 61673,
+            "nameLocation": "1169:11:102",
+            "scope": 65023,
             "visibility": "public"
           },
           {
-            "id": 61651,
+            "id": 65001,
             "nodeType": "FunctionDefinition",
-            "src": "3227:97:91",
+            "src": "3227:97:102",
             "nodes": [],
             "documentation": {
-              "id": 61640,
+              "id": 64990,
               "nodeType": "StructuredDocumentation",
-              "src": "2489:733:91",
+              "src": "2489:733:102",
               "text": " @notice Supplies an `amount` of underlying asset into the reserve, receiving in return overlying aTokens.\n - E.g. User supplies 100 USDC and gets in return 100 aUSDC\n @param asset The address of the underlying asset to supply\n @param amount The amount to be supplied\n @param onBehalfOf The address that will receive the aTokens, same as msg.sender if the user\n wants to receive them on his own wallet, or a different address if the beneficiary of aTokens\n is a different wallet\n @param referralCode Code used to register the integrator originating the operation, for potential rewards.\n 0 if the action is executed directly by the user, without any middle-man"
             },
             "functionSelector": "617ba037",
@@ -942,20 +942,20 @@ export const IPool =
             "kind": "function",
             "modifiers": [],
             "name": "supply",
-            "nameLocation": "3236:6:91",
+            "nameLocation": "3236:6:102",
             "parameters": {
-              "id": 61649,
+              "id": 64999,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 61642,
+                  "id": 64992,
                   "mutability": "mutable",
                   "name": "asset",
-                  "nameLocation": "3251:5:91",
+                  "nameLocation": "3251:5:102",
                   "nodeType": "VariableDeclaration",
-                  "scope": 61651,
-                  "src": "3243:13:91",
+                  "scope": 65001,
+                  "src": "3243:13:102",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -963,10 +963,10 @@ export const IPool =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 61641,
+                    "id": 64991,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3243:7:91",
+                    "src": "3243:7:102",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -977,13 +977,13 @@ export const IPool =
                 },
                 {
                   "constant": false,
-                  "id": 61644,
+                  "id": 64994,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "3266:6:91",
+                  "nameLocation": "3266:6:102",
                   "nodeType": "VariableDeclaration",
-                  "scope": 61651,
-                  "src": "3258:14:91",
+                  "scope": 65001,
+                  "src": "3258:14:102",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -991,10 +991,10 @@ export const IPool =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 61643,
+                    "id": 64993,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3258:7:91",
+                    "src": "3258:7:102",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1004,13 +1004,13 @@ export const IPool =
                 },
                 {
                   "constant": false,
-                  "id": 61646,
+                  "id": 64996,
                   "mutability": "mutable",
                   "name": "onBehalfOf",
-                  "nameLocation": "3282:10:91",
+                  "nameLocation": "3282:10:102",
                   "nodeType": "VariableDeclaration",
-                  "scope": 61651,
-                  "src": "3274:18:91",
+                  "scope": 65001,
+                  "src": "3274:18:102",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1018,10 +1018,10 @@ export const IPool =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 61645,
+                    "id": 64995,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3274:7:91",
+                    "src": "3274:7:102",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1032,13 +1032,13 @@ export const IPool =
                 },
                 {
                   "constant": false,
-                  "id": 61648,
+                  "id": 64998,
                   "mutability": "mutable",
                   "name": "referralCode",
-                  "nameLocation": "3301:12:91",
+                  "nameLocation": "3301:12:102",
                   "nodeType": "VariableDeclaration",
-                  "scope": 61651,
-                  "src": "3294:19:91",
+                  "scope": 65001,
+                  "src": "3294:19:102",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1046,10 +1046,10 @@ export const IPool =
                     "typeString": "uint16"
                   },
                   "typeName": {
-                    "id": 61647,
+                    "id": 64997,
                     "name": "uint16",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3294:6:91",
+                    "src": "3294:6:102",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint16",
                       "typeString": "uint16"
@@ -1058,28 +1058,28 @@ export const IPool =
                   "visibility": "internal"
                 }
               ],
-              "src": "3242:72:91"
+              "src": "3242:72:102"
             },
             "returnParameters": {
-              "id": 61650,
+              "id": 65000,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3323:0:91"
+              "src": "3323:0:102"
             },
-            "scope": 61673,
+            "scope": 65023,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 61663,
+            "id": 65013,
             "nodeType": "FunctionDefinition",
-            "src": "4027:88:91",
+            "src": "4027:88:102",
             "nodes": [],
             "documentation": {
-              "id": 61652,
+              "id": 65002,
               "nodeType": "StructuredDocumentation",
-              "src": "3330:692:91",
+              "src": "3330:692:102",
               "text": " @notice Withdraws an `amount` of underlying asset from the reserve, burning the equivalent aTokens owned\n E.g. User has 100 aUSDC, calls withdraw() and receives 100 USDC, burning the 100 aUSDC\n @param asset The address of the underlying asset to withdraw\n @param amount The underlying amount to be withdrawn\n - Send the value type(uint256).max in order to withdraw the whole aToken balance\n @param to The address that will receive the underlying, same as msg.sender if the user\n wants to receive it on his own wallet, or a different address if the beneficiary is a\n different wallet\n @return The final amount withdrawn"
             },
             "functionSelector": "69328dec",
@@ -1087,20 +1087,20 @@ export const IPool =
             "kind": "function",
             "modifiers": [],
             "name": "withdraw",
-            "nameLocation": "4036:8:91",
+            "nameLocation": "4036:8:102",
             "parameters": {
-              "id": 61659,
+              "id": 65009,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 61654,
+                  "id": 65004,
                   "mutability": "mutable",
                   "name": "asset",
-                  "nameLocation": "4053:5:91",
+                  "nameLocation": "4053:5:102",
                   "nodeType": "VariableDeclaration",
-                  "scope": 61663,
-                  "src": "4045:13:91",
+                  "scope": 65013,
+                  "src": "4045:13:102",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1108,10 +1108,10 @@ export const IPool =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 61653,
+                    "id": 65003,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4045:7:91",
+                    "src": "4045:7:102",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1122,13 +1122,13 @@ export const IPool =
                 },
                 {
                   "constant": false,
-                  "id": 61656,
+                  "id": 65006,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "4068:6:91",
+                  "nameLocation": "4068:6:102",
                   "nodeType": "VariableDeclaration",
-                  "scope": 61663,
-                  "src": "4060:14:91",
+                  "scope": 65013,
+                  "src": "4060:14:102",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1136,10 +1136,10 @@ export const IPool =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 61655,
+                    "id": 65005,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4060:7:91",
+                    "src": "4060:7:102",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1149,13 +1149,13 @@ export const IPool =
                 },
                 {
                   "constant": false,
-                  "id": 61658,
+                  "id": 65008,
                   "mutability": "mutable",
                   "name": "to",
-                  "nameLocation": "4084:2:91",
+                  "nameLocation": "4084:2:102",
                   "nodeType": "VariableDeclaration",
-                  "scope": 61663,
-                  "src": "4076:10:91",
+                  "scope": 65013,
+                  "src": "4076:10:102",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1163,10 +1163,10 @@ export const IPool =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 61657,
+                    "id": 65007,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4076:7:91",
+                    "src": "4076:7:102",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1176,21 +1176,21 @@ export const IPool =
                   "visibility": "internal"
                 }
               ],
-              "src": "4044:43:91"
+              "src": "4044:43:102"
             },
             "returnParameters": {
-              "id": 61662,
+              "id": 65012,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 61661,
+                  "id": 65011,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 61663,
-                  "src": "4106:7:91",
+                  "scope": 65013,
+                  "src": "4106:7:102",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1198,10 +1198,10 @@ export const IPool =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 61660,
+                    "id": 65010,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4106:7:91",
+                    "src": "4106:7:102",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1210,22 +1210,22 @@ export const IPool =
                   "visibility": "internal"
                 }
               ],
-              "src": "4105:9:91"
+              "src": "4105:9:102"
             },
-            "scope": 61673,
+            "scope": 65023,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 61672,
+            "id": 65022,
             "nodeType": "FunctionDefinition",
-            "src": "4344:82:91",
+            "src": "4344:82:102",
             "nodes": [],
             "documentation": {
-              "id": 61664,
+              "id": 65014,
               "nodeType": "StructuredDocumentation",
-              "src": "4121:218:91",
+              "src": "4121:218:102",
               "text": " @notice Returns the state and configuration of the reserve\n @param asset The address of the underlying asset of the reserve\n @return The state and configuration data of the reserve"
             },
             "functionSelector": "35ea6a75",
@@ -1233,20 +1233,20 @@ export const IPool =
             "kind": "function",
             "modifiers": [],
             "name": "getReserveData",
-            "nameLocation": "4353:14:91",
+            "nameLocation": "4353:14:102",
             "parameters": {
-              "id": 61667,
+              "id": 65017,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 61666,
+                  "id": 65016,
                   "mutability": "mutable",
                   "name": "asset",
-                  "nameLocation": "4376:5:91",
+                  "nameLocation": "4376:5:102",
                   "nodeType": "VariableDeclaration",
-                  "scope": 61672,
-                  "src": "4368:13:91",
+                  "scope": 65022,
+                  "src": "4368:13:102",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1254,10 +1254,10 @@ export const IPool =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 61665,
+                    "id": 65015,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4368:7:91",
+                    "src": "4368:7:102",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1267,53 +1267,53 @@ export const IPool =
                   "visibility": "internal"
                 }
               ],
-              "src": "4367:15:91"
+              "src": "4367:15:102"
             },
             "returnParameters": {
-              "id": 61671,
+              "id": 65021,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 61670,
+                  "id": 65020,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 61672,
-                  "src": "4406:18:91",
+                  "scope": 65022,
+                  "src": "4406:18:102",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_ReserveData_$61639_memory_ptr",
+                    "typeIdentifier": "t_struct$_ReserveData_$64989_memory_ptr",
                     "typeString": "struct IPool.ReserveData"
                   },
                   "typeName": {
-                    "id": 61669,
+                    "id": 65019,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 61668,
+                      "id": 65018,
                       "name": "ReserveData",
                       "nameLocations": [
-                        "4406:11:91"
+                        "4406:11:102"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 61639,
-                      "src": "4406:11:91"
+                      "referencedDeclaration": 64989,
+                      "src": "4406:11:102"
                     },
-                    "referencedDeclaration": 61639,
-                    "src": "4406:11:91",
+                    "referencedDeclaration": 64989,
+                    "src": "4406:11:102",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_ReserveData_$61639_storage_ptr",
+                      "typeIdentifier": "t_struct$_ReserveData_$64989_storage_ptr",
                       "typeString": "struct IPool.ReserveData"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "4405:20:91"
+              "src": "4405:20:102"
             },
-            "scope": 61673,
+            "scope": 65023,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -1325,22 +1325,22 @@ export const IPool =
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 61604,
+          "id": 64954,
           "nodeType": "StructuredDocumentation",
-          "src": "62:99:91",
+          "src": "62:99:102",
           "text": " @title IPool\n @author Aave\n @notice Defines the basic interface for an Aave Pool."
         },
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          61673
+          65023
         ],
         "name": "IPool",
-        "nameLocation": "172:5:91",
-        "scope": 61674,
+        "nameLocation": "172:5:102",
+        "scope": 65024,
         "usedErrors": []
       }
     ],
     "license": "AGPL-3.0"
   },
-  "id": 91
+  "id": 102
 } as const;

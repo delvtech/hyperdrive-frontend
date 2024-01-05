@@ -123,19 +123,19 @@ export const IMultiTokenMetadata =
   },
   "ast": {
     "absolutePath": "contracts/src/interfaces/IMultiTokenMetadata.sol",
-    "id": 4266,
+    "id": 5219,
     "exportedSymbols": {
       "IMultiTokenMetadata": [
-        4265
+        5218
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "39:275:29",
+    "src": "39:275:39",
     "nodes": [
       {
-        "id": 4254,
+        "id": 5207,
         "nodeType": "PragmaDirective",
-        "src": "39:23:29",
+        "src": "39:23:39",
         "nodes": [],
         "literals": [
           "solidity",
@@ -144,40 +144,40 @@ export const IMultiTokenMetadata =
         ]
       },
       {
-        "id": 4265,
+        "id": 5218,
         "nodeType": "ContractDefinition",
-        "src": "64:249:29",
+        "src": "64:249:39",
         "nodes": [
           {
-            "id": 4259,
+            "id": 5212,
             "nodeType": "FunctionDefinition",
-            "src": "143:59:29",
+            "src": "143:59:39",
             "nodes": [],
             "functionSelector": "30adf81f",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "PERMIT_TYPEHASH",
-            "nameLocation": "152:15:29",
+            "nameLocation": "152:15:39",
             "parameters": {
-              "id": 4255,
+              "id": 5208,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "167:2:29"
+              "src": "167:2:39"
             },
             "returnParameters": {
-              "id": 4258,
+              "id": 5211,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4257,
+                  "id": 5210,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4259,
-                  "src": "193:7:29",
+                  "scope": 5212,
+                  "src": "193:7:39",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -185,10 +185,10 @@ export const IMultiTokenMetadata =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 4256,
+                    "id": 5209,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "193:7:29",
+                    "src": "193:7:39",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -197,43 +197,43 @@ export const IMultiTokenMetadata =
                   "visibility": "internal"
                 }
               ],
-              "src": "192:9:29"
+              "src": "192:9:39"
             },
-            "scope": 4265,
+            "scope": 5218,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 4264,
+            "id": 5217,
             "nodeType": "FunctionDefinition",
-            "src": "251:60:29",
+            "src": "251:60:39",
             "nodes": [],
             "functionSelector": "3644e515",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "DOMAIN_SEPARATOR",
-            "nameLocation": "260:16:29",
+            "nameLocation": "260:16:39",
             "parameters": {
-              "id": 4260,
+              "id": 5213,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "276:2:29"
+              "src": "276:2:39"
             },
             "returnParameters": {
-              "id": 4263,
+              "id": 5216,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4262,
+                  "id": 5215,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4264,
-                  "src": "302:7:29",
+                  "scope": 5217,
+                  "src": "302:7:39",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -241,10 +241,10 @@ export const IMultiTokenMetadata =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 4261,
+                    "id": 5214,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "302:7:29",
+                    "src": "302:7:39",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -253,9 +253,9 @@ export const IMultiTokenMetadata =
                   "visibility": "internal"
                 }
               ],
-              "src": "301:9:29"
+              "src": "301:9:39"
             },
-            "scope": 4265,
+            "scope": 5218,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -268,15 +268,15 @@ export const IMultiTokenMetadata =
         "contractKind": "interface",
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          4265
+          5218
         ],
         "name": "IMultiTokenMetadata",
-        "nameLocation": "74:19:29",
-        "scope": 4266,
+        "nameLocation": "74:19:39",
+        "scope": 5219,
         "usedErrors": []
       }
     ],
     "license": "Apache-2.0"
   },
-  "id": 29
+  "id": 39
 } as const;

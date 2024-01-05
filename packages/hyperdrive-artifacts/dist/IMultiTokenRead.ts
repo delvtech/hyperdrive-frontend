@@ -382,19 +382,19 @@ export const IMultiTokenRead =
   },
   "ast": {
     "absolutePath": "contracts/src/interfaces/IMultiTokenRead.sol",
-    "id": 4326,
+    "id": 5279,
     "exportedSymbols": {
       "IMultiTokenRead": [
-        4325
+        5278
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "39:706:30",
+    "src": "39:706:40",
     "nodes": [
       {
-        "id": 4267,
+        "id": 5220,
         "nodeType": "PragmaDirective",
-        "src": "39:23:30",
+        "src": "39:23:40",
         "nodes": [],
         "literals": [
           "solidity",
@@ -403,34 +403,34 @@ export const IMultiTokenRead =
         ]
       },
       {
-        "id": 4325,
+        "id": 5278,
         "nodeType": "ContractDefinition",
-        "src": "64:680:30",
+        "src": "64:680:40",
         "nodes": [
           {
-            "id": 4274,
+            "id": 5227,
             "nodeType": "FunctionDefinition",
-            "src": "96:64:30",
+            "src": "96:64:40",
             "nodes": [],
             "functionSelector": "00ad800c",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "name",
-            "nameLocation": "105:4:30",
+            "nameLocation": "105:4:40",
             "parameters": {
-              "id": 4270,
+              "id": 5223,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4269,
+                  "id": 5222,
                   "mutability": "mutable",
                   "name": "id",
-                  "nameLocation": "118:2:30",
+                  "nameLocation": "118:2:40",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4274,
-                  "src": "110:10:30",
+                  "scope": 5227,
+                  "src": "110:10:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -438,10 +438,10 @@ export const IMultiTokenRead =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4268,
+                    "id": 5221,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "110:7:30",
+                    "src": "110:7:40",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -450,21 +450,21 @@ export const IMultiTokenRead =
                   "visibility": "internal"
                 }
               ],
-              "src": "109:12:30"
+              "src": "109:12:40"
             },
             "returnParameters": {
-              "id": 4273,
+              "id": 5226,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4272,
+                  "id": 5225,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4274,
-                  "src": "145:13:30",
+                  "scope": 5227,
+                  "src": "145:13:40",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -472,10 +472,10 @@ export const IMultiTokenRead =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 4271,
+                    "id": 5224,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "145:6:30",
+                    "src": "145:6:40",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -484,37 +484,37 @@ export const IMultiTokenRead =
                   "visibility": "internal"
                 }
               ],
-              "src": "144:15:30"
+              "src": "144:15:40"
             },
-            "scope": 4325,
+            "scope": 5278,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 4281,
+            "id": 5234,
             "nodeType": "FunctionDefinition",
-            "src": "166:66:30",
+            "src": "166:66:40",
             "nodes": [],
             "functionSelector": "4e41a1fb",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "symbol",
-            "nameLocation": "175:6:30",
+            "nameLocation": "175:6:40",
             "parameters": {
-              "id": 4277,
+              "id": 5230,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4276,
+                  "id": 5229,
                   "mutability": "mutable",
                   "name": "id",
-                  "nameLocation": "190:2:30",
+                  "nameLocation": "190:2:40",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4281,
-                  "src": "182:10:30",
+                  "scope": 5234,
+                  "src": "182:10:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -522,10 +522,10 @@ export const IMultiTokenRead =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4275,
+                    "id": 5228,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "182:7:30",
+                    "src": "182:7:40",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -534,21 +534,21 @@ export const IMultiTokenRead =
                   "visibility": "internal"
                 }
               ],
-              "src": "181:12:30"
+              "src": "181:12:40"
             },
             "returnParameters": {
-              "id": 4280,
+              "id": 5233,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4279,
+                  "id": 5232,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4281,
-                  "src": "217:13:30",
+                  "scope": 5234,
+                  "src": "217:13:40",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -556,10 +556,10 @@ export const IMultiTokenRead =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 4278,
+                    "id": 5231,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "217:6:30",
+                    "src": "217:6:40",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -568,37 +568,37 @@ export const IMultiTokenRead =
                   "visibility": "internal"
                 }
               ],
-              "src": "216:15:30"
+              "src": "216:15:40"
             },
-            "scope": 4325,
+            "scope": 5278,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 4288,
+            "id": 5241,
             "nodeType": "FunctionDefinition",
-            "src": "238:65:30",
+            "src": "238:65:40",
             "nodes": [],
             "functionSelector": "bd85b039",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "totalSupply",
-            "nameLocation": "247:11:30",
+            "nameLocation": "247:11:40",
             "parameters": {
-              "id": 4284,
+              "id": 5237,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4283,
+                  "id": 5236,
                   "mutability": "mutable",
                   "name": "id",
-                  "nameLocation": "267:2:30",
+                  "nameLocation": "267:2:40",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4288,
-                  "src": "259:10:30",
+                  "scope": 5241,
+                  "src": "259:10:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -606,10 +606,10 @@ export const IMultiTokenRead =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4282,
+                    "id": 5235,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "259:7:30",
+                    "src": "259:7:40",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -618,21 +618,21 @@ export const IMultiTokenRead =
                   "visibility": "internal"
                 }
               ],
-              "src": "258:12:30"
+              "src": "258:12:40"
             },
             "returnParameters": {
-              "id": 4287,
+              "id": 5240,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4286,
+                  "id": 5239,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4288,
-                  "src": "294:7:30",
+                  "scope": 5241,
+                  "src": "294:7:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -640,10 +640,10 @@ export const IMultiTokenRead =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4285,
+                    "id": 5238,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "294:7:30",
+                    "src": "294:7:40",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -652,37 +652,37 @@ export const IMultiTokenRead =
                   "visibility": "internal"
                 }
               ],
-              "src": "293:9:30"
+              "src": "293:9:40"
             },
-            "scope": 4325,
+            "scope": 5278,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 4297,
+            "id": 5250,
             "nodeType": "FunctionDefinition",
-            "src": "309:109:30",
+            "src": "309:109:40",
             "nodes": [],
             "functionSelector": "e985e9c5",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "isApprovedForAll",
-            "nameLocation": "318:16:30",
+            "nameLocation": "318:16:40",
             "parameters": {
-              "id": 4293,
+              "id": 5246,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4290,
+                  "id": 5243,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "352:5:30",
+                  "nameLocation": "352:5:40",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4297,
-                  "src": "344:13:30",
+                  "scope": 5250,
+                  "src": "344:13:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -690,10 +690,10 @@ export const IMultiTokenRead =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4289,
+                    "id": 5242,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "344:7:30",
+                    "src": "344:7:40",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -704,13 +704,13 @@ export const IMultiTokenRead =
                 },
                 {
                   "constant": false,
-                  "id": 4292,
+                  "id": 5245,
                   "mutability": "mutable",
                   "name": "spender",
-                  "nameLocation": "375:7:30",
+                  "nameLocation": "375:7:40",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4297,
-                  "src": "367:15:30",
+                  "scope": 5250,
+                  "src": "367:15:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -718,10 +718,10 @@ export const IMultiTokenRead =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4291,
+                    "id": 5244,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "367:7:30",
+                    "src": "367:7:40",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -731,21 +731,21 @@ export const IMultiTokenRead =
                   "visibility": "internal"
                 }
               ],
-              "src": "334:54:30"
+              "src": "334:54:40"
             },
             "returnParameters": {
-              "id": 4296,
+              "id": 5249,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4295,
+                  "id": 5248,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4297,
-                  "src": "412:4:30",
+                  "scope": 5250,
+                  "src": "412:4:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -753,10 +753,10 @@ export const IMultiTokenRead =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 4294,
+                    "id": 5247,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "412:4:30",
+                    "src": "412:4:40",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -765,37 +765,37 @@ export const IMultiTokenRead =
                   "visibility": "internal"
                 }
               ],
-              "src": "411:6:30"
+              "src": "411:6:40"
             },
-            "scope": 4325,
+            "scope": 5278,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 4308,
+            "id": 5261,
             "nodeType": "FunctionDefinition",
-            "src": "424:138:30",
+            "src": "424:138:40",
             "nodes": [],
             "functionSelector": "21ff32a9",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "perTokenApprovals",
-            "nameLocation": "433:17:30",
+            "nameLocation": "433:17:40",
             "parameters": {
-              "id": 4304,
+              "id": 5257,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4299,
+                  "id": 5252,
                   "mutability": "mutable",
                   "name": "tokenId",
-                  "nameLocation": "468:7:30",
+                  "nameLocation": "468:7:40",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4308,
-                  "src": "460:15:30",
+                  "scope": 5261,
+                  "src": "460:15:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -803,10 +803,10 @@ export const IMultiTokenRead =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4298,
+                    "id": 5251,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "460:7:30",
+                    "src": "460:7:40",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -816,13 +816,13 @@ export const IMultiTokenRead =
                 },
                 {
                   "constant": false,
-                  "id": 4301,
+                  "id": 5254,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "493:5:30",
+                  "nameLocation": "493:5:40",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4308,
-                  "src": "485:13:30",
+                  "scope": 5261,
+                  "src": "485:13:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -830,10 +830,10 @@ export const IMultiTokenRead =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4300,
+                    "id": 5253,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "485:7:30",
+                    "src": "485:7:40",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -844,13 +844,13 @@ export const IMultiTokenRead =
                 },
                 {
                   "constant": false,
-                  "id": 4303,
+                  "id": 5256,
                   "mutability": "mutable",
                   "name": "spender",
-                  "nameLocation": "516:7:30",
+                  "nameLocation": "516:7:40",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4308,
-                  "src": "508:15:30",
+                  "scope": 5261,
+                  "src": "508:15:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -858,10 +858,10 @@ export const IMultiTokenRead =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4302,
+                    "id": 5255,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "508:7:30",
+                    "src": "508:7:40",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -871,21 +871,21 @@ export const IMultiTokenRead =
                   "visibility": "internal"
                 }
               ],
-              "src": "450:79:30"
+              "src": "450:79:40"
             },
             "returnParameters": {
-              "id": 4307,
+              "id": 5260,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4306,
+                  "id": 5259,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4308,
-                  "src": "553:7:30",
+                  "scope": 5261,
+                  "src": "553:7:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -893,10 +893,10 @@ export const IMultiTokenRead =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4305,
+                    "id": 5258,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "553:7:30",
+                    "src": "553:7:40",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -905,37 +905,37 @@ export const IMultiTokenRead =
                   "visibility": "internal"
                 }
               ],
-              "src": "552:9:30"
+              "src": "552:9:40"
             },
-            "scope": 4325,
+            "scope": 5278,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 4317,
+            "id": 5270,
             "nodeType": "FunctionDefinition",
-            "src": "568:105:30",
+            "src": "568:105:40",
             "nodes": [],
             "functionSelector": "3656eec2",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "balanceOf",
-            "nameLocation": "577:9:30",
+            "nameLocation": "577:9:40",
             "parameters": {
-              "id": 4313,
+              "id": 5266,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4310,
+                  "id": 5263,
                   "mutability": "mutable",
                   "name": "tokenId",
-                  "nameLocation": "604:7:30",
+                  "nameLocation": "604:7:40",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4317,
-                  "src": "596:15:30",
+                  "scope": 5270,
+                  "src": "596:15:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -943,10 +943,10 @@ export const IMultiTokenRead =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4309,
+                    "id": 5262,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "596:7:30",
+                    "src": "596:7:40",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -956,13 +956,13 @@ export const IMultiTokenRead =
                 },
                 {
                   "constant": false,
-                  "id": 4312,
+                  "id": 5265,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "629:5:30",
+                  "nameLocation": "629:5:40",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4317,
-                  "src": "621:13:30",
+                  "scope": 5270,
+                  "src": "621:13:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -970,10 +970,10 @@ export const IMultiTokenRead =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4311,
+                    "id": 5264,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "621:7:30",
+                    "src": "621:7:40",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -983,21 +983,21 @@ export const IMultiTokenRead =
                   "visibility": "internal"
                 }
               ],
-              "src": "586:54:30"
+              "src": "586:54:40"
             },
             "returnParameters": {
-              "id": 4316,
+              "id": 5269,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4315,
+                  "id": 5268,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4317,
-                  "src": "664:7:30",
+                  "scope": 5270,
+                  "src": "664:7:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1005,10 +1005,10 @@ export const IMultiTokenRead =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4314,
+                    "id": 5267,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "664:7:30",
+                    "src": "664:7:40",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1017,37 +1017,37 @@ export const IMultiTokenRead =
                   "visibility": "internal"
                 }
               ],
-              "src": "663:9:30"
+              "src": "663:9:40"
             },
-            "scope": 4325,
+            "scope": 5278,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 4324,
+            "id": 5277,
             "nodeType": "FunctionDefinition",
-            "src": "679:63:30",
+            "src": "679:63:40",
             "nodes": [],
             "functionSelector": "7ecebe00",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "nonces",
-            "nameLocation": "688:6:30",
+            "nameLocation": "688:6:40",
             "parameters": {
-              "id": 4320,
+              "id": 5273,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4319,
+                  "id": 5272,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "703:5:30",
+                  "nameLocation": "703:5:40",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4324,
-                  "src": "695:13:30",
+                  "scope": 5277,
+                  "src": "695:13:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1055,10 +1055,10 @@ export const IMultiTokenRead =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4318,
+                    "id": 5271,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "695:7:30",
+                    "src": "695:7:40",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1068,21 +1068,21 @@ export const IMultiTokenRead =
                   "visibility": "internal"
                 }
               ],
-              "src": "694:15:30"
+              "src": "694:15:40"
             },
             "returnParameters": {
-              "id": 4323,
+              "id": 5276,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4322,
+                  "id": 5275,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4324,
-                  "src": "733:7:30",
+                  "scope": 5277,
+                  "src": "733:7:40",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1090,10 +1090,10 @@ export const IMultiTokenRead =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4321,
+                    "id": 5274,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "733:7:30",
+                    "src": "733:7:40",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1102,9 +1102,9 @@ export const IMultiTokenRead =
                   "visibility": "internal"
                 }
               ],
-              "src": "732:9:30"
+              "src": "732:9:40"
             },
-            "scope": 4325,
+            "scope": 5278,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -1117,15 +1117,15 @@ export const IMultiTokenRead =
         "contractKind": "interface",
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          4325
+          5278
         ],
         "name": "IMultiTokenRead",
-        "nameLocation": "74:15:30",
-        "scope": 4326,
+        "nameLocation": "74:15:40",
+        "scope": 5279,
         "usedErrors": []
       }
     ],
     "license": "Apache-2.0"
   },
-  "id": 30
+  "id": 40
 } as const;
