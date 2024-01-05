@@ -12,13 +12,12 @@ export function Stat({ label, value, description }: StatProps): ReactElement {
   return (
     <div className="group">
       <div className="mb-1 whitespace-nowrap text-h4 font-bold">{value}</div>
-
       {description ? (
         <div
           data-tip={description}
           // Future note: use before: to style the text inside the tooltip
           className={classNames(
-            "daisy-tooltip flex items-center transition duration-150 ease-in-out before:whitespace-normal",
+            "daisy-tooltip flex items-center transition duration-150 ease-in-out",
             description ? "cursor-help" : "",
           )}
         >
