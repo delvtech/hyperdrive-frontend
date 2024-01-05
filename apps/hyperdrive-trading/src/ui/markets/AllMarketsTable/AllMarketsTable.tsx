@@ -29,7 +29,7 @@ const formatMobileColumnData = (row: MarketTableRowData) => [
     ),
   },
   { name: "Yield Source", value: row.yieldSource.name },
-  { name: "Annual Yield", value: <YieldSourceApy /> },
+  { name: "Yield Source APY", value: <YieldSourceApy /> },
   { name: "Fixed Rate", value: row.longAPR },
   { name: "LP APY", value: <LpApyCell hyperdrive={row.market} /> },
   {
@@ -125,7 +125,7 @@ function getColumns() {
       },
     }),
     columnHelper.display({
-      header: "Annual Yield",
+      header: "Yield Source APY",
       cell: () => {
         return <YieldSourceApy key="yield-source-apy" />;
       },
