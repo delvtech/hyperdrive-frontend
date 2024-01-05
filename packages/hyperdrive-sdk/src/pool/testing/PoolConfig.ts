@@ -3,26 +3,6 @@ import { ZERO_ADDRESS } from "./constants";
 
 export const simplePoolConfig: PoolConfig = {
   baseToken: ZERO_ADDRESS,
-  initialSharePrice: 0n,
-  minimumShareReserves: 0n,
-  minimumTransactionAmount: 0n,
-  positionDuration: 0n,
-  checkpointDuration: 0n,
-  timeStretch: 0n,
-  governance: ZERO_ADDRESS,
-  feeCollector: ZERO_ADDRESS,
-  fees: {
-    curve: 0n,
-    flat: 0n,
-    governanceLP: 0n,
-    governanceZombie: 0n,
-  },
-  linkerCodeHash: "0x".padEnd(66, "0") as `0x${string}`,
-  linkerFactory: ZERO_ADDRESS,
-};
-
-export const mockPoolConfig: PoolConfig = {
-  baseToken: ZERO_ADDRESS,
   governance: ZERO_ADDRESS,
   feeCollector: ZERO_ADDRESS,
   fees: {

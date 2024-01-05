@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 import * as dnum from "dnum";
-import { mockPoolConfig, simplePoolConfig } from "src/pool/testing/PoolConfig";
-import { mockPoolInfo, simplePoolInfo } from "src/pool/testing/PoolInfo";
+import { simplePoolConfig } from "src/pool/testing/PoolConfig";
+import { simplePoolInfo } from "src/pool/testing/PoolInfo";
 import { ALICE, BOB } from "src/base/testing/accounts";
 import { CheckpointEvent } from "src/pool/Checkpoint";
 import { setupReadHyperdrive } from "./testing/setupReadHyperdrive";
@@ -50,12 +50,12 @@ test("getFixedRate should get the fixed rate as-is", async () => {
   contract.stubRead({
     functionName: "getPoolConfig",
     args: [],
-    value: [mockPoolConfig],
+    value: [simplePoolConfig],
   });
   contract.stubRead({
     functionName: "getPoolInfo",
     args: [],
-    value: [mockPoolInfo],
+    value: [simplePoolInfo],
   });
 
   const value = await readHyperdrive.getSpotRate();

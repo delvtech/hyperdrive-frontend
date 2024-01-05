@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShares";
-import { mockPoolInfo } from "src/pool/testing/PoolInfo";
+import { simplePoolInfo } from "src/pool/testing/PoolInfo";
 import { setupReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/testing/setupReadHyperdrive";
 
 test("calculateEffectiveShares should return `shareReserves - shareAdjustment`", async () => {
@@ -8,7 +8,7 @@ test("calculateEffectiveShares should return `shareReserves - shareAdjustment`",
   contract.stubRead({
     functionName: "getPoolInfo",
     args: [],
-    value: [mockPoolInfo],
+    value: [simplePoolInfo],
   });
   const poolInfo = await readHyperdrive.getPoolInfo();
   const effectiveShares = calculateEffectiveShareReserves({
