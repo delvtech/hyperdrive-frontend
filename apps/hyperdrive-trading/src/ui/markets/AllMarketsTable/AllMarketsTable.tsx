@@ -226,7 +226,7 @@ export function AllMarketsTable(): ReactElement {
   });
   return (
     <div className="flex w-full max-w-6xl flex-col items-center overflow-y-scroll p-2 md:p-4 md:px-0">
-      <h3 className="mb-5 w-full pl-1 text-h5 text-gray-400">
+      <h3 className="mb-5 w-full pl-1 text-h5 text-neutral-content">
         Available Markets
       </h3>
       <div className="daisy-card-bordered daisy-card flex w-full md:p-6">
@@ -312,7 +312,7 @@ function GoToMarketButton({ market }: { market: Hyperdrive }): ReactElement {
       onClick={() => {
         navigate(`/market/${market}`);
       }}
-      className="daisy-btn-md daisy-btn-circle flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
+      className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >
       <ArrowRightIcon className="h-5" />
     </button>
