@@ -57,27 +57,27 @@ export const { command, aliases, describe, builder, handler } =
         },
         "gov-lp-fee": {
           alias: ["governance-lp-fee"],
-          description: "The portion of the LP fee that goes to governance",
+          describe: "The portion of the LP fee that goes to governance",
           type: "string",
           default: "0.01",
         },
         "max-gov-lp-fee": {
           alias: ["max-governance-lp-fee"],
-          description:
+          describe:
             "The upper bound of the governance lp fee that governance can set",
           type: "string",
           default: "0.3",
         },
         "gov-zombie-fee": {
           alias: ["governance-zombie-fee"],
-          description:
+          describe:
             "The portion of the zombie interest that goes to governance",
           type: "string",
           default: "0.1",
         },
         "max-gov-zombie-fee": {
           alias: ["max-governance-zombie-fee"],
-          description:
+          describe:
             "The upper bound of the governance zombie fee that governance can set",
           type: "string",
           default: "0.3",
