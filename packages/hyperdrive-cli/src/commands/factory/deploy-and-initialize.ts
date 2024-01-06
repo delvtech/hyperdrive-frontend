@@ -339,6 +339,7 @@ export default command({
           topics: log.topics,
           data: log.data,
         }).args.hyperdrive;
+        break;
       }
     }
 
