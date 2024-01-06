@@ -6,18 +6,19 @@ export default command({
   description: "Start a local ethereum node",
 
   options: {
+    // -h is reserved for --help
+    host: {
+      alias: ["hostname"],
+      description: "The hostname to listen on",
+      type: "string",
+      default: "localhost",
+    },
     p: {
       alias: ["port"],
       description: "The port to listen on",
       type: "number",
       default: 8545,
     },
-    // h: {
-    //   alias: ["host"],
-    //   description: "The hostname to listen on",
-    //   type: "string",
-    //   default: "127.0.0.1",
-    // },
     b: {
       alias: ["balance"],
       description: "The ETH balance to assign to each account",
@@ -38,14 +39,12 @@ export default command({
   },
 
   handler: async ({ options, end }) => {
-    const { balance, blockTime, chainId, port } = await options.values;
+    const { balance, blockTime, chainId, hostname, port } =
+      await options.values;
 
     hre.config.networks.hardhat = {
       ...hre.config.networks.hardhat,
       chainId,
-
-      // TODO: Figure out how to set host
-      // host: args.host,
 
       allowUnlimitedContractSize: true,
       accounts: {
@@ -63,6 +62,7 @@ export default command({
     };
 
     hre.run("node", {
+      hostname,
       port,
     });
 
