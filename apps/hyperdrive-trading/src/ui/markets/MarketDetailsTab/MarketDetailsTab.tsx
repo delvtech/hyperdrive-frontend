@@ -21,7 +21,7 @@ export function MarketDetailsTab({
         </div>
 
         {/* transaction form */}
-        <div className="rounded-r-box bg-base-200 p-6 lg:max-w-sm">
+        <div className="rounded-box bg-base-200 p-6 md:rounded-l-none md:rounded-r-box lg:max-w-sm">
           <h5 className="mb-3 font-bold">{transactionFormHeading}</h5>
           {transactionForm}
         </div>

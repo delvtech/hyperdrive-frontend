@@ -44,7 +44,7 @@ export function MarketStats({
   ].includes(chainId);
 
   return (
-    <div className="grid grid-cols-2 gap-2 border-y border-gray-600 py-8 sm:grid-cols-3 md:grid-cols-5">
+    <div className="grid grid-cols-2 gap-6 border-y border-gray-600 py-8 sm:grid-cols-3 md:grid-cols-5">
       <Stat
         label="Yield source APY"
         value={

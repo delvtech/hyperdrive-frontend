@@ -13,7 +13,7 @@ export default function ToastProvider(): JSX.Element {
               {t.type !== "loading" && (
                 <div className="flex items-center justify-center">
                   <XMarkIcon
-                    className="h-6 cursor-pointer rounded-full bg-base-200 p-1"
+                    className="h-6 cursor-pointer rounded-full p-1"
                     onClick={() => toast.dismiss(t.id)}
                   />
                 </div>
