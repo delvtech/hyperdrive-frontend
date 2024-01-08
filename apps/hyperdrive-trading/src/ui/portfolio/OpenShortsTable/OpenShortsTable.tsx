@@ -288,7 +288,7 @@ export function OpenShortsTable({
           />
         );
       })}
-      <table className="daisy-table-zebra daisy-table daisy-table-lg">
+      <table className="daisy-table daisy-table-zebra daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
@@ -335,7 +335,10 @@ export function OpenShortsTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td className="text-body sm:text-lg" key={cell.id}>
+                        <td
+                          className="text-body align-top sm:text-lg"
+                          key={cell.id}
+                        >
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),

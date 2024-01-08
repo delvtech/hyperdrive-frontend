@@ -5,9 +5,9 @@ import {
   WalletIcon,
 } from "@heroicons/react/24/outline";
 import {
+  Long,
   calculateFixedRateFromOpenLong,
   calculateMatureLongYieldAfterFees,
-  Long,
 } from "@hyperdrive/sdk";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useQuery } from "@tanstack/react-query";
@@ -238,7 +238,7 @@ export function OpenLongsTable({
           />
         );
       })}
-      <table className="daisy-table-zebra daisy-table daisy-table-lg">
+      <table className="daisy-table daisy-table-zebra daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
@@ -286,7 +286,10 @@ export function OpenLongsTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td className="text-body sm:text-lg" key={cell.id}>
+                        <td
+                          className="text-body align-top sm:text-lg"
+                          key={cell.id}
+                        >
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),
