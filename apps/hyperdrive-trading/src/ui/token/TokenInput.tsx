@@ -40,13 +40,13 @@ export function TokenInput({
 }: TokenInputProps): ReactElement {
   return (
     <div className="flex flex-col">
-      <label className="daisy-label flex justify-between">
+      <label className="daisy-label flex justify-between px-0">
         <span className="daisy-label-text">{inputLabel}</span>
         {stat ? <span className="daisy-label-text">{stat}</span> : null}
       </label>
 
       <label className="daisy-join items-center">
-        <div className="daisy-join-item flex h-12 items-center bg-base-300/5 px-4">
+        <div className="daisy-join-item flex items-center justify-start pr-6">
           {token.symbol}
         </div>
         <input
@@ -63,7 +63,7 @@ export function TokenInput({
           name={`${token.symbol} input`}
           disabled={disabled}
           className={classNames(
-            "daisy-input-bordered daisy-input daisy-join-item w-full",
+            "daisy-input daisy-join-item daisy-input-bordered w-full",
             HIDE_NUMERIC_INPUT_ARROWS_CLASS,
             {
               "daisy-input-error text-error": hasError,
@@ -76,7 +76,7 @@ export function TokenInput({
         {maxValue !== undefined ? (
           <button
             className={classNames(
-              "daisy-btn-outline daisy-btn daisy-join-item",
+              "daisy-btn daisy-btn-outline daisy-join-item",
               {
                 "daisy-btn-error": hasError,
               },

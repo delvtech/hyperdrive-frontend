@@ -1,5 +1,4 @@
 import { ReactElement, ReactNode } from "react";
-import { Well } from "src/ui/base/components/Well/Well";
 
 interface TransactionViewProps {
   heading?: string;
@@ -23,12 +22,11 @@ export function TransactionView({
       {tokenInput}
 
       <div className="mt-4 flex flex-col gap-6">
-        <Well elevation="flat">
-          <div className="space-y-4">
-            <span className="text-h6 font-bold">Preview transaction</span>
-            {transactionPreview}
-          </div>
-        </Well>
+        <div className="">
+          <span className="">Preview transaction</span>
+          <div className="daisy-divider m-0" />
+          {transactionPreview}
+        </div>
 
         {disclaimer ? (
           <p className="text-body text-center">{disclaimer}</p>
