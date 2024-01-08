@@ -7,14 +7,8 @@ export async function getMockHyperdrive(
   hyperdriveAddress: Address,
   publicClient: PublicClient,
 ): Promise<Hyperdrive> {
-  const baseToken = await publicClient.readContract({
-    abi: IHyperdrive.abi,
-    functionName: "baseToken",
-    address: hyperdriveAddress,
-  });
-
   // Time in seconds
-  const { positionDuration } = await publicClient.readContract({
+  const { positionDuration, baseToken } = await publicClient.readContract({
     abi: IHyperdrive.abi,
     functionName: "getPoolConfig",
     address: hyperdriveAddress,

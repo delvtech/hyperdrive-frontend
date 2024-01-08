@@ -1,17 +1,10 @@
 import { expect, test } from "vitest";
 import * as dnum from "dnum";
-import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
-import { mockPoolConfig, simplePoolConfig } from "src/pool/testing/PoolConfig";
-import { mockPoolInfo, simplePoolInfo } from "src/pool/testing/PoolInfo";
+import { simplePoolConfig } from "src/pool/testing/PoolConfig";
+import { simplePoolInfo } from "src/pool/testing/PoolInfo";
 import { ALICE, BOB } from "src/base/testing/accounts";
-import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
-import {
-  CachedReadContract,
-  NetworkStub,
-  ReadContractStub,
-} from "@hyperdrive/evm-client";
-import { MockHyperdriveMath } from "@hyperdrive/artifacts/dist/MockHyperdriveMath";
 import { CheckpointEvent } from "src/pool/Checkpoint";
+import { setupReadHyperdrive } from "./testing/setupReadHyperdrive";
 
 // The sdk should return the exact PoolConfig from the contracts. It should not
 // do any conversions or transformations, eg: converting seconds to ms,
@@ -57,16 +50,16 @@ test("getFixedRate should get the fixed rate as-is", async () => {
   contract.stubRead({
     functionName: "getPoolConfig",
     args: [],
-    value: [mockPoolConfig],
+    value: [simplePoolConfig],
   });
   contract.stubRead({
     functionName: "getPoolInfo",
     args: [],
-    value: [mockPoolInfo],
+    value: [simplePoolInfo],
   });
 
   const value = await readHyperdrive.getSpotRate();
-  expect(value).toBe(34999999999999999n);
+  expect(value).toBe(50000000000000000n);
 });
 
 test("getTradingVolume should get the trading volume in terms of bonds", async () => {
@@ -158,7 +151,7 @@ test("getShortAccruedYield should return the amount of yield a non-mature positi
   // The checkpoint gives us the price when the bond was opened
   contract.stubRead({
     functionName: "getCheckpoint",
-    value: [{ exposure: 0n, sharePrice: dnum.from("1.008", 18)[0] }],
+    value: [{ sharePrice: dnum.from("1.008", 18)[0] }],
   });
 
   const accruedYield = await readHyperdrive.getShortAccruedYield({
@@ -194,14 +187,14 @@ test("getShortAccruedYield should return the amount of yield a mature position h
   contract.stubRead({
     functionName: "getCheckpoint",
     args: [1n],
-    value: [{ exposure: 0n, sharePrice: dnum.from("1.008", 18)[0] }],
+    value: [{ sharePrice: dnum.from("1.008", 18)[0] }],
   });
 
   // This checkpoint gives us the price when the shorts matured
   contract.stubRead({
     functionName: "getCheckpoint",
     args: [86401n],
-    value: [{ exposure: 0n, sharePrice: dnum.from("1.01", 18)[0] }],
+    value: [{ sharePrice: dnum.from("1.01", 18)[0] }],
   });
 
   const accruedYield = await readHyperdrive.getShortAccruedYield({
@@ -246,23 +239,3 @@ test("getCheckpointEvents should return an array of CheckpointEvents", async () 
 
   expect(events).toEqual(checkPointEvents);
 });
-
-// No need to explicitly set return types as they are alread set in the Stubs
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export function setupReadHyperdrive() {
-  const contract = new ReadContractStub(IHyperdrive.abi);
-  const cachedContract = new CachedReadContract({ contract });
-
-  const mathContract = new ReadContractStub(MockHyperdriveMath.abi);
-  const cachedMathContract = new CachedReadContract({ contract: mathContract });
-
-  const network = new NetworkStub();
-
-  const readHyperdrive = new ReadHyperdrive({
-    contract: cachedContract,
-    mathContract: cachedMathContract,
-    network: network,
-  });
-
-  return { contract, mathContract, network, readHyperdrive };
-}

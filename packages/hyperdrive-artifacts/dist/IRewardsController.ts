@@ -140,19 +140,19 @@ export const IRewardsController =
   },
   "ast": {
     "absolutePath": "lib/yield-daddy/src/aave-v3/external/IRewardsController.sol",
-    "id": 61693,
+    "id": 65043,
     "exportedSymbols": {
       "IRewardsController": [
-        61692
+        65042
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "37:838:92",
+    "src": "37:838:103",
     "nodes": [
       {
-        "id": 61675,
+        "id": 65025,
         "nodeType": "PragmaDirective",
-        "src": "37:23:92",
+        "src": "37:23:103",
         "nodes": [],
         "literals": [
           "solidity",
@@ -162,19 +162,19 @@ export const IRewardsController =
         ]
       },
       {
-        "id": 61692,
+        "id": 65042,
         "nodeType": "ContractDefinition",
-        "src": "180:694:92",
+        "src": "180:694:103",
         "nodes": [
           {
-            "id": 61691,
+            "id": 65041,
             "nodeType": "FunctionDefinition",
-            "src": "711:161:92",
+            "src": "711:161:103",
             "nodes": [],
             "documentation": {
-              "id": 61677,
+              "id": 65027,
               "nodeType": "StructuredDocumentation",
-              "src": "215:491:92",
+              "src": "215:491:103",
               "text": " @dev Claims all rewards for a user to the desired address, on all the assets of the pool, accumulating the pending rewards\n @param assets The list of assets to check eligible distributions before claiming rewards\n @param to The address that will be receiving the rewards\n @return rewardsList List of addresses of the reward tokens\n @return claimedAmounts List that contains the claimed amount per reward, following same order as \"rewardList\""
             },
             "functionSelector": "bb492bf5",
@@ -182,20 +182,20 @@ export const IRewardsController =
             "kind": "function",
             "modifiers": [],
             "name": "claimAllRewards",
-            "nameLocation": "720:15:92",
+            "nameLocation": "720:15:103",
             "parameters": {
-              "id": 61683,
+              "id": 65033,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 61680,
+                  "id": 65030,
                   "mutability": "mutable",
                   "name": "assets",
-                  "nameLocation": "755:6:92",
+                  "nameLocation": "755:6:103",
                   "nodeType": "VariableDeclaration",
-                  "scope": 61691,
-                  "src": "736:25:92",
+                  "scope": 65041,
+                  "src": "736:25:103",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -204,19 +204,19 @@ export const IRewardsController =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 61678,
+                      "id": 65028,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "736:7:92",
+                      "src": "736:7:103",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 61679,
+                    "id": 65029,
                     "nodeType": "ArrayTypeName",
-                    "src": "736:9:92",
+                    "src": "736:9:103",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -226,13 +226,13 @@ export const IRewardsController =
                 },
                 {
                   "constant": false,
-                  "id": 61682,
+                  "id": 65032,
                   "mutability": "mutable",
                   "name": "to",
-                  "nameLocation": "771:2:92",
+                  "nameLocation": "771:2:103",
                   "nodeType": "VariableDeclaration",
-                  "scope": 61691,
-                  "src": "763:10:92",
+                  "scope": 65041,
+                  "src": "763:10:103",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -240,10 +240,10 @@ export const IRewardsController =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 61681,
+                    "id": 65031,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "763:7:92",
+                    "src": "763:7:103",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -253,21 +253,21 @@ export const IRewardsController =
                   "visibility": "internal"
                 }
               ],
-              "src": "735:39:92"
+              "src": "735:39:103"
             },
             "returnParameters": {
-              "id": 61690,
+              "id": 65040,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 61686,
+                  "id": 65036,
                   "mutability": "mutable",
                   "name": "rewardsList",
-                  "nameLocation": "826:11:92",
+                  "nameLocation": "826:11:103",
                   "nodeType": "VariableDeclaration",
-                  "scope": 61691,
-                  "src": "809:28:92",
+                  "scope": 65041,
+                  "src": "809:28:103",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -276,19 +276,19 @@ export const IRewardsController =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 61684,
+                      "id": 65034,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "809:7:92",
+                      "src": "809:7:103",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 61685,
+                    "id": 65035,
                     "nodeType": "ArrayTypeName",
-                    "src": "809:9:92",
+                    "src": "809:9:103",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -298,13 +298,13 @@ export const IRewardsController =
                 },
                 {
                   "constant": false,
-                  "id": 61689,
+                  "id": 65039,
                   "mutability": "mutable",
                   "name": "claimedAmounts",
-                  "nameLocation": "856:14:92",
+                  "nameLocation": "856:14:103",
                   "nodeType": "VariableDeclaration",
-                  "scope": 61691,
-                  "src": "839:31:92",
+                  "scope": 65041,
+                  "src": "839:31:103",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -313,18 +313,18 @@ export const IRewardsController =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 61687,
+                      "id": 65037,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "839:7:92",
+                      "src": "839:7:103",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 61688,
+                    "id": 65038,
                     "nodeType": "ArrayTypeName",
-                    "src": "839:9:92",
+                    "src": "839:9:103",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                       "typeString": "uint256[]"
@@ -333,9 +333,9 @@ export const IRewardsController =
                   "visibility": "internal"
                 }
               ],
-              "src": "808:63:92"
+              "src": "808:63:103"
             },
-            "scope": 61692,
+            "scope": 65042,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -347,22 +347,22 @@ export const IRewardsController =
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 61676,
+          "id": 65026,
           "nodeType": "StructuredDocumentation",
-          "src": "62:117:92",
+          "src": "62:117:103",
           "text": " @title IRewardsController\n @author Aave\n @notice Defines the basic interface for a Rewards Controller."
         },
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          61692
+          65042
         ],
         "name": "IRewardsController",
-        "nameLocation": "190:18:92",
-        "scope": 61693,
+        "nameLocation": "190:18:103",
+        "scope": 65043,
         "usedErrors": []
       }
     ],
     "license": "AGPL-3.0"
   },
-  "id": 92
+  "id": 103
 } as const;

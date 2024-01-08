@@ -200,58 +200,58 @@ export const Script =
   },
   "ast": {
     "absolutePath": "lib/forge-std/src/Script.sol",
-    "id": 18432,
+    "id": 21782,
     "exportedSymbols": {
       "Script": [
-        18431
+        21781
       ],
       "ScriptBase": [
-        18392
+        21742
       ],
       "StdChains": [
-        20569
+        23919
       ],
       "StdCheatsSafe": [
-        22623
+        25973
       ],
       "StdStorage": [
-        24427
+        27777
       ],
       "StdStyle": [
-        27091
+        30441
       ],
       "StdUtils": [
-        27939
+        31289
       ],
       "VmSafe": [
-        29055
+        32405
       ],
       "console": [
-        37591
+        40941
       ],
       "console2": [
-        45716
+        49066
       ],
       "safeconsole": [
-        58954
+        62304
       ],
       "stdJson": [
-        24253
+        27603
       ],
       "stdMath": [
-        24395
+        27745
       ],
       "stdStorageSafe": [
-        25319
+        28669
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "32:800:64",
+    "src": "32:800:75",
     "nodes": [
       {
-        "id": 18394,
+        "id": 21744,
         "nodeType": "PragmaDirective",
-        "src": "32:31:64",
+        "src": "32:31:75",
         "nodes": [],
         "literals": [
           "solidity",
@@ -264,24 +264,24 @@ export const Script =
         ]
       },
       {
-        "id": 18396,
+        "id": 21746,
         "nodeType": "ImportDirective",
-        "src": "127:38:64",
+        "src": "127:38:75",
         "nodes": [],
         "absolutePath": "lib/forge-std/src/console.sol",
         "file": "./console.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 18432,
-        "sourceUnit": 37592,
+        "scope": 21782,
+        "sourceUnit": 40942,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 18395,
+              "id": 21745,
               "name": "console",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 37591,
-              "src": "135:7:64",
+              "referencedDeclaration": 40941,
+              "src": "135:7:75",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -290,24 +290,24 @@ export const Script =
         "unitAlias": ""
       },
       {
-        "id": 18398,
+        "id": 21748,
         "nodeType": "ImportDirective",
-        "src": "166:40:64",
+        "src": "166:40:75",
         "nodes": [],
         "absolutePath": "lib/forge-std/src/console2.sol",
         "file": "./console2.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 18432,
-        "sourceUnit": 45717,
+        "scope": 21782,
+        "sourceUnit": 49067,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 18397,
+              "id": 21747,
               "name": "console2",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 45716,
-              "src": "174:8:64",
+              "referencedDeclaration": 49066,
+              "src": "174:8:75",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -316,24 +316,24 @@ export const Script =
         "unitAlias": ""
       },
       {
-        "id": 18400,
+        "id": 21750,
         "nodeType": "ImportDirective",
-        "src": "207:46:64",
+        "src": "207:46:75",
         "nodes": [],
         "absolutePath": "lib/forge-std/src/safeconsole.sol",
         "file": "./safeconsole.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 18432,
-        "sourceUnit": 58955,
+        "scope": 21782,
+        "sourceUnit": 62305,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 18399,
+              "id": 21749,
               "name": "safeconsole",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 58954,
-              "src": "215:11:64",
+              "referencedDeclaration": 62304,
+              "src": "215:11:75",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -342,24 +342,24 @@ export const Script =
         "unitAlias": ""
       },
       {
-        "id": 18402,
+        "id": 21752,
         "nodeType": "ImportDirective",
-        "src": "254:42:64",
+        "src": "254:42:75",
         "nodes": [],
         "absolutePath": "lib/forge-std/src/StdChains.sol",
         "file": "./StdChains.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 18432,
-        "sourceUnit": 20570,
+        "scope": 21782,
+        "sourceUnit": 23920,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 18401,
+              "id": 21751,
               "name": "StdChains",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 20569,
-              "src": "262:9:64",
+              "referencedDeclaration": 23919,
+              "src": "262:9:75",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -368,24 +368,24 @@ export const Script =
         "unitAlias": ""
       },
       {
-        "id": 18404,
+        "id": 21754,
         "nodeType": "ImportDirective",
-        "src": "297:46:64",
+        "src": "297:46:75",
         "nodes": [],
         "absolutePath": "lib/forge-std/src/StdCheats.sol",
         "file": "./StdCheats.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 18432,
-        "sourceUnit": 23388,
+        "scope": 21782,
+        "sourceUnit": 26738,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 18403,
+              "id": 21753,
               "name": "StdCheatsSafe",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 22623,
-              "src": "305:13:64",
+              "referencedDeclaration": 25973,
+              "src": "305:13:75",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -394,24 +394,24 @@ export const Script =
         "unitAlias": ""
       },
       {
-        "id": 18406,
+        "id": 21756,
         "nodeType": "ImportDirective",
-        "src": "344:38:64",
+        "src": "344:38:75",
         "nodes": [],
         "absolutePath": "lib/forge-std/src/StdJson.sol",
         "file": "./StdJson.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 18432,
-        "sourceUnit": 24254,
+        "scope": 21782,
+        "sourceUnit": 27604,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 18405,
+              "id": 21755,
               "name": "stdJson",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 24253,
-              "src": "352:7:64",
+              "referencedDeclaration": 27603,
+              "src": "352:7:75",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -420,24 +420,24 @@ export const Script =
         "unitAlias": ""
       },
       {
-        "id": 18408,
+        "id": 21758,
         "nodeType": "ImportDirective",
-        "src": "383:38:64",
+        "src": "383:38:75",
         "nodes": [],
         "absolutePath": "lib/forge-std/src/StdMath.sol",
         "file": "./StdMath.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 18432,
-        "sourceUnit": 24396,
+        "scope": 21782,
+        "sourceUnit": 27746,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 18407,
+              "id": 21757,
               "name": "stdMath",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 24395,
-              "src": "391:7:64",
+              "referencedDeclaration": 27745,
+              "src": "391:7:75",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -446,36 +446,36 @@ export const Script =
         "unitAlias": ""
       },
       {
-        "id": 18411,
+        "id": 21761,
         "nodeType": "ImportDirective",
-        "src": "422:60:64",
+        "src": "422:60:75",
         "nodes": [],
         "absolutePath": "lib/forge-std/src/StdStorage.sol",
         "file": "./StdStorage.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 18432,
-        "sourceUnit": 25881,
+        "scope": 21782,
+        "sourceUnit": 29231,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 18409,
+              "id": 21759,
               "name": "StdStorage",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 24427,
-              "src": "430:10:64",
+              "referencedDeclaration": 27777,
+              "src": "430:10:75",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
           },
           {
             "foreign": {
-              "id": 18410,
+              "id": 21760,
               "name": "stdStorageSafe",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 25319,
-              "src": "442:14:64",
+              "referencedDeclaration": 28669,
+              "src": "442:14:75",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -484,24 +484,24 @@ export const Script =
         "unitAlias": ""
       },
       {
-        "id": 18413,
+        "id": 21763,
         "nodeType": "ImportDirective",
-        "src": "483:40:64",
+        "src": "483:40:75",
         "nodes": [],
         "absolutePath": "lib/forge-std/src/StdStyle.sol",
         "file": "./StdStyle.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 18432,
-        "sourceUnit": 27092,
+        "scope": 21782,
+        "sourceUnit": 30442,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 18412,
+              "id": 21762,
               "name": "StdStyle",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 27091,
-              "src": "491:8:64",
+              "referencedDeclaration": 30441,
+              "src": "491:8:75",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -510,24 +510,24 @@ export const Script =
         "unitAlias": ""
       },
       {
-        "id": 18415,
+        "id": 21765,
         "nodeType": "ImportDirective",
-        "src": "524:40:64",
+        "src": "524:40:75",
         "nodes": [],
         "absolutePath": "lib/forge-std/src/StdUtils.sol",
         "file": "./StdUtils.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 18432,
-        "sourceUnit": 27940,
+        "scope": 21782,
+        "sourceUnit": 31290,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 18414,
+              "id": 21764,
               "name": "StdUtils",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 27939,
-              "src": "532:8:64",
+              "referencedDeclaration": 31289,
+              "src": "532:8:75",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -536,24 +536,24 @@ export const Script =
         "unitAlias": ""
       },
       {
-        "id": 18417,
+        "id": 21767,
         "nodeType": "ImportDirective",
-        "src": "565:32:64",
+        "src": "565:32:75",
         "nodes": [],
         "absolutePath": "lib/forge-std/src/Vm.sol",
         "file": "./Vm.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 18432,
-        "sourceUnit": 29528,
+        "scope": 21782,
+        "sourceUnit": 32878,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 18416,
+              "id": 21766,
               "name": "VmSafe",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 29055,
-              "src": "573:6:64",
+              "referencedDeclaration": 32405,
+              "src": "573:6:75",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -562,24 +562,24 @@ export const Script =
         "unitAlias": ""
       },
       {
-        "id": 18419,
+        "id": 21769,
         "nodeType": "ImportDirective",
-        "src": "619:38:64",
+        "src": "619:38:75",
         "nodes": [],
         "absolutePath": "lib/forge-std/src/Base.sol",
         "file": "./Base.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 18432,
-        "sourceUnit": 18393,
+        "scope": 21782,
+        "sourceUnit": 21743,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 18418,
+              "id": 21768,
               "name": "ScriptBase",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 18392,
-              "src": "627:10:64",
+              "referencedDeclaration": 21742,
+              "src": "627:10:75",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -588,21 +588,21 @@ export const Script =
         "unitAlias": ""
       },
       {
-        "id": 18431,
+        "id": 21781,
         "nodeType": "ContractDefinition",
-        "src": "676:155:64",
+        "src": "676:155:75",
         "nodes": [
           {
-            "id": 18430,
+            "id": 21780,
             "nodeType": "VariableDeclaration",
-            "src": "800:28:64",
+            "src": "800:28:75",
             "nodes": [],
             "constant": false,
             "functionSelector": "f8ccbf47",
             "mutability": "mutable",
             "name": "IS_SCRIPT",
-            "nameLocation": "812:9:64",
-            "scope": 18431,
+            "nameLocation": "812:9:75",
+            "scope": 21781,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -610,10 +610,10 @@ export const Script =
               "typeString": "bool"
             },
             "typeName": {
-              "id": 18428,
+              "id": 21778,
               "name": "bool",
               "nodeType": "ElementaryTypeName",
-              "src": "800:4:64",
+              "src": "800:4:75",
               "typeDescriptions": {
                 "typeIdentifier": "t_bool",
                 "typeString": "bool"
@@ -621,14 +621,14 @@ export const Script =
             },
             "value": {
               "hexValue": "74727565",
-              "id": 18429,
+              "id": 21779,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "bool",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "824:4:64",
+              "src": "824:4:75",
               "typeDescriptions": {
                 "typeIdentifier": "t_bool",
                 "typeString": "bool"
@@ -642,63 +642,63 @@ export const Script =
         "baseContracts": [
           {
             "baseName": {
-              "id": 18420,
+              "id": 21770,
               "name": "ScriptBase",
               "nameLocations": [
-                "704:10:64"
+                "704:10:75"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 18392,
-              "src": "704:10:64"
+              "referencedDeclaration": 21742,
+              "src": "704:10:75"
             },
-            "id": 18421,
+            "id": 21771,
             "nodeType": "InheritanceSpecifier",
-            "src": "704:10:64"
+            "src": "704:10:75"
           },
           {
             "baseName": {
-              "id": 18422,
+              "id": 21772,
               "name": "StdChains",
               "nameLocations": [
-                "716:9:64"
+                "716:9:75"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 20569,
-              "src": "716:9:64"
+              "referencedDeclaration": 23919,
+              "src": "716:9:75"
             },
-            "id": 18423,
+            "id": 21773,
             "nodeType": "InheritanceSpecifier",
-            "src": "716:9:64"
+            "src": "716:9:75"
           },
           {
             "baseName": {
-              "id": 18424,
+              "id": 21774,
               "name": "StdCheatsSafe",
               "nameLocations": [
-                "727:13:64"
+                "727:13:75"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 22623,
-              "src": "727:13:64"
+              "referencedDeclaration": 25973,
+              "src": "727:13:75"
             },
-            "id": 18425,
+            "id": 21775,
             "nodeType": "InheritanceSpecifier",
-            "src": "727:13:64"
+            "src": "727:13:75"
           },
           {
             "baseName": {
-              "id": 18426,
+              "id": 21776,
               "name": "StdUtils",
               "nameLocations": [
-                "742:8:64"
+                "742:8:75"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 27939,
-              "src": "742:8:64"
+              "referencedDeclaration": 31289,
+              "src": "742:8:75"
             },
-            "id": 18427,
+            "id": 21777,
             "nodeType": "InheritanceSpecifier",
-            "src": "742:8:64"
+            "src": "742:8:75"
           }
         ],
         "canonicalName": "Script",
@@ -706,20 +706,20 @@ export const Script =
         "contractKind": "contract",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          18431,
-          27939,
-          22623,
-          20569,
-          18392,
-          18380
+          21781,
+          31289,
+          25973,
+          23919,
+          21742,
+          21730
         ],
         "name": "Script",
-        "nameLocation": "694:6:64",
-        "scope": 18432,
+        "nameLocation": "694:6:75",
+        "scope": 21782,
         "usedErrors": []
       }
     ],
     "license": "MIT"
   },
-  "id": 64
+  "id": 75
 } as const;

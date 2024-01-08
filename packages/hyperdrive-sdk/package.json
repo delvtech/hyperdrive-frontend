@@ -12,7 +12,7 @@
     "build": "tsup src/index.ts --minify --format esm --clean --dts",
     "watch": "npm run build -- --watch",
     "test": "vitest run",
-    "test:watch": "vitest",
+    "test:watch": "vitest --reporter=verbose",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
@@ -37,7 +37,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@delvtech/hyperdrive-wasm": "^0.2.0",
+    "@delvtech/hyperdrive-wasm": "^0.4.0",
     "@tanstack/query-core": "^4.29.11",
     "@types/lodash.groupby": "^4.6.7",
     "@types/lodash.mapvalues": "^4.6.7",

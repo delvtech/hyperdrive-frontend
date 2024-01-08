@@ -91,6 +91,11 @@ export interface IReadHyperdrive {
     options?: ContractReadOptions;
   }): Promise<Checkpoint>;
 
+  getCheckpointExposure(args: {
+    checkpointId: bigint;
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
+
   getCheckpointEvents({
     fromBlock,
     toBlock,
@@ -369,6 +374,21 @@ export class ReadHyperdrive implements IReadHyperdrive {
       options,
     );
     return checkpoint;
+  }
+
+  async getCheckpointExposure({
+    checkpointId,
+    options,
+  }: {
+    checkpointId: bigint;
+    options?: ContractReadOptions | undefined;
+  }): ReturnType<IReadHyperdrive, "getCheckpointExposure"> {
+    const [exposure] = await this.contract.read(
+      "getCheckpointExposure",
+      [checkpointId],
+      options,
+    );
+    return exposure;
   }
 
   async getMarketState(
@@ -1008,8 +1028,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { timestamp: blockTimestamp } = await this.network.getBlock(options);
 
     const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
-    const { exposure: checkpointExposure } = await this.getCheckpoint({
+    const checkpointExposure = await this.getCheckpointExposure({
       checkpointId,
+      options,
     });
 
     const [maxBondsOut] = await this.mathContract.read(
@@ -1026,7 +1047,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
           minimumShareReserves,
           longExposure,
           curveFee: fees.curve,
-          governanceFee: fees.governance,
+          governanceLPFee: fees.governanceLP,
+          flatFee: fees.flat,
         },
         checkpointExposure,
         MAX_ITERATIONS,
@@ -1058,7 +1080,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { timestamp: blockTimestamp } = await this.network.getBlock(options);
 
     const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
-    const { exposure: checkpointExposure } = await this.getCheckpoint({
+    const checkpointExposure = await this.getCheckpointExposure({
       checkpointId,
       options,
     });
@@ -1077,7 +1099,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
           minimumShareReserves,
           longExposure,
           curveFee: fees.curve,
-          governanceFee: fees.governance,
+          governanceLPFee: fees.governanceLP,
+          flatFee: fees.flat,
         },
         checkpointExposure,
         MAX_ITERATIONS,

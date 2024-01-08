@@ -333,19 +333,19 @@ export const StdInvariant =
   },
   "ast": {
     "absolutePath": "lib/forge-std/src/StdInvariant.sol",
-    "id": 23678,
+    "id": 27028,
     "exportedSymbols": {
       "StdInvariant": [
-        23677
+        27027
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "32:3043:69",
+    "src": "32:3043:80",
     "nodes": [
       {
-        "id": 23455,
+        "id": 26805,
         "nodeType": "PragmaDirective",
-        "src": "32:31:69",
+        "src": "32:31:80",
         "nodes": [],
         "literals": [
           "solidity",
@@ -358,9 +358,9 @@ export const StdInvariant =
         ]
       },
       {
-        "id": 23456,
+        "id": 26806,
         "nodeType": "PragmaDirective",
-        "src": "65:33:69",
+        "src": "65:33:80",
         "nodes": [],
         "literals": [
           "experimental",
@@ -368,26 +368,26 @@ export const StdInvariant =
         ]
       },
       {
-        "id": 23677,
+        "id": 27027,
         "nodeType": "ContractDefinition",
-        "src": "100:2974:69",
+        "src": "100:2974:80",
         "nodes": [
           {
-            "id": 23462,
+            "id": 26812,
             "nodeType": "StructDefinition",
-            "src": "137:77:69",
+            "src": "137:77:80",
             "nodes": [],
             "canonicalName": "StdInvariant.FuzzSelector",
             "members": [
               {
                 "constant": false,
-                "id": 23458,
+                "id": 26808,
                 "mutability": "mutable",
                 "name": "addr",
-                "nameLocation": "175:4:69",
+                "nameLocation": "175:4:80",
                 "nodeType": "VariableDeclaration",
-                "scope": 23462,
-                "src": "167:12:69",
+                "scope": 26812,
+                "src": "167:12:80",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -395,10 +395,10 @@ export const StdInvariant =
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 23457,
+                  "id": 26807,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "167:7:69",
+                  "src": "167:7:80",
                   "stateMutability": "nonpayable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -409,13 +409,13 @@ export const StdInvariant =
               },
               {
                 "constant": false,
-                "id": 23461,
+                "id": 26811,
                 "mutability": "mutable",
                 "name": "selectors",
-                "nameLocation": "198:9:69",
+                "nameLocation": "198:9:80",
                 "nodeType": "VariableDeclaration",
-                "scope": 23462,
-                "src": "189:18:69",
+                "scope": 26812,
+                "src": "189:18:80",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -424,18 +424,18 @@ export const StdInvariant =
                 },
                 "typeName": {
                   "baseType": {
-                    "id": 23459,
+                    "id": 26809,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
-                    "src": "189:6:69",
+                    "src": "189:6:80",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes4",
                       "typeString": "bytes4"
                     }
                   },
-                  "id": 23460,
+                  "id": 26810,
                   "nodeType": "ArrayTypeName",
-                  "src": "189:8:69",
+                  "src": "189:8:80",
                   "typeDescriptions": {
                     "typeIdentifier": "t_array$_t_bytes4_$dyn_storage_ptr",
                     "typeString": "bytes4[]"
@@ -445,20 +445,20 @@ export const StdInvariant =
               }
             ],
             "name": "FuzzSelector",
-            "nameLocation": "144:12:69",
-            "scope": 23677,
+            "nameLocation": "144:12:80",
+            "scope": 27027,
             "visibility": "public"
           },
           {
-            "id": 23465,
+            "id": 26815,
             "nodeType": "VariableDeclaration",
-            "src": "220:36:69",
+            "src": "220:36:80",
             "nodes": [],
             "constant": false,
             "mutability": "mutable",
             "name": "_excludedContracts",
-            "nameLocation": "238:18:69",
-            "scope": 23677,
+            "nameLocation": "238:18:80",
+            "scope": 27027,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -467,19 +467,19 @@ export const StdInvariant =
             },
             "typeName": {
               "baseType": {
-                "id": 23463,
+                "id": 26813,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "220:7:69",
+                "src": "220:7:80",
                 "stateMutability": "nonpayable",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
-              "id": 23464,
+              "id": 26814,
               "nodeType": "ArrayTypeName",
-              "src": "220:9:69",
+              "src": "220:9:80",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                 "typeString": "address[]"
@@ -488,15 +488,15 @@ export const StdInvariant =
             "visibility": "private"
           },
           {
-            "id": 23468,
+            "id": 26818,
             "nodeType": "VariableDeclaration",
-            "src": "262:34:69",
+            "src": "262:34:80",
             "nodes": [],
             "constant": false,
             "mutability": "mutable",
             "name": "_excludedSenders",
-            "nameLocation": "280:16:69",
-            "scope": 23677,
+            "nameLocation": "280:16:80",
+            "scope": 27027,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -505,19 +505,19 @@ export const StdInvariant =
             },
             "typeName": {
               "baseType": {
-                "id": 23466,
+                "id": 26816,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "262:7:69",
+                "src": "262:7:80",
                 "stateMutability": "nonpayable",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
-              "id": 23467,
+              "id": 26817,
               "nodeType": "ArrayTypeName",
-              "src": "262:9:69",
+              "src": "262:9:80",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                 "typeString": "address[]"
@@ -526,15 +526,15 @@ export const StdInvariant =
             "visibility": "private"
           },
           {
-            "id": 23471,
+            "id": 26821,
             "nodeType": "VariableDeclaration",
-            "src": "302:36:69",
+            "src": "302:36:80",
             "nodes": [],
             "constant": false,
             "mutability": "mutable",
             "name": "_targetedContracts",
-            "nameLocation": "320:18:69",
-            "scope": 23677,
+            "nameLocation": "320:18:80",
+            "scope": 27027,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -543,19 +543,19 @@ export const StdInvariant =
             },
             "typeName": {
               "baseType": {
-                "id": 23469,
+                "id": 26819,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "302:7:69",
+                "src": "302:7:80",
                 "stateMutability": "nonpayable",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
-              "id": 23470,
+              "id": 26820,
               "nodeType": "ArrayTypeName",
-              "src": "302:9:69",
+              "src": "302:9:80",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                 "typeString": "address[]"
@@ -564,15 +564,15 @@ export const StdInvariant =
             "visibility": "private"
           },
           {
-            "id": 23474,
+            "id": 26824,
             "nodeType": "VariableDeclaration",
-            "src": "344:34:69",
+            "src": "344:34:80",
             "nodes": [],
             "constant": false,
             "mutability": "mutable",
             "name": "_targetedSenders",
-            "nameLocation": "362:16:69",
-            "scope": 23677,
+            "nameLocation": "362:16:80",
+            "scope": 27027,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -581,19 +581,19 @@ export const StdInvariant =
             },
             "typeName": {
               "baseType": {
-                "id": 23472,
+                "id": 26822,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "344:7:69",
+                "src": "344:7:80",
                 "stateMutability": "nonpayable",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
-              "id": 23473,
+              "id": 26823,
               "nodeType": "ArrayTypeName",
-              "src": "344:9:69",
+              "src": "344:9:80",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                 "typeString": "address[]"
@@ -602,15 +602,15 @@ export const StdInvariant =
             "visibility": "private"
           },
           {
-            "id": 23477,
+            "id": 26827,
             "nodeType": "VariableDeclaration",
-            "src": "385:35:69",
+            "src": "385:35:80",
             "nodes": [],
             "constant": false,
             "mutability": "mutable",
             "name": "_excludedArtifacts",
-            "nameLocation": "402:18:69",
-            "scope": 23677,
+            "nameLocation": "402:18:80",
+            "scope": 27027,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -619,18 +619,18 @@ export const StdInvariant =
             },
             "typeName": {
               "baseType": {
-                "id": 23475,
+                "id": 26825,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
-                "src": "385:6:69",
+                "src": "385:6:80",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
                   "typeString": "string"
                 }
               },
-              "id": 23476,
+              "id": 26826,
               "nodeType": "ArrayTypeName",
-              "src": "385:8:69",
+              "src": "385:8:80",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
                 "typeString": "string[]"
@@ -639,15 +639,15 @@ export const StdInvariant =
             "visibility": "private"
           },
           {
-            "id": 23480,
+            "id": 26830,
             "nodeType": "VariableDeclaration",
-            "src": "426:35:69",
+            "src": "426:35:80",
             "nodes": [],
             "constant": false,
             "mutability": "mutable",
             "name": "_targetedArtifacts",
-            "nameLocation": "443:18:69",
-            "scope": 23677,
+            "nameLocation": "443:18:80",
+            "scope": 27027,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -656,18 +656,18 @@ export const StdInvariant =
             },
             "typeName": {
               "baseType": {
-                "id": 23478,
+                "id": 26828,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
-                "src": "426:6:69",
+                "src": "426:6:80",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
                   "typeString": "string"
                 }
               },
-              "id": 23479,
+              "id": 26829,
               "nodeType": "ArrayTypeName",
-              "src": "426:8:69",
+              "src": "426:8:80",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
                 "typeString": "string[]"
@@ -676,120 +676,120 @@ export const StdInvariant =
             "visibility": "private"
           },
           {
-            "id": 23484,
+            "id": 26834,
             "nodeType": "VariableDeclaration",
-            "src": "468:49:69",
+            "src": "468:49:80",
             "nodes": [],
             "constant": false,
             "mutability": "mutable",
             "name": "_targetedArtifactSelectors",
-            "nameLocation": "491:26:69",
-            "scope": 23677,
+            "nameLocation": "491:26:80",
+            "scope": 27027,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_storage_$dyn_storage",
+              "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_storage_$dyn_storage",
               "typeString": "struct StdInvariant.FuzzSelector[]"
             },
             "typeName": {
               "baseType": {
-                "id": 23482,
+                "id": 26832,
                 "nodeType": "UserDefinedTypeName",
                 "pathNode": {
-                  "id": 23481,
+                  "id": 26831,
                   "name": "FuzzSelector",
                   "nameLocations": [
-                    "468:12:69"
+                    "468:12:80"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 23462,
-                  "src": "468:12:69"
+                  "referencedDeclaration": 26812,
+                  "src": "468:12:80"
                 },
-                "referencedDeclaration": 23462,
-                "src": "468:12:69",
+                "referencedDeclaration": 26812,
+                "src": "468:12:80",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_FuzzSelector_$23462_storage_ptr",
+                  "typeIdentifier": "t_struct$_FuzzSelector_$26812_storage_ptr",
                   "typeString": "struct StdInvariant.FuzzSelector"
                 }
               },
-              "id": 23483,
+              "id": 26833,
               "nodeType": "ArrayTypeName",
-              "src": "468:14:69",
+              "src": "468:14:80",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_storage_$dyn_storage_ptr",
+                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_storage_$dyn_storage_ptr",
                 "typeString": "struct StdInvariant.FuzzSelector[]"
               }
             },
             "visibility": "private"
           },
           {
-            "id": 23488,
+            "id": 26838,
             "nodeType": "VariableDeclaration",
-            "src": "523:41:69",
+            "src": "523:41:80",
             "nodes": [],
             "constant": false,
             "mutability": "mutable",
             "name": "_targetedSelectors",
-            "nameLocation": "546:18:69",
-            "scope": 23677,
+            "nameLocation": "546:18:80",
+            "scope": 27027,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_storage_$dyn_storage",
+              "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_storage_$dyn_storage",
               "typeString": "struct StdInvariant.FuzzSelector[]"
             },
             "typeName": {
               "baseType": {
-                "id": 23486,
+                "id": 26836,
                 "nodeType": "UserDefinedTypeName",
                 "pathNode": {
-                  "id": 23485,
+                  "id": 26835,
                   "name": "FuzzSelector",
                   "nameLocations": [
-                    "523:12:69"
+                    "523:12:80"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 23462,
-                  "src": "523:12:69"
+                  "referencedDeclaration": 26812,
+                  "src": "523:12:80"
                 },
-                "referencedDeclaration": 23462,
-                "src": "523:12:69",
+                "referencedDeclaration": 26812,
+                "src": "523:12:80",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_FuzzSelector_$23462_storage_ptr",
+                  "typeIdentifier": "t_struct$_FuzzSelector_$26812_storage_ptr",
                   "typeString": "struct StdInvariant.FuzzSelector"
                 }
               },
-              "id": 23487,
+              "id": 26837,
               "nodeType": "ArrayTypeName",
-              "src": "523:14:69",
+              "src": "523:14:80",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_storage_$dyn_storage_ptr",
+                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_storage_$dyn_storage_ptr",
                 "typeString": "struct StdInvariant.FuzzSelector[]"
               }
             },
             "visibility": "private"
           },
           {
-            "id": 23500,
+            "id": 26850,
             "nodeType": "FunctionDefinition",
-            "src": "649:126:69",
+            "src": "649:126:80",
             "nodes": [],
             "body": {
-              "id": 23499,
+              "id": 26849,
               "nodeType": "Block",
-              "src": "713:62:69",
+              "src": "713:62:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23496,
+                        "id": 26846,
                         "name": "newExcludedContract_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23490,
-                        "src": "747:20:69",
+                        "referencedDeclaration": 26840,
+                        "src": "747:20:80",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -804,32 +804,32 @@ export const StdInvariant =
                         }
                       ],
                       "expression": {
-                        "id": 23493,
+                        "id": 26843,
                         "name": "_excludedContracts",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23465,
-                        "src": "723:18:69",
+                        "referencedDeclaration": 26815,
+                        "src": "723:18:80",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage",
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 23495,
+                      "id": 26845,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "742:4:69",
+                      "memberLocation": "742:4:80",
                       "memberName": "push",
                       "nodeType": "MemberAccess",
-                      "src": "723:23:69",
+                      "src": "723:23:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_address_$dyn_storage_ptr_$_t_address_$returns$__$attached_to$_t_array$_t_address_$dyn_storage_ptr_$",
                         "typeString": "function (address[] storage pointer,address)"
                       }
                     },
-                    "id": 23497,
+                    "id": 26847,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -838,16 +838,16 @@ export const StdInvariant =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "723:45:69",
+                    "src": "723:45:80",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 23498,
+                  "id": 26848,
                   "nodeType": "ExpressionStatement",
-                  "src": "723:45:69"
+                  "src": "723:45:80"
                 }
               ]
             },
@@ -855,20 +855,20 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "excludeContract",
-            "nameLocation": "658:15:69",
+            "nameLocation": "658:15:80",
             "parameters": {
-              "id": 23491,
+              "id": 26841,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23490,
+                  "id": 26840,
                   "mutability": "mutable",
                   "name": "newExcludedContract_",
-                  "nameLocation": "682:20:69",
+                  "nameLocation": "682:20:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23500,
-                  "src": "674:28:69",
+                  "scope": 26850,
+                  "src": "674:28:80",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -876,10 +876,10 @@ export const StdInvariant =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 23489,
+                    "id": 26839,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "674:7:69",
+                    "src": "674:7:80",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -889,40 +889,40 @@ export const StdInvariant =
                   "visibility": "internal"
                 }
               ],
-              "src": "673:30:69"
+              "src": "673:30:80"
             },
             "returnParameters": {
-              "id": 23492,
+              "id": 26842,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "713:0:69"
+              "src": "713:0:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23512,
+            "id": 26862,
             "nodeType": "FunctionDefinition",
-            "src": "781:118:69",
+            "src": "781:118:80",
             "nodes": [],
             "body": {
-              "id": 23511,
+              "id": 26861,
               "nodeType": "Block",
-              "src": "841:58:69",
+              "src": "841:58:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23508,
+                        "id": 26858,
                         "name": "newExcludedSender_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23502,
-                        "src": "873:18:69",
+                        "referencedDeclaration": 26852,
+                        "src": "873:18:80",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -937,32 +937,32 @@ export const StdInvariant =
                         }
                       ],
                       "expression": {
-                        "id": 23505,
+                        "id": 26855,
                         "name": "_excludedSenders",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23468,
-                        "src": "851:16:69",
+                        "referencedDeclaration": 26818,
+                        "src": "851:16:80",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage",
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 23507,
+                      "id": 26857,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "868:4:69",
+                      "memberLocation": "868:4:80",
                       "memberName": "push",
                       "nodeType": "MemberAccess",
-                      "src": "851:21:69",
+                      "src": "851:21:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_address_$dyn_storage_ptr_$_t_address_$returns$__$attached_to$_t_array$_t_address_$dyn_storage_ptr_$",
                         "typeString": "function (address[] storage pointer,address)"
                       }
                     },
-                    "id": 23509,
+                    "id": 26859,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -971,16 +971,16 @@ export const StdInvariant =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "851:41:69",
+                    "src": "851:41:80",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 23510,
+                  "id": 26860,
                   "nodeType": "ExpressionStatement",
-                  "src": "851:41:69"
+                  "src": "851:41:80"
                 }
               ]
             },
@@ -988,20 +988,20 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "excludeSender",
-            "nameLocation": "790:13:69",
+            "nameLocation": "790:13:80",
             "parameters": {
-              "id": 23503,
+              "id": 26853,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23502,
+                  "id": 26852,
                   "mutability": "mutable",
                   "name": "newExcludedSender_",
-                  "nameLocation": "812:18:69",
+                  "nameLocation": "812:18:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23512,
-                  "src": "804:26:69",
+                  "scope": 26862,
+                  "src": "804:26:80",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1009,10 +1009,10 @@ export const StdInvariant =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 23501,
+                    "id": 26851,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "804:7:69",
+                    "src": "804:7:80",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1022,40 +1022,40 @@ export const StdInvariant =
                   "visibility": "internal"
                 }
               ],
-              "src": "803:28:69"
+              "src": "803:28:80"
             },
             "returnParameters": {
-              "id": 23504,
+              "id": 26854,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "841:0:69"
+              "src": "841:0:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23524,
+            "id": 26874,
             "nodeType": "FunctionDefinition",
-            "src": "905:132:69",
+            "src": "905:132:80",
             "nodes": [],
             "body": {
-              "id": 23523,
+              "id": 26873,
               "nodeType": "Block",
-              "src": "975:62:69",
+              "src": "975:62:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23520,
+                        "id": 26870,
                         "name": "newExcludedArtifact_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23514,
-                        "src": "1009:20:69",
+                        "referencedDeclaration": 26864,
+                        "src": "1009:20:80",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -1070,32 +1070,32 @@ export const StdInvariant =
                         }
                       ],
                       "expression": {
-                        "id": 23517,
+                        "id": 26867,
                         "name": "_excludedArtifacts",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23477,
-                        "src": "985:18:69",
+                        "referencedDeclaration": 26827,
+                        "src": "985:18:80",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
                           "typeString": "string storage ref[] storage ref"
                         }
                       },
-                      "id": 23519,
+                      "id": 26869,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "1004:4:69",
+                      "memberLocation": "1004:4:80",
                       "memberName": "push",
                       "nodeType": "MemberAccess",
-                      "src": "985:23:69",
+                      "src": "985:23:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_string_storage_$dyn_storage_ptr_$_t_string_storage_$returns$__$attached_to$_t_array$_t_string_storage_$dyn_storage_ptr_$",
                         "typeString": "function (string storage ref[] storage pointer,string storage ref)"
                       }
                     },
-                    "id": 23521,
+                    "id": 26871,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1104,16 +1104,16 @@ export const StdInvariant =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "985:45:69",
+                    "src": "985:45:80",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 23522,
+                  "id": 26872,
                   "nodeType": "ExpressionStatement",
-                  "src": "985:45:69"
+                  "src": "985:45:80"
                 }
               ]
             },
@@ -1121,20 +1121,20 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "excludeArtifact",
-            "nameLocation": "914:15:69",
+            "nameLocation": "914:15:80",
             "parameters": {
-              "id": 23515,
+              "id": 26865,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23514,
+                  "id": 26864,
                   "mutability": "mutable",
                   "name": "newExcludedArtifact_",
-                  "nameLocation": "944:20:69",
+                  "nameLocation": "944:20:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23524,
-                  "src": "930:34:69",
+                  "scope": 26874,
+                  "src": "930:34:80",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1142,10 +1142,10 @@ export const StdInvariant =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23513,
+                    "id": 26863,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "930:6:69",
+                    "src": "930:6:80",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1154,40 +1154,40 @@ export const StdInvariant =
                   "visibility": "internal"
                 }
               ],
-              "src": "929:36:69"
+              "src": "929:36:80"
             },
             "returnParameters": {
-              "id": 23516,
+              "id": 26866,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "975:0:69"
+              "src": "975:0:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23536,
+            "id": 26886,
             "nodeType": "FunctionDefinition",
-            "src": "1043:131:69",
+            "src": "1043:131:80",
             "nodes": [],
             "body": {
-              "id": 23535,
+              "id": 26885,
               "nodeType": "Block",
-              "src": "1112:62:69",
+              "src": "1112:62:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23532,
+                        "id": 26882,
                         "name": "newTargetedArtifact_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23526,
-                        "src": "1146:20:69",
+                        "referencedDeclaration": 26876,
+                        "src": "1146:20:80",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -1202,32 +1202,32 @@ export const StdInvariant =
                         }
                       ],
                       "expression": {
-                        "id": 23529,
+                        "id": 26879,
                         "name": "_targetedArtifacts",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23480,
-                        "src": "1122:18:69",
+                        "referencedDeclaration": 26830,
+                        "src": "1122:18:80",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
                           "typeString": "string storage ref[] storage ref"
                         }
                       },
-                      "id": 23531,
+                      "id": 26881,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "1141:4:69",
+                      "memberLocation": "1141:4:80",
                       "memberName": "push",
                       "nodeType": "MemberAccess",
-                      "src": "1122:23:69",
+                      "src": "1122:23:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_string_storage_$dyn_storage_ptr_$_t_string_storage_$returns$__$attached_to$_t_array$_t_string_storage_$dyn_storage_ptr_$",
                         "typeString": "function (string storage ref[] storage pointer,string storage ref)"
                       }
                     },
-                    "id": 23533,
+                    "id": 26883,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1236,16 +1236,16 @@ export const StdInvariant =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1122:45:69",
+                    "src": "1122:45:80",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 23534,
+                  "id": 26884,
                   "nodeType": "ExpressionStatement",
-                  "src": "1122:45:69"
+                  "src": "1122:45:80"
                 }
               ]
             },
@@ -1253,20 +1253,20 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "targetArtifact",
-            "nameLocation": "1052:14:69",
+            "nameLocation": "1052:14:80",
             "parameters": {
-              "id": 23527,
+              "id": 26877,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23526,
+                  "id": 26876,
                   "mutability": "mutable",
                   "name": "newTargetedArtifact_",
-                  "nameLocation": "1081:20:69",
+                  "nameLocation": "1081:20:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23536,
-                  "src": "1067:34:69",
+                  "scope": 26886,
+                  "src": "1067:34:80",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1274,10 +1274,10 @@ export const StdInvariant =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 23525,
+                    "id": 26875,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1067:6:69",
+                    "src": "1067:6:80",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1286,42 +1286,42 @@ export const StdInvariant =
                   "visibility": "internal"
                 }
               ],
-              "src": "1066:36:69"
+              "src": "1066:36:80"
             },
             "returnParameters": {
-              "id": 23528,
+              "id": 26878,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1112:0:69"
+              "src": "1112:0:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23549,
+            "id": 26899,
             "nodeType": "FunctionDefinition",
-            "src": "1180:169:69",
+            "src": "1180:169:80",
             "nodes": [],
             "body": {
-              "id": 23548,
+              "id": 26898,
               "nodeType": "Block",
-              "src": "1271:78:69",
+              "src": "1271:78:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23545,
+                        "id": 26895,
                         "name": "newTargetedArtifactSelector_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23539,
-                        "src": "1313:28:69",
+                        "referencedDeclaration": 26889,
+                        "src": "1313:28:80",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_FuzzSelector_$23462_memory_ptr",
+                          "typeIdentifier": "t_struct$_FuzzSelector_$26812_memory_ptr",
                           "typeString": "struct StdInvariant.FuzzSelector memory"
                         }
                       }
@@ -1329,37 +1329,37 @@ export const StdInvariant =
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_FuzzSelector_$23462_memory_ptr",
+                          "typeIdentifier": "t_struct$_FuzzSelector_$26812_memory_ptr",
                           "typeString": "struct StdInvariant.FuzzSelector memory"
                         }
                       ],
                       "expression": {
-                        "id": 23542,
+                        "id": 26892,
                         "name": "_targetedArtifactSelectors",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23484,
-                        "src": "1281:26:69",
+                        "referencedDeclaration": 26834,
+                        "src": "1281:26:80",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_storage_$dyn_storage",
+                          "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_storage_$dyn_storage",
                           "typeString": "struct StdInvariant.FuzzSelector storage ref[] storage ref"
                         }
                       },
-                      "id": 23544,
+                      "id": 26894,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "1308:4:69",
+                      "memberLocation": "1308:4:80",
                       "memberName": "push",
                       "nodeType": "MemberAccess",
-                      "src": "1281:31:69",
+                      "src": "1281:31:80",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_FuzzSelector_$23462_storage_$dyn_storage_ptr_$_t_struct$_FuzzSelector_$23462_storage_$returns$__$attached_to$_t_array$_t_struct$_FuzzSelector_$23462_storage_$dyn_storage_ptr_$",
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_FuzzSelector_$26812_storage_$dyn_storage_ptr_$_t_struct$_FuzzSelector_$26812_storage_$returns$__$attached_to$_t_array$_t_struct$_FuzzSelector_$26812_storage_$dyn_storage_ptr_$",
                         "typeString": "function (struct StdInvariant.FuzzSelector storage ref[] storage pointer,struct StdInvariant.FuzzSelector storage ref)"
                       }
                     },
-                    "id": 23546,
+                    "id": 26896,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1368,16 +1368,16 @@ export const StdInvariant =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1281:61:69",
+                    "src": "1281:61:80",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 23547,
+                  "id": 26897,
                   "nodeType": "ExpressionStatement",
-                  "src": "1281:61:69"
+                  "src": "1281:61:80"
                 }
               ]
             },
@@ -1385,83 +1385,83 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "targetArtifactSelector",
-            "nameLocation": "1189:22:69",
+            "nameLocation": "1189:22:80",
             "parameters": {
-              "id": 23540,
+              "id": 26890,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23539,
+                  "id": 26889,
                   "mutability": "mutable",
                   "name": "newTargetedArtifactSelector_",
-                  "nameLocation": "1232:28:69",
+                  "nameLocation": "1232:28:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23549,
-                  "src": "1212:48:69",
+                  "scope": 26899,
+                  "src": "1212:48:80",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_FuzzSelector_$23462_memory_ptr",
+                    "typeIdentifier": "t_struct$_FuzzSelector_$26812_memory_ptr",
                     "typeString": "struct StdInvariant.FuzzSelector"
                   },
                   "typeName": {
-                    "id": 23538,
+                    "id": 26888,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 23537,
+                      "id": 26887,
                       "name": "FuzzSelector",
                       "nameLocations": [
-                        "1212:12:69"
+                        "1212:12:80"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 23462,
-                      "src": "1212:12:69"
+                      "referencedDeclaration": 26812,
+                      "src": "1212:12:80"
                     },
-                    "referencedDeclaration": 23462,
-                    "src": "1212:12:69",
+                    "referencedDeclaration": 26812,
+                    "src": "1212:12:80",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_FuzzSelector_$23462_storage_ptr",
+                      "typeIdentifier": "t_struct$_FuzzSelector_$26812_storage_ptr",
                       "typeString": "struct StdInvariant.FuzzSelector"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "1211:50:69"
+              "src": "1211:50:80"
             },
             "returnParameters": {
-              "id": 23541,
+              "id": 26891,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1271:0:69"
+              "src": "1271:0:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23561,
+            "id": 26911,
             "nodeType": "FunctionDefinition",
-            "src": "1355:125:69",
+            "src": "1355:125:80",
             "nodes": [],
             "body": {
-              "id": 23560,
+              "id": 26910,
               "nodeType": "Block",
-              "src": "1418:62:69",
+              "src": "1418:62:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23557,
+                        "id": 26907,
                         "name": "newTargetedContract_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23551,
-                        "src": "1452:20:69",
+                        "referencedDeclaration": 26901,
+                        "src": "1452:20:80",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1476,32 +1476,32 @@ export const StdInvariant =
                         }
                       ],
                       "expression": {
-                        "id": 23554,
+                        "id": 26904,
                         "name": "_targetedContracts",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23471,
-                        "src": "1428:18:69",
+                        "referencedDeclaration": 26821,
+                        "src": "1428:18:80",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage",
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 23556,
+                      "id": 26906,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "1447:4:69",
+                      "memberLocation": "1447:4:80",
                       "memberName": "push",
                       "nodeType": "MemberAccess",
-                      "src": "1428:23:69",
+                      "src": "1428:23:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_address_$dyn_storage_ptr_$_t_address_$returns$__$attached_to$_t_array$_t_address_$dyn_storage_ptr_$",
                         "typeString": "function (address[] storage pointer,address)"
                       }
                     },
-                    "id": 23558,
+                    "id": 26908,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1510,16 +1510,16 @@ export const StdInvariant =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1428:45:69",
+                    "src": "1428:45:80",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 23559,
+                  "id": 26909,
                   "nodeType": "ExpressionStatement",
-                  "src": "1428:45:69"
+                  "src": "1428:45:80"
                 }
               ]
             },
@@ -1527,20 +1527,20 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "targetContract",
-            "nameLocation": "1364:14:69",
+            "nameLocation": "1364:14:80",
             "parameters": {
-              "id": 23552,
+              "id": 26902,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23551,
+                  "id": 26901,
                   "mutability": "mutable",
                   "name": "newTargetedContract_",
-                  "nameLocation": "1387:20:69",
+                  "nameLocation": "1387:20:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23561,
-                  "src": "1379:28:69",
+                  "scope": 26911,
+                  "src": "1379:28:80",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1548,10 +1548,10 @@ export const StdInvariant =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 23550,
+                    "id": 26900,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1379:7:69",
+                    "src": "1379:7:80",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1561,42 +1561,42 @@ export const StdInvariant =
                   "visibility": "internal"
                 }
               ],
-              "src": "1378:30:69"
+              "src": "1378:30:80"
             },
             "returnParameters": {
-              "id": 23553,
+              "id": 26903,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1418:0:69"
+              "src": "1418:0:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23574,
+            "id": 26924,
             "nodeType": "FunctionDefinition",
-            "src": "1486:137:69",
+            "src": "1486:137:80",
             "nodes": [],
             "body": {
-              "id": 23573,
+              "id": 26923,
               "nodeType": "Block",
-              "src": "1561:62:69",
+              "src": "1561:62:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23570,
+                        "id": 26920,
                         "name": "newTargetedSelector_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23564,
-                        "src": "1595:20:69",
+                        "referencedDeclaration": 26914,
+                        "src": "1595:20:80",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_FuzzSelector_$23462_memory_ptr",
+                          "typeIdentifier": "t_struct$_FuzzSelector_$26812_memory_ptr",
                           "typeString": "struct StdInvariant.FuzzSelector memory"
                         }
                       }
@@ -1604,37 +1604,37 @@ export const StdInvariant =
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_FuzzSelector_$23462_memory_ptr",
+                          "typeIdentifier": "t_struct$_FuzzSelector_$26812_memory_ptr",
                           "typeString": "struct StdInvariant.FuzzSelector memory"
                         }
                       ],
                       "expression": {
-                        "id": 23567,
+                        "id": 26917,
                         "name": "_targetedSelectors",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23488,
-                        "src": "1571:18:69",
+                        "referencedDeclaration": 26838,
+                        "src": "1571:18:80",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_storage_$dyn_storage",
+                          "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_storage_$dyn_storage",
                           "typeString": "struct StdInvariant.FuzzSelector storage ref[] storage ref"
                         }
                       },
-                      "id": 23569,
+                      "id": 26919,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "1590:4:69",
+                      "memberLocation": "1590:4:80",
                       "memberName": "push",
                       "nodeType": "MemberAccess",
-                      "src": "1571:23:69",
+                      "src": "1571:23:80",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_FuzzSelector_$23462_storage_$dyn_storage_ptr_$_t_struct$_FuzzSelector_$23462_storage_$returns$__$attached_to$_t_array$_t_struct$_FuzzSelector_$23462_storage_$dyn_storage_ptr_$",
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_FuzzSelector_$26812_storage_$dyn_storage_ptr_$_t_struct$_FuzzSelector_$26812_storage_$returns$__$attached_to$_t_array$_t_struct$_FuzzSelector_$26812_storage_$dyn_storage_ptr_$",
                         "typeString": "function (struct StdInvariant.FuzzSelector storage ref[] storage pointer,struct StdInvariant.FuzzSelector storage ref)"
                       }
                     },
-                    "id": 23571,
+                    "id": 26921,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1643,16 +1643,16 @@ export const StdInvariant =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1571:45:69",
+                    "src": "1571:45:80",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 23572,
+                  "id": 26922,
                   "nodeType": "ExpressionStatement",
-                  "src": "1571:45:69"
+                  "src": "1571:45:80"
                 }
               ]
             },
@@ -1660,83 +1660,83 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "targetSelector",
-            "nameLocation": "1495:14:69",
+            "nameLocation": "1495:14:80",
             "parameters": {
-              "id": 23565,
+              "id": 26915,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23564,
+                  "id": 26914,
                   "mutability": "mutable",
                   "name": "newTargetedSelector_",
-                  "nameLocation": "1530:20:69",
+                  "nameLocation": "1530:20:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23574,
-                  "src": "1510:40:69",
+                  "scope": 26924,
+                  "src": "1510:40:80",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_FuzzSelector_$23462_memory_ptr",
+                    "typeIdentifier": "t_struct$_FuzzSelector_$26812_memory_ptr",
                     "typeString": "struct StdInvariant.FuzzSelector"
                   },
                   "typeName": {
-                    "id": 23563,
+                    "id": 26913,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 23562,
+                      "id": 26912,
                       "name": "FuzzSelector",
                       "nameLocations": [
-                        "1510:12:69"
+                        "1510:12:80"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 23462,
-                      "src": "1510:12:69"
+                      "referencedDeclaration": 26812,
+                      "src": "1510:12:80"
                     },
-                    "referencedDeclaration": 23462,
-                    "src": "1510:12:69",
+                    "referencedDeclaration": 26812,
+                    "src": "1510:12:80",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_FuzzSelector_$23462_storage_ptr",
+                      "typeIdentifier": "t_struct$_FuzzSelector_$26812_storage_ptr",
                       "typeString": "struct StdInvariant.FuzzSelector"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "1509:42:69"
+              "src": "1509:42:80"
             },
             "returnParameters": {
-              "id": 23566,
+              "id": 26916,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1561:0:69"
+              "src": "1561:0:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23586,
+            "id": 26936,
             "nodeType": "FunctionDefinition",
-            "src": "1629:117:69",
+            "src": "1629:117:80",
             "nodes": [],
             "body": {
-              "id": 23585,
+              "id": 26935,
               "nodeType": "Block",
-              "src": "1688:58:69",
+              "src": "1688:58:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 23582,
+                        "id": 26932,
                         "name": "newTargetedSender_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23576,
-                        "src": "1720:18:69",
+                        "referencedDeclaration": 26926,
+                        "src": "1720:18:80",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1751,32 +1751,32 @@ export const StdInvariant =
                         }
                       ],
                       "expression": {
-                        "id": 23579,
+                        "id": 26929,
                         "name": "_targetedSenders",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 23474,
-                        "src": "1698:16:69",
+                        "referencedDeclaration": 26824,
+                        "src": "1698:16:80",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage",
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 23581,
+                      "id": 26931,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "1715:4:69",
+                      "memberLocation": "1715:4:80",
                       "memberName": "push",
                       "nodeType": "MemberAccess",
-                      "src": "1698:21:69",
+                      "src": "1698:21:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_address_$dyn_storage_ptr_$_t_address_$returns$__$attached_to$_t_array$_t_address_$dyn_storage_ptr_$",
                         "typeString": "function (address[] storage pointer,address)"
                       }
                     },
-                    "id": 23583,
+                    "id": 26933,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1785,16 +1785,16 @@ export const StdInvariant =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1698:41:69",
+                    "src": "1698:41:80",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 23584,
+                  "id": 26934,
                   "nodeType": "ExpressionStatement",
-                  "src": "1698:41:69"
+                  "src": "1698:41:80"
                 }
               ]
             },
@@ -1802,20 +1802,20 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "targetSender",
-            "nameLocation": "1638:12:69",
+            "nameLocation": "1638:12:80",
             "parameters": {
-              "id": 23577,
+              "id": 26927,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23576,
+                  "id": 26926,
                   "mutability": "mutable",
                   "name": "newTargetedSender_",
-                  "nameLocation": "1659:18:69",
+                  "nameLocation": "1659:18:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23586,
-                  "src": "1651:26:69",
+                  "scope": 26936,
+                  "src": "1651:26:80",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1823,10 +1823,10 @@ export const StdInvariant =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 23575,
+                    "id": 26925,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1651:7:69",
+                    "src": "1651:7:80",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1836,44 +1836,44 @@ export const StdInvariant =
                   "visibility": "internal"
                 }
               ],
-              "src": "1650:28:69"
+              "src": "1650:28:80"
             },
             "returnParameters": {
-              "id": 23578,
+              "id": 26928,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1688:0:69"
+              "src": "1688:0:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 23597,
+            "id": 26947,
             "nodeType": "FunctionDefinition",
-            "src": "1875:141:69",
+            "src": "1875:141:80",
             "nodes": [],
             "body": {
-              "id": 23596,
+              "id": 26946,
               "nodeType": "Block",
-              "src": "1960:56:69",
+              "src": "1960:56:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
-                    "id": 23594,
+                    "id": 26944,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 23592,
+                      "id": 26942,
                       "name": "excludedArtifacts_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23590,
-                      "src": "1970:18:69",
+                      "referencedDeclaration": 26940,
+                      "src": "1970:18:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
                         "typeString": "string memory[] memory"
@@ -1882,26 +1882,26 @@ export const StdInvariant =
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 23593,
+                      "id": 26943,
                       "name": "_excludedArtifacts",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23477,
-                      "src": "1991:18:69",
+                      "referencedDeclaration": 26827,
+                      "src": "1991:18:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
                         "typeString": "string storage ref[] storage ref"
                       }
                     },
-                    "src": "1970:39:69",
+                    "src": "1970:39:80",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
                       "typeString": "string memory[] memory"
                     }
                   },
-                  "id": 23595,
+                  "id": 26945,
                   "nodeType": "ExpressionStatement",
-                  "src": "1970:39:69"
+                  "src": "1970:39:80"
                 }
               ]
             },
@@ -1910,26 +1910,26 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "excludeArtifacts",
-            "nameLocation": "1884:16:69",
+            "nameLocation": "1884:16:80",
             "parameters": {
-              "id": 23587,
+              "id": 26937,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1900:2:69"
+              "src": "1900:2:80"
             },
             "returnParameters": {
-              "id": 23591,
+              "id": 26941,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23590,
+                  "id": 26940,
                   "mutability": "mutable",
                   "name": "excludedArtifacts_",
-                  "nameLocation": "1940:18:69",
+                  "nameLocation": "1940:18:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23597,
-                  "src": "1924:34:69",
+                  "scope": 26947,
+                  "src": "1924:34:80",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1938,18 +1938,18 @@ export const StdInvariant =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23588,
+                      "id": 26938,
                       "name": "string",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1924:6:69",
+                      "src": "1924:6:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage_ptr",
                         "typeString": "string"
                       }
                     },
-                    "id": 23589,
+                    "id": 26939,
                     "nodeType": "ArrayTypeName",
-                    "src": "1924:8:69",
+                    "src": "1924:8:80",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
                       "typeString": "string[]"
@@ -1958,38 +1958,38 @@ export const StdInvariant =
                   "visibility": "internal"
                 }
               ],
-              "src": "1923:36:69"
+              "src": "1923:36:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           },
           {
-            "id": 23608,
+            "id": 26958,
             "nodeType": "FunctionDefinition",
-            "src": "2022:142:69",
+            "src": "2022:142:80",
             "nodes": [],
             "body": {
-              "id": 23607,
+              "id": 26957,
               "nodeType": "Block",
-              "src": "2108:56:69",
+              "src": "2108:56:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
-                    "id": 23605,
+                    "id": 26955,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 23603,
+                      "id": 26953,
                       "name": "excludedContracts_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23601,
-                      "src": "2118:18:69",
+                      "referencedDeclaration": 26951,
+                      "src": "2118:18:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                         "typeString": "address[] memory"
@@ -1998,26 +1998,26 @@ export const StdInvariant =
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 23604,
+                      "id": 26954,
                       "name": "_excludedContracts",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23465,
-                      "src": "2139:18:69",
+                      "referencedDeclaration": 26815,
+                      "src": "2139:18:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
                       }
                     },
-                    "src": "2118:39:69",
+                    "src": "2118:39:80",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                       "typeString": "address[] memory"
                     }
                   },
-                  "id": 23606,
+                  "id": 26956,
                   "nodeType": "ExpressionStatement",
-                  "src": "2118:39:69"
+                  "src": "2118:39:80"
                 }
               ]
             },
@@ -2026,26 +2026,26 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "excludeContracts",
-            "nameLocation": "2031:16:69",
+            "nameLocation": "2031:16:80",
             "parameters": {
-              "id": 23598,
+              "id": 26948,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2047:2:69"
+              "src": "2047:2:80"
             },
             "returnParameters": {
-              "id": 23602,
+              "id": 26952,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23601,
+                  "id": 26951,
                   "mutability": "mutable",
                   "name": "excludedContracts_",
-                  "nameLocation": "2088:18:69",
+                  "nameLocation": "2088:18:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23608,
-                  "src": "2071:35:69",
+                  "scope": 26958,
+                  "src": "2071:35:80",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2054,19 +2054,19 @@ export const StdInvariant =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23599,
+                      "id": 26949,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2071:7:69",
+                      "src": "2071:7:80",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 23600,
+                    "id": 26950,
                     "nodeType": "ArrayTypeName",
-                    "src": "2071:9:69",
+                    "src": "2071:9:80",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -2075,38 +2075,38 @@ export const StdInvariant =
                   "visibility": "internal"
                 }
               ],
-              "src": "2070:37:69"
+              "src": "2070:37:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           },
           {
-            "id": 23619,
+            "id": 26969,
             "nodeType": "FunctionDefinition",
-            "src": "2170:134:69",
+            "src": "2170:134:80",
             "nodes": [],
             "body": {
-              "id": 23618,
+              "id": 26968,
               "nodeType": "Block",
-              "src": "2252:52:69",
+              "src": "2252:52:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
-                    "id": 23616,
+                    "id": 26966,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 23614,
+                      "id": 26964,
                       "name": "excludedSenders_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23612,
-                      "src": "2262:16:69",
+                      "referencedDeclaration": 26962,
+                      "src": "2262:16:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                         "typeString": "address[] memory"
@@ -2115,26 +2115,26 @@ export const StdInvariant =
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 23615,
+                      "id": 26965,
                       "name": "_excludedSenders",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23468,
-                      "src": "2281:16:69",
+                      "referencedDeclaration": 26818,
+                      "src": "2281:16:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
                       }
                     },
-                    "src": "2262:35:69",
+                    "src": "2262:35:80",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                       "typeString": "address[] memory"
                     }
                   },
-                  "id": 23617,
+                  "id": 26967,
                   "nodeType": "ExpressionStatement",
-                  "src": "2262:35:69"
+                  "src": "2262:35:80"
                 }
               ]
             },
@@ -2143,26 +2143,26 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "excludeSenders",
-            "nameLocation": "2179:14:69",
+            "nameLocation": "2179:14:80",
             "parameters": {
-              "id": 23609,
+              "id": 26959,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2193:2:69"
+              "src": "2193:2:80"
             },
             "returnParameters": {
-              "id": 23613,
+              "id": 26963,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23612,
+                  "id": 26962,
                   "mutability": "mutable",
                   "name": "excludedSenders_",
-                  "nameLocation": "2234:16:69",
+                  "nameLocation": "2234:16:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23619,
-                  "src": "2217:33:69",
+                  "scope": 26969,
+                  "src": "2217:33:80",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2171,19 +2171,19 @@ export const StdInvariant =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23610,
+                      "id": 26960,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2217:7:69",
+                      "src": "2217:7:80",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 23611,
+                    "id": 26961,
                     "nodeType": "ArrayTypeName",
-                    "src": "2217:9:69",
+                    "src": "2217:9:80",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -2192,38 +2192,38 @@ export const StdInvariant =
                   "visibility": "internal"
                 }
               ],
-              "src": "2216:35:69"
+              "src": "2216:35:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           },
           {
-            "id": 23630,
+            "id": 26980,
             "nodeType": "FunctionDefinition",
-            "src": "2310:140:69",
+            "src": "2310:140:80",
             "nodes": [],
             "body": {
-              "id": 23629,
+              "id": 26979,
               "nodeType": "Block",
-              "src": "2394:56:69",
+              "src": "2394:56:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
-                    "id": 23627,
+                    "id": 26977,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 23625,
+                      "id": 26975,
                       "name": "targetedArtifacts_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23623,
-                      "src": "2404:18:69",
+                      "referencedDeclaration": 26973,
+                      "src": "2404:18:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
                         "typeString": "string memory[] memory"
@@ -2232,26 +2232,26 @@ export const StdInvariant =
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 23626,
+                      "id": 26976,
                       "name": "_targetedArtifacts",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23480,
-                      "src": "2425:18:69",
+                      "referencedDeclaration": 26830,
+                      "src": "2425:18:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
                         "typeString": "string storage ref[] storage ref"
                       }
                     },
-                    "src": "2404:39:69",
+                    "src": "2404:39:80",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
                       "typeString": "string memory[] memory"
                     }
                   },
-                  "id": 23628,
+                  "id": 26978,
                   "nodeType": "ExpressionStatement",
-                  "src": "2404:39:69"
+                  "src": "2404:39:80"
                 }
               ]
             },
@@ -2260,26 +2260,26 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "targetArtifacts",
-            "nameLocation": "2319:15:69",
+            "nameLocation": "2319:15:80",
             "parameters": {
-              "id": 23620,
+              "id": 26970,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2334:2:69"
+              "src": "2334:2:80"
             },
             "returnParameters": {
-              "id": 23624,
+              "id": 26974,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23623,
+                  "id": 26973,
                   "mutability": "mutable",
                   "name": "targetedArtifacts_",
-                  "nameLocation": "2374:18:69",
+                  "nameLocation": "2374:18:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23630,
-                  "src": "2358:34:69",
+                  "scope": 26980,
+                  "src": "2358:34:80",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2288,18 +2288,18 @@ export const StdInvariant =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23621,
+                      "id": 26971,
                       "name": "string",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2358:6:69",
+                      "src": "2358:6:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage_ptr",
                         "typeString": "string"
                       }
                     },
-                    "id": 23622,
+                    "id": 26972,
                     "nodeType": "ArrayTypeName",
-                    "src": "2358:8:69",
+                    "src": "2358:8:80",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
                       "typeString": "string[]"
@@ -2308,66 +2308,66 @@ export const StdInvariant =
                   "visibility": "internal"
                 }
               ],
-              "src": "2357:36:69"
+              "src": "2357:36:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           },
           {
-            "id": 23642,
+            "id": 26992,
             "nodeType": "FunctionDefinition",
-            "src": "2456:178:69",
+            "src": "2456:178:80",
             "nodes": [],
             "body": {
-              "id": 23641,
+              "id": 26991,
               "nodeType": "Block",
-              "src": "2562:72:69",
+              "src": "2562:72:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
-                    "id": 23639,
+                    "id": 26989,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 23637,
+                      "id": 26987,
                       "name": "targetedArtifactSelectors_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23635,
-                      "src": "2572:26:69",
+                      "referencedDeclaration": 26985,
+                      "src": "2572:26:80",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_memory_ptr_$dyn_memory_ptr",
+                        "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_memory_ptr_$dyn_memory_ptr",
                         "typeString": "struct StdInvariant.FuzzSelector memory[] memory"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 23638,
+                      "id": 26988,
                       "name": "_targetedArtifactSelectors",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23484,
-                      "src": "2601:26:69",
+                      "referencedDeclaration": 26834,
+                      "src": "2601:26:80",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_storage_$dyn_storage",
+                        "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_storage_$dyn_storage",
                         "typeString": "struct StdInvariant.FuzzSelector storage ref[] storage ref"
                       }
                     },
-                    "src": "2572:55:69",
+                    "src": "2572:55:80",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_memory_ptr_$dyn_memory_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_memory_ptr_$dyn_memory_ptr",
                       "typeString": "struct StdInvariant.FuzzSelector memory[] memory"
                     }
                   },
-                  "id": 23640,
+                  "id": 26990,
                   "nodeType": "ExpressionStatement",
-                  "src": "2572:55:69"
+                  "src": "2572:55:80"
                 }
               ]
             },
@@ -2376,96 +2376,96 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "targetArtifactSelectors",
-            "nameLocation": "2465:23:69",
+            "nameLocation": "2465:23:80",
             "parameters": {
-              "id": 23631,
+              "id": 26981,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2488:2:69"
+              "src": "2488:2:80"
             },
             "returnParameters": {
-              "id": 23636,
+              "id": 26986,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23635,
+                  "id": 26985,
                   "mutability": "mutable",
                   "name": "targetedArtifactSelectors_",
-                  "nameLocation": "2534:26:69",
+                  "nameLocation": "2534:26:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23642,
-                  "src": "2512:48:69",
+                  "scope": 26992,
+                  "src": "2512:48:80",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_memory_ptr_$dyn_memory_ptr",
+                    "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_memory_ptr_$dyn_memory_ptr",
                     "typeString": "struct StdInvariant.FuzzSelector[]"
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23633,
+                      "id": 26983,
                       "nodeType": "UserDefinedTypeName",
                       "pathNode": {
-                        "id": 23632,
+                        "id": 26982,
                         "name": "FuzzSelector",
                         "nameLocations": [
-                          "2512:12:69"
+                          "2512:12:80"
                         ],
                         "nodeType": "IdentifierPath",
-                        "referencedDeclaration": 23462,
-                        "src": "2512:12:69"
+                        "referencedDeclaration": 26812,
+                        "src": "2512:12:80"
                       },
-                      "referencedDeclaration": 23462,
-                      "src": "2512:12:69",
+                      "referencedDeclaration": 26812,
+                      "src": "2512:12:80",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_FuzzSelector_$23462_storage_ptr",
+                        "typeIdentifier": "t_struct$_FuzzSelector_$26812_storage_ptr",
                         "typeString": "struct StdInvariant.FuzzSelector"
                       }
                     },
-                    "id": 23634,
+                    "id": 26984,
                     "nodeType": "ArrayTypeName",
-                    "src": "2512:14:69",
+                    "src": "2512:14:80",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_storage_$dyn_storage_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_storage_$dyn_storage_ptr",
                       "typeString": "struct StdInvariant.FuzzSelector[]"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "2511:50:69"
+              "src": "2511:50:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           },
           {
-            "id": 23653,
+            "id": 27003,
             "nodeType": "FunctionDefinition",
-            "src": "2640:141:69",
+            "src": "2640:141:80",
             "nodes": [],
             "body": {
-              "id": 23652,
+              "id": 27002,
               "nodeType": "Block",
-              "src": "2725:56:69",
+              "src": "2725:56:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
-                    "id": 23650,
+                    "id": 27000,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 23648,
+                      "id": 26998,
                       "name": "targetedContracts_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23646,
-                      "src": "2735:18:69",
+                      "referencedDeclaration": 26996,
+                      "src": "2735:18:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                         "typeString": "address[] memory"
@@ -2474,26 +2474,26 @@ export const StdInvariant =
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 23649,
+                      "id": 26999,
                       "name": "_targetedContracts",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23471,
-                      "src": "2756:18:69",
+                      "referencedDeclaration": 26821,
+                      "src": "2756:18:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
                       }
                     },
-                    "src": "2735:39:69",
+                    "src": "2735:39:80",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                       "typeString": "address[] memory"
                     }
                   },
-                  "id": 23651,
+                  "id": 27001,
                   "nodeType": "ExpressionStatement",
-                  "src": "2735:39:69"
+                  "src": "2735:39:80"
                 }
               ]
             },
@@ -2502,26 +2502,26 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "targetContracts",
-            "nameLocation": "2649:15:69",
+            "nameLocation": "2649:15:80",
             "parameters": {
-              "id": 23643,
+              "id": 26993,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2664:2:69"
+              "src": "2664:2:80"
             },
             "returnParameters": {
-              "id": 23647,
+              "id": 26997,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23646,
+                  "id": 26996,
                   "mutability": "mutable",
                   "name": "targetedContracts_",
-                  "nameLocation": "2705:18:69",
+                  "nameLocation": "2705:18:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23653,
-                  "src": "2688:35:69",
+                  "scope": 27003,
+                  "src": "2688:35:80",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2530,19 +2530,19 @@ export const StdInvariant =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23644,
+                      "id": 26994,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2688:7:69",
+                      "src": "2688:7:80",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 23645,
+                    "id": 26995,
                     "nodeType": "ArrayTypeName",
-                    "src": "2688:9:69",
+                    "src": "2688:9:80",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -2551,66 +2551,66 @@ export const StdInvariant =
                   "visibility": "internal"
                 }
               ],
-              "src": "2687:37:69"
+              "src": "2687:37:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           },
           {
-            "id": 23665,
+            "id": 27015,
             "nodeType": "FunctionDefinition",
-            "src": "2787:146:69",
+            "src": "2787:146:80",
             "nodes": [],
             "body": {
-              "id": 23664,
+              "id": 27014,
               "nodeType": "Block",
-              "src": "2877:56:69",
+              "src": "2877:56:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
-                    "id": 23662,
+                    "id": 27012,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 23660,
+                      "id": 27010,
                       "name": "targetedSelectors_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23658,
-                      "src": "2887:18:69",
+                      "referencedDeclaration": 27008,
+                      "src": "2887:18:80",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_memory_ptr_$dyn_memory_ptr",
+                        "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_memory_ptr_$dyn_memory_ptr",
                         "typeString": "struct StdInvariant.FuzzSelector memory[] memory"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 23661,
+                      "id": 27011,
                       "name": "_targetedSelectors",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23488,
-                      "src": "2908:18:69",
+                      "referencedDeclaration": 26838,
+                      "src": "2908:18:80",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_storage_$dyn_storage",
+                        "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_storage_$dyn_storage",
                         "typeString": "struct StdInvariant.FuzzSelector storage ref[] storage ref"
                       }
                     },
-                    "src": "2887:39:69",
+                    "src": "2887:39:80",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_memory_ptr_$dyn_memory_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_memory_ptr_$dyn_memory_ptr",
                       "typeString": "struct StdInvariant.FuzzSelector memory[] memory"
                     }
                   },
-                  "id": 23663,
+                  "id": 27013,
                   "nodeType": "ExpressionStatement",
-                  "src": "2887:39:69"
+                  "src": "2887:39:80"
                 }
               ]
             },
@@ -2619,96 +2619,96 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "targetSelectors",
-            "nameLocation": "2796:15:69",
+            "nameLocation": "2796:15:80",
             "parameters": {
-              "id": 23654,
+              "id": 27004,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2811:2:69"
+              "src": "2811:2:80"
             },
             "returnParameters": {
-              "id": 23659,
+              "id": 27009,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23658,
+                  "id": 27008,
                   "mutability": "mutable",
                   "name": "targetedSelectors_",
-                  "nameLocation": "2857:18:69",
+                  "nameLocation": "2857:18:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23665,
-                  "src": "2835:40:69",
+                  "scope": 27015,
+                  "src": "2835:40:80",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_memory_ptr_$dyn_memory_ptr",
+                    "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_memory_ptr_$dyn_memory_ptr",
                     "typeString": "struct StdInvariant.FuzzSelector[]"
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23656,
+                      "id": 27006,
                       "nodeType": "UserDefinedTypeName",
                       "pathNode": {
-                        "id": 23655,
+                        "id": 27005,
                         "name": "FuzzSelector",
                         "nameLocations": [
-                          "2835:12:69"
+                          "2835:12:80"
                         ],
                         "nodeType": "IdentifierPath",
-                        "referencedDeclaration": 23462,
-                        "src": "2835:12:69"
+                        "referencedDeclaration": 26812,
+                        "src": "2835:12:80"
                       },
-                      "referencedDeclaration": 23462,
-                      "src": "2835:12:69",
+                      "referencedDeclaration": 26812,
+                      "src": "2835:12:80",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_FuzzSelector_$23462_storage_ptr",
+                        "typeIdentifier": "t_struct$_FuzzSelector_$26812_storage_ptr",
                         "typeString": "struct StdInvariant.FuzzSelector"
                       }
                     },
-                    "id": 23657,
+                    "id": 27007,
                     "nodeType": "ArrayTypeName",
-                    "src": "2835:14:69",
+                    "src": "2835:14:80",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$23462_storage_$dyn_storage_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$26812_storage_$dyn_storage_ptr",
                       "typeString": "struct StdInvariant.FuzzSelector[]"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "2834:42:69"
+              "src": "2834:42:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           },
           {
-            "id": 23676,
+            "id": 27026,
             "nodeType": "FunctionDefinition",
-            "src": "2939:133:69",
+            "src": "2939:133:80",
             "nodes": [],
             "body": {
-              "id": 23675,
+              "id": 27025,
               "nodeType": "Block",
-              "src": "3020:52:69",
+              "src": "3020:52:80",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
-                    "id": 23673,
+                    "id": 27023,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 23671,
+                      "id": 27021,
                       "name": "targetedSenders_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23669,
-                      "src": "3030:16:69",
+                      "referencedDeclaration": 27019,
+                      "src": "3030:16:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                         "typeString": "address[] memory"
@@ -2717,26 +2717,26 @@ export const StdInvariant =
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 23672,
+                      "id": 27022,
                       "name": "_targetedSenders",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 23474,
-                      "src": "3049:16:69",
+                      "referencedDeclaration": 26824,
+                      "src": "3049:16:80",
                       "typeDescriptions": {
                         "typeIdentifier": "t_array$_t_address_$dyn_storage",
                         "typeString": "address[] storage ref"
                       }
                     },
-                    "src": "3030:35:69",
+                    "src": "3030:35:80",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                       "typeString": "address[] memory"
                     }
                   },
-                  "id": 23674,
+                  "id": 27024,
                   "nodeType": "ExpressionStatement",
-                  "src": "3030:35:69"
+                  "src": "3030:35:80"
                 }
               ]
             },
@@ -2745,26 +2745,26 @@ export const StdInvariant =
             "kind": "function",
             "modifiers": [],
             "name": "targetSenders",
-            "nameLocation": "2948:13:69",
+            "nameLocation": "2948:13:80",
             "parameters": {
-              "id": 23666,
+              "id": 27016,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2961:2:69"
+              "src": "2961:2:80"
             },
             "returnParameters": {
-              "id": 23670,
+              "id": 27020,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 23669,
+                  "id": 27019,
                   "mutability": "mutable",
                   "name": "targetedSenders_",
-                  "nameLocation": "3002:16:69",
+                  "nameLocation": "3002:16:80",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23676,
-                  "src": "2985:33:69",
+                  "scope": 27026,
+                  "src": "2985:33:80",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2773,19 +2773,19 @@ export const StdInvariant =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 23667,
+                      "id": 27017,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2985:7:69",
+                      "src": "2985:7:80",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 23668,
+                    "id": 27018,
                     "nodeType": "ArrayTypeName",
-                    "src": "2985:9:69",
+                    "src": "2985:9:80",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -2794,9 +2794,9 @@ export const StdInvariant =
                   "visibility": "internal"
                 }
               ],
-              "src": "2984:35:69"
+              "src": "2984:35:80"
             },
-            "scope": 23677,
+            "scope": 27027,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
@@ -2809,15 +2809,15 @@ export const StdInvariant =
         "contractKind": "contract",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          23677
+          27027
         ],
         "name": "StdInvariant",
-        "nameLocation": "118:12:69",
-        "scope": 23678,
+        "nameLocation": "118:12:80",
+        "scope": 27028,
         "usedErrors": []
       }
     ],
     "license": "MIT"
   },
-  "id": 69
+  "id": 80
 } as const;
