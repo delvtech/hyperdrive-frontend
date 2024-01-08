@@ -17,7 +17,7 @@ export function TransactionView({
   actionButton,
 }: TransactionViewProps): ReactElement {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 text-neutral-content">
       {heading !== undefined && <h5 className="font-bold">{heading}</h5>}
       {tokenInput}
 

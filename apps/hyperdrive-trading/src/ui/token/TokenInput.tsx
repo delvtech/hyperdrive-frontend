@@ -41,8 +41,12 @@ export function TokenInput({
   return (
     <div className="flex flex-col">
       <label className="daisy-label flex justify-between px-0">
-        <span className="daisy-label-text">{inputLabel}</span>
-        {stat ? <span className="daisy-label-text">{stat}</span> : null}
+        <span className="daisy-label-text text-neutral-content">
+          {inputLabel}
+        </span>
+        {stat ? (
+          <span className="daisy-label-text text-neutral-content">{stat}</span>
+        ) : null}
       </label>
 
       <label className="daisy-join items-center">
@@ -76,7 +80,7 @@ export function TokenInput({
         {maxValue !== undefined ? (
           <button
             className={classNames(
-              "daisy-btn daisy-btn-outline daisy-join-item",
+              "daisy-btn daisy-btn-outline daisy-join-item text-neutral-content",
               {
                 "daisy-btn-error": hasError,
               },
