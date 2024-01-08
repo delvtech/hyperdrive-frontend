@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --minify --format esm,cjs --clean --dts --legacy-output",
+    "build": "tsup src/index.ts --minify --format esm --clean --dts",
     "watch": "npm run build -- --watch",
     "test": "vitest run",
     "test:watch": "vitest --reporter=verbose",
