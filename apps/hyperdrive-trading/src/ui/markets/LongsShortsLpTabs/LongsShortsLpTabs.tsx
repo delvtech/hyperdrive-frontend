@@ -8,7 +8,7 @@ import { LpTab } from "src/ui/markets/LpTab/LpTab";
 import { ShortsTab } from "src/ui/markets/ShortsTab/ShortsTab";
 
 const TABS = ["Longs", "Shorts", "LP"] as const;
-type LongsShortsLpTab = typeof TABS[number];
+type LongsShortsLpTab = (typeof TABS)[number];
 
 export function LongsShortsLpTabs({
   hyperdrive,
@@ -37,7 +37,8 @@ export function LongsShortsLpTabs({
             name="positions_tabs"
             role="tab"
             className={classNames("daisy-tab", {
-              "font-bold": activeTab === tabId,
+              "font-bold ": activeTab === tabId,
+              "opacity-80 hover:opacity-100": activeTab !== tabId,
             })}
             aria-label={tabId}
             checked={activeTab === tabId}
