@@ -113,7 +113,7 @@ export function CloseLongForm({
       actionButton={
         account ? (
           <button
-            className="daisy-btn daisy-btn-secondary w-full"
+            className="daisy-btn daisy-btn-circle daisy-btn-primary w-full"
             disabled={!closeLong || isPendingWalletAction}
             onClick={(e) => {
               closeLong?.();

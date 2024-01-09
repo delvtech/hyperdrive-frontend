@@ -108,7 +108,7 @@ export function CloseShortForm({
       actionButton={
         account ? (
           <button
-            className="daisy-btn-accent daisy-btn"
+            className="daisy-btn daisy-btn-circle daisy-btn-primary w-full"
             disabled={!closeShort || isPendingWalletAction}
             onClick={() => {
               closeShort?.();
