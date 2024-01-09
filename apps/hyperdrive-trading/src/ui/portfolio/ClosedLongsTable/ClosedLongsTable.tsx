@@ -201,10 +201,7 @@ export function ClosedLongsTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td
-                          className="text-body align-top sm:text-lg"
-                          key={cell.id}
-                        >
+                        <td className="align-top text-lg" key={cell.id}>
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),

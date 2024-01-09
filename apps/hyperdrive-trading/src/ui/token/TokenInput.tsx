@@ -50,7 +50,7 @@ export function TokenInput({
       </label>
 
       <label className="daisy-join items-center">
-        <div className="daisy-join-item flex items-center justify-start pr-6">
+        <div className="daisy-join-item flex h-12 items-center border border-neutral-content/30 bg-base-100 px-4">
           {token.symbol}
         </div>
         <input
@@ -80,7 +80,7 @@ export function TokenInput({
         {maxValue !== undefined ? (
           <button
             className={classNames(
-              "daisy-btn daisy-btn-outline daisy-join-item text-neutral-content",
+              "daisy-btn daisy-join-item border-b-neutral-content/30 border-l-base-100 border-r-neutral-content/30 border-t-neutral-content/30 bg-base-100 text-primary hover:border-b-neutral-content/30 hover:border-l-base-100 hover:border-r-neutral-content/30 hover:border-t-neutral-content/30 hover:bg-base-100 hover:underline active:hover:border-l-base-100",
               {
                 "daisy-btn-error": hasError,
               },

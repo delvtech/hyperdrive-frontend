@@ -21,16 +21,13 @@ export function TransactionView({
       {heading !== undefined && <h5 className="font-bold">{heading}</h5>}
       {tokenInput}
 
-      <div className="mt-4 flex flex-col gap-6">
-        <div className="">
-          <span className="">Preview transaction</span>
-          <div className="daisy-divider m-0" />
+      <div className="mt-4 flex flex-col gap-8">
+        <div className="space-y-6">
+          <h6 className="font-bold">Preview transaction</h6>
           {transactionPreview}
         </div>
 
-        {disclaimer ? (
-          <p className="text-body text-center">{disclaimer}</p>
-        ) : null}
+        {disclaimer ? <p className="text-center">{disclaimer}</p> : null}
 
         <div className="text-center">{actionButton}</div>
       </div>

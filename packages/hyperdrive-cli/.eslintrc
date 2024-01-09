@@ -3,6 +3,8 @@
   "extends": ["@hyperdrive/eslint-config"],
   "ignorePatterns": ["generated.ts"],
   "rules": {
-    "no-console": "off"
+    "turbo/no-undeclared-env-vars": "warn",
+    "no-console": "off",
+    "no-restricted-imports": "off"
   }
 }

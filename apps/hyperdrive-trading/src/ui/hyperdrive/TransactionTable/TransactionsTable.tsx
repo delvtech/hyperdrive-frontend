@@ -1,12 +1,12 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   ColumnFiltersState,
+  Header,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   getSortedRowModel,
-  Header,
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
@@ -48,13 +48,13 @@ function FilterSelect({
   if (isTailwindSmallScreen) {
     return (
       <div className="daisy-dropdown rounded border">
-        <label tabIndex={0} className="daisy-btn-ghost daisy-btn rounded-btn">
+        <label tabIndex={0} className="daisy-btn daisy-btn-ghost rounded-btn">
           {(header.column.getFilterValue() as string) || "All"}
           <ChevronDownIcon className="h-4" />
         </label>
         <ul
           tabIndex={0}
-          className="daisy-dropdown-content daisy-menu mt-1 rounded-box bg-base-100 p-2 shadow"
+          className="daisy-menu daisy-dropdown-content mt-1 rounded-box bg-base-100 p-2 shadow"
         >
           {["All", "Longs", "Shorts", "LP"].map((filter) => (
             <li key={filter} className="daisy-menu-title">
@@ -75,7 +75,7 @@ function FilterSelect({
           className={`${
             header.column.getFilterValue() !== filter
               ? "daisy-tab text-sm  font-normal md:text-lg"
-              : "daisy-tab-active daisy-tab text-sm md:text-lg"
+              : "daisy-tab daisy-tab-active text-sm md:text-lg"
           }`}
           onClick={() => header.column.setFilterValue(filter)}
         >
@@ -273,7 +273,7 @@ export function TransactionTable({
 
   return (
     <div className="max-h-96 overflow-y-scroll">
-      <table className="daisy-table-zebra daisy-table daisy-table-lg">
+      <table className="daisy-table daisy-table-zebra daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
@@ -317,7 +317,7 @@ export function TransactionTable({
                 <>
                   {row.getVisibleCells().map((cell) => {
                     return (
-                      <td className="text-body sm:text-lg" key={cell.id}>
+                      <td className="text-lg" key={cell.id}>
                         {flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext(),

@@ -5,9 +5,9 @@ import { Modal } from "src/ui/base/components/Modal/Modal";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
-import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
 import { useAccount } from "wagmi";
 import { calculateShareValue } from "./calculateShareValue";
 
@@ -87,7 +87,7 @@ export function OpenWithdrawalSharesCard({
                 </p>
               </div>
             </div>
-            <p className="text-center text-body">
+            <p className="text-center">
               Note: Withdrawal shares are considered idle capital and are not
               used to back new positions. They continue to earn the variable
               rate from the yield source.
@@ -104,7 +104,7 @@ export function OpenWithdrawalSharesCard({
               >
                 {({ showModal }) => (
                   <button
-                    className="daisy-btn-neutral daisy-btn daisy-btn-wide m-auto mt-2 hover:daisy-btn-ghost"
+                    className="daisy-btn daisy-btn-neutral daisy-btn-wide m-auto mt-2 hover:daisy-btn-ghost"
                     onClick={showModal}
                   >
                     Claim withdrawal shares

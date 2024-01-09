@@ -1,24 +1,46 @@
-import path from "node:path";
-import { createCommandModule } from "src/utils/createCommandModule";
-import {
-  COMMAND_FILE_EXTENSIONS,
-  selectCommandHandler,
-} from "src/utils/selectCommandHandler";
+import { command } from "clide-js";
+import { Chain, Hex, PrivateKeyAccount } from "viem";
+import { privateKeyToAccount } from "viem/accounts";
+import { chainOption, getChain } from "../reusable-options/chain.js";
+import { rpcUrlOption } from "../reusable-options/rpc-url.js";
+import { walletKeyOption } from "../reusable-options/wallet-key.js";
 
-const commandDir = "./deploy";
+export default command({
+  description: "Deploy a contract or combination of contracts",
+  requiresSubcommand: true,
 
-export const { command, describe, builder, handler } = createCommandModule({
-  command: "deploy [contract]",
-  describe: "Deploy a contract or combination of contracts",
-
-  builder: (yargs) => {
-    return yargs.commandDir(commandDir, {
-      extensions: COMMAND_FILE_EXTENSIONS,
-    });
+  options: {
+    chain: chainOption,
+    rpc: rpcUrlOption,
+    wallet: walletKeyOption,
   },
 
-  handler: selectCommandHandler({
-    commandsPath: path.resolve(__dirname, commandDir),
-    message: "What do you want to deploy?",
-  }),
+  handler: async ({ options, next }) => {
+    const chain = await getChain(options.chain);
+
+    const rpcUrl = await options.rpc({
+      prompt: "Enter RPC URL",
+    });
+
+    const walletKey = await options.wallet({
+      prompt: "Enter wallet key",
+    });
+
+    const account = privateKeyToAccount(walletKey as Hex);
+
+    const payload: DeployOptions = {
+      chain,
+      rpcUrl,
+      account,
+      walletKey: walletKey as `0x${string}`,
+    };
+    next(payload);
+  },
 });
+
+export interface DeployOptions {
+  chain: Chain;
+  rpcUrl: string;
+  account: PrivateKeyAccount;
+  walletKey: `0x${string}`;
+}

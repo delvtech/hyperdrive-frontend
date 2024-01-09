@@ -127,7 +127,7 @@ function getColumns() {
             />
             <div className="flex-col">
               <p className="mb-[-4px]">{marketName}</p>
-              <p className="text-body text-secondary opacity-50">
+              <p className="text-secondary opacity-50">
                 {row.original.yieldSource.protocol}
               </p>
             </div>
@@ -229,8 +229,8 @@ export function AllMarketsTable(): ReactElement {
       <h3 className="mb-5 w-full pl-1 text-h5 text-neutral-content">
         Available Markets
       </h3>
-      <div className="daisy-card-bordered daisy-card flex w-full md:p-6">
-        <table className="daisy-table-zebra daisy-table daisy-table-lg">
+      <div className="daisy-card daisy-card-bordered flex w-full md:p-6">
+        <table className="daisy-table daisy-table-zebra daisy-table-lg">
           <thead>
             {tableInstance.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
@@ -312,7 +312,7 @@ function GoToMarketButton({ market }: { market: Hyperdrive }): ReactElement {
       onClick={() => {
         navigate(`/market/${market}`);
       }}
-      className="daisy-btn-md daisy-btn-circle flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
+      className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >
       <ArrowRightIcon className="h-5" />
     </button>

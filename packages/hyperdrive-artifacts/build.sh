@@ -44,6 +44,12 @@ for dir in out/*; do
   contract_name=${dir_name%.sol}
 
   in_file=$dir/$contract_name.json
+
+  # Ignore the contract if the json file doesn't exist
+  if [ ! -f $in_file ]; then
+    continue
+  fi
+
   out_file=$out_path/$contract_name.ts
   {
     echo "export const $contract_name = "

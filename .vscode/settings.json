@@ -1,11 +1,13 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "dotenv.enableAutocloaking": false,
   "cSpell.words": [
+    "dnum",
     "Mintable",
     "signale",
     "viem"
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
