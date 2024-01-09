@@ -40,13 +40,9 @@ export function TokenInput({
 }: TokenInputProps): ReactElement {
   return (
     <div className="flex flex-col">
-      <label className="daisy-label flex justify-between px-0">
-        <span className="daisy-label-text text-neutral-content">
-          {inputLabel}
-        </span>
-        {stat ? (
-          <span className="daisy-label-text text-neutral-content">{stat}</span>
-        ) : null}
+      <label className="daisy-label flex justify-between">
+        <span className="daisy-label-text">{inputLabel}</span>
+        {stat ? <span className="daisy-label-text">{stat}</span> : null}
       </label>
 
       <label className="daisy-join items-center">

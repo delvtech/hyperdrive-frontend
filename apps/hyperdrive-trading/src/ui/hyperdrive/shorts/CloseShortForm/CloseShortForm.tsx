@@ -95,18 +95,16 @@ export function CloseShortForm({
         <PreviewTransactionRow
           label="You receive"
           value={
-            <>
-              <p className="font-bold">
-                {baseAmountOut
-                  ? `${formatBalance({
-                      balance: baseAmountOut,
-                      decimals: baseDecimals,
-                      places: 8,
-                    })}`
-                  : "0"}{" "}
-                {baseSymbol}
-              </p>
-            </>
+            <p className="font-bold">
+              {baseAmountOut
+                ? `${formatBalance({
+                    balance: baseAmountOut,
+                    decimals: baseDecimals,
+                    places: 8,
+                  })}`
+                : "0"}{" "}
+              {baseSymbol}
+            </p>
           }
         />
       }
