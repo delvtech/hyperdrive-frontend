@@ -208,7 +208,7 @@ function CurrentValueCell({
         <div
           data-tip={"Profit/Loss since open"}
           className={classNames(
-            "sm:text-body daisy-badge daisy-badge-md daisy-tooltip inline-flex text-xs",
+            "daisy-badge daisy-badge-md daisy-tooltip inline-flex text-xs",
             { "text-success": isPositiveChangeInValue },
             { "text-error": !isPositiveChangeInValue },
           )}
@@ -335,10 +335,7 @@ export function OpenShortsTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td
-                          className="text-body align-top sm:text-lg"
-                          key={cell.id}
-                        >
+                        <td className="align-top text-lg" key={cell.id}>
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),
