@@ -22,10 +22,10 @@ export function TransactionView({
       {heading !== undefined && <h5 className="font-bold">{heading}</h5>}
       {tokenInput}
 
-      <div className="mt-4 flex flex-col gap-6">
+      <div className="mt-4 flex flex-col gap-8">
         <Well elevation="flat">
-          <div className="space-y-4">
-            <span className="text-h6 font-bold">Preview transaction</span>
+          <div className="space-y-6">
+            <h6 className="font-bold">Preview transaction</h6>
             {transactionPreview}
           </div>
         </Well>
