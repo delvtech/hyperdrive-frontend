@@ -170,14 +170,14 @@ export function ClosedLongsTable({
   });
 
   return (
-    <div className="max-h-96 overflow-y-scroll md:w-[750px]">
+    <div className="max-h-96 overflow-y-auto md:w-[750px]">
       <table className="daisy-table daisy-table-zebra daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky font-normal text-gray-400"
+                  className="sticky font-normal text-neutral-content"
                   key={header.id}
                 >
                   {header.isPlaceholder
@@ -201,7 +201,7 @@ export function ClosedLongsTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td className="align-top text-lg" key={cell.id}>
+                        <td className="align-top" key={cell.id}>
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),

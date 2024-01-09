@@ -296,7 +296,6 @@ export function OpenLongsTable({
           )}
         </tbody>
       </table>
-      {!longs?.length && !isLoading ? <NonIdealState /> : null}
     </div>
   );
 }
