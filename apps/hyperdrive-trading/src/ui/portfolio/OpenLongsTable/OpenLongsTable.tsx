@@ -1,9 +1,4 @@
-import {
-  ChevronDownIcon,
-  ChevronUpIcon,
-  SparklesIcon,
-  WalletIcon,
-} from "@heroicons/react/24/outline";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   Long,
   calculateFixedRateFromOpenLong,
@@ -203,22 +198,24 @@ export function OpenLongsTable({
 
   if (!account) {
     return (
-      <NonIdealState
-        icon={<WalletIcon height="64" />}
-        heading="No wallet connected"
-        text="Connect your wallet to view your Longs."
-        action={<ConnectWalletButton />}
-      />
+      <div className="my-28">
+        <NonIdealState
+          heading="No wallet connected"
+          text="Connect your wallet to view your Longs."
+          action={<ConnectWalletButton />}
+        />
+      </div>
     );
   }
 
   if (!longs?.length) {
     return (
-      <NonIdealState
-        icon={<SparklesIcon height="64" />}
-        heading="There are no Longs in this wallet"
-        text="Open a long to populate this space with your positions."
-      />
+      <div className="my-28">
+        <NonIdealState
+          heading="There are no open Long positions in this wallet"
+          text="Open a Long, switch wallets, or view Closed positions instead"
+        />
+      </div>
     );
   }
 
@@ -299,7 +296,6 @@ export function OpenLongsTable({
           )}
         </tbody>
       </table>
-      {!longs?.length && !isLoading ? <NonIdealState /> : null}
     </div>
   );
 }
