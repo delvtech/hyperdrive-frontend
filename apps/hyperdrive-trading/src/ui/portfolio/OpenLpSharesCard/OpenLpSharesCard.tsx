@@ -158,7 +158,7 @@ export function OpenLpSharesCard({
                 }
                 max="100"
               ></progress>
-              <p className="text-center text-body">
+              <p className="text-center">
                 Note: When you withdraw liquidity, you get back{" "}
                 {hyperdrive.baseToken.symbol} and withdrawal shares proportional
                 to your utilization ratio.
@@ -176,7 +176,7 @@ export function OpenLpSharesCard({
               >
                 {({ showModal }) => (
                   <button
-                    className="daisy-btn-neutral daisy-btn daisy-btn-wide m-auto hover:daisy-btn-ghost"
+                    className="daisy-btn daisy-btn-neutral daisy-btn-wide m-auto hover:daisy-btn-ghost"
                     onClick={showModal}
                   >
                     Remove liquidity
@@ -217,7 +217,7 @@ function DepositButton({
       {({ showModal }) => (
         <button
           className={classNames(
-            "daisy-btn-neutral daisy-btn daisy-btn-sm  hover:daisy-btn-ghost",
+            "daisy-btn daisy-btn-neutral daisy-btn-sm  hover:daisy-btn-ghost",
             className,
           )}
           onClick={showModal}
