@@ -106,7 +106,7 @@ export function OpenShortForm({
             // Approval button
             <button
               disabled={!approve}
-              className="daisy-btn-warning daisy-btn"
+              className="daisy-btn daisy-btn-warning"
               onClick={(e) => {
                 // Do this so we don't close the modal
                 e.preventDefault();
@@ -123,7 +123,7 @@ export function OpenShortForm({
                 !openShort ||
                 openShortSubmittedStatus === "loading"
               }
-              className="daisy-btn-accent daisy-btn disabled:bg-accent disabled:text-base-100 disabled:opacity-30"
+              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
               onClick={() => openShort?.()}
             >
               Short hy{hyperdrive.baseToken.symbol}
