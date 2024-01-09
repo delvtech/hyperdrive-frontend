@@ -267,8 +267,8 @@ export function OpenShortsTable({
   if (!shorts?.length) {
     return (
       <NonIdealState
-        heading="There are no Shorts in this wallet"
-        text="Open a short to populate this space with your positions."
+        heading="You have no open Short positions"
+        text="Open a Short, switch wallets, or view Closed positions instead"
         icon={<SparklesIcon height="64" />}
       />
     );
@@ -335,7 +335,7 @@ export function OpenShortsTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td className="align-top text-lg" key={cell.id}>
+                        <td className="align-top" key={cell.id}>
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),
