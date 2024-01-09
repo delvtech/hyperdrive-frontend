@@ -106,7 +106,7 @@ export function OpenShortForm({
             // Approval button
             <button
               disabled={!approve}
-              className="daisy-btn daisy-btn-warning"
+              className="daisy-btn daisy-btn-circle daisy-btn-warning w-full"
               onClick={(e) => {
                 // Do this so we don't close the modal
                 e.preventDefault();
