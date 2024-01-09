@@ -128,14 +128,13 @@ export function OpenLongForm({
           }}
         />
       }
-      disclaimer={`Note: 1 hy${hyperdrive.baseToken.symbol} is always worth 1 ${hyperdrive.baseToken.symbol} at maturity, however its value may fluctuate before maturity based on market activity.`}
       actionButton={
         account ? (
           !hasEnoughAllowance ? (
             // Approval button
             <button
               disabled={!approve}
-              className="daisy-btn-warning daisy-btn"
+              className="daisy-btn daisy-btn-warning"
               onClick={(e) => {
                 // Do this so we don't close the modal
                 e.preventDefault();
@@ -148,10 +147,10 @@ export function OpenLongForm({
             // Trade button
             <button
               disabled={!openLong || openLongStatus === "loading"}
-              className="daisy-btn-primary daisy-btn disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
+              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
               onClick={() => openLong?.()}
             >
-              Long hy{hyperdrive.baseToken.symbol}
+              Open Long
             </button>
           )
         ) : (
