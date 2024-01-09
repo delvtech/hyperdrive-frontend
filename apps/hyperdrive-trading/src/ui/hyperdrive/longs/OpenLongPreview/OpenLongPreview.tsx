@@ -56,38 +56,45 @@ export function OpenLongPreview({
         value={
           <div className="flex flex-col items-end gap-2">
             {long.bondAmount > 0 ? (
-              <>
-                <span
-                  className="daisy-tooltip daisy-tooltip-top cursor-help border-b border-dashed border-current before:border"
-                  data-tip="Your net fixed rate after pool fees and slippage are applied."
-                >
-                  <span className="font-bold">
-                    {`${formatRate(
-                      calculateFixedRateFromOpenLong({
-                        positionDuration: poolConfig?.positionDuration || 0n,
-                        baseAmount: long.baseAmountPaid,
-                        bondAmount: long.bondAmount,
-                        decimals: hyperdrive.baseToken.decimals,
-                      }),
-                      hyperdrive.baseToken.decimals,
-                    )}% APR`}
-                  </span>
+              <span
+                className="daisy-tooltip daisy-tooltip-top cursor-help border-b border-dashed border-current before:border"
+                data-tip="Your net fixed rate after pool fees and slippage are applied."
+              >
+                <span className="font-bold">
+                  {`${formatRate(
+                    calculateFixedRateFromOpenLong({
+                      positionDuration: poolConfig?.positionDuration || 0n,
+                      baseAmount: long.baseAmountPaid,
+                      bondAmount: long.bondAmount,
+                      decimals: hyperdrive.baseToken.decimals,
+                    }),
+                    hyperdrive.baseToken.decimals,
+                  )}% APR`}
                 </span>
-                <div className="daisy-badge daisy-badge-md text-success">
-                  <span>
-                    {long.bondAmount > long.baseAmountPaid ? "+" : ""}
-                  </span>
-                  {long.baseAmountPaid
-                    ? `${formatBalance({
-                        balance: long.bondAmount - long.baseAmountPaid,
-                        decimals: hyperdrive.baseToken.decimals,
-                        places: 4,
-                      })} ${hyperdrive.baseToken.symbol}`
-                    : undefined}
-                </div>
-              </>
+              </span>
             ) : (
               "0% APR"
+            )}
+          </div>
+        }
+      />
+      <PreviewTransactionRow
+        label="Yield at maturity"
+        value={
+          <div className="flex flex-col items-end gap-2">
+            {long.bondAmount > 0 ? (
+              <div className="daisy-badge daisy-badge-md text-success">
+                <span>{long.bondAmount > long.baseAmountPaid ? "+" : ""}</span>
+                {long.baseAmountPaid
+                  ? `${formatBalance({
+                      balance: long.bondAmount - long.baseAmountPaid,
+                      decimals: hyperdrive.baseToken.decimals,
+                      places: 4,
+                    })} ${hyperdrive.baseToken.symbol}`
+                  : undefined}
+              </div>
+            ) : (
+              `0 ${hyperdrive.baseToken.symbol}`
             )}
           </div>
         }
