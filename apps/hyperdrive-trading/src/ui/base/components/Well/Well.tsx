@@ -4,6 +4,7 @@ import { PropsWithChildren, ReactElement } from "react";
 interface WellProps {
   interactive?: boolean;
   elevation?: "flat" | "elevated";
+  transparent?: boolean;
   outlined?: boolean;
   block?: boolean;
   disabled?: boolean;
@@ -14,6 +15,7 @@ export function Well({
   disabled,
   interactive,
   elevation = "elevated",
+  transparent,
   outlined,
   children,
   block,
@@ -21,10 +23,11 @@ export function Well({
 }: PropsWithChildren<WellProps>): ReactElement {
   const isInteractive = !disabled && (interactive || onClick);
   const className = classNames(
-    "daisy-card p-5 bg-base-200 border",
+    "daisy-card p-5 border",
     outlined ? "border-1 border-lime" : "border-1 border-gray-700",
     {
       "shadow-md": elevation === "elevated",
+      "bg-base-200": !transparent,
       "w-full": block,
       "hover:cursor-pointer hover:-translate-y-1 transition duration-300 hover:shadow-xl ease-in-out":
         isInteractive,

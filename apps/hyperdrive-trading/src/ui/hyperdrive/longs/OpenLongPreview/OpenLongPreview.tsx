@@ -1,9 +1,10 @@
 import { calculateFixedRateFromOpenLong, Long } from "@hyperdrive/sdk";
 import * as dnum from "dnum";
-import { ReactElement, ReactNode } from "react";
+import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
+import { PreviewTransactionRow } from "src/ui/base/components/PreviewTransactionRow";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
@@ -108,21 +109,6 @@ export function OpenLongPreview({
           </>
         }
       />
-    </div>
-  );
-}
-
-function PreviewTransactionRow({
-  label: label,
-  value: value,
-}: {
-  label: ReactNode;
-  value: ReactNode;
-}): JSX.Element {
-  return (
-    <div className="flex justify-between text-md">
-      <div className="text-neutral-content">{label}</div>
-      <div>{value}</div>
     </div>
   );
 }

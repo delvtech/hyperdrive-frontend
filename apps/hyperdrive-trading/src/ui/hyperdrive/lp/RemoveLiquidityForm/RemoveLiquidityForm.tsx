@@ -5,6 +5,7 @@ import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { calculateTotalValueFromPrice } from "src/base/calculateTotalValueFromPrice";
+import { PreviewTransactionRow } from "src/ui/base/components/PreviewTransactionRow";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -129,26 +130,25 @@ export function RemoveLiquidityForm({
         />
       }
       transactionPreview={
-        <div className="flex flex-col gap-1">
-          <div className="flex justify-between">
-            <p>You receive</p>
-            <p>
-              {formattedBaseAmountOut || 0} {hyperdrive.baseToken.symbol}
-            </p>
-          </div>
-
-          <div className="flex justify-between">
-            <p>Queued for withdrawal</p>
-            <p>
-              {formattedWithdrawalSharesOut || 0} {hyperdrive.baseToken.symbol}
-            </p>
-          </div>
-        </div>
+        <>
+          <PreviewTransactionRow
+            label="You receive"
+            value={`${formattedBaseAmountOut || 0} ${
+              hyperdrive.baseToken.symbol
+            }`}
+          />
+          <PreviewTransactionRow
+            label="Queued for withdrawal"
+            value={`${formattedWithdrawalSharesOut || 0} ${
+              hyperdrive.baseToken.symbol
+            }`}
+          />
+        </>
       }
       actionButton={
         account ? (
           <button
-            className="daisy-btn-primary daisy-btn"
+            className="daisy-btn daisy-btn-circle daisy-btn-primary w-full"
             disabled={!removeLiquidity || removeLiquidityStatus === "loading"}
             onClick={(e) => {
               removeLiquidity?.();
