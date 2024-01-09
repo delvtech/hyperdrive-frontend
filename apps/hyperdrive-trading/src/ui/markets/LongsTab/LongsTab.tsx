@@ -19,9 +19,10 @@ export function LongsTab({
       positions={
         <div className="flex flex-col">
           <div className="flex items-center justify-between px-4 py-8 md:px-0">
-            <h6>Long positions</h6>
+            <h5 className="font-bold">Long positions</h5>
             <OpenClosedFilter />
           </div>
+
           {activeOpenOrClosedTab === "Open" ? (
             <OpenLongsTable hyperdrive={hyperdrive} />
           ) : (
