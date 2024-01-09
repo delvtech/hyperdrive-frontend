@@ -3,6 +3,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
+import { PreviewTransactionRow } from "src/ui/base/components/PreviewTransactionRow";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -91,19 +92,23 @@ export function CloseShortForm({
         />
       }
       transactionPreview={
-        <div className="flex justify-between">
-          <p>You receive</p>
-          <p className="font-bold">
-            {baseAmountOut
-              ? `${formatBalance({
-                  balance: baseAmountOut,
-                  decimals: baseDecimals,
-                  places: 8,
-                })}`
-              : "0"}{" "}
-            {baseSymbol}
-          </p>
-        </div>
+        <PreviewTransactionRow
+          label="You receive"
+          value={
+            <>
+              <p className="font-bold">
+                {baseAmountOut
+                  ? `${formatBalance({
+                      balance: baseAmountOut,
+                      decimals: baseDecimals,
+                      places: 8,
+                    })}`
+                  : "0"}{" "}
+                {baseSymbol}
+              </p>
+            </>
+          }
+        />
       }
       actionButton={
         account ? (
