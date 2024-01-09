@@ -9,7 +9,6 @@ import {
   calculateFixedRateFromOpenLong,
   calculateMatureLongYieldAfterFees,
 } from "@hyperdrive/sdk";
-import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useQuery } from "@tanstack/react-query";
 import {
   createColumnHelper,
@@ -153,7 +152,7 @@ function getMobileColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
       cell: ({ row }) => {
         const data = formatOpenLongMobileColumnData(row.original, hyperdrive);
         return (
-          <ul className="flex flex-col items-start gap-1">
+          <ul className="flex flex-col items-start gap-1 text-neutral-content">
             {data.map((column) => (
               <li key={column.name}>{column.name}</li>
             ))}
@@ -182,7 +181,6 @@ export function OpenLongsTable({
   hyperdrive,
 }: OpenLongsTableProps): ReactElement {
   const { address: account } = useAccount();
-  const { openConnectModal } = useConnectModal();
   const isSmallScreenView = useIsTailwindSmallScreen();
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   // Get the current block and check it's timestamp agains the
@@ -225,7 +223,7 @@ export function OpenLongsTable({
   }
 
   return (
-    <div className="max-h-96 overflow-x-clip overflow-y-scroll">
+    <div className="max-h-96 overflow-y-auto overflow-x-clip">
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
       {tableInstance.getRowModel().rows.map((row) => {
         const modalId = `${row.original.assetId}`;
@@ -286,10 +284,7 @@ export function OpenLongsTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td
-                          className="text-body align-top sm:text-lg"
-                          key={cell.id}
-                        >
+                        <td className="align-top" key={cell.id}>
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),
