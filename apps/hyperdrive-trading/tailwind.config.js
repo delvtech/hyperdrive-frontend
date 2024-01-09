@@ -38,7 +38,12 @@ module.exports = {
       // body texts
       lg: ["18px", { lineHeight: "22px" }],
       md: ["16px", { lineHeight: "20px" }],
-      sm: ["14px", { lineHeight: "16px" }],
+
+      // design doc says `sm` should have 16px lineHeight, but it looks too
+      // squeezed when there are 2 lines of text, so we are intentionally
+      // deviating by a few pixels to make running text look better
+      sm: ["14px", { lineHeight: "18px" }],
+
       xs: ["12px", { lineHeight: "14px" }],
       "2xs": ["10px", { lineHeight: "12px" }],
       // Headings

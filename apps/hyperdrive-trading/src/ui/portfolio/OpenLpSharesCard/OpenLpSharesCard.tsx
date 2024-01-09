@@ -176,7 +176,7 @@ export function OpenLpSharesCard({
               >
                 {({ showModal }) => (
                   <button
-                    className="daisy-btn daisy-btn-neutral daisy-btn-wide m-auto hover:daisy-btn-ghost"
+                    className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
                     onClick={showModal}
                   >
                     Remove liquidity

@@ -148,7 +148,7 @@ export function RemoveLiquidityForm({
       actionButton={
         account ? (
           <button
-            className="daisy-btn daisy-btn-circle daisy-btn-primary w-full"
+            className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             disabled={!removeLiquidity || removeLiquidityStatus === "loading"}
             onClick={(e) => {
               removeLiquidity?.();

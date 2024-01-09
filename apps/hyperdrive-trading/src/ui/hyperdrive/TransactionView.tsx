@@ -30,9 +30,8 @@ export function TransactionView({
           </div>
         </Well>
 
-        {disclaimer ? <p className="text-center">{disclaimer}</p> : null}
-
         <div className="text-center">{actionButton}</div>
+        {disclaimer ? <div>{disclaimer}</div> : null}
       </div>
     </div>
   );
