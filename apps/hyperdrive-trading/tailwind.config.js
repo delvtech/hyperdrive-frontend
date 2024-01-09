@@ -38,7 +38,7 @@ module.exports = {
       // body texts
       lg: ["18px", { lineHeight: "22px" }],
       md: ["16px", { lineHeight: "20px" }],
-      sm: ["14px", { lineHeight: "16px" }],
+      sm: ["14px", { lineHeight: "18px" }],
       xs: ["12px", { lineHeight: "14px" }],
       "2xs": ["10px", { lineHeight: "12px" }],
       // Headings

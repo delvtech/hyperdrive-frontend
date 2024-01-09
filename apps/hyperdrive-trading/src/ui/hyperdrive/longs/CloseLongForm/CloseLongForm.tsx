@@ -70,9 +70,20 @@ export function CloseLongForm({
   return (
     <TransactionView
       disclaimer={
-        previewCloseLongStatus === "error"
-          ? "Insufficient liquidity: There is not enough liquidity in the pool to close your long position at this time. You may either add more funds to the pool or wait for the liquidity to improve."
-          : ""
+        <>
+          <p className="text-center text-sm text-neutral-content">
+            Note: 1 hy{hyperdrive.baseToken.symbol} is always worth 1{" "}
+            {hyperdrive.baseToken.symbol} at maturity, however its value may
+            fluctuate before maturity based on market activity.
+          </p>
+          {previewCloseLongStatus === "error" ? (
+            <p className="text-center text-error">
+              Insufficient liquidity: There is not enough liquidity in the pool
+              to close your long position at this time. You may either add more
+              funds to the pool or wait for the liquidity to improve.
+            </p>
+          ) : null}
+        </>
       }
       heading="Close long"
       tokenInput={
