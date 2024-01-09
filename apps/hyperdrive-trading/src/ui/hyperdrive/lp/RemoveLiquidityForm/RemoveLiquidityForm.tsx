@@ -133,20 +133,15 @@ export function RemoveLiquidityForm({
         <>
           <PreviewTransactionRow
             label="You receive"
-            value={
-              <p>
-                {formattedBaseAmountOut || 0} {hyperdrive.baseToken.symbol}
-              </p>
-            }
+            value={`${formattedBaseAmountOut || 0} ${
+              hyperdrive.baseToken.symbol
+            }`}
           />
           <PreviewTransactionRow
             label="Queued for withdrawal"
-            value={
-              <p>
-                {formattedWithdrawalSharesOut || 0}{" "}
-                {hyperdrive.baseToken.symbol}
-              </p>
-            }
+            value={`${formattedWithdrawalSharesOut || 0} ${
+              hyperdrive.baseToken.symbol
+            }`}
           />
         </>
       }

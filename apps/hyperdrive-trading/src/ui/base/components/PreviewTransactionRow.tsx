@@ -9,8 +9,8 @@ export function PreviewTransactionRow({
 }): JSX.Element {
   return (
     <div className="flex justify-between text-md">
-      <p className="text-neutral-content">{label}</p>
-      <p>{value}</p>
+      <div className="text-neutral-content">{label}</div>
+      <div>{value}</div>
     </div>
   );
 }

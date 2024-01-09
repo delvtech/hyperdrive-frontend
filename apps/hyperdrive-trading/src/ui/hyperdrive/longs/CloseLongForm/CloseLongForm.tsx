@@ -96,18 +96,15 @@ export function CloseLongForm({
       transactionPreview={
         <PreviewTransactionRow
           label="You receive"
-          value={
-            <>
-              {baseAmountOut
-                ? `${formatBalance({
-                    balance: baseAmountOut,
-                    decimals: baseDecimals,
-                    places: 8,
-                  })}`
-                : "0"}{" "}
-              {baseSymbol}
-            </>
-          }
+          value={`${
+            baseAmountOut
+              ? `${formatBalance({
+                  balance: baseAmountOut,
+                  decimals: baseDecimals,
+                  places: 8,
+                })}`
+              : "0"
+          } ${baseSymbol}`}
         />
       }
       actionButton={
