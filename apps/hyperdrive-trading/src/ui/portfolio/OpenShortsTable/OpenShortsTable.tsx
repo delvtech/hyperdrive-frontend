@@ -275,7 +275,7 @@ export function OpenShortsTable({
   }
 
   return (
-    <div className="max-h-96 overflow-y-scroll">
+    <div className="max-h-96 overflow-y-auto">
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
       {tableInstance.getRowModel().rows.map((row) => {
         const modalId = `${row.original.assetId}`;
