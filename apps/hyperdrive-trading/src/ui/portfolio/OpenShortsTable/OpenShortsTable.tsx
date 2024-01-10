@@ -32,39 +32,41 @@ import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewC
 import { MaturesOnCell } from "src/ui/portfolio/MaturesOnCell/MaturesOnCell";
 import { useAccount } from "wagmi";
 
-const formatOpenShortMobileColumnData = (
+function formatOpenShortMobileColumnData(
   openShort: OpenShort,
   hyperdrive: Hyperdrive,
-) => [
-  {
-    name: "Matures on",
-    value: <MaturesOnCell maturity={openShort.maturity} />,
-  },
-  {
-    name: `Size (hy${hyperdrive.baseToken.symbol})`,
-    value: formatBalance({
-      balance: openShort.bondAmount,
-      decimals: hyperdrive.baseToken.decimals,
-      places: 6,
-    }),
-  },
-  {
-    name: `Amount paid`,
-    value: formatBalance({
-      balance: openShort.baseAmountPaid,
-      decimals: hyperdrive.baseToken.decimals,
-      places: 6,
-    }),
-  },
-  {
-    name: `Yield (${hyperdrive.baseToken.symbol})`,
-    value: <AccruedYieldCell hyperdrive={hyperdrive} openShort={openShort} />,
-  },
-  {
-    name: `Current value`,
-    value: <CurrentValueCell hyperdrive={hyperdrive} openShort={openShort} />,
-  },
-];
+) {
+  return [
+    {
+      name: "Matures on",
+      value: <MaturesOnCell maturity={openShort.maturity} />,
+    },
+    {
+      name: `Size (hy${hyperdrive.baseToken.symbol})`,
+      value: formatBalance({
+        balance: openShort.bondAmount,
+        decimals: hyperdrive.baseToken.decimals,
+        places: 6,
+      }),
+    },
+    {
+      name: `Amount paid`,
+      value: formatBalance({
+        balance: openShort.baseAmountPaid,
+        decimals: hyperdrive.baseToken.decimals,
+        places: 6,
+      }),
+    },
+    {
+      name: `Yield (${hyperdrive.baseToken.symbol})`,
+      value: <AccruedYieldCell hyperdrive={hyperdrive} openShort={openShort} />,
+    },
+    {
+      name: `Current value`,
+      value: <CurrentValueCell hyperdrive={hyperdrive} openShort={openShort} />,
+    },
+  ];
+}
 
 function getMobileColumns(hyperdrive: Hyperdrive) {
   return [
@@ -100,53 +102,55 @@ function getMobileColumns(hyperdrive: Hyperdrive) {
 }
 
 const columnHelper = createColumnHelper<OpenShort>();
-const getColumns = (hyperdrive: Hyperdrive) => [
-  columnHelper.accessor("assetId", {
-    id: "maturationDate",
-    header: `Matures on`,
-    cell: ({ row }) => {
-      return <MaturesOnCell maturity={row.original.maturity} />;
-    },
-  }),
-  columnHelper.accessor("bondAmount", {
-    header: `Size (hy${hyperdrive.baseToken.symbol})`,
-    cell: (bondAmount) => {
-      const bondAmountValue = bondAmount.getValue();
-      return formatBalance({
-        balance: bondAmountValue,
-        decimals: hyperdrive.baseToken.decimals,
-        places: 6,
-      });
-    },
-  }),
-  columnHelper.accessor("baseAmountPaid", {
-    header: `Amount paid`,
-    cell: (baseAmountPaid) => {
-      const amountPaid = baseAmountPaid.getValue();
-      return formatBalance({
-        balance: amountPaid,
-        decimals: hyperdrive.baseToken.decimals,
-        places: 6,
-      });
-    },
-  }),
-  columnHelper.display({
-    header: `Yield earned (${hyperdrive.baseToken.symbol})`,
-    cell: ({ row }) => {
-      return (
-        <AccruedYieldCell hyperdrive={hyperdrive} openShort={row.original} />
-      );
-    },
-  }),
-  columnHelper.display({
-    header: `Current value (${hyperdrive.baseToken.symbol})`,
-    cell: ({ row }) => {
-      return (
-        <CurrentValueCell hyperdrive={hyperdrive} openShort={row.original} />
-      );
-    },
-  }),
-];
+function getColumns(hyperdrive: Hyperdrive) {
+  return [
+    columnHelper.accessor("assetId", {
+      id: "maturationDate",
+      header: `Matures on`,
+      cell: ({ row }) => {
+        return <MaturesOnCell maturity={row.original.maturity} />;
+      },
+    }),
+    columnHelper.accessor("bondAmount", {
+      header: `Size (hy${hyperdrive.baseToken.symbol})`,
+      cell: (bondAmount) => {
+        const bondAmountValue = bondAmount.getValue();
+        return formatBalance({
+          balance: bondAmountValue,
+          decimals: hyperdrive.baseToken.decimals,
+          places: 6,
+        });
+      },
+    }),
+    columnHelper.accessor("baseAmountPaid", {
+      header: `Amount paid`,
+      cell: (baseAmountPaid) => {
+        const amountPaid = baseAmountPaid.getValue();
+        return formatBalance({
+          balance: amountPaid,
+          decimals: hyperdrive.baseToken.decimals,
+          places: 3,
+        });
+      },
+    }),
+    columnHelper.display({
+      header: `Yield earned (${hyperdrive.baseToken.symbol})`,
+      cell: ({ row }) => {
+        return (
+          <AccruedYieldCell hyperdrive={hyperdrive} openShort={row.original} />
+        );
+      },
+    }),
+    columnHelper.display({
+      header: `Current value (${hyperdrive.baseToken.symbol})`,
+      cell: ({ row }) => {
+        return (
+          <CurrentValueCell hyperdrive={hyperdrive} openShort={row.original} />
+        );
+      },
+    }),
+  ];
+}
 
 function AccruedYieldCell({
   openShort,
@@ -168,7 +172,7 @@ function AccruedYieldCell({
         {formatBalance({
           balance: accruedYield || 0n,
           decimals: hyperdrive.baseToken.decimals,
-          places: 6,
+          places: 3,
         })}
       </span>
     </div>
@@ -195,7 +199,7 @@ function CurrentValueCell({
     formatBalance({
       balance: baseAmountOut,
       decimals: hyperdrive.baseToken.decimals,
-      places: 6,
+      places: 3,
     });
 
   const isPositiveChangeInValue =
@@ -275,7 +279,7 @@ export function OpenShortsTable({
   }
 
   return (
-    <div className="max-h-96 overflow-y-scroll">
+    <div className="max-h-96 overflow-y-auto">
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
       {tableInstance.getRowModel().rows.map((row) => {
         const modalId = `${row.original.assetId}`;
