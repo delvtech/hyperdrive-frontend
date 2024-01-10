@@ -1,6 +1,7 @@
 import { formatUnits } from "viem";
 
 export function formatRate(rate: bigint, decimals = 18): string {
+  console.log("formatRate", formatUnits(rate, decimals), decimals);
   if (rate < 0n) {
     throw new Error("Rate must be non-negative");
   }
