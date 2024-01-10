@@ -129,7 +129,7 @@ function getColumns(hyperdrive: Hyperdrive) {
         return formatBalance({
           balance: amountPaid,
           decimals: hyperdrive.baseToken.decimals,
-          places: 6,
+          places: 3,
         });
       },
     }),
@@ -172,7 +172,7 @@ function AccruedYieldCell({
         {formatBalance({
           balance: accruedYield || 0n,
           decimals: hyperdrive.baseToken.decimals,
-          places: 6,
+          places: 3,
         })}
       </span>
     </div>
@@ -199,7 +199,7 @@ function CurrentValueCell({
     formatBalance({
       balance: baseAmountOut,
       decimals: hyperdrive.baseToken.decimals,
-      places: 6,
+      places: 3,
     });
 
   const isPositiveChangeInValue =
