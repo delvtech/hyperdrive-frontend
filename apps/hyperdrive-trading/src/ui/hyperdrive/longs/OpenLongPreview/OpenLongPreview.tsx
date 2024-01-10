@@ -39,7 +39,6 @@ export function OpenLongPreview({
           })} hy${hyperdrive.baseToken.symbol}`}</span>
         }
       />
-
       <PreviewTransactionRow
         label="Pool fee"
         value={
@@ -51,49 +50,47 @@ export function OpenLongPreview({
           </span>
         }
       />
-
       <PreviewTransactionRow
         label="Net fixed rate"
         value={
-          <div className="flex flex-col items-end gap-2">
-            {long.bondAmount > 0 ? (
-              <span
-                className="daisy-tooltip daisy-tooltip-top cursor-help border-b border-dashed border-current before:border"
-                data-tip="Your net fixed rate after pool fees and slippage are applied."
-              >
-                <span className="font-bold">
-                  {`${formatRate(
-                    calculateFixedRateFromOpenLong({
-                      positionDuration: poolConfig?.positionDuration || 0n,
-                      baseAmount: long.baseAmountPaid,
-                      bondAmount: long.bondAmount,
-                      decimals: hyperdrive.baseToken.decimals,
-                    }),
-                    hyperdrive.baseToken.decimals,
-                  )}% APR`}
-                </span>
-              </span>
-            ) : (
-              "0% APR"
-            )}
-          </div>
+          <span
+            className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
+            data-tip="Your net fixed rate after pool fees and slippage are applied."
+          >
+            {long.bondAmount > 0
+              ? `${formatRate(
+                  calculateFixedRateFromOpenLong({
+                    positionDuration: poolConfig?.positionDuration || 0n,
+                    baseAmount: long.baseAmountPaid,
+                    bondAmount: long.bondAmount,
+                    decimals: hyperdrive.baseToken.decimals,
+                  }),
+                  hyperdrive.baseToken.decimals,
+                )}% APR`
+              : "0% APR"}
+          </span>
         }
       />
       <PreviewTransactionRow
         label="Yield at maturity"
         value={
-          <div className="flex flex-col items-end gap-2">
+          <div
+            className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
+            data-tip={`Total ${hyperdrive.baseToken.symbol} expected in return at the end of the term, excluding fees.`}
+          >
             {long.bondAmount > 0 ? (
-              <div className="daisy-badge daisy-badge-md text-success">
+              <>
                 <span>{long.bondAmount > long.baseAmountPaid ? "+" : ""}</span>
-                {long.baseAmountPaid
-                  ? `${formatBalance({
-                      balance: long.bondAmount - long.baseAmountPaid,
-                      decimals: hyperdrive.baseToken.decimals,
-                      places: 4,
-                    })} ${hyperdrive.baseToken.symbol}`
-                  : undefined}
-              </div>
+                <span>
+                  {long.baseAmountPaid
+                    ? `${formatBalance({
+                        balance: long.bondAmount - long.baseAmountPaid,
+                        decimals: hyperdrive.baseToken.decimals,
+                        places: 4,
+                      })} ${hyperdrive.baseToken.symbol}`
+                    : undefined}
+                </span>
+              </>
             ) : (
               `0 ${hyperdrive.baseToken.symbol}`
             )}
@@ -102,12 +99,9 @@ export function OpenLongPreview({
       />
       <PreviewTransactionRow
         label="Matures in"
-        value={
-          <>
-            {numDays} days,{" "}
-            {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
-          </>
-        }
+        value={`${numDays} days, ${new Date(
+          Date.now() + Number(hyperdrive.termLengthMS),
+        ).toLocaleDateString()}`}
       />
     </div>
   );

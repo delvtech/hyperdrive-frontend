@@ -16,43 +16,49 @@ export function OpenShortPreview({
   shortSize,
 }: OpenShortPreviewProps): ReactElement {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-1">
       <PreviewTransactionRow
         label="Short size"
         value={
-          <p className="font-bold">
+          <span
+            className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
+            data-tip="The amount of pool liquidity deposited into the yield source."
+          >
             {shortSize
               ? `${formatBalance({
                   balance: shortSize,
                   decimals: market.baseToken.decimals,
                   places: 6,
-                })}`
-              : "0"}{" "}
-            hy{market.baseToken.symbol}
-          </p>
+                })} ${market.baseToken.symbol}`
+              : `0` + ` ${market.baseToken.symbol}`}
+          </span>
         }
       />
       <PreviewTransactionRow
         label="You pay"
         value={
-          <p className="font-bold">
+          <span
+            className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
+            data-tip="The upfront cost to open a short."
+          >
             {costBasis
               ? `${formatBalance({
                   balance: costBasis,
                   decimals: market.baseToken.decimals,
                   places: 6,
-                })}`
-              : "0"}{" "}
-            {market.baseToken.symbol}
-          </p>
+                })} ${market.baseToken.symbol}`
+              : `0 ${market.baseToken.symbol}`}
+          </span>
         }
       />
+
       <PreviewTransactionRow
         label="Matures in"
-        value={`${convertMillisecondsToDays(market.termLengthMS)} days, 
-          ${new Date(
-            Date.now() + Number(market.termLengthMS),
-          ).toLocaleDateString()}`}
+        value={`${convertMillisecondsToDays(
+          market.termLengthMS,
+        )} days, ${new Date(
+          Date.now() + Number(market.termLengthMS),
+        ).toLocaleDateString()}`}
       />
     </div>
   );
