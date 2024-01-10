@@ -99,7 +99,13 @@ export function OpenShortForm({
           shortSize={amountAsBigInt}
         />
       }
-      disclaimer={`Note: When you short hy${hyperdrive.baseToken.symbol} you earn the variable rate on the equivalent amount of ${hyperdrive.baseToken.symbol} deposited in the yield source.`}
+      disclaimer={
+        <p className="text-center text-sm text-neutral-content">
+          Note: Opening a short deposits the pool&apos;s liquidity into the
+          yield source for you. You pay for the current yield upfront, and
+          benefit if the APY increases.
+        </p>
+      }
       actionButton={
         account ? (
           needsApproval ? (
