@@ -27,7 +27,6 @@ export function OpenLongPreview({
     [poolConfig?.fees.curve || 0n, 18],
     [fixedAPR?.apr || 1n, 18],
   );
-
   return (
     <div className="flex flex-col gap-3">
       <PreviewTransactionRow
@@ -40,7 +39,6 @@ export function OpenLongPreview({
           })} hy${hyperdrive.baseToken.symbol}`}</span>
         }
       />
-
       <PreviewTransactionRow
         label="Pool fee"
         value={
@@ -52,7 +50,6 @@ export function OpenLongPreview({
           </span>
         }
       />
-
       <PreviewTransactionRow
         label="Net fixed rate"
         value={
@@ -102,12 +99,9 @@ export function OpenLongPreview({
       />
       <PreviewTransactionRow
         label="Matures in"
-        value={
-          <>
-            {numDays} days,{" "}
-            {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
-          </>
-        }
+        value={`${numDays} days, ${new Date(
+          Date.now() + Number(hyperdrive.termLengthMS),
+        ).toLocaleDateString()}`}
       />
     </div>
   );
