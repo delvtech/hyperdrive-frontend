@@ -1,5 +1,3 @@
-import { InboxIcon } from "@heroicons/react/24/outline";
-import classNames from "classnames";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -8,10 +6,10 @@ import { calculateRatio } from "src/base/calculateRatio";
 import { calculateTotalValueFromPrice } from "src/base/calculateTotalValueFromPrice";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { PreviewTransactionRow } from "src/ui/base/components/PreviewTransactionRow";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
-import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
 import { RemoveLiquidityForm } from "src/ui/hyperdrive/lp/RemoveLiquidityForm/RemoveLiquidityForm";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
@@ -64,19 +62,17 @@ export function OpenLpSharesCard({
 
   return (
     <Well elevation="flat">
-      <div className="flex w-80 max-w-xs flex-col gap-4 ">
-        <span className="daisy-card-title font-bold">LP Shares</span>
+      <div className="flex w-80 max-w-xs flex-1 flex-col items-center justify-center gap-3">
         {lpShares !== 0n ? (
           <>
-            <div className="mb-4 flex flex-col gap-2">
-              <div className="flex justify-between">
+            <span className="daisy-card-title font-bold">LP Shares</span>
+            <PreviewTransactionRow
+              label="Pool share"
+              value={
                 <p
                   className="daisy-tooltip inline-flex cursor-help items-center gap-1 border-b border-dashed border-current"
                   data-tip="Your share of the total liquidity in the pool"
                 >
-                  Pool share
-                </p>
-                <p>
                   {!!lpShares && !!lpSharesTotalSupply ? (
                     `${dnum.format(
                       [poolShare, hyperdrive.baseToken.decimals],
@@ -86,9 +82,11 @@ export function OpenLpSharesCard({
                     <Skeleton />
                   )}
                 </p>
-              </div>
-              <div className="flex justify-between">
-                <p className="">LP balance</p>
+              }
+            />
+            <PreviewTransactionRow
+              label="LP balance"
+              value={
                 <p>
                   {!lpShares ? (
                     <Skeleton />
@@ -101,9 +99,11 @@ export function OpenLpSharesCard({
                   )}{" "}
                   Shares
                 </p>
-              </div>
-              <div className="flex justify-between">
-                <p className="">Current value</p>
+              }
+            />
+            <PreviewTransactionRow
+              label="Current value"
+              value={
                 <p className="font-bold">
                   {!!poolInfo && !!lpShares ? (
                     `${formatBalance({
@@ -119,11 +119,13 @@ export function OpenLpSharesCard({
                     <Skeleton />
                   )}
                 </p>
-              </div>
+              }
+            />
+            <div className="mb-4 flex flex-col gap-2">
               <div className="mt-4 flex flex-col">
                 <div className="flex justify-between">
                   <p
-                    className="daisy-tooltip mb-1 inline-flex cursor-help items-center border-b border-dashed border-current"
+                    className="daisy-tooltip mb-1 inline-flex cursor-help items-center border-b border-dashed border-current text-neutral-content"
                     data-tip="Your ratio of idle capital to capital being used to back Longs and Shorts."
                   >
                     Utilization ratio
@@ -187,44 +189,11 @@ export function OpenLpSharesCard({
           </>
         ) : (
           <NonIdealState
-            icon={<InboxIcon className="h-16" />}
             heading="No LP shares found."
             text="Add liquidity to receive LP shares."
-            action={
-              <DepositButton hyperdrive={hyperdrive} label="Add liquidity" />
-            }
           />
         )}
       </div>
     </Well>
-  );
-}
-
-function DepositButton({
-  hyperdrive,
-  label = "Deposit",
-  className,
-}: {
-  hyperdrive: Hyperdrive;
-  label?: string;
-  className?: string;
-}) {
-  return (
-    <Modal
-      modalId={"depositLpModal"}
-      modalContent={<AddLiquidityForm hyperdrive={hyperdrive} />}
-    >
-      {({ showModal }) => (
-        <button
-          className={classNames(
-            "daisy-btn daisy-btn-neutral daisy-btn-sm  hover:daisy-btn-ghost",
-            className,
-          )}
-          onClick={showModal}
-        >
-          {label}
-        </button>
-      )}
-    </Modal>
   );
 }
