@@ -2,7 +2,6 @@
 import {
   ChevronDownIcon,
   ChevronUpIcon,
-  SparklesIcon,
   WalletIcon,
 } from "@heroicons/react/24/outline";
 import { OpenShort } from "@hyperdrive/sdk";
@@ -259,22 +258,25 @@ export function OpenShortsTable({
   });
   if (!account) {
     return (
-      <NonIdealState
-        heading="No wallet connected"
-        text="Connect your wallet to view your Shorts."
-        icon={<WalletIcon height="64" />}
-        action={<ConnectWalletButton />}
-      />
+      <div className="my-28">
+        <NonIdealState
+          heading="No wallet connected"
+          text="Connect your wallet to view your Shorts."
+          icon={<WalletIcon height="64" />}
+          action={<ConnectWalletButton />}
+        />
+      </div>
     );
   }
 
   if (!shorts?.length) {
     return (
-      <NonIdealState
-        heading="You have no open Short positions"
-        text="Open a Short, switch wallets, or view Closed positions instead"
-        icon={<SparklesIcon height="64" />}
-      />
+      <div className="my-28">
+        <NonIdealState
+          heading="You have no open Short positions"
+          text="Open a Short, switch wallets, or view Closed positions instead"
+        />
+      </div>
     );
   }
 
