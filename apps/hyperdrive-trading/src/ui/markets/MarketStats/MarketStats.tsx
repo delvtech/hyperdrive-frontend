@@ -44,7 +44,7 @@ export function MarketStats({
   ].includes(chainId);
 
   return (
-    <div className="grid grid-cols-2 gap-6 border-y border-gray-600 py-8 sm:grid-cols-3 md:grid-cols-5">
+    <div className="grid grid-cols-2 gap-6 border-y border-neutral-content/20 py-8 sm:grid-cols-3 md:grid-cols-5">
       <Stat
         label="Yield source APY"
         value={
@@ -149,7 +149,10 @@ function AmountLabel({
       {value}
       <span className="ml-1">{symbol}</span>
       {icon ? (
-        <img src={icon} className="ml-1 h-6 rounded-full border p-1" />
+        <img
+          src={icon}
+          className="ml-1 h-6 rounded-full border border-neutral-content/40  p-1"
+        />
       ) : undefined}
     </p>
   );
