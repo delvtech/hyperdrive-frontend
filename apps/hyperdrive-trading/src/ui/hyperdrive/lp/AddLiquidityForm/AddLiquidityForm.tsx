@@ -112,7 +112,7 @@ export function AddLiquidityForm({
             // Approval button
             <button
               disabled={!approve}
-              className="daisy-btn daisy-btn-warning"
+              className="daisy-btn daisy-btn-circle daisy-btn-warning w-full disabled:bg-warning disabled:text-base-100 disabled:opacity-30"
               onClick={(e) => {
                 // Do this so we don't close the modal
                 e.preventDefault();
