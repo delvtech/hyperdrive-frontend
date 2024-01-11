@@ -41,7 +41,7 @@ function formatOpenShortMobileColumnData(
       value: <MaturesOnCell maturity={openShort.maturity} />,
     },
     {
-      name: `Size (hy${hyperdrive.baseToken.symbol})`,
+      name: `Size (${hyperdrive.baseToken.symbol})`,
       value: formatBalance({
         balance: openShort.bondAmount,
         decimals: hyperdrive.baseToken.decimals,

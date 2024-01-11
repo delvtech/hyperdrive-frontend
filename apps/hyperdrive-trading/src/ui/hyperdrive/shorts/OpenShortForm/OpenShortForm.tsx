@@ -82,7 +82,7 @@ export function OpenShortForm({
       tokenInput={
         <TokenInput
           token={{
-            symbol: `hy${hyperdrive.baseToken.symbol}`,
+            symbol: hyperdrive.baseToken.symbol,
             address: "0x0",
             decimals: 18,
             name: "Bonds",

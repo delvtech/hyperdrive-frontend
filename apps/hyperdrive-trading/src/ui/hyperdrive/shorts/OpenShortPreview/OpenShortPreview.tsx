@@ -16,7 +16,7 @@ export function OpenShortPreview({
   shortSize,
 }: OpenShortPreviewProps): ReactElement {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-3">
       <LabelValue
         label="Short size"
         value={

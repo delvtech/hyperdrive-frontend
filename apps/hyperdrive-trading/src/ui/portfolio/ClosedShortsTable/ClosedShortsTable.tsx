@@ -32,7 +32,7 @@ function formatClosedShortMobileColumnData(
       ).toLocaleDateString(),
     },
     {
-      name: `Size (hy${hyperdrive.baseToken.symbol})`,
+      name: `Size (${hyperdrive.baseToken.symbol})`,
       value: formatBalance({
         balance: closedShort.bondAmount,
         decimals: hyperdrive.baseToken.decimals,
