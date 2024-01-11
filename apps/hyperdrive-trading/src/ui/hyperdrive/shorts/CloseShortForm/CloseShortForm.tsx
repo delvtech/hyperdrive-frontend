@@ -3,7 +3,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
-import { PreviewTransactionRow } from "src/ui/base/components/PreviewTransactionRow";
+import { LabelValue } from "src/ui/base/components/LabelValue";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -92,7 +92,7 @@ export function CloseShortForm({
         />
       }
       transactionPreview={
-        <PreviewTransactionRow
+        <LabelValue
           label="You receive"
           value={
             <p className="font-bold">

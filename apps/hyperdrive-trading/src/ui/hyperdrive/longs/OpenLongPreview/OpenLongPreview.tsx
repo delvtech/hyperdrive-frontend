@@ -4,7 +4,7 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
-import { PreviewTransactionRow } from "src/ui/base/components/PreviewTransactionRow";
+import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
@@ -29,7 +29,7 @@ export function OpenLongPreview({
   );
   return (
     <div className="flex flex-col gap-3">
-      <PreviewTransactionRow
+      <LabelValue
         label="You receive"
         value={
           <span className="font-bold">{`${formatBalance({
@@ -39,7 +39,7 @@ export function OpenLongPreview({
           })} hy${hyperdrive.baseToken.symbol}`}</span>
         }
       />
-      <PreviewTransactionRow
+      <LabelValue
         label="Pool fee"
         value={
           <span
@@ -50,7 +50,7 @@ export function OpenLongPreview({
           </span>
         }
       />
-      <PreviewTransactionRow
+      <LabelValue
         label="Net fixed rate"
         value={
           <span
@@ -71,7 +71,7 @@ export function OpenLongPreview({
           </span>
         }
       />
-      <PreviewTransactionRow
+      <LabelValue
         label="Yield at maturity"
         value={
           <div
@@ -97,7 +97,7 @@ export function OpenLongPreview({
           </div>
         }
       />
-      <PreviewTransactionRow
+      <LabelValue
         label="Matures in"
         value={`${numDays} days, ${new Date(
           Date.now() + Number(hyperdrive.termLengthMS),

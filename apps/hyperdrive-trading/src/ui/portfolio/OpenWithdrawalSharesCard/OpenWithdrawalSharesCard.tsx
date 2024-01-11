@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
+import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Modal } from "src/ui/base/components/Modal/Modal";
-import { PreviewTransactionRow } from "src/ui/base/components/PreviewTransactionRow";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -41,7 +41,7 @@ export function OpenWithdrawalSharesCard({
         {withdrawalShares !== 0n ? (
           <div className="flex h-full flex-col justify-between">
             <div className="mb-4 flex flex-col gap-3">
-              <PreviewTransactionRow
+              <LabelValue
                 label="Shares balance"
                 value={
                   <p>
@@ -58,7 +58,7 @@ export function OpenWithdrawalSharesCard({
                   </p>
                 }
               />
-              <PreviewTransactionRow
+              <LabelValue
                 label="Current value"
                 value={
                   <p>
@@ -78,7 +78,7 @@ export function OpenWithdrawalSharesCard({
                   </p>
                 }
               />
-              <PreviewTransactionRow
+              <LabelValue
                 label="Withdrawable"
                 value={
                   <p className="font-bold">

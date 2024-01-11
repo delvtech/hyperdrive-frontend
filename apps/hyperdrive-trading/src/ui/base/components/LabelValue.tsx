@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export function PreviewTransactionRow({
+export function LabelValue({
   label: label,
   value: value,
 }: {

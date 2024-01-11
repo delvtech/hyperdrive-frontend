@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { PreviewTransactionRow } from "src/ui/base/components/PreviewTransactionRow";
+import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface OpenShortPreviewProps {
@@ -17,7 +17,7 @@ export function OpenShortPreview({
 }: OpenShortPreviewProps): ReactElement {
   return (
     <div className="flex flex-col gap-1">
-      <PreviewTransactionRow
+      <LabelValue
         label="Short size"
         value={
           <span
@@ -34,7 +34,7 @@ export function OpenShortPreview({
           </span>
         }
       />
-      <PreviewTransactionRow
+      <LabelValue
         label="You pay"
         value={
           <span
@@ -52,7 +52,7 @@ export function OpenShortPreview({
         }
       />
 
-      <PreviewTransactionRow
+      <LabelValue
         label="Matures in"
         value={`${convertMillisecondsToDays(
           market.termLengthMS,
