@@ -6,7 +6,7 @@ import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/Transaction
 import { FAQEntries } from "src/ui/onboarding/FAQ/FAQ";
 
 const TABS = ["Transactions", "FAQ"] as const;
-export type Tab = typeof TABS[number];
+export type Tab = (typeof TABS)[number];
 
 export function TransactionAndFaqTabs({
   hyperdrive,
@@ -16,19 +16,20 @@ export function TransactionAndFaqTabs({
   const [activeTab, setActiveTab] = useState<Tab>("Transactions");
   return (
     <div role="tablist" className="daisy-tabs daisy-tabs-lifted daisy-tabs-lg">
-      {TABS.map((tab) => (
-        <Fragment key={tab}>
+      {TABS.map((tabId) => (
+        <Fragment key={tabId}>
           <input
             type="radio"
             name="transactions_and_faq_tab"
             role="tab"
             className={classNames("daisy-tab", {
-              "font-bold": activeTab === tab,
+              "font-bold": activeTab === tabId,
+              "opacity-80 hover:opacity-100": activeTab !== tabId,
             })}
-            aria-label={tab}
-            checked={activeTab === tab}
+            aria-label={tabId}
+            checked={activeTab === tabId}
             onChange={() => {
-              setActiveTab(tab);
+              setActiveTab(tabId);
             }}
           />
           <div
@@ -40,12 +41,12 @@ export function TransactionAndFaqTabs({
               // render the active tab's content
               switch (activeTab) {
                 case "FAQ":
-                  if (tab === "FAQ") {
+                  if (tabId === "FAQ") {
                     return <FAQEntries />;
                   }
                   return null;
                 case "Transactions":
-                  if (tab === "Transactions") {
+                  if (tabId === "Transactions") {
                     return <TransactionTable hyperdrive={hyperdrive} />;
                   }
                   return null;
