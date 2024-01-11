@@ -47,14 +47,14 @@ function FilterSelect({
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   if (isTailwindSmallScreen) {
     return (
-      <div className="daisy-dropdown rounded border">
+      <div className="daisy-dropdown flex flex-row rounded border">
         <label tabIndex={0} className="daisy-btn daisy-btn-ghost rounded-btn">
           {(header.column.getFilterValue() as string) || "All"}
           <ChevronDownIcon className="h-4" />
         </label>
         <ul
           tabIndex={0}
-          className="daisy-menu daisy-dropdown-content mt-1 rounded-box bg-base-100 p-2 shadow"
+          className="daisy-menu daisy-dropdown-content mt-14 rounded-md bg-base-200 p-2 shadow"
         >
           {["All", "Longs", "Shorts", "LP"].map((filter) => (
             <li key={filter} className="daisy-menu-title">
