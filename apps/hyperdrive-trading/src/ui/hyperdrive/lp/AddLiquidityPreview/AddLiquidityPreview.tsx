@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
+import { PreviewTransactionRow } from "src/ui/base/components/PreviewTransactionRow";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface AddLiquidityPreviewProps {
@@ -12,18 +13,20 @@ export function AddLiquidityPreview({
   lpShares,
 }: AddLiquidityPreviewProps): ReactElement {
   return (
-    <div className="flex flex-col gap-1">
-      <div className="flex justify-between">
-        <p>You receive</p>
-        <p className="font-bold">
-          {formatBalance({
-            balance: lpShares,
-            decimals: hyperdrive.baseToken.decimals,
-            places: 4,
-          })}{" "}
-          LP
-        </p>
-      </div>
+    <div className="flex flex-col gap-3">
+      <PreviewTransactionRow
+        label="You receive"
+        value={
+          <p className="font-bold">
+            {formatBalance({
+              balance: lpShares,
+              decimals: hyperdrive.baseToken.decimals,
+              places: 4,
+            })}{" "}
+            LP
+          </p>
+        }
+      />
     </div>
   );
 }
