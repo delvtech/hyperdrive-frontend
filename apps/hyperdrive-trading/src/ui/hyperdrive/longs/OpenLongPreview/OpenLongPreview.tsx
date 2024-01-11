@@ -80,8 +80,8 @@ export function OpenLongPreview({
           >
             {long.bondAmount > 0 ? (
               <>
-                <span>{long.bondAmount > long.baseAmountPaid ? "+" : ""}</span>
                 <span>
+                  {long.bondAmount > long.baseAmountPaid ? "+" : ""}
                   {long.baseAmountPaid
                     ? `${formatBalance({
                         balance: long.bondAmount - long.baseAmountPaid,
