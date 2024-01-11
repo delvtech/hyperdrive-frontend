@@ -75,24 +75,24 @@ export function OpenLongPreview({
         label="Yield at maturity"
         value={
           <div
-            className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
+            className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border"
             data-tip={`Total ${hyperdrive.baseToken.symbol} expected in return at the end of the term, excluding fees.`}
           >
             {long.bondAmount > 0 ? (
-              <>
-                <span>{long.bondAmount > long.baseAmountPaid ? "+" : ""}</span>
-                <span>
-                  {long.baseAmountPaid
-                    ? `${formatBalance({
-                        balance: long.bondAmount - long.baseAmountPaid,
-                        decimals: hyperdrive.baseToken.decimals,
-                        places: 4,
-                      })} ${hyperdrive.baseToken.symbol}`
-                    : undefined}
-                </span>
-              </>
+              <span className="cursor-help border-b border-dashed border-success text-success">
+                {long.bondAmount > long.baseAmountPaid ? "+" : ""}
+                {long.baseAmountPaid
+                  ? `${formatBalance({
+                      balance: long.bondAmount - long.baseAmountPaid,
+                      decimals: hyperdrive.baseToken.decimals,
+                      places: 4,
+                    })} ${hyperdrive.baseToken.symbol}`
+                  : undefined}
+              </span>
             ) : (
-              `0 ${hyperdrive.baseToken.symbol}`
+              <span className="cursor-help border-b border-dashed">
+                0 {hyperdrive.baseToken.symbol}
+              </span>
             )}
           </div>
         }

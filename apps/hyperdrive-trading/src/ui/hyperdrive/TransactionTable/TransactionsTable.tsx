@@ -143,7 +143,7 @@ const getMobileColumns = (hyperdrive: Hyperdrive) => [
     cell: ({ row }) => {
       const data = formatTransactionTableMobileData(row.original);
       return (
-        <ul className="flex flex-col items-start gap-1">
+        <ul className="flex flex-col items-start gap-1 text-neutral-content">
           {data.map((column) => (
             <li key={column.name}>{column.name}</li>
           ))}
@@ -284,7 +284,7 @@ export function TransactionTable({
                 >
                   <div
                     className={classNames({
-                      "flex cursor-pointer select-none items-center gap-2":
+                      "flex cursor-pointer select-none items-center gap-2 font-normal text-neutral-content":
                         header.column.getCanSort(),
                     })}
                     onClick={header.column.getToggleSortingHandler()}
@@ -317,7 +317,7 @@ export function TransactionTable({
                 <>
                   {row.getVisibleCells().map((cell) => {
                     return (
-                      <td className="text-lg" key={cell.id}>
+                      <td key={cell.id}>
                         {flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext(),
