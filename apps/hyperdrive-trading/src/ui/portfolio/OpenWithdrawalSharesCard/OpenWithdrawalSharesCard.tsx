@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
 import { Modal } from "src/ui/base/components/Modal/Modal";
+import { PreviewTransactionRow } from "src/ui/base/components/PreviewTransactionRow";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -39,60 +40,61 @@ export function OpenWithdrawalSharesCard({
         <span className="daisy-card-title font-bold">Withdrawal Shares</span>
         {withdrawalShares !== 0n ? (
           <div className="flex h-full flex-col justify-between">
-            <div className="mb-4 flex flex-col gap-2">
-              <div className="flex justify-between">
-                <p className="">Shares balance</p>
-                <p>
-                  {!withdrawalShares ? (
-                    <Skeleton />
-                  ) : (
-                    formatBalance({
-                      balance: withdrawalShares,
-                      decimals: hyperdrive.baseToken.decimals,
-                      places: 4,
-                    })
-                  )}{" "}
-                  Shares
-                </p>
-              </div>
-              <div className="flex justify-between">
-                <p className="">Current value</p>
-                <p>
-                  {!!poolInfo && !!withdrawalShares ? (
-                    `${formatBalance({
-                      balance: calculateShareValue({
-                        amount: withdrawalShares,
-                        price: poolInfo.lpSharePrice,
+            <div className="mb-4 flex flex-col gap-3">
+              <PreviewTransactionRow
+                label="Shares balance"
+                value={
+                  <p>
+                    {!withdrawalShares ? (
+                      <Skeleton />
+                    ) : (
+                      formatBalance({
+                        balance: withdrawalShares,
                         decimals: hyperdrive.baseToken.decimals,
-                      }),
-                      decimals: hyperdrive.baseToken.decimals,
-                      places: 4,
-                    })} ${hyperdrive.baseToken.symbol}`
-                  ) : (
-                    <Skeleton />
-                  )}
-                </p>
-              </div>
-              <div className="flex justify-between">
-                <p className="">Withdrawable</p>
-                <p className="font-bold">
-                  {withdrawalSharesBaseWithdrawable !== undefined ? (
-                    `${formatBalance({
-                      balance: withdrawalSharesBaseWithdrawable,
-                      decimals: hyperdrive.baseToken.decimals,
-                    })} ${hyperdrive.baseToken.symbol}`
-                  ) : (
-                    <Skeleton />
-                  )}
-                </p>
-              </div>
+                        places: 4,
+                      })
+                    )}{" "}
+                    Shares
+                  </p>
+                }
+              />
+              <PreviewTransactionRow
+                label="Current value"
+                value={
+                  <p>
+                    {!!poolInfo && !!withdrawalShares ? (
+                      `${formatBalance({
+                        balance: calculateShareValue({
+                          amount: withdrawalShares,
+                          price: poolInfo.lpSharePrice,
+                          decimals: hyperdrive.baseToken.decimals,
+                        }),
+                        decimals: hyperdrive.baseToken.decimals,
+                        places: 4,
+                      })} ${hyperdrive.baseToken.symbol}`
+                    ) : (
+                      <Skeleton />
+                    )}
+                  </p>
+                }
+              />
+              <PreviewTransactionRow
+                label="Withdrawable"
+                value={
+                  <p className="font-bold">
+                    {withdrawalSharesBaseWithdrawable !== undefined ? (
+                      `${formatBalance({
+                        balance: withdrawalSharesBaseWithdrawable,
+                        decimals: hyperdrive.baseToken.decimals,
+                      })} ${hyperdrive.baseToken.symbol}`
+                    ) : (
+                      <Skeleton />
+                    )}
+                  </p>
+                }
+              />
             </div>
-            <p className="text-center">
-              Note: Withdrawal shares are considered idle capital and are not
-              used to back new positions. They continue to earn the variable
-              rate from the yield source.
-            </p>
-            <div className="daisy-card-actions">
+            <div className="daisy-card-actions gap-6">
               <Modal
                 modalId={"withdrawalLpModal"}
                 modalContent={
@@ -104,13 +106,18 @@ export function OpenWithdrawalSharesCard({
               >
                 {({ showModal }) => (
                   <button
-                    className="daisy-btn daisy-btn-neutral daisy-btn-wide m-auto mt-2 hover:daisy-btn-ghost"
+                    className="daisy-btn daisy-btn-circle daisy-btn-primary m-auto mt-2 w-full hover:daisy-btn-ghost"
                     onClick={showModal}
                   >
                     Claim withdrawal shares
                   </button>
                 )}
               </Modal>
+              <p className="text-center text-sm text-neutral-content">
+                Note: Withdrawal shares are considered idle capital and are not
+                used to back new positions. They continue to earn the variable
+                rate from the yield source.
+              </p>
             </div>
           </div>
         ) : null}
