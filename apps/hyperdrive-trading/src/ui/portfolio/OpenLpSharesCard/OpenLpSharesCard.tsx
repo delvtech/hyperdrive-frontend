@@ -166,7 +166,7 @@ export function OpenLpSharesCard({
                 to your utilization ratio.
               </p>
             </div>
-            <div className="daisy-card-actions">
+            <div className="daisy-card-actions w-full">
               <Modal
                 modalId={"withdrawalLpModal"}
                 modalContent={

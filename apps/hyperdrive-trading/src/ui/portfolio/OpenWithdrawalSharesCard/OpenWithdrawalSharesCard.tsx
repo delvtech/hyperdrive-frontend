@@ -94,9 +94,9 @@ export function OpenWithdrawalSharesCard({
                 }
               />
             </div>
-            <div className="daisy-card-actions gap-6">
+            <div className="daisy-card-actions w-full gap-6">
               <Modal
-                modalId={"withdrawalLpModal"}
+                modalId="withdrawalLpModal"
                 modalContent={
                   <RedeemWithdrawalSharesForm
                     hyperdrive={hyperdrive}
@@ -106,7 +106,7 @@ export function OpenWithdrawalSharesCard({
               >
                 {({ showModal }) => (
                   <button
-                    className="daisy-btn daisy-btn-circle daisy-btn-primary m-auto mt-2 w-full hover:daisy-btn-ghost"
+                    className="daisy-btn daisy-btn-circle daisy-btn-primary mt-2 w-full hover:daisy-btn-ghost"
                     onClick={showModal}
                   >
                     Claim withdrawal shares

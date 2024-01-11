@@ -8,7 +8,7 @@ export function LabelValue({
   value: ReactNode;
 }): JSX.Element {
   return (
-    <div className="flex justify-between text-md">
+    <div className="flex w-full justify-between text-md">
       <div className="text-neutral-content">{label}</div>
       <div>{value}</div>
     </div>
