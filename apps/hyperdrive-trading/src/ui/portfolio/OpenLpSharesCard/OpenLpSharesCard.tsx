@@ -4,9 +4,9 @@ import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
 import { calculateRatio } from "src/base/calculateRatio";
 import { calculateTotalValueFromPrice } from "src/base/calculateTotalValueFromPrice";
+import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { PreviewTransactionRow } from "src/ui/base/components/PreviewTransactionRow";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -66,7 +66,7 @@ export function OpenLpSharesCard({
         {lpShares !== 0n ? (
           <>
             <span className="daisy-card-title font-bold">LP Shares</span>
-            <PreviewTransactionRow
+            <LabelValue
               label="Pool share"
               value={
                 <p
@@ -84,7 +84,7 @@ export function OpenLpSharesCard({
                 </p>
               }
             />
-            <PreviewTransactionRow
+            <LabelValue
               label="LP balance"
               value={
                 <p>
@@ -101,7 +101,7 @@ export function OpenLpSharesCard({
                 </p>
               }
             />
-            <PreviewTransactionRow
+            <LabelValue
               label="Current value"
               value={
                 <p className="font-bold">

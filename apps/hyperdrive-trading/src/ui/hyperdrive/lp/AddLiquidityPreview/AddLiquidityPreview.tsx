@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { PreviewTransactionRow } from "src/ui/base/components/PreviewTransactionRow";
+import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface AddLiquidityPreviewProps {
@@ -14,7 +14,7 @@ export function AddLiquidityPreview({
 }: AddLiquidityPreviewProps): ReactElement {
   return (
     <div className="flex flex-col gap-3">
-      <PreviewTransactionRow
+      <LabelValue
         label="You receive"
         value={
           <p className="font-bold">

@@ -5,7 +5,7 @@ import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { calculateTotalValueFromPrice } from "src/base/calculateTotalValueFromPrice";
-import { PreviewTransactionRow } from "src/ui/base/components/PreviewTransactionRow";
+import { LabelValue } from "src/ui/base/components/LabelValue";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -131,13 +131,13 @@ export function RemoveLiquidityForm({
       }
       transactionPreview={
         <>
-          <PreviewTransactionRow
+          <LabelValue
             label="You receive"
             value={`${formattedBaseAmountOut || 0} ${
               hyperdrive.baseToken.symbol
             }`}
           />
-          <PreviewTransactionRow
+          <LabelValue
             label="Queued for withdrawal"
             value={`${formattedWithdrawalSharesOut || 0} ${
               hyperdrive.baseToken.symbol
