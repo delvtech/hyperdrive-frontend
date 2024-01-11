@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { formatTermLength } from "src/ui/markets/formatTermLength";
-import { PriceBadges } from "./PriceBadges";
+import { PriceBadges } from "src/ui/markets/MarketDetailsBody/PriceBadges";
 
 export function MarketHeader({
   hyperdrive,

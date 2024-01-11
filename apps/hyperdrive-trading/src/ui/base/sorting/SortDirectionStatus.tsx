@@ -3,7 +3,7 @@ import {
   ChevronDoubleUpIcon,
 } from "@heroicons/react/20/solid";
 import { ReactElement } from "react";
-import { SortDirection } from "./types";
+import { SortDirection } from "src/ui/base/sorting/types";
 
 interface SortDirectionStatusProps {
   direction: SortDirection | undefined;
