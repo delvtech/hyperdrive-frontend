@@ -106,16 +106,13 @@ export function AddLiquidityForm({
           lpShares={lpSharesOut || 0n}
         />
       }
-      disclaimer={
-        "Note: You can withdraw liquidity at any time. If you're backing open positions, you'll receive Withdrawal Shares for later redemption."
-      }
       actionButton={
         account ? (
           needsApproval ? (
             // Approval button
             <button
               disabled={!approve}
-              className="daisy-btn-warning daisy-btn"
+              className="daisy-btn daisy-btn-warning"
               onClick={(e) => {
                 // Do this so we don't close the modal
                 e.preventDefault();
@@ -128,7 +125,7 @@ export function AddLiquidityForm({
             // Trade button
             <button
               disabled={!addLiquidity || addLiquidityStatus === "loading"}
-              className="daisy-btn-primary daisy-btn disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
+              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
               onClick={() => addLiquidity?.()}
             >
               Add liquidity

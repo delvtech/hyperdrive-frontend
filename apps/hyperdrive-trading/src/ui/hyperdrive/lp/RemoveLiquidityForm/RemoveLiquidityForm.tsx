@@ -145,6 +145,13 @@ export function RemoveLiquidityForm({
           />
         </>
       }
+      disclaimer={
+        <p className="text-center text-sm text-neutral-content">
+          Note: You can withdraw liquidity at any time. If you&apos;re liquidity
+          is backing open positions, you&apos;ll receive{" "}
+          {hyperdrive.baseToken.symbol} that&apos;s queued for withdrawal later.
+        </p>
+      }
       actionButton={
         account ? (
           <button
