@@ -176,8 +176,7 @@ function calculateRequiredLpSharesIn(
   desiredBaseOut: bigint | undefined,
   poolInfo: PoolInfo | undefined,
 ): bigint {
-  return dnum.div(
-    [desiredBaseOut || 1n, 18],
-    [poolInfo?.lpSharePrice || 1n, 18],
-  )[0];
+  return !desiredBaseOut
+    ? 0n
+    : dnum.div([desiredBaseOut, 18], [poolInfo?.lpSharePrice || 1n, 18])[0];
 }
