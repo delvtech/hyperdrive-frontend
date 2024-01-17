@@ -11,7 +11,7 @@ fi
 
 # Clone the hyperdrive repo if the hyperdrive folder doesn't exist
 if [ ! -d "hyperdrive" ]; then
-  git clone --depth 1 --branch v0.4.0 git@github.com:delvtech/hyperdrive.git hyperdrive
+  git clone --depth 1 --branch v0.5.0 git@github.com:delvtech/hyperdrive.git hyperdrive
 fi
 
 cd hyperdrive
