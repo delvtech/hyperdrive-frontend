@@ -422,12 +422,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const config = await this.getPoolConfig(options);
     const info = await this.getPoolInfo(options);
 
-    const aprDecimalString = await hyperwasm.getSpotRate(
+    const aprString = await hyperwasm.getSpotRate(
       convertBigIntsToStrings(info),
       convertBigIntsToStrings(config),
     );
 
-    return dnum.from(aprDecimalString, 18)[0];
+    return BigInt(aprString);
   }
 
   async getLiquidity({
@@ -1239,7 +1239,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
     return {
       maturityTime: checkpointId + config.positionDuration,
-      bondProceeds: dnum.from(bondProceeds, 18)[0],
+      bondProceeds: BigInt(bondProceeds),
     };
   }
 
@@ -1267,7 +1267,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
     return {
       maturityTime: checkpointId + config.positionDuration,
-      traderDeposit: dnum.from(baseDepositAmount, 18)[0],
+      traderDeposit: BigInt(baseDepositAmount),
     };
   }
 
