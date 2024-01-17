@@ -29,7 +29,7 @@ import { MarketState } from "src/pool/MarketState";
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { BlockTag } from "viem";
 import * as dnum from "dnum";
-import { ZERO_ADDRESS } from "src/base/numbers";
+import { MAX_UINT256, ZERO_ADDRESS } from "src/base/numbers";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
@@ -1053,56 +1053,37 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async getMaxLong(
     options?: ContractReadOptions,
   ): ReturnType<IReadHyperdrive, "getMaxLong"> {
-    const {
-      minimumShareReserves,
-      initialSharePrice,
-      timeStretch,
-      checkpointDuration,
-      fees,
-    } = await this.getPoolConfig(options);
-    const {
-      shareReserves,
-      bondReserves,
-      longsOutstanding,
-      sharePrice,
-      longExposure,
-      shareAdjustment,
-    } = await this.getPoolInfo(options);
+    const poolInfo = await this.getPoolInfo(options);
+    const poolConfig = await this.getPoolConfig(options);
 
     const { timestamp: blockTimestamp } = await this.network.getBlock(options);
-
-    const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
+    const checkpointId = getCheckpointId(
+      blockTimestamp,
+      poolConfig.checkpointDuration,
+    );
     const checkpointExposure = await this.getCheckpointExposure({
       checkpointId,
       options,
     });
 
-    const [maxBaseIn, maxBondsOut] = await this.mathContract.read(
-      "calculateMaxLong",
-      [
-        {
-          shareReserves,
-          shareAdjustment,
-          bondReserves,
-          longsOutstanding,
-          timeStretch,
-          sharePrice,
-          initialSharePrice,
-          minimumShareReserves,
-          longExposure,
-          curveFee: fees.curve,
-          governanceLPFee: fees.governanceLP,
-          flatFee: fees.flat,
-        },
-        checkpointExposure,
-        MAX_ITERATIONS,
-      ],
-      options,
+    const stringifiedPoolInfo = convertBigIntsToStrings(poolInfo);
+    const stringifiedPoolConfig = convertBigIntsToStrings(poolConfig);
+
+    const maxBaseIn = hyperwasm.getMaxLong(
+      stringifiedPoolInfo,
+      stringifiedPoolConfig,
+      MAX_UINT256.toString(),
+      checkpointExposure.toString(),
+    );
+    const maxBondsOut = hyperwasm.calcOpenLong(
+      stringifiedPoolInfo,
+      stringifiedPoolConfig,
+      maxBaseIn,
     );
 
     return {
-      maxBaseIn,
-      maxBondsOut,
+      maxBaseIn: BigInt(maxBaseIn),
+      maxBondsOut: BigInt(maxBondsOut),
     };
   }
 
