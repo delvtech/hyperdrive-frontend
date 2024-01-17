@@ -18,7 +18,6 @@ export function useReadHyperdrive(
     }
     return new ViemReadHyperdrive({
       address,
-      mathAddress: appConfig.hyperdriveMath,
       publicClient,
       cache: querySdkCache,
       id: chainId.toString(),

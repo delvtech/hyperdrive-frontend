@@ -10,7 +10,6 @@ import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBigInt";
 import { IReadHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
-import { IReadHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { ReturnType } from "src/base/ReturnType";
@@ -39,7 +38,6 @@ const HyperdriveABI = IHyperdrive.abi;
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
-  mathContract: IReadHyperdriveMathContract;
   network: INetwork;
 }
 
@@ -352,15 +350,13 @@ export interface IReadHyperdrive {
 
 export class ReadHyperdrive implements IReadHyperdrive {
   protected readonly contract: IReadHyperdriveContract;
-  protected readonly mathContract: IReadHyperdriveMathContract;
   protected readonly network: INetwork;
 
   /**
    * @hidden
    */
-  constructor({ contract, mathContract, network }: ReadHyperdriveOptions) {
+  constructor({ contract, network }: ReadHyperdriveOptions) {
     this.contract = contract;
-    this.mathContract = mathContract;
     this.network = network;
   }
   async getCheckpoint({

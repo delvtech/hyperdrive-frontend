@@ -5,7 +5,6 @@ export interface AppConfig {
   chainId: number;
   hyperdrives: Hyperdrive[];
 
-  hyperdriveMath: Address;
   yieldSources: Record<string, YieldSource>;
 }
 

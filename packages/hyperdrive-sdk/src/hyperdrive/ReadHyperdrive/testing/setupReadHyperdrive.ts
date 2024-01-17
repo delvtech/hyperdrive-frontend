@@ -1,5 +1,4 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
-import { MockHyperdriveMath } from "@hyperdrive/artifacts/dist/MockHyperdriveMath";
 import {
   CachedReadContract,
   NetworkStub,
@@ -13,16 +12,12 @@ export function setupReadHyperdrive() {
   const contract = new ReadContractStub(IHyperdrive.abi);
   const cachedContract = new CachedReadContract({ contract });
 
-  const mathContract = new ReadContractStub(MockHyperdriveMath.abi);
-  const cachedMathContract = new CachedReadContract({ contract: mathContract });
-
   const network = new NetworkStub();
 
   const readHyperdrive = new ReadHyperdrive({
     contract: cachedContract,
-    mathContract: cachedMathContract,
     network: network,
   });
 
-  return { contract, mathContract, network, readHyperdrive };
+  return { contract, network, readHyperdrive };
 }

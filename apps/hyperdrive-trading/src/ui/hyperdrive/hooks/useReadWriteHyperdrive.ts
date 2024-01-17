@@ -21,7 +21,6 @@ export function useReadWriteHyperdrive(
 
     return new ViemReadWriteHyperdrive({
       address,
-      mathAddress: appConfig.hyperdriveMath,
       publicClient,
       walletClient,
       cache: querySdkCache,

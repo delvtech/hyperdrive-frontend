@@ -15,7 +15,6 @@ export async function getAppConfigFromLocalAddresses(
 ): Promise<AppConfig> {
   const config: AppConfig = {
     chainId,
-    hyperdriveMath: addresses.mockHyperdriveMath,
     hyperdrives: [
       await getMockHyperdrive(addresses.erc4626Hyperdrive, publicClient),
     ],
