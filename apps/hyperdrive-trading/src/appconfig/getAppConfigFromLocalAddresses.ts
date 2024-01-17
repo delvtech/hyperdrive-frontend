@@ -17,7 +17,7 @@ export async function getAppConfigFromLocalAddresses(
     chainId,
     hyperdriveMath: addresses.mockHyperdriveMath,
     hyperdrives: [
-      await getMockHyperdrive(addresses.mockHyperdrive, publicClient),
+      await getMockHyperdrive(addresses.erc4626Hyperdrive, publicClient),
     ],
     yieldSources,
   };

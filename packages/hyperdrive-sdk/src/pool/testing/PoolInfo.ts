@@ -14,5 +14,6 @@ export const simplePoolInfo: PoolInfo = {
   lpSharePrice: 1000000000000000000n,
   withdrawalSharesProceeds: 0n,
   withdrawalSharesReadyToWithdraw: 0n,
+  zombieBaseProceeds: 0n,
   zombieShareReserves: 0n,
 };
