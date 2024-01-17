@@ -538,23 +538,15 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async getLongPrice(
     options?: ContractReadOptions,
   ): ReturnType<IReadHyperdrive, "getLongPrice"> {
-    const { initialSharePrice, timeStretch } = await this.getPoolConfig(
-      options,
-    );
-    const { shareReserves, bondReserves, shareAdjustment } =
-      await this.getPoolInfo(options);
+    const poolConfig = await this.getPoolConfig(options);
+    const poolInfo = await this.getPoolInfo(options);
 
-    const [spotPrice] = await this.mathContract.read(
-      "calculateSpotPrice",
-      [
-        calculateEffectiveShareReserves({ shareReserves, shareAdjustment }),
-        bondReserves,
-        initialSharePrice,
-        timeStretch,
-      ],
-      options,
+    const spotPrice = hyperwasm.getSpotPrice(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
     );
-    return spotPrice;
+
+    return BigInt(spotPrice);
   }
 
   private async getOpenLongEvents(
