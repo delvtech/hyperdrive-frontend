@@ -185,7 +185,10 @@ export interface IReadHyperdrive {
   /**
    * Gets the maximum amount of bonds a user can open a short for.
    */
-  getMaxShort(options?: ContractReadOptions): Promise<bigint>;
+  getMaxShort(options?: ContractReadOptions): Promise<{
+    maxBaseIn: bigint;
+    maxBondsOut: bigint;
+  }>;
 
   /**
    * Gets the maximum amount of bonds a user can open a long for.
@@ -347,7 +350,6 @@ export interface IReadHyperdrive {
   >;
 }
 
-const MAX_ITERATIONS = 7n;
 export class ReadHyperdrive implements IReadHyperdrive {
   protected readonly contract: IReadHyperdriveContract;
   protected readonly mathContract: IReadHyperdriveMathContract;
@@ -1002,52 +1004,42 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async getMaxShort(
     options?: ContractReadOptions,
   ): ReturnType<IReadHyperdrive, "getMaxShort"> {
-    const {
-      minimumShareReserves,
-      initialSharePrice,
-      timeStretch,
-      fees,
-      checkpointDuration,
-    } = await this.getPoolConfig(options);
-    const {
-      shareReserves,
-      bondReserves,
-      longsOutstanding,
-      sharePrice,
-      shareAdjustment,
-      longExposure,
-    } = await this.getPoolInfo(options);
-    const { timestamp: blockTimestamp } = await this.network.getBlock(options);
+    const poolInfo = await this.getPoolInfo(options);
+    const poolConfig = await this.getPoolConfig(options);
 
-    const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
+    const { timestamp: blockTimestamp } = await this.network.getBlock(options);
+    const checkpointId = getCheckpointId(
+      blockTimestamp,
+      poolConfig.checkpointDuration,
+    );
     const checkpointExposure = await this.getCheckpointExposure({
       checkpointId,
       options,
     });
+    const { sharePrice: openSharePrice } = await this.getCheckpoint({
+      checkpointId,
+    });
 
-    const [maxBondsOut] = await this.mathContract.read(
-      "calculateMaxShort",
-      [
-        {
-          shareReserves,
-          shareAdjustment,
-          bondReserves,
-          longsOutstanding,
-          timeStretch,
-          sharePrice,
-          initialSharePrice,
-          minimumShareReserves,
-          longExposure,
-          curveFee: fees.curve,
-          governanceLPFee: fees.governanceLP,
-          flatFee: fees.flat,
-        },
-        checkpointExposure,
-        MAX_ITERATIONS,
-      ],
-      options,
+    const stringifiedPoolInfo = convertBigIntsToStrings(poolInfo);
+    const stringifiedPoolConfig = convertBigIntsToStrings(poolConfig);
+
+    const maxBondsOut = hyperwasm.getMaxShort(
+      stringifiedPoolInfo,
+      stringifiedPoolConfig,
+      MAX_UINT256.toString(),
+      openSharePrice.toString(),
+      checkpointExposure.toString(),
     );
-    return maxBondsOut;
+    const maxBaseIn = hyperwasm.calcOpenShort(
+      stringifiedPoolInfo,
+      stringifiedPoolConfig,
+      maxBondsOut,
+    );
+
+    return {
+      maxBondsOut: BigInt(maxBondsOut),
+      maxBaseIn: BigInt(maxBaseIn),
+    };
   }
 
   async getMaxLong(
