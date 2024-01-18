@@ -34,7 +34,6 @@ export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
             hyperdrives.map(async (hyperdrive): Promise<MarketTableRowData> => {
               const readHyperdrive = new ViemReadHyperdrive({
                 address: hyperdrive.address,
-                mathAddress: appConfig.hyperdriveMath,
                 publicClient,
                 cache: querySdkCache,
               });

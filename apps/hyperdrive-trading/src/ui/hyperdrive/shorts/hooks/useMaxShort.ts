@@ -23,9 +23,9 @@ export function useMaxShort(hyperdrive: Hyperdrive): {
   });
 
   return {
-    maxShort: data,
+    maxShort: data?.maxBondsOut,
     maxShortFormatted: data
-      ? dnum.format([data, hyperdrive.baseToken.decimals], 2)
+      ? dnum.format([data.maxBondsOut, hyperdrive.baseToken.decimals], 2)
       : undefined,
     maxShortStatus: status,
   };

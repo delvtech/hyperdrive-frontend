@@ -5,6 +5,7 @@
   "dotenv.enableAutocloaking": false,
   "cSpell.words": [
     "dnum",
+    "hyperwasm",
     "Mintable",
     "signale",
     "viem"

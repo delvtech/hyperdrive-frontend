@@ -10,7 +10,6 @@ import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBigInt";
 import { IReadHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
-import { IReadHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { ReturnType } from "src/base/ReturnType";
@@ -29,7 +28,7 @@ import { MarketState } from "src/pool/MarketState";
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { BlockTag } from "viem";
 import * as dnum from "dnum";
-import { ZERO_ADDRESS } from "src/base/numbers";
+import { MAX_UINT256, ZERO_ADDRESS } from "src/base/numbers";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
@@ -39,7 +38,6 @@ const HyperdriveABI = IHyperdrive.abi;
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
-  mathContract: IReadHyperdriveMathContract;
   network: INetwork;
 }
 
@@ -185,7 +183,10 @@ export interface IReadHyperdrive {
   /**
    * Gets the maximum amount of bonds a user can open a short for.
    */
-  getMaxShort(options?: ContractReadOptions): Promise<bigint>;
+  getMaxShort(options?: ContractReadOptions): Promise<{
+    maxBaseIn: bigint;
+    maxBondsOut: bigint;
+  }>;
 
   /**
    * Gets the maximum amount of bonds a user can open a long for.
@@ -347,18 +348,15 @@ export interface IReadHyperdrive {
   >;
 }
 
-const MAX_ITERATIONS = 7n;
 export class ReadHyperdrive implements IReadHyperdrive {
   protected readonly contract: IReadHyperdriveContract;
-  protected readonly mathContract: IReadHyperdriveMathContract;
   protected readonly network: INetwork;
 
   /**
    * @hidden
    */
-  constructor({ contract, mathContract, network }: ReadHyperdriveOptions) {
+  constructor({ contract, network }: ReadHyperdriveOptions) {
     this.contract = contract;
-    this.mathContract = mathContract;
     this.network = network;
   }
   async getCheckpoint({
@@ -538,23 +536,15 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async getLongPrice(
     options?: ContractReadOptions,
   ): ReturnType<IReadHyperdrive, "getLongPrice"> {
-    const { initialSharePrice, timeStretch } = await this.getPoolConfig(
-      options,
-    );
-    const { shareReserves, bondReserves, shareAdjustment } =
-      await this.getPoolInfo(options);
+    const poolConfig = await this.getPoolConfig(options);
+    const poolInfo = await this.getPoolInfo(options);
 
-    const [spotPrice] = await this.mathContract.read(
-      "calculateSpotPrice",
-      [
-        calculateEffectiveShareReserves({ shareReserves, shareAdjustment }),
-        bondReserves,
-        initialSharePrice,
-        timeStretch,
-      ],
-      options,
+    const spotPrice = hyperwasm.getSpotPrice(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
     );
-    return spotPrice;
+
+    return BigInt(spotPrice);
   }
 
   private async getOpenLongEvents(
@@ -1010,107 +1000,78 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async getMaxShort(
     options?: ContractReadOptions,
   ): ReturnType<IReadHyperdrive, "getMaxShort"> {
-    const {
-      minimumShareReserves,
-      initialSharePrice,
-      timeStretch,
-      fees,
-      checkpointDuration,
-    } = await this.getPoolConfig(options);
-    const {
-      shareReserves,
-      bondReserves,
-      longsOutstanding,
-      sharePrice,
-      shareAdjustment,
-      longExposure,
-    } = await this.getPoolInfo(options);
-    const { timestamp: blockTimestamp } = await this.network.getBlock(options);
+    const poolInfo = await this.getPoolInfo(options);
+    const poolConfig = await this.getPoolConfig(options);
 
-    const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
+    const { timestamp: blockTimestamp } = await this.network.getBlock(options);
+    const checkpointId = getCheckpointId(
+      blockTimestamp,
+      poolConfig.checkpointDuration,
+    );
     const checkpointExposure = await this.getCheckpointExposure({
       checkpointId,
       options,
     });
+    const { sharePrice: openSharePrice } = await this.getCheckpoint({
+      checkpointId,
+    });
 
-    const [maxBondsOut] = await this.mathContract.read(
-      "calculateMaxShort",
-      [
-        {
-          shareReserves,
-          shareAdjustment,
-          bondReserves,
-          longsOutstanding,
-          timeStretch,
-          sharePrice,
-          initialSharePrice,
-          minimumShareReserves,
-          longExposure,
-          curveFee: fees.curve,
-          governanceLPFee: fees.governanceLP,
-          flatFee: fees.flat,
-        },
-        checkpointExposure,
-        MAX_ITERATIONS,
-      ],
-      options,
+    const stringifiedPoolInfo = convertBigIntsToStrings(poolInfo);
+    const stringifiedPoolConfig = convertBigIntsToStrings(poolConfig);
+
+    const maxBondsOut = hyperwasm.getMaxShort(
+      stringifiedPoolInfo,
+      stringifiedPoolConfig,
+      MAX_UINT256.toString(),
+      openSharePrice.toString(),
+      checkpointExposure.toString(),
     );
-    return maxBondsOut;
+    const maxBaseIn = hyperwasm.calcOpenShort(
+      stringifiedPoolInfo,
+      stringifiedPoolConfig,
+      maxBondsOut,
+    );
+
+    return {
+      maxBondsOut: BigInt(maxBondsOut),
+      maxBaseIn: BigInt(maxBaseIn),
+    };
   }
 
   async getMaxLong(
     options?: ContractReadOptions,
   ): ReturnType<IReadHyperdrive, "getMaxLong"> {
-    const {
-      minimumShareReserves,
-      initialSharePrice,
-      timeStretch,
-      checkpointDuration,
-      fees,
-    } = await this.getPoolConfig(options);
-    const {
-      shareReserves,
-      bondReserves,
-      longsOutstanding,
-      sharePrice,
-      longExposure,
-      shareAdjustment,
-    } = await this.getPoolInfo(options);
+    const poolInfo = await this.getPoolInfo(options);
+    const poolConfig = await this.getPoolConfig(options);
 
     const { timestamp: blockTimestamp } = await this.network.getBlock(options);
-
-    const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
+    const checkpointId = getCheckpointId(
+      blockTimestamp,
+      poolConfig.checkpointDuration,
+    );
     const checkpointExposure = await this.getCheckpointExposure({
       checkpointId,
       options,
     });
 
-    const [maxBaseIn, maxBondsOut] = await this.mathContract.read(
-      "calculateMaxLong",
-      [
-        {
-          shareReserves,
-          shareAdjustment,
-          bondReserves,
-          longsOutstanding,
-          timeStretch,
-          sharePrice,
-          initialSharePrice,
-          minimumShareReserves,
-          longExposure,
-          curveFee: fees.curve,
-          governanceLPFee: fees.governanceLP,
-          flatFee: fees.flat,
-        },
-        checkpointExposure,
-        MAX_ITERATIONS,
-      ],
-      options,
+    const stringifiedPoolInfo = convertBigIntsToStrings(poolInfo);
+    const stringifiedPoolConfig = convertBigIntsToStrings(poolConfig);
+
+    const maxBaseIn = hyperwasm.getMaxLong(
+      stringifiedPoolInfo,
+      stringifiedPoolConfig,
+      MAX_UINT256.toString(),
+      checkpointExposure.toString(),
+    );
+    const maxBondsOut = hyperwasm.calcOpenLong(
+      stringifiedPoolInfo,
+      stringifiedPoolConfig,
+      maxBaseIn,
     );
 
     return {
-      maxBaseIn,
-      maxBondsOut,
+      maxBaseIn: BigInt(maxBaseIn),
+      maxBondsOut: BigInt(maxBondsOut),
     };
   }
 
