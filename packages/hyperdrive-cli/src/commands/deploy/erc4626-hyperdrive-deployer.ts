@@ -1,4 +1,4 @@
-import { ERC4626HyperdriveDeployer } from "@hyperdrive/artifacts/dist/ERC4626HyperdriveDeployer.js";
+import { ERC4626HyperdriveDeployerCoordinator } from "@hyperdrive/artifacts/dist/ERC4626HyperdriveDeployerCoordinator.js";
 import { command } from "clide-js";
 import signale from "signale";
 import { Chain, PrivateKeyAccount } from "viem";
@@ -162,7 +162,7 @@ export async function deployERC4626HyperdriveDeployer({
   onSubmitted,
 }: DeployERC4626HyperdriveDeployerOptions): Promise<DeployedContract> {
   return await deployContract({
-    abi: ERC4626HyperdriveDeployer.abi,
+    abi: ERC4626HyperdriveDeployerCoordinator.abi,
     args: [
       hyperdriveCoreDeployer as `0x${string}`,
       target0Deployer as `0x${string}`,
@@ -170,7 +170,7 @@ export async function deployERC4626HyperdriveDeployer({
       target2Deployer as `0x${string}`,
       target3Deployer as `0x${string}`,
     ],
-    bytecode: ERC4626HyperdriveDeployer.bytecode.object,
+    bytecode: ERC4626HyperdriveDeployerCoordinator.bytecode.object,
     account,
     rpcUrl,
     chain,
