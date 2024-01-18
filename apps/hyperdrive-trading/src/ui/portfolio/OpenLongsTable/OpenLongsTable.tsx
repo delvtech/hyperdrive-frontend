@@ -27,6 +27,7 @@ import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
+import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { MaturesOnCell } from "src/ui/portfolio/MaturesOnCell/MaturesOnCell";
 import { parseUnits } from "viem";
@@ -187,6 +188,11 @@ export function OpenLongsTable({
       : undefined,
     enabled: queryEnabled,
   });
+
+  const { openLongs, openLongsStatus } = useOpenLongs({
+    account,
+    hyperdriveAddress: hyperdrive.address,
+  });
   const tableInstance = useReactTable({
     columns: isSmallScreenView
       ? getMobileColumns({ hyperdrive })
@@ -208,7 +214,7 @@ export function OpenLongsTable({
     );
   }
 
-  if (!longs?.length) {
+  if (!openLongs?.length) {
     return (
       <div className="my-28">
         <NonIdealState
@@ -265,7 +271,7 @@ export function OpenLongsTable({
         </thead>
 
         <tbody>
-          {isLoading ? (
+          {openLongsStatus === "loading" ? (
             <TableSkeleton numColumns={6} />
           ) : (
             tableInstance.getRowModel().rows.map((row) => {
