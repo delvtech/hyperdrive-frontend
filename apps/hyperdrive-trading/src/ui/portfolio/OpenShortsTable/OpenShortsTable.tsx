@@ -5,7 +5,6 @@ import {
   WalletIcon,
 } from "@heroicons/react/24/outline";
 import { OpenShort } from "@hyperdrive/sdk";
-import { useQuery } from "@tanstack/react-query";
 import {
   createColumnHelper,
   flexRender,
@@ -16,7 +15,6 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { makeQueryKey } from "src/base/makeQueryKey";
 import { parseUnits } from "src/base/parseUnits";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -24,9 +22,9 @@ import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useAccruedYield } from "src/ui/hyperdrive/hooks/useAccruedYield";
-import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
+import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { MaturesOnCell } from "src/ui/portfolio/MaturesOnCell/MaturesOnCell";
 import { useAccount } from "wagmi";
@@ -238,21 +236,16 @@ export function OpenShortsTable({
 }): ReactElement {
   const { address: account } = useAccount();
 
-  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
-  const queryEnabled = !!readHyperdrive && !!account;
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
-  const { data: shorts, isLoading } = useQuery({
-    queryKey: makeQueryKey("shortPositions", { account }),
-    queryFn: queryEnabled
-      ? () => readHyperdrive?.getOpenShorts({ account })
-      : undefined,
-    enabled: queryEnabled,
+  const { openShorts, openShortsStatus } = useOpenShorts({
+    account,
+    hyperdriveAddress: hyperdrive.address,
   });
   const tableInstance = useReactTable({
     columns: isTailwindSmallScreen
       ? getMobileColumns(hyperdrive)
       : getColumns(hyperdrive),
-    data: shorts || [],
+    data: openShorts || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
   });
@@ -269,7 +262,7 @@ export function OpenShortsTable({
     );
   }
 
-  if (!shorts?.length) {
+  if (!openShorts?.length) {
     return (
       <div className="my-28">
         <NonIdealState
@@ -325,7 +318,7 @@ export function OpenShortsTable({
           ))}
         </thead>
         <tbody>
-          {isLoading ? (
+          {openShortsStatus === "loading" ? (
             <TableSkeleton numColumns={6} />
           ) : (
             tableInstance.getRowModel().rows.map((row) => {
@@ -356,7 +349,7 @@ export function OpenShortsTable({
           )}
         </tbody>
       </table>
-      {!shorts?.length && !isLoading ? <NonIdealState /> : null}
+      {!openShorts?.length ? <NonIdealState /> : null}
     </div>
   );
 }
