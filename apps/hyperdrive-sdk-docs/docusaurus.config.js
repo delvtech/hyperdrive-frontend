@@ -21,9 +21,11 @@ const config = {
       // Plugin / TypeDoc options
       {
         id: "hyperdrive-sdk",
-        entryPoints: ["../../packages/hyperdrive-sdk/src/index.ts"],
-        tsconfig: "../../packages/hyperdrive-sdk/tsconfig.json",
+        entryPoints: ["../../packages/hyperdrive-sdk"],
         entryPointStrategy: "packages",
+        sidebar: {
+          fullNames: true,
+        },
         out: "sdk/api-reference",
 
         ...defaultTypeDocConfig,
