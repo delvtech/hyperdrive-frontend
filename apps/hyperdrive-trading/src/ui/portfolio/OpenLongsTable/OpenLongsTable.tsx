@@ -4,7 +4,6 @@ import {
   calculateFixedRateFromOpenLong,
   calculateMatureLongYieldAfterFees,
 } from "@hyperdrive/sdk";
-import { useQuery } from "@tanstack/react-query";
 import {
   createColumnHelper,
   flexRender,
@@ -18,15 +17,14 @@ import { Hyperdrive } from "src/appconfig/types";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
-import { makeQueryKey } from "src/base/makeQueryKey";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
-import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
+import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { MaturesOnCell } from "src/ui/portfolio/MaturesOnCell/MaturesOnCell";
 import { parseUnits } from "viem";
@@ -177,21 +175,15 @@ export function OpenLongsTable({
 }: OpenLongsTableProps): ReactElement {
   const { address: account } = useAccount();
   const isSmallScreenView = useIsTailwindSmallScreen();
-  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
-  // Get the current block and check it's timestamp agains the
-  const queryEnabled = !!readHyperdrive && !!account;
-  const { data: longs, isLoading } = useQuery({
-    queryKey: makeQueryKey("longPositions", { account }),
-    queryFn: queryEnabled
-      ? () => readHyperdrive.getOpenLongs({ account })
-      : undefined,
-    enabled: queryEnabled,
+  const { openLongs, openLongsStatus } = useOpenLongs({
+    account,
+    hyperdriveAddress: hyperdrive.address,
   });
   const tableInstance = useReactTable({
     columns: isSmallScreenView
       ? getMobileColumns({ hyperdrive })
       : getColumns({ hyperdrive }),
-    data: longs || [],
+    data: openLongs || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
   });
@@ -208,7 +200,7 @@ export function OpenLongsTable({
     );
   }
 
-  if (!longs?.length) {
+  if (!openLongs?.length) {
     return (
       <div className="my-28">
         <NonIdealState
@@ -265,7 +257,7 @@ export function OpenLongsTable({
         </thead>
 
         <tbody>
-          {isLoading ? (
+          {openLongsStatus === "loading" ? (
             <TableSkeleton numColumns={6} />
           ) : (
             tableInstance.getRowModel().rows.map((row) => {

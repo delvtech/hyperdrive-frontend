@@ -1,5 +1,4 @@
 import { ClosedLong } from "@hyperdrive/sdk";
-import { useQuery } from "@tanstack/react-query";
 import {
   createColumnHelper,
   flexRender,
@@ -8,12 +7,11 @@ import {
 } from "@tanstack/react-table";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { makeQueryKey } from "src/base/makeQueryKey";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
-import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { useClosedLongs } from "src/ui/hyperdrive/longs/hooks/useClosedLongs";
 import { useAccount } from "wagmi";
 
 interface ClosedLongsTableProps {
@@ -151,15 +149,10 @@ export function ClosedLongsTable({
   hyperdrive,
 }: ClosedLongsTableProps): ReactElement {
   const { address: account } = useAccount();
-  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
-  const queryEnabled = !!readHyperdrive && !!account;
-  const { data: closedLongs, isLoading } = useQuery({
-    queryKey: makeQueryKey("closedLongPositions", { account }),
-    queryFn: queryEnabled
-      ? () => readHyperdrive?.getClosedLongs({ account })
-      : undefined,
-    enabled: queryEnabled,
+  const { closedLongs, closedLongsStatus } = useClosedLongs({
+    account,
+    hyperdriveAddress: hyperdrive.address,
   });
   const tableInstance = useReactTable({
     columns: isTailwindSmallScreen
@@ -192,7 +185,7 @@ export function ClosedLongsTable({
           ))}
         </thead>
         <tbody>
-          {isLoading ? (
+          {closedLongsStatus === "loading" ? (
             <TableSkeleton numColumns={5} />
           ) : (
             tableInstance.getRowModel().rows.map((row) => {
