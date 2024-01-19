@@ -39,14 +39,3 @@ export function getProfitLossText({
 
   return result;
 }
-
-export function getStyleClassForProfitLoss(
-  baseAmountOut: bigint,
-  baseAmountPaid: bigint,
-): string | undefined {
-  if (baseAmountOut > baseAmountPaid) {
-    return "text-accent";
-  } else {
-    return "text-red-700";
-  }
-}
