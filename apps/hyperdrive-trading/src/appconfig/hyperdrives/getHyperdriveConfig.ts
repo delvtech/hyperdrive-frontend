@@ -3,7 +3,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { Address, PublicClient } from "viem";
 import { erc20ABI } from "wagmi";
 
-export async function getMockHyperdrive(
+export async function getHyperdriveConfig(
   hyperdriveAddress: Address,
   publicClient: PublicClient,
 ): Promise<Hyperdrive> {

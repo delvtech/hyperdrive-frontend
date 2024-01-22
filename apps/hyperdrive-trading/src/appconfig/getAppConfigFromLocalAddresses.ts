@@ -1,5 +1,5 @@
 import { LocalAddressesJson } from "src/addresses/LocalAddressesJson";
-import { getMockHyperdrive } from "src/appconfig/hyperdrives/getMockHyperdrive";
+import { getHyperdriveConfig } from "src/appconfig/hyperdrives/getHyperdriveConfig";
 import { AppConfig } from "src/appconfig/types";
 import { yieldSourceProtocols } from "src/appconfig/yieldSources/yieldSourceProtocols";
 import { yieldSources } from "src/appconfig/yieldSources/yieldSources";
@@ -17,7 +17,7 @@ export async function getAppConfigFromLocalAddresses(
   const config: AppConfig = {
     chainId,
     hyperdrives: [
-      await getMockHyperdrive(addresses.erc4626Hyperdrive, publicClient),
+      await getHyperdriveConfig(addresses.erc4626Hyperdrive, publicClient),
     ],
     yieldSources,
     yieldSourceProtocols,
