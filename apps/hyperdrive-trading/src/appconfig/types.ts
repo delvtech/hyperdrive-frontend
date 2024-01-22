@@ -1,11 +1,13 @@
-import { YieldSource } from "src/appconfig/yieldSources/yieldSources";
+import { yieldSourceProtocols } from "src/appconfig/yieldSources/yieldSourceProtocols";
+import { yieldSources } from "src/appconfig/yieldSources/yieldSources";
 import { Address } from "viem";
 
 export interface AppConfig {
   chainId: number;
   hyperdrives: Hyperdrive[];
 
-  yieldSources: Record<string, YieldSource>;
+  yieldSources: typeof yieldSources;
+  yieldSourceProtocols: typeof yieldSourceProtocols;
 }
 
 export interface ContractConfig {
