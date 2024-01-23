@@ -24,21 +24,21 @@ export function useAppConfig(): {
       switch (chainId) {
         case 31337: {
           const addresses = await fetchLocalhostAddresses();
-          return getAppConfigFromLocalAddresses(
+          return getAppConfigFromLocalAddresses({
             chainId,
             addresses,
-            publicClient as PublicClient,
-          );
+            publicClient: publicClient as PublicClient,
+          });
         }
         case 42069: {
           const addresses = await fetchCustomChainAddresses();
           // The custom chain is curently deployed using the same contracts as
           // the local devnet, so we can get the appConfig in the same way
-          return getAppConfigFromLocalAddresses(
+          return getAppConfigFromLocalAddresses({
             chainId,
             addresses,
-            publicClient as PublicClient,
-          );
+            publicClient: publicClient as PublicClient,
+          });
         }
 
         default:
