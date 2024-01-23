@@ -8,7 +8,7 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -288,7 +288,11 @@ export function AllMarketsTable(): ReactElement {
     </div>
   );
 }
-function LpApyCell({ hyperdrive }: { hyperdrive: Hyperdrive }): ReactElement {
+function LpApyCell({
+  hyperdrive,
+}: {
+  hyperdrive: HyperdriveConfig;
+}): ReactElement {
   const { lpApy } = useLpApy(hyperdrive);
   return <span>{lpApy?.toFixed(2)}%</span>;
 }
@@ -305,7 +309,11 @@ function YieldSourceApy(): ReactElement {
   );
 }
 
-function GoToMarketButton({ market }: { market: Hyperdrive }): ReactElement {
+function GoToMarketButton({
+  market,
+}: {
+  market: HyperdriveConfig;
+}): ReactElement {
   const navigate = useNavigate();
   return (
     <button

@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { formatTermLength } from "src/ui/markets/formatTermLength";
 import { PriceBadges } from "src/ui/markets/MarketDetailsBody/PriceBadges";
 
@@ -7,7 +7,7 @@ export function MarketHeader({
   hyperdrive,
   longPrice,
 }: {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
   longPrice: { price: bigint; formatted: string } | undefined;
 }): ReactElement {
   const formattedTermLength = formatTermLength(hyperdrive.termLengthMS);

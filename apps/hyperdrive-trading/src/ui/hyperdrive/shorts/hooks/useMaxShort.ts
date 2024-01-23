@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import * as dnum from "dnum";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
-export function useMaxShort(hyperdrive: Hyperdrive): {
+export function useMaxShort(hyperdrive: HyperdriveConfig): {
   maxShort: bigint | undefined;
   maxShortFormatted: string | undefined;
   maxShortStatus: "error" | "success" | "loading";

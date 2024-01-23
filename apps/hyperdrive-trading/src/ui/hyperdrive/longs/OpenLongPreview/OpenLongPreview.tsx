@@ -1,7 +1,7 @@
 import { calculateFixedRateFromOpenLong, Long } from "@hyperdrive/sdk";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { LabelValue } from "src/ui/base/components/LabelValue";
@@ -10,7 +10,7 @@ import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
 
 interface OpenLongPreviewProps {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
   long: Long;
 }
 

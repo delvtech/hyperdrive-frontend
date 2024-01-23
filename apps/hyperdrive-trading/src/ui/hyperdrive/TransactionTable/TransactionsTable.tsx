@@ -12,7 +12,7 @@ import {
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { useState } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import {
@@ -88,7 +88,7 @@ function FilterSelect({
 
 function formatTransactionTableMobileData(
   row: TransactionData,
-  hyperdrive?: Hyperdrive,
+  hyperdrive?: HyperdriveConfig,
 ) {
   const size = dnum.format(
     [
@@ -134,7 +134,7 @@ function formatTransactionTableMobileData(
 
 const columnHelper = createColumnHelper<TransactionData>();
 
-const getMobileColumns = (hyperdrive: Hyperdrive) => [
+const getMobileColumns = (hyperdrive: HyperdriveConfig) => [
   columnHelper.accessor("eventName", {
     id: "eventName",
     enableSorting: false,
@@ -180,7 +180,7 @@ const getMobileColumns = (hyperdrive: Hyperdrive) => [
   }),
 ];
 
-const getColumns = (hyperdrive: Hyperdrive) => {
+const getColumns = (hyperdrive: HyperdriveConfig) => {
   return [
     columnHelper.accessor("eventName", {
       id: "eventName",
@@ -250,7 +250,7 @@ const getColumns = (hyperdrive: Hyperdrive) => {
 export function TransactionTable({
   hyperdrive,
 }: {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }): JSX.Element {
   const { data: transactionData } = useTransactionData(hyperdrive);
   const isSmallScreenView = useIsTailwindSmallScreen();

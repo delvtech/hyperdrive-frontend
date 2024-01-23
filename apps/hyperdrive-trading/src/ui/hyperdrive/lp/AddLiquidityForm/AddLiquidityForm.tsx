@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
 import { parseUnits } from "src/base/parseUnits";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
@@ -17,7 +17,7 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { useAccount, useBalance } from "wagmi";
 
 interface AddLiquidityFormProps {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }
 
 export function AddLiquidityForm({

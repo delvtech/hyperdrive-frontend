@@ -3,7 +3,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { calculateTotalValueFromPrice } from "src/base/calculateTotalValueFromPrice";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
@@ -17,7 +17,7 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 interface RemoveLiquidityFormProps {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
   lpShares: bigint;
   onRemoveLiquidity?: (e: MouseEvent<HTMLButtonElement>) => void;
 }

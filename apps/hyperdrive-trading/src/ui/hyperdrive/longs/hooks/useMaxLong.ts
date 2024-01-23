@@ -1,10 +1,10 @@
 import { ReadHyperdrive } from "@hyperdrive/sdk";
 import { useQuery } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
-export function useMaxLong(hyperdrive: Hyperdrive): {
+export function useMaxLong(hyperdrive: HyperdriveConfig): {
   maxLong: Awaited<ReturnType<ReadHyperdrive["getMaxLong"]>> | undefined;
   maxLongStatus: "error" | "success" | "loading";
 } {

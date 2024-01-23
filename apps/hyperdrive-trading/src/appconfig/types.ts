@@ -4,7 +4,7 @@ import { Address } from "viem";
 
 export interface AppConfig {
   chainId: number;
-  hyperdrives: Hyperdrive[];
+  hyperdrives: HyperdriveConfig[];
 
   yieldSources: typeof yieldSources;
   yieldSourceProtocols: typeof yieldSourceProtocols;
@@ -24,7 +24,7 @@ export interface Token extends ContractConfig {
 /**
  * The appconfig a hyperdrive instance
  */
-export interface Hyperdrive extends ContractConfig {
+export interface HyperdriveConfig extends ContractConfig {
   baseToken: Token;
   name: string;
   yieldSource: string;

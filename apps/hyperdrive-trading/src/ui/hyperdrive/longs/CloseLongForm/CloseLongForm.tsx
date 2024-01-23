@@ -2,7 +2,7 @@ import { Long, adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -15,7 +15,7 @@ import { formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface CloseLongFormProps {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
   long: Long;
   onCloseLong?: (e: MouseEvent<HTMLButtonElement>) => void;
 }

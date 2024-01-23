@@ -1,12 +1,12 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { Address, PublicClient } from "viem";
 import { erc20ABI } from "wagmi";
 
 export async function getHyperdriveConfig(
   hyperdriveAddress: Address,
   publicClient: PublicClient,
-): Promise<Hyperdrive> {
+): Promise<HyperdriveConfig> {
   // Time in seconds
   const { positionDuration, baseToken } = await publicClient.readContract({
     abi: IHyperdrive.abi,

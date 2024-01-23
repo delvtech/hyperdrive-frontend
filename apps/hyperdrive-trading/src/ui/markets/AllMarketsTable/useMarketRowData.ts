@@ -1,7 +1,7 @@
 import { ViemReadHyperdrive } from "@hyperdrive/sdk-viem";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { useMemo } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { YieldSource } from "src/appconfig/yieldSources/yieldSources";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
@@ -10,7 +10,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { usePublicClient } from "wagmi";
 
 export interface MarketTableRowData {
-  market: Hyperdrive;
+  market: HyperdriveConfig;
   liquidity: bigint;
   yieldSource: YieldSource;
   longAPR: string;
