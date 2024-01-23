@@ -25,7 +25,16 @@ export interface Token extends ContractConfig {
  * The appconfig a hyperdrive instance
  */
 export interface HyperdriveConfig extends ContractConfig {
+  /**
+   * The base token for hyperdrive deposits, eg: DAI or ETH
+   */
   baseToken: Token;
+
+  /**
+   * The shares token for hyperdrive deposits, eg: sDAI or stETH
+   */
+  sharesToken: Token;
+
   name: string;
   yieldSource: keyof typeof yieldSources;
   termLengthMS: number;

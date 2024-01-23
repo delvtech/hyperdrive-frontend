@@ -1,5 +1,6 @@
 import { LocalAddressesJson } from "src/addresses/LocalAddressesJson";
-import { getHyperdriveConfig } from "src/appconfig/hyperdrives/getHyperdriveConfig";
+import { getErc4626HyperdriveConfig } from "src/appconfig/hyperdrives/getErc4626HyperdriveConfig";
+import { getStethHyperdriveConfig } from "src/appconfig/hyperdrives/getStethHyperdriveConfig";
 import { AppConfig, HyperdriveConfig } from "src/appconfig/types";
 import { yieldSourceProtocols } from "src/appconfig/yieldSources/yieldSourceProtocols";
 import { yieldSources } from "src/appconfig/yieldSources/yieldSources";
@@ -21,7 +22,7 @@ export async function getAppConfigFromLocalAddresses({
   const hyperdrives: HyperdriveConfig[] = [];
   if (addresses.erc4626Hyperdrive) {
     hyperdrives.push(
-      await getHyperdriveConfig({
+      await getErc4626HyperdriveConfig({
         hyperdriveAddress: addresses.erc4626Hyperdrive,
         publicClient,
         yieldSource: "makerDsr",
@@ -30,8 +31,8 @@ export async function getAppConfigFromLocalAddresses({
   }
   if (addresses.stethHyperdrive) {
     hyperdrives.push(
-      await getHyperdriveConfig({
-        hyperdriveAddress: addresses.erc4626Hyperdrive,
+      await getStethHyperdriveConfig({
+        hyperdriveAddress: addresses.stethHyperdrive,
         publicClient,
         yieldSource: "lidoSteth",
       }),
