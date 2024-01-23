@@ -1,7 +1,7 @@
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { calculateRatio } from "src/base/calculateRatio";
 import { calculateTotalValueFromPrice } from "src/base/calculateTotalValueFromPrice";
 import { LabelValue } from "src/ui/base/components/LabelValue";
@@ -18,7 +18,7 @@ import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface OpenLpSharesCardProps {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }
 
 export function OpenLpSharesCard({

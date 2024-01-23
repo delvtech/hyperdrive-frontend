@@ -1,6 +1,6 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
@@ -11,7 +11,7 @@ import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface RedeemWithdrawalSharesFormProps {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
   withdrawalShares: bigint;
   onRedeemWithdrawalShares?: (e: MouseEvent<HTMLButtonElement>) => void;
 }

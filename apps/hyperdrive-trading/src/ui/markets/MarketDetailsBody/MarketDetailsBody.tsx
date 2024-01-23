@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import CustomBanner from "src/ui/base/components/CustomBanner";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
@@ -12,7 +12,7 @@ import { TransactionAndFaqTabs } from "src/ui/markets/TransactionsAndFaqTabs/Tra
 import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
 
 interface PositionsTableProps {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }
 export function MarketDetailsBody({
   hyperdrive,

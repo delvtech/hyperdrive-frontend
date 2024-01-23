@@ -1,13 +1,13 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
 
 export interface RedeemWithdrawalSharesModalButtonProps {
   modalId: string;
   withdrawalShares: bigint;
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }
 export function RedeemWithdrawalSharesModalButton({
   modalId,
@@ -24,7 +24,7 @@ export function RedeemWithdrawalSharesModalButton({
       modalContent={
         <div>
           <button
-            className="daisy-btn-ghost daisy-btn-sm daisy-btn-circle daisy-btn absolute right-4 top-4"
+            className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
             onClick={closeModal}
           >
             <XMarkIcon
@@ -48,7 +48,7 @@ export function RedeemWithdrawalSharesModalButton({
         <button
           onClick={showModal}
           tabIndex={0}
-          className="daisy-btn-primary daisy-btn-sm daisy-btn"
+          className="daisy-btn daisy-btn-primary daisy-btn-sm"
         >
           Redeem
         </button>

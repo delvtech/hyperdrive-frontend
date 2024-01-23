@@ -1,10 +1,10 @@
 import { ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface AddLiquidityPreviewProps {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
   lpShares: bigint;
 }
 

@@ -14,7 +14,7 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { parseUnits } from "src/base/parseUnits";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -31,7 +31,7 @@ import { useAccount } from "wagmi";
 
 function formatOpenShortMobileColumnData(
   openShort: OpenShort,
-  hyperdrive: Hyperdrive,
+  hyperdrive: HyperdriveConfig,
 ) {
   return [
     {
@@ -65,7 +65,7 @@ function formatOpenShortMobileColumnData(
   ];
 }
 
-function getMobileColumns(hyperdrive: Hyperdrive) {
+function getMobileColumns(hyperdrive: HyperdriveConfig) {
   return [
     columnHelper.display({
       id: "ColumnNames",
@@ -99,7 +99,7 @@ function getMobileColumns(hyperdrive: Hyperdrive) {
 }
 
 const columnHelper = createColumnHelper<OpenShort>();
-function getColumns(hyperdrive: Hyperdrive) {
+function getColumns(hyperdrive: HyperdriveConfig) {
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",
@@ -154,7 +154,7 @@ function AccruedYieldCell({
   hyperdrive,
 }: {
   openShort: OpenShort;
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }) {
   const { bondAmount, checkpointId } = openShort;
   const { accruedYield } = useAccruedYield({
@@ -181,7 +181,7 @@ function CurrentValueCell({
   hyperdrive,
 }: {
   openShort: OpenShort;
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }) {
   const { address: account } = useAccount();
   const { baseAmountOut } = usePreviewCloseShort({
@@ -232,7 +232,7 @@ function CurrentValueCell({
 export function OpenShortsTable({
   hyperdrive,
 }: {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
 

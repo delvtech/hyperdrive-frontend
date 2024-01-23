@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
@@ -13,7 +13,7 @@ export type TransactionData = {
   blockNumber: bigint | undefined;
 };
 
-export function useTransactionData({ address }: Hyperdrive): {
+export function useTransactionData({ address }: HyperdriveConfig): {
   data: TransactionData[] | undefined;
 } {
   const readHyperdrive = useReadHyperdrive(address);

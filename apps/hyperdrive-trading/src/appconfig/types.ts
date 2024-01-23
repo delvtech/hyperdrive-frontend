@@ -1,11 +1,13 @@
-import { YieldSource } from "src/appconfig/yieldSources/yieldSources";
+import { yieldSourceProtocols } from "src/appconfig/yieldSources/yieldSourceProtocols";
+import { yieldSources } from "src/appconfig/yieldSources/yieldSources";
 import { Address } from "viem";
 
 export interface AppConfig {
   chainId: number;
-  hyperdrives: Hyperdrive[];
+  hyperdrives: HyperdriveConfig[];
 
-  yieldSources: Record<string, YieldSource>;
+  yieldSources: typeof yieldSources;
+  yieldSourceProtocols: typeof yieldSourceProtocols;
 }
 
 export interface ContractConfig {
@@ -22,9 +24,18 @@ export interface Token extends ContractConfig {
 /**
  * The appconfig a hyperdrive instance
  */
-export interface Hyperdrive extends ContractConfig {
+export interface HyperdriveConfig extends ContractConfig {
+  /**
+   * The base token for hyperdrive deposits, eg: DAI or ETH
+   */
   baseToken: Token;
+
+  /**
+   * The shares token for hyperdrive deposits, eg: sDAI or stETH
+   */
+  sharesToken: Token;
+
   name: string;
-  yieldSource: string;
+  yieldSource: keyof typeof yieldSources;
   termLengthMS: number;
 }

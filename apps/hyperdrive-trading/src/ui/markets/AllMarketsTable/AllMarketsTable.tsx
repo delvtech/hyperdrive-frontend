@@ -8,7 +8,7 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -19,37 +19,41 @@ import {
   useMarketRowData,
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
-const formatMobileColumnData = (row: MarketTableRowData) => [
-  {
-    name: "Term",
-    value: (
-      <span>
-        {row.market.baseToken.symbol} -{" "}
-        {convertMillisecondsToDays(row.market.termLengthMS)} days
-      </span>
-    ),
-  },
-  { name: "Yield Source", value: row.yieldSource.name },
-  { name: "Yield Source APY", value: <YieldSourceApy /> },
-  { name: "Fixed Rate", value: row.longAPR },
-  { name: "LP APY", value: <LpApyCell hyperdrive={row.market} /> },
-  {
-    name: "Liquidity",
-    value: (
-      <span
-        key="liquidity"
-        className="flex flex-row items-center justify-start"
-      >
-        <img className="mr-1 h-4" src={row.market.baseToken.iconUrl} />
-        {formatBalance({
-          balance: row.liquidity,
-          decimals: row.market.baseToken.decimals,
-          places: 0,
-        })}
-      </span>
-    ),
-  },
-];
+
+function formatMobileColumnData(row: MarketTableRowData) {
+  return [
+    {
+      name: "Term",
+      value: (
+        <span>
+          {row.market.baseToken.symbol} -{" "}
+          {convertMillisecondsToDays(row.market.termLengthMS)} days
+        </span>
+      ),
+    },
+    { name: "Yield Source", value: row.yieldSource.name },
+    { name: "Yield Source APY", value: <YieldSourceApy /> },
+    { name: "Fixed Rate", value: row.longAPR },
+    { name: "LP APY", value: <LpApyCell hyperdrive={row.market} /> },
+    {
+      name: "Liquidity",
+      value: (
+        <span
+          key="liquidity"
+          className="flex flex-row items-center justify-start"
+        >
+          <img className="mr-1 h-4" src={row.market.baseToken.iconUrl} />
+          {formatBalance({
+            balance: row.liquidity,
+            decimals: row.market.baseToken.decimals,
+            places: 0,
+          })}
+        </span>
+      ),
+    },
+  ];
+}
+
 const columnHelper = createColumnHelper<MarketTableRowData>();
 function getMobileColumns() {
   return [
@@ -85,6 +89,7 @@ function getMobileColumns() {
     }),
   ];
 }
+
 function getColumns() {
   return [
     columnHelper.accessor("market.termLengthMS", {
@@ -100,7 +105,7 @@ function getColumns() {
           <div key="term" className="flex items-center ">
             <img
               src={row.original.market.baseToken.iconUrl}
-              className="mr-2 h-8 rounded-full border p-1"
+              className="mr-2 h-10 rounded-full p-1"
             />
             <span>
               {row.original.market.baseToken.symbol} -{" "}
@@ -117,18 +122,17 @@ function getColumns() {
           tooltip="The underlying yield bearing asset"
         />
       ),
-      cell: ({ getValue, row }) => {
-        const marketName = getValue();
+      cell: ({ row }) => {
         return (
           <span key="name" className="flex items-center">
             <img
-              src={row.original.yieldSource.iconUrl}
-              className="mr-2 h-8 rounded-full border p-1"
+              src={row.original.yieldSourceProtocol.iconUrl}
+              className="mr-2 h-10 rounded-full p-1"
             />
             <div className="flex-col">
-              <p className="mb-[-4px]">{marketName}</p>
-              <p className="text-secondary opacity-50">
-                {row.original.yieldSource.protocol}
+              <p className="-mb-1">{row.original.yieldSource.shortName}</p>
+              <p className="text-neutral-content/70 ">
+                {row.original.yieldSourceProtocol.name}
               </p>
             </div>
           </span>
@@ -248,47 +252,49 @@ export function AllMarketsTable(): ReactElement {
             ))}
           </thead>
           <tbody>
-            {tableInstance.getRowModel().rows.map((row) => {
-              return (
-                <tr
-                  key={row.id}
-                  className="daisy-hover h-16 cursor-pointer items-center border-b-0 text-gray-50"
-                  onClick={() => {
-                    navigate(`/market/${row.original.market}`);
-                  }}
-                >
-                  <>
-                    {row.getVisibleCells().map((cell) => {
-                      return (
-                        // In order to round the edges of this row, we need to round the edges of the first and last <td> because border-radius doesn't work on <tr>
-                        <td
-                          className={classNames({
-                            "rounded-l-lg":
-                              cell.column.id.includes("termLengthMS"),
-                            "rounded-r-lg":
-                              cell.column.id.includes("go-to-market"),
-                            "text-sm": isTailwindSmallScreen,
-                          })}
-                          key={cell.id}
-                        >
-                          {flexRender(
-                            cell.column.columnDef.cell,
-                            cell.getContext(),
-                          )}
-                        </td>
-                      );
-                    })}
-                  </>
-                </tr>
-              );
-            })}
+            {tableInstance.getRowModel().rows.map((row) => (
+              <tr
+                key={row.id}
+                className="daisy-hover h-16 cursor-pointer items-center border-b-0 text-gray-50"
+                onClick={() => {
+                  navigate(`/market/${row.original.market.address}`);
+                }}
+              >
+                <>
+                  {row.getVisibleCells().map((cell) => {
+                    return (
+                      // In order to round the edges of this row, we need to round the edges of the first and last <td> because border-radius doesn't work on <tr>
+                      <td
+                        className={classNames({
+                          "rounded-l-lg":
+                            cell.column.id.includes("termLengthMS"),
+                          "rounded-r-lg":
+                            cell.column.id.includes("go-to-market"),
+                          "text-sm": isTailwindSmallScreen,
+                        })}
+                        key={cell.id}
+                      >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </td>
+                    );
+                  })}
+                </>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
     </div>
   );
 }
-function LpApyCell({ hyperdrive }: { hyperdrive: Hyperdrive }): ReactElement {
+function LpApyCell({
+  hyperdrive,
+}: {
+  hyperdrive: HyperdriveConfig;
+}): ReactElement {
   const { lpApy } = useLpApy(hyperdrive);
   return <span>{lpApy?.toFixed(2)}%</span>;
 }
@@ -305,12 +311,16 @@ function YieldSourceApy(): ReactElement {
   );
 }
 
-function GoToMarketButton({ market }: { market: Hyperdrive }): ReactElement {
+function GoToMarketButton({
+  market,
+}: {
+  market: HyperdriveConfig;
+}): ReactElement {
   const navigate = useNavigate();
   return (
     <button
       onClick={() => {
-        navigate(`/market/${market}`);
+        navigate(`/market/${market.address}`);
       }}
       className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >

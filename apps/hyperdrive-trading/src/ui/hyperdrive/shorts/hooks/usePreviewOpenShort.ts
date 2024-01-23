@@ -1,10 +1,10 @@
 import { MutationStatus, useQuery } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
 interface UsePreviewOpenShortOptions {
-  market: Hyperdrive;
+  market: HyperdriveConfig;
   amountBondShorts: bigint | undefined;
 }
 
