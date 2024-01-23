@@ -19,37 +19,40 @@ import {
   useMarketRowData,
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
-const formatMobileColumnData = (row: MarketTableRowData) => [
-  {
-    name: "Term",
-    value: (
-      <span>
-        {row.market.baseToken.symbol} -{" "}
-        {convertMillisecondsToDays(row.market.termLengthMS)} days
-      </span>
-    ),
-  },
-  { name: "Yield Source", value: row.yieldSource.name },
-  { name: "Yield Source APY", value: <YieldSourceApy /> },
-  { name: "Fixed Rate", value: row.longAPR },
-  { name: "LP APY", value: <LpApyCell hyperdrive={row.market} /> },
-  {
-    name: "Liquidity",
-    value: (
-      <span
-        key="liquidity"
-        className="flex flex-row items-center justify-start"
-      >
-        <img className="mr-1 h-4" src={row.market.baseToken.iconUrl} />
-        {formatBalance({
-          balance: row.liquidity,
-          decimals: row.market.baseToken.decimals,
-          places: 0,
-        })}
-      </span>
-    ),
-  },
-];
+
+function formatMobileColumnData(row: MarketTableRowData) {
+  return [
+    {
+      name: "Term",
+      value: (
+        <span>
+          {row.market.baseToken.symbol} -{" "}
+          {convertMillisecondsToDays(row.market.termLengthMS)} days
+        </span>
+      ),
+    },
+    { name: "Yield Source", value: row.yieldSource.name },
+    { name: "Yield Source APY", value: <YieldSourceApy /> },
+    { name: "Fixed Rate", value: row.longAPR },
+    { name: "LP APY", value: <LpApyCell hyperdrive={row.market} /> },
+    {
+      name: "Liquidity",
+      value: (
+        <span
+          key="liquidity"
+          className="flex flex-row items-center justify-start"
+        >
+          <img className="mr-1 h-4" src={row.market.baseToken.iconUrl} />
+          {formatBalance({
+            balance: row.liquidity,
+            decimals: row.market.baseToken.decimals,
+            places: 0,
+          })}
+        </span>
+      ),
+    },
+  ];
+}
 const columnHelper = createColumnHelper<MarketTableRowData>();
 function getMobileColumns() {
   return [
