@@ -3,12 +3,11 @@ export interface YieldSourceProtocol {
   iconUrl: string;
 }
 
-const delv: YieldSourceProtocol = {
-  name: "DELV",
-  // TODO: Replace this with the DELV logo
-  iconUrl:
-    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM4N2Y3ZWEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS13YW5kLTIiPjxwYXRoIGQ9Im0yMS42NCAzLjY0LTEuMjgtMS4yOGExLjIxIDEuMjEgMCAwIDAtMS43MiAwTDIuMzYgMTguNjRhMS4yMSAxLjIxIDAgMCAwIDAgMS43MmwxLjI4IDEuMjhhMS4yIDEuMiAwIDAgMCAxLjcyIDBMMjEuNjQgNS4zNmExLjIgMS4yIDAgMCAwIDAtMS43MloiLz48cGF0aCBkPSJtMTQgNyAzIDMiLz48cGF0aCBkPSJNNSA2djQiLz48cGF0aCBkPSJNMTkgMTR2NCIvPjxwYXRoIGQ9Ik0xMCAydjIiLz48cGF0aCBkPSJNNyA4SDMiLz48cGF0aCBkPSJNMjEgMTZoLTQiLz48cGF0aCBkPSJNMTEgM0g5Ii8+PC9zdmc+",
+const lido: YieldSourceProtocol = {
+  name: "Lido",
+  iconUrl: "https://cryptologos.cc/logos/lido-dao-ldo-logo.png?v=029",
 };
+
 const maker: YieldSourceProtocol = {
   name: "Maker",
   iconUrl: "https://cryptologos.cc/logos/maker-mkr-logo.png?v=024",
@@ -16,5 +15,5 @@ const maker: YieldSourceProtocol = {
 
 export const yieldSourceProtocols = {
   maker,
-  delv,
+  lido,
 } as const;

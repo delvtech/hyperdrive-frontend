@@ -1,6 +1,6 @@
 import { LocalAddressesJson } from "src/addresses/LocalAddressesJson";
 import { getHyperdriveConfig } from "src/appconfig/hyperdrives/getHyperdriveConfig";
-import { AppConfig } from "src/appconfig/types";
+import { AppConfig, HyperdriveConfig } from "src/appconfig/types";
 import { yieldSourceProtocols } from "src/appconfig/yieldSources/yieldSourceProtocols";
 import { yieldSources } from "src/appconfig/yieldSources/yieldSources";
 import { PublicClient } from "viem";
@@ -14,14 +14,28 @@ export async function getAppConfigFromLocalAddresses(
   addresses: LocalAddressesJson,
   publicClient: PublicClient,
 ): Promise<AppConfig> {
-  const config: AppConfig = {
-    chainId,
-    hyperdrives: [
+  const hyperdrives: HyperdriveConfig[] = [];
+  if (addresses.erc4626Hyperdrive) {
+    hyperdrives.push(
       await getHyperdriveConfig({
         hyperdriveAddress: addresses.erc4626Hyperdrive,
         publicClient,
+        yieldSource: "makerDsr",
       }),
-    ],
+    );
+  }
+  if (addresses.stethHyperdrive) {
+    hyperdrives.push(
+      await getHyperdriveConfig({
+        hyperdriveAddress: addresses.erc4626Hyperdrive,
+        publicClient,
+        yieldSource: "lidoSteth",
+      }),
+    );
+  }
+  const config: AppConfig = {
+    chainId,
+    hyperdrives,
     yieldSources,
     yieldSourceProtocols,
   };
