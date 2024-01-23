@@ -17,7 +17,10 @@ export async function getAppConfigFromLocalAddresses(
   const config: AppConfig = {
     chainId,
     hyperdrives: [
-      await getHyperdriveConfig(addresses.erc4626Hyperdrive, publicClient),
+      await getHyperdriveConfig({
+        hyperdriveAddress: addresses.erc4626Hyperdrive,
+        publicClient,
+      }),
     ],
     yieldSources,
     yieldSourceProtocols,

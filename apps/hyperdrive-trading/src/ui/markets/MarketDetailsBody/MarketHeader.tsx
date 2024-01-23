@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 import { HyperdriveConfig } from "src/appconfig/types";
-import { formatTermLength } from "src/ui/markets/formatTermLength";
 import { PriceBadges } from "src/ui/markets/MarketDetailsBody/PriceBadges";
 
 export function MarketHeader({
@@ -10,13 +9,11 @@ export function MarketHeader({
   hyperdrive: HyperdriveConfig;
   longPrice: { price: bigint; formatted: string } | undefined;
 }): ReactElement {
-  const formattedTermLength = formatTermLength(hyperdrive.termLengthMS);
   return (
     <div className="my-2 flex items-center gap-2 md:my-0">
       <div className="flex w-full flex-col items-start gap-1">
         <span className="gradient-text items-center text-h1 md:my-0">
-          {formattedTermLength} {hyperdrive.baseToken.symbol}-
-          {hyperdrive.yieldSource}
+          {hyperdrive.name}
         </span>
         {longPrice ? (
           <PriceBadges hyperdrive={hyperdrive} longPrice={longPrice} />
