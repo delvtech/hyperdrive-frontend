@@ -4,6 +4,9 @@
 # Production
 /build
 
+# Generated Typedoc files
+/docs/**/api-reference
+
 # Generated files
 .docusaurus
 .cache-loader
