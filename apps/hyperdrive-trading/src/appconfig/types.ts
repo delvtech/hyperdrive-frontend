@@ -27,6 +27,6 @@ export interface Token extends ContractConfig {
 export interface HyperdriveConfig extends ContractConfig {
   baseToken: Token;
   name: string;
-  yieldSource: string;
+  yieldSource: keyof typeof yieldSources;
   termLengthMS: number;
 }
