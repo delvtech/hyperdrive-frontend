@@ -3,7 +3,7 @@
   "extends": ["//"],
   "pipeline": {
     "build": {
-      "dependsOn": ["@hyperdrive/sdk-viem#build"]
+      "dependsOn": ["@hyperdrive/sdk#build"]
     }
   }
 }
