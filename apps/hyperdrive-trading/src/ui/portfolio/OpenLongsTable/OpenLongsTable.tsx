@@ -13,7 +13,7 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";

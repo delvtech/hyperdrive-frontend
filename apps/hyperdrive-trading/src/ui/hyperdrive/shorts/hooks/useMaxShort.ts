@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import * as dnum from "dnum";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";

@@ -1,7 +1,7 @@
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
 import { calculateRatio } from "src/base/calculateRatio";
 import { calculateTotalValueFromPrice } from "src/base/calculateTotalValueFromPrice";
 import { LabelValue } from "src/ui/base/components/LabelValue";

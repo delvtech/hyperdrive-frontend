@@ -3,7 +3,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
 import { calculateTotalValueFromPrice } from "src/base/calculateTotalValueFromPrice";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";

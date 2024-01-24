@@ -1,7 +1,7 @@
 import { ViemReadHyperdrive } from "@hyperdrive/sdk-viem";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { useMemo } from "react";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
 import {
   YieldSourceProtocol,
   yieldSourceProtocols,

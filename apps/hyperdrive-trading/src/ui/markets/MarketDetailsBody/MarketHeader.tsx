@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
 import { PriceBadges } from "src/ui/markets/MarketDetailsBody/PriceBadges";
 
 export function MarketHeader({

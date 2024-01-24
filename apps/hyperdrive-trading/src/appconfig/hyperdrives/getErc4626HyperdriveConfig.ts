@@ -1,6 +1,7 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
+import { TokenConfig } from "src/appconfig/TokenConfig";
 import { formatHyperdriveName } from "src/appconfig/hyperdrives/formatHyperdriveName";
-import { HyperdriveConfig, Token } from "src/appconfig/types";
 import { yieldSources } from "src/appconfig/yieldSources/yieldSources";
 import { Address, PublicClient } from "viem";
 import { erc20ABI } from "wagmi";
@@ -21,7 +22,7 @@ export async function getErc4626HyperdriveConfig({
       address: hyperdriveAddress,
     });
 
-  const baseToken: Token = {
+  const baseToken: TokenConfig = {
     address: baseTokenAddress,
     decimals: await publicClient.readContract({
       address: baseTokenAddress,
@@ -47,7 +48,7 @@ export async function getErc4626HyperdriveConfig({
   };
 
   // TODO: This should be specific to the yield source
-  const sharesToken: Token = {
+  const sharesToken: TokenConfig = {
     name: "",
     symbol: "",
     decimals: 0,
@@ -66,6 +67,12 @@ export async function getErc4626HyperdriveConfig({
     termLengthMS,
     name,
     yieldSource,
+    withdrawOptions: {
+      // Base token withdrawals are enabled in a 4626 hyperdrive, because, for
+      // example, sDAI can be converted back to DAI in a single transaction by
+      // the DSR smart contract.
+      isBaseTokenWithdrawalEnabled: true,
+    },
     baseToken,
     sharesToken,
   };

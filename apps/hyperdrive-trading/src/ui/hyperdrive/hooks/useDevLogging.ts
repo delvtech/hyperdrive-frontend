@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
 import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { formatUnits } from "viem";

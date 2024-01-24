@@ -1,7 +1,7 @@
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
 import { MAX_UINT256 } from "src/base/constants";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";

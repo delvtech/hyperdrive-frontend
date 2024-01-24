@@ -12,7 +12,7 @@ import {
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { useState } from "react";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import {

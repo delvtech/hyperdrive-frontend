@@ -1,7 +1,7 @@
 import { calculateFixedRateFromOpenLong, Long } from "@hyperdrive/sdk";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { LabelValue } from "src/ui/base/components/LabelValue";

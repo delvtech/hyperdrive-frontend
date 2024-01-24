@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { Token } from "src/appconfig/types";
+import { TokenConfig } from "src/appconfig/TokenConfig";
 import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -7,7 +7,11 @@ import { useMintBaseToken } from "src/ui/token/hooks/useMintBaseToken";
 import { parseUnits } from "viem";
 import { useAccount, useBalance, useChainId } from "wagmi";
 
-export function YourBalanceWell({ token }: { token: Token }): ReactElement {
+export function YourBalanceWell({
+  token,
+}: {
+  token: TokenConfig;
+}): ReactElement {
   const { address: account } = useAccount();
   const { data: balance } = useBalance({
     address: account,

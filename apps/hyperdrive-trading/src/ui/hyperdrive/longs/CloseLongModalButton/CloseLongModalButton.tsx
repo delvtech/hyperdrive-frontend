@@ -1,7 +1,7 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { Long } from "@hyperdrive/sdk";
 import { ReactElement } from "react";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { CloseLongForm } from "src/ui/hyperdrive/longs/CloseLongForm/CloseLongForm";
 

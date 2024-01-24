@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import assertNever from "assert-never";
 import { LocalAddressesJson } from "src/addresses/LocalAddressesJson";
+import { AppConfig } from "src/appconfig/AppConfig";
 import { SupportedChainId } from "src/appconfig/chains/supportedChains";
 import { getAppConfigFromLocalAddresses } from "src/appconfig/getAppConfigFromLocalAddresses";
-import { AppConfig } from "src/appconfig/types";
 import { PublicClient } from "viem";
 import { useChainId, usePublicClient } from "wagmi";
 

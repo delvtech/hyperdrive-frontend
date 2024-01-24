@@ -1,10 +1,11 @@
 import { LocalAddressesJson } from "src/addresses/LocalAddressesJson";
+import { AppConfig } from "src/appconfig/AppConfig";
 import { getErc4626HyperdriveConfig } from "src/appconfig/hyperdrives/getErc4626HyperdriveConfig";
 import { getStethHyperdriveConfig } from "src/appconfig/hyperdrives/getStethHyperdriveConfig";
-import { AppConfig, HyperdriveConfig } from "src/appconfig/types";
 import { yieldSourceProtocols } from "src/appconfig/yieldSources/yieldSourceProtocols";
 import { yieldSources } from "src/appconfig/yieldSources/yieldSources";
 import { PublicClient } from "viem";
+import { HyperdriveConfig } from "./HyperdriveConfig";
 
 /**
  * Retrieves the application config, including hyperdrives and yield sources,

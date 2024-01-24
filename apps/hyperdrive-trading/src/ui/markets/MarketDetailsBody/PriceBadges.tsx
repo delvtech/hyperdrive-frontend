@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
 import { divideBigInt } from "src/base/divideBigInt";
 import { parseUnits } from "src/base/parseUnits";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
