@@ -6,7 +6,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { ReactElement, useMemo } from "react";
-import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";

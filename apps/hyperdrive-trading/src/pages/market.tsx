@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { useLoaderData } from "react-router-dom";
-import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
 import { useDevLogging } from "src/ui/hyperdrive/hooks/useDevLogging";
 import { MarketDetailsBody } from "src/ui/markets/MarketDetailsBody/MarketDetailsBody";

@@ -1,7 +1,7 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
-import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
-import { TokenConfig } from "src/appconfig/TokenConfig";
-import { yieldSources } from "src/appconfig/yieldSources/yieldSources";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { TokenConfig } from "src/token/TokenConfig";
+import { yieldSources } from "src/yieldSources/yieldSources";
 import { Address, PublicClient } from "viem";
 import { formatHyperdriveName } from "./formatHyperdriveName";
 

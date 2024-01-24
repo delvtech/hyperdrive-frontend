@@ -1,8 +1,8 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
-import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
-import { TokenConfig } from "src/appconfig/TokenConfig";
-import { formatHyperdriveName } from "src/appconfig/hyperdrives/formatHyperdriveName";
-import { yieldSources } from "src/appconfig/yieldSources/yieldSources";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { formatHyperdriveName } from "src/hyperdrive/formatHyperdriveName";
+import { TokenConfig } from "src/token/TokenConfig";
+import { yieldSources } from "src/yieldSources/yieldSources";
 import { Address, PublicClient } from "viem";
 import { erc20ABI } from "wagmi";
 

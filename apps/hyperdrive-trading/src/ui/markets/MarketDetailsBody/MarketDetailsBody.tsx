@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import CustomBanner from "src/ui/base/components/CustomBanner";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";

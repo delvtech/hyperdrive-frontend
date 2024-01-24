@@ -1,6 +1,6 @@
-import { yieldSources } from "src/appconfig/yieldSources/yieldSources";
+import { TokenConfig } from "src/token/TokenConfig";
+import { yieldSources } from "src/yieldSources/yieldSources";
 import { Address } from "viem";
-import { TokenConfig } from "./TokenConfig";
 
 /**
  * The appconfig a hyperdrive instance

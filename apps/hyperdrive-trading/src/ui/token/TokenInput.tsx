@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
-import { TokenConfig } from "src/appconfig/TokenConfig";
+import { TokenConfig } from "src/token/TokenConfig";
 import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
 
 interface TokenInputProps {

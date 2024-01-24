@@ -1,6 +1,6 @@
-import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
-import { yieldSourceProtocols } from "src/appconfig/yieldSources/yieldSourceProtocols";
-import { yieldSources } from "src/appconfig/yieldSources/yieldSources";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { yieldSourceProtocols } from "src/yieldSources/yieldSourceProtocols";
+import { yieldSources } from "src/yieldSources/yieldSources";
 
 export interface AppConfig {
   chainId: number;

@@ -1,4 +1,4 @@
-import { yieldSourceProtocols } from "src/appconfig/yieldSources/yieldSourceProtocols";
+import { yieldSourceProtocols } from "src/yieldSources/yieldSourceProtocols";
 
 export interface YieldSource {
   name: string;

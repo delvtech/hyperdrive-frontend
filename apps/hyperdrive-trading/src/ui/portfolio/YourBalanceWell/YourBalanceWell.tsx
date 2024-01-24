@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { TokenConfig } from "src/appconfig/TokenConfig";
+import { TokenConfig } from "src/token/TokenConfig";
 import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";

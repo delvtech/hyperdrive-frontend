@@ -8,8 +8,8 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
-import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
