@@ -1,16 +1,23 @@
-import { ReactElement } from "react";
-import {
-  createBrowserRouter,
-  Outlet,
-  redirect,
-  RouterProvider,
-} from "react-router-dom";
-import { Landing } from "src/pages/Landing";
-import { Market } from "src/pages/market";
-import { Markets } from "src/pages/Markets";
+import { ReactElement, StrictMode } from "react";
+import { Outlet } from "react-router-dom";
 import Footer from "src/ui/app/Footer/Footer";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+
+import { Router, RouterProvider } from "@tanstack/react-router";
+
+// Import the generated route tree
+import { routeTree } from "src/routeTree.gen";
+
+// Create a new router instance
+const router = new Router({ routeTree });
+
+// Register the router instance for type safety
+declare module "@tanstack/react-router" {
+  interface Register {
+    router: typeof router;
+  }
+}
 
 function BaseLayout(): ReactElement {
   return (
@@ -33,43 +40,45 @@ export function App(): ReactElement | null {
     return null;
   }
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <BaseLayout />,
-      children: [
-        {
-          path: "/",
-          element: <Landing />,
-        },
-        {
-          path: "/markets",
-          element: <Markets />,
-        },
-        {
-          path: "/market/:address",
-          element: <Market />,
-          loader: ({ params }) => {
-            const market = appConfig?.hyperdrives.find(
-              (market) => market.address === params.address,
-            );
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: <BaseLayout />,
+  //     children: [
+  //       {
+  //         path: "/",
+  //         element: <Landing />,
+  //       },
+  //       {
+  //         path: "/markets",
+  //         element: <Markets />,
+  //       },
+  //       {
+  //         path: "/market/:address",
+  //         element: <Market />,
+  //         loader: ({ params }) => {
+  //           const market = appConfig?.hyperdrives.find(
+  //             (market) => market.address === params.address,
+  //           );
 
-            if (market) {
-              return market;
-            }
+  //           if (market) {
+  //             return market;
+  //           }
 
-            // we fall back to the first market in the config
-            // this should rarely happen
-            return redirect(`/market/${appConfig?.hyperdrives[0].address}`);
-          },
-        },
-      ],
-    },
-  ]);
+  //           // we fall back to the first market in the config
+  //           // this should rarely happen
+  //           return redirect(`/market/${appConfig?.hyperdrives[0].address}`);
+  //         },
+  //       },
+  //     ],
+  //   },
+  // ]);
 
   return (
     <div className="flex h-full flex-col overflow-auto">
-      <RouterProvider router={router} />
+      <StrictMode>
+        <RouterProvider router={router} />
+      </StrictMode>
     </div>
   );
 }
