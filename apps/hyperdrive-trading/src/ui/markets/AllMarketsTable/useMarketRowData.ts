@@ -1,19 +1,16 @@
 import { ViemReadHyperdrive } from "@hyperdrive/sdk-viem";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { useMemo } from "react";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { formatRate } from "src/base/formatRate";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { querySdkCache } from "src/sdk/sdkCache";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import {
   YieldSourceProtocol,
   yieldSourceProtocols,
-} from "src/appconfig/yieldSources/yieldSourceProtocols";
-import {
-  YieldSource,
-  yieldSources,
-} from "src/appconfig/yieldSources/yieldSources";
-import { formatRate } from "src/base/formatRate";
-import { makeQueryKey } from "src/base/makeQueryKey";
-import { querySdkCache } from "src/sdk/sdkCache";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+} from "src/yieldSources/yieldSourceProtocols";
+import { YieldSource, yieldSources } from "src/yieldSources/yieldSources";
 import { usePublicClient } from "wagmi";
 
 export interface MarketTableRowData {

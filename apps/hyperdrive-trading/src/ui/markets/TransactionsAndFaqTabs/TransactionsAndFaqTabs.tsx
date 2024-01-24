@@ -1,7 +1,7 @@
 import assertNever from "assert-never";
 import classNames from "classnames";
 import { Fragment, ReactElement, useState } from "react";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { FAQEntries } from "src/ui/onboarding/FAQ/FAQ";
 

@@ -1,9 +1,9 @@
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { HyperdriveConfig } from "src/appconfig/types";
 import { calculateRatio } from "src/base/calculateRatio";
 import { calculateTotalValueFromPrice } from "src/base/calculateTotalValueFromPrice";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";

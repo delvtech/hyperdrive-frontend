@@ -13,10 +13,10 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { HyperdriveConfig } from "src/appconfig/types";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";

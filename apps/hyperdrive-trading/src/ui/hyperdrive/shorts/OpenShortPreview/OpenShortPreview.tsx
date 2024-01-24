@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
-import { HyperdriveConfig } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 

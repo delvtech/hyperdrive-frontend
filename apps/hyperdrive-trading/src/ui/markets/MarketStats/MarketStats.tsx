@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";

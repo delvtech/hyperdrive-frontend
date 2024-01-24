@@ -2,7 +2,7 @@ import assertNever from "assert-never";
 import classNames from "classnames";
 import { Fragment, ReactElement } from "react";
 import { useSearchParams } from "react-router-dom";
-import { HyperdriveConfig } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { LongsTab } from "src/ui/markets/LongsTab/LongsTab";
 import { LpTab } from "src/ui/markets/LpTab/LpTab";
 import { ShortsTab } from "src/ui/markets/ShortsTab/ShortsTab";

@@ -1,21 +1,21 @@
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
-import { HyperdriveConfig } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
-import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
-import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { TokenInput } from "src/ui/token/TokenInput";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
-import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
 import { useAccount, useBalance } from "wagmi";
 

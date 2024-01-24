@@ -1,6 +1,7 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
-import { HyperdriveConfig, Token } from "src/appconfig/types";
-import { yieldSources } from "src/appconfig/yieldSources/yieldSources";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { TokenConfig } from "src/token/TokenConfig";
+import { yieldSources } from "src/yieldSources/yieldSources";
 import { Address, PublicClient } from "viem";
 import { formatHyperdriveName } from "./formatHyperdriveName";
 
@@ -26,7 +27,7 @@ export async function getStethHyperdriveConfig({
       address: hyperdriveAddress,
     });
 
-  const baseToken: Token = {
+  const baseToken: TokenConfig = {
     address: baseTokenAddress,
     decimals: 18,
     name: "Ether",
@@ -35,7 +36,7 @@ export async function getStethHyperdriveConfig({
   };
 
   // This is specific to the yield source
-  const sharesToken: Token = {
+  const sharesToken: TokenConfig = {
     name: "",
     symbol: "",
     decimals: 0,
@@ -54,6 +55,13 @@ export async function getStethHyperdriveConfig({
     termLengthMS,
     name,
     yieldSource,
+    withdrawOptions: {
+      // You can't withdraw ETH from the stETH hyperdrive, since converting
+      // stETH back to ETH is a multi-step, multi-day process in Lido. Users of
+      // stETH hyperdrive will need to withdraw as stETH (sharesToken), and
+      // unwind back to ETH themselves.
+      isBaseTokenWithdrawalEnabled: false,
+    },
     baseToken,
     sharesToken,
   };
