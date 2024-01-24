@@ -1,8 +1,7 @@
+import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
-import { Link } from "react-router-dom";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import DiscordIcon from "src/ui/base/icons/discord";
-
 export default function Footer(): ReactElement {
   const footerTitleClassName =
     "daisy-footer-title text-neutral-content opacity-100"; // need to set opacity here to override daisy-footer-title

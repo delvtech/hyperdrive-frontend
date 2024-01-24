@@ -1,5 +1,4 @@
 import { ReactElement, StrictMode } from "react";
-import { Outlet } from "react-router-dom";
 import Footer from "src/ui/app/Footer/Footer";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -7,6 +6,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Router, RouterProvider } from "@tanstack/react-router";
 
 // Import the generated route tree
+import { Landing } from "src/pages/Landing";
 import { routeTree } from "src/routeTree.gen";
 
 // Create a new router instance
@@ -23,7 +23,7 @@ function BaseLayout(): ReactElement {
   return (
     <div className="flex h-full flex-col items-center">
       <Navbar />
-      <Outlet />
+      <Landing />
       <Footer />
     </div>
   );
