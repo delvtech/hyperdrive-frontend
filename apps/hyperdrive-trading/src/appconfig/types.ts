@@ -10,7 +10,7 @@ export interface AppConfig {
   yieldSourceProtocols: typeof yieldSourceProtocols;
 }
 
-export interface ContractConfig {
+interface ContractConfig {
   address: Address;
 }
 
