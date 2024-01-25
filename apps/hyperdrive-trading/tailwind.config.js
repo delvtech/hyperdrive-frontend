@@ -54,7 +54,7 @@ module.exports = {
       h5: ["20px", { lineHeight: "24px" }],
     },
   },
-  plugins: [require("daisyui"), require("tailwindcss-debug-screens")],
+  plugins: [require("daisyui")],
   daisyui: {
     prefix: "daisy-",
     themes: [

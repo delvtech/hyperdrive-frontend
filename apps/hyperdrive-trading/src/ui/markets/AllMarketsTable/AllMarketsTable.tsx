@@ -1,4 +1,5 @@
 import { ArrowRightIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { useNavigate } from "@tanstack/react-router";
 import {
   createColumnHelper,
   flexRender,
@@ -7,7 +8,6 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { useNavigate } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
@@ -214,7 +214,7 @@ function getColumns() {
 
 export function AllMarketsTable(): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { data: marketsRowData } = useMarketRowData();
   const memoizedColumns = isTailwindSmallScreen
     ? getMobileColumns()
@@ -253,9 +253,9 @@ export function AllMarketsTable(): ReactElement {
                 <tr
                   key={row.id}
                   className="daisy-hover h-16 cursor-pointer items-center border-b-0 text-gray-50"
-                  onClick={() => {
-                    navigate(`/market/${row.original.market}`);
-                  }}
+                  // onClick={() => {
+                  //   navigate(`/market/${row.original.market}`);
+                  // }}
                 >
                   <>
                     {row.getVisibleCells().map((cell) => {
@@ -310,7 +310,7 @@ function GoToMarketButton({ market }: { market: Hyperdrive }): ReactElement {
   return (
     <button
       onClick={() => {
-        navigate(`/market/${market}`);
+        navigate({ to: `/market/${market.address}` });
       }}
       className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >

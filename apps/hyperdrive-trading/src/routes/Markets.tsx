@@ -1,11 +1,12 @@
-import { ReactElement, useMemo } from "react";
+import { FileRoute } from "@tanstack/react-router";
+import { useMemo } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { AllMarketsTable } from "src/ui/markets/AllMarketsTable/AllMarketsTable";
-// export const Route = new FileRoute("/Markets").createRoute({
-//   component: <Markets />,
-// });
+export const Route = new FileRoute("/markets").createRoute({
+  component: () => <Markets />,
+});
 
-export function Markets(): ReactElement {
+function Markets() {
   const { appConfig: config } = useAppConfig();
 
   const memoizedData = useMemo(

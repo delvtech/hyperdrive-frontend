@@ -1,6 +1,6 @@
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
+import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
-import { Link } from "react-router-dom";
 
 export function MarketBreadcrumbs(): ReactElement {
   return (
