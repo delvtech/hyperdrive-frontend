@@ -26,7 +26,6 @@ export function App(): ReactElement | null {
   if (!appConfig) {
     return null;
   }
-
   return (
     <div className="flex h-full flex-col overflow-auto">
       <StrictMode>
