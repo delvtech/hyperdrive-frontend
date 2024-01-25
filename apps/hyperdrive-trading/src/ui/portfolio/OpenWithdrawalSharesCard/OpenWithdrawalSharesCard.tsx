@@ -1,19 +1,19 @@
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
-import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
+import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
 import { calculateShareValue } from "src/ui/portfolio/OpenWithdrawalSharesCard/calculateShareValue";
 import { useAccount } from "wagmi";
 
 interface LpPortfolioCardProps {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }
 
 export function OpenWithdrawalSharesCard({

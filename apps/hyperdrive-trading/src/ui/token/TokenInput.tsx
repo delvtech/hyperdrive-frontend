@@ -1,10 +1,10 @@
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
-import { Token } from "src/appconfig/types";
+import { TokenConfig } from "src/token/TokenConfig";
 import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
 
 interface TokenInputProps {
-  token: Token;
+  token: TokenConfig;
   value: string;
   onChange: (newAmount: string) => void;
   /**

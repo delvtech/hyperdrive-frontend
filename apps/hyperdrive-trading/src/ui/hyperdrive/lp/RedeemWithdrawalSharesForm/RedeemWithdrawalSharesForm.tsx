@@ -1,17 +1,17 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
-import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemWithdrawalShares";
+import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface RedeemWithdrawalSharesFormProps {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
   withdrawalShares: bigint;
   onRedeemWithdrawalShares?: (e: MouseEvent<HTMLButtonElement>) => void;
 }

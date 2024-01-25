@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { formatUnits } from "viem";
 
-export function useDevLogging(market: Hyperdrive): void {
+export function useDevLogging(market: HyperdriveConfig): void {
   const { poolConfig } = usePoolConfig(market.address);
   useEffect(() => {
     if (import.meta.env.DEV) {

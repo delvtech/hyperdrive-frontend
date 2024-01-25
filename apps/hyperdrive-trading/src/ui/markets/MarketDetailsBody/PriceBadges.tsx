@@ -1,14 +1,14 @@
 import { ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
 import { divideBigInt } from "src/base/divideBigInt";
 import { parseUnits } from "src/base/parseUnits";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 export function PriceBadges({
   hyperdrive,
   longPrice,
 }: {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
   longPrice: { price: bigint; formatted: string };
 }): ReactElement {
   return (

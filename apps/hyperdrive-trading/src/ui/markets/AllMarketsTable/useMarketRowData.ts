@@ -1,18 +1,23 @@
 import { ViemReadHyperdrive } from "@hyperdrive/sdk-viem";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { useMemo } from "react";
-import { Hyperdrive } from "src/appconfig/types";
-import { YieldSource } from "src/appconfig/yieldSources/yieldSources";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { querySdkCache } from "src/sdk/sdkCache";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import {
+  YieldSourceProtocol,
+  yieldSourceProtocols,
+} from "src/yieldSources/yieldSourceProtocols";
+import { YieldSource, yieldSources } from "src/yieldSources/yieldSources";
 import { usePublicClient } from "wagmi";
 
 export interface MarketTableRowData {
-  market: Hyperdrive;
+  market: HyperdriveConfig;
   liquidity: bigint;
   yieldSource: YieldSource;
+  yieldSourceProtocol: YieldSourceProtocol;
   longAPR: string;
 }
 export type MarketStatistics = Omit<MarketTableRowData, "market" | "liquidity">;
@@ -41,11 +46,13 @@ export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
                 decimals: hyperdrive.baseToken.decimals,
               });
               const longApr = await readHyperdrive.getSpotRate();
+              const yieldSource = yieldSources[hyperdrive.yieldSource];
               return {
                 market: hyperdrive,
                 liquidity,
                 longAPR: formatRate(longApr),
-                yieldSource: appConfig.yieldSources[hyperdrive.yieldSource],
+                yieldSource,
+                yieldSourceProtocol: yieldSourceProtocols[yieldSource.protocol],
               };
             }),
           )

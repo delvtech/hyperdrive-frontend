@@ -6,7 +6,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -15,12 +15,12 @@ import { useClosedShorts } from "src/ui/hyperdrive/shorts/hooks/useClosedShorts"
 import { useAccount } from "wagmi";
 
 interface ClosedShortsTableProps {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }
 
 function formatClosedShortMobileColumnData(
   closedShort: ClosedShort,
-  hyperdrive: Hyperdrive,
+  hyperdrive: HyperdriveConfig,
 ) {
   return [
     {
@@ -56,7 +56,7 @@ function formatClosedShortMobileColumnData(
 
 const columnHelper = createColumnHelper<ClosedShort>();
 
-function getMobileColumns(hyperdrive: Hyperdrive) {
+function getMobileColumns(hyperdrive: HyperdriveConfig) {
   return [
     columnHelper.display({
       id: "ColumnNames",
@@ -95,7 +95,7 @@ function getMobileColumns(hyperdrive: Hyperdrive) {
   ];
 }
 
-const getColumns = (hyperdrive: Hyperdrive) => [
+const getColumns = (hyperdrive: HyperdriveConfig) => [
   columnHelper.display({
     header: `Matures on`,
     cell: ({ row }) => {

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
 export function useAccruedYield({
@@ -8,7 +8,7 @@ export function useAccruedYield({
   checkpointId,
   bondAmount,
 }: {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
   checkpointId: bigint;
   bondAmount: bigint;
 }): {

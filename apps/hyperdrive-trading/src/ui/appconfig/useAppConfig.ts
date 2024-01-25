@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import assertNever from "assert-never";
 import { LocalAddressesJson } from "src/addresses/LocalAddressesJson";
-import { SupportedChainId } from "src/appconfig/chains/supportedChains";
+import { AppConfig } from "src/appconfig/AppConfig";
 import { getAppConfigFromLocalAddresses } from "src/appconfig/getAppConfigFromLocalAddresses";
-import { AppConfig } from "src/appconfig/types";
+import { SupportedChainId } from "src/chains/supportedChains";
 import { PublicClient } from "viem";
 import { useChainId, usePublicClient } from "wagmi";
 
@@ -24,21 +24,21 @@ export function useAppConfig(): {
       switch (chainId) {
         case 31337: {
           const addresses = await fetchLocalhostAddresses();
-          return getAppConfigFromLocalAddresses(
+          return getAppConfigFromLocalAddresses({
             chainId,
             addresses,
-            publicClient as PublicClient,
-          );
+            publicClient: publicClient as PublicClient,
+          });
         }
         case 42069: {
           const addresses = await fetchCustomChainAddresses();
           // The custom chain is curently deployed using the same contracts as
           // the local devnet, so we can get the appConfig in the same way
-          return getAppConfigFromLocalAddresses(
+          return getAppConfigFromLocalAddresses({
             chainId,
             addresses,
-            publicClient as PublicClient,
-          );
+            publicClient: publicClient as PublicClient,
+          });
         }
 
         default:

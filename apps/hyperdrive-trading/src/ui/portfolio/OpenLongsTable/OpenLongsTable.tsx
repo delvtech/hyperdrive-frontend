@@ -1,8 +1,8 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
-  Long,
   calculateFixedRateFromOpenLong,
   calculateMatureLongYieldAfterFees,
+  Long,
 } from "@hyperdrive/sdk";
 import {
   createColumnHelper,
@@ -13,10 +13,10 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
@@ -30,12 +30,15 @@ import { MaturesOnCell } from "src/ui/portfolio/MaturesOnCell/MaturesOnCell";
 import { parseUnits } from "viem";
 import { useAccount } from "wagmi";
 interface OpenLongsTableProps {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }
 
 const columnHelper = createColumnHelper<Long>();
 
-function formatOpenLongMobileColumnData(row: Long, hyperdrive: Hyperdrive) {
+function formatOpenLongMobileColumnData(
+  row: Long,
+  hyperdrive: HyperdriveConfig,
+) {
   return [
     {
       name: "Matures on",
@@ -72,7 +75,7 @@ function formatOpenLongMobileColumnData(row: Long, hyperdrive: Hyperdrive) {
   ];
 }
 
-function getColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
+function getColumns({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",
@@ -138,7 +141,7 @@ function getColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
   ];
 }
 
-function getMobileColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
+function getMobileColumns({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   return [
     columnHelper.display({
       id: "ColumnNames",
@@ -297,7 +300,7 @@ function CurrentValueCell({
   hyperdrive,
 }: {
   row: Long;
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }) {
   const { address: account } = useAccount();
   const { baseAmountOut, previewCloseLongStatus } = usePreviewCloseLong({
@@ -350,7 +353,7 @@ function FixedRateCell({
   hyperdrive,
 }: {
   row: Long;
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }) {
   const { poolConfig } = usePoolConfig(hyperdrive.address);
   const { baseAmountPaid, bondAmount } = row;

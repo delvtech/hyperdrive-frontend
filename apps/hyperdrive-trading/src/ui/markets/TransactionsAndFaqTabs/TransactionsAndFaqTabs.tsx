@@ -1,17 +1,17 @@
 import assertNever from "assert-never";
 import classNames from "classnames";
 import { Fragment, ReactElement, useState } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { FAQEntries } from "src/ui/onboarding/FAQ/FAQ";
 
 const TABS = ["Transactions", "FAQ"] as const;
-export type Tab = (typeof TABS)[number];
+export type Tab = typeof TABS[number];
 
 export function TransactionAndFaqTabs({
   hyperdrive,
 }: {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const [activeTab, setActiveTab] = useState<Tab>("Transactions");
   return (

@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
-import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -16,7 +16,7 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenShortPositionFormProps {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }
 
 export function OpenShortForm({

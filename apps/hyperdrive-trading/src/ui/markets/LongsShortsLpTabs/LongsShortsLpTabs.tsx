@@ -2,7 +2,7 @@ import { useNavigate } from "@tanstack/react-router";
 import assertNever from "assert-never";
 import classNames from "classnames";
 import { Fragment, ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { Route } from "src/routes/market.$address";
 import { LongsTab } from "src/ui/markets/LongsTab/LongsTab";
 import { LpTab } from "src/ui/markets/LpTab/LpTab";
@@ -13,7 +13,7 @@ const TABS = ["Longs", "Shorts", "LP"] as const;
 export function LongsShortsLpTabs({
   hyperdrive,
 }: {
-  hyperdrive: Hyperdrive;
+  hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address } = Route.useParams();
   const { position } = Route.useSearch();

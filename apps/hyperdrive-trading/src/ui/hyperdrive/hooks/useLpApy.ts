@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { useBlockNumber, useChainId } from "wagmi";
 
-export function useLpApy(hyperdrive: Hyperdrive): {
+export function useLpApy(hyperdrive: HyperdriveConfig): {
   lpApy: number | undefined;
 } {
   const chainId = useChainId();
