@@ -1,8 +1,10 @@
 import { FileRoute } from "@tanstack/react-router";
 
 import { ReactElement } from "react";
+import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useDevLogging } from "src/ui/hyperdrive/hooks/useDevLogging";
 import { MarketDetailsBody } from "src/ui/markets/MarketDetailsBody/MarketDetailsBody";
 import { z } from "zod";
 
@@ -32,22 +34,16 @@ export const Route = new FileRoute("/market/$address").createRoute({
   },
 });
 export function Market(): ReactElement {
-  // Safe to cast this variable because router configs this page is rendered with a valid market
-  // const market = useLoaderData({ from: "/market" }) as Hyperdrive;
   const { market: address } = Route.useLoaderData();
   const { appConfig } = useAppConfig();
   const market = appConfig?.hyperdrives.find(
     (hyperdrive) => hyperdrive.address === address,
-  );
-  // useDevLogging(market);
-  if (!market) {
-    return <div>Market not found</div>;
-  }
-
+  ) as HyperdriveConfig;
+  useDevLogging(market);
   return (
     <div className="flex justify-center bg-base-100 px-4 py-8">
       <CommonHeadTags />
-      <MarketDetailsBody hyperdrive={market} />
+      <MarketDetailsBody hyperdrive={market ?? appConfig?.hyperdrives[0]} />
     </div>
   );
 }
