@@ -2,10 +2,10 @@
 
 // Import Routes
 
-import { Route as IndexImport } from "./routes/index";
-import { Route as MarketAddressImport } from "./routes/market.$address";
-import { Route as MarketsImport } from "./routes/markets";
-import { Route as rootRoute } from "./routes/__root";
+import { Route as IndexImport } from "./ui/routes/index";
+import { Route as MarketAddressImport } from "./ui/routes/market.$address";
+import { Route as MarketsImport } from "./ui/routes/markets";
+import { Route as rootRoute } from "./ui/routes/__root";
 
 // Create/Update Routes
 

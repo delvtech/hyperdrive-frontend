@@ -3,10 +3,10 @@ import assertNever from "assert-never";
 import classNames from "classnames";
 import { Fragment, ReactElement } from "react";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
-import { Route } from "src/routes/market.$address";
 import { LongsTab } from "src/ui/markets/LongsTab/LongsTab";
 import { LpTab } from "src/ui/markets/LpTab/LpTab";
 import { ShortsTab } from "src/ui/markets/ShortsTab/ShortsTab";
+import { Route } from "src/ui/routes/market.$address";
 
 const TABS = ["Longs", "Shorts", "LP"] as const;
 

@@ -1,4 +1,4 @@
-import { Route } from "src/routes/market.$address";
+import { Route } from "src/ui/routes/market.$address";
 
 export type OpenOrClosedTab = "Open" | "Closed";
 

@@ -10,7 +10,6 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
-import { Route } from "src/routes/market.$address";
 import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
@@ -19,6 +18,7 @@ import {
   MarketTableRowData,
   useMarketRowData,
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
+import { Route } from "src/ui/routes/market.$address";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
 
 function formatMobileColumnData(row: MarketTableRowData) {

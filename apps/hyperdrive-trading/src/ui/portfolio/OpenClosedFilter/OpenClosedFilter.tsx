@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { Route } from "src/routes/market.$address";
+import { Route } from "src/ui/routes/market.$address";
 
 type OpenOrClosedTab = "Open" | "Closed";
 export function OpenClosedFilter(): ReactElement {
