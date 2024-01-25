@@ -84,6 +84,7 @@ export function AddLiquidityForm({
     <TransactionView
       tokenInput={
         <TokenInput
+          name={hyperdrive.baseToken.name}
           token={hyperdrive.baseToken}
           value={amount ?? ""}
           maxValue={baseTokenBalance?.formatted}

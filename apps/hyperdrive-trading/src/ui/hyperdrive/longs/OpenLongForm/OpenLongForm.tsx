@@ -99,6 +99,7 @@ export function OpenLongForm({
     <TransactionView
       tokenInput={
         <TokenInput
+          name={hyperdrive.baseToken.symbol}
           token={hyperdrive.baseToken}
           value={amount ?? ""}
           maxValue={maxAmount}

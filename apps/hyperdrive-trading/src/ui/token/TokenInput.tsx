@@ -5,6 +5,7 @@ import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
 
 interface TokenInputProps {
   token: TokenConfig;
+  name: string;
   value: string;
   onChange: (newAmount: string) => void;
   /**
@@ -30,6 +31,7 @@ interface TokenInputProps {
 export function TokenInput({
   value,
   token,
+  name,
   onChange,
   maxValue,
   inputLabel = "Enter amount",
@@ -60,7 +62,7 @@ export function TokenInput({
           min="0"
           autoFocus={autoFocus}
           max={maxValue}
-          name={`${token.symbol} input`}
+          name={name}
           disabled={disabled}
           className={classNames(
             "daisy-input daisy-join-item daisy-input-bordered w-full",

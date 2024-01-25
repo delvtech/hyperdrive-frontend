@@ -59,6 +59,7 @@ export function RedeemWithdrawalSharesForm({
       heading="Redeem withdrawal shares"
       tokenInput={
         <TokenInput
+          name="withdrawalShares"
           token={{
             name: "Hyperdrive Withdrawal Shares",
             // TODO: What should the symbol be?

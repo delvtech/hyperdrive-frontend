@@ -109,6 +109,7 @@ export function RemoveLiquidityForm({
       heading="Remove liquidity"
       tokenInput={
         <TokenInput
+          name={hyperdrive.baseToken.name}
           token={{
             name: hyperdrive.baseToken.name,
             symbol: hyperdrive.baseToken.symbol,

@@ -88,6 +88,7 @@ export function CloseLongForm({
       heading="Close long"
       tokenInput={
         <TokenInput
+          name={hyperdrive.baseToken.symbol}
           token={{
             name: `Hyperdrive ${baseSymbol}`,
             symbol: `hy${baseSymbol}`,

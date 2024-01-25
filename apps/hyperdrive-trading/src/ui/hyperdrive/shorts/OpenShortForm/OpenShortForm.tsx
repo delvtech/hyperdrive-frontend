@@ -81,6 +81,7 @@ export function OpenShortForm({
     <TransactionView
       tokenInput={
         <TokenInput
+          name={`${hyperdrive.baseToken.symbol}-input`}
           token={{
             symbol: hyperdrive.baseToken.symbol,
             address: "0x0",

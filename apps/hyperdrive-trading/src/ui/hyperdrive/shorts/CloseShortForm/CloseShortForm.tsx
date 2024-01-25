@@ -71,6 +71,7 @@ export function CloseShortForm({
       heading="Close short"
       tokenInput={
         <TokenInput
+          name="shorts"
           token={{
             name: "Hyperdrive Short",
             symbol: "Shorts",
