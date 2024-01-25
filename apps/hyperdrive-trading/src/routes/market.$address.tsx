@@ -22,14 +22,10 @@ export const Route = new FileRoute("/market/$address").createRoute({
       openOrClosed,
     };
   },
-  loader: ({ params, deps }) => {
+  loader: ({ params }) => {
     const market = params.address;
-    const position = deps.position ?? "Longs";
-    const openOrClosed = deps.openOrClosed ?? "Open";
     return {
       market,
-      position,
-      openOrClosed,
     };
   },
 });
