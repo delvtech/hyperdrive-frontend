@@ -1,5 +1,5 @@
 import { ArrowRightIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import { useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import {
   createColumnHelper,
   flexRender,
@@ -10,6 +10,7 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { Route } from "src/routes/market.$address";
 import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
@@ -214,7 +215,7 @@ function getColumns() {
 
 export function AllMarketsTable(): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const { data: marketsRowData } = useMarketRowData();
   const memoizedColumns = isTailwindSmallScreen
     ? getMobileColumns()
@@ -253,9 +254,16 @@ export function AllMarketsTable(): ReactElement {
                 <tr
                   key={row.id}
                   className="daisy-hover h-16 cursor-pointer items-center border-b-0 text-gray-50"
-                  // onClick={() => {
-                  //   navigate(`/market/${row.original.market}`);
-                  // }}
+                  onClick={() => {
+                    navigate({
+                      params: { address: row.original.market.address },
+                      search: {
+                        openOrClosed: "Open",
+                        position: "Longs",
+                      },
+                      to: Route.fullPath,
+                    });
+                  }}
                 >
                   <>
                     {row.getVisibleCells().map((cell) => {
@@ -306,15 +314,14 @@ function YieldSourceApy(): ReactElement {
 }
 
 function GoToMarketButton({ market }: { market: Hyperdrive }): ReactElement {
-  const navigate = useNavigate();
   return (
-    <button
-      onClick={() => {
-        navigate({ to: `/market/${market.address}` });
-      }}
+    <Link
+      from={Route.fullPath}
+      search={(prev) => ({ openOrClosed: "Open", position: "Longs", ...prev })}
+      params={{ address: market.address }}
       className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >
       <ArrowRightIcon className="h-5" />
-    </button>
+    </Link>
   );
 }

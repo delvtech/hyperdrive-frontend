@@ -9,7 +9,6 @@ import { LpTab } from "src/ui/markets/LpTab/LpTab";
 import { ShortsTab } from "src/ui/markets/ShortsTab/ShortsTab";
 
 const TABS = ["Longs", "Shorts", "LP"] as const;
-type LongsShortsLpTab = typeof TABS[number];
 
 export function LongsShortsLpTabs({
   hyperdrive,
@@ -43,7 +42,7 @@ export function LongsShortsLpTabs({
 
           <div
             role="tabpanel"
-            className="daisy-tab-content rounded-box border-base-200 bg-base-100"
+            className="daisy-tab-content flex rounded-box border-base-200 bg-base-100"
           >
             {(() => {
               // We render a content panel for each tab, however we only want to
@@ -51,7 +50,7 @@ export function LongsShortsLpTabs({
 
               switch (activeTab) {
                 case "Longs":
-                  if (activeTab === "Longs") {
+                  if (tabId === "Longs") {
                     return <LongsTab hyperdrive={hyperdrive} />;
                   }
                   return null;

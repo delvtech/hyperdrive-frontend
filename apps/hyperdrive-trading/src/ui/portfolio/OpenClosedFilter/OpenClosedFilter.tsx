@@ -5,7 +5,7 @@ import { Route } from "src/routes/market.$address";
 
 type OpenOrClosedTab = "Open" | "Closed";
 export function OpenClosedFilter(): ReactElement {
-  const { openOrClosed } = Route.useSearch();
+  const { openOrClosed, position } = Route.useSearch();
   const { address } = Route.useParams();
   const navigate = useNavigate({ from: Route.fullPath });
   const activeOpenOrClosedTab = (openOrClosed as OpenOrClosedTab) || "Open";
@@ -16,7 +16,7 @@ export function OpenClosedFilter(): ReactElement {
         onClick={() =>
           navigate({
             params: { address },
-            search: () => ({ openOrClosed: "Open" }),
+            search: () => ({ openOrClosed: "Open", position }),
           })
         }
         className={classNames("daisy-tab", {
@@ -29,7 +29,7 @@ export function OpenClosedFilter(): ReactElement {
         onClick={() =>
           navigate({
             params: { address },
-            search: () => ({ openOrClosed: "Closed" }),
+            search: () => ({ openOrClosed: "Closed", position }),
           })
         }
         className={classNames("daisy-tab", {
