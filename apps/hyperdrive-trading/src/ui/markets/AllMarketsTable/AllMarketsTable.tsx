@@ -19,7 +19,7 @@ import {
   MarketTableRowData,
   useMarketRowData,
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
-import { Route } from "src/ui/routes/market.$address";
+import { ALL_MARKETS_ROUTE, MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
 
 export function Markets(): ReactElement {
@@ -299,7 +299,8 @@ export function AllMarketsTable(): ReactElement {
                         openOrClosed: "Open",
                         position: "Longs",
                       },
-                      to: Route.fullPath,
+                      from: ALL_MARKETS_ROUTE,
+                      to: MARKET_DETAILS_ROUTE,
                     });
                   }}
                 >
@@ -362,7 +363,7 @@ function GoToMarketButton({
 }): ReactElement {
   return (
     <Link
-      from={Route.fullPath}
+      from={MARKET_DETAILS_ROUTE}
       search={() => ({ position: "Longs", openOrClosed: "Open" })}
       params={{ address: market.address }}
       className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
