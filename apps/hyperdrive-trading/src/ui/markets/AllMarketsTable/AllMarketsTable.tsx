@@ -329,7 +329,7 @@ function GoToMarketButton({
   return (
     <Link
       from={Route.fullPath}
-      search={(prev) => ({ openOrClosed: "Open", position: "Longs", ...prev })}
+      search={() => ({ position: "Longs", openOrClosed: "Open" })}
       params={{ address: market.address }}
       className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >

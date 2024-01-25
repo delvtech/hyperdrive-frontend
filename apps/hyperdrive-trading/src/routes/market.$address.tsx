@@ -7,8 +7,8 @@ import { MarketDetailsBody } from "src/ui/markets/MarketDetailsBody/MarketDetail
 import { z } from "zod";
 
 const marketRouteParams = z.object({
-  position: z.enum(["Longs", "Shorts", "LP"]).catch("Longs").optional(),
-  openOrClosed: z.enum(["Open", "Closed"]).catch("Open").optional(),
+  position: z.enum(["Longs", "Shorts", "LP"]).catch("Longs"),
+  openOrClosed: z.enum(["Open", "Closed"]).catch("Open"),
 });
 
 export const Route = new FileRoute("/market/$address").createRoute({
