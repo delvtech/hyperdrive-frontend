@@ -9,7 +9,7 @@
   "scripts": {
     "build": "turbo run build",
     "build:packages": "turbo run build --filter=./packages/*",
-    "build:docs": "yarn build:packages && turbo run build --filter={./apps/hyperdrive-sdk-docs}",
+    "build:docs": "yarn build:packages && turbo run build:docs --filter={./apps/hyperdrive-sdk-docs}",
     "dev": "turbo run dev --parallel --filter=./apps/*",
     "lint": "turbo run lint",
     "lint:packages": "turbo run lint --filter=./packages/*",
