@@ -72,12 +72,7 @@ export function CloseShortForm({
       tokenInput={
         <TokenInput
           name="shorts"
-          token={{
-            name: "Hyperdrive Short",
-            symbol: "Shorts",
-            decimals: baseDecimals,
-            address: "0x00",
-          }}
+          token="Shorts"
           value={amount ?? ""}
           maxValue={short ? formatUnits(short.bondAmount, baseDecimals) : ""}
           stat={

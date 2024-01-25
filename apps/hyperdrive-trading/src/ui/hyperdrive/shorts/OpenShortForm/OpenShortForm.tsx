@@ -82,12 +82,7 @@ export function OpenShortForm({
       tokenInput={
         <TokenInput
           name={`${hyperdrive.baseToken.symbol}-input`}
-          token={{
-            symbol: hyperdrive.baseToken.symbol,
-            address: "0x0",
-            decimals: 18,
-            name: "Bonds",
-          }}
+          token={hyperdrive.baseToken.symbol}
           inputLabel="Amount to short"
           value={amount ?? ""}
           onChange={(newAmount) => setAmount(newAmount)}

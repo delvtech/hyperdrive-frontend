@@ -89,12 +89,7 @@ export function CloseLongForm({
       tokenInput={
         <TokenInput
           name={hyperdrive.baseToken.symbol}
-          token={{
-            name: `Hyperdrive ${baseSymbol}`,
-            symbol: `hy${baseSymbol}`,
-            decimals: baseDecimals,
-            address: "0x00",
-          }}
+          token={`hy${baseSymbol}`}
           value={amount ?? ""}
           maxValue={long ? formatUnits(long.bondAmount, baseDecimals) : ""}
           stat={`Balance: ${formatBalance({

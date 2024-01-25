@@ -1,10 +1,9 @@
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
-import { TokenConfig } from "src/token/TokenConfig";
 import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
 
 interface TokenInputProps {
-  token: TokenConfig;
+  token: string | ReactNode;
   name: string;
   value: string;
   onChange: (newAmount: string) => void;
@@ -48,9 +47,13 @@ export function TokenInput({
       </label>
 
       <label className="daisy-join items-center">
-        <div className="daisy-join-item flex h-12 items-center border border-neutral-content/30 bg-base-100 px-4">
-          {token.symbol}
-        </div>
+        {typeof token === "string" ? (
+          <div className="daisy-join-item flex h-12 items-center border border-neutral-content/30 bg-base-100 px-4">
+            {token}
+          </div>
+        ) : (
+          token
+        )}
         <input
           type="number"
           // Setting step to `any` allows any number between min and max to be

@@ -100,7 +100,7 @@ export function OpenLongForm({
       tokenInput={
         <TokenInput
           name={hyperdrive.baseToken.symbol}
-          token={hyperdrive.baseToken}
+          token={hyperdrive.baseToken.symbol}
           value={amount ?? ""}
           maxValue={maxAmount}
           inputLabel="Amount to spend"

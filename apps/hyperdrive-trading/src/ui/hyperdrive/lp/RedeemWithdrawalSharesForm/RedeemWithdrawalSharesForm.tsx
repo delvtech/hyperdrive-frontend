@@ -60,13 +60,7 @@ export function RedeemWithdrawalSharesForm({
       tokenInput={
         <TokenInput
           name="withdrawalShares"
-          token={{
-            name: "Hyperdrive Withdrawal Shares",
-            // TODO: What should the symbol be?
-            symbol: "Withdrawal shares",
-            decimals: baseDecimals,
-            address: "0x00",
-          }}
+          token="Withdrawal shares"
           value={amount ?? ""}
           stat={`Balance: ${formatBalance({
             balance: maxRedeemableShares ?? withdrawalShares,
