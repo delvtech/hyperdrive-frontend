@@ -22,7 +22,7 @@ export function ConnectWalletButton(): JSX.Element {
               if (!connected) {
                 return (
                   <button
-                    className="daisy-btn-primary daisy-btn daisy-btn-circle w-32"
+                    className="daisy-btn daisy-btn-circle daisy-btn-primary w-32"
                     onClick={openConnectModal}
                   >
                     Connect Wallet
@@ -32,7 +32,7 @@ export function ConnectWalletButton(): JSX.Element {
               if (chain.unsupported) {
                 return (
                   <button
-                    className="daisy-btn-primary daisy-btn daisy-btn-circle w-32"
+                    className="daisy-btn daisy-btn-circle daisy-btn-error w-32"
                     onClick={openChainModal}
                   >
                     Wrong network
@@ -41,7 +41,7 @@ export function ConnectWalletButton(): JSX.Element {
               }
               return (
                 <button
-                  className="daisy-btn-primary daisy-btn daisy-btn-circle mx-0 w-32"
+                  className="daisy-btn daisy-btn-circle daisy-btn-primary mx-0 w-32"
                   onClick={openAccountModal}
                 >
                   {account.displayName}
