@@ -2,9 +2,9 @@ import { ReactElement } from "react";
 import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
-import { FAQ } from "src/ui/landing/FAQ/FAQ";
-import { MobileFaq } from "src/ui/landing/FAQ/MobileFaq";
 import { Hero } from "src/ui/landing/Hero/Hero";
+import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
+import { MobileFaq } from "src/ui/onboarding/FAQ/MobileFaq";
 import { PositionCards } from "./PositionCards/PositionCards";
 
 export function Landing(): ReactElement | null {

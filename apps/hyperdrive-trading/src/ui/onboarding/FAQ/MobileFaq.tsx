@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { Disclosure } from "src/ui/base/components/Disclosure/Disclosure";
-import { faqData } from "src/ui/landing/FAQ/faqData";
+import { faqData } from "src/ui/onboarding/FAQ/faqData";
 export function MobileFaq(): ReactElement {
   return (
     <div className="flex flex-col gap-6 pb-12">

@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { Fragment, ReactElement, useState } from "react";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
-import { FAQEntries } from "src/ui/landing/FAQ/FAQ";
+import { FAQEntries } from "src/ui/onboarding/FAQ/FAQ";
 
 const TABS = ["Transactions", "FAQ"] as const;
 export type Tab = typeof TABS[number];
