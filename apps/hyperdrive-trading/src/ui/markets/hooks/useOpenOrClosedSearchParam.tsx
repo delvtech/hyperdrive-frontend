@@ -1,10 +1,9 @@
-import { useSearchParams } from "react-router-dom";
+import { Route } from "src/routes/market.$address";
 
 export type OpenOrClosedTab = "Open" | "Closed";
 
 export function useOpenOrClosedSearchParam(): OpenOrClosedTab {
-  const [searchParams] = useSearchParams();
-  const activeOpenOrClosedTab =
-    (searchParams.get("openOrClosed") as OpenOrClosedTab) || "Open";
+  const { openOrClosed } = Route.useSearch();
+  const activeOpenOrClosedTab = (openOrClosed as OpenOrClosedTab) || "Open";
   return activeOpenOrClosedTab;
 }

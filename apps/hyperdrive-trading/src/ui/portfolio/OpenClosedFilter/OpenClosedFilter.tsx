@@ -1,25 +1,24 @@
+import { useNavigate } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Route } from "src/routes/market.$address";
 
 type OpenOrClosedTab = "Open" | "Closed";
 export function OpenClosedFilter(): ReactElement {
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const activeOpenOrClosedTab =
-    (searchParams.get("openOrClosed") as OpenOrClosedTab) || "Open";
-
-  function handleChangeOpenOrClosedTab(openOrClosed: OpenOrClosedTab) {
-    // Create a new search params so we retain all existing search params
-    const newSearchParams = new URLSearchParams(searchParams);
-    newSearchParams.set("openOrClosed", openOrClosed);
-    setSearchParams(newSearchParams);
-  }
+  const { openOrClosed } = Route.useSearch();
+  const { address } = Route.useParams();
+  const navigate = useNavigate({ from: Route.fullPath });
+  const activeOpenOrClosedTab = (openOrClosed as OpenOrClosedTab) || "Open";
 
   return (
-    <div className="daisy-tabs daisy-tabs-boxed daisy-tabs-sm">
+    <div className="daisy-tabs-boxed daisy-tabs daisy-tabs-sm">
       <button
-        onClick={() => handleChangeOpenOrClosedTab("Open")}
+        onClick={() =>
+          navigate({
+            params: { address },
+            search: () => ({ openOrClosed: "Open" }),
+          })
+        }
         className={classNames("daisy-tab", {
           "daisy-tab-active font-medium": activeOpenOrClosedTab === "Open",
         })}
@@ -27,7 +26,12 @@ export function OpenClosedFilter(): ReactElement {
         Open
       </button>
       <button
-        onClick={() => handleChangeOpenOrClosedTab("Closed")}
+        onClick={() =>
+          navigate({
+            params: { address },
+            search: () => ({ openOrClosed: "Closed" }),
+          })
+        }
         className={classNames("daisy-tab", {
           "daisy-tab-active font-medium": activeOpenOrClosedTab === "Closed",
         })}
