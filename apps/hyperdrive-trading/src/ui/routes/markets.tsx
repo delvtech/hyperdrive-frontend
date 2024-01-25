@@ -2,7 +2,8 @@ import { FileRoute } from "@tanstack/react-router";
 import { useMemo } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { AllMarketsTable } from "src/ui/markets/AllMarketsTable/AllMarketsTable";
-export const Route = new FileRoute("/markets").createRoute({
+import { ALL_MARKETS_ROUTE } from "src/ui/markets/routes";
+export const Route = new FileRoute(ALL_MARKETS_ROUTE).createRoute({
   component: () => <Markets />,
 });
 

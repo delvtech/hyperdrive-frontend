@@ -1,12 +1,12 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useParams, useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { Route } from "src/ui/routes/market.$address";
+import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 
 type OpenOrClosedTab = "Open" | "Closed";
 export function OpenClosedFilter(): ReactElement {
-  const { openOrClosed, position } = Route.useSearch();
-  const { address } = Route.useParams();
+  const { openOrClosed, position } = useSearch({ from: MARKET_DETAILS_ROUTE });
+  const { address } = useParams({ from: MARKET_DETAILS_ROUTE });
 
   const activeOpenOrClosedTab = (openOrClosed as OpenOrClosedTab) || "Open";
 
@@ -20,7 +20,7 @@ export function OpenClosedFilter(): ReactElement {
         <Link
           params={{ address }}
           search={{ openOrClosed: "Open", position }}
-          to={Route.fullPath}
+          to={MARKET_DETAILS_ROUTE}
         >
           Open
         </Link>
@@ -33,7 +33,7 @@ export function OpenClosedFilter(): ReactElement {
         <Link
           params={{ address }}
           search={{ openOrClosed: "Closed", position }}
-          to={Route.fullPath}
+          to={MARKET_DETAILS_ROUTE}
         >
           Closed
         </Link>

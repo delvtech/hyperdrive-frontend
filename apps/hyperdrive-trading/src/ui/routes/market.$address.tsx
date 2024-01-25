@@ -6,6 +6,7 @@ import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useDevLogging } from "src/ui/hyperdrive/hooks/useDevLogging";
 import { MarketDetailsBody } from "src/ui/markets/MarketDetailsBody/MarketDetailsBody";
+import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { z } from "zod";
 
 const marketRouteParams = z.object({
@@ -13,7 +14,7 @@ const marketRouteParams = z.object({
   openOrClosed: z.enum(["Open", "Closed"]).catch("Open"),
 });
 
-export const Route = new FileRoute("/market/$address").createRoute({
+export const Route = new FileRoute(MARKET_DETAILS_ROUTE).createRoute({
   component: () => <Market />,
   validateSearch: marketRouteParams,
   loaderDeps: ({ search: { position, openOrClosed } }) => {
