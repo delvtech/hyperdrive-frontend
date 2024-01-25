@@ -1,7 +1,9 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
-import { formatHyperdriveName } from "src/hyperdrive/formatHyperdriveName";
+import { SupportedChainId } from "src/chains/supportedChains";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { formatHyperdriveName } from "src/hyperdrive/formatHyperdriveName";
 import { TokenConfig } from "src/token/TokenConfig";
+import { getTokenIconUrl } from "src/token/tokenIconsUrls";
 import { yieldSources } from "src/yieldSources/yieldSources";
 import { Address, PublicClient } from "viem";
 import { erc20ABI } from "wagmi";
@@ -22,6 +24,7 @@ export async function getErc4626HyperdriveConfig({
       address: hyperdriveAddress,
     });
 
+  const chainId = (await publicClient.getChainId()) as SupportedChainId;
   const baseToken: TokenConfig = {
     address: baseTokenAddress,
     decimals: await publicClient.readContract({
@@ -41,10 +44,7 @@ export async function getErc4626HyperdriveConfig({
       functionName: "symbol",
     }),
 
-    // TODO: Don't hardcode this, it should be looked up in a object that maps
-    // token addresses to icon urls
-    iconUrl:
-      "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmMGM3NzAiIHN0cm9rZS13aWR0aD0iMS43MTQyODU3MTQyODU3MTQyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXN3aXRjaC1jYW1lcmEiPjxwYXRoIGQ9Ik0xMSAxOUg0YTIgMiAwIDAgMS0yLTJWN2EyIDIgMCAwIDEgMi0yaDUiLz48cGF0aCBkPSJNMTMgNWg3YTIgMiAwIDAgMSAyIDJ2MTBhMiAyIDAgMCAxLTIgMmgtNSIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiLz48cGF0aCBkPSJtMTggMjItMy0zIDMtMyIvPjxwYXRoIGQ9Im02IDIgMyAzLTMgMyIvPjwvc3ZnPg==",
+    iconUrl: getTokenIconUrl({ address: baseTokenAddress, chainId }),
   };
 
   // TODO: This should be specific to the yield source

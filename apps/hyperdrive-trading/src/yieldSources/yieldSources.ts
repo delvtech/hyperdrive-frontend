@@ -1,3 +1,4 @@
+import { SDAI_ICON_URL, STETH_ICON_URL } from "src/token/tokenIconsUrls";
 import { yieldSourceProtocols } from "src/yieldSources/yieldSourceProtocols";
 
 export interface YieldSource {
@@ -12,14 +13,14 @@ export const makerDsr: YieldSource = {
   shortName: "Maker DSR",
   protocol: "maker",
   // this is the sDAI logo, which is just a green dai logo
-  iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
+  iconUrl: SDAI_ICON_URL,
 };
 
 export const lidoSteth: YieldSource = {
   name: "Lido Staked Ether",
   shortName: "Staked Ether",
   protocol: "lido",
-  iconUrl: "https://cryptologos.cc/logos/steth-steth-logo.png?v=029",
+  iconUrl: STETH_ICON_URL,
 };
 
 export const yieldSources = {
