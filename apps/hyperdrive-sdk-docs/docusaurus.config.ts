@@ -4,7 +4,6 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 const config: Config = {
   title: "Hyperdrive SDK Docs",
-  tagline: "Hyperdrive SDK Docs",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -108,7 +107,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/delvtech/hyperdrive/hyperdrive-repo",
+              href: "https://github.com/delvtech/hyperdrive-monorepo",
             },
             {
               label: "DELV Blog",
