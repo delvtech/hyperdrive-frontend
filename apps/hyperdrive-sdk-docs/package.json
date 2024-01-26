@@ -29,8 +29,11 @@
     "@docusaurus/tsconfig": "3.1.0",
     "@docusaurus/types": "3.1.0",
     "@hyperdrive/eslint-config": "*",
+    "docusaurus-plugin-typedoc": "^0.22.0",
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.33.2",
+    "typedoc": "^0.25.7",
+    "typedoc-plugin-markdown": "^3.17.1",
     "typescript": "~5.2.2"
   },
   "browserslist": {

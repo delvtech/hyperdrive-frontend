@@ -25,6 +25,23 @@ const sidebars: SidebarsConfig = {
       label: "Recipes",
       items: ["sdk/recipes/long"],
     },
+
+    {
+      type: "category",
+      label: "API Reference",
+      items: [
+        {
+          type: "doc",
+          id: "sdk/api-reference/classes/ReadHyperdrive",
+          label: "Read Hyperdrive",
+        },
+        {
+          type: "doc",
+          id: "sdk/api-reference/classes/ReadWriteHyperdrive",
+          label: "Write Hyperdrive",
+        },
+      ],
+    },
   ],
 };
 

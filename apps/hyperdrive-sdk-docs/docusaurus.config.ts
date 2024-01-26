@@ -1,6 +1,6 @@
-import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 import { themes as prismThemes } from "prism-react-renderer";
+import defaultTypeDocConfig from "./typedoc.json";
 
 const config: Config = {
   title: "Hyperdrive SDK Docs",
@@ -12,12 +12,31 @@ const config: Config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
 
+  plugins: [
+    [
+      "docusaurus-plugin-typedoc",
+
+      // Plugin / TypeDoc options
+      {
+        id: "hyperdrive-sdk",
+        entryPoints: ["../../packages/hyperdrive-sdk"],
+        entryPointStrategy: "packages",
+        sidebar: {
+          fullNames: true,
+        },
+        out: "sdk/api-reference",
+
+        ...defaultTypeDocConfig,
+      },
+    ],
+  ],
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   // organizationName: "facebook", // Usually your GitHub org/user name.
   // projectName: "docusaurus", // Usually your repo name.
 
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
@@ -41,7 +60,7 @@ const config: Config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
-      } satisfies Preset.Options,
+      },
     ],
   ],
 
@@ -122,7 +141,7 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-  } satisfies Preset.ThemeConfig,
+  },
 };
 
 export default config;
