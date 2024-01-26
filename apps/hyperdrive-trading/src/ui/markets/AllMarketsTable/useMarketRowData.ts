@@ -20,7 +20,6 @@ export interface MarketTableRowData {
   yieldSourceProtocol: YieldSourceProtocol;
   longAPR: string;
 }
-export type MarketStatistics = Omit<MarketTableRowData, "market" | "liquidity">;
 
 export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
   const publicClient = usePublicClient();
