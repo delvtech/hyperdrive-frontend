@@ -6,7 +6,6 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import classNames from "classnames";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
@@ -24,13 +23,25 @@ function formatMobileColumnData(row: MarketTableRowData) {
     {
       name: "Term",
       value: (
-        <span>
+        <span className="flex flex-row items-center justify-start">
+          <img src={row.market.baseToken.iconUrl} className="mr-2 inline h-4" />
           {row.market.baseToken.symbol} -{" "}
           {convertMillisecondsToDays(row.market.termLengthMS)} days
         </span>
       ),
     },
-    { name: "Yield Source", value: row.yieldSource.name },
+    {
+      name: "Yield Source",
+      value: (
+        <span className="flex flex-row items-center justify-start">
+          <img
+            src={row.yieldSourceProtocol.iconUrl}
+            className="mr-2 inline h-4"
+          />
+          {row.yieldSource.shortName}
+        </span>
+      ),
+    },
     { name: "Yield Source APY", value: <YieldSourceApy /> },
     { name: "Fixed Rate", value: row.longAPR },
     { name: "LP APY", value: <LpApyCell hyperdrive={row.market} /> },
@@ -57,26 +68,16 @@ const columnHelper = createColumnHelper<MarketTableRowData>();
 function getMobileColumns() {
   return [
     columnHelper.display({
-      id: "ColumnNames",
+      id: "ColumnPairs",
       cell: ({ row }) => {
         const data = formatMobileColumnData(row.original);
         return (
-          <div className="flex flex-col items-start gap-2 text-neutral-content">
-            {data.map((column) => (
-              <p key={column.name}>{column.name}</p>
-            ))}
-          </div>
-        );
-      },
-    }),
-    columnHelper.display({
-      id: "ColumnValues",
-      cell: ({ row }) => {
-        const data = formatMobileColumnData(row.original);
-        return (
-          <div className="flex flex-col items-start gap-2">
-            {data.map((column) => (
-              <p key={column.name}>{column.value}</p>
+          <div className="flex flex-col gap-2">
+            {data.map((column, i) => (
+              <div key={i} className="flex w-full justify-between gap-4">
+                <p className="text-neutral-content">{column.name}</p>
+                <p key={column.name}>{column.value}</p>
+              </div>
             ))}
           </div>
         );
@@ -121,14 +122,7 @@ export function AllMarketsTableMobile(): ReactElement {
               <>
                 {row.getVisibleCells().map((cell) => {
                   return (
-                    // In order to round the edges of this row, we need to round the edges of the first and last <td> because border-radius doesn't work on <tr>
-                    <td
-                      className={classNames({
-                        "rounded-l-lg": cell.column.id.includes("termLengthMS"),
-                        "rounded-r-lg": cell.column.id.includes("go-to-market"),
-                      })}
-                      key={cell.id}
-                    >
+                    <td key={cell.id} className="py-10 last:w-5">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext(),
