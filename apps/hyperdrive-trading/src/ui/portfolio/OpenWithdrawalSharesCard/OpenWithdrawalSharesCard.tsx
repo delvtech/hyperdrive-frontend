@@ -94,7 +94,7 @@ export function OpenWithdrawalSharesCard({
                 }
               />
             </div>
-            <div className="daisy-card-actions mt-4 w-full">
+            <div className="daisy-card-actions">
               <Modal
                 modalId="withdrawalLpModal"
                 modalContent={
@@ -113,7 +113,7 @@ export function OpenWithdrawalSharesCard({
                   </button>
                 )}
               </Modal>
-              <p className="mt-1 text-center text-xs text-neutral-content">
+              <p className="mt-2 text-center text-xs text-neutral-content">
                 Note: Withdrawal shares are considered idle capital and are not
                 used to back new positions. They continue to earn the variable
                 rate from the yield source.
