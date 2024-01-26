@@ -1,3 +1,0 @@
-# Recipes
-
-Recipes for hyperdrive
