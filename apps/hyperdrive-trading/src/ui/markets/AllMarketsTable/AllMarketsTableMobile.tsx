@@ -1,4 +1,4 @@
-import { ArrowRightIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { Link, useNavigate } from "@tanstack/react-router";
 import {
   createColumnHelper,
@@ -84,7 +84,7 @@ function getMobileColumns() {
     }),
     columnHelper.display({
       id: "go-to-market",
-      cell: () => <ChevronRightIcon className="h-4" />,
+      cell: ({ row }) => <GoToMarketButton market={row.original.market} />,
     }),
   ];
 }
@@ -173,11 +173,11 @@ function GoToMarketButton({
   return (
     <Link
       from={MARKET_DETAILS_ROUTE}
-      search={() => ({ position: "Longs", openOrClosed: "Open" })}
+      search={{ position: "Longs", openOrClosed: "Open" }}
       params={{ address: market.address }}
-      className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
+      className="daisy-btn-circle daisy-btn-xs flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >
-      <ArrowRightIcon className="h-5" />
+      <ArrowRightIcon className="h-3" />
     </Link>
   );
 }
