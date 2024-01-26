@@ -63,7 +63,7 @@ function getMobileColumns() {
       cell: ({ row }) => {
         const data = formatMobileColumnData(row.original);
         return (
-          <ul className="flex flex-col items-start gap-2">
+          <ul className="flex flex-col items-start gap-2 text-neutral-content">
             {data.map((column) => (
               <li key={column.name}>{column.name}</li>
             ))}
@@ -280,7 +280,6 @@ export function AllMarketsTable(): ReactElement {
                               cell.column.id.includes("termLengthMS"),
                             "rounded-r-lg":
                               cell.column.id.includes("go-to-market"),
-                            "text-sm": isTailwindSmallScreen,
                           })}
                           key={cell.id}
                         >
