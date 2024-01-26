@@ -230,8 +230,8 @@ export function AllMarketsTable(): ReactElement {
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <div className="flex w-full max-w-6xl flex-col items-center overflow-y-auto p-2 md:p-4 md:px-0">
-      <h3 className="mb-5 w-full pl-1 text-h5 text-neutral-content">
+    <div className="flex w-full max-w-6xl flex-col items-center overflow-y-auto p-2 md:p-4">
+      <h3 className="mb-5 w-full pl-1 text-center text-h5 text-neutral-content lg:text-left">
         Available Markets
       </h3>
       <div className="daisy-card daisy-card-bordered flex w-full md:p-6">
@@ -257,7 +257,7 @@ export function AllMarketsTable(): ReactElement {
               return (
                 <tr
                   key={row.id}
-                  className="daisy-hover h-16 cursor-pointer items-center border-b-0 text-gray-50"
+                  className="daisy-hover h-16 cursor-pointer border-b-0 text-gray-50"
                   onClick={() => {
                     navigate({
                       params: { address: row.original.market.address },

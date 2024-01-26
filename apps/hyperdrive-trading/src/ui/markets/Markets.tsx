@@ -14,14 +14,14 @@ export function Markets(): ReactElement {
   }
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center bg-base-100 py-8 md:w-3/4">
-      <div className="daisy-hero max-w-6xl justify-start text-center md:text-left">
+    <div className="flex min-h-screen w-full flex-col items-center bg-base-100 py-8">
+      <div className="daisy-hero max-w-6xl justify-start text-center lg:text-left">
         <div className="daisy-hero-content px-0">
-          <div className="mx-6 max-w-3xl md:mx-0">
-            <span className="gradient-text mb-6 text-h2 font-bold md:text-h1">
+          <div className="mx-6 max-w-3xl ">
+            <span className="gradient-text mb-6 text-h2 font-bold lg:text-h1">
               Hyperdrive Markets
             </span>
-            <p className="mb-5 mt-3 text-neutral-content md:mb-16">
+            <p className="mb-5 mt-3 text-neutral-content lg:mb-16">
               Select a market below to start earning fixed or variable rate
               yield on the most trusted assets in DeFi.
             </p>
