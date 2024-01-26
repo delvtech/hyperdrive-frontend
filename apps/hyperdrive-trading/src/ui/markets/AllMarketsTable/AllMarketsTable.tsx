@@ -39,7 +39,7 @@ export function Markets(): ReactElement {
         <div className="daisy-hero-content px-0">
           <div className="mx-6 max-w-xl md:mx-0">
             <span className="gradient-text mb-6 text-h2 font-bold md:text-h1">
-              Explore Hyperdrive Markets
+              Hyperdrive Markets
             </span>
             <p className="mb-5 mt-3 text-neutral-content md:mb-16">
               Dive into our extensive table of pools, each offering unique term
