@@ -4,12 +4,12 @@
 # Production
 /build
 
-# Generated Typedoc files
-/docs/**/api-reference
-
 # Generated files
 .docusaurus
 .cache-loader
+
+# Generated TypeDoc files
+docs/sdk/api-reference
 
 # Misc
 .DS_Store

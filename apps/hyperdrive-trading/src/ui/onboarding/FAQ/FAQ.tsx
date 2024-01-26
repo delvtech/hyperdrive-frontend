@@ -45,7 +45,7 @@ export function FAQEntries(): JSX.Element {
               key={key}
               onClick={() => setSelectedFAQKey(key)}
               className={classNames(
-                "daisy-btn-ghost daisy-btn daisy-btn-wide justify-start text-left",
+                "daisy-btn daisy-btn-ghost daisy-btn-wide justify-start text-left",
                 {
                   "opacity-40": selectedFAQKey !== key,
                 },

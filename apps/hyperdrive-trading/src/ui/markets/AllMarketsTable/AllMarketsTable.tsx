@@ -1,4 +1,5 @@
 import { ArrowRightIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { Link, useNavigate } from "@tanstack/react-router";
 import {
   createColumnHelper,
   flexRender,
@@ -6,10 +7,10 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement } from "react";
-import { useNavigate } from "react-router-dom";
+import { ReactElement, useMemo } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
@@ -18,7 +19,41 @@ import {
   MarketTableRowData,
   useMarketRowData,
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
+import { ALL_MARKETS_ROUTE, MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
+
+export function Markets(): ReactElement {
+  const { appConfig: config } = useAppConfig();
+
+  const memoizedData = useMemo(
+    () => config?.hyperdrives,
+    [config?.hyperdrives],
+  );
+  if (!memoizedData?.length) {
+    return <div>No markets found</div>;
+  }
+
+  return (
+    <div className="flex min-h-screen w-full flex-col items-center bg-base-100 py-8 md:w-3/4">
+      <div className="daisy-hero max-w-6xl justify-start text-center md:text-left">
+        <div className="daisy-hero-content px-0">
+          <div className="mx-6 max-w-xl md:mx-0">
+            <span className="gradient-text mb-6 text-h2 font-bold md:text-h1">
+              Explore Hyperdrive Markets
+            </span>
+            <p className="mb-5 mt-3 text-neutral-content md:mb-16">
+              Dive into our extensive table of pools, each offering unique term
+              lengths to align with your strategic trading goals. Select the
+              perfect pool for your next investment move in the dynamic world of
+              Hyperdrive.
+            </p>
+          </div>
+        </div>
+      </div>
+      <AllMarketsTable />
+    </div>
+  );
+}
 
 function formatMobileColumnData(row: MarketTableRowData) {
   return [
@@ -252,38 +287,48 @@ export function AllMarketsTable(): ReactElement {
             ))}
           </thead>
           <tbody>
-            {tableInstance.getRowModel().rows.map((row) => (
-              <tr
-                key={row.id}
-                className="daisy-hover h-16 cursor-pointer items-center border-b-0 text-gray-50"
-                onClick={() => {
-                  navigate(`/market/${row.original.market.address}`);
-                }}
-              >
-                <>
-                  {row.getVisibleCells().map((cell) => {
-                    return (
-                      // In order to round the edges of this row, we need to round the edges of the first and last <td> because border-radius doesn't work on <tr>
-                      <td
-                        className={classNames({
-                          "rounded-l-lg":
-                            cell.column.id.includes("termLengthMS"),
-                          "rounded-r-lg":
-                            cell.column.id.includes("go-to-market"),
-                          "text-sm": isTailwindSmallScreen,
-                        })}
-                        key={cell.id}
-                      >
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </td>
-                    );
-                  })}
-                </>
-              </tr>
-            ))}
+            {tableInstance.getRowModel().rows.map((row) => {
+              return (
+                <tr
+                  key={row.id}
+                  className="daisy-hover h-16 cursor-pointer items-center border-b-0 text-gray-50"
+                  onClick={() => {
+                    navigate({
+                      params: { address: row.original.market.address },
+                      search: {
+                        openOrClosed: "Open",
+                        position: "Longs",
+                      },
+                      from: ALL_MARKETS_ROUTE,
+                      to: MARKET_DETAILS_ROUTE,
+                    });
+                  }}
+                >
+                  <>
+                    {row.getVisibleCells().map((cell) => {
+                      return (
+                        // In order to round the edges of this row, we need to round the edges of the first and last <td> because border-radius doesn't work on <tr>
+                        <td
+                          className={classNames({
+                            "rounded-l-lg":
+                              cell.column.id.includes("termLengthMS"),
+                            "rounded-r-lg":
+                              cell.column.id.includes("go-to-market"),
+                            "text-sm": isTailwindSmallScreen,
+                          })}
+                          key={cell.id}
+                        >
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext(),
+                          )}
+                        </td>
+                      );
+                    })}
+                  </>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
@@ -316,15 +361,14 @@ function GoToMarketButton({
 }: {
   market: HyperdriveConfig;
 }): ReactElement {
-  const navigate = useNavigate();
   return (
-    <button
-      onClick={() => {
-        navigate(`/market/${market.address}`);
-      }}
+    <Link
+      from={MARKET_DETAILS_ROUTE}
+      search={() => ({ position: "Longs", openOrClosed: "Open" })}
+      params={{ address: market.address }}
       className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >
       <ArrowRightIcon className="h-5" />
-    </button>
+    </Link>
   );
 }

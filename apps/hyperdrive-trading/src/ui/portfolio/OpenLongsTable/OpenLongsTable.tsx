@@ -1,8 +1,8 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
-  Long,
   calculateFixedRateFromOpenLong,
   calculateMatureLongYieldAfterFees,
+  Long,
 } from "@hyperdrive/sdk";
 import {
   createColumnHelper,

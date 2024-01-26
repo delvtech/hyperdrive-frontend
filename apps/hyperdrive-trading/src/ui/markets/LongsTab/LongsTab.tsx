@@ -22,7 +22,6 @@ export function LongsTab({
             <h5 className="font-bold">Long positions</h5>
             <OpenClosedFilter />
           </div>
-
           {activeOpenOrClosedTab === "Open" ? (
             <OpenLongsTable hyperdrive={hyperdrive} />
           ) : (

@@ -1,12 +1,12 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   ColumnFiltersState,
-  Header,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   getSortedRowModel,
+  Header,
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";

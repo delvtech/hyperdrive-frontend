@@ -1,25 +1,19 @@
-import { ReactElement } from "react";
-import {
-  createBrowserRouter,
-  Outlet,
-  redirect,
-  RouterProvider,
-} from "react-router-dom";
-import { Landing } from "src/pages/Landing";
-import { Market } from "src/pages/market";
-import { Markets } from "src/pages/Markets";
-import Footer from "src/ui/app/Footer/Footer";
-import { Navbar } from "src/ui/app/Navbar/Navbar";
+import { ReactElement, StrictMode } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 
-function BaseLayout(): ReactElement {
-  return (
-    <div className="flex h-full flex-col items-center">
-      <Navbar />
-      <Outlet />
-      <Footer />
-    </div>
-  );
+import { Router, RouterProvider } from "@tanstack/react-router";
+
+// Import the generated route tree
+import { routeTree } from "src/routeTree.gen";
+
+// Create a new router instance
+const router = new Router({ routeTree });
+
+// Register the router instance for type safety
+declare module "@tanstack/react-router" {
+  interface Register {
+    router: typeof router;
+  }
 }
 
 export function App(): ReactElement | null {
@@ -32,44 +26,11 @@ export function App(): ReactElement | null {
   if (!appConfig) {
     return null;
   }
-
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <BaseLayout />,
-      children: [
-        {
-          path: "/",
-          element: <Landing />,
-        },
-        {
-          path: "/markets",
-          element: <Markets />,
-        },
-        {
-          path: "/market/:address",
-          element: <Market />,
-          loader: ({ params }) => {
-            const market = appConfig?.hyperdrives.find(
-              (market) => market.address === params.address,
-            );
-
-            if (market) {
-              return market;
-            }
-
-            // we fall back to the first market in the config
-            // this should rarely happen
-            return redirect(`/market/${appConfig?.hyperdrives[0].address}`);
-          },
-        },
-      ],
-    },
-  ]);
-
   return (
     <div className="flex h-full flex-col overflow-auto">
-      <RouterProvider router={router} />
+      <StrictMode>
+        <RouterProvider router={router} />
+      </StrictMode>
     </div>
   );
 }

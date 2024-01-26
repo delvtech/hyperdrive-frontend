@@ -1,38 +1,42 @@
+import { Link, useParams, useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { useSearchParams } from "react-router-dom";
+import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 
 type OpenOrClosedTab = "Open" | "Closed";
 export function OpenClosedFilter(): ReactElement {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const { openOrClosed, position } = useSearch({ from: MARKET_DETAILS_ROUTE });
+  const { address } = useParams({ from: MARKET_DETAILS_ROUTE });
 
-  const activeOpenOrClosedTab =
-    (searchParams.get("openOrClosed") as OpenOrClosedTab) || "Open";
-
-  function handleChangeOpenOrClosedTab(openOrClosed: OpenOrClosedTab) {
-    // Create a new search params so we retain all existing search params
-    const newSearchParams = new URLSearchParams(searchParams);
-    newSearchParams.set("openOrClosed", openOrClosed);
-    setSearchParams(newSearchParams);
-  }
+  const activeOpenOrClosedTab = (openOrClosed as OpenOrClosedTab) || "Open";
 
   return (
-    <div className="daisy-tabs daisy-tabs-boxed daisy-tabs-sm">
+    <div className="daisy-tabs-boxed daisy-tabs daisy-tabs-sm">
       <button
-        onClick={() => handleChangeOpenOrClosedTab("Open")}
         className={classNames("daisy-tab", {
           "daisy-tab-active font-medium": activeOpenOrClosedTab === "Open",
         })}
       >
-        Open
+        <Link
+          params={{ address }}
+          search={{ openOrClosed: "Open", position }}
+          to={MARKET_DETAILS_ROUTE}
+        >
+          Open
+        </Link>
       </button>
       <button
-        onClick={() => handleChangeOpenOrClosedTab("Closed")}
         className={classNames("daisy-tab", {
           "daisy-tab-active font-medium": activeOpenOrClosedTab === "Closed",
         })}
       >
-        Closed
+        <Link
+          params={{ address }}
+          search={{ openOrClosed: "Closed", position }}
+          to={MARKET_DETAILS_ROUTE}
+        >
+          Closed
+        </Link>
       </button>
     </div>
   );

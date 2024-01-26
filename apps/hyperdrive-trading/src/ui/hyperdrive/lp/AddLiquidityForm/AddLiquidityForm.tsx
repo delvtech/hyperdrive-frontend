@@ -7,13 +7,13 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
-import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/AddLiquidityPreview";
 import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
-import { TokenInput } from "src/ui/token/TokenInput";
+import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
+import { TokenInput } from "src/ui/token/TokenInput";
 import { useAccount, useBalance } from "wagmi";
 
 interface AddLiquidityFormProps {

@@ -1,12 +1,11 @@
 ---
 id: "index"
-title: "@hyperdrive/sdk"
-sidebar_label: "Readme"
+title: "Getting Started"
 sidebar_position: 0
 custom_edit_url: null
 ---
 
-# @hyperdrive/sdk
+# Getting Started
 
 A vanilla TypeScript SDK containing everything you need to start working with
 the Hyperdrive AMM.

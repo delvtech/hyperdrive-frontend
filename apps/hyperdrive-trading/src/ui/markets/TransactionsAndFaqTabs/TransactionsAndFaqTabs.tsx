@@ -6,7 +6,7 @@ import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/Transaction
 import { FAQEntries } from "src/ui/onboarding/FAQ/FAQ";
 
 const TABS = ["Transactions", "FAQ"] as const;
-export type Tab = (typeof TABS)[number];
+export type Tab = typeof TABS[number];
 
 export function TransactionAndFaqTabs({
   hyperdrive,
