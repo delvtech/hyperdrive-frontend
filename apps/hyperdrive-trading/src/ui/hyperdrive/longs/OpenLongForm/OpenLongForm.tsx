@@ -99,7 +99,8 @@ export function OpenLongForm({
     <TransactionView
       tokenInput={
         <TokenInput
-          token={hyperdrive.baseToken}
+          name={hyperdrive.baseToken.symbol}
+          token={hyperdrive.baseToken.symbol}
           value={amount ?? ""}
           maxValue={maxAmount}
           inputLabel="Amount to spend"

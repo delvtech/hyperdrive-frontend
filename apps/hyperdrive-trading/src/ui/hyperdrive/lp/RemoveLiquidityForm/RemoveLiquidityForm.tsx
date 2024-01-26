@@ -109,12 +109,8 @@ export function RemoveLiquidityForm({
       heading="Remove liquidity"
       tokenInput={
         <TokenInput
-          token={{
-            name: hyperdrive.baseToken.name,
-            symbol: hyperdrive.baseToken.symbol,
-            decimals: baseDecimals,
-            address: "0x00",
-          }}
+          name={hyperdrive.baseToken.name}
+          token={hyperdrive.baseToken.symbol}
           value={amount ?? ""}
           maxValue={formatUnits(currentLpValue, baseDecimals)}
           stat={

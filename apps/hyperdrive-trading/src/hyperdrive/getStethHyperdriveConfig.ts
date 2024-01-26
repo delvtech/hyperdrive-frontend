@@ -1,15 +1,11 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+import { SupportedChainId } from "src/chains/supportedChains";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { TokenConfig } from "src/token/TokenConfig";
+import { getTokenIconUrl } from "src/token/tokenIconsUrls";
 import { yieldSources } from "src/yieldSources/yieldSources";
 import { Address, PublicClient } from "viem";
 import { formatHyperdriveName } from "./formatHyperdriveName";
-
-// This magic number is the baseToken for the stethHyperdrive market. It
-// signifies that the base asset is actually native ETH. However, in this market
-// you can deposit either native Eth or stETH. To get the stETH token, we need
-// to use the stethHyperdrive.lido() address, which is the same thing as stETH.
-export const ETH_MAGIC_NUMBER = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
 
 export async function getStethHyperdriveConfig({
   hyperdriveAddress,
@@ -27,12 +23,19 @@ export async function getStethHyperdriveConfig({
       address: hyperdriveAddress,
     });
 
+  const chainId = (await publicClient.getChainId()) as SupportedChainId;
+
+  // The baseToken address for the stethHyperdrive market is the ETH magic
+  // number. It signifies that the base asset is actually native ETH. However,
+  // in this market you can deposit either native Eth or stETH. To get the stETH
+  // token, we need to use the stethHyperdrive.lido() address, which is the same
+  // thing as stETH.
   const baseToken: TokenConfig = {
     address: baseTokenAddress,
     decimals: 18,
     name: "Ether",
     symbol: "ETH",
-    iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",
+    iconUrl: getTokenIconUrl({ address: baseTokenAddress, chainId }),
   };
 
   // This is specific to the yield source
