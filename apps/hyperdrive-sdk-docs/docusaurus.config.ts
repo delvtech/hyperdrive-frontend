@@ -62,6 +62,12 @@ const config: Config = {
           label: "SDK",
         },
         {
+          type: "doc",
+          position: "left",
+          label: "CLI",
+          docId: "cli/index",
+        },
+        {
           href: "https://github.com/delvtech/hyperdrive-monorepo",
           label: "GitHub",
           position: "right",
@@ -75,8 +81,12 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "Tutorial",
-              to: "/docs/intro",
+              label: "SDK",
+              to: "/docs/sdk",
+            },
+            {
+              label: "CLI",
+              to: "/docs/cli",
             },
           ],
         },
