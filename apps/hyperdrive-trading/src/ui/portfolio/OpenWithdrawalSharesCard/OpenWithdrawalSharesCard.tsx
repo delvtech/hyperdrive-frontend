@@ -36,7 +36,7 @@ export function OpenWithdrawalSharesCard({
 
   return (
     <Well elevation="flat">
-      <div className="flex h-full w-80 flex-col justify-between gap-4">
+      <div className="flex h-full w-80 flex-col items-center gap-4">
         <span className="daisy-card-title font-bold">Withdrawal Shares</span>
         {withdrawalShares !== 0n ? (
           <div className="flex h-full flex-col justify-between">
@@ -81,7 +81,7 @@ export function OpenWithdrawalSharesCard({
               <LabelValue
                 label="Withdrawable"
                 value={
-                  <p className="font-bold">
+                  <p>
                     {withdrawalSharesBaseWithdrawable !== undefined ? (
                       `${formatBalance({
                         balance: withdrawalSharesBaseWithdrawable,
@@ -94,7 +94,7 @@ export function OpenWithdrawalSharesCard({
                 }
               />
             </div>
-            <div className="daisy-card-actions w-full gap-6">
+            <div className="daisy-card-actions">
               <Modal
                 modalId="withdrawalLpModal"
                 modalContent={
@@ -106,14 +106,14 @@ export function OpenWithdrawalSharesCard({
               >
                 {({ showModal }) => (
                   <button
-                    className="daisy-btn daisy-btn-circle daisy-btn-primary mt-2 w-full hover:daisy-btn-ghost"
+                    className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
                     onClick={showModal}
                   >
                     Claim withdrawal shares
                   </button>
                 )}
               </Modal>
-              <p className="text-center text-sm text-neutral-content">
+              <p className="mt-2 text-center text-xs text-neutral-content">
                 Note: Withdrawal shares are considered idle capital and are not
                 used to back new positions. They continue to earn the variable
                 rate from the yield source.

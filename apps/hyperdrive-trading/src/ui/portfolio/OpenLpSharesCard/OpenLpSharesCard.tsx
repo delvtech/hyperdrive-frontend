@@ -50,7 +50,6 @@ export function OpenLpSharesCard({
           decimals: hyperdrive.baseToken.decimals,
         })
       : 0n;
-
   const poolShare =
     !!lpShares && !!lpSharesTotalSupply
       ? calculateRatio({
@@ -62,7 +61,7 @@ export function OpenLpSharesCard({
 
   return (
     <Well elevation="flat">
-      <div className="flex w-80 max-w-xs flex-1 flex-col items-center justify-center gap-3">
+      <div className="flex w-80 flex-col items-center gap-4">
         {lpShares !== 0n ? (
           <>
             <span className="daisy-card-title font-bold">LP Shares</span>
@@ -85,26 +84,9 @@ export function OpenLpSharesCard({
               }
             />
             <LabelValue
-              label="LP balance"
-              value={
-                <p>
-                  {!lpShares ? (
-                    <Skeleton />
-                  ) : (
-                    formatBalance({
-                      balance: lpShares,
-                      decimals: hyperdrive.baseToken.decimals,
-                      places: 4,
-                    })
-                  )}{" "}
-                  Shares
-                </p>
-              }
-            />
-            <LabelValue
               label="Current value"
               value={
-                <p className="font-bold">
+                <p>
                   {!!poolInfo && !!lpShares ? (
                     `${formatBalance({
                       balance: calculateTotalValueFromPrice({
@@ -121,8 +103,8 @@ export function OpenLpSharesCard({
                 </p>
               }
             />
-            <div className="mb-4 flex flex-col gap-2">
-              <div className="mt-4 flex flex-col">
+            <div className="flex w-full flex-col gap-2">
+              <div className="flex flex-col">
                 <div className="flex justify-between">
                   <p
                     className="daisy-tooltip mb-1 inline-flex cursor-help items-center border-b border-dashed border-current text-neutral-content"
@@ -160,13 +142,9 @@ export function OpenLpSharesCard({
                 }
                 max="100"
               ></progress>
-              <p className="text-center">
-                Note: When you withdraw liquidity, you get back{" "}
-                {hyperdrive.baseToken.symbol} and withdrawal shares proportional
-                to your utilization ratio.
-              </p>
             </div>
-            <div className="daisy-card-actions w-full">
+
+            <div className="daisy-card-actions mt-4 w-full">
               <Modal
                 modalId={"withdrawalLpModal"}
                 modalContent={
@@ -185,6 +163,11 @@ export function OpenLpSharesCard({
                   </button>
                 )}
               </Modal>
+              <p className="mt-2 text-center text-xs text-neutral-content">
+                Note: When you withdraw liquidity, you get back{" "}
+                {hyperdrive.baseToken.symbol} and withdrawal shares proportional
+                to your utilization ratio.
+              </p>
             </div>
           </>
         ) : (
