@@ -1,2 +1,3485 @@
 export const MockFixedPointMath = 
-{"abi":[{"type":"function","name":"divDown","inputs":[{"name":"a","type":"uint256","internalType":"uint256"},{"name":"b","type":"uint256","internalType":"uint256"}],"outputs":[{"name":"","type":"uint256","internalType":"uint256"}],"stateMutability":"pure"},{"type":"function","name":"divUp","inputs":[{"name":"a","type":"uint256","internalType":"uint256"},{"name":"b","type":"uint256","internalType":"uint256"}],"outputs":[{"name":"","type":"uint256","internalType":"uint256"}],"stateMutability":"pure"},{"type":"function","name":"exp","inputs":[{"name":"x","type":"int256","internalType":"int256"}],"outputs":[{"name":"r","type":"int256","internalType":"int256"}],"stateMutability":"pure"},{"type":"function","name":"ln","inputs":[{"name":"x","type":"int256","internalType":"int256"}],"outputs":[{"name":"","type":"int256","internalType":"int256"}],"stateMutability":"pure"},{"type":"function","name":"mulDivDown","inputs":[{"name":"x","type":"uint256","internalType":"uint256"},{"name":"y","type":"uint256","internalType":"uint256"},{"name":"d","type":"uint256","internalType":"uint256"}],"outputs":[{"name":"z","type":"uint256","internalType":"uint256"}],"stateMutability":"pure"},{"type":"function","name":"mulDivUp","inputs":[{"name":"x","type":"uint256","internalType":"uint256"},{"name":"y","type":"uint256","internalType":"uint256"},{"name":"d","type":"uint256","internalType":"uint256"}],"outputs":[{"name":"z","type":"uint256","internalType":"uint256"}],"stateMutability":"pure"},{"type":"function","name":"mulDown","inputs":[{"name":"a","type":"uint256","internalType":"uint256"},{"name":"b","type":"uint256","internalType":"uint256"}],"outputs":[{"name":"","type":"uint256","internalType":"uint256"}],"stateMutability":"pure"},{"type":"function","name":"mulUp","inputs":[{"name":"a","type":"uint256","internalType":"uint256"},{"name":"b","type":"uint256","internalType":"uint256"}],"outputs":[{"name":"","type":"uint256","internalType":"uint256"}],"stateMutability":"pure"},{"type":"function","name":"pow","inputs":[{"name":"x","type":"uint256","internalType":"uint256"},{"name":"y","type":"uint256","internalType":"uint256"}],"outputs":[{"name":"","type":"uint256","internalType":"uint256"}],"stateMutability":"pure"},{"type":"function","name":"updateWeightedAverage","inputs":[{"name":"_average","type":"uint256","internalType":"uint256"},{"name":"_totalWeight","type":"uint256","internalType":"uint256"},{"name":"_delta","type":"uint256","internalType":"uint256"},{"name":"_deltaWeight","type":"uint256","internalType":"uint256"},{"name":"_isAdding","type":"bool","internalType":"bool"}],"outputs":[{"name":"average","type":"uint256","internalType":"uint256"}],"stateMutability":"pure"},{"type":"error","name":"FixedPointMath_InvalidExponent","inputs":[]},{"type":"error","name":"FixedPointMath_InvalidInput","inputs":[]},{"type":"error","name":"FixedPointMath_NegativeOrZeroInput","inputs":[]}],"bytecode":{"object":"0x608060405234801561001057600080fd5b5061092a806100206000396000f3fe608060405234801561001057600080fd5b506004361061009e5760003560e01c80639ba5f52e116100665780639ba5f52e14610114578063b67bee0414610127578063cbe8623f1461013a578063e46751e31461014d578063f3e4f87c1461016057600080fd5b80630c9b9881146100a357806312bd6ac0146100c85780632e4c697f146100db57806381e5f7c9146100ee5780638e6f235314610101575b600080fd5b6100b66100b13660046107c3565b610173565b60405190815260200160405180910390f35b6100b66100d63660046107e5565b61018a565b6100b66100e93660046107c3565b6101a1565b6100b66100fc366004610811565b6101ae565b6100b661010f366004610863565b6101c9565b6100b66101223660046107c3565b6101dc565b6100b66101353660046107e5565b6101e9565b6100b66101483660046107c3565b6101f7565b6100b661015b366004610863565b610204565b6100b661016e3660046107c3565b610210565b600080610180848461021d565b9150505b92915050565b600080610198858585610232565b95945050505050565b6000806101808484610258565b6000806101be87878787876102b9565b979650505050505050565b6000806101d58361036d565b9392505050565b6000806101808484610398565b6000806101988585856103a9565b60008061018084846103c7565b6000806101d5836103dc565b6000806101808484610567565b60006101d58383670de0b6b3a76400006103a9565b600082600019048411830215820261024957600080fd5b50910281810615159190040190565b6000816000036102715750670de0b6b3a7640000610184565b8260000361028157506000610184565b81600061028d8561057c565b90508181026102a4670de0b6b3a764000082610892565b90506102af816103dc565b9695505050505050565b60008115610333576102f26102ce84876108ce565b6102d8858761021d565b6102e2888a61021d565b6102ec91906108ce565b906103c7565b905060006103008588610798565b9050600061030e86896107ad565b9050818310156103205781925061032c565b8083111561032c578092505b5050610198565b82850361034257506000610198565b6102af61034f84876108e1565b610359858761021d565b610363888a61021d565b6102ec91906108e1565b600080821361038f5760405163562f8dc760e11b815260040160405180910390fd5b6101848261057c565b60006101d583670de0b6b3a7640000845b60008260001904841183021582026103c057600080fd5b5091020490565b60006101d583670de0b6b3a764000084610232565b6000680248ce36a70cb26b3e1982136103f757506000919050565b680755bf798b4a1bf1e582126104205760405163df92cc9d60e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b39881029093036c240c330e9fb2d9cbaf0fd5aafb1981018102606090811d6d0277594991cfc85f6e2461837cd9018202811d6d1a521255e34f6a5061b25ef1c9c319018202811d6db1bbb201f443cf962f1a1d3db4a5018202811d6e02c72388d9f74f51a9331fed693f1419018202811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765084018402831d9081019084016d01d3967ed30fc4f89c02bab5708119010290911d6e0587f503bb6ea29d25fcb740196450019091026d360d7aeea093263ecc6e0ecb291760621b010574029d9dc38563c32e5c2f6dc192ee70ef65f9978af30260c3939093039290921c92915050565b60006101d58383670de0b6b3a7640000610232565b600080821361059e57604051636838feed60e11b815260040160405180910390fd5b5060606fffffffffffffffffffffffffffffffff821160071b82811c67ffffffffffffffff1060061b1782811c63ffffffff1060051b1782811c61ffff1060041b1782811c60ff10600390811b90911783811c600f1060021b1783811c909110600190811b90911783811c90911017609f81810383019390931b90921c6c465772b2bbbb5f824b15207a3081018102821d6d0388eaa27412d5aca026815d636e018102821d6d0df99ac502031bf953eff472fdcc018102821d6d13cdffb29d51d99322bdff5f2211018102821d6d0a0f742023def783a307a986912e018102821d6d01920d8043ca89b5239253284e42018102821d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7882018202831d6d0139601a2efabe717e604cbb4894018202831d6d02247f7a7b6594320649aa03aba1018202831d6c8c3f38e95a6b1ff2ab1c3b343619018202831d6d02384773bdf1ac5676facced60901901820290921d6cb9a025d814b29c212b8b1a07cd190102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a550602605f19919091017d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b302017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d90565b60008183116107a757826101d5565b50919050565b60008183116107bc57816101d5565b5090919050565b600080604083850312156107d657600080fd5b50508035926020909101359150565b6000806000606084860312156107fa57600080fd5b505081359360208301359350604090920135919050565b600080600080600060a0868803121561082957600080fd5b853594506020860135935060408601359250606086013591506080860135801515811461085557600080fd5b809150509295509295909350565b60006020828403121561087557600080fd5b5035919050565b634e487b7160e01b600052601160045260246000fd5b6000826108af57634e487b7160e01b600052601260045260246000fd5b600160ff1b8214600019841416156108c9576108c961087c565b500590565b808201808211156101845761018461087c565b818103818111156101845761018461087c56fea26469706673582212209a637d73dd25188a80c8cec2da4f63ed9aa2b28a6509e7ab093437dc346235fa64736f6c63430008130033","sourceMap":"136:1998:80:-:0;;;;;;;;;;;;;;;;;;;","linkReferences":{}},"deployedBytecode":{"object":"0x608060405234801561001057600080fd5b506004361061009e5760003560e01c80639ba5f52e116100665780639ba5f52e14610114578063b67bee0414610127578063cbe8623f1461013a578063e46751e31461014d578063f3e4f87c1461016057600080fd5b80630c9b9881146100a357806312bd6ac0146100c85780632e4c697f146100db57806381e5f7c9146100ee5780638e6f235314610101575b600080fd5b6100b66100b13660046107c3565b610173565b60405190815260200160405180910390f35b6100b66100d63660046107e5565b61018a565b6100b66100e93660046107c3565b6101a1565b6100b66100fc366004610811565b6101ae565b6100b661010f366004610863565b6101c9565b6100b66101223660046107c3565b6101dc565b6100b66101353660046107e5565b6101e9565b6100b66101483660046107c3565b6101f7565b6100b661015b366004610863565b610204565b6100b661016e3660046107c3565b610210565b600080610180848461021d565b9150505b92915050565b600080610198858585610232565b95945050505050565b6000806101808484610258565b6000806101be87878787876102b9565b979650505050505050565b6000806101d58361036d565b9392505050565b6000806101808484610398565b6000806101988585856103a9565b60008061018084846103c7565b6000806101d5836103dc565b6000806101808484610567565b60006101d58383670de0b6b3a76400006103a9565b600082600019048411830215820261024957600080fd5b50910281810615159190040190565b6000816000036102715750670de0b6b3a7640000610184565b8260000361028157506000610184565b81600061028d8561057c565b90508181026102a4670de0b6b3a764000082610892565b90506102af816103dc565b9695505050505050565b60008115610333576102f26102ce84876108ce565b6102d8858761021d565b6102e2888a61021d565b6102ec91906108ce565b906103c7565b905060006103008588610798565b9050600061030e86896107ad565b9050818310156103205781925061032c565b8083111561032c578092505b5050610198565b82850361034257506000610198565b6102af61034f84876108e1565b610359858761021d565b610363888a61021d565b6102ec91906108e1565b600080821361038f5760405163562f8dc760e11b815260040160405180910390fd5b6101848261057c565b60006101d583670de0b6b3a7640000845b60008260001904841183021582026103c057600080fd5b5091020490565b60006101d583670de0b6b3a764000084610232565b6000680248ce36a70cb26b3e1982136103f757506000919050565b680755bf798b4a1bf1e582126104205760405163df92cc9d60e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b39881029093036c240c330e9fb2d9cbaf0fd5aafb1981018102606090811d6d0277594991cfc85f6e2461837cd9018202811d6d1a521255e34f6a5061b25ef1c9c319018202811d6db1bbb201f443cf962f1a1d3db4a5018202811d6e02c72388d9f74f51a9331fed693f1419018202811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765084018402831d9081019084016d01d3967ed30fc4f89c02bab5708119010290911d6e0587f503bb6ea29d25fcb740196450019091026d360d7aeea093263ecc6e0ecb291760621b010574029d9dc38563c32e5c2f6dc192ee70ef65f9978af30260c3939093039290921c92915050565b60006101d58383670de0b6b3a7640000610232565b600080821361059e57604051636838feed60e11b815260040160405180910390fd5b5060606fffffffffffffffffffffffffffffffff821160071b82811c67ffffffffffffffff1060061b1782811c63ffffffff1060051b1782811c61ffff1060041b1782811c60ff10600390811b90911783811c600f1060021b1783811c909110600190811b90911783811c90911017609f81810383019390931b90921c6c465772b2bbbb5f824b15207a3081018102821d6d0388eaa27412d5aca026815d636e018102821d6d0df99ac502031bf953eff472fdcc018102821d6d13cdffb29d51d99322bdff5f2211018102821d6d0a0f742023def783a307a986912e018102821d6d01920d8043ca89b5239253284e42018102821d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7882018202831d6d0139601a2efabe717e604cbb4894018202831d6d02247f7a7b6594320649aa03aba1018202831d6c8c3f38e95a6b1ff2ab1c3b343619018202831d6d02384773bdf1ac5676facced60901901820290921d6cb9a025d814b29c212b8b1a07cd190102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a550602605f19919091017d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b302017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d90565b60008183116107a757826101d5565b50919050565b60008183116107bc57816101d5565b5090919050565b600080604083850312156107d657600080fd5b50508035926020909101359150565b6000806000606084860312156107fa57600080fd5b505081359360208301359350604090920135919050565b600080600080600060a0868803121561082957600080fd5b853594506020860135935060408601359250606086013591506080860135801515811461085557600080fd5b809150509295509295909350565b60006020828403121561087557600080fd5b5035919050565b634e487b7160e01b600052601160045260246000fd5b6000826108af57634e487b7160e01b600052601260045260246000fd5b600160ff1b8214600019841416156108c9576108c961087c565b500590565b808201808211156101845761018461087c565b818103818111156101845761018461087c56fea26469706673582212209a637d73dd25188a80c8cec2da4f63ed9aa2b28a6509e7ab093437dc346235fa64736f6c63430008130033","sourceMap":"136:1998:80:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;423:156;;;;;;:::i;:::-;;:::i;:::-;;;413:25:180;;;401:2;386:18;423:156:80;;;;;;;747:204;;;;;;:::i;:::-;;:::i;1273:148::-;;;;;;:::i;:::-;;:::i;1701:431::-;;;;;;:::i;:::-;;:::i;1566:129::-;;;;;;:::i;:::-;;:::i;585:156::-;;;;;;:::i;:::-;;:::i;209:208::-;;;;;;:::i;:::-;;:::i;1115:152::-;;;;;;:::i;:::-;;:::i;1427:133::-;;;;;;:::i;:::-;;:::i;957:152::-;;;;;;:::i;:::-;;:::i;423:156::-;485:7;504:14;521:28;544:1;547;521:22;:28::i;:::-;504:45;-1:-1:-1;;423:156:80;;;;;:::o;747:204::-;851:9;872:14;889:32;913:1;916;919;889:23;:32::i;:::-;872:49;747:204;-1:-1:-1;;;;;747:204:80:o;1273:148::-;1331:7;1350:14;1367:24;1386:1;1389;1367:18;:24::i;1701:431::-;1895:15;1922:14;1939:163;1989:8;2011:12;2037:6;2057:12;2083:9;1939:36;:163::i;:::-;1922:180;1701:431;-1:-1:-1;;;;;;;1701:431:80:o;1566:129::-;1611:6;1629:13;1645:20;1663:1;1645:17;:20::i;:::-;1629:36;1566:129;-1:-1:-1;;;1566:129:80:o;585:156::-;647:7;666:14;683:28;706:1;709;683:22;:28::i;209:208::-;315:9;336:14;353:34;379:1;382;385;353:25;:34::i;1115:152::-;1175:7;1194:14;1211:26;1232:1;1235;1211:20;:26::i;1427:133::-;1473:8;1493:13;1509:21;1528:1;1509:18;:21::i;957:152::-;1017:7;1036:14;1053:26;1074:1;1077;1053:20;:26::i;1771:119:66:-;1833:7;1860:22;1871:1;1874;1877:4;1860:10;:22::i;2683:748::-;2797:9;3062:1;-1:-1:-1;;3045:19:66;3042:1;3039:26;3036:1;3032:34;3025:42;3012:11;3008:60;2981:146;;3111:1;3108;3101:12;2981:146;-1:-1:-1;3378:9:66;;3325:27;;;3322:34;;3374:27;;;3301:114;;2683:748::o;4628:840::-;4686:7;4752:1;4757;4752:6;4748:47;;-1:-1:-1;150:4:66;4774:10;;4748:47;4848:1;4853;4848:6;4844:45;;-1:-1:-1;4877:1:66;4870:8;;4844:45;5052:1;5027:15;5230:14;5241:1;5230:3;:14::i;:::-;5217:27;-1:-1:-1;5322:18:66;;;5359:19;150:4;5322:18;5359:19;:::i;:::-;;;5451:9;5455:4;5451:3;:9::i;:::-;5436:25;4628:840;-1:-1:-1;;;;;;4628:840:66:o;13533:1801::-;13727:15;14002:9;13998:1330;;;14037:152;14144:27;14159:12;14144;:27;:::i;:::-;14087:28;:12;14108:6;14087:20;:28::i;:::-;14038:30;:12;14059:8;14038:20;:30::i;:::-;:77;;;;:::i;:::-;14037:85;;:152::i;:::-;14027:162;-1:-1:-1;14536:18:66;14557:20;:6;14568:8;14557:10;:20::i;:::-;14536:41;-1:-1:-1;14591:18:66;14612:20;:6;14623:8;14612:10;:20::i;:::-;14591:41;;14660:10;14650:7;:20;14646:164;;;14700:10;14690:20;;14646:164;;;14745:10;14735:7;:20;14731:79;;;14785:10;14775:20;;14731:79;14013:807;;13998:1330;;;15119:12;15103;:28;15099:42;;-1:-1:-1;15140:1:66;15133:8;;15099:42;15165:152;15272:27;15287:12;15272;:27;:::i;:::-;15215:28;:12;15236:6;15215:20;:28::i;:::-;15166:30;:12;15187:8;15166:20;:30::i;:::-;:77;;;;:::i;9363:160::-;9408:6;9435:1;9430;:6;9426:67;;9445:48;;-1:-1:-1;;;9445:48:66;;;;;;;;;;;9426:67;9510:6;9514:1;9510:3;:6::i;2164:165::-;2226:7;2253:22;2264:1;2267:4;2273:1;941:556;1057:9;1322:1;-1:-1:-1;;1305:19:66;1302:1;1299:26;1296:1;1292:34;1285:42;1272:11;1268:60;1241:146;;1371:1;1368;1361:12;1241:146;-1:-1:-1;1458:9:66;;1454:27;;941:556::o;4098:115::-;4158:7;4185:20;4194:1;4197:4;4203:1;4185:8;:20::i;5724:3347::-;5770:8;-1:-1:-1;;5947:1:66;:26;5943:40;;-1:-1:-1;5982:1:66;;5724:3347;-1:-1:-1;5724:3347:66:o;5943:40::-;6182:21;6177:1;:26;6173:99;;6228:44;;-1:-1:-1;;;6228:44:66;;;;;;;;;;;6173:99;6545:7;6539:2;6534:7;;;6533:19;;-1:-1:-1;6881:8:66;6965:2;6905:29;6894:7;;;6893:41;-1:-1:-1;;;6893:51:66;6892:75;;6993:29;6989:33;;6985:37;;;-1:-1:-1;;7664:35:66;;7719:5;;7299:2;7718:13;;;7735:32;7717:50;7787:5;;7786:13;;-1:-1:-1;;7785:51:66;7856:5;;7855:13;;7872:34;7854:52;7926:5;;7925:13;;-1:-1:-1;;7924:53:66;7997:5;;7996:13;;8013:35;7995:53;7305:32;7238:31;7234:35;;7289:5;;7288:13;;7287:50;;;7362:5;;;-1:-1:-1;;7362:40:66;7422:5;7421:13;;;7438:35;7420:53;7491:5;;;-1:-1:-1;;;7491:50:66;8413:10;8950:49;8917:82;9032:3;:7;;;;8916:124;;;;;;-1:-1:-1;;5724:3347:66:o;3707:115::-;3767:7;3794:20;3803:1;3806;3809:4;3794:8;:20::i;9583:3592::-;9628:8;9681:1;9676;:6;9672:60;;9691:41;;-1:-1:-1;;;9691:41:66;;;;;;;;;;;9672:60;-1:-1:-1;10698:2:66;10115:34;-1:-1:-1;;10109:1:66;10105:49;10212:9;;;10192:18;10189:33;10186:1;10182:41;10176:48;10274:9;;;10262:10;10259:25;10256:1;10252:33;10246:40;10332:9;;;10324:6;10321:21;10318:1;10314:29;10308:36;10388:9;;;10382:4;10379:19;10376:1;10372:27;;;10366:34;;;10443:9;;;10438:3;10435:18;10432:1;10428:26;10422:33;10498:9;;;10490:18;;;10487:1;10483:26;;;10477:33;;;10546:9;;;10538:18;;;10532:25;10728:3;:7;;;;;10714:22;;;;10761:17;;;11554:31;11550:35;;11605:5;;11604:13;;11621:32;11603:50;11673:5;;11672:13;;11689:33;11671:51;11742:5;;11741:13;;11758:33;11740:51;11811:5;;11810:13;;11827:33;11809:51;11880:5;;11879:13;;11896:32;11878:50;11948:5;;11947:13;;11964:30;11946:48;10951:31;10947:35;;11002:5;;11001:13;;11018:32;11000:50;11070:5;;11069:13;;11086:32;11068:50;11138:5;;11137:13;;-1:-1:-1;;11136:50:66;11206:5;;11205:13;;-1:-1:-1;;11204:50:66;11274:5;;11273:13;;;-1:-1:-1;;11272:50:66;11340:5;-1:-1:-1;;11340:46:66;12335:10;12725:43;12720:48;-1:-1:-1;;10694:6:66;;;;12848:71;:91;12827:112;13012:72;13007:77;13155:3;13149:9;;9583:3592::o;15507:104::-;15565:7;15595:1;15591;:5;:13;;15603:1;15591:13;;;-1:-1:-1;15599:1:66;15507:104;-1:-1:-1;15507:104:66:o;15784:::-;15842:7;15872:1;15868;:5;:13;;15880:1;15868:13;;;-1:-1:-1;15876:1:66;;15784:104;-1:-1:-1;15784:104:66:o;14:248:180:-;82:6;90;143:2;131:9;122:7;118:23;114:32;111:52;;;159:1;156;149:12;111:52;-1:-1:-1;;182:23:180;;;252:2;237:18;;;224:32;;-1:-1:-1;14:248:180:o;449:316::-;526:6;534;542;595:2;583:9;574:7;570:23;566:32;563:52;;;611:1;608;601:12;563:52;-1:-1:-1;;634:23:180;;;704:2;689:18;;676:32;;-1:-1:-1;755:2:180;740:18;;;727:32;;449:316;-1:-1:-1;449:316:180:o;770:547::-;862:6;870;878;886;894;947:3;935:9;926:7;922:23;918:33;915:53;;;964:1;961;954:12;915:53;1000:9;987:23;977:33;;1057:2;1046:9;1042:18;1029:32;1019:42;;1108:2;1097:9;1093:18;1080:32;1070:42;;1159:2;1148:9;1144:18;1131:32;1121:42;;1213:3;1202:9;1198:19;1185:33;1261:5;1254:13;1247:21;1240:5;1237:32;1227:60;;1283:1;1280;1273:12;1227:60;1306:5;1296:15;;;770:547;;;;;;;;:::o;1322:179::-;1380:6;1433:2;1421:9;1412:7;1408:23;1404:32;1401:52;;;1449:1;1446;1439:12;1401:52;-1:-1:-1;1472:23:180;;1322:179;-1:-1:-1;1322:179:180:o;1818:127::-;1879:10;1874:3;1870:20;1867:1;1860:31;1910:4;1907:1;1900:15;1934:4;1931:1;1924:15;1950:290;1989:1;2015;2005:132;;2059:10;2054:3;2050:20;2047:1;2040:31;2094:4;2091:1;2084:15;2122:4;2119:1;2112:15;2005:132;-1:-1:-1;;;2153:18:180;;-1:-1:-1;;2173:13:180;;2149:38;2146:64;;;2190:18;;:::i;:::-;-1:-1:-1;2224:10:180;;1950:290::o;2245:125::-;2310:9;;;2331:10;;;2328:36;;;2344:18;;:::i;2375:128::-;2442:9;;;2463:11;;;2460:37;;;2477:18;;:::i","linkReferences":{}},"methodIdentifiers":{"divDown(uint256,uint256)":"9ba5f52e","divUp(uint256,uint256)":"cbe8623f","exp(int256)":"e46751e3","ln(int256)":"8e6f2353","mulDivDown(uint256,uint256,uint256)":"b67bee04","mulDivUp(uint256,uint256,uint256)":"12bd6ac0","mulDown(uint256,uint256)":"0c9b9881","mulUp(uint256,uint256)":"f3e4f87c","pow(uint256,uint256)":"2e4c697f","updateWeightedAverage(uint256,uint256,uint256,uint256,bool)":"81e5f7c9"},"rawMetadata":"{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"FixedPointMath_InvalidExponent\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FixedPointMath_InvalidInput\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FixedPointMath_NegativeOrZeroInput\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"a\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"b\",\"type\":\"uint256\"}],\"name\":\"divDown\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"a\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"b\",\"type\":\"uint256\"}],\"name\":\"divUp\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int256\",\"name\":\"x\",\"type\":\"int256\"}],\"name\":\"exp\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"r\",\"type\":\"int256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int256\",\"name\":\"x\",\"type\":\"int256\"}],\"name\":\"ln\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"x\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"d\",\"type\":\"uint256\"}],\"name\":\"mulDivDown\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"z\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"x\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"d\",\"type\":\"uint256\"}],\"name\":\"mulDivUp\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"z\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"a\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"b\",\"type\":\"uint256\"}],\"name\":\"mulDown\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"a\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"b\",\"type\":\"uint256\"}],\"name\":\"mulUp\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"x\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"}],\"name\":\"pow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_average\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_totalWeight\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_delta\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_deltaWeight\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"_isAdding\",\"type\":\"bool\"}],\"name\":\"updateWeightedAverage\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"average\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"errors\":{\"FixedPointMath_InvalidExponent()\":[{\"notice\":\"###################### ### FixedPointMath ### ######################\"}]},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/test/MockFixedPointMath.sol\":\"MockFixedPointMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36\",\"dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x3b4f94e5480e7074e05b0d338d583569aef147f45365eb57daeb99f19fe817c3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2cc18b204ec94f80cd6b4876ea3c39dfb143fc4feff52e2a8d00ea72e6811644\",\"dweb:/ipfs/QmZHmZRvmJr8FxExBzKHSHYNZqcEgcgDcs4Z6gF1wPvBvj\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85\",\"dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x1c61ba57b783bfa408a4e208e80c1c117850d4d6c9f0e280263d3fcf57a8b2fd\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5b920d5f0f37014035b6cbba16d898e52654122a0c004a3f75050af93b799496\",\"dweb:/ipfs/QmaneaTDVXbw5HfevR2vFwXWw95EKWcBq8yMgMyWJPHKVW\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6\",\"dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8\",\"dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f\",\"dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6\",\"dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x3d2d86890e7287a59bc7171a030f98006a60271812a233027d2e42d8f31ef46c\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ecf29c3dedf328bd29caef4ce1eba85576d4c4b8d6f77fc255e37c24e8d44e1d\",\"dweb:/ipfs/QmVgmtYXzMkvR1GYsfqnJ1cH2ojmggoKmVuxKQZ9Rw78T1\"]},\"contracts/test/MockFixedPointMath.sol\":{\"keccak256\":\"0x5e82986f7623b7ebfefb3c2ac049880084b606dc0fe46e7182140360c6543026\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c6c6467ea0d201fbd0b98b8d65251cc4e9e79cfa88a1f697f1828b999b74dfcd\",\"dweb:/ipfs/QmYFNTqLhBNuBg37qMTh6nRPmnZ2h6DJkLkWHw7TuqgVMD\"]}},\"version\":1}","metadata":{"compiler":{"version":"0.8.19+commit.7dd6d404"},"language":"Solidity","output":{"abi":[{"inputs":[],"type":"error","name":"FixedPointMath_InvalidExponent"},{"inputs":[],"type":"error","name":"FixedPointMath_InvalidInput"},{"inputs":[],"type":"error","name":"FixedPointMath_NegativeOrZeroInput"},{"inputs":[{"internalType":"uint256","name":"a","type":"uint256"},{"internalType":"uint256","name":"b","type":"uint256"}],"stateMutability":"pure","type":"function","name":"divDown","outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"inputs":[{"internalType":"uint256","name":"a","type":"uint256"},{"internalType":"uint256","name":"b","type":"uint256"}],"stateMutability":"pure","type":"function","name":"divUp","outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"inputs":[{"internalType":"int256","name":"x","type":"int256"}],"stateMutability":"pure","type":"function","name":"exp","outputs":[{"internalType":"int256","name":"r","type":"int256"}]},{"inputs":[{"internalType":"int256","name":"x","type":"int256"}],"stateMutability":"pure","type":"function","name":"ln","outputs":[{"internalType":"int256","name":"","type":"int256"}]},{"inputs":[{"internalType":"uint256","name":"x","type":"uint256"},{"internalType":"uint256","name":"y","type":"uint256"},{"internalType":"uint256","name":"d","type":"uint256"}],"stateMutability":"pure","type":"function","name":"mulDivDown","outputs":[{"internalType":"uint256","name":"z","type":"uint256"}]},{"inputs":[{"internalType":"uint256","name":"x","type":"uint256"},{"internalType":"uint256","name":"y","type":"uint256"},{"internalType":"uint256","name":"d","type":"uint256"}],"stateMutability":"pure","type":"function","name":"mulDivUp","outputs":[{"internalType":"uint256","name":"z","type":"uint256"}]},{"inputs":[{"internalType":"uint256","name":"a","type":"uint256"},{"internalType":"uint256","name":"b","type":"uint256"}],"stateMutability":"pure","type":"function","name":"mulDown","outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"inputs":[{"internalType":"uint256","name":"a","type":"uint256"},{"internalType":"uint256","name":"b","type":"uint256"}],"stateMutability":"pure","type":"function","name":"mulUp","outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"inputs":[{"internalType":"uint256","name":"x","type":"uint256"},{"internalType":"uint256","name":"y","type":"uint256"}],"stateMutability":"pure","type":"function","name":"pow","outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"inputs":[{"internalType":"uint256","name":"_average","type":"uint256"},{"internalType":"uint256","name":"_totalWeight","type":"uint256"},{"internalType":"uint256","name":"_delta","type":"uint256"},{"internalType":"uint256","name":"_deltaWeight","type":"uint256"},{"internalType":"bool","name":"_isAdding","type":"bool"}],"stateMutability":"pure","type":"function","name":"updateWeightedAverage","outputs":[{"internalType":"uint256","name":"average","type":"uint256"}]}],"devdoc":{"kind":"dev","methods":{},"version":1},"userdoc":{"kind":"user","methods":{},"version":1}},"settings":{"remappings":["aave-v3-core/=lib/aave-v3-core/","create3-factory/=lib/yield-daddy/lib/create3-factory/","ds-test/=lib/forge-std/lib/ds-test/src/","forge-std/=lib/forge-std/src/","solmate/=lib/solmate/src/","yield-daddy/=lib/yield-daddy/"],"optimizer":{"enabled":true,"runs":200},"metadata":{"bytecodeHash":"ipfs"},"compilationTarget":{"contracts/test/MockFixedPointMath.sol":"MockFixedPointMath"},"libraries":{}},"sources":{"contracts/src/interfaces/IERC20.sol":{"keccak256":"0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4","urls":["bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36","dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL"],"license":"Apache-2.0"},"contracts/src/interfaces/IHyperdrive.sol":{"keccak256":"0x3b4f94e5480e7074e05b0d338d583569aef147f45365eb57daeb99f19fe817c3","urls":["bzz-raw://2cc18b204ec94f80cd6b4876ea3c39dfb143fc4feff52e2a8d00ea72e6811644","dweb:/ipfs/QmZHmZRvmJr8FxExBzKHSHYNZqcEgcgDcs4Z6gF1wPvBvj"],"license":"Apache-2.0"},"contracts/src/interfaces/IHyperdriveCore.sol":{"keccak256":"0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d","urls":["bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85","dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF"],"license":"Apache-2.0"},"contracts/src/interfaces/IHyperdriveRead.sol":{"keccak256":"0x1c61ba57b783bfa408a4e208e80c1c117850d4d6c9f0e280263d3fcf57a8b2fd","urls":["bzz-raw://5b920d5f0f37014035b6cbba16d898e52654122a0c004a3f75050af93b799496","dweb:/ipfs/QmaneaTDVXbw5HfevR2vFwXWw95EKWcBq8yMgMyWJPHKVW"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiToken.sol":{"keccak256":"0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad","urls":["bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6","dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiTokenCore.sol":{"keccak256":"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d","urls":["bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8","dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiTokenMetadata.sol":{"keccak256":"0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb","urls":["bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f","dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiTokenRead.sol":{"keccak256":"0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4","urls":["bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6","dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW"],"license":"Apache-2.0"},"contracts/src/libraries/FixedPointMath.sol":{"keccak256":"0x3d2d86890e7287a59bc7171a030f98006a60271812a233027d2e42d8f31ef46c","urls":["bzz-raw://ecf29c3dedf328bd29caef4ce1eba85576d4c4b8d6f77fc255e37c24e8d44e1d","dweb:/ipfs/QmVgmtYXzMkvR1GYsfqnJ1cH2ojmggoKmVuxKQZ9Rw78T1"],"license":"Apache-2.0"},"contracts/test/MockFixedPointMath.sol":{"keccak256":"0x5e82986f7623b7ebfefb3c2ac049880084b606dc0fe46e7182140360c6543026","urls":["bzz-raw://c6c6467ea0d201fbd0b98b8d65251cc4e9e79cfa88a1f697f1828b999b74dfcd","dweb:/ipfs/QmYFNTqLhBNuBg37qMTh6nRPmnZ2h6DJkLkWHw7TuqgVMD"],"license":"Apache-2.0"}},"version":1},"ast":{"absolutePath":"contracts/test/MockFixedPointMath.sol","id":18295,"exportedSymbols":{"FixedPointMath":[12293],"MockFixedPointMath":[18294]},"nodeType":"SourceUnit","src":"40:2095:80","nodes":[{"id":18079,"nodeType":"PragmaDirective","src":"40:23:80","nodes":[],"literals":["solidity","0.8",".19"]},{"id":18081,"nodeType":"ImportDirective","src":"65:69:80","nodes":[],"absolutePath":"contracts/src/libraries/FixedPointMath.sol","file":"../src/libraries/FixedPointMath.sol","nameLocation":"-1:-1:-1","scope":18295,"sourceUnit":12294,"symbolAliases":[{"foreign":{"id":18080,"name":"FixedPointMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12293,"src":"74:14:80","typeDescriptions":{}},"nameLocation":"-1:-1:-1"}],"unitAlias":""},{"id":18294,"nodeType":"ContractDefinition","src":"136:1998:80","nodes":[{"id":18084,"nodeType":"UsingForDirective","src":"170:33:80","nodes":[],"global":false,"libraryName":{"id":18082,"name":"FixedPointMath","nameLocations":["176:14:80"],"nodeType":"IdentifierPath","referencedDeclaration":12293,"src":"176:14:80"},"typeName":{"id":18083,"name":"uint256","nodeType":"ElementaryTypeName","src":"195:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}},{"id":18107,"nodeType":"FunctionDefinition","src":"209:208:80","nodes":[],"body":{"id":18106,"nodeType":"Block","src":"326:91:80","nodes":[],"statements":[{"assignments":[18096],"declarations":[{"constant":false,"id":18096,"mutability":"mutable","name":"result","nameLocation":"344:6:80","nodeType":"VariableDeclaration","scope":18106,"src":"336:14:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18095,"name":"uint256","nodeType":"ElementaryTypeName","src":"336:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":18103,"initialValue":{"arguments":[{"id":18099,"name":"x","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18086,"src":"379:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":18100,"name":"y","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18088,"src":"382:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":18101,"name":"d","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18090,"src":"385:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":18097,"name":"FixedPointMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12293,"src":"353:14:80","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_FixedPointMath_$12293_$","typeString":"type(library FixedPointMath)"}},"id":18098,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"368:10:80","memberName":"mulDivDown","nodeType":"MemberAccess","referencedDeclaration":11541,"src":"353:25:80","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256,uint256) pure returns (uint256)"}},"id":18102,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"353:34:80","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"336:51:80"},{"expression":{"id":18104,"name":"result","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18096,"src":"404:6:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":18094,"id":18105,"nodeType":"Return","src":"397:13:80"}]},"functionSelector":"b67bee04","implemented":true,"kind":"function","modifiers":[],"name":"mulDivDown","nameLocation":"218:10:80","parameters":{"id":18091,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18086,"mutability":"mutable","name":"x","nameLocation":"246:1:80","nodeType":"VariableDeclaration","scope":18107,"src":"238:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18085,"name":"uint256","nodeType":"ElementaryTypeName","src":"238:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":18088,"mutability":"mutable","name":"y","nameLocation":"265:1:80","nodeType":"VariableDeclaration","scope":18107,"src":"257:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18087,"name":"uint256","nodeType":"ElementaryTypeName","src":"257:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":18090,"mutability":"mutable","name":"d","nameLocation":"284:1:80","nodeType":"VariableDeclaration","scope":18107,"src":"276:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18089,"name":"uint256","nodeType":"ElementaryTypeName","src":"276:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"228:63:80"},"returnParameters":{"id":18094,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18093,"mutability":"mutable","name":"z","nameLocation":"323:1:80","nodeType":"VariableDeclaration","scope":18107,"src":"315:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18092,"name":"uint256","nodeType":"ElementaryTypeName","src":"315:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"314:11:80"},"scope":18294,"stateMutability":"pure","virtual":false,"visibility":"external"},{"id":18127,"nodeType":"FunctionDefinition","src":"423:156:80","nodes":[],"body":{"id":18126,"nodeType":"Block","src":"494:85:80","nodes":[],"statements":[{"assignments":[18117],"declarations":[{"constant":false,"id":18117,"mutability":"mutable","name":"result","nameLocation":"512:6:80","nodeType":"VariableDeclaration","scope":18126,"src":"504:14:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18116,"name":"uint256","nodeType":"ElementaryTypeName","src":"504:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":18123,"initialValue":{"arguments":[{"id":18120,"name":"a","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18109,"src":"544:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":18121,"name":"b","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18111,"src":"547:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":18118,"name":"FixedPointMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12293,"src":"521:14:80","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_FixedPointMath_$12293_$","typeString":"type(library FixedPointMath)"}},"id":18119,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"536:7:80","memberName":"mulDown","nodeType":"MemberAccess","referencedDeclaration":11559,"src":"521:22:80","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256) pure returns (uint256)"}},"id":18122,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"521:28:80","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"504:45:80"},{"expression":{"id":18124,"name":"result","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18117,"src":"566:6:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":18115,"id":18125,"nodeType":"Return","src":"559:13:80"}]},"functionSelector":"0c9b9881","implemented":true,"kind":"function","modifiers":[],"name":"mulDown","nameLocation":"432:7:80","parameters":{"id":18112,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18109,"mutability":"mutable","name":"a","nameLocation":"448:1:80","nodeType":"VariableDeclaration","scope":18127,"src":"440:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18108,"name":"uint256","nodeType":"ElementaryTypeName","src":"440:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":18111,"mutability":"mutable","name":"b","nameLocation":"459:1:80","nodeType":"VariableDeclaration","scope":18127,"src":"451:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18110,"name":"uint256","nodeType":"ElementaryTypeName","src":"451:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"439:22:80"},"returnParameters":{"id":18115,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18114,"mutability":"mutable","name":"","nameLocation":"-1:-1:-1","nodeType":"VariableDeclaration","scope":18127,"src":"485:7:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18113,"name":"uint256","nodeType":"ElementaryTypeName","src":"485:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"484:9:80"},"scope":18294,"stateMutability":"pure","virtual":false,"visibility":"external"},{"id":18147,"nodeType":"FunctionDefinition","src":"585:156:80","nodes":[],"body":{"id":18146,"nodeType":"Block","src":"656:85:80","nodes":[],"statements":[{"assignments":[18137],"declarations":[{"constant":false,"id":18137,"mutability":"mutable","name":"result","nameLocation":"674:6:80","nodeType":"VariableDeclaration","scope":18146,"src":"666:14:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18136,"name":"uint256","nodeType":"ElementaryTypeName","src":"666:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":18143,"initialValue":{"arguments":[{"id":18140,"name":"a","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18129,"src":"706:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":18141,"name":"b","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18131,"src":"709:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":18138,"name":"FixedPointMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12293,"src":"683:14:80","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_FixedPointMath_$12293_$","typeString":"type(library FixedPointMath)"}},"id":18139,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"698:7:80","memberName":"divDown","nodeType":"MemberAccess","referencedDeclaration":11577,"src":"683:22:80","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256) pure returns (uint256)"}},"id":18142,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"683:28:80","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"666:45:80"},{"expression":{"id":18144,"name":"result","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18137,"src":"728:6:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":18135,"id":18145,"nodeType":"Return","src":"721:13:80"}]},"functionSelector":"9ba5f52e","implemented":true,"kind":"function","modifiers":[],"name":"divDown","nameLocation":"594:7:80","parameters":{"id":18132,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18129,"mutability":"mutable","name":"a","nameLocation":"610:1:80","nodeType":"VariableDeclaration","scope":18147,"src":"602:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18128,"name":"uint256","nodeType":"ElementaryTypeName","src":"602:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":18131,"mutability":"mutable","name":"b","nameLocation":"621:1:80","nodeType":"VariableDeclaration","scope":18147,"src":"613:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18130,"name":"uint256","nodeType":"ElementaryTypeName","src":"613:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"601:22:80"},"returnParameters":{"id":18135,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18134,"mutability":"mutable","name":"","nameLocation":"-1:-1:-1","nodeType":"VariableDeclaration","scope":18147,"src":"647:7:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18133,"name":"uint256","nodeType":"ElementaryTypeName","src":"647:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"646:9:80"},"scope":18294,"stateMutability":"pure","virtual":false,"visibility":"external"},{"id":18170,"nodeType":"FunctionDefinition","src":"747:204:80","nodes":[],"body":{"id":18169,"nodeType":"Block","src":"862:89:80","nodes":[],"statements":[{"assignments":[18159],"declarations":[{"constant":false,"id":18159,"mutability":"mutable","name":"result","nameLocation":"880:6:80","nodeType":"VariableDeclaration","scope":18169,"src":"872:14:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18158,"name":"uint256","nodeType":"ElementaryTypeName","src":"872:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":18166,"initialValue":{"arguments":[{"id":18162,"name":"x","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18149,"src":"913:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":18163,"name":"y","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18151,"src":"916:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":18164,"name":"d","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18153,"src":"919:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":18160,"name":"FixedPointMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12293,"src":"889:14:80","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_FixedPointMath_$12293_$","typeString":"type(library FixedPointMath)"}},"id":18161,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"904:8:80","memberName":"mulDivUp","nodeType":"MemberAccess","referencedDeclaration":11591,"src":"889:23:80","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256,uint256) pure returns (uint256)"}},"id":18165,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"889:32:80","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"872:49:80"},{"expression":{"id":18167,"name":"result","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18159,"src":"938:6:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":18157,"id":18168,"nodeType":"Return","src":"931:13:80"}]},"functionSelector":"12bd6ac0","implemented":true,"kind":"function","modifiers":[],"name":"mulDivUp","nameLocation":"756:8:80","parameters":{"id":18154,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18149,"mutability":"mutable","name":"x","nameLocation":"782:1:80","nodeType":"VariableDeclaration","scope":18170,"src":"774:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18148,"name":"uint256","nodeType":"ElementaryTypeName","src":"774:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":18151,"mutability":"mutable","name":"y","nameLocation":"801:1:80","nodeType":"VariableDeclaration","scope":18170,"src":"793:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18150,"name":"uint256","nodeType":"ElementaryTypeName","src":"793:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":18153,"mutability":"mutable","name":"d","nameLocation":"820:1:80","nodeType":"VariableDeclaration","scope":18170,"src":"812:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18152,"name":"uint256","nodeType":"ElementaryTypeName","src":"812:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"764:63:80"},"returnParameters":{"id":18157,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18156,"mutability":"mutable","name":"z","nameLocation":"859:1:80","nodeType":"VariableDeclaration","scope":18170,"src":"851:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18155,"name":"uint256","nodeType":"ElementaryTypeName","src":"851:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"850:11:80"},"scope":18294,"stateMutability":"pure","virtual":false,"visibility":"external"},{"id":18190,"nodeType":"FunctionDefinition","src":"957:152:80","nodes":[],"body":{"id":18189,"nodeType":"Block","src":"1026:83:80","nodes":[],"statements":[{"assignments":[18180],"declarations":[{"constant":false,"id":18180,"mutability":"mutable","name":"result","nameLocation":"1044:6:80","nodeType":"VariableDeclaration","scope":18189,"src":"1036:14:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18179,"name":"uint256","nodeType":"ElementaryTypeName","src":"1036:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":18186,"initialValue":{"arguments":[{"id":18183,"name":"a","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18172,"src":"1074:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":18184,"name":"b","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18174,"src":"1077:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":18181,"name":"FixedPointMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12293,"src":"1053:14:80","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_FixedPointMath_$12293_$","typeString":"type(library FixedPointMath)"}},"id":18182,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"1068:5:80","memberName":"mulUp","nodeType":"MemberAccess","referencedDeclaration":11609,"src":"1053:20:80","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256) pure returns (uint256)"}},"id":18185,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"1053:26:80","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"1036:43:80"},{"expression":{"id":18187,"name":"result","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18180,"src":"1096:6:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":18178,"id":18188,"nodeType":"Return","src":"1089:13:80"}]},"functionSelector":"f3e4f87c","implemented":true,"kind":"function","modifiers":[],"name":"mulUp","nameLocation":"966:5:80","parameters":{"id":18175,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18172,"mutability":"mutable","name":"a","nameLocation":"980:1:80","nodeType":"VariableDeclaration","scope":18190,"src":"972:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18171,"name":"uint256","nodeType":"ElementaryTypeName","src":"972:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":18174,"mutability":"mutable","name":"b","nameLocation":"991:1:80","nodeType":"VariableDeclaration","scope":18190,"src":"983:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18173,"name":"uint256","nodeType":"ElementaryTypeName","src":"983:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"971:22:80"},"returnParameters":{"id":18178,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18177,"mutability":"mutable","name":"","nameLocation":"-1:-1:-1","nodeType":"VariableDeclaration","scope":18190,"src":"1017:7:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18176,"name":"uint256","nodeType":"ElementaryTypeName","src":"1017:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"1016:9:80"},"scope":18294,"stateMutability":"pure","virtual":false,"visibility":"external"},{"id":18210,"nodeType":"FunctionDefinition","src":"1115:152:80","nodes":[],"body":{"id":18209,"nodeType":"Block","src":"1184:83:80","nodes":[],"statements":[{"assignments":[18200],"declarations":[{"constant":false,"id":18200,"mutability":"mutable","name":"result","nameLocation":"1202:6:80","nodeType":"VariableDeclaration","scope":18209,"src":"1194:14:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18199,"name":"uint256","nodeType":"ElementaryTypeName","src":"1194:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":18206,"initialValue":{"arguments":[{"id":18203,"name":"a","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18192,"src":"1232:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":18204,"name":"b","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18194,"src":"1235:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":18201,"name":"FixedPointMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12293,"src":"1211:14:80","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_FixedPointMath_$12293_$","typeString":"type(library FixedPointMath)"}},"id":18202,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"1226:5:80","memberName":"divUp","nodeType":"MemberAccess","referencedDeclaration":11627,"src":"1211:20:80","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256) pure returns (uint256)"}},"id":18205,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"1211:26:80","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"1194:43:80"},{"expression":{"id":18207,"name":"result","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18200,"src":"1254:6:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":18198,"id":18208,"nodeType":"Return","src":"1247:13:80"}]},"functionSelector":"cbe8623f","implemented":true,"kind":"function","modifiers":[],"name":"divUp","nameLocation":"1124:5:80","parameters":{"id":18195,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18192,"mutability":"mutable","name":"a","nameLocation":"1138:1:80","nodeType":"VariableDeclaration","scope":18210,"src":"1130:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18191,"name":"uint256","nodeType":"ElementaryTypeName","src":"1130:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":18194,"mutability":"mutable","name":"b","nameLocation":"1149:1:80","nodeType":"VariableDeclaration","scope":18210,"src":"1141:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18193,"name":"uint256","nodeType":"ElementaryTypeName","src":"1141:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"1129:22:80"},"returnParameters":{"id":18198,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18197,"mutability":"mutable","name":"","nameLocation":"-1:-1:-1","nodeType":"VariableDeclaration","scope":18210,"src":"1175:7:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18196,"name":"uint256","nodeType":"ElementaryTypeName","src":"1175:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"1174:9:80"},"scope":18294,"stateMutability":"pure","virtual":false,"visibility":"external"},{"id":18230,"nodeType":"FunctionDefinition","src":"1273:148:80","nodes":[],"body":{"id":18229,"nodeType":"Block","src":"1340:81:80","nodes":[],"statements":[{"assignments":[18220],"declarations":[{"constant":false,"id":18220,"mutability":"mutable","name":"result","nameLocation":"1358:6:80","nodeType":"VariableDeclaration","scope":18229,"src":"1350:14:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18219,"name":"uint256","nodeType":"ElementaryTypeName","src":"1350:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":18226,"initialValue":{"arguments":[{"id":18223,"name":"x","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18212,"src":"1386:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":18224,"name":"y","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18214,"src":"1389:1:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":18221,"name":"FixedPointMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12293,"src":"1367:14:80","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_FixedPointMath_$12293_$","typeString":"type(library FixedPointMath)"}},"id":18222,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"1382:3:80","memberName":"pow","nodeType":"MemberAccess","referencedDeclaration":11686,"src":"1367:18:80","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256) pure returns (uint256)"}},"id":18225,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"1367:24:80","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"1350:41:80"},{"expression":{"id":18227,"name":"result","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18220,"src":"1408:6:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":18218,"id":18228,"nodeType":"Return","src":"1401:13:80"}]},"functionSelector":"2e4c697f","implemented":true,"kind":"function","modifiers":[],"name":"pow","nameLocation":"1282:3:80","parameters":{"id":18215,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18212,"mutability":"mutable","name":"x","nameLocation":"1294:1:80","nodeType":"VariableDeclaration","scope":18230,"src":"1286:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18211,"name":"uint256","nodeType":"ElementaryTypeName","src":"1286:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":18214,"mutability":"mutable","name":"y","nameLocation":"1305:1:80","nodeType":"VariableDeclaration","scope":18230,"src":"1297:9:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18213,"name":"uint256","nodeType":"ElementaryTypeName","src":"1297:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"1285:22:80"},"returnParameters":{"id":18218,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18217,"mutability":"mutable","name":"","nameLocation":"-1:-1:-1","nodeType":"VariableDeclaration","scope":18230,"src":"1331:7:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18216,"name":"uint256","nodeType":"ElementaryTypeName","src":"1331:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"1330:9:80"},"scope":18294,"stateMutability":"pure","virtual":false,"visibility":"external"},{"id":18247,"nodeType":"FunctionDefinition","src":"1427:133:80","nodes":[],"body":{"id":18246,"nodeType":"Block","src":"1483:77:80","nodes":[],"statements":[{"assignments":[18238],"declarations":[{"constant":false,"id":18238,"mutability":"mutable","name":"result","nameLocation":"1500:6:80","nodeType":"VariableDeclaration","scope":18246,"src":"1493:13:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"},"typeName":{"id":18237,"name":"int256","nodeType":"ElementaryTypeName","src":"1493:6:80","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"visibility":"internal"}],"id":18243,"initialValue":{"arguments":[{"id":18241,"name":"x","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18232,"src":"1528:1:80","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_int256","typeString":"int256"}],"expression":{"id":18239,"name":"FixedPointMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12293,"src":"1509:14:80","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_FixedPointMath_$12293_$","typeString":"type(library FixedPointMath)"}},"id":18240,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"1524:3:80","memberName":"exp","nodeType":"MemberAccess","referencedDeclaration":11883,"src":"1509:18:80","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_int256_$returns$_t_int256_$","typeString":"function (int256) pure returns (int256)"}},"id":18242,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"1509:21:80","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"nodeType":"VariableDeclarationStatement","src":"1493:37:80"},{"expression":{"id":18244,"name":"result","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18238,"src":"1547:6:80","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"functionReturnParameters":18236,"id":18245,"nodeType":"Return","src":"1540:13:80"}]},"functionSelector":"e46751e3","implemented":true,"kind":"function","modifiers":[],"name":"exp","nameLocation":"1436:3:80","parameters":{"id":18233,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18232,"mutability":"mutable","name":"x","nameLocation":"1447:1:80","nodeType":"VariableDeclaration","scope":18247,"src":"1440:8:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"},"typeName":{"id":18231,"name":"int256","nodeType":"ElementaryTypeName","src":"1440:6:80","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"visibility":"internal"}],"src":"1439:10:80"},"returnParameters":{"id":18236,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18235,"mutability":"mutable","name":"r","nameLocation":"1480:1:80","nodeType":"VariableDeclaration","scope":18247,"src":"1473:8:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"},"typeName":{"id":18234,"name":"int256","nodeType":"ElementaryTypeName","src":"1473:6:80","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"visibility":"internal"}],"src":"1472:10:80"},"scope":18294,"stateMutability":"pure","virtual":false,"visibility":"external"},{"id":18264,"nodeType":"FunctionDefinition","src":"1566:129:80","nodes":[],"body":{"id":18263,"nodeType":"Block","src":"1619:76:80","nodes":[],"statements":[{"assignments":[18255],"declarations":[{"constant":false,"id":18255,"mutability":"mutable","name":"result","nameLocation":"1636:6:80","nodeType":"VariableDeclaration","scope":18263,"src":"1629:13:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"},"typeName":{"id":18254,"name":"int256","nodeType":"ElementaryTypeName","src":"1629:6:80","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"visibility":"internal"}],"id":18260,"initialValue":{"arguments":[{"id":18258,"name":"x","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18249,"src":"1663:1:80","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_int256","typeString":"int256"}],"expression":{"id":18256,"name":"FixedPointMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12293,"src":"1645:14:80","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_FixedPointMath_$12293_$","typeString":"type(library FixedPointMath)"}},"id":18257,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"1660:2:80","memberName":"ln","nodeType":"MemberAccess","referencedDeclaration":11905,"src":"1645:17:80","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_int256_$returns$_t_int256_$","typeString":"function (int256) pure returns (int256)"}},"id":18259,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"1645:20:80","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"nodeType":"VariableDeclarationStatement","src":"1629:36:80"},{"expression":{"id":18261,"name":"result","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18255,"src":"1682:6:80","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"functionReturnParameters":18253,"id":18262,"nodeType":"Return","src":"1675:13:80"}]},"functionSelector":"8e6f2353","implemented":true,"kind":"function","modifiers":[],"name":"ln","nameLocation":"1575:2:80","parameters":{"id":18250,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18249,"mutability":"mutable","name":"x","nameLocation":"1585:1:80","nodeType":"VariableDeclaration","scope":18264,"src":"1578:8:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"},"typeName":{"id":18248,"name":"int256","nodeType":"ElementaryTypeName","src":"1578:6:80","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"visibility":"internal"}],"src":"1577:10:80"},"returnParameters":{"id":18253,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18252,"mutability":"mutable","name":"","nameLocation":"-1:-1:-1","nodeType":"VariableDeclaration","scope":18264,"src":"1611:6:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"},"typeName":{"id":18251,"name":"int256","nodeType":"ElementaryTypeName","src":"1611:6:80","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"visibility":"internal"}],"src":"1610:8:80"},"scope":18294,"stateMutability":"pure","virtual":false,"visibility":"external"},{"id":18293,"nodeType":"FunctionDefinition","src":"1701:431:80","nodes":[],"body":{"id":18292,"nodeType":"Block","src":"1912:220:80","nodes":[],"statements":[{"assignments":[18280],"declarations":[{"constant":false,"id":18280,"mutability":"mutable","name":"result","nameLocation":"1930:6:80","nodeType":"VariableDeclaration","scope":18292,"src":"1922:14:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18279,"name":"uint256","nodeType":"ElementaryTypeName","src":"1922:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":18289,"initialValue":{"arguments":[{"id":18283,"name":"_average","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18266,"src":"1989:8:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":18284,"name":"_totalWeight","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18268,"src":"2011:12:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":18285,"name":"_delta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18270,"src":"2037:6:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":18286,"name":"_deltaWeight","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18272,"src":"2057:12:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":18287,"name":"_isAdding","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18274,"src":"2083:9:80","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"}],"expression":{"id":18281,"name":"FixedPointMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12293,"src":"1939:14:80","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_FixedPointMath_$12293_$","typeString":"type(library FixedPointMath)"}},"id":18282,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"1954:21:80","memberName":"updateWeightedAverage","nodeType":"MemberAccess","referencedDeclaration":12220,"src":"1939:36:80","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$","typeString":"function (uint256,uint256,uint256,uint256,bool) pure returns (uint256)"}},"id":18288,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"1939:163:80","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"1922:180:80"},{"expression":{"id":18290,"name":"result","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18280,"src":"2119:6:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":18278,"id":18291,"nodeType":"Return","src":"2112:13:80"}]},"functionSelector":"81e5f7c9","implemented":true,"kind":"function","modifiers":[],"name":"updateWeightedAverage","nameLocation":"1710:21:80","parameters":{"id":18275,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18266,"mutability":"mutable","name":"_average","nameLocation":"1749:8:80","nodeType":"VariableDeclaration","scope":18293,"src":"1741:16:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18265,"name":"uint256","nodeType":"ElementaryTypeName","src":"1741:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":18268,"mutability":"mutable","name":"_totalWeight","nameLocation":"1775:12:80","nodeType":"VariableDeclaration","scope":18293,"src":"1767:20:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18267,"name":"uint256","nodeType":"ElementaryTypeName","src":"1767:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":18270,"mutability":"mutable","name":"_delta","nameLocation":"1805:6:80","nodeType":"VariableDeclaration","scope":18293,"src":"1797:14:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18269,"name":"uint256","nodeType":"ElementaryTypeName","src":"1797:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":18272,"mutability":"mutable","name":"_deltaWeight","nameLocation":"1829:12:80","nodeType":"VariableDeclaration","scope":18293,"src":"1821:20:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18271,"name":"uint256","nodeType":"ElementaryTypeName","src":"1821:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":18274,"mutability":"mutable","name":"_isAdding","nameLocation":"1856:9:80","nodeType":"VariableDeclaration","scope":18293,"src":"1851:14:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":18273,"name":"bool","nodeType":"ElementaryTypeName","src":"1851:4:80","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"visibility":"internal"}],"src":"1731:140:80"},"returnParameters":{"id":18278,"nodeType":"ParameterList","parameters":[{"constant":false,"id":18277,"mutability":"mutable","name":"average","nameLocation":"1903:7:80","nodeType":"VariableDeclaration","scope":18293,"src":"1895:15:80","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":18276,"name":"uint256","nodeType":"ElementaryTypeName","src":"1895:7:80","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"1894:17:80"},"scope":18294,"stateMutability":"pure","virtual":false,"visibility":"external"}],"abstract":false,"baseContracts":[],"canonicalName":"MockFixedPointMath","contractDependencies":[],"contractKind":"contract","fullyImplemented":true,"linearizedBaseContracts":[18294],"name":"MockFixedPointMath","nameLocation":"145:18:80","scope":18295,"usedErrors":[5620,5622,5624]}],"license":"Apache-2.0"},"id":80} as const;
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "ExpInvalidExponent",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "LnInvalidInput",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "a",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "b",
+          "type": "uint256"
+        }
+      ],
+      "name": "divDown",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "a",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "b",
+          "type": "uint256"
+        }
+      ],
+      "name": "divUp",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int256",
+          "name": "x",
+          "type": "int256"
+        }
+      ],
+      "name": "exp",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "r",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int256",
+          "name": "x",
+          "type": "int256"
+        }
+      ],
+      "name": "ln",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "x",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "y",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "d",
+          "type": "uint256"
+        }
+      ],
+      "name": "mulDivDown",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "z",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "x",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "y",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "d",
+          "type": "uint256"
+        }
+      ],
+      "name": "mulDivUp",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "z",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "a",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "b",
+          "type": "uint256"
+        }
+      ],
+      "name": "mulDown",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "a",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "b",
+          "type": "uint256"
+        }
+      ],
+      "name": "mulUp",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "x",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "y",
+          "type": "uint256"
+        }
+      ],
+      "name": "pow",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_average",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_totalWeight",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_delta",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_deltaWeight",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_isAdding",
+          "type": "bool"
+        }
+      ],
+      "name": "updateWeightedAverage",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "average",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x608060405234801561001057600080fd5b5061090e806100206000396000f3fe608060405234801561001057600080fd5b506004361061009e5760003560e01c80639ba5f52e116100665780639ba5f52e14610114578063b67bee0414610127578063cbe8623f1461013a578063e46751e31461014d578063f3e4f87c1461016057600080fd5b80630c9b9881146100a357806312bd6ac0146100c85780632e4c697f146100db57806381e5f7c9146100ee5780638e6f235314610101575b600080fd5b6100b66100b13660046107a7565b610173565b60405190815260200160405180910390f35b6100b66100d63660046107c9565b61018a565b6100b66100e93660046107a7565b6101a1565b6100b66100fc3660046107f5565b6101ae565b6100b661010f366004610847565b6101c9565b6100b66101223660046107a7565b6101dc565b6100b66101353660046107c9565b6101e9565b6100b66101483660046107a7565b6101f7565b6100b661015b366004610847565b610204565b6100b661016e3660046107a7565b610210565b600080610180848461021d565b9150505b92915050565b600080610198858585610232565b95945050505050565b6000806101808484610258565b6000806101be87878787876102b9565b979650505050505050565b6000806101d58361037c565b9392505050565b6000806101808484610598565b6000806101988585856105a9565b60008061018084846105c7565b6000806101d5836105dc565b6000806101808484610767565b60006101d58383670de0b6b3a76400006105a9565b600082600019048411830215820261024957600080fd5b50910281810615159190040190565b6000816000036102715750670de0b6b3a7640000610184565b8260000361028157506000610184565b81600061028d8561037c565b90508181026102a4670de0b6b3a764000082610876565b90506102af816105dc565b9695505050505050565b6000826000036102ca575084610198565b8115610342576103016102dd84876108b2565b6102e7858761021d565b6102f1888a61021d565b6102fb91906108b2565b90610598565b9050600061030f858861077c565b9050600061031d8689610791565b90508183101561032f5781925061033b565b8083111561033b578092505b5050610198565b82850361035157506000610198565b6102af61035e84876108c5565b6103688587610767565b610372888a61021d565b6102fb91906108c5565b600080821361039e5760405163e61b497560e01b815260040160405180910390fd5b5060606fffffffffffffffffffffffffffffffff821160071b82811c67ffffffffffffffff1060061b1782811c63ffffffff1060051b1782811c61ffff1060041b1782811c60ff10600390811b90911783811c600f1060021b1783811c909110600190811b90911783811c90911017609f81810383019390931b90921c6c465772b2bbbb5f824b15207a3081018102821d6d0388eaa27412d5aca026815d636e018102821d6d0df99ac502031bf953eff472fdcc018102821d6d13cdffb29d51d99322bdff5f2211018102821d6d0a0f742023def783a307a986912e018102821d6d01920d8043ca89b5239253284e42018102821d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7882018202831d6d0139601a2efabe717e604cbb4894018202831d6d02247f7a7b6594320649aa03aba1018202831d6c8c3f38e95a6b1ff2ab1c3b343619018202831d6d02384773bdf1ac5676facced60901901820290921d6cb9a025d814b29c212b8b1a07cd190102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a550602605f19919091017d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b302017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d90565b60006101d583670de0b6b3a7640000845b60008260001904841183021582026105c057600080fd5b5091020490565b60006101d583670de0b6b3a764000084610232565b6000680248ce36a70cb26b3e1982136105f757506000919050565b680755bf798b4a1bf1e58212610620576040516373a2d6b160e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b39881029093036c240c330e9fb2d9cbaf0fd5aafb1981018102606090811d6d0277594991cfc85f6e2461837cd9018202811d6d1a521255e34f6a5061b25ef1c9c319018202811d6db1bbb201f443cf962f1a1d3db4a5018202811d6e02c72388d9f74f51a9331fed693f1419018202811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765084018402831d9081019084016d01d3967ed30fc4f89c02bab5708119010290911d6e0587f503bb6ea29d25fcb740196450019091026d360d7aeea093263ecc6e0ecb291760621b010574029d9dc38563c32e5c2f6dc192ee70ef65f9978af30260c3939093039290921c92915050565b60006101d58383670de0b6b3a7640000610232565b600081831161078b57826101d5565b50919050565b60008183116107a057816101d5565b5090919050565b600080604083850312156107ba57600080fd5b50508035926020909101359150565b6000806000606084860312156107de57600080fd5b505081359360208301359350604090920135919050565b600080600080600060a0868803121561080d57600080fd5b853594506020860135935060408601359250606086013591506080860135801515811461083957600080fd5b809150509295509295909350565b60006020828403121561085957600080fd5b5035919050565b634e487b7160e01b600052601160045260246000fd5b60008261089357634e487b7160e01b600052601260045260246000fd5b600160ff1b8214600019841416156108ad576108ad610860565b500590565b8082018082111561018457610184610860565b818103818111156101845761018461086056fea2646970667358221220b8d38cb791ce556dd63c55638f386636369e15b42a2b58fd113c26eb532e958864736f6c63430008140033",
+    "sourceMap": "136:1998:85:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561001057600080fd5b506004361061009e5760003560e01c80639ba5f52e116100665780639ba5f52e14610114578063b67bee0414610127578063cbe8623f1461013a578063e46751e31461014d578063f3e4f87c1461016057600080fd5b80630c9b9881146100a357806312bd6ac0146100c85780632e4c697f146100db57806381e5f7c9146100ee5780638e6f235314610101575b600080fd5b6100b66100b13660046107a7565b610173565b60405190815260200160405180910390f35b6100b66100d63660046107c9565b61018a565b6100b66100e93660046107a7565b6101a1565b6100b66100fc3660046107f5565b6101ae565b6100b661010f366004610847565b6101c9565b6100b66101223660046107a7565b6101dc565b6100b66101353660046107c9565b6101e9565b6100b66101483660046107a7565b6101f7565b6100b661015b366004610847565b610204565b6100b661016e3660046107a7565b610210565b600080610180848461021d565b9150505b92915050565b600080610198858585610232565b95945050505050565b6000806101808484610258565b6000806101be87878787876102b9565b979650505050505050565b6000806101d58361037c565b9392505050565b6000806101808484610598565b6000806101988585856105a9565b60008061018084846105c7565b6000806101d5836105dc565b6000806101808484610767565b60006101d58383670de0b6b3a76400006105a9565b600082600019048411830215820261024957600080fd5b50910281810615159190040190565b6000816000036102715750670de0b6b3a7640000610184565b8260000361028157506000610184565b81600061028d8561037c565b90508181026102a4670de0b6b3a764000082610876565b90506102af816105dc565b9695505050505050565b6000826000036102ca575084610198565b8115610342576103016102dd84876108b2565b6102e7858761021d565b6102f1888a61021d565b6102fb91906108b2565b90610598565b9050600061030f858861077c565b9050600061031d8689610791565b90508183101561032f5781925061033b565b8083111561033b578092505b5050610198565b82850361035157506000610198565b6102af61035e84876108c5565b6103688587610767565b610372888a61021d565b6102fb91906108c5565b600080821361039e5760405163e61b497560e01b815260040160405180910390fd5b5060606fffffffffffffffffffffffffffffffff821160071b82811c67ffffffffffffffff1060061b1782811c63ffffffff1060051b1782811c61ffff1060041b1782811c60ff10600390811b90911783811c600f1060021b1783811c909110600190811b90911783811c90911017609f81810383019390931b90921c6c465772b2bbbb5f824b15207a3081018102821d6d0388eaa27412d5aca026815d636e018102821d6d0df99ac502031bf953eff472fdcc018102821d6d13cdffb29d51d99322bdff5f2211018102821d6d0a0f742023def783a307a986912e018102821d6d01920d8043ca89b5239253284e42018102821d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7882018202831d6d0139601a2efabe717e604cbb4894018202831d6d02247f7a7b6594320649aa03aba1018202831d6c8c3f38e95a6b1ff2ab1c3b343619018202831d6d02384773bdf1ac5676facced60901901820290921d6cb9a025d814b29c212b8b1a07cd190102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a550602605f19919091017d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b302017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d90565b60006101d583670de0b6b3a7640000845b60008260001904841183021582026105c057600080fd5b5091020490565b60006101d583670de0b6b3a764000084610232565b6000680248ce36a70cb26b3e1982136105f757506000919050565b680755bf798b4a1bf1e58212610620576040516373a2d6b160e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b39881029093036c240c330e9fb2d9cbaf0fd5aafb1981018102606090811d6d0277594991cfc85f6e2461837cd9018202811d6d1a521255e34f6a5061b25ef1c9c319018202811d6db1bbb201f443cf962f1a1d3db4a5018202811d6e02c72388d9f74f51a9331fed693f1419018202811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765084018402831d9081019084016d01d3967ed30fc4f89c02bab5708119010290911d6e0587f503bb6ea29d25fcb740196450019091026d360d7aeea093263ecc6e0ecb291760621b010574029d9dc38563c32e5c2f6dc192ee70ef65f9978af30260c3939093039290921c92915050565b60006101d58383670de0b6b3a7640000610232565b600081831161078b57826101d5565b50919050565b60008183116107a057816101d5565b5090919050565b600080604083850312156107ba57600080fd5b50508035926020909101359150565b6000806000606084860312156107de57600080fd5b505081359360208301359350604090920135919050565b600080600080600060a0868803121561080d57600080fd5b853594506020860135935060408601359250606086013591506080860135801515811461083957600080fd5b809150509295509295909350565b60006020828403121561085957600080fd5b5035919050565b634e487b7160e01b600052601160045260246000fd5b60008261089357634e487b7160e01b600052601260045260246000fd5b600160ff1b8214600019841416156108ad576108ad610860565b500590565b8082018082111561018457610184610860565b818103818111156101845761018461086056fea2646970667358221220b8d38cb791ce556dd63c55638f386636369e15b42a2b58fd113c26eb532e958864736f6c63430008140033",
+    "sourceMap": "136:1998:85:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;423:156;;;;;;:::i;:::-;;:::i;:::-;;;413:25:184;;;401:2;386:18;423:156:85;;;;;;;747:204;;;;;;:::i;:::-;;:::i;1273:148::-;;;;;;:::i;:::-;;:::i;1701:431::-;;;;;;:::i;:::-;;:::i;1566:129::-;;;;;;:::i;:::-;;:::i;585:156::-;;;;;;:::i;:::-;;:::i;209:208::-;;;;;;:::i;:::-;;:::i;1115:152::-;;;;;;:::i;:::-;;:::i;1427:133::-;;;;;;:::i;:::-;;:::i;957:152::-;;;;;;:::i;:::-;;:::i;423:156::-;485:7;504:14;521:28;544:1;547;521:22;:28::i;:::-;504:45;-1:-1:-1;;423:156:85;;;;;:::o;747:204::-;851:9;872:14;889:32;913:1;916;919;889:23;:32::i;:::-;872:49;747:204;-1:-1:-1;;;;;747:204:85:o;1273:148::-;1331:7;1350:14;1367:24;1386:1;1389;1367:18;:24::i;1701:431::-;1895:15;1922:14;1939:163;1989:8;2011:12;2037:6;2057:12;2083:9;1939:36;:163::i;:::-;1922:180;1701:431;-1:-1:-1;;;;;;;1701:431:85:o;1566:129::-;1611:6;1629:13;1645:20;1663:1;1645:17;:20::i;:::-;1629:36;1566:129;-1:-1:-1;;;1566:129:85:o;585:156::-;647:7;666:14;683:28;706:1;709;683:22;:28::i;209:208::-;315:9;336:14;353:34;379:1;382;385;353:25;:34::i;1115:152::-;1175:7;1194:14;1211:26;1232:1;1235;1211:20;:26::i;1427:133::-;1473:8;1493:13;1509:21;1528:1;1509:18;:21::i;957:152::-;1017:7;1036:14;1053:26;1074:1;1077;1053:20;:26::i;1535:119:73:-;1597:7;1624:22;1635:1;1638;1641:4;1624:10;:22::i;2211:748::-;2325:9;2590:1;-1:-1:-1;;2573:19:73;2570:1;2567:26;2564:1;2560:34;2553:42;2540:11;2536:60;2509:146;;2639:1;2636;2629:12;2509:146;-1:-1:-1;2906:9:73;;2853:27;;;2850:34;;2902:27;;;2829:114;;2211:748::o;3740:838::-;3798:7;3864:1;3869;3864:6;3860:47;;-1:-1:-1;150:4:73;3886:10;;3860:47;3960:1;3965;3960:6;3956:45;;-1:-1:-1;3989:1:73;3982:8;;3956:45;4164:1;4139:15;4341:13;4351:1;4341:2;:13::i;:::-;4328:26;-1:-1:-1;4432:18:73;;;4469:19;150:4;4432:18;4469:19;:::i;:::-;;;4561:9;4565:4;4561:3;:9::i;:::-;4546:25;3740:838;-1:-1:-1;;;;;;3740:838:73:o;12314:2102::-;12508:15;12608:12;12624:1;12608:17;12604:63;;-1:-1:-1;12648:8:73;12641:15;;12604:63;12925:9;12921:1489;;;13022:154;13131:27;13146:12;13131;:27;:::i;:::-;13072:28;:12;13093:6;13072:20;:28::i;:::-;13023:30;:12;13044:8;13023:20;:30::i;:::-;:77;;;;:::i;:::-;13022:87;;:154::i;:::-;13012:164;-1:-1:-1;13523:18:73;13544:20;:6;13555:8;13544:10;:20::i;:::-;13523:41;-1:-1:-1;13578:18:73;13599:20;:6;13610:8;13599:10;:20::i;:::-;13578:41;;13647:10;13637:7;:20;13633:164;;;13687:10;13677:20;;13633:164;;;13732:10;13722:7;:20;13718:79;;;13772:10;13762:20;;13718:79;12936:871;;12921:1489;;;14106:12;14090;:28;14086:75;;-1:-1:-1;14145:1:73;14138:8;;14086:75;14247:152;14354:27;14369:12;14354;:27;:::i;:::-;14297:26;:12;14316:6;14297:18;:26::i;:::-;14248:30;:12;14269:8;14248:20;:30::i;:::-;:75;;;;:::i;8345:3611::-;8390:8;8443:1;8438;:6;8434:80;;8471:28;;-1:-1:-1;;;8471:28:73;;;;;;;;;;;8434:80;-1:-1:-1;9479:2:73;8896:34;-1:-1:-1;;8890:1:73;8886:49;8993:9;;;8973:18;8970:33;8967:1;8963:41;8957:48;9055:9;;;9043:10;9040:25;9037:1;9033:33;9027:40;9113:9;;;9105:6;9102:21;9099:1;9095:29;9089:36;9169:9;;;9163:4;9160:19;9157:1;9153:27;;;9147:34;;;9224:9;;;9219:3;9216:18;9213:1;9209:26;9203:33;9279:9;;;9271:18;;;9268:1;9264:26;;;9258:33;;;9327:9;;;9319:18;;;9313:25;9509:3;:7;;;;;9495:22;;;;9542:17;;;10335:31;10331:35;;10386:5;;10385:13;;10402:32;10384:50;10454:5;;10453:13;;10470:33;10452:51;10523:5;;10522:13;;10539:33;10521:51;10592:5;;10591:13;;10608:33;10590:51;10661:5;;10660:13;;10677:32;10659:50;10729:5;;10728:13;;10745:30;10727:48;9732:31;9728:35;;9783:5;;9782:13;;9799:32;9781:50;9851:5;;9850:13;;9867:32;9849:50;9919:5;;9918:13;;-1:-1:-1;;9917:50:73;9987:5;;9986:13;;-1:-1:-1;;9985:50:73;10055:5;;10054:13;;;-1:-1:-1;;10053:50:73;10121:5;-1:-1:-1;;10121:46:73;11116:10;11506:43;11501:48;-1:-1:-1;;9475:6:73;;;;11629:71;:91;11608:112;11793:72;11788:77;11936:3;11930:9;;8345:3611::o;1810:165::-;1872:7;1899:22;1910:1;1913:4;1919:1;823:556;939:9;1204:1;-1:-1:-1;;1187:19:73;1184:1;1181:26;1178:1;1174:34;1167:42;1154:11;1150:60;1123:146;;1253:1;1250;1243:12;1123:146;-1:-1:-1;1340:9:73;;1336:27;;823:556::o;3390:115::-;3450:7;3477:20;3486:1;3489:4;3495:1;3477:8;:20::i;4830:3335::-;4876:8;-1:-1:-1;;5053:1:73;:26;5049:40;;-1:-1:-1;5088:1:73;;4830:3335;-1:-1:-1;4830:3335:73:o;5049:40::-;5288:21;5283:1;:26;5279:87;;5334:32;;-1:-1:-1;;;5334:32:73;;;;;;;;;;;5279:87;5639:7;5633:2;5628:7;;;5627:19;;-1:-1:-1;5975:8:73;6059:2;5999:29;5988:7;;;5987:41;-1:-1:-1;;;5987:51:73;5986:75;;6087:29;6083:33;;6079:37;;;-1:-1:-1;;6758:35:73;;6813:5;;6393:2;6812:13;;;6829:32;6811:50;6881:5;;6880:13;;-1:-1:-1;;6879:51:73;6950:5;;6949:13;;6966:34;6948:52;7020:5;;7019:13;;-1:-1:-1;;7018:53:73;7091:5;;7090:13;;7107:35;7089:53;6399:32;6332:31;6328:35;;6383:5;;6382:13;;6381:50;;;6456:5;;;-1:-1:-1;;6456:40:73;6516:5;6515:13;;;6532:35;6514:53;6585:5;;;-1:-1:-1;;;6585:50:73;7507:10;8044:49;8011:82;8126:3;:7;;;;8010:124;;;;;;-1:-1:-1;;4830:3335:73:o;3117:115::-;3177:7;3204:20;3213:1;3216;3219:4;3204:8;:20::i;14589:104::-;14647:7;14677:1;14673;:5;:13;;14685:1;14673:13;;;-1:-1:-1;14681:1:73;14589:104;-1:-1:-1;14589:104:73:o;14866:::-;14924:7;14954:1;14950;:5;:13;;14962:1;14950:13;;;-1:-1:-1;14958:1:73;;14866:104;-1:-1:-1;14866:104:73:o;14:248:184:-;82:6;90;143:2;131:9;122:7;118:23;114:32;111:52;;;159:1;156;149:12;111:52;-1:-1:-1;;182:23:184;;;252:2;237:18;;;224:32;;-1:-1:-1;14:248:184:o;449:316::-;526:6;534;542;595:2;583:9;574:7;570:23;566:32;563:52;;;611:1;608;601:12;563:52;-1:-1:-1;;634:23:184;;;704:2;689:18;;676:32;;-1:-1:-1;755:2:184;740:18;;;727:32;;449:316;-1:-1:-1;449:316:184:o;770:547::-;862:6;870;878;886;894;947:3;935:9;926:7;922:23;918:33;915:53;;;964:1;961;954:12;915:53;1000:9;987:23;977:33;;1057:2;1046:9;1042:18;1029:32;1019:42;;1108:2;1097:9;1093:18;1080:32;1070:42;;1159:2;1148:9;1144:18;1131:32;1121:42;;1213:3;1202:9;1198:19;1185:33;1261:5;1254:13;1247:21;1240:5;1237:32;1227:60;;1283:1;1280;1273:12;1227:60;1306:5;1296:15;;;770:547;;;;;;;;:::o;1322:179::-;1380:6;1433:2;1421:9;1412:7;1408:23;1404:32;1401:52;;;1449:1;1446;1439:12;1401:52;-1:-1:-1;1472:23:184;;1322:179;-1:-1:-1;1322:179:184:o;1818:127::-;1879:10;1874:3;1870:20;1867:1;1860:31;1910:4;1907:1;1900:15;1934:4;1931:1;1924:15;1950:290;1989:1;2015;2005:132;;2059:10;2054:3;2050:20;2047:1;2040:31;2094:4;2091:1;2084:15;2122:4;2119:1;2112:15;2005:132;-1:-1:-1;;;2153:18:184;;-1:-1:-1;;2173:13:184;;2149:38;2146:64;;;2190:18;;:::i;:::-;-1:-1:-1;2224:10:184;;1950:290::o;2245:125::-;2310:9;;;2331:10;;;2328:36;;;2344:18;;:::i;2375:128::-;2442:9;;;2463:11;;;2460:37;;;2477:18;;:::i",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "divDown(uint256,uint256)": "9ba5f52e",
+    "divUp(uint256,uint256)": "cbe8623f",
+    "exp(int256)": "e46751e3",
+    "ln(int256)": "8e6f2353",
+    "mulDivDown(uint256,uint256,uint256)": "b67bee04",
+    "mulDivUp(uint256,uint256,uint256)": "12bd6ac0",
+    "mulDown(uint256,uint256)": "0c9b9881",
+    "mulUp(uint256,uint256)": "f3e4f87c",
+    "pow(uint256,uint256)": "2e4c697f",
+    "updateWeightedAverage(uint256,uint256,uint256,uint256,bool)": "81e5f7c9"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ExpInvalidExponent\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LnInvalidInput\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"a\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"b\",\"type\":\"uint256\"}],\"name\":\"divDown\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"a\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"b\",\"type\":\"uint256\"}],\"name\":\"divUp\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int256\",\"name\":\"x\",\"type\":\"int256\"}],\"name\":\"exp\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"r\",\"type\":\"int256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int256\",\"name\":\"x\",\"type\":\"int256\"}],\"name\":\"ln\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"x\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"d\",\"type\":\"uint256\"}],\"name\":\"mulDivDown\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"z\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"x\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"d\",\"type\":\"uint256\"}],\"name\":\"mulDivUp\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"z\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"a\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"b\",\"type\":\"uint256\"}],\"name\":\"mulDown\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"a\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"b\",\"type\":\"uint256\"}],\"name\":\"mulUp\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"x\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"y\",\"type\":\"uint256\"}],\"name\":\"pow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_average\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_totalWeight\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_delta\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_deltaWeight\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"_isAdding\",\"type\":\"bool\"}],\"name\":\"updateWeightedAverage\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"average\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"errors\":{\"ExpInvalidExponent()\":[{\"notice\":\"Thrown when the exponent to `FixedPointMath.exp` would cause the         the result to be larger than the representable scale.\"}],\"LnInvalidInput()\":[{\"notice\":\"Thrown when the input to `FixedPointMath.ln` is less than or         equal to zero.\"}]},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/test/MockFixedPointMath.sol\":\"MockFixedPointMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0xfd51b9727f00a434ea4ced64044c104ed8361fa2ed22600969d1e4ff257b14f3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8780b588acc11dd906ff0897adc5b7acdab759fec4d14ce0d52bf002cb90c398\",\"dweb:/ipfs/QmTMaRGveFgN5L3k1h5oAbfp5ccmzT9d36JhChVg9PxJkD\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x81c89ca62586555b915a9609d10014ff9d1f0d82111809d566f614bd9ea2fb16\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c4859b122480f504d1f0035ed11983b0d74ea2b16bcf26dfe19365bb4f66240\",\"dweb:/ipfs/QmQEQBxRdsH6zNx2rvzetYZRbB3pMXXWzTuwVPBGVhCHfL\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x93cfce28869c1a082c170092b87b04204a91b7898a1e95c3e4270f06fbc76a97\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b8b24e13ff8994550685fec1405bc5d2a5ed6400db061005e72ecff056be51a1\",\"dweb:/ipfs/QmR4RZzyhjYt8xxRPaJWHKhBZdHZPVBHrtNERAZhCaaTFU\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x5c5d6c812fd2cf996d60632c4c8cca7b3d70f5ae4891a3f99c1e10f967f520dd\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://44ef09e50cf76ebab25b90688b19966575cc07fee503ffdb189c3fbbcbfea01f\",\"dweb:/ipfs/QmZEULHXopjaeWbsfXNrEriQomY19s6LXEcae9saeZCpmt\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x516967eaae812ff7fff81797190f48fca40838eccfb8243e3f973f2f85b51597\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://50fa3165b126976c218d27f7f276789f8cc680d3136cd631999164a64f03e477\",\"dweb:/ipfs/QmTSCjqQoys2SJNDZrhTdy2M2at8siSb3ZXHjWUoeihQjr\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xda628a0f7428ad63cb04b6f341c223d7b36803d554e92cd3a793325eae6ad87a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f7dfe92e6fb15eedbba033a96481db1343aeb48039d40d4b5053cc27d3f5e4f3\",\"dweb:/ipfs/QmNeNyjuEd7LkwZMg14fnMsunLXbJRzHYwzC2yEYKi8H3q\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0xb5b2a1f90c4e85e1290144b1e0e393027c90f24d6030ee802d0369342d7bf002\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f7850a790ea32726462f6dd08c87e5250c70155af558b8fdd17dc71d53c5b7f3\",\"dweb:/ipfs/QmWpshz1Ufdqmw8rmZdbdm9ZyEcKHFswLMNaBkBJ3sqNA1\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xa2e1d420bcae975a3d9aa7918319da2dd047cbc50ad41e0a391048e01b980191\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://335611b957d8ca7c0cee11d6f2268372a7c937bc119c030cb8e274679604b6cd\",\"dweb:/ipfs/QmeoxLRyPVgBXrxetVFEyjsvLNfwAahcHsFdAEzy9otxuU\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xf84c46faa4a3323835a80eae3ee969409bf3f5c48ec94a6e486b70cb59a4c868\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b1dcc1796eac62773f298b5b77fda8de424d822a7e74825028a0f83c627a5bfb\",\"dweb:/ipfs/QmRbiswdabx3uMgrgkLKe6K6JAQBLafsWqEyZCg3PQbN5Q\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0xdcf0c77bc29a0b5b2ce06cccfa6f5e936128e5c0f14a5636bfe21faf95c515bf\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://088172c3f97db68914cdef042d942b0d0c585cce77d004625bfa62a72ac1e95d\",\"dweb:/ipfs/Qmewa9GJtYxBw4fAx4HZJaNuUCKEoQT4c5nmhPyXxVEwwq\"]},\"contracts/test/MockFixedPointMath.sol\":{\"keccak256\":\"0x8e8281499c59aa389be47edae8284a2f15a588937228b99f2e3ba429f9144c36\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://082845489937efb8302bc18011a97d8cc738309a1b0c654a7d3761a331e4a0f1\",\"dweb:/ipfs/QmbLms4PCHGtGdosyKPagQkquLt7jHVRKSJBjdvD2Jt3Ne\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "ExpInvalidExponent"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "LnInvalidInput"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "a",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "b",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "divDown",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "a",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "b",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "divUp",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "int256",
+              "name": "x",
+              "type": "int256"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "exp",
+          "outputs": [
+            {
+              "internalType": "int256",
+              "name": "r",
+              "type": "int256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "int256",
+              "name": "x",
+              "type": "int256"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "ln",
+          "outputs": [
+            {
+              "internalType": "int256",
+              "name": "",
+              "type": "int256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "x",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "y",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "d",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "mulDivDown",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "z",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "x",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "y",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "d",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "mulDivUp",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "z",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "a",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "b",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "mulDown",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "a",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "b",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "mulUp",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "x",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "y",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "pow",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_average",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_totalWeight",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_delta",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_deltaWeight",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "_isAdding",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "updateWeightedAverage",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "average",
+              "type": "uint256"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "aave-v3-core/=lib/aave-v3-core/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/=lib/openzeppelin-contracts/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "contracts/test/MockFixedPointMath.sol": "MockFixedPointMath"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "contracts/src/interfaces/IERC20.sol": {
+        "keccak256": "0xfd51b9727f00a434ea4ced64044c104ed8361fa2ed22600969d1e4ff257b14f3",
+        "urls": [
+          "bzz-raw://8780b588acc11dd906ff0897adc5b7acdab759fec4d14ce0d52bf002cb90c398",
+          "dweb:/ipfs/QmTMaRGveFgN5L3k1h5oAbfp5ccmzT9d36JhChVg9PxJkD"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdrive.sol": {
+        "keccak256": "0x81c89ca62586555b915a9609d10014ff9d1f0d82111809d566f614bd9ea2fb16",
+        "urls": [
+          "bzz-raw://3c4859b122480f504d1f0035ed11983b0d74ea2b16bcf26dfe19365bb4f66240",
+          "dweb:/ipfs/QmQEQBxRdsH6zNx2rvzetYZRbB3pMXXWzTuwVPBGVhCHfL"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdriveCore.sol": {
+        "keccak256": "0x93cfce28869c1a082c170092b87b04204a91b7898a1e95c3e4270f06fbc76a97",
+        "urls": [
+          "bzz-raw://b8b24e13ff8994550685fec1405bc5d2a5ed6400db061005e72ecff056be51a1",
+          "dweb:/ipfs/QmR4RZzyhjYt8xxRPaJWHKhBZdHZPVBHrtNERAZhCaaTFU"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdriveEvents.sol": {
+        "keccak256": "0x5c5d6c812fd2cf996d60632c4c8cca7b3d70f5ae4891a3f99c1e10f967f520dd",
+        "urls": [
+          "bzz-raw://44ef09e50cf76ebab25b90688b19966575cc07fee503ffdb189c3fbbcbfea01f",
+          "dweb:/ipfs/QmZEULHXopjaeWbsfXNrEriQomY19s6LXEcae9saeZCpmt"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdriveRead.sol": {
+        "keccak256": "0x516967eaae812ff7fff81797190f48fca40838eccfb8243e3f973f2f85b51597",
+        "urls": [
+          "bzz-raw://50fa3165b126976c218d27f7f276789f8cc680d3136cd631999164a64f03e477",
+          "dweb:/ipfs/QmTSCjqQoys2SJNDZrhTdy2M2at8siSb3ZXHjWUoeihQjr"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiToken.sol": {
+        "keccak256": "0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f",
+        "urls": [
+          "bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7",
+          "dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenCore.sol": {
+        "keccak256": "0xda628a0f7428ad63cb04b6f341c223d7b36803d554e92cd3a793325eae6ad87a",
+        "urls": [
+          "bzz-raw://f7dfe92e6fb15eedbba033a96481db1343aeb48039d40d4b5053cc27d3f5e4f3",
+          "dweb:/ipfs/QmNeNyjuEd7LkwZMg14fnMsunLXbJRzHYwzC2yEYKi8H3q"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenEvents.sol": {
+        "keccak256": "0xb5b2a1f90c4e85e1290144b1e0e393027c90f24d6030ee802d0369342d7bf002",
+        "urls": [
+          "bzz-raw://f7850a790ea32726462f6dd08c87e5250c70155af558b8fdd17dc71d53c5b7f3",
+          "dweb:/ipfs/QmWpshz1Ufdqmw8rmZdbdm9ZyEcKHFswLMNaBkBJ3sqNA1"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenMetadata.sol": {
+        "keccak256": "0xa2e1d420bcae975a3d9aa7918319da2dd047cbc50ad41e0a391048e01b980191",
+        "urls": [
+          "bzz-raw://335611b957d8ca7c0cee11d6f2268372a7c937bc119c030cb8e274679604b6cd",
+          "dweb:/ipfs/QmeoxLRyPVgBXrxetVFEyjsvLNfwAahcHsFdAEzy9otxuU"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenRead.sol": {
+        "keccak256": "0xf84c46faa4a3323835a80eae3ee969409bf3f5c48ec94a6e486b70cb59a4c868",
+        "urls": [
+          "bzz-raw://b1dcc1796eac62773f298b5b77fda8de424d822a7e74825028a0f83c627a5bfb",
+          "dweb:/ipfs/QmRbiswdabx3uMgrgkLKe6K6JAQBLafsWqEyZCg3PQbN5Q"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/libraries/FixedPointMath.sol": {
+        "keccak256": "0xdcf0c77bc29a0b5b2ce06cccfa6f5e936128e5c0f14a5636bfe21faf95c515bf",
+        "urls": [
+          "bzz-raw://088172c3f97db68914cdef042d942b0d0c585cce77d004625bfa62a72ac1e95d",
+          "dweb:/ipfs/Qmewa9GJtYxBw4fAx4HZJaNuUCKEoQT4c5nmhPyXxVEwwq"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/test/MockFixedPointMath.sol": {
+        "keccak256": "0x8e8281499c59aa389be47edae8284a2f15a588937228b99f2e3ba429f9144c36",
+        "urls": [
+          "bzz-raw://082845489937efb8302bc18011a97d8cc738309a1b0c654a7d3761a331e4a0f1",
+          "dweb:/ipfs/QmbLms4PCHGtGdosyKPagQkquLt7jHVRKSJBjdvD2Jt3Ne"
+        ],
+        "license": "Apache-2.0"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "contracts/test/MockFixedPointMath.sol",
+    "id": 19993,
+    "exportedSymbols": {
+      "FixedPointMath": [
+        14294
+      ],
+      "MockFixedPointMath": [
+        19992
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "40:2095:85",
+    "nodes": [
+      {
+        "id": 19777,
+        "nodeType": "PragmaDirective",
+        "src": "40:23:85",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".20"
+        ]
+      },
+      {
+        "id": 19779,
+        "nodeType": "ImportDirective",
+        "src": "65:69:85",
+        "nodes": [],
+        "absolutePath": "contracts/src/libraries/FixedPointMath.sol",
+        "file": "../src/libraries/FixedPointMath.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 19993,
+        "sourceUnit": 14295,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 19778,
+              "name": "FixedPointMath",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 14294,
+              "src": "74:14:85",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 19992,
+        "nodeType": "ContractDefinition",
+        "src": "136:1998:85",
+        "nodes": [
+          {
+            "id": 19782,
+            "nodeType": "UsingForDirective",
+            "src": "170:33:85",
+            "nodes": [],
+            "global": false,
+            "libraryName": {
+              "id": 19780,
+              "name": "FixedPointMath",
+              "nameLocations": [
+                "176:14:85"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 14294,
+              "src": "176:14:85"
+            },
+            "typeName": {
+              "id": 19781,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "195:7:85",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "id": 19805,
+            "nodeType": "FunctionDefinition",
+            "src": "209:208:85",
+            "nodes": [],
+            "body": {
+              "id": 19804,
+              "nodeType": "Block",
+              "src": "326:91:85",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    19794
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 19794,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "344:6:85",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 19804,
+                      "src": "336:14:85",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 19793,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "336:7:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 19801,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 19797,
+                        "name": "x",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19784,
+                        "src": "379:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 19798,
+                        "name": "y",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19786,
+                        "src": "382:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 19799,
+                        "name": "d",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19788,
+                        "src": "385:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19795,
+                        "name": "FixedPointMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14294,
+                        "src": "353:14:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$14294_$",
+                          "typeString": "type(library FixedPointMath)"
+                        }
+                      },
+                      "id": 19796,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "368:10:85",
+                      "memberName": "mulDivDown",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13554,
+                      "src": "353:25:85",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 19800,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "353:34:85",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "336:51:85"
+                },
+                {
+                  "expression": {
+                    "id": 19802,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 19794,
+                    "src": "404:6:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 19792,
+                  "id": 19803,
+                  "nodeType": "Return",
+                  "src": "397:13:85"
+                }
+              ]
+            },
+            "functionSelector": "b67bee04",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mulDivDown",
+            "nameLocation": "218:10:85",
+            "parameters": {
+              "id": 19789,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19784,
+                  "mutability": "mutable",
+                  "name": "x",
+                  "nameLocation": "246:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19805,
+                  "src": "238:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19783,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "238:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19786,
+                  "mutability": "mutable",
+                  "name": "y",
+                  "nameLocation": "265:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19805,
+                  "src": "257:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19785,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "257:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19788,
+                  "mutability": "mutable",
+                  "name": "d",
+                  "nameLocation": "284:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19805,
+                  "src": "276:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19787,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "276:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "228:63:85"
+            },
+            "returnParameters": {
+              "id": 19792,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19791,
+                  "mutability": "mutable",
+                  "name": "z",
+                  "nameLocation": "323:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19805,
+                  "src": "315:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19790,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "315:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "314:11:85"
+            },
+            "scope": 19992,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 19825,
+            "nodeType": "FunctionDefinition",
+            "src": "423:156:85",
+            "nodes": [],
+            "body": {
+              "id": 19824,
+              "nodeType": "Block",
+              "src": "494:85:85",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    19815
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 19815,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "512:6:85",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 19824,
+                      "src": "504:14:85",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 19814,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "504:7:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 19821,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 19818,
+                        "name": "a",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19807,
+                        "src": "544:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 19819,
+                        "name": "b",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19809,
+                        "src": "547:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19816,
+                        "name": "FixedPointMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14294,
+                        "src": "521:14:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$14294_$",
+                          "typeString": "type(library FixedPointMath)"
+                        }
+                      },
+                      "id": 19817,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "536:7:85",
+                      "memberName": "mulDown",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13572,
+                      "src": "521:22:85",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 19820,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "521:28:85",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "504:45:85"
+                },
+                {
+                  "expression": {
+                    "id": 19822,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 19815,
+                    "src": "566:6:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 19813,
+                  "id": 19823,
+                  "nodeType": "Return",
+                  "src": "559:13:85"
+                }
+              ]
+            },
+            "functionSelector": "0c9b9881",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mulDown",
+            "nameLocation": "432:7:85",
+            "parameters": {
+              "id": 19810,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19807,
+                  "mutability": "mutable",
+                  "name": "a",
+                  "nameLocation": "448:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19825,
+                  "src": "440:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19806,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "440:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19809,
+                  "mutability": "mutable",
+                  "name": "b",
+                  "nameLocation": "459:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19825,
+                  "src": "451:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19808,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "451:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "439:22:85"
+            },
+            "returnParameters": {
+              "id": 19813,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19812,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19825,
+                  "src": "485:7:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19811,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "485:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "484:9:85"
+            },
+            "scope": 19992,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 19845,
+            "nodeType": "FunctionDefinition",
+            "src": "585:156:85",
+            "nodes": [],
+            "body": {
+              "id": 19844,
+              "nodeType": "Block",
+              "src": "656:85:85",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    19835
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 19835,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "674:6:85",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 19844,
+                      "src": "666:14:85",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 19834,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "666:7:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 19841,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 19838,
+                        "name": "a",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19827,
+                        "src": "706:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 19839,
+                        "name": "b",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19829,
+                        "src": "709:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19836,
+                        "name": "FixedPointMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14294,
+                        "src": "683:14:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$14294_$",
+                          "typeString": "type(library FixedPointMath)"
+                        }
+                      },
+                      "id": 19837,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "698:7:85",
+                      "memberName": "divDown",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13590,
+                      "src": "683:22:85",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 19840,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "683:28:85",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "666:45:85"
+                },
+                {
+                  "expression": {
+                    "id": 19842,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 19835,
+                    "src": "728:6:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 19833,
+                  "id": 19843,
+                  "nodeType": "Return",
+                  "src": "721:13:85"
+                }
+              ]
+            },
+            "functionSelector": "9ba5f52e",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "divDown",
+            "nameLocation": "594:7:85",
+            "parameters": {
+              "id": 19830,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19827,
+                  "mutability": "mutable",
+                  "name": "a",
+                  "nameLocation": "610:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19845,
+                  "src": "602:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19826,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "602:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19829,
+                  "mutability": "mutable",
+                  "name": "b",
+                  "nameLocation": "621:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19845,
+                  "src": "613:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19828,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "613:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "601:22:85"
+            },
+            "returnParameters": {
+              "id": 19833,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19832,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19845,
+                  "src": "647:7:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19831,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "647:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "646:9:85"
+            },
+            "scope": 19992,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 19868,
+            "nodeType": "FunctionDefinition",
+            "src": "747:204:85",
+            "nodes": [],
+            "body": {
+              "id": 19867,
+              "nodeType": "Block",
+              "src": "862:89:85",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    19857
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 19857,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "880:6:85",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 19867,
+                      "src": "872:14:85",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 19856,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "872:7:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 19864,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 19860,
+                        "name": "x",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19847,
+                        "src": "913:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 19861,
+                        "name": "y",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19849,
+                        "src": "916:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 19862,
+                        "name": "d",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19851,
+                        "src": "919:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19858,
+                        "name": "FixedPointMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14294,
+                        "src": "889:14:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$14294_$",
+                          "typeString": "type(library FixedPointMath)"
+                        }
+                      },
+                      "id": 19859,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "904:8:85",
+                      "memberName": "mulDivUp",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13604,
+                      "src": "889:23:85",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 19863,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "889:32:85",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "872:49:85"
+                },
+                {
+                  "expression": {
+                    "id": 19865,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 19857,
+                    "src": "938:6:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 19855,
+                  "id": 19866,
+                  "nodeType": "Return",
+                  "src": "931:13:85"
+                }
+              ]
+            },
+            "functionSelector": "12bd6ac0",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mulDivUp",
+            "nameLocation": "756:8:85",
+            "parameters": {
+              "id": 19852,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19847,
+                  "mutability": "mutable",
+                  "name": "x",
+                  "nameLocation": "782:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19868,
+                  "src": "774:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19846,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "774:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19849,
+                  "mutability": "mutable",
+                  "name": "y",
+                  "nameLocation": "801:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19868,
+                  "src": "793:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19848,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "793:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19851,
+                  "mutability": "mutable",
+                  "name": "d",
+                  "nameLocation": "820:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19868,
+                  "src": "812:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19850,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "812:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "764:63:85"
+            },
+            "returnParameters": {
+              "id": 19855,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19854,
+                  "mutability": "mutable",
+                  "name": "z",
+                  "nameLocation": "859:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19868,
+                  "src": "851:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19853,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "851:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "850:11:85"
+            },
+            "scope": 19992,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 19888,
+            "nodeType": "FunctionDefinition",
+            "src": "957:152:85",
+            "nodes": [],
+            "body": {
+              "id": 19887,
+              "nodeType": "Block",
+              "src": "1026:83:85",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    19878
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 19878,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "1044:6:85",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 19887,
+                      "src": "1036:14:85",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 19877,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1036:7:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 19884,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 19881,
+                        "name": "a",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19870,
+                        "src": "1074:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 19882,
+                        "name": "b",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19872,
+                        "src": "1077:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19879,
+                        "name": "FixedPointMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14294,
+                        "src": "1053:14:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$14294_$",
+                          "typeString": "type(library FixedPointMath)"
+                        }
+                      },
+                      "id": 19880,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "1068:5:85",
+                      "memberName": "mulUp",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13622,
+                      "src": "1053:20:85",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 19883,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1053:26:85",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1036:43:85"
+                },
+                {
+                  "expression": {
+                    "id": 19885,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 19878,
+                    "src": "1096:6:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 19876,
+                  "id": 19886,
+                  "nodeType": "Return",
+                  "src": "1089:13:85"
+                }
+              ]
+            },
+            "functionSelector": "f3e4f87c",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mulUp",
+            "nameLocation": "966:5:85",
+            "parameters": {
+              "id": 19873,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19870,
+                  "mutability": "mutable",
+                  "name": "a",
+                  "nameLocation": "980:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19888,
+                  "src": "972:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19869,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "972:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19872,
+                  "mutability": "mutable",
+                  "name": "b",
+                  "nameLocation": "991:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19888,
+                  "src": "983:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19871,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "983:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "971:22:85"
+            },
+            "returnParameters": {
+              "id": 19876,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19875,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19888,
+                  "src": "1017:7:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19874,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1017:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1016:9:85"
+            },
+            "scope": 19992,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 19908,
+            "nodeType": "FunctionDefinition",
+            "src": "1115:152:85",
+            "nodes": [],
+            "body": {
+              "id": 19907,
+              "nodeType": "Block",
+              "src": "1184:83:85",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    19898
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 19898,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "1202:6:85",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 19907,
+                      "src": "1194:14:85",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 19897,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1194:7:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 19904,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 19901,
+                        "name": "a",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19890,
+                        "src": "1232:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 19902,
+                        "name": "b",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19892,
+                        "src": "1235:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19899,
+                        "name": "FixedPointMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14294,
+                        "src": "1211:14:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$14294_$",
+                          "typeString": "type(library FixedPointMath)"
+                        }
+                      },
+                      "id": 19900,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "1226:5:85",
+                      "memberName": "divUp",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13640,
+                      "src": "1211:20:85",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 19903,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1211:26:85",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1194:43:85"
+                },
+                {
+                  "expression": {
+                    "id": 19905,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 19898,
+                    "src": "1254:6:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 19896,
+                  "id": 19906,
+                  "nodeType": "Return",
+                  "src": "1247:13:85"
+                }
+              ]
+            },
+            "functionSelector": "cbe8623f",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "divUp",
+            "nameLocation": "1124:5:85",
+            "parameters": {
+              "id": 19893,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19890,
+                  "mutability": "mutable",
+                  "name": "a",
+                  "nameLocation": "1138:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19908,
+                  "src": "1130:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19889,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1130:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19892,
+                  "mutability": "mutable",
+                  "name": "b",
+                  "nameLocation": "1149:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19908,
+                  "src": "1141:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19891,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1141:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1129:22:85"
+            },
+            "returnParameters": {
+              "id": 19896,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19895,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19908,
+                  "src": "1175:7:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19894,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1175:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1174:9:85"
+            },
+            "scope": 19992,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 19928,
+            "nodeType": "FunctionDefinition",
+            "src": "1273:148:85",
+            "nodes": [],
+            "body": {
+              "id": 19927,
+              "nodeType": "Block",
+              "src": "1340:81:85",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    19918
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 19918,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "1358:6:85",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 19927,
+                      "src": "1350:14:85",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 19917,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1350:7:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 19924,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 19921,
+                        "name": "x",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19910,
+                        "src": "1386:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 19922,
+                        "name": "y",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19912,
+                        "src": "1389:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19919,
+                        "name": "FixedPointMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14294,
+                        "src": "1367:14:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$14294_$",
+                          "typeString": "type(library FixedPointMath)"
+                        }
+                      },
+                      "id": 19920,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "1382:3:85",
+                      "memberName": "pow",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13699,
+                      "src": "1367:18:85",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 19923,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1367:24:85",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1350:41:85"
+                },
+                {
+                  "expression": {
+                    "id": 19925,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 19918,
+                    "src": "1408:6:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 19916,
+                  "id": 19926,
+                  "nodeType": "Return",
+                  "src": "1401:13:85"
+                }
+              ]
+            },
+            "functionSelector": "2e4c697f",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "pow",
+            "nameLocation": "1282:3:85",
+            "parameters": {
+              "id": 19913,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19910,
+                  "mutability": "mutable",
+                  "name": "x",
+                  "nameLocation": "1294:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19928,
+                  "src": "1286:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19909,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1286:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19912,
+                  "mutability": "mutable",
+                  "name": "y",
+                  "nameLocation": "1305:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19928,
+                  "src": "1297:9:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19911,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1297:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1285:22:85"
+            },
+            "returnParameters": {
+              "id": 19916,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19915,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19928,
+                  "src": "1331:7:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19914,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1331:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1330:9:85"
+            },
+            "scope": 19992,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 19945,
+            "nodeType": "FunctionDefinition",
+            "src": "1427:133:85",
+            "nodes": [],
+            "body": {
+              "id": 19944,
+              "nodeType": "Block",
+              "src": "1483:77:85",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    19936
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 19936,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "1500:6:85",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 19944,
+                      "src": "1493:13:85",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      },
+                      "typeName": {
+                        "id": 19935,
+                        "name": "int256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1493:6:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 19941,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 19939,
+                        "name": "x",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19930,
+                        "src": "1528:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19937,
+                        "name": "FixedPointMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14294,
+                        "src": "1509:14:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$14294_$",
+                          "typeString": "type(library FixedPointMath)"
+                        }
+                      },
+                      "id": 19938,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "1524:3:85",
+                      "memberName": "exp",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13896,
+                      "src": "1509:18:85",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
+                        "typeString": "function (int256) pure returns (int256)"
+                      }
+                    },
+                    "id": 19940,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1509:21:85",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1493:37:85"
+                },
+                {
+                  "expression": {
+                    "id": 19942,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 19936,
+                    "src": "1547:6:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "functionReturnParameters": 19934,
+                  "id": 19943,
+                  "nodeType": "Return",
+                  "src": "1540:13:85"
+                }
+              ]
+            },
+            "functionSelector": "e46751e3",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "exp",
+            "nameLocation": "1436:3:85",
+            "parameters": {
+              "id": 19931,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19930,
+                  "mutability": "mutable",
+                  "name": "x",
+                  "nameLocation": "1447:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19945,
+                  "src": "1440:8:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 19929,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1440:6:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1439:10:85"
+            },
+            "returnParameters": {
+              "id": 19934,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19933,
+                  "mutability": "mutable",
+                  "name": "r",
+                  "nameLocation": "1480:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19945,
+                  "src": "1473:8:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 19932,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1473:6:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1472:10:85"
+            },
+            "scope": 19992,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 19962,
+            "nodeType": "FunctionDefinition",
+            "src": "1566:129:85",
+            "nodes": [],
+            "body": {
+              "id": 19961,
+              "nodeType": "Block",
+              "src": "1619:76:85",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    19953
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 19953,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "1636:6:85",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 19961,
+                      "src": "1629:13:85",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      },
+                      "typeName": {
+                        "id": 19952,
+                        "name": "int256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1629:6:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 19958,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 19956,
+                        "name": "x",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19947,
+                        "src": "1663:1:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19954,
+                        "name": "FixedPointMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14294,
+                        "src": "1645:14:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$14294_$",
+                          "typeString": "type(library FixedPointMath)"
+                        }
+                      },
+                      "id": 19955,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "1660:2:85",
+                      "memberName": "ln",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 14118,
+                      "src": "1645:17:85",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
+                        "typeString": "function (int256) pure returns (int256)"
+                      }
+                    },
+                    "id": 19957,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1645:20:85",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1629:36:85"
+                },
+                {
+                  "expression": {
+                    "id": 19959,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 19953,
+                    "src": "1682:6:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "functionReturnParameters": 19951,
+                  "id": 19960,
+                  "nodeType": "Return",
+                  "src": "1675:13:85"
+                }
+              ]
+            },
+            "functionSelector": "8e6f2353",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "ln",
+            "nameLocation": "1575:2:85",
+            "parameters": {
+              "id": 19948,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19947,
+                  "mutability": "mutable",
+                  "name": "x",
+                  "nameLocation": "1585:1:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19962,
+                  "src": "1578:8:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 19946,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1578:6:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1577:10:85"
+            },
+            "returnParameters": {
+              "id": 19951,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19950,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19962,
+                  "src": "1611:6:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 19949,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1611:6:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1610:8:85"
+            },
+            "scope": 19992,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 19991,
+            "nodeType": "FunctionDefinition",
+            "src": "1701:431:85",
+            "nodes": [],
+            "body": {
+              "id": 19990,
+              "nodeType": "Block",
+              "src": "1912:220:85",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    19978
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 19978,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "1930:6:85",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 19990,
+                      "src": "1922:14:85",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 19977,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1922:7:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 19987,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 19981,
+                        "name": "_average",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19964,
+                        "src": "1989:8:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 19982,
+                        "name": "_totalWeight",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19966,
+                        "src": "2011:12:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 19983,
+                        "name": "_delta",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19968,
+                        "src": "2037:6:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 19984,
+                        "name": "_deltaWeight",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19970,
+                        "src": "2057:12:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 19985,
+                        "name": "_isAdding",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19972,
+                        "src": "2083:9:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19979,
+                        "name": "FixedPointMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14294,
+                        "src": "1939:14:85",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$14294_$",
+                          "typeString": "type(library FixedPointMath)"
+                        }
+                      },
+                      "id": 19980,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "1954:21:85",
+                      "memberName": "updateWeightedAverage",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 14221,
+                      "src": "1939:36:85",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,uint256,uint256,bool) pure returns (uint256)"
+                      }
+                    },
+                    "id": 19986,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1939:163:85",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1922:180:85"
+                },
+                {
+                  "expression": {
+                    "id": 19988,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 19978,
+                    "src": "2119:6:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 19976,
+                  "id": 19989,
+                  "nodeType": "Return",
+                  "src": "2112:13:85"
+                }
+              ]
+            },
+            "functionSelector": "81e5f7c9",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateWeightedAverage",
+            "nameLocation": "1710:21:85",
+            "parameters": {
+              "id": 19973,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19964,
+                  "mutability": "mutable",
+                  "name": "_average",
+                  "nameLocation": "1749:8:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19991,
+                  "src": "1741:16:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19963,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1741:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19966,
+                  "mutability": "mutable",
+                  "name": "_totalWeight",
+                  "nameLocation": "1775:12:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19991,
+                  "src": "1767:20:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19965,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1767:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19968,
+                  "mutability": "mutable",
+                  "name": "_delta",
+                  "nameLocation": "1805:6:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19991,
+                  "src": "1797:14:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19967,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1797:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19970,
+                  "mutability": "mutable",
+                  "name": "_deltaWeight",
+                  "nameLocation": "1829:12:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19991,
+                  "src": "1821:20:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19969,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1821:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19972,
+                  "mutability": "mutable",
+                  "name": "_isAdding",
+                  "nameLocation": "1856:9:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19991,
+                  "src": "1851:14:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 19971,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1851:4:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1731:140:85"
+            },
+            "returnParameters": {
+              "id": 19976,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19975,
+                  "mutability": "mutable",
+                  "name": "average",
+                  "nameLocation": "1903:7:85",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19991,
+                  "src": "1895:15:85",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19974,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1895:7:85",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1894:17:85"
+            },
+            "scope": 19992,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "MockFixedPointMath",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          19992
+        ],
+        "name": "MockFixedPointMath",
+        "nameLocation": "145:18:85",
+        "scope": 19993,
+        "usedErrors": [
+          7286,
+          7328
+        ],
+        "usedEvents": []
+      }
+    ],
+    "license": "Apache-2.0"
+  },
+  "id": 85
+} as const;

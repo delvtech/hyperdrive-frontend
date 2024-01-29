@@ -1,2 +1,664 @@
 export const EtchingVault = 
-{"abi":[{"type":"constructor","inputs":[{"name":"_baseToken_","type":"address","internalType":"address"},{"name":"_sharePrice_","type":"uint256","internalType":"uint256"}],"stateMutability":"nonpayable"},{"type":"function","name":"asset","inputs":[],"outputs":[{"name":"","type":"address","internalType":"address"}],"stateMutability":"view"},{"type":"function","name":"convertToAssets","inputs":[{"name":"","type":"uint256","internalType":"uint256"}],"outputs":[{"name":"","type":"uint256","internalType":"uint256"}],"stateMutability":"view"}],"bytecode":{"object":"0x60c060405234801561001057600080fd5b5060405161019e38038061019e83398101604081905261002f91610045565b6001600160a01b0390911660805260a05261007f565b6000806040838503121561005857600080fd5b82516001600160a01b038116811461006f57600080fd5b6020939093015192949293505050565b60805160a05160fe6100a060003960006045015260006087015260fe6000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806307a2d13a14603757806338d52e0f14607a575b600080fd5b6067604236600460b0565b507f000000000000000000000000000000000000000000000000000000000000000090565b6040519081526020015b60405180910390f35b6040516001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001681526020016071565b60006020828403121560c157600080fd5b503591905056fea264697066735822122076602c4fa7f6120af36dd27266575833c02ef051128a4ffb223db46c7288254464736f6c63430008130033","sourceMap":"511:446:75:-:0;;;627:132;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;692:24:75;;;;;726:26;;511:446;;14:351:180;93:6;101;154:2;142:9;133:7;129:23;125:32;122:52;;;170:1;167;160:12;122:52;196:16;;-1:-1:-1;;;;;241:31:180;;231:42;;221:70;;287:1;284;277:12;221:70;355:2;340:18;;;;334:25;310:5;;334:25;;-1:-1:-1;;;14:351:180:o;:::-;511:446:75;;;;;;;;;;;;;;;;;;","linkReferences":{}},"deployedBytecode":{"object":"0x6080604052348015600f57600080fd5b506004361060325760003560e01c806307a2d13a14603757806338d52e0f14607a575b600080fd5b6067604236600460b0565b507f000000000000000000000000000000000000000000000000000000000000000090565b6040519081526020015b60405180910390f35b6040516001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001681526020016071565b60006020828403121560c157600080fd5b503591905056fea264697066735822122076602c4fa7f6120af36dd27266575833c02ef051128a4ffb223db46c7288254464736f6c63430008130033","sourceMap":"511:446:75:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;854:101;;;;;;:::i;:::-;-1:-1:-1;937:11:75;;854:101;;;;345:25:180;;;333:2;318:18;854:101:75;;;;;;;;765:83;;;-1:-1:-1;;;;;831:10:75;545:32:180;527:51;;515:2;500:18;765:83:75;381:203:180;14:180;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:180;;14:180;-1:-1:-1;14:180:180:o","linkReferences":{},"immutableReferences":{"17454":[{"start":135,"length":32}],"17456":[{"start":69,"length":32}]}},"methodIdentifiers":{"asset()":"38d52e0f","convertToAssets(uint256)":"07a2d13a"},"rawMetadata":"{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_baseToken_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_sharePrice_\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"asset\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"convertToAssets\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"This is a helper contract that is etched onto a `MockERC4626` vault      as one of the intermediate steps in the \\\"etching\\\" process in the Rust      debugging tools.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"EtchingVault\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/test/EtchingVault.sol\":\"EtchingVault\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/test/EtchingVault.sol\":{\"keccak256\":\"0xa0656cdeead131dcba3688200253b2547d710adca67a21dfe2b4802e47226e45\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7a9f41b8929ae5d4a9cf9325ed3b821941dee50ed4b42c56bccfd61ea4d535fd\",\"dweb:/ipfs/QmZf7s2ziihnuN33in7A4bbKJposzFs9tbCoyZE6oiNdAx\"]}},\"version\":1}","metadata":{"compiler":{"version":"0.8.19+commit.7dd6d404"},"language":"Solidity","output":{"abi":[{"inputs":[{"internalType":"address","name":"_baseToken_","type":"address"},{"internalType":"uint256","name":"_sharePrice_","type":"uint256"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"stateMutability":"view","type":"function","name":"asset","outputs":[{"internalType":"address","name":"","type":"address"}]},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function","name":"convertToAssets","outputs":[{"internalType":"uint256","name":"","type":"uint256"}]}],"devdoc":{"kind":"dev","methods":{},"version":1},"userdoc":{"kind":"user","methods":{},"version":1}},"settings":{"remappings":["aave-v3-core/=lib/aave-v3-core/","create3-factory/=lib/yield-daddy/lib/create3-factory/","ds-test/=lib/forge-std/lib/ds-test/src/","forge-std/=lib/forge-std/src/","solmate/=lib/solmate/src/","yield-daddy/=lib/yield-daddy/"],"optimizer":{"enabled":true,"runs":200},"metadata":{"bytecodeHash":"ipfs"},"compilationTarget":{"contracts/test/EtchingVault.sol":"EtchingVault"},"libraries":{}},"sources":{"contracts/test/EtchingVault.sol":{"keccak256":"0xa0656cdeead131dcba3688200253b2547d710adca67a21dfe2b4802e47226e45","urls":["bzz-raw://7a9f41b8929ae5d4a9cf9325ed3b821941dee50ed4b42c56bccfd61ea4d535fd","dweb:/ipfs/QmZf7s2ziihnuN33in7A4bbKJposzFs9tbCoyZE6oiNdAx"],"license":"Apache-2.0"}},"version":1},"ast":{"absolutePath":"contracts/test/EtchingVault.sol","id":17492,"exportedSymbols":{"EtchingVault":[17491]},"nodeType":"SourceUnit","src":"39:919:75","nodes":[{"id":17451,"nodeType":"PragmaDirective","src":"39:23:75","nodes":[],"literals":["solidity","0.8",".19"]},{"id":17491,"nodeType":"ContractDefinition","src":"511:446:75","nodes":[{"id":17454,"nodeType":"VariableDeclaration","src":"539:37:75","nodes":[],"constant":false,"mutability":"immutable","name":"_baseToken","nameLocation":"566:10:75","scope":17491,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":17453,"name":"address","nodeType":"ElementaryTypeName","src":"539:7:75","stateMutability":"nonpayable","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"visibility":"internal"},{"id":17456,"nodeType":"VariableDeclaration","src":"582:38:75","nodes":[],"constant":false,"mutability":"immutable","name":"_sharePrice","nameLocation":"609:11:75","scope":17491,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":17455,"name":"uint256","nodeType":"ElementaryTypeName","src":"582:7:75","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"id":17472,"nodeType":"FunctionDefinition","src":"627:132:75","nodes":[],"body":{"id":17471,"nodeType":"Block","src":"682:77:75","nodes":[],"statements":[{"expression":{"id":17465,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":17463,"name":"_baseToken","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":17454,"src":"692:10:75","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"id":17464,"name":"_baseToken_","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":17458,"src":"705:11:75","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"src":"692:24:75","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"id":17466,"nodeType":"ExpressionStatement","src":"692:24:75"},{"expression":{"id":17469,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":17467,"name":"_sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":17456,"src":"726:11:75","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"id":17468,"name":"_sharePrice_","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":17460,"src":"740:12:75","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"726:26:75","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":17470,"nodeType":"ExpressionStatement","src":"726:26:75"}]},"implemented":true,"kind":"constructor","modifiers":[],"name":"","nameLocation":"-1:-1:-1","parameters":{"id":17461,"nodeType":"ParameterList","parameters":[{"constant":false,"id":17458,"mutability":"mutable","name":"_baseToken_","nameLocation":"647:11:75","nodeType":"VariableDeclaration","scope":17472,"src":"639:19:75","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":17457,"name":"address","nodeType":"ElementaryTypeName","src":"639:7:75","stateMutability":"nonpayable","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"visibility":"internal"},{"constant":false,"id":17460,"mutability":"mutable","name":"_sharePrice_","nameLocation":"668:12:75","nodeType":"VariableDeclaration","scope":17472,"src":"660:20:75","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":17459,"name":"uint256","nodeType":"ElementaryTypeName","src":"660:7:75","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"638:43:75"},"returnParameters":{"id":17462,"nodeType":"ParameterList","parameters":[],"src":"682:0:75"},"scope":17491,"stateMutability":"nonpayable","virtual":false,"visibility":"public"},{"id":17480,"nodeType":"FunctionDefinition","src":"765:83:75","nodes":[],"body":{"id":17479,"nodeType":"Block","src":"814:34:75","nodes":[],"statements":[{"expression":{"id":17477,"name":"_baseToken","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":17454,"src":"831:10:75","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"functionReturnParameters":17476,"id":17478,"nodeType":"Return","src":"824:17:75"}]},"functionSelector":"38d52e0f","implemented":true,"kind":"function","modifiers":[],"name":"asset","nameLocation":"774:5:75","parameters":{"id":17473,"nodeType":"ParameterList","parameters":[],"src":"779:2:75"},"returnParameters":{"id":17476,"nodeType":"ParameterList","parameters":[{"constant":false,"id":17475,"mutability":"mutable","name":"","nameLocation":"-1:-1:-1","nodeType":"VariableDeclaration","scope":17480,"src":"805:7:75","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":17474,"name":"address","nodeType":"ElementaryTypeName","src":"805:7:75","stateMutability":"nonpayable","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"visibility":"internal"}],"src":"804:9:75"},"scope":17491,"stateMutability":"view","virtual":false,"visibility":"external"},{"id":17490,"nodeType":"FunctionDefinition","src":"854:101:75","nodes":[],"body":{"id":17489,"nodeType":"Block","src":"920:35:75","nodes":[],"statements":[{"expression":{"id":17487,"name":"_sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":17456,"src":"937:11:75","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":17486,"id":17488,"nodeType":"Return","src":"930:18:75"}]},"functionSelector":"07a2d13a","implemented":true,"kind":"function","modifiers":[],"name":"convertToAssets","nameLocation":"863:15:75","parameters":{"id":17483,"nodeType":"ParameterList","parameters":[{"constant":false,"id":17482,"mutability":"mutable","name":"","nameLocation":"-1:-1:-1","nodeType":"VariableDeclaration","scope":17490,"src":"879:7:75","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":17481,"name":"uint256","nodeType":"ElementaryTypeName","src":"879:7:75","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"878:9:75"},"returnParameters":{"id":17486,"nodeType":"ParameterList","parameters":[{"constant":false,"id":17485,"mutability":"mutable","name":"","nameLocation":"-1:-1:-1","nodeType":"VariableDeclaration","scope":17490,"src":"911:7:75","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":17484,"name":"uint256","nodeType":"ElementaryTypeName","src":"911:7:75","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"910:9:75"},"scope":17491,"stateMutability":"view","virtual":false,"visibility":"external"}],"abstract":false,"baseContracts":[],"canonicalName":"EtchingVault","contractDependencies":[],"contractKind":"contract","documentation":{"id":17452,"nodeType":"StructuredDocumentation","src":"64:447:75","text":"@author DELV\n @title EtchingVault\n @dev This is a helper contract that is etched onto a `MockERC4626` vault\n      as one of the intermediate steps in the \"etching\" process in the Rust\n      debugging tools.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."},"fullyImplemented":true,"linearizedBaseContracts":[17491],"name":"EtchingVault","nameLocation":"520:12:75","scope":17492,"usedErrors":[]}],"license":"Apache-2.0"},"id":75} as const;
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_baseToken_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_vaultSharePrice_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "asset",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "convertToAssets",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x60c060405234801561001057600080fd5b5060405161019e38038061019e83398101604081905261002f91610045565b6001600160a01b0390911660805260a05261007f565b6000806040838503121561005857600080fd5b82516001600160a01b038116811461006f57600080fd5b6020939093015192949293505050565b60805160a05160fe6100a060003960006045015260006087015260fe6000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806307a2d13a14603757806338d52e0f14607a575b600080fd5b6067604236600460b0565b507f000000000000000000000000000000000000000000000000000000000000000090565b6040519081526020015b60405180910390f35b6040516001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001681526020016071565b60006020828403121560c157600080fd5b503591905056fea2646970667358221220bf31d7d4014b34f65f9a3539b27871551c603a48e718d08b1402b2313f506a0464736f6c63430008140033",
+    "sourceMap": "511:471:81:-:0;;;632:147;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;702:24:81;;;;;736:36;;511:471;;14:351:184;93:6;101;154:2;142:9;133:7;129:23;125:32;122:52;;;170:1;167;160:12;122:52;196:16;;-1:-1:-1;;;;;241:31:184;;231:42;;221:70;;287:1;284;277:12;221:70;355:2;340:18;;;;334:25;310:5;;334:25;;-1:-1:-1;;;14:351:184:o;:::-;511:471:81;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c806307a2d13a14603757806338d52e0f14607a575b600080fd5b6067604236600460b0565b507f000000000000000000000000000000000000000000000000000000000000000090565b6040519081526020015b60405180910390f35b6040516001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001681526020016071565b60006020828403121560c157600080fd5b503591905056fea2646970667358221220bf31d7d4014b34f65f9a3539b27871551c603a48e718d08b1402b2313f506a0464736f6c63430008140033",
+    "sourceMap": "511:471:81:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;874:106;;;;;;:::i;:::-;-1:-1:-1;957:16:81;;874:106;;;;345:25:184;;;333:2;318:18;874:106:81;;;;;;;;785:83;;;-1:-1:-1;;;;;851:10:81;545:32:184;527:51;;515:2;500:18;785:83:81;381:203:184;14:180;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:184;;14:180;-1:-1:-1;14:180:184:o",
+    "linkReferences": {},
+    "immutableReferences": {
+      "19269": [
+        {
+          "start": 135,
+          "length": 32
+        }
+      ],
+      "19271": [
+        {
+          "start": 69,
+          "length": 32
+        }
+      ]
+    }
+  },
+  "methodIdentifiers": {
+    "asset()": "38d52e0f",
+    "convertToAssets(uint256)": "07a2d13a"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_baseToken_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_vaultSharePrice_\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"asset\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"convertToAssets\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"This is a helper contract that is etched onto a `MockERC4626` vault      as one of the intermediate steps in the \\\"etching\\\" process in the Rust      debugging tools.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"EtchingVault\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/test/EtchingVault.sol\":\"EtchingVault\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/test/EtchingVault.sol\":{\"keccak256\":\"0x756b076eba139fa9dbc5e45ec6ce3d18a50347798912c073821221a5edd0b8dd\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8cbe4766616950283607c67b26377166328a998d3f8d4022aed2305cde14783f\",\"dweb:/ipfs/QmWPGJG4c1YDcthA5oQbsymbYZp3ZXbTzd8VppBqpXE14k\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_baseToken_",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_vaultSharePrice_",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "asset",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "convertToAssets",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "aave-v3-core/=lib/aave-v3-core/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/=lib/openzeppelin-contracts/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "contracts/test/EtchingVault.sol": "EtchingVault"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "contracts/test/EtchingVault.sol": {
+        "keccak256": "0x756b076eba139fa9dbc5e45ec6ce3d18a50347798912c073821221a5edd0b8dd",
+        "urls": [
+          "bzz-raw://8cbe4766616950283607c67b26377166328a998d3f8d4022aed2305cde14783f",
+          "dweb:/ipfs/QmWPGJG4c1YDcthA5oQbsymbYZp3ZXbTzd8VppBqpXE14k"
+        ],
+        "license": "Apache-2.0"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "contracts/test/EtchingVault.sol",
+    "id": 19307,
+    "exportedSymbols": {
+      "EtchingVault": [
+        19306
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:944:81",
+    "nodes": [
+      {
+        "id": 19266,
+        "nodeType": "PragmaDirective",
+        "src": "39:23:81",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".20"
+        ]
+      },
+      {
+        "id": 19306,
+        "nodeType": "ContractDefinition",
+        "src": "511:471:81",
+        "nodes": [
+          {
+            "id": 19269,
+            "nodeType": "VariableDeclaration",
+            "src": "539:37:81",
+            "nodes": [],
+            "constant": false,
+            "mutability": "immutable",
+            "name": "_baseToken",
+            "nameLocation": "566:10:81",
+            "scope": 19306,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 19268,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "539:7:81",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 19271,
+            "nodeType": "VariableDeclaration",
+            "src": "582:43:81",
+            "nodes": [],
+            "constant": false,
+            "mutability": "immutable",
+            "name": "_vaultSharePrice",
+            "nameLocation": "609:16:81",
+            "scope": 19306,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 19270,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "582:7:81",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 19287,
+            "nodeType": "FunctionDefinition",
+            "src": "632:147:81",
+            "nodes": [],
+            "body": {
+              "id": 19286,
+              "nodeType": "Block",
+              "src": "692:87:81",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 19280,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 19278,
+                      "name": "_baseToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 19269,
+                      "src": "702:10:81",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 19279,
+                      "name": "_baseToken_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 19273,
+                      "src": "715:11:81",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "702:24:81",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 19281,
+                  "nodeType": "ExpressionStatement",
+                  "src": "702:24:81"
+                },
+                {
+                  "expression": {
+                    "id": 19284,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 19282,
+                      "name": "_vaultSharePrice",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 19271,
+                      "src": "736:16:81",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 19283,
+                      "name": "_vaultSharePrice_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 19275,
+                      "src": "755:17:81",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "736:36:81",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 19285,
+                  "nodeType": "ExpressionStatement",
+                  "src": "736:36:81"
+                }
+              ]
+            },
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 19276,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19273,
+                  "mutability": "mutable",
+                  "name": "_baseToken_",
+                  "nameLocation": "652:11:81",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19287,
+                  "src": "644:19:81",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 19272,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "644:7:81",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19275,
+                  "mutability": "mutable",
+                  "name": "_vaultSharePrice_",
+                  "nameLocation": "673:17:81",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19287,
+                  "src": "665:25:81",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19274,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "665:7:81",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "643:48:81"
+            },
+            "returnParameters": {
+              "id": 19277,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "692:0:81"
+            },
+            "scope": 19306,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 19295,
+            "nodeType": "FunctionDefinition",
+            "src": "785:83:81",
+            "nodes": [],
+            "body": {
+              "id": 19294,
+              "nodeType": "Block",
+              "src": "834:34:81",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 19292,
+                    "name": "_baseToken",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 19269,
+                    "src": "851:10:81",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 19291,
+                  "id": 19293,
+                  "nodeType": "Return",
+                  "src": "844:17:81"
+                }
+              ]
+            },
+            "functionSelector": "38d52e0f",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "asset",
+            "nameLocation": "794:5:81",
+            "parameters": {
+              "id": 19288,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "799:2:81"
+            },
+            "returnParameters": {
+              "id": 19291,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19290,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19295,
+                  "src": "825:7:81",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 19289,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "825:7:81",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "824:9:81"
+            },
+            "scope": 19306,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 19305,
+            "nodeType": "FunctionDefinition",
+            "src": "874:106:81",
+            "nodes": [],
+            "body": {
+              "id": 19304,
+              "nodeType": "Block",
+              "src": "940:40:81",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 19302,
+                    "name": "_vaultSharePrice",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 19271,
+                    "src": "957:16:81",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 19301,
+                  "id": 19303,
+                  "nodeType": "Return",
+                  "src": "950:23:81"
+                }
+              ]
+            },
+            "functionSelector": "07a2d13a",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "convertToAssets",
+            "nameLocation": "883:15:81",
+            "parameters": {
+              "id": 19298,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19297,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19305,
+                  "src": "899:7:81",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19296,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "899:7:81",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "898:9:81"
+            },
+            "returnParameters": {
+              "id": 19301,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19300,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19305,
+                  "src": "931:7:81",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19299,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "931:7:81",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "930:9:81"
+            },
+            "scope": 19306,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "EtchingVault",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 19267,
+          "nodeType": "StructuredDocumentation",
+          "src": "64:447:81",
+          "text": "@author DELV\n @title EtchingVault\n @dev This is a helper contract that is etched onto a `MockERC4626` vault\n      as one of the intermediate steps in the \"etching\" process in the Rust\n      debugging tools.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."
+        },
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          19306
+        ],
+        "name": "EtchingVault",
+        "nameLocation": "520:12:81",
+        "scope": 19307,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "Apache-2.0"
+  },
+  "id": 81
+} as const;
