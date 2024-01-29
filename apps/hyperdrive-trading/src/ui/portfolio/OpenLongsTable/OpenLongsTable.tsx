@@ -276,7 +276,10 @@ export function OpenLongsTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td className="align-top" key={cell.id}>
+                        <td
+                          className="align-top text-xs md:text-md"
+                          key={cell.id}
+                        >
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),
@@ -330,7 +333,7 @@ function CurrentValueCell({
       <div
         data-tip={"Profit/Loss since open"}
         className={classNames(
-          "daisy-badge daisy-badge-md daisy-tooltip inline-flex text-xs",
+          "daisy-badge daisy-badge-sm daisy-tooltip inline-flex text-xs lg:daisy-badge-md",
           { "text-success": isPositiveChangeInValue },
           { "text-error": !isPositiveChangeInValue },
         )}
@@ -377,7 +380,7 @@ function FixedRateCell({
       <div
         data-tip={"Yield after fees if held to maturity"}
         className={
-          "daisy-badge daisy-badge-md daisy-tooltip inline-flex w-28 px-2 text-xs text-success"
+          "daisy-badge daisy-badge-sm daisy-tooltip inline-flex w-32 px-2 text-xs text-success lg:daisy-badge-md"
         }
       >
         <span>{"+"}</span>
