@@ -204,12 +204,12 @@ function CurrentValueCell({
 
   return (
     <div className="flex flex-row gap-1 sm:flex-col">
-      <span className="ml-1 font-bold">{currentValue?.toString()}</span>
+      <span className="font-bold">{currentValue?.toString()}</span>
       {baseAmountOut && openShort.bondAmount !== 0n ? (
         <div
           data-tip={"Profit/Loss since open"}
           className={classNames(
-            "daisy-badge daisy-badge-md daisy-tooltip inline-flex text-xs",
+            "daisy-badge daisy-badge-sm daisy-tooltip inline-flex text-xs lg:daisy-badge-md",
             { "text-success": isPositiveChangeInValue },
             { "text-error": !isPositiveChangeInValue },
           )}
@@ -334,7 +334,10 @@ export function OpenShortsTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td className="align-top" key={cell.id}>
+                        <td
+                          className="align-top text-xs md:text-md"
+                          key={cell.id}
+                        >
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),

@@ -21,13 +21,13 @@ export const EXTRA_LARGE_BREAKPOINT = 1280;
 export function useIsTailwindSmallScreen(): boolean {
   const isSm = useIsTailwindSm();
   const isMd = useIsTailwindMd();
-  return isSm || isMd;
+  const isLg = useIsTailwindLg();
+  return isSm || isMd || isLg;
 }
 
 export function useIsTailwindLargeScreen(): boolean {
-  const isLg = useIsTailwindLg();
   const isXl = useIsTailwindXl();
-  return isLg || isXl;
+  return isXl;
 }
 
 function useIsTailwindSm(): boolean {

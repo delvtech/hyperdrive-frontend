@@ -276,7 +276,10 @@ export function OpenLongsTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td className="align-top" key={cell.id}>
+                        <td
+                          className="align-top text-xs md:text-md"
+                          key={cell.id}
+                        >
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),
@@ -325,12 +328,12 @@ function CurrentValueCell({
     return <div>Insufficient Liquidity</div>;
   }
   return (
-    <div className="flex items-start gap-1 lg:flex-col">
-      <span className="font-bold lg:ml-2">{currentValue?.toString()}</span>
+    <div className="flex items-start gap-1 xl:flex-col">
+      <span className="font-bold xl:ml-2">{currentValue?.toString()}</span>
       <div
         data-tip={"Profit/Loss since open"}
         className={classNames(
-          "daisy-badge daisy-badge-md daisy-tooltip inline-flex text-xs",
+          "daisy-badge daisy-badge-sm daisy-tooltip inline-flex text-xs lg:daisy-badge-md",
           { "text-success": isPositiveChangeInValue },
           { "text-error": !isPositiveChangeInValue },
         )}
@@ -372,12 +375,12 @@ function FixedRateCell({
   });
 
   return (
-    <div className="flex items-start gap-1 lg:flex-col">
-      <span className="font-bold lg:ml-2">{formatRate(fixedRate)}%</span>
+    <div className="flex items-start gap-1 xl:flex-col">
+      <span className="font-bold xl:ml-2">{formatRate(fixedRate)}%</span>
       <div
         data-tip={"Yield after fees if held to maturity"}
         className={
-          "daisy-badge daisy-badge-md daisy-tooltip inline-flex w-28 px-2 text-xs text-success"
+          "daisy-badge daisy-badge-sm daisy-tooltip inline-flex w-32 px-2 text-xs text-success lg:daisy-badge-md"
         }
       >
         <span>{"+"}</span>
