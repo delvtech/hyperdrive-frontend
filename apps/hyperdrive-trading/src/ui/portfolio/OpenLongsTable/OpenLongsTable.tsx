@@ -325,8 +325,8 @@ function CurrentValueCell({
     return <div>Insufficient Liquidity</div>;
   }
   return (
-    <div className="flex items-start gap-1 lg:flex-col">
-      <span className="font-bold lg:ml-2">{currentValue?.toString()}</span>
+    <div className="flex items-start gap-1 xl:flex-col">
+      <span className="font-bold xl:ml-2">{currentValue?.toString()}</span>
       <div
         data-tip={"Profit/Loss since open"}
         className={classNames(
@@ -372,8 +372,8 @@ function FixedRateCell({
   });
 
   return (
-    <div className="flex items-start gap-1 lg:flex-col">
-      <span className="font-bold lg:ml-2">{formatRate(fixedRate)}%</span>
+    <div className="flex items-start gap-1 xl:flex-col">
+      <span className="font-bold xl:ml-2">{formatRate(fixedRate)}%</span>
       <div
         data-tip={"Yield after fees if held to maturity"}
         className={
