@@ -13,11 +13,11 @@ export function MarketDetailsTab({
   transactionFormHeading: string;
 }): ReactElement {
   return (
-    <div className="flex w-full flex-col items-center gap-10">
-      <div className="flex flex-col gap-10 xl:flex-row">
-        <div className="flex flex-1 flex-col md:px-8">
+    <div className="flex w-full max-w-7xl flex-col items-center gap-10">
+      <div className="flex w-full flex-col gap-10 xl:flex-row">
+        <div className="flex flex-1 flex-col  md:px-8">
           {/* positions and faq tabs */}
-          <div className="flex flex-col md:w-[750px]">{positions}</div>
+          <div className="flex flex-col">{positions}</div>
         </div>
 
         {/* transaction form */}
