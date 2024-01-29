@@ -1,8 +1,8 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
+  Long,
   calculateFixedRateFromOpenLong,
   calculateMatureLongYieldAfterFees,
-  Long,
 } from "@hyperdrive/sdk";
 import {
   createColumnHelper,
@@ -325,7 +325,7 @@ function CurrentValueCell({
     return <div>Insufficient Liquidity</div>;
   }
   return (
-    <div className="flex items-center gap-1 lg:flex-col">
+    <div className="flex items-start gap-1 lg:flex-col">
       <span className="font-bold lg:ml-2">{currentValue?.toString()}</span>
       <div
         data-tip={"Profit/Loss since open"}
@@ -372,12 +372,12 @@ function FixedRateCell({
   });
 
   return (
-    <div className="flex items-center gap-1 lg:flex-col">
+    <div className="flex items-start gap-1 lg:flex-col">
       <span className="font-bold lg:ml-2">{formatRate(fixedRate)}%</span>
       <div
         data-tip={"Yield after fees if held to maturity"}
         className={
-          "daisy-badge daisy-badge-md daisy-tooltip inline-flex px-2 text-xs text-success"
+          "daisy-badge daisy-badge-md daisy-tooltip inline-flex w-28 px-2 text-xs text-success"
         }
       >
         <span>{"+"}</span>
