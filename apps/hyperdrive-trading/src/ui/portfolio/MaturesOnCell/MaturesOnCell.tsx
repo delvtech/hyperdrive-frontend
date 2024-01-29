@@ -21,7 +21,7 @@ export function MaturesOnCell({
       {isTermComplete ? (
         <div
           className={
-            "daisy-badge daisy-badge-success daisy-badge-md inline-flex text-xs"
+            "daisy-badge daisy-badge-success daisy-badge-md inline-flex w-28 text-xs"
           }
         >
           Term complete
