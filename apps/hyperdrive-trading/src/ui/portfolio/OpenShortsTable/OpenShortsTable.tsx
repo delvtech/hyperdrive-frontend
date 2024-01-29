@@ -204,7 +204,7 @@ function CurrentValueCell({
 
   return (
     <div className="flex flex-row gap-1 sm:flex-col">
-      <span className="ml-1 font-bold">{currentValue?.toString()}</span>
+      <span className="font-bold">{currentValue?.toString()}</span>
       {baseAmountOut && openShort.bondAmount !== 0n ? (
         <div
           data-tip={"Profit/Loss since open"}
