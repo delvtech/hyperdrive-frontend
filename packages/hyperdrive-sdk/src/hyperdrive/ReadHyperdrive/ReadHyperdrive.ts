@@ -278,6 +278,7 @@ export interface IReadHyperdrive {
   previewAddLiquidity(args: {
     contribution: bigint;
     minAPR: bigint;
+    minLpSharePrice: bigint;
     maxAPR: bigint;
     destination: Address;
     asBase: boolean;
@@ -479,15 +480,15 @@ export class ReadHyperdrive implements IReadHyperdrive {
       const checkpointAtMaturity = await this.getCheckpoint({
         checkpointId: checkpointId + positionDuration,
       });
-      finalSharePrice = checkpointAtMaturity.sharePrice;
+      finalSharePrice = checkpointAtMaturity.vaultSharePrice;
     } else {
       // Otherwise get the current vault share price
       const poolInfo = await this.getPoolInfo(options);
-      finalSharePrice = poolInfo.sharePrice;
+      finalSharePrice = poolInfo.vaultSharePrice;
     }
 
     const accruedYield = calculateShortAccruedYield({
-      fromSharePrice: checkpoint.sharePrice,
+      fromSharePrice: checkpoint.vaultSharePrice,
       toSharePrice: finalSharePrice,
       bondAmount,
       decimals,
@@ -1012,7 +1013,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       checkpointId,
       options,
     });
-    const { sharePrice: openSharePrice } = await this.getCheckpoint({
+    const { vaultSharePrice: openSharePrice } = await this.getCheckpoint({
       checkpointId,
     });
 
@@ -1295,6 +1296,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async previewAddLiquidity({
     contribution,
     minAPR,
+    minLpSharePrice,
     maxAPR,
     destination,
     asBase,
@@ -1303,6 +1305,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     contribution: bigint;
     minAPR: bigint;
+    minLpSharePrice: bigint;
     maxAPR: bigint;
     destination: Address;
     asBase: boolean;
@@ -1311,7 +1314,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }): ReturnType<IReadHyperdrive, "previewAddLiquidity"> {
     const [lpShares] = await this.contract.simulateWrite(
       "addLiquidity",
-      [contribution, minAPR, maxAPR, { destination, asBase, extraData }],
+      [
+        contribution,
+        minAPR,
+        minLpSharePrice,
+        maxAPR,
+        { destination, asBase, extraData },
+      ],
       options,
     );
     return lpShares;
