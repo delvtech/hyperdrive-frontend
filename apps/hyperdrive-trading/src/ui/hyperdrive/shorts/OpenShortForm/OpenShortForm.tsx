@@ -60,7 +60,7 @@ export function OpenShortForm({
   const { openShort, openShortSubmittedStatus } = useOpenShort({
     hyperdriveAddress: hyperdrive.address,
     amountBondShorts: amountAsBigInt,
-    minSharePrice: poolInfo?.sharePrice,
+    minSharePrice: poolInfo?.vaultSharePrice,
     // TODO: handle slippage
     maxBaseAmountIn: MAX_UINT256,
     destination: account,

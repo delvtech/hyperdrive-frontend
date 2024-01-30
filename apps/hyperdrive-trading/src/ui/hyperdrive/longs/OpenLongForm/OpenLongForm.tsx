@@ -80,7 +80,7 @@ export function OpenLongForm({
     hyperdriveAddress: hyperdrive.address,
     baseAmount: amountAsBigInt,
     bondAmountOut: longAmountOutAfterSlippage,
-    minSharePrice: poolInfo?.sharePrice,
+    minSharePrice: poolInfo?.vaultSharePrice,
     destination: account,
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onExecuted: (hash) => {

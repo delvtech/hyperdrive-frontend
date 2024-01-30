@@ -13,6 +13,7 @@ interface UseAddLiquidityOptions {
   destination: Address | undefined;
   contribution: bigint | undefined;
   minAPR: bigint | undefined;
+  minLpSharePrice: bigint | undefined;
   maxAPR: bigint | undefined;
   asBase?: boolean;
   /** Controls whether or not an `addLiquidity` callback will be returned to the
@@ -31,6 +32,7 @@ export function useAddLiquidity({
   destination,
   contribution,
   minAPR,
+  minLpSharePrice,
   maxAPR,
   asBase = true,
   enabled,
@@ -43,6 +45,7 @@ export function useAddLiquidity({
   const mutationEnabled =
     !!contribution &&
     minAPR !== undefined &&
+    minLpSharePrice !== undefined &&
     maxAPR !== undefined &&
     !!destination &&
     enabled &&
@@ -54,6 +57,7 @@ export function useAddLiquidity({
         await readWriteHyperdrive.addLiquidity({
           contribution,
           minAPR,
+          minLpSharePrice,
           maxAPR,
           destination,
           asBase,

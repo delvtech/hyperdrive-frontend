@@ -9,6 +9,7 @@ interface UsePreviewAddLiquidityOptions {
   destination: Address | undefined;
   contribution: bigint | undefined;
   minAPR: bigint | undefined;
+  minLpSharePrice: bigint | undefined;
   maxAPR: bigint | undefined;
   asBase?: boolean;
   enabled?: boolean;
@@ -24,6 +25,7 @@ export function usePreviewAddLiquidity({
   destination,
   contribution,
   minAPR,
+  minLpSharePrice,
   maxAPR,
   asBase = true,
   enabled = true,
@@ -33,6 +35,7 @@ export function usePreviewAddLiquidity({
   const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
   const queryEnabled =
     minAPR !== undefined &&
+    minLpSharePrice !== undefined &&
     !!maxAPR &&
     !!contribution &&
     !!destination &&
@@ -56,6 +59,7 @@ export function usePreviewAddLiquidity({
             destination,
             contribution,
             minAPR,
+            minLpSharePrice,
             maxAPR,
             asBase,
           })
