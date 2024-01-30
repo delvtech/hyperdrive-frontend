@@ -1,7 +1,6 @@
 import { LocalAddressesJson } from "src/addresses/LocalAddressesJson";
 import { AppConfig } from "src/appconfig/AppConfig";
 import { getErc4626HyperdriveConfig } from "src/hyperdrive/getErc4626HyperdriveConfig";
-import { getStethHyperdriveConfig } from "src/hyperdrive/getStethHyperdriveConfig";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { yieldSourceProtocols } from "src/yieldSources/yieldSourceProtocols";
 import { yieldSources } from "src/yieldSources/yieldSources";
@@ -30,15 +29,16 @@ export async function getAppConfigFromLocalAddresses({
       }),
     );
   }
-  if (addresses.stethHyperdrive) {
-    hyperdrives.push(
-      await getStethHyperdriveConfig({
-        hyperdriveAddress: addresses.stethHyperdrive,
-        publicClient,
-        yieldSource: "lidoSteth",
-      }),
-    );
-  }
+  // TODO: Uncomment this once stethHyperdrive is properly deployed again on devnet
+  // if (addresses.stethHyperdrive) {
+  //   hyperdrives.push(
+  //     await getStethHyperdriveConfig({
+  //       hyperdriveAddress: addresses.stethHyperdrive,
+  //       publicClient,
+  //       yieldSource: "lidoSteth",
+  //     }),
+  //   );
+  // }
   const config: AppConfig = {
     chainId,
     hyperdrives,
