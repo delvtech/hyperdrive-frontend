@@ -3,7 +3,7 @@ import { PoolInfo } from "src/pool/PoolInfo";
 export const simplePoolInfo: PoolInfo = {
   shareReserves: 10000000000000000000000000n,
   bondReserves: 10217899519533796120000000n,
-  sharePrice: 1000000000000000000n,
+  vaultSharePrice: 1000000000000000000n,
   longsOutstanding: 0n,
   shortsOutstanding: 0n,
   longExposure: 0n,

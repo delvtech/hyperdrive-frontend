@@ -11,7 +11,7 @@ export const simplePoolConfig: PoolConfig = {
     governanceLP: 10000000000000000n,
     governanceZombie: 100000000000000000n,
   },
-  initialSharePrice: 1000000000000000000n,
+  initialVaultSharePrice: 1000000000000000000n,
   minimumShareReserves: 10000000000000000000n,
   minimumTransactionAmount: 1000000000000000n,
   timeStretch: 44463125629060298n,
