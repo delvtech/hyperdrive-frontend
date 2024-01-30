@@ -62,7 +62,7 @@ export function useOpenShortPreview({
             args: [
               bondAmount,
               maxDeposit,
-              poolInfo?.sharePrice,
+              poolInfo?.vaultSharePrice,
               { destination, asBase: asUnderlying, extraData: zeroAddress },
             ],
             value: 0n,
