@@ -73,7 +73,7 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
         baseAmount: dnum.from("1", 18)[0],
         bondAmount: dnum.from("1.3", 18)[0],
         maturityTime: 1729209600n,
-        sharePrice: 1n,
+        vaultSharePrice: 1n,
         trader: BOB,
       },
     },
@@ -84,7 +84,7 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
         baseAmount: dnum.from("1", 18)[0],
         bondAmount: dnum.from("1.4", 18)[0],
         maturityTime: 1733961600n,
-        sharePrice: 1n,
+        vaultSharePrice: 1n,
         trader: ALICE,
       },
     },
@@ -98,7 +98,7 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
         baseAmount: dnum.from("1", 18)[0],
         bondAmount: dnum.from("100", 18)[0],
         maturityTime: 1729296000n,
-        sharePrice: 1n,
+        vaultSharePrice: 1n,
         trader: BOB,
       },
     },
@@ -109,7 +109,7 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
         baseAmount: dnum.from("2", 18)[0],
         bondAmount: dnum.from("190", 18)[0],
         maturityTime: 1729296000n,
-        sharePrice: 1n,
+        vaultSharePrice: 1n,
         trader: BOB,
       },
     },
@@ -145,13 +145,13 @@ test("getShortAccruedYield should return the amount of yield a non-mature positi
   // The pool info gives us the current price
   contract.stubRead({
     functionName: "getPoolInfo",
-    value: [{ ...simplePoolInfo, sharePrice: dnum.from("1.01", 18)[0] }],
+    value: [{ ...simplePoolInfo, vaultSharePrice: dnum.from("1.01", 18)[0] }],
   });
 
   // The checkpoint gives us the price when the bond was opened
   contract.stubRead({
     functionName: "getCheckpoint",
-    value: [{ sharePrice: dnum.from("1.008", 18)[0] }],
+    value: [{ vaultSharePrice: dnum.from("1.008", 18)[0] }],
   });
 
   const accruedYield = await readHyperdrive.getShortAccruedYield({
@@ -187,14 +187,14 @@ test("getShortAccruedYield should return the amount of yield a mature position h
   contract.stubRead({
     functionName: "getCheckpoint",
     args: [1n],
-    value: [{ sharePrice: dnum.from("1.008", 18)[0] }],
+    value: [{ vaultSharePrice: dnum.from("1.008", 18)[0] }],
   });
 
   // This checkpoint gives us the price when the shorts matured
   contract.stubRead({
     functionName: "getCheckpoint",
     args: [86401n],
-    value: [{ sharePrice: dnum.from("1.01", 18)[0] }],
+    value: [{ vaultSharePrice: dnum.from("1.01", 18)[0] }],
   });
 
   const accruedYield = await readHyperdrive.getShortAccruedYield({
@@ -215,7 +215,7 @@ test("getCheckpointEvents should return an array of CheckpointEvents", async () 
     {
       eventName: "CreateCheckpoint",
       args: {
-        sharePrice: 423890n,
+        vaultSharePrice: 423890n,
         checkpointTime: 1699480800n,
         lpSharePrice: 1000276463406900050n,
         maturedLongs: 1010694n,

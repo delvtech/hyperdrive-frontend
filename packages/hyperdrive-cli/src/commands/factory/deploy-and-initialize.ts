@@ -1,14 +1,12 @@
 import { ERC20Mintable } from "@hyperdrive/artifacts/dist/ERC20Mintable.js";
-import { ForwarderFactory } from "@hyperdrive/artifacts/dist/ForwarderFactory.js";
-import { HyperdriveFactory } from "@hyperdrive/artifacts/dist/HyperdriveFactory.js";
+// TODO: As of contracts version 0.7.0, this no longer exists
+// import { ForwarderFactory } from "@hyperdrive/artifacts/dist/ForwarderFactory.js";
 import { MockERC4626 } from "@hyperdrive/artifacts/dist/MockERC4626.js";
 import { command } from "clide-js";
-import signale from "signale";
 import { ZERO_ADDRESS } from "src/constants.js";
 import {
   createPublicClient,
   createWalletClient,
-  decodeEventLog,
   encodeAbiParameters,
   http,
   parseAbiParameters,
@@ -18,7 +16,6 @@ import { privateKeyToAccount } from "viem/accounts";
 import { chainOption, getChain } from "../../reusable-options/chain.js";
 import { rpcUrlOption } from "../../reusable-options/rpc-url.js";
 import { walletKeyOption } from "../../reusable-options/wallet-key.js";
-import { calculateTimeStretch } from "../../utils/calculateTimeStretch.js";
 
 export default command({
   description: "Deploy a Hyperdrive instance with a factory configuration",
@@ -251,14 +248,15 @@ export default command({
       functionName: "decimals",
     });
 
-    const linkerCodeHash =
-      linkerFactory === ZERO_ADDRESS
-        ? "0x".padEnd(66, "0")
-        : await publicClient.readContract({
-            abi: ForwarderFactory.abi,
-            address: linkerFactory as `0x${string}`,
-            functionName: "ERC20LINK_HASH",
-          });
+    // TODO: As of contracts version 0.7.0, the ForwarderFactory no longer exists
+    // const linkerCodeHash =
+    //   linkerFactory === ZERO_ADDRESS
+    //     ? "0x".padEnd(66, "0")
+    //     : await publicClient.readContract({
+    //         abi: ForwarderFactory.abi,
+    //         address: linkerFactory as `0x${string}`,
+    //         functionName: "ERC20LINK_HASH",
+    //       });
 
     const extraData = encodeAbiParameters(
       parseAbiParameters("address, address[]"),
@@ -291,62 +289,59 @@ export default command({
       await walletClient.writeContract(request);
     }
 
-    const { request } = await publicClient.simulateContract({
-      abi: HyperdriveFactory.abi,
-      address: address as `0x${string}`,
-      functionName: "deployAndInitialize",
-      args: [
-        hyperdriveDeployer as `0x${string}`,
-        {
-          baseToken,
-          linkerFactory: linkerFactory as `0x${string}`,
-          linkerCodeHash: linkerCodeHash as `0x${string}`,
-          minimumShareReserves: parseUnits(minShareReserves, decimals),
-          minimumTransactionAmount: parseUnits(minTxAmount, decimals),
-          positionDuration: BigInt(positionDuration),
-          checkpointDuration: BigInt(checkpointDuration),
-          timeStretch: calculateTimeStretch(timeStretchApr),
-          governance: governance as `0x${string}`,
-          feeCollector: feeCollector as `0x${string}`,
-          fees: {
-            curve: parseUnits(curveFee, decimals),
-            flat: parseUnits(flatFee, decimals),
-            governanceLP: parseUnits(govLpFee, decimals),
-            governanceZombie: parseUnits(govZombieFee, decimals),
-          },
-        },
-        extraData,
-        parsedContribution,
-        parseUnits(apr, decimals),
-        initializeExtraData as `0x${string}`,
-      ],
-    });
-
-    signale.pending("Deploying and initializing Hyperdrive...");
-    const txHash = await walletClient.writeContract(request);
-    signale.pending(`Deploy and initialize tx submitted: ${txHash}`);
-    const result = await publicClient.waitForTransactionReceipt({
-      hash: txHash,
-    });
-
-    let hyperdriveAddress: string | undefined;
-
-    for (const log of result.logs) {
-      if (log.address === address) {
-        hyperdriveAddress = decodeEventLog({
-          abi: HyperdriveFactory.abi,
-          eventName: "Deployed",
-          topics: log.topics,
-          data: log.data,
-        }).args.hyperdrive;
-        break;
-      }
-    }
-
-    signale.success(
-      `Successfully deployed and initialized Hyperdrive @ ${hyperdriveAddress}`,
-    );
-
-    next(txHash);
+    // TODO: As of contracts version 0.7.0, the deployAndInitialize() method is
+    // different, so this code will need to be updated.
+    // const { request } = await publicClient.simulateContract({
+    //   abi: HyperdriveFactory.abi,
+    //   address: address as `0x${string}`,
+    //   functionName: "deployAndInitialize",
+    //   args: [
+    //     hyperdriveDeployer as `0x${string}`,
+    //     {
+    //       baseToken,
+    //       linkerFactory: linkerFactory as `0x${string}`,
+    //       linkerCodeHash: linkerCodeHash as `0x${string}`,
+    //       minimumShareReserves: parseUnits(minShareReserves, decimals),
+    //       minimumTransactionAmount: parseUnits(minTxAmount, decimals),
+    //       positionDuration: BigInt(positionDuration),
+    //       checkpointDuration: BigInt(checkpointDuration),
+    //       timeStretch: calculateTimeStretch(timeStretchApr),
+    //       governance: governance as `0x${string}`,
+    //       feeCollector: feeCollector as `0x${string}`,
+    //       fees: {
+    //         curve: parseUnits(curveFee, decimals),
+    //         flat: parseUnits(flatFee, decimals),
+    //         governanceLP: parseUnits(govLpFee, decimals),
+    //         governanceZombie: parseUnits(govZombieFee, decimals),
+    //       },
+    //     },
+    //     extraData,
+    //     parsedContribution,
+    //     parseUnits(apr, decimals),
+    //     initializeExtraData as `0x${string}`,
+    //   ],
+    // });
+    // signale.pending("Deploying and initializing Hyperdrive...");
+    // const txHash = await walletClient.writeContract(request);
+    // signale.pending(`Deploy and initialize tx submitted: ${txHash}`);
+    // const result = await publicClient.waitForTransactionReceipt({
+    //   hash: txHash,
+    // });
+    // let hyperdriveAddress: string | undefined;
+    // for (const log of result.logs) {
+    //   if (log.address === address) {
+    //     hyperdriveAddress = decodeEventLog({
+    //       abi: HyperdriveFactory.abi,
+    //       eventName: "Deployed",
+    //       topics: log.topics,
+    //       data: log.data,
+    //     }).args.hyperdrive;
+    //     break;
+    //   }
+    // }
+    // signale.success(
+    //   `Successfully deployed and initialized Hyperdrive @ ${hyperdriveAddress}`,
+    // );
+    // next(txHash);
   },
 });

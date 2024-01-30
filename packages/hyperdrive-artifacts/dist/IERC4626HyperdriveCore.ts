@@ -1,2 +1,1819 @@
 export const IERC4626HyperdriveCore = 
-{"abi":[{"type":"function","name":"addLiquidity","inputs":[{"name":"_contribution","type":"uint256","internalType":"uint256"},{"name":"_minApr","type":"uint256","internalType":"uint256"},{"name":"_maxApr","type":"uint256","internalType":"uint256"},{"name":"_options","type":"tuple","internalType":"struct IHyperdrive.Options","components":[{"name":"destination","type":"address","internalType":"address"},{"name":"asBase","type":"bool","internalType":"bool"},{"name":"extraData","type":"bytes","internalType":"bytes"}]}],"outputs":[{"name":"lpShares","type":"uint256","internalType":"uint256"}],"stateMutability":"payable"},{"type":"function","name":"batchTransferFrom","inputs":[{"name":"from","type":"address","internalType":"address"},{"name":"to","type":"address","internalType":"address"},{"name":"ids","type":"uint256[]","internalType":"uint256[]"},{"name":"values","type":"uint256[]","internalType":"uint256[]"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"checkpoint","inputs":[{"name":"_checkpointTime","type":"uint256","internalType":"uint256"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"closeLong","inputs":[{"name":"_maturityTime","type":"uint256","internalType":"uint256"},{"name":"_bondAmount","type":"uint256","internalType":"uint256"},{"name":"_minOutput","type":"uint256","internalType":"uint256"},{"name":"_options","type":"tuple","internalType":"struct IHyperdrive.Options","components":[{"name":"destination","type":"address","internalType":"address"},{"name":"asBase","type":"bool","internalType":"bool"},{"name":"extraData","type":"bytes","internalType":"bytes"}]}],"outputs":[{"name":"","type":"uint256","internalType":"uint256"}],"stateMutability":"nonpayable"},{"type":"function","name":"closeShort","inputs":[{"name":"_maturityTime","type":"uint256","internalType":"uint256"},{"name":"_bondAmount","type":"uint256","internalType":"uint256"},{"name":"_minOutput","type":"uint256","internalType":"uint256"},{"name":"_options","type":"tuple","internalType":"struct IHyperdrive.Options","components":[{"name":"destination","type":"address","internalType":"address"},{"name":"asBase","type":"bool","internalType":"bool"},{"name":"extraData","type":"bytes","internalType":"bytes"}]}],"outputs":[{"name":"","type":"uint256","internalType":"uint256"}],"stateMutability":"nonpayable"},{"type":"function","name":"collectGovernanceFee","inputs":[{"name":"_options","type":"tuple","internalType":"struct IHyperdrive.Options","components":[{"name":"destination","type":"address","internalType":"address"},{"name":"asBase","type":"bool","internalType":"bool"},{"name":"extraData","type":"bytes","internalType":"bytes"}]}],"outputs":[{"name":"proceeds","type":"uint256","internalType":"uint256"}],"stateMutability":"nonpayable"},{"type":"function","name":"initialize","inputs":[{"name":"_contribution","type":"uint256","internalType":"uint256"},{"name":"_apr","type":"uint256","internalType":"uint256"},{"name":"_options","type":"tuple","internalType":"struct IHyperdrive.Options","components":[{"name":"destination","type":"address","internalType":"address"},{"name":"asBase","type":"bool","internalType":"bool"},{"name":"extraData","type":"bytes","internalType":"bytes"}]}],"outputs":[{"name":"lpShares","type":"uint256","internalType":"uint256"}],"stateMutability":"payable"},{"type":"function","name":"openLong","inputs":[{"name":"_baseAmount","type":"uint256","internalType":"uint256"},{"name":"_minOutput","type":"uint256","internalType":"uint256"},{"name":"_minSharePrice","type":"uint256","internalType":"uint256"},{"name":"_options","type":"tuple","internalType":"struct IHyperdrive.Options","components":[{"name":"destination","type":"address","internalType":"address"},{"name":"asBase","type":"bool","internalType":"bool"},{"name":"extraData","type":"bytes","internalType":"bytes"}]}],"outputs":[{"name":"maturityTime","type":"uint256","internalType":"uint256"},{"name":"bondProceeds","type":"uint256","internalType":"uint256"}],"stateMutability":"payable"},{"type":"function","name":"openShort","inputs":[{"name":"_bondAmount","type":"uint256","internalType":"uint256"},{"name":"_maxDeposit","type":"uint256","internalType":"uint256"},{"name":"_minSharePrice","type":"uint256","internalType":"uint256"},{"name":"_options","type":"tuple","internalType":"struct IHyperdrive.Options","components":[{"name":"destination","type":"address","internalType":"address"},{"name":"asBase","type":"bool","internalType":"bool"},{"name":"extraData","type":"bytes","internalType":"bytes"}]}],"outputs":[{"name":"maturityTime","type":"uint256","internalType":"uint256"},{"name":"traderDeposit","type":"uint256","internalType":"uint256"}],"stateMutability":"payable"},{"type":"function","name":"pause","inputs":[{"name":"_status","type":"bool","internalType":"bool"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"permitForAll","inputs":[{"name":"owner","type":"address","internalType":"address"},{"name":"spender","type":"address","internalType":"address"},{"name":"_approved","type":"bool","internalType":"bool"},{"name":"deadline","type":"uint256","internalType":"uint256"},{"name":"v","type":"uint8","internalType":"uint8"},{"name":"r","type":"bytes32","internalType":"bytes32"},{"name":"s","type":"bytes32","internalType":"bytes32"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"redeemWithdrawalShares","inputs":[{"name":"_shares","type":"uint256","internalType":"uint256"},{"name":"_minOutput","type":"uint256","internalType":"uint256"},{"name":"_options","type":"tuple","internalType":"struct IHyperdrive.Options","components":[{"name":"destination","type":"address","internalType":"address"},{"name":"asBase","type":"bool","internalType":"bool"},{"name":"extraData","type":"bytes","internalType":"bytes"}]}],"outputs":[{"name":"proceeds","type":"uint256","internalType":"uint256"},{"name":"sharesRedeemed","type":"uint256","internalType":"uint256"}],"stateMutability":"nonpayable"},{"type":"function","name":"removeLiquidity","inputs":[{"name":"_shares","type":"uint256","internalType":"uint256"},{"name":"_minOutput","type":"uint256","internalType":"uint256"},{"name":"_options","type":"tuple","internalType":"struct IHyperdrive.Options","components":[{"name":"destination","type":"address","internalType":"address"},{"name":"asBase","type":"bool","internalType":"bool"},{"name":"extraData","type":"bytes","internalType":"bytes"}]}],"outputs":[{"name":"baseProceeds","type":"uint256","internalType":"uint256"},{"name":"withdrawalShares","type":"uint256","internalType":"uint256"}],"stateMutability":"nonpayable"},{"type":"function","name":"setApproval","inputs":[{"name":"tokenID","type":"uint256","internalType":"uint256"},{"name":"operator","type":"address","internalType":"address"},{"name":"amount","type":"uint256","internalType":"uint256"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"setApprovalBridge","inputs":[{"name":"tokenID","type":"uint256","internalType":"uint256"},{"name":"operator","type":"address","internalType":"address"},{"name":"amount","type":"uint256","internalType":"uint256"},{"name":"caller","type":"address","internalType":"address"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"setApprovalForAll","inputs":[{"name":"operator","type":"address","internalType":"address"},{"name":"approved","type":"bool","internalType":"bool"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"setGovernance","inputs":[{"name":"_who","type":"address","internalType":"address"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"setPauser","inputs":[{"name":"who","type":"address","internalType":"address"},{"name":"status","type":"bool","internalType":"bool"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"sweep","inputs":[{"name":"_target","type":"address","internalType":"contract IERC20"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"transferFrom","inputs":[{"name":"tokenID","type":"uint256","internalType":"uint256"},{"name":"from","type":"address","internalType":"address"},{"name":"to","type":"address","internalType":"address"},{"name":"amount","type":"uint256","internalType":"uint256"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"transferFromBridge","inputs":[{"name":"tokenID","type":"uint256","internalType":"uint256"},{"name":"from","type":"address","internalType":"address"},{"name":"to","type":"address","internalType":"address"},{"name":"amount","type":"uint256","internalType":"uint256"},{"name":"caller","type":"address","internalType":"address"}],"outputs":[],"stateMutability":"nonpayable"}],"bytecode":{"object":"0x","sourceMap":"","linkReferences":{}},"deployedBytecode":{"object":"0x","sourceMap":"","linkReferences":{}},"methodIdentifiers":{"addLiquidity(uint256,uint256,uint256,(address,bool,bytes))":"9aa68462","batchTransferFrom(address,address,uint256[],uint256[])":"17fad7fc","checkpoint(uint256)":"ed64bab2","closeLong(uint256,uint256,uint256,(address,bool,bytes))":"ded06231","closeShort(uint256,uint256,uint256,(address,bool,bytes))":"29b23fc1","collectGovernanceFee((address,bool,bytes))":"3e691db9","initialize(uint256,uint256,(address,bool,bytes))":"77d05ff4","openLong(uint256,uint256,uint256,(address,bool,bytes))":"cba2e58d","openShort(uint256,uint256,uint256,(address,bool,bytes))":"dbbe8070","pause(bool)":"02329a29","permitForAll(address,address,bool,uint256,uint8,bytes32,bytes32)":"9032c726","redeemWithdrawalShares(uint256,uint256,(address,bool,bytes))":"074a6de9","removeLiquidity(uint256,uint256,(address,bool,bytes))":"cbc13434","setApproval(uint256,address,uint256)":"9cd241af","setApprovalBridge(uint256,address,uint256,address)":"4ed2d6ac","setApprovalForAll(address,bool)":"a22cb465","setGovernance(address)":"ab033ea9","setPauser(address,bool)":"7180c8ca","sweep(address)":"01681a62","transferFrom(uint256,address,address,uint256)":"1c0f12b6","transferFromBridge(uint256,address,address,uint256,address)":"e44808bc"},"rawMetadata":"{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_contribution\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minApr\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxApr\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"addLiquidity\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"lpShares\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"ids\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"values\",\"type\":\"uint256[]\"}],\"name\":\"batchTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_checkpointTime\",\"type\":\"uint256\"}],\"name\":\"checkpoint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_maturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_bondAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOutput\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"closeLong\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_maturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_bondAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOutput\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"closeShort\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"collectGovernanceFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"proceeds\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_contribution\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_apr\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"initialize\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"lpShares\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_baseAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOutput\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minSharePrice\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"openLong\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"bondProceeds\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_bondAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxDeposit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minSharePrice\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"openShort\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"traderDeposit\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"_status\",\"type\":\"bool\"}],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permitForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_shares\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOutput\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"redeemWithdrawalShares\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"proceeds\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"sharesRedeemed\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_shares\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOutput\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"removeLiquidity\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawalShares\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"setApproval\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"setApprovalBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_who\",\"type\":\"address\"}],\"name\":\"setGovernance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"who\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"setPauser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"_target\",\"type\":\"address\"}],\"name\":\"sweep\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"transferFromBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"checkpoint(uint256)\":{\"notice\":\"Checkpoints ///\"},\"collectGovernanceFee((address,bool,bytes))\":{\"notice\":\"Admin ///\"},\"initialize(uint256,uint256,(address,bool,bytes))\":{\"notice\":\"LPs ///\"},\"openLong(uint256,uint256,uint256,(address,bool,bytes))\":{\"notice\":\"Longs ///\"},\"openShort(uint256,uint256,uint256,(address,bool,bytes))\":{\"notice\":\"Shorts ///\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IERC4626HyperdriveCore.sol\":\"IERC4626HyperdriveCore\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36\",\"dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL\"]},\"contracts/src/interfaces/IERC4626HyperdriveCore.sol\":{\"keccak256\":\"0xcea74eaf829d241754f74a8c2223fef0ec83459252d2aaedcd860bae538620c9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://464f58076e112b73957147b2abb52c85b1b806b306fa2d490d0e74f993ffe5a8\",\"dweb:/ipfs/QmNf3EACwEDsB7X1G1geLeqenR1xJHd9zGvSeZJ9f2nSmp\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x3b4f94e5480e7074e05b0d338d583569aef147f45365eb57daeb99f19fe817c3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2cc18b204ec94f80cd6b4876ea3c39dfb143fc4feff52e2a8d00ea72e6811644\",\"dweb:/ipfs/QmZHmZRvmJr8FxExBzKHSHYNZqcEgcgDcs4Z6gF1wPvBvj\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85\",\"dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x1c61ba57b783bfa408a4e208e80c1c117850d4d6c9f0e280263d3fcf57a8b2fd\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5b920d5f0f37014035b6cbba16d898e52654122a0c004a3f75050af93b799496\",\"dweb:/ipfs/QmaneaTDVXbw5HfevR2vFwXWw95EKWcBq8yMgMyWJPHKVW\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6\",\"dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8\",\"dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f\",\"dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6\",\"dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW\"]}},\"version\":1}","metadata":{"compiler":{"version":"0.8.19+commit.7dd6d404"},"language":"Solidity","output":{"abi":[{"inputs":[{"internalType":"uint256","name":"_contribution","type":"uint256"},{"internalType":"uint256","name":"_minApr","type":"uint256"},{"internalType":"uint256","name":"_maxApr","type":"uint256"},{"internalType":"struct IHyperdrive.Options","name":"_options","type":"tuple","components":[{"internalType":"address","name":"destination","type":"address"},{"internalType":"bool","name":"asBase","type":"bool"},{"internalType":"bytes","name":"extraData","type":"bytes"}]}],"stateMutability":"payable","type":"function","name":"addLiquidity","outputs":[{"internalType":"uint256","name":"lpShares","type":"uint256"}]},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256[]","name":"ids","type":"uint256[]"},{"internalType":"uint256[]","name":"values","type":"uint256[]"}],"stateMutability":"nonpayable","type":"function","name":"batchTransferFrom"},{"inputs":[{"internalType":"uint256","name":"_checkpointTime","type":"uint256"}],"stateMutability":"nonpayable","type":"function","name":"checkpoint"},{"inputs":[{"internalType":"uint256","name":"_maturityTime","type":"uint256"},{"internalType":"uint256","name":"_bondAmount","type":"uint256"},{"internalType":"uint256","name":"_minOutput","type":"uint256"},{"internalType":"struct IHyperdrive.Options","name":"_options","type":"tuple","components":[{"internalType":"address","name":"destination","type":"address"},{"internalType":"bool","name":"asBase","type":"bool"},{"internalType":"bytes","name":"extraData","type":"bytes"}]}],"stateMutability":"nonpayable","type":"function","name":"closeLong","outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"inputs":[{"internalType":"uint256","name":"_maturityTime","type":"uint256"},{"internalType":"uint256","name":"_bondAmount","type":"uint256"},{"internalType":"uint256","name":"_minOutput","type":"uint256"},{"internalType":"struct IHyperdrive.Options","name":"_options","type":"tuple","components":[{"internalType":"address","name":"destination","type":"address"},{"internalType":"bool","name":"asBase","type":"bool"},{"internalType":"bytes","name":"extraData","type":"bytes"}]}],"stateMutability":"nonpayable","type":"function","name":"closeShort","outputs":[{"internalType":"uint256","name":"","type":"uint256"}]},{"inputs":[{"internalType":"struct IHyperdrive.Options","name":"_options","type":"tuple","components":[{"internalType":"address","name":"destination","type":"address"},{"internalType":"bool","name":"asBase","type":"bool"},{"internalType":"bytes","name":"extraData","type":"bytes"}]}],"stateMutability":"nonpayable","type":"function","name":"collectGovernanceFee","outputs":[{"internalType":"uint256","name":"proceeds","type":"uint256"}]},{"inputs":[{"internalType":"uint256","name":"_contribution","type":"uint256"},{"internalType":"uint256","name":"_apr","type":"uint256"},{"internalType":"struct IHyperdrive.Options","name":"_options","type":"tuple","components":[{"internalType":"address","name":"destination","type":"address"},{"internalType":"bool","name":"asBase","type":"bool"},{"internalType":"bytes","name":"extraData","type":"bytes"}]}],"stateMutability":"payable","type":"function","name":"initialize","outputs":[{"internalType":"uint256","name":"lpShares","type":"uint256"}]},{"inputs":[{"internalType":"uint256","name":"_baseAmount","type":"uint256"},{"internalType":"uint256","name":"_minOutput","type":"uint256"},{"internalType":"uint256","name":"_minSharePrice","type":"uint256"},{"internalType":"struct IHyperdrive.Options","name":"_options","type":"tuple","components":[{"internalType":"address","name":"destination","type":"address"},{"internalType":"bool","name":"asBase","type":"bool"},{"internalType":"bytes","name":"extraData","type":"bytes"}]}],"stateMutability":"payable","type":"function","name":"openLong","outputs":[{"internalType":"uint256","name":"maturityTime","type":"uint256"},{"internalType":"uint256","name":"bondProceeds","type":"uint256"}]},{"inputs":[{"internalType":"uint256","name":"_bondAmount","type":"uint256"},{"internalType":"uint256","name":"_maxDeposit","type":"uint256"},{"internalType":"uint256","name":"_minSharePrice","type":"uint256"},{"internalType":"struct IHyperdrive.Options","name":"_options","type":"tuple","components":[{"internalType":"address","name":"destination","type":"address"},{"internalType":"bool","name":"asBase","type":"bool"},{"internalType":"bytes","name":"extraData","type":"bytes"}]}],"stateMutability":"payable","type":"function","name":"openShort","outputs":[{"internalType":"uint256","name":"maturityTime","type":"uint256"},{"internalType":"uint256","name":"traderDeposit","type":"uint256"}]},{"inputs":[{"internalType":"bool","name":"_status","type":"bool"}],"stateMutability":"nonpayable","type":"function","name":"pause"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"},{"internalType":"bool","name":"_approved","type":"bool"},{"internalType":"uint256","name":"deadline","type":"uint256"},{"internalType":"uint8","name":"v","type":"uint8"},{"internalType":"bytes32","name":"r","type":"bytes32"},{"internalType":"bytes32","name":"s","type":"bytes32"}],"stateMutability":"nonpayable","type":"function","name":"permitForAll"},{"inputs":[{"internalType":"uint256","name":"_shares","type":"uint256"},{"internalType":"uint256","name":"_minOutput","type":"uint256"},{"internalType":"struct IHyperdrive.Options","name":"_options","type":"tuple","components":[{"internalType":"address","name":"destination","type":"address"},{"internalType":"bool","name":"asBase","type":"bool"},{"internalType":"bytes","name":"extraData","type":"bytes"}]}],"stateMutability":"nonpayable","type":"function","name":"redeemWithdrawalShares","outputs":[{"internalType":"uint256","name":"proceeds","type":"uint256"},{"internalType":"uint256","name":"sharesRedeemed","type":"uint256"}]},{"inputs":[{"internalType":"uint256","name":"_shares","type":"uint256"},{"internalType":"uint256","name":"_minOutput","type":"uint256"},{"internalType":"struct IHyperdrive.Options","name":"_options","type":"tuple","components":[{"internalType":"address","name":"destination","type":"address"},{"internalType":"bool","name":"asBase","type":"bool"},{"internalType":"bytes","name":"extraData","type":"bytes"}]}],"stateMutability":"nonpayable","type":"function","name":"removeLiquidity","outputs":[{"internalType":"uint256","name":"baseProceeds","type":"uint256"},{"internalType":"uint256","name":"withdrawalShares","type":"uint256"}]},{"inputs":[{"internalType":"uint256","name":"tokenID","type":"uint256"},{"internalType":"address","name":"operator","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"stateMutability":"nonpayable","type":"function","name":"setApproval"},{"inputs":[{"internalType":"uint256","name":"tokenID","type":"uint256"},{"internalType":"address","name":"operator","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"},{"internalType":"address","name":"caller","type":"address"}],"stateMutability":"nonpayable","type":"function","name":"setApprovalBridge"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"stateMutability":"nonpayable","type":"function","name":"setApprovalForAll"},{"inputs":[{"internalType":"address","name":"_who","type":"address"}],"stateMutability":"nonpayable","type":"function","name":"setGovernance"},{"inputs":[{"internalType":"address","name":"who","type":"address"},{"internalType":"bool","name":"status","type":"bool"}],"stateMutability":"nonpayable","type":"function","name":"setPauser"},{"inputs":[{"internalType":"contract IERC20","name":"_target","type":"address"}],"stateMutability":"nonpayable","type":"function","name":"sweep"},{"inputs":[{"internalType":"uint256","name":"tokenID","type":"uint256"},{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"stateMutability":"nonpayable","type":"function","name":"transferFrom"},{"inputs":[{"internalType":"uint256","name":"tokenID","type":"uint256"},{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"},{"internalType":"address","name":"caller","type":"address"}],"stateMutability":"nonpayable","type":"function","name":"transferFromBridge"}],"devdoc":{"kind":"dev","methods":{},"version":1},"userdoc":{"kind":"user","methods":{"checkpoint(uint256)":{"notice":"Checkpoints ///"},"collectGovernanceFee((address,bool,bytes))":{"notice":"Admin ///"},"initialize(uint256,uint256,(address,bool,bytes))":{"notice":"LPs ///"},"openLong(uint256,uint256,uint256,(address,bool,bytes))":{"notice":"Longs ///"},"openShort(uint256,uint256,uint256,(address,bool,bytes))":{"notice":"Shorts ///"}},"version":1}},"settings":{"remappings":["aave-v3-core/=lib/aave-v3-core/","create3-factory/=lib/yield-daddy/lib/create3-factory/","ds-test/=lib/forge-std/lib/ds-test/src/","forge-std/=lib/forge-std/src/","solmate/=lib/solmate/src/","yield-daddy/=lib/yield-daddy/"],"optimizer":{"enabled":true,"runs":200},"metadata":{"bytecodeHash":"ipfs"},"compilationTarget":{"contracts/src/interfaces/IERC4626HyperdriveCore.sol":"IERC4626HyperdriveCore"},"libraries":{}},"sources":{"contracts/src/interfaces/IERC20.sol":{"keccak256":"0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4","urls":["bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36","dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL"],"license":"Apache-2.0"},"contracts/src/interfaces/IERC4626HyperdriveCore.sol":{"keccak256":"0xcea74eaf829d241754f74a8c2223fef0ec83459252d2aaedcd860bae538620c9","urls":["bzz-raw://464f58076e112b73957147b2abb52c85b1b806b306fa2d490d0e74f993ffe5a8","dweb:/ipfs/QmNf3EACwEDsB7X1G1geLeqenR1xJHd9zGvSeZJ9f2nSmp"],"license":"Apache-2.0"},"contracts/src/interfaces/IHyperdrive.sol":{"keccak256":"0x3b4f94e5480e7074e05b0d338d583569aef147f45365eb57daeb99f19fe817c3","urls":["bzz-raw://2cc18b204ec94f80cd6b4876ea3c39dfb143fc4feff52e2a8d00ea72e6811644","dweb:/ipfs/QmZHmZRvmJr8FxExBzKHSHYNZqcEgcgDcs4Z6gF1wPvBvj"],"license":"Apache-2.0"},"contracts/src/interfaces/IHyperdriveCore.sol":{"keccak256":"0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d","urls":["bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85","dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF"],"license":"Apache-2.0"},"contracts/src/interfaces/IHyperdriveRead.sol":{"keccak256":"0x1c61ba57b783bfa408a4e208e80c1c117850d4d6c9f0e280263d3fcf57a8b2fd","urls":["bzz-raw://5b920d5f0f37014035b6cbba16d898e52654122a0c004a3f75050af93b799496","dweb:/ipfs/QmaneaTDVXbw5HfevR2vFwXWw95EKWcBq8yMgMyWJPHKVW"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiToken.sol":{"keccak256":"0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad","urls":["bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6","dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiTokenCore.sol":{"keccak256":"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d","urls":["bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8","dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiTokenMetadata.sol":{"keccak256":"0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb","urls":["bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f","dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiTokenRead.sol":{"keccak256":"0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4","urls":["bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6","dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW"],"license":"Apache-2.0"}},"version":1},"ast":{"absolutePath":"contracts/src/interfaces/IERC4626HyperdriveCore.sol","id":5123,"exportedSymbols":{"IERC20":[4867],"IERC4626HyperdriveCore":[5122],"IHyperdriveCore":[5816]},"nodeType":"SourceUnit","src":"39:223:37","nodes":[{"id":5109,"nodeType":"PragmaDirective","src":"39:23:37","nodes":[],"literals":["solidity","0.8",".19"]},{"id":5111,"nodeType":"ImportDirective","src":"64:38:37","nodes":[],"absolutePath":"contracts/src/interfaces/IERC20.sol","file":"./IERC20.sol","nameLocation":"-1:-1:-1","scope":5123,"sourceUnit":4868,"symbolAliases":[{"foreign":{"id":5110,"name":"IERC20","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":4867,"src":"73:6:37","typeDescriptions":{}},"nameLocation":"-1:-1:-1"}],"unitAlias":""},{"id":5113,"nodeType":"ImportDirective","src":"103:56:37","nodes":[],"absolutePath":"contracts/src/interfaces/IHyperdriveCore.sol","file":"./IHyperdriveCore.sol","nameLocation":"-1:-1:-1","scope":5123,"sourceUnit":5817,"symbolAliases":[{"foreign":{"id":5112,"name":"IHyperdriveCore","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5816,"src":"112:15:37","typeDescriptions":{}},"nameLocation":"-1:-1:-1"}],"unitAlias":""},{"id":5122,"nodeType":"ContractDefinition","src":"161:100:37","nodes":[{"id":5121,"nodeType":"FunctionDefinition","src":"219:40:37","nodes":[],"functionSelector":"01681a62","implemented":false,"kind":"function","modifiers":[],"name":"sweep","nameLocation":"228:5:37","parameters":{"id":5119,"nodeType":"ParameterList","parameters":[{"constant":false,"id":5118,"mutability":"mutable","name":"_target","nameLocation":"241:7:37","nodeType":"VariableDeclaration","scope":5121,"src":"234:14:37","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_contract$_IERC20_$4867","typeString":"contract IERC20"},"typeName":{"id":5117,"nodeType":"UserDefinedTypeName","pathNode":{"id":5116,"name":"IERC20","nameLocations":["234:6:37"],"nodeType":"IdentifierPath","referencedDeclaration":4867,"src":"234:6:37"},"referencedDeclaration":4867,"src":"234:6:37","typeDescriptions":{"typeIdentifier":"t_contract$_IERC20_$4867","typeString":"contract IERC20"}},"visibility":"internal"}],"src":"233:16:37"},"returnParameters":{"id":5120,"nodeType":"ParameterList","parameters":[],"src":"258:0:37"},"scope":5122,"stateMutability":"nonpayable","virtual":false,"visibility":"external"}],"abstract":false,"baseContracts":[{"baseName":{"id":5114,"name":"IHyperdriveCore","nameLocations":["197:15:37"],"nodeType":"IdentifierPath","referencedDeclaration":5816,"src":"197:15:37"},"id":5115,"nodeType":"InheritanceSpecifier","src":"197:15:37"}],"canonicalName":"IERC4626HyperdriveCore","contractDependencies":[],"contractKind":"interface","fullyImplemented":false,"linearizedBaseContracts":[5122,5816,6236],"name":"IERC4626HyperdriveCore","nameLocation":"171:22:37","scope":5123,"usedErrors":[]}],"license":"Apache-2.0"},"id":37} as const;
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_contribution",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minLpSharePrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minApr",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_maxApr",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "destination",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "asBase",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IHyperdrive.Options",
+          "name": "_options",
+          "type": "tuple"
+        }
+      ],
+      "name": "addLiquidity",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "lpShares",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "ids",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "values",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "batchTransferFrom",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_checkpointTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "checkpoint",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_maturityTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_bondAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minOutput",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "destination",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "asBase",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IHyperdrive.Options",
+          "name": "_options",
+          "type": "tuple"
+        }
+      ],
+      "name": "closeLong",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_maturityTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_bondAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minOutput",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "destination",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "asBase",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IHyperdrive.Options",
+          "name": "_options",
+          "type": "tuple"
+        }
+      ],
+      "name": "closeShort",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "destination",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "asBase",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IHyperdrive.Options",
+          "name": "_options",
+          "type": "tuple"
+        }
+      ],
+      "name": "collectGovernanceFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "proceeds",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_contribution",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_apr",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "destination",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "asBase",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IHyperdrive.Options",
+          "name": "_options",
+          "type": "tuple"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "lpShares",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_baseAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minOutput",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minVaultSharePrice",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "destination",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "asBase",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IHyperdrive.Options",
+          "name": "_options",
+          "type": "tuple"
+        }
+      ],
+      "name": "openLong",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "maturityTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "bondProceeds",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_bondAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_maxDeposit",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minVaultSharePrice",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "destination",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "asBase",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IHyperdrive.Options",
+          "name": "_options",
+          "type": "tuple"
+        }
+      ],
+      "name": "openShort",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "maturityTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "traderDeposit",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_status",
+          "type": "bool"
+        }
+      ],
+      "name": "pause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "_approved",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "deadline",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint8",
+          "name": "v",
+          "type": "uint8"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "r",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "s",
+          "type": "bytes32"
+        }
+      ],
+      "name": "permitForAll",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_shares",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minOutput",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "destination",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "asBase",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IHyperdrive.Options",
+          "name": "_options",
+          "type": "tuple"
+        }
+      ],
+      "name": "redeemWithdrawalShares",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "proceeds",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "sharesRedeemed",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_shares",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minOutput",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "destination",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "asBase",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct IHyperdrive.Options",
+          "name": "_options",
+          "type": "tuple"
+        }
+      ],
+      "name": "removeLiquidity",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "baseProceeds",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "withdrawalShares",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenID",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "setApproval",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenID",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "caller",
+          "type": "address"
+        }
+      ],
+      "name": "setApprovalBridge",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "approved",
+          "type": "bool"
+        }
+      ],
+      "name": "setApprovalForAll",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_who",
+          "type": "address"
+        }
+      ],
+      "name": "setGovernance",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "who",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "status",
+          "type": "bool"
+        }
+      ],
+      "name": "setPauser",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IERC20",
+          "name": "_target",
+          "type": "address"
+        }
+      ],
+      "name": "sweep",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenID",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenID",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "caller",
+          "type": "address"
+        }
+      ],
+      "name": "transferFromBridge",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "addLiquidity(uint256,uint256,uint256,uint256,(address,bool,bytes))": "4c2ac1d9",
+    "batchTransferFrom(address,address,uint256[],uint256[])": "17fad7fc",
+    "checkpoint(uint256)": "ed64bab2",
+    "closeLong(uint256,uint256,uint256,(address,bool,bytes))": "ded06231",
+    "closeShort(uint256,uint256,uint256,(address,bool,bytes))": "29b23fc1",
+    "collectGovernanceFee((address,bool,bytes))": "3e691db9",
+    "initialize(uint256,uint256,(address,bool,bytes))": "77d05ff4",
+    "openLong(uint256,uint256,uint256,(address,bool,bytes))": "cba2e58d",
+    "openShort(uint256,uint256,uint256,(address,bool,bytes))": "dbbe8070",
+    "pause(bool)": "02329a29",
+    "permitForAll(address,address,bool,uint256,uint8,bytes32,bytes32)": "9032c726",
+    "redeemWithdrawalShares(uint256,uint256,(address,bool,bytes))": "074a6de9",
+    "removeLiquidity(uint256,uint256,(address,bool,bytes))": "cbc13434",
+    "setApproval(uint256,address,uint256)": "9cd241af",
+    "setApprovalBridge(uint256,address,uint256,address)": "4ed2d6ac",
+    "setApprovalForAll(address,bool)": "a22cb465",
+    "setGovernance(address)": "ab033ea9",
+    "setPauser(address,bool)": "7180c8ca",
+    "sweep(address)": "01681a62",
+    "transferFrom(uint256,address,address,uint256)": "1c0f12b6",
+    "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_contribution\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minLpSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minApr\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxApr\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"addLiquidity\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"lpShares\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"ids\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"values\",\"type\":\"uint256[]\"}],\"name\":\"batchTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_checkpointTime\",\"type\":\"uint256\"}],\"name\":\"checkpoint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_maturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_bondAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOutput\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"closeLong\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_maturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_bondAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOutput\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"closeShort\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"collectGovernanceFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"proceeds\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_contribution\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_apr\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"initialize\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"lpShares\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_baseAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOutput\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minVaultSharePrice\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"openLong\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"bondProceeds\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_bondAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxDeposit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minVaultSharePrice\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"openShort\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"traderDeposit\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"_status\",\"type\":\"bool\"}],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permitForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_shares\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOutput\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"redeemWithdrawalShares\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"proceeds\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"sharesRedeemed\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_shares\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOutput\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"removeLiquidity\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawalShares\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"setApproval\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"setApprovalBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_who\",\"type\":\"address\"}],\"name\":\"setGovernance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"who\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"setPauser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"_target\",\"type\":\"address\"}],\"name\":\"sweep\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"transferFromBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"checkpoint(uint256)\":{\"notice\":\"Checkpoints ///\"},\"collectGovernanceFee((address,bool,bytes))\":{\"notice\":\"Admin ///\"},\"initialize(uint256,uint256,(address,bool,bytes))\":{\"notice\":\"LPs ///\"},\"openLong(uint256,uint256,uint256,(address,bool,bytes))\":{\"notice\":\"Longs ///\"},\"openShort(uint256,uint256,uint256,(address,bool,bytes))\":{\"notice\":\"Shorts ///\"},\"transferFrom(uint256,address,address,uint256)\":{\"notice\":\"Functions ///\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IERC4626HyperdriveCore.sol\":\"IERC4626HyperdriveCore\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0xfd51b9727f00a434ea4ced64044c104ed8361fa2ed22600969d1e4ff257b14f3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8780b588acc11dd906ff0897adc5b7acdab759fec4d14ce0d52bf002cb90c398\",\"dweb:/ipfs/QmTMaRGveFgN5L3k1h5oAbfp5ccmzT9d36JhChVg9PxJkD\"]},\"contracts/src/interfaces/IERC4626HyperdriveCore.sol\":{\"keccak256\":\"0x9f9ace26856fd355d7934ac123672ca21a1539b7190b37099d48e9e96d3cafa4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f1297786537a3276eb161aaf55bebbaf117298dd117b7179ac51df49e425844a\",\"dweb:/ipfs/QmeZRUDmVRAYh1f8dDyLxZfBTeUHsAzCot4TGb8zNbjHoz\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x81c89ca62586555b915a9609d10014ff9d1f0d82111809d566f614bd9ea2fb16\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c4859b122480f504d1f0035ed11983b0d74ea2b16bcf26dfe19365bb4f66240\",\"dweb:/ipfs/QmQEQBxRdsH6zNx2rvzetYZRbB3pMXXWzTuwVPBGVhCHfL\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x93cfce28869c1a082c170092b87b04204a91b7898a1e95c3e4270f06fbc76a97\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b8b24e13ff8994550685fec1405bc5d2a5ed6400db061005e72ecff056be51a1\",\"dweb:/ipfs/QmR4RZzyhjYt8xxRPaJWHKhBZdHZPVBHrtNERAZhCaaTFU\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x5c5d6c812fd2cf996d60632c4c8cca7b3d70f5ae4891a3f99c1e10f967f520dd\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://44ef09e50cf76ebab25b90688b19966575cc07fee503ffdb189c3fbbcbfea01f\",\"dweb:/ipfs/QmZEULHXopjaeWbsfXNrEriQomY19s6LXEcae9saeZCpmt\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x516967eaae812ff7fff81797190f48fca40838eccfb8243e3f973f2f85b51597\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://50fa3165b126976c218d27f7f276789f8cc680d3136cd631999164a64f03e477\",\"dweb:/ipfs/QmTSCjqQoys2SJNDZrhTdy2M2at8siSb3ZXHjWUoeihQjr\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xda628a0f7428ad63cb04b6f341c223d7b36803d554e92cd3a793325eae6ad87a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f7dfe92e6fb15eedbba033a96481db1343aeb48039d40d4b5053cc27d3f5e4f3\",\"dweb:/ipfs/QmNeNyjuEd7LkwZMg14fnMsunLXbJRzHYwzC2yEYKi8H3q\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0xb5b2a1f90c4e85e1290144b1e0e393027c90f24d6030ee802d0369342d7bf002\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f7850a790ea32726462f6dd08c87e5250c70155af558b8fdd17dc71d53c5b7f3\",\"dweb:/ipfs/QmWpshz1Ufdqmw8rmZdbdm9ZyEcKHFswLMNaBkBJ3sqNA1\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xa2e1d420bcae975a3d9aa7918319da2dd047cbc50ad41e0a391048e01b980191\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://335611b957d8ca7c0cee11d6f2268372a7c937bc119c030cb8e274679604b6cd\",\"dweb:/ipfs/QmeoxLRyPVgBXrxetVFEyjsvLNfwAahcHsFdAEzy9otxuU\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xf84c46faa4a3323835a80eae3ee969409bf3f5c48ec94a6e486b70cb59a4c868\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b1dcc1796eac62773f298b5b77fda8de424d822a7e74825028a0f83c627a5bfb\",\"dweb:/ipfs/QmRbiswdabx3uMgrgkLKe6K6JAQBLafsWqEyZCg3PQbN5Q\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_contribution",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_minLpSharePrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_minApr",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_maxApr",
+              "type": "uint256"
+            },
+            {
+              "internalType": "struct IHyperdrive.Options",
+              "name": "_options",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "destination",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "asBase",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "addLiquidity",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "lpShares",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "ids",
+              "type": "uint256[]"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "values",
+              "type": "uint256[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "batchTransferFrom"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_checkpointTime",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "checkpoint"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_maturityTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_bondAmount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_minOutput",
+              "type": "uint256"
+            },
+            {
+              "internalType": "struct IHyperdrive.Options",
+              "name": "_options",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "destination",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "asBase",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "closeLong",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_maturityTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_bondAmount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_minOutput",
+              "type": "uint256"
+            },
+            {
+              "internalType": "struct IHyperdrive.Options",
+              "name": "_options",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "destination",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "asBase",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "closeShort",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct IHyperdrive.Options",
+              "name": "_options",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "destination",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "asBase",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "collectGovernanceFee",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "proceeds",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_contribution",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_apr",
+              "type": "uint256"
+            },
+            {
+              "internalType": "struct IHyperdrive.Options",
+              "name": "_options",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "destination",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "asBase",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "initialize",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "lpShares",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_baseAmount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_minOutput",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_minVaultSharePrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "struct IHyperdrive.Options",
+              "name": "_options",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "destination",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "asBase",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "openLong",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "maturityTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "bondProceeds",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_bondAmount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_maxDeposit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_minVaultSharePrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "struct IHyperdrive.Options",
+              "name": "_options",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "destination",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "asBase",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "openShort",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "maturityTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "traderDeposit",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bool",
+              "name": "_status",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "pause"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "spender",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "_approved",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint256",
+              "name": "deadline",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint8",
+              "name": "v",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "r",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "s",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "permitForAll"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_minOutput",
+              "type": "uint256"
+            },
+            {
+              "internalType": "struct IHyperdrive.Options",
+              "name": "_options",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "destination",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "asBase",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "redeemWithdrawalShares",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "proceeds",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "sharesRedeemed",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_shares",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_minOutput",
+              "type": "uint256"
+            },
+            {
+              "internalType": "struct IHyperdrive.Options",
+              "name": "_options",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "destination",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "asBase",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "removeLiquidity",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "baseProceeds",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "withdrawalShares",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenID",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setApproval"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenID",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setApprovalBridge"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "approved",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setApprovalForAll"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_who",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setGovernance"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "who",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "status",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setPauser"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IERC20",
+              "name": "_target",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "sweep"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenID",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "transferFrom"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenID",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "transferFromBridge"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "checkpoint(uint256)": {
+            "notice": "Checkpoints ///"
+          },
+          "collectGovernanceFee((address,bool,bytes))": {
+            "notice": "Admin ///"
+          },
+          "initialize(uint256,uint256,(address,bool,bytes))": {
+            "notice": "LPs ///"
+          },
+          "openLong(uint256,uint256,uint256,(address,bool,bytes))": {
+            "notice": "Longs ///"
+          },
+          "openShort(uint256,uint256,uint256,(address,bool,bytes))": {
+            "notice": "Shorts ///"
+          },
+          "transferFrom(uint256,address,address,uint256)": {
+            "notice": "Functions ///"
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "aave-v3-core/=lib/aave-v3-core/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/=lib/openzeppelin-contracts/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "contracts/src/interfaces/IERC4626HyperdriveCore.sol": "IERC4626HyperdriveCore"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "contracts/src/interfaces/IERC20.sol": {
+        "keccak256": "0xfd51b9727f00a434ea4ced64044c104ed8361fa2ed22600969d1e4ff257b14f3",
+        "urls": [
+          "bzz-raw://8780b588acc11dd906ff0897adc5b7acdab759fec4d14ce0d52bf002cb90c398",
+          "dweb:/ipfs/QmTMaRGveFgN5L3k1h5oAbfp5ccmzT9d36JhChVg9PxJkD"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IERC4626HyperdriveCore.sol": {
+        "keccak256": "0x9f9ace26856fd355d7934ac123672ca21a1539b7190b37099d48e9e96d3cafa4",
+        "urls": [
+          "bzz-raw://f1297786537a3276eb161aaf55bebbaf117298dd117b7179ac51df49e425844a",
+          "dweb:/ipfs/QmeZRUDmVRAYh1f8dDyLxZfBTeUHsAzCot4TGb8zNbjHoz"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdrive.sol": {
+        "keccak256": "0x81c89ca62586555b915a9609d10014ff9d1f0d82111809d566f614bd9ea2fb16",
+        "urls": [
+          "bzz-raw://3c4859b122480f504d1f0035ed11983b0d74ea2b16bcf26dfe19365bb4f66240",
+          "dweb:/ipfs/QmQEQBxRdsH6zNx2rvzetYZRbB3pMXXWzTuwVPBGVhCHfL"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdriveCore.sol": {
+        "keccak256": "0x93cfce28869c1a082c170092b87b04204a91b7898a1e95c3e4270f06fbc76a97",
+        "urls": [
+          "bzz-raw://b8b24e13ff8994550685fec1405bc5d2a5ed6400db061005e72ecff056be51a1",
+          "dweb:/ipfs/QmR4RZzyhjYt8xxRPaJWHKhBZdHZPVBHrtNERAZhCaaTFU"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdriveEvents.sol": {
+        "keccak256": "0x5c5d6c812fd2cf996d60632c4c8cca7b3d70f5ae4891a3f99c1e10f967f520dd",
+        "urls": [
+          "bzz-raw://44ef09e50cf76ebab25b90688b19966575cc07fee503ffdb189c3fbbcbfea01f",
+          "dweb:/ipfs/QmZEULHXopjaeWbsfXNrEriQomY19s6LXEcae9saeZCpmt"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdriveRead.sol": {
+        "keccak256": "0x516967eaae812ff7fff81797190f48fca40838eccfb8243e3f973f2f85b51597",
+        "urls": [
+          "bzz-raw://50fa3165b126976c218d27f7f276789f8cc680d3136cd631999164a64f03e477",
+          "dweb:/ipfs/QmTSCjqQoys2SJNDZrhTdy2M2at8siSb3ZXHjWUoeihQjr"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiToken.sol": {
+        "keccak256": "0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f",
+        "urls": [
+          "bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7",
+          "dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenCore.sol": {
+        "keccak256": "0xda628a0f7428ad63cb04b6f341c223d7b36803d554e92cd3a793325eae6ad87a",
+        "urls": [
+          "bzz-raw://f7dfe92e6fb15eedbba033a96481db1343aeb48039d40d4b5053cc27d3f5e4f3",
+          "dweb:/ipfs/QmNeNyjuEd7LkwZMg14fnMsunLXbJRzHYwzC2yEYKi8H3q"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenEvents.sol": {
+        "keccak256": "0xb5b2a1f90c4e85e1290144b1e0e393027c90f24d6030ee802d0369342d7bf002",
+        "urls": [
+          "bzz-raw://f7850a790ea32726462f6dd08c87e5250c70155af558b8fdd17dc71d53c5b7f3",
+          "dweb:/ipfs/QmWpshz1Ufdqmw8rmZdbdm9ZyEcKHFswLMNaBkBJ3sqNA1"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenMetadata.sol": {
+        "keccak256": "0xa2e1d420bcae975a3d9aa7918319da2dd047cbc50ad41e0a391048e01b980191",
+        "urls": [
+          "bzz-raw://335611b957d8ca7c0cee11d6f2268372a7c937bc119c030cb8e274679604b6cd",
+          "dweb:/ipfs/QmeoxLRyPVgBXrxetVFEyjsvLNfwAahcHsFdAEzy9otxuU"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenRead.sol": {
+        "keccak256": "0xf84c46faa4a3323835a80eae3ee969409bf3f5c48ec94a6e486b70cb59a4c868",
+        "urls": [
+          "bzz-raw://b1dcc1796eac62773f298b5b77fda8de424d822a7e74825028a0f83c627a5bfb",
+          "dweb:/ipfs/QmRbiswdabx3uMgrgkLKe6K6JAQBLafsWqEyZCg3PQbN5Q"
+        ],
+        "license": "Apache-2.0"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "contracts/src/interfaces/IERC4626HyperdriveCore.sol",
+    "id": 7044,
+    "exportedSymbols": {
+      "IERC20": [
+        6740
+      ],
+      "IERC4626HyperdriveCore": [
+        7043
+      ],
+      "IHyperdriveCore": [
+        7571
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:223:42",
+    "nodes": [
+      {
+        "id": 7030,
+        "nodeType": "PragmaDirective",
+        "src": "39:23:42",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".20"
+        ]
+      },
+      {
+        "id": 7032,
+        "nodeType": "ImportDirective",
+        "src": "64:38:42",
+        "nodes": [],
+        "absolutePath": "contracts/src/interfaces/IERC20.sol",
+        "file": "./IERC20.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 7044,
+        "sourceUnit": 6741,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 7031,
+              "name": "IERC20",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 6740,
+              "src": "73:6:42",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 7034,
+        "nodeType": "ImportDirective",
+        "src": "103:56:42",
+        "nodes": [],
+        "absolutePath": "contracts/src/interfaces/IHyperdriveCore.sol",
+        "file": "./IHyperdriveCore.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 7044,
+        "sourceUnit": 7572,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 7033,
+              "name": "IHyperdriveCore",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 7571,
+              "src": "112:15:42",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 7043,
+        "nodeType": "ContractDefinition",
+        "src": "161:100:42",
+        "nodes": [
+          {
+            "id": 7042,
+            "nodeType": "FunctionDefinition",
+            "src": "219:40:42",
+            "nodes": [],
+            "functionSelector": "01681a62",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sweep",
+            "nameLocation": "228:5:42",
+            "parameters": {
+              "id": 7040,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7039,
+                  "mutability": "mutable",
+                  "name": "_target",
+                  "nameLocation": "241:7:42",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7042,
+                  "src": "234:14:42",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IERC20_$6740",
+                    "typeString": "contract IERC20"
+                  },
+                  "typeName": {
+                    "id": 7038,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 7037,
+                      "name": "IERC20",
+                      "nameLocations": [
+                        "234:6:42"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 6740,
+                      "src": "234:6:42"
+                    },
+                    "referencedDeclaration": 6740,
+                    "src": "234:6:42",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20_$6740",
+                      "typeString": "contract IERC20"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "233:16:42"
+            },
+            "returnParameters": {
+              "id": 7041,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "258:0:42"
+            },
+            "scope": 7043,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 7035,
+              "name": "IHyperdriveCore",
+              "nameLocations": [
+                "197:15:42"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 7571,
+              "src": "197:15:42"
+            },
+            "id": 7036,
+            "nodeType": "InheritanceSpecifier",
+            "src": "197:15:42"
+          }
+        ],
+        "canonicalName": "IERC4626HyperdriveCore",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          7043,
+          7571,
+          8273
+        ],
+        "name": "IERC4626HyperdriveCore",
+        "nameLocation": "171:22:42",
+        "scope": 7044,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "Apache-2.0"
+  },
+  "id": 42
+} as const;

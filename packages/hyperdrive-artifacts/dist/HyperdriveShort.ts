@@ -1,2 +1,12510 @@
 export const HyperdriveShort = 
-{"abi":[{"type":"event","name":"AddLiquidity","inputs":[{"name":"provider","type":"address","indexed":true,"internalType":"address"},{"name":"lpAmount","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"baseAmount","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"sharePrice","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"lpSharePrice","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"event","name":"Approval","inputs":[{"name":"owner","type":"address","indexed":true,"internalType":"address"},{"name":"spender","type":"address","indexed":true,"internalType":"address"},{"name":"value","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"event","name":"ApprovalForAll","inputs":[{"name":"account","type":"address","indexed":true,"internalType":"address"},{"name":"operator","type":"address","indexed":true,"internalType":"address"},{"name":"approved","type":"bool","indexed":false,"internalType":"bool"}],"anonymous":false},{"type":"event","name":"CloseLong","inputs":[{"name":"trader","type":"address","indexed":true,"internalType":"address"},{"name":"assetId","type":"uint256","indexed":true,"internalType":"uint256"},{"name":"maturityTime","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"baseAmount","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"sharePrice","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"bondAmount","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"event","name":"CloseShort","inputs":[{"name":"trader","type":"address","indexed":true,"internalType":"address"},{"name":"assetId","type":"uint256","indexed":true,"internalType":"uint256"},{"name":"maturityTime","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"baseAmount","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"sharePrice","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"bondAmount","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"event","name":"CreateCheckpoint","inputs":[{"name":"checkpointTime","type":"uint256","indexed":true,"internalType":"uint256"},{"name":"sharePrice","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"maturedShorts","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"maturedLongs","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"lpSharePrice","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"event","name":"Initialize","inputs":[{"name":"provider","type":"address","indexed":true,"internalType":"address"},{"name":"lpAmount","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"baseAmount","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"sharePrice","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"apr","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"event","name":"OpenLong","inputs":[{"name":"trader","type":"address","indexed":true,"internalType":"address"},{"name":"assetId","type":"uint256","indexed":true,"internalType":"uint256"},{"name":"maturityTime","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"baseAmount","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"sharePrice","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"bondAmount","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"event","name":"OpenShort","inputs":[{"name":"trader","type":"address","indexed":true,"internalType":"address"},{"name":"assetId","type":"uint256","indexed":true,"internalType":"uint256"},{"name":"maturityTime","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"baseAmount","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"sharePrice","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"bondAmount","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"event","name":"RedeemWithdrawalShares","inputs":[{"name":"provider","type":"address","indexed":true,"internalType":"address"},{"name":"withdrawalShareAmount","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"baseAmount","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"sharePrice","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"event","name":"RemoveLiquidity","inputs":[{"name":"provider","type":"address","indexed":true,"internalType":"address"},{"name":"lpAmount","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"baseAmount","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"sharePrice","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"withdrawalShareAmount","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"lpSharePrice","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"event","name":"TransferSingle","inputs":[{"name":"operator","type":"address","indexed":true,"internalType":"address"},{"name":"from","type":"address","indexed":true,"internalType":"address"},{"name":"to","type":"address","indexed":true,"internalType":"address"},{"name":"id","type":"uint256","indexed":false,"internalType":"uint256"},{"name":"value","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"error","name":"InvalidCheckpointDuration","inputs":[]},{"type":"error","name":"InvalidFeeAmounts","inputs":[]},{"type":"error","name":"InvalidMinimumShareReserves","inputs":[]},{"type":"error","name":"InvalidPositionDuration","inputs":[]}],"bytecode":{"object":"0x","sourceMap":"","linkReferences":{}},"deployedBytecode":{"object":"0x","sourceMap":"","linkReferences":{}},"methodIdentifiers":{},"rawMetadata":"{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"InvalidCheckpointDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFeeAmounts\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinimumShareReserves\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidPositionDuration\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"HyperdriveShort\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Implements the short accounting for Hyperdrive.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/internal/HyperdriveShort.sol\":\"HyperdriveShort\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36\",\"dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x3b4f94e5480e7074e05b0d338d583569aef147f45365eb57daeb99f19fe817c3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2cc18b204ec94f80cd6b4876ea3c39dfb143fc4feff52e2a8d00ea72e6811644\",\"dweb:/ipfs/QmZHmZRvmJr8FxExBzKHSHYNZqcEgcgDcs4Z6gF1wPvBvj\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85\",\"dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x1c61ba57b783bfa408a4e208e80c1c117850d4d6c9f0e280263d3fcf57a8b2fd\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5b920d5f0f37014035b6cbba16d898e52654122a0c004a3f75050af93b799496\",\"dweb:/ipfs/QmaneaTDVXbw5HfevR2vFwXWw95EKWcBq8yMgMyWJPHKVW\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6\",\"dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8\",\"dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f\",\"dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6\",\"dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x0fbf9c2be16bbfeb3d560e433b21d040292579ba1d21375979008e5eac35d5f6\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8672d924b7a357df66bb17e37fb485b53e445cab1b7a7171b5c38a93999e4a72\",\"dweb:/ipfs/QmQj3xB5fj7V2mY5rn3JSRxmb4LywPEVSyw95J95HVtVUL\"]},\"contracts/src/internal/HyperdriveLP.sol\":{\"keccak256\":\"0xf7dfba22a0063e2db44e0ccbd3cf5a6aa76f1459893e395656518f34f34bdcf5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://9b0f953d3fd2613d271c0734693ee809730c6d870f05eed2a083543ff1cec6ad\",\"dweb:/ipfs/QmaRU2waAMaDDKLWXogUVYjivmfPaYXnB6qNoHHZBvwoqH\"]},\"contracts/src/internal/HyperdriveMultiToken.sol\":{\"keccak256\":\"0x61b9f8eb5795fda17a5c35264f53879a7ef022e02b865b015bdb9f5811db6ba5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://9498f4bfd969d78634da2b0a89b10f88ac467f52d565d9b62561dcc569ad00cd\",\"dweb:/ipfs/QmZdGwc5ezJf2qv8yheoTVF3UTfWJnh6FtAAq7wufhPZ5R\"]},\"contracts/src/internal/HyperdriveShort.sol\":{\"keccak256\":\"0x79c7fa4a4ec7c5b6acb9f51021b5b0b09027c852d67377d43cf87449f5f8c3ec\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://67d19c10eec1c0a5b8b0478e0388c99642a4c035cc48a179c4f95903e34b1d41\",\"dweb:/ipfs/QmbF9Yq4d9CQF5dWkNTYxqo8ZpWGfbofBLedKP6QX38sGN\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xe150223822098026c7ce734cd68848e45b47b92b024d34bc25886e9c6af6ec67\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6590e590f4af53d55e81e06ba8d53346cfce71ce1fa8d1833141f273d74c8a8f\",\"dweb:/ipfs/QmTM582joUpK7KBDWvwWEBi4XT3Qt9x8VLkhwPYj8Qu93o\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0xcf8493b00dd39c50754a63f66dc612f3cd466cbac8c7ea5ed0c5ea68aa99267a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1a1986d6bc80e465dde116a70d3a30027b3e75969117a9b3517c6866c2e5e73a\",\"dweb:/ipfs/QmSASHifHWyKBycGAm1pUs9dw26Uf6A61V9nkEQnFj9mya\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x3d2d86890e7287a59bc7171a030f98006a60271812a233027d2e42d8f31ef46c\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ecf29c3dedf328bd29caef4ce1eba85576d4c4b8d6f77fc255e37c24e8d44e1d\",\"dweb:/ipfs/QmVgmtYXzMkvR1GYsfqnJ1cH2ojmggoKmVuxKQZ9Rw78T1\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xd87293bc10dfe09707a042bf05091baf40ba344bdca141bd99b62256a7611817\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8f6eadd454c6671c26bd22095c31a3bbaea7083df9aa6548dbaba32a4907e336\",\"dweb:/ipfs/QmY1jMW9DuAk9CSfVS6MsG5onqjZHKzdBrv2TcHvj9yKj4\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x077931150bcba5b99dedcd9038f3fbeef9c9230046dc4649c457d75d4be32a5c\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2a48e4046f7ae8acb965d0f8d79767f4f4c70c1a6a8d3cf635482587412d33fd\",\"dweb:/ipfs/QmcY8FbffppqTMBiMwniXG9R8i8eQoVJuLqqTXgpuiXyUr\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0x86d3065b06e2fb93733eb6f19ea0bb6343a51bc6b993c36702dc3e6d50a6d01d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f0d303e0a2ed0c99ea194759d9fce5317b6e3a4c40464fc34c09f6f770d402db\",\"dweb:/ipfs/QmVSTsk4YXLe8pcUbQEpihWq9XTcn47L46j8khkvfzyiWB\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x2f9511684820be7510155adfe3c2c2ef7e2583472946bae37f379bac801fc263\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7e9a84e4168448e3320a6682c8ba248c8b51757df173b86507e9aba4b6167247\",\"dweb:/ipfs/QmSonetYBP22Fnc8HrcaTxAA1Zg2PCR5ptPiEp22sA77Ka\"]},\"lib/solmate/src/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xb282dd78aa7375d6b200b9a5d8dd214b2e5df1004f8217a4b4c2b07f0c5bfd01\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://5fca62eb8d3dbd2b3b7e4bb051f6da16f4d0ff9cee61c39cebb80f031f6a8800\",\"dweb:/ipfs/QmbrsXPK91iBFwHKwJs2HLRud2KzMoBDRiWYMUtyV5H57j\"]}},\"version\":1}","metadata":{"compiler":{"version":"0.8.19+commit.7dd6d404"},"language":"Solidity","output":{"abi":[{"inputs":[],"type":"error","name":"InvalidCheckpointDuration"},{"inputs":[],"type":"error","name":"InvalidFeeAmounts"},{"inputs":[],"type":"error","name":"InvalidMinimumShareReserves"},{"inputs":[],"type":"error","name":"InvalidPositionDuration"},{"inputs":[{"internalType":"address","name":"provider","type":"address","indexed":true},{"internalType":"uint256","name":"lpAmount","type":"uint256","indexed":false},{"internalType":"uint256","name":"baseAmount","type":"uint256","indexed":false},{"internalType":"uint256","name":"sharePrice","type":"uint256","indexed":false},{"internalType":"uint256","name":"lpSharePrice","type":"uint256","indexed":false}],"type":"event","name":"AddLiquidity","anonymous":false},{"inputs":[{"internalType":"address","name":"owner","type":"address","indexed":true},{"internalType":"address","name":"spender","type":"address","indexed":true},{"internalType":"uint256","name":"value","type":"uint256","indexed":false}],"type":"event","name":"Approval","anonymous":false},{"inputs":[{"internalType":"address","name":"account","type":"address","indexed":true},{"internalType":"address","name":"operator","type":"address","indexed":true},{"internalType":"bool","name":"approved","type":"bool","indexed":false}],"type":"event","name":"ApprovalForAll","anonymous":false},{"inputs":[{"internalType":"address","name":"trader","type":"address","indexed":true},{"internalType":"uint256","name":"assetId","type":"uint256","indexed":true},{"internalType":"uint256","name":"maturityTime","type":"uint256","indexed":false},{"internalType":"uint256","name":"baseAmount","type":"uint256","indexed":false},{"internalType":"uint256","name":"sharePrice","type":"uint256","indexed":false},{"internalType":"uint256","name":"bondAmount","type":"uint256","indexed":false}],"type":"event","name":"CloseLong","anonymous":false},{"inputs":[{"internalType":"address","name":"trader","type":"address","indexed":true},{"internalType":"uint256","name":"assetId","type":"uint256","indexed":true},{"internalType":"uint256","name":"maturityTime","type":"uint256","indexed":false},{"internalType":"uint256","name":"baseAmount","type":"uint256","indexed":false},{"internalType":"uint256","name":"sharePrice","type":"uint256","indexed":false},{"internalType":"uint256","name":"bondAmount","type":"uint256","indexed":false}],"type":"event","name":"CloseShort","anonymous":false},{"inputs":[{"internalType":"uint256","name":"checkpointTime","type":"uint256","indexed":true},{"internalType":"uint256","name":"sharePrice","type":"uint256","indexed":false},{"internalType":"uint256","name":"maturedShorts","type":"uint256","indexed":false},{"internalType":"uint256","name":"maturedLongs","type":"uint256","indexed":false},{"internalType":"uint256","name":"lpSharePrice","type":"uint256","indexed":false}],"type":"event","name":"CreateCheckpoint","anonymous":false},{"inputs":[{"internalType":"address","name":"provider","type":"address","indexed":true},{"internalType":"uint256","name":"lpAmount","type":"uint256","indexed":false},{"internalType":"uint256","name":"baseAmount","type":"uint256","indexed":false},{"internalType":"uint256","name":"sharePrice","type":"uint256","indexed":false},{"internalType":"uint256","name":"apr","type":"uint256","indexed":false}],"type":"event","name":"Initialize","anonymous":false},{"inputs":[{"internalType":"address","name":"trader","type":"address","indexed":true},{"internalType":"uint256","name":"assetId","type":"uint256","indexed":true},{"internalType":"uint256","name":"maturityTime","type":"uint256","indexed":false},{"internalType":"uint256","name":"baseAmount","type":"uint256","indexed":false},{"internalType":"uint256","name":"sharePrice","type":"uint256","indexed":false},{"internalType":"uint256","name":"bondAmount","type":"uint256","indexed":false}],"type":"event","name":"OpenLong","anonymous":false},{"inputs":[{"internalType":"address","name":"trader","type":"address","indexed":true},{"internalType":"uint256","name":"assetId","type":"uint256","indexed":true},{"internalType":"uint256","name":"maturityTime","type":"uint256","indexed":false},{"internalType":"uint256","name":"baseAmount","type":"uint256","indexed":false},{"internalType":"uint256","name":"sharePrice","type":"uint256","indexed":false},{"internalType":"uint256","name":"bondAmount","type":"uint256","indexed":false}],"type":"event","name":"OpenShort","anonymous":false},{"inputs":[{"internalType":"address","name":"provider","type":"address","indexed":true},{"internalType":"uint256","name":"withdrawalShareAmount","type":"uint256","indexed":false},{"internalType":"uint256","name":"baseAmount","type":"uint256","indexed":false},{"internalType":"uint256","name":"sharePrice","type":"uint256","indexed":false}],"type":"event","name":"RedeemWithdrawalShares","anonymous":false},{"inputs":[{"internalType":"address","name":"provider","type":"address","indexed":true},{"internalType":"uint256","name":"lpAmount","type":"uint256","indexed":false},{"internalType":"uint256","name":"baseAmount","type":"uint256","indexed":false},{"internalType":"uint256","name":"sharePrice","type":"uint256","indexed":false},{"internalType":"uint256","name":"withdrawalShareAmount","type":"uint256","indexed":false},{"internalType":"uint256","name":"lpSharePrice","type":"uint256","indexed":false}],"type":"event","name":"RemoveLiquidity","anonymous":false},{"inputs":[{"internalType":"address","name":"operator","type":"address","indexed":true},{"internalType":"address","name":"from","type":"address","indexed":true},{"internalType":"address","name":"to","type":"address","indexed":true},{"internalType":"uint256","name":"id","type":"uint256","indexed":false},{"internalType":"uint256","name":"value","type":"uint256","indexed":false}],"type":"event","name":"TransferSingle","anonymous":false}],"devdoc":{"kind":"dev","methods":{},"version":1},"userdoc":{"kind":"user","methods":{},"version":1}},"settings":{"remappings":["aave-v3-core/=lib/aave-v3-core/","create3-factory/=lib/yield-daddy/lib/create3-factory/","ds-test/=lib/forge-std/lib/ds-test/src/","forge-std/=lib/forge-std/src/","solmate/=lib/solmate/src/","yield-daddy/=lib/yield-daddy/"],"optimizer":{"enabled":true,"runs":200},"metadata":{"bytecodeHash":"ipfs"},"compilationTarget":{"contracts/src/internal/HyperdriveShort.sol":"HyperdriveShort"},"libraries":{}},"sources":{"contracts/src/interfaces/IERC20.sol":{"keccak256":"0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4","urls":["bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36","dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL"],"license":"Apache-2.0"},"contracts/src/interfaces/IHyperdrive.sol":{"keccak256":"0x3b4f94e5480e7074e05b0d338d583569aef147f45365eb57daeb99f19fe817c3","urls":["bzz-raw://2cc18b204ec94f80cd6b4876ea3c39dfb143fc4feff52e2a8d00ea72e6811644","dweb:/ipfs/QmZHmZRvmJr8FxExBzKHSHYNZqcEgcgDcs4Z6gF1wPvBvj"],"license":"Apache-2.0"},"contracts/src/interfaces/IHyperdriveCore.sol":{"keccak256":"0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d","urls":["bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85","dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF"],"license":"Apache-2.0"},"contracts/src/interfaces/IHyperdriveRead.sol":{"keccak256":"0x1c61ba57b783bfa408a4e208e80c1c117850d4d6c9f0e280263d3fcf57a8b2fd","urls":["bzz-raw://5b920d5f0f37014035b6cbba16d898e52654122a0c004a3f75050af93b799496","dweb:/ipfs/QmaneaTDVXbw5HfevR2vFwXWw95EKWcBq8yMgMyWJPHKVW"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiToken.sol":{"keccak256":"0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad","urls":["bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6","dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiTokenCore.sol":{"keccak256":"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d","urls":["bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8","dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiTokenMetadata.sol":{"keccak256":"0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb","urls":["bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f","dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiTokenRead.sol":{"keccak256":"0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4","urls":["bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6","dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW"],"license":"Apache-2.0"},"contracts/src/internal/HyperdriveBase.sol":{"keccak256":"0x0fbf9c2be16bbfeb3d560e433b21d040292579ba1d21375979008e5eac35d5f6","urls":["bzz-raw://8672d924b7a357df66bb17e37fb485b53e445cab1b7a7171b5c38a93999e4a72","dweb:/ipfs/QmQj3xB5fj7V2mY5rn3JSRxmb4LywPEVSyw95J95HVtVUL"],"license":"Apache-2.0"},"contracts/src/internal/HyperdriveLP.sol":{"keccak256":"0xf7dfba22a0063e2db44e0ccbd3cf5a6aa76f1459893e395656518f34f34bdcf5","urls":["bzz-raw://9b0f953d3fd2613d271c0734693ee809730c6d870f05eed2a083543ff1cec6ad","dweb:/ipfs/QmaRU2waAMaDDKLWXogUVYjivmfPaYXnB6qNoHHZBvwoqH"],"license":"Apache-2.0"},"contracts/src/internal/HyperdriveMultiToken.sol":{"keccak256":"0x61b9f8eb5795fda17a5c35264f53879a7ef022e02b865b015bdb9f5811db6ba5","urls":["bzz-raw://9498f4bfd969d78634da2b0a89b10f88ac467f52d565d9b62561dcc569ad00cd","dweb:/ipfs/QmZdGwc5ezJf2qv8yheoTVF3UTfWJnh6FtAAq7wufhPZ5R"],"license":"Apache-2.0"},"contracts/src/internal/HyperdriveShort.sol":{"keccak256":"0x79c7fa4a4ec7c5b6acb9f51021b5b0b09027c852d67377d43cf87449f5f8c3ec","urls":["bzz-raw://67d19c10eec1c0a5b8b0478e0388c99642a4c035cc48a179c4f95903e34b1d41","dweb:/ipfs/QmbF9Yq4d9CQF5dWkNTYxqo8ZpWGfbofBLedKP6QX38sGN"],"license":"Apache-2.0"},"contracts/src/internal/HyperdriveStorage.sol":{"keccak256":"0xe150223822098026c7ce734cd68848e45b47b92b024d34bc25886e9c6af6ec67","urls":["bzz-raw://6590e590f4af53d55e81e06ba8d53346cfce71ce1fa8d1833141f273d74c8a8f","dweb:/ipfs/QmTM582joUpK7KBDWvwWEBi4XT3Qt9x8VLkhwPYj8Qu93o"],"license":"Apache-2.0"},"contracts/src/libraries/AssetId.sol":{"keccak256":"0xcf8493b00dd39c50754a63f66dc612f3cd466cbac8c7ea5ed0c5ea68aa99267a","urls":["bzz-raw://1a1986d6bc80e465dde116a70d3a30027b3e75969117a9b3517c6866c2e5e73a","dweb:/ipfs/QmSASHifHWyKBycGAm1pUs9dw26Uf6A61V9nkEQnFj9mya"],"license":"Apache-2.0"},"contracts/src/libraries/FixedPointMath.sol":{"keccak256":"0x3d2d86890e7287a59bc7171a030f98006a60271812a233027d2e42d8f31ef46c","urls":["bzz-raw://ecf29c3dedf328bd29caef4ce1eba85576d4c4b8d6f77fc255e37c24e8d44e1d","dweb:/ipfs/QmVgmtYXzMkvR1GYsfqnJ1cH2ojmggoKmVuxKQZ9Rw78T1"],"license":"Apache-2.0"},"contracts/src/libraries/HyperdriveMath.sol":{"keccak256":"0xd87293bc10dfe09707a042bf05091baf40ba344bdca141bd99b62256a7611817","urls":["bzz-raw://8f6eadd454c6671c26bd22095c31a3bbaea7083df9aa6548dbaba32a4907e336","dweb:/ipfs/QmY1jMW9DuAk9CSfVS6MsG5onqjZHKzdBrv2TcHvj9yKj4"],"license":"Apache-2.0"},"contracts/src/libraries/LPMath.sol":{"keccak256":"0x077931150bcba5b99dedcd9038f3fbeef9c9230046dc4649c457d75d4be32a5c","urls":["bzz-raw://2a48e4046f7ae8acb965d0f8d79767f4f4c70c1a6a8d3cf635482587412d33fd","dweb:/ipfs/QmcY8FbffppqTMBiMwniXG9R8i8eQoVJuLqqTXgpuiXyUr"],"license":"Apache-2.0"},"contracts/src/libraries/SafeCast.sol":{"keccak256":"0x86d3065b06e2fb93733eb6f19ea0bb6343a51bc6b993c36702dc3e6d50a6d01d","urls":["bzz-raw://f0d303e0a2ed0c99ea194759d9fce5317b6e3a4c40464fc34c09f6f770d402db","dweb:/ipfs/QmVSTsk4YXLe8pcUbQEpihWq9XTcn47L46j8khkvfzyiWB"],"license":"Apache-2.0"},"contracts/src/libraries/YieldSpaceMath.sol":{"keccak256":"0x2f9511684820be7510155adfe3c2c2ef7e2583472946bae37f379bac801fc263","urls":["bzz-raw://7e9a84e4168448e3320a6682c8ba248c8b51757df173b86507e9aba4b6167247","dweb:/ipfs/QmSonetYBP22Fnc8HrcaTxAA1Zg2PCR5ptPiEp22sA77Ka"],"license":"Apache-2.0"},"lib/solmate/src/utils/ReentrancyGuard.sol":{"keccak256":"0xb282dd78aa7375d6b200b9a5d8dd214b2e5df1004f8217a4b4c2b07f0c5bfd01","urls":["bzz-raw://5fca62eb8d3dbd2b3b7e4bb051f6da16f4d0ff9cee61c39cebb80f031f6a8800","dweb:/ipfs/QmbrsXPK91iBFwHKwJs2HLRud2KzMoBDRiWYMUtyV5H57j"],"license":"AGPL-3.0-only"}},"version":1},"ast":{"absolutePath":"contracts/src/internal/HyperdriveShort.sol","id":10920,"exportedSymbols":{"AssetId":[11509],"FixedPointMath":[12293],"HyperdriveLP":[8841],"HyperdriveMath":[12857],"HyperdriveShort":[10919],"IHyperdrive":[5658],"ONE":[11516],"SafeCast":[15541]},"nodeType":"SourceUnit","src":"39:25594:63","nodes":[{"id":10099,"nodeType":"PragmaDirective","src":"39:23:63","nodes":[],"literals":["solidity","0.8",".19"]},{"id":10101,"nodeType":"ImportDirective","src":"64:60:63","nodes":[],"absolutePath":"contracts/src/interfaces/IHyperdrive.sol","file":"../interfaces/IHyperdrive.sol","nameLocation":"-1:-1:-1","scope":10920,"sourceUnit":5659,"symbolAliases":[{"foreign":{"id":10100,"name":"IHyperdrive","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5658,"src":"73:11:63","typeDescriptions":{}},"nameLocation":"-1:-1:-1"}],"unitAlias":""},{"id":10103,"nodeType":"ImportDirective","src":"125:51:63","nodes":[],"absolutePath":"contracts/src/libraries/AssetId.sol","file":"../libraries/AssetId.sol","nameLocation":"-1:-1:-1","scope":10920,"sourceUnit":11510,"symbolAliases":[{"foreign":{"id":10102,"name":"AssetId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11509,"src":"134:7:63","typeDescriptions":{}},"nameLocation":"-1:-1:-1"}],"unitAlias":""},{"id":10106,"nodeType":"ImportDirective","src":"177:70:63","nodes":[],"absolutePath":"contracts/src/libraries/FixedPointMath.sol","file":"../libraries/FixedPointMath.sol","nameLocation":"-1:-1:-1","scope":10920,"sourceUnit":12294,"symbolAliases":[{"foreign":{"id":10104,"name":"FixedPointMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12293,"src":"186:14:63","typeDescriptions":{}},"nameLocation":"-1:-1:-1"},{"foreign":{"id":10105,"name":"ONE","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11516,"src":"202:3:63","typeDescriptions":{}},"nameLocation":"-1:-1:-1"}],"unitAlias":""},{"id":10108,"nodeType":"ImportDirective","src":"248:65:63","nodes":[],"absolutePath":"contracts/src/libraries/HyperdriveMath.sol","file":"../libraries/HyperdriveMath.sol","nameLocation":"-1:-1:-1","scope":10920,"sourceUnit":12858,"symbolAliases":[{"foreign":{"id":10107,"name":"HyperdriveMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12857,"src":"257:14:63","typeDescriptions":{}},"nameLocation":"-1:-1:-1"}],"unitAlias":""},{"id":10110,"nodeType":"ImportDirective","src":"314:53:63","nodes":[],"absolutePath":"contracts/src/libraries/SafeCast.sol","file":"../libraries/SafeCast.sol","nameLocation":"-1:-1:-1","scope":10920,"sourceUnit":15542,"symbolAliases":[{"foreign":{"id":10109,"name":"SafeCast","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":15541,"src":"323:8:63","typeDescriptions":{}},"nameLocation":"-1:-1:-1"}],"unitAlias":""},{"id":10112,"nodeType":"ImportDirective","src":"368:50:63","nodes":[],"absolutePath":"contracts/src/internal/HyperdriveLP.sol","file":"./HyperdriveLP.sol","nameLocation":"-1:-1:-1","scope":10920,"sourceUnit":8842,"symbolAliases":[{"foreign":{"id":10111,"name":"HyperdriveLP","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":8841,"src":"377:12:63","typeDescriptions":{}},"nameLocation":"-1:-1:-1"}],"unitAlias":""},{"id":10919,"nodeType":"ContractDefinition","src":"748:24884:63","nodes":[{"id":10118,"nodeType":"UsingForDirective","src":"804:33:63","nodes":[],"global":false,"libraryName":{"id":10116,"name":"FixedPointMath","nameLocations":["810:14:63"],"nodeType":"IdentifierPath","referencedDeclaration":12293,"src":"810:14:63"},"typeName":{"id":10117,"name":"uint256","nodeType":"ElementaryTypeName","src":"829:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}},{"id":10121,"nodeType":"UsingForDirective","src":"842:32:63","nodes":[],"global":false,"libraryName":{"id":10119,"name":"FixedPointMath","nameLocations":["848:14:63"],"nodeType":"IdentifierPath","referencedDeclaration":12293,"src":"848:14:63"},"typeName":{"id":10120,"name":"int256","nodeType":"ElementaryTypeName","src":"867:6:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}}},{"id":10124,"nodeType":"UsingForDirective","src":"879:27:63","nodes":[],"global":false,"libraryName":{"id":10122,"name":"SafeCast","nameLocations":["885:8:63"],"nodeType":"IdentifierPath","referencedDeclaration":15541,"src":"885:8:63"},"typeName":{"id":10123,"name":"uint256","nodeType":"ElementaryTypeName","src":"898:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}},{"id":10127,"nodeType":"UsingForDirective","src":"911:26:63","nodes":[],"global":false,"libraryName":{"id":10125,"name":"SafeCast","nameLocations":["917:8:63"],"nodeType":"IdentifierPath","referencedDeclaration":15541,"src":"917:8:63"},"typeName":{"id":10126,"name":"int256","nodeType":"ElementaryTypeName","src":"930:6:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}}},{"id":10285,"nodeType":"FunctionDefinition","src":"1529:3711:63","nodes":[],"body":{"id":10284,"nodeType":"Block","src":"1753:3487:63","nodes":[],"statements":[{"expression":{"arguments":[],"expression":{"argumentTypes":[],"id":10148,"name":"_checkMessageValue","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6709,"src":"1830:18:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$__$returns$__$","typeString":"function () view"}},"id":10149,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"1830:20:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10150,"nodeType":"ExpressionStatement","src":"1830:20:63"},{"condition":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10153,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10151,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10130,"src":"1864:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"<","rightExpression":{"id":10152,"name":"_minimumTransactionAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10972,"src":"1878:25:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"1864:39:63","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":10160,"nodeType":"IfStatement","src":"1860:115:63","trueBody":{"id":10159,"nodeType":"Block","src":"1905:70:63","statements":[{"errorCall":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10154,"name":"IHyperdrive","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5658,"src":"1926:11:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_IHyperdrive_$5658_$","typeString":"type(contract IHyperdrive)"}},"id":10156,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"1938:24:63","memberName":"MinimumTransactionAmount","nodeType":"MemberAccess","referencedDeclaration":5522,"src":"1926:36:63","typeDescriptions":{"typeIdentifier":"t_function_error_pure$__$returns$__$","typeString":"function () pure"}},"id":10157,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"1926:38:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10158,"nodeType":"RevertStatement","src":"1919:45:63"}]}},{"assignments":[10162],"declarations":[{"constant":false,"id":10162,"mutability":"mutable","name":"sharePrice","nameLocation":"2309:10:63","nodeType":"VariableDeclaration","scope":10284,"src":"2301:18:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10161,"name":"uint256","nodeType":"ElementaryTypeName","src":"2301:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10165,"initialValue":{"arguments":[],"expression":{"argumentTypes":[],"id":10163,"name":"_pricePerShare","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6741,"src":"2322:14:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$__$returns$_t_uint256_$","typeString":"function () view returns (uint256)"}},"id":10164,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"2322:16:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"2301:37:63"},{"condition":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10168,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10166,"name":"sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10162,"src":"2352:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"<","rightExpression":{"id":10167,"name":"_minSharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10134,"src":"2365:14:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"2352:27:63","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":10175,"nodeType":"IfStatement","src":"2348:96:63","trueBody":{"id":10174,"nodeType":"Block","src":"2381:63:63","statements":[{"errorCall":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10169,"name":"IHyperdrive","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5658,"src":"2402:11:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_IHyperdrive_$5658_$","typeString":"type(contract IHyperdrive)"}},"id":10171,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"2414:17:63","memberName":"MinimumSharePrice","nodeType":"MemberAccess","referencedDeclaration":5520,"src":"2402:29:63","typeDescriptions":{"typeIdentifier":"t_function_error_pure$__$returns$__$","typeString":"function () pure"}},"id":10172,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"2402:31:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10173,"nodeType":"RevertStatement","src":"2395:38:63"}]}},{"assignments":[10177],"declarations":[{"constant":false,"id":10177,"mutability":"mutable","name":"latestCheckpoint","nameLocation":"2461:16:63","nodeType":"VariableDeclaration","scope":10284,"src":"2453:24:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10176,"name":"uint256","nodeType":"ElementaryTypeName","src":"2453:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10180,"initialValue":{"arguments":[],"expression":{"argumentTypes":[],"id":10178,"name":"_latestCheckpoint","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6852,"src":"2480:17:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$__$returns$_t_uint256_$","typeString":"function () view returns (uint256)"}},"id":10179,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"2480:19:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"2453:46:63"},{"assignments":[10182],"declarations":[{"constant":false,"id":10182,"mutability":"mutable","name":"openSharePrice","nameLocation":"2517:14:63","nodeType":"VariableDeclaration","scope":10284,"src":"2509:22:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10181,"name":"uint256","nodeType":"ElementaryTypeName","src":"2509:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10187,"initialValue":{"arguments":[{"id":10184,"name":"latestCheckpoint","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10177,"src":"2551:16:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10185,"name":"sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10162,"src":"2569:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10183,"name":"_applyCheckpoint","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6764,"src":"2534:16:63","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256) returns (uint256)"}},"id":10186,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"2534:46:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"2509:71:63"},{"assignments":[10189],"declarations":[{"constant":false,"id":10189,"mutability":"mutable","name":"maturityTime","nameLocation":"2827:12:63","nodeType":"VariableDeclaration","scope":10284,"src":"2819:20:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10188,"name":"uint256","nodeType":"ElementaryTypeName","src":"2819:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10193,"initialValue":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10192,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10190,"name":"latestCheckpoint","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10177,"src":"2842:16:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"+","rightExpression":{"id":10191,"name":"_positionDuration","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10948,"src":"2861:17:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"2842:36:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"2819:59:63"},{"assignments":[10195],"declarations":[{"constant":false,"id":10195,"mutability":"mutable","name":"shareReservesDelta","nameLocation":"2896:18:63","nodeType":"VariableDeclaration","scope":10284,"src":"2888:26:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10194,"name":"uint256","nodeType":"ElementaryTypeName","src":"2888:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10196,"nodeType":"VariableDeclarationStatement","src":"2888:26:63"},{"assignments":[10198],"declarations":[{"constant":false,"id":10198,"mutability":"mutable","name":"baseDeposit","nameLocation":"2932:11:63","nodeType":"VariableDeclaration","scope":10284,"src":"2924:19:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10197,"name":"uint256","nodeType":"ElementaryTypeName","src":"2924:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10199,"nodeType":"VariableDeclarationStatement","src":"2924:19:63"},{"id":10218,"nodeType":"Block","src":"2953:348:63","statements":[{"assignments":[10201],"declarations":[{"constant":false,"id":10201,"mutability":"mutable","name":"totalGovernanceFee","nameLocation":"2975:18:63","nodeType":"VariableDeclaration","scope":10218,"src":"2967:26:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10200,"name":"uint256","nodeType":"ElementaryTypeName","src":"2967:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10202,"nodeType":"VariableDeclarationStatement","src":"2967:26:63"},{"expression":{"id":10212,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"components":[{"id":10203,"name":"baseDeposit","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10198,"src":"3025:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10204,"name":"shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10195,"src":"3054:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10205,"name":"totalGovernanceFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10201,"src":"3090:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"id":10206,"isConstant":false,"isInlineArray":false,"isLValue":true,"isPure":false,"lValueRequested":true,"nodeType":"TupleExpression","src":"3007:115:63","typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,uint256,uint256)"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"arguments":[{"id":10208,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10130,"src":"3145:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10209,"name":"sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10162,"src":"3158:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10210,"name":"openSharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10182,"src":"3170:14:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10207,"name":"_calculateOpenShort","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10742,"src":"3125:19:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$","typeString":"function (uint256,uint256,uint256) view returns (uint256,uint256,uint256)"}},"id":10211,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"3125:60:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,uint256,uint256)"}},"src":"3007:178:63","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10213,"nodeType":"ExpressionStatement","src":"3007:178:63"},{"expression":{"id":10216,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":10214,"name":"_governanceFeesAccrued","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10995,"src":"3246:22:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"+=","rightHandSide":{"id":10215,"name":"totalGovernanceFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10201,"src":"3272:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"3246:44:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10217,"nodeType":"ExpressionStatement","src":"3246:44:63"}]},{"assignments":[10220],"declarations":[{"constant":false,"id":10220,"mutability":"mutable","name":"traderDeposit","nameLocation":"3931:13:63","nodeType":"VariableDeclaration","scope":10284,"src":"3923:21:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10219,"name":"uint256","nodeType":"ElementaryTypeName","src":"3923:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10226,"initialValue":{"arguments":[{"id":10222,"name":"baseDeposit","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10198,"src":"3985:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10223,"name":"sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10162,"src":"4010:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10224,"name":"_options","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10137,"src":"4034:8:63","typeDescriptions":{"typeIdentifier":"t_struct$_Options_$5483_calldata_ptr","typeString":"struct IHyperdrive.Options calldata"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_struct$_Options_$5483_calldata_ptr","typeString":"struct IHyperdrive.Options calldata"}],"id":10221,"name":"_convertToOptionFromBase","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":7579,"src":"3947:24:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$_t_struct$_Options_$5483_calldata_ptr_$returns$_t_uint256_$","typeString":"function (uint256,uint256,struct IHyperdrive.Options calldata) pure returns (uint256)"}},"id":10225,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"3947:105:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"3923:129:63"},{"condition":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10229,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10227,"name":"_maxDeposit","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10132,"src":"4066:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"<","rightExpression":{"id":10228,"name":"traderDeposit","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10220,"src":"4080:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"4066:27:63","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":10236,"nodeType":"IfStatement","src":"4062:90:63","trueBody":{"id":10235,"nodeType":"Block","src":"4095:57:63","statements":[{"errorCall":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10230,"name":"IHyperdrive","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5658,"src":"4116:11:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_IHyperdrive_$5658_$","typeString":"type(contract IHyperdrive)"}},"id":10232,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"4128:11:63","memberName":"OutputLimit","nodeType":"MemberAccess","referencedDeclaration":5532,"src":"4116:23:63","typeDescriptions":{"typeIdentifier":"t_function_error_pure$__$returns$__$","typeString":"function () pure"}},"id":10233,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"4116:25:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10234,"nodeType":"RevertStatement","src":"4109:32:63"}]}},{"expression":{"arguments":[{"id":10238,"name":"traderDeposit","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10220,"src":"4170:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10239,"name":"_options","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10137,"src":"4185:8:63","typeDescriptions":{"typeIdentifier":"t_struct$_Options_$5483_calldata_ptr","typeString":"struct IHyperdrive.Options calldata"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_struct$_Options_$5483_calldata_ptr","typeString":"struct IHyperdrive.Options calldata"}],"id":10237,"name":"_deposit","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6722,"src":"4161:8:63","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_uint256_$_t_struct$_Options_$5483_calldata_ptr_$returns$_t_uint256_$_t_uint256_$","typeString":"function (uint256,struct IHyperdrive.Options calldata) returns (uint256,uint256)"}},"id":10240,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"4161:33:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,uint256)"}},"id":10241,"nodeType":"ExpressionStatement","src":"4161:33:63"},{"expression":{"arguments":[{"id":10243,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10130,"src":"4451:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10244,"name":"shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10195,"src":"4476:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10245,"name":"sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10162,"src":"4508:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10246,"name":"maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10189,"src":"4532:12:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10242,"name":"_applyOpenShort","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10564,"src":"4422:15:63","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$","typeString":"function (uint256,uint256,uint256,uint256)"}},"id":10247,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"4422:132:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10248,"nodeType":"ExpressionStatement","src":"4422:132:63"},{"assignments":[10250],"declarations":[{"constant":false,"id":10250,"mutability":"mutable","name":"assetId","nameLocation":"4722:7:63","nodeType":"VariableDeclaration","scope":10284,"src":"4714:15:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10249,"name":"uint256","nodeType":"ElementaryTypeName","src":"4714:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10258,"initialValue":{"arguments":[{"expression":{"expression":{"id":10253,"name":"AssetId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11509,"src":"4767:7:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_AssetId_$11509_$","typeString":"type(library AssetId)"}},"id":10254,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"4775:13:63","memberName":"AssetIdPrefix","nodeType":"MemberAccess","referencedDeclaration":11215,"src":"4767:21:63","typeDescriptions":{"typeIdentifier":"t_type$_t_enum$_AssetIdPrefix_$11215_$","typeString":"type(enum AssetId.AssetIdPrefix)"}},"id":10255,"isConstant":false,"isLValue":false,"isPure":true,"lValueRequested":false,"memberLocation":"4789:5:63","memberName":"Short","nodeType":"MemberAccess","referencedDeclaration":11213,"src":"4767:27:63","typeDescriptions":{"typeIdentifier":"t_enum$_AssetIdPrefix_$11215","typeString":"enum AssetId.AssetIdPrefix"}},{"id":10256,"name":"maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10189,"src":"4808:12:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_enum$_AssetIdPrefix_$11215","typeString":"enum AssetId.AssetIdPrefix"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":10251,"name":"AssetId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11509,"src":"4732:7:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_AssetId_$11509_$","typeString":"type(library AssetId)"}},"id":10252,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"4740:13:63","memberName":"encodeAssetId","nodeType":"MemberAccess","referencedDeclaration":11238,"src":"4732:21:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_enum$_AssetIdPrefix_$11215_$_t_uint256_$returns$_t_uint256_$","typeString":"function (enum AssetId.AssetIdPrefix,uint256) pure returns (uint256)"}},"id":10257,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"4732:98:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"4714:116:63"},{"assignments":[10260],"declarations":[{"constant":false,"id":10260,"mutability":"mutable","name":"bondAmount","nameLocation":"4848:10:63","nodeType":"VariableDeclaration","scope":10284,"src":"4840:18:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10259,"name":"uint256","nodeType":"ElementaryTypeName","src":"4840:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10262,"initialValue":{"id":10261,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10130,"src":"4861:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"4840:32:63"},{"expression":{"arguments":[{"id":10264,"name":"assetId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10250,"src":"4919:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"expression":{"id":10265,"name":"_options","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10137,"src":"4928:8:63","typeDescriptions":{"typeIdentifier":"t_struct$_Options_$5483_calldata_ptr","typeString":"struct IHyperdrive.Options calldata"}},"id":10266,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"4937:11:63","memberName":"destination","nodeType":"MemberAccess","referencedDeclaration":5476,"src":"4928:20:63","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"id":10267,"name":"bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10260,"src":"4950:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10263,"name":"_mint","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":9904,"src":"4913:5:63","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_uint256_$returns$__$","typeString":"function (uint256,address,uint256)"}},"id":10268,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"4913:48:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10269,"nodeType":"ExpressionStatement","src":"4913:48:63"},{"eventCall":{"arguments":[{"expression":{"id":10271,"name":"_options","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10137,"src":"5036:8:63","typeDescriptions":{"typeIdentifier":"t_struct$_Options_$5483_calldata_ptr","typeString":"struct IHyperdrive.Options calldata"}},"id":10272,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"5045:11:63","memberName":"destination","nodeType":"MemberAccess","referencedDeclaration":5476,"src":"5036:20:63","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"id":10273,"name":"assetId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10250,"src":"5070:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10274,"name":"maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10189,"src":"5091:12:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10275,"name":"baseDeposit","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10198,"src":"5117:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10276,"name":"sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10162,"src":"5142:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10277,"name":"bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10260,"src":"5166:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10270,"name":"OpenShort","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6637,"src":"5013:9:63","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$","typeString":"function (address,uint256,uint256,uint256,uint256,uint256)"}},"id":10278,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"5013:173:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10279,"nodeType":"EmitStatement","src":"5008:178:63"},{"expression":{"components":[{"id":10280,"name":"maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10189,"src":"5205:12:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10281,"name":"traderDeposit","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10220,"src":"5219:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"id":10282,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"5204:29:63","typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,uint256)"}},"functionReturnParameters":10147,"id":10283,"nodeType":"Return","src":"5197:36:63"}]},"documentation":{"id":10128,"nodeType":"StructuredDocumentation","src":"943:581:63","text":"@dev Opens a short position.\n @param _bondAmount The amount of bonds to short.\n @param _maxDeposit The most the user expects to deposit for this trade.\n @param _minSharePrice The minium share price at which to open the long.\n        This allows traders to protect themselves from opening a long in\n        a checkpoint where negative interest has accrued.\n @param _options The options that configure how the trade is settled.\n @return The maturity time of the short.\n @return The amount the user deposited for this trade."},"implemented":true,"kind":"function","modifiers":[{"id":10140,"kind":"modifierInvocation","modifierName":{"id":10139,"name":"nonReentrant","nameLocations":["1701:12:63"],"nodeType":"IdentifierPath","referencedDeclaration":65498,"src":"1701:12:63"},"nodeType":"ModifierInvocation","src":"1701:12:63"},{"id":10142,"kind":"modifierInvocation","modifierName":{"id":10141,"name":"isNotPaused","nameLocations":["1714:11:63"],"nodeType":"IdentifierPath","referencedDeclaration":6754,"src":"1714:11:63"},"nodeType":"ModifierInvocation","src":"1714:11:63"}],"name":"_openShort","nameLocation":"1538:10:63","parameters":{"id":10138,"nodeType":"ParameterList","parameters":[{"constant":false,"id":10130,"mutability":"mutable","name":"_bondAmount","nameLocation":"1566:11:63","nodeType":"VariableDeclaration","scope":10285,"src":"1558:19:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10129,"name":"uint256","nodeType":"ElementaryTypeName","src":"1558:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10132,"mutability":"mutable","name":"_maxDeposit","nameLocation":"1595:11:63","nodeType":"VariableDeclaration","scope":10285,"src":"1587:19:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10131,"name":"uint256","nodeType":"ElementaryTypeName","src":"1587:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10134,"mutability":"mutable","name":"_minSharePrice","nameLocation":"1624:14:63","nodeType":"VariableDeclaration","scope":10285,"src":"1616:22:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10133,"name":"uint256","nodeType":"ElementaryTypeName","src":"1616:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10137,"mutability":"mutable","name":"_options","nameLocation":"1677:8:63","nodeType":"VariableDeclaration","scope":10285,"src":"1648:37:63","stateVariable":false,"storageLocation":"calldata","typeDescriptions":{"typeIdentifier":"t_struct$_Options_$5483_calldata_ptr","typeString":"struct IHyperdrive.Options"},"typeName":{"id":10136,"nodeType":"UserDefinedTypeName","pathNode":{"id":10135,"name":"IHyperdrive.Options","nameLocations":["1648:11:63","1660:7:63"],"nodeType":"IdentifierPath","referencedDeclaration":5483,"src":"1648:19:63"},"referencedDeclaration":5483,"src":"1648:19:63","typeDescriptions":{"typeIdentifier":"t_struct$_Options_$5483_storage_ptr","typeString":"struct IHyperdrive.Options"}},"visibility":"internal"}],"src":"1548:143:63"},"returnParameters":{"id":10147,"nodeType":"ParameterList","parameters":[{"constant":false,"id":10144,"mutability":"mutable","name":"","nameLocation":"-1:-1:-1","nodeType":"VariableDeclaration","scope":10285,"src":"1735:7:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10143,"name":"uint256","nodeType":"ElementaryTypeName","src":"1735:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10146,"mutability":"mutable","name":"","nameLocation":"-1:-1:-1","nodeType":"VariableDeclaration","scope":10285,"src":"1744:7:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10145,"name":"uint256","nodeType":"ElementaryTypeName","src":"1744:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"1734:18:63"},"scope":10919,"stateMutability":"nonpayable","virtual":false,"visibility":"internal"},{"id":10450,"nodeType":"FunctionDefinition","src":"5648:3861:63","nodes":[],"body":{"id":10449,"nodeType":"Block","src":"5850:3659:63","nodes":[],"statements":[{"condition":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10304,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10302,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10290,"src":"5864:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"<","rightExpression":{"id":10303,"name":"_minimumTransactionAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10972,"src":"5878:25:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"5864:39:63","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":10311,"nodeType":"IfStatement","src":"5860:115:63","trueBody":{"id":10310,"nodeType":"Block","src":"5905:70:63","statements":[{"errorCall":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10305,"name":"IHyperdrive","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5658,"src":"5926:11:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_IHyperdrive_$5658_$","typeString":"type(contract IHyperdrive)"}},"id":10307,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"5938:24:63","memberName":"MinimumTransactionAmount","nodeType":"MemberAccess","referencedDeclaration":5522,"src":"5926:36:63","typeDescriptions":{"typeIdentifier":"t_function_error_pure$__$returns$__$","typeString":"function () pure"}},"id":10308,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"5926:38:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10309,"nodeType":"RevertStatement","src":"5919:45:63"}]}},{"assignments":[10313],"declarations":[{"constant":false,"id":10313,"mutability":"mutable","name":"sharePrice","nameLocation":"6026:10:63","nodeType":"VariableDeclaration","scope":10449,"src":"6018:18:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10312,"name":"uint256","nodeType":"ElementaryTypeName","src":"6018:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10316,"initialValue":{"arguments":[],"expression":{"argumentTypes":[],"id":10314,"name":"_pricePerShare","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6741,"src":"6039:14:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$__$returns$_t_uint256_$","typeString":"function () view returns (uint256)"}},"id":10315,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"6039:16:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"6018:37:63"},{"expression":{"arguments":[{"id":10318,"name":"_maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10288,"src":"6082:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10319,"name":"sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10313,"src":"6097:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10317,"name":"_applyCheckpoint","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6764,"src":"6065:16:63","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256) returns (uint256)"}},"id":10320,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"6065:43:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10321,"nodeType":"ExpressionStatement","src":"6065:43:63"},{"expression":{"arguments":[{"arguments":[{"expression":{"expression":{"id":10325,"name":"AssetId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11509,"src":"6210:7:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_AssetId_$11509_$","typeString":"type(library AssetId)"}},"id":10326,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"6218:13:63","memberName":"AssetIdPrefix","nodeType":"MemberAccess","referencedDeclaration":11215,"src":"6210:21:63","typeDescriptions":{"typeIdentifier":"t_type$_t_enum$_AssetIdPrefix_$11215_$","typeString":"type(enum AssetId.AssetIdPrefix)"}},"id":10327,"isConstant":false,"isLValue":false,"isPure":true,"lValueRequested":false,"memberLocation":"6232:5:63","memberName":"Short","nodeType":"MemberAccess","referencedDeclaration":11213,"src":"6210:27:63","typeDescriptions":{"typeIdentifier":"t_enum$_AssetIdPrefix_$11215","typeString":"enum AssetId.AssetIdPrefix"}},{"id":10328,"name":"_maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10288,"src":"6239:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_enum$_AssetIdPrefix_$11215","typeString":"enum AssetId.AssetIdPrefix"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":10323,"name":"AssetId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11509,"src":"6188:7:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_AssetId_$11509_$","typeString":"type(library AssetId)"}},"id":10324,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"6196:13:63","memberName":"encodeAssetId","nodeType":"MemberAccess","referencedDeclaration":11238,"src":"6188:21:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_enum$_AssetIdPrefix_$11215_$_t_uint256_$returns$_t_uint256_$","typeString":"function (enum AssetId.AssetIdPrefix,uint256) pure returns (uint256)"}},"id":10329,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"6188:65:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"expression":{"id":10330,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":-15,"src":"6267:3:63","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":10331,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"6271:6:63","memberName":"sender","nodeType":"MemberAccess","src":"6267:10:63","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"id":10332,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10290,"src":"6291:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10322,"name":"_burn","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":9941,"src":"6169:5:63","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_uint256_$returns$__$","typeString":"function (uint256,address,uint256)"}},"id":10333,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"6169:143:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10334,"nodeType":"ExpressionStatement","src":"6169:143:63"},{"assignments":[10336,10338,10340,10342,10344],"declarations":[{"constant":false,"id":10336,"mutability":"mutable","name":"bondReservesDelta","nameLocation":"6608:17:63","nodeType":"VariableDeclaration","scope":10449,"src":"6600:25:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10335,"name":"uint256","nodeType":"ElementaryTypeName","src":"6600:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10338,"mutability":"mutable","name":"shareProceeds","nameLocation":"6647:13:63","nodeType":"VariableDeclaration","scope":10449,"src":"6639:21:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10337,"name":"uint256","nodeType":"ElementaryTypeName","src":"6639:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10340,"mutability":"mutable","name":"shareReservesDelta","nameLocation":"6682:18:63","nodeType":"VariableDeclaration","scope":10449,"src":"6674:26:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10339,"name":"uint256","nodeType":"ElementaryTypeName","src":"6674:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10342,"mutability":"mutable","name":"shareAdjustmentDelta","nameLocation":"6721:20:63","nodeType":"VariableDeclaration","scope":10449,"src":"6714:27:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"},"typeName":{"id":10341,"name":"int256","nodeType":"ElementaryTypeName","src":"6714:6:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"visibility":"internal"},{"constant":false,"id":10344,"mutability":"mutable","name":"totalGovernanceFee","nameLocation":"6763:18:63","nodeType":"VariableDeclaration","scope":10449,"src":"6755:26:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10343,"name":"uint256","nodeType":"ElementaryTypeName","src":"6755:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10350,"initialValue":{"arguments":[{"id":10346,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10290,"src":"6815:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10347,"name":"sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10313,"src":"6828:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10348,"name":"_maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10288,"src":"6840:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10345,"name":"_calculateCloseShort","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10918,"src":"6794:20:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$","typeString":"function (uint256,uint256,uint256) view returns (uint256,uint256,uint256,int256,uint256)"}},"id":10349,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"6794:60:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$","typeString":"tuple(uint256,uint256,uint256,int256,uint256)"}},"nodeType":"VariableDeclarationStatement","src":"6586:268:63"},{"condition":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10354,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"expression":{"id":10351,"name":"block","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":-4,"src":"7060:5:63","typeDescriptions":{"typeIdentifier":"t_magic_block","typeString":"block"}},"id":10352,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"7066:9:63","memberName":"timestamp","nodeType":"MemberAccess","src":"7060:15:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"<","rightExpression":{"id":10353,"name":"_maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10288,"src":"7078:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"7060:31:63","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"falseBody":{"id":10395,"nodeType":"Block","src":"7975:283:63","statements":[{"expression":{"id":10393,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":10388,"name":"shareProceeds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10338,"src":"8187:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"arguments":[{"id":10390,"name":"shareProceeds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10338,"src":"8221:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10391,"name":"sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10313,"src":"8236:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10389,"name":"_applyZombieClose","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":7231,"src":"8203:17:63","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256) returns (uint256)"}},"id":10392,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"8203:44:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"8187:60:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10394,"nodeType":"ExpressionStatement","src":"8187:60:63"}]},"id":10396,"nodeType":"IfStatement","src":"7056:1202:63","trueBody":{"id":10387,"nodeType":"Block","src":"7093:876:63","statements":[{"expression":{"id":10357,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":10355,"name":"_governanceFeesAccrued","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10995,"src":"7153:22:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"+=","rightHandSide":{"id":10356,"name":"totalGovernanceFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10344,"src":"7179:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"7153:44:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10358,"nodeType":"ExpressionStatement","src":"7153:44:63"},{"expression":{"arguments":[{"id":10360,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10290,"src":"7324:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10361,"name":"bondReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10336,"src":"7353:17:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10362,"name":"shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10340,"src":"7388:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10363,"name":"shareAdjustmentDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10342,"src":"7424:20:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},{"id":10364,"name":"_maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10288,"src":"7462:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_int256","typeString":"int256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10359,"name":"_applyCloseShort","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10638,"src":"7290:16:63","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$returns$__$","typeString":"function (uint256,uint256,uint256,int256,uint256)"}},"id":10365,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"7290:199:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10366,"nodeType":"ExpressionStatement","src":"7290:199:63"},{"assignments":[10368],"declarations":[{"constant":false,"id":10368,"mutability":"mutable","name":"nonNettedLongs","nameLocation":"7664:14:63","nodeType":"VariableDeclaration","scope":10387,"src":"7657:21:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"},"typeName":{"id":10367,"name":"int256","nodeType":"ElementaryTypeName","src":"7657:6:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"visibility":"internal"}],"id":10372,"initialValue":{"arguments":[{"id":10370,"name":"_maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10288,"src":"7697:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10369,"name":"_nonNettedLongs","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6902,"src":"7681:15:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$_t_uint256_$returns$_t_int256_$","typeString":"function (uint256) view returns (int256)"}},"id":10371,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"7681:30:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"nodeType":"VariableDeclarationStatement","src":"7657:54:63"},{"expression":{"arguments":[{"commonType":{"typeIdentifier":"t_int256","typeString":"int256"},"id":10379,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10374,"name":"nonNettedLongs","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10368,"src":"7762:14:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"nodeType":"BinaryOperation","operator":"-","rightExpression":{"arguments":[{"id":10377,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10290,"src":"7786:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10376,"isConstant":false,"isLValue":false,"isPure":true,"lValueRequested":false,"nodeType":"ElementaryTypeNameExpression","src":"7779:6:63","typeDescriptions":{"typeIdentifier":"t_type$_t_int256_$","typeString":"type(int256)"},"typeName":{"id":10375,"name":"int256","nodeType":"ElementaryTypeName","src":"7779:6:63","typeDescriptions":{}}},"id":10378,"isConstant":false,"isLValue":false,"isPure":false,"kind":"typeConversion","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"7779:19:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"src":"7762:36:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},{"id":10380,"name":"nonNettedLongs","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10368,"src":"7816:14:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_int256","typeString":"int256"},{"typeIdentifier":"t_int256","typeString":"int256"}],"id":10373,"name":"_updateLongExposure","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":7141,"src":"7725:19:63","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_int256_$_t_int256_$returns$__$","typeString":"function (int256,int256)"}},"id":10381,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"7725:119:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10382,"nodeType":"ExpressionStatement","src":"7725:119:63"},{"expression":{"arguments":[{"id":10384,"name":"sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10313,"src":"7947:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10383,"name":"_distributeExcessIdle","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":8764,"src":"7925:21:63","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":10385,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"7925:33:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10386,"nodeType":"ExpressionStatement","src":"7925:33:63"}]}},{"assignments":[10398],"declarations":[{"constant":false,"id":10398,"mutability":"mutable","name":"proceeds","nameLocation":"8475:8:63","nodeType":"VariableDeclaration","scope":10449,"src":"8467:16:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10397,"name":"uint256","nodeType":"ElementaryTypeName","src":"8467:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10404,"initialValue":{"arguments":[{"id":10400,"name":"shareProceeds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10338,"src":"8496:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10401,"name":"sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10313,"src":"8511:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10402,"name":"_options","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10295,"src":"8523:8:63","typeDescriptions":{"typeIdentifier":"t_struct$_Options_$5483_calldata_ptr","typeString":"struct IHyperdrive.Options calldata"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_struct$_Options_$5483_calldata_ptr","typeString":"struct IHyperdrive.Options calldata"}],"id":10399,"name":"_withdraw","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6735,"src":"8486:9:63","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_struct$_Options_$5483_calldata_ptr_$returns$_t_uint256_$","typeString":"function (uint256,uint256,struct IHyperdrive.Options calldata) returns (uint256)"}},"id":10403,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"8486:46:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"8467:65:63"},{"assignments":[10406],"declarations":[{"constant":false,"id":10406,"mutability":"mutable","name":"baseProceeds","nameLocation":"8828:12:63","nodeType":"VariableDeclaration","scope":10449,"src":"8820:20:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10405,"name":"uint256","nodeType":"ElementaryTypeName","src":"8820:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10412,"initialValue":{"arguments":[{"id":10408,"name":"proceeds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10398,"src":"8881:8:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10409,"name":"sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10313,"src":"8903:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10410,"name":"_options","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10295,"src":"8927:8:63","typeDescriptions":{"typeIdentifier":"t_struct$_Options_$5483_calldata_ptr","typeString":"struct IHyperdrive.Options calldata"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_struct$_Options_$5483_calldata_ptr","typeString":"struct IHyperdrive.Options calldata"}],"id":10407,"name":"_convertToBaseFromOption","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":7553,"src":"8843:24:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$_t_struct$_Options_$5483_calldata_ptr_$returns$_t_uint256_$","typeString":"function (uint256,uint256,struct IHyperdrive.Options calldata) pure returns (uint256)"}},"id":10411,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"8843:102:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"8820:125:63"},{"condition":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10415,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10413,"name":"baseProceeds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10406,"src":"8959:12:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"<","rightExpression":{"id":10414,"name":"_minOutput","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10292,"src":"8974:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"8959:25:63","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":10422,"nodeType":"IfStatement","src":"8955:88:63","trueBody":{"id":10421,"nodeType":"Block","src":"8986:57:63","statements":[{"errorCall":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10416,"name":"IHyperdrive","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5658,"src":"9007:11:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_IHyperdrive_$5658_$","typeString":"type(contract IHyperdrive)"}},"id":10418,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"9019:11:63","memberName":"OutputLimit","nodeType":"MemberAccess","referencedDeclaration":5532,"src":"9007:23:63","typeDescriptions":{"typeIdentifier":"t_function_error_pure$__$returns$__$","typeString":"function () pure"}},"id":10419,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"9007:25:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10420,"nodeType":"RevertStatement","src":"9000:32:63"}]}},{"assignments":[10424],"declarations":[{"constant":false,"id":10424,"mutability":"mutable","name":"bondAmount","nameLocation":"9097:10:63","nodeType":"VariableDeclaration","scope":10449,"src":"9089:18:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10423,"name":"uint256","nodeType":"ElementaryTypeName","src":"9089:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10426,"initialValue":{"id":10425,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10290,"src":"9110:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"9089:32:63"},{"assignments":[10428],"declarations":[{"constant":false,"id":10428,"mutability":"mutable","name":"maturityTime","nameLocation":"9170:12:63","nodeType":"VariableDeclaration","scope":10449,"src":"9162:20:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10427,"name":"uint256","nodeType":"ElementaryTypeName","src":"9162:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10430,"initialValue":{"id":10429,"name":"_maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10288,"src":"9185:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"9162:36:63"},{"eventCall":{"arguments":[{"expression":{"id":10432,"name":"_options","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10295,"src":"9268:8:63","typeDescriptions":{"typeIdentifier":"t_struct$_Options_$5483_calldata_ptr","typeString":"struct IHyperdrive.Options calldata"}},"id":10433,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"9277:11:63","memberName":"destination","nodeType":"MemberAccess","referencedDeclaration":5476,"src":"9268:20:63","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"arguments":[{"expression":{"expression":{"id":10436,"name":"AssetId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11509,"src":"9324:7:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_AssetId_$11509_$","typeString":"type(library AssetId)"}},"id":10437,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"9332:13:63","memberName":"AssetIdPrefix","nodeType":"MemberAccess","referencedDeclaration":11215,"src":"9324:21:63","typeDescriptions":{"typeIdentifier":"t_type$_t_enum$_AssetIdPrefix_$11215_$","typeString":"type(enum AssetId.AssetIdPrefix)"}},"id":10438,"isConstant":false,"isLValue":false,"isPure":true,"lValueRequested":false,"memberLocation":"9346:5:63","memberName":"Short","nodeType":"MemberAccess","referencedDeclaration":11213,"src":"9324:27:63","typeDescriptions":{"typeIdentifier":"t_enum$_AssetIdPrefix_$11215","typeString":"enum AssetId.AssetIdPrefix"}},{"id":10439,"name":"maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10428,"src":"9353:12:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_enum$_AssetIdPrefix_$11215","typeString":"enum AssetId.AssetIdPrefix"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":10434,"name":"AssetId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11509,"src":"9302:7:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_AssetId_$11509_$","typeString":"type(library AssetId)"}},"id":10435,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"9310:13:63","memberName":"encodeAssetId","nodeType":"MemberAccess","referencedDeclaration":11238,"src":"9302:21:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_enum$_AssetIdPrefix_$11215_$_t_uint256_$returns$_t_uint256_$","typeString":"function (enum AssetId.AssetIdPrefix,uint256) pure returns (uint256)"}},"id":10440,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"9302:64:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10441,"name":"maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10428,"src":"9380:12:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10442,"name":"baseProceeds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10406,"src":"9406:12:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10443,"name":"sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10313,"src":"9432:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10444,"name":"bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10424,"src":"9456:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10431,"name":"CloseShort","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6665,"src":"9244:10:63","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$","typeString":"function (address,uint256,uint256,uint256,uint256,uint256)"}},"id":10445,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"9244:232:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10446,"nodeType":"EmitStatement","src":"9239:237:63"},{"expression":{"id":10447,"name":"proceeds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10398,"src":"9494:8:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":10301,"id":10448,"nodeType":"Return","src":"9487:15:63"}]},"documentation":{"id":10286,"nodeType":"StructuredDocumentation","src":"5246:397:63","text":"@notice Closes a short position with a specified maturity time.\n @param _maturityTime The maturity time of the short.\n @param _bondAmount The amount of shorts to close.\n @param _minOutput The minimum output of this trade.\n @param _options The options that configure how the trade is settled.\n @return The amount of base tokens produced by closing this short."},"implemented":true,"kind":"function","modifiers":[{"id":10298,"kind":"modifierInvocation","modifierName":{"id":10297,"name":"nonReentrant","nameLocations":["5819:12:63"],"nodeType":"IdentifierPath","referencedDeclaration":65498,"src":"5819:12:63"},"nodeType":"ModifierInvocation","src":"5819:12:63"}],"name":"_closeShort","nameLocation":"5657:11:63","parameters":{"id":10296,"nodeType":"ParameterList","parameters":[{"constant":false,"id":10288,"mutability":"mutable","name":"_maturityTime","nameLocation":"5686:13:63","nodeType":"VariableDeclaration","scope":10450,"src":"5678:21:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10287,"name":"uint256","nodeType":"ElementaryTypeName","src":"5678:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10290,"mutability":"mutable","name":"_bondAmount","nameLocation":"5717:11:63","nodeType":"VariableDeclaration","scope":10450,"src":"5709:19:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10289,"name":"uint256","nodeType":"ElementaryTypeName","src":"5709:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10292,"mutability":"mutable","name":"_minOutput","nameLocation":"5746:10:63","nodeType":"VariableDeclaration","scope":10450,"src":"5738:18:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10291,"name":"uint256","nodeType":"ElementaryTypeName","src":"5738:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10295,"mutability":"mutable","name":"_options","nameLocation":"5795:8:63","nodeType":"VariableDeclaration","scope":10450,"src":"5766:37:63","stateVariable":false,"storageLocation":"calldata","typeDescriptions":{"typeIdentifier":"t_struct$_Options_$5483_calldata_ptr","typeString":"struct IHyperdrive.Options"},"typeName":{"id":10294,"nodeType":"UserDefinedTypeName","pathNode":{"id":10293,"name":"IHyperdrive.Options","nameLocations":["5766:11:63","5778:7:63"],"nodeType":"IdentifierPath","referencedDeclaration":5483,"src":"5766:19:63"},"referencedDeclaration":5483,"src":"5766:19:63","typeDescriptions":{"typeIdentifier":"t_struct$_Options_$5483_storage_ptr","typeString":"struct IHyperdrive.Options"}},"visibility":"internal"}],"src":"5668:141:63"},"returnParameters":{"id":10301,"nodeType":"ParameterList","parameters":[{"constant":false,"id":10300,"mutability":"mutable","name":"","nameLocation":"-1:-1:-1","nodeType":"VariableDeclaration","scope":10450,"src":"5841:7:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10299,"name":"uint256","nodeType":"ElementaryTypeName","src":"5841:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"5840:9:63"},"scope":10919,"stateMutability":"nonpayable","virtual":false,"visibility":"internal"},{"id":10564,"nodeType":"FunctionDefinition","src":"9888:2819:63","nodes":[],"body":{"id":10563,"nodeType":"Block","src":"10054:2653:63","nodes":[],"statements":[{"expression":{"id":10481,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"expression":{"id":10462,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"10127:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10464,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberLocation":"10140:24:63","memberName":"shortAverageMaturityTime","nodeType":"MemberAccess","referencedDeclaration":5315,"src":"10127:37:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"arguments":[{"expression":{"id":10471,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"10288:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10472,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"10301:17:63","memberName":"shortsOutstanding","nodeType":"MemberAccess","referencedDeclaration":5309,"src":"10288:30:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10475,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10473,"name":"_maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10459,"src":"10336:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"*","rightExpression":{"hexValue":"31653138","id":10474,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"10352:4:63","typeDescriptions":{"typeIdentifier":"t_rational_1000000000000000000_by_1","typeString":"int_const 1000000000000000000"},"value":"1e18"},"src":"10336:20:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10476,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10453,"src":"10407:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"hexValue":"74727565","id":10477,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"10436:4:63","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"true"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint128","typeString":"uint128"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"}],"expression":{"arguments":[{"expression":{"id":10467,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"10188:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10468,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"10201:24:63","memberName":"shortAverageMaturityTime","nodeType":"MemberAccess","referencedDeclaration":5315,"src":"10188:37:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint128","typeString":"uint128"}],"id":10466,"isConstant":false,"isLValue":false,"isPure":true,"lValueRequested":false,"nodeType":"ElementaryTypeNameExpression","src":"10167:7:63","typeDescriptions":{"typeIdentifier":"t_type$_t_uint256_$","typeString":"type(uint256)"},"typeName":{"id":10465,"name":"uint256","nodeType":"ElementaryTypeName","src":"10167:7:63","typeDescriptions":{}}},"id":10469,"isConstant":false,"isLValue":false,"isPure":false,"kind":"typeConversion","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"10167:68:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10470,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"10249:21:63","memberName":"updateWeightedAverage","nodeType":"MemberAccess","referencedDeclaration":12220,"src":"10167:103:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$attached_to$_t_uint256_$","typeString":"function (uint256,uint256,uint256,uint256,bool) pure returns (uint256)"}},"id":10478,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"10167:287:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10479,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"10468:9:63","memberName":"toUint128","nodeType":"MemberAccess","referencedDeclaration":15500,"src":"10167:310:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$","typeString":"function (uint256) pure returns (uint128)"}},"id":10480,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"10167:312:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"src":"10127:352:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"id":10482,"nodeType":"ExpressionStatement","src":"10127:352:63"},{"assignments":[10484],"declarations":[{"constant":false,"id":10484,"mutability":"mutable","name":"shareReserves_","nameLocation":"10781:14:63","nodeType":"VariableDeclaration","scope":10563,"src":"10773:22:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"},"typeName":{"id":10483,"name":"uint128","nodeType":"ElementaryTypeName","src":"10773:7:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"visibility":"internal"}],"id":10491,"initialValue":{"commonType":{"typeIdentifier":"t_uint128","typeString":"uint128"},"id":10490,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"expression":{"id":10485,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"10798:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10486,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"10811:13:63","memberName":"shareReserves","nodeType":"MemberAccess","referencedDeclaration":5294,"src":"10798:26:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"nodeType":"BinaryOperation","operator":"-","rightExpression":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10487,"name":"_shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10455,"src":"10839:19:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10488,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"10859:9:63","memberName":"toUint128","nodeType":"MemberAccess","referencedDeclaration":15500,"src":"10839:29:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$","typeString":"function (uint256) pure returns (uint128)"}},"id":10489,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"10839:31:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"src":"10798:72:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"nodeType":"VariableDeclarationStatement","src":"10773:97:63"},{"expression":{"id":10496,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"expression":{"id":10492,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"10880:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10494,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberLocation":"10893:13:63","memberName":"shareReserves","nodeType":"MemberAccess","referencedDeclaration":5294,"src":"10880:26:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"id":10495,"name":"shareReserves_","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10484,"src":"10909:14:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"src":"10880:43:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"id":10497,"nodeType":"ExpressionStatement","src":"10880:43:63"},{"expression":{"id":10504,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"expression":{"id":10498,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"10933:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10500,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberLocation":"10946:12:63","memberName":"bondReserves","nodeType":"MemberAccess","referencedDeclaration":5297,"src":"10933:25:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"nodeType":"Assignment","operator":"+=","rightHandSide":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10501,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10453,"src":"10962:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10502,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"10974:9:63","memberName":"toUint128","nodeType":"MemberAccess","referencedDeclaration":15500,"src":"10962:21:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$","typeString":"function (uint256) pure returns (uint128)"}},"id":10503,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"10962:23:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"src":"10933:52:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"id":10505,"nodeType":"ExpressionStatement","src":"10933:52:63"},{"expression":{"id":10512,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"expression":{"id":10506,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"10995:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10508,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberLocation":"11008:17:63","memberName":"shortsOutstanding","nodeType":"MemberAccess","referencedDeclaration":5309,"src":"10995:30:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"nodeType":"Assignment","operator":"+=","rightHandSide":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10509,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10453,"src":"11029:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10510,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"11041:9:63","memberName":"toUint128","nodeType":"MemberAccess","referencedDeclaration":15500,"src":"11029:21:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$","typeString":"function (uint256) pure returns (uint128)"}},"id":10511,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"11029:23:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"src":"10995:57:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"id":10513,"nodeType":"ExpressionStatement","src":"10995:57:63"},{"condition":{"commonType":{"typeIdentifier":"t_int256","typeString":"int256"},"id":10524,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"arguments":[{"arguments":[{"expression":{"id":10518,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"11611:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10519,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"11624:13:63","memberName":"shareReserves","nodeType":"MemberAccess","referencedDeclaration":5294,"src":"11611:26:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint128","typeString":"uint128"}],"id":10517,"isConstant":false,"isLValue":false,"isPure":true,"lValueRequested":false,"nodeType":"ElementaryTypeNameExpression","src":"11603:7:63","typeDescriptions":{"typeIdentifier":"t_type$_t_uint256_$","typeString":"type(uint256)"},"typeName":{"id":10516,"name":"uint256","nodeType":"ElementaryTypeName","src":"11603:7:63","typeDescriptions":{}}},"id":10520,"isConstant":false,"isLValue":false,"isPure":false,"kind":"typeConversion","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"11603:35:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10515,"isConstant":false,"isLValue":false,"isPure":true,"lValueRequested":false,"nodeType":"ElementaryTypeNameExpression","src":"11596:6:63","typeDescriptions":{"typeIdentifier":"t_type$_t_int256_$","typeString":"type(int256)"},"typeName":{"id":10514,"name":"int256","nodeType":"ElementaryTypeName","src":"11596:6:63","typeDescriptions":{}}},"id":10521,"isConstant":false,"isLValue":false,"isPure":false,"kind":"typeConversion","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"11596:43:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"nodeType":"BinaryOperation","operator":"<","rightExpression":{"expression":{"id":10522,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"11654:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10523,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"11667:15:63","memberName":"shareAdjustment","nodeType":"MemberAccess","referencedDeclaration":5306,"src":"11654:28:63","typeDescriptions":{"typeIdentifier":"t_int128","typeString":"int128"}},"src":"11596:86:63","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":10531,"nodeType":"IfStatement","src":"11579:180:63","trueBody":{"id":10530,"nodeType":"Block","src":"11693:66:63","statements":[{"errorCall":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10525,"name":"IHyperdrive","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5658,"src":"11714:11:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_IHyperdrive_$5658_$","typeString":"type(contract IHyperdrive)"}},"id":10527,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"11726:20:63","memberName":"InvalidShareReserves","nodeType":"MemberAccess","referencedDeclaration":5516,"src":"11714:32:63","typeDescriptions":{"typeIdentifier":"t_function_error_pure$__$returns$__$","typeString":"function () pure"}},"id":10528,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"11714:34:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10529,"nodeType":"RevertStatement","src":"11707:41:63"}]}},{"assignments":[10533],"declarations":[{"constant":false,"id":10533,"mutability":"mutable","name":"nonNettedLongs","nameLocation":"11921:14:63","nodeType":"VariableDeclaration","scope":10563,"src":"11914:21:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"},"typeName":{"id":10532,"name":"int256","nodeType":"ElementaryTypeName","src":"11914:6:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"visibility":"internal"}],"id":10537,"initialValue":{"arguments":[{"id":10535,"name":"_maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10459,"src":"11954:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10534,"name":"_nonNettedLongs","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6902,"src":"11938:15:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$_t_uint256_$returns$_t_int256_$","typeString":"function (uint256) view returns (int256)"}},"id":10536,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"11938:30:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"nodeType":"VariableDeclarationStatement","src":"11914:54:63"},{"expression":{"arguments":[{"id":10539,"name":"nonNettedLongs","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10533,"src":"12011:14:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},{"commonType":{"typeIdentifier":"t_int256","typeString":"int256"},"id":10545,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10540,"name":"nonNettedLongs","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10533,"src":"12039:14:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"nodeType":"BinaryOperation","operator":"-","rightExpression":{"arguments":[{"id":10543,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10453,"src":"12063:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10542,"isConstant":false,"isLValue":false,"isPure":true,"lValueRequested":false,"nodeType":"ElementaryTypeNameExpression","src":"12056:6:63","typeDescriptions":{"typeIdentifier":"t_type$_t_int256_$","typeString":"type(int256)"},"typeName":{"id":10541,"name":"int256","nodeType":"ElementaryTypeName","src":"12056:6:63","typeDescriptions":{}}},"id":10544,"isConstant":false,"isLValue":false,"isPure":false,"kind":"typeConversion","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"12056:19:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"src":"12039:36:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_int256","typeString":"int256"},{"typeIdentifier":"t_int256","typeString":"int256"}],"id":10538,"name":"_updateLongExposure","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":7141,"src":"11978:19:63","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_int256_$_t_int256_$returns$__$","typeString":"function (int256,int256)"}},"id":10546,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"11978:107:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10547,"nodeType":"ExpressionStatement","src":"11978:107:63"},{"condition":{"id":10551,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"UnaryOperation","operator":"!","prefix":true,"src":"12501:24:63","subExpression":{"arguments":[{"id":10549,"name":"_sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10457,"src":"12513:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10548,"name":"_isSolvent","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":7082,"src":"12502:10:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$_t_uint256_$returns$_t_bool_$","typeString":"function (uint256) view returns (bool)"}},"id":10550,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"12502:23:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":10558,"nodeType":"IfStatement","src":"12497:97:63","trueBody":{"id":10557,"nodeType":"Block","src":"12527:67:63","statements":[{"errorCall":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10552,"name":"IHyperdrive","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5658,"src":"12548:11:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_IHyperdrive_$5658_$","typeString":"type(contract IHyperdrive)"}},"id":10554,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"12560:21:63","memberName":"InsufficientLiquidity","nodeType":"MemberAccess","referencedDeclaration":5518,"src":"12548:33:63","typeDescriptions":{"typeIdentifier":"t_function_error_pure$__$returns$__$","typeString":"function () pure"}},"id":10555,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"12548:35:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10556,"nodeType":"RevertStatement","src":"12541:42:63"}]}},{"expression":{"arguments":[{"id":10560,"name":"_sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10457,"src":"12688:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10559,"name":"_distributeExcessIdle","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":8764,"src":"12666:21:63","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":10561,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"12666:34:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10562,"nodeType":"ExpressionStatement","src":"12666:34:63"}]},"documentation":{"id":10451,"nodeType":"StructuredDocumentation","src":"9515:368:63","text":"@dev Applies an open short to the state. This includes updating the\n      reserves and maintaining the reserve invariants.\n @param _bondAmount The amount of bonds shorted.\n @param _shareReservesDelta The amount of shares paid to the curve.\n @param _sharePrice The share price.\n @param _maturityTime The maturity time of the long."},"implemented":true,"kind":"function","modifiers":[],"name":"_applyOpenShort","nameLocation":"9897:15:63","parameters":{"id":10460,"nodeType":"ParameterList","parameters":[{"constant":false,"id":10453,"mutability":"mutable","name":"_bondAmount","nameLocation":"9930:11:63","nodeType":"VariableDeclaration","scope":10564,"src":"9922:19:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10452,"name":"uint256","nodeType":"ElementaryTypeName","src":"9922:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10455,"mutability":"mutable","name":"_shareReservesDelta","nameLocation":"9959:19:63","nodeType":"VariableDeclaration","scope":10564,"src":"9951:27:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10454,"name":"uint256","nodeType":"ElementaryTypeName","src":"9951:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10457,"mutability":"mutable","name":"_sharePrice","nameLocation":"9996:11:63","nodeType":"VariableDeclaration","scope":10564,"src":"9988:19:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10456,"name":"uint256","nodeType":"ElementaryTypeName","src":"9988:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10459,"mutability":"mutable","name":"_maturityTime","nameLocation":"10025:13:63","nodeType":"VariableDeclaration","scope":10564,"src":"10017:21:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10458,"name":"uint256","nodeType":"ElementaryTypeName","src":"10017:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"9912:132:63"},"returnParameters":{"id":10461,"nodeType":"ParameterList","parameters":[],"src":"10054:0:63"},"scope":10919,"stateMutability":"nonpayable","virtual":false,"visibility":"internal"},{"id":10638,"nodeType":"FunctionDefinition","src":"13196:1128:63","nodes":[],"body":{"id":10637,"nodeType":"Block","src":"13408:916:63","nodes":[],"statements":[{"assignments":[10579],"declarations":[{"constant":false,"id":10579,"mutability":"mutable","name":"shortsOutstanding_","nameLocation":"13477:18:63","nodeType":"VariableDeclaration","scope":10637,"src":"13469:26:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"},"typeName":{"id":10578,"name":"uint128","nodeType":"ElementaryTypeName","src":"13469:7:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"visibility":"internal"}],"id":10582,"initialValue":{"expression":{"id":10580,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"13498:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10581,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"13511:17:63","memberName":"shortsOutstanding","nodeType":"MemberAccess","referencedDeclaration":5309,"src":"13498:30:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"nodeType":"VariableDeclarationStatement","src":"13469:59:63"},{"expression":{"id":10601,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"expression":{"id":10583,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"13538:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10585,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberLocation":"13551:24:63","memberName":"shortAverageMaturityTime","nodeType":"MemberAccess","referencedDeclaration":5315,"src":"13538:37:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"arguments":[{"id":10592,"name":"shortsOutstanding_","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10579,"src":"13699:18:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10595,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10593,"name":"_maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10575,"src":"13735:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"*","rightExpression":{"hexValue":"31653138","id":10594,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"13751:4:63","typeDescriptions":{"typeIdentifier":"t_rational_1000000000000000000_by_1","typeString":"int_const 1000000000000000000"},"value":"1e18"},"src":"13735:20:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10596,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10567,"src":"13806:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"hexValue":"66616c7365","id":10597,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"13835:5:63","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint128","typeString":"uint128"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"}],"expression":{"arguments":[{"expression":{"id":10588,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"13599:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10589,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"13612:24:63","memberName":"shortAverageMaturityTime","nodeType":"MemberAccess","referencedDeclaration":5315,"src":"13599:37:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint128","typeString":"uint128"}],"id":10587,"isConstant":false,"isLValue":false,"isPure":true,"lValueRequested":false,"nodeType":"ElementaryTypeNameExpression","src":"13578:7:63","typeDescriptions":{"typeIdentifier":"t_type$_t_uint256_$","typeString":"type(uint256)"},"typeName":{"id":10586,"name":"uint256","nodeType":"ElementaryTypeName","src":"13578:7:63","typeDescriptions":{}}},"id":10590,"isConstant":false,"isLValue":false,"isPure":false,"kind":"typeConversion","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"13578:68:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10591,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"13660:21:63","memberName":"updateWeightedAverage","nodeType":"MemberAccess","referencedDeclaration":12220,"src":"13578:103:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$attached_to$_t_uint256_$","typeString":"function (uint256,uint256,uint256,uint256,bool) pure returns (uint256)"}},"id":10598,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"13578:276:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10599,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"13868:9:63","memberName":"toUint128","nodeType":"MemberAccess","referencedDeclaration":15500,"src":"13578:299:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$","typeString":"function (uint256) pure returns (uint128)"}},"id":10600,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"13578:301:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"src":"13538:341:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"id":10602,"nodeType":"ExpressionStatement","src":"13538:341:63"},{"expression":{"id":10611,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"expression":{"id":10603,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"13944:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10605,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberLocation":"13957:17:63","memberName":"shortsOutstanding","nodeType":"MemberAccess","referencedDeclaration":5309,"src":"13944:30:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"commonType":{"typeIdentifier":"t_uint128","typeString":"uint128"},"id":10610,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10606,"name":"shortsOutstanding_","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10579,"src":"13989:18:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"nodeType":"BinaryOperation","operator":"-","rightExpression":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10607,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10567,"src":"14022:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10608,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"14034:9:63","memberName":"toUint128","nodeType":"MemberAccess","referencedDeclaration":15500,"src":"14022:21:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$","typeString":"function (uint256) pure returns (uint128)"}},"id":10609,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"14022:23:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"src":"13989:56:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"src":"13944:101:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"id":10612,"nodeType":"ExpressionStatement","src":"13944:101:63"},{"expression":{"id":10619,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"expression":{"id":10613,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"14113:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10615,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberLocation":"14126:13:63","memberName":"shareReserves","nodeType":"MemberAccess","referencedDeclaration":5294,"src":"14113:26:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"nodeType":"Assignment","operator":"+=","rightHandSide":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10616,"name":"_shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10571,"src":"14143:19:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10617,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"14163:9:63","memberName":"toUint128","nodeType":"MemberAccess","referencedDeclaration":15500,"src":"14143:29:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$","typeString":"function (uint256) pure returns (uint128)"}},"id":10618,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"14143:31:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"src":"14113:61:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"id":10620,"nodeType":"ExpressionStatement","src":"14113:61:63"},{"expression":{"id":10627,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"expression":{"id":10621,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"14184:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10623,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberLocation":"14197:15:63","memberName":"shareAdjustment","nodeType":"MemberAccess","referencedDeclaration":5306,"src":"14184:28:63","typeDescriptions":{"typeIdentifier":"t_int128","typeString":"int128"}},"nodeType":"Assignment","operator":"+=","rightHandSide":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10624,"name":"_shareAdjustmentDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10573,"src":"14216:21:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"id":10625,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"14238:8:63","memberName":"toInt128","nodeType":"MemberAccess","referencedDeclaration":15540,"src":"14216:30:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_int256_$returns$_t_int128_$attached_to$_t_int256_$","typeString":"function (int256) pure returns (int128)"}},"id":10626,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"14216:32:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_int128","typeString":"int128"}},"src":"14184:64:63","typeDescriptions":{"typeIdentifier":"t_int128","typeString":"int128"}},"id":10628,"nodeType":"ExpressionStatement","src":"14184:64:63"},{"expression":{"id":10635,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"expression":{"id":10629,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"14258:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10631,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberLocation":"14271:12:63","memberName":"bondReserves","nodeType":"MemberAccess","referencedDeclaration":5297,"src":"14258:25:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"nodeType":"Assignment","operator":"-=","rightHandSide":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10632,"name":"_bondReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10569,"src":"14287:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10633,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"14306:9:63","memberName":"toUint128","nodeType":"MemberAccess","referencedDeclaration":15500,"src":"14287:28:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$","typeString":"function (uint256) pure returns (uint128)"}},"id":10634,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"14287:30:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"src":"14258:59:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"id":10636,"nodeType":"ExpressionStatement","src":"14258:59:63"}]},"documentation":{"id":10565,"nodeType":"StructuredDocumentation","src":"12713:478:63","text":"@dev Applies the trading deltas from a closed short to the reserves and\n      the withdrawal pool.\n @param _bondAmount The amount of shorts that were closed.\n @param _bondReservesDelta The amount of bonds removed from the reserves.\n @param _shareReservesDelta The amount of shares added to the reserves.\n @param _shareAdjustmentDelta The amount to increase the share adjustment.\n @param _maturityTime The maturity time of the short."},"implemented":true,"kind":"function","modifiers":[],"name":"_applyCloseShort","nameLocation":"13205:16:63","parameters":{"id":10576,"nodeType":"ParameterList","parameters":[{"constant":false,"id":10567,"mutability":"mutable","name":"_bondAmount","nameLocation":"13239:11:63","nodeType":"VariableDeclaration","scope":10638,"src":"13231:19:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10566,"name":"uint256","nodeType":"ElementaryTypeName","src":"13231:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10569,"mutability":"mutable","name":"_bondReservesDelta","nameLocation":"13268:18:63","nodeType":"VariableDeclaration","scope":10638,"src":"13260:26:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10568,"name":"uint256","nodeType":"ElementaryTypeName","src":"13260:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10571,"mutability":"mutable","name":"_shareReservesDelta","nameLocation":"13304:19:63","nodeType":"VariableDeclaration","scope":10638,"src":"13296:27:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10570,"name":"uint256","nodeType":"ElementaryTypeName","src":"13296:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10573,"mutability":"mutable","name":"_shareAdjustmentDelta","nameLocation":"13340:21:63","nodeType":"VariableDeclaration","scope":10638,"src":"13333:28:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"},"typeName":{"id":10572,"name":"int256","nodeType":"ElementaryTypeName","src":"13333:6:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"visibility":"internal"},{"constant":false,"id":10575,"mutability":"mutable","name":"_maturityTime","nameLocation":"13379:13:63","nodeType":"VariableDeclaration","scope":10638,"src":"13371:21:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10574,"name":"uint256","nodeType":"ElementaryTypeName","src":"13371:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"13221:177:63"},"returnParameters":{"id":10577,"nodeType":"ParameterList","parameters":[],"src":"13408:0:63"},"scope":10919,"stateMutability":"nonpayable","virtual":false,"visibility":"internal"},{"id":10742,"nodeType":"FunctionDefinition","src":"14899:3692:63","nodes":[],"body":{"id":10741,"nodeType":"Block","src":"15199:3392:63","nodes":[],"statements":[{"expression":{"id":10666,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":10654,"name":"shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10650,"src":"15425:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"arguments":[{"arguments":[],"expression":{"argumentTypes":[],"id":10657,"name":"_effectiveShareReserves","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6867,"src":"15493:23:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$__$returns$_t_uint256_$","typeString":"function () view returns (uint256)"}},"id":10658,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"15493:25:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"expression":{"id":10659,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"15532:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10660,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"15545:12:63","memberName":"bondReserves","nodeType":"MemberAccess","referencedDeclaration":5297,"src":"15532:25:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},{"id":10661,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10641,"src":"15571:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10662,"name":"_timeStretch","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10951,"src":"15596:12:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10663,"name":"_sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10643,"src":"15622:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10664,"name":"_initialSharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10966,"src":"15647:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint128","typeString":"uint128"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":10655,"name":"HyperdriveMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12857,"src":"15446:14:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_HyperdriveMath_$12857_$","typeString":"type(library HyperdriveMath)"}},"id":10656,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"15461:18:63","memberName":"calculateOpenShort","nodeType":"MemberAccess","referencedDeclaration":12687,"src":"15446:33:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"}},"id":10665,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"15446:229:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"15425:250:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10667,"nodeType":"ExpressionStatement","src":"15425:250:63"},{"condition":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10673,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"arguments":[{"id":10670,"name":"_sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10643,"src":"15921:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":10668,"name":"shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10650,"src":"15894:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10669,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"15913:7:63","memberName":"mulDown","nodeType":"MemberAccess","referencedDeclaration":11559,"src":"15894:26:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$","typeString":"function (uint256,uint256) pure returns (uint256)"}},"id":10671,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"15894:39:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":">","rightExpression":{"id":10672,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10641,"src":"15936:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"15894:53:63","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":10680,"nodeType":"IfStatement","src":"15890:121:63","trueBody":{"id":10679,"nodeType":"Block","src":"15949:62:63","statements":[{"errorCall":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10674,"name":"IHyperdrive","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5658,"src":"15970:11:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_IHyperdrive_$5658_$","typeString":"type(contract IHyperdrive)"}},"id":10676,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"15982:16:63","memberName":"NegativeInterest","nodeType":"MemberAccess","referencedDeclaration":5524,"src":"15970:28:63","typeDescriptions":{"typeIdentifier":"t_function_error_pure$__$returns$__$","typeString":"function () pure"}},"id":10677,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"15970:30:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10678,"nodeType":"RevertStatement","src":"15963:37:63"}]}},{"assignments":[10682],"declarations":[{"constant":false,"id":10682,"mutability":"mutable","name":"curveFee","nameLocation":"16181:8:63","nodeType":"VariableDeclaration","scope":10741,"src":"16173:16:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10681,"name":"uint256","nodeType":"ElementaryTypeName","src":"16173:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10683,"nodeType":"VariableDeclarationStatement","src":"16173:16:63"},{"assignments":[10685],"declarations":[{"constant":false,"id":10685,"mutability":"mutable","name":"governanceCurveFee","nameLocation":"16207:18:63","nodeType":"VariableDeclaration","scope":10741,"src":"16199:26:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10684,"name":"uint256","nodeType":"ElementaryTypeName","src":"16199:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10686,"nodeType":"VariableDeclarationStatement","src":"16199:26:63"},{"assignments":[10688],"declarations":[{"constant":false,"id":10688,"mutability":"mutable","name":"spotPrice","nameLocation":"16243:9:63","nodeType":"VariableDeclaration","scope":10741,"src":"16235:17:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10687,"name":"uint256","nodeType":"ElementaryTypeName","src":"16235:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10698,"initialValue":{"arguments":[{"arguments":[],"expression":{"argumentTypes":[],"id":10691,"name":"_effectiveShareReserves","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6867,"src":"16302:23:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$__$returns$_t_uint256_$","typeString":"function () view returns (uint256)"}},"id":10692,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"16302:25:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"expression":{"id":10693,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"16341:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10694,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"16354:12:63","memberName":"bondReserves","nodeType":"MemberAccess","referencedDeclaration":5297,"src":"16341:25:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},{"id":10695,"name":"_initialSharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10966,"src":"16380:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10696,"name":"_timeStretch","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10951,"src":"16412:12:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint128","typeString":"uint128"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":10689,"name":"HyperdriveMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12857,"src":"16255:14:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_HyperdriveMath_$12857_$","typeString":"type(library HyperdriveMath)"}},"id":10690,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"16270:18:63","memberName":"calculateSpotPrice","nodeType":"MemberAccess","referencedDeclaration":12340,"src":"16255:33:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256,uint256,uint256) pure returns (uint256)"}},"id":10697,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"16255:179:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"16235:199:63"},{"expression":{"id":10708,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"components":[{"id":10699,"name":"curveFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10682,"src":"16598:8:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},null,{"id":10700,"name":"governanceCurveFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10685,"src":"16610:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},null],"id":10701,"isConstant":false,"isInlineArray":false,"isLValue":true,"isPure":false,"lValueRequested":true,"nodeType":"TupleExpression","src":"16597:34:63","typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$__$_t_uint256_$__$","typeString":"tuple(uint256,,uint256,)"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"arguments":[{"id":10703,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10641,"src":"16672:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10704,"name":"ONE","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11516,"src":"16697:3:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10705,"name":"spotPrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10688,"src":"16764:9:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10706,"name":"_sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10643,"src":"16787:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10702,"name":"_calculateFeesGivenBonds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":7527,"src":"16634:24:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$","typeString":"function (uint256,uint256,uint256,uint256) view returns (uint256,uint256,uint256,uint256)"}},"id":10707,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"16634:174:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,uint256,uint256,uint256)"}},"src":"16597:211:63","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10709,"nodeType":"ExpressionStatement","src":"16597:211:63"},{"expression":{"id":10714,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":10710,"name":"shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10650,"src":"17459:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"-=","rightHandSide":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10713,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10711,"name":"curveFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10682,"src":"17481:8:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"-","rightExpression":{"id":10712,"name":"governanceCurveFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10685,"src":"17492:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"17481:29:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"17459:51:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10715,"nodeType":"ExpressionStatement","src":"17459:51:63"},{"expression":{"id":10734,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":10716,"name":"baseDeposit","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10648,"src":"17987:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"arguments":[{"id":10732,"name":"_sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10643,"src":"18501:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"arguments":[{"id":10719,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10641,"src":"18069:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10722,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10720,"name":"shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10650,"src":"18288:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"-","rightExpression":{"id":10721,"name":"governanceCurveFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10685,"src":"18309:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"18288:39:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10723,"name":"_openSharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10645,"src":"18345:15:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"arguments":[{"id":10726,"name":"_openSharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10645,"src":"18394:15:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":10724,"name":"_sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10643,"src":"18378:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10725,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"18390:3:63","memberName":"max","nodeType":"MemberAccess","referencedDeclaration":12256,"src":"18378:15:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$","typeString":"function (uint256,uint256) pure returns (uint256)"}},"id":10727,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"18378:32:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10728,"name":"_sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10643,"src":"18428:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10729,"name":"_flatFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10957,"src":"18457:8:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":10717,"name":"HyperdriveMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12857,"src":"18001:14:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_HyperdriveMath_$12857_$","typeString":"type(library HyperdriveMath)"}},"id":10718,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"18029:22:63","memberName":"calculateShortProceeds","nodeType":"MemberAccess","referencedDeclaration":12504,"src":"18001:50:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"}},"id":10730,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"18001:478:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10731,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"18493:7:63","memberName":"mulDown","nodeType":"MemberAccess","referencedDeclaration":11559,"src":"18001:499:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$","typeString":"function (uint256,uint256) pure returns (uint256)"}},"id":10733,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"18001:512:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"17987:526:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10735,"nodeType":"ExpressionStatement","src":"17987:526:63"},{"expression":{"components":[{"id":10736,"name":"baseDeposit","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10648,"src":"18532:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10737,"name":"shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10650,"src":"18545:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10738,"name":"governanceCurveFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10685,"src":"18565:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"id":10739,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"18531:53:63","typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,uint256,uint256)"}},"functionReturnParameters":10653,"id":10740,"nodeType":"Return","src":"18524:60:63"}]},"documentation":{"id":10639,"nodeType":"StructuredDocumentation","src":"14330:564:63","text":"@dev Calculate the pool reserve and trader deltas that result from\n      opening a short. This calculation includes trading fees.\n @param _bondAmount The amount of bonds being sold to open the short.\n @param _sharePrice The current share price.\n @param _openSharePrice The share price at the beginning of the checkpoint.\n @return baseDeposit The deposit, in base, required to open the short.\n @return shareReservesDelta The change in the share reserves.\n @return totalGovernanceFee The governance fee in shares."},"implemented":true,"kind":"function","modifiers":[],"name":"_calculateOpenShort","nameLocation":"14908:19:63","parameters":{"id":10646,"nodeType":"ParameterList","parameters":[{"constant":false,"id":10641,"mutability":"mutable","name":"_bondAmount","nameLocation":"14945:11:63","nodeType":"VariableDeclaration","scope":10742,"src":"14937:19:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10640,"name":"uint256","nodeType":"ElementaryTypeName","src":"14937:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10643,"mutability":"mutable","name":"_sharePrice","nameLocation":"14974:11:63","nodeType":"VariableDeclaration","scope":10742,"src":"14966:19:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10642,"name":"uint256","nodeType":"ElementaryTypeName","src":"14966:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10645,"mutability":"mutable","name":"_openSharePrice","nameLocation":"15003:15:63","nodeType":"VariableDeclaration","scope":10742,"src":"14995:23:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10644,"name":"uint256","nodeType":"ElementaryTypeName","src":"14995:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"14927:97:63"},"returnParameters":{"id":10653,"nodeType":"ParameterList","parameters":[{"constant":false,"id":10648,"mutability":"mutable","name":"baseDeposit","nameLocation":"15093:11:63","nodeType":"VariableDeclaration","scope":10742,"src":"15085:19:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10647,"name":"uint256","nodeType":"ElementaryTypeName","src":"15085:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10650,"mutability":"mutable","name":"shareReservesDelta","nameLocation":"15126:18:63","nodeType":"VariableDeclaration","scope":10742,"src":"15118:26:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10649,"name":"uint256","nodeType":"ElementaryTypeName","src":"15118:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10652,"mutability":"mutable","name":"totalGovernanceFee","nameLocation":"15166:18:63","nodeType":"VariableDeclaration","scope":10742,"src":"15158:26:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10651,"name":"uint256","nodeType":"ElementaryTypeName","src":"15158:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"15071:123:63"},"scope":10919,"stateMutability":"view","virtual":false,"visibility":"internal"},{"id":10918,"nodeType":"FunctionDefinition","src":"19311:6319:63","nodes":[],"body":{"id":10917,"nodeType":"Block","src":"19692:5938:63","nodes":[],"statements":[{"assignments":[10763],"declarations":[{"constant":false,"id":10763,"mutability":"mutable","name":"shareCurveDelta","nameLocation":"19931:15:63","nodeType":"VariableDeclaration","scope":10917,"src":"19923:23:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10762,"name":"uint256","nodeType":"ElementaryTypeName","src":"19923:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10764,"nodeType":"VariableDeclarationStatement","src":"19923:23:63"},{"id":10859,"nodeType":"Block","src":"19956:3405:63","statements":[{"assignments":[10766],"declarations":[{"constant":false,"id":10766,"mutability":"mutable","name":"timeRemaining","nameLocation":"20412:13:63","nodeType":"VariableDeclaration","scope":10859,"src":"20404:21:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10765,"name":"uint256","nodeType":"ElementaryTypeName","src":"20404:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10770,"initialValue":{"arguments":[{"id":10768,"name":"_maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10749,"src":"20452:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10767,"name":"_calculateTimeRemaining","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6797,"src":"20428:23:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256) view returns (uint256)"}},"id":10769,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"20428:38:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"20404:62:63"},{"expression":{"id":10787,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"components":[{"id":10771,"name":"shareCurveDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10763,"src":"20498:15:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10772,"name":"bondReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10752,"src":"20531:17:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10773,"name":"shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10756,"src":"20566:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"id":10774,"isConstant":false,"isInlineArray":false,"isLValue":true,"isPure":false,"lValueRequested":true,"nodeType":"TupleExpression","src":"20480:118:63","typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,uint256,uint256)"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"arguments":[{"arguments":[],"expression":{"argumentTypes":[],"id":10777,"name":"_effectiveShareReserves","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6867,"src":"20653:23:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$__$returns$_t_uint256_$","typeString":"function () view returns (uint256)"}},"id":10778,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"20653:25:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"expression":{"id":10779,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"20696:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10780,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"20709:12:63","memberName":"bondReserves","nodeType":"MemberAccess","referencedDeclaration":5297,"src":"20696:25:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},{"id":10781,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10745,"src":"20739:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10782,"name":"timeRemaining","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10766,"src":"20768:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10783,"name":"_timeStretch","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10951,"src":"20799:12:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10784,"name":"_sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10747,"src":"20829:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10785,"name":"_initialSharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10966,"src":"20858:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint128","typeString":"uint128"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":10775,"name":"HyperdriveMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12857,"src":"20601:14:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_HyperdriveMath_$12857_$","typeString":"type(library HyperdriveMath)"}},"id":10776,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"20616:19:63","memberName":"calculateCloseShort","nodeType":"MemberAccess","referencedDeclaration":12752,"src":"20601:34:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$","typeString":"function (uint256,uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,uint256,uint256)"}},"id":10786,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"20601:289:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,uint256,uint256)"}},"src":"20480:410:63","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10788,"nodeType":"ExpressionStatement","src":"20480:410:63"},{"assignments":[10790],"declarations":[{"constant":false,"id":10790,"mutability":"mutable","name":"spotPrice","nameLocation":"21043:9:63","nodeType":"VariableDeclaration","scope":10859,"src":"21035:17:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10789,"name":"uint256","nodeType":"ElementaryTypeName","src":"21035:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10800,"initialValue":{"arguments":[{"arguments":[],"expression":{"argumentTypes":[],"id":10793,"name":"_effectiveShareReserves","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":6867,"src":"21106:23:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$__$returns$_t_uint256_$","typeString":"function () view returns (uint256)"}},"id":10794,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"21106:25:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"expression":{"id":10795,"name":"_marketState","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10976,"src":"21149:12:63","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState storage ref"}},"id":10796,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"21162:12:63","memberName":"bondReserves","nodeType":"MemberAccess","referencedDeclaration":5297,"src":"21149:25:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},{"id":10797,"name":"_initialSharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10966,"src":"21192:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10798,"name":"_timeStretch","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10951,"src":"21228:12:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint128","typeString":"uint128"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":10791,"name":"HyperdriveMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12857,"src":"21055:14:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_HyperdriveMath_$12857_$","typeString":"type(library HyperdriveMath)"}},"id":10792,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"21070:18:63","memberName":"calculateSpotPrice","nodeType":"MemberAccess","referencedDeclaration":12340,"src":"21055:33:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256,uint256,uint256) pure returns (uint256)"}},"id":10799,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"21055:199:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"21035:219:63"},{"condition":{"arguments":[{"id":10802,"name":"shareCurveDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10763,"src":"21330:15:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10803,"name":"bondReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10752,"src":"21367:17:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"arguments":[{"id":10806,"name":"spotPrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10790,"src":"21478:9:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10807,"name":"_curveFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10954,"src":"21513:9:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":10804,"name":"HyperdriveMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12857,"src":"21406:14:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_HyperdriveMath_$12857_$","typeString":"type(library HyperdriveMath)"}},"id":10805,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"21421:31:63","memberName":"calculateCloseShortMaxSpotPrice","nodeType":"MemberAccess","referencedDeclaration":12560,"src":"21406:46:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256) pure returns (uint256)"}},"id":10808,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"21406:138:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10801,"name":"_isNegativeInterest","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":7046,"src":"21289:19:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_bool_$","typeString":"function (uint256,uint256,uint256) view returns (bool)"}},"id":10809,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"21289:273:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":10816,"nodeType":"IfStatement","src":"21268:379:63","trueBody":{"id":10815,"nodeType":"Block","src":"21577:70:63","statements":[{"errorCall":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":10810,"name":"IHyperdrive","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5658,"src":"21602:11:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_IHyperdrive_$5658_$","typeString":"type(contract IHyperdrive)"}},"id":10812,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"21614:16:63","memberName":"NegativeInterest","nodeType":"MemberAccess","referencedDeclaration":5524,"src":"21602:28:63","typeDescriptions":{"typeIdentifier":"t_function_error_pure$__$returns$__$","typeString":"function () pure"}},"id":10813,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"21602:30:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10814,"nodeType":"RevertStatement","src":"21595:37:63"}]}},{"assignments":[10818],"declarations":[{"constant":false,"id":10818,"mutability":"mutable","name":"bondAmount","nameLocation":"21856:10:63","nodeType":"VariableDeclaration","scope":10859,"src":"21848:18:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10817,"name":"uint256","nodeType":"ElementaryTypeName","src":"21848:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10820,"initialValue":{"id":10819,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10745,"src":"21869:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"21848:32:63"},{"assignments":[10822],"declarations":[{"constant":false,"id":10822,"mutability":"mutable","name":"sharePrice","nameLocation":"21927:10:63","nodeType":"VariableDeclaration","scope":10859,"src":"21919:18:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10821,"name":"uint256","nodeType":"ElementaryTypeName","src":"21919:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10824,"initialValue":{"id":10823,"name":"_sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10747,"src":"21940:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"21919:32:63"},{"assignments":[10826],"declarations":[{"constant":false,"id":10826,"mutability":"mutable","name":"curveFee","nameLocation":"21998:8:63","nodeType":"VariableDeclaration","scope":10859,"src":"21990:16:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10825,"name":"uint256","nodeType":"ElementaryTypeName","src":"21990:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10827,"nodeType":"VariableDeclarationStatement","src":"21990:16:63"},{"assignments":[10829],"declarations":[{"constant":false,"id":10829,"mutability":"mutable","name":"flatFee","nameLocation":"22028:7:63","nodeType":"VariableDeclaration","scope":10859,"src":"22020:15:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10828,"name":"uint256","nodeType":"ElementaryTypeName","src":"22020:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10830,"nodeType":"VariableDeclarationStatement","src":"22020:15:63"},{"assignments":[10832],"declarations":[{"constant":false,"id":10832,"mutability":"mutable","name":"governanceCurveFee","nameLocation":"22057:18:63","nodeType":"VariableDeclaration","scope":10859,"src":"22049:26:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10831,"name":"uint256","nodeType":"ElementaryTypeName","src":"22049:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10833,"nodeType":"VariableDeclarationStatement","src":"22049:26:63"},{"expression":{"id":10845,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"components":[{"id":10834,"name":"curveFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10826,"src":"22107:8:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10835,"name":"flatFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10829,"src":"22133:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10836,"name":"governanceCurveFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10832,"src":"22158:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10837,"name":"totalGovernanceFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10760,"src":"22194:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"id":10838,"isConstant":false,"isInlineArray":false,"isLValue":true,"isPure":false,"lValueRequested":true,"nodeType":"TupleExpression","src":"22089:137:63","typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,uint256,uint256,uint256)"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"arguments":[{"id":10840,"name":"bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10818,"src":"22271:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10841,"name":"timeRemaining","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10766,"src":"22299:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10842,"name":"spotPrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10790,"src":"22330:9:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10843,"name":"sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10822,"src":"22357:10:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":10839,"name":"_calculateFeesGivenBonds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":7527,"src":"22229:24:63","typeDescriptions":{"typeIdentifier":"t_function_internal_view$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$","typeString":"function (uint256,uint256,uint256,uint256) view returns (uint256,uint256,uint256,uint256)"}},"id":10844,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"22229:152:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,uint256,uint256,uint256)"}},"src":"22089:292:63","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10846,"nodeType":"ExpressionStatement","src":"22089:292:63"},{"expression":{"id":10851,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":10847,"name":"shareCurveDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10763,"src":"23010:15:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"+=","rightHandSide":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10850,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10848,"name":"curveFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10826,"src":"23029:8:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"-","rightExpression":{"id":10849,"name":"governanceCurveFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10832,"src":"23040:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"23029:29:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"23010:48:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10852,"nodeType":"ExpressionStatement","src":"23010:48:63"},{"expression":{"id":10857,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":10853,"name":"shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10756,"src":"23310:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"+=","rightHandSide":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10856,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10854,"name":"curveFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10826,"src":"23332:8:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"+","rightExpression":{"id":10855,"name":"flatFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10829,"src":"23343:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"23332:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"23310:40:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10858,"nodeType":"ExpressionStatement","src":"23310:40:63"}]},{"id":10916,"nodeType":"Block","src":"23504:2120:63","statements":[{"assignments":[10861],"declarations":[{"constant":false,"id":10861,"mutability":"mutable","name":"openSharePrice","nameLocation":"23526:14:63","nodeType":"VariableDeclaration","scope":10916,"src":"23518:22:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10860,"name":"uint256","nodeType":"ElementaryTypeName","src":"23518:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10868,"initialValue":{"expression":{"baseExpression":{"id":10862,"name":"_checkpoints","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10986,"src":"23543:12:63","typeDescriptions":{"typeIdentifier":"t_mapping$_t_uint256_$_t_struct$_Checkpoint_$5332_storage_$","typeString":"mapping(uint256 => struct IHyperdrive.Checkpoint storage ref)"}},"id":10866,"indexExpression":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10865,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"id":10863,"name":"_maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10749,"src":"23573:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"-","rightExpression":{"id":10864,"name":"_positionDuration","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10948,"src":"23589:17:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"23573:33:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"23543:77:63","typeDescriptions":{"typeIdentifier":"t_struct$_Checkpoint_$5332_storage","typeString":"struct IHyperdrive.Checkpoint storage ref"}},"id":10867,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"23621:10:63","memberName":"sharePrice","nodeType":"MemberAccess","referencedDeclaration":5331,"src":"23543:88:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"nodeType":"VariableDeclarationStatement","src":"23518:113:63"},{"assignments":[10870],"declarations":[{"constant":false,"id":10870,"mutability":"mutable","name":"closeSharePrice","nameLocation":"23653:15:63","nodeType":"VariableDeclaration","scope":10916,"src":"23645:23:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10869,"name":"uint256","nodeType":"ElementaryTypeName","src":"23645:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"id":10881,"initialValue":{"condition":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":10874,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"expression":{"id":10871,"name":"block","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":-4,"src":"23671:5:63","typeDescriptions":{"typeIdentifier":"t_magic_block","typeString":"block"}},"id":10872,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"23677:9:63","memberName":"timestamp","nodeType":"MemberAccess","src":"23671:15:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"<","rightExpression":{"id":10873,"name":"_maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10749,"src":"23689:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"23671:31:63","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"falseExpression":{"expression":{"baseExpression":{"id":10876,"name":"_checkpoints","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10986,"src":"23751:12:63","typeDescriptions":{"typeIdentifier":"t_mapping$_t_uint256_$_t_struct$_Checkpoint_$5332_storage_$","typeString":"mapping(uint256 => struct IHyperdrive.Checkpoint storage ref)"}},"id":10878,"indexExpression":{"id":10877,"name":"_maturityTime","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10749,"src":"23764:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"23751:27:63","typeDescriptions":{"typeIdentifier":"t_struct$_Checkpoint_$5332_storage","typeString":"struct IHyperdrive.Checkpoint storage ref"}},"id":10879,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"23779:10:63","memberName":"sharePrice","nodeType":"MemberAccess","referencedDeclaration":5331,"src":"23751:38:63","typeDescriptions":{"typeIdentifier":"t_uint128","typeString":"uint128"}},"id":10880,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"Conditional","src":"23671:118:63","trueExpression":{"id":10875,"name":"_sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10747,"src":"23721:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"23645:144:63"},{"expression":{"id":10892,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":10882,"name":"shareProceeds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10754,"src":"24338:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"arguments":[{"id":10885,"name":"_bondAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10745,"src":"24409:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10886,"name":"shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10756,"src":"24438:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10887,"name":"openSharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10861,"src":"24474:14:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10888,"name":"closeSharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10870,"src":"24506:15:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10889,"name":"_sharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10747,"src":"24539:11:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10890,"name":"_flatFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10957,"src":"24568:8:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"expression":{"id":10883,"name":"HyperdriveMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12857,"src":"24354:14:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_HyperdriveMath_$12857_$","typeString":"type(library HyperdriveMath)"}},"id":10884,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"24369:22:63","memberName":"calculateShortProceeds","nodeType":"MemberAccess","referencedDeclaration":12504,"src":"24354:37:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$","typeString":"function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"}},"id":10891,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"24354:236:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"24338:252:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10893,"nodeType":"ExpressionStatement","src":"24338:252:63"},{"expression":{"id":10896,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":10894,"name":"shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10756,"src":"24796:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"-=","rightHandSide":{"id":10895,"name":"totalGovernanceFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10760,"src":"24818:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"24796:40:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":10897,"nodeType":"ExpressionStatement","src":"24796:40:63"},{"expression":{"id":10914,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"components":[{"id":10898,"name":"shareProceeds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10754,"src":"25155:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10899,"name":"shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10756,"src":"25186:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10900,"name":"shareCurveDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10763,"src":"25222:15:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10901,"name":"shareAdjustmentDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10758,"src":"25255:20:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},{"id":10902,"name":"totalGovernanceFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10760,"src":"25293:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"id":10903,"isConstant":false,"isInlineArray":false,"isLValue":true,"isPure":false,"lValueRequested":true,"nodeType":"TupleExpression","src":"25137:188:63","typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$","typeString":"tuple(uint256,uint256,uint256,int256,uint256)"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"arguments":[{"id":10906,"name":"shareProceeds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10754,"src":"25393:13:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10907,"name":"shareReservesDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10756,"src":"25424:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10908,"name":"shareCurveDelta","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10763,"src":"25460:15:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10909,"name":"totalGovernanceFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10760,"src":"25493:18:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10910,"name":"openSharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10861,"src":"25529:14:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"id":10911,"name":"closeSharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10870,"src":"25561:15:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"hexValue":"66616c7365","id":10912,"isConstant":false,"isLValue":false,"isPure":true,"kind":"bool","lValueRequested":false,"nodeType":"Literal","src":"25594:5:63","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"value":"false"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_uint256","typeString":"uint256"},{"typeIdentifier":"t_bool","typeString":"bool"}],"expression":{"id":10904,"name":"HyperdriveMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12857,"src":"25328:14:63","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_HyperdriveMath_$12857_$","typeString":"type(library HyperdriveMath)"}},"id":10905,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"25343:32:63","memberName":"calculateNegativeInterestOnClose","nodeType":"MemberAccess","referencedDeclaration":12856,"src":"25328:47:63","typeDescriptions":{"typeIdentifier":"t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$","typeString":"function (uint256,uint256,uint256,uint256,uint256,uint256,bool) pure returns (uint256,uint256,uint256,int256,uint256)"}},"id":10913,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"25328:285:63","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$","typeString":"tuple(uint256,uint256,uint256,int256,uint256)"}},"src":"25137:476:63","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":10915,"nodeType":"ExpressionStatement","src":"25137:476:63"}]}]},"documentation":{"id":10743,"nodeType":"StructuredDocumentation","src":"18597:709:63","text":"@dev Calculate the pool reserve and trader deltas that result from\n      closing a short. This calculation includes trading fees.\n @param _bondAmount The amount of bonds being purchased to close the\n        short.\n @param _sharePrice The current share price.\n @param _maturityTime The maturity time of the short position.\n @return bondReservesDelta The change in the bond reserves.\n @return shareProceeds The proceeds in shares of closing the short.\n @return shareReservesDelta The shares added to the reserves.\n @return shareAdjustmentDelta The change in the share adjustment.\n @return totalGovernanceFee The governance fee in shares."},"implemented":true,"kind":"function","modifiers":[],"name":"_calculateCloseShort","nameLocation":"19320:20:63","parameters":{"id":10750,"nodeType":"ParameterList","parameters":[{"constant":false,"id":10745,"mutability":"mutable","name":"_bondAmount","nameLocation":"19358:11:63","nodeType":"VariableDeclaration","scope":10918,"src":"19350:19:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10744,"name":"uint256","nodeType":"ElementaryTypeName","src":"19350:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10747,"mutability":"mutable","name":"_sharePrice","nameLocation":"19387:11:63","nodeType":"VariableDeclaration","scope":10918,"src":"19379:19:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10746,"name":"uint256","nodeType":"ElementaryTypeName","src":"19379:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10749,"mutability":"mutable","name":"_maturityTime","nameLocation":"19416:13:63","nodeType":"VariableDeclaration","scope":10918,"src":"19408:21:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10748,"name":"uint256","nodeType":"ElementaryTypeName","src":"19408:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"19340:95:63"},"returnParameters":{"id":10761,"nodeType":"ParameterList","parameters":[{"constant":false,"id":10752,"mutability":"mutable","name":"bondReservesDelta","nameLocation":"19504:17:63","nodeType":"VariableDeclaration","scope":10918,"src":"19496:25:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10751,"name":"uint256","nodeType":"ElementaryTypeName","src":"19496:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10754,"mutability":"mutable","name":"shareProceeds","nameLocation":"19543:13:63","nodeType":"VariableDeclaration","scope":10918,"src":"19535:21:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10753,"name":"uint256","nodeType":"ElementaryTypeName","src":"19535:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10756,"mutability":"mutable","name":"shareReservesDelta","nameLocation":"19578:18:63","nodeType":"VariableDeclaration","scope":10918,"src":"19570:26:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10755,"name":"uint256","nodeType":"ElementaryTypeName","src":"19570:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"constant":false,"id":10758,"mutability":"mutable","name":"shareAdjustmentDelta","nameLocation":"19617:20:63","nodeType":"VariableDeclaration","scope":10918,"src":"19610:27:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"},"typeName":{"id":10757,"name":"int256","nodeType":"ElementaryTypeName","src":"19610:6:63","typeDescriptions":{"typeIdentifier":"t_int256","typeString":"int256"}},"visibility":"internal"},{"constant":false,"id":10760,"mutability":"mutable","name":"totalGovernanceFee","nameLocation":"19659:18:63","nodeType":"VariableDeclaration","scope":10918,"src":"19651:26:63","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10759,"name":"uint256","nodeType":"ElementaryTypeName","src":"19651:7:63","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"}],"src":"19482:205:63"},"scope":10919,"stateMutability":"view","virtual":false,"visibility":"internal"}],"abstract":true,"baseContracts":[{"baseName":{"id":10114,"name":"HyperdriveLP","nameLocations":["785:12:63"],"nodeType":"IdentifierPath","referencedDeclaration":8841,"src":"785:12:63"},"id":10115,"nodeType":"InheritanceSpecifier","src":"785:12:63"}],"canonicalName":"HyperdriveShort","contractDependencies":[],"contractKind":"contract","documentation":{"id":10113,"nodeType":"StructuredDocumentation","src":"420:328:63","text":"@author DELV\n @title HyperdriveShort\n @notice Implements the short accounting for Hyperdrive.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."},"fullyImplemented":false,"linearizedBaseContracts":[10919,8841,10097,7580,11193,65499],"name":"HyperdriveShort","nameLocation":"766:15:63","scope":10920,"usedErrors":[5498,5502,5512,5514]}],"license":"Apache-2.0"},"id":63} as const;
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "ReentrancyGuardReentrantCall",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "provider",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lpAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "baseAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "vaultSharePrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lpSharePrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "AddLiquidity",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "approved",
+          "type": "bool"
+        }
+      ],
+      "name": "ApprovalForAll",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "trader",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "assetId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maturityTime",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "baseAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "vaultSharePrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bondAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "CloseLong",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "trader",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "assetId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maturityTime",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "baseAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "vaultSharePrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bondAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "CloseShort",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "collector",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "fees",
+          "type": "uint256"
+        }
+      ],
+      "name": "CollectGovernanceFee",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "checkpointTime",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "vaultSharePrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maturedShorts",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maturedLongs",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lpSharePrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "CreateCheckpoint",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newGovernance",
+          "type": "address"
+        }
+      ],
+      "name": "GovernanceUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "provider",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lpAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "baseAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "vaultSharePrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "apr",
+          "type": "uint256"
+        }
+      ],
+      "name": "Initialize",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "trader",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "assetId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maturityTime",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "baseAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "vaultSharePrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bondAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "OpenLong",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "trader",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "assetId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maturityTime",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "baseAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "vaultSharePrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bondAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "OpenShort",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "isPaused",
+          "type": "bool"
+        }
+      ],
+      "name": "PauseStatusUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newPauser",
+          "type": "address"
+        }
+      ],
+      "name": "PauserUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "provider",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "withdrawalShareAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "baseAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "vaultSharePrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "RedeemWithdrawalShares",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "provider",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lpAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "baseAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "vaultSharePrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "withdrawalShareAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lpSharePrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "RemoveLiquidity",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "TransferSingle",
+      "type": "event"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{},\"title\":\"HyperdriveShort\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Implements the short accounting for Hyperdrive.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/internal/HyperdriveShort.sol\":\"HyperdriveShort\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0xfd51b9727f00a434ea4ced64044c104ed8361fa2ed22600969d1e4ff257b14f3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8780b588acc11dd906ff0897adc5b7acdab759fec4d14ce0d52bf002cb90c398\",\"dweb:/ipfs/QmTMaRGveFgN5L3k1h5oAbfp5ccmzT9d36JhChVg9PxJkD\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x81c89ca62586555b915a9609d10014ff9d1f0d82111809d566f614bd9ea2fb16\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c4859b122480f504d1f0035ed11983b0d74ea2b16bcf26dfe19365bb4f66240\",\"dweb:/ipfs/QmQEQBxRdsH6zNx2rvzetYZRbB3pMXXWzTuwVPBGVhCHfL\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x93cfce28869c1a082c170092b87b04204a91b7898a1e95c3e4270f06fbc76a97\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b8b24e13ff8994550685fec1405bc5d2a5ed6400db061005e72ecff056be51a1\",\"dweb:/ipfs/QmR4RZzyhjYt8xxRPaJWHKhBZdHZPVBHrtNERAZhCaaTFU\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x5c5d6c812fd2cf996d60632c4c8cca7b3d70f5ae4891a3f99c1e10f967f520dd\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://44ef09e50cf76ebab25b90688b19966575cc07fee503ffdb189c3fbbcbfea01f\",\"dweb:/ipfs/QmZEULHXopjaeWbsfXNrEriQomY19s6LXEcae9saeZCpmt\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x516967eaae812ff7fff81797190f48fca40838eccfb8243e3f973f2f85b51597\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://50fa3165b126976c218d27f7f276789f8cc680d3136cd631999164a64f03e477\",\"dweb:/ipfs/QmTSCjqQoys2SJNDZrhTdy2M2at8siSb3ZXHjWUoeihQjr\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xda628a0f7428ad63cb04b6f341c223d7b36803d554e92cd3a793325eae6ad87a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f7dfe92e6fb15eedbba033a96481db1343aeb48039d40d4b5053cc27d3f5e4f3\",\"dweb:/ipfs/QmNeNyjuEd7LkwZMg14fnMsunLXbJRzHYwzC2yEYKi8H3q\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0xb5b2a1f90c4e85e1290144b1e0e393027c90f24d6030ee802d0369342d7bf002\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f7850a790ea32726462f6dd08c87e5250c70155af558b8fdd17dc71d53c5b7f3\",\"dweb:/ipfs/QmWpshz1Ufdqmw8rmZdbdm9ZyEcKHFswLMNaBkBJ3sqNA1\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xa2e1d420bcae975a3d9aa7918319da2dd047cbc50ad41e0a391048e01b980191\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://335611b957d8ca7c0cee11d6f2268372a7c937bc119c030cb8e274679604b6cd\",\"dweb:/ipfs/QmeoxLRyPVgBXrxetVFEyjsvLNfwAahcHsFdAEzy9otxuU\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xf84c46faa4a3323835a80eae3ee969409bf3f5c48ec94a6e486b70cb59a4c868\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b1dcc1796eac62773f298b5b77fda8de424d822a7e74825028a0f83c627a5bfb\",\"dweb:/ipfs/QmRbiswdabx3uMgrgkLKe6K6JAQBLafsWqEyZCg3PQbN5Q\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x85425352d87169445470983b3ba518d759f022bdbaec6dad3bdd606a96f9b826\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://453da96e4ddc453cace00c54c3bef55ab1b7f7d23c86c33e5aa09c395ee54496\",\"dweb:/ipfs/QmXkvqn4mEq8sw4ofFW4jKR3QCmPJTxGmKh6YWpKp5sU3w\"]},\"contracts/src/internal/HyperdriveLP.sol\":{\"keccak256\":\"0x90ef3178580af58520b7517024b091b7d67cc6e6e93cb46e061ba2fd7366b972\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5841dbfb9498e283d26855ca25caebfb080c8893474858acfde43ba60c0cb2ae\",\"dweb:/ipfs/QmRYGcn4qmjt7eYsr4oMANBignijf6oz4UFmRA679zt9YD\"]},\"contracts/src/internal/HyperdriveMultiToken.sol\":{\"keccak256\":\"0xa1d8f02c9a470eb0e1fd2ff6195546fe414485cd3c86b9f0ff0734db27699ab6\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://54324a6775bbd1cfc643504cb9b0e53fd843f5a4d9d7c38c07526d6b3e44299d\",\"dweb:/ipfs/QmREvG68YXkt1EoWZL131BpnB4fWjvK6GXJpzi6msL1VzB\"]},\"contracts/src/internal/HyperdriveShort.sol\":{\"keccak256\":\"0x960457a35b1ac18fa27eb3524d29f8ae14cbdbad70a20c46aab62a20330eadb0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e1f791d322e18bada00890b63c13de0d4db9e37b5583d005e44e4516b0f6eb71\",\"dweb:/ipfs/Qmd8Tcer76uSNah2eKA5g9MTSVGwch9HXZUYfMN7YEWeZ7\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xfeac73551892783afcce85d23fb910baf2ad729d218756f3597ad23e3dcb077f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1f659070705bee17efda43c36f71d22b035752f610624c59238cae559c60530d\",\"dweb:/ipfs/QmTEXNYSWa8w3wY2TWzDPNZXxdThMFEbrtRwcQHfyN2CJb\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0xc2e36474285afd5b98999d648305f077a05b0e159dd63ef5f44f29cd42eb68c2\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fbf8aac982e8485dce3f8c7f85b9bbbd46b41d8d0d3deebe1fc927799de60c0b\",\"dweb:/ipfs/QmbUJsi5cqS4M4sVcJ8cDWvbMRSqYzfjRAp8gaP1v2dtst\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0xdcf0c77bc29a0b5b2ce06cccfa6f5e936128e5c0f14a5636bfe21faf95c515bf\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://088172c3f97db68914cdef042d942b0d0c585cce77d004625bfa62a72ac1e95d\",\"dweb:/ipfs/Qmewa9GJtYxBw4fAx4HZJaNuUCKEoQT4c5nmhPyXxVEwwq\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0x94662a356f9ab292c0935ff4c29f9b826a17176eb98b472efed7afbfe4d5d744\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://794c5605f8f0716b871a8747fea516d26fd73f0add45a944ac4034de96c60c7a\",\"dweb:/ipfs/QmYSsquDzxupHSwWMsjjooxNxuzQ29ezczFsP2VQ5PYYve\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x8d9491ad62e48c7148389a72feca73a388076e3386d7ddc6788193be359e1266\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d340b65b76fc638d119d7d1d6f38fa044c34fc9297dc0c1627c9820218b2e244\",\"dweb:/ipfs/QmZo3nPVg3j2Ga8UXRZFQyTq7RuYuY6F2tYynnVUP4SbDY\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0x390a002b83e7ed8a99d4ca9b3ea514b2080c237911a3a3d0fa2ad4522a09d60b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://51ea972cf6d3c79ea6b93c63c85fbba2bd234e71704715a1d9bd897da9d6fcb1\",\"dweb:/ipfs/QmXEGDrLyeAYMZiDVNynVzRzAYgnspcdLfkMeGr81DmJpL\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x76f69d3104f3f97d67289512325306d7ea2c7b29a787eeef93ffc47e8a80f346\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c8df31a46b4287c23c67e0157e6f6a4877608ed3fb1919a9c07f5bd9b81d7f6\",\"dweb:/ipfs/QmPua6efzJGnC7NarnPojk9yF2geqenUaXUNRmPVHJdXWk\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "ReentrancyGuardReentrantCall"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "provider",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "lpAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "baseAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultSharePrice",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "lpSharePrice",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "AddLiquidity",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "spender",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Approval",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "bool",
+              "name": "approved",
+              "type": "bool",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "ApprovalForAll",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "trader",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "assetId",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "maturityTime",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "baseAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultSharePrice",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "bondAmount",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "CloseLong",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "trader",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "assetId",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "maturityTime",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "baseAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultSharePrice",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "bondAmount",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "CloseShort",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "collector",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "fees",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "CollectGovernanceFee",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "checkpointTime",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultSharePrice",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "maturedShorts",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "maturedLongs",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "lpSharePrice",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "CreateCheckpoint",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "newGovernance",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "GovernanceUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "provider",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "lpAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "baseAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultSharePrice",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "apr",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Initialize",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "trader",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "assetId",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "maturityTime",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "baseAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultSharePrice",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "bondAmount",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "OpenLong",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "trader",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "assetId",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "maturityTime",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "baseAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultSharePrice",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "bondAmount",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "OpenShort",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bool",
+              "name": "isPaused",
+              "type": "bool",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "PauseStatusUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "newPauser",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "PauserUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "provider",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "withdrawalShareAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "baseAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultSharePrice",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "RedeemWithdrawalShares",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "provider",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "lpAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "baseAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultSharePrice",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "withdrawalShareAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "lpSharePrice",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "RemoveLiquidity",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "TransferSingle",
+          "anonymous": false
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "aave-v3-core/=lib/aave-v3-core/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/=lib/openzeppelin-contracts/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "contracts/src/internal/HyperdriveShort.sol": "HyperdriveShort"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "contracts/src/interfaces/IERC20.sol": {
+        "keccak256": "0xfd51b9727f00a434ea4ced64044c104ed8361fa2ed22600969d1e4ff257b14f3",
+        "urls": [
+          "bzz-raw://8780b588acc11dd906ff0897adc5b7acdab759fec4d14ce0d52bf002cb90c398",
+          "dweb:/ipfs/QmTMaRGveFgN5L3k1h5oAbfp5ccmzT9d36JhChVg9PxJkD"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdrive.sol": {
+        "keccak256": "0x81c89ca62586555b915a9609d10014ff9d1f0d82111809d566f614bd9ea2fb16",
+        "urls": [
+          "bzz-raw://3c4859b122480f504d1f0035ed11983b0d74ea2b16bcf26dfe19365bb4f66240",
+          "dweb:/ipfs/QmQEQBxRdsH6zNx2rvzetYZRbB3pMXXWzTuwVPBGVhCHfL"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdriveCore.sol": {
+        "keccak256": "0x93cfce28869c1a082c170092b87b04204a91b7898a1e95c3e4270f06fbc76a97",
+        "urls": [
+          "bzz-raw://b8b24e13ff8994550685fec1405bc5d2a5ed6400db061005e72ecff056be51a1",
+          "dweb:/ipfs/QmR4RZzyhjYt8xxRPaJWHKhBZdHZPVBHrtNERAZhCaaTFU"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdriveEvents.sol": {
+        "keccak256": "0x5c5d6c812fd2cf996d60632c4c8cca7b3d70f5ae4891a3f99c1e10f967f520dd",
+        "urls": [
+          "bzz-raw://44ef09e50cf76ebab25b90688b19966575cc07fee503ffdb189c3fbbcbfea01f",
+          "dweb:/ipfs/QmZEULHXopjaeWbsfXNrEriQomY19s6LXEcae9saeZCpmt"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdriveRead.sol": {
+        "keccak256": "0x516967eaae812ff7fff81797190f48fca40838eccfb8243e3f973f2f85b51597",
+        "urls": [
+          "bzz-raw://50fa3165b126976c218d27f7f276789f8cc680d3136cd631999164a64f03e477",
+          "dweb:/ipfs/QmTSCjqQoys2SJNDZrhTdy2M2at8siSb3ZXHjWUoeihQjr"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiToken.sol": {
+        "keccak256": "0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f",
+        "urls": [
+          "bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7",
+          "dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenCore.sol": {
+        "keccak256": "0xda628a0f7428ad63cb04b6f341c223d7b36803d554e92cd3a793325eae6ad87a",
+        "urls": [
+          "bzz-raw://f7dfe92e6fb15eedbba033a96481db1343aeb48039d40d4b5053cc27d3f5e4f3",
+          "dweb:/ipfs/QmNeNyjuEd7LkwZMg14fnMsunLXbJRzHYwzC2yEYKi8H3q"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenEvents.sol": {
+        "keccak256": "0xb5b2a1f90c4e85e1290144b1e0e393027c90f24d6030ee802d0369342d7bf002",
+        "urls": [
+          "bzz-raw://f7850a790ea32726462f6dd08c87e5250c70155af558b8fdd17dc71d53c5b7f3",
+          "dweb:/ipfs/QmWpshz1Ufdqmw8rmZdbdm9ZyEcKHFswLMNaBkBJ3sqNA1"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenMetadata.sol": {
+        "keccak256": "0xa2e1d420bcae975a3d9aa7918319da2dd047cbc50ad41e0a391048e01b980191",
+        "urls": [
+          "bzz-raw://335611b957d8ca7c0cee11d6f2268372a7c937bc119c030cb8e274679604b6cd",
+          "dweb:/ipfs/QmeoxLRyPVgBXrxetVFEyjsvLNfwAahcHsFdAEzy9otxuU"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenRead.sol": {
+        "keccak256": "0xf84c46faa4a3323835a80eae3ee969409bf3f5c48ec94a6e486b70cb59a4c868",
+        "urls": [
+          "bzz-raw://b1dcc1796eac62773f298b5b77fda8de424d822a7e74825028a0f83c627a5bfb",
+          "dweb:/ipfs/QmRbiswdabx3uMgrgkLKe6K6JAQBLafsWqEyZCg3PQbN5Q"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/internal/HyperdriveBase.sol": {
+        "keccak256": "0x85425352d87169445470983b3ba518d759f022bdbaec6dad3bdd606a96f9b826",
+        "urls": [
+          "bzz-raw://453da96e4ddc453cace00c54c3bef55ab1b7f7d23c86c33e5aa09c395ee54496",
+          "dweb:/ipfs/QmXkvqn4mEq8sw4ofFW4jKR3QCmPJTxGmKh6YWpKp5sU3w"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/internal/HyperdriveLP.sol": {
+        "keccak256": "0x90ef3178580af58520b7517024b091b7d67cc6e6e93cb46e061ba2fd7366b972",
+        "urls": [
+          "bzz-raw://5841dbfb9498e283d26855ca25caebfb080c8893474858acfde43ba60c0cb2ae",
+          "dweb:/ipfs/QmRYGcn4qmjt7eYsr4oMANBignijf6oz4UFmRA679zt9YD"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/internal/HyperdriveMultiToken.sol": {
+        "keccak256": "0xa1d8f02c9a470eb0e1fd2ff6195546fe414485cd3c86b9f0ff0734db27699ab6",
+        "urls": [
+          "bzz-raw://54324a6775bbd1cfc643504cb9b0e53fd843f5a4d9d7c38c07526d6b3e44299d",
+          "dweb:/ipfs/QmREvG68YXkt1EoWZL131BpnB4fWjvK6GXJpzi6msL1VzB"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/internal/HyperdriveShort.sol": {
+        "keccak256": "0x960457a35b1ac18fa27eb3524d29f8ae14cbdbad70a20c46aab62a20330eadb0",
+        "urls": [
+          "bzz-raw://e1f791d322e18bada00890b63c13de0d4db9e37b5583d005e44e4516b0f6eb71",
+          "dweb:/ipfs/Qmd8Tcer76uSNah2eKA5g9MTSVGwch9HXZUYfMN7YEWeZ7"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/internal/HyperdriveStorage.sol": {
+        "keccak256": "0xfeac73551892783afcce85d23fb910baf2ad729d218756f3597ad23e3dcb077f",
+        "urls": [
+          "bzz-raw://1f659070705bee17efda43c36f71d22b035752f610624c59238cae559c60530d",
+          "dweb:/ipfs/QmTEXNYSWa8w3wY2TWzDPNZXxdThMFEbrtRwcQHfyN2CJb"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/libraries/AssetId.sol": {
+        "keccak256": "0xc2e36474285afd5b98999d648305f077a05b0e159dd63ef5f44f29cd42eb68c2",
+        "urls": [
+          "bzz-raw://fbf8aac982e8485dce3f8c7f85b9bbbd46b41d8d0d3deebe1fc927799de60c0b",
+          "dweb:/ipfs/QmbUJsi5cqS4M4sVcJ8cDWvbMRSqYzfjRAp8gaP1v2dtst"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/libraries/Errors.sol": {
+        "keccak256": "0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0",
+        "urls": [
+          "bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88",
+          "dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/libraries/FixedPointMath.sol": {
+        "keccak256": "0xdcf0c77bc29a0b5b2ce06cccfa6f5e936128e5c0f14a5636bfe21faf95c515bf",
+        "urls": [
+          "bzz-raw://088172c3f97db68914cdef042d942b0d0c585cce77d004625bfa62a72ac1e95d",
+          "dweb:/ipfs/Qmewa9GJtYxBw4fAx4HZJaNuUCKEoQT4c5nmhPyXxVEwwq"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/libraries/HyperdriveMath.sol": {
+        "keccak256": "0x94662a356f9ab292c0935ff4c29f9b826a17176eb98b472efed7afbfe4d5d744",
+        "urls": [
+          "bzz-raw://794c5605f8f0716b871a8747fea516d26fd73f0add45a944ac4034de96c60c7a",
+          "dweb:/ipfs/QmYSsquDzxupHSwWMsjjooxNxuzQ29ezczFsP2VQ5PYYve"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/libraries/LPMath.sol": {
+        "keccak256": "0x8d9491ad62e48c7148389a72feca73a388076e3386d7ddc6788193be359e1266",
+        "urls": [
+          "bzz-raw://d340b65b76fc638d119d7d1d6f38fa044c34fc9297dc0c1627c9820218b2e244",
+          "dweb:/ipfs/QmZo3nPVg3j2Ga8UXRZFQyTq7RuYuY6F2tYynnVUP4SbDY"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/libraries/SafeCast.sol": {
+        "keccak256": "0x390a002b83e7ed8a99d4ca9b3ea514b2080c237911a3a3d0fa2ad4522a09d60b",
+        "urls": [
+          "bzz-raw://51ea972cf6d3c79ea6b93c63c85fbba2bd234e71704715a1d9bd897da9d6fcb1",
+          "dweb:/ipfs/QmXEGDrLyeAYMZiDVNynVzRzAYgnspcdLfkMeGr81DmJpL"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/libraries/YieldSpaceMath.sol": {
+        "keccak256": "0x76f69d3104f3f97d67289512325306d7ea2c7b29a787eeef93ffc47e8a80f346",
+        "urls": [
+          "bzz-raw://6c8df31a46b4287c23c67e0157e6f6a4877608ed3fb1919a9c07f5bd9b81d7f6",
+          "dweb:/ipfs/QmPua6efzJGnC7NarnPojk9yF2geqenUaXUNRmPVHJdXWk"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol": {
+        "keccak256": "0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236",
+        "urls": [
+          "bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02",
+          "dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "contracts/src/internal/HyperdriveShort.sol",
+    "id": 12980,
+    "exportedSymbols": {
+      "AssetId": [
+        13503
+      ],
+      "Errors": [
+        13522
+      ],
+      "FixedPointMath": [
+        14294
+      ],
+      "HyperdriveLP": [
+        10802
+      ],
+      "HyperdriveMath": [
+        15024
+      ],
+      "HyperdriveShort": [
+        12979
+      ],
+      "IHyperdrive": [
+        7411
+      ],
+      "IHyperdriveEvents": [
+        7814
+      ],
+      "ONE": [
+        13529
+      ],
+      "SafeCast": [
+        17708
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:26986:69",
+    "nodes": [
+      {
+        "id": 12129,
+        "nodeType": "PragmaDirective",
+        "src": "39:23:69",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".20"
+        ]
+      },
+      {
+        "id": 12131,
+        "nodeType": "ImportDirective",
+        "src": "64:60:69",
+        "nodes": [],
+        "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
+        "file": "../interfaces/IHyperdrive.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 12980,
+        "sourceUnit": 7412,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 12130,
+              "name": "IHyperdrive",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 7411,
+              "src": "73:11:69",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 12133,
+        "nodeType": "ImportDirective",
+        "src": "125:72:69",
+        "nodes": [],
+        "absolutePath": "contracts/src/interfaces/IHyperdriveEvents.sol",
+        "file": "../interfaces/IHyperdriveEvents.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 12980,
+        "sourceUnit": 7815,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 12132,
+              "name": "IHyperdriveEvents",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 7814,
+              "src": "134:17:69",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 12135,
+        "nodeType": "ImportDirective",
+        "src": "198:51:69",
+        "nodes": [],
+        "absolutePath": "contracts/src/libraries/AssetId.sol",
+        "file": "../libraries/AssetId.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 12980,
+        "sourceUnit": 13504,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 12134,
+              "name": "AssetId",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 13503,
+              "src": "207:7:69",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 12137,
+        "nodeType": "ImportDirective",
+        "src": "250:49:69",
+        "nodes": [],
+        "absolutePath": "contracts/src/libraries/Errors.sol",
+        "file": "../libraries/Errors.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 12980,
+        "sourceUnit": 13523,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 12136,
+              "name": "Errors",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 13522,
+              "src": "259:6:69",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 12140,
+        "nodeType": "ImportDirective",
+        "src": "300:70:69",
+        "nodes": [],
+        "absolutePath": "contracts/src/libraries/FixedPointMath.sol",
+        "file": "../libraries/FixedPointMath.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 12980,
+        "sourceUnit": 14295,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 12138,
+              "name": "FixedPointMath",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 14294,
+              "src": "309:14:69",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          },
+          {
+            "foreign": {
+              "id": 12139,
+              "name": "ONE",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 13529,
+              "src": "325:3:69",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 12142,
+        "nodeType": "ImportDirective",
+        "src": "371:65:69",
+        "nodes": [],
+        "absolutePath": "contracts/src/libraries/HyperdriveMath.sol",
+        "file": "../libraries/HyperdriveMath.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 12980,
+        "sourceUnit": 15025,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 12141,
+              "name": "HyperdriveMath",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 15024,
+              "src": "380:14:69",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 12144,
+        "nodeType": "ImportDirective",
+        "src": "437:53:69",
+        "nodes": [],
+        "absolutePath": "contracts/src/libraries/SafeCast.sol",
+        "file": "../libraries/SafeCast.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 12980,
+        "sourceUnit": 17709,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 12143,
+              "name": "SafeCast",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 17708,
+              "src": "446:8:69",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 12146,
+        "nodeType": "ImportDirective",
+        "src": "491:50:69",
+        "nodes": [],
+        "absolutePath": "contracts/src/internal/HyperdriveLP.sol",
+        "file": "./HyperdriveLP.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 12980,
+        "sourceUnit": 10803,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 12145,
+              "name": "HyperdriveLP",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 10802,
+              "src": "500:12:69",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 12979,
+        "nodeType": "ContractDefinition",
+        "src": "871:26153:69",
+        "nodes": [
+          {
+            "id": 12154,
+            "nodeType": "UsingForDirective",
+            "src": "946:33:69",
+            "nodes": [],
+            "global": false,
+            "libraryName": {
+              "id": 12152,
+              "name": "FixedPointMath",
+              "nameLocations": [
+                "952:14:69"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 14294,
+              "src": "952:14:69"
+            },
+            "typeName": {
+              "id": 12153,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "971:7:69",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "id": 12157,
+            "nodeType": "UsingForDirective",
+            "src": "984:32:69",
+            "nodes": [],
+            "global": false,
+            "libraryName": {
+              "id": 12155,
+              "name": "FixedPointMath",
+              "nameLocations": [
+                "990:14:69"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 14294,
+              "src": "990:14:69"
+            },
+            "typeName": {
+              "id": 12156,
+              "name": "int256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1009:6:69",
+              "typeDescriptions": {
+                "typeIdentifier": "t_int256",
+                "typeString": "int256"
+              }
+            }
+          },
+          {
+            "id": 12160,
+            "nodeType": "UsingForDirective",
+            "src": "1021:27:69",
+            "nodes": [],
+            "global": false,
+            "libraryName": {
+              "id": 12158,
+              "name": "SafeCast",
+              "nameLocations": [
+                "1027:8:69"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 17708,
+              "src": "1027:8:69"
+            },
+            "typeName": {
+              "id": 12159,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1040:7:69",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "id": 12163,
+            "nodeType": "UsingForDirective",
+            "src": "1053:26:69",
+            "nodes": [],
+            "global": false,
+            "libraryName": {
+              "id": 12161,
+              "name": "SafeCast",
+              "nameLocations": [
+                "1059:8:69"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 17708,
+              "src": "1059:8:69"
+            },
+            "typeName": {
+              "id": 12162,
+              "name": "int256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1072:6:69",
+              "typeDescriptions": {
+                "typeIdentifier": "t_int256",
+                "typeString": "int256"
+              }
+            }
+          },
+          {
+            "id": 12321,
+            "nodeType": "FunctionDefinition",
+            "src": "1682:3766:69",
+            "nodes": [],
+            "body": {
+              "id": 12320,
+              "nodeType": "Block",
+              "src": "1911:3537:69",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 12184,
+                      "name": "_checkMessageValue",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8637,
+                      "src": "1988:18:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$__$",
+                        "typeString": "function () view"
+                      }
+                    },
+                    "id": 12185,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1988:20:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 12186,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1988:20:69"
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 12189,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 12187,
+                      "name": "_bondAmount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12166,
+                      "src": "2022:11:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "id": 12188,
+                      "name": "_minimumTransactionAmount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13032,
+                      "src": "2036:25:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "2022:39:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 12196,
+                  "nodeType": "IfStatement",
+                  "src": "2018:115:69",
+                  "trueBody": {
+                    "id": 12195,
+                    "nodeType": "Block",
+                    "src": "2063:70:69",
+                    "statements": [
+                      {
+                        "errorCall": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "expression": {
+                              "id": 12190,
+                              "name": "IHyperdrive",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 7411,
+                              "src": "2084:11:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7411_$",
+                                "typeString": "type(contract IHyperdrive)"
+                              }
+                            },
+                            "id": 12192,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "2096:24:69",
+                            "memberName": "MinimumTransactionAmount",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 7334,
+                            "src": "2084:36:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_error_pure$__$returns$__$",
+                              "typeString": "function () pure"
+                            }
+                          },
+                          "id": 12193,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2084:38:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 12194,
+                        "nodeType": "RevertStatement",
+                        "src": "2077:45:69"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "assignments": [
+                    12198
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12198,
+                      "mutability": "mutable",
+                      "name": "vaultSharePrice",
+                      "nameLocation": "2467:15:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12320,
+                      "src": "2459:23:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12197,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "2459:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12201,
+                  "initialValue": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 12199,
+                      "name": "_pricePerVaultShare",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8669,
+                      "src": "2485:19:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
+                        "typeString": "function () view returns (uint256)"
+                      }
+                    },
+                    "id": 12200,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2485:21:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2459:47:69"
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 12204,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 12202,
+                      "name": "vaultSharePrice",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12198,
+                      "src": "2520:15:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "id": 12203,
+                      "name": "_minVaultSharePrice",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12170,
+                      "src": "2538:19:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "2520:37:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 12211,
+                  "nodeType": "IfStatement",
+                  "src": "2516:106:69",
+                  "trueBody": {
+                    "id": 12210,
+                    "nodeType": "Block",
+                    "src": "2559:63:69",
+                    "statements": [
+                      {
+                        "errorCall": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "expression": {
+                              "id": 12205,
+                              "name": "IHyperdrive",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 7411,
+                              "src": "2580:11:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7411_$",
+                                "typeString": "type(contract IHyperdrive)"
+                              }
+                            },
+                            "id": 12207,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "2592:17:69",
+                            "memberName": "MinimumSharePrice",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 7331,
+                            "src": "2580:29:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_error_pure$__$returns$__$",
+                              "typeString": "function () pure"
+                            }
+                          },
+                          "id": 12208,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2580:31:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 12209,
+                        "nodeType": "RevertStatement",
+                        "src": "2573:38:69"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "assignments": [
+                    12213
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12213,
+                      "mutability": "mutable",
+                      "name": "latestCheckpoint",
+                      "nameLocation": "2639:16:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12320,
+                      "src": "2631:24:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12212,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "2631:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12216,
+                  "initialValue": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 12214,
+                      "name": "_latestCheckpoint",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8779,
+                      "src": "2658:17:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
+                        "typeString": "function () view returns (uint256)"
+                      }
+                    },
+                    "id": 12215,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2658:19:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2631:46:69"
+                },
+                {
+                  "assignments": [
+                    12218
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12218,
+                      "mutability": "mutable",
+                      "name": "openVaultSharePrice",
+                      "nameLocation": "2695:19:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12320,
+                      "src": "2687:27:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12217,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "2687:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12223,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 12220,
+                        "name": "latestCheckpoint",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12213,
+                        "src": "2747:16:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12221,
+                        "name": "vaultSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12198,
+                        "src": "2777:15:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 12219,
+                      "name": "_applyCheckpoint",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8693,
+                      "src": "2717:16:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256) returns (uint256)"
+                      }
+                    },
+                    "id": 12222,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2717:85:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2687:115:69"
+                },
+                {
+                  "assignments": [
+                    12225
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12225,
+                      "mutability": "mutable",
+                      "name": "maturityTime",
+                      "nameLocation": "3049:12:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12320,
+                      "src": "3041:20:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12224,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "3041:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12229,
+                  "initialValue": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 12228,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 12226,
+                      "name": "latestCheckpoint",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12213,
+                      "src": "3064:16:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "+",
+                    "rightExpression": {
+                      "id": 12227,
+                      "name": "_positionDuration",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13008,
+                      "src": "3083:17:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "3064:36:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "3041:59:69"
+                },
+                {
+                  "assignments": [
+                    12231
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12231,
+                      "mutability": "mutable",
+                      "name": "shareReservesDelta",
+                      "nameLocation": "3118:18:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12320,
+                      "src": "3110:26:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12230,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "3110:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12232,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "3110:26:69"
+                },
+                {
+                  "assignments": [
+                    12234
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12234,
+                      "mutability": "mutable",
+                      "name": "baseDeposit",
+                      "nameLocation": "3154:11:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12320,
+                      "src": "3146:19:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12233,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "3146:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12235,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "3146:19:69"
+                },
+                {
+                  "id": 12254,
+                  "nodeType": "Block",
+                  "src": "3175:420:69",
+                  "statements": [
+                    {
+                      "assignments": [
+                        12237
+                      ],
+                      "declarations": [
+                        {
+                          "constant": false,
+                          "id": 12237,
+                          "mutability": "mutable",
+                          "name": "totalGovernanceFee",
+                          "nameLocation": "3197:18:69",
+                          "nodeType": "VariableDeclaration",
+                          "scope": 12254,
+                          "src": "3189:26:69",
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "typeName": {
+                            "id": 12236,
+                            "name": "uint256",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "3189:7:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "visibility": "internal"
+                        }
+                      ],
+                      "id": 12238,
+                      "nodeType": "VariableDeclarationStatement",
+                      "src": "3189:26:69"
+                    },
+                    {
+                      "expression": {
+                        "id": 12248,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftHandSide": {
+                          "components": [
+                            {
+                              "id": 12239,
+                              "name": "baseDeposit",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12234,
+                              "src": "3247:11:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12240,
+                              "name": "shareReservesDelta",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12231,
+                              "src": "3276:18:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12241,
+                              "name": "totalGovernanceFee",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12237,
+                              "src": "3312:18:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "id": 12242,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "nodeType": "TupleExpression",
+                          "src": "3229:115:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
+                            "typeString": "tuple(uint256,uint256,uint256)"
+                          }
+                        },
+                        "nodeType": "Assignment",
+                        "operator": "=",
+                        "rightHandSide": {
+                          "arguments": [
+                            {
+                              "id": 12244,
+                              "name": "_bondAmount",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12166,
+                              "src": "3384:11:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12245,
+                              "name": "vaultSharePrice",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12198,
+                              "src": "3413:15:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12246,
+                              "name": "openVaultSharePrice",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12218,
+                              "src": "3446:19:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "id": 12243,
+                            "name": "_calculateOpenShort",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12799,
+                            "src": "3347:19:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_view$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$",
+                              "typeString": "function (uint256,uint256,uint256) view returns (uint256,uint256,uint256)"
+                            }
+                          },
+                          "id": 12247,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "3347:132:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
+                            "typeString": "tuple(uint256,uint256,uint256)"
+                          }
+                        },
+                        "src": "3229:250:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_tuple$__$",
+                          "typeString": "tuple()"
+                        }
+                      },
+                      "id": 12249,
+                      "nodeType": "ExpressionStatement",
+                      "src": "3229:250:69"
+                    },
+                    {
+                      "expression": {
+                        "id": 12252,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftHandSide": {
+                          "id": 12250,
+                          "name": "_governanceFeesAccrued",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 13055,
+                          "src": "3540:22:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "Assignment",
+                        "operator": "+=",
+                        "rightHandSide": {
+                          "id": 12251,
+                          "name": "totalGovernanceFee",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12237,
+                          "src": "3566:18:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "3540:44:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "id": 12253,
+                      "nodeType": "ExpressionStatement",
+                      "src": "3540:44:69"
+                    }
+                  ]
+                },
+                {
+                  "assignments": [
+                    12256
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12256,
+                      "mutability": "mutable",
+                      "name": "traderDeposit",
+                      "nameLocation": "4225:13:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12320,
+                      "src": "4217:21:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12255,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "4217:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12262,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 12258,
+                        "name": "baseDeposit",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12234,
+                        "src": "4279:11:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12259,
+                        "name": "vaultSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12198,
+                        "src": "4304:15:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12260,
+                        "name": "_options",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12173,
+                        "src": "4333:8:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Options_$7271_calldata_ptr",
+                          "typeString": "struct IHyperdrive.Options calldata"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_Options_$7271_calldata_ptr",
+                          "typeString": "struct IHyperdrive.Options calldata"
+                        }
+                      ],
+                      "id": 12257,
+                      "name": "_convertToOptionFromBase",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9506,
+                      "src": "4241:24:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_struct$_Options_$7271_calldata_ptr_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,struct IHyperdrive.Options calldata) pure returns (uint256)"
+                      }
+                    },
+                    "id": 12261,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "4241:110:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "4217:134:69"
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 12265,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 12263,
+                      "name": "_maxDeposit",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12168,
+                      "src": "4365:11:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "id": 12264,
+                      "name": "traderDeposit",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12256,
+                      "src": "4379:13:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "4365:27:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 12272,
+                  "nodeType": "IfStatement",
+                  "src": "4361:90:69",
+                  "trueBody": {
+                    "id": 12271,
+                    "nodeType": "Block",
+                    "src": "4394:57:69",
+                    "statements": [
+                      {
+                        "errorCall": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "expression": {
+                              "id": 12266,
+                              "name": "IHyperdrive",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 7411,
+                              "src": "4415:11:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7411_$",
+                                "typeString": "type(contract IHyperdrive)"
+                              }
+                            },
+                            "id": 12268,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "4427:11:69",
+                            "memberName": "OutputLimit",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 7346,
+                            "src": "4415:23:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_error_pure$__$returns$__$",
+                              "typeString": "function () pure"
+                            }
+                          },
+                          "id": 12269,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "4415:25:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 12270,
+                        "nodeType": "RevertStatement",
+                        "src": "4408:32:69"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 12274,
+                        "name": "traderDeposit",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12256,
+                        "src": "4469:13:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12275,
+                        "name": "_options",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12173,
+                        "src": "4484:8:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Options_$7271_calldata_ptr",
+                          "typeString": "struct IHyperdrive.Options calldata"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_Options_$7271_calldata_ptr",
+                          "typeString": "struct IHyperdrive.Options calldata"
+                        }
+                      ],
+                      "id": 12273,
+                      "name": "_deposit",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8650,
+                      "src": "4460:8:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_struct$_Options_$7271_calldata_ptr_$returns$_t_uint256_$_t_uint256_$",
+                        "typeString": "function (uint256,struct IHyperdrive.Options calldata) returns (uint256,uint256)"
+                      }
+                    },
+                    "id": 12276,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "4460:33:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$",
+                      "typeString": "tuple(uint256,uint256)"
+                    }
+                  },
+                  "id": 12277,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4460:33:69"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 12279,
+                        "name": "_bondAmount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12166,
+                        "src": "4750:11:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12280,
+                        "name": "shareReservesDelta",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12231,
+                        "src": "4775:18:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12281,
+                        "name": "vaultSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12198,
+                        "src": "4807:15:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12282,
+                        "name": "maturityTime",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12225,
+                        "src": "4836:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 12278,
+                      "name": "_applyOpenShort",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12618,
+                      "src": "4721:15:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256,uint256,uint256,uint256)"
+                      }
+                    },
+                    "id": 12283,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "4721:137:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 12284,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4721:137:69"
+                },
+                {
+                  "assignments": [
+                    12286
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12286,
+                      "mutability": "mutable",
+                      "name": "assetId",
+                      "nameLocation": "4925:7:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12320,
+                      "src": "4917:15:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12285,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "4917:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12294,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "expression": {
+                            "id": 12289,
+                            "name": "AssetId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13503,
+                            "src": "4970:7:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_AssetId_$13503_$",
+                              "typeString": "type(library AssetId)"
+                            }
+                          },
+                          "id": 12290,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "4978:13:69",
+                          "memberName": "AssetIdPrefix",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 13209,
+                          "src": "4970:21:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$13209_$",
+                            "typeString": "type(enum AssetId.AssetIdPrefix)"
+                          }
+                        },
+                        "id": 12291,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberLocation": "4992:5:69",
+                        "memberName": "Short",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 13207,
+                        "src": "4970:27:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_AssetIdPrefix_$13209",
+                          "typeString": "enum AssetId.AssetIdPrefix"
+                        }
+                      },
+                      {
+                        "id": 12292,
+                        "name": "maturityTime",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12225,
+                        "src": "5011:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_AssetIdPrefix_$13209",
+                          "typeString": "enum AssetId.AssetIdPrefix"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 12287,
+                        "name": "AssetId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13503,
+                        "src": "4935:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_AssetId_$13503_$",
+                          "typeString": "type(library AssetId)"
+                        }
+                      },
+                      "id": 12288,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "4943:13:69",
+                      "memberName": "encodeAssetId",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13232,
+                      "src": "4935:21:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_enum$_AssetIdPrefix_$13209_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (enum AssetId.AssetIdPrefix,uint256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 12293,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "4935:98:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "4917:116:69"
+                },
+                {
+                  "assignments": [
+                    12296
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12296,
+                      "mutability": "mutable",
+                      "name": "bondAmount",
+                      "nameLocation": "5051:10:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12320,
+                      "src": "5043:18:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12295,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "5043:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12298,
+                  "initialValue": {
+                    "id": 12297,
+                    "name": "_bondAmount",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 12166,
+                    "src": "5064:11:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "5043:32:69"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 12300,
+                        "name": "assetId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12286,
+                        "src": "5122:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 12301,
+                          "name": "_options",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12173,
+                          "src": "5131:8:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Options_$7271_calldata_ptr",
+                            "typeString": "struct IHyperdrive.Options calldata"
+                          }
+                        },
+                        "id": 12302,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "5140:11:69",
+                        "memberName": "destination",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 7264,
+                        "src": "5131:20:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 12303,
+                        "name": "bondAmount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12296,
+                        "src": "5153:10:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 12299,
+                      "name": "_mint",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11919,
+                      "src": "5116:5:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256,address,uint256)"
+                      }
+                    },
+                    "id": 12304,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "5116:48:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 12305,
+                  "nodeType": "ExpressionStatement",
+                  "src": "5116:48:69"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 12307,
+                          "name": "_options",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12173,
+                          "src": "5239:8:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Options_$7271_calldata_ptr",
+                            "typeString": "struct IHyperdrive.Options calldata"
+                          }
+                        },
+                        "id": 12308,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "5248:11:69",
+                        "memberName": "destination",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 7264,
+                        "src": "5239:20:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 12309,
+                        "name": "assetId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12286,
+                        "src": "5273:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12310,
+                        "name": "maturityTime",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12225,
+                        "src": "5294:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12311,
+                        "name": "baseDeposit",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12234,
+                        "src": "5320:11:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12312,
+                        "name": "vaultSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12198,
+                        "src": "5345:15:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12313,
+                        "name": "bondAmount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12296,
+                        "src": "5374:10:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 12306,
+                      "name": "OpenShort",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7755,
+                      "src": "5216:9:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256,uint256,uint256,uint256,uint256)"
+                      }
+                    },
+                    "id": 12314,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "5216:178:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 12315,
+                  "nodeType": "EmitStatement",
+                  "src": "5211:183:69"
+                },
+                {
+                  "expression": {
+                    "components": [
+                      {
+                        "id": 12316,
+                        "name": "maturityTime",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12225,
+                        "src": "5413:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12317,
+                        "name": "traderDeposit",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12256,
+                        "src": "5427:13:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "id": 12318,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "5412:29:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$",
+                      "typeString": "tuple(uint256,uint256)"
+                    }
+                  },
+                  "functionReturnParameters": 12183,
+                  "id": 12319,
+                  "nodeType": "Return",
+                  "src": "5405:36:69"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 12164,
+              "nodeType": "StructuredDocumentation",
+              "src": "1085:592:69",
+              "text": "@dev Opens a short position.\n @param _bondAmount The amount of bonds to short.\n @param _maxDeposit The most the user expects to deposit for this trade.\n @param _minVaultSharePrice The minium vault share price at which to open\n        the long. This allows traders to protect themselves from opening\n        a long in a checkpoint where negative interest has accrued.\n @param _options The options that configure how the trade is settled.\n @return The maturity time of the short.\n @return The amount the user deposited for this trade."
+            },
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 12176,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 12175,
+                  "name": "nonReentrant",
+                  "nameLocations": [
+                    "1859:12:69"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 67070,
+                  "src": "1859:12:69"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1859:12:69"
+              },
+              {
+                "id": 12178,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 12177,
+                  "name": "isNotPaused",
+                  "nameLocations": [
+                    "1872:11:69"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 8683,
+                  "src": "1872:11:69"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1872:11:69"
+              }
+            ],
+            "name": "_openShort",
+            "nameLocation": "1691:10:69",
+            "parameters": {
+              "id": 12174,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12166,
+                  "mutability": "mutable",
+                  "name": "_bondAmount",
+                  "nameLocation": "1719:11:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12321,
+                  "src": "1711:19:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12165,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1711:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12168,
+                  "mutability": "mutable",
+                  "name": "_maxDeposit",
+                  "nameLocation": "1748:11:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12321,
+                  "src": "1740:19:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12167,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1740:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12170,
+                  "mutability": "mutable",
+                  "name": "_minVaultSharePrice",
+                  "nameLocation": "1777:19:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12321,
+                  "src": "1769:27:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12169,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1769:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12173,
+                  "mutability": "mutable",
+                  "name": "_options",
+                  "nameLocation": "1835:8:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12321,
+                  "src": "1806:37:69",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Options_$7271_calldata_ptr",
+                    "typeString": "struct IHyperdrive.Options"
+                  },
+                  "typeName": {
+                    "id": 12172,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 12171,
+                      "name": "IHyperdrive.Options",
+                      "nameLocations": [
+                        "1806:11:69",
+                        "1818:7:69"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 7271,
+                      "src": "1806:19:69"
+                    },
+                    "referencedDeclaration": 7271,
+                    "src": "1806:19:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Options_$7271_storage_ptr",
+                      "typeString": "struct IHyperdrive.Options"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1701:148:69"
+            },
+            "returnParameters": {
+              "id": 12183,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12180,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12321,
+                  "src": "1893:7:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12179,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1893:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12182,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12321,
+                  "src": "1902:7:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12181,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1902:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1892:18:69"
+            },
+            "scope": 12979,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "id": 12486,
+            "nodeType": "FunctionDefinition",
+            "src": "5856:3906:69",
+            "nodes": [],
+            "body": {
+              "id": 12485,
+              "nodeType": "Block",
+              "src": "6058:3704:69",
+              "nodes": [],
+              "statements": [
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 12340,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 12338,
+                      "name": "_bondAmount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12326,
+                      "src": "6072:11:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "id": 12339,
+                      "name": "_minimumTransactionAmount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13032,
+                      "src": "6086:25:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "6072:39:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 12347,
+                  "nodeType": "IfStatement",
+                  "src": "6068:115:69",
+                  "trueBody": {
+                    "id": 12346,
+                    "nodeType": "Block",
+                    "src": "6113:70:69",
+                    "statements": [
+                      {
+                        "errorCall": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "expression": {
+                              "id": 12341,
+                              "name": "IHyperdrive",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 7411,
+                              "src": "6134:11:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7411_$",
+                                "typeString": "type(contract IHyperdrive)"
+                              }
+                            },
+                            "id": 12343,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "6146:24:69",
+                            "memberName": "MinimumTransactionAmount",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 7334,
+                            "src": "6134:36:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_error_pure$__$returns$__$",
+                              "typeString": "function () pure"
+                            }
+                          },
+                          "id": 12344,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "6134:38:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 12345,
+                        "nodeType": "RevertStatement",
+                        "src": "6127:45:69"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "assignments": [
+                    12349
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12349,
+                      "mutability": "mutable",
+                      "name": "vaultSharePrice",
+                      "nameLocation": "6234:15:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12485,
+                      "src": "6226:23:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12348,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "6226:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12352,
+                  "initialValue": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 12350,
+                      "name": "_pricePerVaultShare",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8669,
+                      "src": "6252:19:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
+                        "typeString": "function () view returns (uint256)"
+                      }
+                    },
+                    "id": 12351,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "6252:21:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "6226:47:69"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 12354,
+                        "name": "_maturityTime",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12324,
+                        "src": "6300:13:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12355,
+                        "name": "vaultSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12349,
+                        "src": "6315:15:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 12353,
+                      "name": "_applyCheckpoint",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8693,
+                      "src": "6283:16:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256) returns (uint256)"
+                      }
+                    },
+                    "id": 12356,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "6283:48:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 12357,
+                  "nodeType": "ExpressionStatement",
+                  "src": "6283:48:69"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "expression": {
+                              "expression": {
+                                "id": 12361,
+                                "name": "AssetId",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 13503,
+                                "src": "6433:7:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_contract$_AssetId_$13503_$",
+                                  "typeString": "type(library AssetId)"
+                                }
+                              },
+                              "id": 12362,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberLocation": "6441:13:69",
+                              "memberName": "AssetIdPrefix",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 13209,
+                              "src": "6433:21:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$13209_$",
+                                "typeString": "type(enum AssetId.AssetIdPrefix)"
+                              }
+                            },
+                            "id": 12363,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberLocation": "6455:5:69",
+                            "memberName": "Short",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 13207,
+                            "src": "6433:27:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_AssetIdPrefix_$13209",
+                              "typeString": "enum AssetId.AssetIdPrefix"
+                            }
+                          },
+                          {
+                            "id": 12364,
+                            "name": "_maturityTime",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12324,
+                            "src": "6462:13:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_AssetIdPrefix_$13209",
+                              "typeString": "enum AssetId.AssetIdPrefix"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "id": 12359,
+                            "name": "AssetId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13503,
+                            "src": "6411:7:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_AssetId_$13503_$",
+                              "typeString": "type(library AssetId)"
+                            }
+                          },
+                          "id": 12360,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "6419:13:69",
+                          "memberName": "encodeAssetId",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 13232,
+                          "src": "6411:21:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_pure$_t_enum$_AssetIdPrefix_$13209_$_t_uint256_$returns$_t_uint256_$",
+                            "typeString": "function (enum AssetId.AssetIdPrefix,uint256) pure returns (uint256)"
+                          }
+                        },
+                        "id": 12365,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "6411:65:69",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 12366,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "6490:3:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 12367,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "6494:6:69",
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "6490:10:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 12368,
+                        "name": "_bondAmount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12326,
+                        "src": "6514:11:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 12358,
+                      "name": "_burn",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11970,
+                      "src": "6392:5:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256,address,uint256)"
+                      }
+                    },
+                    "id": 12369,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "6392:143:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 12370,
+                  "nodeType": "ExpressionStatement",
+                  "src": "6392:143:69"
+                },
+                {
+                  "assignments": [
+                    12372,
+                    12374,
+                    12376,
+                    12378,
+                    12380
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12372,
+                      "mutability": "mutable",
+                      "name": "bondReservesDelta",
+                      "nameLocation": "6831:17:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12485,
+                      "src": "6823:25:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12371,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "6823:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 12374,
+                      "mutability": "mutable",
+                      "name": "shareProceeds",
+                      "nameLocation": "6870:13:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12485,
+                      "src": "6862:21:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12373,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "6862:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 12376,
+                      "mutability": "mutable",
+                      "name": "shareReservesDelta",
+                      "nameLocation": "6905:18:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12485,
+                      "src": "6897:26:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12375,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "6897:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 12378,
+                      "mutability": "mutable",
+                      "name": "shareAdjustmentDelta",
+                      "nameLocation": "6944:20:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12485,
+                      "src": "6937:27:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      },
+                      "typeName": {
+                        "id": 12377,
+                        "name": "int256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "6937:6:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      },
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 12380,
+                      "mutability": "mutable",
+                      "name": "totalGovernanceFee",
+                      "nameLocation": "6986:18:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12485,
+                      "src": "6978:26:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12379,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "6978:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12386,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 12382,
+                        "name": "_bondAmount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12326,
+                        "src": "7038:11:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12383,
+                        "name": "vaultSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12349,
+                        "src": "7051:15:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12384,
+                        "name": "_maturityTime",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12324,
+                        "src": "7068:13:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 12381,
+                      "name": "_calculateCloseShort",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12978,
+                      "src": "7017:20:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,uint256) view returns (uint256,uint256,uint256,int256,uint256)"
+                      }
+                    },
+                    "id": 12385,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "7017:65:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$",
+                      "typeString": "tuple(uint256,uint256,uint256,int256,uint256)"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "6809:273:69"
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 12390,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "expression": {
+                        "id": 12387,
+                        "name": "block",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": -4,
+                        "src": "7288:5:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_block",
+                          "typeString": "block"
+                        }
+                      },
+                      "id": 12388,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "7294:9:69",
+                      "memberName": "timestamp",
+                      "nodeType": "MemberAccess",
+                      "src": "7288:15:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "id": 12389,
+                      "name": "_maturityTime",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12324,
+                      "src": "7306:13:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "7288:31:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "id": 12431,
+                    "nodeType": "Block",
+                    "src": "8208:288:69",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 12429,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "id": 12424,
+                            "name": "shareProceeds",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12374,
+                            "src": "8420:13:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "arguments": [
+                              {
+                                "id": 12426,
+                                "name": "shareProceeds",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 12374,
+                                "src": "8454:13:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              {
+                                "id": 12427,
+                                "name": "vaultSharePrice",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 12349,
+                                "src": "8469:15:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "id": 12425,
+                              "name": "_applyZombieClose",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 9158,
+                              "src": "8436:17:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                                "typeString": "function (uint256,uint256) returns (uint256)"
+                              }
+                            },
+                            "id": 12428,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "nameLocations": [],
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "8436:49:69",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "8420:65:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 12430,
+                        "nodeType": "ExpressionStatement",
+                        "src": "8420:65:69"
+                      }
+                    ]
+                  },
+                  "id": 12432,
+                  "nodeType": "IfStatement",
+                  "src": "7284:1212:69",
+                  "trueBody": {
+                    "id": 12423,
+                    "nodeType": "Block",
+                    "src": "7321:881:69",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 12393,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "id": 12391,
+                            "name": "_governanceFeesAccrued",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13055,
+                            "src": "7381:22:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "+=",
+                          "rightHandSide": {
+                            "id": 12392,
+                            "name": "totalGovernanceFee",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12380,
+                            "src": "7407:18:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "7381:44:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 12394,
+                        "nodeType": "ExpressionStatement",
+                        "src": "7381:44:69"
+                      },
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "id": 12396,
+                              "name": "_bondAmount",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12326,
+                              "src": "7552:11:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12397,
+                              "name": "bondReservesDelta",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12372,
+                              "src": "7581:17:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12398,
+                              "name": "shareReservesDelta",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12376,
+                              "src": "7616:18:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12399,
+                              "name": "shareAdjustmentDelta",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12378,
+                              "src": "7652:20:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_int256",
+                                "typeString": "int256"
+                              }
+                            },
+                            {
+                              "id": 12400,
+                              "name": "_maturityTime",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12324,
+                              "src": "7690:13:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_int256",
+                                "typeString": "int256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "id": 12395,
+                            "name": "_applyCloseShort",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12692,
+                            "src": "7518:16:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$returns$__$",
+                              "typeString": "function (uint256,uint256,uint256,int256,uint256)"
+                            }
+                          },
+                          "id": 12401,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "7518:199:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 12402,
+                        "nodeType": "ExpressionStatement",
+                        "src": "7518:199:69"
+                      },
+                      {
+                        "assignments": [
+                          12404
+                        ],
+                        "declarations": [
+                          {
+                            "constant": false,
+                            "id": 12404,
+                            "mutability": "mutable",
+                            "name": "nonNettedLongs",
+                            "nameLocation": "7892:14:69",
+                            "nodeType": "VariableDeclaration",
+                            "scope": 12423,
+                            "src": "7885:21:69",
+                            "stateVariable": false,
+                            "storageLocation": "default",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_int256",
+                              "typeString": "int256"
+                            },
+                            "typeName": {
+                              "id": 12403,
+                              "name": "int256",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "7885:6:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_int256",
+                                "typeString": "int256"
+                              }
+                            },
+                            "visibility": "internal"
+                          }
+                        ],
+                        "id": 12408,
+                        "initialValue": {
+                          "arguments": [
+                            {
+                              "id": 12406,
+                              "name": "_maturityTime",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12324,
+                              "src": "7925:13:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "id": 12405,
+                            "name": "_nonNettedLongs",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 8829,
+                            "src": "7909:15:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_int256_$",
+                              "typeString": "function (uint256) view returns (int256)"
+                            }
+                          },
+                          "id": 12407,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "7909:30:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_int256",
+                            "typeString": "int256"
+                          }
+                        },
+                        "nodeType": "VariableDeclarationStatement",
+                        "src": "7885:54:69"
+                      },
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "commonType": {
+                                "typeIdentifier": "t_int256",
+                                "typeString": "int256"
+                              },
+                              "id": 12415,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "leftExpression": {
+                                "id": 12410,
+                                "name": "nonNettedLongs",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 12404,
+                                "src": "7990:14:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_int256",
+                                  "typeString": "int256"
+                                }
+                              },
+                              "nodeType": "BinaryOperation",
+                              "operator": "-",
+                              "rightExpression": {
+                                "arguments": [
+                                  {
+                                    "id": 12413,
+                                    "name": "_bondAmount",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 12326,
+                                    "src": "8014:11:69",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  ],
+                                  "id": 12412,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "nodeType": "ElementaryTypeNameExpression",
+                                  "src": "8007:6:69",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_int256_$",
+                                    "typeString": "type(int256)"
+                                  },
+                                  "typeName": {
+                                    "id": 12411,
+                                    "name": "int256",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "8007:6:69",
+                                    "typeDescriptions": {}
+                                  }
+                                },
+                                "id": 12414,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "kind": "typeConversion",
+                                "lValueRequested": false,
+                                "nameLocations": [],
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "8007:19:69",
+                                "tryCall": false,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_int256",
+                                  "typeString": "int256"
+                                }
+                              },
+                              "src": "7990:36:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_int256",
+                                "typeString": "int256"
+                              }
+                            },
+                            {
+                              "id": 12416,
+                              "name": "nonNettedLongs",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12404,
+                              "src": "8044:14:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_int256",
+                                "typeString": "int256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_int256",
+                                "typeString": "int256"
+                              },
+                              {
+                                "typeIdentifier": "t_int256",
+                                "typeString": "int256"
+                              }
+                            ],
+                            "id": 12409,
+                            "name": "_updateLongExposure",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 9068,
+                            "src": "7953:19:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_nonpayable$_t_int256_$_t_int256_$returns$__$",
+                              "typeString": "function (int256,int256)"
+                            }
+                          },
+                          "id": 12417,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "7953:119:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 12418,
+                        "nodeType": "ExpressionStatement",
+                        "src": "7953:119:69"
+                      },
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "id": 12420,
+                              "name": "vaultSharePrice",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12349,
+                              "src": "8175:15:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "id": 12419,
+                            "name": "_distributeExcessIdle",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 10725,
+                            "src": "8153:21:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
+                              "typeString": "function (uint256)"
+                            }
+                          },
+                          "id": 12421,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "8153:38:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 12422,
+                        "nodeType": "ExpressionStatement",
+                        "src": "8153:38:69"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "assignments": [
+                    12434
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12434,
+                      "mutability": "mutable",
+                      "name": "proceeds",
+                      "nameLocation": "8713:8:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12485,
+                      "src": "8705:16:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12433,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "8705:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12440,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 12436,
+                        "name": "shareProceeds",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12374,
+                        "src": "8734:13:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12437,
+                        "name": "vaultSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12349,
+                        "src": "8749:15:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12438,
+                        "name": "_options",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12331,
+                        "src": "8766:8:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Options_$7271_calldata_ptr",
+                          "typeString": "struct IHyperdrive.Options calldata"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_Options_$7271_calldata_ptr",
+                          "typeString": "struct IHyperdrive.Options calldata"
+                        }
+                      ],
+                      "id": 12435,
+                      "name": "_withdraw",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8663,
+                      "src": "8724:9:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_struct$_Options_$7271_calldata_ptr_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,struct IHyperdrive.Options calldata) returns (uint256)"
+                      }
+                    },
+                    "id": 12439,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "8724:51:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "8705:70:69"
+                },
+                {
+                  "assignments": [
+                    12442
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12442,
+                      "mutability": "mutable",
+                      "name": "baseProceeds",
+                      "nameLocation": "9071:12:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12485,
+                      "src": "9063:20:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12441,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "9063:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12448,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 12444,
+                        "name": "proceeds",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12434,
+                        "src": "9124:8:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12445,
+                        "name": "vaultSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12349,
+                        "src": "9146:15:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12446,
+                        "name": "_options",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12331,
+                        "src": "9175:8:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Options_$7271_calldata_ptr",
+                          "typeString": "struct IHyperdrive.Options calldata"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_Options_$7271_calldata_ptr",
+                          "typeString": "struct IHyperdrive.Options calldata"
+                        }
+                      ],
+                      "id": 12443,
+                      "name": "_convertToBaseFromOption",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9480,
+                      "src": "9086:24:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_struct$_Options_$7271_calldata_ptr_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,struct IHyperdrive.Options calldata) pure returns (uint256)"
+                      }
+                    },
+                    "id": 12447,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "9086:107:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "9063:130:69"
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 12451,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 12449,
+                      "name": "baseProceeds",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12442,
+                      "src": "9207:12:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "id": 12450,
+                      "name": "_minOutput",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12328,
+                      "src": "9222:10:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "9207:25:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 12458,
+                  "nodeType": "IfStatement",
+                  "src": "9203:88:69",
+                  "trueBody": {
+                    "id": 12457,
+                    "nodeType": "Block",
+                    "src": "9234:57:69",
+                    "statements": [
+                      {
+                        "errorCall": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "expression": {
+                              "id": 12452,
+                              "name": "IHyperdrive",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 7411,
+                              "src": "9255:11:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7411_$",
+                                "typeString": "type(contract IHyperdrive)"
+                              }
+                            },
+                            "id": 12454,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "9267:11:69",
+                            "memberName": "OutputLimit",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 7346,
+                            "src": "9255:23:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_error_pure$__$returns$__$",
+                              "typeString": "function () pure"
+                            }
+                          },
+                          "id": 12455,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "9255:25:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 12456,
+                        "nodeType": "RevertStatement",
+                        "src": "9248:32:69"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "assignments": [
+                    12460
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12460,
+                      "mutability": "mutable",
+                      "name": "bondAmount",
+                      "nameLocation": "9345:10:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12485,
+                      "src": "9337:18:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12459,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "9337:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12462,
+                  "initialValue": {
+                    "id": 12461,
+                    "name": "_bondAmount",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 12326,
+                    "src": "9358:11:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "9337:32:69"
+                },
+                {
+                  "assignments": [
+                    12464
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12464,
+                      "mutability": "mutable",
+                      "name": "maturityTime",
+                      "nameLocation": "9418:12:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12485,
+                      "src": "9410:20:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12463,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "9410:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12466,
+                  "initialValue": {
+                    "id": 12465,
+                    "name": "_maturityTime",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 12324,
+                    "src": "9433:13:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "9410:36:69"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 12468,
+                          "name": "_options",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12331,
+                          "src": "9516:8:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Options_$7271_calldata_ptr",
+                            "typeString": "struct IHyperdrive.Options calldata"
+                          }
+                        },
+                        "id": 12469,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "9525:11:69",
+                        "memberName": "destination",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 7264,
+                        "src": "9516:20:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "arguments": [
+                          {
+                            "expression": {
+                              "expression": {
+                                "id": 12472,
+                                "name": "AssetId",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 13503,
+                                "src": "9572:7:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_contract$_AssetId_$13503_$",
+                                  "typeString": "type(library AssetId)"
+                                }
+                              },
+                              "id": 12473,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberLocation": "9580:13:69",
+                              "memberName": "AssetIdPrefix",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 13209,
+                              "src": "9572:21:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$13209_$",
+                                "typeString": "type(enum AssetId.AssetIdPrefix)"
+                              }
+                            },
+                            "id": 12474,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberLocation": "9594:5:69",
+                            "memberName": "Short",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 13207,
+                            "src": "9572:27:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_AssetIdPrefix_$13209",
+                              "typeString": "enum AssetId.AssetIdPrefix"
+                            }
+                          },
+                          {
+                            "id": 12475,
+                            "name": "maturityTime",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12464,
+                            "src": "9601:12:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_AssetIdPrefix_$13209",
+                              "typeString": "enum AssetId.AssetIdPrefix"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "id": 12470,
+                            "name": "AssetId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13503,
+                            "src": "9550:7:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_AssetId_$13503_$",
+                              "typeString": "type(library AssetId)"
+                            }
+                          },
+                          "id": 12471,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "9558:13:69",
+                          "memberName": "encodeAssetId",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 13232,
+                          "src": "9550:21:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_pure$_t_enum$_AssetIdPrefix_$13209_$_t_uint256_$returns$_t_uint256_$",
+                            "typeString": "function (enum AssetId.AssetIdPrefix,uint256) pure returns (uint256)"
+                          }
+                        },
+                        "id": 12476,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "9550:64:69",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12477,
+                        "name": "maturityTime",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12464,
+                        "src": "9628:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12478,
+                        "name": "baseProceeds",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12442,
+                        "src": "9654:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12479,
+                        "name": "vaultSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12349,
+                        "src": "9680:15:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12480,
+                        "name": "bondAmount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12460,
+                        "src": "9709:10:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 12467,
+                      "name": "CloseShort",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7783,
+                      "src": "9492:10:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256,uint256,uint256,uint256,uint256)"
+                      }
+                    },
+                    "id": 12481,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "9492:237:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 12482,
+                  "nodeType": "EmitStatement",
+                  "src": "9487:242:69"
+                },
+                {
+                  "expression": {
+                    "id": 12483,
+                    "name": "proceeds",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 12434,
+                    "src": "9747:8:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 12337,
+                  "id": 12484,
+                  "nodeType": "Return",
+                  "src": "9740:15:69"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 12322,
+              "nodeType": "StructuredDocumentation",
+              "src": "5454:397:69",
+              "text": "@notice Closes a short position with a specified maturity time.\n @param _maturityTime The maturity time of the short.\n @param _bondAmount The amount of shorts to close.\n @param _minOutput The minimum output of this trade.\n @param _options The options that configure how the trade is settled.\n @return The amount of base tokens produced by closing this short."
+            },
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 12334,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 12333,
+                  "name": "nonReentrant",
+                  "nameLocations": [
+                    "6027:12:69"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 67070,
+                  "src": "6027:12:69"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "6027:12:69"
+              }
+            ],
+            "name": "_closeShort",
+            "nameLocation": "5865:11:69",
+            "parameters": {
+              "id": 12332,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12324,
+                  "mutability": "mutable",
+                  "name": "_maturityTime",
+                  "nameLocation": "5894:13:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12486,
+                  "src": "5886:21:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12323,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5886:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12326,
+                  "mutability": "mutable",
+                  "name": "_bondAmount",
+                  "nameLocation": "5925:11:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12486,
+                  "src": "5917:19:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12325,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5917:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12328,
+                  "mutability": "mutable",
+                  "name": "_minOutput",
+                  "nameLocation": "5954:10:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12486,
+                  "src": "5946:18:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12327,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5946:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12331,
+                  "mutability": "mutable",
+                  "name": "_options",
+                  "nameLocation": "6003:8:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12486,
+                  "src": "5974:37:69",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Options_$7271_calldata_ptr",
+                    "typeString": "struct IHyperdrive.Options"
+                  },
+                  "typeName": {
+                    "id": 12330,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 12329,
+                      "name": "IHyperdrive.Options",
+                      "nameLocations": [
+                        "5974:11:69",
+                        "5986:7:69"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 7271,
+                      "src": "5974:19:69"
+                    },
+                    "referencedDeclaration": 7271,
+                    "src": "5974:19:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Options_$7271_storage_ptr",
+                      "typeString": "struct IHyperdrive.Options"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5876:141:69"
+            },
+            "returnParameters": {
+              "id": 12337,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12336,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12486,
+                  "src": "6049:7:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12335,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6049:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6048:9:69"
+            },
+            "scope": 12979,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "id": 12618,
+            "nodeType": "FunctionDefinition",
+            "src": "10160:3311:69",
+            "nodes": [],
+            "body": {
+              "id": 12617,
+              "nodeType": "Block",
+              "src": "10331:3140:69",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    12499
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12499,
+                      "mutability": "mutable",
+                      "name": "shareReserves",
+                      "nameLocation": "10488:13:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12617,
+                      "src": "10480:21:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12498,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "10480:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12502,
+                  "initialValue": {
+                    "expression": {
+                      "id": 12500,
+                      "name": "_marketState",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13036,
+                      "src": "10504:12:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                        "typeString": "struct IHyperdrive.MarketState storage ref"
+                      }
+                    },
+                    "id": 12501,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberLocation": "10517:13:69",
+                    "memberName": "shareReserves",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 7082,
+                    "src": "10504:26:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "10480:50:69"
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 12505,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 12503,
+                      "name": "shareReserves",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12499,
+                      "src": "10544:13:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "id": 12504,
+                      "name": "_shareReservesDelta",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12491,
+                      "src": "10560:19:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "10544:35:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 12515,
+                  "nodeType": "IfStatement",
+                  "src": "10540:192:69",
+                  "trueBody": {
+                    "id": 12514,
+                    "nodeType": "Block",
+                    "src": "10581:151:69",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "expression": {
+                                "expression": {
+                                  "id": 12509,
+                                  "name": "IHyperdrive",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 7411,
+                                  "src": "10651:11:69",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7411_$",
+                                    "typeString": "type(contract IHyperdrive)"
+                                  }
+                                },
+                                "id": 12510,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberLocation": "10663:27:69",
+                                "memberName": "InsufficientLiquidityReason",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 7277,
+                                "src": "10651:39:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$7277_$",
+                                  "typeString": "type(enum IHyperdrive.InsufficientLiquidityReason)"
+                                }
+                              },
+                              "id": 12511,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "memberLocation": "10691:16:69",
+                              "memberName": "SolvencyViolated",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 7276,
+                              "src": "10651:56:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$7277",
+                                "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$7277",
+                                "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
+                              }
+                            ],
+                            "expression": {
+                              "id": 12506,
+                              "name": "Errors",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 13522,
+                              "src": "10595:6:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_Errors_$13522_$",
+                                "typeString": "type(library Errors)"
+                              }
+                            },
+                            "id": 12508,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "10602:31:69",
+                            "memberName": "throwInsufficientLiquidityError",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 13521,
+                            "src": "10595:38:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$7277_$returns$__$",
+                              "typeString": "function (enum IHyperdrive.InsufficientLiquidityReason) pure"
+                            }
+                          },
+                          "id": 12512,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "10595:126:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 12513,
+                        "nodeType": "ExpressionStatement",
+                        "src": "10595:126:69"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "id": 12518,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 12516,
+                      "name": "shareReserves",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12499,
+                      "src": "10741:13:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "-=",
+                    "rightHandSide": {
+                      "id": 12517,
+                      "name": "_shareReservesDelta",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12491,
+                      "src": "10758:19:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "10741:36:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 12519,
+                  "nodeType": "ExpressionStatement",
+                  "src": "10741:36:69"
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 12527,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "arguments": [
+                        {
+                          "id": 12522,
+                          "name": "shareReserves",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12499,
+                          "src": "11211:13:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "expression": {
+                            "id": 12523,
+                            "name": "_marketState",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13036,
+                            "src": "11242:12:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                              "typeString": "struct IHyperdrive.MarketState storage ref"
+                            }
+                          },
+                          "id": 12524,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "11255:15:69",
+                          "memberName": "shareAdjustment",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 7094,
+                          "src": "11242:28:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_int128",
+                            "typeString": "int128"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_int128",
+                            "typeString": "int128"
+                          }
+                        ],
+                        "expression": {
+                          "id": 12520,
+                          "name": "HyperdriveMath",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 15024,
+                          "src": "11147:14:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$15024_$",
+                            "typeString": "type(library HyperdriveMath)"
+                          }
+                        },
+                        "id": 12521,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "11162:31:69",
+                        "memberName": "calculateEffectiveShareReserves",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 14502,
+                        "src": "11147:46:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_int256_$returns$_t_uint256_$",
+                          "typeString": "function (uint256,int256) pure returns (uint256)"
+                        }
+                      },
+                      "id": 12525,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "11147:137:69",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "id": 12526,
+                      "name": "_minimumShareReserves",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13029,
+                      "src": "11287:21:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "11147:161:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 12537,
+                  "nodeType": "IfStatement",
+                  "src": "11130:395:69",
+                  "trueBody": {
+                    "id": 12536,
+                    "nodeType": "Block",
+                    "src": "11319:206:69",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "expression": {
+                                "expression": {
+                                  "id": 12531,
+                                  "name": "IHyperdrive",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 7411,
+                                  "src": "11389:11:69",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7411_$",
+                                    "typeString": "type(contract IHyperdrive)"
+                                  }
+                                },
+                                "id": 12532,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberLocation": "11422:27:69",
+                                "memberName": "InsufficientLiquidityReason",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 7277,
+                                "src": "11389:60:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$7277_$",
+                                  "typeString": "type(enum IHyperdrive.InsufficientLiquidityReason)"
+                                }
+                              },
+                              "id": 12533,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "memberLocation": "11471:29:69",
+                              "memberName": "InvalidEffectiveShareReserves",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 7274,
+                              "src": "11389:111:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$7277",
+                                "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$7277",
+                                "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
+                              }
+                            ],
+                            "expression": {
+                              "id": 12528,
+                              "name": "Errors",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 13522,
+                              "src": "11333:6:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_Errors_$13522_$",
+                                "typeString": "type(library Errors)"
+                              }
+                            },
+                            "id": 12530,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "11340:31:69",
+                            "memberName": "throwInsufficientLiquidityError",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 13521,
+                            "src": "11333:38:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$7277_$returns$__$",
+                              "typeString": "function (enum IHyperdrive.InsufficientLiquidityReason) pure"
+                            }
+                          },
+                          "id": 12534,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "11333:181:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 12535,
+                        "nodeType": "ExpressionStatement",
+                        "src": "11333:181:69"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "id": 12557,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 12538,
+                        "name": "_marketState",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13036,
+                        "src": "11599:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                          "typeString": "struct IHyperdrive.MarketState storage ref"
+                        }
+                      },
+                      "id": 12540,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberLocation": "11612:24:69",
+                      "memberName": "shortAverageMaturityTime",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7103,
+                      "src": "11599:37:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "arguments": [
+                            {
+                              "expression": {
+                                "id": 12547,
+                                "name": "_marketState",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 13036,
+                                "src": "11760:12:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                                  "typeString": "struct IHyperdrive.MarketState storage ref"
+                                }
+                              },
+                              "id": 12548,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberLocation": "11773:17:69",
+                              "memberName": "shortsOutstanding",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 7097,
+                              "src": "11760:30:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint128",
+                                "typeString": "uint128"
+                              }
+                            },
+                            {
+                              "commonType": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              "id": 12551,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "leftExpression": {
+                                "id": 12549,
+                                "name": "_maturityTime",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 12495,
+                                "src": "11808:13:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "nodeType": "BinaryOperation",
+                              "operator": "*",
+                              "rightExpression": {
+                                "hexValue": "31653138",
+                                "id": 12550,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "number",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "11824:4:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_rational_1000000000000000000_by_1",
+                                  "typeString": "int_const 1000000000000000000"
+                                },
+                                "value": "1e18"
+                              },
+                              "src": "11808:20:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12552,
+                              "name": "_bondAmount",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12489,
+                              "src": "11879:11:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "hexValue": "74727565",
+                              "id": 12553,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "bool",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "11908:4:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              "value": "true"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint128",
+                                "typeString": "uint128"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            ],
+                            "expression": {
+                              "arguments": [
+                                {
+                                  "expression": {
+                                    "id": 12543,
+                                    "name": "_marketState",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 13036,
+                                    "src": "11660:12:69",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                                      "typeString": "struct IHyperdrive.MarketState storage ref"
+                                    }
+                                  },
+                                  "id": 12544,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "memberLocation": "11673:24:69",
+                                  "memberName": "shortAverageMaturityTime",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 7103,
+                                  "src": "11660:37:69",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint128",
+                                    "typeString": "uint128"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_uint128",
+                                    "typeString": "uint128"
+                                  }
+                                ],
+                                "id": 12542,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "nodeType": "ElementaryTypeNameExpression",
+                                "src": "11639:7:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_uint256_$",
+                                  "typeString": "type(uint256)"
+                                },
+                                "typeName": {
+                                  "id": 12541,
+                                  "name": "uint256",
+                                  "nodeType": "ElementaryTypeName",
+                                  "src": "11639:7:69",
+                                  "typeDescriptions": {}
+                                }
+                              },
+                              "id": 12545,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "typeConversion",
+                              "lValueRequested": false,
+                              "nameLocations": [],
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "11639:68:69",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "id": 12546,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "11721:21:69",
+                            "memberName": "updateWeightedAverage",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 14221,
+                            "src": "11639:103:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$attached_to$_t_uint256_$",
+                              "typeString": "function (uint256,uint256,uint256,uint256,bool) pure returns (uint256)"
+                            }
+                          },
+                          "id": 12554,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "11639:287:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 12555,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "11940:9:69",
+                        "memberName": "toUint128",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 17667,
+                        "src": "11639:310:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
+                          "typeString": "function (uint256) pure returns (uint128)"
+                        }
+                      },
+                      "id": 12556,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "11639:312:69",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "src": "11599:352:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "id": 12558,
+                  "nodeType": "ExpressionStatement",
+                  "src": "11599:352:69"
+                },
+                {
+                  "expression": {
+                    "id": 12565,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 12559,
+                        "name": "_marketState",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13036,
+                        "src": "12245:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                          "typeString": "struct IHyperdrive.MarketState storage ref"
+                        }
+                      },
+                      "id": 12561,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberLocation": "12258:13:69",
+                      "memberName": "shareReserves",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7082,
+                      "src": "12245:26:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "id": 12562,
+                          "name": "shareReserves",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12499,
+                          "src": "12274:13:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 12563,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "12288:9:69",
+                        "memberName": "toUint128",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 17667,
+                        "src": "12274:23:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
+                          "typeString": "function (uint256) pure returns (uint128)"
+                        }
+                      },
+                      "id": 12564,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "12274:25:69",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "src": "12245:54:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "id": 12566,
+                  "nodeType": "ExpressionStatement",
+                  "src": "12245:54:69"
+                },
+                {
+                  "expression": {
+                    "id": 12573,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 12567,
+                        "name": "_marketState",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13036,
+                        "src": "12309:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                          "typeString": "struct IHyperdrive.MarketState storage ref"
+                        }
+                      },
+                      "id": 12569,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberLocation": "12322:12:69",
+                      "memberName": "bondReserves",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7085,
+                      "src": "12309:25:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "id": 12570,
+                          "name": "_bondAmount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12489,
+                          "src": "12338:11:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 12571,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "12350:9:69",
+                        "memberName": "toUint128",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 17667,
+                        "src": "12338:21:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
+                          "typeString": "function (uint256) pure returns (uint128)"
+                        }
+                      },
+                      "id": 12572,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "12338:23:69",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "src": "12309:52:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "id": 12574,
+                  "nodeType": "ExpressionStatement",
+                  "src": "12309:52:69"
+                },
+                {
+                  "expression": {
+                    "id": 12581,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 12575,
+                        "name": "_marketState",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13036,
+                        "src": "12371:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                          "typeString": "struct IHyperdrive.MarketState storage ref"
+                        }
+                      },
+                      "id": 12577,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberLocation": "12384:17:69",
+                      "memberName": "shortsOutstanding",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7097,
+                      "src": "12371:30:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "id": 12578,
+                          "name": "_bondAmount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12489,
+                          "src": "12405:11:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 12579,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "12417:9:69",
+                        "memberName": "toUint128",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 17667,
+                        "src": "12405:21:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
+                          "typeString": "function (uint256) pure returns (uint128)"
+                        }
+                      },
+                      "id": 12580,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "12405:23:69",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "src": "12371:57:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "id": 12582,
+                  "nodeType": "ExpressionStatement",
+                  "src": "12371:57:69"
+                },
+                {
+                  "assignments": [
+                    12584
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12584,
+                      "mutability": "mutable",
+                      "name": "nonNettedLongs",
+                      "nameLocation": "12591:14:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12617,
+                      "src": "12584:21:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      },
+                      "typeName": {
+                        "id": 12583,
+                        "name": "int256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "12584:6:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12588,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 12586,
+                        "name": "_maturityTime",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12495,
+                        "src": "12624:13:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 12585,
+                      "name": "_nonNettedLongs",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8829,
+                      "src": "12608:15:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_int256_$",
+                        "typeString": "function (uint256) view returns (int256)"
+                      }
+                    },
+                    "id": 12587,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "12608:30:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "12584:54:69"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 12590,
+                        "name": "nonNettedLongs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12584,
+                        "src": "12681:14:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      },
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        },
+                        "id": 12596,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 12591,
+                          "name": "nonNettedLongs",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12584,
+                          "src": "12709:14:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_int256",
+                            "typeString": "int256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "-",
+                        "rightExpression": {
+                          "arguments": [
+                            {
+                              "id": 12594,
+                              "name": "_bondAmount",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12489,
+                              "src": "12733:11:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "id": 12593,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "12726:6:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_int256_$",
+                              "typeString": "type(int256)"
+                            },
+                            "typeName": {
+                              "id": 12592,
+                              "name": "int256",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "12726:6:69",
+                              "typeDescriptions": {}
+                            }
+                          },
+                          "id": 12595,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "12726:19:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_int256",
+                            "typeString": "int256"
+                          }
+                        },
+                        "src": "12709:36:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        },
+                        {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      ],
+                      "id": 12589,
+                      "name": "_updateLongExposure",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 9068,
+                      "src": "12648:19:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_int256_$_t_int256_$returns$__$",
+                        "typeString": "function (int256,int256)"
+                      }
+                    },
+                    "id": 12597,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "12648:107:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 12598,
+                  "nodeType": "ExpressionStatement",
+                  "src": "12648:107:69"
+                },
+                {
+                  "condition": {
+                    "id": 12602,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "!",
+                    "prefix": true,
+                    "src": "13171:29:69",
+                    "subExpression": {
+                      "arguments": [
+                        {
+                          "id": 12600,
+                          "name": "_vaultSharePrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12493,
+                          "src": "13183:16:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "id": 12599,
+                        "name": "_isSolvent",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9009,
+                        "src": "13172:10:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_bool_$",
+                          "typeString": "function (uint256) view returns (bool)"
+                        }
+                      },
+                      "id": 12601,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "13172:28:69",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 12612,
+                  "nodeType": "IfStatement",
+                  "src": "13167:186:69",
+                  "trueBody": {
+                    "id": 12611,
+                    "nodeType": "Block",
+                    "src": "13202:151:69",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "expression": {
+                                "expression": {
+                                  "id": 12606,
+                                  "name": "IHyperdrive",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 7411,
+                                  "src": "13272:11:69",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7411_$",
+                                    "typeString": "type(contract IHyperdrive)"
+                                  }
+                                },
+                                "id": 12607,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberLocation": "13284:27:69",
+                                "memberName": "InsufficientLiquidityReason",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 7277,
+                                "src": "13272:39:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$7277_$",
+                                  "typeString": "type(enum IHyperdrive.InsufficientLiquidityReason)"
+                                }
+                              },
+                              "id": 12608,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "memberLocation": "13312:16:69",
+                              "memberName": "SolvencyViolated",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 7276,
+                              "src": "13272:56:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$7277",
+                                "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$7277",
+                                "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
+                              }
+                            ],
+                            "expression": {
+                              "id": 12603,
+                              "name": "Errors",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 13522,
+                              "src": "13216:6:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_Errors_$13522_$",
+                                "typeString": "type(library Errors)"
+                              }
+                            },
+                            "id": 12605,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "13223:31:69",
+                            "memberName": "throwInsufficientLiquidityError",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 13521,
+                            "src": "13216:38:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$7277_$returns$__$",
+                              "typeString": "function (enum IHyperdrive.InsufficientLiquidityReason) pure"
+                            }
+                          },
+                          "id": 12609,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "13216:126:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 12610,
+                        "nodeType": "ExpressionStatement",
+                        "src": "13216:126:69"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 12614,
+                        "name": "_vaultSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12493,
+                        "src": "13447:16:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 12613,
+                      "name": "_distributeExcessIdle",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10725,
+                      "src": "13425:21:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 12615,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "13425:39:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 12616,
+                  "nodeType": "ExpressionStatement",
+                  "src": "13425:39:69"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 12487,
+              "nodeType": "StructuredDocumentation",
+              "src": "9768:387:69",
+              "text": "@dev Applies an open short to the state. This includes updating the\n      reserves and maintaining the reserve invariants.\n @param _bondAmount The amount of bonds shorted.\n @param _shareReservesDelta The amount of shares paid to the curve.\n @param _vaultSharePrice The current vault share price.\n @param _maturityTime The maturity time of the long."
+            },
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_applyOpenShort",
+            "nameLocation": "10169:15:69",
+            "parameters": {
+              "id": 12496,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12489,
+                  "mutability": "mutable",
+                  "name": "_bondAmount",
+                  "nameLocation": "10202:11:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12618,
+                  "src": "10194:19:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12488,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10194:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12491,
+                  "mutability": "mutable",
+                  "name": "_shareReservesDelta",
+                  "nameLocation": "10231:19:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12618,
+                  "src": "10223:27:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12490,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10223:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12493,
+                  "mutability": "mutable",
+                  "name": "_vaultSharePrice",
+                  "nameLocation": "10268:16:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12618,
+                  "src": "10260:24:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12492,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10260:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12495,
+                  "mutability": "mutable",
+                  "name": "_maturityTime",
+                  "nameLocation": "10302:13:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12618,
+                  "src": "10294:21:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12494,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10294:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10184:137:69"
+            },
+            "returnParameters": {
+              "id": 12497,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "10331:0:69"
+            },
+            "scope": 12979,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "id": 12692,
+            "nodeType": "FunctionDefinition",
+            "src": "13960:1128:69",
+            "nodes": [],
+            "body": {
+              "id": 12691,
+              "nodeType": "Block",
+              "src": "14172:916:69",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    12633
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12633,
+                      "mutability": "mutable",
+                      "name": "shortsOutstanding_",
+                      "nameLocation": "14241:18:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12691,
+                      "src": "14233:26:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      },
+                      "typeName": {
+                        "id": 12632,
+                        "name": "uint128",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "14233:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12636,
+                  "initialValue": {
+                    "expression": {
+                      "id": 12634,
+                      "name": "_marketState",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13036,
+                      "src": "14262:12:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                        "typeString": "struct IHyperdrive.MarketState storage ref"
+                      }
+                    },
+                    "id": 12635,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberLocation": "14275:17:69",
+                    "memberName": "shortsOutstanding",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 7097,
+                    "src": "14262:30:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "14233:59:69"
+                },
+                {
+                  "expression": {
+                    "id": 12655,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 12637,
+                        "name": "_marketState",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13036,
+                        "src": "14302:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                          "typeString": "struct IHyperdrive.MarketState storage ref"
+                        }
+                      },
+                      "id": 12639,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberLocation": "14315:24:69",
+                      "memberName": "shortAverageMaturityTime",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7103,
+                      "src": "14302:37:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "arguments": [
+                            {
+                              "id": 12646,
+                              "name": "shortsOutstanding_",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12633,
+                              "src": "14463:18:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint128",
+                                "typeString": "uint128"
+                              }
+                            },
+                            {
+                              "commonType": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              "id": 12649,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "leftExpression": {
+                                "id": 12647,
+                                "name": "_maturityTime",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 12629,
+                                "src": "14499:13:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "nodeType": "BinaryOperation",
+                              "operator": "*",
+                              "rightExpression": {
+                                "hexValue": "31653138",
+                                "id": 12648,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "number",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "14515:4:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_rational_1000000000000000000_by_1",
+                                  "typeString": "int_const 1000000000000000000"
+                                },
+                                "value": "1e18"
+                              },
+                              "src": "14499:20:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12650,
+                              "name": "_bondAmount",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12621,
+                              "src": "14570:11:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "hexValue": "66616c7365",
+                              "id": 12651,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "bool",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "14599:5:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              "value": "false"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint128",
+                                "typeString": "uint128"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            ],
+                            "expression": {
+                              "arguments": [
+                                {
+                                  "expression": {
+                                    "id": 12642,
+                                    "name": "_marketState",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 13036,
+                                    "src": "14363:12:69",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                                      "typeString": "struct IHyperdrive.MarketState storage ref"
+                                    }
+                                  },
+                                  "id": 12643,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "memberLocation": "14376:24:69",
+                                  "memberName": "shortAverageMaturityTime",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 7103,
+                                  "src": "14363:37:69",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint128",
+                                    "typeString": "uint128"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_uint128",
+                                    "typeString": "uint128"
+                                  }
+                                ],
+                                "id": 12641,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "nodeType": "ElementaryTypeNameExpression",
+                                "src": "14342:7:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_uint256_$",
+                                  "typeString": "type(uint256)"
+                                },
+                                "typeName": {
+                                  "id": 12640,
+                                  "name": "uint256",
+                                  "nodeType": "ElementaryTypeName",
+                                  "src": "14342:7:69",
+                                  "typeDescriptions": {}
+                                }
+                              },
+                              "id": 12644,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "typeConversion",
+                              "lValueRequested": false,
+                              "nameLocations": [],
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "14342:68:69",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "id": 12645,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "14424:21:69",
+                            "memberName": "updateWeightedAverage",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 14221,
+                            "src": "14342:103:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$attached_to$_t_uint256_$",
+                              "typeString": "function (uint256,uint256,uint256,uint256,bool) pure returns (uint256)"
+                            }
+                          },
+                          "id": 12652,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "14342:276:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 12653,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "14632:9:69",
+                        "memberName": "toUint128",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 17667,
+                        "src": "14342:299:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
+                          "typeString": "function (uint256) pure returns (uint128)"
+                        }
+                      },
+                      "id": 12654,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "14342:301:69",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "src": "14302:341:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "id": 12656,
+                  "nodeType": "ExpressionStatement",
+                  "src": "14302:341:69"
+                },
+                {
+                  "expression": {
+                    "id": 12665,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 12657,
+                        "name": "_marketState",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13036,
+                        "src": "14708:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                          "typeString": "struct IHyperdrive.MarketState storage ref"
+                        }
+                      },
+                      "id": 12659,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberLocation": "14721:17:69",
+                      "memberName": "shortsOutstanding",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7097,
+                      "src": "14708:30:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "commonType": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      },
+                      "id": 12664,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "id": 12660,
+                        "name": "shortsOutstanding_",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12633,
+                        "src": "14753:18:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "-",
+                      "rightExpression": {
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "expression": {
+                            "id": 12661,
+                            "name": "_bondAmount",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12621,
+                            "src": "14786:11:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "id": 12662,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "14798:9:69",
+                          "memberName": "toUint128",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 17667,
+                          "src": "14786:21:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
+                            "typeString": "function (uint256) pure returns (uint128)"
+                          }
+                        },
+                        "id": 12663,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "14786:23:69",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        }
+                      },
+                      "src": "14753:56:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "src": "14708:101:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "id": 12666,
+                  "nodeType": "ExpressionStatement",
+                  "src": "14708:101:69"
+                },
+                {
+                  "expression": {
+                    "id": 12673,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 12667,
+                        "name": "_marketState",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13036,
+                        "src": "14877:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                          "typeString": "struct IHyperdrive.MarketState storage ref"
+                        }
+                      },
+                      "id": 12669,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberLocation": "14890:13:69",
+                      "memberName": "shareReserves",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7082,
+                      "src": "14877:26:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "id": 12670,
+                          "name": "_shareReservesDelta",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12625,
+                          "src": "14907:19:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 12671,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "14927:9:69",
+                        "memberName": "toUint128",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 17667,
+                        "src": "14907:29:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
+                          "typeString": "function (uint256) pure returns (uint128)"
+                        }
+                      },
+                      "id": 12672,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "14907:31:69",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "src": "14877:61:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "id": 12674,
+                  "nodeType": "ExpressionStatement",
+                  "src": "14877:61:69"
+                },
+                {
+                  "expression": {
+                    "id": 12681,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 12675,
+                        "name": "_marketState",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13036,
+                        "src": "14948:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                          "typeString": "struct IHyperdrive.MarketState storage ref"
+                        }
+                      },
+                      "id": 12677,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberLocation": "14961:15:69",
+                      "memberName": "shareAdjustment",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7094,
+                      "src": "14948:28:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int128",
+                        "typeString": "int128"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "id": 12678,
+                          "name": "_shareAdjustmentDelta",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12627,
+                          "src": "14980:21:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_int256",
+                            "typeString": "int256"
+                          }
+                        },
+                        "id": 12679,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "15002:8:69",
+                        "memberName": "toInt128",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 17707,
+                        "src": "14980:30:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int128_$attached_to$_t_int256_$",
+                          "typeString": "function (int256) pure returns (int128)"
+                        }
+                      },
+                      "id": 12680,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "14980:32:69",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int128",
+                        "typeString": "int128"
+                      }
+                    },
+                    "src": "14948:64:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int128",
+                      "typeString": "int128"
+                    }
+                  },
+                  "id": 12682,
+                  "nodeType": "ExpressionStatement",
+                  "src": "14948:64:69"
+                },
+                {
+                  "expression": {
+                    "id": 12689,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 12683,
+                        "name": "_marketState",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13036,
+                        "src": "15022:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                          "typeString": "struct IHyperdrive.MarketState storage ref"
+                        }
+                      },
+                      "id": 12685,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberLocation": "15035:12:69",
+                      "memberName": "bondReserves",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7085,
+                      "src": "15022:25:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "-=",
+                    "rightHandSide": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "id": 12686,
+                          "name": "_bondReservesDelta",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12623,
+                          "src": "15051:18:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 12687,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "15070:9:69",
+                        "memberName": "toUint128",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 17667,
+                        "src": "15051:28:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
+                          "typeString": "function (uint256) pure returns (uint128)"
+                        }
+                      },
+                      "id": 12688,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "15051:30:69",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint128",
+                        "typeString": "uint128"
+                      }
+                    },
+                    "src": "15022:59:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "id": 12690,
+                  "nodeType": "ExpressionStatement",
+                  "src": "15022:59:69"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 12619,
+              "nodeType": "StructuredDocumentation",
+              "src": "13477:478:69",
+              "text": "@dev Applies the trading deltas from a closed short to the reserves and\n      the withdrawal pool.\n @param _bondAmount The amount of shorts that were closed.\n @param _bondReservesDelta The amount of bonds removed from the reserves.\n @param _shareReservesDelta The amount of shares added to the reserves.\n @param _shareAdjustmentDelta The amount to increase the share adjustment.\n @param _maturityTime The maturity time of the short."
+            },
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_applyCloseShort",
+            "nameLocation": "13969:16:69",
+            "parameters": {
+              "id": 12630,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12621,
+                  "mutability": "mutable",
+                  "name": "_bondAmount",
+                  "nameLocation": "14003:11:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12692,
+                  "src": "13995:19:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12620,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "13995:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12623,
+                  "mutability": "mutable",
+                  "name": "_bondReservesDelta",
+                  "nameLocation": "14032:18:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12692,
+                  "src": "14024:26:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12622,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "14024:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12625,
+                  "mutability": "mutable",
+                  "name": "_shareReservesDelta",
+                  "nameLocation": "14068:19:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12692,
+                  "src": "14060:27:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12624,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "14060:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12627,
+                  "mutability": "mutable",
+                  "name": "_shareAdjustmentDelta",
+                  "nameLocation": "14104:21:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12692,
+                  "src": "14097:28:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 12626,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "14097:6:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12629,
+                  "mutability": "mutable",
+                  "name": "_maturityTime",
+                  "nameLocation": "14143:13:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12692,
+                  "src": "14135:21:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12628,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "14135:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "13985:177:69"
+            },
+            "returnParameters": {
+              "id": 12631,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "14172:0:69"
+            },
+            "scope": 12979,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "id": 12799,
+            "nodeType": "FunctionDefinition",
+            "src": "15700:4002:69",
+            "nodes": [],
+            "body": {
+              "id": 12798,
+              "nodeType": "Block",
+              "src": "16010:3692:69",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 12720,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 12708,
+                      "name": "shareReservesDelta",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12704,
+                      "src": "16236:18:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 12711,
+                            "name": "_effectiveShareReserves",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 8794,
+                            "src": "16304:23:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
+                              "typeString": "function () view returns (uint256)"
+                            }
+                          },
+                          "id": 12712,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "16304:25:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "expression": {
+                            "id": 12713,
+                            "name": "_marketState",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13036,
+                            "src": "16343:12:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                              "typeString": "struct IHyperdrive.MarketState storage ref"
+                            }
+                          },
+                          "id": 12714,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "16356:12:69",
+                          "memberName": "bondReserves",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 7085,
+                          "src": "16343:25:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint128",
+                            "typeString": "uint128"
+                          }
+                        },
+                        {
+                          "id": 12715,
+                          "name": "_bondAmount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12695,
+                          "src": "16382:11:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "id": 12716,
+                          "name": "_timeStretch",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 13011,
+                          "src": "16407:12:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "id": 12717,
+                          "name": "_vaultSharePrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12697,
+                          "src": "16433:16:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "id": 12718,
+                          "name": "_initialVaultSharePrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 13026,
+                          "src": "16463:23:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint128",
+                            "typeString": "uint128"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "expression": {
+                          "id": 12709,
+                          "name": "HyperdriveMath",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 15024,
+                          "src": "16257:14:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$15024_$",
+                            "typeString": "type(library HyperdriveMath)"
+                          }
+                        },
+                        "id": 12710,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "16272:18:69",
+                        "memberName": "calculateOpenShort",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 14854,
+                        "src": "16257:33:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                          "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
+                        }
+                      },
+                      "id": 12719,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "16257:239:69",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "16236:260:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 12721,
+                  "nodeType": "ExpressionStatement",
+                  "src": "16236:260:69"
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 12727,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "arguments": [
+                        {
+                          "id": 12724,
+                          "name": "_vaultSharePrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12697,
+                          "src": "16805:16:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "expression": {
+                          "id": 12722,
+                          "name": "shareReservesDelta",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12704,
+                          "src": "16780:18:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 12723,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "16799:5:69",
+                        "memberName": "mulUp",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 13622,
+                        "src": "16780:24:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
+                          "typeString": "function (uint256,uint256) pure returns (uint256)"
+                        }
+                      },
+                      "id": 12725,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "16780:42:69",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": ">",
+                    "rightExpression": {
+                      "id": 12726,
+                      "name": "_bondAmount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12695,
+                      "src": "16825:11:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "16780:56:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 12737,
+                  "nodeType": "IfStatement",
+                  "src": "16776:213:69",
+                  "trueBody": {
+                    "id": 12736,
+                    "nodeType": "Block",
+                    "src": "16838:151:69",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "expression": {
+                                "expression": {
+                                  "id": 12731,
+                                  "name": "IHyperdrive",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 7411,
+                                  "src": "16908:11:69",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7411_$",
+                                    "typeString": "type(contract IHyperdrive)"
+                                  }
+                                },
+                                "id": 12732,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberLocation": "16920:27:69",
+                                "memberName": "InsufficientLiquidityReason",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 7277,
+                                "src": "16908:39:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$7277_$",
+                                  "typeString": "type(enum IHyperdrive.InsufficientLiquidityReason)"
+                                }
+                              },
+                              "id": 12733,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "memberLocation": "16948:16:69",
+                              "memberName": "NegativeInterest",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 7275,
+                              "src": "16908:56:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$7277",
+                                "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$7277",
+                                "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
+                              }
+                            ],
+                            "expression": {
+                              "id": 12728,
+                              "name": "Errors",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 13522,
+                              "src": "16852:6:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_Errors_$13522_$",
+                                "typeString": "type(library Errors)"
+                              }
+                            },
+                            "id": 12730,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "16859:31:69",
+                            "memberName": "throwInsufficientLiquidityError",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 13521,
+                            "src": "16852:38:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$7277_$returns$__$",
+                              "typeString": "function (enum IHyperdrive.InsufficientLiquidityReason) pure"
+                            }
+                          },
+                          "id": 12734,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "16852:126:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 12735,
+                        "nodeType": "ExpressionStatement",
+                        "src": "16852:126:69"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "assignments": [
+                    12739
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12739,
+                      "mutability": "mutable",
+                      "name": "curveFee",
+                      "nameLocation": "17159:8:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12798,
+                      "src": "17151:16:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12738,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "17151:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12740,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "17151:16:69"
+                },
+                {
+                  "assignments": [
+                    12742
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12742,
+                      "mutability": "mutable",
+                      "name": "governanceCurveFee",
+                      "nameLocation": "17185:18:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12798,
+                      "src": "17177:26:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12741,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "17177:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12743,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "17177:26:69"
+                },
+                {
+                  "assignments": [
+                    12745
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12745,
+                      "mutability": "mutable",
+                      "name": "spotPrice",
+                      "nameLocation": "17221:9:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12798,
+                      "src": "17213:17:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12744,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "17213:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12755,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 12748,
+                          "name": "_effectiveShareReserves",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 8794,
+                          "src": "17280:23:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
+                            "typeString": "function () view returns (uint256)"
+                          }
+                        },
+                        "id": 12749,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "17280:25:69",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 12750,
+                          "name": "_marketState",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 13036,
+                          "src": "17319:12:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                            "typeString": "struct IHyperdrive.MarketState storage ref"
+                          }
+                        },
+                        "id": 12751,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "17332:12:69",
+                        "memberName": "bondReserves",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 7085,
+                        "src": "17319:25:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        }
+                      },
+                      {
+                        "id": 12752,
+                        "name": "_initialVaultSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13026,
+                        "src": "17358:23:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12753,
+                        "name": "_timeStretch",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13011,
+                        "src": "17395:12:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 12746,
+                        "name": "HyperdriveMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15024,
+                        "src": "17233:14:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$15024_$",
+                          "typeString": "type(library HyperdriveMath)"
+                        }
+                      },
+                      "id": 12747,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "17248:18:69",
+                      "memberName": "calculateSpotPrice",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 14433,
+                      "src": "17233:33:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,uint256,uint256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 12754,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "17233:184:69",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "17213:204:69"
+                },
+                {
+                  "expression": {
+                    "id": 12765,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "components": [
+                        {
+                          "id": 12756,
+                          "name": "curveFee",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12739,
+                          "src": "17581:8:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        null,
+                        {
+                          "id": 12757,
+                          "name": "governanceCurveFee",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12742,
+                          "src": "17593:18:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        null
+                      ],
+                      "id": 12758,
+                      "isConstant": false,
+                      "isInlineArray": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "TupleExpression",
+                      "src": "17580:34:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$_t_uint256_$__$_t_uint256_$__$",
+                        "typeString": "tuple(uint256,,uint256,)"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 12760,
+                          "name": "_bondAmount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12695,
+                          "src": "17655:11:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "id": 12761,
+                          "name": "ONE",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 13529,
+                          "src": "17680:3:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "id": 12762,
+                          "name": "spotPrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12745,
+                          "src": "17747:9:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "id": 12763,
+                          "name": "_vaultSharePrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12697,
+                          "src": "17770:16:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "id": 12759,
+                        "name": "_calculateFeesGivenBonds",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9454,
+                        "src": "17617:24:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_view$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                          "typeString": "function (uint256,uint256,uint256,uint256) view returns (uint256,uint256,uint256,uint256)"
+                        }
+                      },
+                      "id": 12764,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "17617:179:69",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                        "typeString": "tuple(uint256,uint256,uint256,uint256)"
+                      }
+                    },
+                    "src": "17580:216:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 12766,
+                  "nodeType": "ExpressionStatement",
+                  "src": "17580:216:69"
+                },
+                {
+                  "expression": {
+                    "id": 12771,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 12767,
+                      "name": "shareReservesDelta",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12704,
+                      "src": "18447:18:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "-=",
+                    "rightHandSide": {
+                      "commonType": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "id": 12770,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "id": 12768,
+                        "name": "curveFee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12739,
+                        "src": "18469:8:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "-",
+                      "rightExpression": {
+                        "id": 12769,
+                        "name": "governanceCurveFee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12742,
+                        "src": "18480:18:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "src": "18469:29:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "18447:51:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 12772,
+                  "nodeType": "ExpressionStatement",
+                  "src": "18447:51:69"
+                },
+                {
+                  "expression": {
+                    "id": 12791,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 12773,
+                      "name": "baseDeposit",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12702,
+                      "src": "19073:11:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 12789,
+                          "name": "_vaultSharePrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12697,
+                          "src": "19607:16:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "expression": {
+                          "arguments": [
+                            {
+                              "id": 12776,
+                              "name": "_bondAmount",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12695,
+                              "src": "19157:11:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "commonType": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              "id": 12779,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "leftExpression": {
+                                "id": 12777,
+                                "name": "shareReservesDelta",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 12704,
+                                "src": "19376:18:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "nodeType": "BinaryOperation",
+                              "operator": "-",
+                              "rightExpression": {
+                                "id": 12778,
+                                "name": "governanceCurveFee",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 12742,
+                                "src": "19397:18:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "src": "19376:39:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12780,
+                              "name": "_openVaultSharePrice",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12699,
+                              "src": "19433:20:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "arguments": [
+                                {
+                                  "id": 12783,
+                                  "name": "_openVaultSharePrice",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 12699,
+                                  "src": "19492:20:69",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                ],
+                                "expression": {
+                                  "id": 12781,
+                                  "name": "_vaultSharePrice",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 12697,
+                                  "src": "19471:16:69",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "id": 12782,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberLocation": "19488:3:69",
+                                "memberName": "max",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 14257,
+                                "src": "19471:20:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
+                                  "typeString": "function (uint256,uint256) pure returns (uint256)"
+                                }
+                              },
+                              "id": 12784,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "nameLocations": [],
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "19471:42:69",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12785,
+                              "name": "_vaultSharePrice",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12697,
+                              "src": "19531:16:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12786,
+                              "name": "_flatFee",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 13017,
+                              "src": "19565:8:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "expression": {
+                              "id": 12774,
+                              "name": "HyperdriveMath",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 15024,
+                              "src": "19087:14:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$15024_$",
+                                "typeString": "type(library HyperdriveMath)"
+                              }
+                            },
+                            "id": 12775,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "19115:24:69",
+                            "memberName": "calculateShortProceedsUp",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 14620,
+                            "src": "19087:52:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                              "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
+                            }
+                          },
+                          "id": 12787,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "19087:500:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 12788,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "19601:5:69",
+                        "memberName": "mulUp",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 13622,
+                        "src": "19087:519:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
+                          "typeString": "function (uint256,uint256) pure returns (uint256)"
+                        }
+                      },
+                      "id": 12790,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "19087:537:69",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "19073:551:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 12792,
+                  "nodeType": "ExpressionStatement",
+                  "src": "19073:551:69"
+                },
+                {
+                  "expression": {
+                    "components": [
+                      {
+                        "id": 12793,
+                        "name": "baseDeposit",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12702,
+                        "src": "19643:11:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12794,
+                        "name": "shareReservesDelta",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12704,
+                        "src": "19656:18:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 12795,
+                        "name": "governanceCurveFee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12742,
+                        "src": "19676:18:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "id": 12796,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "19642:53:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
+                      "typeString": "tuple(uint256,uint256,uint256)"
+                    }
+                  },
+                  "functionReturnParameters": 12707,
+                  "id": 12797,
+                  "nodeType": "Return",
+                  "src": "19635:60:69"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 12693,
+              "nodeType": "StructuredDocumentation",
+              "src": "15094:601:69",
+              "text": "@dev Calculate the pool reserve and trader deltas that result from\n      opening a short. This calculation includes trading fees.\n @param _bondAmount The amount of bonds being sold to open the short.\n @param _vaultSharePrice The current vault share price.\n @param _openVaultSharePrice The vault share price at the beginning of\n        the checkpoint.\n @return baseDeposit The deposit, in base, required to open the short.\n @return shareReservesDelta The change in the share reserves.\n @return totalGovernanceFee The governance fee in shares."
+            },
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_calculateOpenShort",
+            "nameLocation": "15709:19:69",
+            "parameters": {
+              "id": 12700,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12695,
+                  "mutability": "mutable",
+                  "name": "_bondAmount",
+                  "nameLocation": "15746:11:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12799,
+                  "src": "15738:19:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12694,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "15738:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12697,
+                  "mutability": "mutable",
+                  "name": "_vaultSharePrice",
+                  "nameLocation": "15775:16:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12799,
+                  "src": "15767:24:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12696,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "15767:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12699,
+                  "mutability": "mutable",
+                  "name": "_openVaultSharePrice",
+                  "nameLocation": "15809:20:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12799,
+                  "src": "15801:28:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12698,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "15801:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "15728:107:69"
+            },
+            "returnParameters": {
+              "id": 12707,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12702,
+                  "mutability": "mutable",
+                  "name": "baseDeposit",
+                  "nameLocation": "15904:11:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12799,
+                  "src": "15896:19:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12701,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "15896:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12704,
+                  "mutability": "mutable",
+                  "name": "shareReservesDelta",
+                  "nameLocation": "15937:18:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12799,
+                  "src": "15929:26:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12703,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "15929:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12706,
+                  "mutability": "mutable",
+                  "name": "totalGovernanceFee",
+                  "nameLocation": "15977:18:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12799,
+                  "src": "15969:26:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12705,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "15969:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "15882:123:69"
+            },
+            "scope": 12979,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "id": 12978,
+            "nodeType": "FunctionDefinition",
+            "src": "20433:6589:69",
+            "nodes": [],
+            "body": {
+              "id": 12977,
+              "nodeType": "Block",
+              "src": "20819:6203:69",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    12820
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12820,
+                      "mutability": "mutable",
+                      "name": "shareCurveDelta",
+                      "nameLocation": "21058:15:69",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12977,
+                      "src": "21050:23:69",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12819,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "21050:7:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12821,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "21050:23:69"
+                },
+                {
+                  "id": 12919,
+                  "nodeType": "Block",
+                  "src": "21083:3532:69",
+                  "statements": [
+                    {
+                      "assignments": [
+                        12823
+                      ],
+                      "declarations": [
+                        {
+                          "constant": false,
+                          "id": 12823,
+                          "mutability": "mutable",
+                          "name": "timeRemaining",
+                          "nameLocation": "21539:13:69",
+                          "nodeType": "VariableDeclaration",
+                          "scope": 12919,
+                          "src": "21531:21:69",
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "typeName": {
+                            "id": 12822,
+                            "name": "uint256",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "21531:7:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "visibility": "internal"
+                        }
+                      ],
+                      "id": 12827,
+                      "initialValue": {
+                        "arguments": [
+                          {
+                            "id": 12825,
+                            "name": "_maturityTime",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12806,
+                            "src": "21579:13:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "id": 12824,
+                          "name": "_calculateTimeRemaining",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 8725,
+                          "src": "21555:23:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_uint256_$",
+                            "typeString": "function (uint256) view returns (uint256)"
+                          }
+                        },
+                        "id": 12826,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "21555:38:69",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "VariableDeclarationStatement",
+                      "src": "21531:62:69"
+                    },
+                    {
+                      "expression": {
+                        "id": 12844,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftHandSide": {
+                          "components": [
+                            {
+                              "id": 12828,
+                              "name": "shareCurveDelta",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12820,
+                              "src": "21625:15:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12829,
+                              "name": "bondReservesDelta",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12809,
+                              "src": "21658:17:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12830,
+                              "name": "shareReservesDelta",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12813,
+                              "src": "21693:18:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "id": 12831,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "nodeType": "TupleExpression",
+                          "src": "21607:118:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
+                            "typeString": "tuple(uint256,uint256,uint256)"
+                          }
+                        },
+                        "nodeType": "Assignment",
+                        "operator": "=",
+                        "rightHandSide": {
+                          "arguments": [
+                            {
+                              "arguments": [],
+                              "expression": {
+                                "argumentTypes": [],
+                                "id": 12834,
+                                "name": "_effectiveShareReserves",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 8794,
+                                "src": "21780:23:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
+                                  "typeString": "function () view returns (uint256)"
+                                }
+                              },
+                              "id": 12835,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "nameLocations": [],
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "21780:25:69",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "expression": {
+                                "id": 12836,
+                                "name": "_marketState",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 13036,
+                                "src": "21823:12:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                                  "typeString": "struct IHyperdrive.MarketState storage ref"
+                                }
+                              },
+                              "id": 12837,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberLocation": "21836:12:69",
+                              "memberName": "bondReserves",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 7085,
+                              "src": "21823:25:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint128",
+                                "typeString": "uint128"
+                              }
+                            },
+                            {
+                              "id": 12838,
+                              "name": "_bondAmount",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12802,
+                              "src": "21866:11:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12839,
+                              "name": "timeRemaining",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12823,
+                              "src": "21895:13:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12840,
+                              "name": "_timeStretch",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 13011,
+                              "src": "21926:12:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12841,
+                              "name": "_vaultSharePrice",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12804,
+                              "src": "21956:16:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12842,
+                              "name": "_initialVaultSharePrice",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 13026,
+                              "src": "21990:23:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint128",
+                                "typeString": "uint128"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "expression": {
+                              "id": 12832,
+                              "name": "HyperdriveMath",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 15024,
+                              "src": "21728:14:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$15024_$",
+                                "typeString": "type(library HyperdriveMath)"
+                              }
+                            },
+                            "id": 12833,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "21743:19:69",
+                            "memberName": "calculateCloseShort",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 14919,
+                            "src": "21728:34:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$",
+                              "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,uint256,uint256)"
+                            }
+                          },
+                          "id": 12843,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "21728:299:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
+                            "typeString": "tuple(uint256,uint256,uint256)"
+                          }
+                        },
+                        "src": "21607:420:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_tuple$__$",
+                          "typeString": "tuple()"
+                        }
+                      },
+                      "id": 12845,
+                      "nodeType": "ExpressionStatement",
+                      "src": "21607:420:69"
+                    },
+                    {
+                      "assignments": [
+                        12847
+                      ],
+                      "declarations": [
+                        {
+                          "constant": false,
+                          "id": 12847,
+                          "mutability": "mutable",
+                          "name": "spotPrice",
+                          "nameLocation": "22180:9:69",
+                          "nodeType": "VariableDeclaration",
+                          "scope": 12919,
+                          "src": "22172:17:69",
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "typeName": {
+                            "id": 12846,
+                            "name": "uint256",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "22172:7:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "visibility": "internal"
+                        }
+                      ],
+                      "id": 12857,
+                      "initialValue": {
+                        "arguments": [
+                          {
+                            "arguments": [],
+                            "expression": {
+                              "argumentTypes": [],
+                              "id": 12850,
+                              "name": "_effectiveShareReserves",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 8794,
+                              "src": "22243:23:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
+                                "typeString": "function () view returns (uint256)"
+                              }
+                            },
+                            "id": 12851,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "nameLocations": [],
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "22243:25:69",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          {
+                            "expression": {
+                              "id": 12852,
+                              "name": "_marketState",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 13036,
+                              "src": "22286:12:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+                                "typeString": "struct IHyperdrive.MarketState storage ref"
+                              }
+                            },
+                            "id": 12853,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "22299:12:69",
+                            "memberName": "bondReserves",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 7085,
+                            "src": "22286:25:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint128",
+                              "typeString": "uint128"
+                            }
+                          },
+                          {
+                            "id": 12854,
+                            "name": "_initialVaultSharePrice",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13026,
+                            "src": "22329:23:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          {
+                            "id": 12855,
+                            "name": "_timeStretch",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13011,
+                            "src": "22370:12:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            {
+                              "typeIdentifier": "t_uint128",
+                              "typeString": "uint128"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "expression": {
+                            "id": 12848,
+                            "name": "HyperdriveMath",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 15024,
+                            "src": "22192:14:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$15024_$",
+                              "typeString": "type(library HyperdriveMath)"
+                            }
+                          },
+                          "id": 12849,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "22207:18:69",
+                          "memberName": "calculateSpotPrice",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 14433,
+                          "src": "22192:33:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                            "typeString": "function (uint256,uint256,uint256,uint256) pure returns (uint256)"
+                          }
+                        },
+                        "id": 12856,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "22192:204:69",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "VariableDeclarationStatement",
+                      "src": "22172:224:69"
+                    },
+                    {
+                      "condition": {
+                        "arguments": [
+                          {
+                            "id": 12859,
+                            "name": "shareCurveDelta",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12820,
+                            "src": "22472:15:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          {
+                            "id": 12860,
+                            "name": "bondReservesDelta",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12809,
+                            "src": "22509:17:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          {
+                            "arguments": [
+                              {
+                                "id": 12863,
+                                "name": "spotPrice",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 12847,
+                                "src": "22620:9:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              {
+                                "id": 12864,
+                                "name": "_curveFee",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 13014,
+                                "src": "22655:9:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "expression": {
+                                "id": 12861,
+                                "name": "HyperdriveMath",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 15024,
+                                "src": "22548:14:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$15024_$",
+                                  "typeString": "type(library HyperdriveMath)"
+                                }
+                              },
+                              "id": 12862,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberLocation": "22563:31:69",
+                              "memberName": "calculateCloseShortMaxSpotPrice",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 14727,
+                              "src": "22548:46:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                                "typeString": "function (uint256,uint256) pure returns (uint256)"
+                              }
+                            },
+                            "id": 12865,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "nameLocations": [],
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "22548:138:69",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          ],
+                          "id": 12858,
+                          "name": "_isNegativeInterest",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 8973,
+                          "src": "22431:19:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_bool_$",
+                            "typeString": "function (uint256,uint256,uint256) view returns (bool)"
+                          }
+                        },
+                        "id": 12866,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "22431:273:69",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "id": 12876,
+                      "nodeType": "IfStatement",
+                      "src": "22410:476:69",
+                      "trueBody": {
+                        "id": 12875,
+                        "nodeType": "Block",
+                        "src": "22719:167:69",
+                        "statements": [
+                          {
+                            "expression": {
+                              "arguments": [
+                                {
+                                  "expression": {
+                                    "expression": {
+                                      "id": 12870,
+                                      "name": "IHyperdrive",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 7411,
+                                      "src": "22797:11:69",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7411_$",
+                                        "typeString": "type(contract IHyperdrive)"
+                                      }
+                                    },
+                                    "id": 12871,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "memberLocation": "22809:27:69",
+                                    "memberName": "InsufficientLiquidityReason",
+                                    "nodeType": "MemberAccess",
+                                    "referencedDeclaration": 7277,
+                                    "src": "22797:39:69",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_type$_t_enum$_InsufficientLiquidityReason_$7277_$",
+                                      "typeString": "type(enum IHyperdrive.InsufficientLiquidityReason)"
+                                    }
+                                  },
+                                  "id": 12872,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "memberLocation": "22837:16:69",
+                                  "memberName": "NegativeInterest",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 7275,
+                                  "src": "22797:56:69",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$7277",
+                                    "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_enum$_InsufficientLiquidityReason_$7277",
+                                    "typeString": "enum IHyperdrive.InsufficientLiquidityReason"
+                                  }
+                                ],
+                                "expression": {
+                                  "id": 12867,
+                                  "name": "Errors",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 13522,
+                                  "src": "22737:6:69",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_contract$_Errors_$13522_$",
+                                    "typeString": "type(library Errors)"
+                                  }
+                                },
+                                "id": 12869,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberLocation": "22744:31:69",
+                                "memberName": "throwInsufficientLiquidityError",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 13521,
+                                "src": "22737:38:69",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_internal_pure$_t_enum$_InsufficientLiquidityReason_$7277_$returns$__$",
+                                  "typeString": "function (enum IHyperdrive.InsufficientLiquidityReason) pure"
+                                }
+                              },
+                              "id": 12873,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "nameLocations": [],
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "22737:134:69",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_tuple$__$",
+                                "typeString": "tuple()"
+                              }
+                            },
+                            "id": 12874,
+                            "nodeType": "ExpressionStatement",
+                            "src": "22737:134:69"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "assignments": [
+                        12878
+                      ],
+                      "declarations": [
+                        {
+                          "constant": false,
+                          "id": 12878,
+                          "mutability": "mutable",
+                          "name": "bondAmount",
+                          "nameLocation": "23095:10:69",
+                          "nodeType": "VariableDeclaration",
+                          "scope": 12919,
+                          "src": "23087:18:69",
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "typeName": {
+                            "id": 12877,
+                            "name": "uint256",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "23087:7:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "visibility": "internal"
+                        }
+                      ],
+                      "id": 12880,
+                      "initialValue": {
+                        "id": 12879,
+                        "name": "_bondAmount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12802,
+                        "src": "23108:11:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "VariableDeclarationStatement",
+                      "src": "23087:32:69"
+                    },
+                    {
+                      "assignments": [
+                        12882
+                      ],
+                      "declarations": [
+                        {
+                          "constant": false,
+                          "id": 12882,
+                          "mutability": "mutable",
+                          "name": "vaultSharePrice",
+                          "nameLocation": "23166:15:69",
+                          "nodeType": "VariableDeclaration",
+                          "scope": 12919,
+                          "src": "23158:23:69",
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "typeName": {
+                            "id": 12881,
+                            "name": "uint256",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "23158:7:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "visibility": "internal"
+                        }
+                      ],
+                      "id": 12884,
+                      "initialValue": {
+                        "id": 12883,
+                        "name": "_vaultSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12804,
+                        "src": "23184:16:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "VariableDeclarationStatement",
+                      "src": "23158:42:69"
+                    },
+                    {
+                      "assignments": [
+                        12886
+                      ],
+                      "declarations": [
+                        {
+                          "constant": false,
+                          "id": 12886,
+                          "mutability": "mutable",
+                          "name": "curveFee",
+                          "nameLocation": "23247:8:69",
+                          "nodeType": "VariableDeclaration",
+                          "scope": 12919,
+                          "src": "23239:16:69",
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "typeName": {
+                            "id": 12885,
+                            "name": "uint256",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "23239:7:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "visibility": "internal"
+                        }
+                      ],
+                      "id": 12887,
+                      "nodeType": "VariableDeclarationStatement",
+                      "src": "23239:16:69"
+                    },
+                    {
+                      "assignments": [
+                        12889
+                      ],
+                      "declarations": [
+                        {
+                          "constant": false,
+                          "id": 12889,
+                          "mutability": "mutable",
+                          "name": "flatFee",
+                          "nameLocation": "23277:7:69",
+                          "nodeType": "VariableDeclaration",
+                          "scope": 12919,
+                          "src": "23269:15:69",
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "typeName": {
+                            "id": 12888,
+                            "name": "uint256",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "23269:7:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "visibility": "internal"
+                        }
+                      ],
+                      "id": 12890,
+                      "nodeType": "VariableDeclarationStatement",
+                      "src": "23269:15:69"
+                    },
+                    {
+                      "assignments": [
+                        12892
+                      ],
+                      "declarations": [
+                        {
+                          "constant": false,
+                          "id": 12892,
+                          "mutability": "mutable",
+                          "name": "governanceCurveFee",
+                          "nameLocation": "23306:18:69",
+                          "nodeType": "VariableDeclaration",
+                          "scope": 12919,
+                          "src": "23298:26:69",
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "typeName": {
+                            "id": 12891,
+                            "name": "uint256",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "23298:7:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "visibility": "internal"
+                        }
+                      ],
+                      "id": 12893,
+                      "nodeType": "VariableDeclarationStatement",
+                      "src": "23298:26:69"
+                    },
+                    {
+                      "expression": {
+                        "id": 12905,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftHandSide": {
+                          "components": [
+                            {
+                              "id": 12894,
+                              "name": "curveFee",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12886,
+                              "src": "23356:8:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12895,
+                              "name": "flatFee",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12889,
+                              "src": "23382:7:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12896,
+                              "name": "governanceCurveFee",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12892,
+                              "src": "23407:18:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12897,
+                              "name": "totalGovernanceFee",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12817,
+                              "src": "23443:18:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "id": 12898,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "nodeType": "TupleExpression",
+                          "src": "23338:137:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                            "typeString": "tuple(uint256,uint256,uint256,uint256)"
+                          }
+                        },
+                        "nodeType": "Assignment",
+                        "operator": "=",
+                        "rightHandSide": {
+                          "arguments": [
+                            {
+                              "id": 12900,
+                              "name": "bondAmount",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12878,
+                              "src": "23520:10:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12901,
+                              "name": "timeRemaining",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12823,
+                              "src": "23548:13:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12902,
+                              "name": "spotPrice",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12847,
+                              "src": "23579:9:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12903,
+                              "name": "vaultSharePrice",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12882,
+                              "src": "23606:15:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "id": 12899,
+                            "name": "_calculateFeesGivenBonds",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 9454,
+                            "src": "23478:24:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_view$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                              "typeString": "function (uint256,uint256,uint256,uint256) view returns (uint256,uint256,uint256,uint256)"
+                            }
+                          },
+                          "id": 12904,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "23478:157:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                            "typeString": "tuple(uint256,uint256,uint256,uint256)"
+                          }
+                        },
+                        "src": "23338:297:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_tuple$__$",
+                          "typeString": "tuple()"
+                        }
+                      },
+                      "id": 12906,
+                      "nodeType": "ExpressionStatement",
+                      "src": "23338:297:69"
+                    },
+                    {
+                      "expression": {
+                        "id": 12911,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftHandSide": {
+                          "id": 12907,
+                          "name": "shareCurveDelta",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12820,
+                          "src": "24264:15:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "Assignment",
+                        "operator": "+=",
+                        "rightHandSide": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 12910,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "id": 12908,
+                            "name": "curveFee",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12886,
+                            "src": "24283:8:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "-",
+                          "rightExpression": {
+                            "id": 12909,
+                            "name": "governanceCurveFee",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12892,
+                            "src": "24294:18:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "24283:29:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "24264:48:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "id": 12912,
+                      "nodeType": "ExpressionStatement",
+                      "src": "24264:48:69"
+                    },
+                    {
+                      "expression": {
+                        "id": 12917,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftHandSide": {
+                          "id": 12913,
+                          "name": "shareReservesDelta",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12813,
+                          "src": "24564:18:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "Assignment",
+                        "operator": "+=",
+                        "rightHandSide": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 12916,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "id": 12914,
+                            "name": "curveFee",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12886,
+                            "src": "24586:8:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "+",
+                          "rightExpression": {
+                            "id": 12915,
+                            "name": "flatFee",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12889,
+                            "src": "24597:7:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "24586:18:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "24564:40:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "id": 12918,
+                      "nodeType": "ExpressionStatement",
+                      "src": "24564:40:69"
+                    }
+                  ]
+                },
+                {
+                  "id": 12976,
+                  "nodeType": "Block",
+                  "src": "24758:2258:69",
+                  "statements": [
+                    {
+                      "assignments": [
+                        12921
+                      ],
+                      "declarations": [
+                        {
+                          "constant": false,
+                          "id": 12921,
+                          "mutability": "mutable",
+                          "name": "openVaultSharePrice",
+                          "nameLocation": "24780:19:69",
+                          "nodeType": "VariableDeclaration",
+                          "scope": 12976,
+                          "src": "24772:27:69",
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "typeName": {
+                            "id": 12920,
+                            "name": "uint256",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "24772:7:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "visibility": "internal"
+                        }
+                      ],
+                      "id": 12928,
+                      "initialValue": {
+                        "expression": {
+                          "baseExpression": {
+                            "id": 12922,
+                            "name": "_checkpoints",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13046,
+                            "src": "24802:12:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$7120_storage_$",
+                              "typeString": "mapping(uint256 => struct IHyperdrive.Checkpoint storage ref)"
+                            }
+                          },
+                          "id": 12926,
+                          "indexExpression": {
+                            "commonType": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            "id": 12925,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftExpression": {
+                              "id": 12923,
+                              "name": "_maturityTime",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12806,
+                              "src": "24832:13:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "nodeType": "BinaryOperation",
+                            "operator": "-",
+                            "rightExpression": {
+                              "id": 12924,
+                              "name": "_positionDuration",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 13008,
+                              "src": "24848:17:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "src": "24832:33:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "24802:77:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Checkpoint_$7120_storage",
+                            "typeString": "struct IHyperdrive.Checkpoint storage ref"
+                          }
+                        },
+                        "id": 12927,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "24880:15:69",
+                        "memberName": "vaultSharePrice",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 7119,
+                        "src": "24802:93:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        }
+                      },
+                      "nodeType": "VariableDeclarationStatement",
+                      "src": "24772:123:69"
+                    },
+                    {
+                      "assignments": [
+                        12930
+                      ],
+                      "declarations": [
+                        {
+                          "constant": false,
+                          "id": 12930,
+                          "mutability": "mutable",
+                          "name": "closeVaultSharePrice",
+                          "nameLocation": "24917:20:69",
+                          "nodeType": "VariableDeclaration",
+                          "scope": 12976,
+                          "src": "24909:28:69",
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "typeName": {
+                            "id": 12929,
+                            "name": "uint256",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "24909:7:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "visibility": "internal"
+                        }
+                      ],
+                      "id": 12941,
+                      "initialValue": {
+                        "condition": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 12934,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "expression": {
+                              "id": 12931,
+                              "name": "block",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": -4,
+                              "src": "24940:5:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_block",
+                                "typeString": "block"
+                              }
+                            },
+                            "id": 12932,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "24946:9:69",
+                            "memberName": "timestamp",
+                            "nodeType": "MemberAccess",
+                            "src": "24940:15:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "<",
+                          "rightExpression": {
+                            "id": 12933,
+                            "name": "_maturityTime",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12806,
+                            "src": "24958:13:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "24940:31:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "falseExpression": {
+                          "expression": {
+                            "baseExpression": {
+                              "id": 12936,
+                              "name": "_checkpoints",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 13046,
+                              "src": "25025:12:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$7120_storage_$",
+                                "typeString": "mapping(uint256 => struct IHyperdrive.Checkpoint storage ref)"
+                              }
+                            },
+                            "id": 12938,
+                            "indexExpression": {
+                              "id": 12937,
+                              "name": "_maturityTime",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12806,
+                              "src": "25038:13:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "25025:27:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Checkpoint_$7120_storage",
+                              "typeString": "struct IHyperdrive.Checkpoint storage ref"
+                            }
+                          },
+                          "id": 12939,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "25053:15:69",
+                          "memberName": "vaultSharePrice",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 7119,
+                          "src": "25025:43:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint128",
+                            "typeString": "uint128"
+                          }
+                        },
+                        "id": 12940,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "Conditional",
+                        "src": "24940:128:69",
+                        "trueExpression": {
+                          "id": 12935,
+                          "name": "_vaultSharePrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12804,
+                          "src": "24990:16:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "VariableDeclarationStatement",
+                      "src": "24909:159:69"
+                    },
+                    {
+                      "expression": {
+                        "id": 12952,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftHandSide": {
+                          "id": 12942,
+                          "name": "shareProceeds",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12811,
+                          "src": "25701:13:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "Assignment",
+                        "operator": "=",
+                        "rightHandSide": {
+                          "arguments": [
+                            {
+                              "id": 12945,
+                              "name": "_bondAmount",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12802,
+                              "src": "25776:11:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12946,
+                              "name": "shareReservesDelta",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12813,
+                              "src": "25805:18:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12947,
+                              "name": "openVaultSharePrice",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12921,
+                              "src": "25841:19:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12948,
+                              "name": "closeVaultSharePrice",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12930,
+                              "src": "25878:20:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12949,
+                              "name": "_vaultSharePrice",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12804,
+                              "src": "25916:16:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12950,
+                              "name": "_flatFee",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 13017,
+                              "src": "25950:8:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "expression": {
+                              "id": 12943,
+                              "name": "HyperdriveMath",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 15024,
+                              "src": "25717:14:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$15024_$",
+                                "typeString": "type(library HyperdriveMath)"
+                              }
+                            },
+                            "id": 12944,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "25732:26:69",
+                            "memberName": "calculateShortProceedsDown",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 14671,
+                            "src": "25717:41:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                              "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
+                            }
+                          },
+                          "id": 12951,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "25717:255:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "25701:271:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "id": 12953,
+                      "nodeType": "ExpressionStatement",
+                      "src": "25701:271:69"
+                    },
+                    {
+                      "expression": {
+                        "id": 12956,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftHandSide": {
+                          "id": 12954,
+                          "name": "shareReservesDelta",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12813,
+                          "src": "26178:18:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "Assignment",
+                        "operator": "-=",
+                        "rightHandSide": {
+                          "id": 12955,
+                          "name": "totalGovernanceFee",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12817,
+                          "src": "26200:18:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "26178:40:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "id": 12957,
+                      "nodeType": "ExpressionStatement",
+                      "src": "26178:40:69"
+                    },
+                    {
+                      "expression": {
+                        "id": 12974,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftHandSide": {
+                          "components": [
+                            {
+                              "id": 12958,
+                              "name": "shareProceeds",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12811,
+                              "src": "26537:13:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12959,
+                              "name": "shareReservesDelta",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12813,
+                              "src": "26568:18:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12960,
+                              "name": "shareCurveDelta",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12820,
+                              "src": "26604:15:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12961,
+                              "name": "shareAdjustmentDelta",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12815,
+                              "src": "26637:20:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_int256",
+                                "typeString": "int256"
+                              }
+                            },
+                            {
+                              "id": 12962,
+                              "name": "totalGovernanceFee",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12817,
+                              "src": "26675:18:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "id": 12963,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "nodeType": "TupleExpression",
+                          "src": "26519:188:69",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$",
+                            "typeString": "tuple(uint256,uint256,uint256,int256,uint256)"
+                          }
+                        },
+                        "nodeType": "Assignment",
+                        "operator": "=",
+                        "rightHandSide": {
+                          "arguments": [
+                            {
+                              "id": 12966,
+                              "name": "shareProceeds",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12811,
+                              "src": "26775:13:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12967,
+                              "name": "shareReservesDelta",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12813,
+                              "src": "26806:18:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12968,
+                              "name": "shareCurveDelta",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12820,
+                              "src": "26842:15:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12969,
+                              "name": "totalGovernanceFee",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12817,
+                              "src": "26875:18:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12970,
+                              "name": "openVaultSharePrice",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12921,
+                              "src": "26911:19:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "id": 12971,
+                              "name": "closeVaultSharePrice",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12930,
+                              "src": "26948:20:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "hexValue": "66616c7365",
+                              "id": 12972,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "bool",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "26986:5:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              "value": "false"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            ],
+                            "expression": {
+                              "id": 12964,
+                              "name": "HyperdriveMath",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 15024,
+                              "src": "26710:14:69",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$15024_$",
+                                "typeString": "type(library HyperdriveMath)"
+                              }
+                            },
+                            "id": 12965,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "26725:32:69",
+                            "memberName": "calculateNegativeInterestOnClose",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 15023,
+                            "src": "26710:47:69",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$",
+                              "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256,bool) pure returns (uint256,uint256,uint256,int256,uint256)"
+                            }
+                          },
+                          "id": 12973,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "26710:295:69",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$",
+                            "typeString": "tuple(uint256,uint256,uint256,int256,uint256)"
+                          }
+                        },
+                        "src": "26519:486:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_tuple$__$",
+                          "typeString": "tuple()"
+                        }
+                      },
+                      "id": 12975,
+                      "nodeType": "ExpressionStatement",
+                      "src": "26519:486:69"
+                    }
+                  ]
+                }
+              ]
+            },
+            "documentation": {
+              "id": 12800,
+              "nodeType": "StructuredDocumentation",
+              "src": "19708:720:69",
+              "text": "@dev Calculate the pool reserve and trader deltas that result from\n      closing a short. This calculation includes trading fees.\n @param _bondAmount The amount of bonds being purchased to close the\n        short.\n @param _vaultSharePrice The current vault share price.\n @param _maturityTime The maturity time of the short position.\n @return bondReservesDelta The change in the bond reserves.\n @return shareProceeds The proceeds in shares of closing the short.\n @return shareReservesDelta The shares added to the reserves.\n @return shareAdjustmentDelta The change in the share adjustment.\n @return totalGovernanceFee The governance fee in shares."
+            },
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_calculateCloseShort",
+            "nameLocation": "20442:20:69",
+            "parameters": {
+              "id": 12807,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12802,
+                  "mutability": "mutable",
+                  "name": "_bondAmount",
+                  "nameLocation": "20480:11:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12978,
+                  "src": "20472:19:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12801,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "20472:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12804,
+                  "mutability": "mutable",
+                  "name": "_vaultSharePrice",
+                  "nameLocation": "20509:16:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12978,
+                  "src": "20501:24:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12803,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "20501:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12806,
+                  "mutability": "mutable",
+                  "name": "_maturityTime",
+                  "nameLocation": "20543:13:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12978,
+                  "src": "20535:21:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12805,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "20535:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "20462:100:69"
+            },
+            "returnParameters": {
+              "id": 12818,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12809,
+                  "mutability": "mutable",
+                  "name": "bondReservesDelta",
+                  "nameLocation": "20631:17:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12978,
+                  "src": "20623:25:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12808,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "20623:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12811,
+                  "mutability": "mutable",
+                  "name": "shareProceeds",
+                  "nameLocation": "20670:13:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12978,
+                  "src": "20662:21:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12810,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "20662:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12813,
+                  "mutability": "mutable",
+                  "name": "shareReservesDelta",
+                  "nameLocation": "20705:18:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12978,
+                  "src": "20697:26:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12812,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "20697:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12815,
+                  "mutability": "mutable",
+                  "name": "shareAdjustmentDelta",
+                  "nameLocation": "20744:20:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12978,
+                  "src": "20737:27:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 12814,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "20737:6:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12817,
+                  "mutability": "mutable",
+                  "name": "totalGovernanceFee",
+                  "nameLocation": "20786:18:69",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12978,
+                  "src": "20778:26:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12816,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "20778:7:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "20609:205:69"
+            },
+            "scope": 12979,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 12148,
+              "name": "IHyperdriveEvents",
+              "nameLocations": [
+                "908:17:69"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 7814,
+              "src": "908:17:69"
+            },
+            "id": 12149,
+            "nodeType": "InheritanceSpecifier",
+            "src": "908:17:69"
+          },
+          {
+            "baseName": {
+              "id": 12150,
+              "name": "HyperdriveLP",
+              "nameLocations": [
+                "927:12:69"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 10802,
+              "src": "927:12:69"
+            },
+            "id": 12151,
+            "nodeType": "InheritanceSpecifier",
+            "src": "927:12:69"
+          }
+        ],
+        "canonicalName": "HyperdriveShort",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 12147,
+          "nodeType": "StructuredDocumentation",
+          "src": "543:328:69",
+          "text": "@author DELV\n @title HyperdriveShort\n @notice Implements the short accounting for Hyperdrive.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          12979,
+          10802,
+          12127,
+          9507,
+          13187,
+          67106,
+          7814,
+          8304
+        ],
+        "name": "HyperdriveShort",
+        "nameLocation": "889:15:69",
+        "scope": 12980,
+        "usedErrors": [
+          67051
+        ],
+        "usedEvents": [
+          7691,
+          7703,
+          7717,
+          7727,
+          7741,
+          7755,
+          7769,
+          7783,
+          7795,
+          7801,
+          7805,
+          7809,
+          7813,
+          8287,
+          8295,
+          8303
+        ]
+      }
+    ],
+    "license": "Apache-2.0"
+  },
+  "id": 69
+} as const;

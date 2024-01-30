@@ -154,6 +154,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @param destination - The account adding liquidity
    * @param contribution - The amount of base to supply
    * @param minAPR - The minimum APR to accept
+   * @param minLpSharePrice - The minimum LP share price to accept
    * @param maxAPR - The maximum APR to accept
    * @param asUnderlying - A flag indicating whether the sender will pay in base or using another currency. Implementations choose which currencies they accept.
    * @param options - Contract Write Options
@@ -163,6 +164,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     destination,
     contribution,
     minAPR,
+    minLpSharePrice,
     maxAPR,
     asUnderlying,
     options,
@@ -170,6 +172,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     destination: Address;
     contribution: bigint;
     minAPR: bigint;
+    minLpSharePrice: bigint;
     maxAPR: bigint;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
@@ -404,6 +407,7 @@ export class ReadWriteHyperdrive
     destination,
     contribution,
     minAPR,
+    minLpSharePrice,
     maxAPR,
     asBase = true,
     extraData = DEFAULT_EXTRA_DATA,
@@ -412,6 +416,7 @@ export class ReadWriteHyperdrive
     destination: Address;
     contribution: bigint;
     minAPR: bigint;
+    minLpSharePrice: bigint;
     maxAPR: bigint;
     asBase?: boolean;
     extraData?: `0x${string}`;
@@ -421,7 +426,13 @@ export class ReadWriteHyperdrive
     const requiresEth = asBase && baseToken === ZERO_ADDRESS;
     const [lpShares] = await this.contract.write(
       "addLiquidity",
-      [contribution, minAPR, maxAPR, { destination, asBase, extraData }],
+      [
+        contribution,
+        minLpSharePrice,
+        minAPR,
+        maxAPR,
+        { destination, asBase, extraData },
+      ],
       {
         value: requiresEth && contribution ? contribution : 0n,
         ...options,

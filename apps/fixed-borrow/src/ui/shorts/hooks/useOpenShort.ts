@@ -41,7 +41,7 @@ export function useOpenShort({
       ? [
           bondAmount,
           maxDeposit,
-          poolInfo.sharePrice,
+          poolInfo.vaultSharePrice,
           { destination, asBase, extraData: zeroAddress },
         ]
       : undefined,

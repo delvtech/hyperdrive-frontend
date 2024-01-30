@@ -1,2 +1,2656 @@
 export const HyperdriveStorage = 
-{"abi":[{"type":"error","name":"InvalidCheckpointDuration","inputs":[]},{"type":"error","name":"InvalidFeeAmounts","inputs":[]},{"type":"error","name":"InvalidMinimumShareReserves","inputs":[]},{"type":"error","name":"InvalidPositionDuration","inputs":[]}],"bytecode":{"object":"0x","sourceMap":"","linkReferences":{}},"deployedBytecode":{"object":"0x","sourceMap":"","linkReferences":{}},"methodIdentifiers":{},"rawMetadata":"{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"InvalidCheckpointDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFeeAmounts\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinimumShareReserves\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidPositionDuration\",\"type\":\"error\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"_config\":\"The configuration of the Hyperdrive pool.\"}}},\"stateVariables\":{\"_balanceOf\":{\"details\":\"Allows loading of each balance.\"},\"_baseToken\":{\"details\":\"The base asset.\"},\"_checkpointDuration\":{\"details\":\"The amount of seconds between share price checkpoints.\"},\"_checkpoints\":{\"details\":\"Hyperdrive positions are bucketed into checkpoints, which allows us      to avoid poking in any period that has LP or trading activity. The      checkpoints contain the starting share price from the checkpoint as      well as aggregate volume values.\"},\"_curveFee\":{\"details\":\"The LP fee applied to the curve portion of a trade.\"},\"_feeCollector\":{\"details\":\"The address which collects governance fees.\"},\"_flatFee\":{\"details\":\"The LP fee applied to the flat portion of a trade.\"},\"_governance\":{\"details\":\"The address that can pause the contract.\"},\"_governanceFeesAccrued\":{\"details\":\"Governance fees that haven't been collected yet denominated in shares.\"},\"_governanceLPFee\":{\"details\":\"The portion of the LP fee that goes to governance.\"},\"_governanceZombieFee\":{\"details\":\"The portion of the zombie interest that goes to governance.\"},\"_initialSharePrice\":{\"details\":\"The share price at the time the pool was created.\"},\"_isApprovedForAll\":{\"details\":\"Uniform approval for all tokens.\"},\"_linkerCodeHash\":{\"details\":\"The bytecode hash of the contract which forwards purely ERC20 calls      to this contract.\"},\"_linkerFactory\":{\"details\":\"The forwarder factory that deploys ERC20 forwarders for this      instance.\"},\"_marketState\":{\"details\":\"The state of the market. This includes the reserves, buffers, and      other data used to price trades and maintain solvency.\"},\"_minimumShareReserves\":{\"details\":\"The minimum amount of share reserves that must be maintained at all      times. This is used to enforce practical limits on the share      reserves to avoid numerical issues that can occur if the share      reserves become very small or equal to zero.\"},\"_minimumTransactionAmount\":{\"details\":\"The minimum amount of tokens that a position can be opened or      closed with.\"},\"_nonces\":{\"details\":\"A mapping to track the permitForAll signature nonces.\"},\"_pausers\":{\"details\":\"Addresses approved in this mapping can pause all deposits into the      contract and other non essential functionality.\"},\"_perTokenApprovals\":{\"details\":\"Additional optional per token approvals. This is non-standard for      ERC1155, but it's necessary to replicate the ERC20 interface.\"},\"_positionDuration\":{\"details\":\"The amount of seconds that elapse before a bond can be redeemed.\"},\"_timeStretch\":{\"details\":\"A parameter that decreases slippage around a target rate.\"},\"_totalSupply\":{\"details\":\"Allows loading of each total supply.\"},\"_withdrawPool\":{\"details\":\"The state corresponding to the withdraw pool.\"}},\"title\":\"HyperdriveStorage\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"Instantiates Hyperdrive's storage.\"}},\"notice\":\"Hyperdrive's storage contract.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/internal/HyperdriveStorage.sol\":\"HyperdriveStorage\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36\",\"dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x3b4f94e5480e7074e05b0d338d583569aef147f45365eb57daeb99f19fe817c3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2cc18b204ec94f80cd6b4876ea3c39dfb143fc4feff52e2a8d00ea72e6811644\",\"dweb:/ipfs/QmZHmZRvmJr8FxExBzKHSHYNZqcEgcgDcs4Z6gF1wPvBvj\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85\",\"dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x1c61ba57b783bfa408a4e208e80c1c117850d4d6c9f0e280263d3fcf57a8b2fd\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5b920d5f0f37014035b6cbba16d898e52654122a0c004a3f75050af93b799496\",\"dweb:/ipfs/QmaneaTDVXbw5HfevR2vFwXWw95EKWcBq8yMgMyWJPHKVW\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6\",\"dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8\",\"dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f\",\"dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6\",\"dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xe150223822098026c7ce734cd68848e45b47b92b024d34bc25886e9c6af6ec67\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6590e590f4af53d55e81e06ba8d53346cfce71ce1fa8d1833141f273d74c8a8f\",\"dweb:/ipfs/QmTM582joUpK7KBDWvwWEBi4XT3Qt9x8VLkhwPYj8Qu93o\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x3d2d86890e7287a59bc7171a030f98006a60271812a233027d2e42d8f31ef46c\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ecf29c3dedf328bd29caef4ce1eba85576d4c4b8d6f77fc255e37c24e8d44e1d\",\"dweb:/ipfs/QmVgmtYXzMkvR1GYsfqnJ1cH2ojmggoKmVuxKQZ9Rw78T1\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xd87293bc10dfe09707a042bf05091baf40ba344bdca141bd99b62256a7611817\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8f6eadd454c6671c26bd22095c31a3bbaea7083df9aa6548dbaba32a4907e336\",\"dweb:/ipfs/QmY1jMW9DuAk9CSfVS6MsG5onqjZHKzdBrv2TcHvj9yKj4\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0x86d3065b06e2fb93733eb6f19ea0bb6343a51bc6b993c36702dc3e6d50a6d01d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f0d303e0a2ed0c99ea194759d9fce5317b6e3a4c40464fc34c09f6f770d402db\",\"dweb:/ipfs/QmVSTsk4YXLe8pcUbQEpihWq9XTcn47L46j8khkvfzyiWB\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x2f9511684820be7510155adfe3c2c2ef7e2583472946bae37f379bac801fc263\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7e9a84e4168448e3320a6682c8ba248c8b51757df173b86507e9aba4b6167247\",\"dweb:/ipfs/QmSonetYBP22Fnc8HrcaTxAA1Zg2PCR5ptPiEp22sA77Ka\"]},\"lib/solmate/src/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xb282dd78aa7375d6b200b9a5d8dd214b2e5df1004f8217a4b4c2b07f0c5bfd01\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://5fca62eb8d3dbd2b3b7e4bb051f6da16f4d0ff9cee61c39cebb80f031f6a8800\",\"dweb:/ipfs/QmbrsXPK91iBFwHKwJs2HLRud2KzMoBDRiWYMUtyV5H57j\"]}},\"version\":1}","metadata":{"compiler":{"version":"0.8.19+commit.7dd6d404"},"language":"Solidity","output":{"abi":[{"inputs":[],"type":"error","name":"InvalidCheckpointDuration"},{"inputs":[],"type":"error","name":"InvalidFeeAmounts"},{"inputs":[],"type":"error","name":"InvalidMinimumShareReserves"},{"inputs":[],"type":"error","name":"InvalidPositionDuration"}],"devdoc":{"kind":"dev","methods":{"constructor":{"params":{"_config":"The configuration of the Hyperdrive pool."}}},"version":1},"userdoc":{"kind":"user","methods":{"constructor":{"notice":"Instantiates Hyperdrive's storage."}},"version":1}},"settings":{"remappings":["aave-v3-core/=lib/aave-v3-core/","create3-factory/=lib/yield-daddy/lib/create3-factory/","ds-test/=lib/forge-std/lib/ds-test/src/","forge-std/=lib/forge-std/src/","solmate/=lib/solmate/src/","yield-daddy/=lib/yield-daddy/"],"optimizer":{"enabled":true,"runs":200},"metadata":{"bytecodeHash":"ipfs"},"compilationTarget":{"contracts/src/internal/HyperdriveStorage.sol":"HyperdriveStorage"},"libraries":{}},"sources":{"contracts/src/interfaces/IERC20.sol":{"keccak256":"0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4","urls":["bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36","dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL"],"license":"Apache-2.0"},"contracts/src/interfaces/IHyperdrive.sol":{"keccak256":"0x3b4f94e5480e7074e05b0d338d583569aef147f45365eb57daeb99f19fe817c3","urls":["bzz-raw://2cc18b204ec94f80cd6b4876ea3c39dfb143fc4feff52e2a8d00ea72e6811644","dweb:/ipfs/QmZHmZRvmJr8FxExBzKHSHYNZqcEgcgDcs4Z6gF1wPvBvj"],"license":"Apache-2.0"},"contracts/src/interfaces/IHyperdriveCore.sol":{"keccak256":"0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d","urls":["bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85","dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF"],"license":"Apache-2.0"},"contracts/src/interfaces/IHyperdriveRead.sol":{"keccak256":"0x1c61ba57b783bfa408a4e208e80c1c117850d4d6c9f0e280263d3fcf57a8b2fd","urls":["bzz-raw://5b920d5f0f37014035b6cbba16d898e52654122a0c004a3f75050af93b799496","dweb:/ipfs/QmaneaTDVXbw5HfevR2vFwXWw95EKWcBq8yMgMyWJPHKVW"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiToken.sol":{"keccak256":"0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad","urls":["bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6","dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiTokenCore.sol":{"keccak256":"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d","urls":["bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8","dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiTokenMetadata.sol":{"keccak256":"0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb","urls":["bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f","dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6"],"license":"Apache-2.0"},"contracts/src/interfaces/IMultiTokenRead.sol":{"keccak256":"0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4","urls":["bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6","dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW"],"license":"Apache-2.0"},"contracts/src/internal/HyperdriveStorage.sol":{"keccak256":"0xe150223822098026c7ce734cd68848e45b47b92b024d34bc25886e9c6af6ec67","urls":["bzz-raw://6590e590f4af53d55e81e06ba8d53346cfce71ce1fa8d1833141f273d74c8a8f","dweb:/ipfs/QmTM582joUpK7KBDWvwWEBi4XT3Qt9x8VLkhwPYj8Qu93o"],"license":"Apache-2.0"},"contracts/src/libraries/FixedPointMath.sol":{"keccak256":"0x3d2d86890e7287a59bc7171a030f98006a60271812a233027d2e42d8f31ef46c","urls":["bzz-raw://ecf29c3dedf328bd29caef4ce1eba85576d4c4b8d6f77fc255e37c24e8d44e1d","dweb:/ipfs/QmVgmtYXzMkvR1GYsfqnJ1cH2ojmggoKmVuxKQZ9Rw78T1"],"license":"Apache-2.0"},"contracts/src/libraries/HyperdriveMath.sol":{"keccak256":"0xd87293bc10dfe09707a042bf05091baf40ba344bdca141bd99b62256a7611817","urls":["bzz-raw://8f6eadd454c6671c26bd22095c31a3bbaea7083df9aa6548dbaba32a4907e336","dweb:/ipfs/QmY1jMW9DuAk9CSfVS6MsG5onqjZHKzdBrv2TcHvj9yKj4"],"license":"Apache-2.0"},"contracts/src/libraries/SafeCast.sol":{"keccak256":"0x86d3065b06e2fb93733eb6f19ea0bb6343a51bc6b993c36702dc3e6d50a6d01d","urls":["bzz-raw://f0d303e0a2ed0c99ea194759d9fce5317b6e3a4c40464fc34c09f6f770d402db","dweb:/ipfs/QmVSTsk4YXLe8pcUbQEpihWq9XTcn47L46j8khkvfzyiWB"],"license":"Apache-2.0"},"contracts/src/libraries/YieldSpaceMath.sol":{"keccak256":"0x2f9511684820be7510155adfe3c2c2ef7e2583472946bae37f379bac801fc263","urls":["bzz-raw://7e9a84e4168448e3320a6682c8ba248c8b51757df173b86507e9aba4b6167247","dweb:/ipfs/QmSonetYBP22Fnc8HrcaTxAA1Zg2PCR5ptPiEp22sA77Ka"],"license":"Apache-2.0"},"lib/solmate/src/utils/ReentrancyGuard.sol":{"keccak256":"0xb282dd78aa7375d6b200b9a5d8dd214b2e5df1004f8217a4b4c2b07f0c5bfd01","urls":["bzz-raw://5fca62eb8d3dbd2b3b7e4bb051f6da16f4d0ff9cee61c39cebb80f031f6a8800","dweb:/ipfs/QmbrsXPK91iBFwHKwJs2HLRud2KzMoBDRiWYMUtyV5H57j"],"license":"AGPL-3.0-only"}},"version":1},"ast":{"absolutePath":"contracts/src/internal/HyperdriveStorage.sol","id":11194,"exportedSymbols":{"FixedPointMath":[12293],"HyperdriveMath":[12857],"HyperdriveStorage":[11193],"IERC20":[4867],"IHyperdrive":[5658],"ONE":[11516],"ReentrancyGuard":[65499]},"nodeType":"SourceUnit","src":"39:7487:64","nodes":[{"id":10921,"nodeType":"PragmaDirective","src":"39:23:64","nodes":[],"literals":["solidity","0.8",".19"]},{"id":10923,"nodeType":"ImportDirective","src":"64:68:64","nodes":[],"absolutePath":"lib/solmate/src/utils/ReentrancyGuard.sol","file":"solmate/utils/ReentrancyGuard.sol","nameLocation":"-1:-1:-1","scope":11194,"sourceUnit":65500,"symbolAliases":[{"foreign":{"id":10922,"name":"ReentrancyGuard","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":65499,"src":"73:15:64","typeDescriptions":{}},"nameLocation":"-1:-1:-1"}],"unitAlias":""},{"id":10925,"nodeType":"ImportDirective","src":"133:50:64","nodes":[],"absolutePath":"contracts/src/interfaces/IERC20.sol","file":"../interfaces/IERC20.sol","nameLocation":"-1:-1:-1","scope":11194,"sourceUnit":4868,"symbolAliases":[{"foreign":{"id":10924,"name":"IERC20","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":4867,"src":"142:6:64","typeDescriptions":{}},"nameLocation":"-1:-1:-1"}],"unitAlias":""},{"id":10927,"nodeType":"ImportDirective","src":"184:60:64","nodes":[],"absolutePath":"contracts/src/interfaces/IHyperdrive.sol","file":"../interfaces/IHyperdrive.sol","nameLocation":"-1:-1:-1","scope":11194,"sourceUnit":5659,"symbolAliases":[{"foreign":{"id":10926,"name":"IHyperdrive","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5658,"src":"193:11:64","typeDescriptions":{}},"nameLocation":"-1:-1:-1"}],"unitAlias":""},{"id":10930,"nodeType":"ImportDirective","src":"245:70:64","nodes":[],"absolutePath":"contracts/src/libraries/FixedPointMath.sol","file":"../libraries/FixedPointMath.sol","nameLocation":"-1:-1:-1","scope":11194,"sourceUnit":12294,"symbolAliases":[{"foreign":{"id":10928,"name":"FixedPointMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12293,"src":"254:14:64","typeDescriptions":{}},"nameLocation":"-1:-1:-1"},{"foreign":{"id":10929,"name":"ONE","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11516,"src":"270:3:64","typeDescriptions":{}},"nameLocation":"-1:-1:-1"}],"unitAlias":""},{"id":10932,"nodeType":"ImportDirective","src":"316:65:64","nodes":[],"absolutePath":"contracts/src/libraries/HyperdriveMath.sol","file":"../libraries/HyperdriveMath.sol","nameLocation":"-1:-1:-1","scope":11194,"sourceUnit":12858,"symbolAliases":[{"foreign":{"id":10931,"name":"HyperdriveMath","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":12857,"src":"325:14:64","typeDescriptions":{}},"nameLocation":"-1:-1:-1"}],"unitAlias":""},{"id":11193,"nodeType":"ContractDefinition","src":"696:6829:64","nodes":[{"id":10938,"nodeType":"UsingForDirective","src":"757:33:64","nodes":[],"global":false,"libraryName":{"id":10936,"name":"FixedPointMath","nameLocations":["763:14:64"],"nodeType":"IdentifierPath","referencedDeclaration":12293,"src":"763:14:64"},"typeName":{"id":10937,"name":"uint256","nodeType":"ElementaryTypeName","src":"782:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}},{"id":10942,"nodeType":"VariableDeclaration","src":"845:36:64","nodes":[],"constant":false,"documentation":{"id":10939,"nodeType":"StructuredDocumentation","src":"816:24:64","text":"@dev The base asset."},"mutability":"immutable","name":"_baseToken","nameLocation":"871:10:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_contract$_IERC20_$4867","typeString":"contract IERC20"},"typeName":{"id":10941,"nodeType":"UserDefinedTypeName","pathNode":{"id":10940,"name":"IERC20","nameLocations":["845:6:64"],"nodeType":"IdentifierPath","referencedDeclaration":4867,"src":"845:6:64"},"referencedDeclaration":4867,"src":"845:6:64","typeDescriptions":{"typeIdentifier":"t_contract$_IERC20_$4867","typeString":"contract IERC20"}},"visibility":"internal"},{"id":10945,"nodeType":"VariableDeclaration","src":"974:46:64","nodes":[],"constant":false,"documentation":{"id":10943,"nodeType":"StructuredDocumentation","src":"906:63:64","text":"@dev The amount of seconds between share price checkpoints."},"mutability":"immutable","name":"_checkpointDuration","nameLocation":"1001:19:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10944,"name":"uint256","nodeType":"ElementaryTypeName","src":"974:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"id":10948,"nodeType":"VariableDeclaration","src":"1105:44:64","nodes":[],"constant":false,"documentation":{"id":10946,"nodeType":"StructuredDocumentation","src":"1027:73:64","text":"@dev The amount of seconds that elapse before a bond can be redeemed."},"mutability":"immutable","name":"_positionDuration","nameLocation":"1132:17:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10947,"name":"uint256","nodeType":"ElementaryTypeName","src":"1105:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"id":10951,"nodeType":"VariableDeclaration","src":"1227:39:64","nodes":[],"constant":false,"documentation":{"id":10949,"nodeType":"StructuredDocumentation","src":"1156:66:64","text":"@dev A parameter that decreases slippage around a target rate."},"mutability":"immutable","name":"_timeStretch","nameLocation":"1254:12:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10950,"name":"uint256","nodeType":"ElementaryTypeName","src":"1227:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"id":10954,"nodeType":"VariableDeclaration","src":"1356:36:64","nodes":[],"constant":false,"documentation":{"id":10952,"nodeType":"StructuredDocumentation","src":"1291:60:64","text":"@dev The LP fee applied to the curve portion of a trade."},"mutability":"immutable","name":"_curveFee","nameLocation":"1383:9:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10953,"name":"uint256","nodeType":"ElementaryTypeName","src":"1356:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"id":10957,"nodeType":"VariableDeclaration","src":"1463:35:64","nodes":[],"constant":false,"documentation":{"id":10955,"nodeType":"StructuredDocumentation","src":"1399:59:64","text":"@dev The LP fee applied to the flat portion of a trade."},"mutability":"immutable","name":"_flatFee","nameLocation":"1490:8:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10956,"name":"uint256","nodeType":"ElementaryTypeName","src":"1463:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"id":10960,"nodeType":"VariableDeclaration","src":"1569:43:64","nodes":[],"constant":false,"documentation":{"id":10958,"nodeType":"StructuredDocumentation","src":"1505:59:64","text":"@dev The portion of the LP fee that goes to governance."},"mutability":"immutable","name":"_governanceLPFee","nameLocation":"1596:16:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10959,"name":"uint256","nodeType":"ElementaryTypeName","src":"1569:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"id":10963,"nodeType":"VariableDeclaration","src":"1692:47:64","nodes":[],"constant":false,"documentation":{"id":10961,"nodeType":"StructuredDocumentation","src":"1619:68:64","text":"@dev The portion of the zombie interest that goes to governance."},"mutability":"immutable","name":"_governanceZombieFee","nameLocation":"1719:20:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10962,"name":"uint256","nodeType":"ElementaryTypeName","src":"1692:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"id":10966,"nodeType":"VariableDeclaration","src":"1835:45:64","nodes":[],"constant":false,"documentation":{"id":10964,"nodeType":"StructuredDocumentation","src":"1772:58:64","text":"@dev The share price at the time the pool was created."},"mutability":"immutable","name":"_initialSharePrice","nameLocation":"1862:18:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10965,"name":"uint256","nodeType":"ElementaryTypeName","src":"1835:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"id":10969,"nodeType":"VariableDeclaration","src":"2176:48:64","nodes":[],"constant":false,"documentation":{"id":10967,"nodeType":"StructuredDocumentation","src":"1887:284:64","text":"@dev The minimum amount of share reserves that must be maintained at all\n      times. This is used to enforce practical limits on the share\n      reserves to avoid numerical issues that can occur if the share\n      reserves become very small or equal to zero."},"mutability":"immutable","name":"_minimumShareReserves","nameLocation":"2203:21:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10968,"name":"uint256","nodeType":"ElementaryTypeName","src":"2176:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"id":10972,"nodeType":"VariableDeclaration","src":"2332:52:64","nodes":[],"constant":false,"documentation":{"id":10970,"nodeType":"StructuredDocumentation","src":"2231:96:64","text":"@dev The minimum amount of tokens that a position can be opened or\n      closed with."},"mutability":"immutable","name":"_minimumTransactionAmount","nameLocation":"2359:25:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10971,"name":"uint256","nodeType":"ElementaryTypeName","src":"2332:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"id":10976,"nodeType":"VariableDeclaration","src":"2538:45:64","nodes":[],"constant":false,"documentation":{"id":10973,"nodeType":"StructuredDocumentation","src":"2391:142:64","text":"@dev The state of the market. This includes the reserves, buffers, and\n      other data used to price trades and maintain solvency."},"mutability":"mutable","name":"_marketState","nameLocation":"2571:12:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage","typeString":"struct IHyperdrive.MarketState"},"typeName":{"id":10975,"nodeType":"UserDefinedTypeName","pathNode":{"id":10974,"name":"IHyperdrive.MarketState","nameLocations":["2538:11:64","2550:11:64"],"nodeType":"IdentifierPath","referencedDeclaration":5328,"src":"2538:23:64"},"referencedDeclaration":5328,"src":"2538:23:64","typeDescriptions":{"typeIdentifier":"t_struct$_MarketState_$5328_storage_ptr","typeString":"struct IHyperdrive.MarketState"}},"visibility":"internal"},{"id":10980,"nodeType":"VariableDeclaration","src":"2649:47:64","nodes":[],"constant":false,"documentation":{"id":10977,"nodeType":"StructuredDocumentation","src":"2590:54:64","text":"@dev The state corresponding to the withdraw pool."},"mutability":"mutable","name":"_withdrawPool","nameLocation":"2683:13:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_struct$_WithdrawPool_$5339_storage","typeString":"struct IHyperdrive.WithdrawPool"},"typeName":{"id":10979,"nodeType":"UserDefinedTypeName","pathNode":{"id":10978,"name":"IHyperdrive.WithdrawPool","nameLocations":["2649:11:64","2661:12:64"],"nodeType":"IdentifierPath","referencedDeclaration":5339,"src":"2649:24:64"},"referencedDeclaration":5339,"src":"2649:24:64","typeDescriptions":{"typeIdentifier":"t_struct$_WithdrawPool_$5339_storage_ptr","typeString":"struct IHyperdrive.WithdrawPool"}},"visibility":"internal"},{"id":10986,"nodeType":"VariableDeclaration","src":"2991:100:64","nodes":[],"constant":false,"documentation":{"id":10981,"nodeType":"StructuredDocumentation","src":"2703:283:64","text":"@dev Hyperdrive positions are bucketed into checkpoints, which allows us\n      to avoid poking in any period that has LP or trading activity. The\n      checkpoints contain the starting share price from the checkpoint as\n      well as aggregate volume values."},"mutability":"mutable","name":"_checkpoints","nameLocation":"3079:12:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_mapping$_t_uint256_$_t_struct$_Checkpoint_$5332_storage_$","typeString":"mapping(uint256 => struct IHyperdrive.Checkpoint)"},"typeName":{"id":10985,"keyName":"checkpointNumber","keyNameLocation":"3007:16:64","keyType":{"id":10982,"name":"uint256","nodeType":"ElementaryTypeName","src":"2999:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Mapping","src":"2991:70:64","typeDescriptions":{"typeIdentifier":"t_mapping$_t_uint256_$_t_struct$_Checkpoint_$5332_storage_$","typeString":"mapping(uint256 => struct IHyperdrive.Checkpoint)"},"valueName":"checkpoint","valueNameLocation":"3050:10:64","valueType":{"id":10984,"nodeType":"UserDefinedTypeName","pathNode":{"id":10983,"name":"IHyperdrive.Checkpoint","nameLocations":["3027:11:64","3039:10:64"],"nodeType":"IdentifierPath","referencedDeclaration":5332,"src":"3027:22:64"},"referencedDeclaration":5332,"src":"3027:22:64","typeDescriptions":{"typeIdentifier":"t_struct$_Checkpoint_$5332_storage_ptr","typeString":"struct IHyperdrive.Checkpoint"}}},"visibility":"internal"},{"id":10989,"nodeType":"VariableDeclaration","src":"3174:40:64","nodes":[],"constant":false,"documentation":{"id":10987,"nodeType":"StructuredDocumentation","src":"3117:52:64","text":"@dev The address which collects governance fees."},"mutability":"immutable","name":"_feeCollector","nameLocation":"3201:13:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":10988,"name":"address","nodeType":"ElementaryTypeName","src":"3174:7:64","stateMutability":"nonpayable","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"visibility":"internal"},{"id":10992,"nodeType":"VariableDeclaration","src":"3275:28:64","nodes":[],"constant":false,"documentation":{"id":10990,"nodeType":"StructuredDocumentation","src":"3221:49:64","text":"@dev The address that can pause the contract."},"mutability":"mutable","name":"_governance","nameLocation":"3292:11:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":10991,"name":"address","nodeType":"ElementaryTypeName","src":"3275:7:64","stateMutability":"nonpayable","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"visibility":"internal"},{"id":10995,"nodeType":"VariableDeclaration","src":"3394:39:64","nodes":[],"constant":false,"documentation":{"id":10993,"nodeType":"StructuredDocumentation","src":"3310:79:64","text":"@dev Governance fees that haven't been collected yet denominated in shares."},"mutability":"mutable","name":"_governanceFeesAccrued","nameLocation":"3411:22:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10994,"name":"uint256","nodeType":"ElementaryTypeName","src":"3394:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"visibility":"internal"},{"id":11000,"nodeType":"VariableDeclaration","src":"3581:56:64","nodes":[],"constant":false,"documentation":{"id":10996,"nodeType":"StructuredDocumentation","src":"3440:136:64","text":"@dev Addresses approved in this mapping can pause all deposits into the\n      contract and other non essential functionality."},"mutability":"mutable","name":"_pausers","nameLocation":"3629:8:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_bool_$","typeString":"mapping(address => bool)"},"typeName":{"id":10999,"keyName":"user","keyNameLocation":"3597:4:64","keyType":{"id":10997,"name":"address","nodeType":"ElementaryTypeName","src":"3589:7:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Mapping","src":"3581:38:64","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_bool_$","typeString":"mapping(address => bool)"},"valueName":"isPauser","valueNameLocation":"3610:8:64","valueType":{"id":10998,"name":"bool","nodeType":"ElementaryTypeName","src":"3605:4:64","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}},"visibility":"internal"},{"id":11003,"nodeType":"VariableDeclaration","src":"3765:41:64","nodes":[],"constant":false,"documentation":{"id":11001,"nodeType":"StructuredDocumentation","src":"3668:92:64","text":"@dev The forwarder factory that deploys ERC20 forwarders for this\n      instance."},"mutability":"immutable","name":"_linkerFactory","nameLocation":"3792:14:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":11002,"name":"address","nodeType":"ElementaryTypeName","src":"3765:7:64","stateMutability":"nonpayable","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"visibility":"internal"},{"id":11006,"nodeType":"VariableDeclaration","src":"3925:42:64","nodes":[],"constant":false,"documentation":{"id":11004,"nodeType":"StructuredDocumentation","src":"3813:107:64","text":"@dev The bytecode hash of the contract which forwards purely ERC20 calls\n      to this contract."},"mutability":"immutable","name":"_linkerCodeHash","nameLocation":"3952:15:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bytes32","typeString":"bytes32"},"typeName":{"id":11005,"name":"bytes32","nodeType":"ElementaryTypeName","src":"3925:7:64","typeDescriptions":{"typeIdentifier":"t_bytes32","typeString":"bytes32"}},"visibility":"internal"},{"id":11013,"nodeType":"VariableDeclaration","src":"4019:96:64","nodes":[],"constant":false,"documentation":{"id":11007,"nodeType":"StructuredDocumentation","src":"3974:40:64","text":"@dev Allows loading of each balance."},"mutability":"mutable","name":"_balanceOf","nameLocation":"4105:10:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_uint256_$_$","typeString":"mapping(uint256 => mapping(address => uint256))"},"typeName":{"id":11012,"keyName":"tokenId","keyNameLocation":"4035:7:64","keyType":{"id":11008,"name":"uint256","nodeType":"ElementaryTypeName","src":"4027:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Mapping","src":"4019:68:64","typeDescriptions":{"typeIdentifier":"t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_uint256_$_$","typeString":"mapping(uint256 => mapping(address => uint256))"},"valueName":"","valueNameLocation":"-1:-1:-1","valueType":{"id":11011,"keyName":"user","keyNameLocation":"4062:4:64","keyType":{"id":11009,"name":"address","nodeType":"ElementaryTypeName","src":"4054:7:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Mapping","src":"4046:40:64","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"},"valueName":"balance","valueNameLocation":"4078:7:64","valueType":{"id":11010,"name":"uint256","nodeType":"ElementaryTypeName","src":"4070:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}}},"visibility":"internal"},{"id":11018,"nodeType":"VariableDeclaration","src":"4172:64:64","nodes":[],"constant":false,"documentation":{"id":11014,"nodeType":"StructuredDocumentation","src":"4122:45:64","text":"@dev Allows loading of each total supply."},"mutability":"mutable","name":"_totalSupply","nameLocation":"4224:12:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_mapping$_t_uint256_$_t_uint256_$","typeString":"mapping(uint256 => uint256)"},"typeName":{"id":11017,"keyName":"tokenId","keyNameLocation":"4188:7:64","keyType":{"id":11015,"name":"uint256","nodeType":"ElementaryTypeName","src":"4180:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Mapping","src":"4172:42:64","typeDescriptions":{"typeIdentifier":"t_mapping$_t_uint256_$_t_uint256_$","typeString":"mapping(uint256 => uint256)"},"valueName":"supply","valueNameLocation":"4207:6:64","valueType":{"id":11016,"name":"uint256","nodeType":"ElementaryTypeName","src":"4199:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}},"visibility":"internal"},{"id":11025,"nodeType":"VariableDeclaration","src":"4289:102:64","nodes":[],"constant":false,"documentation":{"id":11019,"nodeType":"StructuredDocumentation","src":"4243:41:64","text":"@dev Uniform approval for all tokens."},"mutability":"mutable","name":"_isApprovedForAll","nameLocation":"4374:17:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_mapping$_t_address_$_t_bool_$_$","typeString":"mapping(address => mapping(address => bool))"},"typeName":{"id":11024,"keyName":"from","keyNameLocation":"4305:4:64","keyType":{"id":11020,"name":"address","nodeType":"ElementaryTypeName","src":"4297:7:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Mapping","src":"4289:67:64","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_mapping$_t_address_$_t_bool_$_$","typeString":"mapping(address => mapping(address => bool))"},"valueName":"","valueNameLocation":"-1:-1:-1","valueType":{"id":11023,"keyName":"caller","keyNameLocation":"4329:6:64","keyType":{"id":11021,"name":"address","nodeType":"ElementaryTypeName","src":"4321:7:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Mapping","src":"4313:42:64","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_bool_$","typeString":"mapping(address => bool)"},"valueName":"isApproved","valueNameLocation":"4344:10:64","valueType":{"id":11022,"name":"bool","nodeType":"ElementaryTypeName","src":"4339:4:64","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}}},"visibility":"internal"},{"id":11034,"nodeType":"VariableDeclaration","src":"4552:132:64","nodes":[],"constant":false,"documentation":{"id":11026,"nodeType":"StructuredDocumentation","src":"4398:149:64","text":"@dev Additional optional per token approvals. This is non-standard for\n      ERC1155, but it's necessary to replicate the ERC20 interface."},"mutability":"mutable","name":"_perTokenApprovals","nameLocation":"4666:18:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$_$","typeString":"mapping(uint256 => mapping(address => mapping(address => uint256)))"},"typeName":{"id":11033,"keyName":"tokenId","keyNameLocation":"4568:7:64","keyType":{"id":11027,"name":"uint256","nodeType":"ElementaryTypeName","src":"4560:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Mapping","src":"4552:96:64","typeDescriptions":{"typeIdentifier":"t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$_$","typeString":"mapping(uint256 => mapping(address => mapping(address => uint256)))"},"valueName":"","valueNameLocation":"-1:-1:-1","valueType":{"id":11032,"keyName":"from","keyNameLocation":"4595:4:64","keyType":{"id":11028,"name":"address","nodeType":"ElementaryTypeName","src":"4587:7:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Mapping","src":"4579:68:64","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$","typeString":"mapping(address => mapping(address => uint256))"},"valueName":"","valueNameLocation":"-1:-1:-1","valueType":{"id":11031,"keyName":"caller","keyNameLocation":"4619:6:64","keyType":{"id":11029,"name":"address","nodeType":"ElementaryTypeName","src":"4611:7:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Mapping","src":"4603:43:64","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"},"valueName":"approved","valueNameLocation":"4637:8:64","valueType":{"id":11030,"name":"uint256","nodeType":"ElementaryTypeName","src":"4629:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}}}},"visibility":"internal"},{"id":11039,"nodeType":"VariableDeclaration","src":"4758:55:64","nodes":[],"constant":false,"documentation":{"id":11035,"nodeType":"StructuredDocumentation","src":"4691:62:64","text":"@dev A mapping to track the permitForAll signature nonces."},"mutability":"mutable","name":"_nonces","nameLocation":"4806:7:64","scope":11193,"stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"},"typeName":{"id":11038,"keyName":"user","keyNameLocation":"4774:4:64","keyType":{"id":11036,"name":"address","nodeType":"ElementaryTypeName","src":"4766:7:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Mapping","src":"4758:38:64","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"},"valueName":"nonce","valueNameLocation":"4790:5:64","valueType":{"id":11037,"name":"uint256","nodeType":"ElementaryTypeName","src":"4782:7:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}},"visibility":"internal"},{"id":11192,"nodeType":"FunctionDefinition","src":"4961:2562:64","nodes":[],"body":{"id":11191,"nodeType":"Block","src":"5012:2511:64","nodes":[],"statements":[{"expression":{"id":11049,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":11046,"name":"_baseToken","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10942,"src":"5068:10:64","typeDescriptions":{"typeIdentifier":"t_contract$_IERC20_$4867","typeString":"contract IERC20"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"expression":{"id":11047,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"5081:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11048,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"5089:9:64","memberName":"baseToken","nodeType":"MemberAccess","referencedDeclaration":5392,"src":"5081:17:64","typeDescriptions":{"typeIdentifier":"t_contract$_IERC20_$4867","typeString":"contract IERC20"}},"src":"5068:30:64","typeDescriptions":{"typeIdentifier":"t_contract$_IERC20_$4867","typeString":"contract IERC20"}},"id":11050,"nodeType":"ExpressionStatement","src":"5068:30:64"},{"condition":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":11054,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"expression":{"id":11051,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"5627:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11052,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"5635:20:64","memberName":"minimumShareReserves","nodeType":"MemberAccess","referencedDeclaration":5404,"src":"5627:28:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"<","rightExpression":{"hexValue":"316533","id":11053,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"5658:3:64","typeDescriptions":{"typeIdentifier":"t_rational_1000_by_1","typeString":"int_const 1000"},"value":"1e3"},"src":"5627:34:64","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":11061,"nodeType":"IfStatement","src":"5623:113:64","trueBody":{"id":11060,"nodeType":"Block","src":"5663:73:64","statements":[{"errorCall":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":11055,"name":"IHyperdrive","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5658,"src":"5684:11:64","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_IHyperdrive_$5658_$","typeString":"type(contract IHyperdrive)"}},"id":11057,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"5696:27:64","memberName":"InvalidMinimumShareReserves","nodeType":"MemberAccess","referencedDeclaration":5512,"src":"5684:39:64","typeDescriptions":{"typeIdentifier":"t_function_error_pure$__$returns$__$","typeString":"function () pure"}},"id":11058,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"5684:41:64","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":11059,"nodeType":"RevertStatement","src":"5677:48:64"}]}},{"expression":{"id":11065,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":11062,"name":"_minimumShareReserves","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10969,"src":"5745:21:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"expression":{"id":11063,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"5769:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11064,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"5777:20:64","memberName":"minimumShareReserves","nodeType":"MemberAccess","referencedDeclaration":5404,"src":"5769:28:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"5745:52:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":11066,"nodeType":"ExpressionStatement","src":"5745:52:64"},{"expression":{"id":11070,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":11067,"name":"_minimumTransactionAmount","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10972,"src":"6057:25:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"expression":{"id":11068,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"6085:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11069,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"6093:24:64","memberName":"minimumTransactionAmount","nodeType":"MemberAccess","referencedDeclaration":5407,"src":"6085:32:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"6057:60:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":11071,"nodeType":"ExpressionStatement","src":"6057:60:64"},{"condition":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":11075,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"expression":{"id":11072,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"6282:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11073,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"6290:18:64","memberName":"checkpointDuration","nodeType":"MemberAccess","referencedDeclaration":5413,"src":"6282:26:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"==","rightExpression":{"hexValue":"30","id":11074,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"6312:1:64","typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"},"src":"6282:31:64","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":11082,"nodeType":"IfStatement","src":"6278:108:64","trueBody":{"id":11081,"nodeType":"Block","src":"6315:71:64","statements":[{"errorCall":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":11076,"name":"IHyperdrive","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5658,"src":"6336:11:64","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_IHyperdrive_$5658_$","typeString":"type(contract IHyperdrive)"}},"id":11078,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"6348:25:64","memberName":"InvalidCheckpointDuration","nodeType":"MemberAccess","referencedDeclaration":5498,"src":"6336:37:64","typeDescriptions":{"typeIdentifier":"t_function_error_pure$__$returns$__$","typeString":"function () pure"}},"id":11079,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"6336:39:64","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":11080,"nodeType":"RevertStatement","src":"6329:46:64"}]}},{"expression":{"id":11086,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":11083,"name":"_checkpointDuration","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10945,"src":"6395:19:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"expression":{"id":11084,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"6417:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11085,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"6425:18:64","memberName":"checkpointDuration","nodeType":"MemberAccess","referencedDeclaration":5413,"src":"6417:26:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"6395:48:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":11087,"nodeType":"ExpressionStatement","src":"6395:48:64"},{"condition":{"commonType":{"typeIdentifier":"t_bool","typeString":"bool"},"id":11100,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":11092,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"expression":{"id":11088,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"6470:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11089,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"6478:16:64","memberName":"positionDuration","nodeType":"MemberAccess","referencedDeclaration":5410,"src":"6470:24:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"<","rightExpression":{"expression":{"id":11090,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"6497:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11091,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"6505:18:64","memberName":"checkpointDuration","nodeType":"MemberAccess","referencedDeclaration":5413,"src":"6497:26:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"6470:53:64","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"BinaryOperation","operator":"||","rightExpression":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":11099,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":11097,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"expression":{"id":11093,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"6539:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11094,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"6547:16:64","memberName":"positionDuration","nodeType":"MemberAccess","referencedDeclaration":5410,"src":"6539:24:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"%","rightExpression":{"expression":{"id":11095,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"6566:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11096,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"6574:18:64","memberName":"checkpointDuration","nodeType":"MemberAccess","referencedDeclaration":5413,"src":"6566:26:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"6539:53:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"!=","rightExpression":{"hexValue":"30","id":11098,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"6596:1:64","typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"},"src":"6539:58:64","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"src":"6470:127:64","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":11107,"nodeType":"IfStatement","src":"6453:224:64","trueBody":{"id":11106,"nodeType":"Block","src":"6608:69:64","statements":[{"errorCall":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":11101,"name":"IHyperdrive","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5658,"src":"6629:11:64","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_IHyperdrive_$5658_$","typeString":"type(contract IHyperdrive)"}},"id":11103,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"6641:23:64","memberName":"InvalidPositionDuration","nodeType":"MemberAccess","referencedDeclaration":5514,"src":"6629:35:64","typeDescriptions":{"typeIdentifier":"t_function_error_pure$__$returns$__$","typeString":"function () pure"}},"id":11104,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"6629:37:64","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":11105,"nodeType":"RevertStatement","src":"6622:44:64"}]}},{"expression":{"id":11111,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":11108,"name":"_positionDuration","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10948,"src":"6686:17:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"expression":{"id":11109,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"6706:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11110,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"6714:16:64","memberName":"positionDuration","nodeType":"MemberAccess","referencedDeclaration":5410,"src":"6706:24:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"6686:44:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":11112,"nodeType":"ExpressionStatement","src":"6686:44:64"},{"expression":{"id":11116,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":11113,"name":"_timeStretch","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10951,"src":"6740:12:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"expression":{"id":11114,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"6755:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11115,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"6763:11:64","memberName":"timeStretch","nodeType":"MemberAccess","referencedDeclaration":5416,"src":"6755:19:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"6740:34:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":11117,"nodeType":"ExpressionStatement","src":"6740:34:64"},{"expression":{"id":11121,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":11118,"name":"_initialSharePrice","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10966,"src":"6784:18:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"expression":{"id":11119,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"6805:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11120,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"6813:17:64","memberName":"initialSharePrice","nodeType":"MemberAccess","referencedDeclaration":5401,"src":"6805:25:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"6784:46:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":11122,"nodeType":"ExpressionStatement","src":"6784:46:64"},{"expression":{"id":11126,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":11123,"name":"_governance","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10992,"src":"6840:11:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"expression":{"id":11124,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"6854:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11125,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"6862:10:64","memberName":"governance","nodeType":"MemberAccess","referencedDeclaration":5419,"src":"6854:18:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"src":"6840:32:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"id":11127,"nodeType":"ExpressionStatement","src":"6840:32:64"},{"expression":{"id":11131,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":11128,"name":"_feeCollector","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10989,"src":"6882:13:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"expression":{"id":11129,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"6898:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11130,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"6906:12:64","memberName":"feeCollector","nodeType":"MemberAccess","referencedDeclaration":5422,"src":"6898:20:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"src":"6882:36:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"id":11132,"nodeType":"ExpressionStatement","src":"6882:36:64"},{"condition":{"commonType":{"typeIdentifier":"t_bool","typeString":"bool"},"id":11149,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"commonType":{"typeIdentifier":"t_bool","typeString":"bool"},"id":11143,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":11137,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"expression":{"expression":{"id":11133,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"6988:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11134,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"6996:4:64","memberName":"fees","nodeType":"MemberAccess","referencedDeclaration":5426,"src":"6988:12:64","typeDescriptions":{"typeIdentifier":"t_struct$_Fees_$5352_memory_ptr","typeString":"struct IHyperdrive.Fees memory"}},"id":11135,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"7001:5:64","memberName":"curve","nodeType":"MemberAccess","referencedDeclaration":5342,"src":"6988:18:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":">","rightExpression":{"hexValue":"31653138","id":11136,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"7009:4:64","typeDescriptions":{"typeIdentifier":"t_rational_1000000000000000000_by_1","typeString":"int_const 1000000000000000000"},"value":"1e18"},"src":"6988:25:64","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"BinaryOperation","operator":"||","rightExpression":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":11142,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"expression":{"expression":{"id":11138,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"7029:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11139,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"7037:4:64","memberName":"fees","nodeType":"MemberAccess","referencedDeclaration":5426,"src":"7029:12:64","typeDescriptions":{"typeIdentifier":"t_struct$_Fees_$5352_memory_ptr","typeString":"struct IHyperdrive.Fees memory"}},"id":11140,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"7042:4:64","memberName":"flat","nodeType":"MemberAccess","referencedDeclaration":5345,"src":"7029:17:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":">","rightExpression":{"hexValue":"31653138","id":11141,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"7049:4:64","typeDescriptions":{"typeIdentifier":"t_rational_1000000000000000000_by_1","typeString":"int_const 1000000000000000000"},"value":"1e18"},"src":"7029:24:64","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"src":"6988:65:64","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"BinaryOperation","operator":"||","rightExpression":{"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":11148,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"expression":{"expression":{"id":11144,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"7069:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11145,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"7077:4:64","memberName":"fees","nodeType":"MemberAccess","referencedDeclaration":5426,"src":"7069:12:64","typeDescriptions":{"typeIdentifier":"t_struct$_Fees_$5352_memory_ptr","typeString":"struct IHyperdrive.Fees memory"}},"id":11146,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"7082:12:64","memberName":"governanceLP","nodeType":"MemberAccess","referencedDeclaration":5348,"src":"7069:25:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":">","rightExpression":{"hexValue":"31653138","id":11147,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"7097:4:64","typeDescriptions":{"typeIdentifier":"t_rational_1000000000000000000_by_1","typeString":"int_const 1000000000000000000"},"value":"1e18"},"src":"7069:32:64","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"src":"6988:113:64","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"id":11156,"nodeType":"IfStatement","src":"6971:204:64","trueBody":{"id":11155,"nodeType":"Block","src":"7112:63:64","statements":[{"errorCall":{"arguments":[],"expression":{"argumentTypes":[],"expression":{"id":11150,"name":"IHyperdrive","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":5658,"src":"7133:11:64","typeDescriptions":{"typeIdentifier":"t_type$_t_contract$_IHyperdrive_$5658_$","typeString":"type(contract IHyperdrive)"}},"id":11152,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberLocation":"7145:17:64","memberName":"InvalidFeeAmounts","nodeType":"MemberAccess","referencedDeclaration":5502,"src":"7133:29:64","typeDescriptions":{"typeIdentifier":"t_function_error_pure$__$returns$__$","typeString":"function () pure"}},"id":11153,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"nameLocations":[],"names":[],"nodeType":"FunctionCall","src":"7133:31:64","tryCall":false,"typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":11154,"nodeType":"RevertStatement","src":"7126:38:64"}]}},{"expression":{"id":11161,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":11157,"name":"_curveFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10954,"src":"7184:9:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"expression":{"expression":{"id":11158,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"7196:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11159,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"7204:4:64","memberName":"fees","nodeType":"MemberAccess","referencedDeclaration":5426,"src":"7196:12:64","typeDescriptions":{"typeIdentifier":"t_struct$_Fees_$5352_memory_ptr","typeString":"struct IHyperdrive.Fees memory"}},"id":11160,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"7209:5:64","memberName":"curve","nodeType":"MemberAccess","referencedDeclaration":5342,"src":"7196:18:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"7184:30:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":11162,"nodeType":"ExpressionStatement","src":"7184:30:64"},{"expression":{"id":11167,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":11163,"name":"_flatFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10957,"src":"7224:8:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"expression":{"expression":{"id":11164,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"7235:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11165,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"7243:4:64","memberName":"fees","nodeType":"MemberAccess","referencedDeclaration":5426,"src":"7235:12:64","typeDescriptions":{"typeIdentifier":"t_struct$_Fees_$5352_memory_ptr","typeString":"struct IHyperdrive.Fees memory"}},"id":11166,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"7248:4:64","memberName":"flat","nodeType":"MemberAccess","referencedDeclaration":5345,"src":"7235:17:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"7224:28:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":11168,"nodeType":"ExpressionStatement","src":"7224:28:64"},{"expression":{"id":11173,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":11169,"name":"_governanceLPFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10960,"src":"7262:16:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"expression":{"expression":{"id":11170,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"7281:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11171,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"7289:4:64","memberName":"fees","nodeType":"MemberAccess","referencedDeclaration":5426,"src":"7281:12:64","typeDescriptions":{"typeIdentifier":"t_struct$_Fees_$5352_memory_ptr","typeString":"struct IHyperdrive.Fees memory"}},"id":11172,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"7294:12:64","memberName":"governanceLP","nodeType":"MemberAccess","referencedDeclaration":5348,"src":"7281:25:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"7262:44:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":11174,"nodeType":"ExpressionStatement","src":"7262:44:64"},{"expression":{"id":11179,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":11175,"name":"_governanceZombieFee","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":10963,"src":"7316:20:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"expression":{"expression":{"id":11176,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"7339:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11177,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"7347:4:64","memberName":"fees","nodeType":"MemberAccess","referencedDeclaration":5426,"src":"7339:12:64","typeDescriptions":{"typeIdentifier":"t_struct$_Fees_$5352_memory_ptr","typeString":"struct IHyperdrive.Fees memory"}},"id":11178,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"7352:16:64","memberName":"governanceZombie","nodeType":"MemberAccess","referencedDeclaration":5351,"src":"7339:29:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"7316:52:64","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":11180,"nodeType":"ExpressionStatement","src":"7316:52:64"},{"expression":{"id":11184,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":11181,"name":"_linkerFactory","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11003,"src":"7428:14:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"expression":{"id":11182,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"7445:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11183,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"7453:13:64","memberName":"linkerFactory","nodeType":"MemberAccess","referencedDeclaration":5395,"src":"7445:21:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"src":"7428:38:64","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"id":11185,"nodeType":"ExpressionStatement","src":"7428:38:64"},{"expression":{"id":11189,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"id":11186,"name":"_linkerCodeHash","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11006,"src":"7476:15:64","typeDescriptions":{"typeIdentifier":"t_bytes32","typeString":"bytes32"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"expression":{"id":11187,"name":"_config","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":11043,"src":"7494:7:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig memory"}},"id":11188,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberLocation":"7502:14:64","memberName":"linkerCodeHash","nodeType":"MemberAccess","referencedDeclaration":5398,"src":"7494:22:64","typeDescriptions":{"typeIdentifier":"t_bytes32","typeString":"bytes32"}},"src":"7476:40:64","typeDescriptions":{"typeIdentifier":"t_bytes32","typeString":"bytes32"}},"id":11190,"nodeType":"ExpressionStatement","src":"7476:40:64"}]},"documentation":{"id":11040,"nodeType":"StructuredDocumentation","src":"4845:111:64","text":"@notice Instantiates Hyperdrive's storage.\n @param _config The configuration of the Hyperdrive pool."},"implemented":true,"kind":"constructor","modifiers":[],"name":"","nameLocation":"-1:-1:-1","parameters":{"id":11044,"nodeType":"ParameterList","parameters":[{"constant":false,"id":11043,"mutability":"mutable","name":"_config","nameLocation":"5003:7:64","nodeType":"VariableDeclaration","scope":11192,"src":"4973:37:64","stateVariable":false,"storageLocation":"memory","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_memory_ptr","typeString":"struct IHyperdrive.PoolConfig"},"typeName":{"id":11042,"nodeType":"UserDefinedTypeName","pathNode":{"id":11041,"name":"IHyperdrive.PoolConfig","nameLocations":["4973:11:64","4985:10:64"],"nodeType":"IdentifierPath","referencedDeclaration":5427,"src":"4973:22:64"},"referencedDeclaration":5427,"src":"4973:22:64","typeDescriptions":{"typeIdentifier":"t_struct$_PoolConfig_$5427_storage_ptr","typeString":"struct IHyperdrive.PoolConfig"}},"visibility":"internal"}],"src":"4972:39:64"},"returnParameters":{"id":11045,"nodeType":"ParameterList","parameters":[],"src":"5012:0:64"},"scope":11193,"stateMutability":"nonpayable","virtual":false,"visibility":"internal"}],"abstract":true,"baseContracts":[{"baseName":{"id":10934,"name":"ReentrancyGuard","nameLocations":["735:15:64"],"nodeType":"IdentifierPath","referencedDeclaration":65499,"src":"735:15:64"},"id":10935,"nodeType":"InheritanceSpecifier","src":"735:15:64"}],"canonicalName":"HyperdriveStorage","contractDependencies":[],"contractKind":"contract","documentation":{"id":10933,"nodeType":"StructuredDocumentation","src":"383:313:64","text":"@author DELV\n @title HyperdriveStorage\n @notice Hyperdrive's storage contract.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."},"fullyImplemented":true,"linearizedBaseContracts":[11193,65499],"name":"HyperdriveStorage","nameLocation":"714:17:64","scope":11194,"usedErrors":[5498,5502,5512,5514]}],"license":"Apache-2.0"},"id":64} as const;
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "ReentrancyGuardReentrantCall",
+      "type": "error"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"_config\":\"The configuration of the Hyperdrive pool.\"}}},\"stateVariables\":{\"_balanceOf\":{\"details\":\"Allows loading of each balance.\"},\"_baseToken\":{\"details\":\"The base asset.\"},\"_checkpointDuration\":{\"details\":\"The amount of seconds between vault share price checkpoints.\"},\"_checkpoints\":{\"details\":\"Hyperdrive positions are bucketed into checkpoints, which allows us      to avoid poking in any period that has LP or trading activity. The      checkpoints contain the starting vault share price from the      checkpoint as well as aggregate volume values.\"},\"_curveFee\":{\"details\":\"The LP fee applied to the curve portion of a trade.\"},\"_feeCollector\":{\"details\":\"The address which collects governance fees.\"},\"_flatFee\":{\"details\":\"The LP fee applied to the flat portion of a trade.\"},\"_governance\":{\"details\":\"The address that can pause the contract.\"},\"_governanceFeesAccrued\":{\"details\":\"Governance fees that haven't been collected yet denominated in shares.\"},\"_governanceLPFee\":{\"details\":\"The portion of the LP fee that goes to governance.\"},\"_governanceZombieFee\":{\"details\":\"The portion of the zombie interest that goes to governance.\"},\"_initialVaultSharePrice\":{\"details\":\"The vault share price at the time the pool was created.\"},\"_isApprovedForAll\":{\"details\":\"Uniform approval for all tokens.\"},\"_linkerCodeHash\":{\"details\":\"The bytecode hash of the contract which forwards purely ERC20 calls      to this contract.\"},\"_linkerFactory\":{\"details\":\"The forwarder factory that deploys ERC20 forwarders for this      instance.\"},\"_marketState\":{\"details\":\"The state of the market. This includes the reserves, buffers, and      other data used to price trades and maintain solvency.\"},\"_minimumShareReserves\":{\"details\":\"The minimum amount of share reserves that must be maintained at all      times. This is used to enforce practical limits on the share      reserves to avoid numerical issues that can occur if the share      reserves become very small or equal to zero.\"},\"_minimumTransactionAmount\":{\"details\":\"The minimum amount of tokens that a position can be opened or      closed with.\"},\"_nonces\":{\"details\":\"A mapping to track the permitForAll signature nonces.\"},\"_pausers\":{\"details\":\"Addresses approved in this mapping can pause all deposits into the      contract and other non essential functionality.\"},\"_perTokenApprovals\":{\"details\":\"Additional optional per token approvals. This is non-standard for      ERC1155, but it's necessary to replicate the ERC20 interface.\"},\"_positionDuration\":{\"details\":\"The amount of seconds that elapse before a bond can be redeemed.\"},\"_timeStretch\":{\"details\":\"A parameter that decreases slippage around a target rate.\"},\"_totalSupply\":{\"details\":\"Allows loading of each total supply.\"},\"_withdrawPool\":{\"details\":\"The state corresponding to the withdraw pool.\"}},\"title\":\"HyperdriveStorage\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"Instantiates Hyperdrive's storage.\"}},\"notice\":\"Hyperdrive's storage contract.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/internal/HyperdriveStorage.sol\":\"HyperdriveStorage\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0xfd51b9727f00a434ea4ced64044c104ed8361fa2ed22600969d1e4ff257b14f3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8780b588acc11dd906ff0897adc5b7acdab759fec4d14ce0d52bf002cb90c398\",\"dweb:/ipfs/QmTMaRGveFgN5L3k1h5oAbfp5ccmzT9d36JhChVg9PxJkD\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x81c89ca62586555b915a9609d10014ff9d1f0d82111809d566f614bd9ea2fb16\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c4859b122480f504d1f0035ed11983b0d74ea2b16bcf26dfe19365bb4f66240\",\"dweb:/ipfs/QmQEQBxRdsH6zNx2rvzetYZRbB3pMXXWzTuwVPBGVhCHfL\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x93cfce28869c1a082c170092b87b04204a91b7898a1e95c3e4270f06fbc76a97\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b8b24e13ff8994550685fec1405bc5d2a5ed6400db061005e72ecff056be51a1\",\"dweb:/ipfs/QmR4RZzyhjYt8xxRPaJWHKhBZdHZPVBHrtNERAZhCaaTFU\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x5c5d6c812fd2cf996d60632c4c8cca7b3d70f5ae4891a3f99c1e10f967f520dd\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://44ef09e50cf76ebab25b90688b19966575cc07fee503ffdb189c3fbbcbfea01f\",\"dweb:/ipfs/QmZEULHXopjaeWbsfXNrEriQomY19s6LXEcae9saeZCpmt\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x516967eaae812ff7fff81797190f48fca40838eccfb8243e3f973f2f85b51597\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://50fa3165b126976c218d27f7f276789f8cc680d3136cd631999164a64f03e477\",\"dweb:/ipfs/QmTSCjqQoys2SJNDZrhTdy2M2at8siSb3ZXHjWUoeihQjr\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xda628a0f7428ad63cb04b6f341c223d7b36803d554e92cd3a793325eae6ad87a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f7dfe92e6fb15eedbba033a96481db1343aeb48039d40d4b5053cc27d3f5e4f3\",\"dweb:/ipfs/QmNeNyjuEd7LkwZMg14fnMsunLXbJRzHYwzC2yEYKi8H3q\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0xb5b2a1f90c4e85e1290144b1e0e393027c90f24d6030ee802d0369342d7bf002\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f7850a790ea32726462f6dd08c87e5250c70155af558b8fdd17dc71d53c5b7f3\",\"dweb:/ipfs/QmWpshz1Ufdqmw8rmZdbdm9ZyEcKHFswLMNaBkBJ3sqNA1\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xa2e1d420bcae975a3d9aa7918319da2dd047cbc50ad41e0a391048e01b980191\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://335611b957d8ca7c0cee11d6f2268372a7c937bc119c030cb8e274679604b6cd\",\"dweb:/ipfs/QmeoxLRyPVgBXrxetVFEyjsvLNfwAahcHsFdAEzy9otxuU\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xf84c46faa4a3323835a80eae3ee969409bf3f5c48ec94a6e486b70cb59a4c868\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b1dcc1796eac62773f298b5b77fda8de424d822a7e74825028a0f83c627a5bfb\",\"dweb:/ipfs/QmRbiswdabx3uMgrgkLKe6K6JAQBLafsWqEyZCg3PQbN5Q\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xfeac73551892783afcce85d23fb910baf2ad729d218756f3597ad23e3dcb077f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1f659070705bee17efda43c36f71d22b035752f610624c59238cae559c60530d\",\"dweb:/ipfs/QmTEXNYSWa8w3wY2TWzDPNZXxdThMFEbrtRwcQHfyN2CJb\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0xdcf0c77bc29a0b5b2ce06cccfa6f5e936128e5c0f14a5636bfe21faf95c515bf\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://088172c3f97db68914cdef042d942b0d0c585cce77d004625bfa62a72ac1e95d\",\"dweb:/ipfs/Qmewa9GJtYxBw4fAx4HZJaNuUCKEoQT4c5nmhPyXxVEwwq\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0x94662a356f9ab292c0935ff4c29f9b826a17176eb98b472efed7afbfe4d5d744\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://794c5605f8f0716b871a8747fea516d26fd73f0add45a944ac4034de96c60c7a\",\"dweb:/ipfs/QmYSsquDzxupHSwWMsjjooxNxuzQ29ezczFsP2VQ5PYYve\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0x390a002b83e7ed8a99d4ca9b3ea514b2080c237911a3a3d0fa2ad4522a09d60b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://51ea972cf6d3c79ea6b93c63c85fbba2bd234e71704715a1d9bd897da9d6fcb1\",\"dweb:/ipfs/QmXEGDrLyeAYMZiDVNynVzRzAYgnspcdLfkMeGr81DmJpL\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x76f69d3104f3f97d67289512325306d7ea2c7b29a787eeef93ffc47e8a80f346\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c8df31a46b4287c23c67e0157e6f6a4877608ed3fb1919a9c07f5bd9b81d7f6\",\"dweb:/ipfs/QmPua6efzJGnC7NarnPojk9yF2geqenUaXUNRmPVHJdXWk\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "ReentrancyGuardReentrantCall"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "constructor": {
+            "params": {
+              "_config": "The configuration of the Hyperdrive pool."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "constructor": {
+            "notice": "Instantiates Hyperdrive's storage."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "aave-v3-core/=lib/aave-v3-core/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/=lib/openzeppelin-contracts/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "contracts/src/internal/HyperdriveStorage.sol": "HyperdriveStorage"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "contracts/src/interfaces/IERC20.sol": {
+        "keccak256": "0xfd51b9727f00a434ea4ced64044c104ed8361fa2ed22600969d1e4ff257b14f3",
+        "urls": [
+          "bzz-raw://8780b588acc11dd906ff0897adc5b7acdab759fec4d14ce0d52bf002cb90c398",
+          "dweb:/ipfs/QmTMaRGveFgN5L3k1h5oAbfp5ccmzT9d36JhChVg9PxJkD"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdrive.sol": {
+        "keccak256": "0x81c89ca62586555b915a9609d10014ff9d1f0d82111809d566f614bd9ea2fb16",
+        "urls": [
+          "bzz-raw://3c4859b122480f504d1f0035ed11983b0d74ea2b16bcf26dfe19365bb4f66240",
+          "dweb:/ipfs/QmQEQBxRdsH6zNx2rvzetYZRbB3pMXXWzTuwVPBGVhCHfL"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdriveCore.sol": {
+        "keccak256": "0x93cfce28869c1a082c170092b87b04204a91b7898a1e95c3e4270f06fbc76a97",
+        "urls": [
+          "bzz-raw://b8b24e13ff8994550685fec1405bc5d2a5ed6400db061005e72ecff056be51a1",
+          "dweb:/ipfs/QmR4RZzyhjYt8xxRPaJWHKhBZdHZPVBHrtNERAZhCaaTFU"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdriveEvents.sol": {
+        "keccak256": "0x5c5d6c812fd2cf996d60632c4c8cca7b3d70f5ae4891a3f99c1e10f967f520dd",
+        "urls": [
+          "bzz-raw://44ef09e50cf76ebab25b90688b19966575cc07fee503ffdb189c3fbbcbfea01f",
+          "dweb:/ipfs/QmZEULHXopjaeWbsfXNrEriQomY19s6LXEcae9saeZCpmt"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdriveRead.sol": {
+        "keccak256": "0x516967eaae812ff7fff81797190f48fca40838eccfb8243e3f973f2f85b51597",
+        "urls": [
+          "bzz-raw://50fa3165b126976c218d27f7f276789f8cc680d3136cd631999164a64f03e477",
+          "dweb:/ipfs/QmTSCjqQoys2SJNDZrhTdy2M2at8siSb3ZXHjWUoeihQjr"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiToken.sol": {
+        "keccak256": "0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f",
+        "urls": [
+          "bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7",
+          "dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenCore.sol": {
+        "keccak256": "0xda628a0f7428ad63cb04b6f341c223d7b36803d554e92cd3a793325eae6ad87a",
+        "urls": [
+          "bzz-raw://f7dfe92e6fb15eedbba033a96481db1343aeb48039d40d4b5053cc27d3f5e4f3",
+          "dweb:/ipfs/QmNeNyjuEd7LkwZMg14fnMsunLXbJRzHYwzC2yEYKi8H3q"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenEvents.sol": {
+        "keccak256": "0xb5b2a1f90c4e85e1290144b1e0e393027c90f24d6030ee802d0369342d7bf002",
+        "urls": [
+          "bzz-raw://f7850a790ea32726462f6dd08c87e5250c70155af558b8fdd17dc71d53c5b7f3",
+          "dweb:/ipfs/QmWpshz1Ufdqmw8rmZdbdm9ZyEcKHFswLMNaBkBJ3sqNA1"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenMetadata.sol": {
+        "keccak256": "0xa2e1d420bcae975a3d9aa7918319da2dd047cbc50ad41e0a391048e01b980191",
+        "urls": [
+          "bzz-raw://335611b957d8ca7c0cee11d6f2268372a7c937bc119c030cb8e274679604b6cd",
+          "dweb:/ipfs/QmeoxLRyPVgBXrxetVFEyjsvLNfwAahcHsFdAEzy9otxuU"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IMultiTokenRead.sol": {
+        "keccak256": "0xf84c46faa4a3323835a80eae3ee969409bf3f5c48ec94a6e486b70cb59a4c868",
+        "urls": [
+          "bzz-raw://b1dcc1796eac62773f298b5b77fda8de424d822a7e74825028a0f83c627a5bfb",
+          "dweb:/ipfs/QmRbiswdabx3uMgrgkLKe6K6JAQBLafsWqEyZCg3PQbN5Q"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/internal/HyperdriveStorage.sol": {
+        "keccak256": "0xfeac73551892783afcce85d23fb910baf2ad729d218756f3597ad23e3dcb077f",
+        "urls": [
+          "bzz-raw://1f659070705bee17efda43c36f71d22b035752f610624c59238cae559c60530d",
+          "dweb:/ipfs/QmTEXNYSWa8w3wY2TWzDPNZXxdThMFEbrtRwcQHfyN2CJb"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/libraries/Errors.sol": {
+        "keccak256": "0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0",
+        "urls": [
+          "bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88",
+          "dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/libraries/FixedPointMath.sol": {
+        "keccak256": "0xdcf0c77bc29a0b5b2ce06cccfa6f5e936128e5c0f14a5636bfe21faf95c515bf",
+        "urls": [
+          "bzz-raw://088172c3f97db68914cdef042d942b0d0c585cce77d004625bfa62a72ac1e95d",
+          "dweb:/ipfs/Qmewa9GJtYxBw4fAx4HZJaNuUCKEoQT4c5nmhPyXxVEwwq"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/libraries/HyperdriveMath.sol": {
+        "keccak256": "0x94662a356f9ab292c0935ff4c29f9b826a17176eb98b472efed7afbfe4d5d744",
+        "urls": [
+          "bzz-raw://794c5605f8f0716b871a8747fea516d26fd73f0add45a944ac4034de96c60c7a",
+          "dweb:/ipfs/QmYSsquDzxupHSwWMsjjooxNxuzQ29ezczFsP2VQ5PYYve"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/libraries/SafeCast.sol": {
+        "keccak256": "0x390a002b83e7ed8a99d4ca9b3ea514b2080c237911a3a3d0fa2ad4522a09d60b",
+        "urls": [
+          "bzz-raw://51ea972cf6d3c79ea6b93c63c85fbba2bd234e71704715a1d9bd897da9d6fcb1",
+          "dweb:/ipfs/QmXEGDrLyeAYMZiDVNynVzRzAYgnspcdLfkMeGr81DmJpL"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/libraries/YieldSpaceMath.sol": {
+        "keccak256": "0x76f69d3104f3f97d67289512325306d7ea2c7b29a787eeef93ffc47e8a80f346",
+        "urls": [
+          "bzz-raw://6c8df31a46b4287c23c67e0157e6f6a4877608ed3fb1919a9c07f5bd9b81d7f6",
+          "dweb:/ipfs/QmPua6efzJGnC7NarnPojk9yF2geqenUaXUNRmPVHJdXWk"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol": {
+        "keccak256": "0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236",
+        "urls": [
+          "bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02",
+          "dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "contracts/src/internal/HyperdriveStorage.sol",
+    "id": 13188,
+    "exportedSymbols": {
+      "FixedPointMath": [
+        14294
+      ],
+      "HyperdriveMath": [
+        15024
+      ],
+      "HyperdriveStorage": [
+        13187
+      ],
+      "IERC20": [
+        6740
+      ],
+      "IHyperdrive": [
+        7411
+      ],
+      "ONE": [
+        13529
+      ],
+      "ReentrancyGuard": [
+        67106
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:6825:70",
+    "nodes": [
+      {
+        "id": 12981,
+        "nodeType": "PragmaDirective",
+        "src": "39:23:70",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".20"
+        ]
+      },
+      {
+        "id": 12983,
+        "nodeType": "ImportDirective",
+        "src": "64:73:70",
+        "nodes": [],
+        "absolutePath": "lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol",
+        "file": "openzeppelin/utils/ReentrancyGuard.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 13188,
+        "sourceUnit": 67107,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 12982,
+              "name": "ReentrancyGuard",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 67106,
+              "src": "73:15:70",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 12985,
+        "nodeType": "ImportDirective",
+        "src": "138:50:70",
+        "nodes": [],
+        "absolutePath": "contracts/src/interfaces/IERC20.sol",
+        "file": "../interfaces/IERC20.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 13188,
+        "sourceUnit": 6741,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 12984,
+              "name": "IERC20",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 6740,
+              "src": "147:6:70",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 12987,
+        "nodeType": "ImportDirective",
+        "src": "189:60:70",
+        "nodes": [],
+        "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
+        "file": "../interfaces/IHyperdrive.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 13188,
+        "sourceUnit": 7412,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 12986,
+              "name": "IHyperdrive",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 7411,
+              "src": "198:11:70",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 12990,
+        "nodeType": "ImportDirective",
+        "src": "250:70:70",
+        "nodes": [],
+        "absolutePath": "contracts/src/libraries/FixedPointMath.sol",
+        "file": "../libraries/FixedPointMath.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 13188,
+        "sourceUnit": 14295,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 12988,
+              "name": "FixedPointMath",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 14294,
+              "src": "259:14:70",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          },
+          {
+            "foreign": {
+              "id": 12989,
+              "name": "ONE",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 13529,
+              "src": "275:3:70",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 12992,
+        "nodeType": "ImportDirective",
+        "src": "321:65:70",
+        "nodes": [],
+        "absolutePath": "contracts/src/libraries/HyperdriveMath.sol",
+        "file": "../libraries/HyperdriveMath.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 13188,
+        "sourceUnit": 15025,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 12991,
+              "name": "HyperdriveMath",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 15024,
+              "src": "330:14:70",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 13187,
+        "nodeType": "ContractDefinition",
+        "src": "701:6162:70",
+        "nodes": [
+          {
+            "id": 12998,
+            "nodeType": "UsingForDirective",
+            "src": "762:33:70",
+            "nodes": [],
+            "global": false,
+            "libraryName": {
+              "id": 12996,
+              "name": "FixedPointMath",
+              "nameLocations": [
+                "768:14:70"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 14294,
+              "src": "768:14:70"
+            },
+            "typeName": {
+              "id": 12997,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "787:7:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "id": 13002,
+            "nodeType": "VariableDeclaration",
+            "src": "850:36:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 12999,
+              "nodeType": "StructuredDocumentation",
+              "src": "821:24:70",
+              "text": "@dev The base asset."
+            },
+            "mutability": "immutable",
+            "name": "_baseToken",
+            "nameLocation": "876:10:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IERC20_$6740",
+              "typeString": "contract IERC20"
+            },
+            "typeName": {
+              "id": 13001,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 13000,
+                "name": "IERC20",
+                "nameLocations": [
+                  "850:6:70"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 6740,
+                "src": "850:6:70"
+              },
+              "referencedDeclaration": 6740,
+              "src": "850:6:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IERC20_$6740",
+                "typeString": "contract IERC20"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13005,
+            "nodeType": "VariableDeclaration",
+            "src": "985:46:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13003,
+              "nodeType": "StructuredDocumentation",
+              "src": "911:69:70",
+              "text": "@dev The amount of seconds between vault share price checkpoints."
+            },
+            "mutability": "immutable",
+            "name": "_checkpointDuration",
+            "nameLocation": "1012:19:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 13004,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "985:7:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13008,
+            "nodeType": "VariableDeclaration",
+            "src": "1116:44:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13006,
+              "nodeType": "StructuredDocumentation",
+              "src": "1038:73:70",
+              "text": "@dev The amount of seconds that elapse before a bond can be redeemed."
+            },
+            "mutability": "immutable",
+            "name": "_positionDuration",
+            "nameLocation": "1143:17:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 13007,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1116:7:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13011,
+            "nodeType": "VariableDeclaration",
+            "src": "1238:39:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13009,
+              "nodeType": "StructuredDocumentation",
+              "src": "1167:66:70",
+              "text": "@dev A parameter that decreases slippage around a target rate."
+            },
+            "mutability": "immutable",
+            "name": "_timeStretch",
+            "nameLocation": "1265:12:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 13010,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1238:7:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13014,
+            "nodeType": "VariableDeclaration",
+            "src": "1367:36:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13012,
+              "nodeType": "StructuredDocumentation",
+              "src": "1302:60:70",
+              "text": "@dev The LP fee applied to the curve portion of a trade."
+            },
+            "mutability": "immutable",
+            "name": "_curveFee",
+            "nameLocation": "1394:9:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 13013,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1367:7:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13017,
+            "nodeType": "VariableDeclaration",
+            "src": "1474:35:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13015,
+              "nodeType": "StructuredDocumentation",
+              "src": "1410:59:70",
+              "text": "@dev The LP fee applied to the flat portion of a trade."
+            },
+            "mutability": "immutable",
+            "name": "_flatFee",
+            "nameLocation": "1501:8:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 13016,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1474:7:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13020,
+            "nodeType": "VariableDeclaration",
+            "src": "1580:43:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13018,
+              "nodeType": "StructuredDocumentation",
+              "src": "1516:59:70",
+              "text": "@dev The portion of the LP fee that goes to governance."
+            },
+            "mutability": "immutable",
+            "name": "_governanceLPFee",
+            "nameLocation": "1607:16:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 13019,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1580:7:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13023,
+            "nodeType": "VariableDeclaration",
+            "src": "1703:47:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13021,
+              "nodeType": "StructuredDocumentation",
+              "src": "1630:68:70",
+              "text": "@dev The portion of the zombie interest that goes to governance."
+            },
+            "mutability": "immutable",
+            "name": "_governanceZombieFee",
+            "nameLocation": "1730:20:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 13022,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1703:7:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13026,
+            "nodeType": "VariableDeclaration",
+            "src": "1852:50:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13024,
+              "nodeType": "StructuredDocumentation",
+              "src": "1783:64:70",
+              "text": "@dev The vault share price at the time the pool was created."
+            },
+            "mutability": "immutable",
+            "name": "_initialVaultSharePrice",
+            "nameLocation": "1879:23:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 13025,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1852:7:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13029,
+            "nodeType": "VariableDeclaration",
+            "src": "2198:48:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13027,
+              "nodeType": "StructuredDocumentation",
+              "src": "1909:284:70",
+              "text": "@dev The minimum amount of share reserves that must be maintained at all\n      times. This is used to enforce practical limits on the share\n      reserves to avoid numerical issues that can occur if the share\n      reserves become very small or equal to zero."
+            },
+            "mutability": "immutable",
+            "name": "_minimumShareReserves",
+            "nameLocation": "2225:21:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 13028,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "2198:7:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13032,
+            "nodeType": "VariableDeclaration",
+            "src": "2354:52:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13030,
+              "nodeType": "StructuredDocumentation",
+              "src": "2253:96:70",
+              "text": "@dev The minimum amount of tokens that a position can be opened or\n      closed with."
+            },
+            "mutability": "immutable",
+            "name": "_minimumTransactionAmount",
+            "nameLocation": "2381:25:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 13031,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "2354:7:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13036,
+            "nodeType": "VariableDeclaration",
+            "src": "2560:45:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13033,
+              "nodeType": "StructuredDocumentation",
+              "src": "2413:142:70",
+              "text": "@dev The state of the market. This includes the reserves, buffers, and\n      other data used to price trades and maintain solvency."
+            },
+            "mutability": "mutable",
+            "name": "_marketState",
+            "nameLocation": "2593:12:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_MarketState_$7116_storage",
+              "typeString": "struct IHyperdrive.MarketState"
+            },
+            "typeName": {
+              "id": 13035,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 13034,
+                "name": "IHyperdrive.MarketState",
+                "nameLocations": [
+                  "2560:11:70",
+                  "2572:11:70"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 7116,
+                "src": "2560:23:70"
+              },
+              "referencedDeclaration": 7116,
+              "src": "2560:23:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_MarketState_$7116_storage_ptr",
+                "typeString": "struct IHyperdrive.MarketState"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13040,
+            "nodeType": "VariableDeclaration",
+            "src": "2671:47:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13037,
+              "nodeType": "StructuredDocumentation",
+              "src": "2612:54:70",
+              "text": "@dev The state corresponding to the withdraw pool."
+            },
+            "mutability": "mutable",
+            "name": "_withdrawPool",
+            "nameLocation": "2705:13:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_WithdrawPool_$7127_storage",
+              "typeString": "struct IHyperdrive.WithdrawPool"
+            },
+            "typeName": {
+              "id": 13039,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 13038,
+                "name": "IHyperdrive.WithdrawPool",
+                "nameLocations": [
+                  "2671:11:70",
+                  "2683:12:70"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 7127,
+                "src": "2671:24:70"
+              },
+              "referencedDeclaration": 7127,
+              "src": "2671:24:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_WithdrawPool_$7127_storage_ptr",
+                "typeString": "struct IHyperdrive.WithdrawPool"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13046,
+            "nodeType": "VariableDeclaration",
+            "src": "3019:100:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13041,
+              "nodeType": "StructuredDocumentation",
+              "src": "2725:289:70",
+              "text": "@dev Hyperdrive positions are bucketed into checkpoints, which allows us\n      to avoid poking in any period that has LP or trading activity. The\n      checkpoints contain the starting vault share price from the\n      checkpoint as well as aggregate volume values."
+            },
+            "mutability": "mutable",
+            "name": "_checkpoints",
+            "nameLocation": "3107:12:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$7120_storage_$",
+              "typeString": "mapping(uint256 => struct IHyperdrive.Checkpoint)"
+            },
+            "typeName": {
+              "id": 13045,
+              "keyName": "checkpointNumber",
+              "keyNameLocation": "3035:16:70",
+              "keyType": {
+                "id": 13042,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "3027:7:70",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "3019:70:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$7120_storage_$",
+                "typeString": "mapping(uint256 => struct IHyperdrive.Checkpoint)"
+              },
+              "valueName": "checkpoint",
+              "valueNameLocation": "3078:10:70",
+              "valueType": {
+                "id": 13044,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 13043,
+                  "name": "IHyperdrive.Checkpoint",
+                  "nameLocations": [
+                    "3055:11:70",
+                    "3067:10:70"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 7120,
+                  "src": "3055:22:70"
+                },
+                "referencedDeclaration": 7120,
+                "src": "3055:22:70",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Checkpoint_$7120_storage_ptr",
+                  "typeString": "struct IHyperdrive.Checkpoint"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13049,
+            "nodeType": "VariableDeclaration",
+            "src": "3202:40:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13047,
+              "nodeType": "StructuredDocumentation",
+              "src": "3145:52:70",
+              "text": "@dev The address which collects governance fees."
+            },
+            "mutability": "immutable",
+            "name": "_feeCollector",
+            "nameLocation": "3229:13:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 13048,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "3202:7:70",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13052,
+            "nodeType": "VariableDeclaration",
+            "src": "3303:28:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13050,
+              "nodeType": "StructuredDocumentation",
+              "src": "3249:49:70",
+              "text": "@dev The address that can pause the contract."
+            },
+            "mutability": "mutable",
+            "name": "_governance",
+            "nameLocation": "3320:11:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 13051,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "3303:7:70",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13055,
+            "nodeType": "VariableDeclaration",
+            "src": "3422:39:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13053,
+              "nodeType": "StructuredDocumentation",
+              "src": "3338:79:70",
+              "text": "@dev Governance fees that haven't been collected yet denominated in shares."
+            },
+            "mutability": "mutable",
+            "name": "_governanceFeesAccrued",
+            "nameLocation": "3439:22:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 13054,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "3422:7:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13060,
+            "nodeType": "VariableDeclaration",
+            "src": "3609:56:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13056,
+              "nodeType": "StructuredDocumentation",
+              "src": "3468:136:70",
+              "text": "@dev Addresses approved in this mapping can pause all deposits into the\n      contract and other non essential functionality."
+            },
+            "mutability": "mutable",
+            "name": "_pausers",
+            "nameLocation": "3657:8:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 13059,
+              "keyName": "user",
+              "keyNameLocation": "3625:4:70",
+              "keyType": {
+                "id": 13057,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "3617:7:70",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "3609:38:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueName": "isPauser",
+              "valueNameLocation": "3638:8:70",
+              "valueType": {
+                "id": 13058,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "3633:4:70",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13063,
+            "nodeType": "VariableDeclaration",
+            "src": "3793:41:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13061,
+              "nodeType": "StructuredDocumentation",
+              "src": "3696:92:70",
+              "text": "@dev The forwarder factory that deploys ERC20 forwarders for this\n      instance."
+            },
+            "mutability": "immutable",
+            "name": "_linkerFactory",
+            "nameLocation": "3820:14:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 13062,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "3793:7:70",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13066,
+            "nodeType": "VariableDeclaration",
+            "src": "3953:42:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13064,
+              "nodeType": "StructuredDocumentation",
+              "src": "3841:107:70",
+              "text": "@dev The bytecode hash of the contract which forwards purely ERC20 calls\n      to this contract."
+            },
+            "mutability": "immutable",
+            "name": "_linkerCodeHash",
+            "nameLocation": "3980:15:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 13065,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "3953:7:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13073,
+            "nodeType": "VariableDeclaration",
+            "src": "4047:96:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13067,
+              "nodeType": "StructuredDocumentation",
+              "src": "4002:40:70",
+              "text": "@dev Allows loading of each balance."
+            },
+            "mutability": "mutable",
+            "name": "_balanceOf",
+            "nameLocation": "4133:10:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_uint256_$_$",
+              "typeString": "mapping(uint256 => mapping(address => uint256))"
+            },
+            "typeName": {
+              "id": 13072,
+              "keyName": "tokenId",
+              "keyNameLocation": "4063:7:70",
+              "keyType": {
+                "id": 13068,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "4055:7:70",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "4047:68:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_uint256_$_$",
+                "typeString": "mapping(uint256 => mapping(address => uint256))"
+              },
+              "valueName": "",
+              "valueNameLocation": "-1:-1:-1",
+              "valueType": {
+                "id": 13071,
+                "keyName": "user",
+                "keyNameLocation": "4090:4:70",
+                "keyType": {
+                  "id": 13069,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4082:7:70",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "nodeType": "Mapping",
+                "src": "4074:40:70",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                  "typeString": "mapping(address => uint256)"
+                },
+                "valueName": "balance",
+                "valueNameLocation": "4106:7:70",
+                "valueType": {
+                  "id": 13070,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4098:7:70",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13078,
+            "nodeType": "VariableDeclaration",
+            "src": "4200:64:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13074,
+              "nodeType": "StructuredDocumentation",
+              "src": "4150:45:70",
+              "text": "@dev Allows loading of each total supply."
+            },
+            "mutability": "mutable",
+            "name": "_totalSupply",
+            "nameLocation": "4252:12:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+              "typeString": "mapping(uint256 => uint256)"
+            },
+            "typeName": {
+              "id": 13077,
+              "keyName": "tokenId",
+              "keyNameLocation": "4216:7:70",
+              "keyType": {
+                "id": 13075,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "4208:7:70",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "4200:42:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                "typeString": "mapping(uint256 => uint256)"
+              },
+              "valueName": "supply",
+              "valueNameLocation": "4235:6:70",
+              "valueType": {
+                "id": 13076,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "4227:7:70",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13085,
+            "nodeType": "VariableDeclaration",
+            "src": "4317:102:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13079,
+              "nodeType": "StructuredDocumentation",
+              "src": "4271:41:70",
+              "text": "@dev Uniform approval for all tokens."
+            },
+            "mutability": "mutable",
+            "name": "_isApprovedForAll",
+            "nameLocation": "4402:17:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_bool_$_$",
+              "typeString": "mapping(address => mapping(address => bool))"
+            },
+            "typeName": {
+              "id": 13084,
+              "keyName": "from",
+              "keyNameLocation": "4333:4:70",
+              "keyType": {
+                "id": 13080,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "4325:7:70",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "4317:67:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_bool_$_$",
+                "typeString": "mapping(address => mapping(address => bool))"
+              },
+              "valueName": "",
+              "valueNameLocation": "-1:-1:-1",
+              "valueType": {
+                "id": 13083,
+                "keyName": "caller",
+                "keyNameLocation": "4357:6:70",
+                "keyType": {
+                  "id": 13081,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4349:7:70",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "nodeType": "Mapping",
+                "src": "4341:42:70",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                  "typeString": "mapping(address => bool)"
+                },
+                "valueName": "isApproved",
+                "valueNameLocation": "4372:10:70",
+                "valueType": {
+                  "id": 13082,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4367:4:70",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13094,
+            "nodeType": "VariableDeclaration",
+            "src": "4580:132:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13086,
+              "nodeType": "StructuredDocumentation",
+              "src": "4426:149:70",
+              "text": "@dev Additional optional per token approvals. This is non-standard for\n      ERC1155, but it's necessary to replicate the ERC20 interface."
+            },
+            "mutability": "mutable",
+            "name": "_perTokenApprovals",
+            "nameLocation": "4694:18:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$_$",
+              "typeString": "mapping(uint256 => mapping(address => mapping(address => uint256)))"
+            },
+            "typeName": {
+              "id": 13093,
+              "keyName": "tokenId",
+              "keyNameLocation": "4596:7:70",
+              "keyType": {
+                "id": 13087,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "4588:7:70",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "4580:96:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$_$",
+                "typeString": "mapping(uint256 => mapping(address => mapping(address => uint256)))"
+              },
+              "valueName": "",
+              "valueNameLocation": "-1:-1:-1",
+              "valueType": {
+                "id": 13092,
+                "keyName": "from",
+                "keyNameLocation": "4623:4:70",
+                "keyType": {
+                  "id": 13088,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4615:7:70",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "nodeType": "Mapping",
+                "src": "4607:68:70",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$",
+                  "typeString": "mapping(address => mapping(address => uint256))"
+                },
+                "valueName": "",
+                "valueNameLocation": "-1:-1:-1",
+                "valueType": {
+                  "id": 13091,
+                  "keyName": "caller",
+                  "keyNameLocation": "4647:6:70",
+                  "keyType": {
+                    "id": 13089,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4639:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "4631:43:70",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                    "typeString": "mapping(address => uint256)"
+                  },
+                  "valueName": "approved",
+                  "valueNameLocation": "4665:8:70",
+                  "valueType": {
+                    "id": 13090,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4657:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13099,
+            "nodeType": "VariableDeclaration",
+            "src": "4786:55:70",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 13095,
+              "nodeType": "StructuredDocumentation",
+              "src": "4719:62:70",
+              "text": "@dev A mapping to track the permitForAll signature nonces."
+            },
+            "mutability": "mutable",
+            "name": "_nonces",
+            "nameLocation": "4834:7:70",
+            "scope": 13187,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 13098,
+              "keyName": "user",
+              "keyNameLocation": "4802:4:70",
+              "keyType": {
+                "id": 13096,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "4794:7:70",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "4786:38:70",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueName": "nonce",
+              "valueNameLocation": "4818:5:70",
+              "valueType": {
+                "id": 13097,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "4810:7:70",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 13186,
+            "nodeType": "FunctionDefinition",
+            "src": "4989:1872:70",
+            "nodes": [],
+            "body": {
+              "id": 13185,
+              "nodeType": "Block",
+              "src": "5040:1821:70",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 13109,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 13106,
+                      "name": "_baseToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13002,
+                      "src": "5096:10:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IERC20_$6740",
+                        "typeString": "contract IERC20"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 13107,
+                        "name": "_config",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13103,
+                        "src": "5109:7:70",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                          "typeString": "struct IHyperdrive.PoolConfig memory"
+                        }
+                      },
+                      "id": 13108,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "5117:9:70",
+                      "memberName": "baseToken",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7180,
+                      "src": "5109:17:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IERC20_$6740",
+                        "typeString": "contract IERC20"
+                      }
+                    },
+                    "src": "5096:30:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20_$6740",
+                      "typeString": "contract IERC20"
+                    }
+                  },
+                  "id": 13110,
+                  "nodeType": "ExpressionStatement",
+                  "src": "5096:30:70"
+                },
+                {
+                  "expression": {
+                    "id": 13114,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 13111,
+                      "name": "_initialVaultSharePrice",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13026,
+                      "src": "5190:23:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 13112,
+                        "name": "_config",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13103,
+                        "src": "5216:7:70",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                          "typeString": "struct IHyperdrive.PoolConfig memory"
+                        }
+                      },
+                      "id": 13113,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "5224:22:70",
+                      "memberName": "initialVaultSharePrice",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7189,
+                      "src": "5216:30:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "5190:56:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 13115,
+                  "nodeType": "ExpressionStatement",
+                  "src": "5190:56:70"
+                },
+                {
+                  "expression": {
+                    "id": 13119,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 13116,
+                      "name": "_minimumShareReserves",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13029,
+                      "src": "5645:21:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 13117,
+                        "name": "_config",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13103,
+                        "src": "5669:7:70",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                          "typeString": "struct IHyperdrive.PoolConfig memory"
+                        }
+                      },
+                      "id": 13118,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "5677:20:70",
+                      "memberName": "minimumShareReserves",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7192,
+                      "src": "5669:28:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "5645:52:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 13120,
+                  "nodeType": "ExpressionStatement",
+                  "src": "5645:52:70"
+                },
+                {
+                  "expression": {
+                    "id": 13124,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 13121,
+                      "name": "_minimumTransactionAmount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13032,
+                      "src": "5957:25:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 13122,
+                        "name": "_config",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13103,
+                        "src": "5985:7:70",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                          "typeString": "struct IHyperdrive.PoolConfig memory"
+                        }
+                      },
+                      "id": 13123,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "5993:24:70",
+                      "memberName": "minimumTransactionAmount",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7195,
+                      "src": "5985:32:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "5957:60:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 13125,
+                  "nodeType": "ExpressionStatement",
+                  "src": "5957:60:70"
+                },
+                {
+                  "expression": {
+                    "id": 13129,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 13126,
+                      "name": "_checkpointDuration",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13005,
+                      "src": "6178:19:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 13127,
+                        "name": "_config",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13103,
+                        "src": "6200:7:70",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                          "typeString": "struct IHyperdrive.PoolConfig memory"
+                        }
+                      },
+                      "id": 13128,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "6208:18:70",
+                      "memberName": "checkpointDuration",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7201,
+                      "src": "6200:26:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "6178:48:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 13130,
+                  "nodeType": "ExpressionStatement",
+                  "src": "6178:48:70"
+                },
+                {
+                  "expression": {
+                    "id": 13134,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 13131,
+                      "name": "_positionDuration",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13008,
+                      "src": "6236:17:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 13132,
+                        "name": "_config",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13103,
+                        "src": "6256:7:70",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                          "typeString": "struct IHyperdrive.PoolConfig memory"
+                        }
+                      },
+                      "id": 13133,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "6264:16:70",
+                      "memberName": "positionDuration",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7198,
+                      "src": "6256:24:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "6236:44:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 13135,
+                  "nodeType": "ExpressionStatement",
+                  "src": "6236:44:70"
+                },
+                {
+                  "expression": {
+                    "id": 13139,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 13136,
+                      "name": "_timeStretch",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13011,
+                      "src": "6290:12:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 13137,
+                        "name": "_config",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13103,
+                        "src": "6305:7:70",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                          "typeString": "struct IHyperdrive.PoolConfig memory"
+                        }
+                      },
+                      "id": 13138,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "6313:11:70",
+                      "memberName": "timeStretch",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7204,
+                      "src": "6305:19:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "6290:34:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 13140,
+                  "nodeType": "ExpressionStatement",
+                  "src": "6290:34:70"
+                },
+                {
+                  "expression": {
+                    "id": 13145,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 13141,
+                      "name": "_curveFee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13014,
+                      "src": "6377:9:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "expression": {
+                          "id": 13142,
+                          "name": "_config",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 13103,
+                          "src": "6389:7:70",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                            "typeString": "struct IHyperdrive.PoolConfig memory"
+                          }
+                        },
+                        "id": 13143,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "6397:4:70",
+                        "memberName": "fees",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 7214,
+                        "src": "6389:12:70",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Fees_$7140_memory_ptr",
+                          "typeString": "struct IHyperdrive.Fees memory"
+                        }
+                      },
+                      "id": 13144,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "6402:5:70",
+                      "memberName": "curve",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7130,
+                      "src": "6389:18:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "6377:30:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 13146,
+                  "nodeType": "ExpressionStatement",
+                  "src": "6377:30:70"
+                },
+                {
+                  "expression": {
+                    "id": 13151,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 13147,
+                      "name": "_flatFee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13017,
+                      "src": "6417:8:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "expression": {
+                          "id": 13148,
+                          "name": "_config",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 13103,
+                          "src": "6428:7:70",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                            "typeString": "struct IHyperdrive.PoolConfig memory"
+                          }
+                        },
+                        "id": 13149,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "6436:4:70",
+                        "memberName": "fees",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 7214,
+                        "src": "6428:12:70",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Fees_$7140_memory_ptr",
+                          "typeString": "struct IHyperdrive.Fees memory"
+                        }
+                      },
+                      "id": 13150,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "6441:4:70",
+                      "memberName": "flat",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7133,
+                      "src": "6428:17:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "6417:28:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 13152,
+                  "nodeType": "ExpressionStatement",
+                  "src": "6417:28:70"
+                },
+                {
+                  "expression": {
+                    "id": 13157,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 13153,
+                      "name": "_governanceLPFee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13020,
+                      "src": "6455:16:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "expression": {
+                          "id": 13154,
+                          "name": "_config",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 13103,
+                          "src": "6474:7:70",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                            "typeString": "struct IHyperdrive.PoolConfig memory"
+                          }
+                        },
+                        "id": 13155,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "6482:4:70",
+                        "memberName": "fees",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 7214,
+                        "src": "6474:12:70",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Fees_$7140_memory_ptr",
+                          "typeString": "struct IHyperdrive.Fees memory"
+                        }
+                      },
+                      "id": 13156,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "6487:12:70",
+                      "memberName": "governanceLP",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7136,
+                      "src": "6474:25:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "6455:44:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 13158,
+                  "nodeType": "ExpressionStatement",
+                  "src": "6455:44:70"
+                },
+                {
+                  "expression": {
+                    "id": 13163,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 13159,
+                      "name": "_governanceZombieFee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13023,
+                      "src": "6509:20:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "expression": {
+                          "id": 13160,
+                          "name": "_config",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 13103,
+                          "src": "6532:7:70",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                            "typeString": "struct IHyperdrive.PoolConfig memory"
+                          }
+                        },
+                        "id": 13161,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "6540:4:70",
+                        "memberName": "fees",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 7214,
+                        "src": "6532:12:70",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Fees_$7140_memory_ptr",
+                          "typeString": "struct IHyperdrive.Fees memory"
+                        }
+                      },
+                      "id": 13162,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "6545:16:70",
+                      "memberName": "governanceZombie",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7139,
+                      "src": "6532:29:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "6509:52:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 13164,
+                  "nodeType": "ExpressionStatement",
+                  "src": "6509:52:70"
+                },
+                {
+                  "expression": {
+                    "id": 13168,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 13165,
+                      "name": "_linkerFactory",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13063,
+                      "src": "6621:14:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 13166,
+                        "name": "_config",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13103,
+                        "src": "6638:7:70",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                          "typeString": "struct IHyperdrive.PoolConfig memory"
+                        }
+                      },
+                      "id": 13167,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "6646:13:70",
+                      "memberName": "linkerFactory",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7183,
+                      "src": "6638:21:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "6621:38:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 13169,
+                  "nodeType": "ExpressionStatement",
+                  "src": "6621:38:70"
+                },
+                {
+                  "expression": {
+                    "id": 13173,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 13170,
+                      "name": "_linkerCodeHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13066,
+                      "src": "6669:15:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 13171,
+                        "name": "_config",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13103,
+                        "src": "6687:7:70",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                          "typeString": "struct IHyperdrive.PoolConfig memory"
+                        }
+                      },
+                      "id": 13172,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "6695:14:70",
+                      "memberName": "linkerCodeHash",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7186,
+                      "src": "6687:22:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "6669:40:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 13174,
+                  "nodeType": "ExpressionStatement",
+                  "src": "6669:40:70"
+                },
+                {
+                  "expression": {
+                    "id": 13178,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 13175,
+                      "name": "_governance",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13052,
+                      "src": "6776:11:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 13176,
+                        "name": "_config",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13103,
+                        "src": "6790:7:70",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                          "typeString": "struct IHyperdrive.PoolConfig memory"
+                        }
+                      },
+                      "id": 13177,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "6798:10:70",
+                      "memberName": "governance",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7207,
+                      "src": "6790:18:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "6776:32:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 13179,
+                  "nodeType": "ExpressionStatement",
+                  "src": "6776:32:70"
+                },
+                {
+                  "expression": {
+                    "id": 13183,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 13180,
+                      "name": "_feeCollector",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13049,
+                      "src": "6818:13:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 13181,
+                        "name": "_config",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13103,
+                        "src": "6834:7:70",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                          "typeString": "struct IHyperdrive.PoolConfig memory"
+                        }
+                      },
+                      "id": 13182,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "6842:12:70",
+                      "memberName": "feeCollector",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7210,
+                      "src": "6834:20:70",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "6818:36:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 13184,
+                  "nodeType": "ExpressionStatement",
+                  "src": "6818:36:70"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 13100,
+              "nodeType": "StructuredDocumentation",
+              "src": "4873:111:70",
+              "text": "@notice Instantiates Hyperdrive's storage.\n @param _config The configuration of the Hyperdrive pool."
+            },
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 13104,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13103,
+                  "mutability": "mutable",
+                  "name": "_config",
+                  "nameLocation": "5031:7:70",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13186,
+                  "src": "5001:37:70",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_PoolConfig_$7215_memory_ptr",
+                    "typeString": "struct IHyperdrive.PoolConfig"
+                  },
+                  "typeName": {
+                    "id": 13102,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 13101,
+                      "name": "IHyperdrive.PoolConfig",
+                      "nameLocations": [
+                        "5001:11:70",
+                        "5013:10:70"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 7215,
+                      "src": "5001:22:70"
+                    },
+                    "referencedDeclaration": 7215,
+                    "src": "5001:22:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_PoolConfig_$7215_storage_ptr",
+                      "typeString": "struct IHyperdrive.PoolConfig"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5000:39:70"
+            },
+            "returnParameters": {
+              "id": 13105,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "5040:0:70"
+            },
+            "scope": 13187,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 12994,
+              "name": "ReentrancyGuard",
+              "nameLocations": [
+                "740:15:70"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 67106,
+              "src": "740:15:70"
+            },
+            "id": 12995,
+            "nodeType": "InheritanceSpecifier",
+            "src": "740:15:70"
+          }
+        ],
+        "canonicalName": "HyperdriveStorage",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 12993,
+          "nodeType": "StructuredDocumentation",
+          "src": "388:313:70",
+          "text": "@author DELV\n @title HyperdriveStorage\n @notice Hyperdrive's storage contract.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."
+        },
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          13187,
+          67106
+        ],
+        "name": "HyperdriveStorage",
+        "nameLocation": "719:17:70",
+        "scope": 13188,
+        "usedErrors": [
+          67051
+        ],
+        "usedEvents": []
+      }
+    ],
+    "license": "Apache-2.0"
+  },
+  "id": 70
+} as const;
