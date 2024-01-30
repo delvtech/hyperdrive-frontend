@@ -1299,10 +1299,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@delvtech/hyperdrive-wasm@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.npmjs.org/@delvtech/hyperdrive-wasm/-/hyperdrive-wasm-0.5.0.tgz"
-  integrity sha512-UnEP08Xuim+USbkUeXJo1sfP0Es2ugWdIshNlhdDXeSLIBSkUo8S0aSJuBYWDP6vcizk7+i5z+1LoikII4qf+A==
+"@delvtech/hyperdrive-wasm@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@delvtech/hyperdrive-wasm/-/hyperdrive-wasm-0.7.0.tgz#57deaf685a249428895a70fff6b3a2716e9b0e21"
+  integrity sha512-EOjALWiVd7KIzPtj6Jyu3gABoksoCYWJ7RZ1n3juDp0AfPEOiDvpnQd5gPkuO4PaO5iLCZ+sTn8apa1eMSag3g==
 
 "@discoveryjs/json-ext@0.5.7":
   version "0.5.7"
