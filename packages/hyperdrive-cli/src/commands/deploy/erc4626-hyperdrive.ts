@@ -1,5 +1,4 @@
 import { ERC20Mintable } from "@hyperdrive/artifacts/dist/ERC20Mintable.js";
-import { HyperdriveFactory } from "@hyperdrive/artifacts/dist/HyperdriveFactory.js";
 import { command } from "clide-js";
 import { supportedChainNames, supportedChains } from "src/utils/chains.js";
 import { createPublicClient, createWalletClient, http, parseUnits } from "viem";
@@ -67,13 +66,14 @@ export default command({
       });
       hyperdriveDeployer = address as string;
 
-      const { request } = await publicClient.simulateContract({
-        abi: HyperdriveFactory.abi,
-        address: factory as `0x${string}`,
-        functionName: "addHyperdriveDeployer",
-        args: [address as `0x${string}`],
-      });
-      await walletClient.writeContract(request);
+      // TODO: As of contracts version 0.7.0, `addHyperdriveDeployer` no longer exists
+      // const { request } = await publicClient.simulateContract({
+      //   abi: HyperdriveFactory.abi,
+      //   address: factory as `0x${string}`,
+      //   functionName: "addHyperdriveDeployer",
+      //   args: [address as `0x${string}`],
+      // });
+      // await walletClient.writeContract(request);
     }
 
     let vault = await options.vault({

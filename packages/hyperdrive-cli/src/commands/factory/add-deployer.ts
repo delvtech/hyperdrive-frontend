@@ -1,4 +1,3 @@
-import { HyperdriveFactory } from "@hyperdrive/artifacts/dist/HyperdriveFactory.js";
 import { command } from "clide-js";
 import signale from "signale";
 import { createPublicClient, createWalletClient, http } from "viem";
@@ -57,16 +56,17 @@ export default command({
 
     signale.pending("Adding deployer to HyperdriveFactory contract...");
 
-    const { request } = await publicClient.simulateContract({
-      abi: HyperdriveFactory.abi,
-      address: address as `0x${string}`,
-      functionName: "addHyperdriveDeployer",
-      args: [deployer as `0x${string}`],
-    });
+    // TODO: As of contracts version 0.7.0, the `addHyperdriveDeployer` no longer exists
+    // const { request } = await publicClient.simulateContract({
+    //   abi: HyperdriveFactory.abi,
+    //   address: address as `0x${string}`,
+    //   functionName: "addHyperdriveDeployer",
+    //   args: [deployer as `0x${string}`],
+    // });
 
-    const txHash = await walletClient.writeContract(request);
+    // const txHash = await walletClient.writeContract(request);
 
-    signale.success(txHash);
-    next(txHash);
+    // signale.success(txHash);
+    // next(txHash);
   },
 });

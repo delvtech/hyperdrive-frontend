@@ -1,11 +1,6 @@
-import { ERC4626HyperdriveDeployerCoordinator } from "@hyperdrive/artifacts/dist/ERC4626HyperdriveDeployerCoordinator.js";
 import { command } from "clide-js";
 import signale from "signale";
 import { Chain, PrivateKeyAccount } from "viem";
-import {
-  DeployedContract,
-  deployContract,
-} from "../../utils/deployContract.js";
 import { DeployOptions } from "../deploy.js";
 import deployERC4626HyperdriveCoreDeployer from "./erc4626-hyperdrive-core-deployer.js";
 import deployERC4626Target0Deployer from "./erc4626-target-0-deployer.js";
@@ -115,26 +110,27 @@ export default command({
 
     signale.pending("Deploying ERC4626HyperdriveDeployer contract...");
 
-    const deployedDeployer = await deployERC4626HyperdriveDeployer({
-      hyperdriveCoreDeployer: hyperdriveCoreDeployer as string,
-      target0Deployer,
-      target1Deployer,
-      target2Deployer,
-      target3Deployer,
-      account,
-      rpcUrl,
-      chain,
-      onSubmitted: (txHash) => {
-        signale.pending(
-          `ERC4626HyperdriveDeployer deployment tx submitted: ${txHash}`,
-        );
-      },
-    });
+    // TODO: As of 0.7.0, the hyperdriveCoreDeployer requires 6 arguments, not 5.
+    // const deployedDeployer = await deployERC4626HyperdriveDeployer({
+    //   hyperdriveCoreDeployer: hyperdriveCoreDeployer as string,
+    //   target0Deployer,
+    //   target1Deployer,
+    //   target2Deployer,
+    //   target3Deployer,
+    //   account,
+    //   rpcUrl,
+    //   chain,
+    //   onSubmitted: (txHash) => {
+    //     signale.pending(
+    //       `ERC4626HyperdriveDeployer deployment tx submitted: ${txHash}`,
+    //     );
+    //   },
+    // });
 
-    signale.success(
-      `ERC4626HyperdriveDeployer deployed @ ${deployedDeployer.address}`,
-    );
-    next(deployedDeployer.address);
+    // signale.success(
+    //   `ERC4626HyperdriveDeployer deployed @ ${deployedDeployer.address}`,
+    // );
+    // next(deployedDeployer.address);
   },
 });
 
@@ -150,30 +146,31 @@ export interface DeployERC4626HyperdriveDeployerOptions {
   onSubmitted?: (txHash: string) => void;
 }
 
-export async function deployERC4626HyperdriveDeployer({
-  hyperdriveCoreDeployer,
-  target0Deployer,
-  target1Deployer,
-  target2Deployer,
-  target3Deployer,
-  account,
-  rpcUrl,
-  chain,
-  onSubmitted,
-}: DeployERC4626HyperdriveDeployerOptions): Promise<DeployedContract> {
-  return await deployContract({
-    abi: ERC4626HyperdriveDeployerCoordinator.abi,
-    args: [
-      hyperdriveCoreDeployer as `0x${string}`,
-      target0Deployer as `0x${string}`,
-      target1Deployer as `0x${string}`,
-      target2Deployer as `0x${string}`,
-      target3Deployer as `0x${string}`,
-    ],
-    bytecode: ERC4626HyperdriveDeployerCoordinator.bytecode.object,
-    account,
-    rpcUrl,
-    chain,
-    onSubmitted,
-  });
-}
+// TODO: As of 0.7.0, the hyperdriveCoreDeployer requires 6 arguments, not 5.
+// export async function deployERC4626HyperdriveDeployer({
+//   hyperdriveCoreDeployer,
+//   target0Deployer,
+//   target1Deployer,
+//   target2Deployer,
+//   target3Deployer,
+//   account,
+//   rpcUrl,
+//   chain,
+//   onSubmitted,
+// }: DeployERC4626HyperdriveDeployerOptions): Promise<DeployedContract> {
+//   return await deployContract({
+//     abi: ERC4626HyperdriveDeployerCoordinator.abi,
+//     args: [
+//       hyperdriveCoreDeployer as `0x${string}`,
+//       target0Deployer as `0x${string}`,
+//       target1Deployer as `0x${string}`,
+//       target2Deployer as `0x${string}`,
+//       target3Deployer as `0x${string}`,
+//     ],
+//     bytecode: ERC4626HyperdriveDeployerCoordinator.bytecode.object,
+//     account,
+//     rpcUrl,
+//     chain,
+//     onSubmitted,
+//   });
+// }

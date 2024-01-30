@@ -1,13 +1,9 @@
-import { ForwarderFactory } from "@hyperdrive/artifacts/dist/ForwarderFactory.js";
-import { HyperdriveFactory } from "@hyperdrive/artifacts/dist/HyperdriveFactory.js";
+// TODO: As of contracts version 0.7.0, the ForwarderFactory no longer exists
+// import { ForwarderFactory } from "@hyperdrive/artifacts/dist/ForwarderFactory.js";
 import { command } from "clide-js";
 import signale from "signale";
-import { PrivateKeyAccount, createPublicClient, http, parseUnits } from "viem";
+import { PrivateKeyAccount, createPublicClient, http } from "viem";
 import { Chain } from "viem/chains";
-import {
-  DeployedContract,
-  deployContract,
-} from "../../utils/deployContract.js";
 import { DeployOptions } from "../deploy.js";
 import deployForwarderFactory from "./forwarder-factory.js";
 
@@ -198,43 +194,45 @@ export default command({
       chain,
     });
 
-    const linkerCodeHash = await publicClient.readContract({
-      abi: ForwarderFactory.abi,
-      address: linkerFactory as `0x${string}`,
-      functionName: "ERC20LINK_HASH",
-    });
+    // TODO: As of contracts version 0.7.0, the ForwarderFactory no longer exists
+    // const linkerCodeHash = await publicClient.readContract({
+    //   abi: ForwarderFactory.abi,
+    //   address: linkerFactory as `0x${string}`,
+    //   functionName: "ERC20LINK_HASH",
+    // });
 
     signale.pending("Deploying HyperdriveFactory...");
 
-    const { address } = await deployHyperdriveFactory({
-      governance,
-      hyperdriveGovernance,
-      defaultPausers,
-      feeCollector,
-      fees: {
-        curve: parseUnits(curveFee, decimals),
-        flat: parseUnits(flatFee, decimals),
-        governanceLP: parseUnits(govLpFee, decimals),
-        governanceZombie: parseUnits(govZombieFee, decimals),
-      },
-      maxFees: {
-        curve: parseUnits(maxCurveFee, decimals),
-        flat: parseUnits(maxFlatFee, decimals),
-        governanceLP: parseUnits(maxGovLpFee, decimals),
-        governanceZombie: parseUnits(maxGovZombieFee, decimals),
-      },
-      linkerFactory,
-      linkerCodeHash,
-      account,
-      rpcUrl,
-      chain,
-      onSubmitted: (txHash) => {
-        signale.pending(`HyperdriveFactory deployment tx submitted: ${txHash}`);
-      },
-    });
+    // TODO: As of contracts version 0.7.0, the `linkerCodeHash` no longer exists
+    // const { address } = await deployHyperdriveFactory({
+    //   governance,
+    //   hyperdriveGovernance,
+    //   defaultPausers,
+    //   feeCollector,
+    //   fees: {
+    //     curve: parseUnits(curveFee, decimals),
+    //     flat: parseUnits(flatFee, decimals),
+    //     governanceLP: parseUnits(govLpFee, decimals),
+    //     governanceZombie: parseUnits(govZombieFee, decimals),
+    //   },
+    //   maxFees: {
+    //     curve: parseUnits(maxCurveFee, decimals),
+    //     flat: parseUnits(maxFlatFee, decimals),
+    //     governanceLP: parseUnits(maxGovLpFee, decimals),
+    //     governanceZombie: parseUnits(maxGovZombieFee, decimals),
+    //   },
+    //   linkerFactory,
+    //   linkerCodeHash,
+    //   account,
+    //   rpcUrl,
+    //   chain,
+    //   onSubmitted: (txHash) => {
+    //     signale.pending(`HyperdriveFactory deployment tx submitted: ${txHash}`);
+    //   },
+    // });
 
-    signale.success(`HyperdriveFactory deployed @ ${address}`);
-    next(address);
+    // signale.success(`HyperdriveFactory deployed @ ${address}`);
+    // next(address);
   },
 });
 
@@ -263,38 +261,39 @@ export interface DeployHyperdriveFactoryOptions {
   onSubmitted?: (txHash: string) => void;
 }
 
-export async function deployHyperdriveFactory({
-  governance,
-  hyperdriveGovernance,
-  defaultPausers,
-  feeCollector,
-  fees,
-  maxFees,
-  linkerFactory,
-  linkerCodeHash,
-  account,
-  rpcUrl,
-  chain,
-  onSubmitted,
-}: DeployHyperdriveFactoryOptions): Promise<DeployedContract> {
-  return await deployContract({
-    abi: HyperdriveFactory.abi,
-    args: [
-      {
-        governance: governance as `0x${string}`,
-        hyperdriveGovernance: hyperdriveGovernance as `0x${string}`,
-        defaultPausers: defaultPausers as `0x${string}`[],
-        feeCollector: feeCollector as `0x${string}`,
-        fees,
-        maxFees,
-        linkerFactory: linkerFactory as `0x${string}`,
-        linkerCodeHash: linkerCodeHash as `0x${string}`,
-      },
-    ],
-    bytecode: HyperdriveFactory.bytecode.object as `0x${string}`,
-    account,
-    rpcUrl,
-    chain,
-    onSubmitted,
-  });
-}
+// TODO: As of contracts version 0.7.0, the `fees` param no longer exists
+// export async function deployHyperdriveFactory({
+//   governance,
+//   hyperdriveGovernance,
+//   defaultPausers,
+//   feeCollector,
+//   fees,
+//   maxFees,
+//   linkerFactory,
+//   linkerCodeHash,
+//   account,
+//   rpcUrl,
+//   chain,
+//   onSubmitted,
+// }: DeployHyperdriveFactoryOptions): Promise<DeployedContract> {
+//   return await deployContract({
+//     abi: HyperdriveFactory.abi,
+//     args: [
+//       {
+//         governance: governance as `0x${string}`,
+//         hyperdriveGovernance: hyperdriveGovernance as `0x${string}`,
+//         defaultPausers: defaultPausers as `0x${string}`[],
+//         feeCollector: feeCollector as `0x${string}`,
+//         fees,
+//         maxFees,
+//         linkerFactory: linkerFactory as `0x${string}`,
+//         linkerCodeHash: linkerCodeHash as `0x${string}`,
+//       },
+//     ],
+//     bytecode: HyperdriveFactory.bytecode.object as `0x${string}`,
+//     account,
+//     rpcUrl,
+//     chain,
+//     onSubmitted,
+//   });
+// }
