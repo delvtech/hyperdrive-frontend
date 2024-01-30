@@ -13,7 +13,7 @@ export function MarketDetailsTab({
   transactionFormHeading: string;
 }): ReactElement {
   return (
-    <div className="flex w-full max-w-7xl flex-col items-center gap-10">
+    <div className="flex w-full max-w-6xl flex-col items-center gap-10">
       <div className="flex w-full flex-col gap-10 xl:flex-row">
         <div className="flex flex-1 flex-col  md:px-8">
           {/* positions and faq tabs */}
@@ -21,7 +21,7 @@ export function MarketDetailsTab({
         </div>
 
         {/* transaction form */}
-        <div className="rounded-box bg-base-200 p-6 md:rounded-r-box xl:rounded-l-none">
+        <div className="rounded-box bg-base-200 p-6 md:rounded-r-box lg:max-w-md xl:rounded-l-none">
           <h5 className="mb-3 font-bold">{transactionFormHeading}</h5>
           {transactionForm}
         </div>

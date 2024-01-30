@@ -43,7 +43,7 @@ export function LongsShortsLpTabs({
 
           <div
             role="tabpanel"
-            className="daisy-tab-content flex rounded-box border-base-200 bg-base-100"
+            className="daisy-tab-content flex rounded-box border-base-200 bg-base-100 lg:min-w-[1200px]"
           >
             {(() => {
               // We render a content panel for each tab, however we only want to
