@@ -12,7 +12,7 @@ function RootComponent() {
       <Navbar />
       <Outlet />
       <Footer />
-      <TanStackRouterDevtools />
+      {import.meta.env.DEV ? <TanStackRouterDevtools /> : null}
     </div>
   );
 }
