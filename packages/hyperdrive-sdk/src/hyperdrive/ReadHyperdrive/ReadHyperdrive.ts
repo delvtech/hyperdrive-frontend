@@ -1316,8 +1316,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
       "addLiquidity",
       [
         contribution,
-        minAPR,
         minLpSharePrice,
+        minAPR,
         maxAPR,
         { destination, asBase, extraData },
       ],
