@@ -6,12 +6,13 @@ export function Hero(): ReactElement {
     <div className="daisy-hero">
       <div className="daisy-hero-content text-center">
         <div className="max-w-4xl">
-          <h2 className="gradient-text mb-5 text-h3 font-bold md:text-h2">
-            DeFi yields that match your risk tolerance
+          <h2 className="gradient-text mb-5 text-h3 font-bold md:text-h1">
+            Fixed and variable yields at your control.
           </h2>
           <h4 className="mb-5 text-h5 text-neutral-content">
-            Hyperdrive is an AMM that lets you buy fixed rates upfront, or
-            maximize your exposure to variable rates like stETH and sDAI.
+            Go Long to lock in a predictable fixed rate of return, go Short to
+            get multiplied exposure to the variable rate, or LP to profit from
+            rates volatility.
           </h4>
           <a
             target="_blank"
