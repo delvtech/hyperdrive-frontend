@@ -97,9 +97,8 @@ export function OpenShortForm({
       }
       disclaimer={
         <p className="text-center text-sm text-neutral-content">
-          Note: Opening a short deposits the pool&apos;s liquidity into the
-          yield source for you. You pay for the current yield upfront, and
-          benefit if the APY increases.
+          Opening a short gives you multiplied exposure to the yield
+          source&apos;s variable rate proportionate to your short size.
         </p>
       }
       actionButton={

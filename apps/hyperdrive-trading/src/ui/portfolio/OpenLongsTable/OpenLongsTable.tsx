@@ -208,7 +208,7 @@ export function OpenLongsTable({
       <div className="my-28">
         <NonIdealState
           heading="You have no open Long positions"
-          text="Open a Long, switch wallets, or view Closed positions instead"
+          text="Open a Long, switch wallets, or view your closed long positions"
         />
       </div>
     );
