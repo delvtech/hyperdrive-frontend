@@ -13,12 +13,12 @@ import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
+import { YieldSourceApy } from "src/ui/markets/AllMarketsTable/YieldSourceApy";
 import {
   MarketTableRowData,
   useMarketRowData,
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
 import { ALL_MARKETS_ROUTE, MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
-import { useVaultRate } from "src/ui/vaults/useVaultRate";
 
 const columnHelper = createColumnHelper<MarketTableRowData>();
 function getColumns() {
@@ -80,8 +80,13 @@ function getColumns() {
           />
         );
       },
-      cell: () => {
-        return <YieldSourceApy key="yield-source-apy" />;
+      cell: ({ row }) => {
+        return (
+          <YieldSourceApy
+            key="yield-source-apy"
+            hyperdrive={row.original.market}
+          />
+        );
       },
     }),
     columnHelper.accessor("longAPR", {
@@ -225,18 +230,6 @@ function LpApyCell({
 }): ReactElement {
   const { lpApy } = useLpApy(hyperdrive);
   return <span>{lpApy?.toFixed(2)}%</span>;
-}
-
-function YieldSourceApy(): ReactElement {
-  const { vaultRate } = useVaultRate({
-    // TODO: temporary for now until this available via addresses.json
-    vaultAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-  });
-  return (
-    <span className="flex items-center gap-1.5">
-      {vaultRate?.formatted || 0}% APY
-    </span>
-  );
 }
 
 function GoToMarketButton({

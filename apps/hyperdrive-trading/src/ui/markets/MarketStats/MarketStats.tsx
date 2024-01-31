@@ -31,8 +31,7 @@ export function MarketStats({
   const { lpApy } = useLpApy(hyperdrive);
 
   const { vaultRate } = useVaultRate({
-    // TODO: temporary for now until this available via addresses.json
-    vaultAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    vaultAddress: hyperdrive.sharesToken.address,
   });
 
   // TODO: This will only work on cloudchain and local for now. Remove this
