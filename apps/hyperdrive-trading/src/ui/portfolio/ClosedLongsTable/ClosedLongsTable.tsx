@@ -7,6 +7,7 @@ import {
 } from "@tanstack/react-table";
 import { ReactElement } from "react";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -161,6 +162,29 @@ export function ClosedLongsTable({
     data: [...(closedLongs || [])].reverse(), // show most recently closed first, TODO: refactor to interactive column sorting
     getCoreRowModel: getCoreRowModel(),
   });
+
+  if (!account) {
+    return (
+      <div className="my-28">
+        <NonIdealState
+          heading="No wallet connected"
+          text="Connect your wallet to view your Longs."
+          action={<ConnectWalletButton />}
+        />
+      </div>
+    );
+  }
+
+  if (!closedLongs?.length) {
+    return (
+      <div className="my-28">
+        <NonIdealState
+          heading="You have no closed Long positions"
+          text="Close a Long, switch wallets, or view your open long positions"
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="max-h-96 overflow-y-auto md:w-[750px]">

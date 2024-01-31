@@ -7,6 +7,7 @@ import {
 } from "@tanstack/react-table";
 import { ReactElement, useMemo } from "react";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -211,7 +212,28 @@ export function ClosedLpTable({
       : getColumns(hyperdrive),
     getCoreRowModel: getCoreRowModel(),
   });
+  if (!account) {
+    return (
+      <div className="my-28">
+        <NonIdealState
+          heading="No wallet connected"
+          text="Connect your wallet to view your LP positions."
+          action={<ConnectWalletButton />}
+        />
+      </div>
+    );
+  }
 
+  if (!closedLpShares?.length) {
+    return (
+      <div className="my-28">
+        <NonIdealState
+          heading="You have no closed LP positions"
+          text="Close an LP position, switch wallets, or view your open LP positions"
+        />
+      </div>
+    );
+  }
   return (
     <div className="max-h-96 w-full overflow-y-scroll">
       <table className="daisy-table daisy-table-zebra daisy-table-lg">
