@@ -31,8 +31,7 @@ export function MarketStats({
   const { lpApy } = useLpApy(hyperdrive);
 
   const { vaultRate } = useVaultRate({
-    // TODO: temporary for now until this available via addresses.json
-    vaultAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    vaultAddress: hyperdrive.sharesToken.address,
   });
 
   // TODO: This will only work on cloudchain and local for now. Remove this
@@ -149,10 +148,7 @@ function AmountLabel({
       {value}
       <span className="ml-1">{symbol}</span>
       {icon ? (
-        <img
-          src={icon}
-          className="ml-1 h-6 rounded-full border border-neutral-content/40  p-1"
-        />
+        <img src={icon} className="ml-1 h-8 rounded-full  p-1" />
       ) : undefined}
     </p>
   );
