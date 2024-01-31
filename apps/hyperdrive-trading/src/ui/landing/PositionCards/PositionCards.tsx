@@ -12,36 +12,42 @@ export function PositionCards(): ReactElement {
     <div className="flex max-w-7xl flex-col items-center justify-evenly gap-10">
       <div className="flex flex-wrap justify-center gap-16 ">
         <PositionCard
-          title="Long"
-          subtitle="Go long fixed rates and earn passive yield on your favourite assets."
+          title={
+            <span>
+              Fixed rates → go <span className="text-primary">Long</span>
+            </span>
+          }
+          subtitle="Simple, predictable, fixed-rate returns."
           icon={<ClockIcon className="h-4 shrink-0" />}
           checklist={[
-            "Fixed rate included in the price",
+            "Principal-protected profits",
             "Minimal risk and maintenance",
-            "Redeemable before term ends",
+            "Exit at any time",
           ]}
         />
         <PositionCard
-          title="Short"
-          subtitle="Profit when the price of hy-asset drops, maximize exposure to the yield source."
+          title={
+            <span>
+              Variable rates → go <span className="text-primary">Short</span>
+            </span>
+          }
+          subtitle="Get multiplied exposure to the most trusted variable rates in DeFi."
           icon={<BoltIcon className="h-4 shrink-0" />}
           checklist={[
-            `Fixed rate up, hy-asset price down`,
-            "Maximize exposure to yield source",
-            "Redeemable before term ends",
+            "Speculate on rates",
+            "Reliable & sustainable yield sources",
+            "Exit at any time",
           ]}
         />
         <PositionCard
           title="Add Liquidity"
-          subtitle="Take the other side of every Long and Short. Earn fees and the
-                  yield source rate."
+          subtitle="Earn market-making fees plus yield on idle capital."
           icon={<SquaresPlusIcon className="h-4 shrink-0" />}
           checklist={[
-            `Single-sided deposit with hy-asset`,
-            "Idle liquidity earns yield source rate",
-            "No terms or manual LP rollovers",
+            "Provide single asset liquidity",
+            "Capital efficient design",
+            "No impermanent loss",
           ]}
-          emphasized
         />
       </div>
       <a

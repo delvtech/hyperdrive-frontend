@@ -77,7 +77,7 @@ export function CloseShortForm({
           maxValue={short ? formatUnits(short.bondAmount, baseDecimals) : ""}
           stat={
             short
-              ? `Available to close: ${formatBalance({
+              ? `Balance: ${formatBalance({
                   balance: short.bondAmount,
                   decimals: hyperdrive.baseToken.decimals,
                   places: 4,

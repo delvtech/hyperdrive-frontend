@@ -3,7 +3,7 @@ import { ChecklistItem } from "src/ui/base/components/ChecklistItem/ChecklistIte
 import { Well } from "src/ui/base/components/Well/Well";
 
 interface Props {
-  title: string;
+  title: ReactNode;
   subtitle: string;
   icon: ReactNode;
   checklist: string[];

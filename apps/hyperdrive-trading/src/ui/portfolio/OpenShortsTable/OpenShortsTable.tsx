@@ -267,7 +267,7 @@ export function OpenShortsTable({
       <div className="my-28">
         <NonIdealState
           heading="You have no open Short positions"
-          text="Open a Short, switch wallets, or view Closed positions instead"
+          text="Open a Short, switch wallets, or view your closed short positions"
         />
       </div>
     );
