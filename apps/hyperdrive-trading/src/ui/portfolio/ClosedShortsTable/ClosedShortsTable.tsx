@@ -1,3 +1,4 @@
+import { WalletIcon } from "@heroicons/react/24/outline";
 import { ClosedShort } from "@hyperdrive/sdk";
 import {
   createColumnHelper,
@@ -7,6 +8,7 @@ import {
 } from "@tanstack/react-table";
 import { ReactElement } from "react";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -154,6 +156,30 @@ export function ClosedShortsTable({
     data: closedShorts || [],
     getCoreRowModel: getCoreRowModel(),
   });
+
+  if (!account) {
+    return (
+      <div className="my-28">
+        <NonIdealState
+          heading="No wallet connected"
+          text="Connect your wallet to view your Shorts."
+          icon={<WalletIcon height="64" />}
+          action={<ConnectWalletButton />}
+        />
+      </div>
+    );
+  }
+
+  if (!closedShorts?.length) {
+    return (
+      <div className="my-28">
+        <NonIdealState
+          heading="You have no closed Short positions"
+          text="Close a Short, switch wallets, or view your open short positions"
+        />
+      </div>
+    );
+  }
   return (
     <div className="max-h-96 overflow-y-scroll">
       <table className="daisy-table daisy-table-zebra daisy-table-lg">
