@@ -217,7 +217,7 @@ export function ClosedLpTable({
       <div className="my-28">
         <NonIdealState
           heading="No wallet connected"
-          text="Connect your wallet to view your Longs."
+          text="Connect your wallet to view your LP positions."
           action={<ConnectWalletButton />}
         />
       </div>
