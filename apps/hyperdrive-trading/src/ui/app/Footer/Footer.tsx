@@ -25,25 +25,30 @@ export default function Footer(): ReactElement {
       </aside>
       <nav>
         <header className={footerTitleClassName}>Services</header>
-        <Link
-          to={
-            "https://delv-tech.notion.site/Hyperdrive-Docs-6c014b9270af4483861b1c2ffa7f3a88"
-          }
-          className="link link-hover"
-        >
-          Documentation
-        </Link>
+        <a className="link link-hover">Documentation</a>
       </nav>
       <nav>
         {/* TODO: Determine if company information is needed here */}
         <header className={footerTitleClassName}>Company</header>
-        <a className="link link-hover">About us</a>
+        <a className="link link-hover" href="https://www.delv.tech/">
+          About us
+        </a>
       </nav>
       <nav>
         {/* TODO: Add links to legal pages */}
         <header className={footerTitleClassName}>Legal</header>
-        <a className="link link-hover">Terms of use</a>
-        <a className="link link-hover">Privacy policy</a>
+        <a
+          className="link link-hover"
+          href="https://elementfi.s3.us-east-2.amazonaws.com/element-finance-terms-of-service.pdf"
+        >
+          Terms of use
+        </a>
+        <a
+          className="link link-hover"
+          href="https://elementfi.s3.us-east-2.amazonaws.com/element-finance-privacy-policy.pdf"
+        >
+          Privacy policy
+        </a>
         <a className="link link-hover">Cookie policy</a>
       </nav>
     </footer>
