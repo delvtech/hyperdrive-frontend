@@ -82,7 +82,7 @@ export function LpTab({
         </div>
       }
       transactionForm={<AddLiquidityForm hyperdrive={hyperdrive} />}
-      transactionFormHeading={"Add liquidity"}
+      transactionFormHeading={"Add Liquidity"}
     />
   );
 }

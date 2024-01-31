@@ -106,7 +106,7 @@ export function RemoveLiquidityForm({
 
   return (
     <TransactionView
-      heading="Remove liquidity"
+      heading="Remove Liquidity"
       tokenInput={
         <TokenInput
           name={hyperdrive.baseToken.name}
@@ -134,7 +134,7 @@ export function RemoveLiquidityForm({
             }`}
           />
           <LabelValue
-            label="Queued for withdrawal"
+            label="Queued for delayed withdrawal"
             value={`${formattedWithdrawalSharesOut || 0} ${
               hyperdrive.baseToken.symbol
             }`}
@@ -143,9 +143,8 @@ export function RemoveLiquidityForm({
       }
       disclaimer={
         <p className="text-center text-sm text-neutral-content">
-          Note: You can withdraw liquidity at any time. If you&apos;re liquidity
-          is backing open positions, you&apos;ll receive{" "}
-          {hyperdrive.baseToken.symbol} that&apos;s queued for withdrawal later.
+          You can withdraw liquidity at any time. The utilized portion may be
+          queued for delayed withdrawal.
         </p>
       }
       actionButton={

@@ -164,16 +164,15 @@ export function OpenLpSharesCard({
                 )}
               </Modal>
               <p className="mt-2 text-center text-xs text-neutral-content">
-                Note: When you withdraw liquidity, you get back{" "}
-                {hyperdrive.baseToken.symbol} and withdrawal shares proportional
-                to your utilization ratio.
+                Liquidity is used to back open Long and Short positions. Any
+                idle liquidity earns the yield source&apos;s variable rate.
               </p>
             </div>
           </>
         ) : (
           <NonIdealState
-            heading="No LP shares found."
-            text="Add liquidity to receive LP shares."
+            heading="You have no LP positions"
+            text="Add liquidity, switch wallets, or view your closed LP positions."
           />
         )}
       </div>
