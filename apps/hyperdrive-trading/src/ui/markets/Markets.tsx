@@ -22,8 +22,8 @@ export function Markets(): ReactElement {
               Hyperdrive Markets
             </span>
             <p className="mb-5 mt-3 text-neutral-content lg:mb-16">
-              Select a market below to start earning fixed or variable rate
-              yield on the most trusted assets in DeFi.
+              Select from the markets below to start earning fixed or variable
+              rates on the most trusted assets in DeFi.
             </p>
           </div>
         </div>
