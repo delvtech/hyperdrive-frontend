@@ -7,6 +7,7 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/AddLiquidityPreview";
 import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
@@ -52,6 +53,8 @@ export function AddLiquidityForm({
     ? amountAsBigInt && amountAsBigInt > tokenAllowance
     : true;
 
+  const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
+  console.log("fixedAPR", fixedAPR?.formatted);
   const { lpSharesOut, status: addLiquidityPreviewStatus } =
     usePreviewAddLiquidity({
       market: hyperdrive,
@@ -67,8 +70,8 @@ export function AddLiquidityForm({
   const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
     hyperdriveAddress: hyperdrive.address,
     contribution: amountAsBigInt,
-    minAPR: parseUnits("0", hyperdrive.baseToken.decimals),
     minLpSharePrice: poolInfo?.lpSharePrice,
+    minAPR: parseUnits("0", hyperdrive.baseToken.decimals),
     maxAPR: parseUnits("999", hyperdrive.baseToken.decimals),
     destination: account,
     enabled: addLiquidityPreviewStatus === "success" && !needsApproval,
