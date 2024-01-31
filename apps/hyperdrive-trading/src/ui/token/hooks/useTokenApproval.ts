@@ -13,21 +13,23 @@ interface UseTokenApprovalOptions {
   tokenAddress: Address;
   spender: Address | undefined;
   amount: bigint;
+  enabled?: boolean;
 }
 
 export function useTokenApproval({
   tokenAddress,
   spender,
   amount,
+  enabled = true,
 }: UseTokenApprovalOptions): { approve: (() => void) | undefined } {
-  const enabled = !!spender;
+  const queryEnabled = !!spender && !!enabled;
 
   const { config } = usePrepareContractWrite({
     enabled: !!spender,
     address: tokenAddress,
     abi: erc20ABI,
     functionName: "approve",
-    args: enabled ? [spender, amount] : undefined,
+    args: queryEnabled ? [spender, amount] : undefined,
   });
 
   const addRecentTransaction = useAddRecentTransaction();

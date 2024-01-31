@@ -3,7 +3,7 @@ import { Address, erc20ABI, useContractRead } from "wagmi";
 interface UseTokenAllowanceOptions {
   account: Address | undefined;
   spender: Address | undefined;
-  tokenAddress: Address;
+  tokenAddress: Address | undefined;
 }
 
 interface useTokenAllowanceResult {
@@ -16,7 +16,7 @@ export function useTokenAllowance({
   spender,
   tokenAddress,
 }: UseTokenAllowanceOptions): useTokenAllowanceResult {
-  const enabled = !!spender && !!account;
+  const enabled = !!spender && !!account && !!tokenAddress;
 
   const { data, status } = useContractRead({
     enabled,
