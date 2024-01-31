@@ -149,10 +149,7 @@ function AmountLabel({
       {value}
       <span className="ml-1">{symbol}</span>
       {icon ? (
-        <img
-          src={icon}
-          className="ml-1 h-6 rounded-full border border-neutral-content/40  p-1"
-        />
+        <img src={icon} className="ml-1 h-8 rounded-full  p-1" />
       ) : undefined}
     </p>
   );
