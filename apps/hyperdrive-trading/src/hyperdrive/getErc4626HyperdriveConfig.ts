@@ -1,3 +1,4 @@
+import { IERC4626HyperdriveRead } from "@hyperdrive/artifacts/dist/IERC4626HyperdriveRead";
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
@@ -47,13 +48,10 @@ export async function getErc4626HyperdriveConfig({
     iconUrl: getTokenIconUrl({ address: baseTokenAddress, chainId }),
   };
 
-  // TODO: This should be specific to the yield source
-  const sharesToken: TokenConfig = {
-    name: "",
-    symbol: "",
-    decimals: 0,
-    address: "0x",
-  };
+  const sharesToken: TokenConfig = await fetchSharesToken(
+    publicClient,
+    hyperdriveAddress,
+  );
 
   const termLengthMS = Number(positionDuration) * 1000;
   const name = formatHyperdriveName({
@@ -76,4 +74,34 @@ export async function getErc4626HyperdriveConfig({
     baseToken,
     sharesToken,
   };
+}
+async function fetchSharesToken(
+  publicClient: PublicClient,
+  hyperdriveAddress: Address,
+) {
+  const sharesTokenAddress = await publicClient.readContract({
+    abi: IERC4626HyperdriveRead.abi,
+    functionName: "vault",
+    address: hyperdriveAddress,
+  });
+  const sharesToken: TokenConfig = {
+    address: sharesTokenAddress,
+    decimals: await publicClient.readContract({
+      address: sharesTokenAddress,
+      abi: erc20ABI,
+      functionName: "decimals",
+    }),
+    name: await publicClient.readContract({
+      address: sharesTokenAddress,
+      abi: erc20ABI,
+      functionName: "name",
+    }),
+
+    symbol: await publicClient.readContract({
+      address: sharesTokenAddress,
+      abi: erc20ABI,
+      functionName: "symbol",
+    }),
+  };
+  return sharesToken;
 }
