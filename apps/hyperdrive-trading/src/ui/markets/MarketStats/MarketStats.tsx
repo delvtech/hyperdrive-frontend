@@ -28,7 +28,7 @@ export function MarketStats({
     decimals: hyperdrive.baseToken.decimals,
   });
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
-  const { lpApy } = useLpApy(hyperdrive);
+  const { lpApy, lpApyStatus } = useLpApy(hyperdrive);
 
   const { vaultRate } = useVaultRate({
     vaultAddress: hyperdrive.sharesToken.address,
@@ -69,9 +69,9 @@ export function MarketStats({
       <Stat
         label="LP APY (12 Hour)"
         value={
-          lpApy || lpApy === 0 ? (
+          lpApyStatus !== "loading" ? (
             <span className="flex items-center gap-1.5">
-              {lpApy.toFixed(2)}%
+              {lpApy === 0 ? "No Data" : `${lpApy?.toFixed(2)}%`}
             </span>
           ) : (
             <Skeleton className="opacity-50" />
