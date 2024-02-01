@@ -75,7 +75,7 @@ function FilterSelect({
           key={filter}
           className={`${
             header.column.getFilterValue() !== filter
-              ? "daisy-tab text-sm  font-normal md:text-lg"
+              ? "daisy-tab text-sm  font-normal opacity-80 hover:opacity-100 md:text-lg"
               : "daisy-tab daisy-tab-active text-sm md:text-lg"
           }`}
           onClick={() => header.column.setFilterValue(filter)}
