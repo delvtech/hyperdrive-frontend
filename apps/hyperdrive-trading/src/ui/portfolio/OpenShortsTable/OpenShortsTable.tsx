@@ -262,7 +262,7 @@ export function OpenShortsTable({
     );
   }
 
-  if (!openShorts?.length) {
+  if (!openShorts?.length && openShortsStatus !== "loading") {
     return (
       <div className="my-28">
         <NonIdealState
@@ -319,7 +319,7 @@ export function OpenShortsTable({
         </thead>
         <tbody>
           {openShortsStatus === "loading" ? (
-            <TableSkeleton numColumns={6} />
+            <TableSkeleton numColumns={5} />
           ) : (
             tableInstance.getRowModel().rows.map((row) => {
               return (
@@ -352,7 +352,6 @@ export function OpenShortsTable({
           )}
         </tbody>
       </table>
-      {!openShorts?.length ? <NonIdealState /> : null}
     </div>
   );
 }
