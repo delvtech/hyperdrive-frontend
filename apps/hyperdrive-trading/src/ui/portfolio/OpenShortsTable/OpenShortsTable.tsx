@@ -262,7 +262,7 @@ export function OpenShortsTable({
     );
   }
 
-  if (!openShorts?.length && openShortsStatus !== "loading") {
+  if (!openShorts?.length && openShortsStatus === "success") {
     return (
       <div className="my-28">
         <NonIdealState

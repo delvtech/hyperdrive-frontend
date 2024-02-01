@@ -203,7 +203,7 @@ export function OpenLongsTable({
     );
   }
 
-  if (!openLongs?.length && openLongsStatus !== "loading") {
+  if (!openLongs?.length && openLongsStatus === "success") {
     return (
       <div className="my-28">
         <NonIdealState

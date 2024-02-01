@@ -170,7 +170,7 @@ export function ClosedShortsTable({
     );
   }
 
-  if (!closedShorts?.length) {
+  if (!closedShorts?.length && closedShortsStatus === "success") {
     return (
       <div className="my-28">
         <NonIdealState

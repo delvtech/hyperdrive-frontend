@@ -175,7 +175,7 @@ export function ClosedLongsTable({
     );
   }
 
-  if (!closedLongs?.length) {
+  if (!closedLongs?.length && closedLongsStatus === "success") {
     return (
       <div className="my-28">
         <NonIdealState
