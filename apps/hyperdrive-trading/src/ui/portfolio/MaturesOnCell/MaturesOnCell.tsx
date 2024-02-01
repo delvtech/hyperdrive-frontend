@@ -16,7 +16,7 @@ export function MaturesOnCell({
   );
 
   return (
-    <div className="daisy-stat flex flex-row p-0 lg:flex-col">
+    <div className="daisy-stat flex flex-row p-0 xl:flex-col">
       <span className="daisy-stat-value text-xs lg:text-md">
         {termEndDate.toLocaleDateString()}
       </span>
