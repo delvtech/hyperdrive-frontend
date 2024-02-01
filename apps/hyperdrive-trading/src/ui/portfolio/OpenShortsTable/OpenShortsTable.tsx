@@ -203,13 +203,15 @@ function CurrentValueCell({
     baseAmountOut && baseAmountOut > openShort.baseAmountPaid;
 
   return (
-    <div className="flex flex-row gap-1 sm:flex-col">
-      <span className="font-bold">{currentValue?.toString()}</span>
+    <div className="daisy-stat p-0">
+      <span className="daisy-stat-value text-md font-bold">
+        {currentValue?.toString()}
+      </span>
       {baseAmountOut && openShort.bondAmount !== 0n ? (
         <div
           data-tip={"Profit/Loss since open"}
           className={classNames(
-            "daisy-badge daisy-badge-sm daisy-tooltip inline-flex text-xs lg:daisy-badge-md",
+            "daisy-stat-desc daisy-tooltip mt-1 flex text-xs",
             { "text-success": isPositiveChangeInValue },
             { "text-error": !isPositiveChangeInValue },
           )}
