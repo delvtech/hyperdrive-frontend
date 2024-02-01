@@ -21,7 +21,7 @@ export function MaturesOnCell({
         {termEndDate.toLocaleDateString()}
       </span>
       {isTermComplete ? (
-        <div className={" daisy-stat-desc inline-flex w-32 text-xs"}>
+        <div className={"daisy-stat-desc inline-flex w-32 text-xs"}>
           Term complete
         </div>
       ) : (
