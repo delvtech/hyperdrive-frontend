@@ -9,8 +9,8 @@ import {
 import { ReactElement } from "react";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
+import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useClosedShorts } from "src/ui/hyperdrive/shorts/hooks/useClosedShorts";
@@ -170,6 +170,9 @@ export function ClosedShortsTable({
     );
   }
 
+  if (closedShortsStatus === "loading") {
+    return <LoadingState />;
+  }
   if (!closedShorts?.length && closedShortsStatus === "success") {
     return (
       <div className="my-28">
@@ -203,28 +206,24 @@ export function ClosedShortsTable({
           ))}
         </thead>
         <tbody>
-          {closedShortsStatus === "loading" ? (
-            <TableSkeleton numColumns={5} />
-          ) : (
-            tableInstance.getRowModel().rows.map((row) => {
-              return (
-                <tr key={row.id} className="h-24 grid-cols-4 items-center">
-                  <>
-                    {row.getVisibleCells().map((cell) => {
-                      return (
-                        <td className="align-top text-lg" key={cell.id}>
-                          {flexRender(
-                            cell.column.columnDef.cell,
-                            cell.getContext(),
-                          )}
-                        </td>
-                      );
-                    })}
-                  </>
-                </tr>
-              );
-            })
-          )}
+          {tableInstance.getRowModel().rows.map((row) => {
+            return (
+              <tr key={row.id} className="h-24 grid-cols-4 items-center">
+                <>
+                  {row.getVisibleCells().map((cell) => {
+                    return (
+                      <td className="align-top text-lg" key={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </td>
+                    );
+                  })}
+                </>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
       {!closedShorts?.length ? <NonIdealState /> : null}
