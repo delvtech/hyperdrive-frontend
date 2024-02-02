@@ -328,12 +328,14 @@ function CurrentValueCell({
     return <div>Insufficient Liquidity</div>;
   }
   return (
-    <div className="flex items-start gap-1 xl:flex-col">
-      <span className="font-bold xl:ml-2">{currentValue?.toString()}</span>
+    <div className="daisy-stat flex flex-row p-0 xl:flex-col">
+      <span className="daisy-stat-value text-md font-bold">
+        {currentValue?.toString()}
+      </span>
       <div
         data-tip={"Profit/Loss since open"}
         className={classNames(
-          "daisy-badge daisy-badge-sm daisy-tooltip inline-flex text-xs lg:daisy-badge-md",
+          "daisy-stat-desc daisy-tooltip mt-1 inline-flex text-xs",
           { "text-success": isPositiveChangeInValue },
           { "text-error": !isPositiveChangeInValue },
         )}
@@ -375,12 +377,14 @@ function FixedRateCell({
   });
 
   return (
-    <div className="flex items-start gap-1 xl:flex-col">
-      <span className="font-bold xl:ml-2">{formatRate(fixedRate)}%</span>
+    <div className="daisy-stat flex flex-row p-0 xl:flex-col">
+      <span className="daisy-stat-value text-md font-bold">
+        {formatRate(fixedRate)}%
+      </span>
       <div
         data-tip={"Yield after fees if held to maturity"}
         className={
-          "daisy-badge daisy-badge-sm daisy-tooltip inline-flex w-32 px-2 text-xs text-success lg:daisy-badge-md"
+          "daisy-stat-desc daisy-tooltip mt-1 inline-flex text-xs text-success"
         }
       >
         <span>{"+"}</span>
