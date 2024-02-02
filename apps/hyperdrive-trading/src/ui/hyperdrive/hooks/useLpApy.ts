@@ -8,6 +8,7 @@ import { useBlockNumber, useChainId } from "wagmi";
 
 export function useLpApy(hyperdrive: HyperdriveConfig): {
   lpApy: number | undefined;
+  lpApyStatus: "error" | "success" | "loading";
 } {
   const chainId = useChainId();
   const isDevnet = !!import.meta.env.VITE_LOCALHOST_NODE_RPC_URL;
@@ -17,7 +18,7 @@ export function useLpApy(hyperdrive: HyperdriveConfig): {
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const queryEnabled =
     !!readHyperdrive && !!blockNumber && !!currentPoolInfo && !!poolConfig;
-  const { data } = useQuery({
+  const { data, status } = useQuery({
     queryKey: makeQueryKey("getLpApy", {
       chainId,
       blockNumber: blockNumber?.toString(),
@@ -37,5 +38,6 @@ export function useLpApy(hyperdrive: HyperdriveConfig): {
 
   return {
     lpApy: data?.lpApy,
+    lpApyStatus: status,
   };
 }

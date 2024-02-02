@@ -8,8 +8,8 @@ import {
 import { ReactElement } from "react";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
+import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useClosedLongs } from "src/ui/hyperdrive/longs/hooks/useClosedLongs";
@@ -175,7 +175,10 @@ export function ClosedLongsTable({
     );
   }
 
-  if (!closedLongs?.length) {
+  if (closedLongsStatus === "loading") {
+    return <LoadingState />;
+  }
+  if (!closedLongs?.length && closedLongsStatus === "success") {
     return (
       <div className="my-28">
         <NonIdealState
@@ -209,31 +212,26 @@ export function ClosedLongsTable({
           ))}
         </thead>
         <tbody>
-          {closedLongsStatus === "loading" ? (
-            <TableSkeleton numColumns={5} />
-          ) : (
-            tableInstance.getRowModel().rows.map((row) => {
-              return (
-                <tr key={row.id} className="h-24 items-center">
-                  <>
-                    {row.getVisibleCells().map((cell) => {
-                      return (
-                        <td className="align-top" key={cell.id}>
-                          {flexRender(
-                            cell.column.columnDef.cell,
-                            cell.getContext(),
-                          )}
-                        </td>
-                      );
-                    })}
-                  </>
-                </tr>
-              );
-            })
-          )}
+          {tableInstance.getRowModel().rows.map((row) => {
+            return (
+              <tr key={row.id} className="h-24 items-center">
+                <>
+                  {row.getVisibleCells().map((cell) => {
+                    return (
+                      <td className="align-top" key={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </td>
+                    );
+                  })}
+                </>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
-      {!closedLongs?.length ? <NonIdealState /> : null}
     </div>
   );
 }

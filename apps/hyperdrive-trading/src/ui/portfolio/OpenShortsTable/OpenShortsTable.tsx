@@ -17,8 +17,8 @@ import { ReactElement } from "react";
 import { parseUnits } from "src/base/parseUnits";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
+import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useAccruedYield } from "src/ui/hyperdrive/hooks/useAccruedYield";
@@ -263,8 +263,10 @@ export function OpenShortsTable({
       </div>
     );
   }
-
-  if (!openShorts?.length) {
+  if (openShortsStatus === "loading") {
+    return <LoadingState />;
+  }
+  if (!openShorts?.length && openShortsStatus === "success") {
     return (
       <div className="my-28">
         <NonIdealState
@@ -320,41 +322,36 @@ export function OpenShortsTable({
           ))}
         </thead>
         <tbody>
-          {openShortsStatus === "loading" ? (
-            <TableSkeleton numColumns={6} />
-          ) : (
-            tableInstance.getRowModel().rows.map((row) => {
-              return (
-                <tr
-                  key={row.id}
-                  className="daisy-hover h-24 cursor-pointer items-center transition duration-300 ease-in-out"
-                  onClick={() => {
-                    const modalId = `${row.original.assetId}`;
-                    (window as any)[modalId].showModal();
-                  }}
-                >
-                  <>
-                    {row.getVisibleCells().map((cell) => {
-                      return (
-                        <td
-                          className="align-top text-xs md:text-md"
-                          key={cell.id}
-                        >
-                          {flexRender(
-                            cell.column.columnDef.cell,
-                            cell.getContext(),
-                          )}
-                        </td>
-                      );
-                    })}
-                  </>
-                </tr>
-              );
-            })
-          )}
+          {tableInstance.getRowModel().rows.map((row) => {
+            return (
+              <tr
+                key={row.id}
+                className="daisy-hover h-24 cursor-pointer items-center transition duration-300 ease-in-out"
+                onClick={() => {
+                  const modalId = `${row.original.assetId}`;
+                  (window as any)[modalId].showModal();
+                }}
+              >
+                <>
+                  {row.getVisibleCells().map((cell) => {
+                    return (
+                      <td
+                        className="align-top text-xs md:text-md"
+                        key={cell.id}
+                      >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </td>
+                    );
+                  })}
+                </>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
-      {!openShorts?.length ? <NonIdealState /> : null}
     </div>
   );
 }

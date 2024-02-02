@@ -1,18 +1,19 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   ColumnFiltersState,
+  Header,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   getSortedRowModel,
-  Header,
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { useState } from "react";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import {
@@ -74,7 +75,7 @@ function FilterSelect({
           key={filter}
           className={`${
             header.column.getFilterValue() !== filter
-              ? "daisy-tab text-sm  font-normal md:text-lg"
+              ? "daisy-tab text-sm  font-normal opacity-80 hover:opacity-100 md:text-lg"
               : "daisy-tab daisy-tab-active text-sm md:text-lg"
           }`}
           onClick={() => header.column.setFilterValue(filter)}
@@ -270,6 +271,17 @@ export function TransactionTable({
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
   });
+
+  if (!transactionData?.length) {
+    return (
+      <div className="my-28">
+        <NonIdealState
+          heading="There are no transactions to display"
+          text="Open a position or add liquidity to see transactions here."
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="max-h-96 overflow-y-scroll">

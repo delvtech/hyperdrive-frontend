@@ -1,5 +1,4 @@
 import { SparklesIcon, WalletIcon } from "@heroicons/react/24/outline";
-import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
@@ -21,16 +20,15 @@ export function LpTab({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
-  const { openConnectModal } = useConnectModal();
 
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
-  const { lpShares } = useLpShares({
+  const { lpShares, lpSharesStatus } = useLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
 
-  const { withdrawalShares } = useWithdrawalShares({
+  const { withdrawalShares, withdrawalSharesStatus } = useWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
@@ -57,7 +55,12 @@ export function LpTab({
                     />
                   );
                 }
-                if (!withdrawalShares && !lpShares) {
+                if (
+                  !withdrawalShares &&
+                  !lpShares &&
+                  lpSharesStatus === "success" &&
+                  withdrawalSharesStatus === "success"
+                ) {
                   return (
                     <NonIdealState
                       heading="There are no LP positions in this wallet"

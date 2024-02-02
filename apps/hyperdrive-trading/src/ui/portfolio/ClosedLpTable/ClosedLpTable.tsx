@@ -224,7 +224,7 @@ export function ClosedLpTable({
     );
   }
 
-  if (!closedLpShares?.length) {
+  if (!closedLpShares?.length && closedLpSharesStatus === "success") {
     return (
       <div className="my-28">
         <NonIdealState
