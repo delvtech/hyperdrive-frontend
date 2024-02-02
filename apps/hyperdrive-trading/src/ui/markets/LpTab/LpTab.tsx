@@ -1,5 +1,4 @@
 import { SparklesIcon, WalletIcon } from "@heroicons/react/24/outline";
-import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
@@ -21,7 +20,6 @@ export function LpTab({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
-  const { openConnectModal } = useConnectModal();
 
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
