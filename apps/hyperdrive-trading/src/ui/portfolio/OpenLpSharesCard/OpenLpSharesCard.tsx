@@ -43,10 +43,10 @@ export function OpenLpSharesCard({
     });
 
   const utilizationRatio =
-    !!withdrawalSharesOut && !!lpBaseWithdrawable
+    !!withdrawalSharesOut && !!lpShares
       ? calculateRatio({
           a: withdrawalSharesOut,
-          b: lpBaseWithdrawable,
+          b: lpShares,
           decimals: hyperdrive.baseToken.decimals,
         })
       : 0n;
