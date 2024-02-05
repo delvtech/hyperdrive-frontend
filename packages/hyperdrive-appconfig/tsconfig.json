@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@hyperdrive/tsconfig/base.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "target": "esnext",
+    "module": "ESNext",
+    "paths": {
+      "src/*": ["src/*"]
+    },
+    "resolveJsonModule": true
+  }
+}
