@@ -1,5 +1,5 @@
 import { ReactElement, StrictMode } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useAppConfigOld } from "src/ui/appconfig/useAppConfigOld";
 
 import { Router, RouterProvider } from "@tanstack/react-router";
 
@@ -17,7 +17,7 @@ declare module "@tanstack/react-router" {
 }
 
 export function App(): ReactElement | null {
-  const { appConfig } = useAppConfig();
+  const { appConfig } = useAppConfigOld();
   if (appConfig) {
     // eslint-disable-next-line no-console
     console.log("appConfig", appConfig);

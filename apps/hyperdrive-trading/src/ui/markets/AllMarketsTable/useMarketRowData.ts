@@ -5,7 +5,7 @@ import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
 import { querySdkCache } from "src/sdk/sdkCache";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useAppConfigOld } from "src/ui/appconfig/useAppConfigOld";
 import {
   YieldSourceProtocol,
   yieldSourceProtocols,
@@ -23,7 +23,7 @@ export interface MarketTableRowData {
 
 export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
   const publicClient = usePublicClient();
-  const { appConfig } = useAppConfig();
+  const { appConfig } = useAppConfigOld();
   const hyperdrives = useMemo(
     () => appConfig?.hyperdrives,
     [appConfig?.hyperdrives],

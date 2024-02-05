@@ -11,7 +11,10 @@ const LOCALHOST_ADDRESSES_URL = import.meta.env.VITE_LOCALHOST_ADDRESSES_URL;
 const CUSTOM_CHAIN_ADDRESSES_URL = import.meta.env
   .VITE_CUSTOM_CHAIN_ADDRESSES_URL;
 
-export function useAppConfig(): {
+/**
+ * @deprecated use useAppConfig instead
+ */
+export function useAppConfigOld(): {
   appConfig: AppConfig | undefined;
   appConfigStatus: "idle" | "error" | "loading" | "success";
 } {
