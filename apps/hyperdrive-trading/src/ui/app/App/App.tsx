@@ -17,7 +17,8 @@ declare module "@tanstack/react-router" {
 }
 
 export function App(): ReactElement | null {
-  const appConfig = useAppConfigOld();
+  const { appConfig } = useAppConfigOld();
+
   if (appConfig) {
     // eslint-disable-next-line no-console
     console.log("appConfig", appConfig);
