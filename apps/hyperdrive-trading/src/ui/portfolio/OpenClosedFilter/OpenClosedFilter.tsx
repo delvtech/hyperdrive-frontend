@@ -14,39 +14,37 @@ export function OpenClosedFilter(): ReactElement {
   return (
     <div
       className={classNames("daisy-tabs-boxed daisy-tabs daisy-tabs-sm", {
-        "cursor-not-allowed": !isConnected,
+        "daisy-tab-disabled cursor-not-allowed": !isConnected,
       })}
     >
-      <button
+      <Link
         className={classNames("daisy-tab", {
-          "daisy-tab-active font-medium": activeOpenOrClosedTab === "Open",
+          "daisy-tab-active font-medium":
+            activeOpenOrClosedTab === "Open" && isConnected,
+          "daisy-link-secondary daisy-tab-disabled cursor-not-allowed":
+            !isConnected,
         })}
+        params={{ address }}
+        search={{ openOrClosed: "Open", position }}
+        to={MARKET_DETAILS_ROUTE}
         disabled={!isConnected}
       >
-        <Link
-          params={{ address }}
-          search={{ openOrClosed: "Open", position }}
-          to={MARKET_DETAILS_ROUTE}
-          disabled={!isConnected}
-        >
-          Open
-        </Link>
-      </button>
-      <button
+        Open
+      </Link>
+
+      <Link
         className={classNames("daisy-tab", {
           "daisy-tab-active font-medium": activeOpenOrClosedTab === "Closed",
+          "daisy-link-secondary daisy-tab-disabled cursor-not-allowed":
+            !isConnected,
         })}
+        params={{ address }}
+        search={{ openOrClosed: "Closed", position }}
+        to={MARKET_DETAILS_ROUTE}
         disabled={!isConnected}
       >
-        <Link
-          params={{ address }}
-          search={{ openOrClosed: "Closed", position }}
-          to={MARKET_DETAILS_ROUTE}
-          disabled={!isConnected}
-        >
-          Closed
-        </Link>
-      </button>
+        Closed
+      </Link>
     </div>
   );
 }
