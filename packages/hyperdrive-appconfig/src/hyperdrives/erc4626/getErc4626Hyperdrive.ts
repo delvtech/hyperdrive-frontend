@@ -2,12 +2,12 @@ import { IERC4626HyperdriveRead } from "@hyperdrive/artifacts/dist/IERC4626Hyper
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getErc4626HyperdriveSharesToken } from "src/hyperdrives/erc4626/getErc4626HyperdriveSharesToken";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
-import { TokenConfig } from "src/tokens/TokenConfig";
-import { getTokenConfig } from "src/tokens/getTokenConfig";
 import {
-  YieldSourceExtensions,
-  YieldSourceTokenConfig,
-} from "src/yieldSources/YieldSourceTokenConfig";
+  EmptyExtensions,
+  TokenConfig,
+  getTokenConfig,
+} from "src/tokens/getTokenConfig";
+import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
 import { Address, PublicClient } from "viem";
 
 export async function getErc4626Hyperdrive({
@@ -19,8 +19,8 @@ export async function getErc4626Hyperdrive({
   hyperdriveAddress: Address;
   sharesTokenExtensions: YieldSourceExtensions;
 }): Promise<{
-  sharesToken: YieldSourceTokenConfig;
-  baseToken: TokenConfig;
+  sharesToken: TokenConfig<YieldSourceExtensions>;
+  baseToken: TokenConfig<EmptyExtensions>;
   hyperdriveConfig: HyperdriveConfig;
 }> {
   const sharesToken = await getErc4626HyperdriveSharesToken({
@@ -42,13 +42,15 @@ export async function getErc4626Hyperdrive({
     tags: [],
   });
 
+  const hyperdriveName = formatHyperdriveName({
+    baseTokenSymbol: baseToken.symbol,
+    termLengthMS: Number(poolConfig.positionDuration) * 1000,
+    yieldSourceShortName: sharesToken.extensions.shortName,
+  });
+
   const hyperdriveConfig: HyperdriveConfig = {
     address: hyperdriveAddress,
-    name: formatHyperdriveName({
-      baseTokenSymbol: baseToken.symbol,
-      termLengthMS: Number(poolConfig.positionDuration) * 1000,
-      yieldSourceShortName: sharesToken.extensions.shortName,
-    }),
+    name: hyperdriveName,
     baseToken: baseToken.address,
     sharesToken: sharesToken.address,
     withdrawOptions: {
