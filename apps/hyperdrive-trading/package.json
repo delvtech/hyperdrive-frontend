@@ -25,6 +25,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.16",
     "@hyperdrive/artifacts": "*",
+    "@hyperdrive/appconfig": "*",
     "@hyperdrive/evm-client": "*",
     "@hyperdrive/sdk": "*",
     "@hyperdrive/sdk-viem": "*",
