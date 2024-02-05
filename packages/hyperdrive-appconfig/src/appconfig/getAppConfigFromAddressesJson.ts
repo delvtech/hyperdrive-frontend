@@ -1,5 +1,5 @@
 import { AddressesJson } from "src/addresses/AddressesJson";
-import { AppConfig, KnownExtensions } from "src/appconfig/AppConfig";
+import { AppConfig, KnownTokenExtensions } from "src/appconfig/AppConfig";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getErc4626Hyperdrive } from "src/hyperdrives/erc4626/getErc4626Hyperdrive";
 import { protocols } from "src/protocols/protocols";
@@ -19,7 +19,7 @@ export async function getAppConfigFromAddressesJson({
 }): Promise<AppConfig> {
   const hyperdrives: HyperdriveConfig[] = [];
   const tags: Set<Tag> = new Set([yieldSourceTag]);
-  const tokens: Set<TokenConfig<KnownExtensions>> = new Set();
+  const tokens: Set<TokenConfig<KnownTokenExtensions>> = new Set();
 
   if (addresses.erc4626Hyperdrive) {
     tags.add(erc4626Tag);

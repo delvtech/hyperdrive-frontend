@@ -4,12 +4,12 @@ import { Tag } from "src/tags";
 import { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
 import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
 
-export type KnownExtensions = YieldSourceExtensions | EmptyExtensions;
+export type KnownTokenExtensions = YieldSourceExtensions | EmptyExtensions;
 
 export interface AppConfig {
   chainId: number;
   tags: Tag[];
   hyperdrives: HyperdriveConfig[];
-  tokens: TokenConfig<KnownExtensions>[];
+  tokens: TokenConfig<KnownTokenExtensions>[];
   protocols: typeof protocols;
 }
