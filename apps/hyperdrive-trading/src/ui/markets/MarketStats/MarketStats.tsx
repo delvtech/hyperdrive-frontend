@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
@@ -13,7 +13,7 @@ import { useBlockNumber, useChainId } from "wagmi";
 export function MarketStats({
   hyperdrive,
 }: {
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }): ReactElement {
   const { data: currentBlockNumber } = useBlockNumber();
 

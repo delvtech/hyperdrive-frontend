@@ -6,7 +6,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { ReactElement, useMemo } from "react";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
@@ -17,7 +17,7 @@ import { useRedeemedWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedee
 import { useAccount } from "wagmi";
 
 interface ClosedLpTablePRops {
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }
 
 type ClosedLpSharesAndWithdrawalShares = ClosedLpShares &
@@ -25,7 +25,7 @@ type ClosedLpSharesAndWithdrawalShares = ClosedLpShares &
 
 const formatClosedLpMobileColumnData = (
   closedLpShares: ClosedLpSharesAndWithdrawalShares,
-  hyperdrive: HyperdriveConfig,
+  hyperdrive: HyperdriveConfigOld,
 ) => {
   const isWithdrawalShare = closedLpShares.redeemedTimestamp;
   const shares = isWithdrawalShare
@@ -69,7 +69,7 @@ const formatClosedLpMobileColumnData = (
 };
 
 const columnHelper = createColumnHelper<ClosedLpSharesAndWithdrawalShares>();
-function getMobileColumns(hyperdrive: HyperdriveConfig) {
+function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
   return [
     columnHelper.display({
       id: "ColumnNames",
@@ -101,7 +101,7 @@ function getMobileColumns(hyperdrive: HyperdriveConfig) {
     }),
   ];
 }
-function getColumns(hyperdrive: HyperdriveConfig) {
+function getColumns(hyperdrive: HyperdriveConfigOld) {
   return [
     columnHelper.display({
       header: "Position",

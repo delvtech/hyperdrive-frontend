@@ -1,11 +1,11 @@
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address } from "wagmi";
 
 interface UsePreviewRedeemWithdrawalSharesOptions {
-  market: HyperdriveConfig;
+  market: HyperdriveConfigOld;
   withdrawalSharesIn: bigint | undefined;
   minBaseAmountOutPerShare: bigint | undefined;
   destination: Address | undefined;

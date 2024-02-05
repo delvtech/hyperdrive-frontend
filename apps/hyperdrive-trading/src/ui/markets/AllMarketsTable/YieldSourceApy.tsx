@@ -1,11 +1,11 @@
 import { ReactElement } from "react";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
 
 export function YieldSourceApy({
   hyperdrive,
 }: {
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }): ReactElement {
   const { vaultRate } = useVaultRate({
     vaultAddress: hyperdrive.sharesToken.address,

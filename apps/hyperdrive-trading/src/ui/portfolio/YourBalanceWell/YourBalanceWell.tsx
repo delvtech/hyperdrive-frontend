@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { TokenConfig } from "src/token/TokenConfig";
+import { TokenConfigOld } from "src/token/TokenConfigOld";
 import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -10,7 +10,7 @@ import { useAccount, useBalance, useChainId } from "wagmi";
 export function YourBalanceWell({
   token,
 }: {
-  token: TokenConfig;
+  token: TokenConfigOld;
 }): ReactElement {
   const { address: account } = useAccount();
   const { data: balance } = useBalance({

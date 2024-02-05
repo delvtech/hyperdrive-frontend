@@ -2,7 +2,7 @@ import { adjustAmountByPercentage, OpenShort } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -15,7 +15,7 @@ import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface CloseShortFormProps {
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
   short: OpenShort;
   onCloseShort?: (e: MouseEvent<HTMLButtonElement>) => void;
 }

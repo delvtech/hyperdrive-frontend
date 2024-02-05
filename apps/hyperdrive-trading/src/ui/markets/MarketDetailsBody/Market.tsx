@@ -1,6 +1,6 @@
 import { useLoaderData } from "@tanstack/react-router";
 import { ReactElement } from "react";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
 import { useAppConfigOld } from "src/ui/appconfig/useAppConfigOld";
 import { useDevLogging } from "src/ui/hyperdrive/hooks/useDevLogging";
@@ -12,7 +12,7 @@ export function Market(): ReactElement {
   const { appConfig } = useAppConfigOld();
   const market = appConfig?.hyperdrives.find(
     (hyperdrive) => hyperdrive.address === address,
-  ) as HyperdriveConfig;
+  ) as HyperdriveConfigOld;
   useDevLogging(market);
   return (
     <div className="flex justify-center bg-base-100 px-4 py-8">

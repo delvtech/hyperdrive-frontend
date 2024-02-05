@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useAppConfigOld } from "src/ui/appconfig/useAppConfigOld";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
-export function useCurrentFixedAPR(hyperdrive: HyperdriveConfig): {
+export function useCurrentFixedAPR(hyperdrive: HyperdriveConfigOld): {
   fixedAPR: { apr: bigint; formatted: string } | undefined;
   fixedAPRStatus: "loading" | "error" | "success";
 } {

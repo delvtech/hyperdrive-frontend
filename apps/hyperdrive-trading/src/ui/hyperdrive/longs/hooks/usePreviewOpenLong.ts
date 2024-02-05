@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 interface UsePreviewOpenLongOptions {
-  market: HyperdriveConfig;
+  market: HyperdriveConfigOld;
   baseAmount: bigint | undefined;
 }
 

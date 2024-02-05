@@ -1,12 +1,12 @@
 import { ReactElement } from "react";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { PriceBadges } from "src/ui/markets/MarketDetailsBody/PriceBadges";
 
 export function MarketHeader({
   hyperdrive,
   longPrice,
 }: {
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
   longPrice: { price: bigint; formatted: string } | undefined;
 }): ReactElement {
   return (

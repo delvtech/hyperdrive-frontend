@@ -16,7 +16,7 @@ import { ReactElement } from "react";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -30,14 +30,14 @@ import { MaturesOnCell } from "src/ui/portfolio/MaturesOnCell/MaturesOnCell";
 import { parseUnits } from "viem";
 import { useAccount } from "wagmi";
 interface OpenLongsTableProps {
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }
 
 const columnHelper = createColumnHelper<Long>();
 
 function formatOpenLongMobileColumnData(
   row: Long,
-  hyperdrive: HyperdriveConfig,
+  hyperdrive: HyperdriveConfigOld,
 ) {
   return [
     {
@@ -75,7 +75,7 @@ function formatOpenLongMobileColumnData(
   ];
 }
 
-function getColumns({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
+function getColumns({ hyperdrive }: { hyperdrive: HyperdriveConfigOld }) {
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",
@@ -141,7 +141,7 @@ function getColumns({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   ];
 }
 
-function getMobileColumns({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
+function getMobileColumns({ hyperdrive }: { hyperdrive: HyperdriveConfigOld }) {
   return [
     columnHelper.display({
       id: "ColumnNames",
@@ -301,7 +301,7 @@ function CurrentValueCell({
   hyperdrive,
 }: {
   row: Long;
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }) {
   const { address: account } = useAccount();
   const { baseAmountOut, previewCloseLongStatus } = usePreviewCloseLong({
@@ -356,7 +356,7 @@ function FixedRateCell({
   hyperdrive,
 }: {
   row: Long;
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }) {
   const { poolConfig } = usePoolConfig(hyperdrive.address);
   const { baseAmountPaid, bondAmount } = row;

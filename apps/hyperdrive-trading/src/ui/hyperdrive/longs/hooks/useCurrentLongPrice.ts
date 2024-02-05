@@ -1,10 +1,10 @@
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { formatUnits } from "viem";
 
-export function useCurrentLongPrice(hyperdrive: HyperdriveConfig): {
+export function useCurrentLongPrice(hyperdrive: HyperdriveConfigOld): {
   longPrice: { price: bigint; formatted: string } | undefined;
   longPriceStatus: QueryStatus;
 } {

@@ -12,7 +12,7 @@ import {
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { useState } from "react";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
@@ -89,7 +89,7 @@ function FilterSelect({
 
 function formatTransactionTableMobileData(
   row: TransactionData,
-  hyperdrive?: HyperdriveConfig,
+  hyperdrive?: HyperdriveConfigOld,
 ) {
   const size = dnum.format(
     [
@@ -135,7 +135,7 @@ function formatTransactionTableMobileData(
 
 const columnHelper = createColumnHelper<TransactionData>();
 
-const getMobileColumns = (hyperdrive: HyperdriveConfig) => [
+const getMobileColumns = (hyperdrive: HyperdriveConfigOld) => [
   columnHelper.accessor("eventName", {
     id: "eventName",
     enableSorting: false,
@@ -181,7 +181,7 @@ const getMobileColumns = (hyperdrive: HyperdriveConfig) => [
   }),
 ];
 
-const getColumns = (hyperdrive: HyperdriveConfig) => {
+const getColumns = (hyperdrive: HyperdriveConfigOld) => {
   return [
     columnHelper.accessor("eventName", {
       id: "eventName",
@@ -251,7 +251,7 @@ const getColumns = (hyperdrive: HyperdriveConfig) => {
 export function TransactionTable({
   hyperdrive,
 }: {
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }): JSX.Element {
   const { data: transactionData } = useTransactionData(hyperdrive);
   const isSmallScreenView = useIsTailwindSmallScreen();

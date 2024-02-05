@@ -1,9 +1,9 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { SupportedChainId } from "src/chains/supportedChains";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
-import { TokenConfig } from "src/token/TokenConfig";
-import { getTokenIconUrl } from "src/token/tokenIconsUrls";
-import { yieldSources } from "src/yieldSources/yieldSources";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { TokenConfigOld } from "src/token/TokenConfigOld";
+import { getTokenIconUrl } from "src/token/tokenIconsUrlsOld";
+import { yieldSourcesOld } from "src/yieldSources/yieldSources";
 import { Address, PublicClient } from "viem";
 import { formatHyperdriveName } from "./formatHyperdriveName";
 
@@ -14,8 +14,8 @@ export async function getStethHyperdriveConfig({
 }: {
   hyperdriveAddress: Address;
   publicClient: PublicClient;
-  yieldSource: keyof typeof yieldSources;
-}): Promise<HyperdriveConfig> {
+  yieldSource: keyof typeof yieldSourcesOld;
+}): Promise<HyperdriveConfigOld> {
   const { positionDuration, baseToken: baseTokenAddress } =
     await publicClient.readContract({
       abi: IHyperdrive.abi,
@@ -30,7 +30,7 @@ export async function getStethHyperdriveConfig({
   // in this market you can deposit either native Eth or stETH. To get the stETH
   // token, we need to use the stethHyperdrive.lido() address, which is the same
   // thing as stETH.
-  const baseToken: TokenConfig = {
+  const baseToken: TokenConfigOld = {
     address: baseTokenAddress,
     decimals: 18,
     name: "Ether",
@@ -39,7 +39,7 @@ export async function getStethHyperdriveConfig({
   };
 
   // This is specific to the yield source
-  const sharesToken: TokenConfig = {
+  const sharesToken: TokenConfigOld = {
     name: "",
     symbol: "",
     decimals: 0,
@@ -50,7 +50,7 @@ export async function getStethHyperdriveConfig({
   const name = formatHyperdriveName({
     termLengthMS,
     baseTokenSymbol: baseToken.symbol,
-    yieldSourceShortName: yieldSources[yieldSource].shortName,
+    yieldSourceShortName: yieldSourcesOld[yieldSource].shortName,
   });
 
   return {
