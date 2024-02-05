@@ -23,7 +23,7 @@ export function AddLiquidityPreview({
               decimals: hyperdrive.baseToken.decimals,
               places: 4,
             })}{" "}
-            LP
+            LP Shares
           </p>
         }
       />

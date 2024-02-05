@@ -261,6 +261,14 @@ export function TransactionTable({
       ? getMobileColumns(hyperdrive)
       : getColumns(hyperdrive),
     data: transactionData || [],
+    initialState: {
+      sorting: [
+        {
+          id: "blockNumber",
+          desc: true,
+        },
+      ],
+    },
     state: {
       columnFilters,
     },
