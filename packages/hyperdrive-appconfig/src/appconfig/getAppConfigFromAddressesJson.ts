@@ -1,10 +1,10 @@
 import { AddressesJson } from "src/addresses/AddressesJson";
-import { AnyTokenConfigExtensions, AppConfig } from "src/appconfig/AppConfig";
+import { AppConfig, KnownExtensions } from "src/appconfig/AppConfig";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getErc4626Hyperdrive } from "src/hyperdrives/erc4626/getErc4626Hyperdrive";
 import { protocols } from "src/protocols/protocols";
 import { Tag } from "src/tags";
-import { TokenConfig } from "src/tokens/TokenConfig";
+import { TokenConfig } from "src/tokens/getTokenConfig";
 import { erc4626Tag, yieldSourceTag } from "src/yieldSources/tags";
 import { PublicClient } from "viem";
 
@@ -19,7 +19,7 @@ export async function getAppConfigFromAddressesJson({
 }): Promise<AppConfig> {
   const hyperdrives: HyperdriveConfig[] = [];
   const tags: Set<Tag> = new Set([yieldSourceTag]);
-  const tokens: Set<TokenConfig<AnyTokenConfigExtensions>> = new Set();
+  const tokens: Set<TokenConfig<KnownExtensions>> = new Set();
 
   if (addresses.erc4626Hyperdrive) {
     tags.add(erc4626Tag);
