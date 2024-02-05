@@ -27,7 +27,7 @@ export function LongsShortsLpTabs({
         <Fragment key={tabId}>
           <input
             className={classNames("daisy-tab", {
-              "font-bold ": activeTab === tabId,
+              "daisy-tab-active font-bold": activeTab === tabId,
               "opacity-80 hover:opacity-100": activeTab !== tabId,
             })}
             aria-label={tabId}
@@ -37,6 +37,7 @@ export function LongsShortsLpTabs({
                 search: () => ({ position: tabId, openOrClosed: "Open" }),
               });
             }}
+            checked={activeTab === tabId}
             type="radio"
             role="tab"
           />
