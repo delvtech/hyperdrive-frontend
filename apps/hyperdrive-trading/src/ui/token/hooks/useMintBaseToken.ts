@@ -1,4 +1,4 @@
-import { ERC20Mintable } from "@hyperdrive/artifacts/dist/ERC20Mintable";
+import { ERC20Mintable } from "@hyperdrive/artifacts/ERC20Mintable";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { Address, formatUnits } from "viem";
 import {

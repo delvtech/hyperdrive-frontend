@@ -1,5 +1,5 @@
 // TODO: As of contracts version 0.7.0, this no longer exists
-// import { ForwarderFactory } from "@hyperdrive/artifacts/dist/ForwarderFactory.js";
+// import { ForwarderFactory } from "@hyperdrive/artifacts/ForwarderFactory";
 import { command } from "clide-js";
 import { createPublicClient, http } from "viem";
 import { chainOption, getChain } from "../../reusable-options/chain.js";

@@ -1,5 +1,5 @@
-import { ERC20Mintable } from "@hyperdrive/artifacts/dist/ERC20Mintable.js";
-import { MockERC4626 } from "@hyperdrive/artifacts/dist/MockERC4626.js";
+import { ERC20Mintable } from "@hyperdrive/artifacts/ERC20Mintable";
+import { MockERC4626 } from "@hyperdrive/artifacts/MockERC4626";
 import { command } from "clide-js";
 import signale from "signale";
 import {

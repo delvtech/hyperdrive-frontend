@@ -1,4 +1,4 @@
-import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
 import { FunctionReturnType } from "@hyperdrive/evm-client";
 
 // Given the unlikely scenario that getPoolConfig will have a second argument,

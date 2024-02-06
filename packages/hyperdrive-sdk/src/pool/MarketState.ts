@@ -1,4 +1,4 @@
-import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
 import { FunctionReturnType } from "@hyperdrive/evm-client";
 
 export type MarketState = FunctionReturnType<

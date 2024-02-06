@@ -1,7 +1,7 @@
-import { ERC20Mintable } from "@hyperdrive/artifacts/dist/ERC20Mintable.js";
+import { ERC20Mintable } from "@hyperdrive/artifacts/ERC20Mintable";
 // TODO: As of contracts version 0.7.0, this no longer exists
-// import { ForwarderFactory } from "@hyperdrive/artifacts/dist/ForwarderFactory.js";
-import { MockERC4626 } from "@hyperdrive/artifacts/dist/MockERC4626.js";
+// import { ForwarderFactory } from "@hyperdrive/artifacts/ForwarderFactory";
+import { MockERC4626 } from "@hyperdrive/artifacts/MockERC4626";
 import { command } from "clide-js";
 import { ZERO_ADDRESS } from "src/constants.js";
 import {

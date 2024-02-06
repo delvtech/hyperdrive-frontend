@@ -25,7 +25,7 @@ import { getCheckpointId } from "src/pool/getCheckpointId";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 import { Checkpoint, CheckpointEvent } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
-import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
 import { BlockTag } from "viem";
 import * as dnum from "dnum";
 import { MAX_UINT256, ZERO_ADDRESS } from "src/base/numbers";
@@ -568,14 +568,16 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const openLongEvents = await this.contract.getEvents("OpenLong", options);
     const closeLongEvents = await this.contract.getEvents("CloseLong", options);
     return [...openLongEvents, ...closeLongEvents].map(
-      ({ args, eventName, blockNumber }) => ({
-        trader: args.trader,
-        assetId: args.assetId,
-        bondAmount: args.bondAmount,
-        baseAmount: args.baseAmount,
-        eventName,
-        blockNumber,
-      }),
+      ({ args, eventName, blockNumber }) => {
+        return {
+          trader: args.trader,
+          assetId: args.assetId,
+          bondAmount: args.bondAmount,
+          baseAmount: args.baseAmount,
+          eventName,
+          blockNumber,
+        };
+      },
     );
   }
 
