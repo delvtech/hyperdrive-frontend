@@ -8,7 +8,6 @@ import {
 } from "@tanstack/react-table";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { YieldSourceApy } from "src/ui/markets/AllMarketsTable/YieldSourceApy";
@@ -17,6 +16,7 @@ import {
   useMarketRowData,
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
 import { ALL_MARKETS_ROUTE, MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
+import { Address } from "viem";
 
 function formatMobileColumnData(row: MarketTableRowData) {
   return [
@@ -24,9 +24,12 @@ function formatMobileColumnData(row: MarketTableRowData) {
       name: "Term",
       value: (
         <span className="flex flex-row items-center justify-start">
-          <img src={row.market.baseToken.iconUrl} className="mr-2 inline h-4" />
-          {row.market.baseToken.symbol} -{" "}
-          {convertMillisecondsToDays(row.market.termLengthMS)} days
+          <img src={row.baseToken.iconUrl} className="mr-2 inline h-4" />
+          {row.baseToken.symbol} -{" "}
+          {convertMillisecondsToDays(
+            Number(row.market.poolConfig.positionDuration * 1000n),
+          )}{" "}
+          days
         </span>
       ),
     },
@@ -38,16 +41,19 @@ function formatMobileColumnData(row: MarketTableRowData) {
             src={row.yieldSourceProtocol.iconUrl}
             className="mr-2 inline h-4"
           />
-          {row.yieldSource.shortName}
+          {row.yieldSourceShortName}
         </span>
       ),
     },
     {
       name: "Yield Source APY",
-      value: <YieldSourceApy hyperdrive={row.market} />,
+      value: <YieldSourceApy yieldSourceAddress={row.market.sharesToken} />,
     },
     { name: "Fixed Rate", value: row.longAPR },
-    { name: "LP APY", value: <LpApyCell hyperdrive={row.market} /> },
+    {
+      name: "LP APY",
+      value: <LpApyCell hyperdriveAddress={row.market.address} />,
+    },
     {
       name: "Liquidity",
       value: (
@@ -55,10 +61,10 @@ function formatMobileColumnData(row: MarketTableRowData) {
           key="liquidity"
           className="flex flex-row items-center justify-start"
         >
-          <img className="mr-1 h-4" src={row.market.baseToken.iconUrl} />
+          <img className="mr-1 h-4" src={row.baseToken.iconUrl} />
           {formatBalance({
             balance: row.liquidity,
-            decimals: row.market.baseToken.decimals,
+            decimals: row.baseToken.decimals,
             places: 0,
           })}
         </span>
@@ -88,7 +94,9 @@ function getMobileColumns() {
     }),
     columnHelper.display({
       id: "go-to-market",
-      cell: ({ row }) => <GoToMarketButton market={row.original.market} />,
+      cell: ({ row }) => (
+        <GoToMarketButton hyperdriveAddress={row.original.market.address} />
+      ),
     }),
   ];
 }
@@ -142,24 +150,24 @@ export function AllMarketsTableMobile(): ReactElement {
   );
 }
 function LpApyCell({
-  hyperdrive,
+  hyperdriveAddress,
 }: {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdriveAddress: Address;
 }): ReactElement {
-  const { lpApy } = useLpApy(hyperdrive);
+  const { lpApy } = useLpApy(hyperdriveAddress);
   return <span>{lpApy?.toFixed(2)}%</span>;
 }
 
 function GoToMarketButton({
-  market,
+  hyperdriveAddress,
 }: {
-  market: HyperdriveConfigOld;
+  hyperdriveAddress: Address;
 }): ReactElement {
   return (
     <Link
       from={MARKET_DETAILS_ROUTE}
       search={{ position: "Longs", openOrClosed: "Open" }}
-      params={{ address: market.address }}
+      params={{ address: hyperdriveAddress }}
       className="daisy-btn-circle daisy-btn-xs flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >
       <ArrowRightIcon className="h-3" />

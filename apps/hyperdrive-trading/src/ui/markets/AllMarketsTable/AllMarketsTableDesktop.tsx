@@ -9,7 +9,6 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
@@ -19,11 +18,12 @@ import {
   useMarketRowData,
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
 import { ALL_MARKETS_ROUTE, MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
+import { Address } from "viem";
 
 const columnHelper = createColumnHelper<MarketTableRowData>();
 function getColumns() {
   return [
-    columnHelper.accessor("market.termLengthMS", {
+    columnHelper.accessor("market.poolConfig.positionDuration", {
       header: () => (
         <TextWithTooltip
           label="Term"
@@ -35,12 +35,12 @@ function getColumns() {
         return (
           <div key="term" className="flex items-center ">
             <img
-              src={row.original.market.baseToken.iconUrl}
+              src={row.original.baseToken.iconUrl}
               className="mr-2 h-10 rounded-full p-1"
             />
             <span>
-              {row.original.market.baseToken.symbol} -{" "}
-              {convertMillisecondsToDays(termLength)} days
+              {row.original.baseToken.symbol} -{" "}
+              {convertMillisecondsToDays(Number(termLength * 1000n))} days
             </span>
           </div>
         );
@@ -61,7 +61,7 @@ function getColumns() {
               className="mr-2 h-10 rounded-full p-1"
             />
             <div className="flex-col">
-              <p className="-mb-1">{row.original.yieldSource.shortName}</p>
+              <p className="-mb-1">{row.original.yieldSourceShortName}</p>
               <p className="text-neutral-content/70 ">
                 {row.original.yieldSourceProtocol.name}
               </p>
@@ -84,7 +84,7 @@ function getColumns() {
         return (
           <YieldSourceApy
             key="yield-source-apy"
-            hyperdrive={row.original.market}
+            yieldSourceAddress={row.original.market.sharesToken}
           />
         );
       },
@@ -111,7 +111,12 @@ function getColumns() {
         />
       ),
       cell: ({ row }) => {
-        return <LpApyCell key="lp-apy" hyperdrive={row.original.market} />;
+        return (
+          <LpApyCell
+            key="lp-apy"
+            hyperdriveAddress={row.original.market.address}
+          />
+        );
       },
     }),
     columnHelper.accessor("liquidity", {
@@ -129,13 +134,10 @@ function getColumns() {
             key="liquidity"
             className="flex flex-row items-center justify-start"
           >
-            <img
-              className="mr-1 h-4"
-              src={row.original.market.baseToken.iconUrl}
-            />
+            <img className="mr-1 h-4" src={row.original.baseToken.iconUrl} />
             {formatBalance({
               balance: liquidity,
-              decimals: row.original.market.baseToken.decimals,
+              decimals: row.original.baseToken.decimals,
               places: 0,
             })}
           </span>
@@ -146,7 +148,10 @@ function getColumns() {
       header: "",
       id: "go-to-market",
       cell: ({ row }) => (
-        <GoToMarketButton market={row.original.market} key={"go-to-market"} />
+        <GoToMarketButton
+          key="go-to-market"
+          hyperdriveAddress={row.original.market.address}
+        />
       ),
     }),
   ];
@@ -224,24 +229,24 @@ export function AllMarketsTableDesktop(): ReactElement {
   );
 }
 function LpApyCell({
-  hyperdrive,
+  hyperdriveAddress,
 }: {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdriveAddress: Address;
 }): ReactElement {
-  const { lpApy } = useLpApy(hyperdrive);
+  const { lpApy } = useLpApy(hyperdriveAddress);
   return <span>{lpApy?.toFixed(2)}%</span>;
 }
 
 function GoToMarketButton({
-  market,
+  hyperdriveAddress,
 }: {
-  market: HyperdriveConfigOld;
+  hyperdriveAddress: Address;
 }): ReactElement {
   return (
     <Link
       from={MARKET_DETAILS_ROUTE}
       search={() => ({ position: "Longs", openOrClosed: "Open" })}
-      params={{ address: market.address }}
+      params={{ address: hyperdriveAddress }}
       className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >
       <ArrowRightIcon className="h-5" />

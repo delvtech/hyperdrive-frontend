@@ -1,60 +1,75 @@
+import {
+  EmptyExtensions,
+  HyperdriveConfig,
+  Protocol,
+  TokenConfig,
+  findBaseToken,
+  findYieldSourceToken,
+  protocols,
+} from "@hyperdrive/appconfig";
 import { ViemReadHyperdrive } from "@hyperdrive/sdk-viem";
-import { useQuery, UseQueryResult } from "@tanstack/react-query";
-import { useMemo } from "react";
+import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { querySdkCache } from "src/sdk/sdkCache";
-import { useAppConfigOld } from "src/ui/appconfig/useAppConfigOld";
-import {
-  YieldSourceProtocolOld,
-  yieldSourceProtocolsOld,
-} from "src/yieldSources/yieldSourceProtocolsOld";
-import { YieldSourceOld, yieldSourcesOld } from "src/yieldSources/yieldSources";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { usePublicClient } from "wagmi";
 
 export interface MarketTableRowData {
-  market: HyperdriveConfigOld;
+  market: HyperdriveConfig;
+  baseToken: TokenConfig<EmptyExtensions>;
   liquidity: bigint;
-  yieldSource: YieldSourceOld;
-  yieldSourceProtocol: YieldSourceProtocolOld;
+  yieldSourceShortName: string;
+  yieldSourceProtocol: Protocol;
   longAPR: string;
 }
 
 export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
   const publicClient = usePublicClient();
-  const { appConfig } = useAppConfigOld();
-  const hyperdrives = useMemo(
-    () => appConfig?.hyperdrives,
-    [appConfig?.hyperdrives],
-  );
-  const queryEnabled = !!hyperdrives && !!appConfig;
+  const appConfig = useAppConfig();
+  const queryEnabled = !!appConfig;
   return useQuery<MarketTableRowData[]>({
-    queryKey: makeQueryKey("app/markets", hyperdrives),
+    queryKey: makeQueryKey("app/markets", {
+      hyperdrives: appConfig?.hyperdrives.map(
+        (hyperdrive) => hyperdrive.address,
+      ),
+    }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? () =>
           Promise.all(
-            hyperdrives.map(async (hyperdrive): Promise<MarketTableRowData> => {
-              const readHyperdrive = new ViemReadHyperdrive({
-                address: hyperdrive.address,
-                publicClient,
-                cache: querySdkCache,
-              });
-              const liquidity = await readHyperdrive.getLiquidity({
-                decimals: hyperdrive.baseToken.decimals,
-              });
-              const longApr = await readHyperdrive.getSpotRate();
-              const yieldSource = yieldSourcesOld[hyperdrive.yieldSource];
-              return {
-                market: hyperdrive,
-                liquidity,
-                longAPR: formatRate(longApr),
-                yieldSource,
-                yieldSourceProtocol:
-                  yieldSourceProtocolsOld[yieldSource.protocol],
-              };
-            }),
+            appConfig.hyperdrives.map(
+              async (hyperdrive): Promise<MarketTableRowData> => {
+                const readHyperdrive = new ViemReadHyperdrive({
+                  address: hyperdrive.address,
+                  publicClient,
+                  cache: querySdkCache,
+                });
+                const baseToken = findBaseToken({
+                  baseTokenAddress: hyperdrive.baseToken,
+                  tokens: appConfig.tokens,
+                });
+                const liquidity = await readHyperdrive.getLiquidity({
+                  decimals: baseToken.decimals,
+                });
+
+                const longApr = await readHyperdrive.getSpotRate();
+
+                const yieldSource = findYieldSourceToken({
+                  yieldSourceTokenAddress: hyperdrive.sharesToken,
+                  tokens: appConfig.tokens,
+                });
+                return {
+                  market: hyperdrive,
+                  baseToken,
+                  liquidity,
+                  longAPR: formatRate(longApr),
+                  yieldSourceShortName: yieldSource.extensions.shortName,
+                  yieldSourceProtocol:
+                    protocols[yieldSource.extensions.protocol],
+                };
+              },
+            ),
           )
       : undefined,
   });

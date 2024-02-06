@@ -1,6 +1,6 @@
 import { FileRoute } from "@tanstack/react-router";
 
-import { Market } from "src/ui/markets/MarketDetailsBody/Market";
+import { Market } from "src/ui/markets/Market";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { z } from "zod";
 

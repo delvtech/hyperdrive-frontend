@@ -1,28 +1,27 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { useBlockNumber, useChainId } from "wagmi";
+import { Address, useBlockNumber, useChainId } from "wagmi";
 
-export function useLpApy(hyperdrive: HyperdriveConfigOld): {
+export function useLpApy(hyperdriveAddress: Address): {
   lpApy: number | undefined;
   lpApyStatus: "error" | "success" | "loading";
 } {
   const chainId = useChainId();
   const isDevnet = !!import.meta.env.VITE_LOCALHOST_NODE_RPC_URL;
   const { data: blockNumber } = useBlockNumber();
-  const { poolInfo: currentPoolInfo } = usePoolInfo(hyperdrive.address);
-  const { poolConfig } = usePoolConfig(hyperdrive.address);
-  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  const { poolInfo: currentPoolInfo } = usePoolInfo(hyperdriveAddress);
+  const { poolConfig } = usePoolConfig(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled =
     !!readHyperdrive && !!blockNumber && !!currentPoolInfo && !!poolConfig;
   const { data, status } = useQuery({
     queryKey: makeQueryKey("getLpApy", {
       chainId,
       blockNumber: blockNumber?.toString(),
-      hyperdrive: hyperdrive.address,
+      hyperdrive: hyperdriveAddress,
     }),
     queryFn: queryEnabled
       ? async () =>

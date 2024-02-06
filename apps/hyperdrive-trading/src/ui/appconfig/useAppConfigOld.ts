@@ -22,7 +22,7 @@ export function useAppConfigOld(): {
   const publicClient = usePublicClient();
 
   const { data: appConfig, status: appConfigStatus } = useQuery({
-    queryKey: ["app-config", { chainId }],
+    queryKey: ["app-config-old", { chainId }],
     queryFn: async () => {
       switch (chainId) {
         case 31337: {
