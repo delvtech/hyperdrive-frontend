@@ -19,7 +19,7 @@ export function OpenLongPreview({
   long,
 }: OpenLongPreviewProps): ReactElement {
   const { poolConfig } = usePoolConfig(hyperdrive.address);
-  const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
+  const { fixedAPR } = useCurrentFixedAPR(hyperdrive.address);
   const numDays = convertMillisecondsToDays(hyperdrive.termLengthMS);
   // The pool's curve fee is applied to the fixed rate, so if the fixed rate is
   // 4.5%, the effective fixed rate is 4%, then the pool fee is .45%.

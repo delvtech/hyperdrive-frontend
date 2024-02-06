@@ -7,7 +7,7 @@ import assertNever from "assert-never";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { useChainId } from "wagmi";
 
-export function useAppConfig(): AppConfig | undefined {
+export function useAppConfig(): AppConfig {
   const chainId = useChainId() as SupportedChainId;
 
   switch (chainId) {
@@ -15,7 +15,6 @@ export function useAppConfig(): AppConfig | undefined {
       return localChainAppConfig;
     case 42069:
       return cloudChainAppConfig;
-
     default:
       assertNever(chainId);
   }
