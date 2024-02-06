@@ -1,9 +1,9 @@
 import { ReactElement, useMemo } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useAppConfigOld } from "src/ui/appconfig/useAppConfigOld";
 import { AllMarketsTable } from "src/ui/markets/AllMarketsTable/AllMarketsTable";
 
 export function Markets(): ReactElement {
-  const { appConfig: config } = useAppConfig();
+  const { appConfig: config } = useAppConfigOld();
 
   const memoizedData = useMemo(
     () => config?.hyperdrives,

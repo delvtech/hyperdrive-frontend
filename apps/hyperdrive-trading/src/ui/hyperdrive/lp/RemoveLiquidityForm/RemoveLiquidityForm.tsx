@@ -4,7 +4,7 @@ import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { calculateTotalValueFromPrice } from "src/base/calculateTotalValueFromPrice";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -17,7 +17,7 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 interface RemoveLiquidityFormProps {
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
   lpShares: bigint;
   onRemoveLiquidity?: (e: MouseEvent<HTMLButtonElement>) => void;
 }

@@ -3,27 +3,27 @@ import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { querySdkCache } from "src/sdk/sdkCache";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useAppConfigOld } from "src/ui/appconfig/useAppConfigOld";
 import {
-  YieldSourceProtocol,
-  yieldSourceProtocols,
-} from "src/yieldSources/yieldSourceProtocols";
-import { YieldSource, yieldSources } from "src/yieldSources/yieldSources";
+  YieldSourceProtocolOld,
+  yieldSourceProtocolsOld,
+} from "src/yieldSources/yieldSourceProtocolsOld";
+import { YieldSourceOld, yieldSourcesOld } from "src/yieldSources/yieldSources";
 import { usePublicClient } from "wagmi";
 
 export interface MarketTableRowData {
-  market: HyperdriveConfig;
+  market: HyperdriveConfigOld;
   liquidity: bigint;
-  yieldSource: YieldSource;
-  yieldSourceProtocol: YieldSourceProtocol;
+  yieldSource: YieldSourceOld;
+  yieldSourceProtocol: YieldSourceProtocolOld;
   longAPR: string;
 }
 
 export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
   const publicClient = usePublicClient();
-  const { appConfig } = useAppConfig();
+  const { appConfig } = useAppConfigOld();
   const hyperdrives = useMemo(
     () => appConfig?.hyperdrives,
     [appConfig?.hyperdrives],
@@ -45,13 +45,14 @@ export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
                 decimals: hyperdrive.baseToken.decimals,
               });
               const longApr = await readHyperdrive.getSpotRate();
-              const yieldSource = yieldSources[hyperdrive.yieldSource];
+              const yieldSource = yieldSourcesOld[hyperdrive.yieldSource];
               return {
                 market: hyperdrive,
                 liquidity,
                 longAPR: formatRate(longApr),
                 yieldSource,
-                yieldSourceProtocol: yieldSourceProtocols[yieldSource.protocol],
+                yieldSourceProtocol:
+                  yieldSourceProtocolsOld[yieldSource.protocol],
               };
             }),
           )

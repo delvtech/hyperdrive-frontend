@@ -1,24 +1,25 @@
-import { TokenConfig } from "src/token/TokenConfig";
-import { yieldSources } from "src/yieldSources/yieldSources";
+import { TokenConfigOld } from "src/token/TokenConfigOld";
+import { yieldSourcesOld } from "src/yieldSources/yieldSources";
 import { Address } from "viem";
 
 /**
  * The appconfig a hyperdrive instance
+ * @deprecated use HyperdriveConfig from @hyperdrive/appconfig instead
  */
 
-export interface HyperdriveConfig {
+export interface HyperdriveConfigOld {
   address: Address;
   name: string;
 
   /**
    * The base token for hyperdrive deposits and withdrawals, eg: DAI or ETH
    */
-  baseToken: TokenConfig;
+  baseToken: TokenConfigOld;
 
   /**
    * The shares token for hyperdrive deposits and withdrawals, eg: sDAI or stETH
    */
-  sharesToken: TokenConfig;
+  sharesToken: TokenConfigOld;
 
   withdrawOptions: {
     /**
@@ -31,6 +32,6 @@ export interface HyperdriveConfig {
     isBaseTokenWithdrawalEnabled: boolean;
   };
 
-  yieldSource: keyof typeof yieldSources;
+  yieldSource: keyof typeof yieldSourcesOld;
   termLengthMS: number;
 }

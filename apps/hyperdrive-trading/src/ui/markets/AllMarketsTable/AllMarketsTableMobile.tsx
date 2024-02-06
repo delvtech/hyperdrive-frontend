@@ -8,7 +8,7 @@ import {
 } from "@tanstack/react-table";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { YieldSourceApy } from "src/ui/markets/AllMarketsTable/YieldSourceApy";
@@ -144,7 +144,7 @@ export function AllMarketsTableMobile(): ReactElement {
 function LpApyCell({
   hyperdrive,
 }: {
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }): ReactElement {
   const { lpApy } = useLpApy(hyperdrive);
   return <span>{lpApy?.toFixed(2)}%</span>;
@@ -153,7 +153,7 @@ function LpApyCell({
 function GoToMarketButton({
   market,
 }: {
-  market: HyperdriveConfig;
+  market: HyperdriveConfigOld;
 }): ReactElement {
   return (
     <Link

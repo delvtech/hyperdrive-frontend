@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useAppConfigOld } from "src/ui/appconfig/useAppConfigOld";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { Hero } from "src/ui/landing/Hero/Hero";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
@@ -8,7 +8,7 @@ import { MobileFaq } from "src/ui/onboarding/FAQ/MobileFaq";
 import { PositionCards } from "./PositionCards/PositionCards";
 
 export function Landing(): ReactElement | null {
-  const { appConfig } = useAppConfig();
+  const { appConfig } = useAppConfigOld();
   const isSmallScreenView = useIsTailwindSmallScreen();
   if (appConfig) {
     // eslint-disable-next-line no-console

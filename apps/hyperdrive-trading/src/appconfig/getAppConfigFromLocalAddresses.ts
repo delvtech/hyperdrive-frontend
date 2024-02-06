@@ -1,9 +1,9 @@
 import { LocalAddressesJson } from "src/addresses/LocalAddressesJson";
-import { AppConfig } from "src/appconfig/AppConfig";
+import { AppConfigOld } from "src/appconfig/AppConfigOld";
 import { getErc4626HyperdriveConfig } from "src/hyperdrive/getErc4626HyperdriveConfig";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
-import { yieldSourceProtocols } from "src/yieldSources/yieldSourceProtocols";
-import { yieldSources } from "src/yieldSources/yieldSources";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { yieldSourceProtocolsOld } from "src/yieldSources/yieldSourceProtocolsOld";
+import { yieldSourcesOld } from "src/yieldSources/yieldSources";
 import { PublicClient } from "viem";
 
 /**
@@ -18,8 +18,8 @@ export async function getAppConfigFromLocalAddresses({
   chainId: number;
   addresses: LocalAddressesJson;
   publicClient: PublicClient;
-}): Promise<AppConfig> {
-  const hyperdrives: HyperdriveConfig[] = [];
+}): Promise<AppConfigOld> {
+  const hyperdrives: HyperdriveConfigOld[] = [];
   if (addresses.erc4626Hyperdrive) {
     hyperdrives.push(
       await getErc4626HyperdriveConfig({
@@ -39,11 +39,11 @@ export async function getAppConfigFromLocalAddresses({
   //     }),
   //   );
   // }
-  const config: AppConfig = {
+  const config: AppConfigOld = {
     chainId,
     hyperdrives,
-    yieldSources,
-    yieldSourceProtocols,
+    yieldSources: yieldSourcesOld,
+    yieldSourceProtocols: yieldSourceProtocolsOld,
   };
 
   return config;

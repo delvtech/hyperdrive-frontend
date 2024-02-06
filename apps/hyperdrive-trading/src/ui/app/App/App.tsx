@@ -1,10 +1,10 @@
 import { ReactElement, StrictMode } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 
 import { Router, RouterProvider } from "@tanstack/react-router";
 
 // Import the generated route tree
 import { routeTree } from "src/routeTree.gen";
+import { useAppConfigOld } from "src/ui/appconfig/useAppConfigOld";
 
 // Create a new router instance
 const router = new Router({ routeTree });
@@ -17,7 +17,8 @@ declare module "@tanstack/react-router" {
 }
 
 export function App(): ReactElement | null {
-  const { appConfig } = useAppConfig();
+  const { appConfig } = useAppConfigOld();
+
   if (appConfig) {
     // eslint-disable-next-line no-console
     console.log("appConfig", appConfig);

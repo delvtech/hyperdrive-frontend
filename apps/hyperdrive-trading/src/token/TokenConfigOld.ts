@@ -1,6 +1,9 @@
 import { Address } from "viem";
 
-export interface TokenConfig {
+/**
+ * @deprecated use TokenConfig from @hyperdrive/appconfig instead
+ */
+export interface TokenConfigOld {
   address: Address;
   name: string;
   symbol: string;

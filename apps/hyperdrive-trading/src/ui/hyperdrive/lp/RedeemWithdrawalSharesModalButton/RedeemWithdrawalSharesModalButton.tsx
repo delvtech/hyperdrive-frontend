@@ -1,13 +1,13 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { ReactElement } from "react";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
 
 export interface RedeemWithdrawalSharesModalButtonProps {
   modalId: string;
   withdrawalShares: bigint;
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }
 export function RedeemWithdrawalSharesModalButton({
   modalId,

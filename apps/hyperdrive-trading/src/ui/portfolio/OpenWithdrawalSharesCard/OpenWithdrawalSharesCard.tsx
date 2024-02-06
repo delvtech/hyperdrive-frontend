@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { Well } from "src/ui/base/components/Well/Well";
@@ -14,7 +14,7 @@ import { calculateShareValueFromPreview } from "src/ui/portfolio/OpenWithdrawalS
 import { useAccount } from "wagmi";
 
 interface LpPortfolioCardProps {
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }
 
 export function OpenWithdrawalSharesCard({

@@ -15,7 +15,7 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { parseUnits } from "src/base/parseUnits";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -31,7 +31,7 @@ import { useAccount } from "wagmi";
 
 function formatOpenShortMobileColumnData(
   openShort: OpenShort,
-  hyperdrive: HyperdriveConfig,
+  hyperdrive: HyperdriveConfigOld,
 ) {
   return [
     {
@@ -65,7 +65,7 @@ function formatOpenShortMobileColumnData(
   ];
 }
 
-function getMobileColumns(hyperdrive: HyperdriveConfig) {
+function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
   return [
     columnHelper.display({
       id: "ColumnNames",
@@ -99,7 +99,7 @@ function getMobileColumns(hyperdrive: HyperdriveConfig) {
 }
 
 const columnHelper = createColumnHelper<OpenShort>();
-function getColumns(hyperdrive: HyperdriveConfig) {
+function getColumns(hyperdrive: HyperdriveConfigOld) {
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",
@@ -154,7 +154,7 @@ function AccruedYieldCell({
   hyperdrive,
 }: {
   openShort: OpenShort;
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }) {
   const { bondAmount, checkpointId } = openShort;
   const { accruedYield } = useAccruedYield({
@@ -181,7 +181,7 @@ function CurrentValueCell({
   hyperdrive,
 }: {
   openShort: OpenShort;
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }) {
   const { address: account } = useAccount();
   const { baseAmountOut } = usePreviewCloseShort({
@@ -234,7 +234,7 @@ function CurrentValueCell({
 export function OpenShortsTable({
   hyperdrive,
 }: {
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }): ReactElement {
   const { address: account } = useAccount();
 

@@ -1,13 +1,13 @@
 import { ViemReadHyperdrive } from "@hyperdrive/sdk-viem";
 import { useMemo } from "react";
 import { querySdkCache } from "src/sdk/sdkCache";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useAppConfigOld } from "src/ui/appconfig/useAppConfigOld";
 import { Address, useChainId, usePublicClient } from "wagmi";
 
 export function useReadHyperdrive(
   address: Address | undefined,
 ): ViemReadHyperdrive | undefined {
-  const { appConfig } = useAppConfig();
+  const { appConfig } = useAppConfigOld();
 
   const chainId = useChainId();
   const publicClient = usePublicClient();

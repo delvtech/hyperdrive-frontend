@@ -9,7 +9,7 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
@@ -226,7 +226,7 @@ export function AllMarketsTableDesktop(): ReactElement {
 function LpApyCell({
   hyperdrive,
 }: {
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }): ReactElement {
   const { lpApy } = useLpApy(hyperdrive);
   return <span>{lpApy?.toFixed(2)}%</span>;
@@ -235,7 +235,7 @@ function LpApyCell({
 function GoToMarketButton({
   market,
 }: {
-  market: HyperdriveConfig;
+  market: HyperdriveConfigOld;
 }): ReactElement {
   return (
     <Link

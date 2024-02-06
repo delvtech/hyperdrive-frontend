@@ -1,14 +1,17 @@
-import { SDAI_ICON_URL, STETH_ICON_URL } from "src/token/tokenIconsUrls";
-import { yieldSourceProtocols } from "src/yieldSources/yieldSourceProtocols";
+import { SDAI_ICON_URL, STETH_ICON_URL } from "src/token/tokenIconsUrlsOld";
+import { yieldSourceProtocolsOld } from "src/yieldSources/yieldSourceProtocolsOld";
 
-export interface YieldSource {
+/**
+ * @deprecated use @hyperdrive/appconfig instead
+ */
+export interface YieldSourceOld {
   name: string;
   shortName: string;
-  protocol: keyof typeof yieldSourceProtocols;
+  protocol: keyof typeof yieldSourceProtocolsOld;
   iconUrl: string;
 }
 
-export const makerDsr: YieldSource = {
+export const makerDsr: YieldSourceOld = {
   name: "Maker Dai Savings Rate",
   shortName: "Maker DSR",
   protocol: "maker",
@@ -16,14 +19,17 @@ export const makerDsr: YieldSource = {
   iconUrl: SDAI_ICON_URL,
 };
 
-export const lidoSteth: YieldSource = {
+export const lidoSteth: YieldSourceOld = {
   name: "Lido Staked Ether",
   shortName: "Staked Ether",
   protocol: "lido",
   iconUrl: STETH_ICON_URL,
 };
 
-export const yieldSources = {
+/**
+ * @deprecated use @hyperdrive/appconfig instead
+ */
+export const yieldSourcesOld = {
   makerDsr,
   lidoSteth,
 } as const;

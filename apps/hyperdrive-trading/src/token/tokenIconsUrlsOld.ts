@@ -23,6 +23,10 @@ const tokenIconUrls: Record<SupportedChainId, Record<Address, string>> = {
   42069: localChainTokenIconUrls,
 };
 
+/**
+ *
+ * @deprecated use @hyperdrive/appconfig instead
+ */
 export function getTokenIconUrl({
   address,
   chainId,

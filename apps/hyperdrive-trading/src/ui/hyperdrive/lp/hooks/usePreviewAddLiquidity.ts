@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewAddLiquidityOptions {
-  market: HyperdriveConfig;
+  market: HyperdriveConfigOld;
   destination: Address | undefined;
   contribution: bigint | undefined;
   minAPR: bigint | undefined;

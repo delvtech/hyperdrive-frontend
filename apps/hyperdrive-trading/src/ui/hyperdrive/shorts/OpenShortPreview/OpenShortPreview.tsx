@@ -1,11 +1,11 @@
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface OpenShortPreviewProps {
-  market: HyperdriveConfig;
+  market: HyperdriveConfigOld;
   costBasis?: bigint;
   shortSize?: bigint;
 }

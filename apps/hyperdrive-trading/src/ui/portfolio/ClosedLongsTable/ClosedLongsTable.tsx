@@ -6,7 +6,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { ReactElement } from "react";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -16,13 +16,13 @@ import { useClosedLongs } from "src/ui/hyperdrive/longs/hooks/useClosedLongs";
 import { useAccount } from "wagmi";
 
 interface ClosedLongsTableProps {
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }
 
 const columnHelper = createColumnHelper<ClosedLong>();
 function formatClosedLongMobileColumnData(
   closedLong: ClosedLong,
-  hyperdrive: HyperdriveConfig,
+  hyperdrive: HyperdriveConfigOld,
 ) {
   return [
     {
@@ -67,7 +67,7 @@ function formatClosedLongMobileColumnData(
   ];
 }
 
-function getMobileColumns(hyperdrive: HyperdriveConfig) {
+function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
   return [
     columnHelper.display({
       id: "ColumnNames",
@@ -100,7 +100,7 @@ function getMobileColumns(hyperdrive: HyperdriveConfig) {
   ];
 }
 
-function getColumns(hyperdrive: HyperdriveConfig) {
+function getColumns(hyperdrive: HyperdriveConfigOld) {
   return [
     columnHelper.display({
       header: `Matures on`,
@@ -241,7 +241,7 @@ function BaseAmountReceivedCell({
   hyperdrive,
 }: {
   closedLong: ClosedLong;
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }) {
   const currentValueLabel = formatBalance({
     balance: closedLong.baseAmount,

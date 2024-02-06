@@ -1,11 +1,11 @@
 import { IERC4626HyperdriveRead } from "@hyperdrive/artifacts/dist/IERC4626HyperdriveRead";
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { SupportedChainId } from "src/chains/supportedChains";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { formatHyperdriveName } from "src/hyperdrive/formatHyperdriveName";
-import { TokenConfig } from "src/token/TokenConfig";
-import { getTokenIconUrl } from "src/token/tokenIconsUrls";
-import { yieldSources } from "src/yieldSources/yieldSources";
+import { TokenConfigOld } from "src/token/TokenConfigOld";
+import { getTokenIconUrl } from "src/token/tokenIconsUrlsOld";
+import { yieldSourcesOld } from "src/yieldSources/yieldSources";
 import { Address, PublicClient } from "viem";
 import { erc20ABI } from "wagmi";
 
@@ -16,8 +16,8 @@ export async function getErc4626HyperdriveConfig({
 }: {
   hyperdriveAddress: Address;
   publicClient: PublicClient;
-  yieldSource: keyof typeof yieldSources;
-}): Promise<HyperdriveConfig> {
+  yieldSource: keyof typeof yieldSourcesOld;
+}): Promise<HyperdriveConfigOld> {
   const { positionDuration, baseToken: baseTokenAddress } =
     await publicClient.readContract({
       abi: IHyperdrive.abi,
@@ -26,7 +26,7 @@ export async function getErc4626HyperdriveConfig({
     });
 
   const chainId = (await publicClient.getChainId()) as SupportedChainId;
-  const baseToken: TokenConfig = {
+  const baseToken: TokenConfigOld = {
     address: baseTokenAddress,
     decimals: await publicClient.readContract({
       address: baseTokenAddress,
@@ -48,7 +48,7 @@ export async function getErc4626HyperdriveConfig({
     iconUrl: getTokenIconUrl({ address: baseTokenAddress, chainId }),
   };
 
-  const sharesToken: TokenConfig = await fetchSharesToken(
+  const sharesToken: TokenConfigOld = await fetchSharesToken(
     publicClient,
     hyperdriveAddress,
   );
@@ -57,7 +57,7 @@ export async function getErc4626HyperdriveConfig({
   const name = formatHyperdriveName({
     termLengthMS,
     baseTokenSymbol: baseToken.symbol,
-    yieldSourceShortName: yieldSources[yieldSource].shortName,
+    yieldSourceShortName: yieldSourcesOld[yieldSource].shortName,
   });
 
   return {
@@ -84,7 +84,7 @@ async function fetchSharesToken(
     functionName: "vault",
     address: hyperdriveAddress,
   });
-  const sharesToken: TokenConfig = {
+  const sharesToken: TokenConfigOld = {
     address: sharesTokenAddress,
     decimals: await publicClient.readContract({
       address: sharesTokenAddress,

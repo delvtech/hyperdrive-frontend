@@ -2,9 +2,9 @@ import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ReactElement, useState } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
-import { HyperdriveConfig } from "src/hyperdrive/HyperdriveConfig";
+import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
-import { TokenConfig } from "src/token/TokenConfig";
+import { TokenConfigOld } from "src/token/TokenConfigOld";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -21,7 +21,7 @@ import { Address } from "viem";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenLongFormProps {
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
 }
 
 type DepositTokenType = "baseToken" | "sharesToken";
@@ -186,11 +186,11 @@ function useActiveToken({
   hyperdrive,
   account,
 }: {
-  hyperdrive: HyperdriveConfig;
+  hyperdrive: HyperdriveConfigOld;
   account: Address | undefined;
 }): {
   activeTokenType: DepositTokenType;
-  activeToken: TokenConfig;
+  activeToken: TokenConfigOld;
   activeTokenAllowance: bigint | undefined;
   activeTokenBalance:
     | {
