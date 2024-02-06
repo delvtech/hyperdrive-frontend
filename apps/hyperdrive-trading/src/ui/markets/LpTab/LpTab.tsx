@@ -36,7 +36,7 @@ export function LpTab({
   return (
     <MarketDetailsTab
       positions={
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center lg:min-w-[720px]">
           <div className="flex w-full justify-between px-4 py-8 md:px-0">
             <h5 className="font-bold">LP positions</h5>
             <OpenClosedFilter />
