@@ -4,10 +4,21 @@
   "license": "MIT",
   "type": "module",
   "files": [
-    "dist"
+    "artifacts"
   ],
+  "exports": {
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    "./*.js": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
-    "build": "sh build.sh",
-    "build:new": "rm -rf ./dist ./hyperdrive && sh build.sh"
+    "build:src": "sh scripts/build_src.sh src",
+    "build": "npm run build:src && tsc --build --force"
   }
 }
