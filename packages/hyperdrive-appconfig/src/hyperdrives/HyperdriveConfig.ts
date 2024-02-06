@@ -8,12 +8,12 @@ export interface HyperdriveConfig {
   /**
    * The base token for hyperdrive deposits and withdrawals, eg: DAI or ETH
    */
-  baseToken: string;
+  baseToken: Address;
 
   /**
    * The shares token for hyperdrive deposits and withdrawals, eg: sDAI or stETH
    */
-  sharesToken: string;
+  sharesToken: Address;
 
   withdrawOptions: {
     /**
