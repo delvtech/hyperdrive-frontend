@@ -28,7 +28,7 @@ export function MarketStats({
     decimals: hyperdrive.baseToken.decimals,
   });
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
-  const { lpApy, lpApyStatus } = useLpApy(hyperdrive);
+  const { lpApy, lpApyStatus } = useLpApy(hyperdrive.address);
 
   const { vaultRate } = useVaultRate({
     vaultAddress: hyperdrive.sharesToken.address,

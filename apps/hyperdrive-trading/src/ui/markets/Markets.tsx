@@ -1,15 +1,11 @@
-import { ReactElement, useMemo } from "react";
-import { useAppConfigOld } from "src/ui/appconfig/useAppConfigOld";
+import { ReactElement } from "react";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { AllMarketsTable } from "src/ui/markets/AllMarketsTable/AllMarketsTable";
 
 export function Markets(): ReactElement {
-  const { appConfig: config } = useAppConfigOld();
+  const appConfig = useAppConfig();
 
-  const memoizedData = useMemo(
-    () => config?.hyperdrives,
-    [config?.hyperdrives],
-  );
-  if (!memoizedData?.length) {
+  if (!appConfig?.hyperdrives.length) {
     return <div>No markets found</div>;
   }
 

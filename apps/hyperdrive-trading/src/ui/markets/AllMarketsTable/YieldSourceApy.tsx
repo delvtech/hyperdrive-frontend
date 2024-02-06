@@ -1,14 +1,14 @@
 import { ReactElement } from "react";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
+import { Address } from "viem";
 
 export function YieldSourceApy({
-  hyperdrive,
+  yieldSourceAddress,
 }: {
-  hyperdrive: HyperdriveConfigOld;
+  yieldSourceAddress: Address;
 }): ReactElement {
   const { vaultRate } = useVaultRate({
-    vaultAddress: hyperdrive.sharesToken.address,
+    vaultAddress: yieldSourceAddress,
   });
   return (
     <span className="flex items-center gap-1.5">

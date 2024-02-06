@@ -10,6 +10,7 @@ import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 export function Market(): ReactElement {
   const { market: address } = useLoaderData({ from: MARKET_DETAILS_ROUTE });
   const { appConfig } = useAppConfigOld();
+  console.log("appConfig", appConfig);
   const market = appConfig?.hyperdrives.find(
     (hyperdrive) => hyperdrive.address === address,
   ) as HyperdriveConfigOld;
