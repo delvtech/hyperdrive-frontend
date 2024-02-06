@@ -7,7 +7,6 @@ import { LongsTab } from "src/ui/markets/LongsTab/LongsTab";
 import { LpTab } from "src/ui/markets/LpTab/LpTab";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { ShortsTab } from "src/ui/markets/ShortsTab/ShortsTab";
-import { Route } from "src/ui/routes/market.$address";
 
 const TABS = ["Longs", "Shorts", "LP"] as const;
 
@@ -18,7 +17,7 @@ export function LongsShortsLpTabs({
 }): ReactElement {
   const { address } = useParams({ from: MARKET_DETAILS_ROUTE });
   const { position } = useSearch({ from: MARKET_DETAILS_ROUTE });
-  const navigate = useNavigate({ from: Route.fullPath });
+  const navigate = useNavigate({ from: MARKET_DETAILS_ROUTE });
   const activeTab = position ?? "Longs";
 
   return (
@@ -31,7 +30,7 @@ export function LongsShortsLpTabs({
               "opacity-80 hover:opacity-100": activeTab !== tabId,
             })}
             aria-label={tabId}
-            onClick={() => {
+            onChange={() => {
               navigate({
                 params: { address },
                 search: () => ({ position: tabId, openOrClosed: "Open" }),
