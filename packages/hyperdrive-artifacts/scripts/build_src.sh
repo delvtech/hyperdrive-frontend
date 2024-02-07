@@ -8,7 +8,7 @@ src_dir_name="src"
 max_file_size=1000000 # 1MB
 
 # Skip the build if the src directory already exists
-if [[ -d "$src_dir_name" ]]; then
+if [ -d "$src_dir_name" ]; then
   echo "Src path ($src_dir_name) already exists. Skipping src build."
   exit 0
 fi
@@ -65,7 +65,7 @@ for dir in "$temp_dir"/out/*; do
   dir_name=$(basename $dir)
 
   # Ignore test contract directories which end with ".t.sol"
-  if [[ "$dir_name" == *".t.sol" ]]; then
+  if [ "$dir_name" == *".t.sol" ]; then
     continue
   fi
 
