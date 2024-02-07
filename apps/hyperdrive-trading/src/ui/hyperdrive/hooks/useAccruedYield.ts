@@ -1,6 +1,7 @@
+import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
 export function useAccruedYield({
@@ -8,12 +9,17 @@ export function useAccruedYield({
   checkpointId,
   bondAmount,
 }: {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
   checkpointId: bigint;
   bondAmount: bigint;
 }): {
   accruedYield: bigint | undefined;
 } {
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const queryEnabled = !!readHyperdrive;
   const { data: accruedYield } = useQuery({
@@ -27,7 +33,7 @@ export function useAccruedYield({
           readHyperdrive.getShortAccruedYield({
             checkpointId,
             bondAmount,
-            decimals: hyperdrive.baseToken.decimals,
+            decimals: baseToken.decimals,
           })
       : undefined,
     enabled: queryEnabled,

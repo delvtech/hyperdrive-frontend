@@ -1,3 +1,8 @@
+import {
+  AppConfig,
+  HyperdriveConfig,
+  findBaseToken,
+} from "@hyperdrive/appconfig";
 import { ClosedLpShares, RedeemedWithdrawalShares } from "@hyperdrive/sdk";
 import {
   createColumnHelper,
@@ -6,7 +11,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { ReactElement, useMemo } from "react";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
@@ -17,16 +22,21 @@ import { useRedeemedWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedee
 import { useAccount } from "wagmi";
 
 interface ClosedLpTablePRops {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }
 
 type ClosedLpSharesAndWithdrawalShares = ClosedLpShares &
   RedeemedWithdrawalShares;
 
-const formatClosedLpMobileColumnData = (
+function formatClosedLpMobileColumnData(
   closedLpShares: ClosedLpSharesAndWithdrawalShares,
-  hyperdrive: HyperdriveConfigOld,
-) => {
+  hyperdrive: HyperdriveConfig,
+  appConfig: AppConfig,
+) {
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   const isWithdrawalShare = closedLpShares.redeemedTimestamp;
   const shares = isWithdrawalShare
     ? closedLpShares.withdrawalShareAmount
@@ -43,15 +53,15 @@ const formatClosedLpMobileColumnData = (
       name: "Shares closed",
       value: formatBalance({
         balance: shares,
-        decimals: hyperdrive.baseToken.decimals,
+        decimals: baseToken.decimals,
         places: 4,
       }),
     },
     {
-      name: `Received (${hyperdrive.baseToken.symbol})`,
+      name: `Received (${baseToken.symbol})`,
       value: formatBalance({
         balance: closedLpShares.baseAmount,
-        decimals: hyperdrive.baseToken.decimals,
+        decimals: baseToken.decimals,
         places: 4,
       }),
     },
@@ -61,20 +71,24 @@ const formatClosedLpMobileColumnData = (
         ? "N/A"
         : formatBalance({
             balance: closedLpShares.withdrawalShareAmount,
-            decimals: hyperdrive.baseToken.decimals,
+            decimals: baseToken.decimals,
             places: 4,
           }),
     },
   ];
-};
+}
 
 const columnHelper = createColumnHelper<ClosedLpSharesAndWithdrawalShares>();
-function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
+function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   return [
     columnHelper.display({
       id: "ColumnNames",
       cell: ({ row }) => {
-        const data = formatClosedLpMobileColumnData(row.original, hyperdrive);
+        const data = formatClosedLpMobileColumnData(
+          row.original,
+          hyperdrive,
+          appConfig,
+        );
         return (
           <ul className="flex flex-col items-start gap-1">
             {data.map((column) => (
@@ -87,7 +101,11 @@ function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
     columnHelper.display({
       id: "ColumnValues",
       cell: ({ row }) => {
-        const data = formatClosedLpMobileColumnData(row.original, hyperdrive);
+        const data = formatClosedLpMobileColumnData(
+          row.original,
+          hyperdrive,
+          appConfig,
+        );
         return (
           <ul className="flex flex-col items-start gap-1">
             {data.map((column) => (
@@ -101,7 +119,11 @@ function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
     }),
   ];
 }
-function getColumns(hyperdrive: HyperdriveConfigOld) {
+function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   return [
     columnHelper.display({
       header: "Position",
@@ -125,7 +147,7 @@ function getColumns(hyperdrive: HyperdriveConfigOld) {
           <span>
             {formatBalance({
               balance: shares,
-              decimals: hyperdrive.baseToken.decimals,
+              decimals: baseToken.decimals,
               places: 4,
             })}
           </span>
@@ -133,14 +155,14 @@ function getColumns(hyperdrive: HyperdriveConfigOld) {
       },
     }),
     columnHelper.accessor("baseAmount", {
-      header: `Amount received (${hyperdrive.baseToken.symbol})`,
+      header: `Amount received (${baseToken.symbol})`,
       cell: ({ getValue }) => {
         const baseAmount = getValue();
         return (
           <span>
             {formatBalance({
               balance: baseAmount,
-              decimals: hyperdrive.baseToken.decimals,
+              decimals: baseToken.decimals,
               places: 4,
             })}
           </span>
@@ -159,7 +181,7 @@ function getColumns(hyperdrive: HyperdriveConfigOld) {
           <span>
             {formatBalance({
               balance: withdrawalShareAmount,
-              decimals: hyperdrive.baseToken.decimals,
+              decimals: baseToken.decimals,
               places: 4,
             })}
           </span>
@@ -185,6 +207,7 @@ export function ClosedLpTable({
   hyperdrive,
 }: ClosedLpTablePRops): ReactElement {
   const { address: account } = useAccount();
+  const appConfig = useAppConfig();
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { closedLpShares, closedLpSharesStatus } = useClosedLpShares({
     hyperdriveAddress: hyperdrive.address,
@@ -208,8 +231,8 @@ export function ClosedLpTable({
   const tableInstance = useReactTable({
     data: memoizedData as ClosedLpSharesAndWithdrawalShares[],
     columns: isTailwindSmallScreen
-      ? getMobileColumns(hyperdrive)
-      : getColumns(hyperdrive),
+      ? getMobileColumns(hyperdrive, appConfig)
+      : getColumns(hyperdrive, appConfig),
     getCoreRowModel: getCoreRowModel(),
   });
   if (!account) {

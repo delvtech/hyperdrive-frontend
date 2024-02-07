@@ -1,10 +1,11 @@
+import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface AddLiquidityPreviewProps {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
   lpShares: bigint;
 }
 
@@ -12,6 +13,11 @@ export function AddLiquidityPreview({
   hyperdrive,
   lpShares,
 }: AddLiquidityPreviewProps): ReactElement {
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   return (
     <div className="flex flex-col gap-3">
       <LabelValue
@@ -20,7 +26,7 @@ export function AddLiquidityPreview({
           <p className="font-bold">
             {formatBalance({
               balance: lpShares,
-              decimals: hyperdrive.baseToken.decimals,
+              decimals: baseToken.decimals,
               places: 4,
             })}{" "}
             LP Shares

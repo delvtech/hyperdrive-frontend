@@ -1,3 +1,10 @@
+import {
+  AppConfig,
+  EmptyExtensions,
+  HyperdriveConfig,
+  TokenConfig,
+  findBaseToken,
+} from "@hyperdrive/appconfig";
 import { ClosedLong } from "@hyperdrive/sdk";
 import {
   createColumnHelper,
@@ -6,7 +13,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { ReactElement } from "react";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -16,13 +23,14 @@ import { useClosedLongs } from "src/ui/hyperdrive/longs/hooks/useClosedLongs";
 import { useAccount } from "wagmi";
 
 interface ClosedLongsTableProps {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }
 
 const columnHelper = createColumnHelper<ClosedLong>();
 function formatClosedLongMobileColumnData(
   closedLong: ClosedLong,
-  hyperdrive: HyperdriveConfigOld,
+  hyperdrive: HyperdriveConfig,
+  baseToken: TokenConfig<EmptyExtensions>,
 ) {
   return [
     {
@@ -34,19 +42,19 @@ function formatClosedLongMobileColumnData(
       ),
     },
     {
-      name: `Size (hy${hyperdrive.baseToken.symbol})`,
+      name: `Size (hy${baseToken.symbol})`,
       value: (
         <span>
           {formatBalance({
             balance: closedLong.bondAmount,
-            decimals: hyperdrive.baseToken.decimals,
+            decimals: baseToken.decimals,
             places: 2,
           })}
         </span>
       ),
     },
     {
-      name: `Amount received (${hyperdrive.baseToken.symbol})`,
+      name: `Amount received (${baseToken.symbol})`,
       value: (
         <BaseAmountReceivedCell
           hyperdrive={hyperdrive}
@@ -67,12 +75,20 @@ function formatClosedLongMobileColumnData(
   ];
 }
 
-function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
+function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   return [
     columnHelper.display({
       id: "ColumnNames",
       cell: ({ row }) => {
-        const data = formatClosedLongMobileColumnData(row.original, hyperdrive);
+        const data = formatClosedLongMobileColumnData(
+          row.original,
+          hyperdrive,
+          baseToken,
+        );
         return (
           <ul className="flex flex-col items-start gap-1">
             {data.map((column) => (
@@ -85,7 +101,11 @@ function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
     columnHelper.display({
       id: "ColumnValues",
       cell: ({ row }) => {
-        const data = formatClosedLongMobileColumnData(row.original, hyperdrive);
+        const data = formatClosedLongMobileColumnData(
+          row.original,
+          hyperdrive,
+          baseToken,
+        );
         return (
           <ul className="flex flex-col items-start gap-1">
             {data.map((column) => (
@@ -100,7 +120,11 @@ function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
   ];
 }
 
-function getColumns(hyperdrive: HyperdriveConfigOld) {
+function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   return [
     columnHelper.display({
       header: `Matures on`,
@@ -111,13 +135,13 @@ function getColumns(hyperdrive: HyperdriveConfigOld) {
     }),
     columnHelper.display({
       id: "size",
-      header: `Size (hy${hyperdrive.baseToken.symbol})`,
+      header: `Size (hy${baseToken.symbol})`,
       cell: ({ row }) => {
         return (
           <span>
             {formatBalance({
               balance: row.original.bondAmount,
-              decimals: hyperdrive.baseToken.decimals,
+              decimals: baseToken.decimals,
               places: 2,
             })}
           </span>
@@ -126,7 +150,7 @@ function getColumns(hyperdrive: HyperdriveConfigOld) {
     }),
     columnHelper.display({
       id: "baseReceived",
-      header: `Amount received (${hyperdrive.baseToken.symbol})`,
+      header: `Amount received (${baseToken.symbol})`,
       cell: ({ row }) => {
         return (
           <BaseAmountReceivedCell
@@ -150,6 +174,7 @@ export function ClosedLongsTable({
   hyperdrive,
 }: ClosedLongsTableProps): ReactElement {
   const { address: account } = useAccount();
+  const appConfig = useAppConfig();
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { closedLongs, closedLongsStatus } = useClosedLongs({
     account,
@@ -157,8 +182,8 @@ export function ClosedLongsTable({
   });
   const tableInstance = useReactTable({
     columns: isTailwindSmallScreen
-      ? getMobileColumns(hyperdrive)
-      : getColumns(hyperdrive),
+      ? getMobileColumns(hyperdrive, appConfig)
+      : getColumns(hyperdrive, appConfig),
     data: [...(closedLongs || [])].reverse(), // show most recently closed first, TODO: refactor to interactive column sorting
     getCoreRowModel: getCoreRowModel(),
   });
@@ -241,11 +266,16 @@ function BaseAmountReceivedCell({
   hyperdrive,
 }: {
   closedLong: ClosedLong;
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }) {
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   const currentValueLabel = formatBalance({
     balance: closedLong.baseAmount,
-    decimals: hyperdrive.baseToken.decimals,
+    decimals: baseToken.decimals,
     places: 4,
   });
 

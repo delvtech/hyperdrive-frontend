@@ -4,6 +4,13 @@ import {
   ChevronUpIcon,
   WalletIcon,
 } from "@heroicons/react/24/outline";
+import {
+  AppConfig,
+  EmptyExtensions,
+  HyperdriveConfig,
+  TokenConfig,
+  findBaseToken,
+} from "@hyperdrive/appconfig";
 import { OpenShort } from "@hyperdrive/sdk";
 import {
   createColumnHelper,
@@ -15,7 +22,7 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { parseUnits } from "src/base/parseUnits";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -31,18 +38,23 @@ import { useAccount } from "wagmi";
 
 function formatOpenShortMobileColumnData(
   openShort: OpenShort,
-  hyperdrive: HyperdriveConfigOld,
+  hyperdrive: HyperdriveConfig,
+  appConfig: AppConfig,
 ) {
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   return [
     {
       name: "Matures on",
       value: <MaturesOnCell maturity={openShort.maturity} />,
     },
     {
-      name: `Size (${hyperdrive.baseToken.symbol})`,
+      name: `Size (${baseToken.symbol})`,
       value: formatBalance({
         balance: openShort.bondAmount,
-        decimals: hyperdrive.baseToken.decimals,
+        decimals: baseToken.decimals,
         places: 6,
       }),
     },
@@ -50,12 +62,12 @@ function formatOpenShortMobileColumnData(
       name: `Amount paid`,
       value: formatBalance({
         balance: openShort.baseAmountPaid,
-        decimals: hyperdrive.baseToken.decimals,
+        decimals: baseToken.decimals,
         places: 6,
       }),
     },
     {
-      name: `Yield (${hyperdrive.baseToken.symbol})`,
+      name: `Yield (${baseToken.symbol})`,
       value: <AccruedYieldCell hyperdrive={hyperdrive} openShort={openShort} />,
     },
     {
@@ -65,12 +77,16 @@ function formatOpenShortMobileColumnData(
   ];
 }
 
-function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
+function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   return [
     columnHelper.display({
       id: "ColumnNames",
       cell: ({ row }) => {
-        const data = formatOpenShortMobileColumnData(row.original, hyperdrive);
+        const data = formatOpenShortMobileColumnData(
+          row.original,
+          hyperdrive,
+          appConfig,
+        );
         return (
           <ul className="flex flex-col items-start gap-1">
             {data.map((column) => (
@@ -83,7 +99,11 @@ function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
     columnHelper.display({
       id: "ColumnValues",
       cell: ({ row }) => {
-        const data = formatOpenShortMobileColumnData(row.original, hyperdrive);
+        const data = formatOpenShortMobileColumnData(
+          row.original,
+          hyperdrive,
+          appConfig,
+        );
         return (
           <ul className="flex flex-col items-start gap-1">
             {data.map((column) => (
@@ -99,7 +119,10 @@ function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
 }
 
 const columnHelper = createColumnHelper<OpenShort>();
-function getColumns(hyperdrive: HyperdriveConfigOld) {
+function getColumns(
+  hyperdrive: HyperdriveConfig,
+  baseToken: TokenConfig<EmptyExtensions>,
+) {
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",
@@ -109,12 +132,12 @@ function getColumns(hyperdrive: HyperdriveConfigOld) {
       },
     }),
     columnHelper.accessor("bondAmount", {
-      header: `Size (hy${hyperdrive.baseToken.symbol})`,
+      header: `Size (hy${baseToken.symbol})`,
       cell: (bondAmount) => {
         const bondAmountValue = bondAmount.getValue();
         return formatBalance({
           balance: bondAmountValue,
-          decimals: hyperdrive.baseToken.decimals,
+          decimals: baseToken.decimals,
           places: 6,
         });
       },
@@ -125,13 +148,13 @@ function getColumns(hyperdrive: HyperdriveConfigOld) {
         const amountPaid = baseAmountPaid.getValue();
         return formatBalance({
           balance: amountPaid,
-          decimals: hyperdrive.baseToken.decimals,
+          decimals: baseToken.decimals,
           places: 3,
         });
       },
     }),
     columnHelper.display({
-      header: `Yield earned (${hyperdrive.baseToken.symbol})`,
+      header: `Yield earned (${baseToken.symbol})`,
       cell: ({ row }) => {
         return (
           <AccruedYieldCell hyperdrive={hyperdrive} openShort={row.original} />
@@ -139,7 +162,7 @@ function getColumns(hyperdrive: HyperdriveConfigOld) {
       },
     }),
     columnHelper.display({
-      header: `Current value (${hyperdrive.baseToken.symbol})`,
+      header: `Current value (${baseToken.symbol})`,
       cell: ({ row }) => {
         return (
           <CurrentValueCell hyperdrive={hyperdrive} openShort={row.original} />
@@ -154,9 +177,14 @@ function AccruedYieldCell({
   hyperdrive,
 }: {
   openShort: OpenShort;
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }) {
   const { bondAmount, checkpointId } = openShort;
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   const { accruedYield } = useAccruedYield({
     hyperdrive,
     bondAmount,
@@ -168,7 +196,7 @@ function AccruedYieldCell({
       <span>
         {formatBalance({
           balance: accruedYield || 0n,
-          decimals: hyperdrive.baseToken.decimals,
+          decimals: baseToken.decimals,
           places: 3,
         })}
       </span>
@@ -181,21 +209,26 @@ function CurrentValueCell({
   hyperdrive,
 }: {
   openShort: OpenShort;
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }) {
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   const { address: account } = useAccount();
   const { baseAmountOut } = usePreviewCloseShort({
     hyperdriveAddress: openShort.hyperdriveAddress,
     maturityTime: openShort.maturity,
     shortAmountIn: openShort.bondAmount,
-    minBaseAmountOut: parseUnits("0", hyperdrive.baseToken.decimals),
+    minBaseAmountOut: parseUnits("0", baseToken.decimals),
     destination: account,
   });
   const currentValue =
     baseAmountOut &&
     formatBalance({
       balance: baseAmountOut,
-      decimals: hyperdrive.baseToken.decimals,
+      decimals: baseToken.decimals,
       places: 3,
     });
 
@@ -219,8 +252,8 @@ function CurrentValueCell({
           {getProfitLossText({
             baseAmountOut,
             amountInput: openShort.baseAmountPaid,
-            baseDecimals: hyperdrive.baseToken.decimals,
-            baseSymbol: hyperdrive.baseToken.symbol,
+            baseDecimals: baseToken.decimals,
+            baseSymbol: baseToken.symbol,
             showPercentage: false,
           })}
         </div>
@@ -234,9 +267,14 @@ function CurrentValueCell({
 export function OpenShortsTable({
   hyperdrive,
 }: {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
 
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { openShorts, openShortsStatus } = useOpenShorts({
@@ -245,8 +283,8 @@ export function OpenShortsTable({
   });
   const tableInstance = useReactTable({
     columns: isTailwindSmallScreen
-      ? getMobileColumns(hyperdrive)
-      : getColumns(hyperdrive),
+      ? getMobileColumns(hyperdrive, appConfig)
+      : getColumns(hyperdrive, baseToken),
     data: openShorts || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),

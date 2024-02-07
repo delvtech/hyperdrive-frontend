@@ -1,40 +1,40 @@
+import { EmptyExtensions, TokenConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { divideBigInt } from "src/base/divideBigInt";
 import { parseUnits } from "src/base/parseUnits";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 export function PriceBadges({
-  hyperdrive,
+  baseToken,
   longPrice,
 }: {
-  hyperdrive: HyperdriveConfigOld;
-  longPrice: { price: bigint; formatted: string };
+  baseToken: TokenConfig<EmptyExtensions>;
+  longPrice: bigint;
 }): ReactElement {
   return (
     <div className="flex flex-col gap-2 md:flex-row md:gap-4">
       <div className="daisy-badge daisy-badge-neutral daisy-badge-lg py-4 text-md text-neutral-content">
-        1 hy{hyperdrive.baseToken.symbol} ≈{" "}
+        1 hy{baseToken.symbol} ≈{" "}
         {formatBalance({
-          balance: longPrice.price,
-          decimals: hyperdrive.baseToken.decimals,
+          balance: longPrice,
+          decimals: baseToken.decimals,
           places: 6,
         })}{" "}
-        {hyperdrive.baseToken.symbol}
+        {baseToken.symbol}
       </div>
       <div className="daisy-badge daisy-badge-neutral daisy-badge-lg py-4 text-md text-neutral-content">
-        1 {hyperdrive.baseToken.symbol} ≈{" "}
+        1 {baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: divideBigInt(
             parseUnits("1", 18),
-            longPrice.price,
-            hyperdrive.baseToken.decimals,
+            longPrice,
+            baseToken.decimals,
           ),
 
-          decimals: hyperdrive.baseToken.decimals,
+          decimals: baseToken.decimals,
           places: 6,
         })}{" "}
-        hy{hyperdrive.baseToken.symbol}
+        hy{baseToken.symbol}
       </div>
     </div>
   );

@@ -1,10 +1,17 @@
+import {
+  EmptyExtensions,
+  findBaseToken,
+  findYieldSourceToken,
+  HyperdriveConfig,
+  TokenConfig,
+  YieldSourceExtensions,
+} from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ReactElement, useState } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
-import { TokenConfigOld } from "src/token/TokenConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -21,7 +28,7 @@ import { Address } from "viem";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenLongFormProps {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }
 
 type DepositTokenType = "baseToken" | "sharesToken";
@@ -60,7 +67,7 @@ export function OpenLongForm({
 
   const { poolInfo } = usePoolInfo(hyperdrive.address);
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
-    market: hyperdrive,
+    hyperdriveAddress: hyperdrive.address,
     baseAmount: amountAsBigInt,
   });
 
@@ -68,7 +75,7 @@ export function OpenLongForm({
     longAmountOut &&
     adjustAmountByPercentage({
       amount: longAmountOut,
-      decimals: hyperdrive.baseToken.decimals,
+      decimals: activeToken.decimals,
     });
 
   const { openLong, openLongStatus } = useOpenLong({
@@ -105,7 +112,7 @@ export function OpenLongForm({
                   balance: activeTokenBalance?.value,
                   decimals: activeToken.decimals,
                   places: 4,
-                })} ${hyperdrive.baseToken.symbol}`
+                })} ${activeToken.symbol}`
               : undefined
           }
           onChange={(newAmount) => setAmount(newAmount)}
@@ -119,7 +126,11 @@ export function OpenLongForm({
             assetId: 0n,
             baseAmountPaid: amountAsBigInt || 0n,
             maturity: BigInt(
-              Math.round((Date.now() + hyperdrive.termLengthMS) / 1000),
+              Math.round(
+                (Date.now() +
+                  Number(hyperdrive.poolConfig.positionDuration * 1000n)) /
+                  1000,
+              ),
             ),
           }}
         />
@@ -186,11 +197,11 @@ function useActiveToken({
   hyperdrive,
   account,
 }: {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
   account: Address | undefined;
 }): {
   activeTokenType: DepositTokenType;
-  activeToken: TokenConfigOld;
+  activeToken: TokenConfig<EmptyExtensions | YieldSourceExtensions>;
   activeTokenAllowance: bigint | undefined;
   activeTokenBalance:
     | {
@@ -201,13 +212,20 @@ function useActiveToken({
   setActiveTokenType: (type: DepositTokenType) => void;
   isActiveTokenApprovalRequired: boolean;
 } {
+  const appConfig = useAppConfig();
   const [activeTokenType, setActiveTokenType] =
     useState<DepositTokenType>("baseToken");
 
   const activeToken =
     activeTokenType === "baseToken"
-      ? hyperdrive.baseToken
-      : hyperdrive.sharesToken;
+      ? findBaseToken({
+          baseTokenAddress: hyperdrive.baseToken,
+          tokens: appConfig.tokens,
+        })
+      : findYieldSourceToken({
+          yieldSourceTokenAddress: hyperdrive.sharesToken,
+          tokens: appConfig.tokens,
+        });
 
   const { data: activeTokenBalance } = useBalance({
     address: account,

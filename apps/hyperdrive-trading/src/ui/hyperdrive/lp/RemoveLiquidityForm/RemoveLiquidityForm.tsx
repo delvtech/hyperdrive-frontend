@@ -1,10 +1,11 @@
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { PoolInfo } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { calculateTotalValueFromPrice } from "src/base/calculateTotalValueFromPrice";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -17,7 +18,7 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 interface RemoveLiquidityFormProps {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
   lpShares: bigint;
   onRemoveLiquidity?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
@@ -27,7 +28,11 @@ export function RemoveLiquidityForm({
   lpShares,
   onRemoveLiquidity,
 }: RemoveLiquidityFormProps): ReactElement {
-  const { decimals: baseDecimals } = hyperdrive.baseToken;
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   const { poolInfo } = usePoolInfo(hyperdrive.address);
 
   const { address: account } = useAccount();
@@ -38,7 +43,7 @@ export function RemoveLiquidityForm({
     amountAsBigInt: desiredBaseOut,
     setAmount,
   } = useNumericInput({
-    decimals: baseDecimals,
+    decimals: baseToken.decimals,
   });
 
   // Then calculate the lpSharesIn required to remove that amount of base
@@ -53,7 +58,7 @@ export function RemoveLiquidityForm({
   } = usePreviewRemoveLiquidity({
     destination: account,
     lpSharesIn: lpSharesIn,
-    market: hyperdrive,
+    hyperdriveAddress: hyperdrive.address,
     minBaseAmountOut: 1n,
   });
 
@@ -79,7 +84,7 @@ export function RemoveLiquidityForm({
     actualBaseOut !== undefined
       ? `${formatBalance({
           balance: actualBaseOut,
-          decimals: baseDecimals,
+          decimals: baseToken.decimals,
           places: 8,
         })}`
       : null;
@@ -91,9 +96,9 @@ export function RemoveLiquidityForm({
         balance: calculateTotalValueFromPrice({
           amount: withdrawalSharesOut,
           price: poolInfo?.lpSharePrice || 0n,
-          decimals: hyperdrive.baseToken.decimals,
+          decimals: baseToken.decimals,
         }),
-        decimals: baseDecimals,
+        decimals: baseToken.decimals,
         places: 8,
       })
     : null;
@@ -101,7 +106,7 @@ export function RemoveLiquidityForm({
   const currentLpValue = calculateTotalValueFromPrice({
     amount: lpShares,
     price: poolInfo?.lpSharePrice || 0n,
-    decimals: hyperdrive.baseToken.decimals,
+    decimals: baseToken.decimals,
   });
 
   return (
@@ -109,17 +114,17 @@ export function RemoveLiquidityForm({
       heading="Remove Liquidity"
       tokenInput={
         <TokenInput
-          name={hyperdrive.baseToken.name}
-          token={hyperdrive.baseToken.symbol}
+          name={baseToken.name}
+          token={baseToken.symbol}
           value={amount ?? ""}
-          maxValue={formatUnits(currentLpValue, baseDecimals)}
+          maxValue={formatUnits(currentLpValue, baseToken.decimals)}
           stat={
             lpShares && !!poolInfo
               ? `Current liquidity: ${formatBalance({
                   balance: currentLpValue,
-                  decimals: hyperdrive.baseToken.decimals,
+                  decimals: baseToken.decimals,
                   places: 2,
-                })} ${hyperdrive.baseToken.symbol}`
+                })} ${baseToken.symbol}`
               : undefined
           }
           onChange={(newAmount) => setAmount(newAmount)}
@@ -129,15 +134,11 @@ export function RemoveLiquidityForm({
         <>
           <LabelValue
             label="You receive"
-            value={`${formattedBaseAmountOut || 0} ${
-              hyperdrive.baseToken.symbol
-            }`}
+            value={`${formattedBaseAmountOut || 0} ${baseToken.symbol}`}
           />
           <LabelValue
             label="Queued for delayed withdrawal"
-            value={`${formattedWithdrawalSharesOut || 0} ${
-              hyperdrive.baseToken.symbol
-            }`}
+            value={`${formattedWithdrawalSharesOut || 0} ${baseToken.symbol}`}
           />
         </>
       }
