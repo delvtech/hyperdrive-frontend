@@ -67,7 +67,7 @@ export function OpenLpSharesCard({
 
   return (
     <Well elevation="flat">
-      <div className="flex w-80 flex-col items-center gap-4">
+      <div className="flex h-full w-80 flex-col items-center justify-center gap-4">
         {lpShares !== 0n ? (
           <>
             <span className="daisy-card-title font-bold">LP Shares</span>
