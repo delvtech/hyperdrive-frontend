@@ -1,13 +1,13 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { OpenShort } from "@hyperdrive/sdk";
 import { ReactElement } from "react";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { CloseShortForm } from "src/ui/hyperdrive/shorts/CloseShortForm/CloseShortForm";
 
 export interface CloseShortModalButtonProps {
   modalId: string;
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
   short: OpenShort;
 }
 export function CloseShortModalButton({

@@ -3,9 +3,11 @@ import { ReactElement } from "react";
 import CustomBanner from "src/ui/base/components/CustomBanner";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
+import { LongsShortsLpTabs } from "src/ui/markets/LongsShortsLpTabs/LongsShortsLpTabs";
 import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadcrumbs";
 import { MarketHeader } from "src/ui/markets/MarketDetailsBody/MarketHeader";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
+import { TransactionAndFaqTabs } from "src/ui/markets/TransactionsAndFaqTabs/TransactionsAndFaqTabs";
 import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
 
 interface PositionsTableProps {
@@ -34,8 +36,8 @@ export function MarketDetailsBody({
         <CustomBanner description="This market has been paused. You may close your positions, but no new positions may be opened." />
       )}
 
-      {/* <LongsShortsLpTabs hyperdrive={hyperdrive} />
-      <TransactionAndFaqTabs hyperdrive={hyperdrive} /> */}
+      <LongsShortsLpTabs hyperdrive={hyperdrive} />
+      <TransactionAndFaqTabs hyperdrive={hyperdrive} />
     </div>
   );
 }
