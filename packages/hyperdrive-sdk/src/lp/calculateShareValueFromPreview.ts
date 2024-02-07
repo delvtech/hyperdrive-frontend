@@ -25,7 +25,3 @@ export function calculateShareValueFromPreview({
     decimals,
   )[0];
 }
-
-/**
- * amount * (baseOut / sharesIn)
- */
