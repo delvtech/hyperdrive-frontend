@@ -9,7 +9,7 @@ max_file_size=1000000 # 1MB
 
 # Skip the build if the src directory already exists
 if [[ -d "$src_dir_name" ]]; then
-  echo "Src path ($src_dir_name) already exists. Exiting..."
+  echo "Src path ($src_dir_name) already exists. Skipping src build."
   exit 0
 fi
 
