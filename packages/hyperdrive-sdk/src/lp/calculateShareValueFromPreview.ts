@@ -2,11 +2,7 @@ import * as dnum from "dnum";
 
 /**
  * Calculates how much an amount of shares are worth, given another amount of
- * shares and their value, example:
- *
- * Example: value of 20 shares given that 10 shares are worth $20:
- *   calculateShareValue({ amount: 20, sharesIn: 10, baseOut: 20, decimals: 2 })
- *   // $40
+ * shares and their value.
  */
 export function calculateShareValueFromPreview({
   amount,
