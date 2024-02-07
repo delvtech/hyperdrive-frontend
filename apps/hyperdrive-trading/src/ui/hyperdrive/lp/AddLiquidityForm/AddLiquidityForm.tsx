@@ -1,8 +1,9 @@
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
 import { parseUnits } from "src/base/parseUnits";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -17,31 +18,36 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { useAccount, useBalance } from "wagmi";
 
 interface AddLiquidityFormProps {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }
 
 export function AddLiquidityForm({
   hyperdrive,
 }: AddLiquidityFormProps): ReactElement {
   const { address: account } = useAccount();
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
 
   const { data: baseTokenBalance } = useBalance({
     address: account,
-    token: hyperdrive.baseToken.address,
+    token: baseToken.address,
   });
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
-    decimals: hyperdrive.baseToken.decimals,
+    decimals: baseToken.decimals,
   });
 
   const { tokenAllowance } = useTokenAllowance({
     account,
     spender: hyperdrive.address,
-    tokenAddress: hyperdrive.baseToken.address,
+    tokenAddress: baseToken.address,
   });
 
   const { approve } = useTokenApproval({
-    tokenAddress: hyperdrive.baseToken.address,
+    tokenAddress: baseToken.address,
     spender: hyperdrive.address,
     amount: MAX_UINT256,
   });
@@ -52,12 +58,12 @@ export function AddLiquidityForm({
 
   const { lpSharesOut, status: addLiquidityPreviewStatus } =
     usePreviewAddLiquidity({
-      market: hyperdrive,
+      hyperdriveAddress: hyperdrive.address,
       contribution: amountAsBigInt,
       // TODO: Add slippage control
-      minAPR: parseUnits("0", hyperdrive.baseToken.decimals),
-      maxAPR: parseUnits("999", hyperdrive.baseToken.decimals),
-      minLpSharePrice: parseUnits("0", hyperdrive.baseToken.decimals),
+      minAPR: parseUnits("0", baseToken.decimals),
+      maxAPR: parseUnits("999", baseToken.decimals),
+      minLpSharePrice: parseUnits("0", baseToken.decimals),
       destination: account,
       enabled: !needsApproval,
     });
@@ -65,9 +71,9 @@ export function AddLiquidityForm({
   const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
     hyperdriveAddress: hyperdrive.address,
     contribution: amountAsBigInt,
-    minLpSharePrice: parseUnits("0", hyperdrive.baseToken.decimals),
-    minAPR: parseUnits("0", hyperdrive.baseToken.decimals),
-    maxAPR: parseUnits("999", hyperdrive.baseToken.decimals),
+    minLpSharePrice: parseUnits("0", baseToken.decimals),
+    minAPR: parseUnits("0", baseToken.decimals),
+    maxAPR: parseUnits("999", baseToken.decimals),
     destination: account,
     enabled: addLiquidityPreviewStatus === "success" && !needsApproval,
     onExecuted: (hash) => {
@@ -86,8 +92,8 @@ export function AddLiquidityForm({
     <TransactionView
       tokenInput={
         <TokenInput
-          name={hyperdrive.baseToken.name}
-          token={hyperdrive.baseToken.symbol}
+          name={baseToken.name}
+          token={baseToken.symbol}
           value={amount ?? ""}
           maxValue={baseTokenBalance?.formatted}
           inputLabel="Amount to deposit"
@@ -95,9 +101,9 @@ export function AddLiquidityForm({
             baseTokenBalance
               ? `Balance: ${formatBalance({
                   balance: baseTokenBalance?.value,
-                  decimals: hyperdrive.baseToken.decimals,
+                  decimals: baseToken.decimals,
                   places: 4,
-                })} ${hyperdrive.baseToken.symbol}`
+                })} ${baseToken.symbol}`
               : undefined
           }
           onChange={(newAmount) => setAmount(newAmount)}
@@ -122,7 +128,7 @@ export function AddLiquidityForm({
                 approve?.();
               }}
             >
-              Approve {hyperdrive.baseToken.symbol}
+              Approve {baseToken.symbol}
             </button>
           ) : (
             // Trade button

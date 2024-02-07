@@ -77,7 +77,7 @@ function formatClosedLongMobileColumnData(
 
 function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.address,
+    baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
   return [

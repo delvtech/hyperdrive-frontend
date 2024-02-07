@@ -1,6 +1,6 @@
 import { SparklesIcon, WalletIcon } from "@heroicons/react/24/outline";
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
@@ -17,7 +17,7 @@ import { useAccount } from "wagmi";
 export function LpTab({
   hyperdrive,
 }: {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
 

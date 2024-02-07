@@ -1,6 +1,7 @@
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
@@ -11,7 +12,7 @@ import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface RedeemWithdrawalSharesFormProps {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
   withdrawalShares: bigint;
   onRedeemWithdrawalShares?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
@@ -21,17 +22,21 @@ export function RedeemWithdrawalSharesForm({
   withdrawalShares,
   onRedeemWithdrawalShares,
 }: RedeemWithdrawalSharesFormProps): ReactElement {
-  const { decimals: baseDecimals, symbol: baseSymbol } = hyperdrive.baseToken;
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
 
   const { address: account } = useAccount();
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
-    decimals: baseDecimals,
+    decimals: baseToken.decimals,
   });
 
   const { sharesRedeemed: maxRedeemableShares } =
     usePreviewRedeemWithdrawalShares({
-      market: hyperdrive,
+      hyperdriveAddress: hyperdrive.address,
       withdrawalSharesIn: withdrawalShares,
       minBaseAmountOutPerShare: 0n,
       destination: account,
@@ -39,7 +44,7 @@ export function RedeemWithdrawalSharesForm({
 
   const { baseAmountOut, previewRedeemWithdrawalSharesStatus } =
     usePreviewRedeemWithdrawalShares({
-      market: hyperdrive,
+      hyperdriveAddress: hyperdrive.address,
       withdrawalSharesIn: amountAsBigInt,
       minBaseAmountOutPerShare: 0n,
       destination: account,
@@ -64,12 +69,12 @@ export function RedeemWithdrawalSharesForm({
           value={amount ?? ""}
           stat={`Balance: ${formatBalance({
             balance: maxRedeemableShares ?? withdrawalShares,
-            decimals: baseDecimals,
+            decimals: baseToken.decimals,
             places: 6,
           })}`}
           maxValue={formatUnits(
             maxRedeemableShares ?? withdrawalShares,
-            baseDecimals,
+            baseToken.decimals,
           )}
           onChange={(newAmount) => setAmount(newAmount)}
         />
@@ -82,9 +87,9 @@ export function RedeemWithdrawalSharesForm({
               {baseAmountOut
                 ? `${formatBalance({
                     balance: baseAmountOut,
-                    decimals: baseDecimals,
+                    decimals: baseToken.decimals,
                     places: 8,
-                  })} ${baseSymbol}`
+                  })} ${baseToken.symbol}`
                 : ""}
             </p>
           </div>

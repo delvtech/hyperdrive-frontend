@@ -1,7 +1,7 @@
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import assertNever from "assert-never";
 import classNames from "classnames";
 import { Fragment, ReactElement, useState } from "react";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { FAQEntries } from "src/ui/onboarding/FAQ/FAQ";
 
@@ -11,7 +11,7 @@ export type Tab = (typeof TABS)[number];
 export function TransactionAndFaqTabs({
   hyperdrive,
 }: {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const [activeTab, setActiveTab] = useState<Tab>("Transactions");
   return (
