@@ -1,3 +1,4 @@
+import { calculateShareValueFromPreview } from "@hyperdrive/sdk";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
@@ -6,11 +7,10 @@ import { Modal } from "src/ui/base/components/Modal/Modal";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
-import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
 import { calculateShareValue } from "src/ui/portfolio/OpenWithdrawalSharesCard/calculateShareValue";
-import { calculateShareValueFromPreview } from "src/ui/portfolio/OpenWithdrawalSharesCard/calculateShareValueFromPreview";
 import { useAccount } from "wagmi";
 
 interface LpPortfolioCardProps {
