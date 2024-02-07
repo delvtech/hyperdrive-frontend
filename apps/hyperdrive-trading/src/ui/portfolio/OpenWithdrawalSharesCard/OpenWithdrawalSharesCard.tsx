@@ -1,6 +1,7 @@
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { Well } from "src/ui/base/components/Well/Well";
@@ -14,13 +15,18 @@ import { calculateShareValueFromPreview } from "src/ui/portfolio/OpenWithdrawalS
 import { useAccount } from "wagmi";
 
 interface LpPortfolioCardProps {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }
 
 export function OpenWithdrawalSharesCard({
   hyperdrive,
 }: LpPortfolioCardProps): ReactElement {
   const { address: account } = useAccount();
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   const { poolInfo } = usePoolInfo(hyperdrive.address);
   const { withdrawalShares } = useWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
@@ -31,7 +37,7 @@ export function OpenWithdrawalSharesCard({
     baseAmountOut: withdrawalSharesBaseWithdrawable,
     sharesRedeemed: withdrawalSharesRedeemable,
   } = usePreviewRedeemWithdrawalShares({
-    market: hyperdrive,
+    hyperdriveAddress: hyperdrive.address,
     withdrawalSharesIn: withdrawalShares,
     minBaseAmountOutPerShare: 1n, // TODO: slippage,
     destination: account,
@@ -53,7 +59,7 @@ export function OpenWithdrawalSharesCard({
                     ) : (
                       formatBalance({
                         balance: withdrawalShares,
-                        decimals: hyperdrive.baseToken.decimals,
+                        decimals: baseToken.decimals,
                         places: 4,
                       })
                     )}{" "}
@@ -74,21 +80,21 @@ export function OpenWithdrawalSharesCard({
                             amount: withdrawalShares,
                             sharesIn: withdrawalSharesRedeemable,
                             baseOut: withdrawalSharesBaseWithdrawable,
-                            decimals: hyperdrive.baseToken.decimals,
+                            decimals: baseToken.decimals,
                           }),
-                          decimals: hyperdrive.baseToken.decimals,
+                          decimals: baseToken.decimals,
                           places: 4,
-                        })} ${hyperdrive.baseToken.symbol}`
+                        })} ${baseToken.symbol}`
                       ) : (
                         `${formatBalance({
                           balance: calculateShareValue({
                             amount: withdrawalShares,
                             price: poolInfo.lpSharePrice,
-                            decimals: hyperdrive.baseToken.decimals,
+                            decimals: baseToken.decimals,
                           }),
-                          decimals: hyperdrive.baseToken.decimals,
+                          decimals: baseToken.decimals,
                           places: 4,
-                        })} ${hyperdrive.baseToken.symbol}`
+                        })} ${baseToken.symbol}`
                       )
                     ) : (
                       <Skeleton />
@@ -103,9 +109,9 @@ export function OpenWithdrawalSharesCard({
                     {withdrawalSharesBaseWithdrawable !== undefined ? (
                       `${formatBalance({
                         balance: withdrawalSharesBaseWithdrawable,
-                        decimals: hyperdrive.baseToken.decimals,
+                        decimals: baseToken.decimals,
                         places: 4,
-                      })} ${hyperdrive.baseToken.symbol}`
+                      })} ${baseToken.symbol}`
                     ) : (
                       <Skeleton />
                     )}

@@ -1,7 +1,8 @@
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -16,25 +17,30 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenShortPositionFormProps {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }
 
 export function OpenShortForm({
   hyperdrive,
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   const { data: baseTokenBalance } = useBalance({
     address: account,
-    token: hyperdrive.baseToken.address,
+    token: baseToken.address,
   });
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
-    decimals: hyperdrive.baseToken.decimals,
+    decimals: baseToken.decimals,
   });
 
   const { poolInfo } = usePoolInfo(hyperdrive.address);
   const { baseAmountIn, status: openShortPreviewStatus } = usePreviewOpenShort({
-    market: hyperdrive,
+    hyperdriveAddress: hyperdrive.address,
     amountBondShorts: amountAsBigInt,
   });
 
@@ -44,11 +50,11 @@ export function OpenShortForm({
   const { tokenAllowance } = useTokenAllowance({
     account,
     spender: hyperdrive.address,
-    tokenAddress: hyperdrive.baseToken.address,
+    tokenAddress: baseToken.address,
   });
 
   const { approve } = useTokenApproval({
-    tokenAddress: hyperdrive.baseToken.address,
+    tokenAddress: baseToken.address,
     spender: hyperdrive.address,
     amount: MAX_UINT256,
   });
@@ -81,8 +87,8 @@ export function OpenShortForm({
     <TransactionView
       tokenInput={
         <TokenInput
-          name={`${hyperdrive.baseToken.symbol}-input`}
-          token={hyperdrive.baseToken.symbol}
+          name={`${baseToken.symbol}-input`}
+          token={baseToken.symbol}
           inputLabel="Amount to short"
           value={amount ?? ""}
           onChange={(newAmount) => setAmount(newAmount)}
@@ -114,7 +120,7 @@ export function OpenShortForm({
                 approve?.();
               }}
             >
-              <h5>Approve {hyperdrive.baseToken.symbol}</h5>
+              <h5>Approve {baseToken.symbol}</h5>
             </button>
           ) : (
             // Open short button
@@ -127,7 +133,7 @@ export function OpenShortForm({
               className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
               onClick={() => openShort?.()}
             >
-              Short hy{hyperdrive.baseToken.symbol}
+              Short hy{baseToken.symbol}
             </button>
           )
         ) : (

@@ -1,11 +1,12 @@
+import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface OpenShortPreviewProps {
-  market: HyperdriveConfigOld;
+  market: HyperdriveConfig;
   costBasis?: bigint;
   shortSize?: bigint;
 }
@@ -15,6 +16,12 @@ export function OpenShortPreview({
   costBasis,
   shortSize,
 }: OpenShortPreviewProps): ReactElement {
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: market.baseToken,
+    tokens: appConfig.tokens,
+  });
+  const termLengthMS = Number(market.poolConfig.positionDuration * 1000n);
   return (
     <div className="flex flex-col gap-3">
       <LabelValue
@@ -27,10 +34,10 @@ export function OpenShortPreview({
             {shortSize
               ? `${formatBalance({
                   balance: shortSize,
-                  decimals: market.baseToken.decimals,
+                  decimals: baseToken.decimals,
                   places: 6,
-                })} ${market.baseToken.symbol}`
-              : `0` + ` ${market.baseToken.symbol}`}
+                })} ${baseToken.symbol}`
+              : `0` + ` ${baseToken.symbol}`}
           </span>
         }
       />
@@ -44,20 +51,18 @@ export function OpenShortPreview({
             {costBasis
               ? `${formatBalance({
                   balance: costBasis,
-                  decimals: market.baseToken.decimals,
+                  decimals: baseToken.decimals,
                   places: 6,
-                })} ${market.baseToken.symbol}`
-              : `0 ${market.baseToken.symbol}`}
+                })} ${baseToken.symbol}`
+              : `0 ${baseToken.symbol}`}
           </span>
         }
       />
 
       <LabelValue
         label="Matures in"
-        value={`${convertMillisecondsToDays(
-          market.termLengthMS,
-        )} days, ${new Date(
-          Date.now() + Number(market.termLengthMS),
+        value={`${convertMillisecondsToDays(termLengthMS)} days, ${new Date(
+          Date.now() + termLengthMS,
         ).toLocaleDateString()}`}
       />
     </div>

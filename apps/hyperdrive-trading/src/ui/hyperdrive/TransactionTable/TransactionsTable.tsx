@@ -1,5 +1,10 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
+  AppConfig,
+  HyperdriveConfig,
+  findBaseToken,
+} from "@hyperdrive/appconfig";
+import {
   ColumnFiltersState,
   Header,
   createColumnHelper,
@@ -12,7 +17,7 @@ import {
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { useState } from "react";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
@@ -90,8 +95,13 @@ function FilterSelect({
 
 function formatTransactionTableMobileData(
   row: TransactionData,
-  hyperdrive?: HyperdriveConfigOld,
+  hyperdrive: HyperdriveConfig,
+  appConfig: AppConfig,
 ) {
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   const size = dnum.format(
     [
       row.eventName === "OpenShort" || row.eventName === "CloseShort"
@@ -116,10 +126,7 @@ function formatTransactionTableMobileData(
       name: "Size",
       value: (
         <span>
-          {size}{" "}
-          {isLpRow
-            ? hyperdrive?.baseToken.symbol
-            : `hy${hyperdrive?.baseToken.symbol}`}
+          {size} {isLpRow ? baseToken.symbol : `hy${baseToken.symbol}`}
         </span>
       ),
     },
@@ -136,53 +143,67 @@ function formatTransactionTableMobileData(
 
 const columnHelper = createColumnHelper<TransactionData>();
 
-const getMobileColumns = (hyperdrive: HyperdriveConfigOld) => [
-  columnHelper.accessor("eventName", {
-    id: "eventName",
-    enableSorting: false,
-    enableColumnFilter: true,
-    header: () => null,
-    cell: ({ row }) => {
-      const data = formatTransactionTableMobileData(row.original);
-      return (
-        <ul className="flex flex-col items-start gap-1 text-neutral-content">
-          {data.map((column) => (
-            <li key={column.name}>{column.name}</li>
-          ))}
-        </ul>
-      );
-    },
-    filterFn: (row, _, filterValue) => {
-      const type = row.getValue("eventName") as string;
-      const filters = {
-        All: true,
-        Longs: ["OpenLong", "CloseLong"].includes(type),
-        Shorts: ["OpenShort", "CloseShort"].includes(type),
-        LP: [
-          "AddLiquidity",
-          "RemoveLiquidity",
-          "RedeemWithdrawalShares",
-        ].includes(type),
-      } as const;
-      return filters[filterValue as keyof typeof filters];
-    },
-  }),
-  columnHelper.display({
-    id: "ColumnValues",
-    cell: ({ row }) => {
-      const data = formatTransactionTableMobileData(row.original, hyperdrive);
-      return (
-        <ul className="flex flex-col items-end gap-1">
-          {data.map((column) => (
-            <li key={column.name}>{column.value}</li>
-          ))}
-        </ul>
-      );
-    },
-  }),
-];
+function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
+  return [
+    columnHelper.accessor("eventName", {
+      id: "eventName",
+      enableSorting: false,
+      enableColumnFilter: true,
+      header: () => null,
+      cell: ({ row }) => {
+        const data = formatTransactionTableMobileData(
+          row.original,
+          hyperdrive,
+          appConfig,
+        );
+        return (
+          <ul className="flex flex-col items-start gap-1 text-neutral-content">
+            {data.map((column) => (
+              <li key={column.name}>{column.name}</li>
+            ))}
+          </ul>
+        );
+      },
+      filterFn: (row, _, filterValue) => {
+        const type = row.getValue("eventName") as string;
+        const filters = {
+          All: true,
+          Longs: ["OpenLong", "CloseLong"].includes(type),
+          Shorts: ["OpenShort", "CloseShort"].includes(type),
+          LP: [
+            "AddLiquidity",
+            "RemoveLiquidity",
+            "RedeemWithdrawalShares",
+          ].includes(type),
+        } as const;
+        return filters[filterValue as keyof typeof filters];
+      },
+    }),
+    columnHelper.display({
+      id: "ColumnValues",
+      cell: ({ row }) => {
+        const data = formatTransactionTableMobileData(
+          row.original,
+          hyperdrive,
+          appConfig,
+        );
+        return (
+          <ul className="flex flex-col items-end gap-1">
+            {data.map((column) => (
+              <li key={column.name}>{column.value}</li>
+            ))}
+          </ul>
+        );
+      },
+    }),
+  ];
+}
 
-const getColumns = (hyperdrive: HyperdriveConfigOld) => {
+function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   return [
     columnHelper.accessor("eventName", {
       id: "eventName",
@@ -226,10 +247,7 @@ const getColumns = (hyperdrive: HyperdriveConfigOld) => {
           row.getValue("eventName") === "Redeem Withdrawal Shares";
         return (
           <span>
-            {size}{" "}
-            {isLpRow
-              ? hyperdrive.baseToken.symbol
-              : `hy${hyperdrive.baseToken.symbol}`}
+            {size} {isLpRow ? baseToken.symbol : `hy${baseToken.symbol}`}
           </span>
         );
       },
@@ -248,19 +266,22 @@ const getColumns = (hyperdrive: HyperdriveConfigOld) => {
       cell: (blockNumber) => blockNumber.getValue()?.toString(),
     }),
   ];
-};
+}
 export function TransactionTable({
   hyperdrive,
 }: {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }): JSX.Element {
-  const { data: transactionData } = useTransactionData(hyperdrive);
+  const { data: transactionData } = useTransactionData({
+    hyperdriveAddress: hyperdrive.address,
+  });
+  const appConfig = useAppConfig();
   const isSmallScreenView = useIsTailwindSmallScreen();
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const tableInstance = useReactTable({
     columns: isSmallScreenView
-      ? getMobileColumns(hyperdrive)
-      : getColumns(hyperdrive),
+      ? getMobileColumns(hyperdrive, appConfig)
+      : getColumns(hyperdrive, appConfig),
     data: transactionData || [],
     initialState: {
       sorting: [

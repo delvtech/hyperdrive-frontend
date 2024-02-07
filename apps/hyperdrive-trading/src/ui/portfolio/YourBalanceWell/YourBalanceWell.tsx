@@ -1,26 +1,33 @@
+import { findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { TokenConfigOld } from "src/token/TokenConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useMintBaseToken } from "src/ui/token/hooks/useMintBaseToken";
-import { parseUnits } from "viem";
+import { Address, parseUnits } from "viem";
 import { useAccount, useBalance, useChainId } from "wagmi";
 
 export function YourBalanceWell({
-  token,
+  tokenAddress,
 }: {
-  token: TokenConfigOld;
+  tokenAddress: Address;
 }): ReactElement {
   const { address: account } = useAccount();
+  const appConfig = useAppConfig();
+  const token = findBaseToken({
+    baseTokenAddress: tokenAddress,
+    tokens: appConfig.tokens,
+  });
   const { data: balance } = useBalance({
     address: account,
-    token: token.address,
+    token: tokenAddress,
   });
+
   const chainId = useChainId();
   const { mint } = useMintBaseToken({
     amount: parseUnits("1000000", token.decimals),
-    baseToken: token.address,
+    baseToken: tokenAddress,
     destination: account,
   });
 

@@ -1,4 +1,9 @@
 import { WalletIcon } from "@heroicons/react/24/outline";
+import {
+  AppConfig,
+  HyperdriveConfig,
+  findBaseToken,
+} from "@hyperdrive/appconfig";
 import { ClosedShort } from "@hyperdrive/sdk";
 import {
   createColumnHelper,
@@ -7,7 +12,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { ReactElement } from "react";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -17,13 +22,18 @@ import { useClosedShorts } from "src/ui/hyperdrive/shorts/hooks/useClosedShorts"
 import { useAccount } from "wagmi";
 
 interface ClosedShortsTableProps {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }
 
 function formatClosedShortMobileColumnData(
   closedShort: ClosedShort,
-  hyperdrive: HyperdriveConfigOld,
+  hyperdrive: HyperdriveConfig,
+  appConfig: AppConfig,
 ) {
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   return [
     {
       name: "Matures on",
@@ -32,18 +42,18 @@ function formatClosedShortMobileColumnData(
       ).toLocaleDateString(),
     },
     {
-      name: `Size (${hyperdrive.baseToken.symbol})`,
+      name: `Size (${baseToken.symbol})`,
       value: formatBalance({
         balance: closedShort.bondAmount,
-        decimals: hyperdrive.baseToken.decimals,
+        decimals: baseToken.decimals,
         places: 2,
       }),
     },
     {
-      name: `Amount received (${hyperdrive.baseToken.symbol})`,
+      name: `Amount received (${baseToken.symbol})`,
       value: formatBalance({
         balance: closedShort.baseAmountReceived,
-        decimals: hyperdrive.baseToken.decimals,
+        decimals: baseToken.decimals,
         places: 4,
       }),
     },
@@ -58,7 +68,7 @@ function formatClosedShortMobileColumnData(
 
 const columnHelper = createColumnHelper<ClosedShort>();
 
-function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
+function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   return [
     columnHelper.display({
       id: "ColumnNames",
@@ -66,6 +76,7 @@ function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
         const data = formatClosedShortMobileColumnData(
           row.original,
           hyperdrive,
+          appConfig,
         );
         return (
           <ul className="flex flex-col items-start gap-1">
@@ -82,6 +93,7 @@ function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
         const data = formatClosedShortMobileColumnData(
           row.original,
           hyperdrive,
+          appConfig,
         );
         return (
           <ul className="flex flex-col items-start gap-1">
@@ -97,53 +109,61 @@ function getMobileColumns(hyperdrive: HyperdriveConfigOld) {
   ];
 }
 
-const getColumns = (hyperdrive: HyperdriveConfigOld) => [
-  columnHelper.display({
-    header: `Matures on`,
-    cell: ({ row }) => {
-      const maturity = new Date(Number(row.original.maturity * 1000n));
-      return <span>{maturity.toLocaleDateString()}</span>;
-    },
-  }),
-  columnHelper.accessor("bondAmount", {
-    header: `Size (hy${hyperdrive.baseToken.symbol})`,
-    cell: (bondAmount) => {
-      const bondAmountValue = bondAmount.getValue();
-      return formatBalance({
-        balance: bondAmountValue,
-        decimals: hyperdrive.baseToken.decimals,
-      });
-    },
-  }),
-  columnHelper.accessor("baseAmountReceived", {
-    header: `Amount received (${hyperdrive.baseToken.symbol})`,
-    cell: (baseAmountReceived) => {
-      const amountReceived = baseAmountReceived.getValue();
-      return formatBalance({
-        balance: amountReceived,
-        decimals: hyperdrive.baseToken.decimals,
-        places: 4,
-      });
-    },
-  }),
-  columnHelper.accessor("closedTimestamp", {
-    header: `Closed`,
-    cell: (closedTimestamp) => {
-      return (
-        <span>
-          {new Date(
-            Number(closedTimestamp.getValue() * 1000n),
-          ).toLocaleDateString()}
-        </span>
-      );
-    },
-  }),
-];
+function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
+
+  return [
+    columnHelper.display({
+      header: `Matures on`,
+      cell: ({ row }) => {
+        const maturity = new Date(Number(row.original.maturity * 1000n));
+        return <span>{maturity.toLocaleDateString()}</span>;
+      },
+    }),
+    columnHelper.accessor("bondAmount", {
+      header: `Size (hy${baseToken.symbol})`,
+      cell: (bondAmount) => {
+        const bondAmountValue = bondAmount.getValue();
+        return formatBalance({
+          balance: bondAmountValue,
+          decimals: baseToken.decimals,
+        });
+      },
+    }),
+    columnHelper.accessor("baseAmountReceived", {
+      header: `Amount received (${baseToken.symbol})`,
+      cell: (baseAmountReceived) => {
+        const amountReceived = baseAmountReceived.getValue();
+        return formatBalance({
+          balance: amountReceived,
+          decimals: baseToken.decimals,
+          places: 4,
+        });
+      },
+    }),
+    columnHelper.accessor("closedTimestamp", {
+      header: `Closed`,
+      cell: (closedTimestamp) => {
+        return (
+          <span>
+            {new Date(
+              Number(closedTimestamp.getValue() * 1000n),
+            ).toLocaleDateString()}
+          </span>
+        );
+      },
+    }),
+  ];
+}
 
 export function ClosedShortsTable({
   hyperdrive,
 }: ClosedShortsTableProps): ReactElement {
   const { address: account } = useAccount();
+  const appConfig = useAppConfig();
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { closedShorts, closedShortsStatus } = useClosedShorts({
     account,
@@ -151,8 +171,8 @@ export function ClosedShortsTable({
   });
   const tableInstance = useReactTable({
     columns: isTailwindSmallScreen
-      ? getMobileColumns(hyperdrive)
-      : getColumns(hyperdrive),
+      ? getMobileColumns(hyperdrive, appConfig)
+      : getColumns(hyperdrive, appConfig),
     data: closedShorts || [],
     getCoreRowModel: getCoreRowModel(),
   });

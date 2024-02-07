@@ -1,6 +1,7 @@
+import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
@@ -13,9 +14,14 @@ import { useBlockNumber, useChainId } from "wagmi";
 export function MarketStats({
   hyperdrive,
 }: {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { data: currentBlockNumber } = useBlockNumber();
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
 
   const chainId = useChainId();
   const { totalVolume, longVolume, shortVolume } = useTradingVolume(
@@ -25,13 +31,13 @@ export function MarketStats({
 
   const { liquidity } = useLiquidity({
     hyperdriveAddress: hyperdrive.address,
-    decimals: hyperdrive.baseToken.decimals,
+    decimals: baseToken.decimals,
   });
-  const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
+  const { fixedAPR } = useCurrentFixedAPR(hyperdrive.address);
   const { lpApy, lpApyStatus } = useLpApy(hyperdrive.address);
 
   const { vaultRate } = useVaultRate({
-    vaultAddress: hyperdrive.sharesToken.address,
+    vaultAddress: hyperdrive.sharesToken,
   });
 
   // TODO: This will only work on cloudchain and local for now. Remove this
@@ -51,7 +57,7 @@ export function MarketStats({
             {showVaultRate ? `${vaultRate?.formatted || 0}%` : ""}
           </div>
         }
-        description={`The yield source backing the hy${hyperdrive.baseToken.symbol} in this pool`}
+        description={`The yield source backing the hy${baseToken.symbol} in this pool`}
       />
       <Stat
         label="Fixed APR"
@@ -80,26 +86,24 @@ export function MarketStats({
         description={`This represents the LP projected annual return based on the performance observed over the past 12 hours. It assumes the rate of return seen in this period continues consistently for an entire year.`}
       />
       <Stat
-        description={`The amount of hy${hyperdrive.baseToken.symbol} (either longs or shorts) that have been traded in the last 24 hours. `}
+        description={`The amount of hy${baseToken.symbol} (either longs or shorts) that have been traded in the last 24 hours. `}
         label="Volume (24h)"
         value={
           <AmountLabel
-            symbol={`hy${hyperdrive.baseToken.symbol}`}
+            symbol={`hy${baseToken.symbol}`}
             value={formatCompact({
               value: totalVolume || 0n,
-              decimals: hyperdrive.baseToken.decimals,
+              decimals: baseToken.decimals,
             })}
             tooltip={`Long volume: ${formatBalance({
               balance: longVolume || 0n,
-              decimals: hyperdrive.baseToken.decimals,
+              decimals: baseToken.decimals,
               places: 0,
-            })} hy${
-              hyperdrive.baseToken.symbol
-            } \n Short volume: ${formatBalance({
+            })} hy${baseToken.symbol} \n Short volume: ${formatBalance({
               balance: shortVolume || 0n,
-              decimals: hyperdrive.baseToken.decimals,
+              decimals: baseToken.decimals,
               places: 0,
-            })} hy${hyperdrive.baseToken.symbol}`}
+            })} hy${baseToken.symbol}`}
           />
         }
       />
@@ -108,17 +112,17 @@ export function MarketStats({
         description="The amount of capital that has been deployed by LPs to the pool"
         value={
           <AmountLabel
-            icon={hyperdrive.baseToken.iconUrl || ""}
-            symbol={hyperdrive.baseToken.symbol}
+            icon={baseToken.iconUrl || ""}
+            symbol={baseToken.symbol}
             value={formatCompact({
               value: liquidity?.liquidity || 0n,
-              decimals: hyperdrive.baseToken.decimals,
+              decimals: baseToken.decimals,
             })}
             tooltip={`${formatBalance({
               balance: liquidity?.liquidity || 0n,
-              decimals: hyperdrive.baseToken.decimals,
+              decimals: baseToken.decimals,
               places: 0,
-            })} ${hyperdrive.baseToken.symbol}`}
+            })} ${baseToken.symbol}`}
           />
         }
       />

@@ -1,8 +1,9 @@
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage, OpenShort } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -15,7 +16,7 @@ import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface CloseShortFormProps {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
   short: OpenShort;
   onCloseShort?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
@@ -24,12 +25,16 @@ export function CloseShortForm({
   hyperdrive,
   short,
 }: CloseShortFormProps): ReactElement {
-  const { decimals: baseDecimals, symbol: baseSymbol } = hyperdrive.baseToken;
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
 
   const { address: account } = useAccount();
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
-    decimals: baseDecimals,
+    decimals: baseToken.decimals,
   });
 
   const { baseAmountOut, previewCloseShortStatus } = usePreviewCloseShort({
@@ -44,7 +49,7 @@ export function CloseShortForm({
     baseAmountOut &&
     adjustAmountByPercentage({
       amount: baseAmountOut,
-      decimals: hyperdrive.baseToken.decimals,
+      decimals: baseToken.decimals,
     });
 
   const { closeShort, isPendingWalletAction } = useCloseShort({
@@ -74,12 +79,14 @@ export function CloseShortForm({
           name="shorts"
           token="Shorts"
           value={amount ?? ""}
-          maxValue={short ? formatUnits(short.bondAmount, baseDecimals) : ""}
+          maxValue={
+            short ? formatUnits(short.bondAmount, baseToken.decimals) : ""
+          }
           stat={
             short
               ? `Balance: ${formatBalance({
                   balance: short.bondAmount,
-                  decimals: hyperdrive.baseToken.decimals,
+                  decimals: baseToken.decimals,
                   places: 4,
                 })}`
               : undefined
@@ -95,11 +102,11 @@ export function CloseShortForm({
               {baseAmountOut
                 ? `${formatBalance({
                     balance: baseAmountOut,
-                    decimals: baseDecimals,
+                    decimals: baseToken.decimals,
                     places: 8,
                   })}`
                 : "0"}{" "}
-              {baseSymbol}
+              {baseToken.symbol}
             </p>
           }
         />

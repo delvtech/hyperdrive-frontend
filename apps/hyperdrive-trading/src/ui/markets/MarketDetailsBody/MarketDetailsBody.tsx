@@ -1,9 +1,8 @@
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import CustomBanner from "src/ui/base/components/CustomBanner";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
-import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { LongsShortsLpTabs } from "src/ui/markets/LongsShortsLpTabs/LongsShortsLpTabs";
 import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadcrumbs";
 import { MarketHeader } from "src/ui/markets/MarketDetailsBody/MarketHeader";
@@ -12,12 +11,11 @@ import { TransactionAndFaqTabs } from "src/ui/markets/TransactionsAndFaqTabs/Tra
 import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
 
 interface PositionsTableProps {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }
 export function MarketDetailsBody({
   hyperdrive,
 }: PositionsTableProps): ReactElement {
-  const { longPrice } = useCurrentLongPrice(hyperdrive);
   const { marketState } = useMarketState(hyperdrive.address);
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   return (
@@ -25,10 +23,10 @@ export function MarketDetailsBody({
       <div className="flex flex-wrap items-center justify-start sm:justify-between">
         <div className="flex flex-col">
           <MarketBreadcrumbs />
-          <MarketHeader hyperdrive={hyperdrive} longPrice={longPrice} />
+          <MarketHeader hyperdrive={hyperdrive} />
         </div>
         {isTailwindSmallScreen ? undefined : (
-          <YourBalanceWell token={hyperdrive.baseToken} />
+          <YourBalanceWell tokenAddress={hyperdrive.baseToken} />
         )}
       </div>
 

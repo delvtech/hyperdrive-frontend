@@ -1,33 +1,31 @@
+import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { useEffect } from "react";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
-import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { formatUnits } from "viem";
 
-export function useDevLogging(market: HyperdriveConfigOld): void {
-  const { poolConfig } = usePoolConfig(market.address);
+export function useDevLogging(market: HyperdriveConfig): void {
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: market.baseToken,
+    tokens: appConfig.tokens,
+  });
   useEffect(() => {
     if (import.meta.env.DEV) {
       console.log("Pool Config:");
-      console.table(
-        poolConfig
-          ? bigIntsToString(poolConfig, market.baseToken.decimals)
-          : undefined,
-      );
+      console.table(bigIntsToString(market.poolConfig, baseToken.decimals));
     }
-  }, [poolConfig, market.baseToken.decimals]);
+  }, [baseToken.decimals, market.poolConfig]);
 
   const { poolInfo } = usePoolInfo(market.address);
   useEffect(() => {
     if (import.meta.env.DEV) {
       console.log("Pool Info:");
       console.table(
-        poolInfo
-          ? bigIntsToString(poolInfo, market.baseToken.decimals)
-          : undefined,
+        poolInfo ? bigIntsToString(poolInfo, baseToken.decimals) : undefined,
       );
     }
-  }, [poolInfo, market.baseToken.decimals]);
+  }, [poolInfo, baseToken.decimals]);
 }
 
 type BigIntsToStrings<T> = T extends bigint

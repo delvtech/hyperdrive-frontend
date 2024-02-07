@@ -1,9 +1,10 @@
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateRatio } from "src/base/calculateRatio";
 import { calculateTotalValueFromPrice } from "src/base/calculateTotalValueFromPrice";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -18,13 +19,18 @@ import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface OpenLpSharesCardProps {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }
 
 export function OpenLpSharesCard({
   hyperdrive,
 }: OpenLpSharesCardProps): ReactElement {
   const { address: account } = useAccount();
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
   const { poolInfo } = usePoolInfo(hyperdrive.address);
   const { lpShares } = useLpShares({
     hyperdriveAddress: hyperdrive.address,
@@ -36,7 +42,7 @@ export function OpenLpSharesCard({
 
   const { baseAmountOut: lpBaseWithdrawable, withdrawalSharesOut } =
     usePreviewRemoveLiquidity({
-      market: hyperdrive,
+      hyperdriveAddress: hyperdrive.address,
       lpSharesIn: lpShares,
       minBaseAmountOut: 1n,
       destination: account,
@@ -47,7 +53,7 @@ export function OpenLpSharesCard({
       ? calculateRatio({
           a: withdrawalSharesOut,
           b: lpShares,
-          decimals: hyperdrive.baseToken.decimals,
+          decimals: baseToken.decimals,
         })
       : 0n;
   const poolShare =
@@ -55,7 +61,7 @@ export function OpenLpSharesCard({
       ? calculateRatio({
           a: lpShares,
           b: lpSharesTotalSupply,
-          decimals: hyperdrive.baseToken.decimals,
+          decimals: baseToken.decimals,
         })
       : 0n;
 
@@ -73,10 +79,7 @@ export function OpenLpSharesCard({
                   data-tip="Your share of the total liquidity in the pool"
                 >
                   {!!lpShares && !!lpSharesTotalSupply ? (
-                    `${dnum.format(
-                      [poolShare, hyperdrive.baseToken.decimals],
-                      6,
-                    )}%`
+                    `${dnum.format([poolShare, baseToken.decimals], 6)}%`
                   ) : (
                     <Skeleton />
                   )}
@@ -92,11 +95,11 @@ export function OpenLpSharesCard({
                       balance: calculateTotalValueFromPrice({
                         amount: lpShares,
                         price: poolInfo.lpSharePrice,
-                        decimals: hyperdrive.baseToken.decimals,
+                        decimals: baseToken.decimals,
                       }),
-                      decimals: hyperdrive.baseToken.decimals,
+                      decimals: baseToken.decimals,
                       places: 4,
-                    })} ${hyperdrive.baseToken.symbol}`
+                    })} ${baseToken.symbol}`
                   ) : (
                     <Skeleton />
                   )}
@@ -115,7 +118,7 @@ export function OpenLpSharesCard({
                   <p>
                     {!!lpBaseWithdrawable && !!withdrawalSharesOut ? (
                       `${dnum.format(
-                        [utilizationRatio, hyperdrive.baseToken.decimals],
+                        [utilizationRatio, baseToken.decimals],
                         2,
                       )}%`
                     ) : (
@@ -133,10 +136,7 @@ export function OpenLpSharesCard({
                   // remove this defensive coding once negative interest is
                   // fixed.
                   Math.min(
-                    +formatUnits(
-                      utilizationRatio,
-                      hyperdrive.baseToken.decimals,
-                    ),
+                    +formatUnits(utilizationRatio, baseToken.decimals),
                     100,
                   )
                 }
