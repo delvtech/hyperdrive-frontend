@@ -19,7 +19,7 @@ export function MarketDetailsBody({
   const { marketState } = useMarketState(hyperdrive.address);
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-12 xl:w-[1200px]">
       <div className="flex flex-wrap items-center justify-start sm:justify-between">
         <div className="flex flex-col">
           <MarketBreadcrumbs />
