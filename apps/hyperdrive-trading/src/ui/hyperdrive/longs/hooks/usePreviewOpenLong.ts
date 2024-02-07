@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { Address } from "viem";
 interface UsePreviewOpenLongOptions {
-  market: HyperdriveConfigOld;
+  hyperdriveAddress: Address;
   baseAmount: bigint | undefined;
 }
 
@@ -14,15 +14,15 @@ interface UsePreviewOpenLongResult {
 }
 
 export function usePreviewOpenLong({
-  market,
+  hyperdriveAddress,
   baseAmount,
 }: UsePreviewOpenLongOptions): UsePreviewOpenLongResult {
-  const readHyperdrive = useReadHyperdrive(market.address);
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive && !!baseAmount;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewOpenLong", {
-      market: market.address,
+      market: hyperdriveAddress,
       baseAmount: baseAmount?.toString(),
     }),
     enabled: queryEnabled,

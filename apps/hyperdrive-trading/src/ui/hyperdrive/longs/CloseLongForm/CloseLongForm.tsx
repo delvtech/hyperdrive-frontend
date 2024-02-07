@@ -1,8 +1,9 @@
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage, Long } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -15,7 +16,7 @@ import { formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface CloseLongFormProps {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
   long: Long;
   onCloseLong?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
@@ -25,19 +26,23 @@ export function CloseLongForm({
   long,
   onCloseLong,
 }: CloseLongFormProps): ReactElement {
-  const { decimals: baseDecimals, symbol: baseSymbol } = hyperdrive.baseToken;
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
 
   const { address: account } = useAccount();
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
-    decimals: baseDecimals,
+    decimals: baseToken.decimals,
   });
 
   const { baseAmountOut, previewCloseLongStatus } = usePreviewCloseLong({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: long.maturity,
     bondAmountIn: amountAsBigInt,
-    minBaseAmountOut: parseUnits("0", baseDecimals),
+    minBaseAmountOut: parseUnits("0", baseToken.decimals),
     destination: account,
   });
 
@@ -45,7 +50,7 @@ export function CloseLongForm({
     baseAmountOut &&
     adjustAmountByPercentage({
       amount: baseAmountOut,
-      decimals: hyperdrive.baseToken.decimals,
+      decimals: baseToken.decimals,
     });
 
   const { closeLong, isPendingWalletAction } = useCloseLong({
@@ -72,9 +77,9 @@ export function CloseLongForm({
       disclaimer={
         <>
           <p className="text-center text-sm text-neutral-content">
-            Note: 1 hy{hyperdrive.baseToken.symbol} is always worth 1{" "}
-            {hyperdrive.baseToken.symbol} at maturity, however its value may
-            fluctuate before maturity based on market activity.
+            Note: 1 hy{baseToken.symbol} is always worth 1 {baseToken.symbol} at
+            maturity, however its value may fluctuate before maturity based on
+            market activity.
           </p>
           {previewCloseLongStatus === "error" ? (
             <p className="text-center text-error">
@@ -88,13 +93,15 @@ export function CloseLongForm({
       heading="Close long"
       tokenInput={
         <TokenInput
-          name={hyperdrive.baseToken.symbol}
-          token={`hy${baseSymbol}`}
+          name={baseToken.symbol}
+          token={`hy${baseToken.symbol}`}
           value={amount ?? ""}
-          maxValue={long ? formatUnits(long.bondAmount, baseDecimals) : ""}
+          maxValue={
+            long ? formatUnits(long.bondAmount, baseToken.decimals) : ""
+          }
           stat={`Balance: ${formatBalance({
             balance: long.bondAmount,
-            decimals: baseDecimals,
+            decimals: baseToken.decimals,
             places: 4,
           })}`}
           onChange={(newAmount) => setAmount(newAmount)}
@@ -107,11 +114,11 @@ export function CloseLongForm({
             baseAmountOut
               ? `${formatBalance({
                   balance: baseAmountOut,
-                  decimals: baseDecimals,
+                  decimals: baseToken.decimals,
                   places: 8,
                 })}`
               : "0"
-          } ${baseSymbol}`}
+          } ${baseToken.symbol}`}
         />
       }
       actionButton={

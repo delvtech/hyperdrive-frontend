@@ -1,5 +1,5 @@
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
 import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
@@ -10,7 +10,7 @@ import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
 export function LongsTab({
   hyperdrive,
 }: {
-  hyperdrive: HyperdriveConfigOld;
+  hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
