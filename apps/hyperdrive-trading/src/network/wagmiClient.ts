@@ -2,6 +2,7 @@ import { getDefaultWallets } from "@rainbow-me/rainbowkit";
 import { cloudChain, cloudChainRpcProvider } from "src/network/cloudChain";
 import { Chain, ChainProviderFn, configureChains, createConfig } from "wagmi";
 import { foundry, goerli } from "wagmi/chains";
+import { SafeConnector } from "wagmi/connectors/safe";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 const {
@@ -59,9 +60,19 @@ const { connectors } = getDefaultWallets({
   chains,
 });
 
+const safeConnector = new SafeConnector({
+  chains,
+  options: {
+    allowedDomains: [/gnosis-safe.io$/, /app.safe.global$/],
+    debug: false,
+  },
+});
+
+const allConnectors = () => [safeConnector, ...connectors()];
+
 export const wagmiConfig = createConfig({
   autoConnect: true,
-  connectors,
+  connectors: allConnectors,
   publicClient,
   webSocketPublicClient,
 });
