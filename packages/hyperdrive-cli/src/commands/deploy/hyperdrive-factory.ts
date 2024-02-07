@@ -1,5 +1,5 @@
 // TODO: As of contracts version 0.7.0, the ForwarderFactory no longer exists
-// import { ForwarderFactory } from "@hyperdrive/artifacts/dist/ForwarderFactory.js";
+// import { ForwarderFactory } from "@hyperdrive/artifacts/ForwarderFactory";
 import { command } from "clide-js";
 import signale from "signale";
 import { PrivateKeyAccount, createPublicClient, http } from "viem";

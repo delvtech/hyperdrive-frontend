@@ -18,11 +18,11 @@ sh build.sh
 ## Usage
 
 Each contract will have a corresponding file at
-`@hyperdrive/artifacts/dist/ContractName` which includes an export named after
+`@hyperdrive/artifacts/ContractName` which includes an export named after
 the contract with the its ABI and bytecode.
 
 ```ts
-import { IHyperdrive } from '@hyperdrive/artifacts/dist/IHyperdrive';
+import { IHyperdrive } from '@hyperdrive/artifacts/IHyperdrive';
 
 const hyperdriveAbi = IHyperdrive.abi;
 ```

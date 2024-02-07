@@ -1,4 +1,4 @@
-import { ERC4626HyperdriveCoreDeployer } from "@hyperdrive/artifacts/dist/ERC4626HyperdriveCoreDeployer.js";
+import { ERC4626HyperdriveCoreDeployer } from "@hyperdrive/artifacts/ERC4626HyperdriveCoreDeployer";
 import { command } from "clide-js";
 import signale from "signale";
 import { Chain, PrivateKeyAccount } from "viem";

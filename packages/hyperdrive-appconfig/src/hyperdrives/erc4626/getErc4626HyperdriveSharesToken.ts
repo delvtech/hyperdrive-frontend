@@ -1,4 +1,4 @@
-import { IERC4626HyperdriveRead } from "@hyperdrive/artifacts/dist/IERC4626HyperdriveRead";
+import { IERC4626HyperdriveRead } from "@hyperdrive/artifacts/IERC4626HyperdriveRead";
 import { TokenConfig, getTokenConfig } from "src/tokens/getTokenConfig";
 import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
 import { Address, PublicClient } from "viem";

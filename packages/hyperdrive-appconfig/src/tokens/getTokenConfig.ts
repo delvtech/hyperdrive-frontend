@@ -1,4 +1,4 @@
-import { IERC20 } from "@hyperdrive/artifacts/dist/IERC20";
+import { IERC20 } from "@hyperdrive/artifacts/IERC20";
 import { getTokenIconUrl } from "src/tokens/tokenIconsUrls";
 import { Address, PublicClient } from "viem";
 

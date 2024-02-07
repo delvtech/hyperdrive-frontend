@@ -5,6 +5,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": ".",
+    "moduleResolution": "Bundler",
     "target": "esnext",
     "module": "ESNext",
     "paths": {

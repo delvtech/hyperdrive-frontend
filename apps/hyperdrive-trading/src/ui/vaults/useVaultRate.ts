@@ -1,4 +1,4 @@
-import { MockERC4626 } from "@hyperdrive/artifacts/dist/MockERC4626";
+import { MockERC4626 } from "@hyperdrive/artifacts/MockERC4626";
 import { useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";

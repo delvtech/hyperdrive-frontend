@@ -1,4 +1,4 @@
-import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";

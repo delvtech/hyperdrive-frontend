@@ -1,5 +1,5 @@
-import { IERC4626HyperdriveRead } from "@hyperdrive/artifacts/dist/IERC4626HyperdriveRead";
-import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+import { IERC4626HyperdriveRead } from "@hyperdrive/artifacts/IERC4626HyperdriveRead";
+import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { formatHyperdriveName } from "src/hyperdrive/formatHyperdriveName";

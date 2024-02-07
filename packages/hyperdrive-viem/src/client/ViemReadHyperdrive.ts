@@ -4,7 +4,7 @@ import {
   ViemNetwork,
 } from "@hyperdrive/evm-client-viem";
 import { Address, PublicClient } from "viem";
-import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
 import { SimpleCache } from "@hyperdrive/evm-client";
 
 interface ViemReadHyperdriveOptions {

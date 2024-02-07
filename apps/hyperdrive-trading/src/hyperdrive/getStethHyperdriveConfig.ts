@@ -1,4 +1,4 @@
-import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { HyperdriveConfigOld } from "src/hyperdrive/HyperdriveConfigOld";
 import { TokenConfigOld } from "src/token/TokenConfigOld";

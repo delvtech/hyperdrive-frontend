@@ -1,4 +1,4 @@
-import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
 import { useQuery } from "@tanstack/react-query";
 import { HyperdriveGoerliAddresses } from "src/addresses/goerli";
 import { zeroAddress } from "viem";

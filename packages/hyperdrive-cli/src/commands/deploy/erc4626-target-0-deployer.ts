@@ -1,4 +1,4 @@
-import { ERC4626Target0Deployer } from "@hyperdrive/artifacts/dist/ERC4626Target0Deployer.js";
+import { ERC4626Target0Deployer } from "@hyperdrive/artifacts/ERC4626Target0Deployer";
 import { command } from "clide-js";
 import signale from "signale";
 import { Chain, PrivateKeyAccount } from "viem";
