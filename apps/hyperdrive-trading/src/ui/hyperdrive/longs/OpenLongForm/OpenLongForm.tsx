@@ -123,6 +123,7 @@ export function OpenLongForm({
                 } else {
                   setActiveTokenType("baseToken");
                 }
+                setAmount("0");
               }}
             />
           }
