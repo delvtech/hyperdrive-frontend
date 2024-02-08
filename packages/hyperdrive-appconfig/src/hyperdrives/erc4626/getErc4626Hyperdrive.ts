@@ -51,6 +51,7 @@ export async function getErc4626Hyperdrive({
   const hyperdriveConfig: HyperdriveConfig = {
     address: hyperdriveAddress,
     name: hyperdriveName,
+    decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
     baseToken: baseToken.address,
     sharesToken: sharesToken.address,
     withdrawOptions: {

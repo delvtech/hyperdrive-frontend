@@ -262,13 +262,14 @@ function CurrentValueCell({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const { baseAmountOut, previewCloseLongStatus } = usePreviewCloseLong({
-    hyperdriveAddress: hyperdrive.address,
-    maturityTime: row.maturity,
-    bondAmountIn: row.bondAmount,
-    minBaseAmountOut: parseUnits("0", baseToken.decimals),
-    destination: account,
-  });
+  const { amountOut: baseAmountOut, previewCloseLongStatus } =
+    usePreviewCloseLong({
+      hyperdriveAddress: hyperdrive.address,
+      maturityTime: row.maturity,
+      bondAmountIn: row.bondAmount,
+      minOutput: parseUnits("0", baseToken.decimals),
+      destination: account,
+    });
 
   const currentValue =
     baseAmountOut &&

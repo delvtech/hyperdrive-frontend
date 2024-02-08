@@ -11,14 +11,14 @@ interface UsePreviewCloseLongOptions {
    */
   maturityTime: bigint | undefined;
   bondAmountIn: bigint | undefined;
-  minBaseAmountOut: bigint | undefined;
+  minOutput: bigint | undefined;
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
 }
 
 interface UsePreviewCloseLongResult {
-  baseAmountOut: bigint | undefined;
+  amountOut: bigint | undefined;
   previewCloseLongStatus: QueryStatus;
 }
 
@@ -26,7 +26,7 @@ export function usePreviewCloseLong({
   hyperdriveAddress,
   maturityTime,
   bondAmountIn,
-  minBaseAmountOut,
+  minOutput,
   destination,
   asBase = true,
   enabled = true,
@@ -37,7 +37,7 @@ export function usePreviewCloseLong({
     !!hyperdriveAddress &&
     !!maturityTime &&
     !!bondAmountIn &&
-    minBaseAmountOut !== undefined && // check undefined since 0 is valid
+    minOutput !== undefined && // check undefined since 0 is valid
     !!destination &&
     enabled;
 
@@ -45,8 +45,9 @@ export function usePreviewCloseLong({
     queryKey: makeQueryKey("previewCloseLong", {
       hyperdriveAddress,
       bondAmountIn: bondAmountIn?.toString(),
-      minBaseAmountOut: minBaseAmountOut?.toString(),
+      minOutput: minOutput?.toString(),
       destination: destination,
+      asBase,
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
@@ -54,12 +55,12 @@ export function usePreviewCloseLong({
           readWriteHyperdrive.previewCloseLong({
             maturityTime,
             bondAmountIn,
-            minBaseAmountOut,
+            minBaseAmountOut: minOutput,
             destination,
             asBase,
           })
       : undefined,
   });
 
-  return { baseAmountOut: data, previewCloseLongStatus: status };
+  return { amountOut: data, previewCloseLongStatus: status };
 }
