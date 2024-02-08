@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address, useBlockNumber, useChainId } from "wagmi";
@@ -13,10 +12,8 @@ export function useLpApy(hyperdriveAddress: Address): {
   const isDevnet = !!import.meta.env.VITE_LOCALHOST_NODE_RPC_URL;
   const { data: blockNumber } = useBlockNumber();
   const { poolInfo: currentPoolInfo } = usePoolInfo(hyperdriveAddress);
-  const { poolConfig } = usePoolConfig(hyperdriveAddress);
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const queryEnabled =
-    !!readHyperdrive && !!blockNumber && !!currentPoolInfo && !!poolConfig;
+  const queryEnabled = !!readHyperdrive && !!blockNumber && !!currentPoolInfo;
   const { data, status } = useQuery({
     queryKey: makeQueryKey("getLpApy", {
       chainId,
