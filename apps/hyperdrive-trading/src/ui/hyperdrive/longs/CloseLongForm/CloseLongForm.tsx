@@ -1,7 +1,14 @@
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  EmptyExtensions,
+  findBaseToken,
+  findYieldSourceToken,
+  HyperdriveConfig,
+  TokenConfig,
+  YieldSourceExtensions,
+} from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage, Long } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { MouseEvent, ReactElement } from "react";
+import { MouseEvent, ReactElement, useState } from "react";
 import toast from "react-hot-toast";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
@@ -31,34 +38,49 @@ export function CloseLongForm({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
+  const sharesToken = findYieldSourceToken({
+    yieldSourceTokenAddress: hyperdrive.sharesToken,
+    tokens: appConfig.tokens,
+  });
+
+  const {
+    activeWithdrawToken,
+    activeWithdrawTokenType,
+    setActiveWithdrawTokenType,
+  } = useActiveWithdrawToken({
+    hyperdrive,
+  });
 
   const { address: account } = useAccount();
 
+  // Input for the hyToken
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
-    decimals: baseToken.decimals,
+    decimals: hyperdrive.decimals,
   });
 
-  const { baseAmountOut, previewCloseLongStatus } = usePreviewCloseLong({
+  const { amountOut, previewCloseLongStatus } = usePreviewCloseLong({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: long.maturity,
     bondAmountIn: amountAsBigInt,
-    minBaseAmountOut: parseUnits("0", baseToken.decimals),
+    minOutput: parseUnits("0", baseToken.decimals),
     destination: account,
+    asBase: activeWithdrawTokenType === "baseToken",
   });
 
-  const closeLongAmountAfterSlippage =
-    baseAmountOut &&
+  const minOutputAfterSlippage =
+    amountOut &&
     adjustAmountByPercentage({
-      amount: baseAmountOut,
-      decimals: baseToken.decimals,
+      amount: amountOut,
+      decimals: activeWithdrawToken.decimals,
     });
 
   const { closeLong, isPendingWalletAction } = useCloseLong({
     hyperdriveAddress: hyperdrive.address,
     long,
     bondAmountIn: amountAsBigInt,
-    minBaseAmountOut: closeLongAmountAfterSlippage,
+    minBaseAmountOut: minOutputAfterSlippage,
     destination: account,
+    asBase: activeWithdrawTokenType === "baseToken",
     enabled: previewCloseLongStatus === "success",
     onExecuted: (hash) => {
       setAmount("");
@@ -97,28 +119,44 @@ export function CloseLongForm({
           token={`hy${baseToken.symbol}`}
           value={amount ?? ""}
           maxValue={
-            long ? formatUnits(long.bondAmount, baseToken.decimals) : ""
+            long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
           }
           stat={`Balance: ${formatBalance({
             balance: long.bondAmount,
-            decimals: baseToken.decimals,
+            decimals: hyperdrive.decimals,
             places: 4,
           })}`}
           onChange={(newAmount) => setAmount(newAmount)}
         />
       }
+      setting={
+        <label className="inline-flex cursor-pointer items-center justify-end gap-2">
+          <input
+            type="checkbox"
+            className="daisy-checkbox-primary daisy-checkbox daisy-checkbox-sm"
+            onChange={(e) => {
+              if (e.target.checked) {
+                setActiveWithdrawTokenType("sharesToken");
+              } else {
+                setActiveWithdrawTokenType("baseToken");
+              }
+            }}
+          />
+          <span>Receive as {sharesToken.symbol}</span>
+        </label>
+      }
       transactionPreview={
         <LabelValue
           label="You receive"
           value={`${
-            baseAmountOut
+            amountOut
               ? `${formatBalance({
-                  balance: baseAmountOut,
-                  decimals: baseToken.decimals,
+                  balance: amountOut,
+                  decimals: activeWithdrawToken.decimals,
                   places: 8,
                 })}`
               : "0"
-          } ${baseToken.symbol}`}
+          } ${activeWithdrawToken.symbol}`}
         />
       }
       actionButton={
@@ -139,4 +177,41 @@ export function CloseLongForm({
       }
     />
   );
+}
+
+type WithdrawTokenType = "baseToken" | "sharesToken";
+function useActiveWithdrawToken({
+  hyperdrive,
+}: {
+  hyperdrive: HyperdriveConfig;
+}): {
+  activeWithdrawTokenType: WithdrawTokenType;
+  activeWithdrawToken: TokenConfig<EmptyExtensions | YieldSourceExtensions>;
+  setActiveWithdrawTokenType: (type: WithdrawTokenType) => void;
+} {
+  const appConfig = useAppConfig();
+  const defaultWithdrawTokenType = hyperdrive.withdrawOptions
+    .isBaseTokenWithdrawalEnabled
+    ? "baseToken"
+    : "sharesToken";
+
+  const [activeWithdrawTokenType, setActiveWithdrawTokenType] =
+    useState<WithdrawTokenType>(defaultWithdrawTokenType);
+
+  const activeWithdrawToken =
+    activeWithdrawTokenType === "baseToken"
+      ? findBaseToken({
+          baseTokenAddress: hyperdrive.baseToken,
+          tokens: appConfig.tokens,
+        })
+      : findYieldSourceToken({
+          yieldSourceTokenAddress: hyperdrive.sharesToken,
+          tokens: appConfig.tokens,
+        });
+
+  return {
+    activeWithdrawToken,
+    activeWithdrawTokenType,
+    setActiveWithdrawTokenType,
+  };
 }

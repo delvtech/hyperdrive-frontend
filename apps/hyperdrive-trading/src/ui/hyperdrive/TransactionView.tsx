@@ -4,6 +4,8 @@ import { Well } from "src/ui/base/components/Well/Well";
 interface TransactionViewProps {
   heading?: string;
   tokenInput: ReactNode;
+
+  setting?: ReactNode;
   transactionPreview: ReactNode;
   disclaimer?: ReactNode;
 
@@ -13,6 +15,7 @@ interface TransactionViewProps {
 export function TransactionView({
   heading,
   tokenInput,
+  setting,
   transactionPreview,
   disclaimer,
   actionButton,
@@ -21,7 +24,7 @@ export function TransactionView({
     <div className="flex w-full flex-col gap-4">
       {heading !== undefined && <h5 className="font-bold">{heading}</h5>}
       {tokenInput}
-
+      {setting}
       <div className="mt-4 flex flex-col gap-8">
         <Well transparent elevation="flat">
           <div className="space-y-6">

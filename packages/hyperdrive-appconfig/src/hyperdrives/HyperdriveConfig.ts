@@ -5,6 +5,8 @@ export interface HyperdriveConfig {
   address: Address;
   name: string;
 
+  decimals: number;
+
   /**
    * The base token for hyperdrive deposits and withdrawals, eg: DAI or ETH
    */
