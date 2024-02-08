@@ -7,6 +7,7 @@ import {
   YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
+import { MutationStatus } from "@tanstack/react-query";
 import { ReactElement, useState } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
@@ -159,12 +160,19 @@ export function OpenLongForm({
           }}
         />
       }
+      disclaimer={
+        !!amountAsBigInt &&
+        !getHasEnoughBalance({ activeTokenBalance, amountAsBigInt }) ? (
+          <p className="text-center text-sm text-error">Insufficient balance</p>
+        ) : undefined
+      }
       actionButton={
         account ? (
-          !hasEnoughAllowance ? (
+          // Only show the approve button if the trade would be valid
+          !hasEnoughAllowance &&
+          getHasEnoughBalance({ activeTokenBalance, amountAsBigInt }) ? (
             // Approval button
             <button
-              disabled={!approve}
               className="daisy-btn daisy-btn-circle daisy-btn-warning w-full"
               onClick={(e) => {
                 // Do this so we don't close the modal
@@ -175,9 +183,14 @@ export function OpenLongForm({
               <h5>Approve {activeToken.symbol}</h5>
             </button>
           ) : (
-            // Trade button
+            // Open Long button
             <button
-              disabled={!openLong || openLongStatus === "loading"}
+              disabled={getIsOpenLongButtonDisabled({
+                openLong,
+                activeTokenBalance,
+                amountAsBigInt,
+                openLongStatus,
+              })}
               className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
               onClick={() => openLong?.()}
             >
@@ -190,6 +203,49 @@ export function OpenLongForm({
       }
     />
   );
+}
+
+function getIsOpenLongButtonDisabled({
+  openLong,
+  activeTokenBalance,
+  amountAsBigInt,
+  openLongStatus,
+}: {
+  openLong: (() => void) | undefined;
+  activeTokenBalance: { formatted: string; value: bigint } | undefined;
+  amountAsBigInt: bigint | undefined;
+  openLongStatus: MutationStatus;
+}): boolean {
+  if (!openLong || openLongStatus === "loading") {
+    return true;
+  }
+
+  return !getHasEnoughBalance({ activeTokenBalance, amountAsBigInt });
+}
+
+function getHasEnoughBalance({
+  activeTokenBalance,
+  amountAsBigInt,
+}: {
+  activeTokenBalance: { formatted: string; value: bigint } | undefined;
+  amountAsBigInt: bigint | undefined;
+}) {
+  // The trade isn't valid if you have no balance or no amount specified to
+  // trade
+  if (!activeTokenBalance || !amountAsBigInt) {
+    return false;
+  }
+
+  // You can't spend more than your current balance either
+  if (
+    activeTokenBalance &&
+    amountAsBigInt &&
+    activeTokenBalance.value < amountAsBigInt
+  ) {
+    return false;
+  }
+
+  return true;
 }
 
 function getHasEnoughAllowance({
