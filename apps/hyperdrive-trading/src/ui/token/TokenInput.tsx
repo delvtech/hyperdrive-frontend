@@ -3,7 +3,7 @@ import { ReactElement, ReactNode } from "react";
 import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
 
 interface TokenInputProps {
-  token: string | ReactNode;
+  token: ReactNode;
   name: string;
   value: string;
   onChange: (newAmount: string) => void;

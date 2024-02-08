@@ -24,6 +24,7 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { TokenPicker } from "src/ui/token/TokenPicker";
 import { Address } from "viem";
 import { useAccount, useBalance } from "wagmi";
 
@@ -43,9 +44,19 @@ export function OpenLongForm({
     activeTokenBalance,
     activeTokenAllowance,
     isActiveTokenApprovalRequired,
+    setActiveTokenType,
   } = useActiveToken({
     hyperdrive,
     account,
+  });
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
+  const sharesToken = findYieldSourceToken({
+    yieldSourceTokenAddress: hyperdrive.sharesToken,
+    tokens: appConfig.tokens,
   });
 
   const { approve } = useTokenApproval({
@@ -102,7 +113,19 @@ export function OpenLongForm({
       tokenInput={
         <TokenInput
           name={activeToken.symbol}
-          token={activeToken.symbol}
+          token={
+            <TokenPicker
+              tokens={[baseToken.symbol, sharesToken.symbol]}
+              activeToken={activeToken.symbol}
+              onChange={function (token: string): void {
+                if (token === sharesToken.symbol) {
+                  setActiveTokenType("sharesToken");
+                } else {
+                  setActiveTokenType("baseToken");
+                }
+              }}
+            />
+          }
           value={amount ?? ""}
           maxValue={activeTokenBalance?.formatted}
           inputLabel="Amount to spend"
