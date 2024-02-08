@@ -30,7 +30,7 @@ export function LongsTab({
         </div>
       }
       transactionForm={<OpenLongForm hyperdrive={hyperdrive} />}
-      transactionFormHeading={"Open long"}
+      transactionFormHeading="Open long"
     />
   );
 }
