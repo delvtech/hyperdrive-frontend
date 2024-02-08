@@ -8,7 +8,6 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
-import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
 
 interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
@@ -24,14 +23,13 @@ export function OpenLongPreview({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const { poolConfig } = usePoolConfig(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive.address);
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
   // The pool's curve fee is applied to the fixed rate, so if the fixed rate is
   // 4.5%, the effective fixed rate is 4%, then the pool fee is .45%.
   const poolFee = dnum.mul(
-    [poolConfig?.fees.curve || 0n, 18],
+    [hyperdrive.poolConfig.fees.curve || 0n, 18],
     [fixedAPR?.apr || 1n, 18],
   );
   return (
@@ -67,7 +65,8 @@ export function OpenLongPreview({
             {long.bondAmount > 0
               ? `${formatRate(
                   calculateFixedRateFromOpenLong({
-                    positionDuration: poolConfig?.positionDuration || 0n,
+                    positionDuration:
+                      hyperdrive.poolConfig.positionDuration || 0n,
                     baseAmount: long.baseAmountPaid,
                     bondAmount: long.bondAmount,
                     decimals: baseToken.decimals,
