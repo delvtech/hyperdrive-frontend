@@ -18,7 +18,7 @@ import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import ApproveToken from "src/ui/token/ApproveToken";
+import ApproveTokenButton from "src/ui/token/ApproveTokenButton";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -162,19 +162,15 @@ export function OpenLongForm({
       }
       actionButton={
         account ? (
-          // Only show the approve button if the trade would be valid
-
           getHasEnoughBalance({ activeTokenBalance, amountAsBigInt }) ? (
             // Approval button
-            <ApproveToken
+            <ApproveTokenButton
               hyperdrive={hyperdrive}
               activeToken={activeToken}
               isActiveTokenApprovalRequired={isActiveTokenApprovalRequired}
               activeTokenBalance={activeTokenBalance}
-              activeTokenAllowance={activeTokenAllowance}
               amountAsBigInt={amountAsBigInt}
               amount={amount}
-              approve={approve}
             />
           ) : (
             // Open Long button
