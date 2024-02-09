@@ -9,9 +9,9 @@ import {
 import { useState } from "react";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { Address } from "viem";
 import { useBalance } from "wagmi";
-import { useTokenAllowance } from "./useTokenAllowance";
 type DepositTokenType = "baseToken" | "sharesToken";
 export function useActiveToken({
   hyperdrive,
