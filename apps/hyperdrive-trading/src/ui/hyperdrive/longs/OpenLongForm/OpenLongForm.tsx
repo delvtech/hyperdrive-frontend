@@ -22,6 +22,7 @@ import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import ApproveToken from "src/ui/token/ApproveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -172,16 +173,7 @@ export function OpenLongForm({
           !hasEnoughAllowance &&
           getHasEnoughBalance({ activeTokenBalance, amountAsBigInt }) ? (
             // Approval button
-            <button
-              className="daisy-btn daisy-btn-circle daisy-btn-warning w-full"
-              onClick={(e) => {
-                // Do this so we don't close the modal
-                e.preventDefault();
-                approve?.();
-              }}
-            >
-              <h5>Approve {activeToken.symbol}</h5>
-            </button>
+            <ApproveToken activeToken={activeToken} approve={approve} />
           ) : (
             // Open Long button
             <button
