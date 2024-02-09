@@ -314,8 +314,8 @@ export function TransactionTable({
   }
 
   return (
-    <div className="max-h-96 overflow-y-scroll">
-      <table className="daisy-table daisy-table-zebra daisy-table-lg">
+    <div className="flex h-96 w-full overflow-y-scroll scrollbar-none">
+      <table className="daisy-table daisy-table-zebra daisy-table-lg h-fit">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
@@ -349,13 +349,10 @@ export function TransactionTable({
           ))}
         </thead>
 
-        <tbody className="mt-10">
+        <tbody>
           {tableInstance.getRowModel().rows.map((row) => {
             return (
-              <tr
-                key={row.id}
-                className="daisy-hover mt-10 h-24 items-center transition duration-300 ease-in-out"
-              >
+              <tr key={row.id} className="h-24">
                 <>
                   {row.getVisibleCells().map((cell) => {
                     return (

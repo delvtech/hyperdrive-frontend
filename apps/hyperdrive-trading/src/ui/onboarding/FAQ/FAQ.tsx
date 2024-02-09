@@ -29,14 +29,14 @@ export function FAQEntries(): JSX.Element {
           <Disclosure
             key={faq.question}
             title={<span className="text-h5">{faq.question}</span>}
-            description={<p className="">{faq.answer}</p>}
+            description={faq.answer}
           />
         ))}
       </div>
     );
   }
   return (
-    <div className="flex min-h-[400px] max-w-6xl flex-col">
+    <div className="ml-8 mt-8 flex min-h-[400px] max-w-6xl flex-col">
       <div className="grid grid-cols-3 gap-8">
         {/* questions */}
         <div className="col-span-1 flex flex-col text-left">
