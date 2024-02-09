@@ -37,6 +37,9 @@ export default function ApproveToken({
     | undefined;
 }): JSX.Element {
   const [approvedAmount, setApprovedAmount] = useState<bigint>(MAX_UINT256);
+  const [selectedOption, setSelectedOption] = useState<
+    "Unlimited" | "Depositing" | "Custom"
+  >("Unlimited");
 
   const { approve } = useTokenApproval({
     tokenAddress: activeToken.address,
@@ -52,6 +55,10 @@ export default function ApproveToken({
   } = useNumericInput({
     decimals: activeToken.decimals,
   });
+
+  // useEffect(() => {
+  //   console.log(approvedAmount, "approvedAmount");
+  // }, [approvedAmount]);
 
   const modalId = `approve_token`;
   function closeModal() {
@@ -76,7 +83,7 @@ export default function ApproveToken({
         }}
         className="daisy-dropdown absolute right-4"
       >
-        <AdjustmentsHorizontalIcon className="h-6 w-6 border" />
+        <AdjustmentsHorizontalIcon className="h-6 w-6" />
         <Modal
           modalId="approve_token"
           modalContent={
@@ -103,8 +110,11 @@ export default function ApproveToken({
                       type="radio"
                       name="radio-10"
                       className="checked:bg-red-500 daisy-radio"
-                      checked
-                      onClick={() => setApprovedAmount(MAX_UINT256)}
+                      checked={selectedOption === "Unlimited"}
+                      onChange={() => {
+                        setSelectedOption("Unlimited");
+                        setApprovedAmount(MAX_UINT256);
+                      }}
                     />
                     <span className="daisy-label-text ml-2 flex flex-1  text-left">
                       Unlimited
@@ -117,8 +127,11 @@ export default function ApproveToken({
                       type="radio"
                       name="radio-10"
                       className="checked:bg-blue-500 daisy-radio"
-                      checked
-                      onClick={() => setApprovedAmount(amountAsBigInt ?? 0n)}
+                      checked={selectedOption === "Depositing"}
+                      onChange={() => {
+                        setSelectedOption("Depositing");
+                        setApprovedAmount(amountAsBigInt ?? 0n);
+                      }}
                     />
                     <span className="daisy-label-text ml-2 flex flex-1  text-left">
                       {activeToken.symbol} Depositing {amount}
@@ -131,6 +144,12 @@ export default function ApproveToken({
                       type="radio"
                       name="radio-10"
                       className="checked:bg-blue-500 daisy-radio"
+                      checked={selectedOption === "Custom"}
+                      onChange={() => {
+                        setSelectedOption("Custom");
+                        // For custom, don't immediately set `approvedAmount` here
+                        // It will be set in the TokenInput's onChange handler
+                      }}
                     />
                     <span className="daisy-label-text ml-2 flex w-full">
                       <TokenInput
@@ -139,6 +158,7 @@ export default function ApproveToken({
                         onChange={(newApprovedAmount) => {
                           setAmount(newApprovedAmount);
                           setApprovedAmount(customAmountAsBigInt ?? 0n);
+                          setSelectedOption("Custom");
                         }}
                         name={activeToken.symbol}
                         value={customAmount ?? ""}
