@@ -130,20 +130,38 @@ export function CloseLongForm({
         />
       }
       setting={
-        <label className="inline-flex cursor-pointer items-center justify-end gap-2">
-          <input
-            type="checkbox"
-            className="daisy-checkbox-primary daisy-checkbox daisy-checkbox-sm"
-            onChange={(e) => {
-              if (e.target.checked) {
-                setActiveWithdrawTokenType("sharesToken");
-              } else {
-                setActiveWithdrawTokenType("baseToken");
-              }
-            }}
-          />
-          <span>Receive as {sharesToken.symbol}</span>
-        </label>
+        <div className="flex items-center justify-between">
+          <span className="daisy-label-text">Choose withdrawal asset</span>
+          <div className="flex gap-8">
+            <label className="inline-flex cursor-pointer items-center justify-end gap-2">
+              <input
+                type="radio"
+                name={baseToken.symbol}
+                disabled={
+                  !hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+                }
+                checked={activeWithdrawTokenType === "baseToken"}
+                className="daisy-radio-primary daisy-radio daisy-radio-xs"
+                onChange={() => {
+                  setActiveWithdrawTokenType("baseToken");
+                }}
+              />
+              {baseToken.symbol}
+            </label>
+            <label className="inline-flex cursor-pointer items-center justify-end gap-2">
+              <input
+                type="radio"
+                name={sharesToken.symbol}
+                className="daisy-radio-primary daisy-radio daisy-radio-xs"
+                checked={activeWithdrawTokenType === "sharesToken"}
+                onChange={() => {
+                  setActiveWithdrawTokenType("sharesToken");
+                }}
+              />
+              {sharesToken.symbol}
+            </label>
+          </div>
+        </div>
       }
       transactionPreview={
         <LabelValue
