@@ -22,6 +22,7 @@ export default function ApproveToken({
   activeToken,
   isActiveTokenApprovalRequired,
   activeTokenBalance,
+  activeTokenAllowance,
 }: {
   hyperdrive: HyperdriveConfig;
   amountAsBigInt: bigint | undefined;
@@ -29,6 +30,7 @@ export default function ApproveToken({
   approve: (() => void) | undefined;
   activeToken: TokenConfig<EmptyExtensions | YieldSourceExtensions>;
   isActiveTokenApprovalRequired: boolean;
+  activeTokenAllowance: bigint | undefined;
   activeTokenBalance:
     | {
         formatted: string;
@@ -59,6 +61,11 @@ export default function ApproveToken({
   // useEffect(() => {
   //   console.log(approvedAmount, "approvedAmount");
   // }, [approvedAmount]);
+  const isCustomAmountExceedingBalance =
+    selectedOption === "Custom" &&
+    !!activeTokenBalance && // Ensure activeTokenBalance exists
+    !!customAmountAsBigInt && // Ensure customAmountAsBigInt is not undefined
+    customAmountAsBigInt > activeTokenBalance.value; // Compare values directly
 
   const modalId = `approve_token`;
   function closeModal() {
@@ -108,7 +115,7 @@ export default function ApproveToken({
                   <label className="daisy-label my-2 cursor-pointer">
                     <input
                       type="radio"
-                      name="radio-10"
+                      name="radio-unlimited"
                       className="checked:bg-red-500 daisy-radio"
                       checked={selectedOption === "Unlimited"}
                       onChange={() => {
@@ -125,7 +132,7 @@ export default function ApproveToken({
                   <label className="daisy-label mt-2 cursor-pointer">
                     <input
                       type="radio"
-                      name="radio-10"
+                      name="radio-depositing"
                       className="checked:bg-blue-500 daisy-radio"
                       checked={selectedOption === "Depositing"}
                       onChange={() => {
@@ -142,7 +149,7 @@ export default function ApproveToken({
                   <label className="daisy-label cursor-pointer">
                     <input
                       type="radio"
-                      name="radio-10"
+                      name="radio-custom"
                       className="checked:bg-blue-500 daisy-radio"
                       checked={selectedOption === "Custom"}
                       onChange={() => {
@@ -179,6 +186,7 @@ export default function ApproveToken({
                 </div>
               </div>
               <button
+                disabled={isCustomAmountExceedingBalance}
                 onClick={(e) => {
                   // Close modal and approve token here
                   approve?.();
@@ -187,6 +195,12 @@ export default function ApproveToken({
               >
                 <h5>Approve {activeToken.symbol}</h5>
               </button>
+
+              {isCustomAmountExceedingBalance && (
+                <p className="text-center text-sm text-error">
+                  Insufficient balance
+                </p>
+              )}
             </div>
           }
         />

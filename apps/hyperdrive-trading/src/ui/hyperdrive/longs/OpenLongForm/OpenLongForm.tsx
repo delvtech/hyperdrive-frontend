@@ -163,7 +163,7 @@ export function OpenLongForm({
       actionButton={
         account ? (
           // Only show the approve button if the trade would be valid
-          !hasEnoughAllowance &&
+
           getHasEnoughBalance({ activeTokenBalance, amountAsBigInt }) ? (
             // Approval button
             <ApproveToken
@@ -171,6 +171,7 @@ export function OpenLongForm({
               activeToken={activeToken}
               isActiveTokenApprovalRequired={isActiveTokenApprovalRequired}
               activeTokenBalance={activeTokenBalance}
+              activeTokenAllowance={activeTokenAllowance}
               amountAsBigInt={amountAsBigInt}
               amount={amount}
               approve={approve}
@@ -241,7 +242,7 @@ function getHasEnoughBalance({
   return true;
 }
 
-function getHasEnoughAllowance({
+export function getHasEnoughAllowance({
   isActiveTokenApprovalRequired,
   activeTokenAllowance,
   amount,
@@ -249,7 +250,7 @@ function getHasEnoughAllowance({
   isActiveTokenApprovalRequired: boolean;
   activeTokenAllowance: bigint | undefined;
   amount: bigint | undefined;
-}) {
+}): boolean {
   // You technically have enough allowance if none is needed, or you're trying
   // to spend 0 of the token
   if (!isActiveTokenApprovalRequired || !amount) {
