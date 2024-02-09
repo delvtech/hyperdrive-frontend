@@ -76,6 +76,7 @@
     "prettier-plugin-organize-imports": "^3.2.2",
     "prettier-plugin-tailwindcss": "^0.2.7",
     "tailwindcss": "^3.3.6",
+    "tailwind-scrollbar": "^3.0.5",
     "tailwindcss-debug-screens": "2.2.1",
     "typescript": "^5.0.2",
     "vite": "^4.1.0",
