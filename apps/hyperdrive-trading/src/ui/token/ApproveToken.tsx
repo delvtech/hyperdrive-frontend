@@ -11,32 +11,46 @@ import {
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { Modal } from "src/ui/base/components/Modal/Modal";
-import { TokenInput } from "src/ui/token/TokenInput";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
+import { TokenInput } from "./TokenInput";
 export default function ApproveToken({
+  amountAsBigInt,
+  amount,
+  hyperdrive,
   activeToken,
   isActiveTokenApprovalRequired,
-  amountAsBigInt,
-  hyperdrive,
+  activeTokenBalance,
 }: {
   hyperdrive: HyperdriveConfig;
-  activeToken: TokenConfig<EmptyExtensions | YieldSourceExtensions>;
   amountAsBigInt: bigint | undefined;
-  isActiveTokenApprovalRequired: boolean;
+  amount: string | undefined;
   approve: (() => void) | undefined;
+  activeToken: TokenConfig<EmptyExtensions | YieldSourceExtensions>;
+  isActiveTokenApprovalRequired: boolean;
+  activeTokenBalance:
+    | {
+        formatted: string;
+        value: bigint;
+      }
+    | undefined;
 }): JSX.Element {
-  const [approvedAmount, setApprovedAmount] = useState<bigint | undefined>(
-    MAX_UINT256,
-  );
-  function handleApprovalSelection() {
-    // Handle approval selection here
-  }
+  const [approvedAmount, setApprovedAmount] = useState<bigint>(MAX_UINT256);
 
   const { approve } = useTokenApproval({
     tokenAddress: activeToken.address,
     spender: hyperdrive.address,
-    amount: MAX_UINT256,
+    amount: approvedAmount,
     enabled: isActiveTokenApprovalRequired,
+  });
+
+  const {
+    amount: customAmount,
+    amountAsBigInt: customAmountAsBigInt,
+    setAmount,
+  } = useNumericInput({
+    decimals: activeToken.decimals,
   });
 
   const modalId = `approve_token`;
@@ -45,7 +59,7 @@ export default function ApproveToken({
   }
   return (
     <button
-      className="daisy-btn daisy-btn-circle daisy-btn-warning relative w-full"
+      className="daisy-btn daisy-btn-circle daisy-btn-warning relative w-full "
       onClick={(e) => {
         // Do this so we don't close the modal
         e.preventDefault();
@@ -62,7 +76,7 @@ export default function ApproveToken({
         }}
         className="daisy-dropdown absolute right-4"
       >
-        <AdjustmentsHorizontalIcon className="h-6 w-6" />
+        <AdjustmentsHorizontalIcon className="h-6 w-6 border" />
         <Modal
           modalId="approve_token"
           modalContent={
@@ -82,7 +96,7 @@ export default function ApproveToken({
                   </p>
                 </div>
               </div>
-              <div className="mt-4 lg:w-[50%]">
+              <div className="mt-4">
                 <div className="daisy-form-control ">
                   <label className="daisy-label my-2 cursor-pointer">
                     <input
@@ -90,6 +104,7 @@ export default function ApproveToken({
                       name="radio-10"
                       className="checked:bg-red-500 daisy-radio"
                       checked
+                      onClick={() => setApprovedAmount(MAX_UINT256)}
                     />
                     <span className="daisy-label-text ml-2 flex flex-1  text-left">
                       Unlimited
@@ -103,9 +118,10 @@ export default function ApproveToken({
                       name="radio-10"
                       className="checked:bg-blue-500 daisy-radio"
                       checked
+                      onClick={() => setApprovedAmount(amountAsBigInt ?? 0n)}
                     />
                     <span className="daisy-label-text ml-2 flex flex-1  text-left">
-                      Dai Depositing 4.000
+                      {activeToken.symbol} Depositing {amount}
                     </span>
                   </label>
                 </div>
@@ -115,13 +131,28 @@ export default function ApproveToken({
                       type="radio"
                       name="radio-10"
                       className="checked:bg-blue-500 daisy-radio"
-                      checked
                     />
-                    <span className="daisy-label-text ml-2 flex flex-1  text-left">
+                    <span className="daisy-label-text ml-2 flex w-full">
                       <TokenInput
-                        onChange={() => console.log("TOken change")}
-                        name="Custom"
+                        // The active token that needs to be approved should already be selected so we don't need to show a token selector here.
+                        token={<></>}
+                        onChange={(newApprovedAmount) => {
+                          setAmount(newApprovedAmount);
+                          setApprovedAmount(customAmountAsBigInt ?? 0n);
+                        }}
+                        name={activeToken.symbol}
+                        value={customAmount ?? ""}
+                        maxValue={activeTokenBalance?.formatted}
                         inputLabel="Custom"
+                        stat={
+                          activeTokenBalance
+                            ? `Balance: ${formatBalance({
+                                balance: activeTokenBalance?.value,
+                                decimals: activeToken.decimals,
+                                places: 4,
+                              })} ${activeToken.symbol}`
+                            : undefined
+                        }
                       />
                     </span>
                   </label>
@@ -130,6 +161,7 @@ export default function ApproveToken({
               <button
                 onClick={(e) => {
                   // Close modal and approve token here
+                  approve?.();
                 }}
                 className="daisy-btn daisy-btn-circle daisy-btn-warning relative mt-4 w-full"
               >

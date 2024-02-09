@@ -33,14 +33,14 @@ export function TokenInput({
   name,
   onChange,
   maxValue,
-  inputLabel = "Enter amount",
+  inputLabel,
   stat,
   hasError = false,
   disabled = false,
   autoFocus = false,
 }: TokenInputProps): ReactElement {
   return (
-    <div className="flex flex-col">
+    <div className="flex w-full flex-col">
       <label className="daisy-label flex justify-between">
         <span className="daisy-label-text">{inputLabel}</span>
         {stat ? <span className="daisy-label-text">{stat}</span> : null}

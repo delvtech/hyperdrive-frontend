@@ -1,17 +1,13 @@
 import {
-  EmptyExtensions,
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
-  TokenConfig,
-  YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { MutationStatus } from "@tanstack/react-query";
-import { ReactElement, useState } from "react";
+import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
-import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
@@ -23,18 +19,15 @@ import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpen
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import ApproveToken from "src/ui/token/ApproveToken";
-import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
+import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
-import { Address } from "viem";
-import { useAccount, useBalance } from "wagmi";
+import { useAccount } from "wagmi";
 
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
 }
-
-type DepositTokenType = "baseToken" | "sharesToken";
 
 export function OpenLongForm({
   hyperdrive: hyperdrive,
@@ -177,7 +170,9 @@ export function OpenLongForm({
               hyperdrive={hyperdrive}
               activeToken={activeToken}
               isActiveTokenApprovalRequired={isActiveTokenApprovalRequired}
+              activeTokenBalance={activeTokenBalance}
               amountAsBigInt={amountAsBigInt}
+              amount={amount}
               approve={approve}
             />
           ) : (
@@ -269,71 +264,4 @@ function getHasEnoughAllowance({
 
   // Otherwise, you have enough allowance if it's greater than or equal to the amount you want to spend
   return activeTokenAllowance >= amount;
-}
-
-function useActiveToken({
-  hyperdrive,
-  account,
-}: {
-  hyperdrive: HyperdriveConfig;
-  account: Address | undefined;
-}): {
-  activeTokenType: DepositTokenType;
-  activeToken: TokenConfig<EmptyExtensions | YieldSourceExtensions>;
-  activeTokenAllowance: bigint | undefined;
-  activeTokenBalance:
-    | {
-        formatted: string;
-        value: bigint;
-      }
-    | undefined;
-  setActiveTokenType: (type: DepositTokenType) => void;
-  isActiveTokenApprovalRequired: boolean;
-} {
-  const appConfig = useAppConfig();
-  const [activeTokenType, setActiveTokenType] =
-    useState<DepositTokenType>("baseToken");
-
-  const activeToken =
-    activeTokenType === "baseToken"
-      ? findBaseToken({
-          baseTokenAddress: hyperdrive.baseToken,
-          tokens: appConfig.tokens,
-        })
-      : findYieldSourceToken({
-          yieldSourceTokenAddress: hyperdrive.sharesToken,
-          tokens: appConfig.tokens,
-        });
-
-  const { data: activeTokenBalance } = useBalance({
-    address: account,
-    // Fetches the account's eth balance by setting `token` to undefined
-    token:
-      activeToken.address === ETH_MAGIC_NUMBER
-        ? undefined
-        : activeToken.address,
-  });
-
-  const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
-    account,
-    spender: hyperdrive.address,
-    tokenAddress:
-      // Eth doesn't require an allowance, so use undefined to turn this hook off
-      activeToken.address === ETH_MAGIC_NUMBER
-        ? undefined
-        : activeToken.address,
-  });
-
-  // All tokens besides ETH require you to check that there is sufficient allowance
-  const isActiveTokenApprovalRequired =
-    activeToken.address !== ETH_MAGIC_NUMBER;
-
-  return {
-    activeToken,
-    activeTokenType,
-    activeTokenAllowance,
-    setActiveTokenType,
-    activeTokenBalance,
-    isActiveTokenApprovalRequired,
-  };
 }
