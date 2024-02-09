@@ -189,7 +189,6 @@ export default function ApproveTokenButton({
             <button
               disabled={isCustomAmountExceedingBalance}
               onClick={() => {
-                // Close modal and approve token here
                 approve?.();
               }}
               className="daisy-btn daisy-btn-circle daisy-btn-warning relative mt-4 w-full"

@@ -33,7 +33,7 @@ export function TokenInput({
   name,
   onChange,
   maxValue,
-  inputLabel,
+  inputLabel = "Enter amount",
   stat,
   hasError = false,
   disabled = false,
