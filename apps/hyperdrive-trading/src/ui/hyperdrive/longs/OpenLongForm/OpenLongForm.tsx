@@ -173,7 +173,13 @@ export function OpenLongForm({
           !hasEnoughAllowance &&
           getHasEnoughBalance({ activeTokenBalance, amountAsBigInt }) ? (
             // Approval button
-            <ApproveToken activeToken={activeToken} approve={approve} />
+            <ApproveToken
+              hyperdrive={hyperdrive}
+              activeToken={activeToken}
+              isActiveTokenApprovalRequired={isActiveTokenApprovalRequired}
+              amountAsBigInt={amountAsBigInt}
+              approve={approve}
+            />
           ) : (
             // Open Long button
             <button
