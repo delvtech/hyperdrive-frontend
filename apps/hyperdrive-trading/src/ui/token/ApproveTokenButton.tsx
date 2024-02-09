@@ -14,11 +14,11 @@ import { Modal } from "src/ui/base/components/Modal/Modal";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
-import { TokenInput } from "./TokenInput";
+import { TokenInput } from "src/ui/token/TokenInput";
 export default function ApproveTokenButton({
+  hyperdrive,
   amountAsBigInt,
   amount,
-  hyperdrive,
   activeToken,
   isActiveTokenApprovalRequired,
   activeTokenBalance,
@@ -74,7 +74,7 @@ export default function ApproveTokenButton({
   return (
     <>
       <button
-        className="daisy-btn daisy-btn-circle daisy-btn-warning relative w-full transition-none"
+        className="daisy-btn daisy-btn-circle daisy-btn-warning relative w-full"
         onClick={(e) => {
           // Do this so we don't close the modal
           e.preventDefault();
@@ -97,7 +97,7 @@ export default function ApproveTokenButton({
       <Modal
         modalId="approve_token"
         modalContent={
-          <div className="">
+          <>
             <div className="flex items-center justify-between">
               <button
                 className="daisy-btn daisy-btn-circle daisy-btn-ghost no-animation daisy-btn-sm absolute right-4 top-4 animate-none"
@@ -107,19 +107,19 @@ export default function ApproveTokenButton({
               </button>
               <div className="flex flex-col items-start">
                 <h5 className="mb-2 font-bold">Approve Tokens</h5>
-                <p className="flex max-w-[250px] text-left text-gray-400">
+                <p className="flex max-w-[250px] text-left text-sm text-gray-400">
                   Set a maximum number of tokens to approve for this
                   transaction.
                 </p>
               </div>
             </div>
             <div className="mt-4">
-              <div className="daisy-form-control ">
+              <div className="daisy-form-control">
                 <label className="daisy-label my-2 cursor-pointer">
                   <input
                     type="radio"
                     name="radio-unlimited"
-                    className="checked:bg-red-500 daisy-radio"
+                    className="daisy-radio"
                     checked={selectedOption === "Unlimited"}
                     onChange={() => {
                       setSelectedOption("Unlimited");
@@ -136,7 +136,7 @@ export default function ApproveTokenButton({
                   <input
                     type="radio"
                     name="radio-depositing"
-                    className="checked:bg-blue-500 daisy-radio"
+                    className="daisy-radio"
                     checked={selectedOption === "Depositing"}
                     onChange={() => {
                       setSelectedOption("Depositing");
@@ -153,13 +153,11 @@ export default function ApproveTokenButton({
                   <input
                     type="radio"
                     name="radio-custom"
-                    className="checked:bg-blue-500 daisy-radio"
+                    className="daisy-radio"
                     checked={selectedOption === "Custom"}
                     onChange={() => {
                       setSelectedOption("Custom");
                       setApprovedAmount(customAmountAsBigInt ?? 0n);
-                      // For custom, don't immediately set `approvedAmount` here
-                      // It will be set in the TokenInput's onChange handler
                     }}
                   />
                   <span className="daisy-label-text ml-2 flex w-full">
@@ -168,7 +166,6 @@ export default function ApproveTokenButton({
                       token={<></>}
                       onChange={(newApprovedAmount) => {
                         setAmount(newApprovedAmount);
-
                         setSelectedOption("Custom");
                       }}
                       name={activeToken.symbol}
@@ -205,7 +202,7 @@ export default function ApproveTokenButton({
                 Insufficient balance
               </p>
             )}
-          </div>
+          </>
         }
       />
     </>
