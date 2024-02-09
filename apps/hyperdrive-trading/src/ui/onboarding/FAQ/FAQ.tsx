@@ -29,7 +29,7 @@ export function FAQEntries(): JSX.Element {
           <Disclosure
             key={faq.question}
             title={<span className="text-h5">{faq.question}</span>}
-            description={<div className="">{faq.answer}</div>}
+            description={faq.answer}
           />
         ))}
       </div>
