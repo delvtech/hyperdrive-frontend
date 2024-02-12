@@ -1,9 +1,8 @@
 import { Long } from "@hyperdrive/sdk";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useRef } from "react";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-import { Address } from "wagmi";
+import { Address, usePublicClient } from "wagmi";
 interface UseCloseLongOptions {
   hyperdriveAddress: Address;
   long: Long | undefined;
@@ -31,9 +30,9 @@ export function useCloseLong({
   onExecuted,
 }: UseCloseLongOptions): UseCloseLongResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
-  const submittedHashRef = useRef<string | undefined>(undefined);
   const mutationEnabled =
     !!long &&
     !!bondAmountIn &&
@@ -45,24 +44,20 @@ export function useCloseLong({
   const { mutate: closeLong, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        await readWriteHyperdrive.closeLong({
+        const hash = await readWriteHyperdrive.closeLong({
           bondAmountIn,
           minBaseAmountOut,
           destination,
           asBase,
           long,
-          options: {
-            onSubmitted(hash) {
-              submittedHashRef.current = hash;
-              addTransaction({
-                hash,
-                description: "Close Long",
-              });
-            },
-          },
         });
+        addTransaction({
+          hash,
+          description: "Close Long",
+        });
+        await publicClient.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
-        onExecuted?.(submittedHashRef.current);
+        onExecuted?.(hash);
       }
     },
   });

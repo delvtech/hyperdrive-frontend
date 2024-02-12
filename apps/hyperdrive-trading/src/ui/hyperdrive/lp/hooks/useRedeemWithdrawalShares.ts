@@ -6,7 +6,7 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { Address } from "wagmi";
+import { Address, usePublicClient } from "wagmi";
 interface UseRedeemWithdrawalSharesOptions {
   hyperdriveAddress: Address;
   withdrawalSharesIn: bigint | undefined;
@@ -30,6 +30,7 @@ export function useRedeemWithdrawalShares({
   enabled,
 }: UseRedeemWithdrawalSharesOptions): UseRedeemWithdrawalSharesResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
   const mutationEnabled =
@@ -42,20 +43,17 @@ export function useRedeemWithdrawalShares({
   const { mutate: redeemWithdrawalShares, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        await readWriteHyperdrive.redeemWithdrawalShares({
+        const hash = await readWriteHyperdrive.redeemWithdrawalShares({
           withdrawalSharesIn,
           minBaseAmountOutPerShare,
           destination,
           asBase,
-          options: {
-            onSubmitted(hash) {
-              addTransaction({
-                hash,
-                description: "Redeem Withdrawal Shares",
-              });
-            },
-          },
         });
+        addTransaction({
+          hash,
+          description: "Redeem Withdrawal Shares",
+        });
+        await publicClient.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
       }
     },

@@ -3,7 +3,6 @@ export { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
 export { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
 
 export type {
-  IHyperdriveContract,
   IReadHyperdriveContract,
   IReadWriteHyperdriveContract,
 } from "src/hyperdrive/HyperdriveContract";

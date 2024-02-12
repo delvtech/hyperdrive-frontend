@@ -4,9 +4,8 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { useRef } from "react";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-import { Address } from "wagmi";
+import { Address, usePublicClient } from "wagmi";
 
 interface UseOpenShortOptions {
   hyperdriveAddress: Address;
@@ -36,9 +35,9 @@ export function useOpenShort({
   onExecuted,
 }: UseOpenShortOptions): UseOpenShortResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
-  const submittedHashRef = useRef<string | undefined>(undefined);
   const mutationEnabled =
     !!amountBondShorts &&
     !!maxBaseAmountIn &&
@@ -50,24 +49,20 @@ export function useOpenShort({
   const { mutate: openShort, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        await readWriteHyperdrive.openShort({
+        const hash = await readWriteHyperdrive.openShort({
           bondAmount: amountBondShorts,
           destination,
           minSharePrice,
           maxDeposit: maxBaseAmountIn,
           asBase,
-          options: {
-            onSubmitted: (hash) => {
-              submittedHashRef.current = hash;
-              addTransaction({
-                hash,
-                description: "Open Short",
-              });
-            },
-          },
         });
+        addTransaction({
+          hash,
+          description: "Open Short",
+        });
+        await publicClient.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
-        onExecuted?.(submittedHashRef.current);
+        onExecuted?.(hash);
       }
     },
   });

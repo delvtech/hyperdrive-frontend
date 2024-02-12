@@ -1,7 +1,7 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
-import { FunctionReturnType } from "@hyperdrive/evm-client";
+import { FunctionReturn } from "@delvtech/evm-client";
 
-export type MarketState = FunctionReturnType<
+export type MarketState = FunctionReturn<
   typeof IHyperdrive.abi,
   "getMarketState"
->[0];
+>;

@@ -1,11 +1,11 @@
 import { Address } from "abitype";
 import {
-  ContractEvent,
+  Event,
   ContractGetEventsOptions,
   ContractReadOptions,
   ContractWriteOptions,
-  INetwork,
-} from "@hyperdrive/evm-client";
+  Network,
+} from "@delvtech/evm-client";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBigInt";
@@ -33,12 +33,13 @@ import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { hyperwasm } from "src/hyperwasm";
+import { getBlockOrThrow } from "src/evm-client/getBlockOrThrow";
 
 const HyperdriveABI = IHyperdrive.abi;
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
-  network: INetwork;
+  network: Network;
 }
 
 export interface IReadHyperdrive {
@@ -351,7 +352,7 @@ export interface IReadHyperdrive {
 
 export class ReadHyperdrive implements IReadHyperdrive {
   protected readonly contract: IReadHyperdriveContract;
-  protected readonly network: INetwork;
+  protected readonly network: Network;
 
   /**
    * @hidden
@@ -360,59 +361,43 @@ export class ReadHyperdrive implements IReadHyperdrive {
     this.contract = contract;
     this.network = network;
   }
-  async getCheckpoint({
+
+  getCheckpoint({
     checkpointId,
     options,
   }: {
     checkpointId: bigint;
     options?: ContractReadOptions | undefined;
   }): ReturnType<IReadHyperdrive, "getCheckpoint"> {
-    const [checkpoint] = await this.contract.read(
-      "getCheckpoint",
-      [checkpointId],
-      options,
-    );
-    return checkpoint;
+    return this.contract.read("getCheckpoint", checkpointId, options);
   }
 
-  async getCheckpointExposure({
+  getCheckpointExposure({
     checkpointId,
     options,
   }: {
     checkpointId: bigint;
     options?: ContractReadOptions | undefined;
   }): ReturnType<IReadHyperdrive, "getCheckpointExposure"> {
-    const [exposure] = await this.contract.read(
-      "getCheckpointExposure",
-      [checkpointId],
-      options,
-    );
-    return exposure;
+    return this.contract.read("getCheckpointExposure", checkpointId, options);
   }
 
-  async getMarketState(
+  getMarketState(
     options?: ContractReadOptions,
   ): ReturnType<IReadHyperdrive, "getMarketState"> {
-    const [marketState] = await this.contract.read(
-      "getMarketState",
-      [],
-      options,
-    );
-    return marketState;
+    return this.contract.read("getMarketState", undefined, options);
   }
 
-  async getPoolConfig(
+  getPoolConfig(
     options?: ContractReadOptions,
   ): ReturnType<IReadHyperdrive, "getPoolConfig"> {
-    const [poolConfig] = await this.contract.read("getPoolConfig", [], options);
-    return poolConfig;
+    return this.contract.read("getPoolConfig", undefined, options);
   }
 
-  async getPoolInfo(
+  getPoolInfo(
     options?: ContractReadOptions,
   ): ReturnType<IReadHyperdrive, "getPoolInfo"> {
-    const [poolInfo] = await this.contract.read("getPoolInfo", [], options);
-    return poolInfo;
+    return this.contract.read("getPoolInfo", undefined, options);
   }
 
   async getSpotRate(
@@ -470,7 +455,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const isCheckpointMature =
       checkpointId + positionDuration <
       getCheckpointId(
-        (await this.network.getBlock()).timestamp,
+        (await getBlockOrThrow(this.network)).timestamp,
         checkpointDuration,
       );
 
@@ -550,13 +535,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
   private async getOpenLongEvents(
     options?: ContractGetEventsOptions<typeof HyperdriveABI, "OpenLong">,
-  ): Promise<ContractEvent<typeof HyperdriveABI, "OpenLong">[]> {
+  ): Promise<Event<typeof HyperdriveABI, "OpenLong">[]> {
     return this.contract.getEvents("OpenLong", options);
   }
 
   private async getOpenShortEvents(
     options?: ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">,
-  ): Promise<ContractEvent<typeof HyperdriveABI, "OpenShort">[]> {
+  ): Promise<Event<typeof HyperdriveABI, "OpenShort">[]> {
     return this.contract.getEvents("OpenShort", options);
   }
 
@@ -848,7 +833,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
         continue;
       }
 
-      const { timestamp } = await this.network.getBlock({ blockNumber });
+      const { timestamp } = await getBlockOrThrow(this.network, {
+        blockNumber,
+      });
       closedShortsById[assetId] = {
         hyperdriveAddress: this.contract.address,
         assetId: eventData.id,
@@ -893,7 +880,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
       blockNumber,
     } of transferInEvents) {
       const assetId = eventData.id.toString();
-      const { timestamp } = await this.network.getBlock({ blockNumber });
+      const { timestamp } = await getBlockOrThrow(this.network, {
+        blockNumber,
+      });
 
       if (openShortsById[assetId]) {
         openShortsById[assetId].bondAmount += eventData.value;
@@ -950,7 +939,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
           baseAmountPaid: 0n, // TODO: Remove this field, this is copy/paste from @hyperdrive/queries
           maturity: decoded.timestamp,
           closedTimestamp: (
-            await this.network.getBlock({
+            await getBlockOrThrow(this.network, {
               blockNumber: event.blockNumber,
             })
           ).timestamp,
@@ -983,7 +972,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
         const decoded = decodeAssetFromTransferSingleEventData(
           event.data as `0x${string}`,
         );
-        const { timestamp } = await this.network.getBlock({
+        const { timestamp } = await getBlockOrThrow(this.network, {
           blockNumber: event.blockNumber,
         });
         return {
@@ -1006,7 +995,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const poolInfo = await this.getPoolInfo(options);
     const poolConfig = await this.getPoolConfig(options);
 
-    const { timestamp: blockTimestamp } = await this.network.getBlock(options);
+    const { timestamp: blockTimestamp } = await getBlockOrThrow(
+      this.network,
+      options,
+    );
     const checkpointId = getCheckpointId(
       blockTimestamp,
       poolConfig.checkpointDuration,
@@ -1047,7 +1039,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const poolInfo = await this.getPoolInfo(options);
     const poolConfig = await this.getPoolConfig(options);
 
-    const { timestamp: blockTimestamp } = await this.network.getBlock(options);
+    const { timestamp: blockTimestamp } = await getBlockOrThrow(
+      this.network,
+      options,
+    );
     const checkpointId = getCheckpointId(
       blockTimestamp,
       poolConfig.checkpointDuration,
@@ -1078,29 +1073,24 @@ export class ReadHyperdrive implements IReadHyperdrive {
     };
   }
 
-  async getLpSharesTotalSupply(args?: {
+  getLpSharesTotalSupply(args?: {
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getLpSharesTotalSupply"> {
-    const [totalSupply] = await this.contract.read(
-      "totalSupply",
-      [LP_ASSET_ID],
-      args?.options,
-    );
-    return totalSupply;
+    return this.contract.read("totalSupply", LP_ASSET_ID, args?.options);
   }
-  async getLpShares({
+
+  getLpShares({
     account,
     options,
   }: {
     account: Address;
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getLpShares"> {
-    const [lpShares] = await this.contract.read(
+    return this.contract.read(
       "balanceOf",
-      [LP_ASSET_ID, account],
+      { tokenId: LP_ASSET_ID, owner: account },
       options,
     );
-    return lpShares;
   }
 
   async getClosedLpShares({
@@ -1126,7 +1116,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
           baseAmount,
           withdrawalShareAmount,
           closedTimestamp: (
-            await this.network.getBlock({
+            await getBlockOrThrow(this.network, {
               blockNumber,
             })
           ).timestamp,
@@ -1135,19 +1125,18 @@ export class ReadHyperdrive implements IReadHyperdrive {
     );
   }
 
-  async getWithdrawalShares({
+  getWithdrawalShares({
     account,
     options,
   }: {
     account: Address;
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getWithdrawalShares"> {
-    const [balanceOf] = await this.contract.read(
+    return this.contract.read(
       "balanceOf",
-      [WITHDRAW_SHARES_ASSET_ID, account],
+      { tokenId: WITHDRAW_SHARES_ASSET_ID, owner: account },
       options,
     );
-    return balanceOf;
   }
 
   async getRedeemedWithdrawalShares({
@@ -1172,8 +1161,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
           hyperdriveAddress: this.contract.address,
           withdrawalShareAmount,
           baseAmount,
-          redeemedTimestamp: (await this.network.getBlock({ blockNumber }))
-            .timestamp,
+          redeemedTimestamp: (
+            await getBlockOrThrow(this.network, { blockNumber })
+          ).timestamp,
         };
       }),
     );
@@ -1189,7 +1179,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const config = await this.getPoolConfig(options);
     const info = await this.getPoolInfo(options);
 
-    const { timestamp: blockTimestamp } = await this.network.getBlock(options);
+    const { timestamp: blockTimestamp } = await getBlockOrThrow(
+      this.network,
+      options,
+    );
     const checkpointId = getCheckpointId(
       blockTimestamp,
       config.checkpointDuration,
@@ -1217,7 +1210,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const config = await this.getPoolConfig(options);
     const info = await this.getPoolInfo(options);
 
-    const { timestamp: blockTimestamp } = await this.network.getBlock(options);
+    const { timestamp: blockTimestamp } = await getBlockOrThrow(
+      this.network,
+      options,
+    );
     const checkpointId = getCheckpointId(
       blockTimestamp,
       config.checkpointDuration,
@@ -1235,7 +1231,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     };
   }
 
-  async previewCloseLong({
+  previewCloseLong({
     maturityTime,
     bondAmountIn,
     minBaseAmountOut,
@@ -1252,20 +1248,19 @@ export class ReadHyperdrive implements IReadHyperdrive {
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadHyperdrive, "previewCloseLong"> {
-    const [closeLong] = await this.contract.simulateWrite(
+    return this.contract.simulateWrite(
       "closeLong",
-      [
-        maturityTime,
-        bondAmountIn,
-        minBaseAmountOut,
-        { destination, asBase, extraData },
-      ],
+      {
+        _maturityTime: maturityTime,
+        _bondAmount: bondAmountIn,
+        _minOutput: minBaseAmountOut,
+        _options: { destination, asBase, extraData },
+      },
       options,
     );
-    return closeLong;
   }
 
-  async previewCloseShort({
+  previewCloseShort({
     maturityTime,
     shortAmountIn,
     minBaseAmountOut,
@@ -1282,20 +1277,19 @@ export class ReadHyperdrive implements IReadHyperdrive {
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadHyperdrive, "previewCloseShort"> {
-    const [closeShort] = await this.contract.simulateWrite(
+    return this.contract.simulateWrite(
       "closeShort",
-      [
-        maturityTime,
-        shortAmountIn,
-        minBaseAmountOut,
-        { destination, asBase, extraData },
-      ],
+      {
+        _maturityTime: maturityTime,
+        _bondAmount: shortAmountIn,
+        _minOutput: minBaseAmountOut,
+        _options: { destination, asBase, extraData },
+      },
       options,
     );
-    return closeShort;
   }
 
-  async previewAddLiquidity({
+  previewAddLiquidity({
     contribution,
     minAPR,
     minLpSharePrice,
@@ -1314,18 +1308,17 @@ export class ReadHyperdrive implements IReadHyperdrive {
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadHyperdrive, "previewAddLiquidity"> {
-    const [lpShares] = await this.contract.simulateWrite(
+    return this.contract.simulateWrite(
       "addLiquidity",
-      [
-        contribution,
-        minLpSharePrice,
-        minAPR,
-        maxAPR,
-        { destination, asBase, extraData },
-      ],
+      {
+        _contribution: contribution,
+        _minLpSharePrice: minLpSharePrice,
+        _minApr: minAPR,
+        _maxApr: maxAPR,
+        _options: { destination, asBase, extraData },
+      },
       options,
     );
-    return lpShares;
   }
 
   async previewRemoveLiquidity({
@@ -1343,13 +1336,21 @@ export class ReadHyperdrive implements IReadHyperdrive {
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadHyperdrive, "previewRemoveLiquidity"> {
-    const [baseAmountOut, withdrawalSharesOut] =
+    const { baseProceeds, withdrawalShares } =
       await this.contract.simulateWrite(
         "removeLiquidity",
-        [lpSharesIn, minBaseAmountOut, { destination, asBase, extraData }],
+        {
+          _shares: lpSharesIn,
+          _minOutput: minBaseAmountOut,
+          _options: { destination, asBase, extraData },
+        },
         options,
       );
-    return { baseAmountOut, withdrawalSharesOut };
+    // TODO: Use same name from contract?
+    return {
+      baseAmountOut: baseProceeds,
+      withdrawalSharesOut: withdrawalShares,
+    };
   }
 
   async previewRedeemWithdrawalShares({
@@ -1367,15 +1368,15 @@ export class ReadHyperdrive implements IReadHyperdrive {
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadHyperdrive, "previewRedeemWithdrawalShares"> {
-    const [baseAmountOut, sharesRedeemed] = await this.contract.simulateWrite(
+    const { proceeds, sharesRedeemed } = await this.contract.simulateWrite(
       "redeemWithdrawalShares",
-      [
-        withdrawalSharesIn,
-        minBaseAmountOutPerShare,
-        { destination, asBase, extraData },
-      ],
+      {
+        _shares: withdrawalSharesIn,
+        _minOutput: minBaseAmountOutPerShare,
+        _options: { destination, asBase, extraData },
+      },
       options,
     );
-    return { baseAmountOut, sharesRedeemed };
+    return { baseAmountOut: proceeds, sharesRedeemed: sharesRedeemed };
   }
 }

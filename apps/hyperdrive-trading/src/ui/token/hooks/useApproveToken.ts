@@ -16,7 +16,7 @@ interface UseTokenApprovalOptions {
   enabled?: boolean;
 }
 
-export function useTokenApproval({
+export function useApproveToken({
   tokenAddress,
   spender,
   amount,

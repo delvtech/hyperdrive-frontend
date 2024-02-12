@@ -8,19 +8,23 @@ import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { MutationStatus } from "@tanstack/react-query";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
+import { MAX_UINT256 } from "src/base/constants";
+import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
-import { useActiveToken } from "src/ui/hyperdrive/hooks/useActiveToken";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import ApproveTokenButton from "src/ui/token/ApproveTokenButton";
+import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
+import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
+import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useAccount } from "wagmi";
@@ -34,17 +38,8 @@ export function OpenLongForm({
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
 
-  const {
-    activeToken,
-    activeTokenBalance,
-    activeTokenAllowance,
-    isActiveTokenApprovalRequired,
-    setActiveTokenType,
-  } = useActiveToken({
-    hyperdrive,
-    account,
-  });
   const appConfig = useAppConfig();
+
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
@@ -52,6 +47,24 @@ export function OpenLongForm({
   const sharesToken = findYieldSourceToken({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
+  });
+
+  const { activeToken, activeTokenBalance, setActiveToken } = useActiveToken({
+    account,
+    defaultActiveToken: baseToken.address,
+    tokens: [baseToken, sharesToken],
+  });
+
+  // All tokens besides ETH require you to check that there is sufficient allowance
+  const isActiveTokenApprovalRequired =
+    activeToken.address !== ETH_MAGIC_NUMBER;
+
+  const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
+    account,
+    spender: hyperdrive.address,
+    tokenAddress:
+      // Eth doesn't require an allowance, so use undefined to turn this hook off
+      isActiveTokenApprovalRequired ? undefined : activeToken.address,
   });
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
@@ -64,7 +77,13 @@ export function OpenLongForm({
     amount: amountAsBigInt,
   });
 
-  const { poolInfo } = usePoolInfo(hyperdrive.address);
+  const { approve } = useApproveToken({
+    tokenAddress: activeToken.address,
+    spender: hyperdrive.address,
+    amount: MAX_UINT256,
+    enabled: isActiveTokenApprovalRequired,
+  });
+
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
     hyperdriveAddress: hyperdrive.address,
     baseAmount: amountAsBigInt,
@@ -77,12 +96,14 @@ export function OpenLongForm({
       decimals: activeToken.decimals,
     });
 
+  const { poolInfo } = usePoolInfo(hyperdrive.address);
   const { openLong, openLongStatus } = useOpenLong({
     hyperdriveAddress: hyperdrive.address,
     baseAmount: amountAsBigInt,
     bondAmountOut: longAmountOutAfterSlippage,
     minSharePrice: poolInfo?.vaultSharePrice,
     destination: account,
+    asBase: activeToken.address === baseToken.address,
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onExecuted: (hash) => {
       setAmount("");
@@ -103,14 +124,10 @@ export function OpenLongForm({
           name={activeToken.symbol}
           token={
             <TokenPicker
-              tokens={[baseToken.symbol, sharesToken.symbol]}
-              activeToken={activeToken.symbol}
-              onChange={function (token: string): void {
-                if (token === sharesToken.symbol) {
-                  setActiveTokenType("sharesToken");
-                } else {
-                  setActiveTokenType("baseToken");
-                }
+              tokens={[baseToken, sharesToken]}
+              activeTokenAddress={activeToken.address}
+              onChange={(tokenAddress) => {
+                setActiveToken(tokenAddress);
                 setAmount("0");
               }}
             />

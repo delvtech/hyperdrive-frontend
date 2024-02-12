@@ -18,9 +18,8 @@
     "viem": "^1.19.15"
   },
   "devDependencies": {
+    "@delvtech/evm-client-viem": "^0.0.2",
     "@hyperdrive/artifacts": "*",
-    "@hyperdrive/evm-client": "*",
-    "@hyperdrive/evm-client-viem": "*",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/sdk": "*",
