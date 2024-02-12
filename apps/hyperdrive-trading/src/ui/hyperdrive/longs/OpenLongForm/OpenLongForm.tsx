@@ -2,6 +2,7 @@ import {
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
+  TokenConfig,
 } from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { MutationStatus } from "@tanstack/react-query";
@@ -164,9 +165,9 @@ export function OpenLongForm({
             // Approval button
             <ApproveTokenButton
               hyperdrive={hyperdrive}
-              activeToken={activeToken}
-              isActiveTokenApprovalRequired={isActiveTokenApprovalRequired}
-              activeTokenBalance={activeTokenBalance}
+              token={activeToken as TokenConfig}
+              isApprovalRequired={isActiveTokenApprovalRequired}
+              tokenBalance={activeTokenBalance}
               amountAsBigInt={amountAsBigInt}
               amount={amount}
             />

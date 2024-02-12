@@ -1,35 +1,27 @@
-import {
-  AdjustmentsHorizontalIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
-import {
-  EmptyExtensions,
-  HyperdriveConfig,
-  TokenConfig,
-  YieldSourceExtensions,
-} from "@hyperdrive/appconfig";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import { HyperdriveConfig, TokenConfig } from "@hyperdrive/appconfig";
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
-import { TokenPicker } from "./TokenPicker";
 export default function ApproveTokenButton({
   hyperdrive,
   amountAsBigInt,
   amount,
-  activeToken,
-  isActiveTokenApprovalRequired,
-  activeTokenBalance,
+  token,
+  isApprovalRequired,
+  tokenBalance,
 }: {
   hyperdrive: HyperdriveConfig;
   amountAsBigInt: bigint | undefined;
   amount: string | undefined;
-  activeToken: TokenConfig<EmptyExtensions | YieldSourceExtensions>;
-  isActiveTokenApprovalRequired: boolean;
-  activeTokenBalance:
+  token: TokenConfig;
+  isApprovalRequired: boolean;
+  tokenBalance:
     | {
         formatted: string;
         value: bigint;
@@ -40,13 +32,12 @@ export default function ApproveTokenButton({
     "Unlimited" | "FixedAmount" | "Custom"
   >("Unlimited");
   let approvedAmount = MAX_UINT256;
-
   const {
     amount: customAmount,
     amountAsBigInt: customAmountAsBigInt,
     setAmount,
   } = useNumericInput({
-    decimals: activeToken.decimals,
+    decimals: token.decimals,
   });
 
   switch (selectedOption) {
@@ -61,16 +52,11 @@ export default function ApproveTokenButton({
       break;
   }
   const { approve } = useTokenApproval({
-    tokenAddress: activeToken.address,
+    tokenAddress: token.address,
     spender: hyperdrive.address,
     amount: approvedAmount,
-    enabled: isActiveTokenApprovalRequired,
+    enabled: isApprovalRequired,
   });
-  const isCustomAmountExceedingBalance =
-    selectedOption === "Custom" &&
-    !!activeTokenBalance && // Ensure activeTokenBalance exists
-    !!customAmountAsBigInt && // Ensure customAmountAsBigInt is not undefined
-    customAmountAsBigInt > activeTokenBalance.value; // Compare values
 
   const modalId = `approve_token`;
   function closeModal() {
@@ -79,25 +65,15 @@ export default function ApproveTokenButton({
   return (
     <>
       <button
-        className="daisy-btn daisy-btn-circle daisy-btn-warning relative w-full"
         onClick={(e) => {
           // Do this so we don't close the modal
-          e.preventDefault();
-          approve?.();
-        }}
-      >
-        <h5>Approve {activeToken.symbol}</h5>
-        <button
-          onClick={(e) => {
-            // Do this so we don't close the modal
-            e.stopPropagation();
+          e.stopPropagation();
 
-            (window as any)[modalId].showModal();
-          }}
-          className="daisy-dropdown absolute right-4"
-        >
-          <AdjustmentsHorizontalIcon className="h-6 w-6" />
-        </button>
+          (window as any)[modalId].showModal();
+        }}
+        className="daisy-btn daisy-btn-circle daisy-btn-warning relative w-full"
+      >
+        <h5>Approve {token.symbol}</h5>
       </button>
       <Modal
         modalId="approve_token"
@@ -111,9 +87,9 @@ export default function ApproveTokenButton({
                 <XMarkIcon className="w-6 " title="Close position" />
               </button>
               <div className="flex flex-col items-start">
-                <h5 className="mb-2 font-bold">Approve {activeToken.symbol}</h5>
+                <h5 className="mb-2 font-bold">Approve {token.symbol}</h5>
                 <p className="flex max-w-[250px] text-left text-sm text-gray-400">
-                  Approve this market to spend your {activeToken.symbol}
+                  Approve this market to spend your {token.symbol}
                 </p>
               </div>
             </div>
@@ -130,7 +106,7 @@ export default function ApproveTokenButton({
                     }}
                   />
                   <span className="daisy-label-text ml-2 flex flex-1  text-left">
-                    Unlimited {activeToken.symbol}
+                    Unlimited {token.symbol}
                   </span>
                 </label>
               </div>
@@ -146,7 +122,7 @@ export default function ApproveTokenButton({
                     }}
                   />
                   <span className="daisy-label-text ml-2 flex flex-1  text-left">
-                    {amount} {activeToken.symbol}
+                    {amount} {token.symbol}
                   </span>
                 </label>
               </div>
@@ -166,8 +142,8 @@ export default function ApproveTokenButton({
                       // The active token that needs to be approved should already be selected so we don't need to show a token selector here.
                       token={
                         <TokenPicker
-                          tokens={[activeToken.symbol]}
-                          activeToken={activeToken.symbol}
+                          tokens={[token.symbol]}
+                          activeToken={token.symbol}
                           onChange={() => {}}
                         />
                       }
@@ -175,17 +151,17 @@ export default function ApproveTokenButton({
                         setAmount(newApprovedAmount);
                         setSelectedOption("Custom");
                       }}
-                      name={activeToken.symbol}
+                      name={token.symbol}
                       value={customAmount ?? ""}
-                      maxValue={activeTokenBalance?.formatted}
+                      maxValue={tokenBalance?.formatted}
                       inputLabel="Custom amount"
                       stat={
-                        activeTokenBalance
+                        tokenBalance
                           ? `Balance: ${formatBalance({
-                              balance: activeTokenBalance?.value,
-                              decimals: activeToken.decimals,
+                              balance: tokenBalance?.value,
+                              decimals: token.decimals,
                               places: 4,
-                            })} ${activeToken.symbol}`
+                            })} ${token.symbol}`
                           : undefined
                       }
                     />
@@ -199,7 +175,7 @@ export default function ApproveTokenButton({
               }}
               className="daisy-btn daisy-btn-circle daisy-btn-warning relative mt-4 w-full"
             >
-              <h5>Approve {activeToken.symbol}</h5>
+              <h5>Approve {token.symbol}</h5>
             </button>
           </>
         }
