@@ -1,6 +1,5 @@
 import {
   BoltIcon,
-  ChevronRightIcon,
   ClockIcon,
   SquaresPlusIcon,
 } from "@heroicons/react/24/outline";
@@ -50,13 +49,6 @@ export function PositionCards(): ReactElement {
           ]}
         />
       </div>
-      <a
-        href={"/markets"}
-        className="daisy-btn daisy-btn-circle daisy-btn-primary daisy-btn-md mt-8 w-60 justify-between gap-0 px-4"
-      >
-        <span className="ml-14">View Markets</span>
-        <ChevronRightIcon className="-left-8 h-4" />
-      </a>
     </div>
   );
 }

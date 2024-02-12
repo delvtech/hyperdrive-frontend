@@ -15,7 +15,7 @@ import {
   MarketTableRowData,
   useMarketRowData,
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
-import { ALL_MARKETS_ROUTE, MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
+import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { Address } from "viem";
 
 function formatMobileColumnData(row: MarketTableRowData) {
@@ -125,7 +125,6 @@ export function AllMarketsTableMobile(): ReactElement {
                     openOrClosed: "Open",
                     position: "Longs",
                   },
-                  from: ALL_MARKETS_ROUTE,
                   to: MARKET_DETAILS_ROUTE,
                 });
               }}

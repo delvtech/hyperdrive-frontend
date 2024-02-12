@@ -147,7 +147,6 @@ export default function ApproveTokenButton({
                       disabled={selectedOption !== "Custom"}
                       name={token.symbol}
                       value={customAmount ?? ""}
-                      maxValue={tokenBalance?.formatted}
                       inputLabel="Custom amount"
                       stat={
                         tokenBalance
