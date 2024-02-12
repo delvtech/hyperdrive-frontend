@@ -13,8 +13,9 @@ import { MAX_UINT256 } from "src/base/constants";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
-import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
+import { TokenPicker } from "./TokenPicker";
 export default function ApproveTokenButton({
   hyperdrive,
   amountAsBigInt,
@@ -127,7 +128,7 @@ export default function ApproveTokenButton({
                     }}
                   />
                   <span className="daisy-label-text ml-2 flex flex-1  text-left">
-                    Unlimited
+                    Unlimited {activeToken.symbol}
                   </span>
                 </label>
               </div>
@@ -144,7 +145,7 @@ export default function ApproveTokenButton({
                     }}
                   />
                   <span className="daisy-label-text ml-2 flex flex-1  text-left">
-                    {activeToken.symbol} Depositing {amount}
+                    {amount} {activeToken.symbol}
                   </span>
                 </label>
               </div>
@@ -163,7 +164,13 @@ export default function ApproveTokenButton({
                   <span className="daisy-label-text ml-2 flex w-full">
                     <TokenInput
                       // The active token that needs to be approved should already be selected so we don't need to show a token selector here.
-                      token={<></>}
+                      token={
+                        <TokenPicker
+                          tokens={[activeToken.symbol]}
+                          activeToken={activeToken.symbol}
+                          onChange={() => {}}
+                        />
+                      }
                       onChange={(newApprovedAmount) => {
                         setAmount(newApprovedAmount);
                         setSelectedOption("Custom");
@@ -171,7 +178,7 @@ export default function ApproveTokenButton({
                       name={activeToken.symbol}
                       value={customAmount ?? ""}
                       maxValue={activeTokenBalance?.formatted}
-                      inputLabel="Custom"
+                      inputLabel="Custom amount"
                       stat={
                         activeTokenBalance
                           ? `Balance: ${formatBalance({
@@ -187,7 +194,6 @@ export default function ApproveTokenButton({
               </div>
             </div>
             <button
-              disabled={isCustomAmountExceedingBalance}
               onClick={() => {
                 approve?.();
               }}
@@ -195,12 +201,6 @@ export default function ApproveTokenButton({
             >
               <h5>Approve {activeToken.symbol}</h5>
             </button>
-
-            {isCustomAmountExceedingBalance && (
-              <p className="text-center text-sm text-error">
-                Insufficient balance
-              </p>
-            )}
           </>
         }
       />

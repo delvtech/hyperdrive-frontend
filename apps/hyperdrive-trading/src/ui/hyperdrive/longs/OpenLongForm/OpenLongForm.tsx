@@ -7,20 +7,19 @@ import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { MutationStatus } from "@tanstack/react-query";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
-import { MAX_UINT256 } from "src/base/constants";
+import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { useActiveToken } from "src/ui/hyperdrive/hooks/useActiveToken";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import ApproveTokenButton from "src/ui/token/ApproveTokenButton";
-import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
-import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useAccount } from "wagmi";
@@ -52,13 +51,6 @@ export function OpenLongForm({
   const sharesToken = findYieldSourceToken({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
-  });
-
-  const { approve } = useTokenApproval({
-    tokenAddress: activeToken.address,
-    spender: hyperdrive.address,
-    amount: MAX_UINT256,
-    enabled: isActiveTokenApprovalRequired,
   });
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
@@ -156,13 +148,19 @@ export function OpenLongForm({
       }
       disclaimer={
         !!amountAsBigInt &&
-        !getHasEnoughBalance({ activeTokenBalance, amountAsBigInt }) ? (
+        !getHasEnoughBalance({
+          balance: activeTokenBalance,
+          amountAsBigInt,
+        }) ? (
           <p className="text-center text-sm text-error">Insufficient balance</p>
         ) : undefined
       }
       actionButton={
         account ? (
-          getHasEnoughBalance({ activeTokenBalance, amountAsBigInt }) ? (
+          getHasEnoughBalance({
+            balance: activeTokenBalance,
+            amountAsBigInt,
+          }) ? (
             // Approval button
             <ApproveTokenButton
               hyperdrive={hyperdrive}
@@ -210,32 +208,7 @@ function getIsOpenLongButtonDisabled({
     return true;
   }
 
-  return !getHasEnoughBalance({ activeTokenBalance, amountAsBigInt });
-}
-
-function getHasEnoughBalance({
-  activeTokenBalance,
-  amountAsBigInt,
-}: {
-  activeTokenBalance: { formatted: string; value: bigint } | undefined;
-  amountAsBigInt: bigint | undefined;
-}) {
-  // The trade isn't valid if you have no balance or no amount specified to
-  // trade
-  if (!activeTokenBalance || !amountAsBigInt) {
-    return false;
-  }
-
-  // You can't spend more than your current balance either
-  if (
-    activeTokenBalance &&
-    amountAsBigInt &&
-    activeTokenBalance.value < amountAsBigInt
-  ) {
-    return false;
-  }
-
-  return true;
+  return !getHasEnoughBalance({ balance: activeTokenBalance, amountAsBigInt });
 }
 
 export function getHasEnoughAllowance({
