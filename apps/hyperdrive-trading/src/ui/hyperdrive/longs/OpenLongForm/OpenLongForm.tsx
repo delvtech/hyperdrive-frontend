@@ -42,6 +42,7 @@ export function OpenLongForm({
 
   const {
     activeToken,
+    activeTokenType,
     activeTokenBalance,
     activeTokenAllowance,
     isActiveTokenApprovalRequired,
@@ -96,6 +97,7 @@ export function OpenLongForm({
     bondAmountOut: longAmountOutAfterSlippage,
     minSharePrice: poolInfo?.vaultSharePrice,
     destination: account,
+    asBase: activeTokenType === "baseToken",
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onExecuted: (hash) => {
       setAmount("");
@@ -118,7 +120,7 @@ export function OpenLongForm({
             <TokenPicker
               tokens={[baseToken.symbol, sharesToken.symbol]}
               activeToken={activeToken.symbol}
-              onChange={function (token: string): void {
+              onChange={(token) => {
                 if (token === sharesToken.symbol) {
                   setActiveTokenType("sharesToken");
                 } else {
