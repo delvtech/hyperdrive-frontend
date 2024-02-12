@@ -33,7 +33,7 @@ import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { hyperwasm } from "src/hyperwasm";
-import { getBlockOrThrow } from "src/evm-client/network/getBlockOrThrow";
+import { getBlockOrThrow } from "src/evm-client/getBlockOrThrow";
 
 const HyperdriveABI = IHyperdrive.abi;
 
