@@ -5,14 +5,14 @@
 import { Route as rootRoute } from "./ui/routes/__root";
 import { Route as IndexImport } from "./ui/routes/index";
 import { Route as MarketAddressImport } from "./ui/routes/market.$address";
+import { Route as MarketsImport } from "./ui/routes/markets";
 
 // Create/Update Routes
 
-// Removed this path because it's not actively used. This will be added back in when more markets are available.
-// const MarketsRoute = MarketsImport.update({
-//   path: "/markets",
-//   getParentRoute: () => rootRoute,
-// } as any);
+const MarketsRoute = MarketsImport.update({
+  path: "/markets",
+  getParentRoute: () => rootRoute,
+} as any);
 
 const IndexRoute = IndexImport.update({
   path: "/",
@@ -32,10 +32,10 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof IndexImport;
       parentRoute: typeof rootRoute;
     };
-    // "/markets": {
-    //   preLoaderRoute: typeof MarketsImport;
-    //   parentRoute: typeof rootRoute;
-    // };
+    "/markets": {
+      preLoaderRoute: typeof MarketsImport;
+      parentRoute: typeof rootRoute;
+    };
     "/market/$address": {
       preLoaderRoute: typeof MarketAddressImport;
       parentRoute: typeof rootRoute;
@@ -47,6 +47,6 @@ declare module "@tanstack/react-router" {
 
 export const routeTree = rootRoute.addChildren([
   IndexRoute,
-  // MarketsRoute,
+  MarketsRoute,
   MarketAddressRoute,
 ]);

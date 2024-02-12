@@ -190,18 +190,16 @@ export function AllMarketsTableDesktop(): ReactElement {
             <tr
               key={row.id}
               className="daisy-hover h-16 cursor-pointer border-b-0 text-gray-50"
-              // Add this back in when we have a route for the market details
-              // onClick={() => {
-              //   navigate({
-              //     params: { address: row.original.market.address },
-              //     search: {
-              //       openOrClosed: "Open",
-              //       position: "Longs",
-              //     },
-              //     from: ALL_MARKETS_ROUTE,
-              //     to: MARKET_DETAILS_ROUTE,
-              //   });
-              // }}
+              onClick={() => {
+                navigate({
+                  params: { address: row.original.market.address },
+                  search: {
+                    openOrClosed: "Open",
+                    position: "Longs",
+                  },
+                  to: MARKET_DETAILS_ROUTE,
+                });
+              }}
             >
               <>
                 {row.getVisibleCells().map((cell) => {
