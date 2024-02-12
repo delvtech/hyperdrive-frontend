@@ -6,8 +6,7 @@ import { Modal } from "src/ui/base/components/Modal/Modal";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenPicker } from "src/ui/token/TokenPicker";
-import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
+import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
 export default function ApproveTokenButton({
   hyperdrive,
   amountAsBigInt,
@@ -31,7 +30,6 @@ export default function ApproveTokenButton({
   const [selectedOption, setSelectedOption] = useState<
     "Unlimited" | "FixedAmount" | "Custom"
   >("Unlimited");
-  let approvedAmount = MAX_UINT256;
   const {
     amount: customAmount,
     amountAsBigInt: customAmountAsBigInt,
@@ -40,6 +38,7 @@ export default function ApproveTokenButton({
     decimals: token.decimals,
   });
 
+  let approvedAmount = MAX_UINT256;
   switch (selectedOption) {
     case "Unlimited":
       approvedAmount = MAX_UINT256;
@@ -51,7 +50,7 @@ export default function ApproveTokenButton({
       approvedAmount = customAmountAsBigInt ?? 0n;
       break;
   }
-  const { approve } = useTokenApproval({
+  const { approve } = useApproveToken({
     tokenAddress: token.address,
     spender: hyperdrive.address,
     amount: approvedAmount,
@@ -140,17 +139,12 @@ export default function ApproveTokenButton({
                   <span className="daisy-label-text ml-2 flex w-full">
                     <TokenInput
                       // The active token that needs to be approved should already be selected so we don't need to show a token selector here.
-                      token={
-                        <TokenPicker
-                          tokens={[token.symbol]}
-                          activeToken={token.symbol}
-                          onChange={() => {}}
-                        />
-                      }
+                      token={token.symbol}
                       onChange={(newApprovedAmount) => {
                         setAmount(newApprovedAmount);
                         setSelectedOption("Custom");
                       }}
+                      disabled={selectedOption !== "Custom"}
                       name={token.symbol}
                       value={customAmount ?? ""}
                       maxValue={tokenBalance?.formatted}
