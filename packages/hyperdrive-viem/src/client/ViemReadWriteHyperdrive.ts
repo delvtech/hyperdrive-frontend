@@ -1,9 +1,9 @@
-import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
-import { SimpleCache } from "@hyperdrive/evm-client";
 import {
-  ViemCachedReadWriteContract,
-  ViemNetwork,
-} from "@hyperdrive/evm-client-viem";
+  SimpleCache,
+  createCachedReadWriteContract,
+  createNetwork,
+} from "@delvtech/evm-client-viem";
+import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
 import { ReadWriteHyperdrive } from "@hyperdrive/sdk";
 import { Address, PublicClient, WalletClient } from "viem";
 
@@ -12,6 +12,10 @@ interface ViemReadWriteHyperdriveOptions {
   publicClient: PublicClient;
   walletClient: WalletClient;
   cache?: SimpleCache;
+  namespace?: string;
+  /**
+   * @deprecated Use `namespace` instead
+   */
   id?: string;
 }
 
@@ -21,18 +25,19 @@ export class ViemReadWriteHyperdrive extends ReadWriteHyperdrive {
     publicClient,
     walletClient,
     cache,
+    namespace,
     id,
   }: ViemReadWriteHyperdriveOptions) {
     super({
-      contract: new ViemCachedReadWriteContract({
+      contract: createCachedReadWriteContract({
         abi: IHyperdrive.abi,
         address,
         publicClient,
         walletClient,
         cache,
-        id,
+        namespace: namespace ?? id,
       }),
-      network: new ViemNetwork(publicClient),
+      network: createNetwork(publicClient),
     });
   }
 }

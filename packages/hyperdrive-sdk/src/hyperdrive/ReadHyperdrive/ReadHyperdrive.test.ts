@@ -15,8 +15,7 @@ test("getPoolConfig should return the PoolConfig from the contract as-is", async
   // stub out the contract call the sdk is going to make
   contract.stubRead({
     functionName: "getPoolConfig",
-    args: [],
-    value: [simplePoolConfig],
+    value: simplePoolConfig,
   });
 
   // The sdk should return the correct data
@@ -32,8 +31,7 @@ test("getPoolInfo should return the PoolInfo from the contract as-is", async () 
 
   contract.stubRead({
     functionName: "getPoolInfo",
-    args: [],
-    value: [simplePoolInfo],
+    value: simplePoolInfo,
   });
 
   const value = await readHyperdrive.getPoolInfo();
@@ -49,13 +47,11 @@ test("getFixedRate should get the fixed rate as-is", async () => {
   // calculateAPRFromReserves directly
   contract.stubRead({
     functionName: "getPoolConfig",
-    args: [],
-    value: [simplePoolConfig],
+    value: simplePoolConfig,
   });
   contract.stubRead({
     functionName: "getPoolInfo",
-    args: [],
-    value: [simplePoolInfo],
+    value: simplePoolInfo,
   });
 
   const value = await readHyperdrive.getSpotRate();
@@ -128,30 +124,28 @@ test("getShortAccruedYield should return the amount of yield a non-mature positi
   const { contract, network, readHyperdrive } = setupReadHyperdrive();
 
   network.stubGetBlock({
-    value: Promise.resolve({ blockNumber: 1n, timestamp: 100n }),
+    value: { blockNumber: 1n, timestamp: 100n },
   });
 
   contract.stubRead({
     functionName: "getPoolConfig",
-    value: [
-      {
-        ...simplePoolConfig,
-        positionDuration: 86400n, // one day in seconds
-        checkpointDuration: 86400n, // one day in seconds
-      },
-    ],
+    value: {
+      ...simplePoolConfig,
+      positionDuration: 86400n, // one day in seconds
+      checkpointDuration: 86400n, // one day in seconds
+    },
   });
 
   // The pool info gives us the current price
   contract.stubRead({
     functionName: "getPoolInfo",
-    value: [{ ...simplePoolInfo, vaultSharePrice: dnum.from("1.01", 18)[0] }],
+    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.01", 18)[0] },
   });
 
   // The checkpoint gives us the price when the bond was opened
   contract.stubRead({
     functionName: "getCheckpoint",
-    value: [{ vaultSharePrice: dnum.from("1.008", 18)[0] }],
+    value: { vaultSharePrice: dnum.from("1.008", 18)[0] },
   });
 
   const accruedYield = await readHyperdrive.getShortAccruedYield({
@@ -170,31 +164,29 @@ test("getShortAccruedYield should return the amount of yield a mature position h
   const { network, contract, readHyperdrive } = setupReadHyperdrive();
 
   network.stubGetBlock({
-    value: Promise.resolve({ blockNumber: 1n, timestamp: 1699503565n }),
+    value: { blockNumber: 1n, timestamp: 1699503565n },
   });
   contract.stubRead({
     functionName: "getPoolConfig",
-    value: [
-      {
-        ...simplePoolConfig,
-        positionDuration: 86400n, // one day in seconds
-        checkpointDuration: 86400n, // one day in seconds
-      },
-    ],
+    value: {
+      ...simplePoolConfig,
+      positionDuration: 86400n, // one day in seconds
+      checkpointDuration: 86400n, // one day in seconds
+    },
   });
 
   // This checkpoint gives us the price when the short was opened
   contract.stubRead({
     functionName: "getCheckpoint",
-    args: [1n],
-    value: [{ vaultSharePrice: dnum.from("1.008", 18)[0] }],
+    args: 1n,
+    value: { vaultSharePrice: dnum.from("1.008", 18)[0] },
   });
 
   // This checkpoint gives us the price when the shorts matured
   contract.stubRead({
     functionName: "getCheckpoint",
-    args: [86401n],
-    value: [{ vaultSharePrice: dnum.from("1.01", 18)[0] }],
+    args: 86401n,
+    value: { vaultSharePrice: dnum.from("1.01", 18)[0] },
   });
 
   const accruedYield = await readHyperdrive.getShortAccruedYield({

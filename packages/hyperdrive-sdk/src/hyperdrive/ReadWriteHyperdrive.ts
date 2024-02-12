@@ -8,10 +8,7 @@ import {
 import { Long } from "src/longs/types";
 import { Short } from "src/shorts/types";
 import { ZERO_ADDRESS } from "src/base/numbers";
-import {
-  ContractWriteOptions,
-  ContractWriteOptionsWithCallback,
-} from "@hyperdrive/evm-client";
+import { ContractWriteOptions } from "@delvtech/evm-client";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { ReturnType } from "src/base/ReturnType";
 
@@ -20,13 +17,19 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * Allows anyone to mint a new checkpoint.
    * @param time - The time (in seconds) of the checkpoint to create.
    */
-  checkpoint(time: number, options?: ContractWriteOptions): Promise<void>;
+  checkpoint(
+    time: number,
+    options?: ContractWriteOptions,
+  ): Promise<`0x${string}`>;
 
   /**
    * Allows an authorized address to pause this contract
    * @param paused - True to pause all deposits and false to unpause them
    */
-  pause(paused: boolean, options?: ContractWriteOptions): Promise<void>;
+  pause(
+    paused: boolean,
+    options?: ContractWriteOptions,
+  ): Promise<`0x${string}`>;
 
   /**
    * Allows the first LP to initialize the market with a target APR.
@@ -47,7 +50,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
       asUnderlying?: boolean;
     },
     options?: ContractWriteOptions,
-  ): Promise<bigint>;
+  ): Promise<`0x${string}`>;
 
   /**
    * Opens a new long position.
@@ -70,8 +73,8 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     baseAmount: bigint;
     bondAmountOut: bigint;
     asUnderlying?: boolean;
-    options?: ContractWriteOptionsWithCallback;
-  }): Promise<{ maturityTime: bigint; bondProceeds: bigint }>;
+    options?: ContractWriteOptions;
+  }): Promise<`0x${string}`>;
 
   /**
    * Opens a new short position.
@@ -94,8 +97,8 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     bondAmount: bigint;
     maxDeposit: bigint;
     asUnderlying?: boolean;
-    options?: ContractWriteOptionsWithCallback;
-  }): Promise<{ maturityTime: bigint; traderDeposit: bigint }>;
+    options?: ContractWriteOptions;
+  }): Promise<`0x${string}`>;
 
   /**
    * Closes a long position.
@@ -120,8 +123,8 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     minBaseAmountOut: bigint;
     destination: Address;
     asUnderlying?: boolean;
-    options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint>;
+    options?: ContractWriteOptions;
+  }): Promise<`0x${string}`>;
 
   /**
    * Closes a short position.
@@ -146,8 +149,8 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     minBaseAmountOut: bigint;
     destination: Address;
     asUnderlying?: boolean;
-    options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint>;
+    options?: ContractWriteOptions;
+  }): Promise<`0x${string}`>;
 
   /**
    * Adds liquidity to the pool.
@@ -175,8 +178,8 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     minLpSharePrice: bigint;
     maxAPR: bigint;
     asUnderlying?: boolean;
-    options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint>;
+    options?: ContractWriteOptions;
+  }): Promise<`0x${string}`>;
 
   /**
    * Removes liquidity from the pool.
@@ -200,8 +203,8 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     lpSharesIn: bigint;
     minBaseAmountOut: bigint;
     asUnderlying?: boolean;
-    options?: ContractWriteOptionsWithCallback;
-  }): Promise<{ baseProceeds: bigint; withdrawShares: bigint }>;
+    options?: ContractWriteOptions;
+  }): Promise<`0x${string}`>;
 
   /**
    * Redeems withdrawal shares.
@@ -224,8 +227,8 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     minBaseAmountOutPerShare: bigint;
     destination: Address;
     asUnderlying?: boolean;
-    options?: ContractWriteOptionsWithCallback;
-  }): Promise<{ baseProceeds: bigint; sharesRedeemed: bigint }>;
+    options?: ContractWriteOptions;
+  }): Promise<`0x${string}`>;
 }
 
 export interface ReadWriteHyperdriveOptions extends ReadHyperdriveOptions {
@@ -243,18 +246,21 @@ export class ReadWriteHyperdrive
     this.contract = contract;
   }
 
-  async checkpoint(
+  checkpoint(
     time: number,
     options?: ContractWriteOptions,
-  ): Promise<void> {
-    this.contract.write("checkpoint", [BigInt(time)], options);
+  ): Promise<`0x${string}`> {
+    return this.contract.write("checkpoint", BigInt(time), options);
   }
 
-  async pause(paused: boolean, options?: ContractWriteOptions): Promise<void> {
-    this.contract.write("pause", [paused], options);
+  pause(
+    paused: boolean,
+    options?: ContractWriteOptions,
+  ): Promise<`0x${string}`> {
+    return this.contract.write("pause", paused, options);
   }
 
-  async initialize(
+  initialize(
     args: {
       contribution: bigint;
       apr: bigint;
@@ -263,21 +269,20 @@ export class ReadWriteHyperdrive
       extraData: `0x${string}`;
     },
     options?: ContractWriteOptions,
-  ): Promise<bigint> {
-    const [result] = await this.contract.write(
+  ): Promise<`0x${string}`> {
+    return this.contract.write(
       "initialize",
-      [
-        args.contribution,
-        args.apr,
-        {
+      {
+        _apr: args.apr,
+        _contribution: args.contribution,
+        _options: {
           destination: args.destination,
           asBase: args.asBase,
           extraData: args.extraData,
         },
-      ],
+      },
       options,
     );
-    return result;
   }
 
   async openLong({
@@ -295,24 +300,23 @@ export class ReadWriteHyperdrive
     minSharePrice: bigint;
     asBase?: boolean;
     extraData?: `0x${string}`;
-    options?: ContractWriteOptionsWithCallback;
+    options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "openLong"> {
     const { baseToken } = await this.getPoolConfig();
     const requiresEth = asBase && baseToken === ZERO_ADDRESS;
-    const [maturityTime, bondProceeds] = await this.contract.write(
+    return this.contract.write(
       "openLong",
-      [
-        baseAmount,
-        bondAmountOut,
-        minSharePrice,
-        { destination, asBase, extraData },
-      ],
+      {
+        _baseAmount: baseAmount,
+        _minOutput: bondAmountOut,
+        _minVaultSharePrice: minSharePrice,
+        _options: { destination, asBase, extraData },
+      },
       { value: requiresEth && baseAmount ? baseAmount : 0n, ...options },
     );
-    return { maturityTime, bondProceeds };
   }
 
-  async openShort({
+  openShort({
     destination,
     bondAmount,
     minSharePrice,
@@ -327,23 +331,22 @@ export class ReadWriteHyperdrive
     maxDeposit: bigint;
     asBase?: boolean;
     extraData?: `0x${string}`;
-    options?: ContractWriteOptionsWithCallback;
+    options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "openShort"> {
-    const [maturityTime, traderDeposit] = await this.contract.write(
+    return this.contract.write(
       "openShort",
-      [
-        bondAmount,
-        maxDeposit,
-        minSharePrice,
-        { destination, asBase, extraData },
-      ],
+      {
+        _bondAmount: bondAmount,
+        _maxDeposit: maxDeposit,
+        _minVaultSharePrice: minSharePrice,
+        _options: { destination, asBase, extraData },
+      },
       // TODO: Do we need to pass value here?
       { value: 0n, ...options },
     );
-    return { maturityTime, traderDeposit };
   }
 
-  async closeLong({
+  closeLong({
     long,
     bondAmountIn,
     minBaseAmountOut,
@@ -358,22 +361,21 @@ export class ReadWriteHyperdrive
     destination: Address;
     asBase?: boolean;
     extraData?: `0x${string}`;
-    options?: ContractWriteOptionsWithCallback;
+    options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "closeLong"> {
-    const [result] = await this.contract.write(
+    return this.contract.write(
       "closeLong",
-      [
-        long.maturity,
-        bondAmountIn,
-        minBaseAmountOut,
-        { destination, asBase, extraData },
-      ],
+      {
+        _maturityTime: long.maturity,
+        _bondAmount: bondAmountIn,
+        _minOutput: minBaseAmountOut,
+        _options: { destination, asBase, extraData },
+      },
       options,
     );
-    return result;
   }
 
-  async closeShort({
+  closeShort({
     short,
     bondAmountIn,
     minBaseAmountOut,
@@ -388,19 +390,18 @@ export class ReadWriteHyperdrive
     destination: Address;
     asBase?: boolean;
     extraData?: `0x${string}`;
-    options?: ContractWriteOptionsWithCallback;
+    options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "closeShort"> {
-    const [result] = await this.contract.write(
+    return this.contract.write(
       "closeShort",
-      [
-        short.maturity,
-        bondAmountIn,
-        minBaseAmountOut,
-        { destination, asBase, extraData },
-      ],
+      {
+        _maturityTime: short.maturity,
+        _bondAmount: bondAmountIn,
+        _minOutput: minBaseAmountOut,
+        _options: { destination, asBase, extraData },
+      },
       options,
     );
-    return result;
   }
 
   async addLiquidity({
@@ -420,28 +421,27 @@ export class ReadWriteHyperdrive
     maxAPR: bigint;
     asBase?: boolean;
     extraData?: `0x${string}`;
-    options?: ContractWriteOptionsWithCallback;
+    options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "addLiquidity"> {
     const { baseToken } = await this.getPoolConfig();
     const requiresEth = asBase && baseToken === ZERO_ADDRESS;
-    const [lpShares] = await this.contract.write(
+    return this.contract.write(
       "addLiquidity",
-      [
-        contribution,
-        minLpSharePrice,
-        minAPR,
-        maxAPR,
-        { destination, asBase, extraData },
-      ],
+      {
+        _contribution: contribution,
+        _minLpSharePrice: minLpSharePrice,
+        _minApr: minAPR,
+        _maxApr: maxAPR,
+        _options: { destination, asBase, extraData },
+      },
       {
         value: requiresEth && contribution ? contribution : 0n,
         ...options,
       },
     );
-    return lpShares;
   }
 
-  async removeLiquidity({
+  removeLiquidity({
     destination,
     lpSharesIn,
     minBaseAmountOut,
@@ -454,17 +454,20 @@ export class ReadWriteHyperdrive
     minBaseAmountOut: bigint;
     asBase?: boolean;
     extraData?: `0x${string}`;
-    options?: ContractWriteOptionsWithCallback;
+    options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "removeLiquidity"> {
-    const [baseProceeds, withdrawShares] = await this.contract.write(
+    return this.contract.write(
       "removeLiquidity",
-      [lpSharesIn, minBaseAmountOut, { destination, asBase, extraData }],
+      {
+        _shares: lpSharesIn,
+        _minOutput: minBaseAmountOut,
+        _options: { destination, asBase, extraData },
+      },
       options,
     );
-    return { baseProceeds, withdrawShares };
   }
 
-  async redeemWithdrawalShares({
+  redeemWithdrawalShares({
     withdrawalSharesIn,
     minBaseAmountOutPerShare,
     destination,
@@ -477,17 +480,16 @@ export class ReadWriteHyperdrive
     destination: Address;
     asBase?: boolean;
     extraData?: `0x${string}`;
-    options?: ContractWriteOptionsWithCallback;
+    options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "redeemWithdrawalShares"> {
-    const [baseProceeds, sharesRedeemed] = await this.contract.write(
+    return this.contract.write(
       "redeemWithdrawalShares",
-      [
-        withdrawalSharesIn,
-        minBaseAmountOutPerShare,
-        { destination, asBase, extraData },
-      ],
+      {
+        _shares: withdrawalSharesIn,
+        _minOutput: minBaseAmountOutPerShare,
+        _options: { destination, asBase, extraData },
+      },
       options,
     );
-    return { baseProceeds, sharesRedeemed };
   }
 }

@@ -6,8 +6,7 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { useRef } from "react";
-import { Address } from "wagmi";
+import { Address, usePublicClient } from "wagmi";
 interface UseAddLiquidityOptions {
   hyperdriveAddress: Address;
   destination: Address | undefined;
@@ -39,9 +38,9 @@ export function useAddLiquidity({
   onExecuted,
 }: UseAddLiquidityOptions): UseAddLiquidityResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
-  const submittedHashRef = useRef<string | undefined>(undefined);
   const mutationEnabled =
     !!contribution &&
     minAPR !== undefined &&
@@ -54,25 +53,21 @@ export function useAddLiquidity({
   const { mutate: addLiquidity, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        await readWriteHyperdrive.addLiquidity({
+        const hash = await readWriteHyperdrive.addLiquidity({
           contribution,
           minAPR,
           minLpSharePrice,
           maxAPR,
           destination,
           asBase,
-          options: {
-            onSubmitted(hash) {
-              submittedHashRef.current = hash;
-              addTransaction({
-                hash,
-                description: "Add Liquidity",
-              });
-            },
-          },
         });
+        addTransaction({
+          hash,
+          description: "Add Liquidity",
+        });
+        await publicClient.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
-        onExecuted?.(submittedHashRef.current);
+        onExecuted?.(hash);
       }
     },
   });

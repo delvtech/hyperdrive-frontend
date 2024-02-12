@@ -2,23 +2,15 @@ import { expect, test } from "vitest";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
 import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShares";
 import { simplePoolInfo } from "src/pool/testing/PoolInfo";
-import { setupReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/testing/setupReadHyperdrive";
 
 test("calculateLiquidity should return the liquidity for a given market", async () => {
-  const { contract, readHyperdrive } = setupReadHyperdrive();
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    args: [],
-    value: [simplePoolInfo],
-  });
-  const poolInfo = await readHyperdrive.getPoolInfo();
   const liquidity = calculateLiquidity({
-    lpSharePrice: poolInfo.lpSharePrice,
+    lpSharePrice: simplePoolInfo.lpSharePrice,
     shareReserves: calculateEffectiveShareReserves({
-      shareReserves: poolInfo.shareReserves,
-      shareAdjustment: poolInfo.shareAdjustment,
+      shareReserves: simplePoolInfo.shareReserves,
+      shareAdjustment: simplePoolInfo.shareAdjustment,
     }),
-    longsOutstanding: poolInfo.longsOutstanding,
+    longsOutstanding: simplePoolInfo.longsOutstanding,
     decimals: 18,
   });
 
