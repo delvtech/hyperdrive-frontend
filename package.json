@@ -30,8 +30,7 @@
     "typescript": "^5.0.2"
   },
   "resolutions": {
-    "typescript": "^5.0.2",
-    "viem": "^1.19.15"
+    "typescript": "^5.0.2"
   },
   "lint-staged": {
     "{apps,packages}/**/*.{gql,graphql,js,jsx,ts,tsx,json}": [

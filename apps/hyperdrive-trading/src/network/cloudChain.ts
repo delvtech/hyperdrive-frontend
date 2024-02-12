@@ -1,5 +1,4 @@
-import { Chain } from "wagmi";
-import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
+import { Chain } from "@wagmi/core/chains";
 
 const { VITE_CUSTOM_CHAIN_NODE_RPC_URL, VITE_CUSTOM_CHAIN_CHAIN_ID } =
   import.meta.env;
@@ -7,7 +6,6 @@ const { VITE_CUSTOM_CHAIN_NODE_RPC_URL, VITE_CUSTOM_CHAIN_CHAIN_ID } =
 export const cloudChain: Chain = {
   id: +VITE_CUSTOM_CHAIN_CHAIN_ID,
   name: "☁️ \u00A0 Chain",
-  network: "custom-chain",
   nativeCurrency: {
     decimals: 18,
     name: "Ether",
@@ -19,8 +17,8 @@ export const cloudChain: Chain = {
   },
 };
 
-export const cloudChainRpcProvider = jsonRpcProvider({
-  rpc: () => ({
-    http: VITE_CUSTOM_CHAIN_NODE_RPC_URL,
-  }),
-});
+// export const cloudChainRpcProvider = jsonRpcProvider({
+//   rpc: () => ({
+//     http: VITE_CUSTOM_CHAIN_NODE_RPC_URL,
+//   }),
+// });
