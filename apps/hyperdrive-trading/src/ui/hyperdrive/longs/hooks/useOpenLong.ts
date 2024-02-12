@@ -3,8 +3,7 @@ import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHype
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useRef } from "react";
-import { Address } from "wagmi";
+import { Address, usePublicClient } from "wagmi";
 
 interface UseOpenLongOptions {
   hyperdriveAddress: Address;
@@ -39,7 +38,7 @@ export function useOpenLong({
 }: UseOpenLongOptions): UseOpenLongResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const addTransaction = useAddRecentTransaction();
-  const submittedHashRef = useRef<string | undefined>(undefined);
+  const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const mutationEnabled =
     !!baseAmount &&
@@ -52,25 +51,20 @@ export function useOpenLong({
   const { mutate: openLong, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        await readWriteHyperdrive.openLong({
+        const hash = await readWriteHyperdrive.openLong({
           baseAmount,
           bondAmountOut,
           destination,
           minSharePrice,
           asBase,
-          options: {
-            onSubmitted: (hash) => {
-              submittedHashRef.current = hash;
-              addTransaction({
-                hash,
-                description: "Open Long",
-              });
-            },
-          },
         });
-
+        addTransaction({
+          hash,
+          description: "Open Long",
+        });
+        await publicClient.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
-        onExecuted?.(submittedHashRef.current);
+        onExecuted?.(hash);
       }
     },
   });

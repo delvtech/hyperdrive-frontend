@@ -6,8 +6,7 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { useRef } from "react";
-import { Address } from "wagmi";
+import { Address, usePublicClient } from "wagmi";
 interface UseRemoveLiquidityOptions {
   hyperdriveAddress: Address;
   lpSharesIn: bigint | undefined;
@@ -33,9 +32,9 @@ export function useRemoveLiquidity({
   onExecuted,
 }: UseRemoveLiquidityOptions): UseRemoveLiquidityResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
-  const submittedHashRef = useRef<string | undefined>(undefined);
   const mutationEnabled =
     !!lpSharesIn &&
     minBaseAmountOut !== undefined &&
@@ -46,23 +45,19 @@ export function useRemoveLiquidity({
   const { mutate: removeLiquidity, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        await readWriteHyperdrive.removeLiquidity({
+        const hash = await readWriteHyperdrive.removeLiquidity({
           lpSharesIn,
           minBaseAmountOut,
           destination,
           asBase,
-          options: {
-            onSubmitted(hash) {
-              submittedHashRef.current = hash;
-              addTransaction({
-                hash,
-                description: "Remove Liquidity",
-              });
-            },
-          },
         });
+        addTransaction({
+          hash,
+          description: "Remove Liquidity",
+        });
+        await publicClient.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
-        onExecuted?.(submittedHashRef.current);
+        onExecuted?.(hash);
       }
     },
   });
