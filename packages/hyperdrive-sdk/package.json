@@ -15,10 +15,13 @@
     "test:watch": "vitest --reporter=verbose",
     "typecheck": "tsc --noEmit"
   },
+  "peerDependencies": {
+    "@delvtech/evm-client": "^0.0.1"
+  },
   "devDependencies": {
+    "@delvtech/evm-client": "^0.0.1",
     "@hyperdrive/artifacts": "*",
     "@hyperdrive/eslint-config": "*",
-    "@hyperdrive/evm-client": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
     "@types/sinon": "^10.0.16",
