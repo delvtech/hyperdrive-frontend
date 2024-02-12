@@ -8,7 +8,7 @@ import {
   TokenConfig,
   YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -36,17 +36,10 @@ export default function ApproveTokenButton({
       }
     | undefined;
 }): JSX.Element {
-  const [approvedAmount, setApprovedAmount] = useState<bigint>(MAX_UINT256);
   const [selectedOption, setSelectedOption] = useState<
-    "Unlimited" | "Depositing" | "Custom"
+    "Unlimited" | "FixedAmount" | "Custom"
   >("Unlimited");
-
-  const { approve } = useTokenApproval({
-    tokenAddress: activeToken.address,
-    spender: hyperdrive.address,
-    amount: approvedAmount,
-    enabled: isActiveTokenApprovalRequired,
-  });
+  let approvedAmount = MAX_UINT256;
 
   const {
     amount: customAmount,
@@ -56,12 +49,23 @@ export default function ApproveTokenButton({
     decimals: activeToken.decimals,
   });
 
-  useEffect(() => {
-    if (selectedOption === "Custom") {
-      setApprovedAmount(customAmountAsBigInt ?? 0n);
-    }
-  }, [customAmountAsBigInt, selectedOption]);
-
+  switch (selectedOption) {
+    case "Unlimited":
+      approvedAmount = MAX_UINT256;
+      break;
+    case "FixedAmount":
+      approvedAmount = amountAsBigInt ?? 0n;
+      break;
+    case "Custom":
+      approvedAmount = customAmountAsBigInt ?? 0n;
+      break;
+  }
+  const { approve } = useTokenApproval({
+    tokenAddress: activeToken.address,
+    spender: hyperdrive.address,
+    amount: approvedAmount,
+    enabled: isActiveTokenApprovalRequired,
+  });
   const isCustomAmountExceedingBalance =
     selectedOption === "Custom" &&
     !!activeTokenBalance && // Ensure activeTokenBalance exists
@@ -107,10 +111,9 @@ export default function ApproveTokenButton({
                 <XMarkIcon className="w-6 " title="Close position" />
               </button>
               <div className="flex flex-col items-start">
-                <h5 className="mb-2 font-bold">Approve Tokens</h5>
+                <h5 className="mb-2 font-bold">Approve {activeToken.symbol}</h5>
                 <p className="flex max-w-[250px] text-left text-sm text-gray-400">
-                  Set a maximum number of tokens to approve for this
-                  transaction.
+                  Approve this market to spend your {activeToken.symbol}
                 </p>
               </div>
             </div>
@@ -124,7 +127,6 @@ export default function ApproveTokenButton({
                     checked={selectedOption === "Unlimited"}
                     onChange={() => {
                       setSelectedOption("Unlimited");
-                      setApprovedAmount(MAX_UINT256);
                     }}
                   />
                   <span className="daisy-label-text ml-2 flex flex-1  text-left">
@@ -138,10 +140,9 @@ export default function ApproveTokenButton({
                     type="radio"
                     name="radio-depositing"
                     className="daisy-radio"
-                    checked={selectedOption === "Depositing"}
+                    checked={selectedOption === "FixedAmount"}
                     onChange={() => {
-                      setSelectedOption("Depositing");
-                      setApprovedAmount(amountAsBigInt ?? 0n);
+                      setSelectedOption("FixedAmount");
                     }}
                   />
                   <span className="daisy-label-text ml-2 flex flex-1  text-left">
@@ -158,7 +159,6 @@ export default function ApproveTokenButton({
                     checked={selectedOption === "Custom"}
                     onChange={() => {
                       setSelectedOption("Custom");
-                      setApprovedAmount(customAmountAsBigInt ?? 0n);
                     }}
                   />
                   <span className="daisy-label-text ml-2 flex w-full">
