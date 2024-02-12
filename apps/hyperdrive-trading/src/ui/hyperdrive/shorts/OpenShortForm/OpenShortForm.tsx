@@ -11,8 +11,8 @@ import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
-import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { useAccount, useBalance } from "wagmi";
 
@@ -53,7 +53,7 @@ export function OpenShortForm({
     tokenAddress: baseToken.address,
   });
 
-  const { approve } = useTokenApproval({
+  const { approve } = useApproveToken({
     tokenAddress: baseToken.address,
     spender: hyperdrive.address,
     amount: MAX_UINT256,

@@ -4,16 +4,16 @@ import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { Address } from "viem";
 import { useBalance } from "wagmi";
 
-export function useActiveToken({
+export function useActiveToken<T1, T2>({
   account,
   tokens,
   defaultActiveToken,
 }: {
-  account: Address;
-  tokens: TokenConfig<any>[];
+  account: Address | undefined;
+  tokens: [TokenConfig<T1>, TokenConfig<T2>];
   defaultActiveToken: Address;
 }): {
-  activeToken: TokenConfig<any>;
+  activeToken: TokenConfig<T1 | T2>;
   activeTokenBalance:
     | {
         formatted: string;
@@ -26,7 +26,7 @@ export function useActiveToken({
 
   const activeToken = tokens.find(
     ({ address }) => address === activeTokenAddress,
-  ) as TokenConfig<any>;
+  ) as TokenConfig<T1 | T2>;
 
   const { data: activeTokenBalance } = useBalance({
     address: account,

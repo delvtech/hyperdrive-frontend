@@ -1,14 +1,11 @@
 import {
-  EmptyExtensions,
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
-  TokenConfig,
-  YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { MutationStatus } from "@tanstack/react-query";
-import { ReactElement, useState } from "react";
+import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
@@ -22,36 +19,24 @@ import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
+import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
-import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
-import { Address } from "viem";
-import { useAccount, useBalance } from "wagmi";
+import { useAccount } from "wagmi";
 
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
 }
-
-type DepositTokenType = "baseToken" | "sharesToken";
 
 export function OpenLongForm({
   hyperdrive: hyperdrive,
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
 
-  const {
-    activeToken,
-    activeTokenType,
-    activeTokenBalance,
-    activeTokenAllowance,
-    isActiveTokenApprovalRequired,
-    setActiveTokenType,
-  } = useActiveToken({
-    hyperdrive,
-    account,
-  });
   const appConfig = useAppConfig();
+
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
@@ -61,11 +46,22 @@ export function OpenLongForm({
     tokens: appConfig.tokens,
   });
 
-  const { approve } = useTokenApproval({
-    tokenAddress: activeToken.address,
+  const { activeToken, activeTokenBalance, setActiveToken } = useActiveToken({
+    account,
+    defaultActiveToken: baseToken.address,
+    tokens: [baseToken, sharesToken],
+  });
+
+  // All tokens besides ETH require you to check that there is sufficient allowance
+  const isActiveTokenApprovalRequired =
+    activeToken.address !== ETH_MAGIC_NUMBER;
+
+  const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
+    account,
     spender: hyperdrive.address,
-    amount: MAX_UINT256,
-    enabled: isActiveTokenApprovalRequired,
+    tokenAddress:
+      // Eth doesn't require an allowance, so use undefined to turn this hook off
+      isActiveTokenApprovalRequired ? undefined : activeToken.address,
   });
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
@@ -78,7 +74,13 @@ export function OpenLongForm({
     amount: amountAsBigInt,
   });
 
-  const { poolInfo } = usePoolInfo(hyperdrive.address);
+  const { approve } = useApproveToken({
+    tokenAddress: activeToken.address,
+    spender: hyperdrive.address,
+    amount: MAX_UINT256,
+    enabled: isActiveTokenApprovalRequired,
+  });
+
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
     hyperdriveAddress: hyperdrive.address,
     baseAmount: amountAsBigInt,
@@ -91,13 +93,14 @@ export function OpenLongForm({
       decimals: activeToken.decimals,
     });
 
+  const { poolInfo } = usePoolInfo(hyperdrive.address);
   const { openLong, openLongStatus } = useOpenLong({
     hyperdriveAddress: hyperdrive.address,
     baseAmount: amountAsBigInt,
     bondAmountOut: longAmountOutAfterSlippage,
     minSharePrice: poolInfo?.vaultSharePrice,
     destination: account,
-    asBase: activeTokenType === "baseToken",
+    asBase: activeToken.address === baseToken.address,
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onExecuted: (hash) => {
       setAmount("");
@@ -118,14 +121,10 @@ export function OpenLongForm({
           name={activeToken.symbol}
           token={
             <TokenPicker
-              tokens={[baseToken.symbol, sharesToken.symbol]}
-              activeToken={activeToken.symbol}
-              onChange={(token) => {
-                if (token === sharesToken.symbol) {
-                  setActiveTokenType("sharesToken");
-                } else {
-                  setActiveTokenType("baseToken");
-                }
+              tokens={[baseToken, sharesToken]}
+              activeTokenAddress={activeToken.address}
+              onChange={(tokenAddress) => {
+                setActiveToken(tokenAddress);
                 setAmount("0");
               }}
             />
@@ -273,71 +272,4 @@ function getHasEnoughAllowance({
 
   // Otherwise, you have enough allowance if it's greater than or equal to the amount you want to spend
   return activeTokenAllowance >= amount;
-}
-
-function useActiveToken({
-  hyperdrive,
-  account,
-}: {
-  hyperdrive: HyperdriveConfig;
-  account: Address | undefined;
-}): {
-  activeTokenType: DepositTokenType;
-  activeToken: TokenConfig<EmptyExtensions | YieldSourceExtensions>;
-  activeTokenAllowance: bigint | undefined;
-  activeTokenBalance:
-    | {
-        formatted: string;
-        value: bigint;
-      }
-    | undefined;
-  setActiveTokenType: (type: DepositTokenType) => void;
-  isActiveTokenApprovalRequired: boolean;
-} {
-  const appConfig = useAppConfig();
-  const [activeTokenType, setActiveTokenType] =
-    useState<DepositTokenType>("baseToken");
-
-  const activeToken =
-    activeTokenType === "baseToken"
-      ? findBaseToken({
-          baseTokenAddress: hyperdrive.baseToken,
-          tokens: appConfig.tokens,
-        })
-      : findYieldSourceToken({
-          yieldSourceTokenAddress: hyperdrive.sharesToken,
-          tokens: appConfig.tokens,
-        });
-
-  const { data: activeTokenBalance } = useBalance({
-    address: account,
-    // Fetches the account's eth balance by setting `token` to undefined
-    token:
-      activeToken.address === ETH_MAGIC_NUMBER
-        ? undefined
-        : activeToken.address,
-  });
-
-  const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
-    account,
-    spender: hyperdrive.address,
-    tokenAddress:
-      // Eth doesn't require an allowance, so use undefined to turn this hook off
-      activeToken.address === ETH_MAGIC_NUMBER
-        ? undefined
-        : activeToken.address,
-  });
-
-  // All tokens besides ETH require you to check that there is sufficient allowance
-  const isActiveTokenApprovalRequired =
-    activeToken.address !== ETH_MAGIC_NUMBER;
-
-  return {
-    activeToken,
-    activeTokenType,
-    activeTokenAllowance,
-    setActiveTokenType,
-    activeTokenBalance,
-    isActiveTokenApprovalRequired,
-  };
 }
