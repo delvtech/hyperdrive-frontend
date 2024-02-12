@@ -40,7 +40,7 @@ export function TokenInput({
   autoFocus = false,
 }: TokenInputProps): ReactElement {
   return (
-    <div className="flex flex-col">
+    <div className="flex w-full flex-col">
       <label className="daisy-label flex justify-between">
         <span className="daisy-label-text">{inputLabel}</span>
         {stat ? <span className="daisy-label-text">{stat}</span> : null}
@@ -48,7 +48,15 @@ export function TokenInput({
 
       <label className="daisy-join items-center">
         {typeof token === "string" ? (
-          <div className="daisy-join-item flex h-12 items-center border border-neutral-content/30 bg-base-100 px-4">
+          <div
+            className={classNames(
+              "daisy-join-item flex h-12 items-center border border-neutral-content/30 px-4",
+              {
+                "bg-base-100": !disabled,
+                "border-none opacity-20": disabled,
+              },
+            )}
+          >
             {token}
           </div>
         ) : (
@@ -78,7 +86,7 @@ export function TokenInput({
           placeholder="0"
           onChange={(event) => onChange(event.target.value)}
         />
-        {maxValue !== undefined ? (
+        {maxValue !== undefined && !disabled ? (
           <button
             className={classNames(
               "daisy-btn daisy-join-item border-b-neutral-content/30 border-l-base-100 border-r-neutral-content/30 border-t-neutral-content/30 bg-base-100 text-primary hover:border-b-neutral-content/30 hover:border-l-base-100 hover:border-r-neutral-content/30 hover:border-t-neutral-content/30 hover:bg-base-100 hover:underline active:hover:border-l-base-100",

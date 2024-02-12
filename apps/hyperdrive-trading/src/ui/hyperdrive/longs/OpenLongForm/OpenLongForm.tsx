@@ -2,6 +2,7 @@ import {
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
+  TokenConfig,
 } from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { MutationStatus } from "@tanstack/react-query";
@@ -9,6 +10,7 @@ import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
+import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
@@ -19,6 +21,7 @@ import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import ApproveTokenButton from "src/ui/token/ApproveTokenButton";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
@@ -163,26 +166,28 @@ export function OpenLongForm({
       }
       disclaimer={
         !!amountAsBigInt &&
-        !getHasEnoughBalance({ activeTokenBalance, amountAsBigInt }) ? (
+        !getHasEnoughBalance({
+          balance: activeTokenBalance,
+          amount: amountAsBigInt,
+        }) ? (
           <p className="text-center text-sm text-error">Insufficient balance</p>
         ) : undefined
       }
       actionButton={
         account ? (
-          // Only show the approve button if the trade would be valid
-          !hasEnoughAllowance &&
-          getHasEnoughBalance({ activeTokenBalance, amountAsBigInt }) ? (
+          getHasEnoughBalance({
+            balance: activeTokenBalance,
+            amount: amountAsBigInt,
+          }) ? (
             // Approval button
-            <button
-              className="daisy-btn daisy-btn-circle daisy-btn-warning w-full"
-              onClick={(e) => {
-                // Do this so we don't close the modal
-                e.preventDefault();
-                approve?.();
-              }}
-            >
-              <h5>Approve {activeToken.symbol}</h5>
-            </button>
+            <ApproveTokenButton
+              hyperdrive={hyperdrive}
+              token={activeToken as TokenConfig}
+              isApprovalRequired={isActiveTokenApprovalRequired}
+              tokenBalance={activeTokenBalance}
+              amountAsBigInt={amountAsBigInt}
+              amount={amount}
+            />
           ) : (
             // Open Long button
             <button
@@ -221,35 +226,13 @@ function getIsOpenLongButtonDisabled({
     return true;
   }
 
-  return !getHasEnoughBalance({ activeTokenBalance, amountAsBigInt });
+  return !getHasEnoughBalance({
+    balance: activeTokenBalance,
+    amount: amountAsBigInt,
+  });
 }
 
-function getHasEnoughBalance({
-  activeTokenBalance,
-  amountAsBigInt,
-}: {
-  activeTokenBalance: { formatted: string; value: bigint } | undefined;
-  amountAsBigInt: bigint | undefined;
-}) {
-  // The trade isn't valid if you have no balance or no amount specified to
-  // trade
-  if (!activeTokenBalance || !amountAsBigInt) {
-    return false;
-  }
-
-  // You can't spend more than your current balance either
-  if (
-    activeTokenBalance &&
-    amountAsBigInt &&
-    activeTokenBalance.value < amountAsBigInt
-  ) {
-    return false;
-  }
-
-  return true;
-}
-
-function getHasEnoughAllowance({
+export function getHasEnoughAllowance({
   isActiveTokenApprovalRequired,
   activeTokenAllowance,
   amount,
@@ -257,7 +240,7 @@ function getHasEnoughAllowance({
   isActiveTokenApprovalRequired: boolean;
   activeTokenAllowance: bigint | undefined;
   amount: bigint | undefined;
-}) {
+}): boolean {
   // You technically have enough allowance if none is needed, or you're trying
   // to spend 0 of the token
   if (!isActiveTokenApprovalRequired || !amount) {
