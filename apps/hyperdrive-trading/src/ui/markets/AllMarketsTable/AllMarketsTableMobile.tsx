@@ -15,7 +15,7 @@ import {
   MarketTableRowData,
   useMarketRowData,
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
-import { ALL_MARKETS_ROUTE, MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
+import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { Address } from "viem";
 
 function formatMobileColumnData(row: MarketTableRowData) {
@@ -118,17 +118,18 @@ export function AllMarketsTableMobile(): ReactElement {
             <tr
               key={row.id}
               className="daisy-hover h-16 cursor-pointer border-b-0 text-gray-50"
-              onClick={() => {
-                navigate({
-                  params: { address: row.original.market.address },
-                  search: {
-                    openOrClosed: "Open",
-                    position: "Longs",
-                  },
-                  from: ALL_MARKETS_ROUTE,
-                  to: MARKET_DETAILS_ROUTE,
-                });
-              }}
+              // Add this back in when we have a route for the market details
+              // onClick={() => {
+              //   navigate({
+              //     params: { address: row.original.market.address },
+              //     search: {
+              //       openOrClosed: "Open",
+              //       position: "Longs",
+              //     },
+              //     from: ALL_MARKETS_ROUTE,
+              //     to: MARKET_DETAILS_ROUTE,
+              //   });
+              // }}
             >
               <>
                 {row.getVisibleCells().map((cell) => {
