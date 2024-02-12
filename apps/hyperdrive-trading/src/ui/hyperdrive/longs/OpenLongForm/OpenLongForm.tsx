@@ -168,7 +168,7 @@ export function OpenLongForm({
         !!amountAsBigInt &&
         !getHasEnoughBalance({
           balance: activeTokenBalance,
-          amountAsBigInt,
+          amount: amountAsBigInt,
         }) ? (
           <p className="text-center text-sm text-error">Insufficient balance</p>
         ) : undefined
@@ -177,7 +177,7 @@ export function OpenLongForm({
         account ? (
           getHasEnoughBalance({
             balance: activeTokenBalance,
-            amountAsBigInt,
+            amount: amountAsBigInt,
           }) ? (
             // Approval button
             <ApproveTokenButton
@@ -226,7 +226,10 @@ function getIsOpenLongButtonDisabled({
     return true;
   }
 
-  return !getHasEnoughBalance({ balance: activeTokenBalance, amountAsBigInt });
+  return !getHasEnoughBalance({
+    balance: activeTokenBalance,
+    amount: amountAsBigInt,
+  });
 }
 
 export function getHasEnoughAllowance({
