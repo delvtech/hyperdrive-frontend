@@ -23,10 +23,10 @@
     "typecheck": "tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@delvtech/evm-client": "^0.0.2",
     "@heroicons/react": "^2.0.16",
     "@hyperdrive/artifacts": "*",
     "@hyperdrive/appconfig": "*",
-    "@hyperdrive/evm-client": "*",
     "@hyperdrive/sdk": "*",
     "@hyperdrive/sdk-viem": "*",
     "@rainbow-me/rainbowkit": "^1.3.0",
