@@ -1299,10 +1299,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@delvtech/evm-client@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.0.1.tgz#12fd99de463da7d7cc997e97fc5d1de1b859dec4"
-  integrity sha512-nVo2jDCwtFs1ZEo4r4H/4LA64itsieaX2zezxGbSM9adjZM7Tc62Aj9JXpxVchPWislAYFNyLITO9DtsRcx8yA==
+"@delvtech/evm-client@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.0.2.tgz#db4eb9a2b989bfad19c59c634baabd432bd0ba78"
+  integrity sha512-xree3GtpC0C5lJIEM/Ye5ekfPUgLiAI6XC9D3E6CVjIWzUMtELQaXdkhzyDTcZiHHK2Jt6TfgKDtCax4LQzcAw==
   dependencies:
     lru-cache "^10.0.1"
 

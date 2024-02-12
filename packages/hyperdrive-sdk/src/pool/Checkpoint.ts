@@ -1,12 +1,9 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
-import { ContractEvent, FunctionReturnType } from "@hyperdrive/evm-client";
+import { Event, FunctionReturn } from "@delvtech/evm-client";
 
-export type Checkpoint = FunctionReturnType<
+export type Checkpoint = FunctionReturn<
   typeof IHyperdrive.abi,
   "getCheckpoint"
->[0];
-
-export type CheckpointEvent = ContractEvent<
-  typeof IHyperdrive.abi,
-  "CreateCheckpoint"
 >;
+
+export type CheckpointEvent = Event<typeof IHyperdrive.abi, "CreateCheckpoint">;

@@ -1,18 +1,12 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
 import {
-  ICachedContract,
-  ICachedReadContract,
-  ICachedReadWriteContract,
-} from "@hyperdrive/evm-client";
+  CachedReadContract,
+  CachedReadWriteContract,
+} from "@delvtech/evm-client";
 
-export type IReadHyperdriveContract = ICachedReadContract<
+export type IReadHyperdriveContract = CachedReadContract<
   typeof IHyperdrive.abi
 >;
-export type IReadWriteHyperdriveContract = ICachedReadWriteContract<
+export type IReadWriteHyperdriveContract = CachedReadWriteContract<
   typeof IHyperdrive.abi
 >;
-
-/**
- * Represents a contract utilizing the Hyperdrive ABI that includes caching
- */
-export type IHyperdriveContract = ICachedContract<typeof IHyperdrive.abi>;
