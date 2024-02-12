@@ -12,8 +12,8 @@ import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/Ad
 import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
-import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { useAccount, useBalance } from "wagmi";
 
@@ -46,7 +46,7 @@ export function AddLiquidityForm({
     tokenAddress: baseToken.address,
   });
 
-  const { approve } = useTokenApproval({
+  const { approve } = useApproveToken({
     tokenAddress: baseToken.address,
     spender: hyperdrive.address,
     amount: MAX_UINT256,
