@@ -7,6 +7,7 @@ import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
+import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
@@ -70,6 +71,10 @@ export function OpenLongForm({
     allowance: activeTokenAllowance,
     amount: amountAsBigInt,
   });
+  const hasEnoughBalance = getHasEnoughBalance({
+    balance: activeTokenBalance,
+    amount: amountAsBigInt,
+  });
 
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
     hyperdriveAddress: hyperdrive.address,
@@ -102,11 +107,6 @@ export function OpenLongForm({
         />,
       );
     },
-  });
-
-  const hasEnoughBalance = getHasEnoughBalance({
-    balance: activeTokenBalance,
-    amount: amountAsBigInt,
   });
 
   return (
@@ -182,7 +182,6 @@ export function OpenLongForm({
             <ApproveTokenButton
               spender={hyperdrive.address}
               token={activeToken}
-              isApprovalRequired={requiresAllowance}
               tokenBalance={activeTokenBalance}
               amountAsBigInt={amountAsBigInt}
               amount={amount}
@@ -202,30 +201,4 @@ export function OpenLongForm({
       })()}
     />
   );
-}
-
-function getHasEnoughAllowance({
-  allowance,
-  amount,
-  requiresAllowance,
-}: {
-  allowance: bigint | undefined;
-  amount: bigint | undefined;
-  requiresAllowance: boolean;
-}): boolean {
-  // You technically have enough allowance if none is required by the token
-  // standard (eg: eth shim token doesn't require allowance) or you're trying
-  // to spend 0 tokens
-  if (!amount || !requiresAllowance) {
-    return true;
-  }
-
-  // If you're trying to spend a non-zero amount, and we don't know your current
-  // token allowance yet, then you don't have enough allowance.
-  if (!allowance) {
-    return false;
-  }
-
-  // Otherwise, you have enough allowance if it's greater than or equal to the amount you want to spend
-  return allowance >= amount;
 }

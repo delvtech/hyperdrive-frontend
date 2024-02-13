@@ -2,6 +2,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { TokenConfig } from "@hyperdrive/appconfig";
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
+import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -13,14 +14,12 @@ export default function ApproveTokenButton({
   amountAsBigInt,
   amount,
   token,
-  isApprovalRequired,
   tokenBalance,
 }: {
   spender: Address | undefined;
   amountAsBigInt: bigint | undefined;
   amount: string | undefined;
   token: TokenConfig<any>;
-  isApprovalRequired: boolean;
   tokenBalance:
     | {
         formatted: string;
@@ -55,7 +54,7 @@ export default function ApproveTokenButton({
     tokenAddress: token.address,
     spender: spender,
     amount: approvedAmount,
-    enabled: isApprovalRequired,
+    enabled: token.address !== ETH_MAGIC_NUMBER,
   });
 
   const modalId = `approve_token`;
