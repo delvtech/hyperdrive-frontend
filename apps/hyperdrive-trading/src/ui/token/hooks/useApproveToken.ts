@@ -18,11 +18,11 @@ export function useApproveToken({
   amount,
   enabled = true,
 }: UseTokenApprovalOptions): { approve: (() => void) | undefined } {
-  const queryEnabled = !!spender && !!enabled;
-
   const { writeContract } = useWriteContract();
   const addRecentTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient();
+
+  const queryEnabled = !!spender && !!enabled && !!publicClient;
 
   const approve = queryEnabled
     ? () =>

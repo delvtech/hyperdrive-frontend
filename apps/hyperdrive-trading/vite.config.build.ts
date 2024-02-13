@@ -3,11 +3,9 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
-// https://vitejs.dev/config https://vitest.dev/config
+// We need this seperate configuration for this problem
+// https://github.com/wevm/wagmi/discussions/2248
 export default defineConfig({
   plugins: [react(), tsconfigPaths(), TanStackRouterVite()],
   publicDir: "src/public",
-  define: {
-    global: {},
-  },
 });

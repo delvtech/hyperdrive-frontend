@@ -3,7 +3,8 @@ import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHype
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Address, usePublicClient } from "wagmi";
+import { Address } from "viem";
+import { usePublicClient } from "wagmi";
 
 interface UseOpenLongOptions {
   hyperdriveAddress: Address;
@@ -62,7 +63,7 @@ export function useOpenLong({
           hash,
           description: "Open Long",
         });
-        await publicClient.waitForTransactionReceipt({ hash });
+        await publicClient?.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
         onExecuted?.(hash);
       }

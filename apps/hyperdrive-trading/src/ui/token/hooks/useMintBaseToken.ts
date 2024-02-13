@@ -1,50 +1,45 @@
+import { TokenConfig } from "@hyperdrive/appconfig";
 import { ERC20Mintable } from "@hyperdrive/artifacts/ERC20Mintable";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { Address, formatUnits } from "viem";
-import {
-  useChainId,
-  useContractWrite,
-  usePrepareContractWrite,
-  useToken,
-} from "wagmi";
+import { useChainId, useWriteContract } from "wagmi";
 
 export function useMintBaseToken({
   baseToken,
   destination,
   amount,
 }: {
-  baseToken: Address;
+  baseToken: TokenConfig;
   destination: Address | undefined;
   amount: bigint;
 }): { mint: (() => void) | undefined } {
   const addRecentTransaction = useAddRecentTransaction();
   const chainId = useChainId();
-  const { data } = useToken({
-    address: baseToken,
-    staleTime: Infinity,
-  });
+  const isEnabled = !!destination && !!amount;
+  const { writeContract } = useWriteContract();
 
-  const isEnabled = !!destination && !!amount && chainId === 31337 && !!data;
-
-  const { config } = usePrepareContractWrite({
-    address: baseToken,
-    abi: ERC20Mintable.abi,
-    functionName: "mint",
-    enabled: isEnabled,
-    args: isEnabled ? [destination, amount] : undefined,
-  });
-
-  const { write: mint } = useContractWrite({
-    ...config,
-    onSuccess: (result) => {
-      addRecentTransaction({
-        hash: result.hash,
-        description: `Mint ${formatUnits(amount, data?.decimals || 0)} ${
-          data?.symbol
-        }`,
-      });
-    },
-  });
+  const mint = isEnabled
+    ? () =>
+        writeContract(
+          {
+            address: baseToken.address,
+            abi: ERC20Mintable.abi,
+            functionName: "mint",
+            // enabled: isEnabled,
+            args: [destination, amount],
+          },
+          {
+            onSuccess: (hash) => {
+              addRecentTransaction({
+                hash: hash,
+                description: `Mint ${formatUnits(amount, baseToken.decimals)} ${
+                  baseToken.symbol
+                }`,
+              });
+            },
+          },
+        )
+    : undefined;
 
   return { mint };
 }

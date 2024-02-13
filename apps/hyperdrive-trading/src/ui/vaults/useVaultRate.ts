@@ -15,7 +15,7 @@ export function useVaultRate({ vaultAddress }: UseVaultRateOptions): {
 } {
   const publicClient = usePublicClient();
 
-  const queryEnabled = !!vaultAddress;
+  const queryEnabled = !!vaultAddress && !!publicClient;
   const { data: vaultRate, status: vaultRateStatus } = useQuery({
     queryKey: makeQueryKey("vaultRate", { vaultAddress }),
     queryFn: queryEnabled

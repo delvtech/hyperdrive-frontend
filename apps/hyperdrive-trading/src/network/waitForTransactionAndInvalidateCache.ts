@@ -1,5 +1,5 @@
 import { queryClient } from "src/network/queryClient";
-import { Address, PublicClient } from "wagmi";
+import { Address, PublicClient } from "viem";
 
 interface WaitForTransactionAndInvalidateCacheOptions {
   publicClient: PublicClient;

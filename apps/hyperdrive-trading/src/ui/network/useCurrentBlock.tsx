@@ -7,7 +7,7 @@ export function useCurrentBlock(): { currentBlock: Block | undefined } {
   const publicClient = usePublicClient();
   const { data: currentBlock } = useQuery({
     queryKey: makeQueryKey("provider", "getBlock"),
-    queryFn: () => publicClient.getBlock(),
+    queryFn: () => publicClient?.getBlock(),
   });
   return { currentBlock };
 }

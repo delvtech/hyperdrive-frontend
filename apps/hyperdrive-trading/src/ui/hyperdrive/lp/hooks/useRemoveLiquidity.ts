@@ -6,7 +6,9 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { Address, usePublicClient } from "wagmi";
+import { Address } from "viem";
+import { usePublicClient } from "wagmi";
+
 interface UseRemoveLiquidityOptions {
   hyperdriveAddress: Address;
   lpSharesIn: bigint | undefined;
@@ -55,7 +57,7 @@ export function useRemoveLiquidity({
           hash,
           description: "Remove Liquidity",
         });
-        await publicClient.waitForTransactionReceipt({ hash });
+        await publicClient?.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
         onExecuted?.(hash);
       }

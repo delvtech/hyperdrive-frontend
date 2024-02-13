@@ -6,7 +6,8 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { Address, usePublicClient } from "wagmi";
+import { Address } from "viem";
+import { usePublicClient } from "wagmi";
 interface UseAddLiquidityOptions {
   hyperdriveAddress: Address;
   destination: Address | undefined;
@@ -65,7 +66,7 @@ export function useAddLiquidity({
           hash,
           description: "Add Liquidity",
         });
-        await publicClient.waitForTransactionReceipt({ hash });
+        await publicClient?.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
         onExecuted?.(hash);
       }

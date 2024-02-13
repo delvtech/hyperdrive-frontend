@@ -6,7 +6,9 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { Address, usePublicClient } from "wagmi";
+import { Address } from "viem";
+import { usePublicClient } from "wagmi";
+
 interface UseRedeemWithdrawalSharesOptions {
   hyperdriveAddress: Address;
   withdrawalSharesIn: bigint | undefined;
@@ -53,7 +55,7 @@ export function useRedeemWithdrawalShares({
           hash,
           description: "Redeem Withdrawal Shares",
         });
-        await publicClient.waitForTransactionReceipt({ hash });
+        await publicClient?.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
       }
     },

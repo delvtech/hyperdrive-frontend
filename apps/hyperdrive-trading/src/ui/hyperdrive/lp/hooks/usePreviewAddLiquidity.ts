@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-import { Address, useAccount, usePublicClient } from "wagmi";
+import { Address } from "viem";
+import { useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewAddLiquidityOptions {
   hyperdriveAddress: Address;

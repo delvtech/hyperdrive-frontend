@@ -5,7 +5,8 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-import { Address, usePublicClient } from "wagmi";
+import { Address } from "viem";
+import { usePublicClient } from "wagmi";
 
 interface UseOpenShortOptions {
   hyperdriveAddress: Address;
@@ -60,7 +61,7 @@ export function useOpenShort({
           hash,
           description: "Open Short",
         });
-        await publicClient.waitForTransactionReceipt({ hash });
+        await publicClient?.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
         onExecuted?.(hash);
       }

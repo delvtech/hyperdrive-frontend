@@ -27,9 +27,11 @@ export function YourBalanceWell({
   const chainId = useChainId();
   const { mint } = useMintBaseToken({
     amount: parseUnits("1000000", token.decimals),
-    baseToken: tokenAddress,
+    baseToken: token,
     destination: account,
   });
+
+  console.log(mint);
 
   return (
     <Well elevation="flat">
@@ -44,15 +46,13 @@ export function YourBalanceWell({
                 places: 4,
               })}{" "}
               {token.symbol}
-              {chainId === 31337 ? (
-                <button
-                  disabled={!mint}
-                  className="daisy-btn daisy-btn-outline daisy-btn-xs ml-1"
-                  onClick={() => mint?.()}
-                >
-                  Mint
-                </button>
-              ) : undefined}
+              <button
+                disabled={!mint}
+                className="daisy-btn daisy-btn-outline daisy-btn-xs ml-1"
+                onClick={() => mint?.()}
+              >
+                Mint
+              </button>
             </div>
           }
         />

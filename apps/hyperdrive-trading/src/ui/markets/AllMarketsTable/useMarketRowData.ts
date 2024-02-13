@@ -27,7 +27,7 @@ export interface MarketTableRowData {
 export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
   const publicClient = usePublicClient();
   const appConfig = useAppConfig();
-  const queryEnabled = !!appConfig;
+  const queryEnabled = !!appConfig && !!publicClient;
   return useQuery<MarketTableRowData[]>({
     queryKey: makeQueryKey("app/markets", {
       hyperdrives: appConfig?.hyperdrives.map(

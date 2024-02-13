@@ -13,7 +13,7 @@
     "url": "https://github.com/delvtech/hyperdrive-monorepo/issues"
   },
   "scripts": {
-    "build": "tsc && vite build",
+    "build": "tsc && vite build --config vite.config.build.ts",
     "dev": "vite",
     "format": "prettier --write '**/*.{gql,graphql,js,jsx,ts,tsx,json,md,yaml,yml}'",
     "format:check": "prettier --check '**/*.{gql,graphql,js,jsx,ts,tsx,json,md}'",
@@ -53,8 +53,8 @@
     "react-hot-toast": "^2.4.0",
     "react-loading-skeleton": "^3.3.1",
     "react-use": "^17.4.2",
-    "viem": "2.7.8",
-    "wagmi": "2"
+    "viem": "^2.7.8",
+    "wagmi": "^2.5.7"
   },
   "devDependencies": {
     "@hyperdrive/eslint-config": "*",

@@ -1,7 +1,7 @@
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-import { Address } from "wagmi";
+import { Address } from "viem";
 
 interface UsePreviewRemoveLiquidityOptions {
   hyperdriveAddress: Address;

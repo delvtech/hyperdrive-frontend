@@ -2,7 +2,8 @@ import { ReadWriteHyperdrive } from "@hyperdrive/sdk";
 import { ViemReadWriteHyperdrive } from "@hyperdrive/sdk-viem";
 import { useMemo } from "react";
 import { querySdkCache } from "src/sdk/sdkCache";
-import { Address, useChainId, usePublicClient, useWalletClient } from "wagmi";
+import { Address } from "viem";
+import { useChainId, usePublicClient, useWalletClient } from "wagmi";
 
 export function useReadWriteHyperdrive(
   address: Address | undefined,
@@ -12,7 +13,7 @@ export function useReadWriteHyperdrive(
   const { data: walletClient } = useWalletClient();
 
   return useMemo(() => {
-    if (!walletClient || !address) {
+    if (!walletClient || !address || !publicClient || !walletClient) {
       return undefined;
     }
 
