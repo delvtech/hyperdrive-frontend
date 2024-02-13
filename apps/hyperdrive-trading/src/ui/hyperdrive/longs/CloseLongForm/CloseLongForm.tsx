@@ -1,23 +1,22 @@
 import {
-  EmptyExtensions,
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
-  TokenConfig,
-  YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage, Long } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { MouseEvent, ReactElement, useState } from "react";
+import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
@@ -44,11 +43,14 @@ export function CloseLongForm({
   });
 
   const {
-    activeWithdrawToken,
-    activeWithdrawTokenType,
-    setActiveWithdrawTokenType,
-  } = useActiveWithdrawToken({
-    hyperdrive,
+    activeItem: activeWithdrawToken,
+    setActiveItem: setActiveWithdrawToken,
+  } = useActiveItem({
+    items: [baseToken, sharesToken],
+    idField: "address",
+    defaultActiveItemId: hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+      ? baseToken.address
+      : sharesToken.address,
   });
 
   const { address: account } = useAccount();
@@ -64,7 +66,7 @@ export function CloseLongForm({
     bondAmountIn: amountAsBigInt,
     minOutput: parseUnits("0", baseToken.decimals),
     destination: account,
-    asBase: activeWithdrawTokenType === "baseToken",
+    asBase: activeWithdrawToken.address === baseToken.address,
   });
 
   const minOutputAfterSlippage =
@@ -80,7 +82,7 @@ export function CloseLongForm({
     bondAmountIn: amountAsBigInt,
     minBaseAmountOut: minOutputAfterSlippage,
     destination: account,
-    asBase: activeWithdrawTokenType === "baseToken",
+    asBase: activeWithdrawToken.address === baseToken.address,
     enabled: previewCloseLongStatus === "success",
     onExecuted: (hash) => {
       setAmount("");
@@ -130,38 +132,22 @@ export function CloseLongForm({
         />
       }
       setting={
-        <div className="flex items-center justify-between">
-          <span className="daisy-label-text">Choose withdrawal asset</span>
-          <div className="flex gap-8">
-            <label className="inline-flex cursor-pointer items-center justify-end gap-2">
-              <input
-                type="radio"
-                name={baseToken.symbol}
-                disabled={
-                  !hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
-                }
-                checked={activeWithdrawTokenType === "baseToken"}
-                className="daisy-radio-primary daisy-radio daisy-radio-xs"
-                onChange={() => {
-                  setActiveWithdrawTokenType("baseToken");
-                }}
-              />
-              {baseToken.symbol}
-            </label>
-            <label className="inline-flex cursor-pointer items-center justify-end gap-2">
-              <input
-                type="radio"
-                name={sharesToken.symbol}
-                className="daisy-radio-primary daisy-radio daisy-radio-xs"
-                checked={activeWithdrawTokenType === "sharesToken"}
-                onChange={() => {
-                  setActiveWithdrawTokenType("sharesToken");
-                }}
-              />
-              {sharesToken.symbol}
-            </label>
-          </div>
-        </div>
+        <TokenChoices
+          label="Choose withdrawal asset"
+          tokens={[
+            {
+              tokenConfig: baseToken,
+              disabled:
+                !hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled,
+            },
+            {
+              tokenConfig: sharesToken,
+              disabled: false,
+            },
+          ]}
+          selectedTokenAddress={activeWithdrawToken.address}
+          onTokenChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
+        />
       }
       transactionPreview={
         <LabelValue
@@ -195,41 +181,4 @@ export function CloseLongForm({
       }
     />
   );
-}
-
-type WithdrawTokenType = "baseToken" | "sharesToken";
-function useActiveWithdrawToken({
-  hyperdrive,
-}: {
-  hyperdrive: HyperdriveConfig;
-}): {
-  activeWithdrawTokenType: WithdrawTokenType;
-  activeWithdrawToken: TokenConfig<EmptyExtensions | YieldSourceExtensions>;
-  setActiveWithdrawTokenType: (type: WithdrawTokenType) => void;
-} {
-  const appConfig = useAppConfig();
-  const defaultWithdrawTokenType = hyperdrive.withdrawOptions
-    .isBaseTokenWithdrawalEnabled
-    ? "baseToken"
-    : "sharesToken";
-
-  const [activeWithdrawTokenType, setActiveWithdrawTokenType] =
-    useState<WithdrawTokenType>(defaultWithdrawTokenType);
-
-  const activeWithdrawToken =
-    activeWithdrawTokenType === "baseToken"
-      ? findBaseToken({
-          baseTokenAddress: hyperdrive.baseToken,
-          tokens: appConfig.tokens,
-        })
-      : findYieldSourceToken({
-          yieldSourceTokenAddress: hyperdrive.sharesToken,
-          tokens: appConfig.tokens,
-        });
-
-  return {
-    activeWithdrawToken,
-    activeWithdrawTokenType,
-    setActiveWithdrawTokenType,
-  };
 }
