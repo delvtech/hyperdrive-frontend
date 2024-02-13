@@ -40,13 +40,13 @@ export function useTransactionData({
   const data = useMemo(() => {
     const data = [];
     if (longs) {
-      data.push(...longs);
+      data.push(...longs.slice(0, 100));
     }
     if (shorts) {
-      data.push(...shorts);
+      data.push(...shorts.slice(0, 100));
     }
     if (lpEvents) {
-      data.push(...lpEvents);
+      data.push(...lpEvents.slice(0, 100));
     }
     return data;
   }, [longs, lpEvents, shorts]);
