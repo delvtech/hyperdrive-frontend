@@ -72,7 +72,7 @@ export function OpenLongForm({
     amount: amountAsBigInt,
   });
   const hasEnoughBalance = getHasEnoughBalance({
-    balance: activeTokenBalance,
+    balance: activeTokenBalance?.value,
     amount: amountAsBigInt,
   });
 

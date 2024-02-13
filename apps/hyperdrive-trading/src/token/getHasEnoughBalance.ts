@@ -6,7 +6,7 @@ export function getHasEnoughBalance({
   balance,
   amount,
 }: {
-  balance: { formatted: string; value: bigint } | undefined;
+  balance: bigint | undefined;
   amount: bigint | undefined;
 }): boolean {
   // The trade isn't valid if you have no balance or no amount specified to
@@ -16,7 +16,7 @@ export function getHasEnoughBalance({
   }
 
   // You can't spend more than your current balance either
-  if (balance && amount && balance.value < amount) {
+  if (balance < amount) {
     return false;
   }
 
