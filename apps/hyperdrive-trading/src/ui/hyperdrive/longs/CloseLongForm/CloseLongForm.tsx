@@ -142,7 +142,6 @@ export function CloseLongForm({
             },
             {
               tokenConfig: sharesToken,
-              disabled: false,
             },
           ]}
           selectedTokenAddress={activeWithdrawToken.address}
