@@ -1,25 +1,25 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { HyperdriveConfig, TokenConfig } from "@hyperdrive/appconfig";
+import { TokenConfig } from "@hyperdrive/appconfig";
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
+import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
+import { Address } from "viem";
 export default function ApproveTokenButton({
-  hyperdrive,
+  spender,
   amountAsBigInt,
   amount,
   token,
-  isApprovalRequired,
   tokenBalance,
 }: {
-  hyperdrive: HyperdriveConfig;
+  spender: Address | undefined;
   amountAsBigInt: bigint | undefined;
   amount: string | undefined;
-  token: TokenConfig;
-  isApprovalRequired: boolean;
+  token: TokenConfig<any>;
   tokenBalance:
     | {
         formatted: string;
@@ -52,9 +52,9 @@ export default function ApproveTokenButton({
   }
   const { approve } = useApproveToken({
     tokenAddress: token.address,
-    spender: hyperdrive.address,
+    spender: spender,
     amount: approvedAmount,
-    enabled: isApprovalRequired,
+    enabled: token.address !== ETH_MAGIC_NUMBER,
   });
 
   const modalId = `approve_token`;

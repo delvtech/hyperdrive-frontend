@@ -304,7 +304,7 @@ export function TransactionTable({
 
   if (!transactionData?.length) {
     return (
-      <div className="my-28">
+      <div className="flex h-52 w-full items-center justify-center">
         <NonIdealState
           heading="There are no transactions to display"
           text="Open a position or add liquidity to see transactions here."

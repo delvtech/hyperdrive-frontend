@@ -4,6 +4,7 @@ interface UseTokenAllowanceOptions {
   account: Address | undefined;
   spender: Address | undefined;
   tokenAddress: Address | undefined;
+  enabled?: boolean;
 }
 
 interface useTokenAllowanceResult {
@@ -15,15 +16,16 @@ export function useTokenAllowance({
   account,
   spender,
   tokenAddress,
+  enabled,
 }: UseTokenAllowanceOptions): useTokenAllowanceResult {
-  const enabled = !!spender && !!account && !!tokenAddress;
+  const queryEnabled = !!spender && !!account && !!tokenAddress && !!enabled;
 
   const { data, status } = useContractRead({
-    enabled,
     address: tokenAddress,
     abi: erc20ABI,
     functionName: "allowance",
-    args: enabled ? [account, spender] : undefined,
+    args: queryEnabled ? [account, spender] : undefined,
+    enabled: queryEnabled,
   });
 
   return { tokenAllowance: data, status };
