@@ -2,13 +2,10 @@ import {
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
-  TokenConfig,
 } from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
-import { MutationStatus } from "@tanstack/react-query";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
-import { MAX_UINT256 } from "src/base/constants";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -23,7 +20,6 @@ import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLon
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import ApproveTokenButton from "src/ui/token/ApproveTokenButton";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
-import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
@@ -55,16 +51,14 @@ export function OpenLongForm({
     tokens: [baseToken, sharesToken],
   });
 
-  // All tokens besides ETH require you to check that there is sufficient allowance
-  const isActiveTokenApprovalRequired =
-    activeToken.address !== ETH_MAGIC_NUMBER;
+  // All tokens besides ETH require an allowance to spend it on hyperdrive
+  const requiresAllowance = activeToken.address !== ETH_MAGIC_NUMBER;
 
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
     account,
+    enabled: requiresAllowance,
     spender: hyperdrive.address,
-    tokenAddress:
-      // Eth doesn't require an allowance, so use undefined to turn this hook off
-      isActiveTokenApprovalRequired ? undefined : activeToken.address,
+    tokenAddress: activeToken.address,
   });
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
@@ -72,16 +66,9 @@ export function OpenLongForm({
   });
 
   const hasEnoughAllowance = getHasEnoughAllowance({
-    isActiveTokenApprovalRequired,
-    activeTokenAllowance,
+    requiresAllowance,
+    allowance: activeTokenAllowance,
     amount: amountAsBigInt,
-  });
-
-  const { approve } = useApproveToken({
-    tokenAddress: activeToken.address,
-    spender: hyperdrive.address,
-    amount: MAX_UINT256,
-    enabled: isActiveTokenApprovalRequired,
   });
 
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
@@ -115,6 +102,11 @@ export function OpenLongForm({
         />,
       );
     },
+  });
+
+  const hasEnoughBalance = getHasEnoughBalance({
+    balance: activeTokenBalance,
+    amount: amountAsBigInt,
   });
 
   return (
@@ -165,94 +157,75 @@ export function OpenLongForm({
         />
       }
       disclaimer={
-        !!amountAsBigInt &&
-        !getHasEnoughBalance({
-          balance: activeTokenBalance,
-          amount: amountAsBigInt,
-        }) ? (
+        !!amountAsBigInt && !hasEnoughBalance ? (
           <p className="text-center text-sm text-error">Insufficient balance</p>
         ) : undefined
       }
-      actionButton={
-        account ? (
-          getHasEnoughBalance({
-            balance: activeTokenBalance,
-            amount: amountAsBigInt,
-          }) ? (
-            // Approval button
+      actionButton={(() => {
+        if (!account) {
+          return <ConnectWalletButton />;
+        }
+
+        if (!hasEnoughBalance) {
+          return (
+            <button
+              disabled
+              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
+            >
+              Open Long
+            </button>
+          );
+        }
+
+        if (!hasEnoughAllowance) {
+          return (
             <ApproveTokenButton
-              hyperdrive={hyperdrive}
-              token={activeToken as TokenConfig}
-              isApprovalRequired={isActiveTokenApprovalRequired}
+              spender={hyperdrive.address}
+              token={activeToken}
+              isApprovalRequired={requiresAllowance}
               tokenBalance={activeTokenBalance}
               amountAsBigInt={amountAsBigInt}
               amount={amount}
             />
-          ) : (
-            // Open Long button
-            <button
-              disabled={getIsOpenLongButtonDisabled({
-                openLong,
-                activeTokenBalance,
-                amountAsBigInt,
-                openLongStatus,
-              })}
-              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-              onClick={() => openLong?.()}
-            >
-              Open Long
-            </button>
-          )
-        ) : (
-          <ConnectWalletButton />
-        )
-      }
+          );
+        }
+
+        return (
+          <button
+            disabled={!openLong || openLongStatus === "loading"}
+            className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
+            onClick={() => openLong?.()}
+          >
+            Open Long
+          </button>
+        );
+      })()}
     />
   );
 }
 
-function getIsOpenLongButtonDisabled({
-  openLong,
-  activeTokenBalance,
-  amountAsBigInt,
-  openLongStatus,
-}: {
-  openLong: (() => void) | undefined;
-  activeTokenBalance: { formatted: string; value: bigint } | undefined;
-  amountAsBigInt: bigint | undefined;
-  openLongStatus: MutationStatus;
-}): boolean {
-  if (!openLong || openLongStatus === "loading") {
-    return true;
-  }
-
-  return !getHasEnoughBalance({
-    balance: activeTokenBalance,
-    amount: amountAsBigInt,
-  });
-}
-
-export function getHasEnoughAllowance({
-  isActiveTokenApprovalRequired,
-  activeTokenAllowance,
+function getHasEnoughAllowance({
+  allowance,
   amount,
+  requiresAllowance,
 }: {
-  isActiveTokenApprovalRequired: boolean;
-  activeTokenAllowance: bigint | undefined;
+  allowance: bigint | undefined;
   amount: bigint | undefined;
+  requiresAllowance: boolean;
 }): boolean {
-  // You technically have enough allowance if none is needed, or you're trying
-  // to spend 0 of the token
-  if (!isActiveTokenApprovalRequired || !amount) {
+  // You technically have enough allowance if none is required by the token
+  // standard (eg: eth shim token doesn't require allowance) or you're trying
+  // to spend 0 tokens
+  if (!amount || !requiresAllowance) {
     return true;
   }
 
   // If you're trying to spend a non-zero amount, and we don't know your current
   // token allowance yet, then you don't have enough allowance.
-  if (!activeTokenAllowance) {
+  if (!allowance) {
     return false;
   }
 
   // Otherwise, you have enough allowance if it's greater than or equal to the amount you want to spend
-  return activeTokenAllowance >= amount;
+  return allowance >= amount;
 }

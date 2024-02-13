@@ -19,7 +19,7 @@ export default function ApproveTokenButton({
   spender: Address | undefined;
   amountAsBigInt: bigint | undefined;
   amount: string | undefined;
-  token: TokenConfig;
+  token: TokenConfig<any>;
   isApprovalRequired: boolean;
   tokenBalance:
     | {
