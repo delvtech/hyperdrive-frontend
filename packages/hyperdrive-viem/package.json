@@ -18,7 +18,7 @@
     "viem": "^1.19.15"
   },
   "dependencies": {
-    "@delvtech/evm-client-viem": "^0.0.4"
+    "@delvtech/evm-client-viem": "^0.0.7"
   },
   "devDependencies": {
     "@hyperdrive/artifacts": "*",
