@@ -44,7 +44,7 @@ export function CloseLongForm({
 
   const {
     activeItem: activeWithdrawToken,
-    setActiveItem: setActiveWithdrawToken,
+    setActiveItemId: setActiveWithdrawToken,
   } = useActiveItem({
     items: [baseToken, sharesToken],
     idField: "address",
