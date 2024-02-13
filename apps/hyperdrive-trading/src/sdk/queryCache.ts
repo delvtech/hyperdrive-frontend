@@ -1,4 +1,4 @@
-import { SimpleCache, SimpleCacheKey } from "@delvtech/evm-client";
+import { SimpleCache, SimpleCacheKey } from "@hyperdrive/sdk-viem";
 import { QueryClient, QueryKey } from "@tanstack/query-core";
 import stringify from "fast-json-stable-stringify";
 

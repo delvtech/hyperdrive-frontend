@@ -16,7 +16,7 @@ export function useTokenAllowance({
   account,
   spender,
   tokenAddress,
-  enabled,
+  enabled = true,
 }: UseTokenAllowanceOptions): useTokenAllowanceResult {
   const queryEnabled = !!spender && !!account && !!tokenAddress && !!enabled;
 

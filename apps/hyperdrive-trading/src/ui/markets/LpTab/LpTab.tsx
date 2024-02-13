@@ -2,6 +2,7 @@ import { SparklesIcon, WalletIcon } from "@heroicons/react/24/outline";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
+import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
@@ -55,6 +56,14 @@ export function LpTab({
                     />
                   );
                 }
+
+                if (
+                  lpSharesStatus === "loading" ||
+                  withdrawalSharesStatus === "loading"
+                ) {
+                  return <LoadingState />;
+                }
+
                 if (
                   !withdrawalShares &&
                   !lpShares &&
@@ -69,6 +78,7 @@ export function LpTab({
                     />
                   );
                 }
+
                 return (
                   <div className="flex flex-col gap-6 md:flex-row">
                     <OpenLpSharesCard hyperdrive={hyperdrive} />{" "}
