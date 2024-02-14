@@ -6,12 +6,14 @@ import {
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
+import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
@@ -136,15 +138,44 @@ export function OpenShortForm({
         <OpenShortPreview
           hyperdrive={hyperdrive}
           tokenIn={activeToken}
-          costBasis={amountIn ?? 0n}
+          costBasis={amountIn || 0n}
           shortSize={shortAmountAsBigInt}
         />
       }
       disclaimer={
-        <p className="text-center text-sm text-neutral-content">
-          Opening a short gives you multiplied exposure to the yield
-          source&apos;s variable rate proportionate to your short size.
-        </p>
+        amountIn ? (
+          <div className="flex flex-col gap-4">
+            <p className="text-center text-sm text-neutral-content">
+              You pay{" "}
+              <strong>
+                {formatBalance({
+                  balance: amountIn || 0n,
+                  decimals: activeToken.decimals,
+                  includeCommas: true,
+                  places: 6,
+                })}{" "}
+                {activeToken.symbol}
+              </strong>{" "}
+              in exchange for the yield on{" "}
+              <strong>
+                {shortAmount} {baseToken.symbol}
+              </strong>{" "}
+              deposited into <strong>{sharesToken.extensions.shortName}</strong>{" "}
+              for{" "}
+              <strong>
+                {convertMillisecondsToDays(
+                  Number(hyperdrive.poolConfig.positionDuration * 1000n),
+                )}{" "}
+                days.
+              </strong>{" "}
+            </p>
+            <p className="text-center text-sm text-neutral-content">
+              {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+                ? `When closing your Short position, you can choose to receive back either ${baseToken.symbol} or ${sharesToken.symbol}.`
+                : `When closing your Short position, you&apos;ll receive ${sharesToken.symbol}.`}
+            </p>
+          </div>
+        ) : null
       }
       actionButton={(() => {
         if (!account) {
