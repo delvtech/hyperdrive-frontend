@@ -8,14 +8,20 @@ export function TokenChoices({
   onTokenChange,
   selectedTokenAddress,
   tokens,
+  vertical = false,
 }: {
   label: string;
   tokens: { disabled?: boolean; tokenConfig: TokenConfig<any> }[];
   selectedTokenAddress: Address;
   onTokenChange: (tokenAddress: Address) => void;
+  vertical?: boolean;
 }): ReactElement {
   return (
-    <div className="flex items-center justify-between">
+    <div
+      className={classNames("flex justify-between", {
+        "flex-col gap-1": vertical,
+      })}
+    >
       <span className="daisy-label-text">{label}</span>
       <div className="flex gap-8">
         {tokens.map(({ disabled, tokenConfig: { symbol, address } }) => {

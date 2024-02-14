@@ -6,23 +6,26 @@ import {
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
+import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import ApproveTokenButton from "src/ui/token/ApproveTokenButton";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
-import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface OpenShortPositionFormProps {
@@ -84,13 +87,6 @@ export function OpenShortForm({
     requiresAllowance,
   });
 
-  // TODO: Remove, this is covered by ApproveTokenButton
-  const { approve } = useApproveToken({
-    tokenAddress: baseToken.address,
-    spender: hyperdrive.address,
-    amount: MAX_UINT256,
-  });
-
   const { poolInfo } = usePoolInfo(hyperdrive.address);
   const { openShort, openShortSubmittedStatus } = useOpenShort({
     hyperdriveAddress: hyperdrive.address,
@@ -125,7 +121,8 @@ export function OpenShortForm({
       }
       setting={
         <TokenChoices
-          label="Choose deposit asset"
+          label="Choose asset for short deposit"
+          vertical
           tokens={[
             {
               tokenConfig: baseToken,
@@ -140,16 +137,46 @@ export function OpenShortForm({
       }
       transactionPreview={
         <OpenShortPreview
-          market={hyperdrive}
-          costBasis={amountIn ?? 0n}
+          hyperdrive={hyperdrive}
+          tokenIn={activeToken}
+          costBasis={amountIn || 0n}
           shortSize={shortAmountAsBigInt}
         />
       }
       disclaimer={
-        <p className="text-center text-sm text-neutral-content">
-          Opening a short gives you multiplied exposure to the yield
-          source&apos;s variable rate proportionate to your short size.
-        </p>
+        amountIn ? (
+          <div className="flex flex-col gap-4">
+            <p className="text-center text-sm text-neutral-content">
+              You pay{" "}
+              <strong>
+                {formatBalance({
+                  balance: amountIn || 0n,
+                  decimals: activeToken.decimals,
+                  includeCommas: true,
+                  places: 6,
+                })}{" "}
+                {activeToken.symbol}
+              </strong>{" "}
+              in exchange for the yield on{" "}
+              <strong>
+                {shortAmount} {baseToken.symbol}
+              </strong>{" "}
+              deposited into <strong>{sharesToken.extensions.shortName}</strong>{" "}
+              for{" "}
+              <strong>
+                {convertMillisecondsToDays(
+                  Number(hyperdrive.poolConfig.positionDuration * 1000n),
+                )}{" "}
+                days.
+              </strong>{" "}
+            </p>
+            <p className="text-center text-sm text-neutral-content">
+              {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+                ? `When closing your Short position, you can choose to receive back either ${baseToken.symbol} or ${sharesToken.symbol}.`
+                : `When closing your Short position, you&apos;ll receive ${sharesToken.symbol}.`}
+            </p>
+          </div>
+        ) : null
       }
       actionButton={(() => {
         if (!account) {
@@ -169,17 +196,13 @@ export function OpenShortForm({
 
         if (!hasEnoughAllowance) {
           return (
-            <button
-              disabled={!approve}
-              className="daisy-btn daisy-btn-circle daisy-btn-warning w-full"
-              onClick={(e) => {
-                // Do this so we don't close the modal
-                e.preventDefault();
-                approve?.();
-              }}
-            >
-              <h5>Approve {activeToken.symbol}</h5>
-            </button>
+            <ApproveTokenButton
+              spender={hyperdrive.address}
+              token={activeToken}
+              tokenBalance={activeTokenBalance}
+              amountAsBigInt={amountIn}
+              amount={formatUnits(amountIn || 0n, activeToken.decimals)}
+            />
           );
         }
         return (
