@@ -1,8 +1,10 @@
 import { TokenConfig } from "@hyperdrive/appconfig";
 import { ERC20Mintable } from "@hyperdrive/artifacts/ERC20Mintable";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
+import { queryClient } from "src/network/queryClient";
+import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { Address, formatUnits } from "viem";
-import { useWriteContract } from "wagmi";
+import { usePublicClient, useWriteContract } from "wagmi";
 
 export function useMintBaseToken({
   baseToken,
@@ -14,7 +16,8 @@ export function useMintBaseToken({
   amount: bigint;
 }): { mint: (() => void) | undefined } {
   const addRecentTransaction = useAddRecentTransaction();
-  const isEnabled = !!destination && !!amount;
+  const publicClient = usePublicClient();
+  const isEnabled = !!destination && !!amount && !!publicClient;
   const { writeContract } = useWriteContract();
 
   const mint = isEnabled
@@ -33,6 +36,11 @@ export function useMintBaseToken({
                 description: `Mint ${formatUnits(amount, baseToken.decimals)} ${
                   baseToken.symbol
                 }`,
+              });
+              waitForTransactionAndInvalidateCache({
+                publicClient,
+                queryClient,
+                hash,
               });
             },
           },
