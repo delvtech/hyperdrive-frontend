@@ -7,7 +7,7 @@ interface UsePreviewCloseShortOptions {
   hyperdriveAddress: Address;
   maturityTime: bigint | undefined;
   shortAmountIn: bigint | undefined;
-  minBaseAmountOut: bigint | undefined;
+  minAmountOut: bigint | undefined;
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
@@ -15,14 +15,14 @@ interface UsePreviewCloseShortOptions {
 
 interface UsePreviewCloseShortResult {
   previewCloseShortStatus: QueryStatus;
-  baseAmountOut: bigint | undefined;
+  amountOut: bigint | undefined;
 }
 
 export function usePreviewCloseShort({
   hyperdriveAddress,
   maturityTime,
   shortAmountIn,
-  minBaseAmountOut,
+  minAmountOut,
   destination,
   asBase = true,
   enabled = true,
@@ -32,7 +32,7 @@ export function usePreviewCloseShort({
     !!readWriteHyperdrive &&
     !!maturityTime &&
     !!shortAmountIn &&
-    minBaseAmountOut !== undefined && // check against undefined explicitly, because base amount of 0 is valid
+    minAmountOut !== undefined && // check against undefined explicitly, because base amount of 0 is valid
     !!destination &&
     enabled;
 
@@ -40,7 +40,7 @@ export function usePreviewCloseShort({
     queryKey: makeQueryKey("previewCloseShort", {
       hyperdriveAddress,
       shortAmountIn: shortAmountIn?.toString(),
-      minBaseAmountOut: minBaseAmountOut?.toString(),
+      minBaseAmountOut: minAmountOut?.toString(),
       destination,
     }),
     enabled: queryEnabled,
@@ -50,11 +50,11 @@ export function usePreviewCloseShort({
             asBase,
             destination,
             maturityTime,
-            minBaseAmountOut,
+            minAmountOut,
             shortAmountIn,
           })
       : undefined,
   });
 
-  return { baseAmountOut: data, previewCloseShortStatus: status };
+  return { amountOut: data, previewCloseShortStatus: status };
 }
