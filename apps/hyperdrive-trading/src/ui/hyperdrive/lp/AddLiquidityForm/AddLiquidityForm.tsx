@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
 import { parseUnits } from "src/base/parseUnits";
+import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
@@ -38,6 +39,10 @@ export function AddLiquidityForm({
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
     decimals: baseToken.decimals,
+  });
+  const hasEnoughBalance = getHasEnoughBalance({
+    balance: baseTokenBalance?.value,
+    amount: amountAsBigInt,
   });
 
   const { tokenAllowance } = useTokenAllowance({
@@ -114,6 +119,11 @@ export function AddLiquidityForm({
           hyperdrive={hyperdrive}
           lpShares={lpSharesOut || 0n}
         />
+      }
+      disclaimer={
+        !!amountAsBigInt && !hasEnoughBalance ? (
+          <p className="text-center text-sm text-error">Insufficient balance</p>
+        ) : null
       }
       actionButton={
         account ? (
