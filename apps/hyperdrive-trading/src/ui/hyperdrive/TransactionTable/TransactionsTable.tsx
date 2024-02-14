@@ -23,6 +23,7 @@ import {
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { useState } from "react";
+import { formatTimeDifference } from "src/base/formatTimeDifference";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
@@ -32,6 +33,7 @@ import {
   useTransactionData,
 } from "src/ui/hyperdrive/TransactionTable/useTransactionData";
 import { Address } from "viem";
+import { useBlock } from "wagmi";
 
 export interface Transaction {
   type: string;
@@ -142,7 +144,7 @@ function formatTransactionTableMobileData(
     },
     {
       name: "Block number",
-      value: row.blockNumber?.toString(),
+      value: <BlockInfo blockNumber={row.blockNumber} />,
     },
   ];
 }
@@ -267,12 +269,23 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       cell: (account) => formatAddress(account.getValue()),
     }),
     columnHelper.accessor("blockNumber", {
-      header: "Block number",
+      header: "Time",
       enableColumnFilter: false,
-      cell: (blockNumber) => blockNumber.getValue()?.toString(),
+      cell: (blockNumber) => <BlockInfo blockNumber={blockNumber.getValue()} />,
     }),
   ];
 }
+
+function BlockInfo({ blockNumber }: { blockNumber: bigint | undefined }) {
+  const { data: transactionBlock } = useBlock({ blockNumber });
+  const { data: currentBlock } = useBlock();
+  const timeDifference = formatTimeDifference({
+    currentTimeStamp: currentBlock?.timestamp || 0n,
+    previousTimeStamp: transactionBlock?.timestamp || 0n,
+  });
+  return <p>{timeDifference}</p>;
+}
+
 export function TransactionTable({
   hyperdrive,
 }: {
