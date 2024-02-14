@@ -217,30 +217,30 @@ function CurrentValueCell({
     tokens: appConfig.tokens,
   });
   const { address: account } = useAccount();
-  const { baseAmountOut } = usePreviewCloseShort({
+  const { amountOut } = usePreviewCloseShort({
     hyperdriveAddress: openShort.hyperdriveAddress,
     maturityTime: openShort.maturity,
     shortAmountIn: openShort.bondAmount,
-    minBaseAmountOut: parseUnits("0", baseToken.decimals),
+    minAmountOut: parseUnits("0", baseToken.decimals),
     destination: account,
   });
   const currentValue =
-    baseAmountOut &&
+    amountOut &&
     formatBalance({
-      balance: baseAmountOut,
+      balance: amountOut,
       decimals: baseToken.decimals,
       places: 3,
     });
 
   const isPositiveChangeInValue =
-    baseAmountOut && baseAmountOut > openShort.baseAmountPaid;
+    amountOut && amountOut > openShort.baseAmountPaid;
 
   return (
     <div className="daisy-stat p-0">
       <span className="daisy-stat-value text-md font-bold">
         {currentValue?.toString()}
       </span>
-      {baseAmountOut && openShort.bondAmount !== 0n ? (
+      {amountOut && openShort.bondAmount !== 0n ? (
         <div
           data-tip={"Profit/Loss since open"}
           className={classNames(
@@ -250,7 +250,7 @@ function CurrentValueCell({
           )}
         >
           {getProfitLossText({
-            baseAmountOut,
+            baseAmountOut: amountOut,
             amountInput: openShort.baseAmountPaid,
             baseDecimals: baseToken.decimals,
             baseSymbol: baseToken.symbol,
