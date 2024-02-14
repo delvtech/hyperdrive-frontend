@@ -121,7 +121,8 @@ export function OpenShortForm({
       }
       setting={
         <TokenChoices
-          label="Choose deposit asset"
+          label="Choose asset for short deposit"
+          vertical
           tokens={[
             {
               tokenConfig: baseToken,
