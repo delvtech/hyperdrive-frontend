@@ -1,6 +1,7 @@
 import { Long } from "@hyperdrive/sdk";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
@@ -58,8 +59,11 @@ export function useCloseLong({
           hash,
           description: "Close Long",
         });
-        await publicClient.waitForTransactionReceipt({ hash });
-        queryClient.resetQueries();
+        await waitForTransactionAndInvalidateCache({
+          publicClient,
+          hash,
+          queryClient,
+        });
         onExecuted?.(hash);
       }
     },

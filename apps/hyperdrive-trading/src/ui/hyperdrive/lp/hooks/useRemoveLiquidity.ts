@@ -6,6 +6,7 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
+import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
@@ -58,8 +59,11 @@ export function useRemoveLiquidity({
           hash,
           description: "Remove Liquidity",
         });
-        await publicClient.waitForTransactionReceipt({ hash });
-        queryClient.resetQueries();
+        await waitForTransactionAndInvalidateCache({
+          publicClient,
+          queryClient,
+          hash,
+        });
         onExecuted?.(hash);
       }
     },
