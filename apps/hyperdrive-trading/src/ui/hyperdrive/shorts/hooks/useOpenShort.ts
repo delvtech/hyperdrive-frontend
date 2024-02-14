@@ -4,6 +4,7 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
+import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
@@ -62,8 +63,11 @@ export function useOpenShort({
           hash,
           description: "Open Short",
         });
-        await publicClient.waitForTransactionReceipt({ hash });
-        queryClient.resetQueries();
+        await waitForTransactionAndInvalidateCache({
+          publicClient,
+          queryClient,
+          hash,
+        });
         onExecuted?.(hash);
       }
     },
