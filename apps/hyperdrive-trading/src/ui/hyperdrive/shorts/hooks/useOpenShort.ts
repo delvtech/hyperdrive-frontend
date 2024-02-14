@@ -5,7 +5,8 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-import { Address, usePublicClient } from "wagmi";
+import { Address } from "viem";
+import { usePublicClient } from "wagmi";
 
 interface UseOpenShortOptions {
   hyperdriveAddress: Address;
@@ -44,7 +45,8 @@ export function useOpenShort({
     !!destination &&
     minSharePrice !== undefined &&
     enabled &&
-    !!readWriteHyperdrive;
+    !!readWriteHyperdrive &&
+    !!publicClient;
 
   const { mutate: openShort, status } = useMutation({
     mutationFn: async () => {

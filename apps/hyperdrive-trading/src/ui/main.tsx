@@ -7,12 +7,13 @@ import { createRoot } from "react-dom/client";
 import { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { queryClient } from "src/network/queryClient";
-import { wagmiChains, wagmiConfig } from "src/network/wagmiClient";
+import { wagmiConfig } from "src/network/wagmiClient";
 import { App } from "src/ui/app/App/App";
 import ToastProvider from "src/ui/base/components/Toaster/ToastProvider";
 import "src/ui/globals.css";
 import { customRainbowTheme } from "src/ui/wallet/customTheme";
-import { WagmiConfig } from "wagmi";
+import { WagmiProvider } from "wagmi";
+
 const container = document.getElementById("root") as HTMLDivElement;
 const root = createRoot(container);
 
@@ -21,14 +22,10 @@ if (import.meta.env.DEV) {
 }
 
 root.render(
-  <QueryClientProvider client={queryClient}>
+  <WagmiProvider config={wagmiConfig}>
     <ToastProvider />
-    <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider
-        chains={wagmiChains}
-        showRecentTransactions
-        theme={customRainbowTheme()}
-      >
+    <QueryClientProvider client={queryClient}>
+      <RainbowKitProvider showRecentTransactions theme={customRainbowTheme()}>
         <SkeletonTheme
           baseColor="hsl(var(--b1))"
           highlightColor="hsl(var(--b3))"
@@ -36,8 +33,8 @@ root.render(
           <App />
         </SkeletonTheme>
       </RainbowKitProvider>
-    </WagmiConfig>
-  </QueryClientProvider>,
+    </QueryClientProvider>
+  </WagmiProvider>,
 );
 
 /**

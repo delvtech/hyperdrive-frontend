@@ -1,7 +1,6 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
-import { zeroAddress } from "viem";
+import { zeroAddress, Address } from "viem";
 import {
-  Address,
   useContractRead,
   useContractWrite,
   usePrepareContractWrite,

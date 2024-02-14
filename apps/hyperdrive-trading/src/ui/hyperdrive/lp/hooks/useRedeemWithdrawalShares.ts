@@ -6,7 +6,9 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { Address, usePublicClient } from "wagmi";
+import { Address } from "viem";
+import { usePublicClient } from "wagmi";
+
 interface UseRedeemWithdrawalSharesOptions {
   hyperdriveAddress: Address;
   withdrawalSharesIn: bigint | undefined;
@@ -38,7 +40,8 @@ export function useRedeemWithdrawalShares({
     minBaseAmountOutPerShare !== undefined &&
     !!destination &&
     enabled &&
-    readWriteHyperdrive;
+    !!readWriteHyperdrive &&
+    !!publicClient;
 
   const { mutate: redeemWithdrawalShares, status } = useMutation({
     mutationFn: async () => {

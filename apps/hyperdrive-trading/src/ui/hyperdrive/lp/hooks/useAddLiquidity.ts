@@ -6,7 +6,8 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { Address, usePublicClient } from "wagmi";
+import { Address } from "viem";
+import { usePublicClient } from "wagmi";
 interface UseAddLiquidityOptions {
   hyperdriveAddress: Address;
   destination: Address | undefined;
@@ -48,7 +49,8 @@ export function useAddLiquidity({
     maxAPR !== undefined &&
     !!destination &&
     enabled &&
-    readWriteHyperdrive;
+    !!readWriteHyperdrive &&
+    !!publicClient;
 
   const { mutate: addLiquidity, status } = useMutation({
     mutationFn: async () => {

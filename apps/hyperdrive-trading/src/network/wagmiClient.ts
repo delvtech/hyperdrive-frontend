@@ -1,10 +1,15 @@
-import { getDefaultWallets } from "@rainbow-me/rainbowkit";
-import { cloudChain, cloudChainRpcProvider } from "src/network/cloudChain";
-import { Chain, ChainProviderFn, configureChains, createConfig } from "wagmi";
+import { getDefaultConfig } from "@rainbow-me/rainbowkit";
+import {
+  injectedWallet,
+  rainbowWallet,
+  safeWallet,
+  walletConnectWallet,
+} from "@rainbow-me/rainbowkit/wallets";
+import { http } from "@wagmi/core";
+import { Chain } from "@wagmi/core/chains";
+import { cloudChain } from "src/network/cloudChain";
 import { foundry, goerli } from "wagmi/chains";
-import { SafeConnector } from "wagmi/connectors/safe";
-import { alchemyProvider } from "wagmi/providers/alchemy";
-import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
+
 const {
   VITE_LOCALHOST_NODE_RPC_URL,
   VITE_CUSTOM_CHAIN_NODE_RPC_URL,
@@ -14,27 +19,11 @@ const {
   VITE_ALCHEMY_GOERLI_RPC_KEY,
 } = import.meta.env;
 
-const chainsToConfigure: Chain[] = [];
-const providersToConfigure: ChainProviderFn[] = [];
+export const wagmiChains: Chain[] = [];
 
 // Goerli
 if (VITE_ALCHEMY_GOERLI_RPC_KEY) {
-  chainsToConfigure.push(goerli);
-  providersToConfigure.push(
-    alchemyProvider({ apiKey: VITE_ALCHEMY_GOERLI_RPC_KEY }),
-  );
-}
-
-// Localhost devnet
-if (VITE_LOCALHOST_NODE_RPC_URL) {
-  chainsToConfigure.push(foundry);
-  providersToConfigure.push(
-    jsonRpcProvider({
-      rpc: () => ({
-        http: VITE_LOCALHOST_NODE_RPC_URL,
-      }),
-    }),
-  );
+  wagmiChains.push(goerli);
 }
 
 // CloudChain
@@ -43,36 +32,24 @@ if (
   VITE_CUSTOM_CHAIN_CHAIN_ID &&
   VITE_CUSTOM_CHAIN_ADDRESSES_URL
 ) {
-  chainsToConfigure.push(cloudChain);
-  providersToConfigure.push(cloudChainRpcProvider);
+  wagmiChains.push(cloudChain);
 }
 
-const { chains, publicClient, webSocketPublicClient } = configureChains(
-  chainsToConfigure,
-  providersToConfigure,
-);
-
-export const wagmiChains = chains;
-
-const { connectors } = getDefaultWallets({
+export const wagmiConfig = getDefaultConfig({
   appName: "Hyperdrive",
-  projectId: VITE_WALLET_CONNECT_PROJECT_ID || undefined,
-  chains,
-});
-
-const safeConnector = new SafeConnector({
-  chains,
-  options: {
-    allowedDomains: [/gnosis-safe.io$/, /app.safe.global$/],
-    debug: false,
+  projectId: VITE_WALLET_CONNECT_PROJECT_ID,
+  transports: {
+    [foundry.id]: http(VITE_LOCALHOST_NODE_RPC_URL),
+    [goerli.id]: http(
+      `https://eth-goerli.g.alchemy.com/v2/${VITE_ALCHEMY_GOERLI_RPC_KEY}`,
+    ),
+    [cloudChain.id]: http(VITE_CUSTOM_CHAIN_NODE_RPC_URL),
   },
-});
-
-const allConnectors = () => [safeConnector, ...connectors()];
-
-export const wagmiConfig = createConfig({
-  autoConnect: true,
-  connectors: allConnectors,
-  publicClient,
-  webSocketPublicClient,
+  chains: [foundry, ...wagmiChains],
+  wallets: [
+    {
+      groupName: "Recommended",
+      wallets: [injectedWallet, safeWallet, rainbowWallet, walletConnectWallet],
+    },
+  ],
 });

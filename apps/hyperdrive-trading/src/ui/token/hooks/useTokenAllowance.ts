@@ -1,4 +1,5 @@
-import { Address, erc20ABI, useContractRead } from "wagmi";
+import { Address, erc20Abi } from "viem";
+import { useReadContract } from "wagmi";
 
 interface UseTokenAllowanceOptions {
   account: Address | undefined;
@@ -20,12 +21,14 @@ export function useTokenAllowance({
 }: UseTokenAllowanceOptions): useTokenAllowanceResult {
   const queryEnabled = !!spender && !!account && !!tokenAddress && !!enabled;
 
-  const { data, status } = useContractRead({
+  const { data, status } = useReadContract({
+    query: {
+      enabled,
+    },
     address: tokenAddress,
-    abi: erc20ABI,
+    abi: erc20Abi,
     functionName: "allowance",
     args: queryEnabled ? [account, spender] : undefined,
-    enabled: queryEnabled,
   });
 
   return { tokenAllowance: data, status };

@@ -2,7 +2,8 @@ import { Short } from "@hyperdrive/sdk";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-import { Address, usePublicClient } from "wagmi";
+import { Address } from "viem";
+import { usePublicClient } from "wagmi";
 
 interface UseCloseShortOptions {
   hyperdriveAddress: Address;
@@ -42,7 +43,8 @@ export function useCloseShort({
         minBaseAmountOut !== undefined && // check undefined since 0 is valid
         !!destination &&
         enabled &&
-        readWriteHyperdrive
+        !!readWriteHyperdrive &&
+        !!publicClient
       ) {
         const hash = await readWriteHyperdrive.closeShort({
           bondAmountIn,
