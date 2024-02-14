@@ -1,4 +1,9 @@
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from "@heroicons/react/24/outline";
 import {
   AppConfig,
   HyperdriveConfig,
@@ -11,6 +16,7 @@ import {
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
+  getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
@@ -300,6 +306,7 @@ export function TransactionTable({
     getFilteredRowModel: getFilteredRowModel(),
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
   });
 
   if (!transactionData?.length) {
@@ -314,7 +321,7 @@ export function TransactionTable({
   }
 
   return (
-    <div className="flex h-96 w-full overflow-y-scroll scrollbar-none">
+    <div className="flex w-full flex-col scrollbar-none">
       <table className="daisy-table daisy-table-zebra daisy-table-lg h-fit">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
@@ -352,7 +359,7 @@ export function TransactionTable({
         <tbody>
           {tableInstance.getRowModel().rows.map((row) => {
             return (
-              <tr key={row.id} className="h-24">
+              <tr key={row.id} className="h-20">
                 <>
                   {row.getVisibleCells().map((cell) => {
                     return (
@@ -370,6 +377,29 @@ export function TransactionTable({
           })}
         </tbody>
       </table>
+      <div className="flex h-24 items-center justify-center gap-2">
+        <button
+          className="daisy-btn"
+          onClick={() => tableInstance.previousPage()}
+          disabled={!tableInstance.getCanPreviousPage()}
+        >
+          <ArrowLeftIcon className="h-5" />
+        </button>
+        <span className="flex items-center gap-1">
+          <p>Page</p>
+          <p>
+            {tableInstance.getState().pagination.pageIndex + 1} of{" "}
+            {tableInstance.getPageCount()}
+          </p>
+        </span>
+        <button
+          className="daisy-btn"
+          onClick={() => tableInstance.nextPage()}
+          disabled={!tableInstance.getCanNextPage()}
+        >
+          <ArrowRightIcon className="h-5" />
+        </button>
+      </div>
     </div>
   );
 }
