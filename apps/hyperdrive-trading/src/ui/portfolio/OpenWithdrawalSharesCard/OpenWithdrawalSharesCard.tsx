@@ -36,8 +36,8 @@ export function OpenWithdrawalSharesCard({
   });
 
   const {
-    baseAmountOut: withdrawalSharesBaseWithdrawable,
-    sharesRedeemed: withdrawalSharesRedeemable,
+    proceeds: withdrawalSharesBaseWithdrawable,
+    withdrawalSharesRedeemed: withdrawalSharesRedeemable,
   } = usePreviewRedeemWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
     withdrawalSharesIn: withdrawalShares,

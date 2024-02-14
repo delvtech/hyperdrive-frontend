@@ -14,8 +14,8 @@ interface UsePreviewRemoveLiquidityOptions {
 
 interface UsePreviewRemoveLiquidityResult {
   previewRemoveLiquidityStatus: MutationStatus;
-  baseAmountOut: bigint | undefined;
-  withdrawalSharesOut: bigint | undefined;
+  proceeds: bigint | undefined;
+  withdrawalShares: bigint | undefined;
 }
 
 export function usePreviewRemoveLiquidity({
@@ -56,7 +56,7 @@ export function usePreviewRemoveLiquidity({
 
   return {
     previewRemoveLiquidityStatus: status,
-    baseAmountOut: data?.baseAmountOut,
-    withdrawalSharesOut: data?.withdrawalSharesOut,
+    proceeds: data?.proceeds,
+    withdrawalShares: data?.withdrawalShares,
   };
 }

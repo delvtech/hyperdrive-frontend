@@ -297,7 +297,7 @@ export interface IReadHyperdrive {
     asBase: boolean;
     extraData?: `0x${string}`;
     options: ContractWriteOptions;
-  }): Promise<{ baseAmountOut: bigint; withdrawalSharesOut: bigint }>;
+  }): Promise<{ proceeds: bigint; withdrawalShares: bigint }>;
 
   /**
    * Predicts the amount of base asset and redeemed shares a user will receive when redeeming withdrawal shares.
@@ -309,7 +309,7 @@ export interface IReadHyperdrive {
     asBase: boolean;
     extraData?: `0x${string}`;
     options: ContractWriteOptions;
-  }): Promise<{ baseAmountOut: bigint; sharesRedeemed: bigint }>;
+  }): Promise<{ proceeds: bigint; withdrawalSharesRedeemed: bigint }>;
 
   getLongEvents(
     options?:
@@ -1347,8 +1347,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
     );
     // TODO: Use same name from contract?
     return {
-      baseAmountOut: proceeds,
-      withdrawalSharesOut: withdrawalShares,
+      proceeds,
+      withdrawalShares,
     };
   }
 
@@ -1378,8 +1378,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
         options,
       );
     return {
-      baseAmountOut: proceeds,
-      sharesRedeemed: withdrawalSharesRedeemed,
+      proceeds,
+      withdrawalSharesRedeemed,
     };
   }
 }
