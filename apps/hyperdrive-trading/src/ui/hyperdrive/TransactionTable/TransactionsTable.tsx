@@ -144,7 +144,7 @@ function formatTransactionTableMobileData(
     },
     {
       name: "Block number",
-      value: row.blockNumber?.toString(),
+      value: <BlockInfo blockNumber={row.blockNumber} />,
     },
   ];
 }

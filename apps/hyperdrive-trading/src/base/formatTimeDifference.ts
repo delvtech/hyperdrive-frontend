@@ -18,7 +18,9 @@ export function formatTimeDifference({
 
   if (timeDifference < 2 * SECONDS_PER_MINUTE) {
     return "recently";
-  } else if (timeDifference < SECONDS_PER_HOUR) {
+  }
+
+  if (timeDifference < SECONDS_PER_HOUR) {
     const minutes = Math.floor(timeDifference / SECONDS_PER_MINUTE);
     return `${minutes} minutes ago`;
   } else {
