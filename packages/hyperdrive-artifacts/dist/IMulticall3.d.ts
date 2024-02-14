@@ -1,335 +1,335 @@
 export declare const IMulticall3: {
     readonly abi: readonly [{
-        readonly type: "function";
-        readonly name: "aggregate";
         readonly inputs: readonly [{
-            readonly name: "calls";
-            readonly type: "tuple[]";
-            readonly internalType: "struct IMulticall3.Call[]";
             readonly components: readonly [{
+                readonly internalType: "address";
                 readonly name: "target";
                 readonly type: "address";
-                readonly internalType: "address";
             }, {
+                readonly internalType: "bytes";
                 readonly name: "callData";
                 readonly type: "bytes";
-                readonly internalType: "bytes";
             }];
+            readonly internalType: "struct IMulticall3.Call[]";
+            readonly name: "calls";
+            readonly type: "tuple[]";
         }];
+        readonly name: "aggregate";
         readonly outputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "blockNumber";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }, {
+            readonly internalType: "bytes[]";
             readonly name: "returnData";
             readonly type: "bytes[]";
-            readonly internalType: "bytes[]";
         }];
         readonly stateMutability: "payable";
-    }, {
         readonly type: "function";
-        readonly name: "aggregate3";
+    }, {
         readonly inputs: readonly [{
-            readonly name: "calls";
-            readonly type: "tuple[]";
-            readonly internalType: "struct IMulticall3.Call3[]";
             readonly components: readonly [{
+                readonly internalType: "address";
                 readonly name: "target";
                 readonly type: "address";
-                readonly internalType: "address";
             }, {
+                readonly internalType: "bool";
                 readonly name: "allowFailure";
                 readonly type: "bool";
-                readonly internalType: "bool";
             }, {
+                readonly internalType: "bytes";
                 readonly name: "callData";
                 readonly type: "bytes";
-                readonly internalType: "bytes";
             }];
-        }];
-        readonly outputs: readonly [{
-            readonly name: "returnData";
-            readonly type: "tuple[]";
-            readonly internalType: "struct IMulticall3.Result[]";
-            readonly components: readonly [{
-                readonly name: "success";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "returnData";
-                readonly type: "bytes";
-                readonly internalType: "bytes";
-            }];
-        }];
-        readonly stateMutability: "payable";
-    }, {
-        readonly type: "function";
-        readonly name: "aggregate3Value";
-        readonly inputs: readonly [{
+            readonly internalType: "struct IMulticall3.Call3[]";
             readonly name: "calls";
             readonly type: "tuple[]";
-            readonly internalType: "struct IMulticall3.Call3Value[]";
+        }];
+        readonly name: "aggregate3";
+        readonly outputs: readonly [{
             readonly components: readonly [{
+                readonly internalType: "bool";
+                readonly name: "success";
+                readonly type: "bool";
+            }, {
+                readonly internalType: "bytes";
+                readonly name: "returnData";
+                readonly type: "bytes";
+            }];
+            readonly internalType: "struct IMulticall3.Result[]";
+            readonly name: "returnData";
+            readonly type: "tuple[]";
+        }];
+        readonly stateMutability: "payable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly components: readonly [{
+                readonly internalType: "address";
                 readonly name: "target";
                 readonly type: "address";
-                readonly internalType: "address";
             }, {
+                readonly internalType: "bool";
                 readonly name: "allowFailure";
                 readonly type: "bool";
-                readonly internalType: "bool";
             }, {
+                readonly internalType: "uint256";
                 readonly name: "value";
                 readonly type: "uint256";
-                readonly internalType: "uint256";
             }, {
+                readonly internalType: "bytes";
                 readonly name: "callData";
                 readonly type: "bytes";
-                readonly internalType: "bytes";
             }];
-        }];
-        readonly outputs: readonly [{
-            readonly name: "returnData";
-            readonly type: "tuple[]";
-            readonly internalType: "struct IMulticall3.Result[]";
-            readonly components: readonly [{
-                readonly name: "success";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "returnData";
-                readonly type: "bytes";
-                readonly internalType: "bytes";
-            }];
-        }];
-        readonly stateMutability: "payable";
-    }, {
-        readonly type: "function";
-        readonly name: "blockAndAggregate";
-        readonly inputs: readonly [{
+            readonly internalType: "struct IMulticall3.Call3Value[]";
             readonly name: "calls";
             readonly type: "tuple[]";
-            readonly internalType: "struct IMulticall3.Call[]";
-            readonly components: readonly [{
-                readonly name: "target";
-                readonly type: "address";
-                readonly internalType: "address";
-            }, {
-                readonly name: "callData";
-                readonly type: "bytes";
-                readonly internalType: "bytes";
-            }];
         }];
+        readonly name: "aggregate3Value";
         readonly outputs: readonly [{
-            readonly name: "blockNumber";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "blockHash";
-            readonly type: "bytes32";
-            readonly internalType: "bytes32";
-        }, {
-            readonly name: "returnData";
-            readonly type: "tuple[]";
-            readonly internalType: "struct IMulticall3.Result[]";
             readonly components: readonly [{
+                readonly internalType: "bool";
                 readonly name: "success";
                 readonly type: "bool";
-                readonly internalType: "bool";
             }, {
+                readonly internalType: "bytes";
                 readonly name: "returnData";
                 readonly type: "bytes";
-                readonly internalType: "bytes";
             }];
+            readonly internalType: "struct IMulticall3.Result[]";
+            readonly name: "returnData";
+            readonly type: "tuple[]";
         }];
         readonly stateMutability: "payable";
-    }, {
         readonly type: "function";
-        readonly name: "getBasefee";
-        readonly inputs: readonly [];
+    }, {
+        readonly inputs: readonly [{
+            readonly components: readonly [{
+                readonly internalType: "address";
+                readonly name: "target";
+                readonly type: "address";
+            }, {
+                readonly internalType: "bytes";
+                readonly name: "callData";
+                readonly type: "bytes";
+            }];
+            readonly internalType: "struct IMulticall3.Call[]";
+            readonly name: "calls";
+            readonly type: "tuple[]";
+        }];
+        readonly name: "blockAndAggregate";
         readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "blockNumber";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "blockHash";
+            readonly type: "bytes32";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "bool";
+                readonly name: "success";
+                readonly type: "bool";
+            }, {
+                readonly internalType: "bytes";
+                readonly name: "returnData";
+                readonly type: "bytes";
+            }];
+            readonly internalType: "struct IMulticall3.Result[]";
+            readonly name: "returnData";
+            readonly type: "tuple[]";
+        }];
+        readonly stateMutability: "payable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [];
+        readonly name: "getBasefee";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "basefee";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
-        readonly name: "getBlockHash";
+    }, {
         readonly inputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "blockNumber";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }];
+        readonly name: "getBlockHash";
         readonly outputs: readonly [{
+            readonly internalType: "bytes32";
             readonly name: "blockHash";
             readonly type: "bytes32";
-            readonly internalType: "bytes32";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
-        readonly name: "getBlockNumber";
+    }, {
         readonly inputs: readonly [];
+        readonly name: "getBlockNumber";
         readonly outputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "blockNumber";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
-        readonly name: "getChainId";
+    }, {
         readonly inputs: readonly [];
+        readonly name: "getChainId";
         readonly outputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "chainid";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
-        readonly name: "getCurrentBlockCoinbase";
+    }, {
         readonly inputs: readonly [];
+        readonly name: "getCurrentBlockCoinbase";
         readonly outputs: readonly [{
+            readonly internalType: "address";
             readonly name: "coinbase";
             readonly type: "address";
-            readonly internalType: "address";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
-        readonly name: "getCurrentBlockDifficulty";
+    }, {
         readonly inputs: readonly [];
+        readonly name: "getCurrentBlockDifficulty";
         readonly outputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "difficulty";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
-        readonly name: "getCurrentBlockGasLimit";
+    }, {
         readonly inputs: readonly [];
+        readonly name: "getCurrentBlockGasLimit";
         readonly outputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "gaslimit";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
-        readonly name: "getCurrentBlockTimestamp";
+    }, {
         readonly inputs: readonly [];
+        readonly name: "getCurrentBlockTimestamp";
         readonly outputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "timestamp";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
-        readonly name: "getEthBalance";
+    }, {
         readonly inputs: readonly [{
+            readonly internalType: "address";
             readonly name: "addr";
             readonly type: "address";
-            readonly internalType: "address";
         }];
+        readonly name: "getEthBalance";
         readonly outputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "balance";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
-        readonly name: "getLastBlockHash";
+    }, {
         readonly inputs: readonly [];
+        readonly name: "getLastBlockHash";
         readonly outputs: readonly [{
+            readonly internalType: "bytes32";
             readonly name: "blockHash";
             readonly type: "bytes32";
-            readonly internalType: "bytes32";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
-        readonly name: "tryAggregate";
+    }, {
         readonly inputs: readonly [{
+            readonly internalType: "bool";
             readonly name: "requireSuccess";
             readonly type: "bool";
-            readonly internalType: "bool";
         }, {
-            readonly name: "calls";
-            readonly type: "tuple[]";
-            readonly internalType: "struct IMulticall3.Call[]";
             readonly components: readonly [{
+                readonly internalType: "address";
                 readonly name: "target";
                 readonly type: "address";
-                readonly internalType: "address";
             }, {
+                readonly internalType: "bytes";
                 readonly name: "callData";
                 readonly type: "bytes";
-                readonly internalType: "bytes";
             }];
-        }];
-        readonly outputs: readonly [{
-            readonly name: "returnData";
+            readonly internalType: "struct IMulticall3.Call[]";
+            readonly name: "calls";
             readonly type: "tuple[]";
-            readonly internalType: "struct IMulticall3.Result[]";
+        }];
+        readonly name: "tryAggregate";
+        readonly outputs: readonly [{
             readonly components: readonly [{
+                readonly internalType: "bool";
                 readonly name: "success";
                 readonly type: "bool";
-                readonly internalType: "bool";
             }, {
+                readonly internalType: "bytes";
                 readonly name: "returnData";
                 readonly type: "bytes";
-                readonly internalType: "bytes";
             }];
+            readonly internalType: "struct IMulticall3.Result[]";
+            readonly name: "returnData";
+            readonly type: "tuple[]";
         }];
         readonly stateMutability: "payable";
-    }, {
         readonly type: "function";
-        readonly name: "tryBlockAndAggregate";
+    }, {
         readonly inputs: readonly [{
+            readonly internalType: "bool";
             readonly name: "requireSuccess";
             readonly type: "bool";
-            readonly internalType: "bool";
         }, {
-            readonly name: "calls";
-            readonly type: "tuple[]";
-            readonly internalType: "struct IMulticall3.Call[]";
             readonly components: readonly [{
+                readonly internalType: "address";
                 readonly name: "target";
                 readonly type: "address";
-                readonly internalType: "address";
             }, {
+                readonly internalType: "bytes";
                 readonly name: "callData";
                 readonly type: "bytes";
-                readonly internalType: "bytes";
             }];
+            readonly internalType: "struct IMulticall3.Call[]";
+            readonly name: "calls";
+            readonly type: "tuple[]";
         }];
+        readonly name: "tryBlockAndAggregate";
         readonly outputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "blockNumber";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }, {
+            readonly internalType: "bytes32";
             readonly name: "blockHash";
             readonly type: "bytes32";
-            readonly internalType: "bytes32";
         }, {
-            readonly name: "returnData";
-            readonly type: "tuple[]";
-            readonly internalType: "struct IMulticall3.Result[]";
             readonly components: readonly [{
+                readonly internalType: "bool";
                 readonly name: "success";
                 readonly type: "bool";
-                readonly internalType: "bool";
             }, {
+                readonly internalType: "bytes";
                 readonly name: "returnData";
                 readonly type: "bytes";
-                readonly internalType: "bytes";
             }];
+            readonly internalType: "struct IMulticall3.Result[]";
+            readonly name: "returnData";
+            readonly type: "tuple[]";
         }];
         readonly stateMutability: "payable";
+        readonly type: "function";
     }];
     readonly bytecode: {
         readonly object: "0x";
@@ -734,43 +734,43 @@ export declare const IMulticall3: {
     };
     readonly ast: {
         readonly absolutePath: "lib/forge-std/src/interfaces/IMulticall3.sol";
-        readonly id: 52598;
+        readonly id: 52850;
         readonly exportedSymbols: {
-            readonly IMulticall3: readonly [52597];
+            readonly IMulticall3: readonly [52849];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "32:2153:111";
+        readonly src: "32:2153:110";
         readonly nodes: readonly [{
-            readonly id: 52436;
+            readonly id: 52688;
             readonly nodeType: "PragmaDirective";
-            readonly src: "32:31:111";
+            readonly src: "32:31:110";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.6", ".2", "<", "0.9", ".0"];
         }, {
-            readonly id: 52437;
+            readonly id: 52689;
             readonly nodeType: "PragmaDirective";
-            readonly src: "65:33:111";
+            readonly src: "65:33:110";
             readonly nodes: readonly [];
             readonly literals: readonly ["experimental", "ABIEncoderV2"];
         }, {
-            readonly id: 52597;
+            readonly id: 52849;
             readonly nodeType: "ContractDefinition";
-            readonly src: "100:2084:111";
+            readonly src: "100:2084:110";
             readonly nodes: readonly [{
-                readonly id: 52442;
+                readonly id: 52694;
                 readonly nodeType: "StructDefinition";
-                readonly src: "128:67:111";
+                readonly src: "128:67:110";
                 readonly nodes: readonly [];
                 readonly canonicalName: "IMulticall3.Call";
                 readonly members: readonly [{
                     readonly constant: false;
-                    readonly id: 52439;
+                    readonly id: 52691;
                     readonly mutability: "mutable";
                     readonly name: "target";
-                    readonly nameLocation: "158:6:111";
+                    readonly nameLocation: "158:6:110";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 52442;
-                    readonly src: "150:14:111";
+                    readonly scope: 52694;
+                    readonly src: "150:14:110";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -778,10 +778,10 @@ export declare const IMulticall3: {
                         readonly typeString: "address";
                     };
                     readonly typeName: {
-                        readonly id: 52438;
+                        readonly id: 52690;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "150:7:111";
+                        readonly src: "150:7:110";
                         readonly stateMutability: "nonpayable";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_address";
@@ -791,13 +791,13 @@ export declare const IMulticall3: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 52441;
+                    readonly id: 52693;
                     readonly mutability: "mutable";
                     readonly name: "callData";
-                    readonly nameLocation: "180:8:111";
+                    readonly nameLocation: "180:8:110";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 52442;
-                    readonly src: "174:14:111";
+                    readonly scope: 52694;
+                    readonly src: "174:14:110";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -805,10 +805,10 @@ export declare const IMulticall3: {
                         readonly typeString: "bytes";
                     };
                     readonly typeName: {
-                        readonly id: 52440;
+                        readonly id: 52692;
                         readonly name: "bytes";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "174:5:111";
+                        readonly src: "174:5:110";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_bytes_storage_ptr";
                             readonly typeString: "bytes";
@@ -817,24 +817,24 @@ export declare const IMulticall3: {
                     readonly visibility: "internal";
                 }];
                 readonly name: "Call";
-                readonly nameLocation: "135:4:111";
-                readonly scope: 52597;
+                readonly nameLocation: "135:4:110";
+                readonly scope: 52849;
                 readonly visibility: "public";
             }, {
-                readonly id: 52449;
+                readonly id: 52701;
                 readonly nodeType: "StructDefinition";
-                readonly src: "201:95:111";
+                readonly src: "201:95:110";
                 readonly nodes: readonly [];
                 readonly canonicalName: "IMulticall3.Call3";
                 readonly members: readonly [{
                     readonly constant: false;
-                    readonly id: 52444;
+                    readonly id: 52696;
                     readonly mutability: "mutable";
                     readonly name: "target";
-                    readonly nameLocation: "232:6:111";
+                    readonly nameLocation: "232:6:110";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 52449;
-                    readonly src: "224:14:111";
+                    readonly scope: 52701;
+                    readonly src: "224:14:110";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -842,10 +842,10 @@ export declare const IMulticall3: {
                         readonly typeString: "address";
                     };
                     readonly typeName: {
-                        readonly id: 52443;
+                        readonly id: 52695;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "224:7:111";
+                        readonly src: "224:7:110";
                         readonly stateMutability: "nonpayable";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_address";
@@ -855,13 +855,13 @@ export declare const IMulticall3: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 52446;
+                    readonly id: 52698;
                     readonly mutability: "mutable";
                     readonly name: "allowFailure";
-                    readonly nameLocation: "253:12:111";
+                    readonly nameLocation: "253:12:110";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 52449;
-                    readonly src: "248:17:111";
+                    readonly scope: 52701;
+                    readonly src: "248:17:110";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -869,10 +869,10 @@ export declare const IMulticall3: {
                         readonly typeString: "bool";
                     };
                     readonly typeName: {
-                        readonly id: 52445;
+                        readonly id: 52697;
                         readonly name: "bool";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "248:4:111";
+                        readonly src: "248:4:110";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_bool";
                             readonly typeString: "bool";
@@ -881,13 +881,13 @@ export declare const IMulticall3: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 52448;
+                    readonly id: 52700;
                     readonly mutability: "mutable";
                     readonly name: "callData";
-                    readonly nameLocation: "281:8:111";
+                    readonly nameLocation: "281:8:110";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 52449;
-                    readonly src: "275:14:111";
+                    readonly scope: 52701;
+                    readonly src: "275:14:110";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -895,10 +895,10 @@ export declare const IMulticall3: {
                         readonly typeString: "bytes";
                     };
                     readonly typeName: {
-                        readonly id: 52447;
+                        readonly id: 52699;
                         readonly name: "bytes";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "275:5:111";
+                        readonly src: "275:5:110";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_bytes_storage_ptr";
                             readonly typeString: "bytes";
@@ -907,24 +907,24 @@ export declare const IMulticall3: {
                     readonly visibility: "internal";
                 }];
                 readonly name: "Call3";
-                readonly nameLocation: "208:5:111";
-                readonly scope: 52597;
+                readonly nameLocation: "208:5:110";
+                readonly scope: 52849;
                 readonly visibility: "public";
             }, {
-                readonly id: 52458;
+                readonly id: 52710;
                 readonly nodeType: "StructDefinition";
-                readonly src: "302:123:111";
+                readonly src: "302:123:110";
                 readonly nodes: readonly [];
                 readonly canonicalName: "IMulticall3.Call3Value";
                 readonly members: readonly [{
                     readonly constant: false;
-                    readonly id: 52451;
+                    readonly id: 52703;
                     readonly mutability: "mutable";
                     readonly name: "target";
-                    readonly nameLocation: "338:6:111";
+                    readonly nameLocation: "338:6:110";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 52458;
-                    readonly src: "330:14:111";
+                    readonly scope: 52710;
+                    readonly src: "330:14:110";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -932,10 +932,10 @@ export declare const IMulticall3: {
                         readonly typeString: "address";
                     };
                     readonly typeName: {
-                        readonly id: 52450;
+                        readonly id: 52702;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "330:7:111";
+                        readonly src: "330:7:110";
                         readonly stateMutability: "nonpayable";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_address";
@@ -945,13 +945,13 @@ export declare const IMulticall3: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 52453;
+                    readonly id: 52705;
                     readonly mutability: "mutable";
                     readonly name: "allowFailure";
-                    readonly nameLocation: "359:12:111";
+                    readonly nameLocation: "359:12:110";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 52458;
-                    readonly src: "354:17:111";
+                    readonly scope: 52710;
+                    readonly src: "354:17:110";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -959,10 +959,10 @@ export declare const IMulticall3: {
                         readonly typeString: "bool";
                     };
                     readonly typeName: {
-                        readonly id: 52452;
+                        readonly id: 52704;
                         readonly name: "bool";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "354:4:111";
+                        readonly src: "354:4:110";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_bool";
                             readonly typeString: "bool";
@@ -971,13 +971,13 @@ export declare const IMulticall3: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 52455;
+                    readonly id: 52707;
                     readonly mutability: "mutable";
                     readonly name: "value";
-                    readonly nameLocation: "389:5:111";
+                    readonly nameLocation: "389:5:110";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 52458;
-                    readonly src: "381:13:111";
+                    readonly scope: 52710;
+                    readonly src: "381:13:110";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -985,10 +985,10 @@ export declare const IMulticall3: {
                         readonly typeString: "uint256";
                     };
                     readonly typeName: {
-                        readonly id: 52454;
+                        readonly id: 52706;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "381:7:111";
+                        readonly src: "381:7:110";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_uint256";
                             readonly typeString: "uint256";
@@ -997,13 +997,13 @@ export declare const IMulticall3: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 52457;
+                    readonly id: 52709;
                     readonly mutability: "mutable";
                     readonly name: "callData";
-                    readonly nameLocation: "410:8:111";
+                    readonly nameLocation: "410:8:110";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 52458;
-                    readonly src: "404:14:111";
+                    readonly scope: 52710;
+                    readonly src: "404:14:110";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -1011,10 +1011,10 @@ export declare const IMulticall3: {
                         readonly typeString: "bytes";
                     };
                     readonly typeName: {
-                        readonly id: 52456;
+                        readonly id: 52708;
                         readonly name: "bytes";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "404:5:111";
+                        readonly src: "404:5:110";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_bytes_storage_ptr";
                             readonly typeString: "bytes";
@@ -1023,24 +1023,24 @@ export declare const IMulticall3: {
                     readonly visibility: "internal";
                 }];
                 readonly name: "Call3Value";
-                readonly nameLocation: "309:10:111";
-                readonly scope: 52597;
+                readonly nameLocation: "309:10:110";
+                readonly scope: 52849;
                 readonly visibility: "public";
             }, {
-                readonly id: 52463;
+                readonly id: 52715;
                 readonly nodeType: "StructDefinition";
-                readonly src: "431:69:111";
+                readonly src: "431:69:110";
                 readonly nodes: readonly [];
                 readonly canonicalName: "IMulticall3.Result";
                 readonly members: readonly [{
                     readonly constant: false;
-                    readonly id: 52460;
+                    readonly id: 52712;
                     readonly mutability: "mutable";
                     readonly name: "success";
-                    readonly nameLocation: "460:7:111";
+                    readonly nameLocation: "460:7:110";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 52463;
-                    readonly src: "455:12:111";
+                    readonly scope: 52715;
+                    readonly src: "455:12:110";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -1048,10 +1048,10 @@ export declare const IMulticall3: {
                         readonly typeString: "bool";
                     };
                     readonly typeName: {
-                        readonly id: 52459;
+                        readonly id: 52711;
                         readonly name: "bool";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "455:4:111";
+                        readonly src: "455:4:110";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_bool";
                             readonly typeString: "bool";
@@ -1060,13 +1060,13 @@ export declare const IMulticall3: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 52462;
+                    readonly id: 52714;
                     readonly mutability: "mutable";
                     readonly name: "returnData";
-                    readonly nameLocation: "483:10:111";
+                    readonly nameLocation: "483:10:110";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 52463;
-                    readonly src: "477:16:111";
+                    readonly scope: 52715;
+                    readonly src: "477:16:110";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -1074,10 +1074,10 @@ export declare const IMulticall3: {
                         readonly typeString: "bytes";
                     };
                     readonly typeName: {
-                        readonly id: 52461;
+                        readonly id: 52713;
                         readonly name: "bytes";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "477:5:111";
+                        readonly src: "477:5:110";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_bytes_storage_ptr";
                             readonly typeString: "bytes";
@@ -1086,81 +1086,81 @@ export declare const IMulticall3: {
                     readonly visibility: "internal";
                 }];
                 readonly name: "Result";
-                readonly nameLocation: "438:6:111";
-                readonly scope: 52597;
+                readonly nameLocation: "438:6:110";
+                readonly scope: 52849;
                 readonly visibility: "public";
             }, {
-                readonly id: 52475;
+                readonly id: 52727;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "506:140:111";
+                readonly src: "506:140:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "252dba42";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "aggregate";
-                readonly nameLocation: "515:9:111";
+                readonly nameLocation: "515:9:110";
                 readonly parameters: {
-                    readonly id: 52468;
+                    readonly id: 52720;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52467;
+                        readonly id: 52719;
                         readonly mutability: "mutable";
                         readonly name: "calls";
-                        readonly nameLocation: "541:5:111";
+                        readonly nameLocation: "541:5:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52475;
-                        readonly src: "525:21:111";
+                        readonly scope: 52727;
+                        readonly src: "525:21:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_Call_$52442_calldata_ptr_$dyn_calldata_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_Call_$52694_calldata_ptr_$dyn_calldata_ptr";
                             readonly typeString: "struct IMulticall3.Call[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 52465;
+                                readonly id: 52717;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 52464;
+                                    readonly id: 52716;
                                     readonly name: "Call";
-                                    readonly nameLocations: readonly ["525:4:111"];
+                                    readonly nameLocations: readonly ["525:4:110"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 52442;
-                                    readonly src: "525:4:111";
+                                    readonly referencedDeclaration: 52694;
+                                    readonly src: "525:4:110";
                                 };
-                                readonly referencedDeclaration: 52442;
-                                readonly src: "525:4:111";
+                                readonly referencedDeclaration: 52694;
+                                readonly src: "525:4:110";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Call_$52442_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Call_$52694_storage_ptr";
                                     readonly typeString: "struct IMulticall3.Call";
                                 };
                             };
-                            readonly id: 52466;
+                            readonly id: 52718;
                             readonly nodeType: "ArrayTypeName";
-                            readonly src: "525:6:111";
+                            readonly src: "525:6:110";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Call_$52442_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Call_$52694_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct IMulticall3.Call[]";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "524:23:111";
+                    readonly src: "524:23:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52474;
+                    readonly id: 52726;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52470;
+                        readonly id: 52722;
                         readonly mutability: "mutable";
                         readonly name: "blockNumber";
-                        readonly nameLocation: "606:11:111";
+                        readonly nameLocation: "606:11:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52475;
-                        readonly src: "598:19:111";
+                        readonly scope: 52727;
+                        readonly src: "598:19:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1168,10 +1168,10 @@ export declare const IMulticall3: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 52469;
+                            readonly id: 52721;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "598:7:111";
+                            readonly src: "598:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1180,13 +1180,13 @@ export declare const IMulticall3: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 52473;
+                        readonly id: 52725;
                         readonly mutability: "mutable";
                         readonly name: "returnData";
-                        readonly nameLocation: "634:10:111";
+                        readonly nameLocation: "634:10:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52475;
-                        readonly src: "619:25:111";
+                        readonly scope: 52727;
+                        readonly src: "619:25:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
@@ -1195,18 +1195,18 @@ export declare const IMulticall3: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 52471;
+                                readonly id: 52723;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "619:5:111";
+                                readonly src: "619:5:110";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes_storage_ptr";
                                     readonly typeString: "bytes";
                                 };
                             };
-                            readonly id: 52472;
+                            readonly id: 52724;
                             readonly nodeType: "ArrayTypeName";
-                            readonly src: "619:7:111";
+                            readonly src: "619:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_array$_t_bytes_storage_$dyn_storage_ptr";
                                 readonly typeString: "bytes[]";
@@ -1214,310 +1214,310 @@ export declare const IMulticall3: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "597:48:111";
+                    readonly src: "597:48:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 52486;
+                readonly id: 52738;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "652:98:111";
+                readonly src: "652:98:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "82ad56cb";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "aggregate3";
-                readonly nameLocation: "661:10:111";
+                readonly nameLocation: "661:10:110";
                 readonly parameters: {
-                    readonly id: 52480;
+                    readonly id: 52732;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52479;
+                        readonly id: 52731;
                         readonly mutability: "mutable";
                         readonly name: "calls";
-                        readonly nameLocation: "689:5:111";
+                        readonly nameLocation: "689:5:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52486;
-                        readonly src: "672:22:111";
+                        readonly scope: 52738;
+                        readonly src: "672:22:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_Call3_$52449_calldata_ptr_$dyn_calldata_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_Call3_$52701_calldata_ptr_$dyn_calldata_ptr";
                             readonly typeString: "struct IMulticall3.Call3[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 52477;
+                                readonly id: 52729;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 52476;
+                                    readonly id: 52728;
                                     readonly name: "Call3";
-                                    readonly nameLocations: readonly ["672:5:111"];
+                                    readonly nameLocations: readonly ["672:5:110"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 52449;
-                                    readonly src: "672:5:111";
+                                    readonly referencedDeclaration: 52701;
+                                    readonly src: "672:5:110";
                                 };
-                                readonly referencedDeclaration: 52449;
-                                readonly src: "672:5:111";
+                                readonly referencedDeclaration: 52701;
+                                readonly src: "672:5:110";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Call3_$52449_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Call3_$52701_storage_ptr";
                                     readonly typeString: "struct IMulticall3.Call3";
                                 };
                             };
-                            readonly id: 52478;
+                            readonly id: 52730;
                             readonly nodeType: "ArrayTypeName";
-                            readonly src: "672:7:111";
+                            readonly src: "672:7:110";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Call3_$52449_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Call3_$52701_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct IMulticall3.Call3[]";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "671:24:111";
+                    readonly src: "671:24:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52485;
+                    readonly id: 52737;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52484;
+                        readonly id: 52736;
                         readonly mutability: "mutable";
                         readonly name: "returnData";
-                        readonly nameLocation: "738:10:111";
+                        readonly nameLocation: "738:10:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52486;
-                        readonly src: "722:26:111";
+                        readonly scope: 52738;
+                        readonly src: "722:26:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_Result_$52463_memory_ptr_$dyn_memory_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_Result_$52715_memory_ptr_$dyn_memory_ptr";
                             readonly typeString: "struct IMulticall3.Result[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 52482;
+                                readonly id: 52734;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 52481;
+                                    readonly id: 52733;
                                     readonly name: "Result";
-                                    readonly nameLocations: readonly ["722:6:111"];
+                                    readonly nameLocations: readonly ["722:6:110"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 52463;
-                                    readonly src: "722:6:111";
+                                    readonly referencedDeclaration: 52715;
+                                    readonly src: "722:6:110";
                                 };
-                                readonly referencedDeclaration: 52463;
-                                readonly src: "722:6:111";
+                                readonly referencedDeclaration: 52715;
+                                readonly src: "722:6:110";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Result_$52463_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Result_$52715_storage_ptr";
                                     readonly typeString: "struct IMulticall3.Result";
                                 };
                             };
-                            readonly id: 52483;
+                            readonly id: 52735;
                             readonly nodeType: "ArrayTypeName";
-                            readonly src: "722:8:111";
+                            readonly src: "722:8:110";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Result_$52463_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Result_$52715_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct IMulticall3.Result[]";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "721:28:111";
+                    readonly src: "721:28:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 52497;
+                readonly id: 52749;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "756:108:111";
+                readonly src: "756:108:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "174dea71";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "aggregate3Value";
-                readonly nameLocation: "765:15:111";
+                readonly nameLocation: "765:15:110";
                 readonly parameters: {
-                    readonly id: 52491;
+                    readonly id: 52743;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52490;
+                        readonly id: 52742;
                         readonly mutability: "mutable";
                         readonly name: "calls";
-                        readonly nameLocation: "803:5:111";
+                        readonly nameLocation: "803:5:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52497;
-                        readonly src: "781:27:111";
+                        readonly scope: 52749;
+                        readonly src: "781:27:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_Call3Value_$52458_calldata_ptr_$dyn_calldata_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_Call3Value_$52710_calldata_ptr_$dyn_calldata_ptr";
                             readonly typeString: "struct IMulticall3.Call3Value[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 52488;
+                                readonly id: 52740;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 52487;
+                                    readonly id: 52739;
                                     readonly name: "Call3Value";
-                                    readonly nameLocations: readonly ["781:10:111"];
+                                    readonly nameLocations: readonly ["781:10:110"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 52458;
-                                    readonly src: "781:10:111";
+                                    readonly referencedDeclaration: 52710;
+                                    readonly src: "781:10:110";
                                 };
-                                readonly referencedDeclaration: 52458;
-                                readonly src: "781:10:111";
+                                readonly referencedDeclaration: 52710;
+                                readonly src: "781:10:110";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Call3Value_$52458_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Call3Value_$52710_storage_ptr";
                                     readonly typeString: "struct IMulticall3.Call3Value";
                                 };
                             };
-                            readonly id: 52489;
+                            readonly id: 52741;
                             readonly nodeType: "ArrayTypeName";
-                            readonly src: "781:12:111";
+                            readonly src: "781:12:110";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Call3Value_$52458_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Call3Value_$52710_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct IMulticall3.Call3Value[]";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "780:29:111";
+                    readonly src: "780:29:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52496;
+                    readonly id: 52748;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52495;
+                        readonly id: 52747;
                         readonly mutability: "mutable";
                         readonly name: "returnData";
-                        readonly nameLocation: "852:10:111";
+                        readonly nameLocation: "852:10:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52497;
-                        readonly src: "836:26:111";
+                        readonly scope: 52749;
+                        readonly src: "836:26:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_Result_$52463_memory_ptr_$dyn_memory_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_Result_$52715_memory_ptr_$dyn_memory_ptr";
                             readonly typeString: "struct IMulticall3.Result[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 52493;
+                                readonly id: 52745;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 52492;
+                                    readonly id: 52744;
                                     readonly name: "Result";
-                                    readonly nameLocations: readonly ["836:6:111"];
+                                    readonly nameLocations: readonly ["836:6:110"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 52463;
-                                    readonly src: "836:6:111";
+                                    readonly referencedDeclaration: 52715;
+                                    readonly src: "836:6:110";
                                 };
-                                readonly referencedDeclaration: 52463;
-                                readonly src: "836:6:111";
+                                readonly referencedDeclaration: 52715;
+                                readonly src: "836:6:110";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Result_$52463_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Result_$52715_storage_ptr";
                                     readonly typeString: "struct IMulticall3.Result";
                                 };
                             };
-                            readonly id: 52494;
+                            readonly id: 52746;
                             readonly nodeType: "ArrayTypeName";
-                            readonly src: "836:8:111";
+                            readonly src: "836:8:110";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Result_$52463_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Result_$52715_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct IMulticall3.Result[]";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "835:28:111";
+                    readonly src: "835:28:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 52512;
+                readonly id: 52764;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "870:168:111";
+                readonly src: "870:168:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "c3077fa9";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "blockAndAggregate";
-                readonly nameLocation: "879:17:111";
+                readonly nameLocation: "879:17:110";
                 readonly parameters: {
-                    readonly id: 52502;
+                    readonly id: 52754;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52501;
+                        readonly id: 52753;
                         readonly mutability: "mutable";
                         readonly name: "calls";
-                        readonly nameLocation: "913:5:111";
+                        readonly nameLocation: "913:5:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52512;
-                        readonly src: "897:21:111";
+                        readonly scope: 52764;
+                        readonly src: "897:21:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_Call_$52442_calldata_ptr_$dyn_calldata_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_Call_$52694_calldata_ptr_$dyn_calldata_ptr";
                             readonly typeString: "struct IMulticall3.Call[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 52499;
+                                readonly id: 52751;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 52498;
+                                    readonly id: 52750;
                                     readonly name: "Call";
-                                    readonly nameLocations: readonly ["897:4:111"];
+                                    readonly nameLocations: readonly ["897:4:110"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 52442;
-                                    readonly src: "897:4:111";
+                                    readonly referencedDeclaration: 52694;
+                                    readonly src: "897:4:110";
                                 };
-                                readonly referencedDeclaration: 52442;
-                                readonly src: "897:4:111";
+                                readonly referencedDeclaration: 52694;
+                                readonly src: "897:4:110";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Call_$52442_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Call_$52694_storage_ptr";
                                     readonly typeString: "struct IMulticall3.Call";
                                 };
                             };
-                            readonly id: 52500;
+                            readonly id: 52752;
                             readonly nodeType: "ArrayTypeName";
-                            readonly src: "897:6:111";
+                            readonly src: "897:6:110";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Call_$52442_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Call_$52694_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct IMulticall3.Call[]";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "896:23:111";
+                    readonly src: "896:23:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52511;
+                    readonly id: 52763;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52504;
+                        readonly id: 52756;
                         readonly mutability: "mutable";
                         readonly name: "blockNumber";
-                        readonly nameLocation: "978:11:111";
+                        readonly nameLocation: "978:11:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52512;
-                        readonly src: "970:19:111";
+                        readonly scope: 52764;
+                        readonly src: "970:19:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1525,10 +1525,10 @@ export declare const IMulticall3: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 52503;
+                            readonly id: 52755;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "970:7:111";
+                            readonly src: "970:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1537,13 +1537,13 @@ export declare const IMulticall3: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 52506;
+                        readonly id: 52758;
                         readonly mutability: "mutable";
                         readonly name: "blockHash";
-                        readonly nameLocation: "999:9:111";
+                        readonly nameLocation: "999:9:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52512;
-                        readonly src: "991:17:111";
+                        readonly scope: 52764;
+                        readonly src: "991:17:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1551,10 +1551,10 @@ export declare const IMulticall3: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 52505;
+                            readonly id: 52757;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "991:7:111";
+                            readonly src: "991:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes32";
                                 readonly typeString: "bytes32";
@@ -1563,83 +1563,83 @@ export declare const IMulticall3: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 52510;
+                        readonly id: 52762;
                         readonly mutability: "mutable";
                         readonly name: "returnData";
-                        readonly nameLocation: "1026:10:111";
+                        readonly nameLocation: "1026:10:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52512;
-                        readonly src: "1010:26:111";
+                        readonly scope: 52764;
+                        readonly src: "1010:26:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_Result_$52463_memory_ptr_$dyn_memory_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_Result_$52715_memory_ptr_$dyn_memory_ptr";
                             readonly typeString: "struct IMulticall3.Result[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 52508;
+                                readonly id: 52760;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 52507;
+                                    readonly id: 52759;
                                     readonly name: "Result";
-                                    readonly nameLocations: readonly ["1010:6:111"];
+                                    readonly nameLocations: readonly ["1010:6:110"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 52463;
-                                    readonly src: "1010:6:111";
+                                    readonly referencedDeclaration: 52715;
+                                    readonly src: "1010:6:110";
                                 };
-                                readonly referencedDeclaration: 52463;
-                                readonly src: "1010:6:111";
+                                readonly referencedDeclaration: 52715;
+                                readonly src: "1010:6:110";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Result_$52463_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Result_$52715_storage_ptr";
                                     readonly typeString: "struct IMulticall3.Result";
                                 };
                             };
-                            readonly id: 52509;
+                            readonly id: 52761;
                             readonly nodeType: "ArrayTypeName";
-                            readonly src: "1010:8:111";
+                            readonly src: "1010:8:110";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Result_$52463_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Result_$52715_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct IMulticall3.Result[]";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "969:68:111";
+                    readonly src: "969:68:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 52517;
+                readonly id: 52769;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1044:62:111";
+                readonly src: "1044:62:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "3e64a696";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "getBasefee";
-                readonly nameLocation: "1053:10:111";
+                readonly nameLocation: "1053:10:110";
                 readonly parameters: {
-                    readonly id: 52513;
+                    readonly id: 52765;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "1063:2:111";
+                    readonly src: "1063:2:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52516;
+                    readonly id: 52768;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52515;
+                        readonly id: 52767;
                         readonly mutability: "mutable";
                         readonly name: "basefee";
-                        readonly nameLocation: "1097:7:111";
+                        readonly nameLocation: "1097:7:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52517;
-                        readonly src: "1089:15:111";
+                        readonly scope: 52769;
+                        readonly src: "1089:15:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1647,10 +1647,10 @@ export declare const IMulticall3: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 52514;
+                            readonly id: 52766;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1089:7:111";
+                            readonly src: "1089:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1658,35 +1658,35 @@ export declare const IMulticall3: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1088:17:111";
+                    readonly src: "1088:17:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 52524;
+                readonly id: 52776;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1112:85:111";
+                readonly src: "1112:85:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "ee82ac5e";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "getBlockHash";
-                readonly nameLocation: "1121:12:111";
+                readonly nameLocation: "1121:12:110";
                 readonly parameters: {
-                    readonly id: 52520;
+                    readonly id: 52772;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52519;
+                        readonly id: 52771;
                         readonly mutability: "mutable";
                         readonly name: "blockNumber";
-                        readonly nameLocation: "1142:11:111";
+                        readonly nameLocation: "1142:11:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52524;
-                        readonly src: "1134:19:111";
+                        readonly scope: 52776;
+                        readonly src: "1134:19:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1694,10 +1694,10 @@ export declare const IMulticall3: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 52518;
+                            readonly id: 52770;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1134:7:111";
+                            readonly src: "1134:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1705,20 +1705,20 @@ export declare const IMulticall3: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1133:21:111";
+                    readonly src: "1133:21:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52523;
+                    readonly id: 52775;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52522;
+                        readonly id: 52774;
                         readonly mutability: "mutable";
                         readonly name: "blockHash";
-                        readonly nameLocation: "1186:9:111";
+                        readonly nameLocation: "1186:9:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52524;
-                        readonly src: "1178:17:111";
+                        readonly scope: 52776;
+                        readonly src: "1178:17:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1726,10 +1726,10 @@ export declare const IMulticall3: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 52521;
+                            readonly id: 52773;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1178:7:111";
+                            readonly src: "1178:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes32";
                                 readonly typeString: "bytes32";
@@ -1737,41 +1737,41 @@ export declare const IMulticall3: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1177:19:111";
+                    readonly src: "1177:19:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 52529;
+                readonly id: 52781;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1203:70:111";
+                readonly src: "1203:70:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "42cbb15c";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "getBlockNumber";
-                readonly nameLocation: "1212:14:111";
+                readonly nameLocation: "1212:14:110";
                 readonly parameters: {
-                    readonly id: 52525;
+                    readonly id: 52777;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "1226:2:111";
+                    readonly src: "1226:2:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52528;
+                    readonly id: 52780;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52527;
+                        readonly id: 52779;
                         readonly mutability: "mutable";
                         readonly name: "blockNumber";
-                        readonly nameLocation: "1260:11:111";
+                        readonly nameLocation: "1260:11:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52529;
-                        readonly src: "1252:19:111";
+                        readonly scope: 52781;
+                        readonly src: "1252:19:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1779,10 +1779,10 @@ export declare const IMulticall3: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 52526;
+                            readonly id: 52778;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1252:7:111";
+                            readonly src: "1252:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1790,41 +1790,41 @@ export declare const IMulticall3: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1251:21:111";
+                    readonly src: "1251:21:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 52534;
+                readonly id: 52786;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1279:62:111";
+                readonly src: "1279:62:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "3408e470";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "getChainId";
-                readonly nameLocation: "1288:10:111";
+                readonly nameLocation: "1288:10:110";
                 readonly parameters: {
-                    readonly id: 52530;
+                    readonly id: 52782;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "1298:2:111";
+                    readonly src: "1298:2:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52533;
+                    readonly id: 52785;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52532;
+                        readonly id: 52784;
                         readonly mutability: "mutable";
                         readonly name: "chainid";
-                        readonly nameLocation: "1332:7:111";
+                        readonly nameLocation: "1332:7:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52534;
-                        readonly src: "1324:15:111";
+                        readonly scope: 52786;
+                        readonly src: "1324:15:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1832,10 +1832,10 @@ export declare const IMulticall3: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 52531;
+                            readonly id: 52783;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1324:7:111";
+                            readonly src: "1324:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1843,41 +1843,41 @@ export declare const IMulticall3: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1323:17:111";
+                    readonly src: "1323:17:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 52539;
+                readonly id: 52791;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1347:76:111";
+                readonly src: "1347:76:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "a8b0574e";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "getCurrentBlockCoinbase";
-                readonly nameLocation: "1356:23:111";
+                readonly nameLocation: "1356:23:110";
                 readonly parameters: {
-                    readonly id: 52535;
+                    readonly id: 52787;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "1379:2:111";
+                    readonly src: "1379:2:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52538;
+                    readonly id: 52790;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52537;
+                        readonly id: 52789;
                         readonly mutability: "mutable";
                         readonly name: "coinbase";
-                        readonly nameLocation: "1413:8:111";
+                        readonly nameLocation: "1413:8:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52539;
-                        readonly src: "1405:16:111";
+                        readonly scope: 52791;
+                        readonly src: "1405:16:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1885,10 +1885,10 @@ export declare const IMulticall3: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 52536;
+                            readonly id: 52788;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1405:7:111";
+                            readonly src: "1405:7:110";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -1897,41 +1897,41 @@ export declare const IMulticall3: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1404:18:111";
+                    readonly src: "1404:18:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 52544;
+                readonly id: 52796;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1429:80:111";
+                readonly src: "1429:80:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "72425d9d";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "getCurrentBlockDifficulty";
-                readonly nameLocation: "1438:25:111";
+                readonly nameLocation: "1438:25:110";
                 readonly parameters: {
-                    readonly id: 52540;
+                    readonly id: 52792;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "1463:2:111";
+                    readonly src: "1463:2:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52543;
+                    readonly id: 52795;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52542;
+                        readonly id: 52794;
                         readonly mutability: "mutable";
                         readonly name: "difficulty";
-                        readonly nameLocation: "1497:10:111";
+                        readonly nameLocation: "1497:10:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52544;
-                        readonly src: "1489:18:111";
+                        readonly scope: 52796;
+                        readonly src: "1489:18:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1939,10 +1939,10 @@ export declare const IMulticall3: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 52541;
+                            readonly id: 52793;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1489:7:111";
+                            readonly src: "1489:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1950,41 +1950,41 @@ export declare const IMulticall3: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1488:20:111";
+                    readonly src: "1488:20:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 52549;
+                readonly id: 52801;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1515:76:111";
+                readonly src: "1515:76:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "86d516e8";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "getCurrentBlockGasLimit";
-                readonly nameLocation: "1524:23:111";
+                readonly nameLocation: "1524:23:110";
                 readonly parameters: {
-                    readonly id: 52545;
+                    readonly id: 52797;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "1547:2:111";
+                    readonly src: "1547:2:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52548;
+                    readonly id: 52800;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52547;
+                        readonly id: 52799;
                         readonly mutability: "mutable";
                         readonly name: "gaslimit";
-                        readonly nameLocation: "1581:8:111";
+                        readonly nameLocation: "1581:8:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52549;
-                        readonly src: "1573:16:111";
+                        readonly scope: 52801;
+                        readonly src: "1573:16:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1992,10 +1992,10 @@ export declare const IMulticall3: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 52546;
+                            readonly id: 52798;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1573:7:111";
+                            readonly src: "1573:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2003,41 +2003,41 @@ export declare const IMulticall3: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1572:18:111";
+                    readonly src: "1572:18:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 52554;
+                readonly id: 52806;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1597:78:111";
+                readonly src: "1597:78:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "0f28c97d";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "getCurrentBlockTimestamp";
-                readonly nameLocation: "1606:24:111";
+                readonly nameLocation: "1606:24:110";
                 readonly parameters: {
-                    readonly id: 52550;
+                    readonly id: 52802;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "1630:2:111";
+                    readonly src: "1630:2:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52553;
+                    readonly id: 52805;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52552;
+                        readonly id: 52804;
                         readonly mutability: "mutable";
                         readonly name: "timestamp";
-                        readonly nameLocation: "1664:9:111";
+                        readonly nameLocation: "1664:9:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52554;
-                        readonly src: "1656:17:111";
+                        readonly scope: 52806;
+                        readonly src: "1656:17:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2045,10 +2045,10 @@ export declare const IMulticall3: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 52551;
+                            readonly id: 52803;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1656:7:111";
+                            readonly src: "1656:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2056,35 +2056,35 @@ export declare const IMulticall3: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1655:19:111";
+                    readonly src: "1655:19:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 52561;
+                readonly id: 52813;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1681:77:111";
+                readonly src: "1681:77:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "4d2301cc";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "getEthBalance";
-                readonly nameLocation: "1690:13:111";
+                readonly nameLocation: "1690:13:110";
                 readonly parameters: {
-                    readonly id: 52557;
+                    readonly id: 52809;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52556;
+                        readonly id: 52808;
                         readonly mutability: "mutable";
                         readonly name: "addr";
-                        readonly nameLocation: "1712:4:111";
+                        readonly nameLocation: "1712:4:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52561;
-                        readonly src: "1704:12:111";
+                        readonly scope: 52813;
+                        readonly src: "1704:12:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2092,10 +2092,10 @@ export declare const IMulticall3: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 52555;
+                            readonly id: 52807;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1704:7:111";
+                            readonly src: "1704:7:110";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -2104,20 +2104,20 @@ export declare const IMulticall3: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1703:14:111";
+                    readonly src: "1703:14:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52560;
+                    readonly id: 52812;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52559;
+                        readonly id: 52811;
                         readonly mutability: "mutable";
                         readonly name: "balance";
-                        readonly nameLocation: "1749:7:111";
+                        readonly nameLocation: "1749:7:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52561;
-                        readonly src: "1741:15:111";
+                        readonly scope: 52813;
+                        readonly src: "1741:15:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2125,10 +2125,10 @@ export declare const IMulticall3: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 52558;
+                            readonly id: 52810;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1741:7:111";
+                            readonly src: "1741:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2136,41 +2136,41 @@ export declare const IMulticall3: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1740:17:111";
+                    readonly src: "1740:17:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 52566;
+                readonly id: 52818;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1764:70:111";
+                readonly src: "1764:70:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "27e86d6e";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "getLastBlockHash";
-                readonly nameLocation: "1773:16:111";
+                readonly nameLocation: "1773:16:110";
                 readonly parameters: {
-                    readonly id: 52562;
+                    readonly id: 52814;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "1789:2:111";
+                    readonly src: "1789:2:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52565;
+                    readonly id: 52817;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52564;
+                        readonly id: 52816;
                         readonly mutability: "mutable";
                         readonly name: "blockHash";
-                        readonly nameLocation: "1823:9:111";
+                        readonly nameLocation: "1823:9:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52566;
-                        readonly src: "1815:17:111";
+                        readonly scope: 52818;
+                        readonly src: "1815:17:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2178,10 +2178,10 @@ export declare const IMulticall3: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 52563;
+                            readonly id: 52815;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1815:7:111";
+                            readonly src: "1815:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes32";
                                 readonly typeString: "bytes32";
@@ -2189,35 +2189,35 @@ export declare const IMulticall3: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1814:19:111";
+                    readonly src: "1814:19:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 52579;
+                readonly id: 52831;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1840:144:111";
+                readonly src: "1840:144:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "bce38bd7";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "tryAggregate";
-                readonly nameLocation: "1849:12:111";
+                readonly nameLocation: "1849:12:110";
                 readonly parameters: {
-                    readonly id: 52573;
+                    readonly id: 52825;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52568;
+                        readonly id: 52820;
                         readonly mutability: "mutable";
                         readonly name: "requireSuccess";
-                        readonly nameLocation: "1867:14:111";
+                        readonly nameLocation: "1867:14:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52579;
-                        readonly src: "1862:19:111";
+                        readonly scope: 52831;
+                        readonly src: "1862:19:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2225,10 +2225,10 @@ export declare const IMulticall3: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 52567;
+                            readonly id: 52819;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1862:4:111";
+                            readonly src: "1862:4:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -2237,126 +2237,126 @@ export declare const IMulticall3: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 52572;
+                        readonly id: 52824;
                         readonly mutability: "mutable";
                         readonly name: "calls";
-                        readonly nameLocation: "1899:5:111";
+                        readonly nameLocation: "1899:5:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52579;
-                        readonly src: "1883:21:111";
+                        readonly scope: 52831;
+                        readonly src: "1883:21:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_Call_$52442_calldata_ptr_$dyn_calldata_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_Call_$52694_calldata_ptr_$dyn_calldata_ptr";
                             readonly typeString: "struct IMulticall3.Call[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 52570;
+                                readonly id: 52822;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 52569;
+                                    readonly id: 52821;
                                     readonly name: "Call";
-                                    readonly nameLocations: readonly ["1883:4:111"];
+                                    readonly nameLocations: readonly ["1883:4:110"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 52442;
-                                    readonly src: "1883:4:111";
+                                    readonly referencedDeclaration: 52694;
+                                    readonly src: "1883:4:110";
                                 };
-                                readonly referencedDeclaration: 52442;
-                                readonly src: "1883:4:111";
+                                readonly referencedDeclaration: 52694;
+                                readonly src: "1883:4:110";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Call_$52442_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Call_$52694_storage_ptr";
                                     readonly typeString: "struct IMulticall3.Call";
                                 };
                             };
-                            readonly id: 52571;
+                            readonly id: 52823;
                             readonly nodeType: "ArrayTypeName";
-                            readonly src: "1883:6:111";
+                            readonly src: "1883:6:110";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Call_$52442_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Call_$52694_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct IMulticall3.Call[]";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1861:44:111";
+                    readonly src: "1861:44:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52578;
+                    readonly id: 52830;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52577;
+                        readonly id: 52829;
                         readonly mutability: "mutable";
                         readonly name: "returnData";
-                        readonly nameLocation: "1972:10:111";
+                        readonly nameLocation: "1972:10:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52579;
-                        readonly src: "1956:26:111";
+                        readonly scope: 52831;
+                        readonly src: "1956:26:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_Result_$52463_memory_ptr_$dyn_memory_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_Result_$52715_memory_ptr_$dyn_memory_ptr";
                             readonly typeString: "struct IMulticall3.Result[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 52575;
+                                readonly id: 52827;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 52574;
+                                    readonly id: 52826;
                                     readonly name: "Result";
-                                    readonly nameLocations: readonly ["1956:6:111"];
+                                    readonly nameLocations: readonly ["1956:6:110"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 52463;
-                                    readonly src: "1956:6:111";
+                                    readonly referencedDeclaration: 52715;
+                                    readonly src: "1956:6:110";
                                 };
-                                readonly referencedDeclaration: 52463;
-                                readonly src: "1956:6:111";
+                                readonly referencedDeclaration: 52715;
+                                readonly src: "1956:6:110";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Result_$52463_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Result_$52715_storage_ptr";
                                     readonly typeString: "struct IMulticall3.Result";
                                 };
                             };
-                            readonly id: 52576;
+                            readonly id: 52828;
                             readonly nodeType: "ArrayTypeName";
-                            readonly src: "1956:8:111";
+                            readonly src: "1956:8:110";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Result_$52463_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Result_$52715_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct IMulticall3.Result[]";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1955:28:111";
+                    readonly src: "1955:28:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 52596;
+                readonly id: 52848;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1990:192:111";
+                readonly src: "1990:192:110";
                 readonly nodes: readonly [];
                 readonly functionSelector: "399542e9";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "tryBlockAndAggregate";
-                readonly nameLocation: "1999:20:111";
+                readonly nameLocation: "1999:20:110";
                 readonly parameters: {
-                    readonly id: 52586;
+                    readonly id: 52838;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52581;
+                        readonly id: 52833;
                         readonly mutability: "mutable";
                         readonly name: "requireSuccess";
-                        readonly nameLocation: "2025:14:111";
+                        readonly nameLocation: "2025:14:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52596;
-                        readonly src: "2020:19:111";
+                        readonly scope: 52848;
+                        readonly src: "2020:19:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2364,10 +2364,10 @@ export declare const IMulticall3: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 52580;
+                            readonly id: 52832;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2020:4:111";
+                            readonly src: "2020:4:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -2376,62 +2376,62 @@ export declare const IMulticall3: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 52585;
+                        readonly id: 52837;
                         readonly mutability: "mutable";
                         readonly name: "calls";
-                        readonly nameLocation: "2057:5:111";
+                        readonly nameLocation: "2057:5:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52596;
-                        readonly src: "2041:21:111";
+                        readonly scope: 52848;
+                        readonly src: "2041:21:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_Call_$52442_calldata_ptr_$dyn_calldata_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_Call_$52694_calldata_ptr_$dyn_calldata_ptr";
                             readonly typeString: "struct IMulticall3.Call[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 52583;
+                                readonly id: 52835;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 52582;
+                                    readonly id: 52834;
                                     readonly name: "Call";
-                                    readonly nameLocations: readonly ["2041:4:111"];
+                                    readonly nameLocations: readonly ["2041:4:110"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 52442;
-                                    readonly src: "2041:4:111";
+                                    readonly referencedDeclaration: 52694;
+                                    readonly src: "2041:4:110";
                                 };
-                                readonly referencedDeclaration: 52442;
-                                readonly src: "2041:4:111";
+                                readonly referencedDeclaration: 52694;
+                                readonly src: "2041:4:110";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Call_$52442_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Call_$52694_storage_ptr";
                                     readonly typeString: "struct IMulticall3.Call";
                                 };
                             };
-                            readonly id: 52584;
+                            readonly id: 52836;
                             readonly nodeType: "ArrayTypeName";
-                            readonly src: "2041:6:111";
+                            readonly src: "2041:6:110";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Call_$52442_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Call_$52694_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct IMulticall3.Call[]";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2019:44:111";
+                    readonly src: "2019:44:110";
                 };
                 readonly returnParameters: {
-                    readonly id: 52595;
+                    readonly id: 52847;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 52588;
+                        readonly id: 52840;
                         readonly mutability: "mutable";
                         readonly name: "blockNumber";
-                        readonly nameLocation: "2122:11:111";
+                        readonly nameLocation: "2122:11:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52596;
-                        readonly src: "2114:19:111";
+                        readonly scope: 52848;
+                        readonly src: "2114:19:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2439,10 +2439,10 @@ export declare const IMulticall3: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 52587;
+                            readonly id: 52839;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2114:7:111";
+                            readonly src: "2114:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2451,13 +2451,13 @@ export declare const IMulticall3: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 52590;
+                        readonly id: 52842;
                         readonly mutability: "mutable";
                         readonly name: "blockHash";
-                        readonly nameLocation: "2143:9:111";
+                        readonly nameLocation: "2143:9:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52596;
-                        readonly src: "2135:17:111";
+                        readonly scope: 52848;
+                        readonly src: "2135:17:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2465,10 +2465,10 @@ export declare const IMulticall3: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 52589;
+                            readonly id: 52841;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2135:7:111";
+                            readonly src: "2135:7:110";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes32";
                                 readonly typeString: "bytes32";
@@ -2477,51 +2477,51 @@ export declare const IMulticall3: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 52594;
+                        readonly id: 52846;
                         readonly mutability: "mutable";
                         readonly name: "returnData";
-                        readonly nameLocation: "2170:10:111";
+                        readonly nameLocation: "2170:10:110";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 52596;
-                        readonly src: "2154:26:111";
+                        readonly scope: 52848;
+                        readonly src: "2154:26:110";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_Result_$52463_memory_ptr_$dyn_memory_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_Result_$52715_memory_ptr_$dyn_memory_ptr";
                             readonly typeString: "struct IMulticall3.Result[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 52592;
+                                readonly id: 52844;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 52591;
+                                    readonly id: 52843;
                                     readonly name: "Result";
-                                    readonly nameLocations: readonly ["2154:6:111"];
+                                    readonly nameLocations: readonly ["2154:6:110"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 52463;
-                                    readonly src: "2154:6:111";
+                                    readonly referencedDeclaration: 52715;
+                                    readonly src: "2154:6:110";
                                 };
-                                readonly referencedDeclaration: 52463;
-                                readonly src: "2154:6:111";
+                                readonly referencedDeclaration: 52715;
+                                readonly src: "2154:6:110";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Result_$52463_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Result_$52715_storage_ptr";
                                     readonly typeString: "struct IMulticall3.Result";
                                 };
                             };
-                            readonly id: 52593;
+                            readonly id: 52845;
                             readonly nodeType: "ArrayTypeName";
-                            readonly src: "2154:8:111";
+                            readonly src: "2154:8:110";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Result_$52463_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Result_$52715_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct IMulticall3.Result[]";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2113:68:111";
+                    readonly src: "2113:68:110";
                 };
-                readonly scope: 52597;
+                readonly scope: 52849;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -2532,15 +2532,15 @@ export declare const IMulticall3: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [52597];
+            readonly linearizedBaseContracts: readonly [52849];
             readonly name: "IMulticall3";
-            readonly nameLocation: "110:11:111";
-            readonly scope: 52598;
+            readonly nameLocation: "110:11:110";
+            readonly scope: 52850;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];
         readonly license: "MIT";
     };
-    readonly id: 111;
+    readonly id: 110;
 };
 //# sourceMappingURL=IMulticall3.d.ts.map

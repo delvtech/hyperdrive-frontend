@@ -14,8 +14,8 @@ interface UsePreviewRedeemWithdrawalSharesOptions {
 
 interface UsePreviewRedeemWithdrawalSharesResult {
   previewRedeemWithdrawalSharesStatus: MutationStatus;
-  baseAmountOut: bigint | undefined;
-  sharesRedeemed: bigint | undefined;
+  proceeds: bigint | undefined;
+  withdrawalSharesRedeemed: bigint | undefined;
 }
 
 export function usePreviewRedeemWithdrawalShares({
@@ -56,7 +56,7 @@ export function usePreviewRedeemWithdrawalShares({
 
   return {
     previewRedeemWithdrawalSharesStatus: status,
-    baseAmountOut: data?.baseAmountOut,
-    sharesRedeemed: data?.sharesRedeemed,
+    proceeds: data?.proceeds,
+    withdrawalSharesRedeemed: data?.withdrawalSharesRedeemed,
   };
 }

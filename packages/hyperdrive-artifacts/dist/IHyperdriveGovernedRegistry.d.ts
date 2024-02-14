@@ -1,57 +1,57 @@
 export declare const IHyperdriveGovernedRegistry: {
     readonly abi: readonly [{
-        readonly type: "function";
-        readonly name: "setHyperdriveInfo";
-        readonly inputs: readonly [{
-            readonly name: "_hyperdriveInstance";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "_data";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
+        readonly inputs: readonly [];
+        readonly name: "Unauthorized";
+        readonly type: "error";
     }, {
-        readonly type: "function";
-        readonly name: "updateGovernance";
+        readonly anonymous: false;
         readonly inputs: readonly [{
-            readonly name: "_governance";
-            readonly type: "address";
+            readonly indexed: true;
             readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "event";
-        readonly name: "GovernanceUpdated";
-        readonly inputs: readonly [{
             readonly name: "governance";
             readonly type: "address";
+        }];
+        readonly name: "GovernanceUpdated";
+        readonly type: "event";
+    }, {
+        readonly anonymous: false;
+        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
-        readonly name: "HyperdriveInfoUpdated";
-        readonly inputs: readonly [{
             readonly name: "hyperdrive";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }, {
-            readonly name: "data";
-            readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+            readonly name: "data";
+            readonly type: "uint256";
         }];
-        readonly anonymous: false;
+        readonly name: "HyperdriveInfoUpdated";
+        readonly type: "event";
     }, {
-        readonly type: "error";
-        readonly name: "Unauthorized";
-        readonly inputs: readonly [];
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "_hyperdriveInstance";
+            readonly type: "address";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "_data";
+            readonly type: "uint256";
+        }];
+        readonly name: "setHyperdriveInfo";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "_governance";
+            readonly type: "address";
+        }];
+        readonly name: "updateGovernance";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
     }];
     readonly bytecode: {
         readonly object: "0x";
@@ -67,7 +67,7 @@ export declare const IHyperdriveGovernedRegistry: {
         readonly "setHyperdriveInfo(address,uint256)": "be44e71a";
         readonly "updateGovernance(address)": "b2561263";
     };
-    readonly rawMetadata: "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"Unauthorized\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"hyperdrive\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"data\",\"type\":\"uint256\"}],\"name\":\"HyperdriveInfoUpdated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_hyperdriveInstance\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_data\",\"type\":\"uint256\"}],\"name\":\"setHyperdriveInfo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_governance\",\"type\":\"address\"}],\"name\":\"updateGovernance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"setHyperdriveInfo(address,uint256)\":{\"params\":{\"_data\":\"The uint256 value to be set to convey information about the instance.\",\"_hyperdriveInstance\":\"The hyperdrive instance address.\"}},\"updateGovernance(address)\":{\"params\":{\"_governance\":\"The new governance address.\"}}},\"version\":1},\"userdoc\":{\"errors\":{\"Unauthorized()\":[{\"notice\":\"Thrown when caller is not governance.\"}]},\"events\":{\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when governance is transferred.\"},\"HyperdriveInfoUpdated(address,uint256)\":{\"notice\":\"Emitted when hyperdrive info is updated.\"}},\"kind\":\"user\",\"methods\":{\"setHyperdriveInfo(address,uint256)\":{\"notice\":\"Allows governance set arbitrary info for a hyperdrive instance.\"},\"updateGovernance(address)\":{\"notice\":\"Allows governance to transfer the governance role.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IHyperdriveGovernedRegistry.sol\":\"IHyperdriveGovernedRegistry\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IHyperdriveGovernedRegistry.sol\":{\"keccak256\":\"0x635a358f9e69308cf7e3087e233dfaa503c9b846e0f2f22d365f1c7bb2592965\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8be6d8d101f22a89e5c9a409f20c8d9630f72aa59ff60edf3f232f070eb94ad1\",\"dweb:/ipfs/QmVf9dG9Adt26pJFy5UwJ27y94WEcEdMqaskJivXF458AP\"]}},\"version\":1}";
+    readonly rawMetadata: "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"Unauthorized\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"hyperdrive\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"data\",\"type\":\"uint256\"}],\"name\":\"HyperdriveInfoUpdated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_hyperdriveInstance\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_data\",\"type\":\"uint256\"}],\"name\":\"setHyperdriveInfo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_governance\",\"type\":\"address\"}],\"name\":\"updateGovernance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"setHyperdriveInfo(address,uint256)\":{\"params\":{\"_data\":\"The uint256 value to be set to convey information about the        instance.\",\"_hyperdriveInstance\":\"The Hyperdrive instance address.\"}},\"updateGovernance(address)\":{\"params\":{\"_governance\":\"The new governance address.\"}}},\"version\":1},\"userdoc\":{\"errors\":{\"Unauthorized()\":[{\"notice\":\"Thrown when caller is not governance.\"}]},\"events\":{\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when governance is transferred.\"},\"HyperdriveInfoUpdated(address,uint256)\":{\"notice\":\"Emitted when hyperdrive info is updated.\"}},\"kind\":\"user\",\"methods\":{\"setHyperdriveInfo(address,uint256)\":{\"notice\":\"Allows governance set arbitrary info for a Hyperdrive instance.\"},\"updateGovernance(address)\":{\"notice\":\"Allows governance to transfer the governance role.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IHyperdriveGovernedRegistry.sol\":\"IHyperdriveGovernedRegistry\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IHyperdriveGovernedRegistry.sol\":{\"keccak256\":\"0x1cd2b2a7476d18906ec76ebc5d97602657959af2538aa7cdff5e8e0b01afdbc5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://468886cc86a60176b121e15086516bce7e94c619c9426337b56f4231ff006929\",\"dweb:/ipfs/QmW6n28BmkbAJjXqGLZw1LQe4MrnzLwBk6gV3UuMTSjp4E\"]}},\"version\":1}";
     readonly metadata: {
         readonly compiler: {
             readonly version: "0.8.20+commit.a1b79de6";
@@ -131,8 +131,8 @@ export declare const IHyperdriveGovernedRegistry: {
                 readonly methods: {
                     readonly "setHyperdriveInfo(address,uint256)": {
                         readonly params: {
-                            readonly _data: "The uint256 value to be set to convey information about the instance.";
-                            readonly _hyperdriveInstance: "The hyperdrive instance address.";
+                            readonly _data: "The uint256 value to be set to convey information about the        instance.";
+                            readonly _hyperdriveInstance: "The Hyperdrive instance address.";
                         };
                     };
                     readonly "updateGovernance(address)": {
@@ -147,7 +147,7 @@ export declare const IHyperdriveGovernedRegistry: {
                 readonly kind: "user";
                 readonly methods: {
                     readonly "setHyperdriveInfo(address,uint256)": {
-                        readonly notice: "Allows governance set arbitrary info for a hyperdrive instance.";
+                        readonly notice: "Allows governance set arbitrary info for a Hyperdrive instance.";
                     };
                     readonly "updateGovernance(address)": {
                         readonly notice: "Allows governance to transfer the governance role.";
@@ -172,8 +172,8 @@ export declare const IHyperdriveGovernedRegistry: {
         };
         readonly sources: {
             readonly "contracts/src/interfaces/IHyperdriveGovernedRegistry.sol": {
-                readonly keccak256: "0x635a358f9e69308cf7e3087e233dfaa503c9b846e0f2f22d365f1c7bb2592965";
-                readonly urls: readonly ["bzz-raw://8be6d8d101f22a89e5c9a409f20c8d9630f72aa59ff60edf3f232f070eb94ad1", "dweb:/ipfs/QmVf9dG9Adt26pJFy5UwJ27y94WEcEdMqaskJivXF458AP"];
+                readonly keccak256: "0x1cd2b2a7476d18906ec76ebc5d97602657959af2538aa7cdff5e8e0b01afdbc5";
+                readonly urls: readonly ["bzz-raw://468886cc86a60176b121e15086516bce7e94c619c9426337b56f4231ff006929", "dweb:/ipfs/QmW6n28BmkbAJjXqGLZw1LQe4MrnzLwBk6gV3UuMTSjp4E"];
                 readonly license: "Apache-2.0";
             };
         };
@@ -181,30 +181,30 @@ export declare const IHyperdriveGovernedRegistry: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IHyperdriveGovernedRegistry.sol";
-        readonly id: 7998;
+        readonly id: 8147;
         readonly exportedSymbols: {
-            readonly IHyperdriveGovernedRegistry: readonly [7997];
+            readonly IHyperdriveGovernedRegistry: readonly [8146];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "39:925:50";
+        readonly src: "39:940:50";
         readonly nodes: readonly [{
-            readonly id: 7967;
+            readonly id: 8116;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:50";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 7997;
+            readonly id: 8146;
             readonly nodeType: "ContractDefinition";
-            readonly src: "64:899:50";
+            readonly src: "64:914:50";
             readonly nodes: readonly [{
-                readonly id: 7972;
+                readonly id: 8121;
                 readonly nodeType: "EventDefinition";
                 readonly src: "164:52:50";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 7968;
+                    readonly id: 8117;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "108:51:50";
                     readonly text: "@notice Emitted when governance is transferred.";
@@ -213,17 +213,17 @@ export declare const IHyperdriveGovernedRegistry: {
                 readonly name: "GovernanceUpdated";
                 readonly nameLocation: "170:17:50";
                 readonly parameters: {
-                    readonly id: 7971;
+                    readonly id: 8120;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7970;
+                        readonly id: 8119;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "governance";
                         readonly nameLocation: "204:10:50";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7972;
+                        readonly scope: 8121;
                         readonly src: "188:26:50";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -232,7 +232,7 @@ export declare const IHyperdriveGovernedRegistry: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 7969;
+                            readonly id: 8118;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "188:7:50";
@@ -247,13 +247,13 @@ export declare const IHyperdriveGovernedRegistry: {
                     readonly src: "187:28:50";
                 };
             }, {
-                readonly id: 7979;
+                readonly id: 8128;
                 readonly nodeType: "EventDefinition";
                 readonly src: "279:70:50";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly documentation: {
-                    readonly id: 7973;
+                    readonly id: 8122;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "222:52:50";
                     readonly text: "@notice Emitted when hyperdrive info is updated.";
@@ -262,17 +262,17 @@ export declare const IHyperdriveGovernedRegistry: {
                 readonly name: "HyperdriveInfoUpdated";
                 readonly nameLocation: "285:21:50";
                 readonly parameters: {
-                    readonly id: 7978;
+                    readonly id: 8127;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7975;
+                        readonly id: 8124;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "hyperdrive";
                         readonly nameLocation: "323:10:50";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7979;
+                        readonly scope: 8128;
                         readonly src: "307:26:50";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -281,7 +281,7 @@ export declare const IHyperdriveGovernedRegistry: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 7974;
+                            readonly id: 8123;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "307:7:50";
@@ -294,13 +294,13 @@ export declare const IHyperdriveGovernedRegistry: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 7977;
+                        readonly id: 8126;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "343:4:50";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7979;
+                        readonly scope: 8128;
                         readonly src: "335:12:50";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -309,7 +309,7 @@ export declare const IHyperdriveGovernedRegistry: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 7976;
+                            readonly id: 8125;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "335:7:50";
@@ -323,12 +323,12 @@ export declare const IHyperdriveGovernedRegistry: {
                     readonly src: "306:42:50";
                 };
             }, {
-                readonly id: 7982;
+                readonly id: 8131;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "409:21:50";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 7980;
+                    readonly id: 8129;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "355:49:50";
                     readonly text: "@notice Thrown when caller is not governance.";
@@ -337,18 +337,18 @@ export declare const IHyperdriveGovernedRegistry: {
                 readonly name: "Unauthorized";
                 readonly nameLocation: "415:12:50";
                 readonly parameters: {
-                    readonly id: 7981;
+                    readonly id: 8130;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "427:2:50";
                 };
             }, {
-                readonly id: 7988;
+                readonly id: 8137;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "558:56:50";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 7983;
+                    readonly id: 8132;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "436:117:50";
                     readonly text: "@notice Allows governance to transfer the governance role.\n @param _governance The new governance address.";
@@ -360,16 +360,16 @@ export declare const IHyperdriveGovernedRegistry: {
                 readonly name: "updateGovernance";
                 readonly nameLocation: "567:16:50";
                 readonly parameters: {
-                    readonly id: 7986;
+                    readonly id: 8135;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7985;
+                        readonly id: 8134;
                         readonly mutability: "mutable";
                         readonly name: "_governance";
                         readonly nameLocation: "592:11:50";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7988;
+                        readonly scope: 8137;
                         readonly src: "584:19:50";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -378,7 +378,7 @@ export declare const IHyperdriveGovernedRegistry: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 7984;
+                            readonly id: 8133;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "584:7:50";
@@ -393,44 +393,44 @@ export declare const IHyperdriveGovernedRegistry: {
                     readonly src: "583:21:50";
                 };
                 readonly returnParameters: {
-                    readonly id: 7987;
+                    readonly id: 8136;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "613:0:50";
                 };
-                readonly scope: 7997;
+                readonly scope: 8146;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 7996;
+                readonly id: 8145;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "859:102:50";
+                readonly src: "874:102:50";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 7989;
+                    readonly id: 8138;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "620:234:50";
-                    readonly text: "@notice Allows governance set arbitrary info for a hyperdrive instance.\n @param _hyperdriveInstance The hyperdrive instance address.\n @param _data The uint256 value to be set to convey information about the instance.";
+                    readonly src: "620:249:50";
+                    readonly text: "@notice Allows governance set arbitrary info for a Hyperdrive instance.\n @param _hyperdriveInstance The Hyperdrive instance address.\n @param _data The uint256 value to be set to convey information about the\n        instance.";
                 };
                 readonly functionSelector: "be44e71a";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "setHyperdriveInfo";
-                readonly nameLocation: "868:17:50";
+                readonly nameLocation: "883:17:50";
                 readonly parameters: {
-                    readonly id: 7994;
+                    readonly id: 8143;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7991;
+                        readonly id: 8140;
                         readonly mutability: "mutable";
                         readonly name: "_hyperdriveInstance";
-                        readonly nameLocation: "903:19:50";
+                        readonly nameLocation: "918:19:50";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7996;
-                        readonly src: "895:27:50";
+                        readonly scope: 8145;
+                        readonly src: "910:27:50";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -438,10 +438,10 @@ export declare const IHyperdriveGovernedRegistry: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 7990;
+                            readonly id: 8139;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "895:7:50";
+                            readonly src: "910:7:50";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -451,13 +451,13 @@ export declare const IHyperdriveGovernedRegistry: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 7993;
+                        readonly id: 8142;
                         readonly mutability: "mutable";
                         readonly name: "_data";
-                        readonly nameLocation: "940:5:50";
+                        readonly nameLocation: "955:5:50";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7996;
-                        readonly src: "932:13:50";
+                        readonly scope: 8145;
+                        readonly src: "947:13:50";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -465,10 +465,10 @@ export declare const IHyperdriveGovernedRegistry: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 7992;
+                            readonly id: 8141;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "932:7:50";
+                            readonly src: "947:7:50";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -476,15 +476,15 @@ export declare const IHyperdriveGovernedRegistry: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "885:66:50";
+                    readonly src: "900:66:50";
                 };
                 readonly returnParameters: {
-                    readonly id: 7995;
+                    readonly id: 8144;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "960:0:50";
+                    readonly src: "975:0:50";
                 };
-                readonly scope: 7997;
+                readonly scope: 8146;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -495,12 +495,12 @@ export declare const IHyperdriveGovernedRegistry: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [7997];
+            readonly linearizedBaseContracts: readonly [8146];
             readonly name: "IHyperdriveGovernedRegistry";
             readonly nameLocation: "74:27:50";
-            readonly scope: 7998;
-            readonly usedErrors: readonly [7982];
-            readonly usedEvents: readonly [7972, 7979];
+            readonly scope: 8147;
+            readonly usedErrors: readonly [8131];
+            readonly usedEvents: readonly [8121, 8128];
         }];
         readonly license: "Apache-2.0";
     };

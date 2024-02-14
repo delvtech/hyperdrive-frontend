@@ -297,7 +297,7 @@ export interface IReadHyperdrive {
     asBase: boolean;
     extraData?: `0x${string}`;
     options: ContractWriteOptions;
-  }): Promise<{ baseAmountOut: bigint; withdrawalSharesOut: bigint }>;
+  }): Promise<{ proceeds: bigint; withdrawalShares: bigint }>;
 
   /**
    * Predicts the amount of base asset and redeemed shares a user will receive when redeeming withdrawal shares.
@@ -309,7 +309,7 @@ export interface IReadHyperdrive {
     asBase: boolean;
     extraData?: `0x${string}`;
     options: ContractWriteOptions;
-  }): Promise<{ baseAmountOut: bigint; sharesRedeemed: bigint }>;
+  }): Promise<{ proceeds: bigint; withdrawalSharesRedeemed: bigint }>;
 
   getLongEvents(
     options?:
@@ -1336,20 +1336,19 @@ export class ReadHyperdrive implements IReadHyperdrive {
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadHyperdrive, "previewRemoveLiquidity"> {
-    const { baseProceeds, withdrawalShares } =
-      await this.contract.simulateWrite(
-        "removeLiquidity",
-        {
-          _shares: lpSharesIn,
-          _minOutput: minBaseAmountOut,
-          _options: { destination, asBase, extraData },
-        },
-        options,
-      );
+    const { proceeds, withdrawalShares } = await this.contract.simulateWrite(
+      "removeLiquidity",
+      {
+        _lpShares: lpSharesIn,
+        _minOutputPerShare: minBaseAmountOut,
+        _options: { destination, asBase, extraData },
+      },
+      options,
+    );
     // TODO: Use same name from contract?
     return {
-      baseAmountOut: baseProceeds,
-      withdrawalSharesOut: withdrawalShares,
+      proceeds,
+      withdrawalShares,
     };
   }
 
@@ -1368,15 +1367,19 @@ export class ReadHyperdrive implements IReadHyperdrive {
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadHyperdrive, "previewRedeemWithdrawalShares"> {
-    const { proceeds, sharesRedeemed } = await this.contract.simulateWrite(
-      "redeemWithdrawalShares",
-      {
-        _shares: withdrawalSharesIn,
-        _minOutput: minBaseAmountOutPerShare,
-        _options: { destination, asBase, extraData },
-      },
-      options,
-    );
-    return { baseAmountOut: proceeds, sharesRedeemed: sharesRedeemed };
+    const { proceeds, withdrawalSharesRedeemed } =
+      await this.contract.simulateWrite(
+        "redeemWithdrawalShares",
+        {
+          _withdrawalShares: withdrawalSharesIn,
+          _minOutputPerShare: minBaseAmountOutPerShare,
+          _options: { destination, asBase, extraData },
+        },
+        options,
+      );
+    return {
+      proceeds,
+      withdrawalSharesRedeemed,
+    };
   }
 }

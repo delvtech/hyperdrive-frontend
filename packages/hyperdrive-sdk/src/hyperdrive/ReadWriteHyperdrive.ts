@@ -307,7 +307,7 @@ export class ReadWriteHyperdrive
     return this.contract.write(
       "openLong",
       {
-        _baseAmount: baseAmount,
+        _amount: baseAmount,
         _minOutput: bondAmountOut,
         _minVaultSharePrice: minSharePrice,
         _options: { destination, asBase, extraData },
@@ -459,8 +459,8 @@ export class ReadWriteHyperdrive
     return this.contract.write(
       "removeLiquidity",
       {
-        _shares: lpSharesIn,
-        _minOutput: minBaseAmountOut,
+        _lpShares: lpSharesIn,
+        _minOutputPerShare: minBaseAmountOut,
         _options: { destination, asBase, extraData },
       },
       options,
@@ -485,8 +485,8 @@ export class ReadWriteHyperdrive
     return this.contract.write(
       "redeemWithdrawalShares",
       {
-        _shares: withdrawalSharesIn,
-        _minOutput: minBaseAmountOutPerShare,
+        _withdrawalShares: withdrawalSharesIn,
+        _minOutputPerShare: minBaseAmountOutPerShare,
         _options: { destination, asBase, extraData },
       },
       options,

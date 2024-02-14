@@ -52,9 +52,9 @@ export function RemoveLiquidityForm({
   // Then we preview that trade to show users the split between the actual base
   // and withdrawal shares they'll receive
   const {
-    baseAmountOut: actualBaseOut,
+    proceeds: actualBaseOut,
     previewRemoveLiquidityStatus,
-    withdrawalSharesOut,
+    withdrawalShares,
   } = usePreviewRemoveLiquidity({
     destination: account,
     lpSharesIn: lpSharesIn,
@@ -91,10 +91,10 @@ export function RemoveLiquidityForm({
 
   // to format the withdrawal shares out in terms of base, we need to multiply
   // them by the lpSharePrice
-  const formattedWithdrawalSharesOut = withdrawalSharesOut
+  const formattedWithdrawalSharesOut = withdrawalShares
     ? formatBalance({
         balance: calculateTotalValueFromPrice({
-          amount: withdrawalSharesOut,
+          amount: withdrawalShares,
           price: poolInfo?.lpSharePrice || 0n,
           decimals: baseToken.decimals,
         }),

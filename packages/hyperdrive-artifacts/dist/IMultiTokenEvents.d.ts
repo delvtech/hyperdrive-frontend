@@ -1,74 +1,74 @@
 export declare const IMultiTokenEvents: {
     readonly abi: readonly [{
-        readonly type: "event";
-        readonly name: "Approval";
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "owner";
             readonly type: "address";
+        }, {
             readonly indexed: true;
             readonly internalType: "address";
-        }, {
             readonly name: "spender";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }, {
-            readonly name: "value";
-            readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+            readonly name: "value";
+            readonly type: "uint256";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "Approval";
         readonly type: "event";
-        readonly name: "ApprovalForAll";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "account";
             readonly type: "address";
+        }, {
             readonly indexed: true;
             readonly internalType: "address";
-        }, {
             readonly name: "operator";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }, {
-            readonly name: "approved";
-            readonly type: "bool";
             readonly indexed: false;
             readonly internalType: "bool";
+            readonly name: "approved";
+            readonly type: "bool";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "ApprovalForAll";
         readonly type: "event";
-        readonly name: "TransferSingle";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "operator";
             readonly type: "address";
+        }, {
             readonly indexed: true;
             readonly internalType: "address";
-        }, {
             readonly name: "from";
             readonly type: "address";
+        }, {
             readonly indexed: true;
             readonly internalType: "address";
-        }, {
             readonly name: "to";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "id";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "value";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }];
-        readonly anonymous: false;
+        readonly name: "TransferSingle";
+        readonly type: "event";
     }];
     readonly bytecode: {
         readonly object: "0x";
@@ -81,7 +81,7 @@ export declare const IMultiTokenEvents: {
         readonly linkReferences: {};
     };
     readonly methodIdentifiers: {};
-    readonly rawMetadata: "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IMultiTokenEvents.sol\":\"IMultiTokenEvents\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0xb5b2a1f90c4e85e1290144b1e0e393027c90f24d6030ee802d0369342d7bf002\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f7850a790ea32726462f6dd08c87e5250c70155af558b8fdd17dc71d53c5b7f3\",\"dweb:/ipfs/QmWpshz1Ufdqmw8rmZdbdm9ZyEcKHFswLMNaBkBJ3sqNA1\"]}},\"version\":1}";
+    readonly rawMetadata: "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"events\":{\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IMultiTokenEvents.sol\":\"IMultiTokenEvents\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]}},\"version\":1}";
     readonly metadata: {
         readonly compiler: {
             readonly version: "0.8.20+commit.a1b79de6";
@@ -186,8 +186,8 @@ export declare const IMultiTokenEvents: {
         };
         readonly sources: {
             readonly "contracts/src/interfaces/IMultiTokenEvents.sol": {
-                readonly keccak256: "0xb5b2a1f90c4e85e1290144b1e0e393027c90f24d6030ee802d0369342d7bf002";
-                readonly urls: readonly ["bzz-raw://f7850a790ea32726462f6dd08c87e5250c70155af558b8fdd17dc71d53c5b7f3", "dweb:/ipfs/QmWpshz1Ufdqmw8rmZdbdm9ZyEcKHFswLMNaBkBJ3sqNA1"];
+                readonly keccak256: "0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb";
+                readonly urls: readonly ["bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222", "dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK"];
                 readonly license: "Apache-2.0";
             };
         };
@@ -195,44 +195,50 @@ export declare const IMultiTokenEvents: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IMultiTokenEvents.sol";
-        readonly id: 8305;
+        readonly id: 8483;
         readonly exportedSymbols: {
-            readonly IMultiTokenEvents: readonly [8304];
+            readonly IMultiTokenEvents: readonly [8482];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "39:461:57";
+        readonly src: "39:741:57";
         readonly nodes: readonly [{
-            readonly id: 8275;
+            readonly id: 8450;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:57";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 8304;
+            readonly id: 8482;
             readonly nodeType: "ContractDefinition";
-            readonly src: "64:435:57";
+            readonly src: "64:715:57";
             readonly nodes: readonly [{
-                readonly id: 8287;
+                readonly id: 8463;
                 readonly nodeType: "EventDefinition";
-                readonly src: "98:162:57";
+                readonly src: "179:162:57";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
+                readonly documentation: {
+                    readonly id: 8451;
+                    readonly nodeType: "StructuredDocumentation";
+                    readonly src: "98:76:57";
+                    readonly text: "@notice Emitted when tokens are transferred from one account to another.";
+                };
                 readonly eventSelector: "c3d58168c5ae7397731d063d5bbf3d657854427343f4c083240f7aacaa2d0f62";
                 readonly name: "TransferSingle";
-                readonly nameLocation: "104:14:57";
+                readonly nameLocation: "185:14:57";
                 readonly parameters: {
-                    readonly id: 8286;
+                    readonly id: 8462;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8277;
+                        readonly id: 8453;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "operator";
-                        readonly nameLocation: "144:8:57";
+                        readonly nameLocation: "225:8:57";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8287;
-                        readonly src: "128:24:57";
+                        readonly scope: 8463;
+                        readonly src: "209:24:57";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -240,10 +246,10 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8276;
+                            readonly id: 8452;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "128:7:57";
+                            readonly src: "209:7:57";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -253,14 +259,14 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8279;
+                        readonly id: 8455;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "from";
-                        readonly nameLocation: "178:4:57";
+                        readonly nameLocation: "259:4:57";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8287;
-                        readonly src: "162:20:57";
+                        readonly scope: 8463;
+                        readonly src: "243:20:57";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -268,10 +274,10 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8278;
+                            readonly id: 8454;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "162:7:57";
+                            readonly src: "243:7:57";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -281,14 +287,14 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8281;
+                        readonly id: 8457;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "to";
-                        readonly nameLocation: "208:2:57";
+                        readonly nameLocation: "289:2:57";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8287;
-                        readonly src: "192:18:57";
+                        readonly scope: 8463;
+                        readonly src: "273:18:57";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -296,10 +302,10 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8280;
+                            readonly id: 8456;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "192:7:57";
+                            readonly src: "273:7:57";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -309,14 +315,14 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8283;
+                        readonly id: 8459;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "id";
-                        readonly nameLocation: "228:2:57";
+                        readonly nameLocation: "309:2:57";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8287;
-                        readonly src: "220:10:57";
+                        readonly scope: 8463;
+                        readonly src: "301:10:57";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -324,10 +330,10 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8282;
+                            readonly id: 8458;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "220:7:57";
+                            readonly src: "301:7:57";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -336,14 +342,14 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8285;
+                        readonly id: 8461;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "value";
-                        readonly nameLocation: "248:5:57";
+                        readonly nameLocation: "329:5:57";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8287;
-                        readonly src: "240:13:57";
+                        readonly scope: 8463;
+                        readonly src: "321:13:57";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -351,10 +357,10 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8284;
+                            readonly id: 8460;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "240:7:57";
+                            readonly src: "321:7:57";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -362,30 +368,36 @@ export declare const IMultiTokenEvents: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "118:141:57";
+                    readonly src: "199:141:57";
                 };
             }, {
-                readonly id: 8295;
+                readonly id: 8472;
                 readonly nodeType: "EventDefinition";
-                readonly src: "266:108:57";
+                readonly src: "446:108:57";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
+                readonly documentation: {
+                    readonly id: 8464;
+                    readonly nodeType: "StructuredDocumentation";
+                    readonly src: "347:94:57";
+                    readonly text: "@notice Emitted when an account changes the allowance for another\n         account.";
+                };
                 readonly eventSelector: "8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925";
                 readonly name: "Approval";
-                readonly nameLocation: "272:8:57";
+                readonly nameLocation: "452:8:57";
                 readonly parameters: {
-                    readonly id: 8294;
+                    readonly id: 8471;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8289;
+                        readonly id: 8466;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "owner";
-                        readonly nameLocation: "306:5:57";
+                        readonly nameLocation: "486:5:57";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8295;
-                        readonly src: "290:21:57";
+                        readonly scope: 8472;
+                        readonly src: "470:21:57";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -393,10 +405,10 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8288;
+                            readonly id: 8465;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "290:7:57";
+                            readonly src: "470:7:57";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -406,14 +418,14 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8291;
+                        readonly id: 8468;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "spender";
-                        readonly nameLocation: "337:7:57";
+                        readonly nameLocation: "517:7:57";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8295;
-                        readonly src: "321:23:57";
+                        readonly scope: 8472;
+                        readonly src: "501:23:57";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -421,10 +433,10 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8290;
+                            readonly id: 8467;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "321:7:57";
+                            readonly src: "501:7:57";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -434,14 +446,14 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8293;
+                        readonly id: 8470;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "value";
-                        readonly nameLocation: "362:5:57";
+                        readonly nameLocation: "542:5:57";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8295;
-                        readonly src: "354:13:57";
+                        readonly scope: 8472;
+                        readonly src: "534:13:57";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -449,10 +461,10 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8292;
+                            readonly id: 8469;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "354:7:57";
+                            readonly src: "534:7:57";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -460,30 +472,36 @@ export declare const IMultiTokenEvents: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "280:93:57";
+                    readonly src: "460:93:57";
                 };
             }, {
-                readonly id: 8303;
+                readonly id: 8481;
                 readonly nodeType: "EventDefinition";
-                readonly src: "380:117:57";
+                readonly src: "660:117:57";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
+                readonly documentation: {
+                    readonly id: 8473;
+                    readonly nodeType: "StructuredDocumentation";
+                    readonly src: "560:95:57";
+                    readonly text: "@notice Emitted when an account changes the approval for all of its\n         tokens.";
+                };
                 readonly eventSelector: "17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c31";
                 readonly name: "ApprovalForAll";
-                readonly nameLocation: "386:14:57";
+                readonly nameLocation: "666:14:57";
                 readonly parameters: {
-                    readonly id: 8302;
+                    readonly id: 8480;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8297;
+                        readonly id: 8475;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "account";
-                        readonly nameLocation: "426:7:57";
+                        readonly nameLocation: "706:7:57";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8303;
-                        readonly src: "410:23:57";
+                        readonly scope: 8481;
+                        readonly src: "690:23:57";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -491,10 +509,10 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8296;
+                            readonly id: 8474;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "410:7:57";
+                            readonly src: "690:7:57";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -504,14 +522,14 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8299;
+                        readonly id: 8477;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "operator";
-                        readonly nameLocation: "459:8:57";
+                        readonly nameLocation: "739:8:57";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8303;
-                        readonly src: "443:24:57";
+                        readonly scope: 8481;
+                        readonly src: "723:24:57";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -519,10 +537,10 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8298;
+                            readonly id: 8476;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "443:7:57";
+                            readonly src: "723:7:57";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -532,14 +550,14 @@ export declare const IMultiTokenEvents: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8301;
+                        readonly id: 8479;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "approved";
-                        readonly nameLocation: "482:8:57";
+                        readonly nameLocation: "762:8:57";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8303;
-                        readonly src: "477:13:57";
+                        readonly scope: 8481;
+                        readonly src: "757:13:57";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -547,10 +565,10 @@ export declare const IMultiTokenEvents: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 8300;
+                            readonly id: 8478;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "477:4:57";
+                            readonly src: "757:4:57";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -558,7 +576,7 @@ export declare const IMultiTokenEvents: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "400:96:57";
+                    readonly src: "680:96:57";
                 };
             }];
             readonly abstract: false;
@@ -567,12 +585,12 @@ export declare const IMultiTokenEvents: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [8304];
+            readonly linearizedBaseContracts: readonly [8482];
             readonly name: "IMultiTokenEvents";
             readonly nameLocation: "74:17:57";
-            readonly scope: 8305;
+            readonly scope: 8483;
             readonly usedErrors: readonly [];
-            readonly usedEvents: readonly [8287, 8295, 8303];
+            readonly usedEvents: readonly [8463, 8472, 8481];
         }];
         readonly license: "Apache-2.0";
     };

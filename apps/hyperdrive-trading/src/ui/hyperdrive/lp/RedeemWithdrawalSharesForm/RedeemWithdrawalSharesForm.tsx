@@ -34,7 +34,7 @@ export function RedeemWithdrawalSharesForm({
     decimals: baseToken.decimals,
   });
 
-  const { sharesRedeemed: maxRedeemableShares } =
+  const { withdrawalSharesRedeemed: maxRedeemableShares } =
     usePreviewRedeemWithdrawalShares({
       hyperdriveAddress: hyperdrive.address,
       withdrawalSharesIn: withdrawalShares,
@@ -42,7 +42,7 @@ export function RedeemWithdrawalSharesForm({
       destination: account,
     });
 
-  const { baseAmountOut, previewRedeemWithdrawalSharesStatus } =
+  const { proceeds, previewRedeemWithdrawalSharesStatus } =
     usePreviewRedeemWithdrawalShares({
       hyperdriveAddress: hyperdrive.address,
       withdrawalSharesIn: amountAsBigInt,
@@ -84,9 +84,9 @@ export function RedeemWithdrawalSharesForm({
           <div className="flex justify-between">
             <p>You receive</p>
             <p className="font-bold">
-              {baseAmountOut
+              {proceeds
                 ? `${formatBalance({
-                    balance: baseAmountOut,
+                    balance: proceeds,
                     decimals: baseToken.decimals,
                     places: 8,
                   })} ${baseToken.symbol}`

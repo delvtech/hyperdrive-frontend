@@ -40,7 +40,7 @@ export function OpenLpSharesCard({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const { baseAmountOut: lpBaseWithdrawable, withdrawalSharesOut } =
+  const { proceeds: lpBaseWithdrawable, withdrawalShares } =
     usePreviewRemoveLiquidity({
       hyperdriveAddress: hyperdrive.address,
       lpSharesIn: lpShares,
@@ -49,9 +49,9 @@ export function OpenLpSharesCard({
     });
 
   const utilizationRatio =
-    !!withdrawalSharesOut && !!lpShares
+    !!withdrawalShares && !!lpShares
       ? calculateRatio({
-          a: withdrawalSharesOut,
+          a: withdrawalShares,
           b: lpShares,
           decimals: baseToken.decimals,
         })
@@ -116,7 +116,7 @@ export function OpenLpSharesCard({
                     Utilization ratio
                   </p>
                   <p>
-                    {!!lpBaseWithdrawable && !!withdrawalSharesOut ? (
+                    {!!lpBaseWithdrawable && !!withdrawalShares ? (
                       `${dnum.format(
                         [utilizationRatio, baseToken.decimals],
                         2,
