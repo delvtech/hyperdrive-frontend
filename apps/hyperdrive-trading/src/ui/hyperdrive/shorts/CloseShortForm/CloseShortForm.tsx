@@ -57,6 +57,9 @@ export function CloseShortForm({
     decimals: baseToken.decimals,
   });
 
+  const isAmountValid = !!(
+    amountAsBigInt && amountAsBigInt <= short.bondAmount
+  );
   const { amountOut, previewCloseShortStatus } = usePreviewCloseShort({
     hyperdriveAddress: short.hyperdriveAddress,
     maturityTime: short.maturity,
@@ -64,6 +67,7 @@ export function CloseShortForm({
     minAmountOut: 0n,
     destination: account,
     asBase: activeWithdrawToken.address === baseToken.address,
+    enabled: isAmountValid,
   });
 
   const closeShortAmountAfterSlippage =
@@ -77,9 +81,9 @@ export function CloseShortForm({
     hyperdriveAddress: hyperdrive.address,
     short,
     bondAmountIn: amountAsBigInt,
-    minBaseAmountOut: closeShortAmountAfterSlippage,
+    minAmountOut: closeShortAmountAfterSlippage,
     destination: account,
-    enabled: previewCloseShortStatus === "success",
+    enabled: previewCloseShortStatus === "success" && isAmountValid,
     asBase: activeWithdrawToken.address === baseToken.address,
     onExecuted: (hash) => {
       setAmount("");
@@ -150,11 +154,16 @@ export function CloseShortForm({
           }
         />
       }
+      disclaimer={
+        !!amountAsBigInt && !isAmountValid ? (
+          <p className="text-center text-error">Insufficient balance</p>
+        ) : null
+      }
       actionButton={
         account ? (
           <button
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            disabled={!closeShort || isPendingWalletAction}
+            disabled={!closeShort || isPendingWalletAction || !isAmountValid}
             onClick={() => {
               closeShort?.();
             }}

@@ -10,7 +10,7 @@ interface UseCloseShortOptions {
   hyperdriveAddress: Address;
   short: Short | undefined;
   bondAmountIn: bigint | undefined;
-  minBaseAmountOut: bigint | undefined;
+  minAmountOut: bigint | undefined;
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
@@ -26,7 +26,7 @@ export function useCloseShort({
   hyperdriveAddress,
   short,
   bondAmountIn,
-  minBaseAmountOut,
+  minAmountOut,
   destination,
   asBase = true,
   enabled = true,
@@ -41,7 +41,7 @@ export function useCloseShort({
       if (
         !!short &&
         !!bondAmountIn &&
-        minBaseAmountOut !== undefined && // check undefined since 0 is valid
+        minAmountOut !== undefined && // check undefined since 0 is valid
         !!destination &&
         enabled &&
         !!readWriteHyperdrive &&
@@ -49,7 +49,7 @@ export function useCloseShort({
       ) {
         const hash = await readWriteHyperdrive.closeShort({
           bondAmountIn,
-          minBaseAmountOut,
+          minAmountOut,
           destination,
           asBase,
           short,
