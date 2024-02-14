@@ -1,4 +1,8 @@
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import {
+  HyperdriveConfig,
+  TokenConfig,
+  findBaseToken,
+} from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -6,22 +10,24 @@ import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface OpenShortPreviewProps {
-  market: HyperdriveConfig;
+  hyperdrive: HyperdriveConfig;
+  tokenIn: TokenConfig<any>;
   costBasis?: bigint;
   shortSize?: bigint;
 }
 
 export function OpenShortPreview({
-  market,
+  hyperdrive,
   costBasis,
+  tokenIn,
   shortSize,
 }: OpenShortPreviewProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
-    baseTokenAddress: market.baseToken,
+    baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const termLengthMS = Number(market.poolConfig.positionDuration * 1000n);
+  const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   return (
     <div className="flex flex-col gap-3">
       <LabelValue
@@ -51,10 +57,10 @@ export function OpenShortPreview({
             {costBasis
               ? `${formatBalance({
                   balance: costBasis,
-                  decimals: baseToken.decimals,
+                  decimals: tokenIn.decimals,
                   places: 6,
-                })} ${baseToken.symbol}`
-              : `0 ${baseToken.symbol}`}
+                })} ${tokenIn.symbol}`
+              : `0 ${tokenIn.symbol}`}
           </span>
         }
       />

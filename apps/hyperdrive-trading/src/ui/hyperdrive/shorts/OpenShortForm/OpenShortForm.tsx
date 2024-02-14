@@ -134,7 +134,8 @@ export function OpenShortForm({
       }
       transactionPreview={
         <OpenShortPreview
-          market={hyperdrive}
+          hyperdrive={hyperdrive}
+          tokenIn={activeToken}
           costBasis={amountIn ?? 0n}
           shortSize={shortAmountAsBigInt}
         />
