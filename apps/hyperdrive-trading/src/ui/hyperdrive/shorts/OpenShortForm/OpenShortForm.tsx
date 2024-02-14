@@ -18,11 +18,12 @@ import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import ApproveTokenButton from "src/ui/token/ApproveTokenButton";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
-import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface OpenShortPositionFormProps {
@@ -82,13 +83,6 @@ export function OpenShortForm({
     allowance: activeTokenAllowance,
     amount: amountIn,
     requiresAllowance,
-  });
-
-  // TODO: Remove, this is covered by ApproveTokenButton
-  const { approve } = useApproveToken({
-    tokenAddress: baseToken.address,
-    spender: hyperdrive.address,
-    amount: MAX_UINT256,
   });
 
   const { poolInfo } = usePoolInfo(hyperdrive.address);
@@ -169,17 +163,13 @@ export function OpenShortForm({
 
         if (!hasEnoughAllowance) {
           return (
-            <button
-              disabled={!approve}
-              className="daisy-btn daisy-btn-circle daisy-btn-warning w-full"
-              onClick={(e) => {
-                // Do this so we don't close the modal
-                e.preventDefault();
-                approve?.();
-              }}
-            >
-              <h5>Approve {activeToken.symbol}</h5>
-            </button>
+            <ApproveTokenButton
+              spender={hyperdrive.address}
+              token={activeToken}
+              tokenBalance={activeTokenBalance}
+              amountAsBigInt={amountIn}
+              amount={formatUnits(amountIn || 0n, activeToken.decimals)}
+            />
           );
         }
         return (
