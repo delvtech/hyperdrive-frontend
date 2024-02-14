@@ -377,9 +377,9 @@ export function TransactionTable({
           })}
         </tbody>
       </table>
-      <div className="flex h-24 items-center justify-center">
+      <div className="flex h-24 items-center justify-center gap-2">
         <button
-          className="daisy-btn mr-2 "
+          className="daisy-btn"
           onClick={() => tableInstance.previousPage()}
           disabled={!tableInstance.getCanPreviousPage()}
         >
@@ -393,7 +393,7 @@ export function TransactionTable({
           </p>
         </span>
         <button
-          className="daisy-btn ml-2 "
+          className="daisy-btn"
           onClick={() => tableInstance.nextPage()}
           disabled={!tableInstance.getCanNextPage()}
         >
