@@ -18,7 +18,7 @@ export async function waitForTransactionAndInvalidateCache({
   hash,
   queryClient,
 }: WaitForTransactionAndInvalidateCacheOptions): Promise<void> {
-  publicClient.waitForTransactionReceipt({
+  await publicClient.waitForTransactionReceipt({
     hash,
     onReplaced() {
       queryClient.invalidateQueries();

@@ -20,6 +20,12 @@ export class QueryClientSimpleCache<
 
   get(key: TKey): TValue | undefined {
     const queryKey = convertSimpleCacheKeyToQueryKey(key);
+    const data = this.queryClient.getQueryState(queryKey);
+    // don't return invalidated query data from the cache, it's stale and will
+    // need to be refetched!
+    if (data?.isInvalidated) {
+      return;
+    }
     return this.queryClient.getQueryData<TValue>(queryKey);
   }
 

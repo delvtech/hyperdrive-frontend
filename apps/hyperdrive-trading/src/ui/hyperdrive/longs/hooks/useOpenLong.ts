@@ -61,15 +61,18 @@ export function useOpenLong({
           minSharePrice,
           asBase,
         });
+
         addTransaction({
           hash,
           description: "Open Long",
         });
+
         await waitForTransactionAndInvalidateCache({
           publicClient,
           queryClient,
           hash,
         });
+
         onExecuted?.(hash);
       }
     },
