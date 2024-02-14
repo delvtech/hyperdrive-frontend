@@ -34,7 +34,6 @@ root.render(
         </SkeletonTheme>
       </RainbowKitProvider>
     </QueryClientProvider>
-    ,
   </WagmiProvider>,
 );
 

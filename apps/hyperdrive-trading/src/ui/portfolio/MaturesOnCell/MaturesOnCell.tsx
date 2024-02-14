@@ -1,13 +1,13 @@
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { useCurrentBlock } from "src/ui/network/useCurrentBlock";
+import { useBlock } from "wagmi";
 
 export function MaturesOnCell({
   maturity,
 }: {
   maturity: bigint;
 }): ReactElement {
-  const { currentBlock } = useCurrentBlock();
+  const { data: currentBlock } = useBlock();
   const isTermComplete = maturity < (currentBlock?.timestamp || 0n);
   const maturityDateMS = maturity * 1000n;
   const termEndDate = new Date(Number(maturityDateMS));

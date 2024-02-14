@@ -22,9 +22,6 @@
     "test:ui": "vitest --ui",
     "typecheck": "tsc --project tsconfig.json --noEmit"
   },
-  "resolutions": {
-    "viem": "2.7.8"
-  },
   "dependencies": {
     "@delvtech/evm-client": "^0.0.2",
     "@heroicons/react": "^2.0.16",

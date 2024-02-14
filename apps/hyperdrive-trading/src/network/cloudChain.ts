@@ -16,9 +16,3 @@ export const cloudChain: Chain = {
     default: { http: [VITE_CUSTOM_CHAIN_NODE_RPC_URL] },
   },
 };
-
-// export const cloudChainRpcProvider = jsonRpcProvider({
-//   rpc: () => ({
-//     http: VITE_CUSTOM_CHAIN_NODE_RPC_URL,
-//   }),
-// });

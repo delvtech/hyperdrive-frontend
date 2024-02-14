@@ -45,7 +45,8 @@ export function useOpenShort({
     !!destination &&
     minSharePrice !== undefined &&
     enabled &&
-    !!readWriteHyperdrive;
+    !!readWriteHyperdrive &&
+    !!publicClient;
 
   const { mutate: openShort, status } = useMutation({
     mutationFn: async () => {
@@ -61,7 +62,7 @@ export function useOpenShort({
           hash,
           description: "Open Short",
         });
-        await publicClient?.waitForTransactionReceipt({ hash });
+        await publicClient.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
         onExecuted?.(hash);
       }

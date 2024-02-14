@@ -40,7 +40,8 @@ export function useRedeemWithdrawalShares({
     minBaseAmountOutPerShare !== undefined &&
     !!destination &&
     enabled &&
-    readWriteHyperdrive;
+    !!readWriteHyperdrive &&
+    !!publicClient;
 
   const { mutate: redeemWithdrawalShares, status } = useMutation({
     mutationFn: async () => {
@@ -55,7 +56,7 @@ export function useRedeemWithdrawalShares({
           hash,
           description: "Redeem Withdrawal Shares",
         });
-        await publicClient?.waitForTransactionReceipt({ hash });
+        await publicClient.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
       }
     },

@@ -26,11 +26,6 @@ if (VITE_ALCHEMY_GOERLI_RPC_KEY) {
   wagmiChains.push(goerli);
 }
 
-// Localhost devnet
-if (VITE_LOCALHOST_NODE_RPC_URL) {
-  wagmiChains.push(foundry);
-}
-
 // CloudChain
 if (
   VITE_CUSTOM_CHAIN_NODE_RPC_URL &&
@@ -39,8 +34,6 @@ if (
 ) {
   wagmiChains.push(cloudChain);
 }
-
-// const allConnectors = () => [safeConnector, ...connectors()];
 
 export const wagmiConfig = getDefaultConfig({
   appName: "Hyperdrive",

@@ -2,7 +2,7 @@ import { TokenConfig } from "@hyperdrive/appconfig";
 import { ERC20Mintable } from "@hyperdrive/artifacts/ERC20Mintable";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { Address, formatUnits } from "viem";
-import { useChainId, useWriteContract } from "wagmi";
+import { useWriteContract } from "wagmi";
 
 export function useMintBaseToken({
   baseToken,
@@ -14,7 +14,6 @@ export function useMintBaseToken({
   amount: bigint;
 }): { mint: (() => void) | undefined } {
   const addRecentTransaction = useAddRecentTransaction();
-  const chainId = useChainId();
   const isEnabled = !!destination && !!amount;
   const { writeContract } = useWriteContract();
 
@@ -25,7 +24,6 @@ export function useMintBaseToken({
             address: baseToken.address,
             abi: ERC20Mintable.abi,
             functionName: "mint",
-            // enabled: isEnabled,
             args: [destination, amount],
           },
           {

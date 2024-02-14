@@ -49,7 +49,8 @@ export function useAddLiquidity({
     maxAPR !== undefined &&
     !!destination &&
     enabled &&
-    readWriteHyperdrive;
+    !!readWriteHyperdrive &&
+    !!publicClient;
 
   const { mutate: addLiquidity, status } = useMutation({
     mutationFn: async () => {
@@ -66,7 +67,7 @@ export function useAddLiquidity({
           hash,
           description: "Add Liquidity",
         });
-        await publicClient?.waitForTransactionReceipt({ hash });
+        await publicClient.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
         onExecuted?.(hash);
       }

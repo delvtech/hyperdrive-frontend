@@ -43,7 +43,8 @@ export function useCloseShort({
         minBaseAmountOut !== undefined && // check undefined since 0 is valid
         !!destination &&
         enabled &&
-        readWriteHyperdrive
+        !!readWriteHyperdrive &&
+        !!publicClient
       ) {
         const hash = await readWriteHyperdrive.closeShort({
           bondAmountIn,
@@ -56,7 +57,7 @@ export function useCloseShort({
           hash,
           description: "Close Short",
         });
-        await publicClient?.waitForTransactionReceipt({ hash });
+        await publicClient.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
         onExecuted?.(hash);
       }

@@ -42,7 +42,8 @@ export function useRemoveLiquidity({
     minBaseAmountOut !== undefined &&
     !!destination &&
     enabled &&
-    readWriteHyperdrive;
+    !!readWriteHyperdrive &&
+    !!publicClient;
 
   const { mutate: removeLiquidity, status } = useMutation({
     mutationFn: async () => {
@@ -57,7 +58,7 @@ export function useRemoveLiquidity({
           hash,
           description: "Remove Liquidity",
         });
-        await publicClient?.waitForTransactionReceipt({ hash });
+        await publicClient.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
         onExecuted?.(hash);
       }

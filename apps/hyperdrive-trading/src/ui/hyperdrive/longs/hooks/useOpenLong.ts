@@ -47,7 +47,8 @@ export function useOpenLong({
     !!destination &&
     minSharePrice !== undefined &&
     enabled &&
-    readWriteHyperdrive;
+    !!readWriteHyperdrive &&
+    !!publicClient;
 
   const { mutate: openLong, status } = useMutation({
     mutationFn: async () => {
@@ -63,7 +64,7 @@ export function useOpenLong({
           hash,
           description: "Open Long",
         });
-        await publicClient?.waitForTransactionReceipt({ hash });
+        await publicClient.waitForTransactionReceipt({ hash });
         queryClient.resetQueries();
         onExecuted?.(hash);
       }

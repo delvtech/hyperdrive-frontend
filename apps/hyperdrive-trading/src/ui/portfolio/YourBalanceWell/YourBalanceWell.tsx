@@ -6,7 +6,7 @@ import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useMintBaseToken } from "src/ui/token/hooks/useMintBaseToken";
 import { Address, parseUnits } from "viem";
-import { useAccount, useBalance, useChainId } from "wagmi";
+import { useAccount, useBalance } from "wagmi";
 
 export function YourBalanceWell({
   tokenAddress,
@@ -24,14 +24,11 @@ export function YourBalanceWell({
     token: tokenAddress,
   });
 
-  const chainId = useChainId();
   const { mint } = useMintBaseToken({
     amount: parseUnits("1000000", token.decimals),
     baseToken: token,
     destination: account,
   });
-
-  console.log(mint);
 
   return (
     <Well elevation="flat">
