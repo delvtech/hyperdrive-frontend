@@ -146,6 +146,11 @@ export function OpenShortForm({
       disclaimer={
         amountIn ? (
           <div className="flex flex-col gap-4">
+            {!hasEnoughBalance ? (
+              <p className="text-center text-sm text-error">
+                Insufficient balance
+              </p>
+            ) : null}
             <p className="text-center text-sm text-neutral-content">
               You pay{" "}
               <strong>
