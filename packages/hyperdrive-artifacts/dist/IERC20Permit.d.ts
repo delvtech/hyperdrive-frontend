@@ -1,62 +1,62 @@
 export declare const IERC20Permit: {
     readonly abi: readonly [{
-        readonly type: "function";
-        readonly name: "DOMAIN_SEPARATOR";
         readonly inputs: readonly [];
+        readonly name: "DOMAIN_SEPARATOR";
         readonly outputs: readonly [{
+            readonly internalType: "bytes32";
             readonly name: "";
             readonly type: "bytes32";
-            readonly internalType: "bytes32";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
-        readonly name: "nonces";
+    }, {
         readonly inputs: readonly [{
+            readonly internalType: "address";
             readonly name: "owner";
             readonly type: "address";
-            readonly internalType: "address";
         }];
+        readonly name: "nonces";
         readonly outputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
-        readonly name: "permit";
+    }, {
         readonly inputs: readonly [{
+            readonly internalType: "address";
             readonly name: "owner";
             readonly type: "address";
-            readonly internalType: "address";
         }, {
+            readonly internalType: "address";
             readonly name: "spender";
             readonly type: "address";
-            readonly internalType: "address";
         }, {
+            readonly internalType: "uint256";
             readonly name: "value";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }, {
+            readonly internalType: "uint256";
             readonly name: "deadline";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }, {
+            readonly internalType: "uint8";
             readonly name: "v";
             readonly type: "uint8";
-            readonly internalType: "uint8";
         }, {
+            readonly internalType: "bytes32";
             readonly name: "r";
             readonly type: "bytes32";
-            readonly internalType: "bytes32";
         }, {
+            readonly internalType: "bytes32";
             readonly name: "s";
             readonly type: "bytes32";
-            readonly internalType: "bytes32";
         }];
+        readonly name: "permit";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
+        readonly type: "function";
     }];
     readonly bytecode: {
         readonly object: "0x";
@@ -184,31 +184,31 @@ export declare const IERC20Permit: {
     };
     readonly ast: {
         readonly absolutePath: "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol";
-        readonly id: 66465;
+        readonly id: 66717;
         readonly exportedSymbols: {
-            readonly IERC20Permit: readonly [66464];
+            readonly IERC20Permit: readonly [66716];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "123:3680:117";
+        readonly src: "123:3680:116";
         readonly nodes: readonly [{
-            readonly id: 66430;
+            readonly id: 66682;
             readonly nodeType: "PragmaDirective";
-            readonly src: "123:24:117";
+            readonly src: "123:24:116";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "^", "0.8", ".20"];
         }, {
-            readonly id: 66464;
+            readonly id: 66716;
             readonly nodeType: "ContractDefinition";
-            readonly src: "2113:1689:117";
+            readonly src: "2113:1689:116";
             readonly nodes: readonly [{
-                readonly id: 66449;
+                readonly id: 66701;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "2997:183:117";
+                readonly src: "2997:183:116";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 66432;
+                    readonly id: 66684;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "2142:850:117";
+                    readonly src: "2142:850:116";
                     readonly text: " @dev Sets `value` as the allowance of `spender` over ``owner``'s tokens,\n given ``owner``'s signed approval.\n IMPORTANT: The same issues {IERC20-approve} has related to transaction\n ordering also apply here.\n Emits an {Approval} event.\n Requirements:\n - `spender` cannot be the zero address.\n - `deadline` must be a timestamp in the future.\n - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner`\n over the EIP712-formatted function arguments.\n - the signature must use ``owner``'s current nonce (see {nonces}).\n For more information on the signature format, see the\n https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP\n section].\n CAUTION: See Security Considerations above.";
                 };
                 readonly functionSelector: "d505accf";
@@ -216,19 +216,19 @@ export declare const IERC20Permit: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "permit";
-                readonly nameLocation: "3006:6:117";
+                readonly nameLocation: "3006:6:116";
                 readonly parameters: {
-                    readonly id: 66447;
+                    readonly id: 66699;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 66434;
+                        readonly id: 66686;
                         readonly mutability: "mutable";
                         readonly name: "owner";
-                        readonly nameLocation: "3030:5:117";
+                        readonly nameLocation: "3030:5:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 66449;
-                        readonly src: "3022:13:117";
+                        readonly scope: 66701;
+                        readonly src: "3022:13:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -236,10 +236,10 @@ export declare const IERC20Permit: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 66433;
+                            readonly id: 66685;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3022:7:117";
+                            readonly src: "3022:7:116";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -249,13 +249,13 @@ export declare const IERC20Permit: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 66436;
+                        readonly id: 66688;
                         readonly mutability: "mutable";
                         readonly name: "spender";
-                        readonly nameLocation: "3053:7:117";
+                        readonly nameLocation: "3053:7:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 66449;
-                        readonly src: "3045:15:117";
+                        readonly scope: 66701;
+                        readonly src: "3045:15:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -263,10 +263,10 @@ export declare const IERC20Permit: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 66435;
+                            readonly id: 66687;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3045:7:117";
+                            readonly src: "3045:7:116";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -276,13 +276,13 @@ export declare const IERC20Permit: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 66438;
+                        readonly id: 66690;
                         readonly mutability: "mutable";
                         readonly name: "value";
-                        readonly nameLocation: "3078:5:117";
+                        readonly nameLocation: "3078:5:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 66449;
-                        readonly src: "3070:13:117";
+                        readonly scope: 66701;
+                        readonly src: "3070:13:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -290,10 +290,10 @@ export declare const IERC20Permit: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 66437;
+                            readonly id: 66689;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3070:7:117";
+                            readonly src: "3070:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -302,13 +302,13 @@ export declare const IERC20Permit: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 66440;
+                        readonly id: 66692;
                         readonly mutability: "mutable";
                         readonly name: "deadline";
-                        readonly nameLocation: "3101:8:117";
+                        readonly nameLocation: "3101:8:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 66449;
-                        readonly src: "3093:16:117";
+                        readonly scope: 66701;
+                        readonly src: "3093:16:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -316,10 +316,10 @@ export declare const IERC20Permit: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 66439;
+                            readonly id: 66691;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3093:7:117";
+                            readonly src: "3093:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -328,13 +328,13 @@ export declare const IERC20Permit: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 66442;
+                        readonly id: 66694;
                         readonly mutability: "mutable";
                         readonly name: "v";
-                        readonly nameLocation: "3125:1:117";
+                        readonly nameLocation: "3125:1:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 66449;
-                        readonly src: "3119:7:117";
+                        readonly scope: 66701;
+                        readonly src: "3119:7:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -342,10 +342,10 @@ export declare const IERC20Permit: {
                             readonly typeString: "uint8";
                         };
                         readonly typeName: {
-                            readonly id: 66441;
+                            readonly id: 66693;
                             readonly name: "uint8";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3119:5:117";
+                            readonly src: "3119:5:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint8";
                                 readonly typeString: "uint8";
@@ -354,13 +354,13 @@ export declare const IERC20Permit: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 66444;
+                        readonly id: 66696;
                         readonly mutability: "mutable";
                         readonly name: "r";
-                        readonly nameLocation: "3144:1:117";
+                        readonly nameLocation: "3144:1:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 66449;
-                        readonly src: "3136:9:117";
+                        readonly scope: 66701;
+                        readonly src: "3136:9:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -368,10 +368,10 @@ export declare const IERC20Permit: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 66443;
+                            readonly id: 66695;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3136:7:117";
+                            readonly src: "3136:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes32";
                                 readonly typeString: "bytes32";
@@ -380,13 +380,13 @@ export declare const IERC20Permit: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 66446;
+                        readonly id: 66698;
                         readonly mutability: "mutable";
                         readonly name: "s";
-                        readonly nameLocation: "3163:1:117";
+                        readonly nameLocation: "3163:1:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 66449;
-                        readonly src: "3155:9:117";
+                        readonly scope: 66701;
+                        readonly src: "3155:9:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -394,10 +394,10 @@ export declare const IERC20Permit: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 66445;
+                            readonly id: 66697;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3155:7:117";
+                            readonly src: "3155:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes32";
                                 readonly typeString: "bytes32";
@@ -405,27 +405,27 @@ export declare const IERC20Permit: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "3012:158:117";
+                    readonly src: "3012:158:116";
                 };
                 readonly returnParameters: {
-                    readonly id: 66448;
+                    readonly id: 66700;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "3179:0:117";
+                    readonly src: "3179:0:116";
                 };
-                readonly scope: 66464;
+                readonly scope: 66716;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 66457;
+                readonly id: 66709;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "3485:63:117";
+                readonly src: "3485:63:116";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 66450;
+                    readonly id: 66702;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "3186:294:117";
+                    readonly src: "3186:294:116";
                     readonly text: " @dev Returns the current nonce for `owner`. This value must be\n included whenever a signature is generated for {permit}.\n Every successful call to {permit} increases ``owner``'s nonce by one. This\n prevents a signature from being used multiple times.";
                 };
                 readonly functionSelector: "7ecebe00";
@@ -433,19 +433,19 @@ export declare const IERC20Permit: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "nonces";
-                readonly nameLocation: "3494:6:117";
+                readonly nameLocation: "3494:6:116";
                 readonly parameters: {
-                    readonly id: 66453;
+                    readonly id: 66705;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 66452;
+                        readonly id: 66704;
                         readonly mutability: "mutable";
                         readonly name: "owner";
-                        readonly nameLocation: "3509:5:117";
+                        readonly nameLocation: "3509:5:116";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 66457;
-                        readonly src: "3501:13:117";
+                        readonly scope: 66709;
+                        readonly src: "3501:13:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -453,10 +453,10 @@ export declare const IERC20Permit: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 66451;
+                            readonly id: 66703;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3501:7:117";
+                            readonly src: "3501:7:116";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -465,20 +465,20 @@ export declare const IERC20Permit: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "3500:15:117";
+                    readonly src: "3500:15:116";
                 };
                 readonly returnParameters: {
-                    readonly id: 66456;
+                    readonly id: 66708;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 66455;
+                        readonly id: 66707;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 66457;
-                        readonly src: "3539:7:117";
+                        readonly scope: 66709;
+                        readonly src: "3539:7:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -486,10 +486,10 @@ export declare const IERC20Permit: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 66454;
+                            readonly id: 66706;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3539:7:117";
+                            readonly src: "3539:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -497,21 +497,21 @@ export declare const IERC20Permit: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "3538:9:117";
+                    readonly src: "3538:9:116";
                 };
-                readonly scope: 66464;
+                readonly scope: 66716;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 66463;
+                readonly id: 66715;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "3740:60:117";
+                readonly src: "3740:60:116";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 66458;
+                    readonly id: 66710;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "3554:128:117";
+                    readonly src: "3554:128:116";
                     readonly text: " @dev Returns the domain separator used in the encoding of the signature for {permit}, as defined by {EIP712}.";
                 };
                 readonly functionSelector: "3644e515";
@@ -519,25 +519,25 @@ export declare const IERC20Permit: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "DOMAIN_SEPARATOR";
-                readonly nameLocation: "3749:16:117";
+                readonly nameLocation: "3749:16:116";
                 readonly parameters: {
-                    readonly id: 66459;
+                    readonly id: 66711;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "3765:2:117";
+                    readonly src: "3765:2:116";
                 };
                 readonly returnParameters: {
-                    readonly id: 66462;
+                    readonly id: 66714;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 66461;
+                        readonly id: 66713;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 66463;
-                        readonly src: "3791:7:117";
+                        readonly scope: 66715;
+                        readonly src: "3791:7:116";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -545,10 +545,10 @@ export declare const IERC20Permit: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 66460;
+                            readonly id: 66712;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3791:7:117";
+                            readonly src: "3791:7:116";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes32";
                                 readonly typeString: "bytes32";
@@ -556,9 +556,9 @@ export declare const IERC20Permit: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "3790:9:117";
+                    readonly src: "3790:9:116";
                 };
-                readonly scope: 66464;
+                readonly scope: 66716;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -569,21 +569,21 @@ export declare const IERC20Permit: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly documentation: {
-                readonly id: 66431;
+                readonly id: 66683;
                 readonly nodeType: "StructuredDocumentation";
-                readonly src: "149:1963:117";
+                readonly src: "149:1963:116";
                 readonly text: " @dev Interface of the ERC20 Permit extension allowing approvals to be made via signatures, as defined in\n https://eips.ethereum.org/EIPS/eip-2612[EIP-2612].\n Adds the {permit} method, which can be used to change an account's ERC20 allowance (see {IERC20-allowance}) by\n presenting a message signed by the account. By not relying on {IERC20-approve}, the token holder account doesn't\n need to send a transaction, and thus is not required to hold Ether at all.\n ==== Security Considerations\n There are two important considerations concerning the use of `permit`. The first is that a valid permit signature\n expresses an allowance, and it should not be assumed to convey additional meaning. In particular, it should not be\n considered as an intention to spend the allowance in any specific way. The second is that because permits have\n built-in replay protection and can be submitted by anyone, they can be frontrun. A protocol that uses permits should\n take this into consideration and allow a `permit` call to fail. Combining these two aspects, a pattern that may be\n generally recommended is:\n ```solidity\n function doThingWithPermit(..., uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) public {\n     try token.permit(msg.sender, address(this), value, deadline, v, r, s) {} catch {}\n     doThing(..., value);\n }\n function doThing(..., uint256 value) public {\n     token.safeTransferFrom(msg.sender, address(this), value);\n     ...\n }\n ```\n Observe that: 1) `msg.sender` is used as the owner, leaving no ambiguity as to the signer intent, and 2) the use of\n `try/catch` allows the permit to fail and makes the code tolerant to frontrunning. (See also\n {SafeERC20-safeTransferFrom}).\n Additionally, note that smart contract wallets (such as Argent or Safe) are not able to produce permit signatures, so\n contracts should have entry points that don't rely on permit.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [66464];
+            readonly linearizedBaseContracts: readonly [66716];
             readonly name: "IERC20Permit";
-            readonly nameLocation: "2123:12:117";
-            readonly scope: 66465;
+            readonly nameLocation: "2123:12:116";
+            readonly scope: 66717;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];
         readonly license: "MIT";
     };
-    readonly id: 117;
+    readonly id: 116;
 };
 //# sourceMappingURL=IERC20Permit.d.ts.map
