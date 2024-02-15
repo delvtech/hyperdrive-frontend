@@ -55,7 +55,7 @@ export function usePreviewCloseLong({
           readWriteHyperdrive.previewCloseLong({
             maturityTime,
             bondAmountIn,
-            minBaseAmountOut: minOutput,
+            minAmountOut: minOutput,
             destination,
             asBase,
           })

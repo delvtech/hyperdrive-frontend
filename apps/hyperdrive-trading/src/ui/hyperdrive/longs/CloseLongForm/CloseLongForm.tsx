@@ -80,7 +80,7 @@ export function CloseLongForm({
     hyperdriveAddress: hyperdrive.address,
     long,
     bondAmountIn: amountAsBigInt,
-    minBaseAmountOut: minOutputAfterSlippage,
+    minAmountOut: minOutputAfterSlippage,
     destination: account,
     asBase: activeWithdrawToken.address === baseToken.address,
     enabled: previewCloseLongStatus === "success",
