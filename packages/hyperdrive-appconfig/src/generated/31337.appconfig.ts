@@ -10,6 +10,11 @@ export const localChainAppConfig: AppConfig = {
       id: "erc4626",
       description: "A vault standard for yield sources",
     },
+    {
+      id: "steth",
+      description:
+        "The stETH yield source, which conforms to no ERC standard, and must be treated as a special case",
+    },
   ],
   tokens: [
     {
@@ -35,6 +40,27 @@ export const localChainAppConfig: AppConfig = {
       tags: [],
       extensions: {},
     },
+    {
+      address: "0x68BF6B6131e9c784eaB5747Ba08Cc903A679B6dE",
+      decimals: 18,
+      name: "Liquid staked Ether 2.0",
+      symbol: "stETH",
+      iconUrl: "https://cryptologos.cc/logos/steth-steth-logo.png?v=029",
+      tags: ["yieldSource", "steth"],
+      extensions: {
+        shortName: "Lido stETH",
+        protocol: "lido",
+      },
+    },
+    {
+      address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+      name: "Ether",
+      symbol: "ETH",
+      decimals: 18,
+      tags: [],
+      extensions: {},
+      iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",
+    },
   ],
   hyperdrives: [
     {
@@ -57,6 +83,36 @@ export const localChainAppConfig: AppConfig = {
         positionDuration: 604800n,
         checkpointDuration: 3600n,
         timeStretch: 873443363379730n,
+        governance: "0x0000000000000000000000000000000000000000",
+        feeCollector: "0x0000000000000000000000000000000000000000",
+        fees: {
+          curve: 10000000000000000n,
+          flat: 500000000000000n,
+          governanceLP: 150000000000000000n,
+          governanceZombie: 30000000000000000n,
+        },
+      },
+    },
+    {
+      address: "0x1546c8bf7fc378a89f42490c2562c143d540dfaa",
+      name: "7d ETH-Lido stETH",
+      decimals: 18,
+      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+      sharesToken: "0x68BF6B6131e9c784eaB5747Ba08Cc903A679B6dE",
+      withdrawOptions: {
+        isBaseTokenWithdrawalEnabled: false,
+      },
+      poolConfig: {
+        baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+        linkerFactory: "0x06E5aCdA0914B9c79eF21798629c96bFC6b6D11b",
+        linkerCodeHash:
+          "0x667d4fd5e9caf594f2719acb9a7e4aa728f4c384e906a974032be6aa1fc2df66",
+        initialVaultSharePrice: 1000000029965753424n,
+        minimumShareReserves: 1000000000000000n,
+        minimumTransactionAmount: 1000000000000000n,
+        positionDuration: 604800n,
+        checkpointDuration: 3600n,
+        timeStretch: 607084408361255n,
         governance: "0x0000000000000000000000000000000000000000",
         feeCollector: "0x0000000000000000000000000000000000000000",
         fees: {
