@@ -6,7 +6,7 @@ import { Address } from "viem";
 interface UsePreviewRedeemWithdrawalSharesOptions {
   hyperdriveAddress: Address;
   withdrawalSharesIn: bigint | undefined;
-  minBaseAmountOutPerShare: bigint | undefined;
+  minOutputPerShare: bigint | undefined;
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
@@ -21,7 +21,7 @@ interface UsePreviewRedeemWithdrawalSharesResult {
 export function usePreviewRedeemWithdrawalShares({
   hyperdriveAddress,
   withdrawalSharesIn,
-  minBaseAmountOutPerShare,
+  minOutputPerShare,
   destination,
   asBase = true,
   enabled = true,
@@ -29,7 +29,7 @@ export function usePreviewRedeemWithdrawalShares({
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryEnabled =
     !!withdrawalSharesIn &&
-    minBaseAmountOutPerShare !== undefined &&
+    minOutputPerShare !== undefined &&
     !!destination &&
     enabled &&
     !!readWriteHyperdrive;
@@ -38,15 +38,15 @@ export function usePreviewRedeemWithdrawalShares({
     queryKey: makeQueryKey("previewRedeemWithdrawalShares", {
       market: hyperdriveAddress,
       withdrawalSharesIn: withdrawalSharesIn?.toString(),
-      minBaseAmountOutPerShare: minBaseAmountOutPerShare?.toString(),
+      minBaseAmountOutPerShare: minOutputPerShare?.toString(),
       destination,
-      asUnderlying: asBase,
+      asBase,
     }),
     queryFn: queryEnabled
       ? () =>
           readWriteHyperdrive.previewRedeemWithdrawalShares({
             withdrawalSharesIn,
-            minBaseAmountOutPerShare,
+            minOutputPerShare,
             destination,
             asBase,
           })

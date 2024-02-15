@@ -38,7 +38,7 @@ export function RedeemWithdrawalSharesForm({
     usePreviewRedeemWithdrawalShares({
       hyperdriveAddress: hyperdrive.address,
       withdrawalSharesIn: withdrawalShares,
-      minBaseAmountOutPerShare: 0n,
+      minOutputPerShare: 0n,
       destination: account,
     });
 
@@ -46,7 +46,7 @@ export function RedeemWithdrawalSharesForm({
     usePreviewRedeemWithdrawalShares({
       hyperdriveAddress: hyperdrive.address,
       withdrawalSharesIn: amountAsBigInt,
-      minBaseAmountOutPerShare: 0n,
+      minOutputPerShare: 0n,
       destination: account,
     });
 
@@ -54,7 +54,7 @@ export function RedeemWithdrawalSharesForm({
     useRedeemWithdrawalShares({
       hyperdriveAddress: hyperdrive.address,
       withdrawalSharesIn: amountAsBigInt,
-      minBaseAmountOutPerShare: 0n,
+      minOutputPerShare: 0n,
       destination: account,
       enabled: previewRedeemWithdrawalSharesStatus === "success",
     });

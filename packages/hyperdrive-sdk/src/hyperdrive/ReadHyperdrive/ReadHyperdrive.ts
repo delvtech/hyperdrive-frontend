@@ -292,7 +292,7 @@ export interface IReadHyperdrive {
    */
   previewRemoveLiquidity(args: {
     lpSharesIn: bigint;
-    minBaseAmountOut: bigint;
+    minOutputPerShare: bigint;
     destination: Address;
     asBase: boolean;
     extraData?: `0x${string}`;
@@ -304,7 +304,7 @@ export interface IReadHyperdrive {
    */
   previewRedeemWithdrawalShares(args: {
     withdrawalSharesIn: bigint;
-    minBaseAmountOutPerShare: bigint;
+    minOutputPerShare: bigint;
     destination: Address;
     asBase: boolean;
     extraData?: `0x${string}`;
@@ -1323,14 +1323,14 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
   async previewRemoveLiquidity({
     lpSharesIn,
-    minBaseAmountOut,
+    minOutputPerShare,
     destination,
     asBase,
     extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     lpSharesIn: bigint;
-    minBaseAmountOut: bigint;
+    minOutputPerShare: bigint;
     destination: Address;
     asBase: boolean;
     extraData?: `0x${string}`;
@@ -1340,12 +1340,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
       "removeLiquidity",
       {
         _lpShares: lpSharesIn,
-        _minOutputPerShare: minBaseAmountOut,
+        _minOutputPerShare: minOutputPerShare,
         _options: { destination, asBase, extraData },
       },
       options,
     );
-    // TODO: Use same name from contract?
+
     return {
       proceeds,
       withdrawalShares,
@@ -1354,14 +1354,14 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
   async previewRedeemWithdrawalShares({
     withdrawalSharesIn,
-    minBaseAmountOutPerShare,
+    minOutputPerShare,
     destination,
     asBase,
     extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     withdrawalSharesIn: bigint;
-    minBaseAmountOutPerShare: bigint;
+    minOutputPerShare: bigint;
     destination: Address;
     asBase: boolean;
     extraData?: `0x${string}`;
@@ -1372,7 +1372,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
         "redeemWithdrawalShares",
         {
           _withdrawalShares: withdrawalSharesIn,
-          _minOutputPerShare: minBaseAmountOutPerShare,
+          _minOutputPerShare: minOutputPerShare,
           _options: { destination, asBase, extraData },
         },
         options,

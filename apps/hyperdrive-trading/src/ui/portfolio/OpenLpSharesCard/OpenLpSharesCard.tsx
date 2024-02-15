@@ -44,7 +44,7 @@ export function OpenLpSharesCard({
     usePreviewRemoveLiquidity({
       hyperdriveAddress: hyperdrive.address,
       lpSharesIn: lpShares,
-      minBaseAmountOut: 1n,
+      minOutputPerShare: 1n,
       destination: account,
     });
 

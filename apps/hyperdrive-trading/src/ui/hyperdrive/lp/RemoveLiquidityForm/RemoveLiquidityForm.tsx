@@ -61,13 +61,13 @@ export function RemoveLiquidityForm({
     destination: account,
     lpSharesIn: lpSharesIn,
     hyperdriveAddress: hyperdrive.address,
-    minBaseAmountOut: 1n,
+    minOutputPerShare: 1n,
   });
 
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
     hyperdriveAddress: hyperdrive.address,
     lpSharesIn: lpSharesIn,
-    minBaseAmountOut: 1n,
+    minOutputPerShare: 1n,
     destination: account,
     enabled: previewRemoveLiquidityStatus === "success",
     onExecuted: (hash) => {
