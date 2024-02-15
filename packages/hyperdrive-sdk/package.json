@@ -16,10 +16,10 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@delvtech/evm-client": "^0.0.6"
+    "@delvtech/evm-client": "^0.0.7"
   },
   "devDependencies": {
-    "@delvtech/evm-client": "^0.0.6",
+    "@delvtech/evm-client": "^0.0.7",
     "@hyperdrive/artifacts": "*",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
