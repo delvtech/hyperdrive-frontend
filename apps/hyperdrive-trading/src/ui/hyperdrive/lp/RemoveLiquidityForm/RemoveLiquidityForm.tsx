@@ -1,5 +1,4 @@
 import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
-import { PoolInfo } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
@@ -47,7 +46,10 @@ export function RemoveLiquidityForm({
   });
 
   // Then calculate the lpSharesIn required to remove that amount of base
-  const lpSharesIn = calculateRequiredLpSharesIn(desiredBaseOut, poolInfo);
+  const lpSharesIn = calculateRequiredLpSharesIn(
+    desiredBaseOut,
+    poolInfo?.lpSharePrice,
+  );
 
   // Then we preview that trade to show users the split between the actual base
   // and withdrawal shares they'll receive
@@ -170,9 +172,9 @@ export function RemoveLiquidityForm({
 
 function calculateRequiredLpSharesIn(
   desiredBaseOut: bigint | undefined,
-  poolInfo: PoolInfo | undefined,
+  lpSharePrice: bigint | undefined,
 ): bigint {
   return !desiredBaseOut
     ? 0n
-    : dnum.div([desiredBaseOut, 18], [poolInfo?.lpSharePrice || 1n, 18])[0];
+    : dnum.div([desiredBaseOut, 18], [lpSharePrice || 1n, 18])[0];
 }
