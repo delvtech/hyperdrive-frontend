@@ -683,10 +683,16 @@ export class ReadHyperdrive implements IReadHyperdrive {
       fromBlock,
       toBlock,
     });
-
+    // { 'checkpointId1': 1000, 'checkpoint2': 500 }
     const totalBasePaidByAssetId = mapValues(
       groupBy(openLongEvents, (event) => event.args.assetId.toString()),
       (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
+    );
+
+    // {'checkpointId1': 50, 'checkpointId2': 0}
+    const totalSharesPaidByAssetId = mapValues(
+      groupBy(openLongEvents, (event) => event.args.assetId.toString()),
+      (events) => sumBigInt(events.map((event) => event.args.vaultShareAmount)),
     );
 
     const closeLongEvents = await this.contract.getEvents("CloseLong", {
@@ -700,18 +706,23 @@ export class ReadHyperdrive implements IReadHyperdrive {
       (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
     );
 
+    const totalSharesReceivedByAssetId = mapValues(
+      groupBy(closeLongEvents, (event) => event.args.assetId.toString()),
+      (events) => sumBigInt(events.map((event) => event.args.vaultShareAmount)),
+    );
+
     const longsMintedOrReceived = (
       await this.getTransferSingleEvents({
         filter: { to: account },
         fromBlock,
         toBlock,
       })
-    ).filter(
-      (transferSingleEvent) =>
-        decodeAssetFromTransferSingleEventData(
-          transferSingleEvent.data as `0x${string}`,
-        ).assetType === "LONG",
-    );
+    ).filter((transferSingleEvent) => {
+      const decoded = decodeAssetFromTransferSingleEventData(
+        transferSingleEvent.data as `0x${string}`,
+      );
+      return decoded.assetType === "LONG";
+    });
 
     const longsMintedOrReceivedById = mapValues(
       groupBy(longsMintedOrReceived, (event) => event.args.id),
@@ -725,6 +736,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
           bondAmount: sumBigInt(events.map((event) => event.args.value)),
           baseAmountPaid: totalBasePaidByAssetId[assetId.toString()],
           maturity: decoded.timestamp,
+          sharesAmountPaid: totalSharesPaidByAssetId[assetId.toString()],
         };
       },
     );
@@ -742,6 +754,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
         ).assetType === "LONG",
     );
 
+    console.log("longsRedeemedOrSent", longsRedeemedOrSent);
     const longsRedeemedOrSentById = mapValues(
       groupBy(longsRedeemedOrSent, (event) => event.args.id),
       (events): Long => {
@@ -754,6 +767,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
           bondAmount: sumBigInt(events.map((event) => event.args.value)),
           baseAmountPaid: totalBaseReceivedByAssetId[assetId.toString()],
           maturity: decoded.timestamp,
+          sharesAmountPaid: totalSharesReceivedByAssetId[assetId.toString()],
         };
       },
     );
@@ -762,14 +776,18 @@ export class ReadHyperdrive implements IReadHyperdrive {
       longsMintedOrReceivedById,
       (long, key): Long => {
         const matchingExit = longsRedeemedOrSentById[key];
+        console.log("matchingExit", matchingExit);
         if (matchingExit) {
           const newBondAmount = long.bondAmount - matchingExit.bondAmount;
           const newBaseAmountPaid =
             long.baseAmountPaid - matchingExit.baseAmountPaid;
+          const newSharesAmountPaid =
+            long.sharesAmountPaid - matchingExit.sharesAmountPaid;
           return {
             ...long,
             bondAmount: newBondAmount,
             baseAmountPaid: newBaseAmountPaid,
+            sharesAmountPaid: newSharesAmountPaid,
           };
         }
         return long;
@@ -927,7 +945,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     });
 
     const closedLongsList: ClosedLong[] = await Promise.all(
-      closedLongs.map(async (event) => {
+      closedLongs.map(async (event): Promise<ClosedLong> => {
         const assetId = event.args.assetId;
         const decoded = decodeAssetFromTransferSingleEventData(
           event.data as `0x${string}`,
@@ -936,7 +954,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
           assetId,
           bondAmount: event.args.bondAmount,
           baseAmount: event.args.baseAmount,
-          baseAmountPaid: 0n, // TODO: Remove this field, this is copy/paste from @hyperdrive/queries
+          baseAmountPaid: 0n,
+          sharesAmountPaid: 0n,
+          // TODO: Remove this field, this is copy/paste from @hyperdrive/queries
           maturity: decoded.timestamp,
           closedTimestamp: (
             await getBlockOrThrow(this.network, {

@@ -7,6 +7,7 @@ export interface Long {
   maturity: bigint;
 
   baseAmountPaid: bigint;
+  sharesAmountPaid: bigint;
 }
 
 export interface ClosedLong extends Long {

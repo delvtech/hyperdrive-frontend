@@ -3,6 +3,7 @@ import {
   AppConfig,
   HyperdriveConfig,
   findBaseToken,
+  findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import {
   Long,
@@ -193,15 +194,10 @@ function getColumns({
     }),
     columnHelper.accessor("baseAmountPaid", {
       id: "amountPaid",
-      header: `Amount paid (${baseToken.symbol})`,
-      cell: (baseAmountPaid) => {
-        const amountPaid = baseAmountPaid.getValue();
-        return formatBalance({
-          balance: amountPaid,
-          decimals: baseToken.decimals,
-          places: 2,
-        });
-      },
+      header: `Amount paid`,
+      cell: ({ row }) => (
+        <AmountPaidCell hyperdrive={hyperdrive} long={row.original} />
+      ),
     }),
     columnHelper.accessor("assetId", {
       id: "fixedRate",
@@ -235,6 +231,46 @@ function getColumns({
       },
     }),
   ];
+}
+
+function AmountPaidCell({
+  long,
+  hyperdrive,
+}: {
+  long: Long;
+  hyperdrive: HyperdriveConfig;
+}) {
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
+  const sharesToken = findYieldSourceToken({
+    yieldSourceTokenAddress: hyperdrive.sharesToken,
+    tokens: appConfig.tokens,
+  });
+  return (
+    <div className="flex flex-col gap-1">
+      <span>
+        {formatBalance({
+          // balance: long.baseAmountPaid,
+          balance: long.baseAmountPaid,
+          decimals: baseToken.decimals,
+          places: 2,
+        })}{" "}
+        {baseToken.symbol}
+      </span>
+      <span>
+        {formatBalance({
+          // balance: long.baseAmountPaid,
+          balance: long.sharesAmountPaid,
+          decimals: baseToken.decimals,
+          places: 2,
+        })}{" "}
+        {sharesToken.symbol}
+      </span>
+    </div>
+  );
 }
 
 function CurrentValueCell({

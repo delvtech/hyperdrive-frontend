@@ -5,6 +5,8 @@ import { simplePoolInfo } from "src/pool/testing/PoolInfo";
 import { ALICE, BOB } from "src/base/testing/accounts";
 import { CheckpointEvent } from "src/pool/Checkpoint";
 import { setupReadHyperdrive } from "./testing/setupReadHyperdrive";
+import { ZERO_ADDRESS } from "src/base/numbers";
+import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 
 // The sdk should return the exact PoolConfig from the contracts. It should not
 // do any conversions or transformations, eg: converting seconds to ms,
@@ -56,6 +58,79 @@ test("getFixedRate should get the fixed rate as-is", async () => {
 
   const value = await readHyperdrive.getSpotRate();
   expect(value).toBe(50000000000000000n);
+});
+
+test.only("getOpenLongs should account for longs opened with base or shares", async () => {
+  const { contract, readHyperdrive } = setupReadHyperdrive();
+
+  const eventData =
+    "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
+  const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
+  contract.stubEvents("OpenLong", [
+    {
+      eventName: "OpenLong",
+      args: {
+        assetId: 1n,
+        // paid for in base
+        baseAmount: dnum.from("1", 18)[0],
+        vaultShareAmount: 0n,
+        // received bonds
+        bondAmount: dnum.from("1.3", 18)[0],
+        maturityTime: timestamp,
+        asBase: true,
+        trader: BOB,
+      },
+    },
+    {
+      eventName: "OpenLong",
+      args: {
+        assetId: 1n,
+        // paid for in base
+        baseAmount: dnum.from("1", 18)[0],
+        vaultShareAmount: 0n,
+        // received bonds
+        bondAmount: dnum.from("1.4", 18)[0],
+        maturityTime: timestamp,
+        asBase: true,
+        trader: BOB,
+      },
+    },
+  ]);
+  contract.stubEvents("CloseLong", []);
+  contract.stubEvents("TransferSingle", [
+    {
+      data: eventData,
+      args: {
+        from: ZERO_ADDRESS,
+        to: BOB,
+        id: 1n,
+        value: dnum.from("1.3", 18)[0],
+        operator: BOB,
+      },
+      eventName: "TransferSingle",
+    },
+    {
+      args: {
+        from: ZERO_ADDRESS,
+        to: BOB,
+        id: 1n,
+        value: dnum.from("1.4", 18)[0],
+        operator: BOB,
+      },
+      data: eventData,
+      eventName: "TransferSingle",
+    },
+  ]);
+
+  const value = await readHyperdrive.getOpenLongs({ account: BOB });
+
+  expect(value).toEqual([
+    {
+      shortVolume: dnum.from("290", 18)[0], // sum of bondAmount in short events
+      longVolume: dnum.from("2.7", 18)[0], // sum of bondAmount in long events
+      totalVolume: dnum.from("292.7", 18)[0],
+    },
+  ]);
 });
 
 test("getTradingVolume should get the trading volume in terms of bonds", async () => {
