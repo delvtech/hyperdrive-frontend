@@ -10,7 +10,7 @@ interface UseCloseLongOptions {
   hyperdriveAddress: Address;
   long: Long | undefined;
   bondAmountIn: bigint | undefined;
-  minBaseAmountOut: bigint | undefined;
+  minAmountOut: bigint | undefined;
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
@@ -26,7 +26,7 @@ export function useCloseLong({
   hyperdriveAddress,
   long,
   bondAmountIn,
-  minBaseAmountOut,
+  minAmountOut,
   destination,
   asBase = true,
   enabled = true,
@@ -39,7 +39,7 @@ export function useCloseLong({
   const mutationEnabled =
     !!long &&
     !!bondAmountIn &&
-    minBaseAmountOut !== undefined && // check undefined since 0 is valid
+    minAmountOut !== undefined && // check undefined since 0 is valid
     !!destination &&
     enabled &&
     !!readWriteHyperdrive &&
@@ -50,7 +50,7 @@ export function useCloseLong({
       if (mutationEnabled) {
         const hash = await readWriteHyperdrive.closeLong({
           bondAmountIn,
-          minBaseAmountOut,
+          minAmountOut,
           destination,
           asBase,
           long,

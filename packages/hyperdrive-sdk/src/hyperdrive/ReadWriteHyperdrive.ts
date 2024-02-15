@@ -113,14 +113,14 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
   closeLong({
     long,
     bondAmountIn,
-    minBaseAmountOut,
+    minAmountOut,
     destination,
     asUnderlying,
     options,
   }: {
     long: Long;
     bondAmountIn: bigint;
-    minBaseAmountOut: bigint;
+    minAmountOut: bigint;
     destination: Address;
     asUnderlying?: boolean;
     options?: ContractWriteOptions;
@@ -139,14 +139,14 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
   closeShort({
     short,
     bondAmountIn,
-    minBaseAmountOut,
+    minAmountOut,
     destination,
     asUnderlying,
     options,
   }: {
     short: Short;
     bondAmountIn: bigint;
-    minBaseAmountOut: bigint;
+    minAmountOut: bigint;
     destination: Address;
     asUnderlying?: boolean;
     options?: ContractWriteOptions;
@@ -349,7 +349,7 @@ export class ReadWriteHyperdrive
   closeLong({
     long,
     bondAmountIn,
-    minBaseAmountOut,
+    minAmountOut,
     destination,
     asBase = true,
     extraData = DEFAULT_EXTRA_DATA,
@@ -357,7 +357,7 @@ export class ReadWriteHyperdrive
   }: {
     long: Long;
     bondAmountIn: bigint;
-    minBaseAmountOut: bigint;
+    minAmountOut: bigint;
     destination: Address;
     asBase?: boolean;
     extraData?: `0x${string}`;
@@ -368,7 +368,7 @@ export class ReadWriteHyperdrive
       {
         _maturityTime: long.maturity,
         _bondAmount: bondAmountIn,
-        _minOutput: minBaseAmountOut,
+        _minOutput: minAmountOut,
         _options: { destination, asBase, extraData },
       },
       options,
@@ -378,7 +378,7 @@ export class ReadWriteHyperdrive
   closeShort({
     short,
     bondAmountIn,
-    minBaseAmountOut,
+    minAmountOut,
     destination,
     asBase = true,
     extraData = DEFAULT_EXTRA_DATA,
@@ -386,7 +386,7 @@ export class ReadWriteHyperdrive
   }: {
     short: Short;
     bondAmountIn: bigint;
-    minBaseAmountOut: bigint;
+    minAmountOut: bigint;
     destination: Address;
     asBase?: boolean;
     extraData?: `0x${string}`;
@@ -397,7 +397,7 @@ export class ReadWriteHyperdrive
       {
         _maturityTime: short.maturity,
         _bondAmount: bondAmountIn,
-        _minOutput: minBaseAmountOut,
+        _minOutput: minAmountOut,
         _options: { destination, asBase, extraData },
       },
       options,

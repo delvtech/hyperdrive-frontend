@@ -237,7 +237,7 @@ export interface IReadHyperdrive {
   previewCloseLong(args: {
     maturityTime: bigint;
     bondAmountIn: bigint;
-    minBaseAmountOut: bigint;
+    minAmountOut: bigint;
     destination: Address;
     asBase: boolean;
     extraData?: `0x${string}`;
@@ -250,7 +250,7 @@ export interface IReadHyperdrive {
   previewCloseShort(args: {
     maturityTime: bigint;
     shortAmountIn: bigint;
-    minBaseAmountOut: bigint;
+    minAmountOut: bigint;
     destination: Address;
     asBase: boolean;
     extraData?: `0x${string}`;
@@ -1234,7 +1234,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   previewCloseLong({
     maturityTime,
     bondAmountIn,
-    minBaseAmountOut,
+    minAmountOut,
     destination,
     asBase,
     extraData = ZERO_ADDRESS,
@@ -1242,7 +1242,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     maturityTime: bigint;
     bondAmountIn: bigint;
-    minBaseAmountOut: bigint;
+    minAmountOut: bigint;
     destination: Address;
     asBase: boolean;
     extraData?: `0x${string}`;
@@ -1253,7 +1253,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       {
         _maturityTime: maturityTime,
         _bondAmount: bondAmountIn,
-        _minOutput: minBaseAmountOut,
+        _minOutput: minAmountOut,
         _options: { destination, asBase, extraData },
       },
       options,
@@ -1263,7 +1263,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   previewCloseShort({
     maturityTime,
     shortAmountIn,
-    minBaseAmountOut,
+    minAmountOut,
     destination,
     asBase,
     extraData = DEFAULT_EXTRA_DATA,
@@ -1271,7 +1271,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     maturityTime: bigint;
     shortAmountIn: bigint;
-    minBaseAmountOut: bigint;
+    minAmountOut: bigint;
     destination: Address;
     asBase: boolean;
     extraData?: `0x${string}`;
@@ -1282,7 +1282,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       {
         _maturityTime: maturityTime,
         _bondAmount: shortAmountIn,
-        _minOutput: minBaseAmountOut,
+        _minOutput: minAmountOut,
         _options: { destination, asBase, extraData },
       },
       options,
