@@ -13,7 +13,7 @@ import { usePublicClient } from "wagmi";
 interface UseRedeemWithdrawalSharesOptions {
   hyperdriveAddress: Address;
   withdrawalSharesIn: bigint | undefined;
-  minBaseAmountOutPerShare: bigint | undefined;
+  minOutputPerShare: bigint | undefined;
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
@@ -27,7 +27,7 @@ interface UseRedeemWithdrawalSharesResult {
 export function useRedeemWithdrawalShares({
   hyperdriveAddress,
   withdrawalSharesIn,
-  minBaseAmountOutPerShare,
+  minOutputPerShare,
   destination,
   asBase = true,
   enabled,
@@ -38,7 +38,7 @@ export function useRedeemWithdrawalShares({
   const addTransaction = useAddRecentTransaction();
   const mutationEnabled =
     !!withdrawalSharesIn &&
-    minBaseAmountOutPerShare !== undefined &&
+    minOutputPerShare !== undefined &&
     !!destination &&
     enabled &&
     !!readWriteHyperdrive &&
@@ -49,7 +49,7 @@ export function useRedeemWithdrawalShares({
       if (mutationEnabled) {
         const hash = await readWriteHyperdrive.redeemWithdrawalShares({
           withdrawalSharesIn,
-          minBaseAmountOutPerShare,
+          minOutputPerShare,
           destination,
           asBase,
         });

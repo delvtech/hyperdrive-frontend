@@ -6,7 +6,7 @@ import { Address } from "viem";
 interface UsePreviewRemoveLiquidityOptions {
   hyperdriveAddress: Address;
   lpSharesIn: bigint | undefined;
-  minBaseAmountOut: bigint | undefined;
+  minOutputPerShare: bigint | undefined;
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
@@ -21,7 +21,7 @@ interface UsePreviewRemoveLiquidityResult {
 export function usePreviewRemoveLiquidity({
   hyperdriveAddress,
   lpSharesIn,
-  minBaseAmountOut,
+  minOutputPerShare,
   destination,
   asBase = true,
   enabled = true,
@@ -29,7 +29,7 @@ export function usePreviewRemoveLiquidity({
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryEnabled =
     !!lpSharesIn &&
-    minBaseAmountOut !== undefined &&
+    minOutputPerShare !== undefined &&
     !!destination &&
     enabled &&
     !!readWriteHyperdrive;
@@ -38,15 +38,15 @@ export function usePreviewRemoveLiquidity({
     queryKey: makeQueryKey("previewRemoveLiquidity", {
       market: hyperdriveAddress,
       lpSharesIn: lpSharesIn?.toString(),
-      minBaseAmountOut: minBaseAmountOut?.toString(),
+      minOutputPerShare: minOutputPerShare?.toString(),
       destination,
-      asUnderlying: asBase,
+      asBase,
     }),
     queryFn: queryEnabled
       ? () =>
           readWriteHyperdrive.previewRemoveLiquidity({
             lpSharesIn,
-            minBaseAmountOut,
+            minOutputPerShare,
             destination,
             asBase,
           })

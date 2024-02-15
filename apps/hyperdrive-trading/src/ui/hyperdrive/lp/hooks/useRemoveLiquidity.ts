@@ -13,7 +13,7 @@ import { usePublicClient } from "wagmi";
 interface UseRemoveLiquidityOptions {
   hyperdriveAddress: Address;
   lpSharesIn: bigint | undefined;
-  minBaseAmountOut: bigint | undefined;
+  minOutputPerShare: bigint | undefined;
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
@@ -28,7 +28,7 @@ interface UseRemoveLiquidityResult {
 export function useRemoveLiquidity({
   hyperdriveAddress,
   lpSharesIn,
-  minBaseAmountOut,
+  minOutputPerShare,
   destination,
   asBase = true,
   enabled,
@@ -40,7 +40,7 @@ export function useRemoveLiquidity({
   const addTransaction = useAddRecentTransaction();
   const mutationEnabled =
     !!lpSharesIn &&
-    minBaseAmountOut !== undefined &&
+    minOutputPerShare !== undefined &&
     !!destination &&
     enabled &&
     !!readWriteHyperdrive &&
@@ -51,7 +51,7 @@ export function useRemoveLiquidity({
       if (mutationEnabled) {
         const hash = await readWriteHyperdrive.removeLiquidity({
           lpSharesIn,
-          minBaseAmountOut,
+          minOutputPerShare,
           destination,
           asBase,
         });

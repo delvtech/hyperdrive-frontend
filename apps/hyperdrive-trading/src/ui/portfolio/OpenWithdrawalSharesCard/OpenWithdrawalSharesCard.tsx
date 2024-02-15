@@ -41,7 +41,7 @@ export function OpenWithdrawalSharesCard({
   } = usePreviewRedeemWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
     withdrawalSharesIn: withdrawalShares,
-    minBaseAmountOutPerShare: 1n, // TODO: slippage,
+    minOutputPerShare: 1n, // TODO: slippage,
     destination: account,
   });
 
