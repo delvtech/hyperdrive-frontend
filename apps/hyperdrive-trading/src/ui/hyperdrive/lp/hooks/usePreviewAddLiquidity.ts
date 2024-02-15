@@ -51,7 +51,7 @@ export function usePreviewAddLiquidity({
       contribution: contribution?.toString(),
       minAPR: minAPR?.toString(),
       maxAPR: maxAPR?.toString(),
-      asUnderlying: asBase,
+      asBase,
     }),
     queryFn: queryEnabled
       ? () =>

@@ -1,8 +1,13 @@
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  findBaseToken,
+  findYieldSourceToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
-import { MAX_UINT256 } from "src/base/constants";
 import { parseUnits } from "src/base/parseUnits";
+import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
+import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
@@ -13,10 +18,12 @@ import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/Ad
 import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
+import ApproveTokenButton from "src/ui/token/ApproveTokenButton";
+import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { useAccount, useBalance } from "wagmi";
+import { TokenPicker } from "src/ui/token/TokenPicker";
+import { useAccount } from "wagmi";
 
 interface AddLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
@@ -31,36 +38,40 @@ export function AddLiquidityForm({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
+  const sharesToken = findYieldSourceToken({
+    yieldSourceTokenAddress: hyperdrive.sharesToken,
+    tokens: appConfig.tokens,
+  });
 
-  const { data: baseTokenBalance } = useBalance({
-    address: account,
-    token: baseToken.address,
+  const { activeToken, activeTokenBalance, setActiveToken } = useActiveToken({
+    account,
+    defaultActiveToken: baseToken.address,
+    tokens: [baseToken, sharesToken],
   });
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
-    decimals: baseToken.decimals,
+    decimals: activeToken.decimals,
+  });
+
+  const requiresAllowance = activeToken.address !== ETH_MAGIC_NUMBER;
+  const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
+    account,
+    spender: hyperdrive.address,
+    tokenAddress: activeToken.address,
+    enabled: requiresAllowance,
+  });
+
+  const hasEnoughAllowance = getHasEnoughAllowance({
+    requiresAllowance,
+    allowance: activeTokenAllowance,
+    amount: amountAsBigInt,
   });
   const hasEnoughBalance = getHasEnoughBalance({
-    balance: baseTokenBalance?.value,
+    balance: activeTokenBalance?.value,
     amount: amountAsBigInt,
   });
 
-  const { tokenAllowance } = useTokenAllowance({
-    account,
-    spender: hyperdrive.address,
-    tokenAddress: baseToken.address,
-  });
-
-  const { approve } = useApproveToken({
-    tokenAddress: baseToken.address,
-    spender: hyperdrive.address,
-    amount: MAX_UINT256,
-  });
-
-  const needsApproval = tokenAllowance
-    ? amountAsBigInt && amountAsBigInt > tokenAllowance
-    : true;
-
+  const isPreviewEnabled = hasEnoughAllowance && hasEnoughBalance;
   const { lpSharesOut, status: addLiquidityPreviewStatus } =
     usePreviewAddLiquidity({
       hyperdriveAddress: hyperdrive.address,
@@ -69,8 +80,9 @@ export function AddLiquidityForm({
       minAPR: parseUnits("0", baseToken.decimals),
       maxAPR: parseUnits("999", baseToken.decimals),
       minLpSharePrice: parseUnits("0", baseToken.decimals),
+      asBase: activeToken.address === baseToken.address,
       destination: account,
-      enabled: !needsApproval,
+      enabled: isPreviewEnabled,
     });
 
   const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
@@ -80,7 +92,8 @@ export function AddLiquidityForm({
     minAPR: parseUnits("0", baseToken.decimals),
     maxAPR: parseUnits("999", baseToken.decimals),
     destination: account,
-    enabled: addLiquidityPreviewStatus === "success" && !needsApproval,
+    enabled: addLiquidityPreviewStatus === "success" && isPreviewEnabled,
+    asBase: activeToken.address === baseToken.address,
     onExecuted: (hash) => {
       setAmount("");
       toast.success(
@@ -97,18 +110,27 @@ export function AddLiquidityForm({
     <TransactionView
       tokenInput={
         <TokenInput
-          name={baseToken.name}
-          token={baseToken.symbol}
+          name={activeToken.symbol}
+          token={
+            <TokenPicker
+              tokens={[baseToken, sharesToken]}
+              activeTokenAddress={activeToken.address}
+              onChange={(tokenAddress) => {
+                setActiveToken(tokenAddress);
+                setAmount("0");
+              }}
+            />
+          }
           value={amount ?? ""}
-          maxValue={baseTokenBalance?.formatted}
+          maxValue={activeTokenBalance?.formatted}
           inputLabel="Amount to deposit"
           stat={
-            baseTokenBalance
+            activeTokenBalance
               ? `Balance: ${formatBalance({
-                  balance: baseTokenBalance?.value,
-                  decimals: baseToken.decimals,
+                  balance: activeTokenBalance?.value,
+                  decimals: activeToken.decimals,
                   places: 4,
-                })} ${baseToken.symbol}`
+                })} ${activeToken.symbol}`
               : undefined
           }
           onChange={(newAmount) => setAmount(newAmount)}
@@ -125,35 +147,44 @@ export function AddLiquidityForm({
           <p className="text-center text-sm text-error">Insufficient balance</p>
         ) : null
       }
-      actionButton={
-        account ? (
-          needsApproval ? (
-            // Approval button
+      actionButton={(() => {
+        if (!account) {
+          return <ConnectWalletButton />;
+        }
+
+        if (!hasEnoughBalance) {
+          return (
             <button
-              disabled={!approve}
-              className="daisy-btn daisy-btn-circle daisy-btn-warning w-full disabled:bg-warning disabled:text-base-100 disabled:opacity-30"
-              onClick={(e) => {
-                // Do this so we don't close the modal
-                e.preventDefault();
-                approve?.();
-              }}
-            >
-              Approve {baseToken.symbol}
-            </button>
-          ) : (
-            // Trade button
-            <button
-              disabled={!addLiquidity || addLiquidityStatus === "loading"}
+              disabled
               className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-              onClick={() => addLiquidity?.()}
             >
-              Add liquidity
+              Add Liquidity
             </button>
-          )
-        ) : (
-          <ConnectWalletButton />
-        )
-      }
+          );
+        }
+
+        if (!hasEnoughAllowance) {
+          return (
+            <ApproveTokenButton
+              spender={hyperdrive.address}
+              token={activeToken}
+              tokenBalance={activeTokenBalance}
+              amountAsBigInt={amountAsBigInt}
+              amount={amount}
+            />
+          );
+        }
+
+        return (
+          <button
+            disabled={!addLiquidity || addLiquidityStatus === "loading"}
+            className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
+            onClick={() => addLiquidity?.()}
+          >
+            Add liquidity
+          </button>
+        );
+      })()}
     />
   );
 }
