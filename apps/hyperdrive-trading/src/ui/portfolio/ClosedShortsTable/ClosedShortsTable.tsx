@@ -137,11 +137,15 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       header: `Amount received (${baseToken.symbol})`,
       cell: (baseAmountReceived) => {
         const amountReceived = baseAmountReceived.getValue();
-        return formatBalance({
-          balance: amountReceived,
-          decimals: baseToken.decimals,
-          places: 4,
-        });
+        return (
+          <span className="font-bold">
+            {formatBalance({
+              balance: amountReceived,
+              decimals: baseToken.decimals,
+              places: 4,
+            })}
+          </span>
+        );
       },
     }),
     columnHelper.accessor("closedTimestamp", {
@@ -232,7 +236,7 @@ export function ClosedShortsTable({
                 <>
                   {row.getVisibleCells().map((cell) => {
                     return (
-                      <td className="align-top text-lg" key={cell.id}>
+                      <td className="align-top" key={cell.id}>
                         {flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext(),
