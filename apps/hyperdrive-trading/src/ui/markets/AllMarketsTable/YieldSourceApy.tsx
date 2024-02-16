@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { useVaultRate } from "src/ui/vaults/useVaultRate";
+import { useMockYieldSourceRate } from "src/ui/vaults/useMockYieldSourceRate";
 import { Address } from "viem";
 
 export function YieldSourceApy({
@@ -7,7 +7,7 @@ export function YieldSourceApy({
 }: {
   yieldSourceAddress: Address;
 }): ReactElement {
-  const { vaultRate } = useVaultRate({
+  const { vaultRate } = useMockYieldSourceRate({
     vaultAddress: yieldSourceAddress,
   });
   return (
