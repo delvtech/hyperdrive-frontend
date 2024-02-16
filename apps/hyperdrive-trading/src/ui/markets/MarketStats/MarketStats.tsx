@@ -9,8 +9,8 @@ import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
-import { useVaultRate } from "src/ui/vaults/useVaultRate";
-import { useBlockNumber, useChainId } from "wagmi";
+import { useMockYieldSourceRate } from "src/ui/vaults/useMockYieldSourceRate";
+import { useBlockNumber } from "wagmi";
 export function MarketStats({
   hyperdrive,
 }: {
@@ -23,7 +23,6 @@ export function MarketStats({
     tokens: appConfig.tokens,
   });
 
-  const chainId = useChainId();
   const { totalVolume, longVolume, shortVolume } = useTradingVolume(
     hyperdrive.address,
     currentBlockNumber,
@@ -36,26 +35,16 @@ export function MarketStats({
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive.address);
   const { lpApy, lpApyStatus } = useLpApy(hyperdrive.address);
 
-  const { vaultRate } = useVaultRate({
+  const { vaultRate } = useMockYieldSourceRate({
     vaultAddress: hyperdrive.sharesToken,
   });
-
-  // TODO: This will only work on cloudchain and local for now. Remove this
-  // condition once we can dynamically source the underlying 4626 vault address
-  // from the hyperdrive instance.
-  const showVaultRate = [
-    +import.meta.env.VITE_CUSTOM_CHAIN_CHAIN_ID,
-    31337,
-  ].includes(chainId);
 
   return (
     <div className="grid grid-cols-2 gap-6 border-y border-neutral-content/20 py-8 sm:grid-cols-3 md:grid-cols-5">
       <Stat
         label="Yield source APY"
         value={
-          <div className="flex flex-row">
-            {showVaultRate ? `${vaultRate?.formatted || 0}%` : ""}
-          </div>
+          <div className="flex flex-row">{vaultRate?.formatted || 0}%</div>
         }
         description={`The yield source backing the hy${baseToken.symbol} in this pool`}
       />
