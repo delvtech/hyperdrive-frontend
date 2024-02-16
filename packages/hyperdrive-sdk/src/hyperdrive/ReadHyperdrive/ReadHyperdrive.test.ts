@@ -264,6 +264,7 @@ test("getCheckpointEvents should return an array of CheckpointEvents", async () 
   expect(events).toEqual(checkPointEvents);
 });
 
+// opened with base
 test("getOpenLongs should account for longs opened with base", async () => {
   // Description:
   // Bob opens up a long position over 2 txs in the same checkpoint, for a total
@@ -363,7 +364,7 @@ test("getOpenLongs should account for longs opened with base", async () => {
   ]);
 });
 
-test("getOpenLongs should account for longs opened with base that have been partiallly closed to base", async () => {
+test("getOpenLongs should account for longs opened with base and partiallly closed to base", async () => {
   // Description:
   // Bob opens up a long position over 2 txs in the same checkpoint, for a total
   // cost 2 base, and receiving 2.7 bonds. He then partially closes this
@@ -612,12 +613,16 @@ test("getOpenLongs should account for longs opened with base that have been full
 
   expect(value).toEqual([]);
 });
+test.skip("getOpenLongs should account for longs opened with base and partially closed to shares", async () => {});
+test.skip("getOpenLongs should account for longs opened with base and fully closed to shares", async () => {});
 
+// opened with shares
 test("getOpenLongs should account for longs opened with shares", async () => {
   // Description:
-  // Bob opens up a long position, for a total cost 2 shares, and receiving 2.7
-  // bonds. As a result, he should now have an open position with the 2.7 bonds
-  // and a total cost of 2.3 base. (because 1 share = 1.15 base)
+  // Bob opens up a long position over 2 txs, for a total cost 2 shares, and
+  // receiving 2.7 bonds. As a result, he should now have an open position with
+  // the 2.7 bonds and a total cost of 2.35 base. (because 1 share = 1.15 base in
+  // the first tx, and 1 share = 1.2 base in the second tx)
 
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
@@ -630,13 +635,29 @@ test("getOpenLongs should account for longs opened with shares", async () => {
     [
       {
         eventName: "OpenLong",
+        blockNumber: 5n,
         args: {
           assetId: 1n,
           // paid for in shares
           baseAmount: 0n,
-          vaultShareAmount: dnum.from("2", 18)[0],
+          vaultShareAmount: dnum.from("1", 18)[0],
           // received bonds
-          bondAmount: dnum.from("2.7", 18)[0],
+          bondAmount: dnum.from("1.3", 18)[0],
+          maturityTime: timestamp,
+          asBase: false,
+          trader: BOB,
+        },
+      },
+      {
+        eventName: "OpenLong",
+        blockNumber: 12n,
+        args: {
+          assetId: 1n,
+          // paid for in shares
+          baseAmount: 0n,
+          vaultShareAmount: dnum.from("1", 18)[0],
+          // received bonds
+          bondAmount: dnum.from("1.4", 18)[0],
           maturityTime: timestamp,
           asBase: false,
           trader: BOB,
@@ -648,6 +669,12 @@ test("getOpenLongs should account for longs opened with shares", async () => {
   contract.stubRead({
     functionName: "getPoolInfo",
     value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.15", 18)[0] },
+    options: { blockNumber: 5n },
+  });
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.20", 18)[0] },
+    options: { blockNumber: 12n },
   });
 
   // Matching TransferSingle event for OpenLong
@@ -661,10 +688,23 @@ test("getOpenLongs should account for longs opened with shares", async () => {
           from: ZERO_ADDRESS,
           to: BOB,
           id: 1n,
-          value: dnum.from("2.7", 18)[0],
+          value: dnum.from("1.3", 18)[0],
           operator: BOB,
         },
         eventName: "TransferSingle",
+        blockNumber: 5n,
+      },
+      {
+        data: eventData,
+        args: {
+          from: ZERO_ADDRESS,
+          to: BOB,
+          id: 1n,
+          value: dnum.from("1.4", 18)[0],
+          operator: BOB,
+        },
+        eventName: "TransferSingle",
+        blockNumber: 12n,
       },
     ],
   );
@@ -685,9 +725,20 @@ test("getOpenLongs should account for longs opened with shares", async () => {
   expect(value).toEqual([
     {
       assetId: 1n,
-      baseAmountPaid: dnum.from("2.3", 18)[0], // Bob paid in shares, for the equivalent cost of 2.3 base
+      baseAmountPaid: dnum.from("2.35", 18)[0], // Bob paid in shares, for the equivalent cost of 2.35 base
       bondAmount: dnum.from("2.7", 18)[0], // Bob received a total of 2.7 bond
       maturity: 1708545600n,
     },
   ]);
 });
+test.skip("getOpenLongs should account for longs opened with shares and partially closed to shares", async () => {});
+test.skip("getOpenLongs should account for longs opened with shares and partially closed to base", async () => {});
+test.skip("getOpenLongs should account for longs opened with shares and fully closed to shares", async () => {});
+test.skip("getOpenLongs should account for longs opened with shares and fully closed to base", async () => {});
+
+// opened with shares and base
+test.skip("getOpenLongs should account for longs opened with shares and base", async () => {});
+test.skip("getOpenLongs should account for longs opened with shares and base and partial closed to base", async () => {});
+test.skip("getOpenLongs should account for longs opened with shares and base and partial closed to shares", async () => {});
+test.skip("getOpenLongs should account for longs opened with shares and base and fully closed to base", async () => {});
+test.skip("getOpenLongs should account for longs opened with shares and base and fully closed to shares", async () => {});
