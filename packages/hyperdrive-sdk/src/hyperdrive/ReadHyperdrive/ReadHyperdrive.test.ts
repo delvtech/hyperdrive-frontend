@@ -61,63 +61,80 @@ test("getFixedRate should get the fixed rate as-is", async () => {
 test("getTradingVolume should get the trading volume in terms of bonds", async () => {
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
-  contract.stubEvents("OpenLong", [
+  contract.stubEvents(
+    "OpenLong",
     {
-      eventName: "OpenLong",
-      args: {
-        assetId: 1n,
-        baseAmount: dnum.from("1", 18)[0],
-        bondAmount: dnum.from("1.3", 18)[0],
-        maturityTime: 1729209600n,
-        vaultShareAmount: 1n,
-        asBase: false,
-        trader: BOB,
-      },
+      fromBlock: "earliest",
+      toBlock: "latest",
     },
-    {
-      eventName: "OpenLong",
-      args: {
-        assetId: 2n,
-        baseAmount: dnum.from("1", 18)[0],
-        bondAmount: dnum.from("1.4", 18)[0],
-        maturityTime: 1733961600n,
-        vaultShareAmount: 1n,
-        asBase: false,
-        trader: ALICE,
+    [
+      {
+        eventName: "OpenLong",
+        args: {
+          assetId: 1n,
+          baseAmount: dnum.from("1", 18)[0],
+          bondAmount: dnum.from("1.3", 18)[0],
+          maturityTime: 1729209600n,
+          vaultShareAmount: 1n,
+          asBase: false,
+          trader: BOB,
+        },
       },
-    },
-  ]);
+      {
+        eventName: "OpenLong",
+        args: {
+          assetId: 2n,
+          baseAmount: dnum.from("1", 18)[0],
+          bondAmount: dnum.from("1.4", 18)[0],
+          maturityTime: 1733961600n,
+          vaultShareAmount: 1n,
+          asBase: false,
+          trader: ALICE,
+        },
+      },
+    ],
+  );
 
-  contract.stubEvents("OpenShort", [
+  contract.stubEvents(
+    "OpenShort",
     {
-      eventName: "OpenShort",
-      args: {
-        assetId: 3n,
-        baseAmount: dnum.from("1", 18)[0],
-        bondAmount: dnum.from("100", 18)[0],
-        maturityTime: 1729296000n,
-        vaultShareAmount: 1n,
-        asBase: false,
-        baseProceeds: dnum.from("100", 18)[0],
-        trader: BOB,
-      },
+      fromBlock: "earliest",
+      toBlock: "latest",
     },
-    {
-      eventName: "OpenShort",
-      args: {
-        assetId: 4n,
-        baseAmount: dnum.from("2", 18)[0],
-        bondAmount: dnum.from("190", 18)[0],
-        maturityTime: 1729296000n,
-        vaultShareAmount: 1n,
-        asBase: false,
-        baseProceeds: dnum.from("190", 18)[0],
-        trader: BOB,
+    [
+      {
+        eventName: "OpenShort",
+        args: {
+          assetId: 3n,
+          baseAmount: dnum.from("1", 18)[0],
+          bondAmount: dnum.from("100", 18)[0],
+          maturityTime: 1729296000n,
+          vaultShareAmount: 1n,
+          asBase: false,
+          baseProceeds: dnum.from("100", 18)[0],
+          trader: BOB,
+        },
       },
-    },
-  ]);
+      {
+        eventName: "OpenShort",
+        args: {
+          assetId: 4n,
+          baseAmount: dnum.from("2", 18)[0],
+          bondAmount: dnum.from("190", 18)[0],
+          maturityTime: 1729296000n,
+          vaultShareAmount: 1n,
+          asBase: false,
+          baseProceeds: dnum.from("190", 18)[0],
+          trader: BOB,
+        },
+      },
+    ],
+  );
 
-  const value = await readHyperdrive.getTradingVolume();
+  const value = await readHyperdrive.getTradingVolume({
+    fromBlock: "earliest",
+    toBlock: "latest",
+  });
 
   expect(value).toEqual({
     shortVolume: dnum.from("290", 18)[0], // sum of bondAmount in short events
@@ -231,9 +248,16 @@ test("getCheckpointEvents should return an array of CheckpointEvents", async () 
       },
     },
   ] as CheckpointEvent[];
-  contract.stubEvents("CreateCheckpoint", checkPointEvents);
+  contract.stubEvents(
+    "CreateCheckpoint",
+    { fromBlock: undefined, toBlock: undefined },
+    checkPointEvents,
+  );
 
-  const events = await readHyperdrive.getCheckpointEvents({});
+  const events = await readHyperdrive.getCheckpointEvents({
+    fromBlock: undefined,
+    toBlock: undefined,
+  });
 
   expect(events).toEqual(checkPointEvents);
 });
