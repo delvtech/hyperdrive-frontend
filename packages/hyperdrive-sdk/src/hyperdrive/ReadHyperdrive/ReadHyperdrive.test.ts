@@ -644,6 +644,12 @@ test("getOpenLongs should account for longs opened with shares", async () => {
       },
     ],
   );
+
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.15", 18)[0] },
+  });
+
   // Matching TransferSingle event for OpenLong
   contract.stubEvents(
     "TransferSingle",
