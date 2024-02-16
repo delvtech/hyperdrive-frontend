@@ -2,10 +2,11 @@ import { AddressesJson } from "src/addresses/AddressesJson";
 import { AppConfig, KnownTokenExtensions } from "src/appconfig/AppConfig";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getErc4626Hyperdrive } from "src/hyperdrives/erc4626/getErc4626Hyperdrive";
+import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols/protocols";
 import { Tag } from "src/tags";
 import { TokenConfig } from "src/tokens/getTokenConfig";
-import { erc4626Tag, yieldSourceTag } from "src/yieldSources/tags";
+import { erc4626Tag, stethTag, yieldSourceTag } from "src/yieldSources/tags";
 import { PublicClient } from "viem";
 
 export async function getAppConfigFromAddressesJson({
@@ -39,9 +40,23 @@ export async function getAppConfigFromAddressesJson({
     hyperdrives.push(hyperdriveConfig);
   }
 
-  // TODO: Uncomment this once stethHyperdrive is properly deployed again on devnet
-  // if (addresses.stethHyperdrive) {
-  // }
+  if (addresses.stethHyperdrive) {
+    tags.add(stethTag);
+
+    const { sharesToken, baseToken, hyperdriveConfig } =
+      await getStethHyperdrive({
+        publicClient,
+        hyperdriveAddress: addresses.stethHyperdrive,
+        sharesTokenExtensions: {
+          shortName: "Lido stETH",
+          protocol: "lido",
+        },
+      });
+
+    tokens.add(sharesToken);
+    tokens.add(baseToken);
+    hyperdrives.push(hyperdriveConfig);
+  }
 
   const config: AppConfig = {
     chainId,

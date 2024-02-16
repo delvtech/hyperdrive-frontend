@@ -1,16 +1,13 @@
 import { IERC4626HyperdriveRead } from "@hyperdrive/artifacts/IERC4626HyperdriveRead";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
-import { getErc4626HyperdriveSharesToken } from "src/hyperdrives/erc4626/getErc4626HyperdriveSharesToken";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
-import {
-  EmptyExtensions,
-  TokenConfig,
-  getTokenConfig,
-} from "src/tokens/getTokenConfig";
+import { getStethHyperdriveSharesToken } from "src/hyperdrives/steth/getStethHyperdriveSharesToken";
+import { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
+import { getTokenIconUrl } from "src/tokens/tokenIconsUrls";
 import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
 import { Address, PublicClient } from "viem";
 
-export async function getErc4626Hyperdrive({
+export async function getStethHyperdrive({
   publicClient,
   hyperdriveAddress,
   sharesTokenExtensions,
@@ -23,7 +20,7 @@ export async function getErc4626Hyperdrive({
   baseToken: TokenConfig<EmptyExtensions>;
   hyperdriveConfig: HyperdriveConfig;
 }> {
-  const sharesToken = await getErc4626HyperdriveSharesToken({
+  const sharesToken = await getStethHyperdriveSharesToken({
     publicClient,
     hyperdriveAddress: hyperdriveAddress,
     extensions: sharesTokenExtensions,
@@ -35,12 +32,18 @@ export async function getErc4626Hyperdrive({
     functionName: "getPoolConfig",
   });
 
-  const baseToken = await getTokenConfig({
+  const baseToken: TokenConfig<EmptyExtensions> = {
     address: poolConfig.baseToken,
-    publicClient,
-    extensions: {},
+    name: "Ether",
+    symbol: "ETH",
+    decimals: 18,
     tags: [],
-  });
+    extensions: {},
+    iconUrl: getTokenIconUrl({
+      address: poolConfig.baseToken,
+      chainId: publicClient.chain?.id as number,
+    }),
+  };
 
   const hyperdriveName = formatHyperdriveName({
     baseTokenSymbol: baseToken.symbol,
@@ -51,15 +54,13 @@ export async function getErc4626Hyperdrive({
   const hyperdriveConfig: HyperdriveConfig = {
     address: hyperdriveAddress,
     name: hyperdriveName,
-    decimals: await publicClient.readContract({
-      address: hyperdriveAddress,
-      abi: IERC4626HyperdriveRead.abi,
-      functionName: "decimals",
-    }),
+    decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
     baseToken: baseToken.address,
     sharesToken: sharesToken.address,
     withdrawOptions: {
-      isBaseTokenWithdrawalEnabled: true,
+      // steth hyperdrive does not allow you to withdraw back to native ETH, due
+      // to how lido's withraw process works
+      isBaseTokenWithdrawalEnabled: false,
     },
     poolConfig,
   };
