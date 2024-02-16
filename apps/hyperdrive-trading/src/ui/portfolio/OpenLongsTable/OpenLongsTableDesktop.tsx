@@ -192,8 +192,8 @@ function getColumns({
       },
     }),
     columnHelper.accessor("baseAmountPaid", {
-      id: "amountPaid",
-      header: `Amount paid (${baseToken.symbol})`,
+      id: "valuePaid",
+      header: `Value paid (${baseToken.symbol})`,
       cell: (baseAmountPaid) => {
         const amountPaid = baseAmountPaid.getValue();
         return formatBalance({

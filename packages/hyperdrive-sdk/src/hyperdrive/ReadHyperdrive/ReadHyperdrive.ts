@@ -642,9 +642,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
     toBlock,
   }: ContractGetEventsOptions<typeof HyperdriveABI, "TransferSingle">) {
     return this.contract.getEvents("TransferSingle", {
+      filter,
       fromBlock,
       toBlock,
-      filter,
     });
   }
 
@@ -684,9 +684,39 @@ export class ReadHyperdrive implements IReadHyperdrive {
       toBlock,
     });
 
-    const totalBasePaidByAssetId = mapValues(
-      groupBy(openLongEvents, (event) => event.args.assetId.toString()),
-      (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
+    // Paid base
+    // { checkpoint1: 10, checkpoint2: 0 }
+    const totalBasePaidByAssetId = await convertPromiseObjectToObject(
+      mapValues(
+        groupBy(openLongEvents, (event) => event.args.assetId.toString()),
+        async (events) => {
+          const baseAmounts = await Promise.all(
+            events.map(async (event) => {
+              // If you paid in base, no need to convert anything
+              if (event.args.asBase) {
+                return event.args.baseAmount;
+              }
+              const { vaultShareAmount } = event.args;
+              // if you paid shares, but didn't actually spend anything, just
+              // return 0 to avoid requesting the vaultSharePrice
+              if (!vaultShareAmount) {
+                return 0n;
+              }
+              // Get the vault share price at the time you opened the position
+              // so we can convert your shares paid into their base value
+              const block = event.blockNumber as bigint;
+              const { vaultSharePrice } = await this.getPoolInfo({
+                blockNumber: block,
+              });
+              return dnum.multiply(
+                [vaultSharePrice, 18],
+                [vaultShareAmount, 18],
+              )[0];
+            }),
+          );
+          return sumBigInt(baseAmounts);
+        },
+      ),
     );
 
     const closeLongEvents = await this.contract.getEvents("CloseLong", {
@@ -735,12 +765,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
         fromBlock,
         toBlock,
       })
-    ).filter(
-      (transferSingleEvent) =>
+    ).filter((transferSingleEvent) => {
+      return (
         decodeAssetFromTransferSingleEventData(
           transferSingleEvent.data as `0x${string}`,
-        ).assetType === "LONG",
-    );
+        ).assetType === "LONG"
+      );
+    });
 
     const longsRedeemedOrSentById = mapValues(
       groupBy(longsRedeemedOrSent, (event) => event.args.id),
@@ -1382,4 +1413,28 @@ export class ReadHyperdrive implements IReadHyperdrive {
       withdrawalSharesRedeemed,
     };
   }
+}
+
+/**
+ * Takes an object whose values are promises and returns an object with those values resolved.
+ * @param obj An object whose values are promises returning numbers.
+ * @returns A promise that resolves to an object with the resolved values.
+ */
+async function convertPromiseObjectToObject<T>(
+  obj: Record<string, Promise<T>>,
+): Promise<Record<string, T>> {
+  // Initialize an empty object to store resolved values
+  const resolvedObject: Record<string, T> = {};
+
+  // Use Promise.all() to concurrently resolve all promises in the input object
+  await Promise.all(
+    // Convert the object into an array of key-value pairs and map over it
+    Object.entries(obj).map(async ([key, promise]) => {
+      // Await each promise and assign its resolved value to the corresponding key in the resolved object
+      resolvedObject[key] = await promise;
+    }),
+  );
+
+  // Return a promise that resolves to the object with resolved values
+  return resolvedObject;
 }

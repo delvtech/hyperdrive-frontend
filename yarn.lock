@@ -1314,18 +1314,19 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@delvtech/evm-client-viem@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@delvtech/evm-client-viem/-/evm-client-viem-0.0.9.tgz#227a85123bdc1742af68ee204e571b89774576e9"
-  integrity sha512-o3GDKONTgjBEjpjXU0qMRJv5JO/QpOsOU9UWqgrK5b8afD4yEmyfVSZqB1qTAvOOckKSssS1YODyA3rMfcJiGg==
+"@delvtech/evm-client-viem@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@delvtech/evm-client-viem/-/evm-client-viem-0.0.13.tgz#89d29966ab47e414869b62e70643207adefcad02"
+  integrity sha512-PdI/H6LGzNg9Wb3Hpp7mBB+koWRLnbhpcEU/7bqKaZgrPshUPDWb5tuank/lEn3gwgaGh4CDB0dXNVu6PumLWA==
   dependencies:
-    "@delvtech/evm-client" "0.0.7"
+    "@delvtech/evm-client" "0.0.11"
 
-"@delvtech/evm-client@0.0.7", "@delvtech/evm-client@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.0.7.tgz#c39e5ac1123bcd238ef996a77d573d79d1a33f7e"
-  integrity sha512-lDIB/KAgesd3KhxWlzXZ9hlgqvWsa0Aqypgo92Ght0XZy9nIOr4xFz958kbWumZBAzTd3hysCm+StlXHRboeNw==
+"@delvtech/evm-client@0.0.11", "@delvtech/evm-client@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.0.11.tgz#5518b007aa62d4ffba115c653f0b4b33b58bb2e6"
+  integrity sha512-DuG9oz5Ryayto4r+jv4hORjQwClP3+isuhnajHbPQWJLvSoTCd7QpuW+mwutOVS6dgeBvndanT8jRmil5krTGg==
   dependencies:
+    fast-safe-stringify "^2.1.1"
     lru-cache "^10.0.1"
 
 "@delvtech/hyperdrive-wasm@^0.7.0":
@@ -9606,7 +9607,7 @@ fast-redact@^3.0.0:
   resolved "https://registry.npmjs.org/fast-redact/-/fast-redact-3.1.2.tgz"
   integrity sha512-+0em+Iya9fKGfEQGcd62Yv6onjBmmhV1uh86XVfOU8VwAe6kaFdQCWI9s0/Nnugx5Vd9tdbZ7e6gE2tR9dzXdw==
 
-fast-safe-stringify@^2.0.6:
+fast-safe-stringify@^2.0.6, fast-safe-stringify@^2.1.1:
   version "2.1.1"
   resolved "https://registry.npmjs.org/fast-safe-stringify/-/fast-safe-stringify-2.1.1.tgz"
   integrity sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==
