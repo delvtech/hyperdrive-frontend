@@ -5,8 +5,9 @@ import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useMintBaseToken } from "src/ui/token/hooks/useMintBaseToken";
+import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { Address, parseUnits } from "viem";
-import { useAccount, useBalance } from "wagmi";
+import { useAccount } from "wagmi";
 
 export function YourBalanceWell({
   tokenAddress,
@@ -19,9 +20,10 @@ export function YourBalanceWell({
     baseTokenAddress: tokenAddress,
     tokens: appConfig.tokens,
   });
-  const { data: balance } = useBalance({
-    address: account,
-    token: tokenAddress,
+  const balance = useTokenBalance({
+    account: account,
+    tokenAddress: tokenAddress,
+    decimals: token.decimals,
   });
 
   const { mint } = useMintBaseToken({

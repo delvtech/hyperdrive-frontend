@@ -1,8 +1,7 @@
 import { TokenConfig } from "@hyperdrive/appconfig";
 import { useState } from "react";
-import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
+import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { Address } from "viem";
-import { useBalance } from "wagmi";
 
 export function useActiveToken<T1, T2>({
   account,
@@ -28,12 +27,10 @@ export function useActiveToken<T1, T2>({
     ({ address }) => address === activeTokenAddress,
   ) as TokenConfig<T1 | T2>;
 
-  const { data: activeTokenBalance } = useBalance({
-    address: account,
-    token:
-      activeToken.address === ETH_MAGIC_NUMBER
-        ? undefined // Fetches eth balance by setting `token` to undefined
-        : activeToken.address,
+  const activeTokenBalance = useTokenBalance({
+    account,
+    tokenAddress: activeTokenAddress,
+    decimals: activeToken.decimals,
   });
 
   return {
