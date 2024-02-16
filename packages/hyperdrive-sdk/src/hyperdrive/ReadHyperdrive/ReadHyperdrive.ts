@@ -642,9 +642,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
     toBlock,
   }: ContractGetEventsOptions<typeof HyperdriveABI, "TransferSingle">) {
     return this.contract.getEvents("TransferSingle", {
+      filter,
       fromBlock,
       toBlock,
-      filter,
     });
   }
 
@@ -684,10 +684,22 @@ export class ReadHyperdrive implements IReadHyperdrive {
       toBlock,
     });
 
+    // Paid base
+    // { checkpoint1: 10, checkpoint2: 0 }
     const totalBasePaidByAssetId = mapValues(
       groupBy(openLongEvents, (event) => event.args.assetId.toString()),
       (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
     );
+
+    // Paid shares
+    // { checkpoint1: 0, checkpoint2: 5 }
+    const totalSharesPaidByAssetId = mapValues(
+      groupBy(openLongEvents, (event) => event.args.assetId.toString()),
+      (events) => sumBigInt(events.map((event) => event.args.vaultShareAmount)),
+    );
+
+    // convert any values that were paid in shares to base
+    // add the converted values onto the totalBasePaidByAssetId
 
     const closeLongEvents = await this.contract.getEvents("CloseLong", {
       filter: { trader: account },
@@ -735,12 +747,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
         fromBlock,
         toBlock,
       })
-    ).filter(
-      (transferSingleEvent) =>
+    ).filter((transferSingleEvent) => {
+      return (
         decodeAssetFromTransferSingleEventData(
           transferSingleEvent.data as `0x${string}`,
-        ).assetType === "LONG",
-    );
+        ).assetType === "LONG"
+      );
+    });
 
     const longsRedeemedOrSentById = mapValues(
       groupBy(longsRedeemedOrSent, (event) => event.args.id),
