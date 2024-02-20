@@ -1077,3 +1077,799 @@ test("getClosedLongs should account for closing out to shares", async () => {
     },
   ]);
 });
+
+test("getOpenShorts should account for shorts opened with base", async () => {
+  // Description:
+  // Bob opens up a short position over 2 txs in the same checkpoint, for a
+  // total cost of 2 base  to have a short size of 100, (ie: 1 base to short 50
+  // bonds per tx).
+
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const eventData =
+    "0x0200000000000000000000000000000000000000000000000000000065d76f800000000000000000000000000000000000000000000000056bc75e2d63100000";
+  const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
+
+  contract.stubRead({ functionName: "getPoolConfig", value: simplePoolConfig });
+  contract.stubEvents(
+    "OpenShort",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "OpenShort",
+        args: {
+          assetId: 1n,
+          // paid for in base
+          asBase: true,
+          baseAmount: dnum.from("1", 18)[0],
+          baseProceeds: 0n, // TODO: what's a good value for this?
+          vaultShareAmount: 0n,
+          // The short size is represented in bonds
+          bondAmount: dnum.from("50", 18)[0],
+
+          maturityTime: timestamp,
+          trader: BOB,
+        },
+      },
+      {
+        eventName: "OpenShort",
+        args: {
+          assetId: 1n,
+          // paid for in base
+          asBase: true,
+          baseAmount: dnum.from("1", 18)[0],
+          baseProceeds: 0n, // TODO: what's a good value for this?
+          vaultShareAmount: 0n,
+          // The short size is represented in bonds
+          bondAmount: dnum.from("50", 18)[0],
+
+          maturityTime: timestamp,
+          trader: BOB,
+        },
+      },
+    ],
+  );
+  // matching TransferSingle events for OpenShort
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { to: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        data: eventData,
+        args: {
+          from: ZERO_ADDRESS,
+          to: BOB,
+          id: 1n,
+          value: dnum.from("50", 18)[0],
+          operator: BOB,
+        },
+        eventName: "TransferSingle",
+      },
+      {
+        args: {
+          from: ZERO_ADDRESS,
+          to: BOB,
+          id: 1n,
+          value: dnum.from("50", 18)[0],
+          operator: BOB,
+        },
+        data: eventData,
+        eventName: "TransferSingle",
+      },
+    ],
+  );
+
+  contract.stubEvents(
+    "CloseShort",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [],
+  );
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { from: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [],
+  );
+
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+
+  const value = await readHyperdrive.getOpenShorts({ account: BOB });
+
+  expect(value).toEqual([
+    {
+      assetId: 1n,
+      bondAmount: dnum.from("100", 18)[0],
+      baseAmountPaid: dnum.from("2", 18)[0],
+      checkpointId: 123454800n,
+      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      maturity: 1708617600n,
+      openedTimestamp: 123456789n,
+    },
+  ]);
+});
+
+test("getOpenShorts should account for shorts opened with shares", async () => {
+  // Description:
+  // Bob opens up a short position over 2 txs in the same checkpoint, for a
+  // total cost of 2 shares (which are worth 1.1 base per share). His resulting
+  // short size is 100.
+
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const eventData =
+    "0x0200000000000000000000000000000000000000000000000000000065d76f800000000000000000000000000000000000000000000000056bc75e2d63100000";
+  const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
+
+  contract.stubRead({ functionName: "getPoolConfig", value: simplePoolConfig });
+  contract.stubEvents(
+    "OpenShort",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "OpenShort",
+        blockNumber: 5n,
+        args: {
+          assetId: 1n,
+          // paid for in base
+          asBase: false,
+          baseAmount: 0n,
+          baseProceeds: 0n, // TODO: what's a good value for this?
+          vaultShareAmount: dnum.from("1", 18)[0],
+          // The short size is represented in bonds
+          bondAmount: dnum.from("50", 18)[0],
+
+          maturityTime: timestamp,
+          trader: BOB,
+        },
+      },
+      {
+        eventName: "OpenShort",
+        blockNumber: 5n,
+        args: {
+          assetId: 1n,
+          // paid for in shares
+          asBase: false,
+          baseAmount: 0n,
+          baseProceeds: 0n, // TODO: what's a good value for this?
+          vaultShareAmount: dnum.from("1", 18)[0],
+          // The short size is represented in bonds
+          bondAmount: dnum.from("50", 18)[0],
+
+          maturityTime: timestamp,
+          trader: BOB,
+        },
+      },
+    ],
+  );
+  // matching TransferSingle events for OpenShort
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { to: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        data: eventData,
+        args: {
+          from: ZERO_ADDRESS,
+          to: BOB,
+          id: 1n,
+          value: dnum.from("50", 18)[0],
+          operator: BOB,
+        },
+        eventName: "TransferSingle",
+      },
+      {
+        args: {
+          from: ZERO_ADDRESS,
+          to: BOB,
+          id: 1n,
+          value: dnum.from("50", 18)[0],
+          operator: BOB,
+        },
+        data: eventData,
+        eventName: "TransferSingle",
+      },
+    ],
+  );
+
+  contract.stubEvents(
+    "CloseShort",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [],
+  );
+  // matching TransferSingle for CloseShort
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { from: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [],
+  );
+
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+
+  // pool info to get the price of shares at the time he opens the short
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
+    options: { blockNumber: 5n },
+  });
+
+  const value = await readHyperdrive.getOpenShorts({ account: BOB });
+
+  expect(value).toEqual([
+    {
+      assetId: 1n,
+      bondAmount: dnum.from("100", 18)[0],
+      baseAmountPaid: dnum.from("2.2", 18)[0],
+      checkpointId: 123454800n,
+      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      maturity: 1708617600n,
+      openedTimestamp: 123456789n,
+    },
+  ]);
+});
+
+test("getOpenShorts should account for shorts partially closed to base", async () => {
+  // Description:
+  // Bob opens up a short position, for a total cost of 2 base to have a short
+  // size of 100. He then partially closes this position, redeeming 50 bonds for
+  // 1 base. As a result, he has 50 bonds left with a total cost of 1 base.
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const eventData =
+    "0x0200000000000000000000000000000000000000000000000000000065d76f800000000000000000000000000000000000000000000000056bc75e2d63100000";
+  const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
+
+  contract.stubRead({ functionName: "getPoolConfig", value: simplePoolConfig });
+  contract.stubEvents(
+    "OpenShort",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "OpenShort",
+        blockNumber: 5n,
+        args: {
+          assetId: 1n,
+          // paid for in base
+          asBase: true,
+          baseAmount: dnum.from("2", 18)[0],
+          baseProceeds: 0n, // TODO: what's a good value for this?
+          vaultShareAmount: 0n,
+          // The short size is represented in bonds
+          bondAmount: dnum.from("100", 18)[0],
+
+          maturityTime: timestamp,
+          trader: BOB,
+        },
+      },
+    ],
+  );
+  // matching TransferSingle events for OpenShort
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { to: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        data: eventData,
+        args: {
+          from: ZERO_ADDRESS,
+          to: BOB,
+          id: 1n,
+          value: dnum.from("100", 18)[0],
+          operator: BOB,
+        },
+        eventName: "TransferSingle",
+      },
+    ],
+  );
+
+  contract.stubEvents(
+    "CloseShort",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "CloseShort",
+        args: {
+          assetId: 1n,
+          asBase: true,
+          baseAmount: dnum.from("1", 18)[0], // closed out to base
+          vaultShareAmount: 0n, // did not close out to shares
+          bondAmount: dnum.from("50", 18)[0],
+          maturityTime: timestamp,
+          trader: BOB,
+        },
+      },
+    ],
+  );
+  // matching TransferSingle for CloseShort
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { from: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        data: eventData,
+        args: {
+          to: ZERO_ADDRESS,
+          from: BOB,
+          id: 1n,
+          value: dnum.from("50", 18)[0],
+          operator: BOB,
+        },
+        eventName: "TransferSingle",
+      },
+    ],
+  );
+
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+
+  // pool info to get the price of shares at the time he opens the short
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
+    options: { blockNumber: 5n },
+  });
+
+  const value = await readHyperdrive.getOpenShorts({ account: BOB });
+
+  expect(value).toEqual([
+    {
+      assetId: 1n,
+      bondAmount: dnum.from("50", 18)[0],
+      baseAmountPaid: dnum.from("1", 18)[0],
+      checkpointId: 123454800n,
+      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      maturity: 1708617600n,
+      openedTimestamp: 123456789n,
+    },
+  ]);
+});
+
+test("getOpenShorts should account for shorts fully closed to base", async () => {
+  // Description:
+  // Bob opens up a short position, for a total cost of 2 base to have a short
+  // size of 100. He then completely closes this position, redeeming 100 bonds
+  // for 2 base. As a result, he no longer has any open short positions.
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const eventData =
+    "0x0200000000000000000000000000000000000000000000000000000065d76f800000000000000000000000000000000000000000000000056bc75e2d63100000";
+  const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
+
+  contract.stubRead({ functionName: "getPoolConfig", value: simplePoolConfig });
+  contract.stubEvents(
+    "OpenShort",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "OpenShort",
+        blockNumber: 5n,
+        args: {
+          assetId: 1n,
+          // paid for in base
+          asBase: true,
+          baseAmount: dnum.from("2", 18)[0],
+          baseProceeds: 0n, // TODO: what's a good value for this?
+          vaultShareAmount: 0n,
+          // The short size is represented in bonds
+          bondAmount: dnum.from("100", 18)[0],
+
+          maturityTime: timestamp,
+          trader: BOB,
+        },
+      },
+    ],
+  );
+  // matching TransferSingle events for OpenShort
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { to: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        data: eventData,
+        args: {
+          from: ZERO_ADDRESS,
+          to: BOB,
+          id: 1n,
+          value: dnum.from("100", 18)[0],
+          operator: BOB,
+        },
+        eventName: "TransferSingle",
+      },
+    ],
+  );
+
+  contract.stubEvents(
+    "CloseShort",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "CloseShort",
+        args: {
+          assetId: 1n,
+          asBase: true,
+          baseAmount: dnum.from("2", 18)[0], // closed out to base
+          vaultShareAmount: 0n, // did not close out to shares
+          bondAmount: dnum.from("100", 18)[0],
+          maturityTime: timestamp,
+          trader: BOB,
+        },
+      },
+    ],
+  );
+  // matching TransferSingle for CloseShort
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { from: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        data: eventData,
+        args: {
+          to: ZERO_ADDRESS,
+          from: BOB,
+          id: 1n,
+          value: dnum.from("100", 18)[0],
+          operator: BOB,
+        },
+        eventName: "TransferSingle",
+      },
+    ],
+  );
+
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+
+  const value = await readHyperdrive.getOpenShorts({ account: BOB });
+
+  expect(value).toEqual([]);
+});
+
+test("getOpenShorts should account for shorts partially closed to shares", async () => {
+  // Description:
+  // Bob opens up a short position, for a total cost of 2 base to have a short
+  // size of 100. He then partially closes this position, redeeming 50 bonds for
+  // 0.9 shares. Shares are worth 1.1 base at the time he closes, therefore his
+  // closed position is valued at 1.01 base.
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const eventData =
+    "0x0200000000000000000000000000000000000000000000000000000065d76f800000000000000000000000000000000000000000000000056bc75e2d63100000";
+  const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
+
+  contract.stubRead({ functionName: "getPoolConfig", value: simplePoolConfig });
+  contract.stubEvents(
+    "OpenShort",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "OpenShort",
+        blockNumber: 5n,
+        args: {
+          assetId: 1n,
+          // paid for in base
+          asBase: true,
+          baseAmount: dnum.from("2", 18)[0],
+          baseProceeds: 0n, // TODO: what's a good value for this?
+          vaultShareAmount: 0n,
+          // The short size is represented in bonds
+          bondAmount: dnum.from("100", 18)[0],
+
+          maturityTime: timestamp,
+          trader: BOB,
+        },
+      },
+    ],
+  );
+  // matching TransferSingle events for OpenShort
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { to: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        data: eventData,
+        args: {
+          from: ZERO_ADDRESS,
+          to: BOB,
+          id: 1n,
+          value: dnum.from("100", 18)[0],
+          operator: BOB,
+        },
+        eventName: "TransferSingle",
+      },
+    ],
+  );
+
+  contract.stubEvents(
+    "CloseShort",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "CloseShort",
+        blockNumber: 5n,
+        args: {
+          assetId: 1n,
+          asBase: false,
+          baseAmount: 0n, // did not close out to base
+          vaultShareAmount: dnum.from("0.9", 18)[0], // closed out to shares
+          bondAmount: dnum.from("50", 18)[0],
+          maturityTime: timestamp,
+          trader: BOB,
+        },
+      },
+    ],
+  );
+  // matching TransferSingle for CloseShort
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { from: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        data: eventData,
+        args: {
+          to: ZERO_ADDRESS,
+          from: BOB,
+          id: 1n,
+          value: dnum.from("50", 18)[0],
+          operator: BOB,
+        },
+        eventName: "TransferSingle",
+      },
+    ],
+  );
+
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+
+  // pool info to get the price of shares at the time he closes the short
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
+    options: { blockNumber: 5n },
+  });
+
+  const value = await readHyperdrive.getOpenShorts({ account: BOB });
+
+  expect(value).toEqual([
+    {
+      assetId: 1n,
+      baseAmountPaid: dnum.from("1.01", 18)[0],
+      bondAmount: dnum.from("50", 18)[0],
+      checkpointId: 123454800n,
+      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      maturity: 1708617600n,
+      openedTimestamp: 123456789n,
+    },
+  ]);
+});
+
+test("getOpenShorts should account for shorts fully closed to shares", async () => {
+  // Description:
+  // Bob opens up a short position, for a total cost of 2 base to have a short
+  // size of 100. He then completely closes this position, redeeming 100 bonds
+  // for 1.1 shares. Shares are worth 1.1 base at the time he closes, therefore
+  // his closed position is valued at 1.21 base.
+
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const eventData =
+    "0x0200000000000000000000000000000000000000000000000000000065d76f800000000000000000000000000000000000000000000000056bc75e2d63100000";
+  const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
+
+  contract.stubRead({ functionName: "getPoolConfig", value: simplePoolConfig });
+  contract.stubEvents(
+    "OpenShort",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "OpenShort",
+        blockNumber: 5n,
+        args: {
+          assetId: 1n,
+          // paid for in base
+          asBase: true,
+          baseAmount: dnum.from("2", 18)[0],
+          baseProceeds: 0n, // TODO: what's a good value for this?
+          vaultShareAmount: 0n,
+          // The short size is represented in bonds
+          bondAmount: dnum.from("100", 18)[0],
+
+          maturityTime: timestamp,
+          trader: BOB,
+        },
+      },
+    ],
+  );
+  // matching TransferSingle events for OpenShort
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { to: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        data: eventData,
+        args: {
+          from: ZERO_ADDRESS,
+          to: BOB,
+          id: 1n,
+          value: dnum.from("100", 18)[0],
+          operator: BOB,
+        },
+        eventName: "TransferSingle",
+      },
+    ],
+  );
+
+  contract.stubEvents(
+    "CloseShort",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "CloseShort",
+        blockNumber: 5n,
+        args: {
+          assetId: 1n,
+          asBase: false,
+          baseAmount: 0n, // did not close out to base
+          vaultShareAmount: dnum.from("1.1", 18)[0], // closed out to shares
+          bondAmount: dnum.from("100", 18)[0],
+          maturityTime: timestamp,
+          trader: BOB,
+        },
+      },
+    ],
+  );
+  // matching TransferSingle for CloseShort
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { from: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        data: eventData,
+        args: {
+          to: ZERO_ADDRESS,
+          from: BOB,
+          id: 1n,
+          value: dnum.from("100", 18)[0],
+          operator: BOB,
+        },
+        eventName: "TransferSingle",
+      },
+    ],
+  );
+
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+
+  // pool info to get the price of shares at the time he closes the short
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
+    options: { blockNumber: 5n },
+  });
+
+  const value = await readHyperdrive.getOpenShorts({ account: BOB });
+
+  expect(value).toEqual([]);
+});
+
+test("getClosedShorts should account for shorts closed to base", async () => {
+  // Description:
+  // Bob completely closes his position, redeeming 100 shorted bonds for 2 base.
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const eventData =
+    "0x0200000000000000000000000000000000000000000000000000000065d76f800000000000000000000000000000000000000000000000056bc75e2d63100000";
+  const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
+
+  contract.stubRead({ functionName: "getPoolConfig", value: simplePoolConfig });
+
+  contract.stubEvents(
+    "CloseShort",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "CloseShort",
+        args: {
+          assetId: 1n,
+          asBase: true,
+          baseAmount: dnum.from("2", 18)[0], // closed out to base
+          vaultShareAmount: 0n, // did not close out to shares
+          bondAmount: dnum.from("100", 18)[0],
+          maturityTime: timestamp,
+          trader: BOB,
+        },
+      },
+    ],
+  );
+  // matching TransferSingle for CloseShort
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { from: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        args: {
+          to: ZERO_ADDRESS,
+          from: BOB,
+          id: 1n,
+          value: dnum.from("100", 18)[0],
+          operator: BOB,
+        },
+        eventName: "TransferSingle",
+      },
+    ],
+  );
+
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+
+  const value = await readHyperdrive.getClosedShorts({ account: BOB });
+
+  expect(value).toEqual([
+    {
+      assetId: 1n,
+      baseAmountReceived: dnum.from("2", 18)[0],
+      bondAmount: dnum.from("100", 18)[0],
+      checkpointId: 123454800n,
+      closedTimestamp: 123456789n,
+      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      maturity: 1708617600n,
+    },
+  ]);
+});
+
+test("getClosedShorts should account for shorts closed to shares", async () => {
+  // Description:
+  // Bob completely closes his position, redeeming 100 shorted bonds for 1.1 shares.
+  // Shares are worth 1.1 base at the time he closes, therefore his closed position
+  // is valued at 1.21 base.
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const eventData =
+    "0x0200000000000000000000000000000000000000000000000000000065d76f800000000000000000000000000000000000000000000000056bc75e2d63100000";
+  const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
+
+  contract.stubRead({ functionName: "getPoolConfig", value: simplePoolConfig });
+
+  contract.stubEvents(
+    "CloseShort",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "CloseShort",
+        blockNumber: 5n,
+        args: {
+          assetId: 1n,
+          asBase: false,
+          baseAmount: 0n, // did not close out to base
+          vaultShareAmount: dnum.from("1.1", 18)[0], // closed out to shares
+          bondAmount: dnum.from("100", 18)[0],
+          maturityTime: timestamp,
+          trader: BOB,
+        },
+      },
+    ],
+  );
+  // matching TransferSingle for CloseShort
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { from: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        args: {
+          to: ZERO_ADDRESS,
+          from: BOB,
+          id: 1n,
+          value: dnum.from("100", 18)[0],
+          operator: BOB,
+        },
+        eventName: "TransferSingle",
+        blockNumber: 5n,
+      },
+    ],
+  );
+
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  // pool info to get the price of shares at the time he closes the short
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
+    options: { blockNumber: 5n },
+  });
+
+  const value = await readHyperdrive.getClosedShorts({ account: BOB });
+
+  expect(value).toEqual([
+    {
+      assetId: 1n,
+      baseAmountReceived: dnum.from("1.21", 18)[0],
+      bondAmount: dnum.from("100", 18)[0],
+      checkpointId: 123454800n,
+      closedTimestamp: 123456789n,
+      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      maturity: 1708617600n,
+    },
+  ]);
+});
