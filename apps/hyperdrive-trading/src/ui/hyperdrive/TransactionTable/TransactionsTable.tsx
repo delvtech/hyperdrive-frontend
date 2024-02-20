@@ -24,6 +24,8 @@ import classNames from "classnames";
 import * as dnum from "dnum";
 import { useState } from "react";
 import { formatTimeDifference } from "src/base/formatTimeDifference";
+import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
+import { SupportedChainId } from "src/chains/supportedChains";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
@@ -33,7 +35,7 @@ import {
   useTransactionData,
 } from "src/ui/hyperdrive/TransactionTable/useTransactionData";
 import { Address } from "viem";
-import { useBlock } from "wagmi";
+import { useBlock, useChainId } from "wagmi";
 
 export interface Transaction {
   type: string;
@@ -426,9 +428,10 @@ function EventNameCell({
   blockNumber: bigint;
 }) {
   const { data: transaction } = useBlock({ blockNumber });
+  const chainId = useChainId() as SupportedChainId;
   return (
     <a
-      href={`https://etherscan.io/tx/${transaction?.hash}`}
+      href={makeAddressUrl(transaction?.hash || "", chainId)}
       target="_blank"
       rel="noreferrer"
       className="underline"
@@ -439,9 +442,10 @@ function EventNameCell({
 }
 
 function AccountCell({ account }: { account: Address }) {
+  const chainId = useChainId() as SupportedChainId;
   return (
     <a
-      href={`https://etherscan.io/address/${account}`}
+      href={makeAddressUrl(account, chainId)}
       target="_blank"
       rel="noreferrer"
       className="underline"
