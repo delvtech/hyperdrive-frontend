@@ -24,6 +24,8 @@ import classNames from "classnames";
 import * as dnum from "dnum";
 import { useState } from "react";
 import { formatTimeDifference } from "src/base/formatTimeDifference";
+import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
+import { SupportedChainId } from "src/chains/supportedChains";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
@@ -33,7 +35,7 @@ import {
   useTransactionData,
 } from "src/ui/hyperdrive/TransactionTable/useTransactionData";
 import { Address } from "viem";
-import { useBlock } from "wagmi";
+import { useBlock, useChainId } from "wagmi";
 
 export interface Transaction {
   type: string;
@@ -124,11 +126,15 @@ function formatTransactionTableMobileData(
     row.eventName === "AddLiquidity" ||
     row.eventName === "RemoveLiquidity" ||
     row.eventName === "RedeemWithdrawalShares";
-
   return [
     {
       name: "Event",
-      value: eventMap[row.eventName as EventName] || row.eventName,
+      value: (
+        <EventNameCell
+          name={eventMap[row.eventName as EventName] || row.eventName}
+          blockNumber={row.blockNumber || 0n}
+        />
+      ),
     },
     {
       name: "Size",
@@ -140,7 +146,7 @@ function formatTransactionTableMobileData(
     },
     {
       name: "Account",
-      value: formatAddress(row.trader),
+      value: <AccountCell account={row.trader} />,
     },
     {
       name: "Block number",
@@ -218,7 +224,14 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       enableSorting: false,
       enableColumnFilter: true,
       header: () => null,
-      cell: ({ getValue }) => eventMap[getValue() as EventName] || getValue(),
+      cell: ({ getValue, row }) => {
+        return (
+          <EventNameCell
+            name={eventMap[getValue() as EventName] || getValue()}
+            blockNumber={row.original.blockNumber || 0n}
+          />
+        );
+      },
       filterFn: (row, _, filterValue) => {
         const type = row.getValue("eventName") as string;
         const filters = {
@@ -266,7 +279,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
     columnHelper.accessor("trader", {
       header: "Account",
       enableColumnFilter: false,
-      cell: (account) => formatAddress(account.getValue()),
+      cell: (account) => <AccountCell account={account.getValue()} />,
     }),
     columnHelper.accessor("blockNumber", {
       header: "Time",
@@ -274,16 +287,6 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       cell: (blockNumber) => <BlockInfo blockNumber={blockNumber.getValue()} />,
     }),
   ];
-}
-
-function BlockInfo({ blockNumber }: { blockNumber: bigint | undefined }) {
-  const { data: transactionBlock } = useBlock({ blockNumber });
-  const { data: currentBlock } = useBlock();
-  const timeDifference = formatTimeDifference({
-    currentTimeStamp: currentBlock?.timestamp || 0n,
-    previousTimeStamp: transactionBlock?.timestamp || 0n,
-  });
-  return <p>{timeDifference}</p>;
 }
 
 export function TransactionTable({
@@ -415,4 +418,49 @@ export function TransactionTable({
       </div>
     </div>
   );
+}
+
+function EventNameCell({
+  name,
+  blockNumber,
+}: {
+  name: EventName | string;
+  blockNumber: bigint;
+}) {
+  const { data: transaction } = useBlock({ blockNumber });
+  const chainId = useChainId() as SupportedChainId;
+  return (
+    <a
+      href={makeAddressUrl(transaction?.hash || "", chainId)}
+      target="_blank"
+      rel="noreferrer"
+      className="underline"
+    >
+      {name}
+    </a>
+  );
+}
+
+function AccountCell({ account }: { account: Address }) {
+  const chainId = useChainId() as SupportedChainId;
+  return (
+    <a
+      href={makeAddressUrl(account, chainId)}
+      target="_blank"
+      rel="noreferrer"
+      className="underline"
+    >
+      {formatAddress(account)}
+    </a>
+  );
+}
+
+function BlockInfo({ blockNumber }: { blockNumber: bigint | undefined }) {
+  const { data: transactionBlock } = useBlock({ blockNumber });
+  const { data: currentBlock } = useBlock();
+  const timeDifference = formatTimeDifference({
+    currentTimeStamp: currentBlock?.timestamp || 0n,
+    previousTimeStamp: transactionBlock?.timestamp || 0n,
+  });
+  return <p>{timeDifference}</p>;
 }

@@ -15,6 +15,12 @@ export function useAppConfig(): AppConfig {
       return localChainAppConfig;
     case 42069:
       return cloudChainAppConfig;
+    case 1:
+      // Return mainnet config when available
+      return {} as AppConfig;
+    case 5:
+      // Return goerli config when available
+      return {} as AppConfig;
     default:
       assertNever(chainId);
   }
