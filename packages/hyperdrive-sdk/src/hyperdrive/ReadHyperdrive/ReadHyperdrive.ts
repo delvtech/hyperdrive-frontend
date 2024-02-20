@@ -34,7 +34,6 @@ import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYiel
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { hyperwasm } from "src/hyperwasm";
 import { getBlockOrThrow } from "src/evm-client/getBlockOrThrow";
-import { base } from "viem/chains";
 
 const HyperdriveABI = IHyperdrive.abi;
 
@@ -856,15 +855,42 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
     const { checkpointDuration } = await this.getPoolConfig(options);
+
     const closeShortEvents = await this.contract.getEvents("CloseShort", {
       filter: { trader: account },
       fromBlock,
       toBlock,
     });
 
-    const amountReceivedByAssetId = mapValues(
-      groupBy(closeShortEvents, (event) => event.args.assetId.toString()),
-      (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
+    // convert this to a promise object that converts shares to baseAmount
+    const totalBaseReceivedByAssetId = await convertPromiseObjectToObject(
+      mapValues(
+        groupBy(closeShortEvents, (event) => event.args.assetId.toString()),
+        async (events) => {
+          const baseAmounts = await Promise.all(
+            events.map(async (event) => {
+              if (event.args.asBase) {
+                return event.args.baseAmount;
+              }
+              const { vaultShareAmount } = event.args;
+
+              if (!vaultShareAmount) {
+                return 0n;
+              }
+
+              const block = event.blockNumber as bigint;
+              const { vaultSharePrice } = await this.getPoolInfo({
+                blockNumber: block,
+              });
+              return dnum.multiply(
+                [vaultSharePrice, 18],
+                [vaultShareAmount, 18],
+              )[0];
+            }),
+          );
+          return sumBigInt(baseAmounts);
+        },
+      ),
     );
 
     const transferOutEvents = (
@@ -901,7 +927,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
         assetId: eventData.id,
         bondAmount: eventData.value ?? 0n,
         checkpointId: getCheckpointId(timestamp, checkpointDuration),
-        baseAmountReceived: amountReceivedByAssetId[assetId] ?? 0n,
+        baseAmountReceived: totalBaseReceivedByAssetId[assetId] ?? 0n,
         maturity: decodeAssetFromTransferSingleEventData(
           eventLog as `0x${string}`,
         ).timestamp,
@@ -915,9 +941,32 @@ export class ReadHyperdrive implements IReadHyperdrive {
       toBlock,
     });
 
-    const amountPaidByAssetId = mapValues(
-      groupBy(openShortEvents, (event) => event.args.assetId),
-      (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
+    const totalBasePaidByAssetId = await convertPromiseObjectToObject(
+      mapValues(
+        groupBy(openShortEvents, (event) => event.args.assetId.toString()),
+        async (events) => {
+          const baseAmounts = await Promise.all(
+            events.map(async (event) => {
+              if (event.args.asBase) {
+                return event.args.baseAmount;
+              }
+              const { vaultShareAmount } = event.args;
+              if (!vaultShareAmount) {
+                return 0n;
+              }
+              const block = event.blockNumber as bigint;
+              const { vaultSharePrice } = await this.getPoolInfo({
+                blockNumber: block,
+              });
+              return dnum.multiply(
+                [vaultSharePrice, 18],
+                [vaultShareAmount, 18],
+              )[0];
+            }),
+          );
+          return sumBigInt(baseAmounts);
+        },
+      ),
     );
 
     const transferInEvents = (
@@ -950,8 +999,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
       }
 
       const netAmountPaid =
-        (amountPaidByAssetId[assetId] ?? 0n) -
-        (amountReceivedByAssetId[assetId] ?? 0n);
+        (totalBasePaidByAssetId[assetId] ?? 0n) -
+        (totalBaseReceivedByAssetId[assetId] ?? 0n);
 
       openShortsById[assetId] = {
         hyperdriveAddress: this.contract.address,
@@ -1041,19 +1090,31 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { checkpointDuration } = await this.getPoolConfig(options);
     const closedShortsList: ClosedShort[] = await Promise.all(
       closedShorts.map(async (event) => {
-        const { assetId } = event.args;
-        const decoded = decodeAssetFromTransferSingleEventData(
-          event.data as `0x${string}`,
-        );
+        const { assetId, maturityTime } = event.args;
         const { timestamp } = await getBlockOrThrow(this.network, {
           blockNumber: event.blockNumber,
         });
+
+        let baseAmountReceived = event.args.baseAmount;
+        if (!event.args.asBase && event.args.vaultShareAmount) {
+          // Get the vault share price at the time you closed the position
+          // so we can convert your shares out into their base value
+          const block = event.blockNumber as bigint;
+          const { vaultSharePrice } = await this.getPoolInfo({
+            blockNumber: block,
+          });
+          const convertedBaseAmount = dnum.multiply(
+            [vaultSharePrice, 18],
+            [event.args.vaultShareAmount, 18],
+          )[0]; // convert vault shares to base amount
+          baseAmountReceived = convertedBaseAmount;
+        }
         return {
           hyperdriveAddress: this.contract.address,
           assetId,
           bondAmount: event.args.bondAmount,
-          baseAmountReceived: event.args.baseAmount,
-          maturity: decoded.timestamp,
+          baseAmountReceived: baseAmountReceived,
+          maturity: maturityTime,
           closedTimestamp: timestamp,
           checkpointId: getCheckpointId(timestamp, checkpointDuration),
         };
