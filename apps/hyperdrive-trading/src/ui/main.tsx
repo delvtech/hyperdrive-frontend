@@ -11,6 +11,7 @@ import { wagmiConfig } from "src/network/wagmiClient";
 import { App } from "src/ui/app/App/App";
 import ToastProvider from "src/ui/base/components/Toaster/ToastProvider";
 import "src/ui/globals.css";
+import { logAppVersion } from "src/ui/version/logAppVersion";
 import { customRainbowTheme } from "src/ui/wallet/customTheme";
 import { WagmiProvider } from "wagmi";
 
@@ -20,6 +21,8 @@ const root = createRoot(container);
 if (import.meta.env.DEV) {
   enableTailwindBreakpointsDevTool();
 }
+
+logAppVersion();
 
 root.render(
   <WagmiProvider config={wagmiConfig}>

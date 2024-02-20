@@ -13,14 +13,15 @@
     "url": "https://github.com/delvtech/hyperdrive-monorepo/issues"
   },
   "scripts": {
-    "build": "tsc && vite build --config vite.config.build.ts",
+    "build": "bash ./scripts/build-app.sh",
     "dev": "vite",
     "format": "prettier --write '**/*.{gql,graphql,js,jsx,ts,tsx,json,md,yaml,yml}'",
     "format:check": "prettier --check '**/*.{gql,graphql,js,jsx,ts,tsx,json,md}'",
     "lint": "eslint src",
     "serve": "vite preview",
     "test:ui": "vitest --ui",
-    "typecheck": "tsc --project tsconfig.json --noEmit"
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "gen:version": "bash ./scripts/generate-version.sh"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
