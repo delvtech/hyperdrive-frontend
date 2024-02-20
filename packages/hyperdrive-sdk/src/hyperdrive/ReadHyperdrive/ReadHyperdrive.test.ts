@@ -613,7 +613,116 @@ test("getOpenLongs should account for longs opened with base that have been full
 
   expect(value).toEqual([]);
 });
-test.skip("getOpenLongs should account for longs opened with base and partially closed to shares", async () => {});
+test("getOpenLongs should account for longs opened with base and partially closed to shares", async () => {
+  // Description:
+  // Bob opens up a long position, for a total cost 2 base, and receiving 2.2
+  // bonds. He then closes half of this position, redeeming 1.1 bonds for 0.8
+  // shares. Shares are worth 1.1 base at the time he closes, As a result, he
+  // has 1.1 bonds left that are worth 1.21 base in his long position.
+
+  const { contract, readHyperdrive } = setupReadHyperdrive();
+
+  const eventData =
+    "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
+  const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
+  contract.stubEvents(
+    "OpenLong",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "OpenLong",
+        args: {
+          assetId: 1n,
+          // paid for in base
+          baseAmount: dnum.from("2", 18)[0],
+          vaultShareAmount: 0n,
+          // received bonds
+          bondAmount: dnum.from("2.2", 18)[0],
+          maturityTime: timestamp,
+          asBase: true,
+          trader: BOB,
+        },
+      },
+    ],
+  );
+  // matching TransferSingle events for OpenLong
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { to: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        data: eventData,
+        args: {
+          from: ZERO_ADDRESS,
+          to: BOB,
+          id: 1n,
+          value: dnum.from("2.2", 18)[0],
+          operator: BOB,
+        },
+        eventName: "TransferSingle",
+      },
+    ],
+  );
+
+  contract.stubEvents(
+    "CloseLong",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "CloseLong",
+        blockNumber: 5n,
+        args: {
+          assetId: 1n,
+          maturityTime: timestamp,
+          trader: BOB,
+
+          // received back 0.8 shares, and no base
+          asBase: false,
+          baseAmount: 0n,
+          vaultShareAmount: dnum.from("0.8", 18)[0],
+
+          // closed out 1.1 bonds
+          bondAmount: dnum.from("1.1", 18)[0],
+        },
+      },
+    ],
+  );
+  // Matching TransferSingle events for CloseLong
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { from: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        args: {
+          from: BOB,
+          to: ZERO_ADDRESS,
+          id: 1n,
+          value: dnum.from("1.1", 18)[0],
+          operator: BOB,
+        },
+        data: eventData,
+        eventName: "TransferSingle",
+      },
+    ],
+  );
+  // pool info to get the price of shares at the time he closes out to 0.8 shares
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
+    options: { blockNumber: 5n },
+  });
+  const value = await readHyperdrive.getOpenLongs({ account: BOB });
+
+  expect(value).toEqual([
+    {
+      assetId: 1n,
+      baseAmountPaid: dnum.from("1.12", 18)[0],
+      bondAmount: dnum.from("1.1", 18)[0],
+      maturity: 1708545600n,
+    },
+  ]);
+});
+
 test.skip("getOpenLongs should account for longs opened with base and fully closed to shares", async () => {});
 
 // opened with shares
@@ -731,7 +840,10 @@ test("getOpenLongs should account for longs opened with shares", async () => {
     },
   ]);
 });
-test.skip("getOpenLongs should account for longs opened with shares and partially closed to shares", async () => {});
+test.skip("getOpenLongs should account for longs opened with shares and partially closed to shares", async () => {
+  // Description:
+  // Bob opens up a long position over 1 txn, for a total cost of 2 shares, and
+});
 test.skip("getOpenLongs should account for longs opened with shares and partially closed to base", async () => {});
 test.skip("getOpenLongs should account for longs opened with shares and fully closed to shares", async () => {});
 test.skip("getOpenLongs should account for longs opened with shares and fully closed to base", async () => {});
