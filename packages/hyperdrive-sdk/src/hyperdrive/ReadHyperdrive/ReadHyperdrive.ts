@@ -725,9 +725,37 @@ export class ReadHyperdrive implements IReadHyperdrive {
       toBlock,
     });
 
-    const totalBaseReceivedByAssetId = mapValues(
-      groupBy(closeLongEvents, (event) => event.args.assetId.toString()),
-      (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
+    const totalBaseReceivedByAssetId = await convertPromiseObjectToObject(
+      mapValues(
+        groupBy(closeLongEvents, (event) => event.args.assetId.toString()),
+        async (events) => {
+          const baseAmounts = await Promise.all(
+            events.map(async (event) => {
+              // If you removed base, no need to convert anything
+              if (event.args.asBase) {
+                return event.args.baseAmount;
+              }
+              const { vaultShareAmount } = event.args;
+              // if you removed shares, but didn't actually remove anything,
+              // just return 0 to avoid requesting the vaultSharePrice
+              if (!vaultShareAmount) {
+                return 0n;
+              }
+              // Get the vault share price at the time you closed the position
+              // so we can convert your shares out into their base value
+              const block = event.blockNumber as bigint;
+              const { vaultSharePrice } = await this.getPoolInfo({
+                blockNumber: block,
+              });
+              return dnum.multiply(
+                [vaultSharePrice, 18],
+                [vaultShareAmount, 18],
+              )[0];
+            }),
+          );
+          return sumBigInt(baseAmounts);
+        },
+      ),
     );
 
     const longsMintedOrReceived = (
