@@ -54,7 +54,7 @@ function formatClosedLongMobileColumnData(
       ),
     },
     {
-      name: `Amount received (${baseToken.symbol})`,
+      name: `Value received (${baseToken.symbol})`,
       value: (
         <BaseAmountReceivedCell
           hyperdrive={hyperdrive}
@@ -150,7 +150,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
     }),
     columnHelper.display({
       id: "baseReceived",
-      header: `Amount received (${baseToken.symbol})`,
+      header: `Value received (${baseToken.symbol})`,
       cell: ({ row }) => {
         return (
           <BaseAmountReceivedCell
