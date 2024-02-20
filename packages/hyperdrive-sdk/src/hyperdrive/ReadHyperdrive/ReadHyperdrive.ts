@@ -34,6 +34,7 @@ import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYiel
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { hyperwasm } from "src/hyperwasm";
 import { getBlockOrThrow } from "src/evm-client/getBlockOrThrow";
+import { base } from "viem/chains";
 
 const HyperdriveABI = IHyperdrive.abi;
 
@@ -988,15 +989,28 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const closedLongsList: ClosedLong[] = await Promise.all(
       closedLongs.map(async (event) => {
         const assetId = event.args.assetId;
-        const decoded = decodeAssetFromTransferSingleEventData(
-          event.data as `0x${string}`,
-        );
+
+        let baseAmount = event.args.baseAmount;
+        if (!event.args.asBase && event.args.vaultShareAmount) {
+          // Get the vault share price at the time you closed the position
+          // so we can convert your shares out into their base value
+          const block = event.blockNumber as bigint;
+          const { vaultSharePrice } = await this.getPoolInfo({
+            blockNumber: block,
+          });
+          const convertedBasAmount = dnum.multiply(
+            [vaultSharePrice, 18],
+            [event.args.vaultShareAmount, 18],
+          )[0]; // convert vault shares to base amount
+          baseAmount = convertedBasAmount;
+        }
+
         return {
           assetId,
           bondAmount: event.args.bondAmount,
-          baseAmount: event.args.baseAmount,
+          baseAmount,
           baseAmountPaid: 0n, // TODO: Remove this field, this is copy/paste from @hyperdrive/queries
-          maturity: decoded.timestamp,
+          maturity: event.args.maturityTime,
           closedTimestamp: (
             await getBlockOrThrow(this.network, {
               blockNumber: event.blockNumber,

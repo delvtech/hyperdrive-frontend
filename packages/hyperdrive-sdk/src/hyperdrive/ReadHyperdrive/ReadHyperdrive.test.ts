@@ -938,3 +938,142 @@ test("getOpenLongs should account for longs fully closed to shares", async () =>
 
   expect(value).toEqual([]);
 });
+
+test("getClosedLongs should account for closing out to base", async () => {
+  // Description:
+  // Bob closes a long position of 2 bonds and receives back 2.2 base.
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+
+  const eventData =
+    "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
+  const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
+
+  contract.stubEvents(
+    "CloseLong",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "CloseLong",
+        blockNumber: 5n,
+        args: {
+          assetId: 1n,
+          maturityTime: timestamp,
+          trader: BOB,
+
+          // received back 2 shares, and no base
+          asBase: true,
+          baseAmount: dnum.from("2.2", 18)[0],
+          vaultShareAmount: 0n,
+
+          // closed out 2.0 bonds
+          bondAmount: dnum.from("2.0", 18)[0],
+        },
+      },
+    ],
+  );
+  // Matching TransferSingle events for CloseLong
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { from: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        args: {
+          from: BOB,
+          to: ZERO_ADDRESS,
+          id: 1n,
+          value: dnum.from("2.0", 18)[0],
+          operator: BOB,
+        },
+        data: eventData,
+        eventName: "TransferSingle",
+      },
+    ],
+  );
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  const value = await readHyperdrive.getClosedLongs({ account: BOB });
+  expect(value).toEqual([
+    {
+      assetId: 1n,
+      baseAmount: dnum.from("2.2", 18)[0],
+      baseAmountPaid: 0n,
+      bondAmount: dnum.from("2.0", 18)[0],
+      closedTimestamp: 123456789n,
+      maturity: 1708545600n,
+    },
+  ]);
+});
+
+test("getClosedLongs should account for closing out to shares", async () => {
+  // Description:
+  // Bob closes a long position of 2 bonds and receives back 1.9 shares. Shares
+  // are worth 1.1 base at the time he closes, therefore his closed position is
+  // valued at 2.09 base.
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+
+  const eventData =
+    "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
+  const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
+
+  contract.stubEvents(
+    "CloseLong",
+    { filter: { trader: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        eventName: "CloseLong",
+        blockNumber: 5n,
+        args: {
+          assetId: 1n,
+          maturityTime: timestamp,
+          trader: BOB,
+
+          // received back 1.9 shares, and no base
+          asBase: false,
+          baseAmount: 0n,
+          vaultShareAmount: dnum.from("1.9", 18)[0],
+
+          // closed out 2 bonds
+          bondAmount: dnum.from("2.0", 18)[0],
+        },
+      },
+    ],
+  );
+  // Matching TransferSingle events for CloseLong
+  contract.stubEvents(
+    "TransferSingle",
+    { filter: { from: BOB }, fromBlock: "earliest", toBlock: "latest" },
+    [
+      {
+        args: {
+          from: BOB,
+          to: ZERO_ADDRESS,
+          id: 1n,
+          value: dnum.from("2.0", 18)[0],
+          operator: BOB,
+        },
+        data: eventData,
+        eventName: "TransferSingle",
+      },
+    ],
+  );
+  // pool info to get the price of shares at the time he closes out to 0.8 shares
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
+    options: { blockNumber: 5n },
+  });
+
+  // getBlock gives us the timestamp of when he closed the position
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+
+  const value = await readHyperdrive.getClosedLongs({ account: BOB });
+  expect(value).toEqual([
+    {
+      assetId: 1n,
+      baseAmount: dnum.from("2.09", 18)[0],
+      baseAmountPaid: 0n,
+      bondAmount: dnum.from("2.0", 18)[0],
+      closedTimestamp: 123456789n,
+      maturity: 1708545600n,
+    },
+  ]);
+});
