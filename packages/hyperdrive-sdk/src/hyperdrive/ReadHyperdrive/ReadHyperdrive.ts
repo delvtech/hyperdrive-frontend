@@ -1243,11 +1243,18 @@ export class ReadHyperdrive implements IReadHyperdrive {
     );
     return Promise.all(
       removeLiquidityEvents.map(async ({ blockNumber, args }) => {
-        const { baseAmount, lpAmount, withdrawalShareAmount } = args;
+        const { lpAmount, withdrawalShareAmount, lpSharePrice } = args;
+        // Get the value of the lp shares by multiplying by the lp share price
+        // in the event, this saves us looking up pool info
+        const finalBaseAmount = dnum.multiply(
+          [lpAmount, 18],
+          [lpSharePrice, 18],
+        )[0];
+
         return {
           hyperdriveAddress: this.contract.address,
           lpAmount,
-          baseAmount,
+          baseAmount: finalBaseAmount,
           withdrawalShareAmount,
           closedTimestamp: (
             await getBlockOrThrow(this.network, {
@@ -1290,11 +1297,23 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
     return Promise.all(
       redeemedWithdrawalShareEvents.map(async ({ blockNumber, args }) => {
-        const { withdrawalShareAmount, baseAmount } = args;
+        const { withdrawalShareAmount, baseAmount, asBase, vaultShareAmount } =
+          args;
+        let finalBaseAmount = baseAmount;
+        if (!asBase && vaultShareAmount) {
+          const { vaultSharePrice } = await this.getPoolInfo({ blockNumber });
+          // Get the vault share price at the time you closed the position
+          // so we can convert your shares out into their base value
+          const convertedBaseAmount = dnum.multiply(
+            [vaultSharePrice, 18],
+            [vaultShareAmount, 18],
+          )[0]; // convert vault shares to base amount
+          finalBaseAmount = convertedBaseAmount;
+        }
         return {
           hyperdriveAddress: this.contract.address,
           withdrawalShareAmount,
-          baseAmount,
+          baseAmount: finalBaseAmount,
           redeemedTimestamp: (
             await getBlockOrThrow(this.network, { blockNumber })
           ).timestamp,

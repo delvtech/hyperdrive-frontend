@@ -1873,3 +1873,153 @@ test("getClosedShorts should account for shorts closed to shares", async () => {
     },
   ]);
 });
+
+test("getClosedLpShares should account for LP shares closed to base", async () => {
+  // Description:
+  // Bob completely closes his LP position of 5 LP shares and receives back
+  // base.
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+
+  contract.stubEvents("RemoveLiquidity", { filter: { provider: BOB } }, [
+    {
+      eventName: "RemoveLiquidity",
+      blockNumber: 5n,
+      args: {
+        asBase: true,
+        baseAmount: dnum.from("10", 18)[0],
+        vaultShareAmount: 0n,
+        provider: BOB,
+        withdrawalShareAmount: 0n,
+        lpAmount: dnum.from("5", 18)[0],
+        lpSharePrice: dnum.from("2", 18)[0],
+      },
+    },
+  ]);
+
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+
+  const closedLpShares = await readHyperdrive.getClosedLpShares({
+    account: BOB,
+  });
+  expect(closedLpShares).toEqual([
+    {
+      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      lpAmount: dnum.from("5", 18)[0],
+      baseAmount: dnum.from("10", 18)[0],
+      withdrawalShareAmount: 0n,
+      closedTimestamp: 123456789n,
+    },
+  ]);
+});
+
+test("getClosedLpShares should account for LP shares closed to vault shares", async () => {
+  // Description:
+  // Bob completely closes his LP position of 5 LP shares and receives back
+  // shares.
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+
+  contract.stubEvents("RemoveLiquidity", { filter: { provider: BOB } }, [
+    {
+      eventName: "RemoveLiquidity",
+      blockNumber: 5n,
+      args: {
+        asBase: false,
+        baseAmount: 0n,
+        vaultShareAmount: dnum.from("10", 18)[0],
+        provider: BOB,
+        withdrawalShareAmount: 0n,
+        lpAmount: dnum.from("5", 18)[0],
+        lpSharePrice: dnum.from("2", 18)[0],
+      },
+    },
+  ]);
+
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+
+  const closedLpShares = await readHyperdrive.getClosedLpShares({
+    account: BOB,
+  });
+  expect(closedLpShares).toEqual([
+    {
+      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      lpAmount: dnum.from("5", 18)[0],
+      baseAmount: dnum.from("10", 18)[0],
+      withdrawalShareAmount: 0n,
+      closedTimestamp: 123456789n,
+    },
+  ]);
+});
+
+test("getRedeemedWithdrawalShares should account for withdrawal shares closed to base", async () => {
+  // Description:
+  // Bob completely redeems 5 withdrawal shares and receives 10 base.
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+
+  contract.stubEvents("RedeemWithdrawalShares", { filter: { provider: BOB } }, [
+    {
+      eventName: "RedeemWithdrawalShares",
+      blockNumber: 5n,
+      args: {
+        asBase: true,
+        baseAmount: dnum.from("10", 18)[0],
+        vaultShareAmount: 0n,
+        provider: BOB,
+        withdrawalShareAmount: dnum.from("5", 18)[0],
+      },
+    },
+  ]);
+
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+
+  const redeemedWithdrawalShares =
+    await readHyperdrive.getRedeemedWithdrawalShares({
+      account: BOB,
+    });
+  expect(redeemedWithdrawalShares).toEqual([
+    {
+      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      baseAmount: dnum.from("10", 18)[0],
+      withdrawalShareAmount: dnum.from("5", 18)[0],
+      redeemedTimestamp: 123456789n,
+    },
+  ]);
+});
+test("getRedeemedWithdrawalShares should account for withdrawal shares closed to vault shares", async () => {
+  // Description:
+  // Bob completely redeems 5 withdrawal shares and receives 8 shares that are worth 10 base.
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.25", 18)[0] },
+    options: { blockNumber: 5n },
+  });
+
+  contract.stubEvents("RedeemWithdrawalShares", { filter: { provider: BOB } }, [
+    {
+      eventName: "RedeemWithdrawalShares",
+      blockNumber: 5n,
+      args: {
+        asBase: false,
+        baseAmount: 0n,
+        vaultShareAmount: dnum.from("8", 18)[0],
+        provider: BOB,
+        withdrawalShareAmount: dnum.from("5", 18)[0],
+      },
+    },
+  ]);
+
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+
+  const redeemedWithdrawalShares =
+    await readHyperdrive.getRedeemedWithdrawalShares({
+      account: BOB,
+    });
+  expect(redeemedWithdrawalShares).toEqual([
+    {
+      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      baseAmount: dnum.from("10", 18)[0],
+      withdrawalShareAmount: dnum.from("5", 18)[0],
+      redeemedTimestamp: 123456789n,
+    },
+  ]);
+});
