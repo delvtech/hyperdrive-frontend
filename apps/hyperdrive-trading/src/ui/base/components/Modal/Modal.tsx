@@ -6,7 +6,6 @@ interface ModalProps {
   modalContent: ReactNode;
   children?: (options: ModalChildrenOptions) => ReactNode;
   className?: string;
-  canClose?: boolean;
   forceOpen?: boolean;
 }
 
@@ -19,7 +18,6 @@ export function Modal({
   modalContent,
   children,
   className,
-  canClose = true,
   forceOpen = false,
 }: ModalProps): ReactElement {
   const modalRef = useRef<HTMLDialogElement>(null);
@@ -41,7 +39,7 @@ export function Modal({
           {modalContent}
         </form>
         <form method="dialog" className="daisy-modal-backdrop">
-          {canClose ? <button>close</button> : null}
+          <button>close</button>
         </form>
       </dialog>
     </>

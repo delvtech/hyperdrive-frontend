@@ -2,13 +2,15 @@ import { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { privacyPolicyUrl } from "src/ui/compliance/privacyPolicy";
 import { termsOfUseUrl } from "src/ui/compliance/termsOfUse";
-import { useTermsOfServiceAndPrivacyPolicyAccepted } from "src/ui/compliance/useTermsOfUseAndPrivacyPolicyAccepted";
+import { useTermsOfUseAndPrivacyPolicyAccepted } from "src/ui/compliance/useTermsOfUseAndPrivacyPolicyAccepted";
 
 export function TermsOfUseAndPrivacyPolicyModal(): ReactElement {
   const {
-    isTermsOfServiceAndPrivacePolicyAccepted,
-    setIsTermsOfServiceAndPrivacyPolicyAccepted,
-  } = useTermsOfServiceAndPrivacyPolicyAccepted();
+    isTermsOfUseAndPrivacePolicyAccepted:
+      isTermsOfServiceAndPrivacePolicyAccepted,
+    setIsTermsOfUseAndPrivacyPolicyAccepted:
+      setIsTermsOfServiceAndPrivacyPolicyAccepted,
+  } = useTermsOfUseAndPrivacyPolicyAccepted();
   return (
     <Modal
       forceOpen={!isTermsOfServiceAndPrivacePolicyAccepted}
