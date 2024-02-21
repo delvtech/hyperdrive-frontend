@@ -1244,10 +1244,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return Promise.all(
       removeLiquidityEvents.map(async ({ blockNumber, args }) => {
         const { lpAmount, withdrawalShareAmount, lpSharePrice } = args;
+        // Get the value of the lp shares by multiplying by the lp share price
+        // in the event, this saves us looking up pool info
         const finalBaseAmount = dnum.multiply(
           [lpAmount, 18],
           [lpSharePrice, 18],
-        )[0]; // convert vault shares to base amount
+        )[0];
 
         return {
           hyperdriveAddress: this.contract.address,
