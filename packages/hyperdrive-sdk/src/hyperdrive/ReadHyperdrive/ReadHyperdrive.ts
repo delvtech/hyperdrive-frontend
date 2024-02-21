@@ -1304,11 +1304,11 @@ export class ReadHyperdrive implements IReadHyperdrive {
           const { vaultSharePrice } = await this.getPoolInfo({ blockNumber });
           // Get the vault share price at the time you closed the position
           // so we can convert your shares out into their base value
-          const convertedBasAmount = dnum.multiply(
+          const convertedBaseAmount = dnum.multiply(
             [vaultSharePrice, 18],
             [vaultShareAmount, 18],
           )[0]; // convert vault shares to base amount
-          finalBaseAmount = convertedBasAmount;
+          finalBaseAmount = convertedBaseAmount;
         }
         return {
           hyperdriveAddress: this.contract.address,
