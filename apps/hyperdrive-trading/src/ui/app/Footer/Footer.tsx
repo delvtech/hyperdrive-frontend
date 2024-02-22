@@ -2,6 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import DiscordIcon from "src/ui/base/icons/discord";
+import { privacyPolicyUrl } from "src/ui/compliance/privacyPolicy";
+import { termsOfUseUrl } from "src/ui/compliance/termsOfUse";
 export default function Footer(): ReactElement {
   const footerTitleClassName =
     "daisy-footer-title text-neutral-content opacity-100"; // need to set opacity here to override daisy-footer-title
@@ -16,7 +18,7 @@ export default function Footer(): ReactElement {
         </Link>
         <a
           href="https://discord.gg/bdn9fxcs"
-          className="link link-hover"
+          className="daisy-link-hover daisy-link"
           target="_blank"
           rel="noreferrer"
         >
@@ -25,28 +27,25 @@ export default function Footer(): ReactElement {
       </aside>
       <nav>
         <header className={footerTitleClassName}>Services</header>
-        <a className="link link-hover">Documentation</a>
+        <a className="daisy-link-hover daisy-link">Documentation</a>
       </nav>
       <nav>
         {/* TODO: Determine if company information is needed here */}
         <header className={footerTitleClassName}>Company</header>
-        <a className="link link-hover" href="https://www.delv.tech/">
+        <a
+          className="daisy-link-hover daisy-link"
+          href="https://www.delv.tech/"
+        >
           About us
         </a>
       </nav>
       <nav>
         {/* TODO: Add links to legal pages */}
         <header className={footerTitleClassName}>Legal</header>
-        <a
-          className="link link-hover"
-          href="https://elementfi.s3.us-east-2.amazonaws.com/element-finance-terms-of-service.pdf"
-        >
+        <a className="daisy-link-hover daisy-link" href={termsOfUseUrl}>
           Terms of use
         </a>
-        <a
-          className="link link-hover"
-          href="https://elementfi.s3.us-east-2.amazonaws.com/element-finance-privacy-policy.pdf"
-        >
+        <a className="daisy-link-hover daisy-link" href={privacyPolicyUrl}>
           Privacy policy
         </a>
       </nav>

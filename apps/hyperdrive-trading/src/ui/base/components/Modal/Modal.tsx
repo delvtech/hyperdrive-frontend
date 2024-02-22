@@ -6,6 +6,7 @@ interface ModalProps {
   modalContent: ReactNode;
   children?: (options: ModalChildrenOptions) => ReactNode;
   className?: string;
+  forceOpen?: boolean;
 }
 
 interface ModalChildrenOptions {
@@ -17,6 +18,7 @@ export function Modal({
   modalContent,
   children,
   className,
+  forceOpen = false,
 }: ModalProps): ReactElement {
   const modalRef = useRef<HTMLDialogElement>(null);
   const showModal = () => modalRef.current?.showModal();
@@ -25,7 +27,11 @@ export function Modal({
     <>
       {children?.({ showModal })}
 
-      <dialog id={modalId} className="daisy-modal" ref={modalRef}>
+      <dialog
+        id={modalId}
+        className={classNames("daisy-modal", { "daisy-modal-open": forceOpen })}
+        ref={modalRef}
+      >
         <form
           method="dialog"
           className={classNames("daisy-modal-box bg-base-200", className)}
