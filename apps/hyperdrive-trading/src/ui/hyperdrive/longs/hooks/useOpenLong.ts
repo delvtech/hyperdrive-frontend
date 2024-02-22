@@ -14,6 +14,7 @@ interface UseOpenLongOptions {
   baseAmount: bigint | undefined;
   bondAmountOut: bigint | undefined;
   asBase?: boolean;
+  ethValue?: bigint;
 
   /** Controls whether or not an `openLong` callback will be returned to the
    * caller, useful for disabling buttons and other hooks */
@@ -37,6 +38,7 @@ export function useOpenLong({
   asBase = true,
   enabled,
   onExecuted,
+  ethValue,
 }: UseOpenLongOptions): UseOpenLongResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const addTransaction = useAddRecentTransaction();
@@ -60,6 +62,7 @@ export function useOpenLong({
           destination,
           minSharePrice,
           asBase,
+          options: { value: ethValue },
         });
 
         addTransaction({
