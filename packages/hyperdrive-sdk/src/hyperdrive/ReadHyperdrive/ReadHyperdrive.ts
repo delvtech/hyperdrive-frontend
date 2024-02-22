@@ -693,38 +693,16 @@ export class ReadHyperdrive implements IReadHyperdrive {
     });
 
     // Paid base
-    // { checkpoint1: 10, checkpoint2: 0 }
-    const totalBasePaidByAssetId = await convertPromiseObjectToObject(
-      mapValues(
-        groupBy(openLongEvents, (event) => event.args.assetId.toString()),
-        async (events) => {
-          const baseAmounts = await Promise.all(
-            events.map(async (event) => {
-              // If you paid in base, no need to convert anything
-              if (event.args.asBase) {
-                return event.args.baseAmount;
-              }
-              const { vaultShareAmount } = event.args;
-              // if you paid shares, but didn't actually spend anything, just
-              // return 0 to avoid requesting the vaultSharePrice
-              if (!vaultShareAmount) {
-                return 0n;
-              }
-              // Get the vault share price at the time you opened the position
-              // so we can convert your shares paid into their base value
-              const block = event.blockNumber as bigint;
-              const { vaultSharePrice } = await this.getPoolInfo({
-                blockNumber: block,
-              });
-              return dnum.multiply(
-                [vaultSharePrice, 18],
-                [vaultShareAmount, 18],
-              )[0];
-            }),
-          );
-          return sumBigInt(baseAmounts);
-        },
-      ),
+    const totalBasePaidByAssetId = mapValues(
+      groupBy(openLongEvents, (event) => event.args.assetId.toString()),
+      (events) => {
+        const baseAmounts = events.map((event) => {
+          const { vaultShareAmount, asBase, baseAmount } = event.args;
+          return calculateBaseAmount({ vaultShareAmount, asBase, baseAmount });
+        });
+
+        return sumBigInt(baseAmounts);
+      },
     );
 
     const closeLongEvents = await this.contract.getEvents("CloseLong", {
@@ -733,37 +711,15 @@ export class ReadHyperdrive implements IReadHyperdrive {
       toBlock,
     });
 
-    const totalBaseReceivedByAssetId = await convertPromiseObjectToObject(
-      mapValues(
-        groupBy(closeLongEvents, (event) => event.args.assetId.toString()),
-        async (events) => {
-          const baseAmounts = await Promise.all(
-            events.map(async (event) => {
-              // If you removed base, no need to convert anything
-              if (event.args.asBase) {
-                return event.args.baseAmount;
-              }
-              const { vaultShareAmount } = event.args;
-              // if you removed shares, but didn't actually remove anything,
-              // just return 0 to avoid requesting the vaultSharePrice
-              if (!vaultShareAmount) {
-                return 0n;
-              }
-              // Get the vault share price at the time you closed the position
-              // so we can convert your shares out into their base value
-              const block = event.blockNumber as bigint;
-              const { vaultSharePrice } = await this.getPoolInfo({
-                blockNumber: block,
-              });
-              return dnum.multiply(
-                [vaultSharePrice, 18],
-                [vaultShareAmount, 18],
-              )[0];
-            }),
-          );
-          return sumBigInt(baseAmounts);
-        },
-      ),
+    const totalBaseReceivedByAssetId = mapValues(
+      groupBy(closeLongEvents, (event) => event.args.assetId.toString()),
+      (events) => {
+        const baseAmounts = events.map((event) => {
+          const { vaultShareAmount, asBase, baseAmount } = event.args;
+          return calculateBaseAmount({ vaultShareAmount, asBase, baseAmount });
+        });
+        return sumBigInt(baseAmounts);
+      },
     );
 
     const longsMintedOrReceived = (
@@ -871,34 +827,19 @@ export class ReadHyperdrive implements IReadHyperdrive {
     });
 
     // convert this to a promise object that converts shares to baseAmount
-    const totalBaseReceivedByAssetId = await convertPromiseObjectToObject(
-      mapValues(
-        groupBy(closeShortEvents, (event) => event.args.assetId.toString()),
-        async (events) => {
-          const baseAmounts = await Promise.all(
-            events.map(async (event) => {
-              if (event.args.asBase) {
-                return event.args.baseAmount;
-              }
-              const { vaultShareAmount } = event.args;
-
-              if (!vaultShareAmount) {
-                return 0n;
-              }
-
-              const block = event.blockNumber as bigint;
-              const { vaultSharePrice } = await this.getPoolInfo({
-                blockNumber: block,
-              });
-              return dnum.multiply(
-                [vaultSharePrice, 18],
-                [vaultShareAmount, 18],
-              )[0];
-            }),
-          );
-          return sumBigInt(baseAmounts);
-        },
-      ),
+    const totalBaseReceivedByAssetId = mapValues(
+      groupBy(closeShortEvents, (event) => event.args.assetId.toString()),
+      (events) => {
+        const baseAmounts = events.map((event) => {
+          const { asBase, baseAmount, vaultShareAmount } = event.args;
+          return calculateBaseAmount({
+            asBase,
+            baseAmount,
+            vaultShareAmount,
+          });
+        });
+        return sumBigInt(baseAmounts);
+      },
     );
 
     const transferOutEvents = (
@@ -949,32 +890,16 @@ export class ReadHyperdrive implements IReadHyperdrive {
       toBlock,
     });
 
-    const totalBasePaidByAssetId = await convertPromiseObjectToObject(
-      mapValues(
-        groupBy(openShortEvents, (event) => event.args.assetId.toString()),
-        async (events) => {
-          const baseAmounts = await Promise.all(
-            events.map(async (event) => {
-              if (event.args.asBase) {
-                return event.args.baseAmount;
-              }
-              const { vaultShareAmount } = event.args;
-              if (!vaultShareAmount) {
-                return 0n;
-              }
-              const block = event.blockNumber as bigint;
-              const { vaultSharePrice } = await this.getPoolInfo({
-                blockNumber: block,
-              });
-              return dnum.multiply(
-                [vaultSharePrice, 18],
-                [vaultShareAmount, 18],
-              )[0];
-            }),
-          );
-          return sumBigInt(baseAmounts);
-        },
-      ),
+    // Openning a short total cost
+    const totalBasePaidByAssetId = mapValues(
+      groupBy(openShortEvents, (event) => event.args.assetId.toString()),
+      (events) => {
+        const baseAmounts = events.map((event) => {
+          const { asBase, baseAmount, vaultShareAmount } = event.args;
+          return calculateBaseAmount({ asBase, baseAmount, vaultShareAmount });
+        });
+        return sumBigInt(baseAmounts);
+      },
     );
 
     const transferInEvents = (
@@ -1047,25 +972,17 @@ export class ReadHyperdrive implements IReadHyperdrive {
       closedLongs.map(async (event) => {
         const assetId = event.args.assetId;
 
-        let baseAmount = event.args.baseAmount;
-        if (!event.args.asBase && event.args.vaultShareAmount) {
-          // Get the vault share price at the time you closed the position
-          // so we can convert your shares out into their base value
-          const block = event.blockNumber as bigint;
-          const { vaultSharePrice } = await this.getPoolInfo({
-            blockNumber: block,
-          });
-          const convertedBasAmount = dnum.multiply(
-            [vaultSharePrice, 18],
-            [event.args.vaultShareAmount, 18],
-          )[0]; // convert vault shares to base amount
-          baseAmount = convertedBasAmount;
-        }
+        const { vaultShareAmount, asBase, baseAmount } = event.args;
+        const finalBaseAmount = calculateBaseAmount({
+          vaultShareAmount,
+          asBase,
+          baseAmount,
+        });
 
         return {
           assetId,
           bondAmount: event.args.bondAmount,
-          baseAmount,
+          baseAmount: finalBaseAmount,
           baseAmountPaid: 0n, // TODO: Remove this field, this is copy/paste from @hyperdrive/queries
           maturity: event.args.maturityTime,
           closedTimestamp: (
@@ -1076,7 +993,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
         };
       }),
     );
-
     return closedLongsList.filter((long) => long.bondAmount);
   }
 
@@ -1103,31 +1019,25 @@ export class ReadHyperdrive implements IReadHyperdrive {
           blockNumber: event.blockNumber,
         });
 
-        let baseAmountReceived = event.args.baseAmount;
-        if (!event.args.asBase && event.args.vaultShareAmount) {
-          // Get the vault share price at the time you closed the position
-          // so we can convert your shares out into their base value
-          const block = event.blockNumber as bigint;
-          const { vaultSharePrice } = await this.getPoolInfo({
-            blockNumber: block,
-          });
-          const convertedBaseAmount = dnum.multiply(
-            [vaultSharePrice, 18],
-            [event.args.vaultShareAmount, 18],
-          )[0]; // convert vault shares to base amount
-          baseAmountReceived = convertedBaseAmount;
-        }
+        const { vaultShareAmount, asBase, baseAmount } = event.args;
+        const finalBaseAmount = calculateBaseAmount({
+          vaultShareAmount,
+          asBase,
+          baseAmount,
+        });
+
         return {
           hyperdriveAddress: this.contract.address,
           assetId,
           bondAmount: event.args.bondAmount,
-          baseAmountReceived: baseAmountReceived,
+          baseAmountReceived: finalBaseAmount,
           maturity: maturityTime,
           closedTimestamp: timestamp,
           checkpointId: getCheckpointId(timestamp, checkpointDuration),
         };
       }),
     );
+
     return closedShortsList.filter((short) => short.bondAmount);
   }
 
@@ -1311,17 +1221,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
       redeemedWithdrawalShareEvents.map(async ({ blockNumber, args }) => {
         const { withdrawalShareAmount, baseAmount, asBase, vaultShareAmount } =
           args;
-        let finalBaseAmount = baseAmount;
-        if (!asBase && vaultShareAmount) {
-          const { vaultSharePrice } = await this.getPoolInfo({ blockNumber });
-          // Get the vault share price at the time you closed the position
-          // so we can convert your shares out into their base value
-          const convertedBaseAmount = dnum.multiply(
-            [vaultSharePrice, 18],
-            [vaultShareAmount, 18],
-          )[0]; // convert vault shares to base amount
-          finalBaseAmount = convertedBaseAmount;
-        }
+
+        const finalBaseAmount = calculateBaseAmount({
+          vaultShareAmount,
+          asBase,
+          baseAmount,
+        });
         return {
           hyperdriveAddress: this.contract.address,
           withdrawalShareAmount,
@@ -1549,26 +1454,22 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }
 }
 
-/**
- * Takes an object whose values are promises and returns an object with those values resolved.
- * @param obj An object whose values are promises returning numbers.
- * @returns A promise that resolves to an object with the resolved values.
- */
-async function convertPromiseObjectToObject<T>(
-  obj: Record<string, Promise<T>>,
-): Promise<Record<string, T>> {
-  // Initialize an empty object to store resolved values
-  const resolvedObject: Record<string, T> = {};
+function calculateBaseAmount({
+  vaultShareAmount,
+  asBase,
+  baseAmount,
+}: {
+  vaultShareAmount: bigint;
+  asBase: boolean;
+  baseAmount: bigint;
+}): bigint {
+  // If you paid in base, no need to convert anything
+  if (asBase) {
+    return baseAmount;
+  }
 
-  // Use Promise.all() to concurrently resolve all promises in the input object
-  await Promise.all(
-    // Convert the object into an array of key-value pairs and map over it
-    Object.entries(obj).map(async ([key, promise]) => {
-      // Await each promise and assign its resolved value to the corresponding key in the resolved object
-      resolvedObject[key] = await promise;
-    }),
-  );
-
-  // Return a promise that resolves to the object with resolved values
-  return resolvedObject;
+  // Get the vault share price at the time you opened the position
+  // so we can convert your shares paid into their base value
+  const vaultSharePrice = dnum.div([baseAmount, 18], [vaultShareAmount, 18])[0];
+  return dnum.multiply([vaultSharePrice, 18], [vaultShareAmount, 18])[0];
 }
