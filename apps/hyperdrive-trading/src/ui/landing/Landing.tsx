@@ -11,11 +11,11 @@ export function Landing(): ReactElement | null {
   const isSmallScreenView = useIsTailwindSmallScreen();
 
   return (
-    <div className="flex flex-col items-center gap-10 px-4 py-8">
+    <div className="flex flex-col items-center gap-14 px-4 py-8">
       <CommonHeadTags />
       <Hero />
-      <PositionCards />
       <AllMarketsTable />
+      <PositionCards />
       {isSmallScreenView ? <MobileFaq /> : <FAQ />}
     </div>
   );
