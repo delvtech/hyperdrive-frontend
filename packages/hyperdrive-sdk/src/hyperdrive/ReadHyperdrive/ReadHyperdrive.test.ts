@@ -286,7 +286,7 @@ test("getOpenLongs should account for longs opened with base", async () => {
           assetId: 1n,
           // paid for in base
           baseAmount: dnum.from("1", 18)[0],
-          vaultShareAmount: 0n,
+          vaultShareAmount: dnum.from("0.8", 18)[0],
           // received bonds
           bondAmount: dnum.from("1.3", 18)[0],
           maturityTime: timestamp,
@@ -300,7 +300,7 @@ test("getOpenLongs should account for longs opened with base", async () => {
           assetId: 1n,
           // paid for in base
           baseAmount: dnum.from("1", 18)[0],
-          vaultShareAmount: 0n,
+          vaultShareAmount: dnum.from("0.8", 18)[0],
           // received bonds
           bondAmount: dnum.from("1.4", 18)[0],
           maturityTime: timestamp,
@@ -363,6 +363,7 @@ test("getOpenLongs should account for longs opened with base", async () => {
     },
   ]);
 });
+
 test("getOpenLongs should account for longs opened with shares", async () => {
   // Description:
   // Bob opens up a long position over 2 txs, for a total cost 2 shares, and
@@ -381,11 +382,10 @@ test("getOpenLongs should account for longs opened with shares", async () => {
     [
       {
         eventName: "OpenLong",
-        blockNumber: 5n,
         args: {
           assetId: 1n,
           // paid for in shares
-          baseAmount: 0n,
+          baseAmount: dnum.from("1.15", 18)[0],
           vaultShareAmount: dnum.from("1", 18)[0],
           // received bonds
           bondAmount: dnum.from("1.3", 18)[0],
@@ -396,11 +396,10 @@ test("getOpenLongs should account for longs opened with shares", async () => {
       },
       {
         eventName: "OpenLong",
-        blockNumber: 12n,
         args: {
           assetId: 1n,
           // paid for in shares
-          baseAmount: 0n,
+          baseAmount: dnum.from("1.2", 18)[0],
           vaultShareAmount: dnum.from("1", 18)[0],
           // received bonds
           bondAmount: dnum.from("1.4", 18)[0],
@@ -411,17 +410,6 @@ test("getOpenLongs should account for longs opened with shares", async () => {
       },
     ],
   );
-
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.15", 18)[0] },
-    options: { blockNumber: 5n },
-  });
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.20", 18)[0] },
-    options: { blockNumber: 12n },
-  });
 
   // Matching TransferSingle event for OpenLong
   contract.stubEvents(
@@ -438,7 +426,6 @@ test("getOpenLongs should account for longs opened with shares", async () => {
           operator: BOB,
         },
         eventName: "TransferSingle",
-        blockNumber: 5n,
       },
       {
         data: eventData,
@@ -450,7 +437,6 @@ test("getOpenLongs should account for longs opened with shares", async () => {
           operator: BOB,
         },
         eventName: "TransferSingle",
-        blockNumber: 12n,
       },
     ],
   );
@@ -499,7 +485,8 @@ test("getOpenLongs should account for longs partially closed to base", async () 
           assetId: 1n,
           // paid for in base
           baseAmount: dnum.from("1", 18)[0],
-          vaultShareAmount: 0n,
+          vaultShareAmount: dnum.from("0.8", 18)[0],
+
           // received bonds
           bondAmount: dnum.from("1.3", 18)[0],
           maturityTime: timestamp,
@@ -513,7 +500,7 @@ test("getOpenLongs should account for longs partially closed to base", async () 
           assetId: 1n,
           // paid for in base
           baseAmount: dnum.from("1", 18)[0],
-          vaultShareAmount: 0n,
+          vaultShareAmount: dnum.from("0.8", 18)[0],
           // received bonds
           bondAmount: dnum.from("1.4", 18)[0],
           maturityTime: timestamp,
@@ -534,10 +521,10 @@ test("getOpenLongs should account for longs partially closed to base", async () 
           maturityTime: timestamp,
           trader: BOB,
 
-          // received back 1 base, and no vault shares
+          // received back 1 base
           asBase: true,
           baseAmount: dnum.from("1", 18)[0],
-          vaultShareAmount: 0n,
+          vaultShareAmount: dnum.from("0.8", 18)[0],
 
           // closed out 0.9 bonds
           bondAmount: dnum.from("0.9", 18)[0],
@@ -628,7 +615,8 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
           assetId: 1n,
           // paid for in base
           baseAmount: dnum.from("1", 18)[0],
-          vaultShareAmount: 0n,
+          vaultShareAmount: dnum.from("0.8", 18)[0],
+
           // received bonds
           bondAmount: dnum.from("1.3", 18)[0],
           maturityTime: timestamp,
@@ -642,7 +630,7 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
           assetId: 1n,
           // paid for in base
           baseAmount: dnum.from("1", 18)[0],
-          vaultShareAmount: 0n,
+          vaultShareAmount: dnum.from("0.8", 18)[0],
           // received bonds
           bondAmount: dnum.from("1.4", 18)[0],
           maturityTime: timestamp,
@@ -693,10 +681,10 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
           maturityTime: timestamp,
           trader: BOB,
 
-          // received back 2.5 base, and no vault shares
+          // received back 2.5 base
           asBase: true,
           baseAmount: dnum.from("2.5", 18)[0],
-          vaultShareAmount: 0n,
+          vaultShareAmount: dnum.from("2.1", 18)[0],
 
           // closed out 2.7 bonds
           bondAmount: dnum.from("2.7", 18)[0],
@@ -748,12 +736,12 @@ test("getOpenLongs should account for longs partially closed to shares", async (
         args: {
           assetId: 1n,
           // paid for in base
+          asBase: true,
           baseAmount: dnum.from("2", 18)[0],
-          vaultShareAmount: 0n,
+          vaultShareAmount: dnum.from("1.8", 18)[0],
           // received bonds
           bondAmount: dnum.from("2.2", 18)[0],
           maturityTime: timestamp,
-          asBase: true,
           trader: BOB,
         },
       },
@@ -790,9 +778,9 @@ test("getOpenLongs should account for longs partially closed to shares", async (
           maturityTime: timestamp,
           trader: BOB,
 
-          // received back 0.8 shares, and no base
+          // received back 0.8 shares
           asBase: false,
-          baseAmount: 0n,
+          baseAmount: dnum.from("0.88", 18)[0],
           vaultShareAmount: dnum.from("0.8", 18)[0],
 
           // closed out 1.1 bonds
@@ -819,12 +807,7 @@ test("getOpenLongs should account for longs partially closed to shares", async (
       },
     ],
   );
-  // pool info to get the price of shares at the time he closes out to 0.8 shares
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
-    options: { blockNumber: 5n },
-  });
+
   const value = await readHyperdrive.getOpenLongs({ account: BOB });
 
   expect(value).toEqual([
@@ -858,7 +841,8 @@ test("getOpenLongs should account for longs fully closed to shares", async () =>
           assetId: 1n,
           // paid for in base
           baseAmount: dnum.from("2", 18)[0],
-          vaultShareAmount: 0n,
+          vaultShareAmount: dnum.from("1.8", 18)[0],
+
           // received bonds
           bondAmount: dnum.from("2.2", 18)[0],
           maturityTime: timestamp,
@@ -901,7 +885,7 @@ test("getOpenLongs should account for longs fully closed to shares", async () =>
 
           // received back 2 shares, and no base
           asBase: false,
-          baseAmount: 0n,
+          baseAmount: dnum.from("2.2", 18)[0],
           vaultShareAmount: dnum.from("2.0", 18)[0],
 
           // closed out 2.2 bonds
@@ -928,12 +912,7 @@ test("getOpenLongs should account for longs fully closed to shares", async () =>
       },
     ],
   );
-  // pool info to get the price of shares at the time he closes out to 0.8 shares
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
-    options: { blockNumber: 5n },
-  });
+
   const value = await readHyperdrive.getOpenLongs({ account: BOB });
 
   expect(value).toEqual([]);
@@ -960,10 +939,10 @@ test("getClosedLongs should account for closing out to base", async () => {
           maturityTime: timestamp,
           trader: BOB,
 
-          // received back 2 shares, and no base
+          // received back 2.2 base, and no shares
           asBase: true,
           baseAmount: dnum.from("2.2", 18)[0],
-          vaultShareAmount: 0n,
+          vaultShareAmount: dnum.from("2.0", 18)[0],
 
           // closed out 2.0 bonds
           bondAmount: dnum.from("2.0", 18)[0],
@@ -1028,7 +1007,7 @@ test("getClosedLongs should account for closing out to shares", async () => {
 
           // received back 1.9 shares, and no base
           asBase: false,
-          baseAmount: 0n,
+          baseAmount: dnum.from("2.09", 18)[0],
           vaultShareAmount: dnum.from("1.9", 18)[0],
 
           // closed out 2 bonds
@@ -1055,12 +1034,6 @@ test("getClosedLongs should account for closing out to shares", async () => {
       },
     ],
   );
-  // pool info to get the price of shares at the time he closes out to 0.8 shares
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
-    options: { blockNumber: 5n },
-  });
 
   // getBlock gives us the timestamp of when he closed the position
   network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
@@ -1101,8 +1074,9 @@ test("getOpenShorts should account for shorts opened with base", async () => {
           // paid for in base
           asBase: true,
           baseAmount: dnum.from("1", 18)[0],
+          vaultShareAmount: dnum.from("0.8", 18)[0],
+
           baseProceeds: 0n, // TODO: what's a good value for this?
-          vaultShareAmount: 0n,
           // The short size is represented in bonds
           bondAmount: dnum.from("50", 18)[0],
 
@@ -1117,8 +1091,9 @@ test("getOpenShorts should account for shorts opened with base", async () => {
           // paid for in base
           asBase: true,
           baseAmount: dnum.from("1", 18)[0],
+          vaultShareAmount: dnum.from("0.8", 18)[0],
           baseProceeds: 0n, // TODO: what's a good value for this?
-          vaultShareAmount: 0n,
+
           // The short size is represented in bonds
           bondAmount: dnum.from("50", 18)[0],
 
@@ -1207,11 +1182,12 @@ test("getOpenShorts should account for shorts opened with shares", async () => {
         blockNumber: 5n,
         args: {
           assetId: 1n,
-          // paid for in base
+          // paid for in shares
           asBase: false,
-          baseAmount: 0n,
-          baseProceeds: 0n, // TODO: what's a good value for this?
+          baseAmount: dnum.from("1.1", 18)[0],
           vaultShareAmount: dnum.from("1", 18)[0],
+
+          baseProceeds: 0n, // TODO: what's a good value for this?
           // The short size is represented in bonds
           bondAmount: dnum.from("50", 18)[0],
 
@@ -1226,7 +1202,7 @@ test("getOpenShorts should account for shorts opened with shares", async () => {
           assetId: 1n,
           // paid for in shares
           asBase: false,
-          baseAmount: 0n,
+          baseAmount: dnum.from("1.1", 18)[0],
           baseProceeds: 0n, // TODO: what's a good value for this?
           vaultShareAmount: dnum.from("1", 18)[0],
           // The short size is represented in bonds
@@ -1281,13 +1257,6 @@ test("getOpenShorts should account for shorts opened with shares", async () => {
   );
 
   network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
-
-  // pool info to get the price of shares at the time he opens the short
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
-    options: { blockNumber: 5n },
-  });
 
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
@@ -1327,8 +1296,9 @@ test("getOpenShorts should account for shorts partially closed to base", async (
           // paid for in base
           asBase: true,
           baseAmount: dnum.from("2", 18)[0],
+          vaultShareAmount: dnum.from("1.8", 18)[0],
+
           baseProceeds: 0n, // TODO: what's a good value for this?
-          vaultShareAmount: 0n,
           // The short size is represented in bonds
           bondAmount: dnum.from("100", 18)[0],
 
@@ -1367,7 +1337,7 @@ test("getOpenShorts should account for shorts partially closed to base", async (
           assetId: 1n,
           asBase: true,
           baseAmount: dnum.from("1", 18)[0], // closed out to base
-          vaultShareAmount: 0n, // did not close out to shares
+          vaultShareAmount: dnum.from("0.8", 18)[0],
           bondAmount: dnum.from("50", 18)[0],
           maturityTime: timestamp,
           trader: BOB,
@@ -1395,13 +1365,6 @@ test("getOpenShorts should account for shorts partially closed to base", async (
   );
 
   network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
-
-  // pool info to get the price of shares at the time he opens the short
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
-    options: { blockNumber: 5n },
-  });
 
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
@@ -1441,8 +1404,9 @@ test("getOpenShorts should account for shorts fully closed to base", async () =>
           // paid for in base
           asBase: true,
           baseAmount: dnum.from("2", 18)[0],
+          vaultShareAmount: dnum.from("1.8", 18)[0],
+
           baseProceeds: 0n, // TODO: what's a good value for this?
-          vaultShareAmount: 0n,
           // The short size is represented in bonds
           bondAmount: dnum.from("100", 18)[0],
 
@@ -1481,7 +1445,7 @@ test("getOpenShorts should account for shorts fully closed to base", async () =>
           assetId: 1n,
           asBase: true,
           baseAmount: dnum.from("2", 18)[0], // closed out to base
-          vaultShareAmount: 0n, // did not close out to shares
+          vaultShareAmount: dnum.from("1.8", 18)[0], // did not close out to shares
           bondAmount: dnum.from("100", 18)[0],
           maturityTime: timestamp,
           trader: BOB,
@@ -1539,8 +1503,9 @@ test("getOpenShorts should account for shorts partially closed to shares", async
           // paid for in base
           asBase: true,
           baseAmount: dnum.from("2", 18)[0],
+          vaultShareAmount: dnum.from("1.8", 18)[0],
+
           baseProceeds: 0n, // TODO: what's a good value for this?
-          vaultShareAmount: 0n,
           // The short size is represented in bonds
           bondAmount: dnum.from("100", 18)[0],
 
@@ -1579,8 +1544,9 @@ test("getOpenShorts should account for shorts partially closed to shares", async
         args: {
           assetId: 1n,
           asBase: false,
-          baseAmount: 0n, // did not close out to base
+          baseAmount: dnum.from("0.99", 18)[0], // did not close out to base
           vaultShareAmount: dnum.from("0.9", 18)[0], // closed out to shares
+
           bondAmount: dnum.from("50", 18)[0],
           maturityTime: timestamp,
           trader: BOB,
@@ -1608,13 +1574,6 @@ test("getOpenShorts should account for shorts partially closed to shares", async
   );
 
   network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
-
-  // pool info to get the price of shares at the time he closes the short
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
-    options: { blockNumber: 5n },
-  });
 
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
@@ -1758,7 +1717,7 @@ test("getClosedShorts should account for shorts closed to base", async () => {
           assetId: 1n,
           asBase: true,
           baseAmount: dnum.from("2", 18)[0], // closed out to base
-          vaultShareAmount: 0n, // did not close out to shares
+          vaultShareAmount: dnum.from("1.8", 18)[0], // did not close out to shares
           bondAmount: dnum.from("100", 18)[0],
           maturityTime: timestamp,
           trader: BOB,
@@ -1823,7 +1782,7 @@ test("getClosedShorts should account for shorts closed to shares", async () => {
         args: {
           assetId: 1n,
           asBase: false,
-          baseAmount: 0n, // did not close out to base
+          baseAmount: dnum.from("1.21", 18)[0],
           vaultShareAmount: dnum.from("1.1", 18)[0], // closed out to shares
           bondAmount: dnum.from("100", 18)[0],
           maturityTime: timestamp,
@@ -1852,12 +1811,6 @@ test("getClosedShorts should account for shorts closed to shares", async () => {
   );
 
   network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
-  // pool info to get the price of shares at the time he closes the short
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
-    options: { blockNumber: 5n },
-  });
 
   const value = await readHyperdrive.getClosedShorts({ account: BOB });
 
@@ -1962,7 +1915,7 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
       args: {
         asBase: true,
         baseAmount: dnum.from("10", 18)[0],
-        vaultShareAmount: 0n,
+        vaultShareAmount: dnum.from("9.8", 18)[0],
         provider: BOB,
         withdrawalShareAmount: dnum.from("5", 18)[0],
       },
@@ -1988,11 +1941,6 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
   // Description:
   // Bob completely redeems 5 withdrawal shares and receives 8 shares that are worth 10 base.
   const { contract, readHyperdrive, network } = setupReadHyperdrive();
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.25", 18)[0] },
-    options: { blockNumber: 5n },
-  });
 
   contract.stubEvents("RedeemWithdrawalShares", { filter: { provider: BOB } }, [
     {
@@ -2000,7 +1948,7 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
       blockNumber: 5n,
       args: {
         asBase: false,
-        baseAmount: 0n,
+        baseAmount: dnum.from("10", 18)[0],
         vaultShareAmount: dnum.from("8", 18)[0],
         provider: BOB,
         withdrawalShareAmount: dnum.from("5", 18)[0],
