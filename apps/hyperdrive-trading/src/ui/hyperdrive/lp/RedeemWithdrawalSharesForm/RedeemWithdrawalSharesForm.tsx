@@ -108,9 +108,9 @@ export function RedeemWithdrawalSharesForm({
               {proceeds
                 ? `${formatBalance({
                     balance: proceeds,
-                    decimals: baseToken.decimals,
+                    decimals: activeWithdrawToken.decimals,
                     places: 8,
-                  })} ${baseToken.symbol}`
+                  })} ${activeWithdrawToken.symbol}`
                 : ""}
             </p>
           </div>
