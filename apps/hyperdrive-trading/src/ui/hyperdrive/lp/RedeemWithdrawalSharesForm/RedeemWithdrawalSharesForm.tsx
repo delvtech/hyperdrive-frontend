@@ -1,12 +1,18 @@
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  findBaseToken,
+  findYieldSourceToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemWithdrawalShares";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
@@ -27,7 +33,21 @@ export function RedeemWithdrawalSharesForm({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
+  const sharesToken = findYieldSourceToken({
+    yieldSourceTokenAddress: hyperdrive.sharesToken,
+    tokens: appConfig.tokens,
+  });
 
+  const {
+    activeItem: activeWithdrawToken,
+    setActiveItemId: setActiveWithdrawToken,
+  } = useActiveItem({
+    items: [baseToken, sharesToken],
+    idField: "address",
+    defaultActiveItemId: hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+      ? baseToken.address
+      : sharesToken.address,
+  });
   const { address: account } = useAccount();
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
@@ -48,6 +68,7 @@ export function RedeemWithdrawalSharesForm({
       withdrawalSharesIn: amountAsBigInt,
       minOutputPerShare: 0n,
       destination: account,
+      asBase: activeWithdrawToken.address === baseToken.address,
     });
 
   const { redeemWithdrawalShares, redeemWithdrawalSharesStatus } =
@@ -87,13 +108,30 @@ export function RedeemWithdrawalSharesForm({
               {proceeds
                 ? `${formatBalance({
                     balance: proceeds,
-                    decimals: baseToken.decimals,
+                    decimals: activeWithdrawToken.decimals,
                     places: 8,
-                  })} ${baseToken.symbol}`
+                  })} ${activeWithdrawToken.symbol}`
                 : ""}
             </p>
           </div>
         </div>
+      }
+      setting={
+        <TokenChoices
+          label="Choose withdrawal asset"
+          tokens={[
+            {
+              tokenConfig: baseToken,
+              disabled:
+                !hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled,
+            },
+            {
+              tokenConfig: sharesToken,
+            },
+          ]}
+          selectedTokenAddress={activeWithdrawToken.address}
+          onTokenChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
+        />
       }
       actionButton={
         account ? (

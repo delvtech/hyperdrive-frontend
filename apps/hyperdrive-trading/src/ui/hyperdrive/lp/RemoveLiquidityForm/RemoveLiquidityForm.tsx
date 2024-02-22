@@ -1,4 +1,8 @@
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  findBaseToken,
+  findYieldSourceToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
@@ -8,11 +12,13 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/useRemoveLiquidity";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
@@ -31,6 +37,22 @@ export function RemoveLiquidityForm({
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
+  });
+
+  const sharesToken = findYieldSourceToken({
+    yieldSourceTokenAddress: hyperdrive.sharesToken,
+    tokens: appConfig.tokens,
+  });
+
+  const {
+    activeItem: activeWithdrawToken,
+    setActiveItemId: setActiveWithdrawToken,
+  } = useActiveItem({
+    items: [baseToken, sharesToken],
+    idField: "address",
+    defaultActiveItemId: hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+      ? baseToken.address
+      : sharesToken.address,
   });
   const { poolInfo } = usePoolInfo(hyperdrive.address);
 
@@ -54,7 +76,7 @@ export function RemoveLiquidityForm({
   // Then we preview that trade to show users the split between the actual base
   // and withdrawal shares they'll receive
   const {
-    proceeds: actualBaseOut,
+    proceeds: actualValueOut,
     previewRemoveLiquidityStatus,
     withdrawalShares,
   } = usePreviewRemoveLiquidity({
@@ -62,6 +84,7 @@ export function RemoveLiquidityForm({
     lpSharesIn: lpSharesIn,
     hyperdriveAddress: hyperdrive.address,
     minOutputPerShare: 1n,
+    asBase: activeWithdrawToken.address === baseToken.address,
   });
 
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
@@ -81,15 +104,6 @@ export function RemoveLiquidityForm({
       );
     },
   });
-
-  const formattedBaseAmountOut =
-    actualBaseOut !== undefined
-      ? `${formatBalance({
-          balance: actualBaseOut,
-          decimals: baseToken.decimals,
-          places: 8,
-        })}`
-      : null;
 
   // to format the withdrawal shares out in terms of base, we need to multiply
   // them by the lpSharePrice
@@ -132,11 +146,36 @@ export function RemoveLiquidityForm({
           onChange={(newAmount) => setAmount(newAmount)}
         />
       }
+      setting={
+        <TokenChoices
+          label="Choose withdrawal asset"
+          tokens={[
+            {
+              tokenConfig: baseToken,
+              disabled:
+                !hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled,
+            },
+            {
+              tokenConfig: sharesToken,
+            },
+          ]}
+          selectedTokenAddress={activeWithdrawToken.address}
+          onTokenChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
+        />
+      }
       transactionPreview={
         <>
           <LabelValue
             label="You receive"
-            value={`${formattedBaseAmountOut || 0} ${baseToken.symbol}`}
+            value={`${
+              actualValueOut
+                ? `${formatBalance({
+                    balance: actualValueOut,
+                    decimals: activeWithdrawToken.decimals,
+                    places: 8,
+                  })}`
+                : "0"
+            } ${activeWithdrawToken.symbol}`}
           />
           <LabelValue
             label="Queued for delayed withdrawal"
