@@ -3,6 +3,7 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
+import * as dnum from "dnum";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
@@ -27,7 +28,6 @@ import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
-
 interface OpenShortPositionFormProps {
   hyperdrive: HyperdriveConfig;
 }
@@ -37,6 +37,7 @@ export function OpenShortForm({
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
+  const { poolInfo } = usePoolInfo(hyperdrive.address);
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
@@ -69,11 +70,20 @@ export function OpenShortForm({
     decimals: hyperdrive.decimals,
   });
 
+  let finalAmount = shortAmountAsBigInt;
+
+  if (activeToken.address === sharesToken.address) {
+    finalAmount = dnum.multiply(
+      [shortAmountAsBigInt || 0n, activeToken.decimals],
+      [poolInfo?.vaultSharePrice || 0n, activeToken.decimals],
+    )[0];
+  }
+
   // TODO: This should have an `asBase` paramter, add it once hyperwasm has it
   const { baseAmountIn: amountIn, status: openShortPreviewStatus } =
     usePreviewOpenShort({
       hyperdriveAddress: hyperdrive.address,
-      amountBondShorts: shortAmountAsBigInt,
+      amountBondShorts: finalAmount,
     });
 
   const hasEnoughBalance = getHasEnoughBalance({
@@ -87,7 +97,6 @@ export function OpenShortForm({
     requiresAllowance,
   });
 
-  const { poolInfo } = usePoolInfo(hyperdrive.address);
   const { openShort, openShortSubmittedStatus } = useOpenShort({
     hyperdriveAddress: hyperdrive.address,
     amountBondShorts: shortAmountAsBigInt,
