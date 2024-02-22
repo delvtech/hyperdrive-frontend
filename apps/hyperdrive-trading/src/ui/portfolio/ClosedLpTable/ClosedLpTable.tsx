@@ -249,7 +249,7 @@ export function ClosedLpTable({
 
   if (!closedLpShares?.length && closedLpSharesStatus === "success") {
     return (
-      <div className="my-28">
+      <div className="my-20">
         <NonIdealState
           heading="You have no closed LP positions"
           text="Close an LP position, switch wallets, or view your open LP positions"
