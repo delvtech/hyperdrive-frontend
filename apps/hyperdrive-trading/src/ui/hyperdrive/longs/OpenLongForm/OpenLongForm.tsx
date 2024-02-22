@@ -4,6 +4,7 @@ import {
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
+import * as dnum from "dnum";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
@@ -24,7 +25,6 @@ import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useAccount } from "wagmi";
-
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
 }
@@ -35,6 +35,7 @@ export function OpenLongForm({
   const { address: account } = useAccount();
 
   const appConfig = useAppConfig();
+  const { poolInfo } = usePoolInfo(hyperdrive.address);
 
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -76,9 +77,18 @@ export function OpenLongForm({
     amount: amountAsBigInt,
   });
 
+  let finalAmount = amountAsBigInt;
+
+  if (activeToken.address === sharesToken.address) {
+    finalAmount = dnum.multiply(
+      [amountAsBigInt || 0n, activeToken.decimals],
+      [poolInfo?.vaultSharePrice || 0n, activeToken.decimals],
+    )[0];
+  }
+
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
     hyperdriveAddress: hyperdrive.address,
-    baseAmount: amountAsBigInt,
+    baseAmount: finalAmount,
   });
 
   const longAmountOutAfterSlippage =
@@ -88,7 +98,6 @@ export function OpenLongForm({
       decimals: activeToken.decimals,
     });
 
-  const { poolInfo } = usePoolInfo(hyperdrive.address);
   const { openLong, openLongStatus } = useOpenLong({
     hyperdriveAddress: hyperdrive.address,
     baseAmount: amountAsBigInt,
