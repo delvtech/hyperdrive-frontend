@@ -203,14 +203,14 @@ test("getShortAccruedYield should return the amount of yield a mature position h
   // This checkpoint gives us the price when the short was opened
   contract.stubRead({
     functionName: "getCheckpoint",
-    args: 1n,
+    args: { _checkpointTime: 1n },
     value: { vaultSharePrice: dnum.from("1.008", 18)[0] },
   });
 
   // This checkpoint gives us the price when the shorts matured
   contract.stubRead({
     functionName: "getCheckpoint",
-    args: 86401n,
+    args: { _checkpointTime: 86401n },
     value: { vaultSharePrice: dnum.from("1.01", 18)[0] },
   });
 
