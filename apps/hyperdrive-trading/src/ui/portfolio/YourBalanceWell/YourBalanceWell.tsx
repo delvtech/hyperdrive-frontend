@@ -27,7 +27,7 @@ export function YourBalanceWell({
   });
 
   const { mint } = useMintBaseToken({
-    amount: parseUnits("500000000", token.decimals),
+    amount: parseUnits("1000000", token.decimals),
     baseToken: token,
     destination: account,
   });
