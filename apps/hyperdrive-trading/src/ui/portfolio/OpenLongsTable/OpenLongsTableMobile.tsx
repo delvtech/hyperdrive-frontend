@@ -21,6 +21,7 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
+import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
@@ -262,6 +263,7 @@ function CurrentValueCell({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
+  // TODO: This needs to be converted to baseAmount if called w/ asBase set to false
   const { amountOut: baseAmountOut, previewCloseLongStatus } =
     usePreviewCloseLong({
       hyperdriveAddress: hyperdrive.address,
@@ -269,6 +271,7 @@ function CurrentValueCell({
       bondAmountIn: row.bondAmount,
       minOutput: parseUnits("0", baseToken.decimals),
       destination: account,
+      asBase: baseToken.address !== ETH_MAGIC_NUMBER,
     });
 
   const currentValue =

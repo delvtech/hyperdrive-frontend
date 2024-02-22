@@ -1,4 +1,4 @@
-import { SparklesIcon, WalletIcon } from "@heroicons/react/24/outline";
+import { WalletIcon } from "@heroicons/react/24/outline";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
@@ -44,7 +44,7 @@ export function LpTab({
           </div>
 
           {activeOpenOrClosedTab === "Open" ? (
-            <div className="flex gap-8 pb-8">
+            <div className="my-20 flex pb-8">
               {(() => {
                 if (!account) {
                   return (
@@ -72,9 +72,8 @@ export function LpTab({
                 ) {
                   return (
                     <NonIdealState
-                      heading="There are no LP positions in this wallet"
-                      text="Add liquidity to populate this space with your positions."
-                      icon={<SparklesIcon height="64" />}
+                      heading="You have no open LP positions"
+                      text="Add liquidity, switch wallets, or view your closed LP positions."
                     />
                   );
                 }

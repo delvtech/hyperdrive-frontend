@@ -369,7 +369,11 @@ export class ReadHyperdrive implements IReadHyperdrive {
     checkpointId: bigint;
     options?: ContractReadOptions | undefined;
   }): ReturnType<IReadHyperdrive, "getCheckpoint"> {
-    return this.contract.read("getCheckpoint", checkpointId, options);
+    return this.contract.read(
+      "getCheckpoint",
+      { _checkpointTime: checkpointId },
+      options,
+    );
   }
 
   getCheckpointExposure({
@@ -379,7 +383,11 @@ export class ReadHyperdrive implements IReadHyperdrive {
     checkpointId: bigint;
     options?: ContractReadOptions | undefined;
   }): ReturnType<IReadHyperdrive, "getCheckpointExposure"> {
-    return this.contract.read("getCheckpointExposure", checkpointId, options);
+    return this.contract.read(
+      "getCheckpointExposure",
+      { _checkpointTime: checkpointId },
+      options,
+    );
   }
 
   getMarketState(
@@ -1210,7 +1218,11 @@ export class ReadHyperdrive implements IReadHyperdrive {
   getLpSharesTotalSupply(args?: {
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getLpSharesTotalSupply"> {
-    return this.contract.read("totalSupply", LP_ASSET_ID, args?.options);
+    return this.contract.read(
+      "totalSupply",
+      { id: LP_ASSET_ID },
+      args?.options,
+    );
   }
 
   getLpShares({

@@ -6,7 +6,7 @@ import { AllMarketsTableMobile } from "src/ui/markets/AllMarketsTable/AllMarkets
 export function AllMarketsTable(): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   return (
-    <div className="flex w-full max-w-6xl flex-col items-center overflow-y-auto p-2 md:p-4">
+    <div className="flex w-full flex-col items-center">
       <span className="gradient-text mb-8 text-center text-h3">
         Available Markets
       </span>

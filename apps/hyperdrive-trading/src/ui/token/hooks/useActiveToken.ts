@@ -1,5 +1,6 @@
 import { TokenConfig } from "@hyperdrive/appconfig";
 import { useState } from "react";
+import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { Address } from "viem";
 
@@ -20,6 +21,7 @@ export function useActiveToken<T1, T2>({
       }
     | undefined;
   setActiveToken: (tokenAddress: Address) => void;
+  isActiveTokenEth: boolean;
 } {
   const [activeTokenAddress, setActiveToken] = useState(defaultActiveToken);
 
@@ -37,5 +39,6 @@ export function useActiveToken<T1, T2>({
     activeToken,
     activeTokenBalance,
     setActiveToken,
+    isActiveTokenEth: activeTokenAddress === ETH_MAGIC_NUMBER,
   };
 }

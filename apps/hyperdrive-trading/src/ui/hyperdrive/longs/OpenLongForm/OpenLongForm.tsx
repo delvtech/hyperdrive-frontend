@@ -6,7 +6,6 @@ import {
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
-import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -46,14 +45,15 @@ export function OpenLongForm({
     tokens: appConfig.tokens,
   });
 
-  const { activeToken, activeTokenBalance, setActiveToken } = useActiveToken({
-    account,
-    defaultActiveToken: baseToken.address,
-    tokens: [baseToken, sharesToken],
-  });
+  const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
+    useActiveToken({
+      account,
+      defaultActiveToken: baseToken.address,
+      tokens: [baseToken, sharesToken],
+    });
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
-  const requiresAllowance = activeToken.address !== ETH_MAGIC_NUMBER;
+  const requiresAllowance = !isActiveTokenEth;
 
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
     account,
@@ -96,6 +96,7 @@ export function OpenLongForm({
     minSharePrice: poolInfo?.vaultSharePrice,
     destination: account,
     asBase: activeToken.address === baseToken.address,
+    ethValue: isActiveTokenEth ? amountAsBigInt : undefined,
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onExecuted: (hash) => {
       setAmount("");

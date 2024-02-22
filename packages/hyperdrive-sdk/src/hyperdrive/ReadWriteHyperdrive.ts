@@ -7,7 +7,6 @@ import {
 } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
 import { Long } from "src/longs/types";
 import { Short } from "src/shorts/types";
-import { ZERO_ADDRESS } from "src/base/numbers";
 import { ContractWriteOptions } from "@delvtech/evm-client";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { ReturnType } from "src/base/ReturnType";
@@ -204,14 +203,18 @@ export class ReadWriteHyperdrive
     time: number,
     options?: ContractWriteOptions,
   ): Promise<`0x${string}`> {
-    return this.contract.write("checkpoint", BigInt(time), options);
+    return this.contract.write(
+      "checkpoint",
+      { _checkpointTime: BigInt(time) },
+      options,
+    );
   }
 
   pause(
     paused: boolean,
     options?: ContractWriteOptions,
   ): Promise<`0x${string}`> {
-    return this.contract.write("pause", paused, options);
+    return this.contract.write("pause", { _status: paused }, options);
   }
 
   initialize(
@@ -256,8 +259,6 @@ export class ReadWriteHyperdrive
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "openLong"> {
-    const { baseToken } = await this.getPoolConfig();
-    const requiresEth = asBase && baseToken === ZERO_ADDRESS;
     return this.contract.write(
       "openLong",
       {
@@ -266,7 +267,7 @@ export class ReadWriteHyperdrive
         _minVaultSharePrice: minSharePrice,
         _options: { destination, asBase, extraData },
       },
-      { value: requiresEth && baseAmount ? baseAmount : 0n, ...options },
+      options,
     );
   }
 
@@ -295,8 +296,7 @@ export class ReadWriteHyperdrive
         _minVaultSharePrice: minSharePrice,
         _options: { destination, asBase, extraData },
       },
-      // TODO: Do we need to pass value here?
-      { value: 0n, ...options },
+      options,
     );
   }
 
@@ -377,8 +377,6 @@ export class ReadWriteHyperdrive
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "addLiquidity"> {
-    const { baseToken } = await this.getPoolConfig();
-    const requiresEth = asBase && baseToken === ZERO_ADDRESS;
     return this.contract.write(
       "addLiquidity",
       {
@@ -388,10 +386,7 @@ export class ReadWriteHyperdrive
         _maxApr: maxAPR,
         _options: { destination, asBase, extraData },
       },
-      {
-        value: requiresEth && contribution ? contribution : 0n,
-        ...options,
-      },
+      options,
     );
   }
 

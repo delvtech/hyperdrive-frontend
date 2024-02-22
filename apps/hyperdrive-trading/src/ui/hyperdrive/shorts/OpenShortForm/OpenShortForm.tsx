@@ -113,7 +113,7 @@ export function OpenShortForm({
       tokenInput={
         <TokenInput
           name={`${baseToken.symbol}-input`}
-          token={baseToken.symbol}
+          token={`hy${baseToken.symbol}`}
           inputLabel="Amount to short"
           value={shortAmount ?? ""}
           onChange={(newAmount) => setAmount(newAmount)}
