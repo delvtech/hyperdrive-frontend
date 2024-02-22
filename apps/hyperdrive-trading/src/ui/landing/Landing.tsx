@@ -14,8 +14,8 @@ export function Landing(): ReactElement | null {
     <div className="flex flex-col items-center gap-14 px-4 py-8">
       <CommonHeadTags />
       <Hero />
-      <PositionCards />
       <AllMarketsTable />
+      <PositionCards />
       {isSmallScreenView ? <MobileFaq /> : <FAQ />}
     </div>
   );

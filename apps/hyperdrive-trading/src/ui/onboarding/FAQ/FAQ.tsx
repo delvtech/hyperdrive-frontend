@@ -6,7 +6,7 @@ import { faqData } from "src/ui/onboarding/FAQ/faqData";
 
 export function FAQ(): ReactElement {
   return (
-    <div className="mt-8 flex max-w-6xl flex-col">
+    <div className="mt-8 flex w-full flex-col">
       <span className="gradient-text mb-8 text-center text-h3">
         Frequently Asked Questions
       </span>
