@@ -1454,30 +1454,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }
 }
 
-/**
- * Takes an object whose values are promises and returns an object with those values resolved.
- * @param obj An object whose values are promises returning numbers.
- * @returns A promise that resolves to an object with the resolved values.
- */
-async function convertPromiseObjectToObject<T>(
-  obj: Record<string, Promise<T>>,
-): Promise<Record<string, T>> {
-  // Initialize an empty object to store resolved values
-  const resolvedObject: Record<string, T> = {};
-
-  // Use Promise.all() to concurrently resolve all promises in the input object
-  await Promise.all(
-    // Convert the object into an array of key-value pairs and map over it
-    Object.entries(obj).map(async ([key, promise]) => {
-      // Await each promise and assign its resolved value to the corresponding key in the resolved object
-      resolvedObject[key] = await promise;
-    }),
-  );
-
-  // Return a promise that resolves to the object with resolved values
-  return resolvedObject;
-}
-
 function calculateBaseAmount({
   vaultShareAmount,
   asBase,
