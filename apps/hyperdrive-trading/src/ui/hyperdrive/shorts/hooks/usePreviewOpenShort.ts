@@ -5,7 +5,7 @@ import { Address } from "viem";
 
 interface UsePreviewOpenShortOptions {
   hyperdriveAddress: Address;
-  amountBondShorts: bigint | undefined;
+  amountOfBondsToShort: bigint | undefined;
 }
 
 interface UsePreviewOpenShortResult {
@@ -15,21 +15,21 @@ interface UsePreviewOpenShortResult {
 
 export function usePreviewOpenShort({
   hyperdriveAddress,
-  amountBondShorts,
+  amountOfBondsToShort,
 }: UsePreviewOpenShortOptions): UsePreviewOpenShortResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const queryEnabled = !!readHyperdrive && !!amountBondShorts;
+  const queryEnabled = !!readHyperdrive && !!amountOfBondsToShort;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewOpenShort", {
       market: hyperdriveAddress,
-      amountBondShorts: amountBondShorts?.toString(),
+      amountBondShorts: amountOfBondsToShort?.toString(),
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
           return readHyperdrive.previewOpenShort({
-            amountOfBondsToShort: amountBondShorts,
+            amountOfBondsToShort: amountOfBondsToShort,
           });
         }
       : undefined,

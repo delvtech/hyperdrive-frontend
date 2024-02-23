@@ -4,9 +4,9 @@ import {
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
-import * as dnum from "dnum";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
+import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -80,10 +80,11 @@ export function OpenLongForm({
   let finalAmount = amountAsBigInt;
 
   if (activeToken.address === sharesToken.address) {
-    finalAmount = dnum.multiply(
-      [amountAsBigInt || 0n, activeToken.decimals],
-      [poolInfo?.vaultSharePrice || 0n, activeToken.decimals],
-    )[0];
+    finalAmount = convertSharesToBase({
+      decimals: sharesToken.decimals,
+      sharesAmount: amountAsBigInt,
+      vaultSharePrice: poolInfo?.vaultSharePrice,
+    });
   }
 
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
