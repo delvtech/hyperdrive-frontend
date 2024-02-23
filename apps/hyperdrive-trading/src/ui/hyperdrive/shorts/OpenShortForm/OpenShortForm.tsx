@@ -3,11 +3,11 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
-import * as dnum from "dnum";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { convertBaseToShares } from "src/hyperdrive/convertBaseToShares";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -63,43 +63,44 @@ export function OpenShortForm({
   });
 
   const {
-    amount: shortAmount,
-    amountAsBigInt: shortAmountAsBigInt,
+    amount: amountOfBondsToShort,
+    amountAsBigInt: amountOfBondsToShortAsBigInt,
     setAmount,
   } = useNumericInput({
     decimals: hyperdrive.decimals,
   });
 
-  let finalAmount = shortAmountAsBigInt;
-
+  // preview calc will always say how much base is required to open the position,
+  // however users can open the position using either base or shares
+  const { baseAmountIn, status: openShortPreviewStatus } = usePreviewOpenShort({
+    hyperdriveAddress: hyperdrive.address,
+    amountOfBondsToShort: amountOfBondsToShortAsBigInt,
+  });
+  // If they're choosing to deposit shares, we need to convert the deposit
+  // amount into shares
+  let depositAmount = baseAmountIn;
   if (activeToken.address === sharesToken.address) {
-    finalAmount = dnum.multiply(
-      [shortAmountAsBigInt || 0n, activeToken.decimals],
-      [poolInfo?.vaultSharePrice || 0n, activeToken.decimals],
-    )[0];
+    depositAmount = convertBaseToShares({
+      decimals: sharesToken.decimals,
+      vaultSharePrice: poolInfo?.vaultSharePrice,
+      baseAmount: baseAmountIn,
+    });
   }
 
-  // TODO: This should have an `asBase` paramter, add it once hyperwasm has it
-  const { baseAmountIn: amountIn, status: openShortPreviewStatus } =
-    usePreviewOpenShort({
-      hyperdriveAddress: hyperdrive.address,
-      amountBondShorts: finalAmount,
-    });
-
   const hasEnoughBalance = getHasEnoughBalance({
-    amount: amountIn,
+    amount: depositAmount,
     balance: activeTokenBalance?.value,
   });
 
   const hasEnoughAllowance = getHasEnoughAllowance({
     allowance: activeTokenAllowance,
-    amount: amountIn,
+    amount: depositAmount,
     requiresAllowance,
   });
 
   const { openShort, openShortSubmittedStatus } = useOpenShort({
     hyperdriveAddress: hyperdrive.address,
-    amountBondShorts: shortAmountAsBigInt,
+    amountBondShorts: amountOfBondsToShortAsBigInt,
     minSharePrice: poolInfo?.vaultSharePrice,
     // TODO: handle slippage
     maxBaseAmountIn: MAX_UINT256,
@@ -124,7 +125,7 @@ export function OpenShortForm({
           name={`${baseToken.symbol}-input`}
           token={`hy${baseToken.symbol}`}
           inputLabel="Amount to short"
-          value={shortAmount ?? ""}
+          value={amountOfBondsToShort ?? ""}
           onChange={(newAmount) => setAmount(newAmount)}
         />
       }
@@ -148,12 +149,12 @@ export function OpenShortForm({
         <OpenShortPreview
           hyperdrive={hyperdrive}
           tokenIn={activeToken}
-          costBasis={amountIn || 0n}
-          shortSize={shortAmountAsBigInt}
+          costBasis={depositAmount || 0n}
+          shortSize={amountOfBondsToShortAsBigInt}
         />
       }
       disclaimer={
-        amountIn ? (
+        depositAmount ? (
           <div className="flex flex-col gap-4">
             {!hasEnoughBalance ? (
               <p className="text-center text-sm text-error">
@@ -164,7 +165,7 @@ export function OpenShortForm({
               You pay{" "}
               <strong>
                 {formatBalance({
-                  balance: amountIn || 0n,
+                  balance: depositAmount || 0n,
                   decimals: activeToken.decimals,
                   includeCommas: true,
                   places: 6,
@@ -173,7 +174,7 @@ export function OpenShortForm({
               </strong>{" "}
               in exchange for the yield on{" "}
               <strong>
-                {shortAmount} {baseToken.symbol}
+                {amountOfBondsToShort} {baseToken.symbol}
               </strong>{" "}
               deposited into <strong>{sharesToken.extensions.shortName}</strong>{" "}
               for{" "}
@@ -214,8 +215,8 @@ export function OpenShortForm({
               spender={hyperdrive.address}
               token={activeToken}
               tokenBalance={activeTokenBalance}
-              amountAsBigInt={amountIn}
-              amount={formatUnits(amountIn || 0n, activeToken.decimals)}
+              amountAsBigInt={depositAmount}
+              amount={formatUnits(baseAmountIn || 0n, activeToken.decimals)}
             />
           );
         }
