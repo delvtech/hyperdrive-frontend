@@ -62,5 +62,5 @@ export function usePreviewCloseLong({
       : undefined,
   });
 
-  return { amountOut: data?.previewAmountOut, previewCloseLongStatus: status };
+  return { amountOut: data, previewCloseLongStatus: status };
 }

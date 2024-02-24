@@ -100,6 +100,7 @@ export function OpenLongForm({
     longAmountOut &&
     adjustAmountByPercentage({
       amount: longAmountOut,
+      percentage: 1n,
       decimals: activeToken.decimals,
     });
 
