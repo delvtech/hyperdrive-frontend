@@ -55,24 +55,28 @@ export function CloseLongForm({
 
   const { address: account } = useAccount();
 
-  // Input for the hyToken
-  const { amount, amountAsBigInt, setAmount } = useNumericInput({
+  const {
+    amount: bondAmount,
+    amountAsBigInt: bondAmountAsBigInt,
+    setAmount,
+  } = useNumericInput({
     decimals: hyperdrive.decimals,
   });
 
-  const { amountOut, previewCloseLongStatus } = usePreviewCloseLong({
-    hyperdriveAddress: hyperdrive.address,
-    maturityTime: long.maturity,
-    bondAmountIn: amountAsBigInt,
-    minOutput: parseUnits("0", baseToken.decimals),
-    destination: account,
-    asBase: activeWithdrawToken.address === baseToken.address,
-  });
+  const { amountOut: withdrawTokenAmount, previewCloseLongStatus } =
+    usePreviewCloseLong({
+      hyperdriveAddress: hyperdrive.address,
+      maturityTime: long.maturity,
+      bondAmountIn: bondAmountAsBigInt,
+      minOutput: parseUnits("0", baseToken.decimals),
+      destination: account,
+      asBase: activeWithdrawToken.address === baseToken.address,
+    });
 
   const minOutputAfterSlippage =
-    amountOut &&
+    withdrawTokenAmount &&
     adjustAmountByPercentage({
-      amount: amountOut,
+      amount: withdrawTokenAmount,
       percentage: 1n,
       decimals: activeWithdrawToken.decimals,
     });
@@ -80,7 +84,7 @@ export function CloseLongForm({
   const { closeLong, isPendingWalletAction } = useCloseLong({
     hyperdriveAddress: hyperdrive.address,
     long,
-    bondAmountIn: amountAsBigInt,
+    bondAmountIn: bondAmountAsBigInt,
     minAmountOut: minOutputAfterSlippage,
     destination: account,
     asBase: activeWithdrawToken.address === baseToken.address,
@@ -120,7 +124,7 @@ export function CloseLongForm({
         <TokenInput
           name={baseToken.symbol}
           token={`hy${baseToken.symbol}`}
-          value={amount ?? ""}
+          value={bondAmount ?? ""}
           maxValue={
             long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
           }
@@ -153,9 +157,9 @@ export function CloseLongForm({
         <LabelValue
           label="You receive"
           value={`${
-            amountOut
+            withdrawTokenAmount
               ? `${formatBalance({
-                  balance: amountOut,
+                  balance: withdrawTokenAmount,
                   decimals: activeWithdrawToken.decimals,
                   places: 8,
                 })}`

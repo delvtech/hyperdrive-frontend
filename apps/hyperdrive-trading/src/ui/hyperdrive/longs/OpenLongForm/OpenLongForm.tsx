@@ -91,15 +91,15 @@ export function OpenLongForm({
       vaultSharePrice: poolInfo?.vaultSharePrice,
     });
   }
-  const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
+  const { bondsReceived, status: openLongPreviewStatus } = usePreviewOpenLong({
     hyperdriveAddress: hyperdrive.address,
     baseAmount: depositAmountConvertedToBase,
   });
 
-  const longAmountOutAfterSlippage =
-    longAmountOut &&
+  const bondsReceivedAfterSlippage =
+    bondsReceived &&
     adjustAmountByPercentage({
-      amount: longAmountOut,
+      amount: bondsReceived,
       percentage: 1n,
       decimals: activeToken.decimals,
     });
@@ -107,7 +107,7 @@ export function OpenLongForm({
   const { openLong, openLongStatus } = useOpenLong({
     hyperdriveAddress: hyperdrive.address,
     baseAmount: depositAmountAsBigInt,
-    bondAmountOut: longAmountOutAfterSlippage,
+    bondAmountOut: bondsReceivedAfterSlippage,
     minSharePrice: poolInfo?.vaultSharePrice,
     destination: account,
     asBase: activeToken.address === baseToken.address,
@@ -159,7 +159,7 @@ export function OpenLongForm({
         <OpenLongPreview
           hyperdrive={hyperdrive}
           long={{
-            bondAmount: longAmountOut || 0n,
+            bondAmount: bondsReceived || 0n,
             assetId: 0n,
             baseAmountPaid: depositAmountAsBigInt || 0n,
             maturity: BigInt(
