@@ -63,32 +63,37 @@ export function OpenLongForm({
     tokenAddress: activeToken.address,
   });
 
-  const { amount, amountAsBigInt, setAmount } = useNumericInput({
+  const {
+    amount: depositAmount,
+    amountAsBigInt: depositAmountAsBigInt,
+    setAmount,
+  } = useNumericInput({
     decimals: activeToken.decimals,
   });
 
   const hasEnoughAllowance = getHasEnoughAllowance({
     requiresAllowance,
     allowance: activeTokenAllowance,
-    amount: amountAsBigInt,
+    amount: depositAmountAsBigInt,
   });
   const hasEnoughBalance = getHasEnoughBalance({
     balance: activeTokenBalance?.value,
-    amount: amountAsBigInt,
+    amount: depositAmountAsBigInt,
   });
 
-  let finalAmount = amountAsBigInt;
+  // The preview calc only accepts base, so if the user is depositing shares we
+  // need to convert that value to base before we can preview the trade for them
+  let depositAmountConvertedToBase = depositAmountAsBigInt;
   if (activeToken.address === sharesToken.address) {
-    finalAmount = convertSharesToBase({
+    depositAmountConvertedToBase = convertSharesToBase({
       decimals: sharesToken.decimals,
-      sharesAmount: amountAsBigInt,
+      sharesAmount: depositAmountAsBigInt,
       vaultSharePrice: poolInfo?.vaultSharePrice,
     });
   }
-
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
     hyperdriveAddress: hyperdrive.address,
-    baseAmount: finalAmount,
+    baseAmount: depositAmountConvertedToBase,
   });
 
   const longAmountOutAfterSlippage =
@@ -100,12 +105,12 @@ export function OpenLongForm({
 
   const { openLong, openLongStatus } = useOpenLong({
     hyperdriveAddress: hyperdrive.address,
-    baseAmount: amountAsBigInt,
+    baseAmount: depositAmountAsBigInt,
     bondAmountOut: longAmountOutAfterSlippage,
     minSharePrice: poolInfo?.vaultSharePrice,
     destination: account,
     asBase: activeToken.address === baseToken.address,
-    ethValue: isActiveTokenEth ? amountAsBigInt : undefined,
+    ethValue: isActiveTokenEth ? depositAmountAsBigInt : undefined,
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onExecuted: (hash) => {
       setAmount("");
@@ -134,7 +139,7 @@ export function OpenLongForm({
               }}
             />
           }
-          value={amount ?? ""}
+          value={depositAmount ?? ""}
           maxValue={activeTokenBalance?.formatted}
           inputLabel="Amount to spend"
           stat={
@@ -155,7 +160,7 @@ export function OpenLongForm({
           long={{
             bondAmount: longAmountOut || 0n,
             assetId: 0n,
-            baseAmountPaid: amountAsBigInt || 0n,
+            baseAmountPaid: depositAmountAsBigInt || 0n,
             maturity: BigInt(
               Math.round(
                 (Date.now() +
@@ -167,7 +172,7 @@ export function OpenLongForm({
         />
       }
       disclaimer={
-        !!amountAsBigInt && !hasEnoughBalance ? (
+        !!depositAmountAsBigInt && !hasEnoughBalance ? (
           <p className="text-center text-sm text-error">Insufficient balance</p>
         ) : undefined
       }
@@ -193,8 +198,8 @@ export function OpenLongForm({
               spender={hyperdrive.address}
               token={activeToken}
               tokenBalance={activeTokenBalance}
-              amountAsBigInt={amountAsBigInt}
-              amount={amount}
+              amountAsBigInt={depositAmountAsBigInt}
+              amount={depositAmount}
             />
           );
         }
