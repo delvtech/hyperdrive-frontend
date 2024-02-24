@@ -9,7 +9,7 @@ interface UsePreviewOpenLongOptions {
 
 interface UsePreviewOpenLongResult {
   status: "error" | "idle" | "loading" | "success";
-  longAmountOut: bigint | undefined;
+  bondsReceived: bigint | undefined;
   maturityTime: bigint | undefined;
 }
 
@@ -34,7 +34,7 @@ export function usePreviewOpenLong({
       : undefined,
   });
   return {
-    longAmountOut: data?.bondProceeds,
+    bondsReceived: data?.bondProceeds,
     maturityTime: data?.maturityTime,
     status,
   };
