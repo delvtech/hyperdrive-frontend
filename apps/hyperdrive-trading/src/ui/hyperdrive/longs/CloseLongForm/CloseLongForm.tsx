@@ -83,7 +83,7 @@ export function CloseLongForm({
 
   const { closeLong, isPendingWalletAction } = useCloseLong({
     hyperdriveAddress: hyperdrive.address,
-    long,
+    maturityTime: long.maturity,
     bondAmountIn: bondAmountAsBigInt,
     minAmountOut: minOutputAfterSlippage,
     destination: account,

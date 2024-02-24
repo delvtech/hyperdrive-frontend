@@ -1,4 +1,3 @@
-import { Long } from "@hyperdrive/sdk";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
@@ -8,7 +7,7 @@ import { usePublicClient } from "wagmi";
 
 interface UseCloseLongOptions {
   hyperdriveAddress: Address;
-  long: Long | undefined;
+  maturityTime: bigint | undefined;
   bondAmountIn: bigint | undefined;
   minAmountOut: bigint | undefined;
   destination: Address | undefined;
@@ -24,7 +23,7 @@ interface UseCloseLongResult {
 
 export function useCloseLong({
   hyperdriveAddress,
-  long,
+  maturityTime,
   bondAmountIn,
   minAmountOut,
   destination,
@@ -37,7 +36,7 @@ export function useCloseLong({
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
   const mutationEnabled =
-    !!long &&
+    !!maturityTime &&
     !!bondAmountIn &&
     minAmountOut !== undefined && // check undefined since 0 is valid
     !!destination &&
@@ -53,7 +52,7 @@ export function useCloseLong({
           minAmountOut,
           destination,
           asBase,
-          long,
+          maturityTime,
         });
         addTransaction({
           hash,

@@ -106,8 +106,8 @@ export function OpenLongForm({
 
   const { openLong, openLongStatus } = useOpenLong({
     hyperdriveAddress: hyperdrive.address,
-    baseAmount: depositAmountAsBigInt,
-    bondAmountOut: bondsReceivedAfterSlippage,
+    amount: depositAmountAsBigInt,
+    minBondsOut: bondsReceivedAfterSlippage,
     minSharePrice: poolInfo?.vaultSharePrice,
     destination: account,
     asBase: activeToken.address === baseToken.address,

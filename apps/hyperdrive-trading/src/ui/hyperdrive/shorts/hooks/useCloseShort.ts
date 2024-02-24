@@ -1,4 +1,3 @@
-import { Short } from "@hyperdrive/sdk";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
@@ -8,7 +7,7 @@ import { usePublicClient } from "wagmi";
 
 interface UseCloseShortOptions {
   hyperdriveAddress: Address;
-  short: Short | undefined;
+  maturityTime: bigint | undefined;
   bondAmountIn: bigint | undefined;
   minAmountOut: bigint | undefined;
   destination: Address | undefined;
@@ -24,7 +23,7 @@ interface UseCloseShortResult {
 
 export function useCloseShort({
   hyperdriveAddress,
-  short,
+  maturityTime,
   bondAmountIn,
   minAmountOut,
   destination,
@@ -39,7 +38,7 @@ export function useCloseShort({
   const { mutate: closeShort, status } = useMutation({
     mutationFn: async () => {
       if (
-        !!short &&
+        !!maturityTime &&
         !!bondAmountIn &&
         minAmountOut !== undefined && // check undefined since 0 is valid
         !!destination &&
@@ -52,7 +51,7 @@ export function useCloseShort({
           minAmountOut,
           destination,
           asBase,
-          short,
+          maturityTime,
         });
         addTransaction({
           hash,

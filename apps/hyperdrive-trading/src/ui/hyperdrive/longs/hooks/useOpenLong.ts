@@ -11,8 +11,8 @@ interface UseOpenLongOptions {
   hyperdriveAddress: Address;
   destination: Address | undefined;
   minSharePrice: bigint | undefined;
-  baseAmount: bigint | undefined;
-  bondAmountOut: bigint | undefined;
+  amount: bigint | undefined;
+  minBondsOut: bigint | undefined;
   asBase?: boolean;
   ethValue?: bigint;
 
@@ -32,8 +32,8 @@ interface UseOpenLongResult {
 export function useOpenLong({
   hyperdriveAddress,
   destination,
-  baseAmount,
-  bondAmountOut,
+  amount,
+  minBondsOut,
   minSharePrice,
   asBase = true,
   enabled,
@@ -45,8 +45,8 @@ export function useOpenLong({
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const mutationEnabled =
-    !!baseAmount &&
-    !!bondAmountOut &&
+    !!amount &&
+    !!minBondsOut &&
     !!destination &&
     minSharePrice !== undefined &&
     enabled &&
@@ -57,8 +57,8 @@ export function useOpenLong({
     mutationFn: async () => {
       if (mutationEnabled) {
         const hash = await readWriteHyperdrive.openLong({
-          baseAmount,
-          bondAmountOut,
+          amount: amount,
+          minBondsOut: minBondsOut,
           destination,
           minSharePrice,
           asBase,
