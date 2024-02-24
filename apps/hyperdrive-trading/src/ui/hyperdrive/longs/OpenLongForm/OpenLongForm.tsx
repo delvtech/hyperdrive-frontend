@@ -78,7 +78,6 @@ export function OpenLongForm({
   });
 
   let finalAmount = amountAsBigInt;
-
   if (activeToken.address === sharesToken.address) {
     finalAmount = convertSharesToBase({
       decimals: sharesToken.decimals,

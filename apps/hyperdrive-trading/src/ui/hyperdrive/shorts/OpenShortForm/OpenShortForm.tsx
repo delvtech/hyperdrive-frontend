@@ -188,7 +188,7 @@ export function OpenShortForm({
             <p className="text-center text-sm text-neutral-content">
               {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
                 ? `When closing your Short position, you can choose to receive back either ${baseToken.symbol} or ${sharesToken.symbol}.`
-                : `When closing your Short position, you&apos;ll receive ${sharesToken.symbol}.`}
+                : `When closing your Short position, you'll receive ${sharesToken.symbol}.`}
             </p>
           </div>
         ) : null
