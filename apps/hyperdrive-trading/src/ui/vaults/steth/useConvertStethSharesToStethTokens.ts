@@ -8,7 +8,7 @@ import { useReadContract } from "wagmi";
  * However, Hyperdrive mandates stETH shares as output, necessitating this
  * conversion for withdrawal purposes.
  */
-export function useConvertStethTokensToStethShares({
+export function useConvertStethSharesToStethTokens({
   lidoAddress,
   enabled,
   stethShares,
