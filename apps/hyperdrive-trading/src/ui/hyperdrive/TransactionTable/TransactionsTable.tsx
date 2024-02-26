@@ -337,7 +337,7 @@ export function TransactionTable({
   }
 
   return (
-    <div className="flex w-full flex-col scrollbar-none">
+    <div className="flex w-full flex-col">
       <table className="daisy-table daisy-table-zebra daisy-table-lg h-fit">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (

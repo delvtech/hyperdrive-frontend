@@ -17,12 +17,6 @@ module.exports = {
         800: "#49E9E4",
         900: "#16B6B1",
       },
-      // Used for secondary buttons and their states
-      purple: {
-        100: "#DBCCFF",
-        DEFAULT: "#AB87FF",
-        800: "#7033FF",
-      },
 
       gray: {
         50: "#EFF4F6",
@@ -54,11 +48,7 @@ module.exports = {
       h5: ["20px", { lineHeight: "24px" }],
     },
   },
-  plugins: [
-    require("daisyui"),
-    require("tailwindcss-debug-screens"),
-    require("tailwind-scrollbar"),
-  ],
+  plugins: [require("daisyui"), require("tailwindcss-debug-screens")],
   daisyui: {
     prefix: "daisy-",
     themes: [
