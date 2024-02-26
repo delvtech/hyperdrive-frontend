@@ -34,6 +34,7 @@ import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYiel
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { hyperwasm } from "src/hyperwasm";
 import { getBlockOrThrow } from "src/evm-client/getBlockOrThrow";
+import { convertSharesToBase } from "src/hyperdrive/utils/convertSharesToBase";
 
 const HyperdriveABI = IHyperdrive.abi;
 
@@ -258,10 +259,13 @@ export interface IReadHyperdrive {
   }): Promise<bigint>;
 
   /**
-   * Predicts the amount of bonds a user will receive when opening a long.
+   * Predicts the amount of bonds a user will receive when opening a long in
+   * either base or shares.
    */
   previewOpenLong(args: {
-    baseAmount: bigint;
+    amountIn: bigint;
+    asBase: boolean;
+    decimals: number;
     options?: ContractReadOptions;
   }): Promise<{ maturityTime: bigint; bondProceeds: bigint }>;
 
@@ -1240,14 +1244,16 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }
 
   async previewOpenLong({
-    baseAmount,
+    amountIn,
+    asBase,
+    decimals,
     options,
   }: Parameters<IReadHyperdrive["previewOpenLong"]>[0]): ReturnType<
     IReadHyperdrive,
     "previewOpenLong"
   > {
-    const config = await this.getPoolConfig(options);
-    const info = await this.getPoolInfo(options);
+    const poolConfig = await this.getPoolConfig(options);
+    const poolInfo = await this.getPoolInfo(options);
 
     const { timestamp: blockTimestamp } = await getBlockOrThrow(
       this.network,
@@ -1255,17 +1261,28 @@ export class ReadHyperdrive implements IReadHyperdrive {
     );
     const checkpointId = getCheckpointId(
       blockTimestamp,
-      config.checkpointDuration,
+      poolConfig.checkpointDuration,
     );
 
+    // calcOpenLong only accepts base, so if the user is depositing shares we
+    // need to convert that value to base before we can preview the trade for them
+    let depositAmountConvertedToBase = amountIn;
+    if (!asBase) {
+      depositAmountConvertedToBase = convertSharesToBase({
+        decimals,
+        sharesAmount: amountIn,
+        vaultSharePrice: poolInfo.vaultSharePrice,
+      });
+    }
+
     const bondProceeds = await hyperwasm.calcOpenLong(
-      convertBigIntsToStrings(info),
-      convertBigIntsToStrings(config),
-      baseAmount.toString(),
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
+      depositAmountConvertedToBase.toString(),
     );
 
     return {
-      maturityTime: checkpointId + config.positionDuration,
+      maturityTime: checkpointId + poolConfig.positionDuration,
       bondProceeds: BigInt(bondProceeds),
     };
   }
