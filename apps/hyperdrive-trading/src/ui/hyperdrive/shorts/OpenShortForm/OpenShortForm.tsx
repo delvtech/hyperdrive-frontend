@@ -7,6 +7,7 @@ import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { getHasEnoughLiquidity } from "src/hyperdrive/getHasEnoughLiquidity";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -16,6 +17,7 @@ import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessag
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
@@ -88,6 +90,16 @@ export function OpenShortForm({
     requiresAllowance,
   });
 
+  const { maxBaseIn, maxSharesIn } = useMaxShort({
+    hyperdriveAddress: hyperdrive.address,
+  });
+
+  const hasEnoughLiquidity = getHasEnoughLiquidity({
+    tradeAmount: amountOfBondsToShortAsBigInt,
+    maxTradeSize:
+      activeToken.address === sharesToken.address ? maxSharesIn : maxBaseIn,
+  });
+
   const { openShort, openShortSubmittedStatus } = useOpenShort({
     hyperdriveAddress: hyperdrive.address,
     amountBondShorts: amountOfBondsToShortAsBigInt,
@@ -143,46 +155,62 @@ export function OpenShortForm({
           shortSize={amountOfBondsToShortAsBigInt}
         />
       }
-      disclaimer={
-        depositAmount ? (
-          <div className="flex flex-col gap-4">
-            {!hasEnoughBalance ? (
-              <p className="text-center text-sm text-error">
-                Insufficient balance
+      disclaimer={(() => {
+        if (depositAmount && !!amountOfBondsToShortAsBigInt) {
+          return (
+            <div className="flex flex-col gap-4">
+              <p className="text-center text-sm text-neutral-content">
+                You pay{" "}
+                <strong>
+                  {formatBalance({
+                    balance: depositAmount || 0n,
+                    decimals: activeToken.decimals,
+                    includeCommas: true,
+                    places: 6,
+                  })}{" "}
+                  {activeToken.symbol}
+                </strong>{" "}
+                in exchange for the yield on{" "}
+                <strong>
+                  {amountOfBondsToShort} {baseToken.symbol}
+                </strong>{" "}
+                deposited into{" "}
+                <strong>{sharesToken.extensions.shortName}</strong> for{" "}
+                <strong>
+                  {convertMillisecondsToDays(
+                    Number(hyperdrive.poolConfig.positionDuration * 1000n),
+                  )}{" "}
+                  days.
+                </strong>{" "}
               </p>
-            ) : null}
-            <p className="text-center text-sm text-neutral-content">
-              You pay{" "}
-              <strong>
-                {formatBalance({
-                  balance: depositAmount || 0n,
-                  decimals: activeToken.decimals,
-                  includeCommas: true,
-                  places: 6,
-                })}{" "}
-                {activeToken.symbol}
-              </strong>{" "}
-              in exchange for the yield on{" "}
-              <strong>
-                {amountOfBondsToShort} {baseToken.symbol}
-              </strong>{" "}
-              deposited into <strong>{sharesToken.extensions.shortName}</strong>{" "}
-              for{" "}
-              <strong>
-                {convertMillisecondsToDays(
-                  Number(hyperdrive.poolConfig.positionDuration * 1000n),
-                )}{" "}
-                days.
-              </strong>{" "}
+              <p className="text-center text-sm text-neutral-content">
+                {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+                  ? `When closing your Short position, you can choose to receive back either ${baseToken.symbol} or ${sharesToken.symbol}.`
+                  : `When closing your Short position, you'll receive ${sharesToken.symbol}.`}
+              </p>
+            </div>
+          );
+        }
+        if (!!amountOfBondsToShortAsBigInt && !hasEnoughLiquidity) {
+          return (
+            <p className="text-center text-sm text-error">
+              Insufficient liquidity
             </p>
-            <p className="text-center text-sm text-neutral-content">
-              {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
-                ? `When closing your Short position, you can choose to receive back either ${baseToken.symbol} or ${sharesToken.symbol}.`
-                : `When closing your Short position, you'll receive ${sharesToken.symbol}.`}
+          );
+        }
+        if (
+          !!amountOfBondsToShortAsBigInt &&
+          !hasEnoughBalance &&
+          openShortPreviewStatus !== "loading"
+        ) {
+          return (
+            <p className="text-center text-sm text-error">
+              Insufficient balance
             </p>
-          </div>
-        ) : null
-      }
+          );
+        }
+        return null;
+      })()}
       actionButton={(() => {
         if (!account) {
           return <ConnectWalletButton />;
