@@ -54,7 +54,7 @@ export function RemoveLiquidityForm({
       ? baseToken.address
       : sharesToken.address,
   });
-  const { poolInfo } = usePoolInfo(hyperdrive.address);
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
   const { address: account } = useAccount();
 

@@ -3,7 +3,11 @@ import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
-export function usePoolInfo(hyperdriveAddress: Address): {
+export function usePoolInfo({
+  hyperdriveAddress,
+}: {
+  hyperdriveAddress: Address;
+}): {
   poolInfo: PoolInfo | undefined;
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);

@@ -35,7 +35,7 @@ export function OpenLongForm({
   const { address: account } = useAccount();
 
   const appConfig = useAppConfig();
-  const { poolInfo } = usePoolInfo(hyperdrive.address);
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -93,7 +93,7 @@ export function OpenLongForm({
   }
   const { bondsReceived, status: openLongPreviewStatus } = usePreviewOpenLong({
     hyperdriveAddress: hyperdrive.address,
-    baseAmount: depositAmountConvertedToBase,
+    amountIn: depositAmountConvertedToBase,
   });
 
   const bondsReceivedAfterSlippage =

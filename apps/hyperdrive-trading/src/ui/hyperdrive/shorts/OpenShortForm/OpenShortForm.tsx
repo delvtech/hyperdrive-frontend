@@ -37,7 +37,7 @@ export function OpenShortForm({
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const { poolInfo } = usePoolInfo(hyperdrive.address);
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
