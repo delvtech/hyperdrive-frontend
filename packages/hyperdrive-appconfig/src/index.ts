@@ -5,6 +5,7 @@ export { cloudChainAppConfig } from "src/generated/42069.appconfig";
 
 // appconfig helpers
 export { findBaseToken } from "src/appconfig/helpers/findBaseToken";
+export { findHyperdriveConfig } from "src/appconfig/helpers/findHyperdriveConfig";
 export { findYieldSourceToken } from "src/appconfig/helpers/findYieldSourceToken";
 
 // hyperdrive
