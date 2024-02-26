@@ -159,6 +159,11 @@ export function OpenShortForm({
         if (depositAmount && !!amountOfBondsToShortAsBigInt) {
           return (
             <div className="flex flex-col gap-4">
+              {!hasEnoughBalance ? (
+                <p className="text-center text-sm text-error">
+                  Insufficient balance
+                </p>
+              ) : null}
               <p className="text-center text-sm text-neutral-content">
                 You pay{" "}
                 <strong>
@@ -198,18 +203,6 @@ export function OpenShortForm({
             </p>
           );
         }
-        if (
-          !!amountOfBondsToShortAsBigInt &&
-          !hasEnoughBalance &&
-          openShortPreviewStatus !== "loading"
-        ) {
-          return (
-            <p className="text-center text-sm text-error">
-              Insufficient balance
-            </p>
-          );
-        }
-        return null;
       })()}
       actionButton={(() => {
         if (!account) {
