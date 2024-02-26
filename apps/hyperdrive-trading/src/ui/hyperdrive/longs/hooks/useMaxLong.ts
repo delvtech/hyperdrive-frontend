@@ -5,6 +5,7 @@ import { Address } from "viem";
 
 interface UseMaxLongResult {
   maxBaseIn: bigint | undefined;
+  maxSharesIn: bigint | undefined;
   maxBondsOut: bigint | undefined;
   status: "error" | "idle" | "loading" | "success";
 }
@@ -27,6 +28,7 @@ export function useMaxLong({
 
   return {
     maxBaseIn: data?.maxBaseIn,
+    maxSharesIn: data?.maxSharesIn,
     maxBondsOut: data?.maxBondsOut,
     status,
   };

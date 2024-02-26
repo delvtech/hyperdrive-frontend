@@ -4,12 +4,11 @@ import {
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
-import * as dnum from "dnum";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
+import { getHasEnoughLiquidity } from "src/hyperdrive/getHasEnoughLiquidity";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
-import { getHasEnoughLiquidity } from "src/token/getHasEnoughLiquidity";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
@@ -82,22 +81,14 @@ export function OpenLongForm({
     amount: depositAmountAsBigInt,
   });
 
-  let finalAmount = depositAmountAsBigInt;
-
-  if (activeToken.address === sharesToken.address) {
-    finalAmount = dnum.multiply(
-      [depositAmountAsBigInt || 0n, activeToken.decimals],
-      [poolInfo?.vaultSharePrice || 0n, activeToken.decimals],
-    )[0];
-  }
-
-  const { maxBaseIn } = useMaxLong({
+  const { maxBaseIn, maxSharesIn } = useMaxLong({
     hyperdriveAddress: hyperdrive.address,
   });
 
   const hasEnoughLiquidity = getHasEnoughLiquidity({
-    amount: finalAmount,
-    liquidity: maxBaseIn,
+    tradeAmount: depositAmountAsBigInt,
+    maxTradeSize:
+      activeToken.address === sharesToken.address ? maxSharesIn : maxBaseIn,
   });
 
   const { bondsReceived, status: openLongPreviewStatus } = usePreviewOpenLong({
@@ -190,7 +181,7 @@ export function OpenLongForm({
             </p>
           );
         }
-        if (!hasEnoughLiquidity && !!depositAmountAsBigInt) {
+        if (!!depositAmountAsBigInt && !hasEnoughLiquidity) {
           return (
             <p className="text-center text-sm text-error">
               Insufficient liquidity
