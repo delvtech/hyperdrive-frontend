@@ -5,12 +5,12 @@ export function convertSharesToBase({
   vaultSharePrice,
   decimals,
 }: {
-  sharesAmount: bigint | undefined;
-  vaultSharePrice: bigint | undefined;
+  sharesAmount: bigint;
+  vaultSharePrice: bigint;
   decimals: number;
 }): bigint {
   return dnum.multiply(
-    [sharesAmount || 0n, decimals],
-    [vaultSharePrice || 0n, decimals],
+    [sharesAmount, decimals],
+    [vaultSharePrice, decimals],
   )[0];
 }

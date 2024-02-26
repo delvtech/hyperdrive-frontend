@@ -5,13 +5,10 @@ export function convertBaseToShares({
   vaultSharePrice,
   decimals,
 }: {
-  baseAmount: bigint | undefined;
-  vaultSharePrice: bigint | undefined;
+  baseAmount: bigint;
+  vaultSharePrice: bigint;
   decimals: number;
 }): bigint {
   // if I have 20 base, and shares cost 2 base each, then 20 / 2 = 10 shares
-  return dnum.divide(
-    [baseAmount || 0n, decimals],
-    [vaultSharePrice || 0n, decimals],
-  )[0];
+  return dnum.divide([baseAmount, decimals], [vaultSharePrice, decimals])[0];
 }
