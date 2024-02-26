@@ -6,6 +6,7 @@ import {
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
+import { getAmountOrEthValue } from "src/hyperdrive/getAmountOrEthValue";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -23,6 +24,7 @@ import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
+import { useConvertStethTokensToStethShares } from "src/ui/vaults/steth/useConvertStethTokensToStethShares";
 import { useAccount } from "wagmi";
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
@@ -94,14 +96,27 @@ export function OpenLongForm({
       decimals: activeToken.decimals,
     });
 
+  // If user is depositing steth, the depositAmount must be converted from steth
+  // tokens into steth shares before calling openLong
+  const isActiveTokenSteth =
+    activeToken.address === sharesToken.address &&
+    sharesToken.tags.includes("steth");
+  const { stethShares } = useConvertStethTokensToStethShares({
+    lidoAddress: sharesToken.address,
+    stethTokenAmount: depositAmountAsBigInt,
+    enabled: isActiveTokenSteth,
+  });
+
   const { openLong, openLongStatus } = useOpenLong({
     hyperdriveAddress: hyperdrive.address,
-    amount: depositAmountAsBigInt,
+    asBase: activeToken.address === baseToken.address,
+    ...getAmountOrEthValue({
+      isActiveTokenEth,
+      amount: isActiveTokenSteth ? stethShares : depositAmountAsBigInt,
+    }),
     minBondsOut: bondsReceivedAfterSlippage,
     minSharePrice: poolInfo?.vaultSharePrice,
     destination: account,
-    asBase: activeToken.address === baseToken.address,
-    ethValue: isActiveTokenEth ? depositAmountAsBigInt : undefined,
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onExecuted: (hash) => {
       setAmount("");
