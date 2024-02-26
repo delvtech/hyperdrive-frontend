@@ -94,14 +94,23 @@ export function OpenLongForm({
       decimals: activeToken.decimals,
     });
 
+  // TODO: if this is a steth hyperdrive, the depositAmount must be converted into steth shares before calling openLong
+  if (
+    activeToken.address === sharesToken.address &&
+    sharesToken.tags.includes("steth")
+  ) {
+  }
+
   const { openLong, openLongStatus } = useOpenLong({
     hyperdriveAddress: hyperdrive.address,
-    amount: depositAmountAsBigInt,
+    asBase: activeToken.address === baseToken.address,
+    ...getAmountOrEthValue({
+      isActiveTokenEth,
+      amount: depositAmountAsBigInt,
+    }),
     minBondsOut: bondsReceivedAfterSlippage,
     minSharePrice: poolInfo?.vaultSharePrice,
     destination: account,
-    asBase: activeToken.address === baseToken.address,
-    ethValue: isActiveTokenEth ? depositAmountAsBigInt : undefined,
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onExecuted: (hash) => {
       setAmount("");
@@ -207,4 +216,24 @@ export function OpenLongForm({
       })()}
     />
   );
+}
+
+function getAmountOrEthValue({
+  isActiveTokenEth,
+  amount,
+}: {
+  isActiveTokenEth: boolean;
+  amount: bigint | undefined;
+}) {
+  if (isActiveTokenEth) {
+    return {
+      amount: undefined,
+      ethValue: amount,
+    };
+  }
+
+  return {
+    amount,
+    ethValue: undefined,
+  };
 }

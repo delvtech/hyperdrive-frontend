@@ -7,22 +7,22 @@ import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransac
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
-interface UseOpenLongOptions {
+type UseOpenLongOptionsBase = {
   hyperdriveAddress: Address;
   destination: Address | undefined;
   minSharePrice: bigint | undefined;
-  amount: bigint | undefined;
   minBondsOut: bigint | undefined;
   asBase?: boolean;
-  ethValue?: bigint;
-
-  /** Controls whether or not an `openLong` callback will be returned to the
-   * caller, useful for disabling buttons and other hooks */
   enabled?: boolean;
-
-  /** Callback to be invoked when the transaction is finalized */
   onExecuted?: (hash: string | undefined) => void;
-}
+};
+
+// Define a union type for the mutually exclusive properties
+type UseOpenLongOptions = UseOpenLongOptionsBase &
+  (
+    | { amount?: bigint; ethValue?: undefined }
+    | { amount?: undefined; ethValue?: bigint }
+  );
 
 interface UseOpenLongResult {
   openLong: (() => void) | undefined;
@@ -45,7 +45,7 @@ export function useOpenLong({
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const mutationEnabled =
-    !!amount &&
+    !!(amount || ethValue) && // must have a valid amount or ethValue argument
     !!minBondsOut &&
     !!destination &&
     minSharePrice !== undefined &&
@@ -55,29 +55,33 @@ export function useOpenLong({
 
   const { mutate: openLong, status } = useMutation({
     mutationFn: async () => {
-      if (mutationEnabled) {
-        const hash = await readWriteHyperdrive.openLong({
-          amount: amount,
-          minBondsOut: minBondsOut,
-          destination,
-          minSharePrice,
-          asBase,
-          options: { value: ethValue },
-        });
-
-        addTransaction({
-          hash,
-          description: "Open Long",
-        });
-
-        await waitForTransactionAndInvalidateCache({
-          publicClient,
-          queryClient,
-          hash,
-        });
-
-        onExecuted?.(hash);
+      if (!mutationEnabled) {
+        return;
       }
+
+      const hash = await readWriteHyperdrive.openLong({
+        // `ethValue` and `amount` are mutually exclusive, therefore if an ethValue
+        // was sent, don't send anything in the amount field
+        amount: ethValue ? 0n : (amount as bigint),
+        minBondsOut: minBondsOut,
+        destination,
+        minSharePrice,
+        asBase,
+        options: { value: ethValue },
+      });
+
+      addTransaction({
+        hash,
+        description: "Open Long",
+      });
+
+      await waitForTransactionAndInvalidateCache({
+        publicClient,
+        queryClient,
+        hash,
+      });
+
+      onExecuted?.(hash);
     },
   });
   return {
