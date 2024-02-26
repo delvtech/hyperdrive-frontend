@@ -31,7 +31,7 @@ export function OpenLpSharesCard({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const { poolInfo } = usePoolInfo(hyperdrive.address);
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const { lpShares } = useLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,

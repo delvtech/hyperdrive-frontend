@@ -7,7 +7,6 @@ import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { convertBaseToShares } from "src/hyperdrive/convertBaseToShares";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -37,7 +36,7 @@ export function OpenShortForm({
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const { poolInfo } = usePoolInfo(hyperdrive.address);
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
@@ -70,22 +69,13 @@ export function OpenShortForm({
     decimals: hyperdrive.decimals,
   });
 
-  // preview calc will always say how much base is required to open the position,
-  // however users can open the position using either base or shares
-  const { baseAmountIn, status: openShortPreviewStatus } = usePreviewOpenShort({
-    hyperdriveAddress: hyperdrive.address,
-    amountOfBondsToShort: amountOfBondsToShortAsBigInt,
-  });
-  // If they're choosing to deposit shares, we need to convert the deposit
-  // amount into shares
-  let depositAmount = baseAmountIn;
-  if (activeToken.address === sharesToken.address) {
-    depositAmount = convertBaseToShares({
-      decimals: sharesToken.decimals,
-      vaultSharePrice: poolInfo?.vaultSharePrice,
-      baseAmount: baseAmountIn,
-    });
-  }
+  const { depositAmount, status: openShortPreviewStatus } = usePreviewOpenShort(
+    {
+      hyperdriveAddress: hyperdrive.address,
+      amountOfBondsToShort: amountOfBondsToShortAsBigInt,
+      asBase: activeToken.address === baseToken.address,
+    },
+  );
 
   const hasEnoughBalance = getHasEnoughBalance({
     amount: depositAmount,
@@ -216,7 +206,7 @@ export function OpenShortForm({
               token={activeToken}
               tokenBalance={activeTokenBalance}
               amountAsBigInt={depositAmount}
-              amount={formatUnits(baseAmountIn || 0n, activeToken.decimals)}
+              amount={formatUnits(depositAmount || 0n, activeToken.decimals)}
             />
           );
         }

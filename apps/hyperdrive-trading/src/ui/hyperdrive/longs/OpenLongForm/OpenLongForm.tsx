@@ -6,7 +6,6 @@ import {
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
-import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -35,7 +34,7 @@ export function OpenLongForm({
   const { address: account } = useAccount();
 
   const appConfig = useAppConfig();
-  const { poolInfo } = usePoolInfo(hyperdrive.address);
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -81,19 +80,10 @@ export function OpenLongForm({
     amount: depositAmountAsBigInt,
   });
 
-  // The preview calc only accepts base, so if the user is depositing shares we
-  // need to convert that value to base before we can preview the trade for them
-  let depositAmountConvertedToBase = depositAmountAsBigInt;
-  if (activeToken.address === sharesToken.address) {
-    depositAmountConvertedToBase = convertSharesToBase({
-      decimals: sharesToken.decimals,
-      sharesAmount: depositAmountAsBigInt,
-      vaultSharePrice: poolInfo?.vaultSharePrice,
-    });
-  }
   const { bondsReceived, status: openLongPreviewStatus } = usePreviewOpenLong({
     hyperdriveAddress: hyperdrive.address,
-    baseAmount: depositAmountConvertedToBase,
+    amountIn: depositAmountAsBigInt,
+    asBase: activeToken.address === baseToken.address,
   });
 
   const bondsReceivedAfterSlippage =

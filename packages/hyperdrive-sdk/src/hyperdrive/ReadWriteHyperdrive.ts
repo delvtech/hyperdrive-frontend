@@ -5,8 +5,6 @@ import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
 } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
-import { Long } from "src/longs/types";
-import { Short } from "src/shorts/types";
 import { ContractWriteOptions } from "@delvtech/evm-client";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { ReturnType } from "src/base/ReturnType";
