@@ -9,12 +9,14 @@ import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
+import { getHasEnoughLiquidity } from "src/token/getHasEnoughLiquidity";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
@@ -85,6 +87,15 @@ export function OpenLongForm({
       [poolInfo?.vaultSharePrice || 0n, activeToken.decimals],
     )[0];
   }
+
+  const { maxBaseIn } = useMaxLong({
+    hyperdriveAddress: hyperdrive.address,
+  });
+
+  const hasEnoughLiquidity = getHasEnoughLiquidity({
+    amount: finalAmount,
+    liquidity: maxBaseIn,
+  });
 
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
     hyperdriveAddress: hyperdrive.address,
@@ -166,17 +177,28 @@ export function OpenLongForm({
           }}
         />
       }
-      disclaimer={
-        !!amountAsBigInt && !hasEnoughBalance ? (
-          <p className="text-center text-sm text-error">Insufficient balance</p>
-        ) : undefined
-      }
+      disclaimer={(() => {
+        if (!!amountAsBigInt && !hasEnoughBalance) {
+          return (
+            <p className="text-center text-sm text-error">
+              Insufficient balance
+            </p>
+          );
+        }
+        if (!hasEnoughLiquidity && !!amountAsBigInt) {
+          return (
+            <p className="text-center text-sm text-error">
+              Insufficient liquidity
+            </p>
+          );
+        }
+      })()}
       actionButton={(() => {
         if (!account) {
           return <ConnectWalletButton />;
         }
 
-        if (!hasEnoughBalance) {
+        if (!hasEnoughBalance || !hasEnoughLiquidity) {
           return (
             <button
               disabled
