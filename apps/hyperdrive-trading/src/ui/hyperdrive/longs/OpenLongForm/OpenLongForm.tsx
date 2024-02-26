@@ -7,6 +7,7 @@ import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { getAmountOrEthValue } from "src/hyperdrive/getAmountOrEthValue";
+import { getHasEnoughLiquidity } from "src/hyperdrive/getHasEnoughLiquidity";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -15,6 +16,7 @@ import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessag
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
@@ -29,7 +31,6 @@ import { useAccount } from "wagmi";
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
 }
-
 export function OpenLongForm({
   hyperdrive: hyperdrive,
 }: OpenLongFormProps): ReactElement {
@@ -80,6 +81,16 @@ export function OpenLongForm({
   const hasEnoughBalance = getHasEnoughBalance({
     balance: activeTokenBalance?.value,
     amount: depositAmountAsBigInt,
+  });
+
+  const { maxBaseIn, maxSharesIn } = useMaxLong({
+    hyperdriveAddress: hyperdrive.address,
+  });
+
+  const hasEnoughLiquidity = getHasEnoughLiquidity({
+    tradeAmount: depositAmountAsBigInt,
+    maxTradeSize:
+      activeToken.address === sharesToken.address ? maxSharesIn : maxBaseIn,
   });
 
   const { bondsReceived, status: openLongPreviewStatus } = usePreviewOpenLong({
@@ -177,17 +188,28 @@ export function OpenLongForm({
           }}
         />
       }
-      disclaimer={
-        !!depositAmountAsBigInt && !hasEnoughBalance ? (
-          <p className="text-center text-sm text-error">Insufficient balance</p>
-        ) : undefined
-      }
+      disclaimer={(() => {
+        if (!!depositAmountAsBigInt && !hasEnoughBalance) {
+          return (
+            <p className="text-center text-sm text-error">
+              Insufficient balance
+            </p>
+          );
+        }
+        if (!!depositAmountAsBigInt && !hasEnoughLiquidity) {
+          return (
+            <p className="text-center text-sm text-error">
+              Insufficient liquidity
+            </p>
+          );
+        }
+      })()}
       actionButton={(() => {
         if (!account) {
           return <ConnectWalletButton />;
         }
 
-        if (!hasEnoughBalance) {
+        if (!hasEnoughBalance || !hasEnoughLiquidity) {
           return (
             <button
               disabled

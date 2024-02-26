@@ -196,6 +196,7 @@ export interface IReadHyperdrive {
    */
   getMaxLong(options?: ContractReadOptions): Promise<{
     maxBaseIn: bigint;
+    maxSharesIn: bigint;
     maxBondsOut: bigint;
   }>;
 
@@ -1123,6 +1124,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
       MAX_UINT256.toString(),
       checkpointExposure.toString(),
     );
+
+    const maxSharesIn = dnum.multiply(
+      [BigInt(maxBaseIn), 18],
+      [poolInfo?.vaultSharePrice, 18],
+    )[0];
+
     const maxBondsOut = hyperwasm.calcOpenLong(
       stringifiedPoolInfo,
       stringifiedPoolConfig,
@@ -1131,6 +1138,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
     return {
       maxBaseIn: BigInt(maxBaseIn),
+      maxSharesIn: BigInt(maxSharesIn),
       maxBondsOut: BigInt(maxBondsOut),
     };
   }
