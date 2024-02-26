@@ -29,7 +29,7 @@ export function OpenWithdrawalSharesCard({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const { poolInfo } = usePoolInfo(hyperdrive.address);
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const { withdrawalShares } = useWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
     account,

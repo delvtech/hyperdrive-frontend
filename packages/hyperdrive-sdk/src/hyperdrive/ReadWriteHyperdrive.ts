@@ -5,8 +5,6 @@ import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
 } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
-import { Long } from "src/longs/types";
-import { Short } from "src/shorts/types";
 import { ContractWriteOptions } from "@delvtech/evm-client";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { ReturnType } from "src/base/ReturnType";
@@ -63,8 +61,8 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    */
   openLong(args: {
     destination: Address;
-    baseAmount: bigint;
-    bondAmountOut: bigint;
+    amount: bigint;
+    minBondsOut: bigint;
     asUnderlying?: boolean;
     options?: ContractWriteOptions;
   }): Promise<`0x${string}`>;
@@ -89,7 +87,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
 
   /**
    * Closes a long position.
-   * @param long - The long position to close
+   * @param maturityTime - The maturity time of the long
    * @param bondAmountIn - The amount of of bonds to remove from the position
    * @param minBaseAmountOut - The minimum amount of base to send to the destination
    * @param destination - The account receiving the base
@@ -98,7 +96,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @return The amount of underlying asset the user receives.
    */
   closeLong(args: {
-    long: Long;
+    maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
     destination: Address;
@@ -108,7 +106,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
 
   /**
    * Closes a short position.
-   * @param short - The short position to close
+   * @param maturityTime - The maturity time of the short
    * @param bondAmountIn - The amount of bonds to remove from the position
    * @param minBaseAmountOut - The minimum amount of base to send to the destination
    * @param destination - The account receiving the base
@@ -117,7 +115,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @return The amount of base tokens produced by closing this short
    */
   closeShort(args: {
-    short: Short;
+    maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
     destination: Address;
@@ -244,16 +242,16 @@ export class ReadWriteHyperdrive
 
   async openLong({
     destination,
-    baseAmount,
-    bondAmountOut,
+    amount,
+    minBondsOut,
     minSharePrice,
     asBase = true,
     extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     destination: Address;
-    baseAmount: bigint;
-    bondAmountOut: bigint;
+    amount: bigint;
+    minBondsOut: bigint;
     minSharePrice: bigint;
     asBase?: boolean;
     extraData?: `0x${string}`;
@@ -262,8 +260,8 @@ export class ReadWriteHyperdrive
     return this.contract.write(
       "openLong",
       {
-        _amount: baseAmount,
-        _minOutput: bondAmountOut,
+        _amount: amount,
+        _minOutput: minBondsOut,
         _minVaultSharePrice: minSharePrice,
         _options: { destination, asBase, extraData },
       },
@@ -301,7 +299,7 @@ export class ReadWriteHyperdrive
   }
 
   closeLong({
-    long,
+    maturityTime,
     bondAmountIn,
     minAmountOut,
     destination,
@@ -309,7 +307,7 @@ export class ReadWriteHyperdrive
     extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
-    long: Long;
+    maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
     destination: Address;
@@ -320,7 +318,7 @@ export class ReadWriteHyperdrive
     return this.contract.write(
       "closeLong",
       {
-        _maturityTime: long.maturity,
+        _maturityTime: maturityTime,
         _bondAmount: bondAmountIn,
         _minOutput: minAmountOut,
         _options: { destination, asBase, extraData },
@@ -330,7 +328,7 @@ export class ReadWriteHyperdrive
   }
 
   closeShort({
-    short,
+    maturityTime,
     bondAmountIn,
     minAmountOut,
     destination,
@@ -338,7 +336,7 @@ export class ReadWriteHyperdrive
     extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
-    short: Short;
+    maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
     destination: Address;
@@ -349,7 +347,7 @@ export class ReadWriteHyperdrive
     return this.contract.write(
       "closeShort",
       {
-        _maturityTime: short.maturity,
+        _maturityTime: maturityTime,
         _bondAmount: bondAmountIn,
         _minOutput: minAmountOut,
         _options: { destination, asBase, extraData },

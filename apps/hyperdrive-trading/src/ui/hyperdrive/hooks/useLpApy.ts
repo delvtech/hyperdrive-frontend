@@ -12,7 +12,7 @@ export function useLpApy(hyperdriveAddress: Address): {
   const chainId = useChainId();
   const isDevnet = !!import.meta.env.VITE_LOCALHOST_NODE_RPC_URL;
   const { data: blockNumber } = useBlockNumber();
-  const { poolInfo: currentPoolInfo } = usePoolInfo(hyperdriveAddress);
+  const { poolInfo: currentPoolInfo } = usePoolInfo({ hyperdriveAddress });
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive && !!blockNumber && !!currentPoolInfo;
   const { data, status } = useQuery({

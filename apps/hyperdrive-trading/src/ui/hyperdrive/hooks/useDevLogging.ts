@@ -17,7 +17,7 @@ export function useDevLogging(market: HyperdriveConfig): void {
     }
   }, [baseToken.decimals, market.poolConfig]);
 
-  const { poolInfo } = usePoolInfo(market.address);
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: market.address });
   useEffect(() => {
     if (import.meta.env.DEV) {
       console.log("Pool Info:");

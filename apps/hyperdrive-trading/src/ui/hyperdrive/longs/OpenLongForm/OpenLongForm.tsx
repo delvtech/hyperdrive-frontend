@@ -30,14 +30,13 @@ import { useAccount } from "wagmi";
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
 }
-
 export function OpenLongForm({
   hyperdrive: hyperdrive,
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
 
   const appConfig = useAppConfig();
-  const { poolInfo } = usePoolInfo(hyperdrive.address);
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -65,25 +64,29 @@ export function OpenLongForm({
     tokenAddress: activeToken.address,
   });
 
-  const { amount, amountAsBigInt, setAmount } = useNumericInput({
+  const {
+    amount: depositAmount,
+    amountAsBigInt: depositAmountAsBigInt,
+    setAmount,
+  } = useNumericInput({
     decimals: activeToken.decimals,
   });
 
   const hasEnoughAllowance = getHasEnoughAllowance({
     requiresAllowance,
     allowance: activeTokenAllowance,
-    amount: amountAsBigInt,
+    amount: depositAmountAsBigInt,
   });
   const hasEnoughBalance = getHasEnoughBalance({
     balance: activeTokenBalance?.value,
-    amount: amountAsBigInt,
+    amount: depositAmountAsBigInt,
   });
 
-  let finalAmount = amountAsBigInt;
+  let finalAmount = depositAmountAsBigInt;
 
   if (activeToken.address === sharesToken.address) {
     finalAmount = dnum.multiply(
-      [amountAsBigInt || 0n, activeToken.decimals],
+      [depositAmountAsBigInt || 0n, activeToken.decimals],
       [poolInfo?.vaultSharePrice || 0n, activeToken.decimals],
     )[0];
   }
@@ -97,26 +100,28 @@ export function OpenLongForm({
     liquidity: maxBaseIn,
   });
 
-  const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
+  const { bondsReceived, status: openLongPreviewStatus } = usePreviewOpenLong({
     hyperdriveAddress: hyperdrive.address,
-    baseAmount: finalAmount,
+    amountIn: depositAmountAsBigInt,
+    asBase: activeToken.address === baseToken.address,
   });
 
-  const longAmountOutAfterSlippage =
-    longAmountOut &&
+  const bondsReceivedAfterSlippage =
+    bondsReceived &&
     adjustAmountByPercentage({
-      amount: longAmountOut,
+      amount: bondsReceived,
+      percentage: 1n,
       decimals: activeToken.decimals,
     });
 
   const { openLong, openLongStatus } = useOpenLong({
     hyperdriveAddress: hyperdrive.address,
-    baseAmount: amountAsBigInt,
-    bondAmountOut: longAmountOutAfterSlippage,
+    amount: depositAmountAsBigInt,
+    minBondsOut: bondsReceivedAfterSlippage,
     minSharePrice: poolInfo?.vaultSharePrice,
     destination: account,
     asBase: activeToken.address === baseToken.address,
-    ethValue: isActiveTokenEth ? amountAsBigInt : undefined,
+    ethValue: isActiveTokenEth ? depositAmountAsBigInt : undefined,
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onExecuted: (hash) => {
       setAmount("");
@@ -145,7 +150,7 @@ export function OpenLongForm({
               }}
             />
           }
-          value={amount ?? ""}
+          value={depositAmount ?? ""}
           maxValue={activeTokenBalance?.formatted}
           inputLabel="Amount to spend"
           stat={
@@ -164,9 +169,9 @@ export function OpenLongForm({
         <OpenLongPreview
           hyperdrive={hyperdrive}
           long={{
-            bondAmount: longAmountOut || 0n,
+            bondAmount: bondsReceived || 0n,
             assetId: 0n,
-            baseAmountPaid: amountAsBigInt || 0n,
+            baseAmountPaid: depositAmountAsBigInt || 0n,
             maturity: BigInt(
               Math.round(
                 (Date.now() +
@@ -178,14 +183,14 @@ export function OpenLongForm({
         />
       }
       disclaimer={(() => {
-        if (!!amountAsBigInt && !hasEnoughBalance) {
+        if (!!depositAmountAsBigInt && !hasEnoughBalance) {
           return (
             <p className="text-center text-sm text-error">
               Insufficient balance
             </p>
           );
         }
-        if (!hasEnoughLiquidity && !!amountAsBigInt) {
+        if (!hasEnoughLiquidity && !!depositAmountAsBigInt) {
           return (
             <p className="text-center text-sm text-error">
               Insufficient liquidity
@@ -215,8 +220,8 @@ export function OpenLongForm({
               spender={hyperdrive.address}
               token={activeToken}
               tokenBalance={activeTokenBalance}
-              amountAsBigInt={amountAsBigInt}
-              amount={amount}
+              amountAsBigInt={depositAmountAsBigInt}
+              amount={depositAmount}
             />
           );
         }

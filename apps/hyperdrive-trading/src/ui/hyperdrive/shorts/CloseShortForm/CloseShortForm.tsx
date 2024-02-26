@@ -74,12 +74,13 @@ export function CloseShortForm({
     amountOut &&
     adjustAmountByPercentage({
       amount: amountOut,
+      percentage: 1n,
       decimals: baseToken.decimals,
     });
 
   const { closeShort, isPendingWalletAction } = useCloseShort({
     hyperdriveAddress: hyperdrive.address,
-    short,
+    maturityTime: short.maturity,
     bondAmountIn: amountAsBigInt,
     minAmountOut: closeShortAmountAfterSlippage,
     destination: account,
