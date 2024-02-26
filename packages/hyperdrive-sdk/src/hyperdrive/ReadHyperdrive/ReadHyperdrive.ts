@@ -425,7 +425,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const config = await this.getPoolConfig(options);
     const info = await this.getPoolInfo(options);
 
-    const aprString = await hyperwasm.getSpotRate(
+    const aprString = hyperwasm.getSpotRate(
       convertBigIntsToStrings(info),
       convertBigIntsToStrings(config),
     );
@@ -1289,7 +1289,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       });
     }
 
-    const bondProceeds = await hyperwasm.calcOpenLong(
+    const bondProceeds = hyperwasm.calcOpenLong(
       convertBigIntsToStrings(poolInfo),
       convertBigIntsToStrings(poolConfig),
       depositAmountConvertedToBase.toString(),
@@ -1323,7 +1323,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     );
 
     const baseDepositAmount = BigInt(
-      await hyperwasm.calcOpenShort(
+      hyperwasm.calcOpenShort(
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
         amountOfBondsToShort.toString(),
