@@ -1314,14 +1314,16 @@ export class ReadHyperdrive implements IReadHyperdrive {
       poolConfig.checkpointDuration,
     );
 
-    const baseDepositAmount = await hyperwasm.calcOpenShort(
-      convertBigIntsToStrings(poolInfo),
-      convertBigIntsToStrings(poolConfig),
-      amountOfBondsToShort.toString(),
+    const baseDepositAmount = BigInt(
+      await hyperwasm.calcOpenShort(
+        convertBigIntsToStrings(poolInfo),
+        convertBigIntsToStrings(poolConfig),
+        amountOfBondsToShort.toString(),
+      ),
     );
     // calcOpenShort only returns the preview in terms of base, so if the user
     // wants to deposit shares we need to convert that value to shares.
-    let depositAmount = BigInt(baseDepositAmount);
+    let depositAmount = baseDepositAmount;
     if (!asBase) {
       depositAmount = convertBaseToShares({
         decimals: decimals,
