@@ -245,3 +245,23 @@ export function OpenLongForm({
     />
   );
 }
+
+function getAmountOrEthValue({
+  isActiveTokenEth,
+  amount,
+}: {
+  isActiveTokenEth: boolean;
+  amount: bigint | undefined;
+}) {
+  if (isActiveTokenEth) {
+    return {
+      amount: undefined,
+      ethValue: amount,
+    };
+  }
+
+  return {
+    amount,
+    ethValue: undefined,
+  };
+}
