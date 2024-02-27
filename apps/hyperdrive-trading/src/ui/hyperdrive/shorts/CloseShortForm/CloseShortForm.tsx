@@ -23,6 +23,7 @@ import { useAccount } from "wagmi";
 
 interface CloseShortFormProps {
   hyperdrive: HyperdriveConfig;
+  // TODO: Refactor this to only need the positionSize and maturity time
   short: OpenShort;
   onCloseShort?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
@@ -57,17 +58,18 @@ export function CloseShortForm({
     decimals: baseToken.decimals,
   });
 
-  const isAmountValid = !!(
-    amountAsBigInt && amountAsBigInt <= short.bondAmount
+  // You can't close an amount that's larger than the position size
+  const isAmountLargerThanPositionSize = !!(
+    amountAsBigInt && amountAsBigInt > short.bondAmount
   );
   const { amountOut, previewCloseShortStatus } = usePreviewCloseShort({
-    hyperdriveAddress: short.hyperdriveAddress,
+    hyperdriveAddress: hyperdrive.address,
     maturityTime: short.maturity,
     shortAmountIn: amountAsBigInt,
     minAmountOut: 0n,
     destination: account,
     asBase: activeWithdrawToken.address === baseToken.address,
-    enabled: isAmountValid,
+    enabled: !isAmountLargerThanPositionSize,
   });
 
   const closeShortAmountAfterSlippage =
@@ -84,7 +86,8 @@ export function CloseShortForm({
     bondAmountIn: amountAsBigInt,
     minAmountOut: closeShortAmountAfterSlippage,
     destination: account,
-    enabled: previewCloseShortStatus === "success" && isAmountValid,
+    enabled:
+      previewCloseShortStatus === "success" && !isAmountLargerThanPositionSize,
     asBase: activeWithdrawToken.address === baseToken.address,
     onExecuted: (hash) => {
       setAmount("");
@@ -156,7 +159,7 @@ export function CloseShortForm({
         />
       }
       disclaimer={
-        !!amountAsBigInt && !isAmountValid ? (
+        !!amountAsBigInt && isAmountLargerThanPositionSize ? (
           <p className="text-center text-error">Insufficient balance</p>
         ) : null
       }
@@ -164,7 +167,11 @@ export function CloseShortForm({
         account ? (
           <button
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            disabled={!closeShort || isPendingWalletAction || !isAmountValid}
+            disabled={
+              !closeShort ||
+              isPendingWalletAction ||
+              isAmountLargerThanPositionSize
+            }
             onClick={() => {
               closeShort?.();
             }}
