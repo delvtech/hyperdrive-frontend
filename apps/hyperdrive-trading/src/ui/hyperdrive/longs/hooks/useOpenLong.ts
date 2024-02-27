@@ -7,22 +7,17 @@ import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransac
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
-type UseOpenLongOptionsBase = {
+interface UseOpenLongOptions {
   hyperdriveAddress: Address;
   destination: Address | undefined;
   minSharePrice: bigint | undefined;
   minBondsOut: bigint | undefined;
+  amount: bigint | undefined;
+  ethValue?: bigint;
   asBase?: boolean;
   enabled?: boolean;
   onExecuted?: (hash: string | undefined) => void;
-};
-
-// Define a union type for the mutually exclusive properties
-type UseOpenLongOptions = UseOpenLongOptionsBase &
-  (
-    | { amount?: bigint; ethValue?: undefined }
-    | { amount?: undefined; ethValue?: bigint }
-  );
+}
 
 interface UseOpenLongResult {
   openLong: (() => void) | undefined;
@@ -45,7 +40,7 @@ export function useOpenLong({
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const mutationEnabled =
-    !!(amount || ethValue) && // must have a valid amount or ethValue argument
+    !!amount &&
     !!minBondsOut &&
     !!destination &&
     minSharePrice !== undefined &&
@@ -60,9 +55,7 @@ export function useOpenLong({
       }
 
       const hash = await readWriteHyperdrive.openLong({
-        // `ethValue` and `amount` are mutually exclusive, therefore if an ethValue
-        // was sent, don't send anything in the amount field
-        amount: ethValue ? 0n : (amount as bigint),
+        amount,
         minBondsOut: minBondsOut,
         destination,
         minSharePrice,

@@ -6,7 +6,6 @@ import {
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
-import { getAmountOrEthValue } from "src/hyperdrive/getAmountOrEthValue";
 import { getHasEnoughLiquidity } from "src/hyperdrive/getHasEnoughLiquidity";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -27,6 +26,7 @@ import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useConvertStethTokensToStethShares } from "src/ui/vaults/steth/useConvertStethTokensToStethShares";
+import { getIsSteth } from "src/vaults/isSteth";
 import { useAccount } from "wagmi";
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
@@ -110,8 +110,7 @@ export function OpenLongForm({
   // If user is depositing steth, the depositAmount must be converted from steth
   // tokens into steth shares before calling openLong
   const isActiveTokenSteth =
-    activeToken.address === sharesToken.address &&
-    sharesToken.tags.includes("steth");
+    activeToken.address === sharesToken.address && getIsSteth(sharesToken);
   const { stethShares } = useConvertStethTokensToStethShares({
     lidoAddress: sharesToken.address,
     stethTokenAmount: depositAmountAsBigInt,
@@ -121,10 +120,8 @@ export function OpenLongForm({
   const { openLong, openLongStatus } = useOpenLong({
     hyperdriveAddress: hyperdrive.address,
     asBase: activeToken.address === baseToken.address,
-    ...getAmountOrEthValue({
-      isActiveTokenEth,
-      amount: isActiveTokenSteth ? stethShares : depositAmountAsBigInt,
-    }),
+    amount: isActiveTokenSteth ? stethShares : depositAmountAsBigInt,
+    ethValue: isActiveTokenEth ? depositAmountAsBigInt : undefined,
     minBondsOut: bondsReceivedAfterSlippage,
     minSharePrice: poolInfo?.vaultSharePrice,
     destination: account,
