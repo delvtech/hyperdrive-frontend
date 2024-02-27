@@ -1090,7 +1090,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       stringifiedPoolConfig,
       maxBondsOut,
     );
-    const maxSharesIn = dnum.multiply(
+    const maxSharesIn = dnum.divide(
       [BigInt(maxBaseIn), 18],
       [poolInfo?.vaultSharePrice, 18],
     )[0];
@@ -1131,7 +1131,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       checkpointExposure.toString(),
     );
 
-    const maxSharesIn = dnum.multiply(
+    const maxSharesIn = dnum.divide(
       [BigInt(maxBaseIn), 18],
       [poolInfo?.vaultSharePrice, 18],
     )[0];
