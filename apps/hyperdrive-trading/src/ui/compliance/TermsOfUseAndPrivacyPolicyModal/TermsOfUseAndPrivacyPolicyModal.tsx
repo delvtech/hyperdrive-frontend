@@ -1,8 +1,12 @@
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
+import Markdown from "react-markdown";
+import tosContent from "src/public/tos-privacy.md";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { privacyPolicyUrl } from "src/ui/compliance/privacyPolicy";
 import { termsOfUseUrl } from "src/ui/compliance/termsOfUse";
 import { useTermsOfUseAndPrivacyPolicyAccepted } from "src/ui/compliance/useTermsOfUseAndPrivacyPolicyAccepted";
+
+import { useBottomScrollListener } from "react-bottom-scroll-listener";
 
 export function TermsOfUseAndPrivacyPolicyModal(): ReactElement {
   const {
@@ -11,6 +15,13 @@ export function TermsOfUseAndPrivacyPolicyModal(): ReactElement {
     setIsTermsOfUseAndPrivacyPolicyAccepted:
       setIsTermsOfServiceAndPrivacyPolicyAccepted,
   } = useTermsOfUseAndPrivacyPolicyAccepted();
+  const [buttonDisabled, setButtonDisabled] = useState(true);
+
+  const callback = () => {
+    setButtonDisabled(false);
+  };
+
+  const scrollRef = useBottomScrollListener(callback);
   return (
     <Modal
       forceOpen={!isTermsOfServiceAndPrivacePolicyAccepted}
@@ -39,7 +50,16 @@ export function TermsOfUseAndPrivacyPolicyModal(): ReactElement {
             </a>{" "}
             to use this app.
           </p>
+          <article
+            ref={scrollRef}
+            className="max-h-[200px] w-full max-w-5xl overflow-y-scroll rounded-md border border-neutral-content p-2"
+          >
+            <Markdown className="markdown p-2">
+              {tosContent.toString()}
+            </Markdown>
+          </article>
           <button
+            disabled={buttonDisabled}
             className="daisy-btn daisy-btn-primary"
             onClick={() => setIsTermsOfServiceAndPrivacyPolicyAccepted(true)}
           >

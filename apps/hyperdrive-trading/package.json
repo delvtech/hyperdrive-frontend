@@ -45,10 +45,12 @@
     "lodash.uniqby": "^4.7.0",
     "process": "^0.11.10",
     "react": "^18.2.0",
+    "react-bottom-scroll-listener": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-hot-toast": "^2.4.0",
     "react-loading-skeleton": "^3.3.1",
+    "react-markdown": "^9.0.1",
     "react-use": "^17.4.2",
     "viem": "^2.7.8",
     "wagmi": "^2.5.7"
