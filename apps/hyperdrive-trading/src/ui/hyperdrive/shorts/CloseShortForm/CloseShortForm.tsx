@@ -1,7 +1,10 @@
 import {
+  EmptyExtensions,
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
+  TokenConfig,
+  YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage, OpenShort } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
@@ -18,6 +21,8 @@ import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewC
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
+import { getIsSteth } from "src/vaults/isSteth";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
@@ -72,19 +77,19 @@ export function CloseShortForm({
     enabled: !isAmountLargerThanPositionSize,
   });
 
-  const closeShortAmountAfterSlippage =
+  const minAmountOutAfterSlippage =
     amountOut &&
     adjustAmountByPercentage({
       amount: amountOut,
       percentage: 1n,
-      decimals: baseToken.decimals,
+      decimals: activeWithdrawToken.decimals,
     });
 
   const { closeShort, isPendingWalletAction } = useCloseShort({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: short.maturity,
     bondAmountIn: amountAsBigInt,
-    minAmountOut: closeShortAmountAfterSlippage,
+    minAmountOut: minAmountOutAfterSlippage,
     destination: account,
     enabled:
       previewCloseShortStatus === "success" && !isAmountLargerThanPositionSize,
@@ -100,6 +105,19 @@ export function CloseShortForm({
       );
     },
   });
+
+  // If withdrawing in steth shares, convert them to steth tokens to show a
+  // meaningful value to the user in the transactionPreview
+  const isActiveWithdrawTokenSteth = getIsSteth(activeWithdrawToken);
+  const { stethTokenAmount: stethTokenAmountOut } =
+    useConvertStethSharesToStethTokens({
+      stethShares: amountOut,
+      lidoAddress: sharesToken.address,
+      enabled: isActiveWithdrawTokenSteth,
+    });
+  const stethOrWithdrawTokenAmount = isActiveWithdrawTokenSteth
+    ? stethTokenAmountOut
+    : amountOut;
 
   return (
     <TransactionView
@@ -146,9 +164,9 @@ export function CloseShortForm({
           label="You receive"
           value={
             <p className="font-bold">
-              {amountOut
+              {stethOrWithdrawTokenAmount
                 ? `${formatBalance({
-                    balance: amountOut,
+                    balance: stethOrWithdrawTokenAmount,
                     decimals: baseToken.decimals,
                     places: 8,
                   })}`
@@ -184,4 +202,28 @@ export function CloseShortForm({
       }
     />
   );
+}
+
+function formatYouReceiveLabel({
+  isActiveTokenSteth,
+  stethTokenAmountOut,
+  withdrawAmount,
+  activeWithdrawToken,
+}: {
+  isActiveTokenSteth: boolean;
+  stethTokenAmountOut: bigint | undefined;
+  withdrawAmount: bigint | undefined;
+  activeWithdrawToken: TokenConfig<EmptyExtensions | YieldSourceExtensions>;
+}) {
+  let amountToFormat = 0n;
+  if (isActiveTokenSteth && stethTokenAmountOut) {
+    amountToFormat = stethTokenAmountOut;
+  } else if (!isActiveTokenSteth && withdrawAmount) {
+    amountToFormat = withdrawAmount;
+  }
+  return `${formatBalance({
+    balance: amountToFormat,
+    decimals: activeWithdrawToken.decimals,
+    places: 8,
+  })} ${activeWithdrawToken.symbol}`;
 }
