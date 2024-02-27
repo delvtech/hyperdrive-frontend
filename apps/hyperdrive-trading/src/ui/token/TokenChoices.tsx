@@ -29,7 +29,13 @@ export function TokenChoices({
           return (
             <label
               key={address}
-              className="inline-flex cursor-pointer items-center justify-end gap-2"
+              className={classNames(
+                "inline-flex items-center justify-end gap-2",
+                {
+                  "cursor-not-allowed text-gray-100": disabled,
+                  "cursor-pointer": !disabled,
+                },
+              )}
             >
               <input
                 type="radio"
@@ -37,7 +43,9 @@ export function TokenChoices({
                 disabled={!!disabled}
                 checked={checked}
                 className={classNames("daisy-radio daisy-radio-xs", {
-                  "daisy-radio-primary": checked,
+                  // show as primary when disabled otherwise the radio button
+                  // doesn't look right (it's the same color as the background)
+                  "daisy-radio-primary": checked || disabled,
                 })}
                 onChange={() => {
                   onTokenChange(address);
