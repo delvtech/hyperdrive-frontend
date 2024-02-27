@@ -5,13 +5,13 @@ Viem adapter for the [@hyperdrive/sdk](/packages/hyperdrive-sdk/).
 ### Installation
 
 ```bash
-npm install @hyperdrive/sdk-viem
+npm install @delvtech/hyperdrive-viem
 ```
 
 ### Quick Start
 
 ```typescript
-import { ViemReadHyperdrive } from "@hyperdrive/sdk-viem";
+import { ViemReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { publicClient } from "./client";
 
 const hyperdrive = new ViemReadHyperdrive({

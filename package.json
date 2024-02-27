@@ -19,7 +19,7 @@
     "format:check": "turbo run format:check",
     "postinstall": "husky install",
     "typecheck": "turbo run typecheck",
-    "new-hyperwasm-just-dropped": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && rm -rf packages/{hyperdrive-sdk,hyperdrive-viem}/dist && yarn cache clean && yarn && yarn workspace @hyperdrive/sdk run build && yarn workspace @hyperdrive/sdk-viem run build"
+    "new-hyperwasm-just-dropped": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && rm -rf packages/{hyperdrive-sdk,hyperdrive-viem}/dist && yarn cache clean && yarn && yarn workspace @hyperdrive/sdk run build && yarn workspace @delvtech/hyperdrive-viem run build"
   },
   "devDependencies": {
     "@hyperdrive/prettier-config": "*",

@@ -1,5 +1,5 @@
 {
-  "name": "@hyperdrive/sdk-viem",
+  "name": "@delvtech/hyperdrive-viem",
   "version": "0.0.0",
   "license": "MIT",
   "type": "module",

@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-key */
+import { OpenShort } from "@delvtech/hyperdrive-viem";
 import {
   ChevronDownIcon,
   ChevronUpIcon,
@@ -11,7 +12,6 @@ import {
   TokenConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
-import { OpenShort } from "@hyperdrive/sdk-viem";
 import {
   createColumnHelper,
   flexRender,

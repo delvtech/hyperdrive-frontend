@@ -1,7 +1,7 @@
 import {
   ReadWriteHyperdrive,
   createReadWriteHyperdrive,
-} from "@hyperdrive/sdk-viem";
+} from "@delvtech/hyperdrive-viem";
 import { useMemo } from "react";
 import { querySdkCache } from "src/sdk/sdkCache";
 import { Address } from "viem";

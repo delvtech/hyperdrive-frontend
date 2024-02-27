@@ -1,3 +1,4 @@
+import { createReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import {
   EmptyExtensions,
   HyperdriveConfig,
@@ -7,7 +8,6 @@ import {
   findYieldSourceToken,
   protocols,
 } from "@hyperdrive/appconfig";
-import { createReadHyperdrive } from "@hyperdrive/sdk-viem";
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";

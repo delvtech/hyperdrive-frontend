@@ -1,14 +1,14 @@
+import {
+  Long,
+  calculateFixedRateFromOpenLong,
+  calculateMatureLongYieldAfterFees,
+} from "@delvtech/hyperdrive-viem";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
   HyperdriveConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
-import {
-  Long,
-  calculateFixedRateFromOpenLong,
-  calculateMatureLongYieldAfterFees,
-} from "@hyperdrive/sdk-viem";
 import {
   createColumnHelper,
   flexRender,

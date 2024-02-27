@@ -1,4 +1,7 @@
-import { ReadHyperdrive, createReadHyperdrive } from "@hyperdrive/sdk-viem";
+import {
+  ReadHyperdrive,
+  createReadHyperdrive,
+} from "@delvtech/hyperdrive-viem";
 import { useMemo } from "react";
 import { querySdkCache } from "src/sdk/sdkCache";
 import { Address } from "viem";
