@@ -83,6 +83,7 @@ export function CloseShortForm({
       amount: amountOut,
       percentage: 1n,
       decimals: activeWithdrawToken.decimals,
+      direction: "down",
     });
 
   const { closeShort, isPendingWalletAction } = useCloseShort({

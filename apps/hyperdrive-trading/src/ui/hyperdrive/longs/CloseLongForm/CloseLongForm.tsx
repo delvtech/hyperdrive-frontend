@@ -95,6 +95,7 @@ export function CloseLongForm({
       amount: withdrawAmount,
       percentage: 1n,
       decimals: activeWithdrawToken.decimals,
+      direction: "down",
     });
 
   const { closeLong, isPendingWalletAction } = useCloseLong({
