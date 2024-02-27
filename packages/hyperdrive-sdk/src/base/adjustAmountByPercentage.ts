@@ -19,11 +19,13 @@ interface AdjustAmountByPercentageOptions {
  *
  * Example:
  *
+ * ```ts
  * adjustAmountByPercentage({
  *   amount: parseUnits("100", 18),
  *   decimals: 18,
  *   percentage: 1n
  * }) === parseUnits("99")
+ * ```
  */
 export function adjustAmountByPercentage({
   amount,
