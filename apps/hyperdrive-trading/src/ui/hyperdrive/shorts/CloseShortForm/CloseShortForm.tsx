@@ -1,7 +1,10 @@
 import {
+  EmptyExtensions,
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
+  TokenConfig,
+  YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage, OpenShort } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
@@ -18,11 +21,14 @@ import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewC
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
+import { getIsSteth } from "src/vaults/isSteth";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface CloseShortFormProps {
   hyperdrive: HyperdriveConfig;
+  // TODO: Refactor this to only need the positionSize and maturity time
   short: OpenShort;
   onCloseShort?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
@@ -57,34 +63,37 @@ export function CloseShortForm({
     decimals: baseToken.decimals,
   });
 
-  const isAmountValid = !!(
-    amountAsBigInt && amountAsBigInt <= short.bondAmount
+  // You can't close an amount that's larger than the position size
+  const isAmountLargerThanPositionSize = !!(
+    amountAsBigInt && amountAsBigInt > short.bondAmount
   );
   const { amountOut, previewCloseShortStatus } = usePreviewCloseShort({
-    hyperdriveAddress: short.hyperdriveAddress,
+    hyperdriveAddress: hyperdrive.address,
     maturityTime: short.maturity,
     shortAmountIn: amountAsBigInt,
     minAmountOut: 0n,
     destination: account,
     asBase: activeWithdrawToken.address === baseToken.address,
-    enabled: isAmountValid,
+    enabled: !isAmountLargerThanPositionSize,
   });
 
-  const closeShortAmountAfterSlippage =
+  const minAmountOutAfterSlippage =
     amountOut &&
     adjustAmountByPercentage({
       amount: amountOut,
       percentage: 1n,
-      decimals: baseToken.decimals,
+      decimals: activeWithdrawToken.decimals,
+      direction: "down",
     });
 
   const { closeShort, isPendingWalletAction } = useCloseShort({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: short.maturity,
     bondAmountIn: amountAsBigInt,
-    minAmountOut: closeShortAmountAfterSlippage,
+    minAmountOut: minAmountOutAfterSlippage,
     destination: account,
-    enabled: previewCloseShortStatus === "success" && isAmountValid,
+    enabled:
+      previewCloseShortStatus === "success" && !isAmountLargerThanPositionSize,
     asBase: activeWithdrawToken.address === baseToken.address,
     onExecuted: (hash) => {
       setAmount("");
@@ -97,6 +106,19 @@ export function CloseShortForm({
       );
     },
   });
+
+  // If withdrawing in steth shares, convert them to steth tokens to show a
+  // meaningful value to the user in the transactionPreview
+  const isActiveWithdrawTokenSteth = getIsSteth(activeWithdrawToken);
+  const { stethTokenAmount: stethTokenAmountOut } =
+    useConvertStethSharesToStethTokens({
+      stethShares: amountOut,
+      lidoAddress: sharesToken.address,
+      enabled: isActiveWithdrawTokenSteth,
+    });
+  const stethOrWithdrawTokenAmount = isActiveWithdrawTokenSteth
+    ? stethTokenAmountOut
+    : amountOut;
 
   return (
     <TransactionView
@@ -143,9 +165,9 @@ export function CloseShortForm({
           label="You receive"
           value={
             <p className="font-bold">
-              {amountOut
+              {stethOrWithdrawTokenAmount
                 ? `${formatBalance({
-                    balance: amountOut,
+                    balance: stethOrWithdrawTokenAmount,
                     decimals: baseToken.decimals,
                     places: 8,
                   })}`
@@ -156,7 +178,7 @@ export function CloseShortForm({
         />
       }
       disclaimer={
-        !!amountAsBigInt && !isAmountValid ? (
+        !!amountAsBigInt && isAmountLargerThanPositionSize ? (
           <p className="text-center text-error">Insufficient balance</p>
         ) : null
       }
@@ -164,7 +186,11 @@ export function CloseShortForm({
         account ? (
           <button
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            disabled={!closeShort || isPendingWalletAction || !isAmountValid}
+            disabled={
+              !closeShort ||
+              isPendingWalletAction ||
+              isAmountLargerThanPositionSize
+            }
             onClick={() => {
               closeShort?.();
             }}
@@ -177,4 +203,28 @@ export function CloseShortForm({
       }
     />
   );
+}
+
+function formatYouReceiveLabel({
+  isActiveTokenSteth,
+  stethTokenAmountOut,
+  withdrawAmount,
+  activeWithdrawToken,
+}: {
+  isActiveTokenSteth: boolean;
+  stethTokenAmountOut: bigint | undefined;
+  withdrawAmount: bigint | undefined;
+  activeWithdrawToken: TokenConfig<EmptyExtensions | YieldSourceExtensions>;
+}) {
+  let amountToFormat = 0n;
+  if (isActiveTokenSteth && stethTokenAmountOut) {
+    amountToFormat = stethTokenAmountOut;
+  } else if (!isActiveTokenSteth && withdrawAmount) {
+    amountToFormat = withdrawAmount;
+  }
+  return `${formatBalance({
+    balance: amountToFormat,
+    decimals: activeWithdrawToken.decimals,
+    places: 8,
+  })} ${activeWithdrawToken.symbol}`;
 }

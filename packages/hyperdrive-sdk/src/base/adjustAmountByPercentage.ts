@@ -12,6 +12,7 @@ interface AdjustAmountByPercentageOptions {
    * The decimals of precision for the `amount`
    */
   decimals: number;
+  direction: "up" | "down";
 }
 
 /**
@@ -24,13 +25,24 @@ interface AdjustAmountByPercentageOptions {
  *   amount: parseUnits("100", 18),
  *   decimals: 18,
  *   percentage: 1n
+ *   direction: "down",
  * }) === parseUnits("99")
+ * ```
+ *
+ * ```ts
+ * adjustAmountByPercentage({
+ *   amount: parseUnits("100", 18),
+ *   decimals: 18,
+ *   percentage: 1n
+ *   direction: "up",
+ * }) === parseUnits("101")
  * ```
  */
 export function adjustAmountByPercentage({
   amount,
   percentage,
   decimals,
+  direction,
 }: AdjustAmountByPercentageOptions): bigint {
   // Check if the input amount is negative and throw an error if true
   if (amount < 0n) {
@@ -44,8 +56,11 @@ export function adjustAmountByPercentage({
   // Calculate the slippage amount
   const slippageAmount = (amountWithDecimals * percentage) / 100n;
 
-  // Subtract the slippage from the amountOut
-  const minOutput = amountWithDecimals - slippageAmount;
+  // Subtract the slippage from the amountOut if "down", or add it if "up"
+  let minOutput = amountWithDecimals - slippageAmount;
+  if (direction === "up") {
+    minOutput = amountWithDecimals + slippageAmount;
+  }
 
   // Handle small values to ensure proper rounding
   if (minOutput < shiftDecimals && minOutput > 0n) {

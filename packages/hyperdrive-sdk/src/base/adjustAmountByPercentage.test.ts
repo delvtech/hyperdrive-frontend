@@ -2,11 +2,28 @@ import { expect, test } from "vitest";
 import { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
 import * as dnum from "dnum";
 
-test("should return adjusted amount when given a basic input", () => {
+test("should return adjusted amount down when given a basic input", () => {
   const [amount] = dnum.from("100", 18);
   const [expectedAmount] = dnum.from("99", 18);
   expect(
-    adjustAmountByPercentage({ amount, percentage: 1n, decimals: 18 }),
+    adjustAmountByPercentage({
+      amount,
+      percentage: 1n,
+      decimals: 18,
+      direction: "down",
+    }),
+  ).toBe(expectedAmount);
+});
+test("should return adjusted amount up when given a basic input", () => {
+  const [amount] = dnum.from("100", 18);
+  const [expectedAmount] = dnum.from("101", 18);
+  expect(
+    adjustAmountByPercentage({
+      amount,
+      percentage: 1n,
+      decimals: 18,
+      direction: "up",
+    }),
   ).toBe(expectedAmount);
 });
 
@@ -18,6 +35,7 @@ test("should handle precision accurately when given precise input amounts", () =
       amount: preciseAmount,
       percentage: 1n,
       decimals: 18,
+      direction: "down",
     }),
   ).toBe(expectedPreciseAmount);
 });
@@ -29,13 +47,19 @@ test("should round down to zero when given the smallest possible positive value"
       amount: roundingAmount,
       percentage: 1n,
       decimals: 18,
+      direction: "down",
     }),
   ).toBe(0n);
 });
 
 test("should return zero when input amount is zero", () => {
   expect(
-    adjustAmountByPercentage({ amount: 0n, percentage: 1n, decimals: 18 }),
+    adjustAmountByPercentage({
+      amount: 0n,
+      percentage: 1n,
+      decimals: 18,
+      direction: "down",
+    }),
   ).toBe(0n);
 });
 
@@ -46,6 +70,7 @@ test("should throw an error when given a negative input amount", () => {
       amount: negativeAmount,
       percentage: 1n,
       decimals: 18,
+      direction: "down",
     });
   }).toThrow(Error("Negative amounts are not allowed"));
 });

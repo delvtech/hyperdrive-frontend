@@ -105,6 +105,7 @@ export function OpenLongForm({
       amount: bondsReceived,
       percentage: 1n,
       decimals: activeToken.decimals,
+      direction: "down",
     });
 
   // If user is depositing steth, the depositAmount must be converted from steth
