@@ -1,10 +1,7 @@
 import {
-  EmptyExtensions,
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
-  TokenConfig,
-  YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
 import { adjustAmountByPercentage, Long } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
@@ -80,19 +77,19 @@ export function CloseLongForm({
     });
 
   // If user is withdrawing steth, the withdrawAmount will be in steth shares,
-  // which must be converted into steth tokens to show the user an amount they
-  // understand
-  const isActiveTokenSteth =
-    activeWithdrawToken.address === sharesToken.address &&
-    getIsSteth(sharesToken);
+  // which must be converted into steth tokens for display purposes
+  const isActiveWithdrawTokenSteth = getIsSteth(activeWithdrawToken);
   const { stethTokenAmount: stethTokenAmountOut } =
     useConvertStethSharesToStethTokens({
       lidoAddress: sharesToken.address,
       stethShares: withdrawAmount,
-      enabled: isActiveTokenSteth,
+      enabled: isActiveWithdrawTokenSteth,
     });
+  const stethOrWithdrawTokenAmount = isActiveWithdrawTokenSteth
+    ? stethTokenAmountOut
+    : withdrawAmount;
 
-  const minOutputAfterSlippage =
+  const minAmountOutAfterSlippage =
     withdrawAmount &&
     adjustAmountByPercentage({
       amount: withdrawAmount,
@@ -104,7 +101,7 @@ export function CloseLongForm({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: long.maturity,
     bondAmountIn: bondAmountAsBigInt,
-    minAmountOut: minOutputAfterSlippage,
+    minAmountOut: minAmountOutAfterSlippage,
     destination: account,
     asBase: activeWithdrawToken.address === baseToken.address,
     enabled: previewCloseLongStatus === "success",
@@ -175,12 +172,18 @@ export function CloseLongForm({
       transactionPreview={
         <LabelValue
           label="You receive"
-          value={formatYouReceiveLabel({
-            isActiveTokenSteth,
-            stethTokenAmountOut,
-            withdrawAmount,
-            activeWithdrawToken,
-          })}
+          value={
+            <p className="font-bold">
+              {stethOrWithdrawTokenAmount
+                ? `${formatBalance({
+                    balance: stethOrWithdrawTokenAmount,
+                    decimals: baseToken.decimals,
+                    places: 8,
+                  })}`
+                : "0"}{" "}
+              {activeWithdrawToken.symbol}
+            </p>
+          }
         />
       }
       actionButton={
@@ -201,28 +204,4 @@ export function CloseLongForm({
       }
     />
   );
-}
-
-function formatYouReceiveLabel({
-  isActiveTokenSteth,
-  stethTokenAmountOut,
-  withdrawAmount,
-  activeWithdrawToken,
-}: {
-  isActiveTokenSteth: boolean;
-  stethTokenAmountOut: bigint | undefined;
-  withdrawAmount: bigint | undefined;
-  activeWithdrawToken: TokenConfig<EmptyExtensions | YieldSourceExtensions>;
-}) {
-  let amountToFormat = 0n;
-  if (isActiveTokenSteth && stethTokenAmountOut) {
-    amountToFormat = stethTokenAmountOut;
-  } else if (!isActiveTokenSteth && withdrawAmount) {
-    amountToFormat = withdrawAmount;
-  }
-  return `${formatBalance({
-    balance: amountToFormat,
-    decimals: activeWithdrawToken.decimals,
-    places: 8,
-  })} ${activeWithdrawToken.symbol}`;
 }
