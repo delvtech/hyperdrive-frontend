@@ -1,11 +1,16 @@
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import {
+  HyperdriveConfig,
+  findBaseToken,
+  findYieldSourceToken,
+} from "@hyperdrive/appconfig";
 import { Long } from "@hyperdrive/sdk";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
+import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
+import { getIsSteth } from "src/vaults/isSteth";
 import { parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
@@ -22,27 +27,46 @@ export function CurrentValueCell({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  // TODO: This needs to be converted to baseAmount if called w/ asBase set to false
-  const { amountOut: baseAmountOut, previewCloseLongStatus } =
-    usePreviewCloseLong({
-      hyperdriveAddress: hyperdrive.address,
-      maturityTime: row.maturity,
-      bondAmountIn: row.bondAmount,
-      minOutput: parseUnits("0", baseToken.decimals),
-      destination: account,
-      asBase: baseToken.address !== ETH_MAGIC_NUMBER,
+  const sharesToken = findYieldSourceToken({
+    yieldSourceTokenAddress: hyperdrive.sharesToken,
+    tokens: appConfig.tokens,
+  });
+
+  // steth markets will close you out to steth shares, which must be converted
+  // into steth tokens
+  const isStethHyperdrive = getIsSteth(sharesToken);
+  const { amountOut, previewCloseLongStatus } = usePreviewCloseLong({
+    hyperdriveAddress: hyperdrive.address,
+    maturityTime: row.maturity,
+    bondAmountIn: row.bondAmount,
+    minOutput: parseUnits("0", baseToken.decimals),
+    destination: account,
+    // You can only withdraw as base if it's not a steth hyperdrive
+    asBase: !isStethHyperdrive,
+  });
+
+  // Steth tokens are 1:1 with eth so they can be used interchangeably with the
+  // base token
+  const { stethTokenAmount: stethTokenAmountOut } =
+    useConvertStethSharesToStethTokens({
+      lidoAddress: sharesToken.address,
+      stethShares: amountOut,
+      enabled: isStethHyperdrive,
     });
+  const amountOutOrStethTokens = isStethHyperdrive
+    ? stethTokenAmountOut
+    : amountOut;
 
   const currentValue =
-    baseAmountOut &&
+    amountOutOrStethTokens &&
     formatBalance({
-      balance: baseAmountOut,
+      balance: amountOutOrStethTokens,
       decimals: baseToken.decimals,
-      places: 2,
+      places: 4,
     });
 
   const isPositiveChangeInValue =
-    baseAmountOut && baseAmountOut > row.baseAmountPaid;
+    amountOutOrStethTokens && amountOutOrStethTokens > row.baseAmountPaid;
   if (previewCloseLongStatus === "error") {
     return <div>Insufficient Liquidity</div>;
   }
@@ -60,9 +84,9 @@ export function CurrentValueCell({
         )}
       >
         <span>{isPositiveChangeInValue ? "+" : ""}</span>
-        {baseAmountOut
+        {amountOutOrStethTokens
           ? `${formatBalance({
-              balance: baseAmountOut - row.baseAmountPaid,
+              balance: amountOutOrStethTokens - row.baseAmountPaid,
               decimals: baseToken.decimals,
               places: 4,
             })} ${baseToken.symbol}`
