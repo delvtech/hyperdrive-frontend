@@ -5,6 +5,7 @@ import {
   ContractReadOptions,
   ContractWriteOptions,
   Network,
+  BlockTag,
 } from "@delvtech/evm-client";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
@@ -26,7 +27,6 @@ import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 import { Checkpoint, CheckpointEvent } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
 import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
-import { BlockTag } from "viem";
 import * as dnum from "dnum";
 import { MAX_UINT256, ZERO_ADDRESS } from "src/base/numbers";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
