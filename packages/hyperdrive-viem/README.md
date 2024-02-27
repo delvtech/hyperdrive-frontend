@@ -1,6 +1,6 @@
 # Viem integrations for the Hyperdrive SDK
 
-Viem adapter for the [@hyperdrive/sdk](/packages/hyperdrive-sdk/).
+Viem adapter for the [@delvtech/hyperdrive-js-core](/packages/hyperdrive-sdk/).
 
 ### Installation
 

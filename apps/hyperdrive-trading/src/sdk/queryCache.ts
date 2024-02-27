@@ -4,7 +4,7 @@ import stringify from "fast-json-stable-stringify";
 
 // Convert SimpleCacheKey to QueryKey
 function convertSimpleCacheKeyToQueryKey(key: SimpleCacheKey): QueryKey {
-  return ["@hyperdrive/sdk", stringify(key)];
+  return ["@delvtech/hyperdrive-js-core", stringify(key)];
 }
 
 export class QueryClientSimpleCache<
