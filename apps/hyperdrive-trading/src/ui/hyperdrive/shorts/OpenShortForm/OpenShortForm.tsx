@@ -27,6 +27,8 @@ import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
+import { getIsSteth } from "src/vaults/isSteth";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 interface OpenShortPositionFormProps {
@@ -79,25 +81,38 @@ export function OpenShortForm({
     },
   );
 
+  // If depositing in shares, steth shares needs to be converted to steth tokens
+  // to determine if the user has enough balance and to show a meaningful value
+  // to the user
+  const isSteth = getIsSteth(activeToken);
+  const { stethTokenAmount: stethTokenDepositAmount } =
+    useConvertStethSharesToStethTokens({
+      stethShares: depositAmount,
+      lidoAddress: activeToken.address,
+      enabled: isSteth,
+    });
+  const stethOrDepositTokenAmount = isSteth
+    ? stethTokenDepositAmount
+    : depositAmount;
+
   const hasEnoughBalance = getHasEnoughBalance({
-    amount: depositAmount,
+    amount: stethOrDepositTokenAmount,
     balance: activeTokenBalance?.value,
   });
 
   const hasEnoughAllowance = getHasEnoughAllowance({
     allowance: activeTokenAllowance,
-    amount: depositAmount,
+    amount: stethOrDepositTokenAmount,
     requiresAllowance,
   });
 
-  const { maxBaseIn, maxSharesIn } = useMaxShort({
+  const { maxBondsOut } = useMaxShort({
     hyperdriveAddress: hyperdrive.address,
   });
 
   const hasEnoughLiquidity = getHasEnoughLiquidity({
     tradeAmount: amountOfBondsToShortAsBigInt,
-    maxTradeSize:
-      activeToken.address === sharesToken.address ? maxSharesIn : maxBaseIn,
+    maxTradeSize: maxBondsOut,
   });
 
   const { openShort, openShortSubmittedStatus } = useOpenShort({
@@ -108,6 +123,7 @@ export function OpenShortForm({
     maxBaseAmountIn: MAX_UINT256,
     destination: account,
     enabled: openShortPreviewStatus === "success" && hasEnoughAllowance,
+    asBase: activeToken.address === baseToken.address,
     onExecuted: (hash) => {
       setAmount("");
       toast.success(
@@ -151,12 +167,12 @@ export function OpenShortForm({
         <OpenShortPreview
           hyperdrive={hyperdrive}
           tokenIn={activeToken}
-          costBasis={depositAmount || 0n}
+          costBasis={stethOrDepositTokenAmount}
           shortSize={amountOfBondsToShortAsBigInt}
         />
       }
       disclaimer={(() => {
-        if (depositAmount && !!amountOfBondsToShortAsBigInt) {
+        if (stethOrDepositTokenAmount && !!amountOfBondsToShortAsBigInt) {
           return (
             <div className="flex flex-col gap-4">
               {!hasEnoughBalance ? (
@@ -168,7 +184,7 @@ export function OpenShortForm({
                 You pay{" "}
                 <strong>
                   {formatBalance({
-                    balance: depositAmount || 0n,
+                    balance: stethOrDepositTokenAmount || 0n,
                     decimals: activeToken.decimals,
                     includeCommas: true,
                     places: 6,
@@ -226,8 +242,11 @@ export function OpenShortForm({
               spender={hyperdrive.address}
               token={activeToken}
               tokenBalance={activeTokenBalance}
-              amountAsBigInt={depositAmount}
-              amount={formatUnits(depositAmount || 0n, activeToken.decimals)}
+              amountAsBigInt={stethOrDepositTokenAmount}
+              amount={formatUnits(
+                stethOrDepositTokenAmount || 0n,
+                activeToken.decimals,
+              )}
             />
           );
         }
