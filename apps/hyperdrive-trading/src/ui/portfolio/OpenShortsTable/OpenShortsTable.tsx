@@ -11,7 +11,7 @@ import {
   TokenConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
-import { OpenShort } from "@hyperdrive/sdk";
+import { OpenShort } from "@hyperdrive/sdk-viem";
 import {
   createColumnHelper,
   flexRender,

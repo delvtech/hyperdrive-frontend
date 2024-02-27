@@ -1,4 +1,4 @@
-import { ViemReadHyperdrive } from "@hyperdrive/sdk-viem";
+import { ReadHyperdrive, createReadHyperdrive } from "@hyperdrive/sdk-viem";
 import { useMemo } from "react";
 import { querySdkCache } from "src/sdk/sdkCache";
 import { Address } from "viem";
@@ -6,7 +6,7 @@ import { useChainId, usePublicClient } from "wagmi";
 
 export function useReadHyperdrive(
   address: Address | undefined,
-): ViemReadHyperdrive | undefined {
+): ReadHyperdrive | undefined {
   const chainId = useChainId();
   const publicClient = usePublicClient();
 
@@ -14,11 +14,11 @@ export function useReadHyperdrive(
     if (!address || !publicClient) {
       return undefined;
     }
-    return new ViemReadHyperdrive({
+    return createReadHyperdrive({
       address,
       publicClient,
       cache: querySdkCache,
-      id: chainId.toString(),
+      namespace: chainId.toString(),
     });
   }, [address, chainId, publicClient]);
 }

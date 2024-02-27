@@ -7,7 +7,7 @@ import {
   findYieldSourceToken,
   protocols,
 } from "@hyperdrive/appconfig";
-import { ViemReadHyperdrive } from "@hyperdrive/sdk-viem";
+import { createReadHyperdrive } from "@hyperdrive/sdk-viem";
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
@@ -40,7 +40,7 @@ export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
           Promise.all(
             appConfig.hyperdrives.map(
               async (hyperdrive): Promise<MarketTableRowData> => {
-                const readHyperdrive = new ViemReadHyperdrive({
+                const readHyperdrive = createReadHyperdrive({
                   address: hyperdrive.address,
                   publicClient,
                   cache: querySdkCache,

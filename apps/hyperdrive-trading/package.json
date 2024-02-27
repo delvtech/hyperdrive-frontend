@@ -27,7 +27,6 @@
     "@heroicons/react": "^2.0.16",
     "@hyperdrive/appconfig": "*",
     "@hyperdrive/artifacts": "*",
-    "@hyperdrive/sdk": "*",
     "@hyperdrive/sdk-viem": "*",
     "@rainbow-me/rainbowkit": "^2.0.0",
     "@tanstack/react-query": "^4.29.12",

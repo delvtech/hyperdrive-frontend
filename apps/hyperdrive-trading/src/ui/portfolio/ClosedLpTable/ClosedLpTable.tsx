@@ -3,7 +3,7 @@ import {
   HyperdriveConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
-import { ClosedLpShares, RedeemedWithdrawalShares } from "@hyperdrive/sdk";
+import { ClosedLpShares, RedeemedWithdrawalShares } from "@hyperdrive/sdk-viem";
 import {
   createColumnHelper,
   flexRender,

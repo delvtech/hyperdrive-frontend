@@ -1,4 +1,4 @@
-import { Long } from "@hyperdrive/sdk";
+import { Long } from "@hyperdrive/sdk-viem";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";

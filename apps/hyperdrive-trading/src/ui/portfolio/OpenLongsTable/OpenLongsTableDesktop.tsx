@@ -8,7 +8,7 @@ import {
   Long,
   calculateFixedRateFromOpenLong,
   calculateMatureLongYieldAfterFees,
-} from "@hyperdrive/sdk";
+} from "@hyperdrive/sdk-viem";
 import {
   createColumnHelper,
   flexRender,

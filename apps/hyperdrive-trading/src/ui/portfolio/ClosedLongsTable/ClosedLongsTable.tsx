@@ -5,7 +5,7 @@ import {
   TokenConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
-import { ClosedLong } from "@hyperdrive/sdk";
+import { ClosedLong } from "@hyperdrive/sdk-viem";
 import {
   createColumnHelper,
   flexRender,

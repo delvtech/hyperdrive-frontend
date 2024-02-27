@@ -3,7 +3,7 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
-import { adjustAmountByPercentage } from "@hyperdrive/sdk";
+import { adjustAmountByPercentage } from "@hyperdrive/sdk-viem";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { getHasEnoughLiquidity } from "src/hyperdrive/getHasEnoughLiquidity";

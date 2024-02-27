@@ -6,7 +6,7 @@ import {
   TokenConfig,
   YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
-import { adjustAmountByPercentage, Long } from "@hyperdrive/sdk";
+import { adjustAmountByPercentage, Long } from "@hyperdrive/sdk-viem";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";

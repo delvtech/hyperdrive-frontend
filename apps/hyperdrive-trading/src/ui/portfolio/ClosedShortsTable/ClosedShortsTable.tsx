@@ -4,7 +4,7 @@ import {
   HyperdriveConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
-import { ClosedShort } from "@hyperdrive/sdk";
+import { ClosedShort } from "@hyperdrive/sdk-viem";
 import {
   createColumnHelper,
   flexRender,

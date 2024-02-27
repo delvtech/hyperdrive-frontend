@@ -3,7 +3,7 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
-import { adjustAmountByPercentage, OpenShort } from "@hyperdrive/sdk";
+import { adjustAmountByPercentage, OpenShort } from "@hyperdrive/sdk-viem";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";

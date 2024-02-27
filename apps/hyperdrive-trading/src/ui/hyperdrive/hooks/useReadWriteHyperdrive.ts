@@ -1,5 +1,7 @@
-import { ReadWriteHyperdrive } from "@hyperdrive/sdk";
-import { ViemReadWriteHyperdrive } from "@hyperdrive/sdk-viem";
+import {
+  ReadWriteHyperdrive,
+  createReadWriteHyperdrive,
+} from "@hyperdrive/sdk-viem";
 import { useMemo } from "react";
 import { querySdkCache } from "src/sdk/sdkCache";
 import { Address } from "viem";
@@ -17,12 +19,12 @@ export function useReadWriteHyperdrive(
       return undefined;
     }
 
-    return new ViemReadWriteHyperdrive({
+    return createReadWriteHyperdrive({
       address,
       publicClient,
       walletClient,
       cache: querySdkCache,
-      id: chainId.toString(),
+      namespace: chainId.toString(),
     });
   }, [address, chainId, publicClient, walletClient]);
 }
