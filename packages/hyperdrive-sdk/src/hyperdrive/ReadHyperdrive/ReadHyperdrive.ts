@@ -188,6 +188,7 @@ export interface IReadHyperdrive {
    */
   getMaxShort(options?: ContractReadOptions): Promise<{
     maxBaseIn: bigint;
+    maxSharesIn: bigint;
     maxBondsOut: bigint;
   }>;
 
@@ -1089,10 +1090,15 @@ export class ReadHyperdrive implements IReadHyperdrive {
       stringifiedPoolConfig,
       maxBondsOut,
     );
+    const maxSharesIn = dnum.divide(
+      [BigInt(maxBaseIn), 18],
+      [poolInfo?.vaultSharePrice, 18],
+    )[0];
 
     return {
-      maxBondsOut: BigInt(maxBondsOut),
       maxBaseIn: BigInt(maxBaseIn),
+      maxSharesIn: BigInt(maxSharesIn),
+      maxBondsOut: BigInt(maxBondsOut),
     };
   }
 
@@ -1125,7 +1131,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       checkpointExposure.toString(),
     );
 
-    const maxSharesIn = dnum.multiply(
+    const maxSharesIn = dnum.divide(
       [BigInt(maxBaseIn), 18],
       [poolInfo?.vaultSharePrice, 18],
     )[0];
