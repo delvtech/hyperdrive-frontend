@@ -1,4 +1,3 @@
-import { Address } from "abitype";
 import {
   Event,
   ContractGetEventsOptions,
@@ -155,7 +154,7 @@ export interface IReadHyperdrive {
    * Gets the active longs opened by a specific user.
    */
   getOpenLongs(args: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<Long[]>;
 
@@ -163,7 +162,7 @@ export interface IReadHyperdrive {
    * Gets the active shorts opened by a specific user.
    */
   getOpenShorts(args: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<OpenShort[]>;
 
@@ -171,7 +170,7 @@ export interface IReadHyperdrive {
    * Gets the closed longs by a specific user.
    */
   getClosedLongs(args: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<ClosedLong[]>;
 
@@ -179,7 +178,7 @@ export interface IReadHyperdrive {
    * Gets the inactive shorts opened by a specific user.
    */
   getClosedShorts(args: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<ClosedShort[]>;
 
@@ -205,7 +204,7 @@ export interface IReadHyperdrive {
    * Gets the amount of LP shares a user has.
    */
   getLpShares(args: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<bigint>;
   getLpSharesTotalSupply(args?: {
@@ -215,7 +214,7 @@ export interface IReadHyperdrive {
    * Gets the amount of closed LP shares a user has.
    */
   getClosedLpShares(args: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<ClosedLpShares[]>;
 
@@ -223,7 +222,7 @@ export interface IReadHyperdrive {
    * Gets the amount of withdrawal shares a user has.
    */
   getWithdrawalShares(args: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<bigint>;
 
@@ -231,7 +230,7 @@ export interface IReadHyperdrive {
    * Gets the amount of redeemed withdrawal shares a user has.
    */
   getRedeemedWithdrawalShares(args: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<RedeemedWithdrawalShares[]>;
 
@@ -242,7 +241,7 @@ export interface IReadHyperdrive {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asBase: boolean;
     extraData?: `0x${string}`;
     options: ContractWriteOptions;
@@ -255,7 +254,7 @@ export interface IReadHyperdrive {
     maturityTime: bigint;
     shortAmountIn: bigint;
     minAmountOut: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asBase: boolean;
     extraData?: `0x${string}`;
     options: ContractWriteOptions;
@@ -293,7 +292,7 @@ export interface IReadHyperdrive {
     minAPR: bigint;
     minLpSharePrice: bigint;
     maxAPR: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asBase: boolean;
     extraData?: `0x${string}`;
     options: ContractWriteOptions;
@@ -305,7 +304,7 @@ export interface IReadHyperdrive {
   previewRemoveLiquidity(args: {
     lpSharesIn: bigint;
     minOutputPerShare: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asBase: boolean;
     extraData?: `0x${string}`;
     options: ContractWriteOptions;
@@ -317,7 +316,7 @@ export interface IReadHyperdrive {
   previewRedeemWithdrawalShares(args: {
     withdrawalSharesIn: bigint;
     minOutputPerShare: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asBase: boolean;
     extraData?: `0x${string}`;
     options: ContractWriteOptions;
@@ -329,7 +328,7 @@ export interface IReadHyperdrive {
       | ContractGetEventsOptions<typeof HyperdriveABI, "CloseLong">,
   ): Promise<
     {
-      trader: Address;
+      trader: `0x${string}`;
       assetId: bigint;
       bondAmount: bigint;
       baseAmount: bigint;
@@ -343,7 +342,7 @@ export interface IReadHyperdrive {
       | ContractGetEventsOptions<typeof HyperdriveABI, "CloseShort">,
   ): Promise<
     {
-      trader: Address;
+      trader: `0x${string}`;
       assetId: bigint;
       bondAmount: bigint;
       baseAmount: bigint;
@@ -354,7 +353,7 @@ export interface IReadHyperdrive {
 
   getLpEvents(): Promise<
     {
-      trader: Address;
+      trader: `0x${string}`;
       baseAmount: bigint;
       eventName: "AddLiquidity" | "RemoveLiquidity" | "RedeemWithdrawalShares";
       blockNumber: bigint | undefined;
@@ -692,7 +691,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     account,
     options,
   }: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getOpenLongs"> {
     const fromBlock = "earliest";
@@ -824,7 +823,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     account,
     options,
   }: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getOpenShorts"> {
     const fromBlock = "earliest";
@@ -968,7 +967,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     account,
     options,
   }: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getClosedLongs"> {
     const fromBlock = "earliest";
@@ -1012,7 +1011,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     account,
     options,
   }: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getClosedShorts"> {
     const fromBlock = "earliest";
@@ -1163,7 +1162,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     account,
     options,
   }: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getLpShares"> {
     return this.contract.read(
@@ -1177,7 +1176,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     account,
     options,
   }: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getClosedLpShares"> {
     const removeLiquidityEvents = await this.contract.getEvents(
@@ -1216,7 +1215,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     account,
     options,
   }: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getWithdrawalShares"> {
     return this.contract.read(
@@ -1230,7 +1229,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     account,
     options,
   }: {
-    account: Address;
+    account: `0x${string}`;
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getRedeemedWithdrawalShares"> {
     const redeemedWithdrawalShareEvents = await this.contract.getEvents(
@@ -1364,7 +1363,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asBase: boolean;
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
@@ -1393,7 +1392,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     maturityTime: bigint;
     shortAmountIn: bigint;
     minAmountOut: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asBase: boolean;
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
@@ -1424,7 +1423,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     minAPR: bigint;
     minLpSharePrice: bigint;
     maxAPR: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asBase: boolean;
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
@@ -1452,7 +1451,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     lpSharesIn: bigint;
     minOutputPerShare: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asBase: boolean;
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
@@ -1483,7 +1482,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     withdrawalSharesIn: bigint;
     minOutputPerShare: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asBase: boolean;
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;

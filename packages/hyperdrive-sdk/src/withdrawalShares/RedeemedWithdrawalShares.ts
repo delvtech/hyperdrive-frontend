@@ -1,7 +1,5 @@
-import { Address } from "abitype";
-
 export interface RedeemedWithdrawalShares {
-  hyperdriveAddress: Address;
+  hyperdriveAddress: `0x${string}`;
   withdrawalShareAmount: bigint;
   baseAmount: bigint;
   redeemedTimestamp: bigint;
