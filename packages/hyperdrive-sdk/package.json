@@ -3,11 +3,6 @@
   "version": "0.0.0",
   "license": "MIT",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "build": "tsup src/index.ts --minify --format esm --clean --dts",
     "watch": "npm run build -- --watch",
@@ -18,6 +13,11 @@
   "peerDependencies": {
     "@delvtech/evm-client": "^0.1.1",
     "@hyperdrive/artifacts": "*"
+  },
+  "dependencies": {
+    "@delvtech/hyperdrive-wasm": "^0.7.0",
+    "lodash.groupby": "^4.6.0",
+    "lodash.mapvalues": "^4.6.0"
   },
   "devDependencies": {
     "@delvtech/evm-client": "^0.1.1",
@@ -37,12 +37,12 @@
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.28.5"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "@delvtech/hyperdrive-wasm": "^0.7.0",
-    "lodash.groupby": "^4.6.0",
-    "lodash.mapvalues": "^4.6.0"
   }
 }
