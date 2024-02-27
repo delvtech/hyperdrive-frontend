@@ -1,3 +1,4 @@
+import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import {
   MutationStatus,
@@ -19,6 +20,7 @@ interface UseOpenShortOptions {
   enabled?: boolean;
   /** Callback to be invoked when the transaction is finalized */
   onExecuted?: (hash: string | undefined) => void;
+  ethValue?: bigint;
 }
 
 interface UseOpenShortResult {
@@ -34,6 +36,7 @@ export function useOpenShort({
   destination,
   asBase = true,
   enabled,
+  ethValue,
   onExecuted,
 }: UseOpenShortOptions): UseOpenShortResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
@@ -58,6 +61,18 @@ export function useOpenShort({
           minSharePrice,
           maxDeposit: maxBaseAmountIn,
           asBase,
+          options: {
+            value: ethValue
+              ? // Pad the eth value by 1% so that the tx goes through, the
+                // contract will refund any amount that it doesn't spend
+                adjustAmountByPercentage({
+                  amount: ethValue,
+                  decimals: 18,
+                  direction: "up",
+                  percentage: 1n,
+                })
+              : undefined,
+          },
         });
         addTransaction({
           hash,

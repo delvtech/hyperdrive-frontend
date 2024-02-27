@@ -49,6 +49,7 @@ export function OpenShortForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
+  const isStethHyperdrive = getIsSteth(sharesToken);
 
   const { activeToken, activeTokenBalance, setActiveToken } = useActiveToken({
     account,
@@ -84,14 +85,14 @@ export function OpenShortForm({
   // If depositing in shares, steth shares needs to be converted to steth tokens
   // to determine if the user has enough balance and to show a meaningful value
   // to the user
-  const isSteth = getIsSteth(activeToken);
+  const isActiveTokenSteth = getIsSteth(activeToken);
   const { stethTokenAmount: stethTokenDepositAmount } =
     useConvertStethSharesToStethTokens({
       stethShares: depositAmount,
       lidoAddress: activeToken.address,
-      enabled: isSteth,
+      enabled: isActiveTokenSteth,
     });
-  const stethOrDepositTokenAmount = isSteth
+  const stethOrDepositTokenAmount = isActiveTokenSteth
     ? stethTokenDepositAmount
     : depositAmount;
 
@@ -124,6 +125,13 @@ export function OpenShortForm({
     destination: account,
     enabled: openShortPreviewStatus === "success" && hasEnoughAllowance,
     asBase: activeToken.address === baseToken.address,
+    // In a steth market where the user wants to deposit eth, we must pass the
+    // eth amount required from the preview calculation
+    ethValue:
+      activeToken.address === baseToken.address && isStethHyperdrive
+        ? depositAmount
+        : undefined,
+
     onExecuted: (hash) => {
       setAmount("");
       toast.success(
