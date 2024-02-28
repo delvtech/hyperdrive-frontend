@@ -1,9 +1,9 @@
+import { Long } from "@delvtech/hyperdrive-viem";
 import {
   HyperdriveConfig,
   findBaseToken,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
-import { Long } from "@hyperdrive/sdk";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
