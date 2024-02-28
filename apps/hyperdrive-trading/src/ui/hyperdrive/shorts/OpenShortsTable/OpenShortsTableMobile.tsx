@@ -22,89 +22,6 @@ import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalB
 import { AccruedYieldCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/AccruedYieldCell";
 import { CurrentValueCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/CurrentValueCell";
 
-const columnHelper = createColumnHelper<OpenShort>();
-function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
-  return [
-    columnHelper.display({
-      id: "ColumnNames",
-      cell: ({ row }) => {
-        const data = formatOpenShortMobileColumnData(
-          row.original,
-          hyperdrive,
-          appConfig,
-        );
-        return (
-          <ul className="flex flex-col items-start gap-1">
-            {data.map((column) => (
-              <li key={column.name}>{column.name}</li>
-            ))}
-          </ul>
-        );
-      },
-    }),
-    columnHelper.display({
-      id: "ColumnValues",
-      cell: ({ row }) => {
-        const data = formatOpenShortMobileColumnData(
-          row.original,
-          hyperdrive,
-          appConfig,
-        );
-        return (
-          <ul className="flex flex-col items-start gap-1">
-            {data.map((column) => (
-              <li className="flex flex-row" key={column.name}>
-                {column.value}
-              </li>
-            ))}
-          </ul>
-        );
-      },
-    }),
-  ];
-}
-
-function formatOpenShortMobileColumnData(
-  openShort: OpenShort,
-  hyperdrive: HyperdriveConfig,
-  appConfig: AppConfig,
-) {
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
-    tokens: appConfig.tokens,
-  });
-  return [
-    {
-      name: "Matures on",
-      value: <MaturesOnCell maturity={openShort.maturity} />,
-    },
-    {
-      name: `Size (${baseToken.symbol})`,
-      value: formatBalance({
-        balance: openShort.bondAmount,
-        decimals: baseToken.decimals,
-        places: 6,
-      }),
-    },
-    {
-      name: `Amount paid`,
-      value: formatBalance({
-        balance: openShort.baseAmountPaid,
-        decimals: baseToken.decimals,
-        places: 6,
-      }),
-    },
-    {
-      name: `Yield (${baseToken.symbol})`,
-      value: <AccruedYieldCell hyperdrive={hyperdrive} openShort={openShort} />,
-    },
-    {
-      name: `Current value`,
-      value: <CurrentValueCell hyperdrive={hyperdrive} openShort={openShort} />,
-    },
-  ];
-}
-
 export function OpenShortsTableMobile({
   hyperdrive,
   openShorts,
@@ -198,4 +115,87 @@ export function OpenShortsTableMobile({
       </table>
     </div>
   );
+}
+
+const columnHelper = createColumnHelper<OpenShort>();
+function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
+  return [
+    columnHelper.display({
+      id: "ColumnNames",
+      cell: ({ row }) => {
+        const data = formatOpenShortMobileColumnData(
+          row.original,
+          hyperdrive,
+          appConfig,
+        );
+        return (
+          <ul className="flex flex-col items-start gap-1">
+            {data.map((column) => (
+              <li key={column.name}>{column.name}</li>
+            ))}
+          </ul>
+        );
+      },
+    }),
+    columnHelper.display({
+      id: "ColumnValues",
+      cell: ({ row }) => {
+        const data = formatOpenShortMobileColumnData(
+          row.original,
+          hyperdrive,
+          appConfig,
+        );
+        return (
+          <ul className="flex flex-col items-start gap-1">
+            {data.map((column) => (
+              <li className="flex flex-row" key={column.name}>
+                {column.value}
+              </li>
+            ))}
+          </ul>
+        );
+      },
+    }),
+  ];
+}
+
+function formatOpenShortMobileColumnData(
+  openShort: OpenShort,
+  hyperdrive: HyperdriveConfig,
+  appConfig: AppConfig,
+) {
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
+  return [
+    {
+      name: "Matures on",
+      value: <MaturesOnCell maturity={openShort.maturity} />,
+    },
+    {
+      name: `Size (${baseToken.symbol})`,
+      value: formatBalance({
+        balance: openShort.bondAmount,
+        decimals: baseToken.decimals,
+        places: 6,
+      }),
+    },
+    {
+      name: `Amount paid`,
+      value: formatBalance({
+        balance: openShort.baseAmountPaid,
+        decimals: baseToken.decimals,
+        places: 6,
+      }),
+    },
+    {
+      name: `Yield (${baseToken.symbol})`,
+      value: <AccruedYieldCell hyperdrive={hyperdrive} openShort={openShort} />,
+    },
+    {
+      name: `Current value`,
+      value: <CurrentValueCell hyperdrive={hyperdrive} openShort={openShort} />,
+    },
+  ];
 }

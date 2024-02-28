@@ -23,60 +23,6 @@ import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalB
 import { AccruedYieldCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/AccruedYieldCell";
 import { CurrentValueCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/CurrentValueCell";
 
-const columnHelper = createColumnHelper<OpenShort>();
-function getColumns(
-  hyperdrive: HyperdriveConfig,
-  baseToken: TokenConfig<EmptyExtensions>,
-) {
-  return [
-    columnHelper.accessor("assetId", {
-      id: "maturationDate",
-      header: `Matures on`,
-      cell: ({ row }) => {
-        return <MaturesOnCell maturity={row.original.maturity} />;
-      },
-    }),
-    columnHelper.accessor("bondAmount", {
-      header: `Size (hy${baseToken.symbol})`,
-      cell: (bondAmount) => {
-        const bondAmountValue = bondAmount.getValue();
-        return formatBalance({
-          balance: bondAmountValue,
-          decimals: baseToken.decimals,
-          places: 6,
-        });
-      },
-    }),
-    columnHelper.accessor("baseAmountPaid", {
-      header: `Amount paid`,
-      cell: (baseAmountPaid) => {
-        const amountPaid = baseAmountPaid.getValue();
-        return formatBalance({
-          balance: amountPaid,
-          decimals: baseToken.decimals,
-          places: 3,
-        });
-      },
-    }),
-    columnHelper.display({
-      header: `Yield earned (${baseToken.symbol})`,
-      cell: ({ row }) => {
-        return (
-          <AccruedYieldCell hyperdrive={hyperdrive} openShort={row.original} />
-        );
-      },
-    }),
-    columnHelper.display({
-      header: `Current value (${baseToken.symbol})`,
-      cell: ({ row }) => {
-        return (
-          <CurrentValueCell hyperdrive={hyperdrive} openShort={row.original} />
-        );
-      },
-    }),
-  ];
-}
-
 export function OpenShortsTableDesktop({
   hyperdrive,
   openShorts,
@@ -174,4 +120,58 @@ export function OpenShortsTableDesktop({
       </table>
     </div>
   );
+}
+
+const columnHelper = createColumnHelper<OpenShort>();
+function getColumns(
+  hyperdrive: HyperdriveConfig,
+  baseToken: TokenConfig<EmptyExtensions>,
+) {
+  return [
+    columnHelper.accessor("assetId", {
+      id: "maturationDate",
+      header: `Matures on`,
+      cell: ({ row }) => {
+        return <MaturesOnCell maturity={row.original.maturity} />;
+      },
+    }),
+    columnHelper.accessor("bondAmount", {
+      header: `Size (hy${baseToken.symbol})`,
+      cell: (bondAmount) => {
+        const bondAmountValue = bondAmount.getValue();
+        return formatBalance({
+          balance: bondAmountValue,
+          decimals: baseToken.decimals,
+          places: 6,
+        });
+      },
+    }),
+    columnHelper.accessor("baseAmountPaid", {
+      header: `Amount paid`,
+      cell: (baseAmountPaid) => {
+        const amountPaid = baseAmountPaid.getValue();
+        return formatBalance({
+          balance: amountPaid,
+          decimals: baseToken.decimals,
+          places: 3,
+        });
+      },
+    }),
+    columnHelper.display({
+      header: `Yield earned (${baseToken.symbol})`,
+      cell: ({ row }) => {
+        return (
+          <AccruedYieldCell hyperdrive={hyperdrive} openShort={row.original} />
+        );
+      },
+    }),
+    columnHelper.display({
+      header: `Current value (${baseToken.symbol})`,
+      cell: ({ row }) => {
+        return (
+          <CurrentValueCell hyperdrive={hyperdrive} openShort={row.original} />
+        );
+      },
+    }),
+  ];
 }
