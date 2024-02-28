@@ -29,8 +29,8 @@ npm i viem @delvtech/hyperdrive-viem
 
 ### Using the `ReadHyperdrive`
 
-The [`ReadHyperdrive`][ReadHyperdrive-reference] interface provides methods for fetching data and performing
-calculations with a public client.
+The [`ReadHyperdrive`][ReadHyperdrive-reference] interface provides methods for
+fetching data and performing calculations with a public client.
 
 ```ts
 import { createPublicClient, http } from "viem";
@@ -55,8 +55,9 @@ const liquidity = await hyperdrive.getLiquidity();
 
 ### Using the `ReadWriteHyperdrive`
 
-The [`ReadWriteHyperdrive`][ReadWriteHyperdrive-reference]
-interface extends [`ReadHyperdrive`][ReadHyperdrive-reference] with additional methods for sending transactions.
+The [`ReadWriteHyperdrive`][ReadWriteHyperdrive-reference] interface extends
+[`ReadHyperdrive`][ReadHyperdrive-reference] with additional methods for sending
+transactions with a wallet client.
 
 ```ts
 import { createPublicClient, createWalletClient, custom, http } from "viem";
@@ -88,11 +89,11 @@ const liquidity = await hyperdrive.pause(true);
 
 ## Ethers Quickstart
 
-*Coming soon!*
+_Coming soon!_
 
 ## Web3.js Quickstart
 
-*Coming soon!*
+_Coming soon!_
 
 [ReadHyperdrive-reference]: /docs/sdk/api-reference/classes/ReadHyperdrive "ReadHyperdrive Reference"
 [ReadWriteHyperdrive-reference]: /docs/sdk/api-reference/classes/ReadWriteHyperdrive "ReadWriteHyperdrive
