@@ -13,6 +13,7 @@ interface UsePreviewAddLiquidityOptions {
   maxAPR: bigint | undefined;
   asBase?: boolean;
   enabled?: boolean;
+  ethValue?: bigint;
 }
 
 interface UsePreviewAddLiquidityResult {
@@ -29,6 +30,7 @@ export function usePreviewAddLiquidity({
   maxAPR,
   asBase = true,
   enabled = true,
+  ethValue,
 }: UsePreviewAddLiquidityOptions): UsePreviewAddLiquidityResult {
   const publicClient = usePublicClient();
   const { address: account } = useAccount();
@@ -62,6 +64,7 @@ export function usePreviewAddLiquidity({
             minLpSharePrice,
             maxAPR,
             asBase,
+            options: { value: ethValue },
           })
       : undefined,
     enabled: queryEnabled,
