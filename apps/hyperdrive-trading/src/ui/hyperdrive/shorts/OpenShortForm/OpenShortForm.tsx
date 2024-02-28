@@ -25,6 +25,7 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import ApproveTokenButton from "src/ui/token/ApproveTokenButton";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
+import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
@@ -55,6 +56,18 @@ export function OpenShortForm({
     account,
     defaultActiveToken: baseToken.address,
     tokens: [baseToken, sharesToken],
+  });
+
+  const baseTokenBalance = useTokenBalance({
+    account,
+    tokenAddress: baseToken.address,
+    decimals: baseToken.decimals,
+  });
+
+  const sharesTokenBalance = useTokenBalance({
+    account,
+    tokenAddress: sharesToken.address,
+    decimals: sharesToken.decimals,
   });
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
@@ -162,9 +175,11 @@ export function OpenShortForm({
           tokens={[
             {
               tokenConfig: baseToken,
+              tokenBalance: baseTokenBalance?.value,
             },
             {
               tokenConfig: sharesToken,
+              tokenBalance: sharesTokenBalance?.value,
             },
           ]}
           selectedTokenAddress={activeToken.address}
