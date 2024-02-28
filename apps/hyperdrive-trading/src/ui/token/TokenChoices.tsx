@@ -45,10 +45,16 @@ export function TokenChoices({
             return (
               <label
                 key={address}
+                data-tip={
+                  disabled
+                    ? `${symbol} is not available for withdrawal in this market.`
+                    : undefined
+                }
                 className={classNames(
                   "inline-flex items-center justify-start gap-2",
                   {
-                    "cursor-not-allowed text-gray-100": disabled,
+                    "daisy-tooltip daisy-tooltip-left daisy-tooltip-warning cursor-not-allowed text-gray-100":
+                      disabled,
                     "cursor-pointer": !disabled,
                   },
                 )}
@@ -69,7 +75,7 @@ export function TokenChoices({
                 />
                 {symbol}{" "}
                 <span className="text-xs">
-                  {tokenBalance
+                  {tokenBalance || tokenBalance === 0n
                     ? `(Balance: ${formatBalance({
                         balance: tokenBalance,
                         decimals,
