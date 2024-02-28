@@ -30,8 +30,9 @@ export function TokenChoices({
     >
       <span className="daisy-label-text">{label}</span>
       <div
-        className={classNames({
-          "flex flex-col gap-2": vertical,
+        className={classNames("flex", {
+          "flex-col gap-2": vertical,
+          "gap-4": !vertical,
         })}
       >
         {tokens.map(
