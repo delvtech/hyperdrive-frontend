@@ -6,7 +6,7 @@ import {
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
-import { getHasEnoughLiquidity } from "src/hyperdrive/getHasEnoughLiquidity";
+import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -87,7 +87,7 @@ export function OpenLongForm({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const hasEnoughLiquidity = getHasEnoughLiquidity({
+  const hasEnoughLiquidity = getIsValidTradeSize({
     tradeAmount: depositAmountAsBigInt,
     maxTradeSize:
       activeToken.address === sharesToken.address ? maxSharesIn : maxBaseIn,
