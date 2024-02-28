@@ -1,4 +1,4 @@
-import { useLocalStorage } from "@uidotdev/usehooks";
+import { useLocalStorage } from "react-use";
 
 /**
  * Custom hook for managing feature flags via local storage.  It
@@ -21,16 +21,16 @@ export function useFeatureFlag(flagName: string): {
     [],
   );
 
-  const isFlagEnabled = existingFlags.includes(flagName);
+  const isFlagEnabled = existingFlags?.includes(flagName);
 
   return {
-    isFlagEnabled,
+    isFlagEnabled: !!isFlagEnabled,
     enableFlag: () => {
-      setFlags([...new Set([...existingFlags, flagName])]);
+      setFlags([...new Set([...(existingFlags || []), flagName])]);
     },
 
     disableFlag: () => {
-      setFlags(existingFlags.filter((flag) => flag !== flagName));
+      setFlags((existingFlags || []).filter((flag) => flag !== flagName));
     },
   };
 }
