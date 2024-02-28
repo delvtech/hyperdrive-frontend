@@ -6,7 +6,9 @@ import {
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
+  EmptyExtensions,
   HyperdriveConfig,
+  TokenConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import {
@@ -18,21 +20,19 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
-import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
+import { CurrentValueCell } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
-import { MaturesOnCell } from "src/ui/portfolio/MaturesOnCell/MaturesOnCell";
-import { CurrentValueCell } from "src/ui/portfolio/OpenLongsTable/CurrentValueCell";
 import { useAccount } from "wagmi";
 
-export function OpenLongsTableDesktop({
+export function OpenLongsTableMobile({
   hyperdrive,
 }: {
   hyperdrive: HyperdriveConfig;
@@ -44,7 +44,7 @@ export function OpenLongsTableDesktop({
     hyperdriveAddress: hyperdrive.address,
   });
   const tableInstance = useReactTable({
-    columns: getColumns({ hyperdrive, appConfig }),
+    columns: getMobileColumns({ hyperdrive, appConfig }),
     data: openLongs || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -156,7 +156,48 @@ export function OpenLongsTableDesktop({
 }
 const columnHelper = createColumnHelper<Long>();
 
-function getColumns({
+function formatOpenLongMobileColumnData(
+  row: Long,
+  hyperdrive: HyperdriveConfig,
+  baseToken: TokenConfig<EmptyExtensions>,
+) {
+  return [
+    {
+      name: "Matures on",
+      value: <MaturesOnCell maturity={row.maturity} />,
+    },
+    {
+      name: `Size (hy${baseToken.symbol})`,
+      value: (
+        <span>
+          {formatBalance({
+            balance: row.bondAmount,
+            decimals: baseToken.decimals,
+            places: 2,
+          })}
+        </span>
+      ),
+    },
+    {
+      name: `Paid (${baseToken.symbol})`,
+      value: formatBalance({
+        balance: row.baseAmountPaid,
+        decimals: baseToken.decimals,
+        places: 2,
+      }),
+    },
+    {
+      name: "Fixed rate (APR)",
+      value: <FixedRateCell hyperdrive={hyperdrive} row={row} />,
+    },
+    {
+      name: `Current value`,
+      value: <CurrentValueCell hyperdrive={hyperdrive} row={row} />,
+    },
+  ];
+}
+
+function getMobileColumns({
   hyperdrive,
   appConfig,
 }: {
@@ -168,69 +209,40 @@ function getColumns({
     tokens: appConfig.tokens,
   });
   return [
-    columnHelper.accessor("assetId", {
-      id: "maturationDate",
-      header: `Matures on`,
+    columnHelper.display({
+      id: "ColumnNames",
       cell: ({ row }) => {
-        return <MaturesOnCell maturity={row.original.maturity} />;
-      },
-    }),
-    columnHelper.accessor("bondAmount", {
-      id: "size",
-      header: `Size (hy${baseToken.symbol})`,
-      cell: ({ row }) => {
+        const data = formatOpenLongMobileColumnData(
+          row.original,
+          hyperdrive,
+          baseToken,
+        );
         return (
-          <span>
-            {formatBalance({
-              balance: row.original.bondAmount,
-              decimals: baseToken.decimals,
-              places: 2,
-            })}
-          </span>
+          <ul className="flex flex-col items-start gap-1 text-neutral-content">
+            {data.map((column) => (
+              <li key={column.name}>{column.name}</li>
+            ))}
+          </ul>
         );
       },
     }),
-    columnHelper.accessor("baseAmountPaid", {
-      id: "valuePaid",
-      header: `Value paid (${baseToken.symbol})`,
-      cell: (baseAmountPaid) => {
-        const amountPaid = baseAmountPaid.getValue();
-        return formatBalance({
-          balance: amountPaid,
-          decimals: baseToken.decimals,
-          places: 2,
-        });
-      },
-    }),
-    columnHelper.accessor("assetId", {
-      id: "fixedRate",
-      header: `Fixed rate (APR)`,
-      cell: ({ row }) => {
-        return <FixedRateCell hyperdrive={hyperdrive} row={row.original} />;
-      },
-      sortingFn: (rowA, rowB) => {
-        const aFixedRate = calculateAnnualizedPercentageChange({
-          amountBefore: rowA.original.baseAmountPaid,
-          amountAfter: rowA.original.bondAmount,
-          days: convertMillisecondsToDays(
-            Number(hyperdrive.poolConfig.positionDuration * 1000n),
-          ),
-        });
-        const bFixedRate = calculateAnnualizedPercentageChange({
-          amountBefore: rowB.original.baseAmountPaid,
-          amountAfter: rowB.original.bondAmount,
-          days: convertMillisecondsToDays(
-            Number(hyperdrive.poolConfig.positionDuration * 1000n),
-          ),
-        });
-        return aFixedRate - bFixedRate;
-      },
-    }),
     columnHelper.display({
-      id: "value",
-      header: `Current value (${baseToken.symbol})`,
+      id: "ColumnValues",
       cell: ({ row }) => {
-        return <CurrentValueCell hyperdrive={hyperdrive} row={row.original} />;
+        const data = formatOpenLongMobileColumnData(
+          row.original,
+          hyperdrive,
+          baseToken,
+        );
+        return (
+          <ul className="flex flex-col items-start gap-1">
+            {data.map((column) => (
+              <li className="flex flex-row" key={column.name}>
+                {column.value}
+              </li>
+            ))}
+          </ul>
+        );
       },
     }),
   ];
@@ -265,7 +277,7 @@ function FixedRateCell({
   });
 
   return (
-    <div className="daisy-stat flex flex-col p-0">
+    <div className="daisy-stat flex flex-row p-0">
       <span className="daisy-stat-value text-md font-bold">
         {formatRate(fixedRate)}%
       </span>

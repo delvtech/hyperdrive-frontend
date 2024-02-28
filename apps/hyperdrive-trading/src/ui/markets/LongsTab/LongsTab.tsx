@@ -1,11 +1,11 @@
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
+import { ClosedLongsTable } from "src/ui/hyperdrive/longs/ClosedLongsTable/ClosedLongsTable";
 import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
-import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
+import { OpenLongsTable } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenLongsTable";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
-import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
-import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFilter";
-import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
+import { OpenClosedFilter } from "src/ui/markets/OpenClosedFilter/OpenClosedFilter";
+import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
 
 export function LongsTab({
   hyperdrive,

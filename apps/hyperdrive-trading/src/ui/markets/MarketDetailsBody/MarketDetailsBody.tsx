@@ -8,7 +8,7 @@ import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadc
 import { MarketHeader } from "src/ui/markets/MarketDetailsBody/MarketHeader";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
 import { TransactionAndFaqTabs } from "src/ui/markets/TransactionsAndFaqTabs/TransactionsAndFaqTabs";
-import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
+import { YourBalanceWell } from "src/ui/markets/YourBalanceWell/YourBalanceWell";
 
 interface PositionsTableProps {
   hyperdrive: HyperdriveConfig;
