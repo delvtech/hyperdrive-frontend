@@ -16,15 +16,12 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { parseUnits } from "src/base/parseUnits";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
-import { useAccruedYield } from "src/ui/hyperdrive/hooks/useAccruedYield";
-import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
-import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
-import { useAccount } from "wagmi";
+import { AccruedYieldCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/AccruedYieldCell";
+import { CurrentValueCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/CurrentValueCell";
 
 const columnHelper = createColumnHelper<OpenShort>();
 function getColumns(
@@ -78,98 +75,6 @@ function getColumns(
       },
     }),
   ];
-}
-
-function AccruedYieldCell({
-  openShort,
-  hyperdrive,
-}: {
-  openShort: OpenShort;
-  hyperdrive: HyperdriveConfig;
-}) {
-  const { bondAmount, checkpointId } = openShort;
-  const appConfig = useAppConfig();
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
-    tokens: appConfig.tokens,
-  });
-  const { accruedYield } = useAccruedYield({
-    hyperdrive,
-    bondAmount,
-    checkpointId,
-  });
-
-  return (
-    <div className="flex flex-col gap-1">
-      <span>
-        {formatBalance({
-          balance: accruedYield || 0n,
-          decimals: baseToken.decimals,
-          places: 3,
-        })}
-      </span>
-    </div>
-  );
-}
-
-function CurrentValueCell({
-  openShort,
-  hyperdrive,
-}: {
-  openShort: OpenShort;
-  hyperdrive: HyperdriveConfig;
-}) {
-  const appConfig = useAppConfig();
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
-    tokens: appConfig.tokens,
-  });
-  const { address: account } = useAccount();
-  const { amountOut } = usePreviewCloseShort({
-    hyperdriveAddress: openShort.hyperdriveAddress,
-    maturityTime: openShort.maturity,
-    shortAmountIn: openShort.bondAmount,
-    minAmountOut: parseUnits("0", baseToken.decimals),
-    destination: account,
-  });
-  const currentValue =
-    amountOut &&
-    formatBalance({
-      balance: amountOut,
-      decimals: baseToken.decimals,
-      places: 3,
-    });
-
-  const isPositiveChangeInValue =
-    amountOut && amountOut > openShort.baseAmountPaid;
-
-  return (
-    <div className="daisy-stat p-0">
-      <span className="daisy-stat-value text-md font-bold">
-        {currentValue?.toString()}
-      </span>
-      {amountOut && openShort.bondAmount !== 0n ? (
-        <div
-          data-tip={"Profit/Loss since open"}
-          className={classNames(
-            "daisy-stat-desc daisy-tooltip mt-1 flex text-xs",
-            { "text-success": isPositiveChangeInValue },
-            { "text-error": !isPositiveChangeInValue },
-          )}
-        >
-          {getProfitLossText({
-            baseAmountOut: amountOut,
-            amountInput: openShort.baseAmountPaid,
-            baseDecimals: baseToken.decimals,
-            baseSymbol: baseToken.symbol,
-            showPercentage: false,
-          })}
-        </div>
-      ) : (
-        ""
-      )}
-    </div>
-  );
 }
 
 export function OpenShortsTableDesktop({
