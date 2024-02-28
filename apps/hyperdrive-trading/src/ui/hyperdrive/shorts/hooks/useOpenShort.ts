@@ -1,4 +1,4 @@
-import { adjustAmountByPercentage } from "@hyperdrive/sdk";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import {
   MutationStatus,
