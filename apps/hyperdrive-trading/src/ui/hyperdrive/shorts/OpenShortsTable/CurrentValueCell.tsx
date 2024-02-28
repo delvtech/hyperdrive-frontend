@@ -1,4 +1,4 @@
-import { Long } from "@delvtech/hyperdrive-viem";
+import { OpenShort } from "@delvtech/hyperdrive-viem";
 import {
   HyperdriveConfig,
   findBaseToken,
@@ -6,19 +6,20 @@ import {
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import { parseUnits } from "src/base/parseUnits";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
+import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
+import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
 import { getIsSteth } from "src/vaults/isSteth";
-import { parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
 export function CurrentValueCell({
-  row,
+  openShort,
   hyperdrive,
 }: {
-  row: Long;
+  openShort: OpenShort;
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
@@ -35,18 +36,14 @@ export function CurrentValueCell({
   // steth markets can only close you out to steth shares, which must be
   // converted into steth tokens, which are 1:1 with eth
   const isStethHyperdrive = getIsSteth(sharesToken);
-  const { amountOut, previewCloseLongStatus } = usePreviewCloseLong({
+  const { amountOut } = usePreviewCloseShort({
     hyperdriveAddress: hyperdrive.address,
-    maturityTime: row.maturity,
-    bondAmountIn: row.bondAmount,
-    minOutput: parseUnits("0", baseToken.decimals),
+    maturityTime: openShort.maturity,
+    shortAmountIn: openShort.bondAmount,
+    minAmountOut: parseUnits("0", baseToken.decimals),
     destination: account,
-    // You can only withdraw as base if it's not a steth hyperdrive
     asBase: !isStethHyperdrive,
   });
-
-  // Steth tokens are 1:1 with eth so they can be used interchangeably with the
-  // base token
   const { stethTokenAmount: stethTokenAmountOut } =
     useConvertStethSharesToStethTokens({
       lidoAddress: sharesToken.address,
@@ -64,32 +61,33 @@ export function CurrentValueCell({
   });
 
   const isPositiveChangeInValue =
-    amountOutOrStethTokens && amountOutOrStethTokens > row.baseAmountPaid;
-  if (previewCloseLongStatus === "error") {
-    return <div>Insufficient Liquidity</div>;
-  }
+    amountOutOrStethTokens && amountOutOrStethTokens > openShort.baseAmountPaid;
+
   return (
-    <div className="daisy-stat flex flex-row p-0 xl:flex-col">
-      <span className="daisy-stat-value text-xs font-bold md:text-md">
-        {currentValueLabel}
+    <div className="daisy-stat p-0">
+      <span className="daisy-stat-value text-md font-bold">
+        {currentValueLabel?.toString()}
       </span>
-      <div
-        data-tip={"Profit/Loss since open"}
-        className={classNames(
-          "daisy-stat-desc daisy-tooltip mt-1 inline-flex text-xs",
-          { "text-success": isPositiveChangeInValue },
-          { "text-error": !isPositiveChangeInValue },
-        )}
-      >
-        <span>{isPositiveChangeInValue ? "+" : ""}</span>
-        {amountOutOrStethTokens
-          ? `${formatBalance({
-              balance: amountOutOrStethTokens - row.baseAmountPaid,
-              decimals: baseToken.decimals,
-              places: 4,
-            })} ${baseToken.symbol}`
-          : undefined}
-      </div>
+      {amountOutOrStethTokens && openShort.bondAmount !== 0n ? (
+        <div
+          data-tip={"Profit/Loss since open"}
+          className={classNames(
+            "daisy-stat-desc daisy-tooltip mt-1 flex text-xs",
+            { "text-success": isPositiveChangeInValue },
+            { "text-error": !isPositiveChangeInValue },
+          )}
+        >
+          {getProfitLossText({
+            baseAmountOut: amountOutOrStethTokens,
+            amountInput: openShort.baseAmountPaid,
+            baseDecimals: baseToken.decimals,
+            baseSymbol: baseToken.symbol,
+            showPercentage: false,
+          })}
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
