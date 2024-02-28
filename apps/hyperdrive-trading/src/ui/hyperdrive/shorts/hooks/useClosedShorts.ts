@@ -1,4 +1,4 @@
-import { ClosedShort } from "@hyperdrive/sdk";
+import { ClosedShort } from "@delvtech/hyperdrive-viem";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";

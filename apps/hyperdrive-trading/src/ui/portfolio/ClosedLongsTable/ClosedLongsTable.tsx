@@ -1,3 +1,4 @@
+import { ClosedLong } from "@delvtech/hyperdrive-viem";
 import {
   AppConfig,
   EmptyExtensions,
@@ -5,7 +6,6 @@ import {
   TokenConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
-import { ClosedLong } from "@hyperdrive/sdk";
 import {
   createColumnHelper,
   flexRender,

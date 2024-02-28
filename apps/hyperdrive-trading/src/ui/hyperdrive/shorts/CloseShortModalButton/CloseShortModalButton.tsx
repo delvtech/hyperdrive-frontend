@@ -1,6 +1,6 @@
+import { OpenShort } from "@delvtech/hyperdrive-viem";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
-import { OpenShort } from "@hyperdrive/sdk";
 import { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { CloseShortForm } from "src/ui/hyperdrive/shorts/CloseShortForm/CloseShortForm";

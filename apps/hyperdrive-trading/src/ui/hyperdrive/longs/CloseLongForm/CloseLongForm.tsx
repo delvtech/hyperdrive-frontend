@@ -1,9 +1,9 @@
+import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-viem";
 import {
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
-import { adjustAmountByPercentage, Long } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";

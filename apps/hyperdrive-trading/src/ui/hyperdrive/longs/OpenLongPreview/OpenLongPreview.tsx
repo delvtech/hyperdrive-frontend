@@ -1,5 +1,8 @@
+import {
+  calculateFixedRateFromOpenLong,
+  Long,
+} from "@delvtech/hyperdrive-viem";
 import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
-import { calculateFixedRateFromOpenLong, Long } from "@hyperdrive/sdk";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";

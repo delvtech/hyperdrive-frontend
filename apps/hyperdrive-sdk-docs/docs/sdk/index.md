@@ -12,16 +12,16 @@ the Hyperdrive AMM.
 
 | Library                    | Description                                                                          |
 | -------------------------- | ------------------------------------------------------------------------------------ |
-| `@hyperdrive/sdk`          | TypeScript SDK for Hyperdrive. web3 library bindings not included, see options below |
-| `@hyperdrive/sdk-viem`     | Viem bindings for the TypeScript SDK                                                 |
-| _`@hyperdrive/sdk-ethers`_ | _TODO: Ethers bindings for the TypeScript SDK_                                       |
+| `@delvtech/hyperdrive-js-core`          | TypeScript SDK for Hyperdrive. web3 library bindings not included, see options below |
+| `@delvtech/hyperdrive-viem`     | Viem bindings for the TypeScript SDK                                                 |
+| _`@delvtech/hyperdrive-js-core-ethers`_ | _TODO: Ethers bindings for the TypeScript SDK_                                       |
 
 ## Quickstart (Viem)
 
 Install in your project:
 
 ```bash
-npm i @hyperdrive/sdk @hyperdrive/sdk-viem viem
+npm i @delvtech/hyperdrive-js-core @delvtech/hyperdrive-viem viem
 ```
 
 Configure the Hyperdrive SDK and get the current fixed rate:
@@ -35,11 +35,11 @@ import {
   http,
 } from "viem";
 import { mainnet } from "viem/chains";
-import { HyperdriveSDK } from "@hyperdrive/sdk";
+import { HyperdriveSDK } from "@delvtech/hyperdrive-js-core";
 import {
   HyperdriveContract,
   HypedriveMathContract,
-} from "@hyperdrive/sdk-viem";
+} from "@delvtech/hyperdrive-viem";
 
 // 1. Set up your viem clients
 const publicClient = createPublicClient({

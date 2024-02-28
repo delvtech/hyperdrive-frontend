@@ -1,10 +1,10 @@
+import { ClosedShort } from "@delvtech/hyperdrive-viem";
 import { WalletIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
   HyperdriveConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
-import { ClosedShort } from "@hyperdrive/sdk";
 import {
   createColumnHelper,
   flexRender,

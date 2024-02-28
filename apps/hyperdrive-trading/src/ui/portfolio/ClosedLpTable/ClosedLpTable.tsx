@@ -1,9 +1,12 @@
 import {
+  ClosedLpShares,
+  RedeemedWithdrawalShares,
+} from "@delvtech/hyperdrive-viem";
+import {
   AppConfig,
   HyperdriveConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
-import { ClosedLpShares, RedeemedWithdrawalShares } from "@hyperdrive/sdk";
 import {
   createColumnHelper,
   flexRender,

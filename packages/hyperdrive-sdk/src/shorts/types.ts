@@ -1,7 +1,5 @@
-import { Address } from "abitype";
-
 export interface Short {
-  hyperdriveAddress: Address;
+  hyperdriveAddress: `0x${string}`;
   assetId: bigint;
   bondAmount: bigint;
   checkpointId: bigint;

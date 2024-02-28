@@ -1,8 +1,8 @@
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import {
   calculateShareValue,
   calculateShareValueFromPreview,
-} from "@hyperdrive/sdk";
+} from "@delvtech/hyperdrive-viem";
+import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";

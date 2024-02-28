@@ -1,5 +1,4 @@
 import { IReadWriteHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
-import { Address } from "abitype";
 import {
   IReadHyperdrive,
   ReadHyperdrive,
@@ -60,7 +59,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    *
    */
   openLong(args: {
-    destination: Address;
+    destination: `0x${string}`;
     amount: bigint;
     minBondsOut: bigint;
     asUnderlying?: boolean;
@@ -78,7 +77,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @return traderDeposit - The amount the user deposited for this trade.
    */
   openShort(args: {
-    destination: Address;
+    destination: `0x${string}`;
     bondAmount: bigint;
     maxDeposit: bigint;
     asUnderlying?: boolean;
@@ -99,7 +98,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asUnderlying?: boolean;
     options?: ContractWriteOptions;
   }): Promise<`0x${string}`>;
@@ -118,7 +117,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asUnderlying?: boolean;
     options?: ContractWriteOptions;
   }): Promise<`0x${string}`>;
@@ -135,7 +134,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @return lpShares The number of LP tokens created
    */
   addLiquidity(args: {
-    destination: Address;
+    destination: `0x${string}`;
     contribution: bigint;
     minAPR: bigint;
     minLpSharePrice: bigint;
@@ -156,7 +155,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @returns withdrawShares - The base that the LP receives buys out some of their LP  shares, but it may not be sufficient to fully buy the LP out. In this case, the LP receives withdrawal shares equal in value to the present value they are owed. As idle capital becomes available, the pool will buy back these shares.
    */
   removeLiquidity(args: {
-    destination: Address;
+    destination: `0x${string}`;
     lpSharesIn: bigint;
     minOutputPerShare: bigint;
     asUnderlying?: boolean;
@@ -176,7 +175,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
   redeemWithdrawalShares(args: {
     withdrawalSharesIn: bigint;
     minOutputPerShare: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asUnderlying?: boolean;
     options?: ContractWriteOptions;
   }): Promise<`0x${string}`>;
@@ -249,7 +248,7 @@ export class ReadWriteHyperdrive
     extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
-    destination: Address;
+    destination: `0x${string}`;
     amount: bigint;
     minBondsOut: bigint;
     minSharePrice: bigint;
@@ -278,7 +277,7 @@ export class ReadWriteHyperdrive
     extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
-    destination: Address;
+    destination: `0x${string}`;
     bondAmount: bigint;
     minSharePrice: bigint;
     maxDeposit: bigint;
@@ -310,7 +309,7 @@ export class ReadWriteHyperdrive
     maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asBase?: boolean;
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
@@ -339,7 +338,7 @@ export class ReadWriteHyperdrive
     maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asBase?: boolean;
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
@@ -366,7 +365,7 @@ export class ReadWriteHyperdrive
     extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
-    destination: Address;
+    destination: `0x${string}`;
     contribution: bigint;
     minAPR: bigint;
     minLpSharePrice: bigint;
@@ -396,7 +395,7 @@ export class ReadWriteHyperdrive
     extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
-    destination: Address;
+    destination: `0x${string}`;
     lpSharesIn: bigint;
     minOutputPerShare: bigint;
     asBase?: boolean;
@@ -424,7 +423,7 @@ export class ReadWriteHyperdrive
   }: {
     withdrawalSharesIn: bigint;
     minOutputPerShare: bigint;
-    destination: Address;
+    destination: `0x${string}`;
     asBase?: boolean;
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
