@@ -22,11 +22,16 @@ export function TokenChoices({
   vertical?: boolean;
 }): ReactElement {
   return (
-    <div className="flex justify-between">
+    <div
+      className={classNames("flex justify-between", {
+        "flex-col gap-2": vertical,
+        "flex-row items-center gap-8": !vertical,
+      })}
+    >
       <span className="daisy-label-text">{label}</span>
       <div
-        className={classNames("flex", {
-          "flex-col gap-1": vertical,
+        className={classNames({
+          "flex flex-col gap-2": vertical,
         })}
       >
         {tokens.map(
