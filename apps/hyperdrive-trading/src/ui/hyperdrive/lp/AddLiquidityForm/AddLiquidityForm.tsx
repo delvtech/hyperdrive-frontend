@@ -6,7 +6,6 @@ import {
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { parseUnits } from "src/base/parseUnits";
-import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -43,17 +42,19 @@ export function AddLiquidityForm({
     tokens: appConfig.tokens,
   });
 
-  const { activeToken, activeTokenBalance, setActiveToken } = useActiveToken({
-    account,
-    defaultActiveToken: baseToken.address,
-    tokens: [baseToken, sharesToken],
-  });
+  const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
+    useActiveToken({
+      account,
+      defaultActiveToken: baseToken.address,
+      tokens: [baseToken, sharesToken],
+    });
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
     decimals: activeToken.decimals,
   });
 
-  const requiresAllowance = activeToken.address !== ETH_MAGIC_NUMBER;
+  // All tokens besides ETH require an allowance to spend it on hyperdrive
+  const requiresAllowance = !isActiveTokenEth;
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
     account,
     spender: hyperdrive.address,
@@ -83,6 +84,7 @@ export function AddLiquidityForm({
       asBase: activeToken.address === baseToken.address,
       destination: account,
       enabled: isPreviewEnabled,
+      ethValue: isActiveTokenEth ? amountAsBigInt : undefined,
     });
 
   const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
