@@ -32,8 +32,8 @@ export function CurrentValueCell({
     tokens: appConfig.tokens,
   });
 
-  // steth markets will close you out to steth shares, which must be converted
-  // into steth tokens
+  // steth markets can only close you out to steth shares, which must be
+  // converted into steth tokens, which are 1:1 with eth
   const isStethHyperdrive = getIsSteth(sharesToken);
   const { amountOut, previewCloseLongStatus } = usePreviewCloseLong({
     hyperdriveAddress: hyperdrive.address,
@@ -57,13 +57,11 @@ export function CurrentValueCell({
     ? stethTokenAmountOut
     : amountOut;
 
-  const currentValue =
-    amountOutOrStethTokens &&
-    formatBalance({
-      balance: amountOutOrStethTokens,
-      decimals: baseToken.decimals,
-      places: 4,
-    });
+  const currentValueLabel = formatBalance({
+    balance: amountOutOrStethTokens || 0n,
+    decimals: baseToken.decimals,
+    places: 4,
+  });
 
   const isPositiveChangeInValue =
     amountOutOrStethTokens && amountOutOrStethTokens > row.baseAmountPaid;
@@ -73,7 +71,7 @@ export function CurrentValueCell({
   return (
     <div className="daisy-stat flex flex-row p-0 xl:flex-col">
       <span className="daisy-stat-value text-xs font-bold md:text-md">
-        {currentValue?.toString()}
+        {currentValueLabel}
       </span>
       <div
         data-tip={"Profit/Loss since open"}
