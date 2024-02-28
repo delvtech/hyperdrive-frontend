@@ -17,6 +17,7 @@ interface UseAddLiquidityOptions {
   minLpSharePrice: bigint | undefined;
   maxAPR: bigint | undefined;
   asBase?: boolean;
+  ethValue?: bigint;
   /** Controls whether or not an `addLiquidity` callback will be returned to the
    * caller, useful for disabling buttons and other hooks */
   enabled?: boolean;
@@ -38,6 +39,7 @@ export function useAddLiquidity({
   asBase = true,
   enabled,
   onExecuted,
+  ethValue,
 }: UseAddLiquidityOptions): UseAddLiquidityResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const publicClient = usePublicClient();
@@ -63,6 +65,7 @@ export function useAddLiquidity({
           maxAPR,
           destination,
           asBase,
+          options: { value: ethValue },
         });
         addTransaction({
           hash,

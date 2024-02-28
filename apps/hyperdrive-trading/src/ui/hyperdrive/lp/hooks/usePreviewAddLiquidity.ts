@@ -48,12 +48,14 @@ export function usePreviewAddLiquidity({
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewAddLiquidity", {
-      market: hyperdriveAddress,
+      hyperdrive: hyperdriveAddress,
       destination,
       contribution: contribution?.toString(),
       minAPR: minAPR?.toString(),
       maxAPR: maxAPR?.toString(),
+      minLpSharePrice: minLpSharePrice?.toString(),
       asBase,
+      ethValue: ethValue?.toString(),
     }),
     queryFn: queryEnabled
       ? () =>

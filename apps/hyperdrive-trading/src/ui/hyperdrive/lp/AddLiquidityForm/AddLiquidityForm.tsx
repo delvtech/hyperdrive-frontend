@@ -22,6 +22,8 @@ import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
+import { useConvertStethTokensToStethShares } from "src/ui/vaults/steth/useConvertStethTokensToStethShares";
+import { getIsSteth } from "src/vaults/isSteth";
 import { useAccount } from "wagmi";
 
 interface AddLiquidityFormProps {
@@ -49,9 +51,26 @@ export function AddLiquidityForm({
       tokens: [baseToken, sharesToken],
     });
 
-  const { amount, amountAsBigInt, setAmount } = useNumericInput({
+  const {
+    amount: depositAmount,
+    amountAsBigInt: depositAmountAsBigInt,
+    setAmount,
+  } = useNumericInput({
     decimals: activeToken.decimals,
   });
+
+  // If depositing in steth, the steth tokens need to be converted to steth
+  // shares to properly preview and/or open the position
+  const isActiveTokenSteth = getIsSteth(activeToken);
+  const { stethShares: stethSharesDepositAmount } =
+    useConvertStethTokensToStethShares({
+      stethTokenAmount: depositAmountAsBigInt,
+      lidoAddress: activeToken.address,
+      enabled: isActiveTokenSteth,
+    });
+  const stethSharesOrDepositAmount = isActiveTokenSteth
+    ? stethSharesDepositAmount
+    : depositAmountAsBigInt;
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
@@ -65,37 +84,35 @@ export function AddLiquidityForm({
   const hasEnoughAllowance = getHasEnoughAllowance({
     requiresAllowance,
     allowance: activeTokenAllowance,
-    amount: amountAsBigInt,
+    amount: depositAmountAsBigInt,
   });
+
   const hasEnoughBalance = getHasEnoughBalance({
     balance: activeTokenBalance?.value,
-    amount: amountAsBigInt,
+    amount: depositAmountAsBigInt,
   });
 
-  const isPreviewEnabled = hasEnoughAllowance && hasEnoughBalance;
-  const { lpSharesOut, status: addLiquidityPreviewStatus } =
-    usePreviewAddLiquidity({
-      hyperdriveAddress: hyperdrive.address,
-      contribution: amountAsBigInt,
-      // TODO: Add slippage control
-      minAPR: parseUnits("0", baseToken.decimals),
-      maxAPR: parseUnits("999", baseToken.decimals),
-      minLpSharePrice: parseUnits("0", baseToken.decimals),
-      asBase: activeToken.address === baseToken.address,
-      destination: account,
-      enabled: isPreviewEnabled,
-      ethValue: isActiveTokenEth ? amountAsBigInt : undefined,
-    });
-
-  const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
+  // Shared params with the preview and the write method
+  const addLiquidityParams = {
     hyperdriveAddress: hyperdrive.address,
-    contribution: amountAsBigInt,
-    minLpSharePrice: parseUnits("0", baseToken.decimals),
+    contribution: stethSharesOrDepositAmount,
+    // TODO: Add slippage control
     minAPR: parseUnits("0", baseToken.decimals),
     maxAPR: parseUnits("999", baseToken.decimals),
-    destination: account,
-    enabled: addLiquidityPreviewStatus === "success" && isPreviewEnabled,
+    minLpSharePrice: parseUnits("0", baseToken.decimals),
     asBase: activeToken.address === baseToken.address,
+    destination: account,
+    ethValue: isActiveTokenEth ? depositAmountAsBigInt : undefined,
+    enabled: hasEnoughAllowance && hasEnoughBalance,
+  };
+
+  const { lpSharesOut, status: addLiquidityPreviewStatus } =
+    usePreviewAddLiquidity(addLiquidityParams);
+
+  const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
+    ...addLiquidityParams,
+    enabled:
+      addLiquidityParams.enabled && addLiquidityPreviewStatus === "success",
     onExecuted: (hash) => {
       setAmount("");
       toast.success(
@@ -123,7 +140,7 @@ export function AddLiquidityForm({
               }}
             />
           }
-          value={amount ?? ""}
+          value={depositAmount ?? ""}
           maxValue={activeTokenBalance?.formatted}
           inputLabel="Amount to deposit"
           stat={
@@ -145,7 +162,7 @@ export function AddLiquidityForm({
         />
       }
       disclaimer={
-        !!amountAsBigInt && !hasEnoughBalance ? (
+        !!depositAmountAsBigInt && !hasEnoughBalance ? (
           <p className="text-center text-sm text-error">Insufficient balance</p>
         ) : null
       }
@@ -171,8 +188,8 @@ export function AddLiquidityForm({
               spender={hyperdrive.address}
               token={activeToken}
               tokenBalance={activeTokenBalance}
-              amountAsBigInt={amountAsBigInt}
-              amount={amount}
+              amountAsBigInt={depositAmountAsBigInt}
+              amount={depositAmount}
             />
           );
         }
