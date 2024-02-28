@@ -1,5 +1,5 @@
+import { ERC20Mintable } from "@delvtech/hyperdrive-artifacts/ERC20Mintable";
 import { TokenConfig } from "@hyperdrive/appconfig";
-import { ERC20Mintable } from "@hyperdrive/artifacts/ERC20Mintable";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";

@@ -1,64 +1,79 @@
 # @delvtech/hyperdrive-js-core
 
-A vanilla TypeScript SDK containing everything you need to start working with
-the Hyperdrive AMM.
+A TypeScript SDK for the [Hyperdrive
+AMM](https://www.github.com/delvtech/hyperdrive).
 
-| Library                    | Description                                                                          |
-| -------------------------- | ------------------------------------------------------------------------------------ |
-| `@delvtech/hyperdrive-js-core`          | TypeScript SDK for Hyperdrive. web3 library bindings not included, see options below |
-| `@delvtech/hyperdrive-viem`     | Viem bindings for the TypeScript SDK                                                 |
-| _`@delvtech/hyperdrive-js-core-ethers`_ | _TODO: Ethers bindings for the TypeScript SDK_                                       |
+> This is a foundational package. If you're looking to use the SDK. Checkout the
+> list of [binding packages](#Binding-Packages) below.
 
-## Quickstart (Viem)
+This package contains the core logic for interacting with the Hyperdrive
+contracts, but doesn't include a web3 library for communicating with a network.
+For this, we publish thin binding packages which seamlessly integrate the SDK
+with a specific web3 library and re-export everything from the core. This design
+enables us to be flexible in the web3 libraries (and even persisitence layers)
+we support.
 
-Install in your project:
+## Binding Packages
 
-```bash
-npm i @delvtech/hyperdrive-js-core @delvtech/hyperdrive-viem viem
-```
+Use the Hyperdrive TypeScript SDK with your web3 library of choice:
 
-Configure the Hyperdrive SDK and get the current fixed rate:
+| Web3 Library                   | Package                                                                                                               |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| [Viem](https://viem.sh)        | [`@delvtech/hyperdrive-viem`](https://www.github.com/delvtech/hyperdrive-monorepo/tree/main/packages/hyperdrive-viem) |
+| [Ethers](https://ethers.org/)  | `@delvtech/hyperdrive-ethers` _(coming soon)_                                                                         |
+| [Web3.js](https://web3js.org/) | `@delvtech/hyperdrive-web3` _(coming soon)_                                                                           |
+
+## Creating a new binding package
+
+To abstract away the web3 library, the SDK uses
+[@delvtech/evm-client](https://www.github.com/delvtech/evm-client). Each SDK binding
+package uses a corresponding `@delvtech/evm-client` binding package.
+
+| SDK binding package                                                                                                   | EVM Client binding package                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| [`@delvtech/hyperdrive-viem`](https://www.github.com/delvtech/hyperdrive-monorepo/tree/main/packages/hyperdrive-viem) | [`@delvtech/evm-client-viem`](https://www.github.com/delvtech/evm-client/tree/main/packages/evm-client-viem)     |
+| `@delvtech/hyperdrive-ethers` _(coming soon)_                                                                         | [`@delvtech/evm-client-ethers`](https://www.github.com/delvtech/evm-client/tree/main/packages/evm-client-ethers) |
+| `@delvtech/hyperdrive-web3` _(coming soon)_                                                                           | `@delvtech/evm-client-web3` _(coming soon)_                                                                      |
+
+Find or create the evm-client package for the web3 library you want to support
+and use it to create `CachedReadContract`, `CachedReadWriteContract`, and
+`Network` instances.
+
+**Viem `ReadHyperdrive` example:**
 
 ```ts
+import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-js-core";
 import {
-  PublicClient,
-  createPublicClient,
-  createWalletClient,
-  custom,
-  http,
-} from "viem";
-import { mainnet } from "viem/chains";
-import { HyperdriveSDK } from "@delvtech/hyperdrive-js-core";
-import {
-  HyperdriveContract,
-  HypedriveMathContract,
-} from "@delvtech/hyperdrive-viem";
+  SimpleCache,
+  createCachedReadContract,
+  createNetwork,
+} from "@delvtech/evm-client-viem";
+import { Address, PublicClient } from "viem";
 
-// 1. Set up your viem clients
-const publicClient = createPublicClient({
-  chain: mainnet,
-  transport: http(),
-});
-const walletClient = createWalletClient({
-  chain: mainnet,
-  transport: custom(window.ethereum),
-});
+interface CreateReadHyperdriveOptions {
+  address: Address;
+  publicClient: PublicClient;
+  cache?: SimpleCache;
+  namespace?: string;
+}
 
-// 2. Create Hyperdrive SDK instance
-export const hyperdrive = new HyperdriveSdk({
-  hyperdriveContract: new HyperdriveContract({
-    publicClient,
-    walletClient,
-    address: "<hyperdrive-address-here>",
-  }),
-  mathContract: new HyperdriveMathContract({
-    publicClient,
-    address: "<math-address-here>",
-  }),
-});
-
-// 3. Use the SDK <3
-(async function () {
-  console.log(`The current fixed rate is: ${await hyperdrive.getSpotRate()}`);
-})();
+export function createReadHyperdrive({
+  address,
+  publicClient,
+  cache,
+  namespace,
+}: CreateReadHyperdriveOptions): ReadHyperdrive {
+  // Create a new ReadHyperdrive using the evm-client bindings for Viem.
+  return new ReadHyperdrive({
+    contract: createCachedReadContract({
+      abi: IHyperdrive.abi,
+      address,
+      publicClient,
+      cache,
+      namespace,
+    }),
+    network: createNetwork(publicClient),
+  });
+}
 ```

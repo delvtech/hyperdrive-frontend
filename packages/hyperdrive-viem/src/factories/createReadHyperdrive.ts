@@ -1,6 +1,6 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js-core";
 import { Address, PublicClient } from "viem";
-import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
+import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
 import {
   SimpleCache,
   createCachedReadContract,

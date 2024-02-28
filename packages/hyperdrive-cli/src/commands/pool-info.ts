@@ -1,4 +1,4 @@
-import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
+import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
 import { command } from "clide-js";
 import signale from "signale";
 import { createPublicClient, http } from "viem";

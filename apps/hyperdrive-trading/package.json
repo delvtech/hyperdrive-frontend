@@ -26,7 +26,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.16",
     "@hyperdrive/appconfig": "*",
-    "@hyperdrive/artifacts": "*",
+    "@delvtech/hyperdrive-artifacts": "*",
     "@delvtech/hyperdrive-viem": "*",
     "@rainbow-me/rainbowkit": "^2.0.0",
     "@tanstack/react-query": "^4.29.12",

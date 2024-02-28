@@ -1,4 +1,4 @@
-import { ERC20Mintable } from "@hyperdrive/artifacts/ERC20Mintable";
+import { ERC20Mintable } from "@delvtech/hyperdrive-artifacts/ERC20Mintable";
 import { command } from "clide-js";
 import signale from "signale";
 import { createPublicClient, formatUnits, http } from "viem";
