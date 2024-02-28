@@ -1,4 +1,4 @@
-# @hyperdrive/artifacts
+# @delvtech/hyperdrive-artifacts
 
 Typed build artifacts from the [Hyperdrive
 Contracts](https://github.com/delvtech/hyperdrive).
@@ -18,11 +18,11 @@ sh build.sh
 ## Usage
 
 Each contract will have a corresponding file at
-`@hyperdrive/artifacts/ContractName` which includes an export named after
+`@delvtech/hyperdrive-artifacts/ContractName` which includes an export named after
 the contract with the its ABI and bytecode.
 
 ```ts
-import { IHyperdrive } from '@hyperdrive/artifacts/IHyperdrive';
+import { IHyperdrive } from '@delvtech/hyperdrive-artifacts/IHyperdrive';
 
 const hyperdriveAbi = IHyperdrive.abi;
 ```

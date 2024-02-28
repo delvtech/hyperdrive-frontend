@@ -1,4 +1,4 @@
-import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
+import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
 import { Event, FunctionReturn } from "@delvtech/evm-client";
 
 export type Checkpoint = FunctionReturn<

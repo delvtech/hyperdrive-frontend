@@ -1,4 +1,4 @@
-import { MockLido } from "@hyperdrive/artifacts/MockLido";
+import { MockLido } from "@delvtech/hyperdrive-artifacts/MockLido";
 import { Address } from "viem";
 import { useReadContract } from "wagmi";
 

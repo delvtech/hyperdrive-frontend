@@ -1,4 +1,4 @@
-import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
+import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
 import { createCachedReadContract } from "@delvtech/evm-client";
 import { NetworkStub, ReadContractStub } from "@delvtech/evm-client/stubs";
 import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";

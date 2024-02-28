@@ -1,4 +1,4 @@
-import { IHyperdrive } from "@hyperdrive/artifacts/IHyperdrive";
+import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
 import { useQuery } from "@tanstack/react-query";
 import { PublicClient, decodeEventLog, Address } from "viem";
 import { usePublicClient } from "wagmi";

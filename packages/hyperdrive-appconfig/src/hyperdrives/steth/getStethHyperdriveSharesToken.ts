@@ -1,4 +1,4 @@
-import { IStETHHyperdriveRead } from "@hyperdrive/artifacts/IStETHHyperdriveRead";
+import { IStETHHyperdriveRead } from "@delvtech/hyperdrive-artifacts/IStETHHyperdriveRead";
 import { TokenConfig, getTokenConfig } from "src/tokens/getTokenConfig";
 import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
 import { Address, PublicClient } from "viem";

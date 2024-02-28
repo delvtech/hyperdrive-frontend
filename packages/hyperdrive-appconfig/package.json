@@ -15,7 +15,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@hyperdrive/artifacts": "*",
+    "@delvtech/hyperdrive-artifacts": "*",
     "@delvtech/hyperdrive-js-core": "*",
     "@delvtech/hyperdrive-viem": "*",
     "@hyperdrive/eslint-config": "*",

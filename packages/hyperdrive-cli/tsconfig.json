@@ -10,7 +10,7 @@
     "moduleResolution": "NodeNext",
     "allowSyntheticDefaultImports": true,
 
-    // important to import JSON files from @hyperdrive/artifacts
+    // important to import JSON files from @delvtech/hyperdrive-artifacts
     "resolveJsonModule": true,
 
     // we don't need declaration files for a CLI

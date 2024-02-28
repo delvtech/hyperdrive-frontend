@@ -1,4 +1,4 @@
-import { HyperdriveFactory } from "@hyperdrive/artifacts/HyperdriveFactory";
+import { HyperdriveFactory } from "@delvtech/hyperdrive-artifacts/HyperdriveFactory";
 import { command } from "clide-js";
 import signale from "signale";
 import { createPublicClient, http } from "viem";
