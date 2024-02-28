@@ -1,8 +1,7 @@
-export interface ClosedLpShares {
+export interface OpenLpShares {
   hyperdriveAddress: `0x${string}`;
   lpAmount: bigint;
-  baseAmount: bigint;
-  withdrawalShareAmount: bigint;
   lpSharePrice: bigint;
+  baseAmount: bigint;
   closedTimestamp: bigint;
 }

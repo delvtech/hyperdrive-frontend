@@ -13,6 +13,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
+import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { RemoveLiquidityForm } from "src/ui/hyperdrive/lp/RemoveLiquidityForm/RemoveLiquidityForm";
 import { formatUnits } from "viem";
@@ -39,6 +40,13 @@ export function OpenLpSharesCard({
   const { lpSharesTotalSupply } = useLpSharesTotalSupply({
     hyperdriveAddress: hyperdrive.address,
   });
+
+  const { lpShareBalance, baseAmountPaid } = useOpenLpPosition({
+    hyperdriveAddress: hyperdrive.address,
+    account,
+  });
+
+  const profit = dnum.subtract([lpShareBalance, 18], [baseAmountPaid, 18])[0];
 
   const { proceeds: lpBaseWithdrawable, withdrawalShares } =
     usePreviewRemoveLiquidity({
@@ -103,6 +111,27 @@ export function OpenLpSharesCard({
                   ) : (
                     <Skeleton />
                   )}
+                </p>
+              }
+            />
+            <LabelValue
+              label="Profit"
+              value={
+                <p>
+                  <div
+                    data-tip={"Profit on your LP position since you opened it."}
+                    className={
+                      "daisy-stat-desc daisy-tooltip mt-1 inline-flex border-b border-dashed border-current text-md text-success"
+                    }
+                  >
+                    <span>{"+"}</span>
+                    {formatBalance({
+                      balance: profit,
+                      decimals: baseToken.decimals,
+                      places: 4,
+                    })}{" "}
+                    {baseToken.symbol}
+                  </div>
                 </p>
               }
             />
