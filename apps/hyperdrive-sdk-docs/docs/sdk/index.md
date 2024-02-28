@@ -7,65 +7,93 @@ custom_edit_url: null
 
 # Getting Started
 
-A vanilla TypeScript SDK containing everything you need to start working with
-the Hyperdrive AMM.
+A TypeScript SDK for the [Hyperdrive
+AMM](https://www.github.com/delvtech/hyperdrive).
 
-| Library                    | Description                                                                          |
-| -------------------------- | ------------------------------------------------------------------------------------ |
-| `@delvtech/hyperdrive-js-core`          | TypeScript SDK for Hyperdrive. web3 library bindings not included, see options below |
-| `@delvtech/hyperdrive-viem`     | Viem bindings for the TypeScript SDK                                                 |
-| _`@delvtech/hyperdrive-js-core-ethers`_ | _TODO: Ethers bindings for the TypeScript SDK_                                       |
+The SDK has been designed to seamlessly integrate with multiple web3 libraries.
+Choose one below to get started:
 
-## Quickstart (Viem)
+- [Viem Quickstart](#viem-quickstart)
+- [Ethers Quickstart](#ethers-quickstart)
+- [Web3.js Quickstart](#web3js-quickstart)
 
-Install in your project:
+## Viem Quickstart
 
-```bash
-npm i @delvtech/hyperdrive-js-core @delvtech/hyperdrive-viem viem
+To use the Hyperdrive SDK with [Viem](https://viem.sh):
+
+### Install
+
+```sh
+npm i viem @delvtech/hyperdrive-viem
 ```
 
-Configure the Hyperdrive SDK and get the current fixed rate:
+### Using the `ReadHyperdrive`
+
+The [`ReadHyperdrive`][ReadHyperdrive-reference] interface provides methods for fetching data and performing
+calculations with a public client.
 
 ```ts
-import {
-  PublicClient,
-  createPublicClient,
-  createWalletClient,
-  custom,
-  http,
-} from "viem";
+import { createPublicClient, http } from "viem";
 import { mainnet } from "viem/chains";
-import { HyperdriveSDK } from "@delvtech/hyperdrive-js-core";
-import {
-  HyperdriveContract,
-  HypedriveMathContract,
-} from "@delvtech/hyperdrive-viem";
+import { createReadHyperdrive } from "@delvtech/hyperdrive-viem";
 
-// 1. Set up your viem clients
+// 1. Create a public client
 const publicClient = createPublicClient({
   chain: mainnet,
   transport: http(),
 });
-const walletClient = createWalletClient({
-  chain: mainnet,
-  transport: custom(window.ethereum),
+
+// 2. Create a ReadHyperdrive instance
+const hyperdrive = createReadHyperdrive({
+  address: "0x...",
+  publicClient,
 });
 
-// 2. Create Hyperdrive SDK instance
-export const hyperdrive = new HyperdriveSdk({
-  hyperdriveContract: new HyperdriveContract({
-    publicClient,
-    walletClient,
-    address: "<hyperdrive-address-here>",
-  }),
-  mathContract: new HyperdriveMathContract({
-    publicClient,
-    address: "<math-address-here>",
-  }),
-});
-
-// 3. Use the SDK <3
-(async function () {
-  console.log(`The current fixed rate is: ${await hyperdrive.getFixedRate()}`);
-})();
+// 3. Get data from the contracts
+const liquidity = await hyperdrive.getLiquidity();
 ```
+
+### Using the `ReadWriteHyperdrive`
+
+The [`ReadWriteHyperdrive`][ReadWriteHyperdrive-reference]
+interface extends [`ReadHyperdrive`][ReadHyperdrive-reference] with additional methods for sending transactions.
+
+```ts
+import { createPublicClient, createWalletClient, custom, http } from "viem";
+import { mainnet } from "viem/chains";
+import { createReadHyperdrive } from "@delvtech/hyperdrive-viem";
+
+// 1. Create a public client
+const publicClient = createPublicClient({
+  chain: mainnet,
+  transport: http(),
+});
+
+// 2. Create a wallet client
+const client = createWalletClient({
+  chain: mainnet,
+  transport: custom(window.ethereum!),
+});
+
+// 3. Create a ReadWriteHyperdrive instance
+const hyperdrive = createReadWriteHyperdrive({
+  address: "0x...",
+  publicClient,
+  walletClient,
+});
+
+// 4. Send a transaction
+const liquidity = await hyperdrive.pause(true);
+```
+
+## Ethers Quickstart
+
+*Coming soon!*
+
+## Web3.js Quickstart
+
+*Coming soon!*
+
+[ReadHyperdrive-reference]: /docs/sdk/api-reference/classes/ReadHyperdrive "ReadHyperdrive Reference"
+[ReadWriteHyperdrive-reference]: /docs/sdk/api-reference/classes/ReadWriteHyperdrive "ReadWriteHyperdrive
+    Reference"
