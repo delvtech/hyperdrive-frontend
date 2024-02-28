@@ -7,7 +7,7 @@ import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { getHasEnoughLiquidity } from "src/hyperdrive/getHasEnoughLiquidity";
+import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -111,7 +111,7 @@ export function OpenShortForm({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const hasEnoughLiquidity = getHasEnoughLiquidity({
+  const hasEnoughLiquidity = getIsValidTradeSize({
     tradeAmount: amountOfBondsToShortAsBigInt,
     maxTradeSize: maxBondsOut,
   });
