@@ -1,4 +1,8 @@
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  findBaseToken,
+  findYieldSourceToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -15,6 +19,8 @@ import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { RemoveLiquidityForm } from "src/ui/hyperdrive/lp/RemoveLiquidityForm/RemoveLiquidityForm";
+import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
+import { getIsSteth } from "src/vaults/isSteth";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
@@ -31,6 +37,11 @@ export function OpenLpSharesCard({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
+  const sharesToken = findYieldSourceToken({
+    yieldSourceTokenAddress: hyperdrive.sharesToken,
+    tokens: appConfig.tokens,
+  });
+
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const { lpShares } = useLpShares({
     hyperdriveAddress: hyperdrive.address,
@@ -40,13 +51,25 @@ export function OpenLpSharesCard({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const { proceeds: lpBaseWithdrawable, withdrawalShares } =
+  // If this is a steth market, we need to convert the amount out into steth
+  // tokens, which are 1:1 with eth
+  const isSteth = getIsSteth(sharesToken);
+  const { proceeds: previewWithdrawAmount, withdrawalShares } =
     usePreviewRemoveLiquidity({
       hyperdriveAddress: hyperdrive.address,
       lpSharesIn: lpShares,
       minOutputPerShare: 1n,
       destination: account,
+      asBase: !isSteth,
     });
+  const { stethTokenAmount } = useConvertStethSharesToStethTokens({
+    lidoAddress: sharesToken.address,
+    enabled: isSteth,
+    stethShares: previewWithdrawAmount,
+  });
+  const finalPreviewWithdrawAmount = isSteth
+    ? stethTokenAmount
+    : previewWithdrawAmount;
 
   const utilizationRatio =
     !!withdrawalShares && !!lpShares
@@ -70,7 +93,7 @@ export function OpenLpSharesCard({
       <div className="flex h-full w-80 flex-col items-center justify-center gap-4">
         {lpShares !== 0n ? (
           <>
-            <span className="daisy-card-title font-bold">LP Shares</span>
+            <span className="daisy-card-title font-bold">Your Liquidity</span>
             <LabelValue
               label="Pool share"
               value={
@@ -116,7 +139,7 @@ export function OpenLpSharesCard({
                     Utilization ratio
                   </p>
                   <p>
-                    {!!lpBaseWithdrawable && !!withdrawalShares ? (
+                    {!!finalPreviewWithdrawAmount && !!withdrawalShares ? (
                       `${dnum.format(
                         [utilizationRatio, baseToken.decimals],
                         2,
