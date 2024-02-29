@@ -1240,7 +1240,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
       lpAmount: bigint;
       lpSharePrice: bigint;
       baseAmount: bigint;
-      closedTimestamp: bigint;
     }[]
   > {
     const addLiquidityEvents = await this.contract.getEvents("AddLiquidity", {
@@ -1249,7 +1248,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     });
 
     return Promise.all(
-      addLiquidityEvents.map(async ({ blockNumber, args }) => {
+      addLiquidityEvents.map(async ({ args }) => {
         const { lpAmount, lpSharePrice } = args;
         const finalBaseAmount = dnum.multiply(
           [lpAmount, 18],
@@ -1260,11 +1259,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
           lpAmount,
           baseAmount: finalBaseAmount,
           lpSharePrice,
-          closedTimestamp: (
-            await getBlockOrThrow(this.network, {
-              blockNumber,
-            })
-          ).timestamp,
         };
       }),
     );

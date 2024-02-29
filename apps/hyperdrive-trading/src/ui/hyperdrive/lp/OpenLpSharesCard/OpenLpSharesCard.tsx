@@ -157,7 +157,9 @@ export function OpenLpSharesCard({
               value={
                 <p>
                   <div
-                    data-tip={"Profit on your LP position since you opened it."}
+                    data-tip={
+                      "Profit or loss on your LP position since you opened it."
+                    }
                     className={classNames(
                       "daisy-stat-desc daisy-tooltip mt-1 inline-flex border-b border-dashed border-current text-md ",
                       { "text-success": isPositiveChangeInValue },
