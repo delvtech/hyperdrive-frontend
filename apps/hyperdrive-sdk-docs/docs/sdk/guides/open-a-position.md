@@ -13,10 +13,10 @@ in the [Hyperdrive
 docs](https://app.gitbook.com/o/-MXeT9pntmqRJiE1hMf6/s/XxVgcFIHiBW2xa7lepeu/~/changes/11/hyperdrive-overview/overview)).
 The steps will be similar for short and LP positions.
 
-This guide assumes you've already installed an implementation of the Hyperdrive
-TypeScript SDK and created a
-[`ReadWriteHyperdrive`][ReadWriteHyperdrive-reference] instance. Checkout the
-[Getting Started](/docs/sdk/) guide to learn how.
+> This guide assumes you've already installed an implementation of the Hyperdrive
+> TypeScript SDK and created a
+> [`ReadWriteHyperdrive`][ReadWriteHyperdrive-reference] instance. Checkout the
+> [Getting Started](/docs/sdk/) guide to learn how.
 
 ### 1. Get the current vault share price
 
