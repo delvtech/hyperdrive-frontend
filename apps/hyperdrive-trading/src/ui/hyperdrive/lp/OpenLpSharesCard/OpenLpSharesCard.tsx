@@ -155,33 +155,31 @@ export function OpenLpSharesCard({
             <LabelValue
               label="Profit/Loss"
               value={
-                <p>
-                  <div
-                    data-tip={
-                      "Profit or loss on your LP position since you opened it."
-                    }
-                    className={classNames(
-                      "daisy-stat-desc daisy-tooltip mt-1 inline-flex border-b border-dashed border-current text-md ",
-                      { "text-success": isPositiveChangeInValue },
-                      { "text-error": !isPositiveChangeInValue },
-                    )}
-                  >
-                    <span>{isPositiveChangeInValue ? "+" : ""}</span>
-                    {formatBalance({
-                      balance: profit,
-                      decimals: baseToken.decimals,
-                      places: 4,
-                    })}{" "}
-                    {baseToken.symbol}
-                  </div>
-                </p>
+                <div
+                  data-tip={
+                    "Profit or loss on your LP position since you opened it."
+                  }
+                  className={classNames(
+                    "daisy-tooltip flex items-center border-b border-dashed border-current before:border",
+                    { "text-success": isPositiveChangeInValue },
+                    { "text-error": !isPositiveChangeInValue },
+                  )}
+                >
+                  <span>{isPositiveChangeInValue ? "+" : ""}</span>
+                  {formatBalance({
+                    balance: profit,
+                    decimals: baseToken.decimals,
+                    places: 4,
+                  })}{" "}
+                  {baseToken.symbol}
+                </div>
               }
             />
             <div className="flex w-full flex-col gap-2">
               <div className="flex flex-col">
                 <div className="flex justify-between">
                   <p
-                    className="daisy-tooltip mb-1 inline-flex cursor-help items-center border-b border-dashed border-current text-neutral-content"
+                    className="daisy-tooltip mb-1 inline-flex cursor-help items-center border-b border-dashed border-current text-neutral-content before:border"
                     data-tip="Your ratio of idle capital to capital being used to back Longs and Shorts."
                   >
                     Utilization ratio
