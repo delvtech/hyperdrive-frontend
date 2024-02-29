@@ -22,8 +22,8 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Recipes",
-      items: ["sdk/recipes/long"],
+      label: "Guides",
+      items: ["sdk/guides/position"],
     },
 
     {
