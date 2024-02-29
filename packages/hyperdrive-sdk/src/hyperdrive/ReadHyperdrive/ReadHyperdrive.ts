@@ -210,6 +210,18 @@ export interface IReadHyperdrive {
   getLpSharesTotalSupply(args?: {
     options?: ContractReadOptions;
   }): Promise<bigint>;
+
+  /**
+   * Gets the lpShareBalance and baseAmountPaid of a user's open LP position.
+   */
+  getOpenLpPosition(args: {
+    account: `0x${string}`;
+    options?: ContractReadOptions;
+  }): Promise<{
+    lpShareBalance: bigint;
+    baseAmountPaid: bigint;
+  }>;
+
   /**
    * Gets the amount of closed LP shares a user has.
    */
@@ -1172,6 +1184,86 @@ export class ReadHyperdrive implements IReadHyperdrive {
     );
   }
 
+  async getOpenLpPosition({ account }: { account: `0x${string}` }): Promise<{
+    lpShareBalance: bigint;
+    baseAmountPaid: bigint;
+  }> {
+    const openLpShares = await this.getOpenLpShares({ account });
+    const closedLpShares = await this.getClosedLpShares({ account });
+    let baseAmountPaid = 0n;
+    let lpShareBalance = 0n;
+
+    openLpShares.forEach((lpShare) => {
+      lpShareBalance = dnum.add(
+        [lpShareBalance, 18],
+        [lpShare.lpAmount, 18],
+      )[0];
+      const openLpSharesValue = dnum.multiply(
+        [lpShare.lpAmount, 18],
+        [lpShare.lpSharePrice, 18],
+      )[0];
+      baseAmountPaid = dnum.add(
+        [baseAmountPaid, 18],
+        [openLpSharesValue, 18],
+      )[0];
+    });
+
+    closedLpShares.forEach((lpShare) => {
+      lpShareBalance = dnum.subtract(
+        [lpShareBalance, 18],
+        [lpShare.lpAmount, 18],
+      )[0];
+      const closedLpSharesValue = dnum.multiply(
+        [lpShare.lpAmount, 18],
+        [lpShare.lpSharePrice, 18],
+      )[0];
+      baseAmountPaid = dnum.subtract(
+        [baseAmountPaid, 18],
+        [closedLpSharesValue, 18],
+      )[0];
+    });
+
+    return {
+      lpShareBalance,
+      baseAmountPaid,
+    };
+  }
+
+  private async getOpenLpShares({
+    account,
+    options,
+  }: {
+    account: `0x${string}`;
+    options?: ContractReadOptions;
+  }): Promise<
+    {
+      lpAmount: bigint;
+      lpSharePrice: bigint;
+      baseAmount: bigint;
+    }[]
+  > {
+    const addLiquidityEvents = await this.contract.getEvents("AddLiquidity", {
+      filter: { provider: account },
+      ...options,
+    });
+
+    return Promise.all(
+      addLiquidityEvents.map(async ({ args }) => {
+        const { lpAmount, lpSharePrice } = args;
+        const finalBaseAmount = dnum.multiply(
+          [lpAmount, 18],
+          [lpSharePrice, 18],
+        )[0];
+
+        return {
+          lpAmount,
+          baseAmount: finalBaseAmount,
+          lpSharePrice,
+        };
+      }),
+    );
+  }
+
   async getClosedLpShares({
     account,
     options,
@@ -1201,6 +1293,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
           lpAmount,
           baseAmount: finalBaseAmount,
           withdrawalShareAmount,
+          lpSharePrice,
           closedTimestamp: (
             await getBlockOrThrow(this.network, {
               blockNumber,

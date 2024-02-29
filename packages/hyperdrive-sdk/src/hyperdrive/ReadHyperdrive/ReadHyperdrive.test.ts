@@ -1827,6 +1827,64 @@ test("getClosedShorts should account for shorts closed to shares", async () => {
   ]);
 });
 
+test("getOpenLpPosition should return the lpShareBalance and baseAmountPaid for a given accounts open LP position", async () => {
+  // Description:
+  // Bob opens up 2 lp positions, one for 5 LP shares and another for 10 LP shares.
+  // Bob then closes 5 of the 15 LP shares for 10 base.
+  // Bob is left with 10 LP shares and 10 base paid.
+
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  contract.stubEvents("AddLiquidity", { filter: { provider: BOB } }, [
+    {
+      eventName: "AddLiquidity",
+      blockNumber: 5n,
+      args: {
+        baseAmount: dnum.from("10", 18)[0],
+        lpAmount: dnum.from("5", 18)[0],
+        provider: BOB,
+        lpSharePrice: dnum.from("2", 18)[0],
+        asBase: true,
+        vaultShareAmount: 0n,
+      },
+    },
+    {
+      eventName: "AddLiquidity",
+      blockNumber: 5n,
+      args: {
+        baseAmount: dnum.from("10", 18)[0],
+        lpAmount: dnum.from("10", 18)[0],
+        provider: BOB,
+        lpSharePrice: dnum.from("1", 18)[0],
+        asBase: true,
+        vaultShareAmount: 0n,
+      },
+    },
+  ]);
+
+  contract.stubEvents("RemoveLiquidity", { filter: { provider: BOB } }, [
+    {
+      eventName: "RemoveLiquidity",
+      blockNumber: 5n,
+      args: {
+        asBase: true,
+        baseAmount: dnum.from("10", 18)[0],
+        vaultShareAmount: 0n,
+        provider: BOB,
+        withdrawalShareAmount: 0n,
+        lpAmount: dnum.from("5", 18)[0],
+        lpSharePrice: dnum.from("2", 18)[0],
+      },
+    },
+  ]);
+
+  const value = await readHyperdrive.getOpenLpPosition({ account: BOB });
+  expect(value).toEqual({
+    lpShareBalance: dnum.from("10", 18)[0],
+    baseAmountPaid: dnum.from("10", 18)[0],
+  });
+});
+
 test("getClosedLpShares should account for LP shares closed to base", async () => {
   // Description:
   // Bob completely closes his LP position of 5 LP shares and receives back
@@ -1859,6 +1917,7 @@ test("getClosedLpShares should account for LP shares closed to base", async () =
       hyperdriveAddress: "0x0000000000000000000000000000000000000000",
       lpAmount: dnum.from("5", 18)[0],
       baseAmount: dnum.from("10", 18)[0],
+      lpSharePrice: dnum.from("2", 18)[0],
       withdrawalShareAmount: 0n,
       closedTimestamp: 123456789n,
     },
@@ -1898,6 +1957,7 @@ test("getClosedLpShares should account for LP shares closed to vault shares", as
       lpAmount: dnum.from("5", 18)[0],
       baseAmount: dnum.from("10", 18)[0],
       withdrawalShareAmount: 0n,
+      lpSharePrice: dnum.from("2", 18)[0],
       closedTimestamp: 123456789n,
     },
   ]);

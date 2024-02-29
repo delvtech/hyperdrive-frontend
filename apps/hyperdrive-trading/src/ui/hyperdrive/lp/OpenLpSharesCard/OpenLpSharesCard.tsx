@@ -3,6 +3,7 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
+import classNames from "classnames";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -17,6 +18,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
+import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { RemoveLiquidityForm } from "src/ui/hyperdrive/lp/RemoveLiquidityForm/RemoveLiquidityForm";
 import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
@@ -50,6 +52,18 @@ export function OpenLpSharesCard({
   const { lpSharesTotalSupply } = useLpSharesTotalSupply({
     hyperdriveAddress: hyperdrive.address,
   });
+
+  const { baseAmountPaid } = useOpenLpPosition({
+    hyperdriveAddress: hyperdrive.address,
+    account,
+  });
+  const currentValue = calculateTotalValueFromPrice({
+    amount: lpShares || 0n,
+    price: poolInfo?.lpSharePrice || 0n,
+    decimals: baseToken.decimals,
+  });
+  const profit = dnum.subtract([currentValue, 18], [baseAmountPaid, 18])[0];
+  const isPositiveChangeInValue = profit > 0n;
 
   // If this is a steth market, we need to convert the amount out into steth
   // tokens, which are 1:1 with eth
@@ -110,22 +124,56 @@ export function OpenLpSharesCard({
               }
             />
             <LabelValue
+              label={`${baseToken.symbol} deposited`}
+              value={
+                <p>
+                  {formatBalance({
+                    balance: baseAmountPaid,
+                    decimals: baseToken.decimals,
+                    places: 4,
+                  })}{" "}
+                  {baseToken.symbol}
+                </p>
+              }
+            />
+            <LabelValue
               label="Current value"
               value={
                 <p>
                   {!!poolInfo && !!lpShares ? (
                     `${formatBalance({
-                      balance: calculateTotalValueFromPrice({
-                        amount: lpShares,
-                        price: poolInfo.lpSharePrice,
-                        decimals: baseToken.decimals,
-                      }),
+                      balance: currentValue,
                       decimals: baseToken.decimals,
                       places: 4,
                     })} ${baseToken.symbol}`
                   ) : (
                     <Skeleton />
                   )}
+                </p>
+              }
+            />
+            <LabelValue
+              label="Profit/Loss"
+              value={
+                <p>
+                  <div
+                    data-tip={
+                      "Profit or loss on your LP position since you opened it."
+                    }
+                    className={classNames(
+                      "daisy-stat-desc daisy-tooltip mt-1 inline-flex border-b border-dashed border-current text-md ",
+                      { "text-success": isPositiveChangeInValue },
+                      { "text-error": !isPositiveChangeInValue },
+                    )}
+                  >
+                    <span>{isPositiveChangeInValue ? "+" : ""}</span>
+                    {formatBalance({
+                      balance: profit,
+                      decimals: baseToken.decimals,
+                      places: 4,
+                    })}{" "}
+                    {baseToken.symbol}
+                  </div>
                 </p>
               }
             />
@@ -139,14 +187,12 @@ export function OpenLpSharesCard({
                     Utilization ratio
                   </p>
                   <p>
-                    {!!finalPreviewWithdrawAmount && !!withdrawalShares ? (
-                      `${dnum.format(
-                        [utilizationRatio, baseToken.decimals],
-                        2,
-                      )}%`
-                    ) : (
-                      <Skeleton />
-                    )}
+                    {!!finalPreviewWithdrawAmount && !!withdrawalShares
+                      ? `${dnum.format(
+                          [utilizationRatio, baseToken.decimals],
+                          2,
+                        )}%`
+                      : "0%"}
                   </p>
                 </div>
               </div>
