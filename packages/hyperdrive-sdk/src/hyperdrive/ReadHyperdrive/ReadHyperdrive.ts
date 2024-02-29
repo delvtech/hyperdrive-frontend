@@ -35,7 +35,6 @@ import { hyperwasm } from "src/hyperwasm";
 import { getBlockOrThrow } from "src/evm-client/getBlockOrThrow";
 import { convertSharesToBase } from "src/hyperdrive/utils/convertSharesToBase";
 import { convertBaseToShares } from "src/hyperdrive/utils/convertBaseToShares";
-import { OpenLpShares } from "src/lp/OpenLpShares";
 
 const HyperdriveABI = IHyperdrive.abi;
 
@@ -1191,29 +1190,42 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }> {
     const openLpShares = await this.getOpenLpShares({ account });
     const closedLpShares = await this.getClosedLpShares({ account });
-    const lpShares = await this.getLpShares({ account });
-    let totalOpenLpSharesValue = 0n;
-    let totalClosedLpSharesValue = 0n;
+    let baseAmountPaid = 0n;
+    let lpShareBalance = 0n;
 
     openLpShares.forEach((lpShare) => {
-      totalOpenLpSharesValue += dnum.multiply(
+      lpShareBalance = dnum.add(
+        [lpShareBalance, 18],
+        [lpShare.lpAmount, 18],
+      )[0];
+      const openLpSharesValue = dnum.multiply(
         [lpShare.lpAmount, 18],
         [lpShare.lpSharePrice, 18],
+      )[0];
+      baseAmountPaid = dnum.add(
+        [baseAmountPaid, 18],
+        [openLpSharesValue, 18],
       )[0];
     });
 
     closedLpShares.forEach((lpShare) => {
-      totalClosedLpSharesValue += dnum.multiply(
+      lpShareBalance = dnum.subtract(
+        [lpShareBalance, 18],
+        [lpShare.lpAmount, 18],
+      )[0];
+      const closedLpSharesValue = dnum.multiply(
         [lpShare.lpAmount, 18],
         [lpShare.lpSharePrice, 18],
       )[0];
+      baseAmountPaid = dnum.subtract(
+        [baseAmountPaid, 18],
+        [closedLpSharesValue, 18],
+      )[0];
     });
+
     return {
-      lpShareBalance: lpShares,
-      baseAmountPaid: dnum.subtract(
-        [totalOpenLpSharesValue, 18],
-        [totalClosedLpSharesValue, 18],
-      )[0],
+      lpShareBalance,
+      baseAmountPaid,
     };
   }
 
@@ -1223,7 +1235,14 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     account: `0x${string}`;
     options?: ContractReadOptions;
-  }): Promise<OpenLpShares[]> {
+  }): Promise<
+    {
+      lpAmount: bigint;
+      lpSharePrice: bigint;
+      baseAmount: bigint;
+      closedTimestamp: bigint;
+    }[]
+  > {
     const addLiquidityEvents = await this.contract.getEvents("AddLiquidity", {
       filter: { provider: account },
       ...options,
@@ -1238,7 +1257,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
         )[0];
 
         return {
-          hyperdriveAddress: this.contract.address,
           lpAmount,
           baseAmount: finalBaseAmount,
           lpSharePrice,

@@ -1878,11 +1878,6 @@ test("getOpenLpPosition should return the lpShareBalance and baseAmountPaid for 
     },
   ]);
 
-  contract.stubRead({
-    functionName: "balanceOf",
-    value: dnum.from("10", 18)[0],
-  });
-
   const value = await readHyperdrive.getOpenLpPosition({ account: BOB });
   expect(value).toEqual({
     lpShareBalance: dnum.from("10", 18)[0],
@@ -1922,6 +1917,7 @@ test("getClosedLpShares should account for LP shares closed to base", async () =
       hyperdriveAddress: "0x0000000000000000000000000000000000000000",
       lpAmount: dnum.from("5", 18)[0],
       baseAmount: dnum.from("10", 18)[0],
+      lpSharePrice: dnum.from("2", 18)[0],
       withdrawalShareAmount: 0n,
       closedTimestamp: 123456789n,
     },
@@ -1961,6 +1957,7 @@ test("getClosedLpShares should account for LP shares closed to vault shares", as
       lpAmount: dnum.from("5", 18)[0],
       baseAmount: dnum.from("10", 18)[0],
       withdrawalShareAmount: 0n,
+      lpSharePrice: dnum.from("2", 18)[0],
       closedTimestamp: 123456789n,
     },
   ]);

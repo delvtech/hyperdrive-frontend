@@ -59,7 +59,7 @@ export function OpenLpSharesCard({
   });
   const currentValue = calculateTotalValueFromPrice({
     amount: lpShares || 0n,
-    price: poolInfo.lpSharePrice,
+    price: poolInfo?.lpSharePrice || 0n,
     decimals: baseToken.decimals,
   });
   const profit = dnum.subtract([currentValue, 18], [baseAmountPaid, 18])[0];
@@ -140,7 +140,7 @@ export function OpenLpSharesCard({
               }
             />
             <LabelValue
-              label={`${baseToken.symbol} paid`}
+              label={`${baseToken.symbol} deposited`}
               value={
                 <p>
                   {formatBalance({
@@ -153,7 +153,7 @@ export function OpenLpSharesCard({
               }
             />
             <LabelValue
-              label="Profit"
+              label="Profit/Loss"
               value={
                 <p>
                   <div
