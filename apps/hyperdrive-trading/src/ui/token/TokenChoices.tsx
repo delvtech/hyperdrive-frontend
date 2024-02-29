@@ -53,7 +53,7 @@ export function TokenChoices({
                 className={classNames(
                   "inline-flex items-center justify-start gap-2",
                   {
-                    "daisy-tooltip daisy-tooltip-left daisy-tooltip-warning cursor-not-allowed text-gray-100":
+                    "daisy-tooltip daisy-tooltip-left cursor-not-allowed border-current before:border":
                       disabled,
                     "cursor-pointer": !disabled,
                   },
@@ -75,7 +75,7 @@ export function TokenChoices({
                 />
                 {symbol}{" "}
                 <span className="text-xs">
-                  {tokenBalance || tokenBalance === 0n
+                  {tokenBalance || tokenBalance !== undefined
                     ? `(Balance: ${formatBalance({
                         balance: tokenBalance,
                         decimals,
