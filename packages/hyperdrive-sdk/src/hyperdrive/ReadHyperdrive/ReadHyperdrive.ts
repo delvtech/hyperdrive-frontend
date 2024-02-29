@@ -1232,8 +1232,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return Promise.all(
       addLiquidityEvents.map(async ({ blockNumber, args }) => {
         const { lpAmount, lpSharePrice } = args;
-        // Get the value of the lp shares by multiplying by the lp share price
-        // in the event, this saves us looking up pool info
         const finalBaseAmount = dnum.multiply(
           [lpAmount, 18],
           [lpSharePrice, 18],
