@@ -124,6 +124,19 @@ export function OpenLpSharesCard({
               }
             />
             <LabelValue
+              label={`${baseToken.symbol} deposited`}
+              value={
+                <p>
+                  {formatBalance({
+                    balance: baseAmountPaid,
+                    decimals: baseToken.decimals,
+                    places: 4,
+                  })}{" "}
+                  {baseToken.symbol}
+                </p>
+              }
+            />
+            <LabelValue
               label="Current value"
               value={
                 <p>
@@ -136,19 +149,6 @@ export function OpenLpSharesCard({
                   ) : (
                     <Skeleton />
                   )}
-                </p>
-              }
-            />
-            <LabelValue
-              label={`${baseToken.symbol} deposited`}
-              value={
-                <p>
-                  {formatBalance({
-                    balance: baseAmountPaid,
-                    decimals: baseToken.decimals,
-                    places: 4,
-                  })}{" "}
-                  {baseToken.symbol}
                 </p>
               }
             />
