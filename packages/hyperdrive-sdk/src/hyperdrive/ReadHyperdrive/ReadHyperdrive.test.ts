@@ -1827,7 +1827,7 @@ test("getClosedShorts should account for shorts closed to shares", async () => {
   ]);
 });
 
-test.only("getOpenLpPosition should return the lpShareBalance and baseAmountPaid for a given accounts open LP position", async () => {
+test("getOpenLpPosition should return the lpShareBalance and baseAmountPaid for a given accounts open LP position", async () => {
   // Description:
   // Bob opens up 2 lp positions, one for 5 LP shares and another for 10 LP shares.
   // Bob then closes 5 of the 15 LP shares for 10 base.
