@@ -1,4 +1,5 @@
 import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import classNames from "classnames";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -41,12 +42,17 @@ export function OpenLpSharesCard({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const { lpShareBalance, baseAmountPaid } = useOpenLpPosition({
+  const { baseAmountPaid } = useOpenLpPosition({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
-
-  const profit = dnum.subtract([lpShareBalance, 18], [baseAmountPaid, 18])[0];
+  const currentValue = calculateTotalValueFromPrice({
+    amount: lpShares || 0n,
+    price: poolInfo.lpSharePrice,
+    decimals: baseToken.decimals,
+  });
+  const profit = dnum.subtract([currentValue, 18], [baseAmountPaid, 18])[0];
+  const isPositiveChangeInValue = profit > 0n;
 
   const { proceeds: lpBaseWithdrawable, withdrawalShares } =
     usePreviewRemoveLiquidity({
@@ -100,11 +106,7 @@ export function OpenLpSharesCard({
                 <p>
                   {!!poolInfo && !!lpShares ? (
                     `${formatBalance({
-                      balance: calculateTotalValueFromPrice({
-                        amount: lpShares,
-                        price: poolInfo.lpSharePrice,
-                        decimals: baseToken.decimals,
-                      }),
+                      balance: currentValue,
                       decimals: baseToken.decimals,
                       places: 4,
                     })} ${baseToken.symbol}`
@@ -115,16 +117,31 @@ export function OpenLpSharesCard({
               }
             />
             <LabelValue
+              label={`${baseToken.symbol} paid`}
+              value={
+                <p>
+                  {formatBalance({
+                    balance: baseAmountPaid,
+                    decimals: baseToken.decimals,
+                    places: 4,
+                  })}{" "}
+                  {baseToken.symbol}
+                </p>
+              }
+            />
+            <LabelValue
               label="Profit"
               value={
                 <p>
                   <div
                     data-tip={"Profit on your LP position since you opened it."}
-                    className={
-                      "daisy-stat-desc daisy-tooltip mt-1 inline-flex border-b border-dashed border-current text-md text-success"
-                    }
+                    className={classNames(
+                      "daisy-stat-desc daisy-tooltip mt-1 inline-flex border-b border-dashed border-current text-md ",
+                      { "text-success": isPositiveChangeInValue },
+                      { "text-error": !isPositiveChangeInValue },
+                    )}
                   >
-                    <span>{"+"}</span>
+                    <span>{isPositiveChangeInValue ? "+" : ""}</span>
                     {formatBalance({
                       balance: profit,
                       decimals: baseToken.decimals,
@@ -145,14 +162,12 @@ export function OpenLpSharesCard({
                     Utilization ratio
                   </p>
                   <p>
-                    {!!lpBaseWithdrawable && !!withdrawalShares ? (
-                      `${dnum.format(
-                        [utilizationRatio, baseToken.decimals],
-                        2,
-                      )}%`
-                    ) : (
-                      <Skeleton />
-                    )}
+                    {!!lpBaseWithdrawable && !!withdrawalShares
+                      ? `${dnum.format(
+                          [utilizationRatio, baseToken.decimals],
+                          2,
+                        )}%`
+                      : "0%"}
                   </p>
                 </div>
               </div>

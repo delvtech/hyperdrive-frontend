@@ -223,11 +223,6 @@ export interface IReadHyperdrive {
     baseAmountPaid: bigint;
   }>;
 
-  getOpenLpShares(args: {
-    account: `0x${string}`;
-    options?: ContractReadOptions;
-  }): Promise<OpenLpShares[]>;
-
   /**
    * Gets the amount of closed LP shares a user has.
    */
@@ -1215,17 +1210,20 @@ export class ReadHyperdrive implements IReadHyperdrive {
     });
     return {
       lpShareBalance: lpShares,
-      baseAmountPaid: totalOpenLpSharesValue - totalClosedLpSharesValue,
+      baseAmountPaid: dnum.subtract(
+        [totalOpenLpSharesValue, 18],
+        [totalClosedLpSharesValue, 18],
+      )[0],
     };
   }
 
-  async getOpenLpShares({
+  private async getOpenLpShares({
     account,
     options,
   }: {
     account: `0x${string}`;
     options?: ContractReadOptions;
-  }): ReturnType<IReadHyperdrive, "getOpenLpShares"> {
+  }): Promise<OpenLpShares[]> {
     const addLiquidityEvents = await this.contract.getEvents("AddLiquidity", {
       filter: { provider: account },
       ...options,
