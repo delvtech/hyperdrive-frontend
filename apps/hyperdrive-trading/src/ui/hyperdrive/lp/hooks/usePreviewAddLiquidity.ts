@@ -13,6 +13,7 @@ interface UsePreviewAddLiquidityOptions {
   maxAPR: bigint | undefined;
   asBase?: boolean;
   enabled?: boolean;
+  ethValue?: bigint;
 }
 
 interface UsePreviewAddLiquidityResult {
@@ -29,6 +30,7 @@ export function usePreviewAddLiquidity({
   maxAPR,
   asBase = true,
   enabled = true,
+  ethValue,
 }: UsePreviewAddLiquidityOptions): UsePreviewAddLiquidityResult {
   const publicClient = usePublicClient();
   const { address: account } = useAccount();
@@ -46,12 +48,14 @@ export function usePreviewAddLiquidity({
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewAddLiquidity", {
-      market: hyperdriveAddress,
+      hyperdrive: hyperdriveAddress,
       destination,
       contribution: contribution?.toString(),
       minAPR: minAPR?.toString(),
       maxAPR: maxAPR?.toString(),
+      minLpSharePrice: minLpSharePrice?.toString(),
       asBase,
+      ethValue: ethValue?.toString(),
     }),
     queryFn: queryEnabled
       ? () =>
@@ -62,6 +66,7 @@ export function usePreviewAddLiquidity({
             minLpSharePrice,
             maxAPR,
             asBase,
+            options: { value: ethValue },
           })
       : undefined,
     enabled: queryEnabled,
