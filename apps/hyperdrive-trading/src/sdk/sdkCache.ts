@@ -1,4 +1,4 @@
-import { queryClient } from "src/network/queryClient";
-import { QueryClientSimpleCache } from "./queryCache";
+import { createLruSimpleCache } from "@delvtech/hyperdrive-viem";
 
-export const querySdkCache = new QueryClientSimpleCache(queryClient);
+// 1 minute TTL to match the queryClient's staleTime
+export const sdkCache = createLruSimpleCache({ max: 500, ttl: 60_000 });

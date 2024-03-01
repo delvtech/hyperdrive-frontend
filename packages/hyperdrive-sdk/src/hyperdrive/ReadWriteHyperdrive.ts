@@ -196,25 +196,37 @@ export class ReadWriteHyperdrive
     this.contract = contract;
   }
 
-  checkpoint(
+  async checkpoint(
     time: number,
     options?: ContractWriteOptions,
   ): Promise<`0x${string}`> {
-    return this.contract.write(
+    const hash = await this.contract.write(
       "checkpoint",
       { _checkpointTime: BigInt(time) },
       options,
     );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+    });
+    return hash;
   }
 
-  pause(
+  async pause(
     paused: boolean,
     options?: ContractWriteOptions,
   ): Promise<`0x${string}`> {
-    return this.contract.write("pause", { _status: paused }, options);
+    const hash = await this.contract.write(
+      "pause",
+      { _status: paused },
+      options,
+    );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.deleteRead("getMarketState");
+    });
+    return hash;
   }
 
-  initialize(
+  async initialize(
     args: {
       contribution: bigint;
       apr: bigint;
@@ -224,7 +236,7 @@ export class ReadWriteHyperdrive
     },
     options?: ContractWriteOptions,
   ): Promise<`0x${string}`> {
-    return this.contract.write(
+    const hash = await this.contract.write(
       "initialize",
       {
         _apr: args.apr,
@@ -237,6 +249,10 @@ export class ReadWriteHyperdrive
       },
       options,
     );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+    });
+    return hash;
   }
 
   async openLong({
@@ -256,7 +272,7 @@ export class ReadWriteHyperdrive
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "openLong"> {
-    return this.contract.write(
+    const hash = await this.contract.write(
       "openLong",
       {
         _amount: amount,
@@ -266,9 +282,13 @@ export class ReadWriteHyperdrive
       },
       options,
     );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+    });
+    return hash;
   }
 
-  openShort({
+  async openShort({
     destination,
     bondAmount,
     minSharePrice,
@@ -285,7 +305,7 @@ export class ReadWriteHyperdrive
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "openShort"> {
-    return this.contract.write(
+    const hash = await this.contract.write(
       "openShort",
       {
         _bondAmount: bondAmount,
@@ -295,9 +315,13 @@ export class ReadWriteHyperdrive
       },
       options,
     );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+    });
+    return hash;
   }
 
-  closeLong({
+  async closeLong({
     maturityTime,
     bondAmountIn,
     minAmountOut,
@@ -314,7 +338,7 @@ export class ReadWriteHyperdrive
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "closeLong"> {
-    return this.contract.write(
+    const hash = await this.contract.write(
       "closeLong",
       {
         _maturityTime: maturityTime,
@@ -324,9 +348,13 @@ export class ReadWriteHyperdrive
       },
       options,
     );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+    });
+    return hash;
   }
 
-  closeShort({
+  async closeShort({
     maturityTime,
     bondAmountIn,
     minAmountOut,
@@ -343,7 +371,7 @@ export class ReadWriteHyperdrive
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "closeShort"> {
-    return this.contract.write(
+    const hash = await this.contract.write(
       "closeShort",
       {
         _maturityTime: maturityTime,
@@ -353,6 +381,10 @@ export class ReadWriteHyperdrive
       },
       options,
     );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+    });
+    return hash;
   }
 
   async addLiquidity({
@@ -374,7 +406,7 @@ export class ReadWriteHyperdrive
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "addLiquidity"> {
-    return this.contract.write(
+    const hash = await this.contract.write(
       "addLiquidity",
       {
         _contribution: contribution,
@@ -385,9 +417,13 @@ export class ReadWriteHyperdrive
       },
       options,
     );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+    });
+    return hash;
   }
 
-  removeLiquidity({
+  async removeLiquidity({
     destination,
     lpSharesIn,
     minOutputPerShare,
@@ -402,7 +438,7 @@ export class ReadWriteHyperdrive
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "removeLiquidity"> {
-    return this.contract.write(
+    const hash = await this.contract.write(
       "removeLiquidity",
       {
         _lpShares: lpSharesIn,
@@ -411,9 +447,13 @@ export class ReadWriteHyperdrive
       },
       options,
     );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+    });
+    return hash;
   }
 
-  redeemWithdrawalShares({
+  async redeemWithdrawalShares({
     withdrawalSharesIn,
     minOutputPerShare,
     destination,
@@ -428,7 +468,7 @@ export class ReadWriteHyperdrive
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadWriteHyperdrive, "redeemWithdrawalShares"> {
-    return this.contract.write(
+    const hash = await this.contract.write(
       "redeemWithdrawalShares",
       {
         _withdrawalShares: withdrawalSharesIn,
@@ -437,5 +477,9 @@ export class ReadWriteHyperdrive
       },
       options,
     );
+    this.network.waitForTransaction(hash).then(() => {
+      this.contract.clearCache();
+    });
+    return hash;
   }
 }

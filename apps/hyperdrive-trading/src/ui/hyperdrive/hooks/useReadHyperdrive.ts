@@ -3,7 +3,7 @@ import {
   createReadHyperdrive,
 } from "@delvtech/hyperdrive-viem";
 import { useMemo } from "react";
-import { querySdkCache } from "src/sdk/sdkCache";
+import { sdkCache } from "src/sdk/sdkCache";
 import { Address } from "viem";
 import { useChainId, usePublicClient } from "wagmi";
 
@@ -20,7 +20,7 @@ export function useReadHyperdrive(
     return createReadHyperdrive({
       address,
       publicClient,
-      cache: querySdkCache,
+      cache: sdkCache,
       namespace: chainId.toString(),
     });
   }, [address, chainId, publicClient]);
