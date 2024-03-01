@@ -48,27 +48,12 @@ export function OpenWithdrawalSharesCard({
   return (
     <Well elevation="flat">
       <div className="flex h-full w-80 flex-col items-center gap-4">
-        <span className="daisy-card-title font-bold">Withdrawal Shares</span>
+        <span className="daisy-card-title font-bold">
+          Queued for Withdrawal
+        </span>
         {withdrawalShares !== 0n ? (
           <div className="flex h-full flex-col justify-between">
             <div className="mb-4 flex flex-col gap-3">
-              <LabelValue
-                label="Shares balance"
-                value={
-                  <p>
-                    {!withdrawalShares ? (
-                      <Skeleton />
-                    ) : (
-                      formatBalance({
-                        balance: withdrawalShares,
-                        decimals: baseToken.decimals,
-                        places: 4,
-                      })
-                    )}{" "}
-                    Shares
-                  </p>
-                }
-              />
               <LabelValue
                 label="Current value"
                 value={
@@ -137,7 +122,7 @@ export function OpenWithdrawalSharesCard({
                     className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
                     onClick={showModal}
                   >
-                    Claim withdrawal shares
+                    Withdraw
                   </button>
                 )}
               </Modal>
