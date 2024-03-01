@@ -1,6 +1,6 @@
-import { expect, test } from "vitest";
 import * as dnum from "dnum";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
+import { expect, test } from "vitest";
 /**
  * Calculates how much an amount of shares are worth, give the price, example:
  *

@@ -23,8 +23,6 @@ export { calculateMatureLongYieldAfterFees } from "src/longs/calculateMatureLong
 
 // LP
 export type { ClosedLpShares } from "src/lp/ClosedLpShares";
-export { calculateEquivalentShareValue } from "src/lp/calculateEquivalentShareValue";
-export { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
 
 // Withdrawal Shares
 export type { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";

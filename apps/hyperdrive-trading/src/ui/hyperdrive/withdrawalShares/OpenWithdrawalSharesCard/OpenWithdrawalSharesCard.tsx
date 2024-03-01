@@ -1,10 +1,8 @@
-import {
-  calculateEquivalentShareValue,
-  calculateValueFromPrice,
-} from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
+import { calculateEquivalentShareValue } from "src/hyperdrive/calculateEquivalentShareValue";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Modal } from "src/ui/base/components/Modal/Modal";

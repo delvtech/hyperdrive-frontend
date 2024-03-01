@@ -1,6 +1,6 @@
-import { expect, test } from "vitest";
 import * as dnum from "dnum";
-import { calculateEquivalentShareValue } from "src/lp/calculateEquivalentShareValue";
+import { calculateEquivalentShareValue } from "src/hyperdrive/calculateEquivalentShareValue";
+import { expect, test } from "vitest";
 
 test("calculateEquivalentShareValue should return how much an amount of shares are worth, given another amount of shares and their value", async () => {
   const value = calculateEquivalentShareValue({
