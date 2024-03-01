@@ -120,14 +120,14 @@ export function OpenWithdrawalSharesCard({
                     className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
                     onClick={showModal}
                   >
-                    Withdraw
+                    Redeem
                   </button>
                 )}
               </Modal>
               <p className="mt-2 text-center text-xs text-neutral-content">
-                Note: Withdrawal shares are considered idle capital and are not
-                used to back new positions. They continue to earn the variable
-                rate from the yield source.
+                Note: Liquidity that is queued for withdraw is considered idle
+                capital and is not used to back new positions. It continues to
+                earn the yield source APY.
               </p>
             </div>
           </div>
