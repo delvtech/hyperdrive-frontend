@@ -1,3 +1,4 @@
+import { calculateValueFromPrice } from "@delvtech/hyperdrive-viem";
 import {
   findBaseToken,
   findYieldSourceToken,
@@ -8,7 +9,6 @@ import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateRatio } from "src/base/calculateRatio";
-import { calculateTotalValueFromPrice } from "src/base/calculateTotalValueFromPrice";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Modal } from "src/ui/base/components/Modal/Modal";
@@ -57,9 +57,9 @@ export function OpenLpSharesCard({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
-  const currentValue = calculateTotalValueFromPrice({
+  const currentValue = calculateValueFromPrice({
     amount: lpShares || 0n,
-    price: poolInfo?.lpSharePrice || 0n,
+    unitPrice: poolInfo?.lpSharePrice || 0n,
     decimals: baseToken.decimals,
   });
   const profit = dnum.subtract([currentValue, 18], [baseAmountPaid, 18])[0];

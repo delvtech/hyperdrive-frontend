@@ -1,3 +1,4 @@
+import { calculateValueFromPrice } from "@delvtech/hyperdrive-viem";
 import {
   findBaseToken,
   findYieldSourceToken,
@@ -7,7 +8,6 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
-import { calculateTotalValueFromPrice } from "src/base/calculateTotalValueFromPrice";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
@@ -109,9 +109,9 @@ export function RemoveLiquidityForm({
   // them by the lpSharePrice
   const formattedWithdrawalSharesOut = withdrawalShares
     ? formatBalance({
-        balance: calculateTotalValueFromPrice({
+        balance: calculateValueFromPrice({
           amount: withdrawalShares,
-          price: poolInfo?.lpSharePrice || 0n,
+          unitPrice: poolInfo?.lpSharePrice || 0n,
           decimals: baseToken.decimals,
         }),
         decimals: baseToken.decimals,
@@ -119,9 +119,9 @@ export function RemoveLiquidityForm({
       })
     : null;
 
-  const currentLpValue = calculateTotalValueFromPrice({
+  const currentLpValue = calculateValueFromPrice({
     amount: lpShares,
-    price: poolInfo?.lpSharePrice || 0n,
+    unitPrice: poolInfo?.lpSharePrice || 0n,
     decimals: baseToken.decimals,
   });
 
