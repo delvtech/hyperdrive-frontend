@@ -58,7 +58,7 @@ export function useReadHyperdrive(
 }
 ```
 
-### 2. Create a `useReadWriteHyperdrive` hook
+### 3. Create a `useReadWriteHyperdrive` hook
 
 ```ts
 import {
