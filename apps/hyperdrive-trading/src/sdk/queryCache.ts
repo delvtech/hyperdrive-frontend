@@ -16,6 +16,21 @@ export class QueryClientSimpleCache<
 
   constructor(queryClient?: QueryClient) {
     this.queryClient = queryClient ?? new QueryClient();
+    this.queryClient
+      .getQueryCache()
+      .getAll()
+      .forEach((query) => {
+        return [query.queryKey, query.state.data];
+      });
+  }
+
+  get entries(): [TKey, TValue][] {
+    const queries = this.queryClient.getQueryCache().findAll();
+    return queries.map((query) => {
+      const key = query.queryKey as TKey;
+      const value = query.state.data as TValue;
+      return [key, value];
+    });
   }
 
   get(key: TKey): TValue | undefined {
@@ -42,6 +57,7 @@ export class QueryClientSimpleCache<
   }
 
   clear(): void {
+    console.log("entries", [...this.entries]);
     this.queryClient.clear();
   }
 
