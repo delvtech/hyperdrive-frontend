@@ -76,7 +76,7 @@ export function CurrentValueCell({
       <div
         data-tip={"Profit/Loss since open, after closing fees."}
         className={classNames(
-          "daisy-tooltip daisy-tooltip-left mt-1 flex text-xs before:max-w-[150px] before:border",
+          "daisy-tooltip daisy-tooltip-left mt-1 flex text-xs before:border",
           { "text-success": isPositiveChangeInValue },
           { "text-error": !isPositiveChangeInValue },
         )}
