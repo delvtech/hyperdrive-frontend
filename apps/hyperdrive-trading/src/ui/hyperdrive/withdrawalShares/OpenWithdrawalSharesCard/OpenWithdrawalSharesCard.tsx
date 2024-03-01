@@ -1,10 +1,8 @@
-import {
-  calculateShareValue,
-  calculateShareValueFromPreview,
-} from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
+import { calculateEquivalentShareValue } from "src/hyperdrive/calculateEquivalentShareValue";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Modal } from "src/ui/base/components/Modal/Modal";
@@ -48,27 +46,12 @@ export function OpenWithdrawalSharesCard({
   return (
     <Well elevation="flat">
       <div className="flex h-full w-80 flex-col items-center gap-4">
-        <span className="daisy-card-title font-bold">Withdrawal Shares</span>
+        <span className="daisy-card-title font-bold">
+          Queued for Withdrawal
+        </span>
         {withdrawalShares !== 0n ? (
           <div className="flex h-full flex-col justify-between">
             <div className="mb-4 flex flex-col gap-3">
-              <LabelValue
-                label="Shares balance"
-                value={
-                  <p>
-                    {!withdrawalShares ? (
-                      <Skeleton />
-                    ) : (
-                      formatBalance({
-                        balance: withdrawalShares,
-                        decimals: baseToken.decimals,
-                        places: 4,
-                      })
-                    )}{" "}
-                    Shares
-                  </p>
-                }
-              />
               <LabelValue
                 label="Current value"
                 value={
@@ -78,10 +61,11 @@ export function OpenWithdrawalSharesCard({
                       withdrawalSharesRedeemable !== undefined &&
                       withdrawalSharesRedeemable > 0 ? (
                         `${formatBalance({
-                          balance: calculateShareValueFromPreview({
-                            amount: withdrawalShares,
-                            sharesIn: withdrawalSharesRedeemable,
-                            baseOut: withdrawalSharesBaseWithdrawable,
+                          balance: calculateEquivalentShareValue({
+                            targetShares: withdrawalShares,
+                            referenceShares: withdrawalSharesRedeemable,
+                            totalReferenceValue:
+                              withdrawalSharesBaseWithdrawable,
                             decimals: baseToken.decimals,
                           }),
                           decimals: baseToken.decimals,
@@ -89,9 +73,9 @@ export function OpenWithdrawalSharesCard({
                         })} ${baseToken.symbol}`
                       ) : (
                         `${formatBalance({
-                          balance: calculateShareValue({
+                          balance: calculateValueFromPrice({
                             amount: withdrawalShares,
-                            price: poolInfo.lpSharePrice,
+                            unitPrice: poolInfo.lpSharePrice,
                             decimals: baseToken.decimals,
                           }),
                           decimals: baseToken.decimals,
@@ -136,14 +120,14 @@ export function OpenWithdrawalSharesCard({
                     className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
                     onClick={showModal}
                   >
-                    Claim withdrawal shares
+                    Redeem
                   </button>
                 )}
               </Modal>
               <p className="mt-2 text-center text-xs text-neutral-content">
-                Note: Withdrawal shares are considered idle capital and are not
-                used to back new positions. They continue to earn the variable
-                rate from the yield source.
+                Note: Liquidity that is queued for withdraw is considered idle
+                capital and is not used to back new positions. It continues to
+                earn the yield source APY.
               </p>
             </div>
           </div>

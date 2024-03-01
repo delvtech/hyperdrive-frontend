@@ -11,7 +11,7 @@ import {
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { querySdkCache } from "src/sdk/sdkCache";
+import { sdkCache } from "src/sdk/sdkCache";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { usePublicClient } from "wagmi";
 
@@ -43,7 +43,7 @@ export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
                 const readHyperdrive = createReadHyperdrive({
                   address: hyperdrive.address,
                   publicClient,
-                  cache: querySdkCache,
+                  cache: sdkCache,
                 });
                 const baseToken = findBaseToken({
                   baseTokenAddress: hyperdrive.baseToken,

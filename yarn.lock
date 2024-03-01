@@ -1314,17 +1314,17 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@delvtech/evm-client-viem@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@delvtech/evm-client-viem/-/evm-client-viem-0.1.1.tgz#e1b75a544bae1c630e127cf826d3c00a3bc0e1cb"
-  integrity sha512-6Ubs59gFyTT1oZsD0KwC8ryNbcAX50HgogvtpstNGde/TBmAK8GwE+cVXp0q/UANxAx/zh280Egsz/TG4TrkhQ==
+"@delvtech/evm-client-viem@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@delvtech/evm-client-viem/-/evm-client-viem-0.2.1.tgz#421712db33742a89deb263417def94c1c12456e8"
+  integrity sha512-hOuS99UWpROXtKV6/lO2sRcs4QSonTtWt7Rj5eIrb7nFgTH5qRy7U0ySHSdvpFRnSZb3JQY6UJVzxgmCFtJIGg==
   dependencies:
-    "@delvtech/evm-client" "0.1.1"
+    "@delvtech/evm-client" "0.2.1"
 
-"@delvtech/evm-client@0.1.1", "@delvtech/evm-client@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.1.1.tgz#ba3ac26b3af24249094d176e3b0ff44bc252b912"
-  integrity sha512-6EZhLPHSk62xrqCSadoSboQIWAJ4RsRcbpf/F/KYrS0+IWyRPtm2YmmuBjk/Ua61W/I2RnlppgL2nbtnQLV8ZA==
+"@delvtech/evm-client@0.2.1", "@delvtech/evm-client@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.2.1.tgz#d16a21b870336571bca919dd76e6bce582c1c833"
+  integrity sha512-ar77F5yAJaPju4EVj9CxVwsCQ+i0Ez+Q87//MqTg26F2N0thHpr54/UCllin2fVAFaiHyHdDQCxldFGBRRZERg==
   dependencies:
     fast-safe-stringify "^2.1.1"
     lru-cache "^10.0.1"

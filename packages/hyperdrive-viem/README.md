@@ -1,23 +1,25 @@
-# Viem integrations for the Hyperdrive SDK
+# @delvtech/hyperdrive-viem
 
-Viem adapter for the [@delvtech/hyperdrive-js-core](/packages/hyperdrive-sdk/).
+A [Viem](https://viem.sh) implementation of the [Hyperdrive Typescript SDK](https://hyperdrive-js.delv.tech)
 
 ### Installation
 
 ```bash
-npm install @delvtech/hyperdrive-viem
+npm install viem @delvtech/hyperdrive-viem
 ```
 
 ### Quick Start
 
 ```typescript
-import { ViemReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { createReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { publicClient } from "./client";
 
-const hyperdrive = new ViemReadHyperdrive({
+const hyperdrive = createReadHyperdrive({
   address: "0x...", // hyperdrive contract address
   publicClient,
 });
 
-const myLongs = hyperdrive.getOpenLongs("0x...");
+const myLongs = hyperdrive.getOpenLongs({
+  account: "0x..."
+});
 ```

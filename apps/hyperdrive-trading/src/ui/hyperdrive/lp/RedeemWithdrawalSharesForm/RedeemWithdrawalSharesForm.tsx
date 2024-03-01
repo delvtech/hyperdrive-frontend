@@ -82,7 +82,7 @@ export function RedeemWithdrawalSharesForm({
 
   return (
     <TransactionView
-      heading="Redeem withdrawal shares"
+      heading="Confirm Withdrawal"
       tokenInput={
         <TokenInput
           name="withdrawalShares"
