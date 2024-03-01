@@ -289,7 +289,7 @@ export function ClosedLpTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td className="text-lg" key={cell.id}>
+                        <td className="text-lg italic" key={cell.id}>
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),

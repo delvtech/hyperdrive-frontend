@@ -191,7 +191,7 @@ export function RemoveLiquidityForm({
       }
       disclaimer={
         <>
-          {!removeLiquidity && !hasEnoughBalance ? (
+          {desiredBaseOut && !hasEnoughBalance ? (
             <p className="mb-2 text-center text-sm text-error">
               Insufficient balance
             </p>
