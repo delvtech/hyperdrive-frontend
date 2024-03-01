@@ -11,7 +11,7 @@ export function Stat({ label, value, description }: StatProps): ReactElement {
   return (
     <div
       data-tip={description}
-      className="group daisy-tooltip flex cursor-help  flex-col items-start transition duration-150 ease-in-out"
+      className="group daisy-tooltip flex cursor-help flex-col items-start whitespace-pre-wrap transition duration-150 ease-in-out before:text-start"
     >
       <div className="mb-1 whitespace-nowrap text-h4 font-bold">{value}</div>
       {description ? (
