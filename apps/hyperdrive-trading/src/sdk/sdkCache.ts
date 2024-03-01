@@ -1,3 +1,3 @@
 import { createLruSimpleCache } from "@delvtech/hyperdrive-viem";
 
-export const querySdkCache = createLruSimpleCache({ max: 500 });
+export const sdkCache = createLruSimpleCache({ max: 500 });
