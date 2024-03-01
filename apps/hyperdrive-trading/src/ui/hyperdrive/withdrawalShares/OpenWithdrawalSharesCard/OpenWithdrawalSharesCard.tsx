@@ -1,6 +1,6 @@
 import {
-  calculateShareValue,
-  calculateShareValueFromPreview,
+  calculateEquivalentShareValue,
+  calculateValueFromPrice,
 } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
@@ -78,10 +78,11 @@ export function OpenWithdrawalSharesCard({
                       withdrawalSharesRedeemable !== undefined &&
                       withdrawalSharesRedeemable > 0 ? (
                         `${formatBalance({
-                          balance: calculateShareValueFromPreview({
-                            amount: withdrawalShares,
-                            sharesIn: withdrawalSharesRedeemable,
-                            baseOut: withdrawalSharesBaseWithdrawable,
+                          balance: calculateEquivalentShareValue({
+                            targetShares: withdrawalShares,
+                            referenceShares: withdrawalSharesRedeemable,
+                            totalReferenceValue:
+                              withdrawalSharesBaseWithdrawable,
                             decimals: baseToken.decimals,
                           }),
                           decimals: baseToken.decimals,
@@ -89,9 +90,9 @@ export function OpenWithdrawalSharesCard({
                         })} ${baseToken.symbol}`
                       ) : (
                         `${formatBalance({
-                          balance: calculateShareValue({
+                          balance: calculateValueFromPrice({
                             amount: withdrawalShares,
-                            price: poolInfo.lpSharePrice,
+                            unitPrice: poolInfo.lpSharePrice,
                             decimals: baseToken.decimals,
                           }),
                           decimals: baseToken.decimals,
