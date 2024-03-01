@@ -1,4 +1,3 @@
-import { queryClient } from "src/network/queryClient";
-import { QueryClientSimpleCache } from "./queryCache";
+import { createLruSimpleCache } from "@delvtech/hyperdrive-viem";
 
-export const querySdkCache = new QueryClientSimpleCache(queryClient);
+export const querySdkCache = createLruSimpleCache({ max: 500 });
