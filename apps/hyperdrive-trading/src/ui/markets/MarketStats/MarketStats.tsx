@@ -75,7 +75,19 @@ export function MarketStats({
         description={`This represents the LP projected annual return based on the performance observed over the past 12 hours. It assumes the rate of return seen in this period continues consistently for an entire year.`}
       />
       <Stat
-        description={`The amount of hy${baseToken.symbol} (either longs or shorts) that have been traded in the last 24 hours. `}
+        description={`The amount of hy${
+          baseToken.symbol
+        } (either longs or shorts) that have been traded in the last 24 hours \nLong volume: ${formatBalance(
+          {
+            balance: longVolume || 0n,
+            decimals: baseToken.decimals,
+            places: 0,
+          },
+        )} hy${baseToken.symbol} \nShort volume: ${formatBalance({
+          balance: shortVolume || 0n,
+          decimals: baseToken.decimals,
+          places: 0,
+        })} hy${baseToken.symbol}`}
         label="Volume (24h)"
         value={
           <AmountLabel
@@ -84,21 +96,18 @@ export function MarketStats({
               value: totalVolume || 0n,
               decimals: baseToken.decimals,
             })}
-            tooltip={`Long volume: ${formatBalance({
-              balance: longVolume || 0n,
-              decimals: baseToken.decimals,
-              places: 0,
-            })} hy${baseToken.symbol} \n Short volume: ${formatBalance({
-              balance: shortVolume || 0n,
-              decimals: baseToken.decimals,
-              places: 0,
-            })} hy${baseToken.symbol}`}
           />
         }
       />
       <Stat
         label="Available Liquidity"
-        description="The amount of capital that has been deployed by LPs to the pool"
+        description={`The amount of capital that has been deployed by LPs to the pool. Currently, there is ${formatBalance(
+          {
+            balance: liquidity?.liquidity || 0n,
+            decimals: baseToken.decimals,
+            places: 0,
+          },
+        )} ${baseToken.symbol} available for trading.`}
         value={
           <AmountLabel
             icon={baseToken.iconUrl || ""}
@@ -107,11 +116,6 @@ export function MarketStats({
               value: liquidity?.liquidity || 0n,
               decimals: baseToken.decimals,
             })}
-            tooltip={`${formatBalance({
-              balance: liquidity?.liquidity || 0n,
-              decimals: baseToken.decimals,
-              places: 0,
-            })} ${baseToken.symbol}`}
           />
         }
       />

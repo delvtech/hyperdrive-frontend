@@ -8,6 +8,7 @@ import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
+import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
@@ -125,6 +126,11 @@ export function RemoveLiquidityForm({
     decimals: baseToken.decimals,
   });
 
+  const hasEnoughBalance = getHasEnoughBalance({
+    amount: desiredBaseOut,
+    balance: currentLpValue,
+  });
+
   return (
     <TransactionView
       heading="Remove Liquidity"
@@ -184,10 +190,18 @@ export function RemoveLiquidityForm({
         </>
       }
       disclaimer={
-        <p className="text-center text-sm text-neutral-content">
-          You can withdraw liquidity at any time. The utilized portion may be
-          queued for delayed withdrawal.
-        </p>
+        <>
+          {desiredBaseOut && !hasEnoughBalance ? (
+            <p className="mb-2 text-center text-sm text-error">
+              Insufficient balance
+            </p>
+          ) : null}
+
+          <p className="text-center text-sm text-neutral-content">
+            You can withdraw liquidity at any time. The utilized portion may be
+            queued for delayed withdrawal.
+          </p>
+        </>
       }
       actionButton={
         account ? (

@@ -17,8 +17,12 @@ export function MaturesOnCell({
 
   return (
     <div className="daisy-stat flex flex-row p-0 xl:flex-col">
-      <span className="daisy-stat-value text-xs lg:text-md">
-        {termEndDate.toLocaleDateString()}
+      <span className="daisy-stat-value text-xs font-normal lg:text-md">
+        {termEndDate.toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+        })}
       </span>
       {isTermComplete ? (
         <div className={"daisy-stat-desc inline-flex w-32 text-xs"}>
