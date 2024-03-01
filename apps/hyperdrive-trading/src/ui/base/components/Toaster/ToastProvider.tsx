@@ -3,7 +3,7 @@ import toast, { ToastBar, Toaster } from "react-hot-toast";
 
 export default function ToastProvider(): JSX.Element {
   return (
-    <Toaster position="top-right">
+    <Toaster toastOptions={{ duration: 5000 }} position="top-right">
       {(t) => (
         <ToastBar toast={t}>
           {({ icon, message }) => (

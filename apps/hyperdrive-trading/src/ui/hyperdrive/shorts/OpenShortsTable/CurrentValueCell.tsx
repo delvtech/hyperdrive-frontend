@@ -70,9 +70,9 @@ export function CurrentValueCell({
       </span>
       {amountOutOrStethTokens && openShort.bondAmount !== 0n ? (
         <div
-          data-tip={"Profit/Loss since open"}
+          data-tip={"Profit/Loss since open, net of closing fees."}
           className={classNames(
-            "daisy-stat-desc daisy-tooltip mt-1 flex text-xs",
+            "daisy-tooltip mt-1 flex text-xs",
             { "text-success": isPositiveChangeInValue },
             { "text-error": !isPositiveChangeInValue },
           )}
