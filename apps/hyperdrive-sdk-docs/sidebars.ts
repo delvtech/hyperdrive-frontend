@@ -23,7 +23,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Guides",
-      items: ["sdk/guides/position"],
+      items: ["sdk/guides/position", "sdk/guides/react"],
     },
 
     {
