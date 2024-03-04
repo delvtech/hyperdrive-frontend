@@ -9,9 +9,9 @@ import { Modal } from "src/ui/base/components/Modal/Modal";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
-import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
+import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/withdrawalShares/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
 import { useAccount } from "wagmi";
 
 interface LpPortfolioCardProps {
@@ -34,13 +34,22 @@ export function OpenWithdrawalSharesCard({
   });
 
   const {
-    proceeds: withdrawalSharesBaseWithdrawable,
-    withdrawalSharesRedeemed: withdrawalSharesRedeemable,
+    proceeds: baseProceedsFromPreviewRedeemWithdrawalShares,
+    withdrawalSharesRedeemed:
+      withdrawalSharesRedeemedFromPreviewRedeemWithdrawalShares,
   } = usePreviewRedeemWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
     withdrawalSharesIn: withdrawalShares,
     minOutputPerShare: 1n, // TODO: slippage,
     destination: account,
+  });
+
+  const withdrawalSharesCurrentValue = getWithdrawalSharesCurrentValue({
+    baseTokenDecimals: baseToken.decimals,
+    lpSharePrice: poolInfo?.lpSharePrice,
+    withdrawalShares,
+    baseProceedsFromPreviewRedeemWithdrawalShares,
+    withdrawalSharesRedeemedFromPreviewRedeemWithdrawalShares,
   });
 
   return (
@@ -56,32 +65,12 @@ export function OpenWithdrawalSharesCard({
                 label="Current value"
                 value={
                   <p>
-                    {!!poolInfo && !!withdrawalShares ? (
-                      withdrawalSharesBaseWithdrawable !== undefined &&
-                      withdrawalSharesRedeemable !== undefined &&
-                      withdrawalSharesRedeemable > 0 ? (
-                        `${formatBalance({
-                          balance: calculateEquivalentShareValue({
-                            targetShares: withdrawalShares,
-                            referenceShares: withdrawalSharesRedeemable,
-                            totalReferenceValue:
-                              withdrawalSharesBaseWithdrawable,
-                            decimals: baseToken.decimals,
-                          }),
-                          decimals: baseToken.decimals,
-                          places: 4,
-                        })} ${baseToken.symbol}`
-                      ) : (
-                        `${formatBalance({
-                          balance: calculateValueFromPrice({
-                            amount: withdrawalShares,
-                            unitPrice: poolInfo.lpSharePrice,
-                            decimals: baseToken.decimals,
-                          }),
-                          decimals: baseToken.decimals,
-                          places: 4,
-                        })} ${baseToken.symbol}`
-                      )
+                    {withdrawalSharesCurrentValue ? (
+                      `${formatBalance({
+                        balance: withdrawalSharesCurrentValue,
+                        decimals: baseToken.decimals,
+                        places: 4,
+                      })} ${baseToken.symbol}`
                     ) : (
                       <Skeleton />
                     )}
@@ -92,9 +81,10 @@ export function OpenWithdrawalSharesCard({
                 label="Withdrawable"
                 value={
                   <p>
-                    {withdrawalSharesBaseWithdrawable !== undefined ? (
+                    {baseProceedsFromPreviewRedeemWithdrawalShares !==
+                    undefined ? (
                       `${formatBalance({
-                        balance: withdrawalSharesBaseWithdrawable,
+                        balance: baseProceedsFromPreviewRedeemWithdrawalShares,
                         decimals: baseToken.decimals,
                         places: 4,
                       })} ${baseToken.symbol}`
@@ -135,4 +125,45 @@ export function OpenWithdrawalSharesCard({
       </div>
     </Well>
   );
+}
+
+function getWithdrawalSharesCurrentValue({
+  lpSharePrice,
+  baseTokenDecimals,
+  withdrawalShares,
+  withdrawalSharesRedeemedFromPreviewRedeemWithdrawalShares,
+  baseProceedsFromPreviewRedeemWithdrawalShares,
+}: {
+  lpSharePrice: bigint | undefined;
+  baseTokenDecimals: number;
+  withdrawalShares: bigint | undefined;
+  baseProceedsFromPreviewRedeemWithdrawalShares: bigint | undefined;
+  withdrawalSharesRedeemedFromPreviewRedeemWithdrawalShares: bigint | undefined;
+}): bigint | undefined {
+  if (lpSharePrice === undefined || withdrawalShares === undefined) {
+    return;
+  }
+
+  // Get a more accurate estimate from previewing the redeem withdrawal shares
+  // and basing the current value on actual redemption data.
+  if (
+    baseProceedsFromPreviewRedeemWithdrawalShares !== undefined &&
+    withdrawalSharesRedeemedFromPreviewRedeemWithdrawalShares
+  ) {
+    return calculateEquivalentShareValue({
+      targetShares: withdrawalShares,
+      referenceShares:
+        withdrawalSharesRedeemedFromPreviewRedeemWithdrawalShares,
+      totalReferenceValue: baseProceedsFromPreviewRedeemWithdrawalShares,
+      decimals: baseTokenDecimals,
+    });
+  }
+
+  // If withdrawal shares are not yet redeemable though, we should just treat
+  // them as the same value as lp shares.
+  return calculateValueFromPrice({
+    amount: withdrawalShares,
+    unitPrice: lpSharePrice,
+    decimals: baseTokenDecimals,
+  });
 }
