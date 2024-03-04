@@ -42,7 +42,7 @@ export function MarketStats({
   return (
     <div className="grid grid-cols-2 gap-6 border-y border-neutral-content/20 py-8 sm:grid-cols-3 md:grid-cols-5">
       <Stat
-        label="Yield source APY"
+        label="Yield Source APY"
         value={
           <div className="flex flex-row">{vaultRate?.formatted || 0}%</div>
         }
@@ -59,7 +59,7 @@ export function MarketStats({
             <Skeleton className="opacity-50" />
           )
         }
-        description={`Fixed rate earned from opening longs, before fees and slippage are applied`}
+        description="Fixed rate earned from opening longs, before fees and slippage are applied"
       />
       <Stat
         label="LP APY (12 Hour)"
@@ -72,12 +72,12 @@ export function MarketStats({
             <Skeleton className="opacity-50" />
           )
         }
-        description={`This represents the LP projected annual return based on the performance observed over the past 12 hours. It assumes the rate of return seen in this period continues consistently for an entire year.`}
+        description={`The LP's annual return projection assuming the past 12-hour performance rate continues for a year.`}
       />
       <Stat
         description={`The amount of hy${
           baseToken.symbol
-        } (either longs or shorts) that have been traded in the last 24 hours \nLong volume: ${formatBalance(
+        } (either longs or shorts) that have been traded in the last 24 hours \n\nLong volume: ${formatBalance(
           {
             balance: longVolume || 0n,
             decimals: baseToken.decimals,
@@ -101,13 +101,7 @@ export function MarketStats({
       />
       <Stat
         label="Available Liquidity"
-        description={`The amount of capital that has been deployed by LPs to the pool. Currently, there is ${formatBalance(
-          {
-            balance: liquidity?.liquidity || 0n,
-            decimals: baseToken.decimals,
-            places: 0,
-          },
-        )} ${baseToken.symbol} available for trading.`}
+        description={`The amount of capital that has been deployed by LPs in the pool.`}
         value={
           <AmountLabel
             icon={baseToken.iconUrl || ""}

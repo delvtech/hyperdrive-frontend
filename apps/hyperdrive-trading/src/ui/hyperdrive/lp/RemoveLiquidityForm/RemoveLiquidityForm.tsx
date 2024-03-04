@@ -19,7 +19,7 @@ import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/useRemoveLiquidity";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import { TokenChoices } from "src/ui/token/TokenChoices";
+import { WithdrawTokenPicker } from "src/ui/hyperdrive/WithdrawTokenPicker";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
@@ -62,15 +62,15 @@ export function RemoveLiquidityForm({
   // Let users type in an amount of base to withdraw
   const {
     amount,
-    amountAsBigInt: desiredBaseOut,
+    amountAsBigInt: desiredOut,
     setAmount,
   } = useNumericInput({
-    decimals: baseToken.decimals,
+    decimals: activeWithdrawToken.decimals,
   });
 
   // Then calculate the lpSharesIn required to remove that amount of base
   const lpSharesIn = calculateRequiredLpSharesIn(
-    desiredBaseOut,
+    desiredOut,
     poolInfo?.lpSharePrice,
   );
 
@@ -85,7 +85,9 @@ export function RemoveLiquidityForm({
     lpSharesIn: lpSharesIn,
     hyperdriveAddress: hyperdrive.address,
     minOutputPerShare: 1n,
-    asBase: activeWithdrawToken.address === baseToken.address,
+    asBase:
+      hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
+      activeWithdrawToken.address === baseToken.address,
   });
 
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
@@ -94,6 +96,9 @@ export function RemoveLiquidityForm({
     minOutputPerShare: 1n,
     destination: account,
     enabled: previewRemoveLiquidityStatus === "success",
+    asBase:
+      hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
+      activeWithdrawToken.address === baseToken.address,
     onExecuted: (hash) => {
       setAmount("");
       toast.success(
@@ -116,18 +121,29 @@ export function RemoveLiquidityForm({
           decimals: baseToken.decimals,
         }),
         decimals: baseToken.decimals,
-        places: 8,
+        places: 4,
       })
     : null;
 
-  const currentLpValue = calculateValueFromPrice({
+  const currentLpValueInBase = calculateValueFromPrice({
     amount: lpShares,
     unitPrice: poolInfo?.lpSharePrice || 0n,
     decimals: baseToken.decimals,
   });
 
+  const currentLpValueInShares = poolInfo
+    ? dnum.divide(
+        [currentLpValueInBase, baseToken.decimals],
+        [poolInfo?.vaultSharePrice, hyperdrive.decimals],
+      )[0]
+    : 0n;
+  const currentLpValue =
+    activeWithdrawToken.address === baseToken.address
+      ? currentLpValueInBase
+      : currentLpValueInShares;
+
   const hasEnoughBalance = getHasEnoughBalance({
-    amount: desiredBaseOut,
+    amount: desiredOut,
     balance: currentLpValue,
   });
 
@@ -137,12 +153,23 @@ export function RemoveLiquidityForm({
       tokenInput={
         <TokenInput
           name={baseToken.name}
-          token={baseToken.symbol}
+          token={
+            <WithdrawTokenPicker
+              hyperdrive={hyperdrive}
+              activeWithdrawToken={activeWithdrawToken}
+              sharesToken={sharesToken}
+              baseToken={baseToken}
+              onChange={(tokenAddress) => {
+                setActiveWithdrawToken(tokenAddress);
+                setAmount("0");
+              }}
+            />
+          }
           value={amount ?? ""}
           maxValue={formatUnits(currentLpValue, baseToken.decimals)}
           stat={
             lpShares && !!poolInfo
-              ? `Current liquidity: ${formatBalance({
+              ? `Withdrawable: ${formatBalance({
                   balance: currentLpValue,
                   decimals: baseToken.decimals,
                   places: 2,
@@ -150,23 +177,6 @@ export function RemoveLiquidityForm({
               : undefined
           }
           onChange={(newAmount) => setAmount(newAmount)}
-        />
-      }
-      setting={
-        <TokenChoices
-          label="Choose withdrawal asset"
-          tokens={[
-            {
-              tokenConfig: baseToken,
-              disabled:
-                !hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled,
-            },
-            {
-              tokenConfig: sharesToken,
-            },
-          ]}
-          selectedTokenAddress={activeWithdrawToken.address}
-          onTokenChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
         />
       }
       transactionPreview={
@@ -178,7 +188,7 @@ export function RemoveLiquidityForm({
                 ? `${formatBalance({
                     balance: actualValueOut,
                     decimals: activeWithdrawToken.decimals,
-                    places: 8,
+                    places: 4,
                   })}`
                 : "0"
             } ${activeWithdrawToken.symbol}`}
@@ -191,7 +201,7 @@ export function RemoveLiquidityForm({
       }
       disclaimer={
         <>
-          {desiredBaseOut && !hasEnoughBalance ? (
+          {desiredOut && !hasEnoughBalance ? (
             <p className="mb-2 text-center text-sm text-error">
               Insufficient balance
             </p>
@@ -207,7 +217,11 @@ export function RemoveLiquidityForm({
         account ? (
           <button
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            disabled={!removeLiquidity || removeLiquidityStatus === "loading"}
+            disabled={
+              !hasEnoughBalance ||
+              !removeLiquidity ||
+              removeLiquidityStatus === "loading"
+            }
             onClick={(e) => {
               removeLiquidity?.();
               onRemoveLiquidity?.(e);

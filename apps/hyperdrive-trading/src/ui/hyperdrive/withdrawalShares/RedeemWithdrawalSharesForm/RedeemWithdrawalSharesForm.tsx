@@ -1,10 +1,7 @@
 import {
-  EmptyExtensions,
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
-  TokenConfig,
-  YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import * as dnum from "dnum";
@@ -16,8 +13,8 @@ import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemWithdrawalShares";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { WithdrawTokenPicker } from "src/ui/hyperdrive/WithdrawTokenPicker";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 interface RedeemWithdrawalSharesFormProps {
@@ -106,7 +103,7 @@ export function RedeemWithdrawalSharesForm({
         <TokenInput
           name="withdrawalShares"
           token={
-            <RedeemWithdrawalSharesTokenPicker
+            <WithdrawTokenPicker
               sharesToken={sharesToken}
               hyperdrive={hyperdrive}
               baseToken={baseToken}
@@ -200,31 +197,4 @@ function calculateWithdrawalSharesFromAmount({
   )[0];
 
   return convertedAmountToWithdrawalShares;
-}
-
-function RedeemWithdrawalSharesTokenPicker({
-  sharesToken,
-  hyperdrive,
-  baseToken,
-  activeWithdrawToken,
-  onChange,
-}: {
-  sharesToken: TokenConfig<YieldSourceExtensions>;
-  hyperdrive: HyperdriveConfig;
-  baseToken: TokenConfig<EmptyExtensions>;
-  activeWithdrawToken: TokenConfig<any>;
-  onChange: (tokenAddress: string) => void;
-}) {
-  const tokens: TokenConfig<any>[] = [sharesToken];
-  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
-    tokens.push(baseToken);
-  }
-
-  return (
-    <TokenPicker
-      tokens={tokens}
-      activeTokenAddress={activeWithdrawToken.address}
-      onChange={onChange}
-    />
-  );
 }
