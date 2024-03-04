@@ -35,7 +35,7 @@ import { hyperwasm } from "src/hyperwasm";
 import { getBlockOrThrow } from "src/evm-client/getBlockOrThrow";
 import { convertSharesToBase } from "src/hyperdrive/utils/convertSharesToBase";
 import { convertBaseToShares } from "src/hyperdrive/utils/convertBaseToShares";
-import { convertSecondsToYearFraction } from "src/longs/calculateFixedRateFromOpenLong";
+import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
 
 const HyperdriveABI = IHyperdrive.abi;
 
