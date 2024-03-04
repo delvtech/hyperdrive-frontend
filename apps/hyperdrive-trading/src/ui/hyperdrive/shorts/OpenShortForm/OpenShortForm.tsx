@@ -87,13 +87,16 @@ export function OpenShortForm({
     decimals: hyperdrive.decimals,
   });
 
-  const { depositAmount, status: openShortPreviewStatus } = usePreviewOpenShort(
-    {
-      hyperdriveAddress: hyperdrive.address,
-      amountOfBondsToShort: amountOfBondsToShortAsBigInt,
-      asBase: activeToken.address === baseToken.address,
-    },
-  );
+  const {
+    depositAmount,
+    spotPriceAfterOpen,
+    spotRateAfterOpen,
+    status: openShortPreviewStatus,
+  } = usePreviewOpenShort({
+    hyperdriveAddress: hyperdrive.address,
+    amountOfBondsToShort: amountOfBondsToShortAsBigInt,
+    asBase: activeToken.address === baseToken.address,
+  });
 
   // If depositing in shares, steth shares needs to be converted to steth tokens
   // to determine if the user has enough balance and to show a meaningful value
@@ -192,6 +195,7 @@ export function OpenShortForm({
           tokenIn={activeToken}
           costBasis={stethOrDepositTokenAmount}
           shortSize={amountOfBondsToShortAsBigInt}
+          spotRateAfterOpen={spotRateAfterOpen}
         />
       }
       disclaimer={(() => {

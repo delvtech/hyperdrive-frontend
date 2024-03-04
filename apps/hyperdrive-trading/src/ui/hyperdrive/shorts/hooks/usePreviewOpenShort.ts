@@ -14,6 +14,8 @@ interface UsePreviewOpenShortOptions {
 interface UsePreviewOpenShortResult {
   status: MutationStatus;
   depositAmount: bigint | undefined;
+  spotPriceAfterOpen: bigint | undefined;
+  spotRateAfterOpen: bigint | undefined;
 }
 
 export function usePreviewOpenShort({
@@ -46,5 +48,10 @@ export function usePreviewOpenShort({
         }
       : undefined,
   });
-  return { depositAmount: data?.traderDeposit, status };
+  return {
+    depositAmount: data?.traderDeposit,
+    spotPriceAfterOpen: data?.spotPriceAfterOpen,
+    spotRateAfterOpen: data?.spotRateAfterOpen,
+    status,
+  };
 }
