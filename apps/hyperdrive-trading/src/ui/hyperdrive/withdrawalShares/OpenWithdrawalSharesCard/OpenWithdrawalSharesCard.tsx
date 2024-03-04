@@ -12,6 +12,7 @@ import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
 import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/withdrawalShares/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
+import { formatUnits } from "viem/utils";
 import { useAccount } from "wagmi";
 
 interface LpPortfolioCardProps {
@@ -43,6 +44,14 @@ export function OpenWithdrawalSharesCard({
     minOutputPerShare: 1n, // TODO: slippage,
     destination: account,
   });
+  console.log("my withdrawal shares", formatUnits(withdrawalShares || 0n, 18));
+  console.log(
+    "my redeemable withdrawal shares",
+    formatUnits(
+      withdrawalSharesRedeemedFromPreviewRedeemWithdrawalShares || 0n,
+      18,
+    ),
+  );
 
   const withdrawalSharesCurrentValue = getWithdrawalSharesCurrentValue({
     baseTokenDecimals: baseToken.decimals,
@@ -108,6 +117,7 @@ export function OpenWithdrawalSharesCard({
                 {({ showModal }) => (
                   <button
                     className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
+                    disabled={!baseProceedsFromPreviewRedeemWithdrawalShares}
                     onClick={showModal}
                   >
                     Redeem
@@ -145,7 +155,8 @@ function getWithdrawalSharesCurrentValue({
   }
 
   // Get a more accurate estimate from previewing the redeem withdrawal shares
-  // and basing the current value on actual redemption data.
+  // and basing the current value of all of your withdrawal shares on actual
+  // redemption data.
   if (
     baseProceedsFromPreviewRedeemWithdrawalShares !== undefined &&
     withdrawalSharesRedeemedFromPreviewRedeemWithdrawalShares
@@ -159,7 +170,7 @@ function getWithdrawalSharesCurrentValue({
     });
   }
 
-  // If withdrawal shares are not yet redeemable though, we should just treat
+  // If withdrawal shares are not yet redeemable, we should just treat
   // them as the same value as lp shares.
   return calculateValueFromPrice({
     amount: withdrawalShares,

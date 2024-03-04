@@ -1,10 +1,14 @@
 import {
+  EmptyExtensions,
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
+  TokenConfig,
+  YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { MouseEvent, ReactElement } from "react";
+import * as dnum from "dnum";
+import { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
@@ -12,21 +16,18 @@ import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemWithdrawalShares";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
-
 interface RedeemWithdrawalSharesFormProps {
   hyperdrive: HyperdriveConfig;
   withdrawalShares: bigint;
-  onRedeemWithdrawalShares?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function RedeemWithdrawalSharesForm({
   hyperdrive,
   withdrawalShares,
-  onRedeemWithdrawalShares,
 }: RedeemWithdrawalSharesFormProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -50,22 +51,44 @@ export function RedeemWithdrawalSharesForm({
   });
   const { address: account } = useAccount();
 
-  const { amount, amountAsBigInt, setAmount } = useNumericInput({
-    decimals: baseToken.decimals,
+  const {
+    withdrawalSharesRedeemed: maxWithdrawalSharesRedeemable,
+    proceeds: maxRedeemableProceeds,
+  } = usePreviewRedeemWithdrawalShares({
+    hyperdriveAddress: hyperdrive.address,
+    withdrawalSharesIn: withdrawalShares,
+    minOutputPerShare: 0n,
+    destination: account,
+    asBase:
+      hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
+      activeWithdrawToken.address === baseToken.address,
   });
 
-  const { withdrawalSharesRedeemed: maxRedeemableShares } =
-    usePreviewRedeemWithdrawalShares({
-      hyperdriveAddress: hyperdrive.address,
-      withdrawalSharesIn: withdrawalShares,
-      minOutputPerShare: 0n,
-      destination: account,
-    });
+  // eg: user types in 10 base
+  const { amount, amountAsBigInt, setAmount } = useNumericInput({
+    decimals: activeWithdrawToken.decimals,
+  });
+
+  const convertedAmountToWithdrawalShares = calculateWithdrawalSharesFromAmount(
+    {
+      maxRedeemableProceeds,
+      decimals: activeWithdrawToken.decimals,
+      maxWithdrawalSharesRedeemable: maxWithdrawalSharesRedeemable,
+      amountAsBigInt,
+    },
+  );
+
+  console.log(
+    "convertedAmountToWithdrawalShares",
+    formatUnits(convertedAmountToWithdrawalShares || 0n, 18),
+    formatUnits(maxWithdrawalSharesRedeemable || 0n, 18),
+    maxWithdrawalSharesRedeemable === convertedAmountToWithdrawalShares,
+  );
 
   const { proceeds, previewRedeemWithdrawalSharesStatus } =
     usePreviewRedeemWithdrawalShares({
       hyperdriveAddress: hyperdrive.address,
-      withdrawalSharesIn: amountAsBigInt,
+      withdrawalSharesIn: convertedAmountToWithdrawalShares,
       minOutputPerShare: 0n,
       destination: account,
       asBase: activeWithdrawToken.address === baseToken.address,
@@ -74,9 +97,12 @@ export function RedeemWithdrawalSharesForm({
   const { redeemWithdrawalShares, redeemWithdrawalSharesStatus } =
     useRedeemWithdrawalShares({
       hyperdriveAddress: hyperdrive.address,
-      withdrawalSharesIn: amountAsBigInt,
+      withdrawalSharesIn: convertedAmountToWithdrawalShares,
       minOutputPerShare: 0n,
       destination: account,
+      asBase:
+        hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
+        activeWithdrawToken.address === baseToken.address,
       enabled: previewRedeemWithdrawalSharesStatus === "success",
     });
 
@@ -86,16 +112,27 @@ export function RedeemWithdrawalSharesForm({
       tokenInput={
         <TokenInput
           name="withdrawalShares"
-          token="Withdrawal shares"
+          token={
+            <RedeemWithdrawalSharesTokenPicker
+              sharesToken={sharesToken}
+              hyperdrive={hyperdrive}
+              baseToken={baseToken}
+              onChange={(tokenAddress) => {
+                setActiveWithdrawToken(tokenAddress);
+                setAmount("0");
+              }}
+              activeWithdrawToken={activeWithdrawToken}
+            />
+          }
           value={amount ?? ""}
-          stat={`Balance: ${formatBalance({
-            balance: maxRedeemableShares ?? withdrawalShares,
-            decimals: baseToken.decimals,
-            places: 6,
-          })}`}
+          stat={`Withdrawable: ${formatBalance({
+            balance: maxRedeemableProceeds || 0n,
+            decimals: activeWithdrawToken.decimals,
+            places: 4,
+          })} ${activeWithdrawToken.symbol}`}
           maxValue={formatUnits(
-            maxRedeemableShares ?? withdrawalShares,
-            baseToken.decimals,
+            maxRedeemableProceeds || 0n,
+            activeWithdrawToken.decimals,
           )}
           onChange={(newAmount) => setAmount(newAmount)}
         />
@@ -116,23 +153,6 @@ export function RedeemWithdrawalSharesForm({
           </div>
         </div>
       }
-      setting={
-        <TokenChoices
-          label="Choose withdrawal asset"
-          tokens={[
-            {
-              tokenConfig: baseToken,
-              disabled:
-                !hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled,
-            },
-            {
-              tokenConfig: sharesToken,
-            },
-          ]}
-          selectedTokenAddress={activeWithdrawToken.address}
-          onTokenChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
-        />
-      }
       actionButton={
         account ? (
           <button
@@ -143,7 +163,7 @@ export function RedeemWithdrawalSharesForm({
             }
             onClick={(e) => {
               redeemWithdrawalShares?.();
-              onRedeemWithdrawalShares?.(e);
+              setAmount("0");
             }}
           >
             Redeem withdrawal shares
@@ -152,6 +172,66 @@ export function RedeemWithdrawalSharesForm({
           <ConnectButton />
         )
       }
+    />
+  );
+}
+
+function calculateWithdrawalSharesFromAmount({
+  maxRedeemableProceeds,
+  decimals,
+  maxWithdrawalSharesRedeemable,
+  amountAsBigInt,
+}: {
+  maxRedeemableProceeds: bigint | undefined;
+  decimals: number;
+  maxWithdrawalSharesRedeemable: bigint | undefined;
+  amountAsBigInt: bigint | undefined;
+}) {
+  if (
+    !maxRedeemableProceeds ||
+    !maxWithdrawalSharesRedeemable ||
+    !amountAsBigInt
+  ) {
+    return;
+  }
+  // 1 withdrawal share is worth $2
+  const unitPriceOfRedeemedWithdrawalShare = dnum.divide(
+    [maxRedeemableProceeds, decimals],
+    [maxWithdrawalSharesRedeemable, decimals],
+  )[0];
+
+  // Therefore, user would be redeeming 5 withdrawal shares
+  const convertedAmountToWithdrawalShares = dnum.divide(
+    [amountAsBigInt, decimals],
+    [unitPriceOfRedeemedWithdrawalShare, decimals],
+  )[0];
+
+  return convertedAmountToWithdrawalShares;
+}
+
+function RedeemWithdrawalSharesTokenPicker({
+  sharesToken,
+  hyperdrive,
+  baseToken,
+  activeWithdrawToken,
+  onChange,
+}: {
+  sharesToken: TokenConfig<YieldSourceExtensions>;
+  hyperdrive: HyperdriveConfig;
+  baseToken: TokenConfig<EmptyExtensions>;
+  activeWithdrawToken: TokenConfig<any>;
+  onChange: (tokenAddress: string) => void;
+}) {
+  const tokens: TokenConfig<any>[] = [sharesToken];
+  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
+    tokens.push(baseToken);
+  }
+
+  return (
+    <TokenPicker
+      tokens={tokens}
+      activeTokenAddress={activeWithdrawToken.address}
+      onChange={onChange}
     />
   );
 }
