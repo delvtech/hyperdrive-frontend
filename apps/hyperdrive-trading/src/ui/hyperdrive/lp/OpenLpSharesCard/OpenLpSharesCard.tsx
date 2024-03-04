@@ -124,7 +124,7 @@ export function OpenLpSharesCard({
               }
             />
             <LabelValue
-              label={`${baseToken.symbol} deposited`}
+              label={`Value deposited`}
               value={
                 <p>
                   {formatBalance({

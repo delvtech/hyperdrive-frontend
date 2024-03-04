@@ -81,7 +81,7 @@ export function TokenChoices({
                         decimals,
                         places: 2,
                         includeCommas: true,
-                      })})`
+                      })} ${symbol})`
                     : null}
                 </span>
               </label>
