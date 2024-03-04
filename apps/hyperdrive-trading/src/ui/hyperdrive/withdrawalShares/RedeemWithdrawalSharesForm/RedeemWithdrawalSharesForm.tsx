@@ -78,13 +78,6 @@ export function RedeemWithdrawalSharesForm({
     },
   );
 
-  console.log(
-    "convertedAmountToWithdrawalShares",
-    formatUnits(convertedAmountToWithdrawalShares || 0n, 18),
-    formatUnits(maxWithdrawalSharesRedeemable || 0n, 18),
-    maxWithdrawalSharesRedeemable === convertedAmountToWithdrawalShares,
-  );
-
   const { proceeds, previewRedeemWithdrawalSharesStatus } =
     usePreviewRedeemWithdrawalShares({
       hyperdriveAddress: hyperdrive.address,

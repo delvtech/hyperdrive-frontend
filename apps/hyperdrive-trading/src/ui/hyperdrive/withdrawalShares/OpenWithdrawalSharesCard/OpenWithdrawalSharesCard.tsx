@@ -12,7 +12,6 @@ import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
 import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/withdrawalShares/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
-import { formatUnits } from "viem/utils";
 import { useAccount } from "wagmi";
 
 interface LpPortfolioCardProps {
@@ -44,14 +43,6 @@ export function OpenWithdrawalSharesCard({
     minOutputPerShare: 1n, // TODO: slippage,
     destination: account,
   });
-  console.log("my withdrawal shares", formatUnits(withdrawalShares || 0n, 18));
-  console.log(
-    "my redeemable withdrawal shares",
-    formatUnits(
-      withdrawalSharesRedeemedFromPreviewRedeemWithdrawalShares || 0n,
-      18,
-    ),
-  );
 
   const withdrawalSharesCurrentValue = getWithdrawalSharesCurrentValue({
     baseTokenDecimals: baseToken.decimals,
