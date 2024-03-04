@@ -232,7 +232,7 @@ export function OpenLpSharesCard({
               </Modal>
               <p className="mt-2 text-center text-xs text-neutral-content">
                 Liquidity is used to back open Long and Short positions. Any
-                idle liquidity earns the yield source&apos;s variable rate.
+                idle liquidity earns the Yield Source APY.
               </p>
             </div>
           </>
