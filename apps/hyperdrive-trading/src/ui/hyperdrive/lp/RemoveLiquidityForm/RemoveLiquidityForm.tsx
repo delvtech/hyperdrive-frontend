@@ -59,7 +59,7 @@ export function RemoveLiquidityForm({
 
   const { address: account } = useAccount();
 
-  // Let users type in an amount of base to withdraw
+  // Let users type in an amount of base or shares to withdraw
   const {
     amount,
     amountAsBigInt: desiredOut,
@@ -69,8 +69,17 @@ export function RemoveLiquidityForm({
   });
 
   // Then calculate the lpSharesIn required to remove that amount of base
+  let desiredOutInBase = desiredOut;
+  if (activeWithdrawToken.address === sharesToken.address) {
+    desiredOutInBase = calculateValueFromPrice({
+      amount: desiredOut || 0n,
+      unitPrice: poolInfo?.vaultSharePrice || 0n,
+      decimals: activeWithdrawToken.decimals,
+    });
+  }
+
   const lpSharesIn = calculateRequiredLpSharesIn(
-    desiredOut,
+    desiredOutInBase,
     poolInfo?.lpSharePrice,
   );
 
@@ -143,8 +152,8 @@ export function RemoveLiquidityForm({
       : currentLpValueInShares;
 
   const hasEnoughBalance = getHasEnoughBalance({
-    amount: desiredOut,
-    balance: currentLpValue,
+    amount: lpSharesIn,
+    balance: lpShares,
   });
 
   return (

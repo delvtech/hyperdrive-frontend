@@ -1827,37 +1827,26 @@ test("getClosedShorts should account for shorts closed to shares", async () => {
   ]);
 });
 
-test("getOpenLpPosition should return the lpShareBalance and baseAmountPaid for a given accounts open LP position", async () => {
+test("getOpenLpPosition should return zero when a position is fully closed", async () => {
   // Description:
-  // Bob opens up 2 lp positions, one for 5 LP shares and another for 10 LP shares.
-  // Bob then closes 5 of the 15 LP shares for 10 base.
-  // Bob is left with 10 LP shares and 10 base paid.
+  // Bob opens up an lp position, receiving 498 LP shares, depositing 500 base.
+  // Bob then closes all of his 498 LP shares, receiving 499 base (he lost
+  // 1 base on this position) Bob is left with 0 LP shares and 0 base paid in his
+  // current LP position.
 
   const { contract, readHyperdrive, network } = setupReadHyperdrive();
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 175n } });
   contract.stubEvents("AddLiquidity", { filter: { provider: BOB } }, [
     {
       eventName: "AddLiquidity",
-      blockNumber: 5n,
+      blockNumber: 174n,
       args: {
-        baseAmount: dnum.from("10", 18)[0],
-        lpAmount: dnum.from("5", 18)[0],
-        provider: BOB,
-        lpSharePrice: dnum.from("2", 18)[0],
         asBase: true,
-        vaultShareAmount: 0n,
-      },
-    },
-    {
-      eventName: "AddLiquidity",
-      blockNumber: 5n,
-      args: {
-        baseAmount: dnum.from("10", 18)[0],
-        lpAmount: dnum.from("10", 18)[0],
-        provider: BOB,
-        lpSharePrice: dnum.from("1", 18)[0],
-        asBase: true,
-        vaultShareAmount: 0n,
+        baseAmount: dnum.from("500", 18)[0],
+        lpAmount: dnum.from("498", 18)[0],
+        lpSharePrice: dnum.from("1.000000590811771717", 18)[0],
+        provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
+        vaultShareAmount: dnum.from("498.570512905658351934", 18)[0],
       },
     },
   ]);
@@ -1865,23 +1854,83 @@ test("getOpenLpPosition should return the lpShareBalance and baseAmountPaid for 
   contract.stubEvents("RemoveLiquidity", { filter: { provider: BOB } }, [
     {
       eventName: "RemoveLiquidity",
-      blockNumber: 5n,
+      blockNumber: 175n,
       args: {
         asBase: true,
-        baseAmount: dnum.from("10", 18)[0],
-        vaultShareAmount: 0n,
-        provider: BOB,
+        baseAmount: dnum.from("499", 18)[0],
+        lpAmount: dnum.from("498", 18)[0],
+        lpSharePrice: dnum.from("1.002867781011873985", 18)[0],
+        provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
+        vaultShareAmount: dnum.from("498.567723245858722697", 18)[0],
         withdrawalShareAmount: 0n,
-        lpAmount: dnum.from("5", 18)[0],
-        lpSharePrice: dnum.from("2", 18)[0],
       },
     },
   ]);
 
   const value = await readHyperdrive.getOpenLpPosition({ account: BOB });
   expect(value).toEqual({
-    lpShareBalance: dnum.from("10", 18)[0],
-    baseAmountPaid: dnum.from("10", 18)[0],
+    lpShareBalance: dnum.from("0", 18)[0],
+    baseAmountPaid: dnum.from("0", 18)[0],
+  });
+});
+
+test("getOpenLpPosition should return the current lpShareBalance and baseAmountPaid", async () => {
+  // Description:
+  // Bob opens up an lp position, receiving 498 LP shares, depositing 500 base.
+  // Bob then closes his entire position of 498 LP shares, receiving 499 base
+  // (he lost 1 base on this position). Then he opens up a new LP position,
+  // receiving 99 LP shares, depositing 100 base. Bob now has with 99 LP
+  // shares and 100 base paid in his current LP position.
+
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 175n } });
+  contract.stubEvents("AddLiquidity", { filter: { provider: BOB } }, [
+    {
+      eventName: "AddLiquidity",
+      blockNumber: 174n,
+      args: {
+        asBase: true,
+        baseAmount: dnum.from("500", 18)[0],
+        lpAmount: dnum.from("498", 18)[0],
+        lpSharePrice: dnum.from("1.000000590811771717", 18)[0],
+        provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
+        vaultShareAmount: dnum.from("498.570512905658351934", 18)[0],
+      },
+    },
+    {
+      eventName: "AddLiquidity",
+      blockNumber: 176n,
+      args: {
+        asBase: true,
+        baseAmount: dnum.from("100", 18)[0],
+        lpAmount: dnum.from("99", 18)[0],
+        lpSharePrice: dnum.from("1.000000576182752684", 18)[0],
+        provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
+        vaultShareAmount: dnum.from("99.714088352522938072", 18)[0],
+      },
+    },
+  ]);
+
+  contract.stubEvents("RemoveLiquidity", { filter: { provider: BOB } }, [
+    {
+      eventName: "RemoveLiquidity",
+      blockNumber: 175n,
+      args: {
+        asBase: true,
+        baseAmount: dnum.from("499", 18)[0],
+        lpAmount: dnum.from("498", 18)[0],
+        lpSharePrice: dnum.from("1.002867781011873985", 18)[0],
+        provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
+        vaultShareAmount: dnum.from("498.567723245858722697", 18)[0],
+        withdrawalShareAmount: 0n,
+      },
+    },
+  ]);
+
+  const value = await readHyperdrive.getOpenLpPosition({ account: BOB });
+  expect(value).toEqual({
+    lpShareBalance: dnum.from("99", 18)[0],
+    baseAmountPaid: dnum.from("100", 18)[0],
   });
 });
 
@@ -1898,7 +1947,7 @@ test("getClosedLpShares should account for LP shares closed to base", async () =
       args: {
         asBase: true,
         baseAmount: dnum.from("10", 18)[0],
-        vaultShareAmount: 0n,
+        vaultShareAmount: dnum.from("9", 18)[0],
         provider: BOB,
         withdrawalShareAmount: 0n,
         lpAmount: dnum.from("5", 18)[0],
@@ -1936,8 +1985,8 @@ test("getClosedLpShares should account for LP shares closed to vault shares", as
       blockNumber: 5n,
       args: {
         asBase: false,
-        baseAmount: 0n,
-        vaultShareAmount: dnum.from("10", 18)[0],
+        baseAmount: dnum.from("10", 18)[0],
+        vaultShareAmount: dnum.from("9", 18)[0],
         provider: BOB,
         withdrawalShareAmount: 0n,
         lpAmount: dnum.from("5", 18)[0],

@@ -213,7 +213,7 @@ export interface IReadHyperdrive {
   }): Promise<bigint>;
 
   /**
-   * Gets the lpShareBalance and baseAmountPaid of a user's open LP position.
+   * Gets a user's current LP position.
    */
   getOpenLpPosition(args: {
     account: `0x${string}`;
@@ -1194,80 +1194,62 @@ export class ReadHyperdrive implements IReadHyperdrive {
     lpShareBalance: bigint;
     baseAmountPaid: bigint;
   }> {
-    const openLpShares = await this.getOpenLpShares({ account });
-    const closedLpShares = await this.getClosedLpShares({ account });
+    const addLiquidityEvents = await this.contract.getEvents("AddLiquidity", {
+      filter: { provider: account },
+    });
+    const removeLiquidityEvents = await this.contract.getEvents(
+      "RemoveLiquidity",
+      {
+        filter: { provider: account },
+      },
+    );
+
+    // combine the adds and removes in order of block number to get the full
+    // transaction history in the order the user executed them
+    const combinedEventsInOrder = [
+      ...addLiquidityEvents,
+      ...removeLiquidityEvents,
+    ].sort((a, b) => Number(a.blockNumber) - Number(b.blockNumber));
+
     let baseAmountPaid = 0n;
     let lpShareBalance = 0n;
+    combinedEventsInOrder.forEach((event) => {
+      if (event.eventName === "AddLiquidity") {
+        lpShareBalance = dnum.add(
+          [lpShareBalance, 18],
+          [event.args.lpAmount, 18],
+        )[0];
+        baseAmountPaid = dnum.add(
+          [baseAmountPaid, 18],
+          [event.args.baseAmount, 18],
+        )[0];
+      }
 
-    openLpShares.forEach((lpShare) => {
-      lpShareBalance = dnum.add(
-        [lpShareBalance, 18],
-        [lpShare.lpAmount, 18],
-      )[0];
-      const openLpSharesValue = dnum.multiply(
-        [lpShare.lpAmount, 18],
-        [lpShare.lpSharePrice, 18],
-      )[0];
-      baseAmountPaid = dnum.add(
-        [baseAmountPaid, 18],
-        [openLpSharesValue, 18],
-      )[0];
-    });
-
-    closedLpShares.forEach((lpShare) => {
-      lpShareBalance = dnum.subtract(
-        [lpShareBalance, 18],
-        [lpShare.lpAmount, 18],
-      )[0];
-      const closedLpSharesValue = dnum.multiply(
-        [lpShare.lpAmount, 18],
-        [lpShare.lpSharePrice, 18],
-      )[0];
-      baseAmountPaid = dnum.subtract(
-        [baseAmountPaid, 18],
-        [closedLpSharesValue, 18],
-      )[0];
+      if (event.eventName === "RemoveLiquidity") {
+        // If a user removes all their lp shares, we should zero out
+        // baseAmountPaid, since it's basically starting over
+        if (event.args.lpAmount === lpShareBalance) {
+          lpShareBalance = 0n;
+          baseAmountPaid = 0n;
+          return;
+        }
+        // otherwise just subtract the amount of lp shares they closed and baseAmount
+        // they received back from the running total
+        lpShareBalance = dnum.subtract(
+          [lpShareBalance, 18],
+          [event.args.lpAmount, 18],
+        )[0];
+        baseAmountPaid = dnum.subtract(
+          [baseAmountPaid, 18],
+          [event.args.baseAmount, 18],
+        )[0];
+      }
     });
 
     return {
       lpShareBalance,
       baseAmountPaid,
     };
-  }
-
-  private async getOpenLpShares({
-    account,
-    options,
-  }: {
-    account: `0x${string}`;
-    options?: ContractReadOptions;
-  }): Promise<
-    {
-      lpAmount: bigint;
-      lpSharePrice: bigint;
-      baseAmount: bigint;
-    }[]
-  > {
-    const addLiquidityEvents = await this.contract.getEvents("AddLiquidity", {
-      filter: { provider: account },
-      ...options,
-    });
-
-    return Promise.all(
-      addLiquidityEvents.map(async ({ args }) => {
-        const { lpAmount, lpSharePrice } = args;
-        const finalBaseAmount = dnum.multiply(
-          [lpAmount, 18],
-          [lpSharePrice, 18],
-        )[0];
-
-        return {
-          lpAmount,
-          baseAmount: finalBaseAmount,
-          lpSharePrice,
-        };
-      }),
-    );
   }
 
   async getClosedLpShares({
@@ -1286,18 +1268,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
     );
     return Promise.all(
       removeLiquidityEvents.map(async ({ blockNumber, args }) => {
-        const { lpAmount, withdrawalShareAmount, lpSharePrice } = args;
-        // Get the value of the lp shares by multiplying by the lp share price
-        // in the event, this saves us looking up pool info
-        const finalBaseAmount = dnum.multiply(
-          [lpAmount, 18],
-          [lpSharePrice, 18],
-        )[0];
+        const { lpAmount, withdrawalShareAmount, baseAmount, lpSharePrice } =
+          args;
 
         return {
           hyperdriveAddress: this.contract.address,
           lpAmount,
-          baseAmount: finalBaseAmount,
+          baseAmount,
           withdrawalShareAmount,
           lpSharePrice,
           closedTimestamp: (
