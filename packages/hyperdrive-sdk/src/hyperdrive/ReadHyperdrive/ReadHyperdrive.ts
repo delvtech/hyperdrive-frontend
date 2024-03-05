@@ -282,7 +282,12 @@ export interface IReadHyperdrive {
     asBase: boolean;
     decimals: number;
     options?: ContractReadOptions;
-  }): Promise<{ maturityTime: bigint; bondProceeds: bigint }>;
+  }): Promise<{
+    maturityTime: bigint;
+    bondProceeds: bigint;
+    spotPriceAfterOpen: bigint;
+    spotRateAfterOpen: bigint;
+  }>;
 
   /**
    * Predicts the amount of base asset it will cost to open a short.
@@ -1393,6 +1398,27 @@ export class ReadHyperdrive implements IReadHyperdrive {
       });
     }
 
+    const spotPriceAfterOpen = BigInt(
+      hyperwasm.calcSpotPriceAfterLong(
+        convertBigIntsToStrings(poolInfo),
+        convertBigIntsToStrings(poolConfig),
+        depositAmountConvertedToBase.toString(),
+      ),
+    );
+
+    // See for spot rate calc:
+    // https://github.com/delvtech/hyperdrive/blob/main/crates/hyperdrive-math/src/lib.rs#L120
+    const termLengthInYearFractions = convertSecondsToYearFraction(
+      poolConfig.positionDuration,
+    );
+    const spotRateAfterOpen = dnum.divide(
+      dnum.subtract(dnum.from("1", 18), [spotPriceAfterOpen, 18]),
+      dnum.multiply(
+        [spotPriceAfterOpen, 18],
+        dnum.from(termLengthInYearFractions, 18),
+      ),
+    )[0];
+
     const bondProceeds = hyperwasm.calcOpenLong(
       convertBigIntsToStrings(poolInfo),
       convertBigIntsToStrings(poolConfig),
@@ -1402,6 +1428,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return {
       maturityTime: checkpointId + poolConfig.positionDuration,
       bondProceeds: BigInt(bondProceeds),
+      spotPriceAfterOpen,
+      spotRateAfterOpen,
     };
   }
 

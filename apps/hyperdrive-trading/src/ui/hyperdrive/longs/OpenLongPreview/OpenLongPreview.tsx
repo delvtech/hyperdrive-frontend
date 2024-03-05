@@ -3,6 +3,7 @@ import {
   Long,
 } from "@delvtech/hyperdrive-viem";
 import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import classNames from "classnames";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
@@ -15,11 +16,13 @@ import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
   long: Long;
+  spotRateAfterOpen: bigint | undefined;
 }
 
 export function OpenLongPreview({
   hyperdrive,
   long,
+  spotRateAfterOpen,
 }: OpenLongPreviewProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -27,6 +30,18 @@ export function OpenLongPreview({
     tokens: appConfig.tokens,
   });
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive.address);
+
+  let changeInFixedApr = 0n;
+  if (spotRateAfterOpen && fixedAPR) {
+    changeInFixedApr = dnum.subtract(
+      [spotRateAfterOpen, 18],
+      [fixedAPR.apr, 18],
+    )[0];
+    // Ensure the change in fixed APR is positive because formatRate doesn't accept negative values
+    // opening a long will always reduce the fixed APR so we can handle the negative value in the JSX
+    changeInFixedApr = dnum.abs(changeInFixedApr)[0];
+  }
+
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
   // The pool's curve fee is applied to the fixed rate, so if the fixed rate is
@@ -77,6 +92,37 @@ export function OpenLongPreview({
                   baseToken.decimals,
                 )}% APR`
               : "0% APR"}
+          </span>
+        }
+      />
+      <LabelValue
+        label="Fixed APR after open"
+        value={
+          <span
+            className={classNames(
+              "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
+              { "border-b border-dashed border-current": spotRateAfterOpen },
+            )}
+            data-tip="The market fixed rate after opening the long."
+          >
+            {spotRateAfterOpen ? `${formatRate(spotRateAfterOpen)}% APR` : "-"}
+          </span>
+        }
+      />
+      <LabelValue
+        label="Fixed APR impact"
+        value={
+          <span
+            className={classNames(
+              "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help  before:border",
+              {
+                "border-b border-dashed border-error text-error":
+                  spotRateAfterOpen,
+              },
+            )}
+            data-tip={`The net market impact on the fixed rate after opening the long.`}
+          >
+            {spotRateAfterOpen ? `-${formatRate(changeInFixedApr)}% APR` : "-"}
           </span>
         }
       />
