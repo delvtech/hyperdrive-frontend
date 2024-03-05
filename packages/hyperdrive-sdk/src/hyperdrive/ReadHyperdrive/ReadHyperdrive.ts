@@ -1451,10 +1451,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
         amountOfBondsToShort.toString(),
       ),
     );
+
+    // See for spot rate calc:
+    // https://github.com/delvtech/hyperdrive/blob/main/crates/hyperdrive-math/src/lib.rs#L120
     const termLengthInYearFractions = convertSecondsToYearFraction(
       poolConfig.positionDuration,
     );
-
     const spotRateAfterOpen = dnum.divide(
       dnum.subtract(dnum.from("1", 18), [spotPriceAfterOpen, 18]),
       dnum.multiply(
