@@ -186,7 +186,10 @@ export interface IReadHyperdrive {
   /**
    * Gets the maximum amount of bonds a user can open a short for.
    */
-  getMaxShort(options?: ContractReadOptions): Promise<{
+  getMaxShort(
+    args: { budget: bigint },
+    options?: ContractReadOptions,
+  ): Promise<{
     maxBaseIn: bigint;
     maxSharesIn: bigint;
     maxBondsOut: bigint;
@@ -1071,6 +1074,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }
 
   async getMaxShort(
+    { budget }: { budget: bigint },
     options?: ContractReadOptions,
   ): ReturnType<IReadHyperdrive, "getMaxShort"> {
     const poolInfo = await this.getPoolInfo(options);
@@ -1098,7 +1102,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const maxBondsOut = hyperwasm.getMaxShort(
       stringifiedPoolInfo,
       stringifiedPoolConfig,
-      MAX_UINT256.toString(),
+      budget.toString(),
       openSharePrice.toString(),
       checkpointExposure.toString(),
     );

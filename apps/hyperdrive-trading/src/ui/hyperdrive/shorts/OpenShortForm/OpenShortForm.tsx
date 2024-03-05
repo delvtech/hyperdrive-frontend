@@ -125,6 +125,7 @@ export function OpenShortForm({
 
   const { maxBondsOut } = useMaxShort({
     hyperdriveAddress: hyperdrive.address,
+    budget: MAX_UINT256,
   });
 
   const hasEnoughLiquidity = getIsValidTradeSize({

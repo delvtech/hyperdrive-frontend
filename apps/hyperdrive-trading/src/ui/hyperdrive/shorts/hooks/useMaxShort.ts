@@ -12,7 +12,9 @@ interface UseMaxShortResult {
 
 export function useMaxShort({
   hyperdriveAddress,
+  budget,
 }: {
+  budget: bigint;
   hyperdriveAddress: Address;
 }): UseMaxShortResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
@@ -23,7 +25,9 @@ export function useMaxShort({
       market: hyperdriveAddress,
     }),
     enabled: queryEnabled,
-    queryFn: queryEnabled ? () => readHyperdrive.getMaxShort() : undefined,
+    queryFn: queryEnabled
+      ? () => readHyperdrive.getMaxShort({ budget })
+      : undefined,
   });
 
   return {
