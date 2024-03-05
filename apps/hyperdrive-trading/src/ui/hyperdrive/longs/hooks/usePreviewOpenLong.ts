@@ -14,6 +14,8 @@ interface UsePreviewOpenLongResult {
   status: "error" | "idle" | "loading" | "success";
   bondsReceived: bigint | undefined;
   maturityTime: bigint | undefined;
+  spotPriceAfterOpen: bigint | undefined;
+  spotRateAfterOpen: bigint | undefined;
 }
 
 export function usePreviewOpenLong({
@@ -50,6 +52,8 @@ export function usePreviewOpenLong({
   return {
     bondsReceived: data?.bondProceeds,
     maturityTime: data?.maturityTime,
+    spotPriceAfterOpen: data?.spotPriceAfterOpen,
+    spotRateAfterOpen: data?.spotRateAfterOpen,
     status,
   };
 }

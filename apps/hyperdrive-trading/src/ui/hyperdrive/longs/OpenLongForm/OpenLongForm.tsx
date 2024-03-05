@@ -93,7 +93,11 @@ export function OpenLongForm({
       activeToken.address === sharesToken.address ? maxSharesIn : maxBaseIn,
   });
 
-  const { bondsReceived, status: openLongPreviewStatus } = usePreviewOpenLong({
+  const {
+    bondsReceived,
+    spotRateAfterOpen,
+    status: openLongPreviewStatus,
+  } = usePreviewOpenLong({
     hyperdriveAddress: hyperdrive.address,
     amountIn: depositAmountAsBigInt,
     asBase: activeToken.address === baseToken.address,
@@ -172,6 +176,7 @@ export function OpenLongForm({
       transactionPreview={
         <OpenLongPreview
           hyperdrive={hyperdrive}
+          spotRateAfterOpen={spotRateAfterOpen}
           long={{
             bondAmount: bondsReceived || 0n,
             assetId: 0n,
