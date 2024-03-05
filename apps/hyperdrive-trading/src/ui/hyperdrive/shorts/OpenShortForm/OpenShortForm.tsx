@@ -3,6 +3,7 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
+import * as dnum from "dnum";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
@@ -89,7 +90,6 @@ export function OpenShortForm({
 
   const {
     depositAmount,
-    spotPriceAfterOpen,
     spotRateAfterOpen,
     status: openShortPreviewStatus,
   } = usePreviewOpenShort({
@@ -126,6 +126,21 @@ export function OpenShortForm({
   const { maxBondsOut } = useMaxShort({
     hyperdriveAddress: hyperdrive.address,
     budget: MAX_UINT256,
+  });
+
+  const convertedSharesBudgetToBase = dnum.multiply(
+    [sharesTokenBalance?.value || 0n, sharesToken.decimals],
+    [poolInfo?.vaultSharePrice || 0n, baseToken.decimals],
+  )[0];
+
+  // calculate the max bonds a user can short given the current active deposit
+  // token
+  const { maxBondsOut: maxBondsForUserBalance } = useMaxShort({
+    hyperdriveAddress: hyperdrive.address,
+    budget:
+      activeToken.address === baseToken.address
+        ? activeTokenBalance?.value
+        : convertedSharesBudgetToBase,
   });
 
   const hasEnoughLiquidity = getIsValidTradeSize({
@@ -169,6 +184,11 @@ export function OpenShortForm({
           token={`hy${baseToken.symbol}`}
           inputLabel="Amount to short"
           value={amountOfBondsToShort ?? ""}
+          maxValue={
+            maxBondsForUserBalance
+              ? formatUnits(maxBondsForUserBalance, activeToken.decimals)
+              : undefined
+          }
           onChange={(newAmount) => setAmount(newAmount)}
         />
       }
@@ -187,7 +207,10 @@ export function OpenShortForm({
             },
           ]}
           selectedTokenAddress={activeToken.address}
-          onTokenChange={(tokenAddress) => setActiveToken(tokenAddress)}
+          onTokenChange={(tokenAddress) => {
+            setActiveToken(tokenAddress);
+            setAmount("");
+          }}
         />
       }
       transactionPreview={

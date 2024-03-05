@@ -14,15 +14,16 @@ export function useMaxShort({
   hyperdriveAddress,
   budget,
 }: {
-  budget: bigint;
+  budget: bigint | undefined;
   hyperdriveAddress: Address;
 }): UseMaxShortResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const queryEnabled = !!readHyperdrive;
+  const queryEnabled = !!readHyperdrive && budget !== undefined;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("maxShort", {
       market: hyperdriveAddress,
+      budget: budget?.toString(),
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
