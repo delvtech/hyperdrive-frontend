@@ -73,7 +73,7 @@ export function RemoveLiquidityForm({
   if (activeWithdrawToken.address === sharesToken.address) {
     desiredOutInBase = calculateValueFromPrice({
       amount: desiredOut || 0n,
-      unitPrice: poolInfo.vaultSharePrice,
+      unitPrice: poolInfo?.vaultSharePrice || 0n,
       decimals: activeWithdrawToken.decimals,
     });
   }
