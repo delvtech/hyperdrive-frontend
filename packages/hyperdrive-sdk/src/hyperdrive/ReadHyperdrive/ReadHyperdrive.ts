@@ -35,6 +35,7 @@ import { hyperwasm } from "src/hyperwasm";
 import { getBlockOrThrow } from "src/evm-client/getBlockOrThrow";
 import { convertSharesToBase } from "src/hyperdrive/utils/convertSharesToBase";
 import { convertBaseToShares } from "src/hyperdrive/utils/convertBaseToShares";
+import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
 
 const HyperdriveABI = IHyperdrive.abi;
 
@@ -294,7 +295,12 @@ export interface IReadHyperdrive {
     asBase: boolean;
     decimals: number;
     options?: ContractReadOptions;
-  }): Promise<{ maturityTime: bigint; traderDeposit: bigint }>;
+  }): Promise<{
+    maturityTime: bigint;
+    traderDeposit: bigint;
+    spotPriceAfterOpen: bigint;
+    spotRateAfterOpen: bigint;
+  }>;
 
   /**
    * Predicts the amount of LP shares a user will receive when adding liquidity.
@@ -1438,9 +1444,32 @@ export class ReadHyperdrive implements IReadHyperdrive {
       });
     }
 
+    const spotPriceAfterOpen = BigInt(
+      hyperwasm.calcSpotPriceAfterShort(
+        convertBigIntsToStrings(poolInfo),
+        convertBigIntsToStrings(poolConfig),
+        amountOfBondsToShort.toString(),
+      ),
+    );
+
+    // See for spot rate calc:
+    // https://github.com/delvtech/hyperdrive/blob/main/crates/hyperdrive-math/src/lib.rs#L120
+    const termLengthInYearFractions = convertSecondsToYearFraction(
+      poolConfig.positionDuration,
+    );
+    const spotRateAfterOpen = dnum.divide(
+      dnum.subtract(dnum.from("1", 18), [spotPriceAfterOpen, 18]),
+      dnum.multiply(
+        [spotPriceAfterOpen, 18],
+        dnum.from(termLengthInYearFractions, 18),
+      ),
+    )[0];
+
     return {
       maturityTime: checkpointId + poolConfig.positionDuration,
       traderDeposit: depositAmount,
+      spotPriceAfterOpen,
+      spotRateAfterOpen,
     };
   }
 
