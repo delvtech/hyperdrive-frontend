@@ -39,7 +39,6 @@ export function OpenShortPreview({
       [spotRateAfterOpen, 18],
       [fixedAPR.apr, 18],
     )[0];
-    console.log("changeInFixedApr", changeInFixedApr);
   }
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   return (
