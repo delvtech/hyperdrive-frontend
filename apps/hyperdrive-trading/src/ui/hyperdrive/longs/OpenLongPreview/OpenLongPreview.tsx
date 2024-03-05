@@ -34,12 +34,9 @@ export function OpenLongPreview({
   let changeInFixedApr = 0n;
   if (spotRateAfterOpen && fixedAPR) {
     changeInFixedApr = dnum.subtract(
-      [spotRateAfterOpen, 18],
       [fixedAPR.apr, 18],
+      [spotRateAfterOpen, 18],
     )[0];
-    // Ensure the change in fixed APR is positive because formatRate doesn't accept negative values
-    // opening a long will always reduce the fixed APR so we can handle the negative value in the JSX
-    changeInFixedApr = dnum.abs(changeInFixedApr)[0];
   }
 
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
