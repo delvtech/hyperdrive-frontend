@@ -16,6 +16,7 @@ interface UsePreviewOpenLongResult {
   maturityTime: bigint | undefined;
   spotPriceAfterOpen: bigint | undefined;
   spotRateAfterOpen: bigint | undefined;
+  curveFee: bigint | undefined;
 }
 
 export function usePreviewOpenLong({
@@ -54,6 +55,7 @@ export function usePreviewOpenLong({
     maturityTime: data?.maturityTime,
     spotPriceAfterOpen: data?.spotPriceAfterOpen,
     spotRateAfterOpen: data?.spotRateAfterOpen,
+    curveFee: data?.curveFee,
     status,
   };
 }
