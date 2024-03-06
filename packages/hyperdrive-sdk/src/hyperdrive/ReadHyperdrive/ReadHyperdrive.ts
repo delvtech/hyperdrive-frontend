@@ -1444,7 +1444,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     let depositAmount = baseDepositAmount;
     if (!asBase) {
       depositAmount = convertBaseToShares({
-        decimals: decimals,
+        decimals,
         vaultSharePrice: poolInfo.vaultSharePrice,
         baseAmount: baseDepositAmount,
       });
@@ -1471,7 +1471,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       ),
     )[0];
 
-    const curveFee = BigInt(
+    const curveFeeInBase = BigInt(
       hyperwasm.getOpenShortCurveFees(
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
@@ -1482,6 +1482,14 @@ export class ReadHyperdrive implements IReadHyperdrive {
         ),
       ),
     );
+    let curveFee = curveFeeInBase;
+    if (!asBase) {
+      curveFee = convertBaseToShares({
+        baseAmount: curveFeeInBase,
+        vaultSharePrice: poolInfo.vaultSharePrice,
+        decimals,
+      });
+    }
 
     return {
       maturityTime: checkpointId + poolConfig.positionDuration,
