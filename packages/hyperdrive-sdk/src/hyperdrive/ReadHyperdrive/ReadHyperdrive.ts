@@ -275,7 +275,7 @@ export interface IReadHyperdrive {
 
   /**
    * Predicts the amount of bonds a user will receive when opening a long in
-   * either base or shares.
+   * either base or shares. The curve fee returned from this function is paid in bonds.
    */
   previewOpenLong(args: {
     amountIn: bigint;
@@ -287,6 +287,7 @@ export interface IReadHyperdrive {
     bondProceeds: bigint;
     spotPriceAfterOpen: bigint;
     spotRateAfterOpen: bigint;
+    curveFee: bigint;
   }>;
 
   /**
@@ -1403,11 +1404,20 @@ export class ReadHyperdrive implements IReadHyperdrive {
       depositAmountConvertedToBase.toString(),
     );
 
+    const curveFeeInBonds = BigInt(
+      hyperwasm.getOpenLongCurveFees(
+        convertBigIntsToStrings(poolInfo),
+        convertBigIntsToStrings(poolConfig),
+        depositAmountConvertedToBase.toString(),
+      ),
+    );
+
     return {
       maturityTime: checkpointId + poolConfig.positionDuration,
       bondProceeds: BigInt(bondProceeds),
       spotPriceAfterOpen,
       spotRateAfterOpen,
+      curveFee: curveFeeInBonds,
     };
   }
 

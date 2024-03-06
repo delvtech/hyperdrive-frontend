@@ -96,6 +96,7 @@ export function OpenLongForm({
   const {
     bondsReceived,
     spotRateAfterOpen,
+    curveFee,
     status: openLongPreviewStatus,
   } = usePreviewOpenLong({
     hyperdriveAddress: hyperdrive.address,
@@ -177,6 +178,7 @@ export function OpenLongForm({
         <OpenLongPreview
           hyperdrive={hyperdrive}
           spotRateAfterOpen={spotRateAfterOpen}
+          curveFee={curveFee}
           long={{
             bondAmount: bondsReceived || 0n,
             assetId: 0n,

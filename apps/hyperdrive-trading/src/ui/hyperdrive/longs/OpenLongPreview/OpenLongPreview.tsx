@@ -17,12 +17,14 @@ interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
   long: Long;
   spotRateAfterOpen: bigint | undefined;
+  curveFee: bigint | undefined;
 }
 
 export function OpenLongPreview({
   hyperdrive,
   long,
   spotRateAfterOpen,
+  curveFee,
 }: OpenLongPreviewProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -63,10 +65,16 @@ export function OpenLongPreview({
         label="Pool fee"
         value={
           <span
-            className="daisy-tooltip daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
-            data-tip={`The pool fee is applied to the effective fixed rate you receive`}
+            className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
+            data-tip="Total combined fee paid to LPs and governance to open the long."
           >
-            {formatRate(poolFee[0], 18)}%
+            {curveFee
+              ? `${formatBalance({
+                  balance: curveFee,
+                  decimals: baseToken.decimals,
+                  places: 6,
+                })} hy${baseToken.symbol}`
+              : `0 hy${baseToken.symbol}`}
           </span>
         }
       />
