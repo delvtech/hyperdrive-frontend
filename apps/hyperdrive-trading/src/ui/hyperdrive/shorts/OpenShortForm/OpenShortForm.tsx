@@ -89,8 +89,8 @@ export function OpenShortForm({
 
   const {
     depositAmount,
-    spotPriceAfterOpen,
     spotRateAfterOpen,
+    curveFee,
     status: openShortPreviewStatus,
   } = usePreviewOpenShort({
     hyperdriveAddress: hyperdrive.address,
@@ -196,6 +196,7 @@ export function OpenShortForm({
           costBasis={stethOrDepositTokenAmount}
           shortSize={amountOfBondsToShortAsBigInt}
           spotRateAfterOpen={spotRateAfterOpen}
+          curveFee={curveFee}
         />
       }
       disclaimer={(() => {
@@ -220,7 +221,13 @@ export function OpenShortForm({
                 </strong>{" "}
                 in exchange for the yield on{" "}
                 <strong>
-                  {amountOfBondsToShort} {baseToken.symbol}
+                  {formatBalance({
+                    balance: amountOfBondsToShortAsBigInt,
+                    decimals: activeToken.decimals,
+                    includeCommas: true,
+                    places: 6,
+                  })}{" "}
+                  {baseToken.symbol}
                 </strong>{" "}
                 deposited into{" "}
                 <strong>{sharesToken.extensions.shortName}</strong> for{" "}

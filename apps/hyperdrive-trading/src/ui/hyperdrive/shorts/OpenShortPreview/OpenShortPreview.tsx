@@ -18,6 +18,7 @@ interface OpenShortPreviewProps {
   costBasis: bigint | undefined;
   shortSize: bigint | undefined;
   spotRateAfterOpen: bigint | undefined;
+  curveFee: bigint | undefined;
 }
 
 export function OpenShortPreview({
@@ -26,6 +27,7 @@ export function OpenShortPreview({
   tokenIn,
   shortSize,
   spotRateAfterOpen,
+  curveFee,
 }: OpenShortPreviewProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -33,13 +35,7 @@ export function OpenShortPreview({
     tokens: appConfig.tokens,
   });
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive.address);
-  let changeInFixedApr = 0n;
-  if (spotRateAfterOpen && fixedAPR) {
-    changeInFixedApr = dnum.subtract(
-      [spotRateAfterOpen, 18],
-      [fixedAPR.apr, 18],
-    )[0];
-  }
+
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   return (
     <div className="flex flex-col gap-3">
@@ -55,8 +51,25 @@ export function OpenShortPreview({
                   balance: shortSize,
                   decimals: baseToken.decimals,
                   places: 6,
-                })} ${baseToken.symbol}`
-              : `0` + ` ${baseToken.symbol}`}
+                })} hy${baseToken.symbol}`
+              : `0 hy${baseToken.symbol}`}
+          </span>
+        }
+      />
+      <LabelValue
+        label="Pool fee"
+        value={
+          <span
+            className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
+            data-tip="Total combined fee paid to LPs and governance to open the short."
+          >
+            {curveFee
+              ? `${formatBalance({
+                  balance: curveFee,
+                  decimals: tokenIn.decimals,
+                  places: 6,
+                })} ${tokenIn.symbol}`
+              : `0 ${tokenIn.symbol}`}
           </span>
         }
       />
@@ -104,7 +117,7 @@ export function OpenShortPreview({
             )}
             data-tip={`The net market impact on the fixed rate after opening the short.`}
           >
-            {spotRateAfterOpen ? `+${formatRate(changeInFixedApr)}% APR` : "-"}
+            {getMarketImpactLabel(fixedAPR?.apr, spotRateAfterOpen)}
           </span>
         }
       />
@@ -117,4 +130,25 @@ export function OpenShortPreview({
       />
     </div>
   );
+}
+
+function getMarketImpactLabel(
+  currentFixedRate: bigint | undefined,
+  spotRateAfterOpenShort: bigint | undefined,
+) {
+  if (spotRateAfterOpenShort === undefined || currentFixedRate === undefined) {
+    return "-";
+  }
+  const changeInFixedApr = dnum.subtract(
+    [spotRateAfterOpenShort, 18],
+    [currentFixedRate, 18],
+  )[0];
+
+  const isChangeInFixedAprLessThanOneBasisPoint =
+    changeInFixedApr < dnum.from("0.0001", 18)[0];
+
+  if (isChangeInFixedAprLessThanOneBasisPoint) {
+    return "+<0.01%";
+  }
+  return `+${formatRate(changeInFixedApr)}%`;
 }

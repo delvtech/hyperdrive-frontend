@@ -16,6 +16,7 @@ interface UsePreviewOpenShortResult {
   depositAmount: bigint | undefined;
   spotPriceAfterOpen: bigint | undefined;
   spotRateAfterOpen: bigint | undefined;
+  curveFee: bigint | undefined;
 }
 
 export function usePreviewOpenShort({
@@ -52,6 +53,7 @@ export function usePreviewOpenShort({
     depositAmount: data?.traderDeposit,
     spotPriceAfterOpen: data?.spotPriceAfterOpen,
     spotRateAfterOpen: data?.spotRateAfterOpen,
+    curveFee: data?.curveFee,
     status,
   };
 }

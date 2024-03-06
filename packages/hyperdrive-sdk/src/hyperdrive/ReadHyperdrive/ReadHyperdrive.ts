@@ -305,6 +305,7 @@ export interface IReadHyperdrive {
     traderDeposit: bigint;
     spotPriceAfterOpen: bigint;
     spotRateAfterOpen: bigint;
+    curveFee: bigint;
   }>;
 
   /**
@@ -1443,7 +1444,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     let depositAmount = baseDepositAmount;
     if (!asBase) {
       depositAmount = convertBaseToShares({
-        decimals: decimals,
+        decimals,
         vaultSharePrice: poolInfo.vaultSharePrice,
         baseAmount: baseDepositAmount,
       });
@@ -1470,11 +1471,32 @@ export class ReadHyperdrive implements IReadHyperdrive {
       ),
     )[0];
 
+    const curveFeeInBase = BigInt(
+      hyperwasm.getOpenShortCurveFees(
+        convertBigIntsToStrings(poolInfo),
+        convertBigIntsToStrings(poolConfig),
+        amountOfBondsToShort.toString(),
+        hyperwasm.getSpotPrice(
+          convertBigIntsToStrings(poolInfo),
+          convertBigIntsToStrings(poolConfig),
+        ),
+      ),
+    );
+    let curveFee = curveFeeInBase;
+    if (!asBase) {
+      curveFee = convertBaseToShares({
+        baseAmount: curveFeeInBase,
+        vaultSharePrice: poolInfo.vaultSharePrice,
+        decimals,
+      });
+    }
+
     return {
       maturityTime: checkpointId + poolConfig.positionDuration,
       traderDeposit: depositAmount,
       spotPriceAfterOpen,
       spotRateAfterOpen,
+      curveFee,
     };
   }
 
