@@ -305,6 +305,7 @@ export interface IReadHyperdrive {
     traderDeposit: bigint;
     spotPriceAfterOpen: bigint;
     spotRateAfterOpen: bigint;
+    curveFee: bigint;
   }>;
 
   /**
@@ -1470,11 +1471,24 @@ export class ReadHyperdrive implements IReadHyperdrive {
       ),
     )[0];
 
+    const curveFee = BigInt(
+      hyperwasm.getOpenShortCurveFees(
+        convertBigIntsToStrings(poolInfo),
+        convertBigIntsToStrings(poolConfig),
+        amountOfBondsToShort.toString(),
+        hyperwasm.getSpotPrice(
+          convertBigIntsToStrings(poolInfo),
+          convertBigIntsToStrings(poolConfig),
+        ),
+      ),
+    );
+
     return {
       maturityTime: checkpointId + poolConfig.positionDuration,
       traderDeposit: depositAmount,
       spotPriceAfterOpen,
       spotRateAfterOpen,
+      curveFee,
     };
   }
 
