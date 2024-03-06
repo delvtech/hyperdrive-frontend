@@ -263,9 +263,9 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
           { digits: 2 },
         );
         const isLpRow =
-          row.getValue("eventName") === "Add Liquidity" ||
-          row.getValue("eventName") === "Remove Liquidity" ||
-          row.getValue("eventName") === "Redeem Withdrawal Shares";
+          row.getValue("eventName") === "AddLiquidity" ||
+          row.getValue("eventName") === "RemoveLiquidity" ||
+          row.getValue("eventName") === "RedeemWithdrawalShares";
         return (
           <span>
             {size} {isLpRow ? baseToken.symbol : `hy${baseToken.symbol}`}
