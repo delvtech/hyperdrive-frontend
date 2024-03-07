@@ -747,8 +747,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
       groupBy(openLongEvents, (event) => event.args.assetId.toString()),
       (events) => {
         const baseAmounts = events.map((event) => {
-          const { vaultShareAmount, asBase, baseAmount } = event.args;
-          return calculateBaseAmount({ vaultShareAmount, asBase, baseAmount });
+          const { baseAmount } = event.args;
+          return baseAmount;
         });
 
         return sumBigInt(baseAmounts);
@@ -765,8 +765,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
       groupBy(closeLongEvents, (event) => event.args.assetId.toString()),
       (events) => {
         const baseAmounts = events.map((event) => {
-          const { vaultShareAmount, asBase, baseAmount } = event.args;
-          return calculateBaseAmount({ vaultShareAmount, asBase, baseAmount });
+          const { baseAmount } = event.args;
+          return baseAmount;
         });
         return sumBigInt(baseAmounts);
       },
