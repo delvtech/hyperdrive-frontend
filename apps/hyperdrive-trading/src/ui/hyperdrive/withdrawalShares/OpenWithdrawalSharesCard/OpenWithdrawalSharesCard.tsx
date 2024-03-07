@@ -28,28 +28,27 @@ export function OpenWithdrawalSharesCard({
     tokens: appConfig.tokens,
   });
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
-  const { withdrawalShares } = useWithdrawalShares({
+  const { withdrawalShares: balanceOfWithdrawalShares } = useWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
 
   const {
-    proceeds: baseProceedsFromPreviewRedeemWithdrawalShares,
-    withdrawalSharesRedeemed:
-      withdrawalSharesRedeemedFromPreviewRedeemWithdrawalShares,
+    baseProceeds: baseProceedsFromPreview,
+    withdrawalSharesRedeemed: withdrawalSharesRedeemedFromPreview,
   } = usePreviewRedeemWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
-    withdrawalSharesIn: withdrawalShares,
+    withdrawalSharesIn: balanceOfWithdrawalShares,
     minOutputPerShare: 1n, // TODO: slippage,
     destination: account,
   });
 
   const withdrawalSharesCurrentValue = getWithdrawalSharesCurrentValue({
-    baseTokenDecimals: baseToken.decimals,
+    decimals: hyperdrive.decimals,
     lpSharePrice: poolInfo?.lpSharePrice,
-    withdrawalShares,
-    baseProceedsFromPreviewRedeemWithdrawalShares,
-    withdrawalSharesRedeemedFromPreviewRedeemWithdrawalShares,
+    withdrawalShares: balanceOfWithdrawalShares,
+    baseProceedsFromPreview,
+    withdrawalSharesRedeemedFromPreview,
   });
 
   return (
@@ -58,7 +57,7 @@ export function OpenWithdrawalSharesCard({
         <span className="daisy-card-title font-bold">
           Queued for Withdrawal
         </span>
-        {withdrawalShares !== 0n ? (
+        {balanceOfWithdrawalShares !== 0n ? (
           <div className="flex h-full flex-col justify-between">
             <div className="mb-4 flex flex-col gap-3">
               <LabelValue
@@ -81,10 +80,9 @@ export function OpenWithdrawalSharesCard({
                 label="Withdrawable"
                 value={
                   <p>
-                    {baseProceedsFromPreviewRedeemWithdrawalShares !==
-                    undefined ? (
+                    {baseProceedsFromPreview !== undefined ? (
                       `${formatBalance({
-                        balance: baseProceedsFromPreviewRedeemWithdrawalShares,
+                        balance: baseProceedsFromPreview,
                         decimals: baseToken.decimals,
                         places: 4,
                       })} ${baseToken.symbol}`
@@ -99,16 +97,13 @@ export function OpenWithdrawalSharesCard({
               <Modal
                 modalId="withdrawalLpModal"
                 modalContent={
-                  <RedeemWithdrawalSharesForm
-                    hyperdrive={hyperdrive}
-                    withdrawalShares={withdrawalShares || 0n}
-                  />
+                  <RedeemWithdrawalSharesForm hyperdrive={hyperdrive} />
                 }
               >
                 {({ showModal }) => (
                   <button
                     className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-                    disabled={!baseProceedsFromPreviewRedeemWithdrawalShares}
+                    disabled={!baseProceedsFromPreview}
                     onClick={showModal}
                   >
                     Redeem
@@ -130,16 +125,17 @@ export function OpenWithdrawalSharesCard({
 
 function getWithdrawalSharesCurrentValue({
   lpSharePrice,
-  baseTokenDecimals,
+  decimals,
   withdrawalShares,
-  withdrawalSharesRedeemedFromPreviewRedeemWithdrawalShares,
-  baseProceedsFromPreviewRedeemWithdrawalShares,
+  withdrawalSharesRedeemedFromPreview,
+
+  baseProceedsFromPreview,
 }: {
   lpSharePrice: bigint | undefined;
-  baseTokenDecimals: number;
+  decimals: number;
   withdrawalShares: bigint | undefined;
-  baseProceedsFromPreviewRedeemWithdrawalShares: bigint | undefined;
-  withdrawalSharesRedeemedFromPreviewRedeemWithdrawalShares: bigint | undefined;
+  baseProceedsFromPreview: bigint | undefined;
+  withdrawalSharesRedeemedFromPreview: bigint | undefined;
 }): bigint | undefined {
   if (lpSharePrice === undefined || withdrawalShares === undefined) {
     return;
@@ -149,15 +145,14 @@ function getWithdrawalSharesCurrentValue({
   // and basing the current value of all of your withdrawal shares on actual
   // redemption data.
   if (
-    baseProceedsFromPreviewRedeemWithdrawalShares !== undefined &&
-    withdrawalSharesRedeemedFromPreviewRedeemWithdrawalShares
+    baseProceedsFromPreview !== undefined &&
+    withdrawalSharesRedeemedFromPreview
   ) {
     return calculateEquivalentShareValue({
       targetShares: withdrawalShares,
-      referenceShares:
-        withdrawalSharesRedeemedFromPreviewRedeemWithdrawalShares,
-      totalReferenceValue: baseProceedsFromPreviewRedeemWithdrawalShares,
-      decimals: baseTokenDecimals,
+      referenceShares: withdrawalSharesRedeemedFromPreview,
+      totalReferenceValue: baseProceedsFromPreview,
+      decimals,
     });
   }
 
@@ -166,6 +161,6 @@ function getWithdrawalSharesCurrentValue({
   return calculateValueFromPrice({
     amount: withdrawalShares,
     unitPrice: lpSharePrice,
-    decimals: baseTokenDecimals,
+    decimals,
   });
 }

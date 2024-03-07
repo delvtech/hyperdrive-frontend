@@ -14,7 +14,8 @@ interface UsePreviewRedeemWithdrawalSharesOptions {
 
 interface UsePreviewRedeemWithdrawalSharesResult {
   previewRedeemWithdrawalSharesStatus: MutationStatus;
-  proceeds: bigint | undefined;
+  baseProceeds: bigint | undefined;
+  sharesProceeds: bigint | undefined;
   withdrawalSharesRedeemed: bigint | undefined;
 }
 
@@ -23,7 +24,6 @@ export function usePreviewRedeemWithdrawalShares({
   withdrawalSharesIn,
   minOutputPerShare,
   destination,
-  asBase = true,
   enabled = true,
 }: UsePreviewRedeemWithdrawalSharesOptions): UsePreviewRedeemWithdrawalSharesResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
@@ -36,27 +36,30 @@ export function usePreviewRedeemWithdrawalShares({
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewRedeemWithdrawalShares", {
-      market: hyperdriveAddress,
+      hyperdriveAddress,
       withdrawalSharesIn: withdrawalSharesIn?.toString(),
       minBaseAmountOutPerShare: minOutputPerShare?.toString(),
       destination,
-      asBase,
     }),
+    enabled: queryEnabled,
     queryFn: queryEnabled
       ? () =>
           readWriteHyperdrive.previewRedeemWithdrawalShares({
             withdrawalSharesIn,
             minOutputPerShare,
             destination,
-            asBase,
+            // Some hyperdrives can only be exited to shares. So we'll always
+            // just set this to false. We'll get a preview amount for both
+            // shares and base from the sdk regardless
+            asBase: false,
           })
       : undefined,
-    enabled: queryEnabled,
   });
 
   return {
     previewRedeemWithdrawalSharesStatus: status,
-    proceeds: data?.proceeds,
+    baseProceeds: data?.baseProceeds,
+    sharesProceeds: data?.sharesProceeds,
     withdrawalSharesRedeemed: data?.withdrawalSharesRedeemed,
   };
 }

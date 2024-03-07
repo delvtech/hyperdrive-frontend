@@ -50,6 +50,8 @@ export interface IReadHyperdrive {
    */
   getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig>;
 
+  getDecimals(options?: ContractReadOptions): Promise<number>;
+
   /**
    * Gets info about the pool's reserves and other state that is important to
    * evaluate potential trades.
@@ -66,10 +68,9 @@ export interface IReadHyperdrive {
    * This function retrieves the market liquidity by using the following formula:
    * marketLiquidity = lpSharePrice * effectiveShareReserves - longsOutstanding
    *
-   * TODO: We need a better way to get the baseToken.decimals() without the
-   * caller having to provide them.
    */
   getLiquidity(args: {
+    // TODO: Remove `decimals` param and just use this.getDecimals() internally
     decimals?: number;
     options?: ContractReadOptions;
   }): Promise<bigint>;
@@ -127,6 +128,7 @@ export interface IReadHyperdrive {
   }: {
     checkpointId: bigint;
     bondAmount: bigint;
+    // TODO: Remove `decimals` param and just use this.getDecimals() internally
     decimals: number;
     options?: ContractReadOptions;
   }): Promise<bigint>;
@@ -280,6 +282,7 @@ export interface IReadHyperdrive {
   previewOpenLong(args: {
     amountIn: bigint;
     asBase: boolean;
+    // TODO: Remove `decimals` param and just use this.getDecimals() internally
     decimals: number;
     options?: ContractReadOptions;
   }): Promise<{
@@ -299,6 +302,7 @@ export interface IReadHyperdrive {
   previewOpenShort(args: {
     amountOfBondsToShort: bigint;
     asBase: boolean;
+    // TODO: Remove `decimals` param and just use this.getDecimals() internally
     decimals: number;
     options?: ContractReadOptions;
   }): Promise<{
@@ -345,7 +349,12 @@ export interface IReadHyperdrive {
     asBase: boolean;
     extraData?: `0x${string}`;
     options: ContractWriteOptions;
-  }): Promise<{ proceeds: bigint; withdrawalSharesRedeemed: bigint }>;
+  }): Promise<{
+    baseProceeds: bigint;
+    withdrawalSharesRedeemed: bigint;
+    asBase: boolean;
+    sharesProceeds: bigint;
+  }>;
 
   getLongEvents(
     options?:
@@ -396,6 +405,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
   constructor({ contract, network }: ReadHyperdriveOptions) {
     this.contract = contract;
     this.network = network;
+  }
+  getDecimals(options?: ContractReadOptions | undefined): Promise<number> {
+    return this.contract.read("decimals", {}, options);
   }
 
   getCheckpoint({
@@ -463,6 +475,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     options,
   }: {
     decimals?: number;
+    // TODO: Remove `decimals` param and just use this.getDecimals() internally
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getLiquidity"> {
     const { lpSharePrice, shareReserves, longsOutstanding, shareAdjustment } =
@@ -484,6 +497,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async getShortAccruedYield({
     checkpointId,
     bondAmount,
+    // TODO: Remove in favor of this.getDecimals();
     decimals,
     options,
   }: {
@@ -1347,6 +1361,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async previewOpenLong({
     amountIn,
     asBase,
+    // TODO: Remove in favor of this.getDecimals();
     decimals,
     options,
   }: Parameters<IReadHyperdrive["previewOpenLong"]>[0]): ReturnType<
@@ -1423,6 +1438,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async previewOpenShort({
     amountOfBondsToShort,
     asBase,
+    // TODO: Remove in favor of this.getDecimals();
     decimals,
     options,
   }: Parameters<IReadHyperdrive["previewOpenShort"]>[0]): ReturnType<
@@ -1655,8 +1671,29 @@ export class ReadHyperdrive implements IReadHyperdrive {
         },
         options,
       );
+    const { vaultSharePrice } = await this.getPoolInfo();
+    const decimals = await this.getDecimals();
+
+    const baseProceeds = asBase
+      ? proceeds
+      : convertSharesToBase({
+          sharesAmount: proceeds,
+          vaultSharePrice,
+          decimals,
+        });
+
+    const sharesProceeds = asBase
+      ? convertBaseToShares({
+          baseAmount: proceeds,
+          vaultSharePrice,
+          decimals,
+        })
+      : proceeds;
+
     return {
-      proceeds,
+      asBase,
+      baseProceeds,
+      sharesProceeds,
       withdrawalSharesRedeemed,
     };
   }
