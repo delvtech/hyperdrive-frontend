@@ -433,6 +433,12 @@ export const StETHBase = {
                     "internalType": "address",
                     "name": "newPauser",
                     "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "status",
+                    "type": "bool"
                 }
             ],
             "name": "PauserUpdated",
@@ -573,7 +579,7 @@ export const StETHBase = {
         "linkReferences": {}
     },
     "methodIdentifiers": {},
-    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"Lido has it's own notion of shares to account for the accrual of      interest on the ether pooled in the Lido protocol. Instead of      maintaining a balance of shares, this integration can simply use Lido      shares directly.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"__lido\":\"The Lido contract.\"}}},\"stateVariables\":{\"_lido\":{\"details\":\"The Lido contract.\"}},\"title\":\"StethHyperdrive\",\"version\":1},\"userdoc\":{\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"Instantiates the stETH Hyperdrive base contract.\"}},\"notice\":\"The base contract for the stETH Hyperdrive implementation.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/instances/steth/StETHBase.sol\":\"StETHBase\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/instances/steth/StETHBase.sol\":{\"keccak256\":\"0x0cb486eaa8d75908bd8e91db3269ec203918cdd288d5aa7938ee45d405efcad2\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b0aa85afa7f423a01c7d1c28e42d0ee75ced8d568eb5e085d700042c1a8756ec\",\"dweb:/ipfs/QmTSiyx6WzWsYv9viG6Dv81xpgoynU2A6uLDVXriTVtmjH\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xbb41b77195a206fee42f1c801d1feeefcb84d1d33fcdb537ba2597a2eaf7bf94\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ad3474360d05cf4002ea0703ff36dba900dc1b17da8077f8bcaf159c0b0861eb\",\"dweb:/ipfs/QmYTehjAXpiuLErAWGfVw1LFn8g2oZ7YnjLNXcmU5ngPBf\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x2836b8e9e2b6e143d4601e0047dfd09232352038a2133670d2f40da5442ff4b3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://64eec4fc70dd4fdf3ad835ef343d56bd4a7c48f2bb0e1f338d9f090e42848660\",\"dweb:/ipfs/Qmeg2aX8QZBggY1tChJQJbkhkbxWFRQPDsZRxUMsGfFg5m\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x1841703b12d5b2ca7dedff94c7dd71a4ad0a0b47ca59ba9de98ea14929fb72e5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c192bfc8bee91341d7e7530d71df2fbaec69d7bf0017e7b318dea276b7f3e171\",\"dweb:/ipfs/QmRWCkdXJ7G2FDo4CpsNuRvDgYWzN9U3LXLzM3YKHs9M4y\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x5922cbd86a7267c8fd19e3dc7a6f2636bad2b3330c28bca8e66adc7cd8ce2b55\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ced8bce3f3c15a9f0bcdd11ba16e69651179edd6b16e267936788f4ab4d6eabf\",\"dweb:/ipfs/QmcoZPj4h2ym6r13KDU7JG2GoVdDWa1GwfKL2jjFRsp8H6\"]},\"contracts/src/interfaces/ILido.sol\":{\"keccak256\":\"0x5942f8acaa122bd9f40cc0c6c4a5d489de3537efef6f7e744a89dae8a616ecc9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://629e5370ec6464f25f476b20635d67b06919f37aac7b8decba0756ab3ccbc8e3\",\"dweb:/ipfs/QmdZi8CygBNpvd1oX2GMReYRffbYirNJqnnEGxTkHoWqrw\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xf692b4673daac8627a185253b5fb99c843d9c5a2897be50599030fbd02c21a28\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ec28e35b2523d2f399c79ec5c8e29a4985a0e7a2d1d83c9a834d84dfc44130a2\",\"dweb:/ipfs/QmZLHmSUkDJsnU2FJ4FuaMfo2t6dPimmLaCDrfuxYF8nmD\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xeabffcfcd0fd642caaa2355dccad38269d25fbd4db1b0db43fd97328bf464862\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6970e3db54bfcca6748db01b871fcee4f8d74fea2e66c39e3320232086633355\",\"dweb:/ipfs/QmPq66eyA4DmnU7m1QpMgKGrJ3ebUeN6e8UEuhb64U3BH2\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xc28d1017afe010c20c2fbe9b78e0001eb8b7db16e0fe5038990692227be365ec\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8056e866c6da775c66cefc4e03d8856d75980d8c6eb98e954e1319b2478ad51c\",\"dweb:/ipfs/Qme9n2mBoeFUxf7Tzx4dD3iYt2kDsza6mqPXoUogPnS2hx\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x64568129b288bbc5ceda7a9f99afaa879353d6a3ccec737cce9c8827a52d3717\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://17f30a5d3b37e7e3aa45dba37efee31223a3d20e52ac25574df66706e69c15cc\",\"dweb:/ipfs/QmWTcWTuWZT7YyTE58QT5QsGfUBfyfx52kivRcAKJTvCv8\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xfeac73551892783afcce85d23fb910baf2ad729d218756f3597ad23e3dcb077f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1f659070705bee17efda43c36f71d22b035752f610624c59238cae559c60530d\",\"dweb:/ipfs/QmTEXNYSWa8w3wY2TWzDPNZXxdThMFEbrtRwcQHfyN2CJb\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0xc2e36474285afd5b98999d648305f077a05b0e159dd63ef5f44f29cd42eb68c2\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fbf8aac982e8485dce3f8c7f85b9bbbd46b41d8d0d3deebe1fc927799de60c0b\",\"dweb:/ipfs/QmbUJsi5cqS4M4sVcJ8cDWvbMRSqYzfjRAp8gaP1v2dtst\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0xdcf0c77bc29a0b5b2ce06cccfa6f5e936128e5c0f14a5636bfe21faf95c515bf\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://088172c3f97db68914cdef042d942b0d0c585cce77d004625bfa62a72ac1e95d\",\"dweb:/ipfs/Qmewa9GJtYxBw4fAx4HZJaNuUCKEoQT4c5nmhPyXxVEwwq\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0x94662a356f9ab292c0935ff4c29f9b826a17176eb98b472efed7afbfe4d5d744\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://794c5605f8f0716b871a8747fea516d26fd73f0add45a944ac4034de96c60c7a\",\"dweb:/ipfs/QmYSsquDzxupHSwWMsjjooxNxuzQ29ezczFsP2VQ5PYYve\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x8d9491ad62e48c7148389a72feca73a388076e3386d7ddc6788193be359e1266\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d340b65b76fc638d119d7d1d6f38fa044c34fc9297dc0c1627c9820218b2e244\",\"dweb:/ipfs/QmZo3nPVg3j2Ga8UXRZFQyTq7RuYuY6F2tYynnVUP4SbDY\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0x390a002b83e7ed8a99d4ca9b3ea514b2080c237911a3a3d0fa2ad4522a09d60b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://51ea972cf6d3c79ea6b93c63c85fbba2bd234e71704715a1d9bd897da9d6fcb1\",\"dweb:/ipfs/QmXEGDrLyeAYMZiDVNynVzRzAYgnspcdLfkMeGr81DmJpL\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x76f69d3104f3f97d67289512325306d7ea2c7b29a787eeef93ffc47e8a80f346\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c8df31a46b4287c23c67e0157e6f6a4877608ed3fb1919a9c07f5bd9b81d7f6\",\"dweb:/ipfs/QmPua6efzJGnC7NarnPojk9yF2geqenUaXUNRmPVHJdXWk\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}",
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"Lido has it's own notion of shares to account for the accrual of      interest on the ether pooled in the Lido protocol. Instead of      maintaining a balance of shares, this integration can simply use Lido      shares directly.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"__lido\":\"The Lido contract.\"}}},\"stateVariables\":{\"_lido\":{\"details\":\"The Lido contract.\"}},\"title\":\"StethHyperdrive\",\"version\":1},\"userdoc\":{\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"Instantiates the stETH Hyperdrive base contract.\"}},\"notice\":\"The base contract for the stETH Hyperdrive implementation.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/instances/steth/StETHBase.sol\":\"StETHBase\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/instances/steth/StETHBase.sol\":{\"keccak256\":\"0x639d9194f93421b99bc2b1d3b96425d845e0b2cb4d5dfb37ea358cefc8beb35c\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b1d405c802fdfedbccdbdd0707f2109659b8f02cc3808ee3f8ebac4d475c7c87\",\"dweb:/ipfs/Qmatdps9svvTBhZfKtxCoz2FEs7LZLh6hkd1h7VgenuJkn\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x7cc4f7a8878cf02f9896f930882ccb6839b20f63c85efc4a66e88af46c57c317\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://de756bba0e3622e5ddaff774a989fa20b4be7c49806dd972efc11f2cef523213\",\"dweb:/ipfs/QmPWwZo7TsF8ccFYbGVXhZMo85FYjKmyTnEYGV3V936YG2\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0xd15fb3cb39e359f334b7f836f23026d162de7b5be66d9aab3ac11dede9357a76\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b8b6fdcb4a2a45a3dbb8a70e9451fdd6aa5e23ee75d8960e42a149e9138a32eb\",\"dweb:/ipfs/QmNQiGzu6qhssorP8UMtaRbxygqzajPg3rB4phnbfQuMzF\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x1233242868a6eaeb6e6764df97cd094bfda03978bbedb04592db8ddc3ac6db56\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5cc50aa0bdaff888c940b004ad3a7a0c2aac4c15104419bd216ca48270c3fcb8\",\"dweb:/ipfs/QmQS6jncTRsBmZxDgR6dAofzXgTt1bXSRb8WdBNqKTCKiR\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x5922cbd86a7267c8fd19e3dc7a6f2636bad2b3330c28bca8e66adc7cd8ce2b55\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ced8bce3f3c15a9f0bcdd11ba16e69651179edd6b16e267936788f4ab4d6eabf\",\"dweb:/ipfs/QmcoZPj4h2ym6r13KDU7JG2GoVdDWa1GwfKL2jjFRsp8H6\"]},\"contracts/src/interfaces/ILido.sol\":{\"keccak256\":\"0x5942f8acaa122bd9f40cc0c6c4a5d489de3537efef6f7e744a89dae8a616ecc9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://629e5370ec6464f25f476b20635d67b06919f37aac7b8decba0756ab3ccbc8e3\",\"dweb:/ipfs/QmdZi8CygBNpvd1oX2GMReYRffbYirNJqnnEGxTkHoWqrw\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0xfc6947a6bfff9ca937fc2654ee56203dbc2ffc3c8bffe40c1334ebc9c81804bc\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b29d5b70c6cb40ede4e496cbeee4937c5318b43536a450d7c246166d326c85fa\",\"dweb:/ipfs/QmcDD9Bs4Gueepjs92CYJC9UFBMFYSN1QfbfqBJMQECkWj\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xfeac73551892783afcce85d23fb910baf2ad729d218756f3597ad23e3dcb077f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1f659070705bee17efda43c36f71d22b035752f610624c59238cae559c60530d\",\"dweb:/ipfs/QmTEXNYSWa8w3wY2TWzDPNZXxdThMFEbrtRwcQHfyN2CJb\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xe86d38d659ce3191d0423a4ee9b6592218a0e59dd72f3e0ec60cfa83809b266e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://91d15d179f83429f36db12d5eac3f575727e16f1505d4cb1b95a11d0876c7534\",\"dweb:/ipfs/QmQDHYp8pgd9maivqkaH2mZ8qtb5ZEmK34n4oDmvAo8nrh\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x8fde664589dfd8a26b6d39aed585388f7c179bf508ffe7688dc6c796a68dc785\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3406b91898282977f3630976461eb344764c0f321d35588b1e31408b64f64263\",\"dweb:/ipfs/QmVGGknjaaG9wnyPHUWAMpDJZ4tANu6hmEQcUU1HnUQ5U5\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c\",\"dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}",
     "metadata": {
         "compiler": {
             "version": "0.8.20+commit.a1b79de6"
@@ -1013,6 +1019,12 @@ export const StETHBase = {
                             "name": "newPauser",
                             "type": "address",
                             "indexed": true
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "status",
+                            "type": "bool",
+                            "indexed": false
                         }
                     ],
                     "type": "event",
@@ -1189,10 +1201,10 @@ export const StETHBase = {
         },
         "sources": {
             "contracts/src/instances/steth/StETHBase.sol": {
-                "keccak256": "0x0cb486eaa8d75908bd8e91db3269ec203918cdd288d5aa7938ee45d405efcad2",
+                "keccak256": "0x639d9194f93421b99bc2b1d3b96425d845e0b2cb4d5dfb37ea358cefc8beb35c",
                 "urls": [
-                    "bzz-raw://b0aa85afa7f423a01c7d1c28e42d0ee75ced8d568eb5e085d700042c1a8756ec",
-                    "dweb:/ipfs/QmTSiyx6WzWsYv9viG6Dv81xpgoynU2A6uLDVXriTVtmjH"
+                    "bzz-raw://b1d405c802fdfedbccdbdd0707f2109659b8f02cc3808ee3f8ebac4d475c7c87",
+                    "dweb:/ipfs/Qmatdps9svvTBhZfKtxCoz2FEs7LZLh6hkd1h7VgenuJkn"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1205,26 +1217,26 @@ export const StETHBase = {
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdrive.sol": {
-                "keccak256": "0xbb41b77195a206fee42f1c801d1feeefcb84d1d33fcdb537ba2597a2eaf7bf94",
+                "keccak256": "0x7cc4f7a8878cf02f9896f930882ccb6839b20f63c85efc4a66e88af46c57c317",
                 "urls": [
-                    "bzz-raw://ad3474360d05cf4002ea0703ff36dba900dc1b17da8077f8bcaf159c0b0861eb",
-                    "dweb:/ipfs/QmYTehjAXpiuLErAWGfVw1LFn8g2oZ7YnjLNXcmU5ngPBf"
+                    "bzz-raw://de756bba0e3622e5ddaff774a989fa20b4be7c49806dd972efc11f2cef523213",
+                    "dweb:/ipfs/QmPWwZo7TsF8ccFYbGVXhZMo85FYjKmyTnEYGV3V936YG2"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdriveCore.sol": {
-                "keccak256": "0x2836b8e9e2b6e143d4601e0047dfd09232352038a2133670d2f40da5442ff4b3",
+                "keccak256": "0xd15fb3cb39e359f334b7f836f23026d162de7b5be66d9aab3ac11dede9357a76",
                 "urls": [
-                    "bzz-raw://64eec4fc70dd4fdf3ad835ef343d56bd4a7c48f2bb0e1f338d9f090e42848660",
-                    "dweb:/ipfs/Qmeg2aX8QZBggY1tChJQJbkhkbxWFRQPDsZRxUMsGfFg5m"
+                    "bzz-raw://b8b6fdcb4a2a45a3dbb8a70e9451fdd6aa5e23ee75d8960e42a149e9138a32eb",
+                    "dweb:/ipfs/QmNQiGzu6qhssorP8UMtaRbxygqzajPg3rB4phnbfQuMzF"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdriveEvents.sol": {
-                "keccak256": "0x1841703b12d5b2ca7dedff94c7dd71a4ad0a0b47ca59ba9de98ea14929fb72e5",
+                "keccak256": "0x1233242868a6eaeb6e6764df97cd094bfda03978bbedb04592db8ddc3ac6db56",
                 "urls": [
-                    "bzz-raw://c192bfc8bee91341d7e7530d71df2fbaec69d7bf0017e7b318dea276b7f3e171",
-                    "dweb:/ipfs/QmRWCkdXJ7G2FDo4CpsNuRvDgYWzN9U3LXLzM3YKHs9M4y"
+                    "bzz-raw://5cc50aa0bdaff888c940b004ad3a7a0c2aac4c15104419bd216ca48270c3fcb8",
+                    "dweb:/ipfs/QmQS6jncTRsBmZxDgR6dAofzXgTt1bXSRb8WdBNqKTCKiR"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1253,10 +1265,10 @@ export const StETHBase = {
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IMultiTokenCore.sol": {
-                "keccak256": "0xf692b4673daac8627a185253b5fb99c843d9c5a2897be50599030fbd02c21a28",
+                "keccak256": "0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501",
                 "urls": [
-                    "bzz-raw://ec28e35b2523d2f399c79ec5c8e29a4985a0e7a2d1d83c9a834d84dfc44130a2",
-                    "dweb:/ipfs/QmZLHmSUkDJsnU2FJ4FuaMfo2t6dPimmLaCDrfuxYF8nmD"
+                    "bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae",
+                    "dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1269,26 +1281,26 @@ export const StETHBase = {
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IMultiTokenMetadata.sol": {
-                "keccak256": "0xeabffcfcd0fd642caaa2355dccad38269d25fbd4db1b0db43fd97328bf464862",
+                "keccak256": "0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca",
                 "urls": [
-                    "bzz-raw://6970e3db54bfcca6748db01b871fcee4f8d74fea2e66c39e3320232086633355",
-                    "dweb:/ipfs/QmPq66eyA4DmnU7m1QpMgKGrJ3ebUeN6e8UEuhb64U3BH2"
+                    "bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3",
+                    "dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IMultiTokenRead.sol": {
-                "keccak256": "0xc28d1017afe010c20c2fbe9b78e0001eb8b7db16e0fe5038990692227be365ec",
+                "keccak256": "0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0",
                 "urls": [
-                    "bzz-raw://8056e866c6da775c66cefc4e03d8856d75980d8c6eb98e954e1319b2478ad51c",
-                    "dweb:/ipfs/Qme9n2mBoeFUxf7Tzx4dD3iYt2kDsza6mqPXoUogPnS2hx"
+                    "bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11",
+                    "dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveBase.sol": {
-                "keccak256": "0x64568129b288bbc5ceda7a9f99afaa879353d6a3ccec737cce9c8827a52d3717",
+                "keccak256": "0xfc6947a6bfff9ca937fc2654ee56203dbc2ffc3c8bffe40c1334ebc9c81804bc",
                 "urls": [
-                    "bzz-raw://17f30a5d3b37e7e3aa45dba37efee31223a3d20e52ac25574df66706e69c15cc",
-                    "dweb:/ipfs/QmWTcWTuWZT7YyTE58QT5QsGfUBfyfx52kivRcAKJTvCv8"
+                    "bzz-raw://b29d5b70c6cb40ede4e496cbeee4937c5318b43536a450d7c246166d326c85fa",
+                    "dweb:/ipfs/QmcDD9Bs4Gueepjs92CYJC9UFBMFYSN1QfbfqBJMQECkWj"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1301,10 +1313,10 @@ export const StETHBase = {
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/AssetId.sol": {
-                "keccak256": "0xc2e36474285afd5b98999d648305f077a05b0e159dd63ef5f44f29cd42eb68c2",
+                "keccak256": "0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b",
                 "urls": [
-                    "bzz-raw://fbf8aac982e8485dce3f8c7f85b9bbbd46b41d8d0d3deebe1fc927799de60c0b",
-                    "dweb:/ipfs/QmbUJsi5cqS4M4sVcJ8cDWvbMRSqYzfjRAp8gaP1v2dtst"
+                    "bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131",
+                    "dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1317,42 +1329,42 @@ export const StETHBase = {
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/FixedPointMath.sol": {
-                "keccak256": "0xdcf0c77bc29a0b5b2ce06cccfa6f5e936128e5c0f14a5636bfe21faf95c515bf",
+                "keccak256": "0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076",
                 "urls": [
-                    "bzz-raw://088172c3f97db68914cdef042d942b0d0c585cce77d004625bfa62a72ac1e95d",
-                    "dweb:/ipfs/Qmewa9GJtYxBw4fAx4HZJaNuUCKEoQT4c5nmhPyXxVEwwq"
+                    "bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd",
+                    "dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/HyperdriveMath.sol": {
-                "keccak256": "0x94662a356f9ab292c0935ff4c29f9b826a17176eb98b472efed7afbfe4d5d744",
+                "keccak256": "0xe86d38d659ce3191d0423a4ee9b6592218a0e59dd72f3e0ec60cfa83809b266e",
                 "urls": [
-                    "bzz-raw://794c5605f8f0716b871a8747fea516d26fd73f0add45a944ac4034de96c60c7a",
-                    "dweb:/ipfs/QmYSsquDzxupHSwWMsjjooxNxuzQ29ezczFsP2VQ5PYYve"
+                    "bzz-raw://91d15d179f83429f36db12d5eac3f575727e16f1505d4cb1b95a11d0876c7534",
+                    "dweb:/ipfs/QmQDHYp8pgd9maivqkaH2mZ8qtb5ZEmK34n4oDmvAo8nrh"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/LPMath.sol": {
-                "keccak256": "0x8d9491ad62e48c7148389a72feca73a388076e3386d7ddc6788193be359e1266",
+                "keccak256": "0x8fde664589dfd8a26b6d39aed585388f7c179bf508ffe7688dc6c796a68dc785",
                 "urls": [
-                    "bzz-raw://d340b65b76fc638d119d7d1d6f38fa044c34fc9297dc0c1627c9820218b2e244",
-                    "dweb:/ipfs/QmZo3nPVg3j2Ga8UXRZFQyTq7RuYuY6F2tYynnVUP4SbDY"
+                    "bzz-raw://3406b91898282977f3630976461eb344764c0f321d35588b1e31408b64f64263",
+                    "dweb:/ipfs/QmVGGknjaaG9wnyPHUWAMpDJZ4tANu6hmEQcUU1HnUQ5U5"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/SafeCast.sol": {
-                "keccak256": "0x390a002b83e7ed8a99d4ca9b3ea514b2080c237911a3a3d0fa2ad4522a09d60b",
+                "keccak256": "0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148",
                 "urls": [
-                    "bzz-raw://51ea972cf6d3c79ea6b93c63c85fbba2bd234e71704715a1d9bd897da9d6fcb1",
-                    "dweb:/ipfs/QmXEGDrLyeAYMZiDVNynVzRzAYgnspcdLfkMeGr81DmJpL"
+                    "bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8",
+                    "dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/YieldSpaceMath.sol": {
-                "keccak256": "0x76f69d3104f3f97d67289512325306d7ea2c7b29a787eeef93ffc47e8a80f346",
+                "keccak256": "0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891",
                 "urls": [
-                    "bzz-raw://6c8df31a46b4287c23c67e0157e6f6a4877608ed3fb1919a9c07f5bd9b81d7f6",
-                    "dweb:/ipfs/QmPua6efzJGnC7NarnPojk9yF2geqenUaXUNRmPVHJdXWk"
+                    "bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c",
+                    "dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1369,32 +1381,32 @@ export const StETHBase = {
     },
     "ast": {
         "absolutePath": "contracts/src/instances/steth/StETHBase.sol",
-        "id": 6320,
+        "id": 6448,
         "exportedSymbols": {
             "FixedPointMath": [
-                14585
+                14917
             ],
             "HyperdriveBase": [
-                9728
+                9917
             ],
             "IHyperdrive": [
-                7480
+                7616
             ],
             "ILido": [
-                8338
+                8479
             ],
             "ONE": [
-                13820
+                14151
             ],
             "StETHBase": [
-                6319
+                6447
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "39:5897:30",
+        "src": "39:6095:30",
         "nodes": [
             {
-                "id": 6101,
+                "id": 6233,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:30",
                 "nodes": [],
@@ -1405,23 +1417,23 @@ export const StETHBase = {
                 ]
             },
             {
-                "id": 6103,
+                "id": 6235,
                 "nodeType": "ImportDirective",
                 "src": "64:63:30",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
                 "file": "../../interfaces/IHyperdrive.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 6320,
-                "sourceUnit": 7481,
+                "scope": 6448,
+                "sourceUnit": 7617,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 6102,
+                            "id": 6234,
                             "name": "IHyperdrive",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 7480,
+                            "referencedDeclaration": 7616,
                             "src": "73:11:30",
                             "typeDescriptions": {}
                         },
@@ -1431,23 +1443,23 @@ export const StETHBase = {
                 "unitAlias": ""
             },
             {
-                "id": 6105,
+                "id": 6237,
                 "nodeType": "ImportDirective",
                 "src": "128:51:30",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/ILido.sol",
                 "file": "../../interfaces/ILido.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 6320,
-                "sourceUnit": 8339,
+                "scope": 6448,
+                "sourceUnit": 8480,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 6104,
+                            "id": 6236,
                             "name": "ILido",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8338,
+                            "referencedDeclaration": 8479,
                             "src": "137:5:30",
                             "typeDescriptions": {}
                         },
@@ -1457,23 +1469,23 @@ export const StETHBase = {
                 "unitAlias": ""
             },
             {
-                "id": 6107,
+                "id": 6239,
                 "nodeType": "ImportDirective",
                 "src": "180:67:30",
                 "nodes": [],
                 "absolutePath": "contracts/src/internal/HyperdriveBase.sol",
                 "file": "../../internal/HyperdriveBase.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 6320,
-                "sourceUnit": 9729,
+                "scope": 6448,
+                "sourceUnit": 9918,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 6106,
+                            "id": 6238,
                             "name": "HyperdriveBase",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 9728,
+                            "referencedDeclaration": 9917,
                             "src": "189:14:30",
                             "typeDescriptions": {}
                         },
@@ -1483,23 +1495,23 @@ export const StETHBase = {
                 "unitAlias": ""
             },
             {
-                "id": 6110,
+                "id": 6242,
                 "nodeType": "ImportDirective",
                 "src": "248:73:30",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/FixedPointMath.sol",
                 "file": "../../libraries/FixedPointMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 6320,
-                "sourceUnit": 14586,
+                "scope": 6448,
+                "sourceUnit": 14918,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 6108,
+                            "id": 6240,
                             "name": "FixedPointMath",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 14585,
+                            "referencedDeclaration": 14917,
                             "src": "257:14:30",
                             "typeDescriptions": {}
                         },
@@ -1507,11 +1519,11 @@ export const StETHBase = {
                     },
                     {
                         "foreign": {
-                            "id": 6109,
+                            "id": 6241,
                             "name": "ONE",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 13820,
+                            "referencedDeclaration": 14151,
                             "src": "273:3:30",
                             "typeDescriptions": {}
                         },
@@ -1521,28 +1533,28 @@ export const StETHBase = {
                 "unitAlias": ""
             },
             {
-                "id": 6319,
+                "id": 6447,
                 "nodeType": "ContractDefinition",
-                "src": "912:5023:30",
+                "src": "912:5221:30",
                 "nodes": [
                     {
-                        "id": 6116,
+                        "id": 6248,
                         "nodeType": "UsingForDirective",
                         "src": "964:33:30",
                         "nodes": [],
                         "global": false,
                         "libraryName": {
-                            "id": 6114,
+                            "id": 6246,
                             "name": "FixedPointMath",
                             "nameLocations": [
                                 "970:14:30"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 14585,
+                            "referencedDeclaration": 14917,
                             "src": "970:14:30"
                         },
                         "typeName": {
-                            "id": 6115,
+                            "id": 6247,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "989:7:30",
@@ -1553,13 +1565,13 @@ export const StETHBase = {
                         }
                     },
                     {
-                        "id": 6120,
+                        "id": 6252,
                         "nodeType": "VariableDeclaration",
                         "src": "1035:30:30",
                         "nodes": [],
                         "constant": false,
                         "documentation": {
-                            "id": 6117,
+                            "id": 6249,
                             "nodeType": "StructuredDocumentation",
                             "src": "1003:27:30",
                             "text": "@dev The Lido contract."
@@ -1567,93 +1579,93 @@ export const StETHBase = {
                         "mutability": "immutable",
                         "name": "_lido",
                         "nameLocation": "1060:5:30",
-                        "scope": 6319,
+                        "scope": 6447,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_ILido_$8338",
+                            "typeIdentifier": "t_contract$_ILido_$8479",
                             "typeString": "contract ILido"
                         },
                         "typeName": {
-                            "id": 6119,
+                            "id": 6251,
                             "nodeType": "UserDefinedTypeName",
                             "pathNode": {
-                                "id": 6118,
+                                "id": 6250,
                                 "name": "ILido",
                                 "nameLocations": [
                                     "1035:5:30"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 8338,
+                                "referencedDeclaration": 8479,
                                 "src": "1035:5:30"
                             },
-                            "referencedDeclaration": 8338,
+                            "referencedDeclaration": 8479,
                             "src": "1035:5:30",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ILido_$8338",
+                                "typeIdentifier": "t_contract$_ILido_$8479",
                                 "typeString": "contract ILido"
                             }
                         },
                         "visibility": "internal"
                     },
                     {
-                        "id": 6132,
+                        "id": 6264,
                         "nodeType": "FunctionDefinition",
                         "src": "1178:57:30",
                         "nodes": [],
                         "body": {
-                            "id": 6131,
+                            "id": 6263,
                             "nodeType": "Block",
                             "src": "1204:31:30",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 6129,
+                                        "id": 6261,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 6127,
+                                            "id": 6259,
                                             "name": "_lido",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 6120,
+                                            "referencedDeclaration": 6252,
                                             "src": "1214:5:30",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_ILido_$8338",
+                                                "typeIdentifier": "t_contract$_ILido_$8479",
                                                 "typeString": "contract ILido"
                                             }
                                         },
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 6128,
+                                            "id": 6260,
                                             "name": "__lido",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 6124,
+                                            "referencedDeclaration": 6256,
                                             "src": "1222:6:30",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_ILido_$8338",
+                                                "typeIdentifier": "t_contract$_ILido_$8479",
                                                 "typeString": "contract ILido"
                                             }
                                         },
                                         "src": "1214:14:30",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_ILido_$8338",
+                                            "typeIdentifier": "t_contract$_ILido_$8479",
                                             "typeString": "contract ILido"
                                         }
                                     },
-                                    "id": 6130,
+                                    "id": 6262,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1214:14:30"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 6121,
+                            "id": 6253,
                             "nodeType": "StructuredDocumentation",
                             "src": "1072:101:30",
                             "text": "@notice Instantiates the stETH Hyperdrive base contract.\n @param __lido The Lido contract."
@@ -1664,41 +1676,41 @@ export const StETHBase = {
                         "name": "",
                         "nameLocation": "-1:-1:-1",
                         "parameters": {
-                            "id": 6125,
+                            "id": 6257,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6124,
+                                    "id": 6256,
                                     "mutability": "mutable",
                                     "name": "__lido",
                                     "nameLocation": "1196:6:30",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6132,
+                                    "scope": 6264,
                                     "src": "1190:12:30",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_ILido_$8338",
+                                        "typeIdentifier": "t_contract$_ILido_$8479",
                                         "typeString": "contract ILido"
                                     },
                                     "typeName": {
-                                        "id": 6123,
+                                        "id": 6255,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 6122,
+                                            "id": 6254,
                                             "name": "ILido",
                                             "nameLocations": [
                                                 "1190:5:30"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 8338,
+                                            "referencedDeclaration": 8479,
                                             "src": "1190:5:30"
                                         },
-                                        "referencedDeclaration": 8338,
+                                        "referencedDeclaration": 8479,
                                         "src": "1190:5:30",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_ILido_$8338",
+                                            "typeIdentifier": "t_contract$_ILido_$8479",
                                             "typeString": "contract ILido"
                                         }
                                     },
@@ -1708,41 +1720,41 @@ export const StETHBase = {
                             "src": "1189:14:30"
                         },
                         "returnParameters": {
-                            "id": 6126,
+                            "id": 6258,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1204:0:30"
                         },
-                        "scope": 6319,
+                        "scope": 6447,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 6244,
+                        "id": 6372,
                         "nodeType": "FunctionDefinition",
-                        "src": "1853:1680:30",
+                        "src": "1946:1610:30",
                         "nodes": [],
                         "body": {
-                            "id": 6243,
+                            "id": 6371,
                             "nodeType": "Block",
-                            "src": "2017:1516:30",
+                            "src": "2110:1446:30",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        6147
+                                        6279
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 6147,
+                                            "id": 6279,
                                             "mutability": "mutable",
                                             "name": "refund",
-                                            "nameLocation": "2035:6:30",
+                                            "nameLocation": "2128:6:30",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 6243,
-                                            "src": "2027:14:30",
+                                            "scope": 6371,
+                                            "src": "2120:14:30",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -1750,10 +1762,10 @@ export const StETHBase = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 6146,
+                                                "id": 6278,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "2027:7:30",
+                                                "src": "2120:7:30",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -1762,58 +1774,58 @@ export const StETHBase = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 6148,
+                                    "id": 6280,
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "2027:14:30"
+                                    "src": "2120:14:30"
                                 },
                                 {
                                     "condition": {
                                         "expression": {
-                                            "id": 6149,
+                                            "id": 6281,
                                             "name": "_options",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 6138,
-                                            "src": "2055:8:30",
+                                            "referencedDeclaration": 6270,
+                                            "src": "2148:8:30",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Options_$7336_calldata_ptr",
+                                                "typeIdentifier": "t_struct$_Options_$7463_calldata_ptr",
                                                 "typeString": "struct IHyperdrive.Options calldata"
                                             }
                                         },
-                                        "id": 6150,
+                                        "id": 6282,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
-                                        "memberLocation": "2064:6:30",
+                                        "memberLocation": "2157:6:30",
                                         "memberName": "asBase",
                                         "nodeType": "MemberAccess",
-                                        "referencedDeclaration": 7332,
-                                        "src": "2055:15:30",
+                                        "referencedDeclaration": 7459,
+                                        "src": "2148:15:30",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
                                     "falseBody": {
-                                        "id": 6210,
+                                        "id": 6333,
                                         "nodeType": "Block",
-                                        "src": "2843:369:30",
+                                        "src": "2875:266:30",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 6187,
+                                                    "id": 6315,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 6184,
+                                                        "id": 6312,
                                                         "name": "refund",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 6147,
-                                                        "src": "2920:6:30",
+                                                        "referencedDeclaration": 6279,
+                                                        "src": "2952:6:30",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -1823,66 +1835,109 @@ export const StETHBase = {
                                                     "operator": "=",
                                                     "rightHandSide": {
                                                         "expression": {
-                                                            "id": 6185,
+                                                            "id": 6313,
                                                             "name": "msg",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
                                                             "referencedDeclaration": -15,
-                                                            "src": "2929:3:30",
+                                                            "src": "2961:3:30",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_magic_message",
                                                                 "typeString": "msg"
                                                             }
                                                         },
-                                                        "id": 6186,
+                                                        "id": 6314,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "2933:5:30",
+                                                        "memberLocation": "2965:5:30",
                                                         "memberName": "value",
                                                         "nodeType": "MemberAccess",
-                                                        "src": "2929:9:30",
+                                                        "src": "2961:9:30",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "2920:18:30",
+                                                    "src": "2952:18:30",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 6188,
+                                                "id": 6316,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "2920:18:30"
+                                                "src": "2952:18:30"
+                                            },
+                                            {
+                                                "expression": {
+                                                    "id": 6319,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "leftHandSide": {
+                                                        "id": 6317,
+                                                        "name": "shares",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 6274,
+                                                        "src": "3041:6:30",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    },
+                                                    "nodeType": "Assignment",
+                                                    "operator": "=",
+                                                    "rightHandSide": {
+                                                        "id": 6318,
+                                                        "name": "_amount",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 6267,
+                                                        "src": "3050:7:30",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    },
+                                                    "src": "3041:16:30",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "id": 6320,
+                                                "nodeType": "ExpressionStatement",
+                                                "src": "3041:16:30"
                                             },
                                             {
                                                 "expression": {
                                                     "arguments": [
                                                         {
                                                             "expression": {
-                                                                "id": 6192,
+                                                                "id": 6324,
                                                                 "name": "msg",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
                                                                 "referencedDeclaration": -15,
-                                                                "src": "3034:3:30",
+                                                                "src": "3096:3:30",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_magic_message",
                                                                     "typeString": "msg"
                                                                 }
                                                             },
-                                                            "id": 6193,
+                                                            "id": 6325,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "3038:6:30",
+                                                            "memberLocation": "3100:6:30",
                                                             "memberName": "sender",
                                                             "nodeType": "MemberAccess",
-                                                            "src": "3034:10:30",
+                                                            "src": "3096:10:30",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
@@ -1891,14 +1946,14 @@ export const StETHBase = {
                                                         {
                                                             "arguments": [
                                                                 {
-                                                                    "id": 6196,
+                                                                    "id": 6328,
                                                                     "name": "this",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
                                                                     "referencedDeclaration": -28,
-                                                                    "src": "3054:4:30",
+                                                                    "src": "3116:4:30",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_contract$_StETHBase_$6319",
+                                                                        "typeIdentifier": "t_contract$_StETHBase_$6447",
                                                                         "typeString": "contract StETHBase"
                                                                     }
                                                                 }
@@ -1906,30 +1961,30 @@ export const StETHBase = {
                                                             "expression": {
                                                                 "argumentTypes": [
                                                                     {
-                                                                        "typeIdentifier": "t_contract$_StETHBase_$6319",
+                                                                        "typeIdentifier": "t_contract$_StETHBase_$6447",
                                                                         "typeString": "contract StETHBase"
                                                                     }
                                                                 ],
-                                                                "id": 6195,
+                                                                "id": 6327,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
                                                                 "lValueRequested": false,
                                                                 "nodeType": "ElementaryTypeNameExpression",
-                                                                "src": "3046:7:30",
+                                                                "src": "3108:7:30",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_type$_t_address_$",
                                                                     "typeString": "type(address)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 6194,
+                                                                    "id": 6326,
                                                                     "name": "address",
                                                                     "nodeType": "ElementaryTypeName",
-                                                                    "src": "3046:7:30",
+                                                                    "src": "3108:7:30",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 6197,
+                                                            "id": 6329,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -1938,7 +1993,7 @@ export const StETHBase = {
                                                             "nameLocations": [],
                                                             "names": [],
                                                             "nodeType": "FunctionCall",
-                                                            "src": "3046:13:30",
+                                                            "src": "3108:13:30",
                                                             "tryCall": false,
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
@@ -1946,12 +2001,12 @@ export const StETHBase = {
                                                             }
                                                         },
                                                         {
-                                                            "id": 6198,
-                                                            "name": "_amount",
+                                                            "id": 6330,
+                                                            "name": "shares",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 6135,
-                                                            "src": "3061:7:30",
+                                                            "referencedDeclaration": 6274,
+                                                            "src": "3123:6:30",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -1974,33 +2029,33 @@ export const StETHBase = {
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 6189,
+                                                            "id": 6321,
                                                             "name": "_lido",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 6120,
-                                                            "src": "3009:5:30",
+                                                            "referencedDeclaration": 6252,
+                                                            "src": "3071:5:30",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_contract$_ILido_$8338",
+                                                                "typeIdentifier": "t_contract$_ILido_$8479",
                                                                 "typeString": "contract ILido"
                                                             }
                                                         },
-                                                        "id": 6191,
+                                                        "id": 6323,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "3015:18:30",
+                                                        "memberLocation": "3077:18:30",
                                                         "memberName": "transferSharesFrom",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 8295,
-                                                        "src": "3009:24:30",
+                                                        "referencedDeclaration": 8436,
+                                                        "src": "3071:24:30",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_uint256_$",
                                                             "typeString": "function (address,address,uint256) external returns (uint256)"
                                                         }
                                                     },
-                                                    "id": 6199,
+                                                    "id": 6331,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2009,133 +2064,26 @@ export const StETHBase = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "3009:60:30",
+                                                    "src": "3071:59:30",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 6200,
+                                                "id": 6332,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "3009:60:30"
-                                            },
-                                            {
-                                                "expression": {
-                                                    "id": 6203,
-                                                    "isConstant": false,
-                                                    "isLValue": false,
-                                                    "isPure": false,
-                                                    "lValueRequested": false,
-                                                    "leftHandSide": {
-                                                        "id": 6201,
-                                                        "name": "shares",
-                                                        "nodeType": "Identifier",
-                                                        "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 6142,
-                                                        "src": "3132:6:30",
-                                                        "typeDescriptions": {
-                                                            "typeIdentifier": "t_uint256",
-                                                            "typeString": "uint256"
-                                                        }
-                                                    },
-                                                    "nodeType": "Assignment",
-                                                    "operator": "=",
-                                                    "rightHandSide": {
-                                                        "id": 6202,
-                                                        "name": "_amount",
-                                                        "nodeType": "Identifier",
-                                                        "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 6135,
-                                                        "src": "3141:7:30",
-                                                        "typeDescriptions": {
-                                                            "typeIdentifier": "t_uint256",
-                                                            "typeString": "uint256"
-                                                        }
-                                                    },
-                                                    "src": "3132:16:30",
-                                                    "typeDescriptions": {
-                                                        "typeIdentifier": "t_uint256",
-                                                        "typeString": "uint256"
-                                                    }
-                                                },
-                                                "id": 6204,
-                                                "nodeType": "ExpressionStatement",
-                                                "src": "3132:16:30"
-                                            },
-                                            {
-                                                "expression": {
-                                                    "id": 6208,
-                                                    "isConstant": false,
-                                                    "isLValue": false,
-                                                    "isPure": false,
-                                                    "lValueRequested": false,
-                                                    "leftHandSide": {
-                                                        "id": 6205,
-                                                        "name": "vaultSharePrice",
-                                                        "nodeType": "Identifier",
-                                                        "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 6144,
-                                                        "src": "3162:15:30",
-                                                        "typeDescriptions": {
-                                                            "typeIdentifier": "t_uint256",
-                                                            "typeString": "uint256"
-                                                        }
-                                                    },
-                                                    "nodeType": "Assignment",
-                                                    "operator": "=",
-                                                    "rightHandSide": {
-                                                        "arguments": [],
-                                                        "expression": {
-                                                            "argumentTypes": [],
-                                                            "id": 6206,
-                                                            "name": "_pricePerVaultShare",
-                                                            "nodeType": "Identifier",
-                                                            "overloadedDeclarations": [
-                                                                6312
-                                                            ],
-                                                            "referencedDeclaration": 6312,
-                                                            "src": "3180:19:30",
-                                                            "typeDescriptions": {
-                                                                "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
-                                                                "typeString": "function () view returns (uint256)"
-                                                            }
-                                                        },
-                                                        "id": 6207,
-                                                        "isConstant": false,
-                                                        "isLValue": false,
-                                                        "isPure": false,
-                                                        "kind": "functionCall",
-                                                        "lValueRequested": false,
-                                                        "nameLocations": [],
-                                                        "names": [],
-                                                        "nodeType": "FunctionCall",
-                                                        "src": "3180:21:30",
-                                                        "tryCall": false,
-                                                        "typeDescriptions": {
-                                                            "typeIdentifier": "t_uint256",
-                                                            "typeString": "uint256"
-                                                        }
-                                                    },
-                                                    "src": "3162:39:30",
-                                                    "typeDescriptions": {
-                                                        "typeIdentifier": "t_uint256",
-                                                        "typeString": "uint256"
-                                                    }
-                                                },
-                                                "id": 6209,
-                                                "nodeType": "ExpressionStatement",
-                                                "src": "3162:39:30"
+                                                "src": "3071:59:30"
                                             }
                                         ]
                                     },
-                                    "id": 6211,
+                                    "id": 6334,
                                     "nodeType": "IfStatement",
-                                    "src": "2051:1161:30",
+                                    "src": "2144:997:30",
                                     "trueBody": {
-                                        "id": 6183,
+                                        "id": 6311,
                                         "nodeType": "Block",
-                                        "src": "2072:765:30",
+                                        "src": "2165:704:30",
                                         "statements": [
                                             {
                                                 "condition": {
@@ -2143,33 +2091,33 @@ export const StETHBase = {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     },
-                                                    "id": 6154,
+                                                    "id": 6286,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
                                                         "expression": {
-                                                            "id": 6151,
+                                                            "id": 6283,
                                                             "name": "msg",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
                                                             "referencedDeclaration": -15,
-                                                            "src": "2148:3:30",
+                                                            "src": "2241:3:30",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_magic_message",
                                                                 "typeString": "msg"
                                                             }
                                                         },
-                                                        "id": 6152,
+                                                        "id": 6284,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "2152:5:30",
+                                                        "memberLocation": "2245:5:30",
                                                         "memberName": "value",
                                                         "nodeType": "MemberAccess",
-                                                        "src": "2148:9:30",
+                                                        "src": "2241:9:30",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -2178,30 +2126,30 @@ export const StETHBase = {
                                                     "nodeType": "BinaryOperation",
                                                     "operator": "<",
                                                     "rightExpression": {
-                                                        "id": 6153,
+                                                        "id": 6285,
                                                         "name": "_amount",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 6135,
-                                                        "src": "2160:7:30",
+                                                        "referencedDeclaration": 6267,
+                                                        "src": "2253:7:30",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "2148:19:30",
+                                                    "src": "2241:19:30",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bool",
                                                         "typeString": "bool"
                                                     }
                                                 },
-                                                "id": 6161,
+                                                "id": 6293,
                                                 "nodeType": "IfStatement",
-                                                "src": "2144:93:30",
+                                                "src": "2237:93:30",
                                                 "trueBody": {
-                                                    "id": 6160,
+                                                    "id": 6292,
                                                     "nodeType": "Block",
-                                                    "src": "2169:68:30",
+                                                    "src": "2262:68:30",
                                                     "statements": [
                                                         {
                                                             "errorCall": {
@@ -2209,33 +2157,33 @@ export const StETHBase = {
                                                                 "expression": {
                                                                     "argumentTypes": [],
                                                                     "expression": {
-                                                                        "id": 6155,
+                                                                        "id": 6287,
                                                                         "name": "IHyperdrive",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 7480,
-                                                                        "src": "2194:11:30",
+                                                                        "referencedDeclaration": 7616,
+                                                                        "src": "2287:11:30",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7480_$",
+                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7616_$",
                                                                             "typeString": "type(contract IHyperdrive)"
                                                                         }
                                                                     },
-                                                                    "id": 6157,
+                                                                    "id": 6289,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
-                                                                    "memberLocation": "2206:14:30",
+                                                                    "memberLocation": "2299:14:30",
                                                                     "memberName": "TransferFailed",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 7431,
-                                                                    "src": "2194:26:30",
+                                                                    "referencedDeclaration": 7564,
+                                                                    "src": "2287:26:30",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                                         "typeString": "function () pure"
                                                                     }
                                                                 },
-                                                                "id": 6158,
+                                                                "id": 6290,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -2244,122 +2192,129 @@ export const StETHBase = {
                                                                 "nameLocations": [],
                                                                 "names": [],
                                                                 "nodeType": "FunctionCall",
-                                                                "src": "2194:28:30",
+                                                                "src": "2287:28:30",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_tuple$__$",
                                                                     "typeString": "tuple()"
                                                                 }
                                                             },
-                                                            "id": 6159,
+                                                            "id": 6291,
                                                             "nodeType": "RevertStatement",
-                                                            "src": "2187:35:30"
+                                                            "src": "2280:35:30"
                                                         }
                                                     ]
                                                 }
                                             },
                                             {
-                                                "expression": {
-                                                    "id": 6167,
-                                                    "isConstant": false,
-                                                    "isLValue": false,
-                                                    "isPure": false,
-                                                    "lValueRequested": false,
-                                                    "leftHandSide": {
-                                                        "id": 6162,
-                                                        "name": "refund",
-                                                        "nodeType": "Identifier",
-                                                        "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 6147,
-                                                        "src": "2361:6:30",
-                                                        "typeDescriptions": {
-                                                            "typeIdentifier": "t_uint256",
-                                                            "typeString": "uint256"
-                                                        }
-                                                    },
-                                                    "nodeType": "Assignment",
-                                                    "operator": "=",
-                                                    "rightHandSide": {
-                                                        "commonType": {
-                                                            "typeIdentifier": "t_uint256",
-                                                            "typeString": "uint256"
-                                                        },
-                                                        "id": 6166,
-                                                        "isConstant": false,
-                                                        "isLValue": false,
-                                                        "isPure": false,
-                                                        "lValueRequested": false,
-                                                        "leftExpression": {
-                                                            "expression": {
-                                                                "id": 6163,
-                                                                "name": "msg",
-                                                                "nodeType": "Identifier",
-                                                                "overloadedDeclarations": [],
-                                                                "referencedDeclaration": -15,
-                                                                "src": "2370:3:30",
-                                                                "typeDescriptions": {
-                                                                    "typeIdentifier": "t_magic_message",
-                                                                    "typeString": "msg"
-                                                                }
-                                                            },
-                                                            "id": 6164,
+                                                "id": 6301,
+                                                "nodeType": "UncheckedBlock",
+                                                "src": "2454:71:30",
+                                                "statements": [
+                                                    {
+                                                        "expression": {
+                                                            "id": 6299,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "2374:5:30",
-                                                            "memberName": "value",
-                                                            "nodeType": "MemberAccess",
-                                                            "src": "2370:9:30",
+                                                            "leftHandSide": {
+                                                                "id": 6294,
+                                                                "name": "refund",
+                                                                "nodeType": "Identifier",
+                                                                "overloadedDeclarations": [],
+                                                                "referencedDeclaration": 6279,
+                                                                "src": "2482:6:30",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_uint256",
+                                                                    "typeString": "uint256"
+                                                                }
+                                                            },
+                                                            "nodeType": "Assignment",
+                                                            "operator": "=",
+                                                            "rightHandSide": {
+                                                                "commonType": {
+                                                                    "typeIdentifier": "t_uint256",
+                                                                    "typeString": "uint256"
+                                                                },
+                                                                "id": 6298,
+                                                                "isConstant": false,
+                                                                "isLValue": false,
+                                                                "isPure": false,
+                                                                "lValueRequested": false,
+                                                                "leftExpression": {
+                                                                    "expression": {
+                                                                        "id": 6295,
+                                                                        "name": "msg",
+                                                                        "nodeType": "Identifier",
+                                                                        "overloadedDeclarations": [],
+                                                                        "referencedDeclaration": -15,
+                                                                        "src": "2491:3:30",
+                                                                        "typeDescriptions": {
+                                                                            "typeIdentifier": "t_magic_message",
+                                                                            "typeString": "msg"
+                                                                        }
+                                                                    },
+                                                                    "id": 6296,
+                                                                    "isConstant": false,
+                                                                    "isLValue": false,
+                                                                    "isPure": false,
+                                                                    "lValueRequested": false,
+                                                                    "memberLocation": "2495:5:30",
+                                                                    "memberName": "value",
+                                                                    "nodeType": "MemberAccess",
+                                                                    "src": "2491:9:30",
+                                                                    "typeDescriptions": {
+                                                                        "typeIdentifier": "t_uint256",
+                                                                        "typeString": "uint256"
+                                                                    }
+                                                                },
+                                                                "nodeType": "BinaryOperation",
+                                                                "operator": "-",
+                                                                "rightExpression": {
+                                                                    "id": 6297,
+                                                                    "name": "_amount",
+                                                                    "nodeType": "Identifier",
+                                                                    "overloadedDeclarations": [],
+                                                                    "referencedDeclaration": 6267,
+                                                                    "src": "2503:7:30",
+                                                                    "typeDescriptions": {
+                                                                        "typeIdentifier": "t_uint256",
+                                                                        "typeString": "uint256"
+                                                                    }
+                                                                },
+                                                                "src": "2491:19:30",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_uint256",
+                                                                    "typeString": "uint256"
+                                                                }
+                                                            },
+                                                            "src": "2482:28:30",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             }
                                                         },
-                                                        "nodeType": "BinaryOperation",
-                                                        "operator": "-",
-                                                        "rightExpression": {
-                                                            "id": 6165,
-                                                            "name": "_amount",
-                                                            "nodeType": "Identifier",
-                                                            "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 6135,
-                                                            "src": "2382:7:30",
-                                                            "typeDescriptions": {
-                                                                "typeIdentifier": "t_uint256",
-                                                                "typeString": "uint256"
-                                                            }
-                                                        },
-                                                        "src": "2370:19:30",
-                                                        "typeDescriptions": {
-                                                            "typeIdentifier": "t_uint256",
-                                                            "typeString": "uint256"
-                                                        }
-                                                    },
-                                                    "src": "2361:28:30",
-                                                    "typeDescriptions": {
-                                                        "typeIdentifier": "t_uint256",
-                                                        "typeString": "uint256"
+                                                        "id": 6300,
+                                                        "nodeType": "ExpressionStatement",
+                                                        "src": "2482:28:30"
                                                     }
-                                                },
-                                                "id": 6168,
-                                                "nodeType": "ExpressionStatement",
-                                                "src": "2361:28:30"
+                                                ]
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 6176,
+                                                    "id": 6309,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 6169,
+                                                        "id": 6302,
                                                         "name": "shares",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 6142,
-                                                        "src": "2670:6:30",
+                                                        "referencedDeclaration": 6274,
+                                                        "src": "2804:6:30",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -2370,12 +2325,12 @@ export const StETHBase = {
                                                     "rightHandSide": {
                                                         "arguments": [
                                                             {
-                                                                "id": 6174,
+                                                                "id": 6307,
                                                                 "name": "_feeCollector",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13340,
-                                                                "src": "2710:13:30",
+                                                                "referencedDeclaration": 13704,
+                                                                "src": "2844:13:30",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
@@ -2397,33 +2352,33 @@ export const StETHBase = {
                                                                     }
                                                                 ],
                                                                 "expression": {
-                                                                    "id": 6170,
+                                                                    "id": 6303,
                                                                     "name": "_lido",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 6120,
-                                                                    "src": "2679:5:30",
+                                                                    "referencedDeclaration": 6252,
+                                                                    "src": "2813:5:30",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_contract$_ILido_$8338",
+                                                                        "typeIdentifier": "t_contract$_ILido_$8479",
                                                                         "typeString": "contract ILido"
                                                                     }
                                                                 },
-                                                                "id": 6171,
+                                                                "id": 6304,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
-                                                                "memberLocation": "2685:6:30",
+                                                                "memberLocation": "2819:6:30",
                                                                 "memberName": "submit",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 8273,
-                                                                "src": "2679:12:30",
+                                                                "referencedDeclaration": 8414,
+                                                                "src": "2813:12:30",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_function_external_payable$_t_address_$returns$_t_uint256_$",
                                                                     "typeString": "function (address) payable external returns (uint256)"
                                                                 }
                                                             },
-                                                            "id": 6173,
+                                                            "id": 6306,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -2434,25 +2389,25 @@ export const StETHBase = {
                                                             "nodeType": "FunctionCallOptions",
                                                             "options": [
                                                                 {
-                                                                    "id": 6172,
+                                                                    "id": 6305,
                                                                     "name": "_amount",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 6135,
-                                                                    "src": "2700:7:30",
+                                                                    "referencedDeclaration": 6267,
+                                                                    "src": "2834:7:30",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
                                                                     }
                                                                 }
                                                             ],
-                                                            "src": "2679:30:30",
+                                                            "src": "2813:30:30",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_external_payable$_t_address_$returns$_t_uint256_$value",
                                                                 "typeString": "function (address) payable external returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 6175,
+                                                        "id": 6308,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -2461,89 +2416,89 @@ export const StETHBase = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "2679:45:30",
+                                                        "src": "2813:45:30",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "2670:54:30",
+                                                    "src": "2804:54:30",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 6177,
+                                                "id": 6310,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "2670:54:30"
-                                            },
-                                            {
-                                                "expression": {
-                                                    "id": 6181,
-                                                    "isConstant": false,
-                                                    "isLValue": false,
-                                                    "isPure": false,
-                                                    "lValueRequested": false,
-                                                    "leftHandSide": {
-                                                        "id": 6178,
-                                                        "name": "vaultSharePrice",
-                                                        "nodeType": "Identifier",
-                                                        "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 6144,
-                                                        "src": "2787:15:30",
-                                                        "typeDescriptions": {
-                                                            "typeIdentifier": "t_uint256",
-                                                            "typeString": "uint256"
-                                                        }
-                                                    },
-                                                    "nodeType": "Assignment",
-                                                    "operator": "=",
-                                                    "rightHandSide": {
-                                                        "arguments": [],
-                                                        "expression": {
-                                                            "argumentTypes": [],
-                                                            "id": 6179,
-                                                            "name": "_pricePerVaultShare",
-                                                            "nodeType": "Identifier",
-                                                            "overloadedDeclarations": [
-                                                                6312
-                                                            ],
-                                                            "referencedDeclaration": 6312,
-                                                            "src": "2805:19:30",
-                                                            "typeDescriptions": {
-                                                                "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
-                                                                "typeString": "function () view returns (uint256)"
-                                                            }
-                                                        },
-                                                        "id": 6180,
-                                                        "isConstant": false,
-                                                        "isLValue": false,
-                                                        "isPure": false,
-                                                        "kind": "functionCall",
-                                                        "lValueRequested": false,
-                                                        "nameLocations": [],
-                                                        "names": [],
-                                                        "nodeType": "FunctionCall",
-                                                        "src": "2805:21:30",
-                                                        "tryCall": false,
-                                                        "typeDescriptions": {
-                                                            "typeIdentifier": "t_uint256",
-                                                            "typeString": "uint256"
-                                                        }
-                                                    },
-                                                    "src": "2787:39:30",
-                                                    "typeDescriptions": {
-                                                        "typeIdentifier": "t_uint256",
-                                                        "typeString": "uint256"
-                                                    }
-                                                },
-                                                "id": 6182,
-                                                "nodeType": "ExpressionStatement",
-                                                "src": "2787:39:30"
+                                                "src": "2804:54:30"
                                             }
                                         ]
                                     }
+                                },
+                                {
+                                    "expression": {
+                                        "id": 6338,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "id": 6335,
+                                            "name": "vaultSharePrice",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 6276,
+                                            "src": "3195:15:30",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "arguments": [],
+                                            "expression": {
+                                                "argumentTypes": [],
+                                                "id": 6336,
+                                                "name": "_pricePerVaultShare",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [
+                                                    6440
+                                                ],
+                                                "referencedDeclaration": 6440,
+                                                "src": "3213:19:30",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
+                                                    "typeString": "function () view returns (uint256)"
+                                                }
+                                            },
+                                            "id": 6337,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "kind": "functionCall",
+                                            "lValueRequested": false,
+                                            "nameLocations": [],
+                                            "names": [],
+                                            "nodeType": "FunctionCall",
+                                            "src": "3213:21:30",
+                                            "tryCall": false,
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "src": "3195:39:30",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "id": 6339,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "3195:39:30"
                                 },
                                 {
                                     "condition": {
@@ -2551,18 +2506,18 @@ export const StETHBase = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 6214,
+                                        "id": 6342,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 6212,
+                                            "id": 6340,
                                             "name": "refund",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 6147,
-                                            "src": "3288:6:30",
+                                            "referencedDeclaration": 6279,
+                                            "src": "3311:6:30",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -2572,49 +2527,49 @@ export const StETHBase = {
                                         "operator": ">",
                                         "rightExpression": {
                                             "hexValue": "30",
-                                            "id": 6213,
+                                            "id": 6341,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
                                             "kind": "number",
                                             "lValueRequested": false,
                                             "nodeType": "Literal",
-                                            "src": "3297:1:30",
+                                            "src": "3320:1:30",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_rational_0_by_1",
                                                 "typeString": "int_const 0"
                                             },
                                             "value": "0"
                                         },
-                                        "src": "3288:10:30",
+                                        "src": "3311:10:30",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 6238,
+                                    "id": 6366,
                                     "nodeType": "IfStatement",
-                                    "src": "3284:200:30",
+                                    "src": "3307:200:30",
                                     "trueBody": {
-                                        "id": 6237,
+                                        "id": 6365,
                                         "nodeType": "Block",
-                                        "src": "3300:184:30",
+                                        "src": "3323:184:30",
                                         "statements": [
                                             {
                                                 "assignments": [
-                                                    6216,
+                                                    6344,
                                                     null
                                                 ],
                                                 "declarations": [
                                                     {
                                                         "constant": false,
-                                                        "id": 6216,
+                                                        "id": 6344,
                                                         "mutability": "mutable",
                                                         "name": "success",
-                                                        "nameLocation": "3320:7:30",
+                                                        "nameLocation": "3343:7:30",
                                                         "nodeType": "VariableDeclaration",
-                                                        "scope": 6237,
-                                                        "src": "3315:12:30",
+                                                        "scope": 6365,
+                                                        "src": "3338:12:30",
                                                         "stateVariable": false,
                                                         "storageLocation": "default",
                                                         "typeDescriptions": {
@@ -2622,10 +2577,10 @@ export const StETHBase = {
                                                             "typeString": "bool"
                                                         },
                                                         "typeName": {
-                                                            "id": 6215,
+                                                            "id": 6343,
                                                             "name": "bool",
                                                             "nodeType": "ElementaryTypeName",
-                                                            "src": "3315:4:30",
+                                                            "src": "3338:4:30",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bool",
                                                                 "typeString": "bool"
@@ -2635,19 +2590,19 @@ export const StETHBase = {
                                                     },
                                                     null
                                                 ],
-                                                "id": 6227,
+                                                "id": 6355,
                                                 "initialValue": {
                                                     "arguments": [
                                                         {
                                                             "hexValue": "",
-                                                            "id": 6225,
+                                                            "id": 6353,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "kind": "string",
                                                             "lValueRequested": false,
                                                             "nodeType": "Literal",
-                                                            "src": "3375:2:30",
+                                                            "src": "3398:2:30",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
                                                                 "typeString": "literal_string \"\""
@@ -2673,26 +2628,26 @@ export const StETHBase = {
                                                                 "arguments": [
                                                                     {
                                                                         "expression": {
-                                                                            "id": 6219,
+                                                                            "id": 6347,
                                                                             "name": "msg",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
                                                                             "referencedDeclaration": -15,
-                                                                            "src": "3341:3:30",
+                                                                            "src": "3364:3:30",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_magic_message",
                                                                                 "typeString": "msg"
                                                                             }
                                                                         },
-                                                                        "id": 6220,
+                                                                        "id": 6348,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
                                                                         "lValueRequested": false,
-                                                                        "memberLocation": "3345:6:30",
+                                                                        "memberLocation": "3368:6:30",
                                                                         "memberName": "sender",
                                                                         "nodeType": "MemberAccess",
-                                                                        "src": "3341:10:30",
+                                                                        "src": "3364:10:30",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_address",
                                                                             "typeString": "address"
@@ -2706,27 +2661,27 @@ export const StETHBase = {
                                                                             "typeString": "address"
                                                                         }
                                                                     ],
-                                                                    "id": 6218,
+                                                                    "id": 6346,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
                                                                     "lValueRequested": false,
                                                                     "nodeType": "ElementaryTypeNameExpression",
-                                                                    "src": "3333:8:30",
+                                                                    "src": "3356:8:30",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_type$_t_address_payable_$",
                                                                         "typeString": "type(address payable)"
                                                                     },
                                                                     "typeName": {
-                                                                        "id": 6217,
+                                                                        "id": 6345,
                                                                         "name": "address",
                                                                         "nodeType": "ElementaryTypeName",
-                                                                        "src": "3333:8:30",
+                                                                        "src": "3356:8:30",
                                                                         "stateMutability": "payable",
                                                                         "typeDescriptions": {}
                                                                     }
                                                                 },
-                                                                "id": 6221,
+                                                                "id": 6349,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -2735,28 +2690,28 @@ export const StETHBase = {
                                                                 "nameLocations": [],
                                                                 "names": [],
                                                                 "nodeType": "FunctionCall",
-                                                                "src": "3333:19:30",
+                                                                "src": "3356:19:30",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address_payable",
                                                                     "typeString": "address payable"
                                                                 }
                                                             },
-                                                            "id": 6222,
+                                                            "id": 6350,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "3353:4:30",
+                                                            "memberLocation": "3376:4:30",
                                                             "memberName": "call",
                                                             "nodeType": "MemberAccess",
-                                                            "src": "3333:24:30",
+                                                            "src": "3356:24:30",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_barecall_payable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$",
                                                                 "typeString": "function (bytes memory) payable returns (bool,bytes memory)"
                                                             }
                                                         },
-                                                        "id": 6224,
+                                                        "id": 6352,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -2767,25 +2722,25 @@ export const StETHBase = {
                                                         "nodeType": "FunctionCallOptions",
                                                         "options": [
                                                             {
-                                                                "id": 6223,
+                                                                "id": 6351,
                                                                 "name": "refund",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 6147,
-                                                                "src": "3366:6:30",
+                                                                "referencedDeclaration": 6279,
+                                                                "src": "3389:6:30",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             }
                                                         ],
-                                                        "src": "3333:41:30",
+                                                        "src": "3356:41:30",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_barecall_payable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$value",
                                                             "typeString": "function (bytes memory) payable returns (bool,bytes memory)"
                                                         }
                                                     },
-                                                    "id": 6226,
+                                                    "id": 6354,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2794,7 +2749,7 @@ export const StETHBase = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "3333:45:30",
+                                                    "src": "3356:45:30",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$_t_bool_$_t_bytes_memory_ptr_$",
@@ -2802,11 +2757,11 @@ export const StETHBase = {
                                                     }
                                                 },
                                                 "nodeType": "VariableDeclarationStatement",
-                                                "src": "3314:64:30"
+                                                "src": "3337:64:30"
                                             },
                                             {
                                                 "condition": {
-                                                    "id": 6229,
+                                                    "id": 6357,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2814,14 +2769,14 @@ export const StETHBase = {
                                                     "nodeType": "UnaryOperation",
                                                     "operator": "!",
                                                     "prefix": true,
-                                                    "src": "3396:8:30",
+                                                    "src": "3419:8:30",
                                                     "subExpression": {
-                                                        "id": 6228,
+                                                        "id": 6356,
                                                         "name": "success",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 6216,
-                                                        "src": "3397:7:30",
+                                                        "referencedDeclaration": 6344,
+                                                        "src": "3420:7:30",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
                                                             "typeString": "bool"
@@ -2832,13 +2787,13 @@ export const StETHBase = {
                                                         "typeString": "bool"
                                                     }
                                                 },
-                                                "id": 6236,
+                                                "id": 6364,
                                                 "nodeType": "IfStatement",
-                                                "src": "3392:82:30",
+                                                "src": "3415:82:30",
                                                 "trueBody": {
-                                                    "id": 6235,
+                                                    "id": 6363,
                                                     "nodeType": "Block",
-                                                    "src": "3406:68:30",
+                                                    "src": "3429:68:30",
                                                     "statements": [
                                                         {
                                                             "errorCall": {
@@ -2846,33 +2801,33 @@ export const StETHBase = {
                                                                 "expression": {
                                                                     "argumentTypes": [],
                                                                     "expression": {
-                                                                        "id": 6230,
+                                                                        "id": 6358,
                                                                         "name": "IHyperdrive",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 7480,
-                                                                        "src": "3431:11:30",
+                                                                        "referencedDeclaration": 7616,
+                                                                        "src": "3454:11:30",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7480_$",
+                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7616_$",
                                                                             "typeString": "type(contract IHyperdrive)"
                                                                         }
                                                                     },
-                                                                    "id": 6232,
+                                                                    "id": 6360,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
-                                                                    "memberLocation": "3443:14:30",
+                                                                    "memberLocation": "3466:14:30",
                                                                     "memberName": "TransferFailed",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 7431,
-                                                                    "src": "3431:26:30",
+                                                                    "referencedDeclaration": 7564,
+                                                                    "src": "3454:26:30",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                                         "typeString": "function () pure"
                                                                     }
                                                                 },
-                                                                "id": 6233,
+                                                                "id": 6361,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -2881,16 +2836,16 @@ export const StETHBase = {
                                                                 "nameLocations": [],
                                                                 "names": [],
                                                                 "nodeType": "FunctionCall",
-                                                                "src": "3431:28:30",
+                                                                "src": "3454:28:30",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_tuple$__$",
                                                                     "typeString": "tuple()"
                                                                 }
                                                             },
-                                                            "id": 6234,
+                                                            "id": 6362,
                                                             "nodeType": "RevertStatement",
-                                                            "src": "3424:35:30"
+                                                            "src": "3447:35:30"
                                                         }
                                                     ]
                                                 }
@@ -2902,83 +2857,83 @@ export const StETHBase = {
                                     "expression": {
                                         "components": [
                                             {
-                                                "id": 6239,
+                                                "id": 6367,
                                                 "name": "shares",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 6142,
-                                                "src": "3502:6:30",
+                                                "referencedDeclaration": 6274,
+                                                "src": "3525:6:30",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 6240,
+                                                "id": 6368,
                                                 "name": "vaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 6144,
-                                                "src": "3510:15:30",
+                                                "referencedDeclaration": 6276,
+                                                "src": "3533:15:30",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             }
                                         ],
-                                        "id": 6241,
+                                        "id": 6369,
                                         "isConstant": false,
                                         "isInlineArray": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "nodeType": "TupleExpression",
-                                        "src": "3501:25:30",
+                                        "src": "3524:25:30",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$",
                                             "typeString": "tuple(uint256,uint256)"
                                         }
                                     },
-                                    "functionReturnParameters": 6145,
-                                    "id": 6242,
+                                    "functionReturnParameters": 6277,
+                                    "id": 6370,
                                     "nodeType": "Return",
-                                    "src": "3494:32:30"
+                                    "src": "3517:32:30"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8845
+                            9013
                         ],
                         "documentation": {
-                            "id": 6133,
+                            "id": 6265,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1267:581:30",
-                            "text": "@dev Accepts a transfer from the user in base or the yield source token.\n @param _amount The amount of token to transfer. It will be in either\n          base or shares depending on the `asBase` option.\n @param _options The options that configure the deposit. The only option\n        used in this implementation is \"asBase\" which determines if\n        the deposit is settled in ETH or stETH shares.\n @return shares The amount of shares that represents the amount deposited.\n @return vaultSharePrice The current vault share price."
+                            "src": "1267:674:30",
+                            "text": "@dev Accepts a transfer from the user in base or the yield source token.\n @param _amount The amount of capital to deposit. The units of this\n        quantity are either base or vault shares, depending on the value\n        of `_options.asBase`.\n @param _options The options that configure how the trade is settled. The\n        only option used in this deposit implementation is\n        `_options.asBase` which determines if the deposit is settled in\n        ETH or stETH shares.\n @return shares The amount of capital deposited measured in vault shares.\n @return vaultSharePrice The current vault share price."
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_deposit",
-                        "nameLocation": "1862:8:30",
+                        "nameLocation": "1955:8:30",
                         "overrides": {
-                            "id": 6140,
+                            "id": 6272,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
-                            "src": "1958:8:30"
+                            "src": "2051:8:30"
                         },
                         "parameters": {
-                            "id": 6139,
+                            "id": 6271,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6135,
+                                    "id": 6267,
                                     "mutability": "mutable",
                                     "name": "_amount",
-                                    "nameLocation": "1888:7:30",
+                                    "nameLocation": "1981:7:30",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6244,
-                                    "src": "1880:15:30",
+                                    "scope": 6372,
+                                    "src": "1973:15:30",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2986,10 +2941,10 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6134,
+                                        "id": 6266,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1880:7:30",
+                                        "src": "1973:7:30",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2999,58 +2954,58 @@ export const StETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6138,
+                                    "id": 6270,
                                     "mutability": "mutable",
                                     "name": "_options",
-                                    "nameLocation": "1934:8:30",
+                                    "nameLocation": "2027:8:30",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6244,
-                                    "src": "1905:37:30",
+                                    "scope": 6372,
+                                    "src": "1998:37:30",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Options_$7336_calldata_ptr",
+                                        "typeIdentifier": "t_struct$_Options_$7463_calldata_ptr",
                                         "typeString": "struct IHyperdrive.Options"
                                     },
                                     "typeName": {
-                                        "id": 6137,
+                                        "id": 6269,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 6136,
+                                            "id": 6268,
                                             "name": "IHyperdrive.Options",
                                             "nameLocations": [
-                                                "1905:11:30",
-                                                "1917:7:30"
+                                                "1998:11:30",
+                                                "2010:7:30"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 7336,
-                                            "src": "1905:19:30"
+                                            "referencedDeclaration": 7463,
+                                            "src": "1998:19:30"
                                         },
-                                        "referencedDeclaration": 7336,
-                                        "src": "1905:19:30",
+                                        "referencedDeclaration": 7463,
+                                        "src": "1998:19:30",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Options_$7336_storage_ptr",
+                                            "typeIdentifier": "t_struct$_Options_$7463_storage_ptr",
                                             "typeString": "struct IHyperdrive.Options"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1870:78:30"
+                            "src": "1963:78:30"
                         },
                         "returnParameters": {
-                            "id": 6145,
+                            "id": 6277,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6142,
+                                    "id": 6274,
                                     "mutability": "mutable",
                                     "name": "shares",
-                                    "nameLocation": "1984:6:30",
+                                    "nameLocation": "2077:6:30",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6244,
-                                    "src": "1976:14:30",
+                                    "scope": 6372,
+                                    "src": "2069:14:30",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3058,10 +3013,10 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6141,
+                                        "id": 6273,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1976:7:30",
+                                        "src": "2069:7:30",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3071,13 +3026,13 @@ export const StETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6144,
+                                    "id": 6276,
                                     "mutability": "mutable",
                                     "name": "vaultSharePrice",
-                                    "nameLocation": "2000:15:30",
+                                    "nameLocation": "2093:15:30",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6244,
-                                    "src": "1992:23:30",
+                                    "scope": 6372,
+                                    "src": "2085:23:30",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3085,10 +3040,10 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6143,
+                                        "id": 6275,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1992:7:30",
+                                        "src": "2085:7:30",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3097,60 +3052,60 @@ export const StETHBase = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1975:41:30"
+                            "src": "2068:41:30"
                         },
-                        "scope": 6319,
+                        "scope": 6447,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 6299,
+                        "id": 6427,
                         "nodeType": "FunctionDefinition",
-                        "src": "4359:1080:30",
+                        "src": "4547:1090:30",
                         "nodes": [],
                         "body": {
-                            "id": 6298,
+                            "id": 6426,
                             "nodeType": "Block",
-                            "src": "4521:918:30",
+                            "src": "4714:923:30",
                             "nodes": [],
                             "statements": [
                                 {
                                     "condition": {
                                         "expression": {
-                                            "id": 6258,
+                                            "id": 6386,
                                             "name": "_options",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 6252,
-                                            "src": "4677:8:30",
+                                            "referencedDeclaration": 6380,
+                                            "src": "4870:8:30",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Options_$7336_calldata_ptr",
+                                                "typeIdentifier": "t_struct$_Options_$7463_calldata_ptr",
                                                 "typeString": "struct IHyperdrive.Options calldata"
                                             }
                                         },
-                                        "id": 6259,
+                                        "id": 6387,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
-                                        "memberLocation": "4686:6:30",
+                                        "memberLocation": "4879:6:30",
                                         "memberName": "asBase",
                                         "nodeType": "MemberAccess",
-                                        "referencedDeclaration": 7332,
-                                        "src": "4677:15:30",
+                                        "referencedDeclaration": 7459,
+                                        "src": "4870:15:30",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 6266,
+                                    "id": 6394,
                                     "nodeType": "IfStatement",
-                                    "src": "4673:83:30",
+                                    "src": "4866:83:30",
                                     "trueBody": {
-                                        "id": 6265,
+                                        "id": 6393,
                                         "nodeType": "Block",
-                                        "src": "4694:62:30",
+                                        "src": "4887:62:30",
                                         "statements": [
                                             {
                                                 "errorCall": {
@@ -3158,33 +3113,33 @@ export const StETHBase = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 6260,
+                                                            "id": 6388,
                                                             "name": "IHyperdrive",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 7480,
-                                                            "src": "4715:11:30",
+                                                            "referencedDeclaration": 7616,
+                                                            "src": "4908:11:30",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7480_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7616_$",
                                                                 "typeString": "type(contract IHyperdrive)"
                                                             }
                                                         },
-                                                        "id": 6262,
+                                                        "id": 6390,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "4727:16:30",
+                                                        "memberLocation": "4920:16:30",
                                                         "memberName": "UnsupportedToken",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 7449,
-                                                        "src": "4715:28:30",
+                                                        "referencedDeclaration": 7585,
+                                                        "src": "4908:28:30",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 6263,
+                                                    "id": 6391,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3193,34 +3148,34 @@ export const StETHBase = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "4715:30:30",
+                                                    "src": "4908:30:30",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$__$",
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 6264,
+                                                "id": 6392,
                                                 "nodeType": "RevertStatement",
-                                                "src": "4708:37:30"
+                                                "src": "4901:37:30"
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "assignments": [
-                                        6268
+                                        6396
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 6268,
+                                            "id": 6396,
                                             "mutability": "mutable",
                                             "name": "baseAmount",
-                                            "nameLocation": "5055:10:30",
+                                            "nameLocation": "5248:10:30",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 6298,
-                                            "src": "5047:18:30",
+                                            "scope": 6426,
+                                            "src": "5240:18:30",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -3228,10 +3183,10 @@ export const StETHBase = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 6267,
+                                                "id": 6395,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "5047:7:30",
+                                                "src": "5240:7:30",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -3240,16 +3195,16 @@ export const StETHBase = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 6273,
+                                    "id": 6401,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 6271,
-                                                "name": "_sharePrice",
+                                                "id": 6399,
+                                                "name": "_vaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 6249,
-                                                "src": "5084:11:30",
+                                                "referencedDeclaration": 6377,
+                                                "src": "5277:16:30",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -3264,33 +3219,33 @@ export const StETHBase = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 6269,
+                                                "id": 6397,
                                                 "name": "_shares",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 6247,
-                                                "src": "5068:7:30",
+                                                "referencedDeclaration": 6375,
+                                                "src": "5261:7:30",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 6270,
+                                            "id": 6398,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "5076:7:30",
+                                            "memberLocation": "5269:7:30",
                                             "memberName": "mulDown",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 13863,
-                                            "src": "5068:15:30",
+                                            "referencedDeclaration": 14197,
+                                            "src": "5261:15:30",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 6272,
+                                        "id": 6400,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3299,7 +3254,7 @@ export const StETHBase = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "5068:28:30",
+                                        "src": "5261:33:30",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
@@ -3307,22 +3262,22 @@ export const StETHBase = {
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "5047:49:30"
+                                    "src": "5240:54:30"
                                 },
                                 {
                                     "expression": {
-                                        "id": 6279,
+                                        "id": 6407,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 6274,
+                                            "id": 6402,
                                             "name": "_shares",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 6247,
-                                            "src": "5106:7:30",
+                                            "referencedDeclaration": 6375,
+                                            "src": "5304:7:30",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -3333,12 +3288,12 @@ export const StETHBase = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 6277,
+                                                    "id": 6405,
                                                     "name": "baseAmount",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 6268,
-                                                    "src": "5143:10:30",
+                                                    "referencedDeclaration": 6396,
+                                                    "src": "5341:10:30",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -3353,33 +3308,33 @@ export const StETHBase = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 6275,
+                                                    "id": 6403,
                                                     "name": "_lido",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 6120,
-                                                    "src": "5116:5:30",
+                                                    "referencedDeclaration": 6252,
+                                                    "src": "5314:5:30",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_contract$_ILido_$8338",
+                                                        "typeIdentifier": "t_contract$_ILido_$8479",
                                                         "typeString": "contract ILido"
                                                     }
                                                 },
-                                                "id": 6276,
+                                                "id": 6404,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "5122:20:30",
+                                                "memberLocation": "5320:20:30",
                                                 "memberName": "getSharesByPooledEth",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 8303,
-                                                "src": "5116:26:30",
+                                                "referencedDeclaration": 8444,
+                                                "src": "5314:26:30",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_uint256_$",
                                                     "typeString": "function (uint256) view external returns (uint256)"
                                                 }
                                             },
-                                            "id": 6278,
+                                            "id": 6406,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3388,22 +3343,22 @@ export const StETHBase = {
                                             "nameLocations": [],
                                             "names": [],
                                             "nodeType": "FunctionCall",
-                                            "src": "5116:38:30",
+                                            "src": "5314:38:30",
                                             "tryCall": false,
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "src": "5106:48:30",
+                                        "src": "5304:48:30",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 6280,
+                                    "id": 6408,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "5106:48:30"
+                                    "src": "5304:48:30"
                                 },
                                 {
                                     "condition": {
@@ -3411,18 +3366,18 @@ export const StETHBase = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 6283,
+                                        "id": 6411,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 6281,
+                                            "id": 6409,
                                             "name": "_shares",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 6247,
-                                            "src": "5242:7:30",
+                                            "referencedDeclaration": 6375,
+                                            "src": "5440:7:30",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -3432,55 +3387,55 @@ export const StETHBase = {
                                         "operator": "==",
                                         "rightExpression": {
                                             "hexValue": "30",
-                                            "id": 6282,
+                                            "id": 6410,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
                                             "kind": "number",
                                             "lValueRequested": false,
                                             "nodeType": "Literal",
-                                            "src": "5253:1:30",
+                                            "src": "5451:1:30",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_rational_0_by_1",
                                                 "typeString": "int_const 0"
                                             },
                                             "value": "0"
                                         },
-                                        "src": "5242:12:30",
+                                        "src": "5440:12:30",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 6287,
+                                    "id": 6415,
                                     "nodeType": "IfStatement",
-                                    "src": "5238:51:30",
+                                    "src": "5436:51:30",
                                     "trueBody": {
-                                        "id": 6286,
+                                        "id": 6414,
                                         "nodeType": "Block",
-                                        "src": "5256:33:30",
+                                        "src": "5454:33:30",
                                         "statements": [
                                             {
                                                 "expression": {
                                                     "hexValue": "30",
-                                                    "id": 6284,
+                                                    "id": 6412,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "kind": "number",
                                                     "lValueRequested": false,
                                                     "nodeType": "Literal",
-                                                    "src": "5277:1:30",
+                                                    "src": "5475:1:30",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_rational_0_by_1",
                                                         "typeString": "int_const 0"
                                                     },
                                                     "value": "0"
                                                 },
-                                                "functionReturnParameters": 6257,
-                                                "id": 6285,
+                                                "functionReturnParameters": 6385,
+                                                "id": 6413,
                                                 "nodeType": "Return",
-                                                "src": "5270:8:30"
+                                                "src": "5468:8:30"
                                             }
                                         ]
                                     }
@@ -3490,39 +3445,39 @@ export const StETHBase = {
                                         "arguments": [
                                             {
                                                 "expression": {
-                                                    "id": 6291,
+                                                    "id": 6419,
                                                     "name": "_options",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 6252,
-                                                    "src": "5377:8:30",
+                                                    "referencedDeclaration": 6380,
+                                                    "src": "5575:8:30",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_Options_$7336_calldata_ptr",
+                                                        "typeIdentifier": "t_struct$_Options_$7463_calldata_ptr",
                                                         "typeString": "struct IHyperdrive.Options calldata"
                                                     }
                                                 },
-                                                "id": 6292,
+                                                "id": 6420,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "5386:11:30",
+                                                "memberLocation": "5584:11:30",
                                                 "memberName": "destination",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 7329,
-                                                "src": "5377:20:30",
+                                                "referencedDeclaration": 7456,
+                                                "src": "5575:20:30",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 6293,
+                                                "id": 6421,
                                                 "name": "_shares",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 6247,
-                                                "src": "5399:7:30",
+                                                "referencedDeclaration": 6375,
+                                                "src": "5597:7:30",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -3541,33 +3496,33 @@ export const StETHBase = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 6288,
+                                                "id": 6416,
                                                 "name": "_lido",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 6120,
-                                                "src": "5356:5:30",
+                                                "referencedDeclaration": 6252,
+                                                "src": "5554:5:30",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_ILido_$8338",
+                                                    "typeIdentifier": "t_contract$_ILido_$8479",
                                                     "typeString": "contract ILido"
                                                 }
                                             },
-                                            "id": 6290,
+                                            "id": 6418,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "5362:14:30",
+                                            "memberLocation": "5560:14:30",
                                             "memberName": "transferShares",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 8283,
-                                            "src": "5356:20:30",
+                                            "referencedDeclaration": 8424,
+                                            "src": "5554:20:30",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (address,uint256) external returns (uint256)"
                                             }
                                         },
-                                        "id": 6294,
+                                        "id": 6422,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3576,70 +3531,70 @@ export const StETHBase = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "5356:51:30",
+                                        "src": "5554:51:30",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 6295,
+                                    "id": 6423,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "5356:51:30"
+                                    "src": "5554:51:30"
                                 },
                                 {
                                     "expression": {
-                                        "id": 6296,
+                                        "id": 6424,
                                         "name": "_shares",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 6247,
-                                        "src": "5425:7:30",
+                                        "referencedDeclaration": 6375,
+                                        "src": "5623:7:30",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 6257,
-                                    "id": 6297,
+                                    "functionReturnParameters": 6385,
+                                    "id": 6425,
                                     "nodeType": "Return",
-                                    "src": "5418:14:30"
+                                    "src": "5616:14:30"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8858
+                            9026
                         ],
                         "documentation": {
-                            "id": 6245,
+                            "id": 6373,
                             "nodeType": "StructuredDocumentation",
-                            "src": "3539:815:30",
-                            "text": "@notice Processes a trader's withdrawal. This yield source only supports\n         withdrawals in stETH shares.\n @param _shares The amount of shares to withdraw from Hyperdrive.\n @param _sharePrice The share price.\n @param _options The options that configure the withdrawal. The options\n        used in this implementation are \"destination\" which specifies the\n        recipient of the withdrawal and \"asBase\" which determines\n        if the withdrawal is settled in base or vault shares. The \"asBase\"\n        option must be false since stETH withdrawals aren't processed\n        instantaneously. Users that want to withdraw can manage their\n        withdrawal separately.\n @return The amount of shares withdrawn from the yield source."
+                            "src": "3562:980:30",
+                            "text": "@notice Processes a trader's withdrawal. This yield source only supports\n         withdrawals in stETH shares.\n @param _shares The amount of vault shares to withdraw from Hyperdrive.\n @param _vaultSharePrice The vault share price.\n @param _options The options that configure the withdrawal. The options\n        used in this withdrawal implementation are `_options.destination`,\n        which specifies the recipient of the withdrawal, and\n        `_options.asBase`, which determines if the withdrawal is settled\n        in ETH or stETH. The `_options.asBase` option must be false since\n        stETH withdrawals aren't processed instantaneously. Users that\n        want to withdraw can manage their withdrawal separately.\n @return The proceeds of the withdrawal. The units of this quantity are\n         vault shares since this yield source doesn't support withdrawals\n         in base."
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_withdraw",
-                        "nameLocation": "4368:9:30",
+                        "nameLocation": "4556:9:30",
                         "overrides": {
-                            "id": 6254,
+                            "id": 6382,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
-                            "src": "4494:8:30"
+                            "src": "4687:8:30"
                         },
                         "parameters": {
-                            "id": 6253,
+                            "id": 6381,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6247,
+                                    "id": 6375,
                                     "mutability": "mutable",
                                     "name": "_shares",
-                                    "nameLocation": "4395:7:30",
+                                    "nameLocation": "4583:7:30",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6299,
-                                    "src": "4387:15:30",
+                                    "scope": 6427,
+                                    "src": "4575:15:30",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3647,10 +3602,10 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6246,
+                                        "id": 6374,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4387:7:30",
+                                        "src": "4575:7:30",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3660,13 +3615,13 @@ export const StETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6249,
+                                    "id": 6377,
                                     "mutability": "mutable",
-                                    "name": "_sharePrice",
-                                    "nameLocation": "4420:11:30",
+                                    "name": "_vaultSharePrice",
+                                    "nameLocation": "4608:16:30",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6299,
-                                    "src": "4412:19:30",
+                                    "scope": 6427,
+                                    "src": "4600:24:30",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3674,10 +3629,10 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6248,
+                                        "id": 6376,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4412:7:30",
+                                        "src": "4600:7:30",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3687,58 +3642,58 @@ export const StETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6252,
+                                    "id": 6380,
                                     "mutability": "mutable",
                                     "name": "_options",
-                                    "nameLocation": "4470:8:30",
+                                    "nameLocation": "4663:8:30",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6299,
-                                    "src": "4441:37:30",
+                                    "scope": 6427,
+                                    "src": "4634:37:30",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Options_$7336_calldata_ptr",
+                                        "typeIdentifier": "t_struct$_Options_$7463_calldata_ptr",
                                         "typeString": "struct IHyperdrive.Options"
                                     },
                                     "typeName": {
-                                        "id": 6251,
+                                        "id": 6379,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 6250,
+                                            "id": 6378,
                                             "name": "IHyperdrive.Options",
                                             "nameLocations": [
-                                                "4441:11:30",
-                                                "4453:7:30"
+                                                "4634:11:30",
+                                                "4646:7:30"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 7336,
-                                            "src": "4441:19:30"
+                                            "referencedDeclaration": 7463,
+                                            "src": "4634:19:30"
                                         },
-                                        "referencedDeclaration": 7336,
-                                        "src": "4441:19:30",
+                                        "referencedDeclaration": 7463,
+                                        "src": "4634:19:30",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Options_$7336_storage_ptr",
+                                            "typeIdentifier": "t_struct$_Options_$7463_storage_ptr",
                                             "typeString": "struct IHyperdrive.Options"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "4377:107:30"
+                            "src": "4565:112:30"
                         },
                         "returnParameters": {
-                            "id": 6257,
+                            "id": 6385,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6256,
+                                    "id": 6384,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6299,
-                                    "src": "4512:7:30",
+                                    "scope": 6427,
+                                    "src": "4705:7:30",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3746,10 +3701,10 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6255,
+                                        "id": 6383,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4512:7:30",
+                                        "src": "4705:7:30",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3758,34 +3713,34 @@ export const StETHBase = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "4511:9:30"
+                            "src": "4704:9:30"
                         },
-                        "scope": 6319,
+                        "scope": 6447,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 6312,
+                        "id": 6440,
                         "nodeType": "FunctionDefinition",
-                        "src": "5606:169:30",
+                        "src": "5804:169:30",
                         "nodes": [],
                         "body": {
-                            "id": 6311,
+                            "id": 6439,
                             "nodeType": "Block",
-                            "src": "5720:55:30",
+                            "src": "5918:55:30",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 6308,
+                                                "id": 6436,
                                                 "name": "ONE",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 13820,
-                                                "src": "5764:3:30",
+                                                "referencedDeclaration": 14151,
+                                                "src": "5962:3:30",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -3800,33 +3755,33 @@ export const StETHBase = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 6306,
+                                                "id": 6434,
                                                 "name": "_lido",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 6120,
-                                                "src": "5737:5:30",
+                                                "referencedDeclaration": 6252,
+                                                "src": "5935:5:30",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_ILido_$8338",
+                                                    "typeIdentifier": "t_contract$_ILido_$8479",
                                                     "typeString": "contract ILido"
                                                 }
                                             },
-                                            "id": 6307,
+                                            "id": 6435,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "5743:20:30",
+                                            "memberLocation": "5941:20:30",
                                             "memberName": "getPooledEthByShares",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 8311,
-                                            "src": "5737:26:30",
+                                            "referencedDeclaration": 8452,
+                                            "src": "5935:26:30",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256) view external returns (uint256)"
                                             }
                                         },
-                                        "id": 6309,
+                                        "id": 6437,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3835,59 +3790,59 @@ export const StETHBase = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "5737:31:30",
+                                        "src": "5935:31:30",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 6305,
-                                    "id": 6310,
+                                    "functionReturnParameters": 6433,
+                                    "id": 6438,
                                     "nodeType": "Return",
-                                    "src": "5730:38:30"
+                                    "src": "5928:38:30"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8864
+                            9032
                         ],
                         "documentation": {
-                            "id": 6300,
+                            "id": 6428,
                             "nodeType": "StructuredDocumentation",
-                            "src": "5445:156:30",
+                            "src": "5643:156:30",
                             "text": "@dev Returns the current vault share price. We simply use Lido's\n      internal share price.\n @return price The current vault share price."
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_pricePerVaultShare",
-                        "nameLocation": "5615:19:30",
+                        "nameLocation": "5813:19:30",
                         "overrides": {
-                            "id": 6302,
+                            "id": 6430,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
-                            "src": "5675:8:30"
+                            "src": "5873:8:30"
                         },
                         "parameters": {
-                            "id": 6301,
+                            "id": 6429,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "5634:2:30"
+                            "src": "5832:2:30"
                         },
                         "returnParameters": {
-                            "id": 6305,
+                            "id": 6433,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6304,
+                                    "id": 6432,
                                     "mutability": "mutable",
                                     "name": "price",
-                                    "nameLocation": "5709:5:30",
+                                    "nameLocation": "5907:5:30",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6312,
-                                    "src": "5701:13:30",
+                                    "scope": 6440,
+                                    "src": "5899:13:30",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3895,10 +3850,10 @@ export const StETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6303,
+                                        "id": 6431,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "5701:7:30",
+                                        "src": "5899:7:30",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3907,58 +3862,58 @@ export const StETHBase = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "5700:15:30"
+                            "src": "5898:15:30"
                         },
-                        "scope": 6319,
+                        "scope": 6447,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 6318,
+                        "id": 6446,
                         "nodeType": "FunctionDefinition",
-                        "src": "5878:55:30",
+                        "src": "6076:55:30",
                         "nodes": [],
                         "body": {
-                            "id": 6317,
+                            "id": 6445,
                             "nodeType": "Block",
-                            "src": "5931:2:30",
+                            "src": "6129:2:30",
                             "nodes": [],
                             "statements": []
                         },
                         "baseFunctions": [
-                            8832
+                            8978
                         ],
                         "documentation": {
-                            "id": 6313,
+                            "id": 6441,
                             "nodeType": "StructuredDocumentation",
-                            "src": "5781:92:30",
+                            "src": "5979:92:30",
                             "text": "@dev We override the message value check since this integration is\n      payable."
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_checkMessageValue",
-                        "nameLocation": "5887:18:30",
+                        "nameLocation": "6085:18:30",
                         "overrides": {
-                            "id": 6315,
+                            "id": 6443,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
-                            "src": "5922:8:30"
+                            "src": "6120:8:30"
                         },
                         "parameters": {
-                            "id": 6314,
+                            "id": 6442,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "5905:2:30"
+                            "src": "6103:2:30"
                         },
                         "returnParameters": {
-                            "id": 6316,
+                            "id": 6444,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "5931:0:30"
+                            "src": "6129:0:30"
                         },
-                        "scope": 6319,
+                        "scope": 6447,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
@@ -3968,16 +3923,16 @@ export const StETHBase = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 6112,
+                            "id": 6244,
                             "name": "HyperdriveBase",
                             "nameLocations": [
                                 "943:14:30"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 9728,
+                            "referencedDeclaration": 9917,
                             "src": "943:14:30"
                         },
-                        "id": 6113,
+                        "id": 6245,
                         "nodeType": "InheritanceSpecifier",
                         "src": "943:14:30"
                     }
@@ -3986,43 +3941,43 @@ export const StETHBase = {
                 "contractDependencies": [],
                 "contractKind": "contract",
                 "documentation": {
-                    "id": 6111,
+                    "id": 6243,
                     "nodeType": "StructuredDocumentation",
                     "src": "323:589:30",
                     "text": "@author DELV\n @title StethHyperdrive\n @notice The base contract for the stETH Hyperdrive implementation.\n @dev Lido has it's own notion of shares to account for the accrual of\n      interest on the ether pooled in the Lido protocol. Instead of\n      maintaining a balance of shares, this integration can simply use Lido\n      shares directly.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."
                 },
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    6319,
-                    9728,
-                    13478,
-                    67358,
-                    7924,
-                    8482
+                    6447,
+                    9917,
+                    13842,
+                    67058,
+                    8062,
+                    8623
                 ],
                 "name": "StETHBase",
                 "nameLocation": "930:9:30",
-                "scope": 6320,
+                "scope": 6448,
                 "usedErrors": [
-                    67303
+                    67003
                 ],
                 "usedEvents": [
-                    7773,
-                    7788,
-                    7805,
-                    7818,
-                    7835,
-                    7854,
-                    7871,
-                    7888,
-                    7901,
-                    7908,
-                    7913,
-                    7918,
-                    7923,
-                    8463,
-                    8472,
-                    8481
+                    7909,
+                    7924,
+                    7941,
+                    7954,
+                    7971,
+                    7990,
+                    8007,
+                    8024,
+                    8037,
+                    8044,
+                    8049,
+                    8056,
+                    8061,
+                    8604,
+                    8613,
+                    8622
                 ]
             }
         ],

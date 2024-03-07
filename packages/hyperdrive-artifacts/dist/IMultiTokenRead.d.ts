@@ -48,7 +48,7 @@ export declare const IMultiTokenRead: {
     }, {
         readonly inputs: readonly [{
             readonly internalType: "uint256";
-            readonly name: "id";
+            readonly name: "tokenId";
             readonly type: "uint256";
         }];
         readonly name: "name";
@@ -98,7 +98,7 @@ export declare const IMultiTokenRead: {
     }, {
         readonly inputs: readonly [{
             readonly internalType: "uint256";
-            readonly name: "id";
+            readonly name: "tokenId";
             readonly type: "uint256";
         }];
         readonly name: "symbol";
@@ -112,7 +112,7 @@ export declare const IMultiTokenRead: {
     }, {
         readonly inputs: readonly [{
             readonly internalType: "uint256";
-            readonly name: "id";
+            readonly name: "tokenId";
             readonly type: "uint256";
         }];
         readonly name: "totalSupply";
@@ -144,7 +144,7 @@ export declare const IMultiTokenRead: {
         readonly "symbol(uint256)": "4e41a1fb";
         readonly "totalSupply(uint256)": "bd85b039";
     };
-    readonly rawMetadata: "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"isApprovedForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"nonces\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"perTokenApprovals\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"balanceOf(uint256,address)\":{\"params\":{\"owner\":\"The owner of the tokens.\",\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The balance of the owner.\"}},\"decimals()\":{\"returns\":{\"_0\":\"The decimals of the MultiToken.\"}},\"isApprovedForAll(address,address)\":{\"params\":{\"owner\":\"The owner of the tokens.\",\"spender\":\"The spender of the tokens.\"},\"returns\":{\"_0\":\"The approval-for-all status of the spender for the owner.\"}},\"name(uint256)\":{\"returns\":{\"_0\":\"The name of the MultiToken.\"}},\"nonces(address)\":{\"params\":{\"owner\":\"The owner of the tokens.\"},\"returns\":{\"_0\":\"The permit nonce of the owner.\"}},\"perTokenApprovals(uint256,address,address)\":{\"params\":{\"owner\":\"The owner of the tokens.\",\"spender\":\"The spender of the tokens.\",\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The allowance of the spender for the owner.\"}},\"symbol(uint256)\":{\"returns\":{\"_0\":\"The symbol of the MultiToken.\"}},\"totalSupply(uint256)\":{\"returns\":{\"_0\":\"The total supply of the MultiToken.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"balanceOf(uint256,address)\":{\"notice\":\"Gets the balance of a spender for a sub-token.\"},\"decimals()\":{\"notice\":\"Gets the decimals of the MultiToken.\"},\"isApprovedForAll(address,address)\":{\"notice\":\"Gets the approval-for-all status of a spender on behalf of an         owner.\"},\"name(uint256)\":{\"notice\":\"Gets the name of the MultiToken.\"},\"nonces(address)\":{\"notice\":\"Gets the permit nonce for an account.\"},\"perTokenApprovals(uint256,address,address)\":{\"notice\":\"Gets the allowance of a spender for a sub-token.\"},\"symbol(uint256)\":{\"notice\":\"Gets the symbol of the MultiToken.\"},\"totalSupply(uint256)\":{\"notice\":\"Gets the total supply of the MultiToken.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IMultiTokenRead.sol\":\"IMultiTokenRead\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xc28d1017afe010c20c2fbe9b78e0001eb8b7db16e0fe5038990692227be365ec\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8056e866c6da775c66cefc4e03d8856d75980d8c6eb98e954e1319b2478ad51c\",\"dweb:/ipfs/Qme9n2mBoeFUxf7Tzx4dD3iYt2kDsza6mqPXoUogPnS2hx\"]}},\"version\":1}";
+    readonly rawMetadata: "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"isApprovedForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"nonces\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"perTokenApprovals\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"balanceOf(uint256,address)\":{\"params\":{\"owner\":\"The owner of the tokens.\",\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The balance of the owner.\"}},\"decimals()\":{\"returns\":{\"_0\":\"The decimals of the MultiToken.\"}},\"isApprovedForAll(address,address)\":{\"params\":{\"owner\":\"The owner of the tokens.\",\"spender\":\"The spender of the tokens.\"},\"returns\":{\"_0\":\"The approval-for-all status of the spender for the owner.\"}},\"name(uint256)\":{\"params\":{\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The name of the MultiToken.\"}},\"nonces(address)\":{\"params\":{\"owner\":\"The owner of the tokens.\"},\"returns\":{\"_0\":\"The permit nonce of the owner.\"}},\"perTokenApprovals(uint256,address,address)\":{\"params\":{\"owner\":\"The owner of the tokens.\",\"spender\":\"The spender of the tokens.\",\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The allowance of the spender for the owner.\"}},\"symbol(uint256)\":{\"params\":{\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The symbol of the MultiToken.\"}},\"totalSupply(uint256)\":{\"params\":{\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The total supply of the MultiToken.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"balanceOf(uint256,address)\":{\"notice\":\"Gets the balance of a spender for a sub-token.\"},\"decimals()\":{\"notice\":\"Gets the decimals of the MultiToken.\"},\"isApprovedForAll(address,address)\":{\"notice\":\"Gets the approval-for-all status of a spender on behalf of an         owner.\"},\"name(uint256)\":{\"notice\":\"Gets the name of the MultiToken.\"},\"nonces(address)\":{\"notice\":\"Gets the permit nonce for an account.\"},\"perTokenApprovals(uint256,address,address)\":{\"notice\":\"Gets the allowance of a spender for a sub-token.\"},\"symbol(uint256)\":{\"notice\":\"Gets the symbol of the MultiToken.\"},\"totalSupply(uint256)\":{\"notice\":\"Gets the total supply of the MultiToken.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IMultiTokenRead.sol\":\"IMultiTokenRead\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]}},\"version\":1}";
     readonly metadata: {
         readonly compiler: {
             readonly version: "0.8.20+commit.a1b79de6";
@@ -200,7 +200,7 @@ export declare const IMultiTokenRead: {
             }, {
                 readonly inputs: readonly [{
                     readonly internalType: "uint256";
-                    readonly name: "id";
+                    readonly name: "tokenId";
                     readonly type: "uint256";
                 }];
                 readonly stateMutability: "view";
@@ -250,7 +250,7 @@ export declare const IMultiTokenRead: {
             }, {
                 readonly inputs: readonly [{
                     readonly internalType: "uint256";
-                    readonly name: "id";
+                    readonly name: "tokenId";
                     readonly type: "uint256";
                 }];
                 readonly stateMutability: "view";
@@ -264,7 +264,7 @@ export declare const IMultiTokenRead: {
             }, {
                 readonly inputs: readonly [{
                     readonly internalType: "uint256";
-                    readonly name: "id";
+                    readonly name: "tokenId";
                     readonly type: "uint256";
                 }];
                 readonly stateMutability: "view";
@@ -303,6 +303,9 @@ export declare const IMultiTokenRead: {
                         };
                     };
                     readonly "name(uint256)": {
+                        readonly params: {
+                            readonly tokenId: "The sub-token ID.";
+                        };
                         readonly returns: {
                             readonly _0: "The name of the MultiToken.";
                         };
@@ -326,11 +329,17 @@ export declare const IMultiTokenRead: {
                         };
                     };
                     readonly "symbol(uint256)": {
+                        readonly params: {
+                            readonly tokenId: "The sub-token ID.";
+                        };
                         readonly returns: {
                             readonly _0: "The symbol of the MultiToken.";
                         };
                     };
                     readonly "totalSupply(uint256)": {
+                        readonly params: {
+                            readonly tokenId: "The sub-token ID.";
+                        };
                         readonly returns: {
                             readonly _0: "The total supply of the MultiToken.";
                         };
@@ -385,8 +394,8 @@ export declare const IMultiTokenRead: {
         };
         readonly sources: {
             readonly "contracts/src/interfaces/IMultiTokenRead.sol": {
-                readonly keccak256: "0xc28d1017afe010c20c2fbe9b78e0001eb8b7db16e0fe5038990692227be365ec";
-                readonly urls: readonly ["bzz-raw://8056e866c6da775c66cefc4e03d8856d75980d8c6eb98e954e1319b2478ad51c", "dweb:/ipfs/Qme9n2mBoeFUxf7Tzx4dD3iYt2kDsza6mqPXoUogPnS2hx"];
+                readonly keccak256: "0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0";
+                readonly urls: readonly ["bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11", "dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR"];
                 readonly license: "Apache-2.0";
             };
         };
@@ -394,29 +403,29 @@ export declare const IMultiTokenRead: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IMultiTokenRead.sol";
-        readonly id: 8571;
+        readonly id: 8712;
         readonly exportedSymbols: {
-            readonly IMultiTokenRead: readonly [8570];
+            readonly IMultiTokenRead: readonly [8711];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "39:2034:59";
+        readonly src: "39:2172:59";
         readonly nodes: readonly [{
-            readonly id: 8499;
+            readonly id: 8640;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:59";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 8570;
+            readonly id: 8711;
             readonly nodeType: "ContractDefinition";
-            readonly src: "64:2008:59";
+            readonly src: "64:2146:59";
             readonly nodes: readonly [{
-                readonly id: 8505;
+                readonly id: 8646;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "197:50:59";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 8500;
+                    readonly id: 8641;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "96:96:59";
                     readonly text: "@notice Gets the decimals of the MultiToken.\n @return The decimals of the MultiToken.";
@@ -428,22 +437,22 @@ export declare const IMultiTokenRead: {
                 readonly name: "decimals";
                 readonly nameLocation: "206:8:59";
                 readonly parameters: {
-                    readonly id: 8501;
+                    readonly id: 8642;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "214:2:59";
                 };
                 readonly returnParameters: {
-                    readonly id: 8504;
+                    readonly id: 8645;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8503;
+                        readonly id: 8644;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8505;
+                        readonly scope: 8646;
                         readonly src: "240:5:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -452,7 +461,7 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint8";
                         };
                         readonly typeName: {
-                            readonly id: 8502;
+                            readonly id: 8643;
                             readonly name: "uint8";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "240:5:59";
@@ -465,39 +474,39 @@ export declare const IMultiTokenRead: {
                     }];
                     readonly src: "239:7:59";
                 };
-                readonly scope: 8570;
+                readonly scope: 8711;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 8513;
+                readonly id: 8654;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "346:64:59";
+                readonly src: "387:69:59";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 8506;
+                    readonly id: 8647;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "253:88:59";
-                    readonly text: "@notice Gets the name of the MultiToken.\n @return The name of the MultiToken.";
+                    readonly src: "253:129:59";
+                    readonly text: "@notice Gets the name of the MultiToken.\n @param tokenId The sub-token ID.\n @return The name of the MultiToken.";
                 };
                 readonly functionSelector: "00ad800c";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "name";
-                readonly nameLocation: "355:4:59";
+                readonly nameLocation: "396:4:59";
                 readonly parameters: {
-                    readonly id: 8509;
+                    readonly id: 8650;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8508;
+                        readonly id: 8649;
                         readonly mutability: "mutable";
-                        readonly name: "id";
-                        readonly nameLocation: "368:2:59";
+                        readonly name: "tokenId";
+                        readonly nameLocation: "409:7:59";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8513;
-                        readonly src: "360:10:59";
+                        readonly scope: 8654;
+                        readonly src: "401:15:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -505,10 +514,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8507;
+                            readonly id: 8648;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "360:7:59";
+                            readonly src: "401:7:59";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -516,20 +525,20 @@ export declare const IMultiTokenRead: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "359:12:59";
+                    readonly src: "400:17:59";
                 };
                 readonly returnParameters: {
-                    readonly id: 8512;
+                    readonly id: 8653;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8511;
+                        readonly id: 8652;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8513;
-                        readonly src: "395:13:59";
+                        readonly scope: 8654;
+                        readonly src: "441:13:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
@@ -537,10 +546,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 8510;
+                            readonly id: 8651;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "395:6:59";
+                            readonly src: "441:6:59";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_string_storage_ptr";
                                 readonly typeString: "string";
@@ -548,41 +557,41 @@ export declare const IMultiTokenRead: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "394:15:59";
+                    readonly src: "440:15:59";
                 };
-                readonly scope: 8570;
+                readonly scope: 8711;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 8521;
+                readonly id: 8662;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "513:66:59";
+                readonly src: "600:71:59";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 8514;
+                    readonly id: 8655;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "416:92:59";
-                    readonly text: "@notice Gets the symbol of the MultiToken.\n @return The symbol of the MultiToken.";
+                    readonly src: "462:133:59";
+                    readonly text: "@notice Gets the symbol of the MultiToken.\n @param tokenId The sub-token ID.\n @return The symbol of the MultiToken.";
                 };
                 readonly functionSelector: "4e41a1fb";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "symbol";
-                readonly nameLocation: "522:6:59";
+                readonly nameLocation: "609:6:59";
                 readonly parameters: {
-                    readonly id: 8517;
+                    readonly id: 8658;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8516;
+                        readonly id: 8657;
                         readonly mutability: "mutable";
-                        readonly name: "id";
-                        readonly nameLocation: "537:2:59";
+                        readonly name: "tokenId";
+                        readonly nameLocation: "624:7:59";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8521;
-                        readonly src: "529:10:59";
+                        readonly scope: 8662;
+                        readonly src: "616:15:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -590,10 +599,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8515;
+                            readonly id: 8656;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "529:7:59";
+                            readonly src: "616:7:59";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -601,20 +610,20 @@ export declare const IMultiTokenRead: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "528:12:59";
+                    readonly src: "615:17:59";
                 };
                 readonly returnParameters: {
-                    readonly id: 8520;
+                    readonly id: 8661;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8519;
+                        readonly id: 8660;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8521;
-                        readonly src: "564:13:59";
+                        readonly scope: 8662;
+                        readonly src: "656:13:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
@@ -622,10 +631,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 8518;
+                            readonly id: 8659;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "564:6:59";
+                            readonly src: "656:6:59";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_string_storage_ptr";
                                 readonly typeString: "string";
@@ -633,41 +642,41 @@ export declare const IMultiTokenRead: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "563:15:59";
+                    readonly src: "655:15:59";
                 };
-                readonly scope: 8570;
+                readonly scope: 8711;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 8529;
+                readonly id: 8670;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "694:65:59";
+                readonly src: "827:70:59";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 8522;
+                    readonly id: 8663;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "585:104:59";
-                    readonly text: "@notice Gets the total supply of the MultiToken.\n @return The total supply of the MultiToken.";
+                    readonly src: "677:145:59";
+                    readonly text: "@notice Gets the total supply of the MultiToken.\n @param tokenId The sub-token ID.\n @return The total supply of the MultiToken.";
                 };
                 readonly functionSelector: "bd85b039";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "totalSupply";
-                readonly nameLocation: "703:11:59";
+                readonly nameLocation: "836:11:59";
                 readonly parameters: {
-                    readonly id: 8525;
+                    readonly id: 8666;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8524;
+                        readonly id: 8665;
                         readonly mutability: "mutable";
-                        readonly name: "id";
-                        readonly nameLocation: "723:2:59";
+                        readonly name: "tokenId";
+                        readonly nameLocation: "856:7:59";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8529;
-                        readonly src: "715:10:59";
+                        readonly scope: 8670;
+                        readonly src: "848:15:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -675,10 +684,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8523;
+                            readonly id: 8664;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "715:7:59";
+                            readonly src: "848:7:59";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -686,20 +695,20 @@ export declare const IMultiTokenRead: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "714:12:59";
+                    readonly src: "847:17:59";
                 };
                 readonly returnParameters: {
-                    readonly id: 8528;
+                    readonly id: 8669;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8527;
+                        readonly id: 8668;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8529;
-                        readonly src: "750:7:59";
+                        readonly scope: 8670;
+                        readonly src: "888:7:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -707,10 +716,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8526;
+                            readonly id: 8667;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "750:7:59";
+                            readonly src: "888:7:59";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -718,21 +727,21 @@ export declare const IMultiTokenRead: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "749:9:59";
+                    readonly src: "887:9:59";
                 };
-                readonly scope: 8570;
+                readonly scope: 8711;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 8539;
+                readonly id: 8680;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1036:109:59";
+                readonly src: "1174:109:59";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 8530;
+                    readonly id: 8671;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "765:266:59";
+                    readonly src: "903:266:59";
                     readonly text: "@notice Gets the approval-for-all status of a spender on behalf of an\n         owner.\n @param owner The owner of the tokens.\n @param spender The spender of the tokens.\n @return The approval-for-all status of the spender for the owner.";
                 };
                 readonly functionSelector: "e985e9c5";
@@ -740,19 +749,19 @@ export declare const IMultiTokenRead: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "isApprovedForAll";
-                readonly nameLocation: "1045:16:59";
+                readonly nameLocation: "1183:16:59";
                 readonly parameters: {
-                    readonly id: 8535;
+                    readonly id: 8676;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8532;
+                        readonly id: 8673;
                         readonly mutability: "mutable";
                         readonly name: "owner";
-                        readonly nameLocation: "1079:5:59";
+                        readonly nameLocation: "1217:5:59";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8539;
-                        readonly src: "1071:13:59";
+                        readonly scope: 8680;
+                        readonly src: "1209:13:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -760,10 +769,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8531;
+                            readonly id: 8672;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1071:7:59";
+                            readonly src: "1209:7:59";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -773,13 +782,13 @@ export declare const IMultiTokenRead: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8534;
+                        readonly id: 8675;
                         readonly mutability: "mutable";
                         readonly name: "spender";
-                        readonly nameLocation: "1102:7:59";
+                        readonly nameLocation: "1240:7:59";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8539;
-                        readonly src: "1094:15:59";
+                        readonly scope: 8680;
+                        readonly src: "1232:15:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -787,10 +796,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8533;
+                            readonly id: 8674;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1094:7:59";
+                            readonly src: "1232:7:59";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -799,20 +808,20 @@ export declare const IMultiTokenRead: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1061:54:59";
+                    readonly src: "1199:54:59";
                 };
                 readonly returnParameters: {
-                    readonly id: 8538;
+                    readonly id: 8679;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8537;
+                        readonly id: 8678;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8539;
-                        readonly src: "1139:4:59";
+                        readonly scope: 8680;
+                        readonly src: "1277:4:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -820,10 +829,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 8536;
+                            readonly id: 8677;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1139:4:59";
+                            readonly src: "1277:4:59";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -831,21 +840,21 @@ export declare const IMultiTokenRead: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1138:6:59";
+                    readonly src: "1276:6:59";
                 };
-                readonly scope: 8570;
+                readonly scope: 8711;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 8551;
+                readonly id: 8692;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1413:138:59";
+                readonly src: "1551:138:59";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 8540;
+                    readonly id: 8681;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "1151:257:59";
+                    readonly src: "1289:257:59";
                     readonly text: "@notice Gets the allowance of a spender for a sub-token.\n @param tokenId The sub-token ID.\n @param owner The owner of the tokens.\n @param spender The spender of the tokens.\n @return The allowance of the spender for the owner.";
                 };
                 readonly functionSelector: "21ff32a9";
@@ -853,19 +862,19 @@ export declare const IMultiTokenRead: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "perTokenApprovals";
-                readonly nameLocation: "1422:17:59";
+                readonly nameLocation: "1560:17:59";
                 readonly parameters: {
-                    readonly id: 8547;
+                    readonly id: 8688;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8542;
+                        readonly id: 8683;
                         readonly mutability: "mutable";
                         readonly name: "tokenId";
-                        readonly nameLocation: "1457:7:59";
+                        readonly nameLocation: "1595:7:59";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8551;
-                        readonly src: "1449:15:59";
+                        readonly scope: 8692;
+                        readonly src: "1587:15:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -873,10 +882,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8541;
+                            readonly id: 8682;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1449:7:59";
+                            readonly src: "1587:7:59";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -885,13 +894,13 @@ export declare const IMultiTokenRead: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8544;
+                        readonly id: 8685;
                         readonly mutability: "mutable";
                         readonly name: "owner";
-                        readonly nameLocation: "1482:5:59";
+                        readonly nameLocation: "1620:5:59";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8551;
-                        readonly src: "1474:13:59";
+                        readonly scope: 8692;
+                        readonly src: "1612:13:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -899,10 +908,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8543;
+                            readonly id: 8684;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1474:7:59";
+                            readonly src: "1612:7:59";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -912,13 +921,13 @@ export declare const IMultiTokenRead: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8546;
+                        readonly id: 8687;
                         readonly mutability: "mutable";
                         readonly name: "spender";
-                        readonly nameLocation: "1505:7:59";
+                        readonly nameLocation: "1643:7:59";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8551;
-                        readonly src: "1497:15:59";
+                        readonly scope: 8692;
+                        readonly src: "1635:15:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -926,10 +935,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8545;
+                            readonly id: 8686;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1497:7:59";
+                            readonly src: "1635:7:59";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -938,20 +947,20 @@ export declare const IMultiTokenRead: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1439:79:59";
+                    readonly src: "1577:79:59";
                 };
                 readonly returnParameters: {
-                    readonly id: 8550;
+                    readonly id: 8691;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8549;
+                        readonly id: 8690;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8551;
-                        readonly src: "1542:7:59";
+                        readonly scope: 8692;
+                        readonly src: "1680:7:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -959,10 +968,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8548;
+                            readonly id: 8689;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1542:7:59";
+                            readonly src: "1680:7:59";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -970,21 +979,21 @@ export declare const IMultiTokenRead: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1541:9:59";
+                    readonly src: "1679:9:59";
                 };
-                readonly scope: 8570;
+                readonly scope: 8711;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 8561;
+                readonly id: 8702;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1749:105:59";
+                readonly src: "1887:105:59";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 8552;
+                    readonly id: 8693;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "1557:187:59";
+                    readonly src: "1695:187:59";
                     readonly text: "@notice Gets the balance of a spender for a sub-token.\n @param tokenId The sub-token ID.\n @param owner The owner of the tokens.\n @return The balance of the owner.";
                 };
                 readonly functionSelector: "3656eec2";
@@ -992,19 +1001,19 @@ export declare const IMultiTokenRead: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "balanceOf";
-                readonly nameLocation: "1758:9:59";
+                readonly nameLocation: "1896:9:59";
                 readonly parameters: {
-                    readonly id: 8557;
+                    readonly id: 8698;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8554;
+                        readonly id: 8695;
                         readonly mutability: "mutable";
                         readonly name: "tokenId";
-                        readonly nameLocation: "1785:7:59";
+                        readonly nameLocation: "1923:7:59";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8561;
-                        readonly src: "1777:15:59";
+                        readonly scope: 8702;
+                        readonly src: "1915:15:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1012,10 +1021,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8553;
+                            readonly id: 8694;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1777:7:59";
+                            readonly src: "1915:7:59";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1024,13 +1033,13 @@ export declare const IMultiTokenRead: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8556;
+                        readonly id: 8697;
                         readonly mutability: "mutable";
                         readonly name: "owner";
-                        readonly nameLocation: "1810:5:59";
+                        readonly nameLocation: "1948:5:59";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8561;
-                        readonly src: "1802:13:59";
+                        readonly scope: 8702;
+                        readonly src: "1940:13:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1038,10 +1047,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8555;
+                            readonly id: 8696;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1802:7:59";
+                            readonly src: "1940:7:59";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -1050,20 +1059,20 @@ export declare const IMultiTokenRead: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1767:54:59";
+                    readonly src: "1905:54:59";
                 };
                 readonly returnParameters: {
-                    readonly id: 8560;
+                    readonly id: 8701;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8559;
+                        readonly id: 8700;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8561;
-                        readonly src: "1845:7:59";
+                        readonly scope: 8702;
+                        readonly src: "1983:7:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1071,10 +1080,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8558;
+                            readonly id: 8699;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1845:7:59";
+                            readonly src: "1983:7:59";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1082,21 +1091,21 @@ export declare const IMultiTokenRead: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1844:9:59";
+                    readonly src: "1982:9:59";
                 };
-                readonly scope: 8570;
+                readonly scope: 8711;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 8569;
+                readonly id: 8710;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "2007:63:59";
+                readonly src: "2145:63:59";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 8562;
+                    readonly id: 8703;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "1860:142:59";
+                    readonly src: "1998:142:59";
                     readonly text: "@notice Gets the permit nonce for an account.\n @param owner The owner of the tokens.\n @return The permit nonce of the owner.";
                 };
                 readonly functionSelector: "7ecebe00";
@@ -1104,19 +1113,19 @@ export declare const IMultiTokenRead: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "nonces";
-                readonly nameLocation: "2016:6:59";
+                readonly nameLocation: "2154:6:59";
                 readonly parameters: {
-                    readonly id: 8565;
+                    readonly id: 8706;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8564;
+                        readonly id: 8705;
                         readonly mutability: "mutable";
                         readonly name: "owner";
-                        readonly nameLocation: "2031:5:59";
+                        readonly nameLocation: "2169:5:59";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8569;
-                        readonly src: "2023:13:59";
+                        readonly scope: 8710;
+                        readonly src: "2161:13:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1124,10 +1133,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8563;
+                            readonly id: 8704;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2023:7:59";
+                            readonly src: "2161:7:59";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -1136,20 +1145,20 @@ export declare const IMultiTokenRead: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2022:15:59";
+                    readonly src: "2160:15:59";
                 };
                 readonly returnParameters: {
-                    readonly id: 8568;
+                    readonly id: 8709;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8567;
+                        readonly id: 8708;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8569;
-                        readonly src: "2061:7:59";
+                        readonly scope: 8710;
+                        readonly src: "2199:7:59";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1157,10 +1166,10 @@ export declare const IMultiTokenRead: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8566;
+                            readonly id: 8707;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2061:7:59";
+                            readonly src: "2199:7:59";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1168,9 +1177,9 @@ export declare const IMultiTokenRead: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2060:9:59";
+                    readonly src: "2198:9:59";
                 };
-                readonly scope: 8570;
+                readonly scope: 8711;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -1181,10 +1190,10 @@ export declare const IMultiTokenRead: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [8570];
+            readonly linearizedBaseContracts: readonly [8711];
             readonly name: "IMultiTokenRead";
             readonly nameLocation: "74:15:59";
-            readonly scope: 8571;
+            readonly scope: 8712;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

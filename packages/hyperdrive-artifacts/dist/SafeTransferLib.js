@@ -2,12 +2,12 @@ export const SafeTransferLib = {
     "abi": [],
     "bytecode": {
         "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220286a006efc6c8a33b5de61931d83ab3c98f3c10c91b5f33ff587451031d9f5ce64736f6c63430008140033",
-        "sourceMap": "586:5750:126:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;586:5750:126;;;;;;;;;;;;;;;;;",
+        "sourceMap": "586:5750:127:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;586:5750:127;;;;;;;;;;;;;;;;;",
         "linkReferences": {}
     },
     "deployedBytecode": {
         "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220286a006efc6c8a33b5de61931d83ab3c98f3c10c91b5f33ff587451031d9f5ce64736f6c63430008140033",
-        "sourceMap": "586:5750:126:-:0;;;;;;;;",
+        "sourceMap": "586:5750:127:-:0;;;;;;;;",
         "linkReferences": {}
     },
     "methodIdentifiers": {},
@@ -75,22 +75,22 @@ export const SafeTransferLib = {
     },
     "ast": {
         "absolutePath": "lib/solmate/src/utils/SafeTransferLib.sol",
-        "id": 68989,
+        "id": 68689,
         "exportedSymbols": {
             "ERC20": [
-                68223
+                67923
             ],
             "SafeTransferLib": [
-                68988
+                68688
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "42:6295:126",
+        "src": "42:6295:127",
         "nodes": [
             {
-                "id": 68905,
+                "id": 68605,
                 "nodeType": "PragmaDirective",
-                "src": "42:24:126",
+                "src": "42:24:127",
                 "nodes": [],
                 "literals": [
                     "solidity",
@@ -100,24 +100,24 @@ export const SafeTransferLib = {
                 ]
             },
             {
-                "id": 68907,
+                "id": 68607,
                 "nodeType": "ImportDirective",
-                "src": "68:42:126",
+                "src": "68:42:127",
                 "nodes": [],
                 "absolutePath": "lib/solmate/src/tokens/ERC20.sol",
                 "file": "../tokens/ERC20.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 68989,
-                "sourceUnit": 68224,
+                "scope": 68689,
+                "sourceUnit": 67924,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 68906,
+                            "id": 68606,
                             "name": "ERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68223,
-                            "src": "76:5:126",
+                            "referencedDeclaration": 67923,
+                            "src": "76:5:127",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -126,35 +126,35 @@ export const SafeTransferLib = {
                 "unitAlias": ""
             },
             {
-                "id": 68988,
+                "id": 68688,
                 "nodeType": "ContractDefinition",
-                "src": "586:5750:126",
+                "src": "586:5750:127",
                 "nodes": [
                     {
-                        "id": 68925,
+                        "id": 68625,
                         "nodeType": "FunctionDefinition",
-                        "src": "799:339:126",
+                        "src": "799:339:127",
                         "nodes": [],
                         "body": {
-                            "id": 68924,
+                            "id": 68624,
                             "nodeType": "Block",
-                            "src": "861:277:126",
+                            "src": "861:277:127",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        68916
+                                        68616
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 68916,
+                                            "id": 68616,
                                             "mutability": "mutable",
                                             "name": "success",
-                                            "nameLocation": "876:7:126",
+                                            "nameLocation": "876:7:127",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 68924,
-                                            "src": "871:12:126",
+                                            "scope": 68624,
+                                            "src": "871:12:127",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -162,10 +162,10 @@ export const SafeTransferLib = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 68915,
+                                                "id": 68615,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "871:4:126",
+                                                "src": "871:4:127",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -174,18 +174,18 @@ export const SafeTransferLib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 68917,
+                                    "id": 68617,
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "871:12:126"
+                                    "src": "871:12:127"
                                 },
                                 {
                                     "AST": {
                                         "nodeType": "YulBlock",
-                                        "src": "946:136:126",
+                                        "src": "946:136:127",
                                         "statements": [
                                             {
                                                 "nodeType": "YulAssignment",
-                                                "src": "1026:46:126",
+                                                "src": "1026:46:127",
                                                 "value": {
                                                     "arguments": [
                                                         {
@@ -193,46 +193,46 @@ export const SafeTransferLib = {
                                                             "functionName": {
                                                                 "name": "gas",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "1042:3:126"
+                                                                "src": "1042:3:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "1042:5:126"
+                                                            "src": "1042:5:127"
                                                         },
                                                         {
                                                             "name": "to",
                                                             "nodeType": "YulIdentifier",
-                                                            "src": "1049:2:126"
+                                                            "src": "1049:2:127"
                                                         },
                                                         {
                                                             "name": "amount",
                                                             "nodeType": "YulIdentifier",
-                                                            "src": "1053:6:126"
+                                                            "src": "1053:6:127"
                                                         },
                                                         {
                                                             "kind": "number",
                                                             "nodeType": "YulLiteral",
-                                                            "src": "1061:1:126",
+                                                            "src": "1061:1:127",
                                                             "type": "",
                                                             "value": "0"
                                                         },
                                                         {
                                                             "kind": "number",
                                                             "nodeType": "YulLiteral",
-                                                            "src": "1064:1:126",
+                                                            "src": "1064:1:127",
                                                             "type": "",
                                                             "value": "0"
                                                         },
                                                         {
                                                             "kind": "number",
                                                             "nodeType": "YulLiteral",
-                                                            "src": "1067:1:126",
+                                                            "src": "1067:1:127",
                                                             "type": "",
                                                             "value": "0"
                                                         },
                                                         {
                                                             "kind": "number",
                                                             "nodeType": "YulLiteral",
-                                                            "src": "1070:1:126",
+                                                            "src": "1070:1:127",
                                                             "type": "",
                                                             "value": "0"
                                                         }
@@ -240,16 +240,16 @@ export const SafeTransferLib = {
                                                     "functionName": {
                                                         "name": "call",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "1037:4:126"
+                                                        "src": "1037:4:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "1037:35:126"
+                                                    "src": "1037:35:127"
                                                 },
                                                 "variableNames": [
                                                     {
                                                         "name": "success",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "1026:7:126"
+                                                        "src": "1026:7:127"
                                                     }
                                                 ]
                                             }
@@ -259,41 +259,41 @@ export const SafeTransferLib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 68912,
+                                            "declaration": 68612,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "1053:6:126",
+                                            "src": "1053:6:127",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 68916,
+                                            "declaration": 68616,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "1026:7:126",
+                                            "src": "1026:7:127",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 68910,
+                                            "declaration": 68610,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "1049:2:126",
+                                            "src": "1049:2:127",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 68918,
+                                    "id": 68618,
                                     "nodeType": "InlineAssembly",
-                                    "src": "937:145:126"
+                                    "src": "937:145:127"
                                 },
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 68920,
+                                                "id": 68620,
                                                 "name": "success",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 68916,
-                                                "src": "1100:7:126",
+                                                "referencedDeclaration": 68616,
+                                                "src": "1100:7:127",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -301,14 +301,14 @@ export const SafeTransferLib = {
                                             },
                                             {
                                                 "hexValue": "4554485f5452414e534645525f4641494c4544",
-                                                "id": 68921,
+                                                "id": 68621,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "kind": "string",
                                                 "lValueRequested": false,
                                                 "nodeType": "Literal",
-                                                "src": "1109:21:126",
+                                                "src": "1109:21:127",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_stringliteral_d383913ea1996930a2623a0d739b8fc033c734c1d71d4759d3ccba1d3a719c29",
                                                     "typeString": "literal_string \"ETH_TRANSFER_FAILED\""
@@ -327,7 +327,7 @@ export const SafeTransferLib = {
                                                     "typeString": "literal_string \"ETH_TRANSFER_FAILED\""
                                                 }
                                             ],
-                                            "id": 68919,
+                                            "id": 68619,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -335,13 +335,13 @@ export const SafeTransferLib = {
                                                 -18
                                             ],
                                             "referencedDeclaration": -18,
-                                            "src": "1092:7:126",
+                                            "src": "1092:7:127",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 68922,
+                                        "id": 68622,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -350,16 +350,16 @@ export const SafeTransferLib = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "1092:39:126",
+                                        "src": "1092:39:127",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 68923,
+                                    "id": 68623,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "1092:39:126"
+                                    "src": "1092:39:127"
                                 }
                             ]
                         },
@@ -367,20 +367,20 @@ export const SafeTransferLib = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "safeTransferETH",
-                        "nameLocation": "808:15:126",
+                        "nameLocation": "808:15:127",
                         "parameters": {
-                            "id": 68913,
+                            "id": 68613,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 68910,
+                                    "id": 68610,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "832:2:126",
+                                    "nameLocation": "832:2:127",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 68925,
-                                    "src": "824:10:126",
+                                    "scope": 68625,
+                                    "src": "824:10:127",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -388,10 +388,10 @@ export const SafeTransferLib = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 68909,
+                                        "id": 68609,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "824:7:126",
+                                        "src": "824:7:127",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -402,13 +402,13 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 68912,
+                                    "id": 68612,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "844:6:126",
+                                    "nameLocation": "844:6:127",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 68925,
-                                    "src": "836:14:126",
+                                    "scope": 68625,
+                                    "src": "836:14:127",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -416,10 +416,10 @@ export const SafeTransferLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 68911,
+                                        "id": 68611,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "836:7:126",
+                                        "src": "836:7:127",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -428,44 +428,44 @@ export const SafeTransferLib = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "823:28:126"
+                            "src": "823:28:127"
                         },
                         "returnParameters": {
-                            "id": 68914,
+                            "id": 68614,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "861:0:126"
+                            "src": "861:0:127"
                         },
-                        "scope": 68988,
+                        "scope": 68688,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 68947,
+                        "id": 68647,
                         "nodeType": "FunctionDefinition",
-                        "src": "1328:1782:126",
+                        "src": "1328:1782:127",
                         "nodes": [],
                         "body": {
-                            "id": 68946,
+                            "id": 68646,
                             "nodeType": "Block",
-                            "src": "1456:1654:126",
+                            "src": "1456:1654:127",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        68938
+                                        68638
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 68938,
+                                            "id": 68638,
                                             "mutability": "mutable",
                                             "name": "success",
-                                            "nameLocation": "1471:7:126",
+                                            "nameLocation": "1471:7:127",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 68946,
-                                            "src": "1466:12:126",
+                                            "scope": 68646,
+                                            "src": "1466:12:127",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -473,10 +473,10 @@ export const SafeTransferLib = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 68937,
+                                                "id": 68637,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "1466:4:126",
+                                                "src": "1466:4:127",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -485,24 +485,24 @@ export const SafeTransferLib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 68939,
+                                    "id": 68639,
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "1466:12:126"
+                                    "src": "1466:12:127"
                                 },
                                 {
                                     "AST": {
                                         "nodeType": "YulBlock",
-                                        "src": "1541:1512:126",
+                                        "src": "1541:1512:127",
                                         "statements": [
                                             {
                                                 "nodeType": "YulVariableDeclaration",
-                                                "src": "1605:36:126",
+                                                "src": "1605:36:127",
                                                 "value": {
                                                     "arguments": [
                                                         {
                                                             "kind": "number",
                                                             "nodeType": "YulLiteral",
-                                                            "src": "1636:4:126",
+                                                            "src": "1636:4:127",
                                                             "type": "",
                                                             "value": "0x40"
                                                         }
@@ -510,16 +510,16 @@ export const SafeTransferLib = {
                                                     "functionName": {
                                                         "name": "mload",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "1630:5:126"
+                                                        "src": "1630:5:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "1630:11:126"
+                                                    "src": "1630:11:127"
                                                 },
                                                 "variables": [
                                                     {
                                                         "name": "freeMemoryPointer",
                                                         "nodeType": "YulTypedName",
-                                                        "src": "1609:17:126",
+                                                        "src": "1609:17:127",
                                                         "type": ""
                                                     }
                                                 ]
@@ -530,12 +530,12 @@ export const SafeTransferLib = {
                                                         {
                                                             "name": "freeMemoryPointer",
                                                             "nodeType": "YulIdentifier",
-                                                            "src": "1759:17:126"
+                                                            "src": "1759:17:127"
                                                         },
                                                         {
                                                             "kind": "number",
                                                             "nodeType": "YulLiteral",
-                                                            "src": "1778:66:126",
+                                                            "src": "1778:66:127",
                                                             "type": "",
                                                             "value": "0x23b872dd00000000000000000000000000000000000000000000000000000000"
                                                         }
@@ -543,13 +543,13 @@ export const SafeTransferLib = {
                                                     "functionName": {
                                                         "name": "mstore",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "1752:6:126"
+                                                        "src": "1752:6:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "1752:93:126"
+                                                    "src": "1752:93:127"
                                                 },
                                                 "nodeType": "YulExpressionStatement",
-                                                "src": "1752:93:126"
+                                                "src": "1752:93:127"
                                             },
                                             {
                                                 "expression": {
@@ -559,12 +559,12 @@ export const SafeTransferLib = {
                                                                 {
                                                                     "name": "freeMemoryPointer",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "1869:17:126"
+                                                                    "src": "1869:17:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "1888:1:126",
+                                                                    "src": "1888:1:127",
                                                                     "type": "",
                                                                     "value": "4"
                                                                 }
@@ -572,22 +572,22 @@ export const SafeTransferLib = {
                                                             "functionName": {
                                                                 "name": "add",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "1865:3:126"
+                                                                "src": "1865:3:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "1865:25:126"
+                                                            "src": "1865:25:127"
                                                         },
                                                         {
                                                             "arguments": [
                                                                 {
                                                                     "name": "from",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "1896:4:126"
+                                                                    "src": "1896:4:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "1902:42:126",
+                                                                    "src": "1902:42:127",
                                                                     "type": "",
                                                                     "value": "0xffffffffffffffffffffffffffffffffffffffff"
                                                                 }
@@ -595,22 +595,22 @@ export const SafeTransferLib = {
                                                             "functionName": {
                                                                 "name": "and",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "1892:3:126"
+                                                                "src": "1892:3:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "1892:53:126"
+                                                            "src": "1892:53:127"
                                                         }
                                                     ],
                                                     "functionName": {
                                                         "name": "mstore",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "1858:6:126"
+                                                        "src": "1858:6:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "1858:88:126"
+                                                    "src": "1858:88:127"
                                                 },
                                                 "nodeType": "YulExpressionStatement",
-                                                "src": "1858:88:126"
+                                                "src": "1858:88:127"
                                             },
                                             {
                                                 "expression": {
@@ -620,12 +620,12 @@ export const SafeTransferLib = {
                                                                 {
                                                                     "name": "freeMemoryPointer",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "2010:17:126"
+                                                                    "src": "2010:17:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "2029:2:126",
+                                                                    "src": "2029:2:127",
                                                                     "type": "",
                                                                     "value": "36"
                                                                 }
@@ -633,22 +633,22 @@ export const SafeTransferLib = {
                                                             "functionName": {
                                                                 "name": "add",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "2006:3:126"
+                                                                "src": "2006:3:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "2006:26:126"
+                                                            "src": "2006:26:127"
                                                         },
                                                         {
                                                             "arguments": [
                                                                 {
                                                                     "name": "to",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "2038:2:126"
+                                                                    "src": "2038:2:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "2042:42:126",
+                                                                    "src": "2042:42:127",
                                                                     "type": "",
                                                                     "value": "0xffffffffffffffffffffffffffffffffffffffff"
                                                                 }
@@ -656,22 +656,22 @@ export const SafeTransferLib = {
                                                             "functionName": {
                                                                 "name": "and",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "2034:3:126"
+                                                                "src": "2034:3:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "2034:51:126"
+                                                            "src": "2034:51:127"
                                                         }
                                                     ],
                                                     "functionName": {
                                                         "name": "mstore",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "1999:6:126"
+                                                        "src": "1999:6:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "1999:87:126"
+                                                    "src": "1999:87:127"
                                                 },
                                                 "nodeType": "YulExpressionStatement",
-                                                "src": "1999:87:126"
+                                                "src": "1999:87:127"
                                             },
                                             {
                                                 "expression": {
@@ -681,12 +681,12 @@ export const SafeTransferLib = {
                                                                 {
                                                                     "name": "freeMemoryPointer",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "2148:17:126"
+                                                                    "src": "2148:17:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "2167:2:126",
+                                                                    "src": "2167:2:127",
                                                                     "type": "",
                                                                     "value": "68"
                                                                 }
@@ -694,31 +694,31 @@ export const SafeTransferLib = {
                                                             "functionName": {
                                                                 "name": "add",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "2144:3:126"
+                                                                "src": "2144:3:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "2144:26:126"
+                                                            "src": "2144:26:127"
                                                         },
                                                         {
                                                             "name": "amount",
                                                             "nodeType": "YulIdentifier",
-                                                            "src": "2172:6:126"
+                                                            "src": "2172:6:127"
                                                         }
                                                     ],
                                                     "functionName": {
                                                         "name": "mstore",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "2137:6:126"
+                                                        "src": "2137:6:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "2137:42:126"
+                                                    "src": "2137:42:127"
                                                 },
                                                 "nodeType": "YulExpressionStatement",
-                                                "src": "2137:42:126"
+                                                "src": "2137:42:127"
                                             },
                                             {
                                                 "nodeType": "YulAssignment",
-                                                "src": "2276:767:126",
+                                                "src": "2276:767:127",
                                                 "value": {
                                                     "arguments": [
                                                         {
@@ -732,7 +732,7 @@ export const SafeTransferLib = {
                                                                                         {
                                                                                             "kind": "number",
                                                                                             "nodeType": "YulLiteral",
-                                                                                            "src": "2503:1:126",
+                                                                                            "src": "2503:1:127",
                                                                                             "type": "",
                                                                                             "value": "0"
                                                                                         }
@@ -740,15 +740,15 @@ export const SafeTransferLib = {
                                                                                     "functionName": {
                                                                                         "name": "mload",
                                                                                         "nodeType": "YulIdentifier",
-                                                                                        "src": "2497:5:126"
+                                                                                        "src": "2497:5:127"
                                                                                     },
                                                                                     "nodeType": "YulFunctionCall",
-                                                                                    "src": "2497:8:126"
+                                                                                    "src": "2497:8:127"
                                                                                 },
                                                                                 {
                                                                                     "kind": "number",
                                                                                     "nodeType": "YulLiteral",
-                                                                                    "src": "2507:1:126",
+                                                                                    "src": "2507:1:127",
                                                                                     "type": "",
                                                                                     "value": "1"
                                                                                 }
@@ -756,10 +756,10 @@ export const SafeTransferLib = {
                                                                             "functionName": {
                                                                                 "name": "eq",
                                                                                 "nodeType": "YulIdentifier",
-                                                                                "src": "2494:2:126"
+                                                                                "src": "2494:2:127"
                                                                             },
                                                                             "nodeType": "YulFunctionCall",
-                                                                            "src": "2494:15:126"
+                                                                            "src": "2494:15:127"
                                                                         },
                                                                         {
                                                                             "arguments": [
@@ -768,15 +768,15 @@ export const SafeTransferLib = {
                                                                                     "functionName": {
                                                                                         "name": "returndatasize",
                                                                                         "nodeType": "YulIdentifier",
-                                                                                        "src": "2514:14:126"
+                                                                                        "src": "2514:14:127"
                                                                                     },
                                                                                     "nodeType": "YulFunctionCall",
-                                                                                    "src": "2514:16:126"
+                                                                                    "src": "2514:16:127"
                                                                                 },
                                                                                 {
                                                                                     "kind": "number",
                                                                                     "nodeType": "YulLiteral",
-                                                                                    "src": "2532:2:126",
+                                                                                    "src": "2532:2:127",
                                                                                     "type": "",
                                                                                     "value": "31"
                                                                                 }
@@ -784,19 +784,19 @@ export const SafeTransferLib = {
                                                                             "functionName": {
                                                                                 "name": "gt",
                                                                                 "nodeType": "YulIdentifier",
-                                                                                "src": "2511:2:126"
+                                                                                "src": "2511:2:127"
                                                                             },
                                                                             "nodeType": "YulFunctionCall",
-                                                                            "src": "2511:24:126"
+                                                                            "src": "2511:24:127"
                                                                         }
                                                                     ],
                                                                     "functionName": {
                                                                         "name": "and",
                                                                         "nodeType": "YulIdentifier",
-                                                                        "src": "2490:3:126"
+                                                                        "src": "2490:3:127"
                                                                     },
                                                                     "nodeType": "YulFunctionCall",
-                                                                    "src": "2490:46:126"
+                                                                    "src": "2490:46:127"
                                                                 },
                                                                 {
                                                                     "arguments": [
@@ -805,28 +805,28 @@ export const SafeTransferLib = {
                                                                             "functionName": {
                                                                                 "name": "returndatasize",
                                                                                 "nodeType": "YulIdentifier",
-                                                                                "src": "2545:14:126"
+                                                                                "src": "2545:14:127"
                                                                             },
                                                                             "nodeType": "YulFunctionCall",
-                                                                            "src": "2545:16:126"
+                                                                            "src": "2545:16:127"
                                                                         }
                                                                     ],
                                                                     "functionName": {
                                                                         "name": "iszero",
                                                                         "nodeType": "YulIdentifier",
-                                                                        "src": "2538:6:126"
+                                                                        "src": "2538:6:127"
                                                                     },
                                                                     "nodeType": "YulFunctionCall",
-                                                                    "src": "2538:24:126"
+                                                                    "src": "2538:24:127"
                                                                 }
                                                             ],
                                                             "functionName": {
                                                                 "name": "or",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "2487:2:126"
+                                                                "src": "2487:2:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "2487:76:126"
+                                                            "src": "2487:76:127"
                                                         },
                                                         {
                                                             "arguments": [
@@ -835,46 +835,46 @@ export const SafeTransferLib = {
                                                                     "functionName": {
                                                                         "name": "gas",
                                                                         "nodeType": "YulIdentifier",
-                                                                        "src": "2982:3:126"
+                                                                        "src": "2982:3:127"
                                                                     },
                                                                     "nodeType": "YulFunctionCall",
-                                                                    "src": "2982:5:126"
+                                                                    "src": "2982:5:127"
                                                                 },
                                                                 {
                                                                     "name": "token",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "2989:5:126"
+                                                                    "src": "2989:5:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "2996:1:126",
+                                                                    "src": "2996:1:127",
                                                                     "type": "",
                                                                     "value": "0"
                                                                 },
                                                                 {
                                                                     "name": "freeMemoryPointer",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "2999:17:126"
+                                                                    "src": "2999:17:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "3018:3:126",
+                                                                    "src": "3018:3:127",
                                                                     "type": "",
                                                                     "value": "100"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "3023:1:126",
+                                                                    "src": "3023:1:127",
                                                                     "type": "",
                                                                     "value": "0"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "3026:2:126",
+                                                                    "src": "3026:2:127",
                                                                     "type": "",
                                                                     "value": "32"
                                                                 }
@@ -882,25 +882,25 @@ export const SafeTransferLib = {
                                                             "functionName": {
                                                                 "name": "call",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "2977:4:126"
+                                                                "src": "2977:4:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "2977:52:126"
+                                                            "src": "2977:52:127"
                                                         }
                                                     ],
                                                     "functionName": {
                                                         "name": "and",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "2287:3:126"
+                                                        "src": "2287:3:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "2287:756:126"
+                                                    "src": "2287:756:127"
                                                 },
                                                 "variableNames": [
                                                     {
                                                         "name": "success",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "2276:7:126"
+                                                        "src": "2276:7:127"
                                                     }
                                                 ]
                                             }
@@ -910,55 +910,55 @@ export const SafeTransferLib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 68934,
+                                            "declaration": 68634,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "2172:6:126",
+                                            "src": "2172:6:127",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 68930,
+                                            "declaration": 68630,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "1896:4:126",
+                                            "src": "1896:4:127",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 68938,
+                                            "declaration": 68638,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "2276:7:126",
+                                            "src": "2276:7:127",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 68932,
+                                            "declaration": 68632,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "2038:2:126",
+                                            "src": "2038:2:127",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 68928,
+                                            "declaration": 68628,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "2989:5:126",
+                                            "src": "2989:5:127",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 68940,
+                                    "id": 68640,
                                     "nodeType": "InlineAssembly",
-                                    "src": "1532:1521:126"
+                                    "src": "1532:1521:127"
                                 },
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 68942,
+                                                "id": 68642,
                                                 "name": "success",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 68938,
-                                                "src": "3071:7:126",
+                                                "referencedDeclaration": 68638,
+                                                "src": "3071:7:127",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -966,14 +966,14 @@ export const SafeTransferLib = {
                                             },
                                             {
                                                 "hexValue": "5452414e534645525f46524f4d5f4641494c4544",
-                                                "id": 68943,
+                                                "id": 68643,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "kind": "string",
                                                 "lValueRequested": false,
                                                 "nodeType": "Literal",
-                                                "src": "3080:22:126",
+                                                "src": "3080:22:127",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_stringliteral_77631768048ee92f9dcf4b9b9d762877d6b9723214862c733f0596708fc219b7",
                                                     "typeString": "literal_string \"TRANSFER_FROM_FAILED\""
@@ -992,7 +992,7 @@ export const SafeTransferLib = {
                                                     "typeString": "literal_string \"TRANSFER_FROM_FAILED\""
                                                 }
                                             ],
-                                            "id": 68941,
+                                            "id": 68641,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -1000,13 +1000,13 @@ export const SafeTransferLib = {
                                                 -18
                                             ],
                                             "referencedDeclaration": -18,
-                                            "src": "3063:7:126",
+                                            "src": "3063:7:127",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 68944,
+                                        "id": 68644,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1015,16 +1015,16 @@ export const SafeTransferLib = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "3063:40:126",
+                                        "src": "3063:40:127",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 68945,
+                                    "id": 68645,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "3063:40:126"
+                                    "src": "3063:40:127"
                                 }
                             ]
                         },
@@ -1032,43 +1032,43 @@ export const SafeTransferLib = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "safeTransferFrom",
-                        "nameLocation": "1337:16:126",
+                        "nameLocation": "1337:16:127",
                         "parameters": {
-                            "id": 68935,
+                            "id": 68635,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 68928,
+                                    "id": 68628,
                                     "mutability": "mutable",
                                     "name": "token",
-                                    "nameLocation": "1369:5:126",
+                                    "nameLocation": "1369:5:127",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 68947,
-                                    "src": "1363:11:126",
+                                    "scope": 68647,
+                                    "src": "1363:11:127",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_ERC20_$68223",
+                                        "typeIdentifier": "t_contract$_ERC20_$67923",
                                         "typeString": "contract ERC20"
                                     },
                                     "typeName": {
-                                        "id": 68927,
+                                        "id": 68627,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 68926,
+                                            "id": 68626,
                                             "name": "ERC20",
                                             "nameLocations": [
-                                                "1363:5:126"
+                                                "1363:5:127"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 68223,
-                                            "src": "1363:5:126"
+                                            "referencedDeclaration": 67923,
+                                            "src": "1363:5:127"
                                         },
-                                        "referencedDeclaration": 68223,
-                                        "src": "1363:5:126",
+                                        "referencedDeclaration": 67923,
+                                        "src": "1363:5:127",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_ERC20_$68223",
+                                            "typeIdentifier": "t_contract$_ERC20_$67923",
                                             "typeString": "contract ERC20"
                                         }
                                     },
@@ -1076,13 +1076,13 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 68930,
+                                    "id": 68630,
                                     "mutability": "mutable",
                                     "name": "from",
-                                    "nameLocation": "1392:4:126",
+                                    "nameLocation": "1392:4:127",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 68947,
-                                    "src": "1384:12:126",
+                                    "scope": 68647,
+                                    "src": "1384:12:127",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1090,10 +1090,10 @@ export const SafeTransferLib = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 68929,
+                                        "id": 68629,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1384:7:126",
+                                        "src": "1384:7:127",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1104,13 +1104,13 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 68932,
+                                    "id": 68632,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "1414:2:126",
+                                    "nameLocation": "1414:2:127",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 68947,
-                                    "src": "1406:10:126",
+                                    "scope": 68647,
+                                    "src": "1406:10:127",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1118,10 +1118,10 @@ export const SafeTransferLib = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 68931,
+                                        "id": 68631,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1406:7:126",
+                                        "src": "1406:7:127",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1132,13 +1132,13 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 68934,
+                                    "id": 68634,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "1434:6:126",
+                                    "nameLocation": "1434:6:127",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 68947,
-                                    "src": "1426:14:126",
+                                    "scope": 68647,
+                                    "src": "1426:14:127",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1146,10 +1146,10 @@ export const SafeTransferLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 68933,
+                                        "id": 68633,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1426:7:126",
+                                        "src": "1426:7:127",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1158,44 +1158,44 @@ export const SafeTransferLib = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1353:93:126"
+                            "src": "1353:93:127"
                         },
                         "returnParameters": {
-                            "id": 68936,
+                            "id": 68636,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1456:0:126"
+                            "src": "1456:0:127"
                         },
-                        "scope": 68988,
+                        "scope": 68688,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 68967,
+                        "id": 68667,
                         "nodeType": "FunctionDefinition",
-                        "src": "3116:1607:126",
+                        "src": "3116:1607:127",
                         "nodes": [],
                         "body": {
-                            "id": 68966,
+                            "id": 68666,
                             "nodeType": "Block",
-                            "src": "3218:1505:126",
+                            "src": "3218:1505:127",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        68958
+                                        68658
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 68958,
+                                            "id": 68658,
                                             "mutability": "mutable",
                                             "name": "success",
-                                            "nameLocation": "3233:7:126",
+                                            "nameLocation": "3233:7:127",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 68966,
-                                            "src": "3228:12:126",
+                                            "scope": 68666,
+                                            "src": "3228:12:127",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -1203,10 +1203,10 @@ export const SafeTransferLib = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 68957,
+                                                "id": 68657,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "3228:4:126",
+                                                "src": "3228:4:127",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -1215,24 +1215,24 @@ export const SafeTransferLib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 68959,
+                                    "id": 68659,
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "3228:12:126"
+                                    "src": "3228:12:127"
                                 },
                                 {
                                     "AST": {
                                         "nodeType": "YulBlock",
-                                        "src": "3303:1368:126",
+                                        "src": "3303:1368:127",
                                         "statements": [
                                             {
                                                 "nodeType": "YulVariableDeclaration",
-                                                "src": "3367:36:126",
+                                                "src": "3367:36:127",
                                                 "value": {
                                                     "arguments": [
                                                         {
                                                             "kind": "number",
                                                             "nodeType": "YulLiteral",
-                                                            "src": "3398:4:126",
+                                                            "src": "3398:4:127",
                                                             "type": "",
                                                             "value": "0x40"
                                                         }
@@ -1240,16 +1240,16 @@ export const SafeTransferLib = {
                                                     "functionName": {
                                                         "name": "mload",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "3392:5:126"
+                                                        "src": "3392:5:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "3392:11:126"
+                                                    "src": "3392:11:127"
                                                 },
                                                 "variables": [
                                                     {
                                                         "name": "freeMemoryPointer",
                                                         "nodeType": "YulTypedName",
-                                                        "src": "3371:17:126",
+                                                        "src": "3371:17:127",
                                                         "type": ""
                                                     }
                                                 ]
@@ -1260,12 +1260,12 @@ export const SafeTransferLib = {
                                                         {
                                                             "name": "freeMemoryPointer",
                                                             "nodeType": "YulIdentifier",
-                                                            "src": "3521:17:126"
+                                                            "src": "3521:17:127"
                                                         },
                                                         {
                                                             "kind": "number",
                                                             "nodeType": "YulLiteral",
-                                                            "src": "3540:66:126",
+                                                            "src": "3540:66:127",
                                                             "type": "",
                                                             "value": "0xa9059cbb00000000000000000000000000000000000000000000000000000000"
                                                         }
@@ -1273,13 +1273,13 @@ export const SafeTransferLib = {
                                                     "functionName": {
                                                         "name": "mstore",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "3514:6:126"
+                                                        "src": "3514:6:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "3514:93:126"
+                                                    "src": "3514:93:127"
                                                 },
                                                 "nodeType": "YulExpressionStatement",
-                                                "src": "3514:93:126"
+                                                "src": "3514:93:127"
                                             },
                                             {
                                                 "expression": {
@@ -1289,12 +1289,12 @@ export const SafeTransferLib = {
                                                                 {
                                                                     "name": "freeMemoryPointer",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "3631:17:126"
+                                                                    "src": "3631:17:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "3650:1:126",
+                                                                    "src": "3650:1:127",
                                                                     "type": "",
                                                                     "value": "4"
                                                                 }
@@ -1302,22 +1302,22 @@ export const SafeTransferLib = {
                                                             "functionName": {
                                                                 "name": "add",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "3627:3:126"
+                                                                "src": "3627:3:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "3627:25:126"
+                                                            "src": "3627:25:127"
                                                         },
                                                         {
                                                             "arguments": [
                                                                 {
                                                                     "name": "to",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "3658:2:126"
+                                                                    "src": "3658:2:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "3662:42:126",
+                                                                    "src": "3662:42:127",
                                                                     "type": "",
                                                                     "value": "0xffffffffffffffffffffffffffffffffffffffff"
                                                                 }
@@ -1325,22 +1325,22 @@ export const SafeTransferLib = {
                                                             "functionName": {
                                                                 "name": "and",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "3654:3:126"
+                                                                "src": "3654:3:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "3654:51:126"
+                                                            "src": "3654:51:127"
                                                         }
                                                     ],
                                                     "functionName": {
                                                         "name": "mstore",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "3620:6:126"
+                                                        "src": "3620:6:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "3620:86:126"
+                                                    "src": "3620:86:127"
                                                 },
                                                 "nodeType": "YulExpressionStatement",
-                                                "src": "3620:86:126"
+                                                "src": "3620:86:127"
                                             },
                                             {
                                                 "expression": {
@@ -1350,12 +1350,12 @@ export const SafeTransferLib = {
                                                                 {
                                                                     "name": "freeMemoryPointer",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "3768:17:126"
+                                                                    "src": "3768:17:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "3787:2:126",
+                                                                    "src": "3787:2:127",
                                                                     "type": "",
                                                                     "value": "36"
                                                                 }
@@ -1363,31 +1363,31 @@ export const SafeTransferLib = {
                                                             "functionName": {
                                                                 "name": "add",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "3764:3:126"
+                                                                "src": "3764:3:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "3764:26:126"
+                                                            "src": "3764:26:127"
                                                         },
                                                         {
                                                             "name": "amount",
                                                             "nodeType": "YulIdentifier",
-                                                            "src": "3792:6:126"
+                                                            "src": "3792:6:127"
                                                         }
                                                     ],
                                                     "functionName": {
                                                         "name": "mstore",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "3757:6:126"
+                                                        "src": "3757:6:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "3757:42:126"
+                                                    "src": "3757:42:127"
                                                 },
                                                 "nodeType": "YulExpressionStatement",
-                                                "src": "3757:42:126"
+                                                "src": "3757:42:127"
                                             },
                                             {
                                                 "nodeType": "YulAssignment",
-                                                "src": "3896:765:126",
+                                                "src": "3896:765:127",
                                                 "value": {
                                                     "arguments": [
                                                         {
@@ -1401,7 +1401,7 @@ export const SafeTransferLib = {
                                                                                         {
                                                                                             "kind": "number",
                                                                                             "nodeType": "YulLiteral",
-                                                                                            "src": "4123:1:126",
+                                                                                            "src": "4123:1:127",
                                                                                             "type": "",
                                                                                             "value": "0"
                                                                                         }
@@ -1409,15 +1409,15 @@ export const SafeTransferLib = {
                                                                                     "functionName": {
                                                                                         "name": "mload",
                                                                                         "nodeType": "YulIdentifier",
-                                                                                        "src": "4117:5:126"
+                                                                                        "src": "4117:5:127"
                                                                                     },
                                                                                     "nodeType": "YulFunctionCall",
-                                                                                    "src": "4117:8:126"
+                                                                                    "src": "4117:8:127"
                                                                                 },
                                                                                 {
                                                                                     "kind": "number",
                                                                                     "nodeType": "YulLiteral",
-                                                                                    "src": "4127:1:126",
+                                                                                    "src": "4127:1:127",
                                                                                     "type": "",
                                                                                     "value": "1"
                                                                                 }
@@ -1425,10 +1425,10 @@ export const SafeTransferLib = {
                                                                             "functionName": {
                                                                                 "name": "eq",
                                                                                 "nodeType": "YulIdentifier",
-                                                                                "src": "4114:2:126"
+                                                                                "src": "4114:2:127"
                                                                             },
                                                                             "nodeType": "YulFunctionCall",
-                                                                            "src": "4114:15:126"
+                                                                            "src": "4114:15:127"
                                                                         },
                                                                         {
                                                                             "arguments": [
@@ -1437,15 +1437,15 @@ export const SafeTransferLib = {
                                                                                     "functionName": {
                                                                                         "name": "returndatasize",
                                                                                         "nodeType": "YulIdentifier",
-                                                                                        "src": "4134:14:126"
+                                                                                        "src": "4134:14:127"
                                                                                     },
                                                                                     "nodeType": "YulFunctionCall",
-                                                                                    "src": "4134:16:126"
+                                                                                    "src": "4134:16:127"
                                                                                 },
                                                                                 {
                                                                                     "kind": "number",
                                                                                     "nodeType": "YulLiteral",
-                                                                                    "src": "4152:2:126",
+                                                                                    "src": "4152:2:127",
                                                                                     "type": "",
                                                                                     "value": "31"
                                                                                 }
@@ -1453,19 +1453,19 @@ export const SafeTransferLib = {
                                                                             "functionName": {
                                                                                 "name": "gt",
                                                                                 "nodeType": "YulIdentifier",
-                                                                                "src": "4131:2:126"
+                                                                                "src": "4131:2:127"
                                                                             },
                                                                             "nodeType": "YulFunctionCall",
-                                                                            "src": "4131:24:126"
+                                                                            "src": "4131:24:127"
                                                                         }
                                                                     ],
                                                                     "functionName": {
                                                                         "name": "and",
                                                                         "nodeType": "YulIdentifier",
-                                                                        "src": "4110:3:126"
+                                                                        "src": "4110:3:127"
                                                                     },
                                                                     "nodeType": "YulFunctionCall",
-                                                                    "src": "4110:46:126"
+                                                                    "src": "4110:46:127"
                                                                 },
                                                                 {
                                                                     "arguments": [
@@ -1474,28 +1474,28 @@ export const SafeTransferLib = {
                                                                             "functionName": {
                                                                                 "name": "returndatasize",
                                                                                 "nodeType": "YulIdentifier",
-                                                                                "src": "4165:14:126"
+                                                                                "src": "4165:14:127"
                                                                             },
                                                                             "nodeType": "YulFunctionCall",
-                                                                            "src": "4165:16:126"
+                                                                            "src": "4165:16:127"
                                                                         }
                                                                     ],
                                                                     "functionName": {
                                                                         "name": "iszero",
                                                                         "nodeType": "YulIdentifier",
-                                                                        "src": "4158:6:126"
+                                                                        "src": "4158:6:127"
                                                                     },
                                                                     "nodeType": "YulFunctionCall",
-                                                                    "src": "4158:24:126"
+                                                                    "src": "4158:24:127"
                                                                 }
                                                             ],
                                                             "functionName": {
                                                                 "name": "or",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "4107:2:126"
+                                                                "src": "4107:2:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "4107:76:126"
+                                                            "src": "4107:76:127"
                                                         },
                                                         {
                                                             "arguments": [
@@ -1504,46 +1504,46 @@ export const SafeTransferLib = {
                                                                     "functionName": {
                                                                         "name": "gas",
                                                                         "nodeType": "YulIdentifier",
-                                                                        "src": "4601:3:126"
+                                                                        "src": "4601:3:127"
                                                                     },
                                                                     "nodeType": "YulFunctionCall",
-                                                                    "src": "4601:5:126"
+                                                                    "src": "4601:5:127"
                                                                 },
                                                                 {
                                                                     "name": "token",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "4608:5:126"
+                                                                    "src": "4608:5:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "4615:1:126",
+                                                                    "src": "4615:1:127",
                                                                     "type": "",
                                                                     "value": "0"
                                                                 },
                                                                 {
                                                                     "name": "freeMemoryPointer",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "4618:17:126"
+                                                                    "src": "4618:17:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "4637:2:126",
+                                                                    "src": "4637:2:127",
                                                                     "type": "",
                                                                     "value": "68"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "4641:1:126",
+                                                                    "src": "4641:1:127",
                                                                     "type": "",
                                                                     "value": "0"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "4644:2:126",
+                                                                    "src": "4644:2:127",
                                                                     "type": "",
                                                                     "value": "32"
                                                                 }
@@ -1551,25 +1551,25 @@ export const SafeTransferLib = {
                                                             "functionName": {
                                                                 "name": "call",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "4596:4:126"
+                                                                "src": "4596:4:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "4596:51:126"
+                                                            "src": "4596:51:127"
                                                         }
                                                     ],
                                                     "functionName": {
                                                         "name": "and",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "3907:3:126"
+                                                        "src": "3907:3:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "3907:754:126"
+                                                    "src": "3907:754:127"
                                                 },
                                                 "variableNames": [
                                                     {
                                                         "name": "success",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "3896:7:126"
+                                                        "src": "3896:7:127"
                                                     }
                                                 ]
                                             }
@@ -1579,48 +1579,48 @@ export const SafeTransferLib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 68954,
+                                            "declaration": 68654,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "3792:6:126",
+                                            "src": "3792:6:127",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 68958,
+                                            "declaration": 68658,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "3896:7:126",
+                                            "src": "3896:7:127",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 68952,
+                                            "declaration": 68652,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "3658:2:126",
+                                            "src": "3658:2:127",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 68950,
+                                            "declaration": 68650,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "4608:5:126",
+                                            "src": "4608:5:127",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 68960,
+                                    "id": 68660,
                                     "nodeType": "InlineAssembly",
-                                    "src": "3294:1377:126"
+                                    "src": "3294:1377:127"
                                 },
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 68962,
+                                                "id": 68662,
                                                 "name": "success",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 68958,
-                                                "src": "4689:7:126",
+                                                "referencedDeclaration": 68658,
+                                                "src": "4689:7:127",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -1628,14 +1628,14 @@ export const SafeTransferLib = {
                                             },
                                             {
                                                 "hexValue": "5452414e534645525f4641494c4544",
-                                                "id": 68963,
+                                                "id": 68663,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "kind": "string",
                                                 "lValueRequested": false,
                                                 "nodeType": "Literal",
-                                                "src": "4698:17:126",
+                                                "src": "4698:17:127",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_stringliteral_8bf8f0d780f13740660fe63233b17f96cb1813889e7dce4121e55b817b367b72",
                                                     "typeString": "literal_string \"TRANSFER_FAILED\""
@@ -1654,7 +1654,7 @@ export const SafeTransferLib = {
                                                     "typeString": "literal_string \"TRANSFER_FAILED\""
                                                 }
                                             ],
-                                            "id": 68961,
+                                            "id": 68661,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -1662,13 +1662,13 @@ export const SafeTransferLib = {
                                                 -18
                                             ],
                                             "referencedDeclaration": -18,
-                                            "src": "4681:7:126",
+                                            "src": "4681:7:127",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 68964,
+                                        "id": 68664,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1677,16 +1677,16 @@ export const SafeTransferLib = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "4681:35:126",
+                                        "src": "4681:35:127",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 68965,
+                                    "id": 68665,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "4681:35:126"
+                                    "src": "4681:35:127"
                                 }
                             ]
                         },
@@ -1694,43 +1694,43 @@ export const SafeTransferLib = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "safeTransfer",
-                        "nameLocation": "3125:12:126",
+                        "nameLocation": "3125:12:127",
                         "parameters": {
-                            "id": 68955,
+                            "id": 68655,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 68950,
+                                    "id": 68650,
                                     "mutability": "mutable",
                                     "name": "token",
-                                    "nameLocation": "3153:5:126",
+                                    "nameLocation": "3153:5:127",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 68967,
-                                    "src": "3147:11:126",
+                                    "scope": 68667,
+                                    "src": "3147:11:127",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_ERC20_$68223",
+                                        "typeIdentifier": "t_contract$_ERC20_$67923",
                                         "typeString": "contract ERC20"
                                     },
                                     "typeName": {
-                                        "id": 68949,
+                                        "id": 68649,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 68948,
+                                            "id": 68648,
                                             "name": "ERC20",
                                             "nameLocations": [
-                                                "3147:5:126"
+                                                "3147:5:127"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 68223,
-                                            "src": "3147:5:126"
+                                            "referencedDeclaration": 67923,
+                                            "src": "3147:5:127"
                                         },
-                                        "referencedDeclaration": 68223,
-                                        "src": "3147:5:126",
+                                        "referencedDeclaration": 67923,
+                                        "src": "3147:5:127",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_ERC20_$68223",
+                                            "typeIdentifier": "t_contract$_ERC20_$67923",
                                             "typeString": "contract ERC20"
                                         }
                                     },
@@ -1738,13 +1738,13 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 68952,
+                                    "id": 68652,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "3176:2:126",
+                                    "nameLocation": "3176:2:127",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 68967,
-                                    "src": "3168:10:126",
+                                    "scope": 68667,
+                                    "src": "3168:10:127",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1752,10 +1752,10 @@ export const SafeTransferLib = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 68951,
+                                        "id": 68651,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3168:7:126",
+                                        "src": "3168:7:127",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1766,13 +1766,13 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 68954,
+                                    "id": 68654,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "3196:6:126",
+                                    "nameLocation": "3196:6:127",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 68967,
-                                    "src": "3188:14:126",
+                                    "scope": 68667,
+                                    "src": "3188:14:127",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1780,10 +1780,10 @@ export const SafeTransferLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 68953,
+                                        "id": 68653,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3188:7:126",
+                                        "src": "3188:7:127",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1792,44 +1792,44 @@ export const SafeTransferLib = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3137:71:126"
+                            "src": "3137:71:127"
                         },
                         "returnParameters": {
-                            "id": 68956,
+                            "id": 68656,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "3218:0:126"
+                            "src": "3218:0:127"
                         },
-                        "scope": 68988,
+                        "scope": 68688,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 68987,
+                        "id": 68687,
                         "nodeType": "FunctionDefinition",
-                        "src": "4729:1605:126",
+                        "src": "4729:1605:127",
                         "nodes": [],
                         "body": {
-                            "id": 68986,
+                            "id": 68686,
                             "nodeType": "Block",
-                            "src": "4830:1504:126",
+                            "src": "4830:1504:127",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        68978
+                                        68678
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 68978,
+                                            "id": 68678,
                                             "mutability": "mutable",
                                             "name": "success",
-                                            "nameLocation": "4845:7:126",
+                                            "nameLocation": "4845:7:127",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 68986,
-                                            "src": "4840:12:126",
+                                            "scope": 68686,
+                                            "src": "4840:12:127",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -1837,10 +1837,10 @@ export const SafeTransferLib = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 68977,
+                                                "id": 68677,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "4840:4:126",
+                                                "src": "4840:4:127",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -1849,24 +1849,24 @@ export const SafeTransferLib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 68979,
+                                    "id": 68679,
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "4840:12:126"
+                                    "src": "4840:12:127"
                                 },
                                 {
                                     "AST": {
                                         "nodeType": "YulBlock",
-                                        "src": "4915:1368:126",
+                                        "src": "4915:1368:127",
                                         "statements": [
                                             {
                                                 "nodeType": "YulVariableDeclaration",
-                                                "src": "4979:36:126",
+                                                "src": "4979:36:127",
                                                 "value": {
                                                     "arguments": [
                                                         {
                                                             "kind": "number",
                                                             "nodeType": "YulLiteral",
-                                                            "src": "5010:4:126",
+                                                            "src": "5010:4:127",
                                                             "type": "",
                                                             "value": "0x40"
                                                         }
@@ -1874,16 +1874,16 @@ export const SafeTransferLib = {
                                                     "functionName": {
                                                         "name": "mload",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "5004:5:126"
+                                                        "src": "5004:5:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "5004:11:126"
+                                                    "src": "5004:11:127"
                                                 },
                                                 "variables": [
                                                     {
                                                         "name": "freeMemoryPointer",
                                                         "nodeType": "YulTypedName",
-                                                        "src": "4983:17:126",
+                                                        "src": "4983:17:127",
                                                         "type": ""
                                                     }
                                                 ]
@@ -1894,12 +1894,12 @@ export const SafeTransferLib = {
                                                         {
                                                             "name": "freeMemoryPointer",
                                                             "nodeType": "YulIdentifier",
-                                                            "src": "5133:17:126"
+                                                            "src": "5133:17:127"
                                                         },
                                                         {
                                                             "kind": "number",
                                                             "nodeType": "YulLiteral",
-                                                            "src": "5152:66:126",
+                                                            "src": "5152:66:127",
                                                             "type": "",
                                                             "value": "0x095ea7b300000000000000000000000000000000000000000000000000000000"
                                                         }
@@ -1907,13 +1907,13 @@ export const SafeTransferLib = {
                                                     "functionName": {
                                                         "name": "mstore",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "5126:6:126"
+                                                        "src": "5126:6:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "5126:93:126"
+                                                    "src": "5126:93:127"
                                                 },
                                                 "nodeType": "YulExpressionStatement",
-                                                "src": "5126:93:126"
+                                                "src": "5126:93:127"
                                             },
                                             {
                                                 "expression": {
@@ -1923,12 +1923,12 @@ export const SafeTransferLib = {
                                                                 {
                                                                     "name": "freeMemoryPointer",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "5243:17:126"
+                                                                    "src": "5243:17:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "5262:1:126",
+                                                                    "src": "5262:1:127",
                                                                     "type": "",
                                                                     "value": "4"
                                                                 }
@@ -1936,22 +1936,22 @@ export const SafeTransferLib = {
                                                             "functionName": {
                                                                 "name": "add",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "5239:3:126"
+                                                                "src": "5239:3:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "5239:25:126"
+                                                            "src": "5239:25:127"
                                                         },
                                                         {
                                                             "arguments": [
                                                                 {
                                                                     "name": "to",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "5270:2:126"
+                                                                    "src": "5270:2:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "5274:42:126",
+                                                                    "src": "5274:42:127",
                                                                     "type": "",
                                                                     "value": "0xffffffffffffffffffffffffffffffffffffffff"
                                                                 }
@@ -1959,22 +1959,22 @@ export const SafeTransferLib = {
                                                             "functionName": {
                                                                 "name": "and",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "5266:3:126"
+                                                                "src": "5266:3:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "5266:51:126"
+                                                            "src": "5266:51:127"
                                                         }
                                                     ],
                                                     "functionName": {
                                                         "name": "mstore",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "5232:6:126"
+                                                        "src": "5232:6:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "5232:86:126"
+                                                    "src": "5232:86:127"
                                                 },
                                                 "nodeType": "YulExpressionStatement",
-                                                "src": "5232:86:126"
+                                                "src": "5232:86:127"
                                             },
                                             {
                                                 "expression": {
@@ -1984,12 +1984,12 @@ export const SafeTransferLib = {
                                                                 {
                                                                     "name": "freeMemoryPointer",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "5380:17:126"
+                                                                    "src": "5380:17:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "5399:2:126",
+                                                                    "src": "5399:2:127",
                                                                     "type": "",
                                                                     "value": "36"
                                                                 }
@@ -1997,31 +1997,31 @@ export const SafeTransferLib = {
                                                             "functionName": {
                                                                 "name": "add",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "5376:3:126"
+                                                                "src": "5376:3:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "5376:26:126"
+                                                            "src": "5376:26:127"
                                                         },
                                                         {
                                                             "name": "amount",
                                                             "nodeType": "YulIdentifier",
-                                                            "src": "5404:6:126"
+                                                            "src": "5404:6:127"
                                                         }
                                                     ],
                                                     "functionName": {
                                                         "name": "mstore",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "5369:6:126"
+                                                        "src": "5369:6:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "5369:42:126"
+                                                    "src": "5369:42:127"
                                                 },
                                                 "nodeType": "YulExpressionStatement",
-                                                "src": "5369:42:126"
+                                                "src": "5369:42:127"
                                             },
                                             {
                                                 "nodeType": "YulAssignment",
-                                                "src": "5508:765:126",
+                                                "src": "5508:765:127",
                                                 "value": {
                                                     "arguments": [
                                                         {
@@ -2035,7 +2035,7 @@ export const SafeTransferLib = {
                                                                                         {
                                                                                             "kind": "number",
                                                                                             "nodeType": "YulLiteral",
-                                                                                            "src": "5735:1:126",
+                                                                                            "src": "5735:1:127",
                                                                                             "type": "",
                                                                                             "value": "0"
                                                                                         }
@@ -2043,15 +2043,15 @@ export const SafeTransferLib = {
                                                                                     "functionName": {
                                                                                         "name": "mload",
                                                                                         "nodeType": "YulIdentifier",
-                                                                                        "src": "5729:5:126"
+                                                                                        "src": "5729:5:127"
                                                                                     },
                                                                                     "nodeType": "YulFunctionCall",
-                                                                                    "src": "5729:8:126"
+                                                                                    "src": "5729:8:127"
                                                                                 },
                                                                                 {
                                                                                     "kind": "number",
                                                                                     "nodeType": "YulLiteral",
-                                                                                    "src": "5739:1:126",
+                                                                                    "src": "5739:1:127",
                                                                                     "type": "",
                                                                                     "value": "1"
                                                                                 }
@@ -2059,10 +2059,10 @@ export const SafeTransferLib = {
                                                                             "functionName": {
                                                                                 "name": "eq",
                                                                                 "nodeType": "YulIdentifier",
-                                                                                "src": "5726:2:126"
+                                                                                "src": "5726:2:127"
                                                                             },
                                                                             "nodeType": "YulFunctionCall",
-                                                                            "src": "5726:15:126"
+                                                                            "src": "5726:15:127"
                                                                         },
                                                                         {
                                                                             "arguments": [
@@ -2071,15 +2071,15 @@ export const SafeTransferLib = {
                                                                                     "functionName": {
                                                                                         "name": "returndatasize",
                                                                                         "nodeType": "YulIdentifier",
-                                                                                        "src": "5746:14:126"
+                                                                                        "src": "5746:14:127"
                                                                                     },
                                                                                     "nodeType": "YulFunctionCall",
-                                                                                    "src": "5746:16:126"
+                                                                                    "src": "5746:16:127"
                                                                                 },
                                                                                 {
                                                                                     "kind": "number",
                                                                                     "nodeType": "YulLiteral",
-                                                                                    "src": "5764:2:126",
+                                                                                    "src": "5764:2:127",
                                                                                     "type": "",
                                                                                     "value": "31"
                                                                                 }
@@ -2087,19 +2087,19 @@ export const SafeTransferLib = {
                                                                             "functionName": {
                                                                                 "name": "gt",
                                                                                 "nodeType": "YulIdentifier",
-                                                                                "src": "5743:2:126"
+                                                                                "src": "5743:2:127"
                                                                             },
                                                                             "nodeType": "YulFunctionCall",
-                                                                            "src": "5743:24:126"
+                                                                            "src": "5743:24:127"
                                                                         }
                                                                     ],
                                                                     "functionName": {
                                                                         "name": "and",
                                                                         "nodeType": "YulIdentifier",
-                                                                        "src": "5722:3:126"
+                                                                        "src": "5722:3:127"
                                                                     },
                                                                     "nodeType": "YulFunctionCall",
-                                                                    "src": "5722:46:126"
+                                                                    "src": "5722:46:127"
                                                                 },
                                                                 {
                                                                     "arguments": [
@@ -2108,28 +2108,28 @@ export const SafeTransferLib = {
                                                                             "functionName": {
                                                                                 "name": "returndatasize",
                                                                                 "nodeType": "YulIdentifier",
-                                                                                "src": "5777:14:126"
+                                                                                "src": "5777:14:127"
                                                                             },
                                                                             "nodeType": "YulFunctionCall",
-                                                                            "src": "5777:16:126"
+                                                                            "src": "5777:16:127"
                                                                         }
                                                                     ],
                                                                     "functionName": {
                                                                         "name": "iszero",
                                                                         "nodeType": "YulIdentifier",
-                                                                        "src": "5770:6:126"
+                                                                        "src": "5770:6:127"
                                                                     },
                                                                     "nodeType": "YulFunctionCall",
-                                                                    "src": "5770:24:126"
+                                                                    "src": "5770:24:127"
                                                                 }
                                                             ],
                                                             "functionName": {
                                                                 "name": "or",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "5719:2:126"
+                                                                "src": "5719:2:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "5719:76:126"
+                                                            "src": "5719:76:127"
                                                         },
                                                         {
                                                             "arguments": [
@@ -2138,46 +2138,46 @@ export const SafeTransferLib = {
                                                                     "functionName": {
                                                                         "name": "gas",
                                                                         "nodeType": "YulIdentifier",
-                                                                        "src": "6213:3:126"
+                                                                        "src": "6213:3:127"
                                                                     },
                                                                     "nodeType": "YulFunctionCall",
-                                                                    "src": "6213:5:126"
+                                                                    "src": "6213:5:127"
                                                                 },
                                                                 {
                                                                     "name": "token",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "6220:5:126"
+                                                                    "src": "6220:5:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "6227:1:126",
+                                                                    "src": "6227:1:127",
                                                                     "type": "",
                                                                     "value": "0"
                                                                 },
                                                                 {
                                                                     "name": "freeMemoryPointer",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "6230:17:126"
+                                                                    "src": "6230:17:127"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "6249:2:126",
+                                                                    "src": "6249:2:127",
                                                                     "type": "",
                                                                     "value": "68"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "6253:1:126",
+                                                                    "src": "6253:1:127",
                                                                     "type": "",
                                                                     "value": "0"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "6256:2:126",
+                                                                    "src": "6256:2:127",
                                                                     "type": "",
                                                                     "value": "32"
                                                                 }
@@ -2185,25 +2185,25 @@ export const SafeTransferLib = {
                                                             "functionName": {
                                                                 "name": "call",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "6208:4:126"
+                                                                "src": "6208:4:127"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "6208:51:126"
+                                                            "src": "6208:51:127"
                                                         }
                                                     ],
                                                     "functionName": {
                                                         "name": "and",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "5519:3:126"
+                                                        "src": "5519:3:127"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "5519:754:126"
+                                                    "src": "5519:754:127"
                                                 },
                                                 "variableNames": [
                                                     {
                                                         "name": "success",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "5508:7:126"
+                                                        "src": "5508:7:127"
                                                     }
                                                 ]
                                             }
@@ -2213,48 +2213,48 @@ export const SafeTransferLib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 68974,
+                                            "declaration": 68674,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "5404:6:126",
+                                            "src": "5404:6:127",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 68978,
+                                            "declaration": 68678,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "5508:7:126",
+                                            "src": "5508:7:127",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 68972,
+                                            "declaration": 68672,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "5270:2:126",
+                                            "src": "5270:2:127",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 68970,
+                                            "declaration": 68670,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "6220:5:126",
+                                            "src": "6220:5:127",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 68980,
+                                    "id": 68680,
                                     "nodeType": "InlineAssembly",
-                                    "src": "4906:1377:126"
+                                    "src": "4906:1377:127"
                                 },
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 68982,
+                                                "id": 68682,
                                                 "name": "success",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 68978,
-                                                "src": "6301:7:126",
+                                                "referencedDeclaration": 68678,
+                                                "src": "6301:7:127",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -2262,14 +2262,14 @@ export const SafeTransferLib = {
                                             },
                                             {
                                                 "hexValue": "415050524f56455f4641494c4544",
-                                                "id": 68983,
+                                                "id": 68683,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "kind": "string",
                                                 "lValueRequested": false,
                                                 "nodeType": "Literal",
-                                                "src": "6310:16:126",
+                                                "src": "6310:16:127",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_stringliteral_cd400c5237ae346977ee020ef8d0d26a880c07edf7eba69a8848f0d31e9a88f2",
                                                     "typeString": "literal_string \"APPROVE_FAILED\""
@@ -2288,7 +2288,7 @@ export const SafeTransferLib = {
                                                     "typeString": "literal_string \"APPROVE_FAILED\""
                                                 }
                                             ],
-                                            "id": 68981,
+                                            "id": 68681,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -2296,13 +2296,13 @@ export const SafeTransferLib = {
                                                 -18
                                             ],
                                             "referencedDeclaration": -18,
-                                            "src": "6293:7:126",
+                                            "src": "6293:7:127",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 68984,
+                                        "id": 68684,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2311,16 +2311,16 @@ export const SafeTransferLib = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "6293:34:126",
+                                        "src": "6293:34:127",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 68985,
+                                    "id": 68685,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "6293:34:126"
+                                    "src": "6293:34:127"
                                 }
                             ]
                         },
@@ -2328,43 +2328,43 @@ export const SafeTransferLib = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "safeApprove",
-                        "nameLocation": "4738:11:126",
+                        "nameLocation": "4738:11:127",
                         "parameters": {
-                            "id": 68975,
+                            "id": 68675,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 68970,
+                                    "id": 68670,
                                     "mutability": "mutable",
                                     "name": "token",
-                                    "nameLocation": "4765:5:126",
+                                    "nameLocation": "4765:5:127",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 68987,
-                                    "src": "4759:11:126",
+                                    "scope": 68687,
+                                    "src": "4759:11:127",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_ERC20_$68223",
+                                        "typeIdentifier": "t_contract$_ERC20_$67923",
                                         "typeString": "contract ERC20"
                                     },
                                     "typeName": {
-                                        "id": 68969,
+                                        "id": 68669,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 68968,
+                                            "id": 68668,
                                             "name": "ERC20",
                                             "nameLocations": [
-                                                "4759:5:126"
+                                                "4759:5:127"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 68223,
-                                            "src": "4759:5:126"
+                                            "referencedDeclaration": 67923,
+                                            "src": "4759:5:127"
                                         },
-                                        "referencedDeclaration": 68223,
-                                        "src": "4759:5:126",
+                                        "referencedDeclaration": 67923,
+                                        "src": "4759:5:127",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_ERC20_$68223",
+                                            "typeIdentifier": "t_contract$_ERC20_$67923",
                                             "typeString": "contract ERC20"
                                         }
                                     },
@@ -2372,13 +2372,13 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 68972,
+                                    "id": 68672,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "4788:2:126",
+                                    "nameLocation": "4788:2:127",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 68987,
-                                    "src": "4780:10:126",
+                                    "scope": 68687,
+                                    "src": "4780:10:127",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2386,10 +2386,10 @@ export const SafeTransferLib = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 68971,
+                                        "id": 68671,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4780:7:126",
+                                        "src": "4780:7:127",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -2400,13 +2400,13 @@ export const SafeTransferLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 68974,
+                                    "id": 68674,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "4808:6:126",
+                                    "nameLocation": "4808:6:127",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 68987,
-                                    "src": "4800:14:126",
+                                    "scope": 68687,
+                                    "src": "4800:14:127",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2414,10 +2414,10 @@ export const SafeTransferLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 68973,
+                                        "id": 68673,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4800:7:126",
+                                        "src": "4800:7:127",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2426,15 +2426,15 @@ export const SafeTransferLib = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "4749:71:126"
+                            "src": "4749:71:127"
                         },
                         "returnParameters": {
-                            "id": 68976,
+                            "id": 68676,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "4830:0:126"
+                            "src": "4830:0:127"
                         },
-                        "scope": 68988,
+                        "scope": 68688,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
@@ -2446,23 +2446,23 @@ export const SafeTransferLib = {
                 "contractDependencies": [],
                 "contractKind": "library",
                 "documentation": {
-                    "id": 68908,
+                    "id": 68608,
                     "nodeType": "StructuredDocumentation",
-                    "src": "112:474:126",
+                    "src": "112:474:127",
                     "text": "@notice Safe ETH and ERC20 transfer library that gracefully handles missing return values.\n @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/SafeTransferLib.sol)\n @dev Use with caution! Some functions in this library knowingly create dirty bits at the destination of the free memory pointer.\n @dev Note that none of the functions in this library check that a token has code at all! That responsibility is delegated to the caller."
                 },
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    68988
+                    68688
                 ],
                 "name": "SafeTransferLib",
-                "nameLocation": "594:15:126",
-                "scope": 68989,
+                "nameLocation": "594:15:127",
+                "scope": 68689,
                 "usedErrors": [],
                 "usedEvents": []
             }
         ],
         "license": "AGPL-3.0-only"
     },
-    "id": 126
+    "id": 127
 };

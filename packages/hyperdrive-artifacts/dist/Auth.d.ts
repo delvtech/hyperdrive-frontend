@@ -198,45 +198,45 @@ export declare const Auth: {
     };
     readonly ast: {
         readonly absolutePath: "lib/solmate/src/auth/Auth.sol";
-        readonly id: 67531;
+        readonly id: 67231;
         readonly exportedSymbols: {
-            readonly Auth: readonly [67517];
-            readonly Authority: readonly [67530];
+            readonly Auth: readonly [67217];
+            readonly Authority: readonly [67230];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "42:2535:121";
+        readonly src: "42:2535:122";
         readonly nodes: readonly [{
-            readonly id: 67360;
+            readonly id: 67060;
             readonly nodeType: "PragmaDirective";
-            readonly src: "42:24:121";
+            readonly src: "42:24:122";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.8", ".0"];
         }, {
-            readonly id: 67517;
+            readonly id: 67217;
             readonly nodeType: "ContractDefinition";
-            readonly src: "369:1760:121";
+            readonly src: "369:1760:122";
             readonly nodes: readonly [{
-                readonly id: 67367;
+                readonly id: 67067;
                 readonly nodeType: "EventDefinition";
-                readonly src: "398:75:121";
+                readonly src: "398:75:122";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly eventSelector: "8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0";
                 readonly name: "OwnershipTransferred";
-                readonly nameLocation: "404:20:121";
+                readonly nameLocation: "404:20:122";
                 readonly parameters: {
-                    readonly id: 67366;
+                    readonly id: 67066;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 67363;
+                        readonly id: 67063;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "user";
-                        readonly nameLocation: "441:4:121";
+                        readonly nameLocation: "441:4:122";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 67367;
-                        readonly src: "425:20:121";
+                        readonly scope: 67067;
+                        readonly src: "425:20:122";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -244,10 +244,10 @@ export declare const Auth: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 67362;
+                            readonly id: 67062;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "425:7:121";
+                            readonly src: "425:7:122";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -257,14 +257,14 @@ export declare const Auth: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 67365;
+                        readonly id: 67065;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "newOwner";
-                        readonly nameLocation: "463:8:121";
+                        readonly nameLocation: "463:8:122";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 67367;
-                        readonly src: "447:24:121";
+                        readonly scope: 67067;
+                        readonly src: "447:24:122";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -272,10 +272,10 @@ export declare const Auth: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 67364;
+                            readonly id: 67064;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "447:7:121";
+                            readonly src: "447:7:122";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -284,30 +284,30 @@ export declare const Auth: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "424:48:121";
+                    readonly src: "424:48:122";
                 };
             }, {
-                readonly id: 67374;
+                readonly id: 67074;
                 readonly nodeType: "EventDefinition";
-                readonly src: "479:77:121";
+                readonly src: "479:77:122";
                 readonly nodes: readonly [];
                 readonly anonymous: false;
                 readonly eventSelector: "a3396fd7f6e0a21b50e5089d2da70d5ac0a3bbbd1f617a93f134b76389980198";
                 readonly name: "AuthorityUpdated";
-                readonly nameLocation: "485:16:121";
+                readonly nameLocation: "485:16:122";
                 readonly parameters: {
-                    readonly id: 67373;
+                    readonly id: 67073;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 67369;
+                        readonly id: 67069;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "user";
-                        readonly nameLocation: "518:4:121";
+                        readonly nameLocation: "518:4:122";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 67374;
-                        readonly src: "502:20:121";
+                        readonly scope: 67074;
+                        readonly src: "502:20:122";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -315,10 +315,10 @@ export declare const Auth: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 67368;
+                            readonly id: 67068;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "502:7:121";
+                            readonly src: "502:7:122";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -328,53 +328,53 @@ export declare const Auth: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 67372;
+                        readonly id: 67072;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "newAuthority";
-                        readonly nameLocation: "542:12:121";
+                        readonly nameLocation: "542:12:122";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 67374;
-                        readonly src: "524:30:121";
+                        readonly scope: 67074;
+                        readonly src: "524:30:122";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_Authority_$67530";
+                            readonly typeIdentifier: "t_contract$_Authority_$67230";
                             readonly typeString: "contract Authority";
                         };
                         readonly typeName: {
-                            readonly id: 67371;
+                            readonly id: 67071;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 67370;
+                                readonly id: 67070;
                                 readonly name: "Authority";
-                                readonly nameLocations: readonly ["524:9:121"];
+                                readonly nameLocations: readonly ["524:9:122"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 67530;
-                                readonly src: "524:9:121";
+                                readonly referencedDeclaration: 67230;
+                                readonly src: "524:9:122";
                             };
-                            readonly referencedDeclaration: 67530;
-                            readonly src: "524:9:121";
+                            readonly referencedDeclaration: 67230;
+                            readonly src: "524:9:122";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                readonly typeIdentifier: "t_contract$_Authority_$67230";
                                 readonly typeString: "contract Authority";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "501:54:121";
+                    readonly src: "501:54:122";
                 };
             }, {
-                readonly id: 67376;
+                readonly id: 67076;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "562:20:121";
+                readonly src: "562:20:122";
                 readonly nodes: readonly [];
                 readonly constant: false;
                 readonly functionSelector: "8da5cb5b";
                 readonly mutability: "mutable";
                 readonly name: "owner";
-                readonly nameLocation: "577:5:121";
-                readonly scope: 67517;
+                readonly nameLocation: "577:5:122";
+                readonly scope: 67217;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -382,10 +382,10 @@ export declare const Auth: {
                     readonly typeString: "address";
                 };
                 readonly typeName: {
-                    readonly id: 67375;
+                    readonly id: 67075;
                     readonly name: "address";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "562:7:121";
+                    readonly src: "562:7:122";
                     readonly stateMutability: "nonpayable";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_address";
@@ -394,65 +394,65 @@ export declare const Auth: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 67379;
+                readonly id: 67079;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "589:26:121";
+                readonly src: "589:26:122";
                 readonly nodes: readonly [];
                 readonly constant: false;
                 readonly functionSelector: "bf7e214f";
                 readonly mutability: "mutable";
                 readonly name: "authority";
-                readonly nameLocation: "606:9:121";
-                readonly scope: 67517;
+                readonly nameLocation: "606:9:122";
+                readonly scope: 67217;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_Authority_$67530";
+                    readonly typeIdentifier: "t_contract$_Authority_$67230";
                     readonly typeString: "contract Authority";
                 };
                 readonly typeName: {
-                    readonly id: 67378;
+                    readonly id: 67078;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 67377;
+                        readonly id: 67077;
                         readonly name: "Authority";
-                        readonly nameLocations: readonly ["589:9:121"];
+                        readonly nameLocations: readonly ["589:9:122"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 67530;
-                        readonly src: "589:9:121";
+                        readonly referencedDeclaration: 67230;
+                        readonly src: "589:9:122";
                     };
-                    readonly referencedDeclaration: 67530;
-                    readonly src: "589:9:121";
+                    readonly referencedDeclaration: 67230;
+                    readonly src: "589:9:122";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_Authority_$67530";
+                        readonly typeIdentifier: "t_contract$_Authority_$67230";
                         readonly typeString: "contract Authority";
                     };
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 67408;
+                readonly id: 67108;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "622:224:121";
+                readonly src: "622:224:122";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 67407;
+                    readonly id: 67107;
                     readonly nodeType: "Block";
-                    readonly src: "672:174:121";
+                    readonly src: "672:174:122";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 67389;
+                            readonly id: 67089;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 67387;
+                                readonly id: 67087;
                                 readonly name: "owner";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67376;
-                                readonly src: "682:5:121";
+                                readonly referencedDeclaration: 67076;
+                                readonly src: "682:5:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -461,103 +461,103 @@ export declare const Auth: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 67388;
+                                readonly id: 67088;
                                 readonly name: "_owner";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67381;
-                                readonly src: "690:6:121";
+                                readonly referencedDeclaration: 67081;
+                                readonly src: "690:6:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly src: "682:14:121";
+                            readonly src: "682:14:122";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             };
                         };
-                        readonly id: 67390;
+                        readonly id: 67090;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "682:14:121";
+                        readonly src: "682:14:122";
                     }, {
                         readonly expression: {
-                            readonly id: 67393;
+                            readonly id: 67093;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 67391;
+                                readonly id: 67091;
                                 readonly name: "authority";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67379;
-                                readonly src: "706:9:121";
+                                readonly referencedDeclaration: 67079;
+                                readonly src: "706:9:122";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                    readonly typeIdentifier: "t_contract$_Authority_$67230";
                                     readonly typeString: "contract Authority";
                                 };
                             };
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 67392;
+                                readonly id: 67092;
                                 readonly name: "_authority";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67384;
-                                readonly src: "718:10:121";
+                                readonly referencedDeclaration: 67084;
+                                readonly src: "718:10:122";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                    readonly typeIdentifier: "t_contract$_Authority_$67230";
                                     readonly typeString: "contract Authority";
                                 };
                             };
-                            readonly src: "706:22:121";
+                            readonly src: "706:22:122";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                readonly typeIdentifier: "t_contract$_Authority_$67230";
                                 readonly typeString: "contract Authority";
                             };
                         };
-                        readonly id: 67394;
+                        readonly id: 67094;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "706:22:121";
+                        readonly src: "706:22:122";
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly id: 67396;
+                                    readonly id: 67096;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -15;
-                                    readonly src: "765:3:121";
+                                    readonly src: "765:3:122";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_magic_message";
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 67397;
+                                readonly id: 67097;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "769:6:121";
+                                readonly memberLocation: "769:6:122";
                                 readonly memberName: "sender";
                                 readonly nodeType: "MemberAccess";
-                                readonly src: "765:10:121";
+                                readonly src: "765:10:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 67398;
+                                readonly id: 67098;
                                 readonly name: "_owner";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67381;
-                                readonly src: "777:6:121";
+                                readonly referencedDeclaration: 67081;
+                                readonly src: "777:6:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -571,18 +571,18 @@ export declare const Auth: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 }];
-                                readonly id: 67395;
+                                readonly id: 67095;
                                 readonly name: "OwnershipTransferred";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67367;
-                                readonly src: "744:20:121";
+                                readonly referencedDeclaration: 67067;
+                                readonly src: "744:20:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$";
                                     readonly typeString: "function (address,address)";
                                 };
                             };
-                            readonly id: 67399;
+                            readonly id: 67099;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -591,53 +591,53 @@ export declare const Auth: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "744:40:121";
+                            readonly src: "744:40:122";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 67400;
+                        readonly id: 67100;
                         readonly nodeType: "EmitStatement";
-                        readonly src: "739:45:121";
+                        readonly src: "739:45:122";
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly id: 67402;
+                                    readonly id: 67102;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -15;
-                                    readonly src: "816:3:121";
+                                    readonly src: "816:3:122";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_magic_message";
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 67403;
+                                readonly id: 67103;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "820:6:121";
+                                readonly memberLocation: "820:6:122";
                                 readonly memberName: "sender";
                                 readonly nodeType: "MemberAccess";
-                                readonly src: "816:10:121";
+                                readonly src: "816:10:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 67404;
+                                readonly id: 67104;
                                 readonly name: "_authority";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67384;
-                                readonly src: "828:10:121";
+                                readonly referencedDeclaration: 67084;
+                                readonly src: "828:10:122";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                    readonly typeIdentifier: "t_contract$_Authority_$67230";
                                     readonly typeString: "contract Authority";
                                 };
                             }];
@@ -646,21 +646,21 @@ export declare const Auth: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 }, {
-                                    readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                    readonly typeIdentifier: "t_contract$_Authority_$67230";
                                     readonly typeString: "contract Authority";
                                 }];
-                                readonly id: 67401;
+                                readonly id: 67101;
                                 readonly name: "AuthorityUpdated";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67374;
-                                readonly src: "799:16:121";
+                                readonly referencedDeclaration: 67074;
+                                readonly src: "799:16:122";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$67530_$returns$__$";
+                                    readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$67230_$returns$__$";
                                     readonly typeString: "function (address,contract Authority)";
                                 };
                             };
-                            readonly id: 67405;
+                            readonly id: 67105;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -669,16 +669,16 @@ export declare const Auth: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "799:40:121";
+                            readonly src: "799:40:122";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 67406;
+                        readonly id: 67106;
                         readonly nodeType: "EmitStatement";
-                        readonly src: "794:45:121";
+                        readonly src: "794:45:122";
                     }];
                 };
                 readonly implemented: true;
@@ -687,17 +687,17 @@ export declare const Auth: {
                 readonly name: "";
                 readonly nameLocation: "-1:-1:-1";
                 readonly parameters: {
-                    readonly id: 67385;
+                    readonly id: 67085;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 67381;
+                        readonly id: 67081;
                         readonly mutability: "mutable";
                         readonly name: "_owner";
-                        readonly nameLocation: "642:6:121";
+                        readonly nameLocation: "642:6:122";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 67408;
-                        readonly src: "634:14:121";
+                        readonly scope: 67108;
+                        readonly src: "634:14:122";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -705,10 +705,10 @@ export declare const Auth: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 67380;
+                            readonly id: 67080;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "634:7:121";
+                            readonly src: "634:7:122";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -718,112 +718,112 @@ export declare const Auth: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 67384;
+                        readonly id: 67084;
                         readonly mutability: "mutable";
                         readonly name: "_authority";
-                        readonly nameLocation: "660:10:121";
+                        readonly nameLocation: "660:10:122";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 67408;
-                        readonly src: "650:20:121";
+                        readonly scope: 67108;
+                        readonly src: "650:20:122";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_Authority_$67530";
+                            readonly typeIdentifier: "t_contract$_Authority_$67230";
                             readonly typeString: "contract Authority";
                         };
                         readonly typeName: {
-                            readonly id: 67383;
+                            readonly id: 67083;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 67382;
+                                readonly id: 67082;
                                 readonly name: "Authority";
-                                readonly nameLocations: readonly ["650:9:121"];
+                                readonly nameLocations: readonly ["650:9:122"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 67530;
-                                readonly src: "650:9:121";
+                                readonly referencedDeclaration: 67230;
+                                readonly src: "650:9:122";
                             };
-                            readonly referencedDeclaration: 67530;
-                            readonly src: "650:9:121";
+                            readonly referencedDeclaration: 67230;
+                            readonly src: "650:9:122";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                readonly typeIdentifier: "t_contract$_Authority_$67230";
                                 readonly typeString: "contract Authority";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "633:38:121";
+                    readonly src: "633:38:122";
                 };
                 readonly returnParameters: {
-                    readonly id: 67386;
+                    readonly id: 67086;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "672:0:121";
+                    readonly src: "672:0:122";
                 };
-                readonly scope: 67517;
+                readonly scope: 67217;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 67422;
+                readonly id: 67122;
                 readonly nodeType: "ModifierDefinition";
-                readonly src: "852:119:121";
+                readonly src: "852:119:122";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 67421;
+                    readonly id: 67121;
                     readonly nodeType: "Block";
-                    readonly src: "884:87:121";
+                    readonly src: "884:87:122";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
                                     readonly expression: {
-                                        readonly id: 67412;
+                                        readonly id: 67112;
                                         readonly name: "msg";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
                                         readonly referencedDeclaration: -15;
-                                        readonly src: "915:3:121";
+                                        readonly src: "915:3:122";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_magic_message";
                                             readonly typeString: "msg";
                                         };
                                     };
-                                    readonly id: 67413;
+                                    readonly id: 67113;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
-                                    readonly memberLocation: "919:6:121";
+                                    readonly memberLocation: "919:6:122";
                                     readonly memberName: "sender";
                                     readonly nodeType: "MemberAccess";
-                                    readonly src: "915:10:121";
+                                    readonly src: "915:10:122";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     };
                                 }, {
                                     readonly expression: {
-                                        readonly id: 67414;
+                                        readonly id: 67114;
                                         readonly name: "msg";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
                                         readonly referencedDeclaration: -15;
-                                        readonly src: "927:3:121";
+                                        readonly src: "927:3:122";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_magic_message";
                                             readonly typeString: "msg";
                                         };
                                     };
-                                    readonly id: 67415;
+                                    readonly id: 67115;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
-                                    readonly memberLocation: "931:3:121";
+                                    readonly memberLocation: "931:3:122";
                                     readonly memberName: "sig";
                                     readonly nodeType: "MemberAccess";
-                                    readonly src: "927:7:121";
+                                    readonly src: "927:7:122";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes4";
                                         readonly typeString: "bytes4";
@@ -837,18 +837,18 @@ export declare const Auth: {
                                         readonly typeIdentifier: "t_bytes4";
                                         readonly typeString: "bytes4";
                                     }];
-                                    readonly id: 67411;
+                                    readonly id: 67111;
                                     readonly name: "isAuthorized";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 67462;
-                                    readonly src: "902:12:121";
+                                    readonly referencedDeclaration: 67162;
+                                    readonly src: "902:12:122";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_view$_t_address_$_t_bytes4_$returns$_t_bool_$";
                                         readonly typeString: "function (address,bytes4) view returns (bool)";
                                     };
                                 };
-                                readonly id: 67416;
+                                readonly id: 67116;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -857,7 +857,7 @@ export declare const Auth: {
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "902:33:121";
+                                readonly src: "902:33:122";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -865,14 +865,14 @@ export declare const Auth: {
                                 };
                             }, {
                                 readonly hexValue: "554e415554484f52495a4544";
-                                readonly id: 67417;
+                                readonly id: 67117;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
                                 readonly kind: "string";
                                 readonly lValueRequested: false;
                                 readonly nodeType: "Literal";
-                                readonly src: "937:14:121";
+                                readonly src: "937:14:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_stringliteral_269df367cd41cace5897a935d0e0858fe4543b5619d45e09af6b124c1bb3d528";
                                     readonly typeString: "literal_string \"UNAUTHORIZED\"";
@@ -887,18 +887,18 @@ export declare const Auth: {
                                     readonly typeIdentifier: "t_stringliteral_269df367cd41cace5897a935d0e0858fe4543b5619d45e09af6b124c1bb3d528";
                                     readonly typeString: "literal_string \"UNAUTHORIZED\"";
                                 }];
-                                readonly id: 67410;
+                                readonly id: 67110;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
                                 readonly referencedDeclaration: -18;
-                                readonly src: "894:7:121";
+                                readonly src: "894:7:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$";
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 67418;
+                            readonly id: 67118;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -907,101 +907,101 @@ export declare const Auth: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "894:58:121";
+                            readonly src: "894:58:122";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 67419;
+                        readonly id: 67119;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "894:58:121";
+                        readonly src: "894:58:122";
                     }, {
-                        readonly id: 67420;
+                        readonly id: 67120;
                         readonly nodeType: "PlaceholderStatement";
-                        readonly src: "963:1:121";
+                        readonly src: "963:1:122";
                     }];
                 };
                 readonly name: "requiresAuth";
-                readonly nameLocation: "861:12:121";
+                readonly nameLocation: "861:12:122";
                 readonly parameters: {
-                    readonly id: 67409;
+                    readonly id: 67109;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "873:2:121";
+                    readonly src: "873:2:122";
                 };
                 readonly virtual: true;
                 readonly visibility: "internal";
             }, {
-                readonly id: 67462;
+                readonly id: 67162;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "977:540:121";
+                readonly src: "977:540:122";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 67461;
+                    readonly id: 67161;
                     readonly nodeType: "Block";
-                    readonly src: "1070:447:121";
+                    readonly src: "1070:447:122";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [67433];
+                        readonly assignments: readonly [67133];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 67433;
+                            readonly id: 67133;
                             readonly mutability: "mutable";
                             readonly name: "auth";
-                            readonly nameLocation: "1090:4:121";
+                            readonly nameLocation: "1090:4:122";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 67461;
-                            readonly src: "1080:14:121";
+                            readonly scope: 67161;
+                            readonly src: "1080:14:122";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                readonly typeIdentifier: "t_contract$_Authority_$67230";
                                 readonly typeString: "contract Authority";
                             };
                             readonly typeName: {
-                                readonly id: 67432;
+                                readonly id: 67132;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 67431;
+                                    readonly id: 67131;
                                     readonly name: "Authority";
-                                    readonly nameLocations: readonly ["1080:9:121"];
+                                    readonly nameLocations: readonly ["1080:9:122"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 67530;
-                                    readonly src: "1080:9:121";
+                                    readonly referencedDeclaration: 67230;
+                                    readonly src: "1080:9:122";
                                 };
-                                readonly referencedDeclaration: 67530;
-                                readonly src: "1080:9:121";
+                                readonly referencedDeclaration: 67230;
+                                readonly src: "1080:9:122";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                    readonly typeIdentifier: "t_contract$_Authority_$67230";
                                     readonly typeString: "contract Authority";
                                 };
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 67435;
+                        readonly id: 67135;
                         readonly initialValue: {
-                            readonly id: 67434;
+                            readonly id: 67134;
                             readonly name: "authority";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 67379;
-                            readonly src: "1097:9:121";
+                            readonly referencedDeclaration: 67079;
+                            readonly src: "1097:9:122";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                readonly typeIdentifier: "t_contract$_Authority_$67230";
                                 readonly typeString: "contract Authority";
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "1080:26:121";
+                        readonly src: "1080:26:122";
                     }, {
                         readonly expression: {
                             readonly commonType: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
-                            readonly id: 67459;
+                            readonly id: 67159;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1012,7 +1012,7 @@ export declare const Auth: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
                                     };
-                                    readonly id: 67454;
+                                    readonly id: 67154;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1022,49 +1022,49 @@ export declare const Auth: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         };
-                                        readonly id: 67444;
+                                        readonly id: 67144;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
                                             readonly arguments: readonly [{
-                                                readonly id: 67438;
+                                                readonly id: 67138;
                                                 readonly name: "auth";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 67433;
-                                                readonly src: "1423:4:121";
+                                                readonly referencedDeclaration: 67133;
+                                                readonly src: "1423:4:122";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                                    readonly typeIdentifier: "t_contract$_Authority_$67230";
                                                     readonly typeString: "contract Authority";
                                                 };
                                             }];
                                             readonly expression: {
                                                 readonly argumentTypes: readonly [{
-                                                    readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                                    readonly typeIdentifier: "t_contract$_Authority_$67230";
                                                     readonly typeString: "contract Authority";
                                                 }];
-                                                readonly id: 67437;
+                                                readonly id: 67137;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
                                                 readonly lValueRequested: false;
                                                 readonly nodeType: "ElementaryTypeNameExpression";
-                                                readonly src: "1415:7:121";
+                                                readonly src: "1415:7:122";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_type$_t_address_$";
                                                     readonly typeString: "type(address)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 67436;
+                                                    readonly id: 67136;
                                                     readonly name: "address";
                                                     readonly nodeType: "ElementaryTypeName";
-                                                    readonly src: "1415:7:121";
+                                                    readonly src: "1415:7:122";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 67439;
+                                            readonly id: 67139;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -1073,7 +1073,7 @@ export declare const Auth: {
                                             readonly nameLocations: readonly [];
                                             readonly names: readonly [];
                                             readonly nodeType: "FunctionCall";
-                                            readonly src: "1415:13:121";
+                                            readonly src: "1415:13:122";
                                             readonly tryCall: false;
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
@@ -1085,14 +1085,14 @@ export declare const Auth: {
                                         readonly rightExpression: {
                                             readonly arguments: readonly [{
                                                 readonly hexValue: "30";
-                                                readonly id: 67442;
+                                                readonly id: 67142;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
                                                 readonly kind: "number";
                                                 readonly lValueRequested: false;
                                                 readonly nodeType: "Literal";
-                                                readonly src: "1440:1:121";
+                                                readonly src: "1440:1:122";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_rational_0_by_1";
                                                     readonly typeString: "int_const 0";
@@ -1104,26 +1104,26 @@ export declare const Auth: {
                                                     readonly typeIdentifier: "t_rational_0_by_1";
                                                     readonly typeString: "int_const 0";
                                                 }];
-                                                readonly id: 67441;
+                                                readonly id: 67141;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
                                                 readonly lValueRequested: false;
                                                 readonly nodeType: "ElementaryTypeNameExpression";
-                                                readonly src: "1432:7:121";
+                                                readonly src: "1432:7:122";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_type$_t_address_$";
                                                     readonly typeString: "type(address)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 67440;
+                                                    readonly id: 67140;
                                                     readonly name: "address";
                                                     readonly nodeType: "ElementaryTypeName";
-                                                    readonly src: "1432:7:121";
+                                                    readonly src: "1432:7:122";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 67443;
+                                            readonly id: 67143;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -1132,14 +1132,14 @@ export declare const Auth: {
                                             readonly nameLocations: readonly [];
                                             readonly names: readonly [];
                                             readonly nodeType: "FunctionCall";
-                                            readonly src: "1432:10:121";
+                                            readonly src: "1432:10:122";
                                             readonly tryCall: false;
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
                                                 readonly typeString: "address";
                                             };
                                         };
-                                        readonly src: "1415:27:121";
+                                        readonly src: "1415:27:122";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bool";
                                             readonly typeString: "bool";
@@ -1149,54 +1149,54 @@ export declare const Auth: {
                                     readonly operator: "&&";
                                     readonly rightExpression: {
                                         readonly arguments: readonly [{
-                                            readonly id: 67447;
+                                            readonly id: 67147;
                                             readonly name: "user";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 67424;
-                                            readonly src: "1459:4:121";
+                                            readonly referencedDeclaration: 67124;
+                                            readonly src: "1459:4:122";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
                                                 readonly typeString: "address";
                                             };
                                         }, {
                                             readonly arguments: readonly [{
-                                                readonly id: 67450;
+                                                readonly id: 67150;
                                                 readonly name: "this";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
                                                 readonly referencedDeclaration: -28;
-                                                readonly src: "1473:4:121";
+                                                readonly src: "1473:4:122";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_contract$_Auth_$67517";
+                                                    readonly typeIdentifier: "t_contract$_Auth_$67217";
                                                     readonly typeString: "contract Auth";
                                                 };
                                             }];
                                             readonly expression: {
                                                 readonly argumentTypes: readonly [{
-                                                    readonly typeIdentifier: "t_contract$_Auth_$67517";
+                                                    readonly typeIdentifier: "t_contract$_Auth_$67217";
                                                     readonly typeString: "contract Auth";
                                                 }];
-                                                readonly id: 67449;
+                                                readonly id: 67149;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
                                                 readonly lValueRequested: false;
                                                 readonly nodeType: "ElementaryTypeNameExpression";
-                                                readonly src: "1465:7:121";
+                                                readonly src: "1465:7:122";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_type$_t_address_$";
                                                     readonly typeString: "type(address)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 67448;
+                                                    readonly id: 67148;
                                                     readonly name: "address";
                                                     readonly nodeType: "ElementaryTypeName";
-                                                    readonly src: "1465:7:121";
+                                                    readonly src: "1465:7:122";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 67451;
+                                            readonly id: 67151;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -1205,19 +1205,19 @@ export declare const Auth: {
                                             readonly nameLocations: readonly [];
                                             readonly names: readonly [];
                                             readonly nodeType: "FunctionCall";
-                                            readonly src: "1465:13:121";
+                                            readonly src: "1465:13:122";
                                             readonly tryCall: false;
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
                                                 readonly typeString: "address";
                                             };
                                         }, {
-                                            readonly id: 67452;
+                                            readonly id: 67152;
                                             readonly name: "functionSig";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 67426;
-                                            readonly src: "1480:11:121";
+                                            readonly referencedDeclaration: 67126;
+                                            readonly src: "1480:11:122";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_bytes4";
                                                 readonly typeString: "bytes4";
@@ -1235,33 +1235,33 @@ export declare const Auth: {
                                                 readonly typeString: "bytes4";
                                             }];
                                             readonly expression: {
-                                                readonly id: 67445;
+                                                readonly id: 67145;
                                                 readonly name: "auth";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 67433;
-                                                readonly src: "1446:4:121";
+                                                readonly referencedDeclaration: 67133;
+                                                readonly src: "1446:4:122";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                                    readonly typeIdentifier: "t_contract$_Authority_$67230";
                                                     readonly typeString: "contract Authority";
                                                 };
                                             };
-                                            readonly id: 67446;
+                                            readonly id: 67146;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
                                             readonly lValueRequested: false;
-                                            readonly memberLocation: "1451:7:121";
+                                            readonly memberLocation: "1451:7:122";
                                             readonly memberName: "canCall";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 67529;
-                                            readonly src: "1446:12:121";
+                                            readonly referencedDeclaration: 67229;
+                                            readonly src: "1446:12:122";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_external_view$_t_address_$_t_address_$_t_bytes4_$returns$_t_bool_$";
                                                 readonly typeString: "function (address,address,bytes4) view external returns (bool)";
                                             };
                                         };
-                                        readonly id: 67453;
+                                        readonly id: 67153;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1270,27 +1270,27 @@ export declare const Auth: {
                                         readonly nameLocations: readonly [];
                                         readonly names: readonly [];
                                         readonly nodeType: "FunctionCall";
-                                        readonly src: "1446:46:121";
+                                        readonly src: "1446:46:122";
                                         readonly tryCall: false;
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bool";
                                             readonly typeString: "bool";
                                         };
                                     };
-                                    readonly src: "1415:77:121";
+                                    readonly src: "1415:77:122";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
                                     };
                                 }];
-                                readonly id: 67455;
+                                readonly id: 67155;
                                 readonly isConstant: false;
                                 readonly isInlineArray: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly nodeType: "TupleExpression";
-                                readonly src: "1414:79:121";
+                                readonly src: "1414:79:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -1303,18 +1303,18 @@ export declare const Auth: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
-                                readonly id: 67458;
+                                readonly id: 67158;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 67456;
+                                    readonly id: 67156;
                                     readonly name: "user";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 67424;
-                                    readonly src: "1497:4:121";
+                                    readonly referencedDeclaration: 67124;
+                                    readonly src: "1497:4:122";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
@@ -1323,52 +1323,52 @@ export declare const Auth: {
                                 readonly nodeType: "BinaryOperation";
                                 readonly operator: "==";
                                 readonly rightExpression: {
-                                    readonly id: 67457;
+                                    readonly id: 67157;
                                     readonly name: "owner";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 67376;
-                                    readonly src: "1505:5:121";
+                                    readonly referencedDeclaration: 67076;
+                                    readonly src: "1505:5:122";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     };
                                 };
-                                readonly src: "1497:13:121";
+                                readonly src: "1497:13:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
                             };
-                            readonly src: "1414:96:121";
+                            readonly src: "1414:96:122";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly functionReturnParameters: 67430;
-                        readonly id: 67460;
+                        readonly functionReturnParameters: 67130;
+                        readonly id: 67160;
                         readonly nodeType: "Return";
-                        readonly src: "1407:103:121";
+                        readonly src: "1407:103:122";
                     }];
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "isAuthorized";
-                readonly nameLocation: "986:12:121";
+                readonly nameLocation: "986:12:122";
                 readonly parameters: {
-                    readonly id: 67427;
+                    readonly id: 67127;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 67424;
+                        readonly id: 67124;
                         readonly mutability: "mutable";
                         readonly name: "user";
-                        readonly nameLocation: "1007:4:121";
+                        readonly nameLocation: "1007:4:122";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 67462;
-                        readonly src: "999:12:121";
+                        readonly scope: 67162;
+                        readonly src: "999:12:122";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1376,10 +1376,10 @@ export declare const Auth: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 67423;
+                            readonly id: 67123;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "999:7:121";
+                            readonly src: "999:7:122";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -1389,13 +1389,13 @@ export declare const Auth: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 67426;
+                        readonly id: 67126;
                         readonly mutability: "mutable";
                         readonly name: "functionSig";
-                        readonly nameLocation: "1020:11:121";
+                        readonly nameLocation: "1020:11:122";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 67462;
-                        readonly src: "1013:18:121";
+                        readonly scope: 67162;
+                        readonly src: "1013:18:122";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1403,10 +1403,10 @@ export declare const Auth: {
                             readonly typeString: "bytes4";
                         };
                         readonly typeName: {
-                            readonly id: 67425;
+                            readonly id: 67125;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1013:6:121";
+                            readonly src: "1013:6:122";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes4";
                                 readonly typeString: "bytes4";
@@ -1414,20 +1414,20 @@ export declare const Auth: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "998:34:121";
+                    readonly src: "998:34:122";
                 };
                 readonly returnParameters: {
-                    readonly id: 67430;
+                    readonly id: 67130;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 67429;
+                        readonly id: 67129;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 67462;
-                        readonly src: "1064:4:121";
+                        readonly scope: 67162;
+                        readonly src: "1064:4:122";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1435,10 +1435,10 @@ export declare const Auth: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 67428;
+                            readonly id: 67128;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1064:4:121";
+                            readonly src: "1064:4:122";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -1446,21 +1446,21 @@ export declare const Auth: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1063:6:121";
+                    readonly src: "1063:6:122";
                 };
-                readonly scope: 67517;
+                readonly scope: 67217;
                 readonly stateMutability: "view";
                 readonly virtual: true;
                 readonly visibility: "internal";
             }, {
-                readonly id: 67498;
+                readonly id: 67198;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1523:434:121";
+                readonly src: "1523:434:122";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 67497;
+                    readonly id: 67197;
                     readonly nodeType: "Block";
-                    readonly src: "1584:373:121";
+                    readonly src: "1584:373:122";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
@@ -1469,7 +1469,7 @@ export declare const Auth: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
-                                readonly id: 67484;
+                                readonly id: 67184;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1479,33 +1479,33 @@ export declare const Auth: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     };
-                                    readonly id: 67472;
+                                    readonly id: 67172;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
                                         readonly expression: {
-                                            readonly id: 67469;
+                                            readonly id: 67169;
                                             readonly name: "msg";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
                                             readonly referencedDeclaration: -15;
-                                            readonly src: "1780:3:121";
+                                            readonly src: "1780:3:122";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_magic_message";
                                                 readonly typeString: "msg";
                                             };
                                         };
-                                        readonly id: 67470;
+                                        readonly id: 67170;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "1784:6:121";
+                                        readonly memberLocation: "1784:6:122";
                                         readonly memberName: "sender";
                                         readonly nodeType: "MemberAccess";
-                                        readonly src: "1780:10:121";
+                                        readonly src: "1780:10:122";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
@@ -1514,18 +1514,18 @@ export declare const Auth: {
                                     readonly nodeType: "BinaryOperation";
                                     readonly operator: "==";
                                     readonly rightExpression: {
-                                        readonly id: 67471;
+                                        readonly id: 67171;
                                         readonly name: "owner";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 67376;
-                                        readonly src: "1794:5:121";
+                                        readonly referencedDeclaration: 67076;
+                                        readonly src: "1794:5:122";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         };
                                     };
-                                    readonly src: "1780:19:121";
+                                    readonly src: "1780:19:122";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
@@ -1536,68 +1536,68 @@ export declare const Auth: {
                                 readonly rightExpression: {
                                     readonly arguments: readonly [{
                                         readonly expression: {
-                                            readonly id: 67475;
+                                            readonly id: 67175;
                                             readonly name: "msg";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
                                             readonly referencedDeclaration: -15;
-                                            readonly src: "1821:3:121";
+                                            readonly src: "1821:3:122";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_magic_message";
                                                 readonly typeString: "msg";
                                             };
                                         };
-                                        readonly id: 67476;
+                                        readonly id: 67176;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "1825:6:121";
+                                        readonly memberLocation: "1825:6:122";
                                         readonly memberName: "sender";
                                         readonly nodeType: "MemberAccess";
-                                        readonly src: "1821:10:121";
+                                        readonly src: "1821:10:122";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         };
                                     }, {
                                         readonly arguments: readonly [{
-                                            readonly id: 67479;
+                                            readonly id: 67179;
                                             readonly name: "this";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
                                             readonly referencedDeclaration: -28;
-                                            readonly src: "1841:4:121";
+                                            readonly src: "1841:4:122";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_Auth_$67517";
+                                                readonly typeIdentifier: "t_contract$_Auth_$67217";
                                                 readonly typeString: "contract Auth";
                                             };
                                         }];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_Auth_$67517";
+                                                readonly typeIdentifier: "t_contract$_Auth_$67217";
                                                 readonly typeString: "contract Auth";
                                             }];
-                                            readonly id: 67478;
+                                            readonly id: 67178;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
                                             readonly nodeType: "ElementaryTypeNameExpression";
-                                            readonly src: "1833:7:121";
+                                            readonly src: "1833:7:122";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_type$_t_address_$";
                                                 readonly typeString: "type(address)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 67477;
+                                                readonly id: 67177;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
-                                                readonly src: "1833:7:121";
+                                                readonly src: "1833:7:122";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 67480;
+                                        readonly id: 67180;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1606,7 +1606,7 @@ export declare const Auth: {
                                         readonly nameLocations: readonly [];
                                         readonly names: readonly [];
                                         readonly nodeType: "FunctionCall";
-                                        readonly src: "1833:13:121";
+                                        readonly src: "1833:13:122";
                                         readonly tryCall: false;
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
@@ -1614,26 +1614,26 @@ export declare const Auth: {
                                         };
                                     }, {
                                         readonly expression: {
-                                            readonly id: 67481;
+                                            readonly id: 67181;
                                             readonly name: "msg";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
                                             readonly referencedDeclaration: -15;
-                                            readonly src: "1848:3:121";
+                                            readonly src: "1848:3:122";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_magic_message";
                                                 readonly typeString: "msg";
                                             };
                                         };
-                                        readonly id: 67482;
+                                        readonly id: 67182;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "1852:3:121";
+                                        readonly memberLocation: "1852:3:122";
                                         readonly memberName: "sig";
                                         readonly nodeType: "MemberAccess";
-                                        readonly src: "1848:7:121";
+                                        readonly src: "1848:7:122";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes4";
                                             readonly typeString: "bytes4";
@@ -1651,33 +1651,33 @@ export declare const Auth: {
                                             readonly typeString: "bytes4";
                                         }];
                                         readonly expression: {
-                                            readonly id: 67473;
+                                            readonly id: 67173;
                                             readonly name: "authority";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 67379;
-                                            readonly src: "1803:9:121";
+                                            readonly referencedDeclaration: 67079;
+                                            readonly src: "1803:9:122";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                                readonly typeIdentifier: "t_contract$_Authority_$67230";
                                                 readonly typeString: "contract Authority";
                                             };
                                         };
-                                        readonly id: 67474;
+                                        readonly id: 67174;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "1813:7:121";
+                                        readonly memberLocation: "1813:7:122";
                                         readonly memberName: "canCall";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 67529;
-                                        readonly src: "1803:17:121";
+                                        readonly referencedDeclaration: 67229;
+                                        readonly src: "1803:17:122";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_external_view$_t_address_$_t_address_$_t_bytes4_$returns$_t_bool_$";
                                             readonly typeString: "function (address,address,bytes4) view external returns (bool)";
                                         };
                                     };
-                                    readonly id: 67483;
+                                    readonly id: 67183;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1686,14 +1686,14 @@ export declare const Auth: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "1803:53:121";
+                                    readonly src: "1803:53:122";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
                                     };
                                 };
-                                readonly src: "1780:76:121";
+                                readonly src: "1780:76:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -1704,18 +1704,18 @@ export declare const Auth: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 }];
-                                readonly id: 67468;
+                                readonly id: 67168;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
                                 readonly referencedDeclaration: -18;
-                                readonly src: "1772:7:121";
+                                readonly src: "1772:7:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_require_pure$_t_bool_$returns$__$";
                                     readonly typeString: "function (bool) pure";
                                 };
                             };
-                            readonly id: 67485;
+                            readonly id: 67185;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1724,95 +1724,95 @@ export declare const Auth: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "1772:85:121";
+                            readonly src: "1772:85:122";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 67486;
+                        readonly id: 67186;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "1772:85:121";
+                        readonly src: "1772:85:122";
                     }, {
                         readonly expression: {
-                            readonly id: 67489;
+                            readonly id: 67189;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 67487;
+                                readonly id: 67187;
                                 readonly name: "authority";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67379;
-                                readonly src: "1868:9:121";
+                                readonly referencedDeclaration: 67079;
+                                readonly src: "1868:9:122";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                    readonly typeIdentifier: "t_contract$_Authority_$67230";
                                     readonly typeString: "contract Authority";
                                 };
                             };
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 67488;
+                                readonly id: 67188;
                                 readonly name: "newAuthority";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67465;
-                                readonly src: "1880:12:121";
+                                readonly referencedDeclaration: 67165;
+                                readonly src: "1880:12:122";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                    readonly typeIdentifier: "t_contract$_Authority_$67230";
                                     readonly typeString: "contract Authority";
                                 };
                             };
-                            readonly src: "1868:24:121";
+                            readonly src: "1868:24:122";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                readonly typeIdentifier: "t_contract$_Authority_$67230";
                                 readonly typeString: "contract Authority";
                             };
                         };
-                        readonly id: 67490;
+                        readonly id: 67190;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "1868:24:121";
+                        readonly src: "1868:24:122";
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly id: 67492;
+                                    readonly id: 67192;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -15;
-                                    readonly src: "1925:3:121";
+                                    readonly src: "1925:3:122";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_magic_message";
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 67493;
+                                readonly id: 67193;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "1929:6:121";
+                                readonly memberLocation: "1929:6:122";
                                 readonly memberName: "sender";
                                 readonly nodeType: "MemberAccess";
-                                readonly src: "1925:10:121";
+                                readonly src: "1925:10:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 67494;
+                                readonly id: 67194;
                                 readonly name: "newAuthority";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67465;
-                                readonly src: "1937:12:121";
+                                readonly referencedDeclaration: 67165;
+                                readonly src: "1937:12:122";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                    readonly typeIdentifier: "t_contract$_Authority_$67230";
                                     readonly typeString: "contract Authority";
                                 };
                             }];
@@ -1821,21 +1821,21 @@ export declare const Auth: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 }, {
-                                    readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                    readonly typeIdentifier: "t_contract$_Authority_$67230";
                                     readonly typeString: "contract Authority";
                                 }];
-                                readonly id: 67491;
+                                readonly id: 67191;
                                 readonly name: "AuthorityUpdated";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67374;
-                                readonly src: "1908:16:121";
+                                readonly referencedDeclaration: 67074;
+                                readonly src: "1908:16:122";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$67530_$returns$__$";
+                                    readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$67230_$returns$__$";
                                     readonly typeString: "function (address,contract Authority)";
                                 };
                             };
-                            readonly id: 67495;
+                            readonly id: 67195;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1844,16 +1844,16 @@ export declare const Auth: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "1908:42:121";
+                            readonly src: "1908:42:122";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 67496;
+                        readonly id: 67196;
                         readonly nodeType: "EmitStatement";
-                        readonly src: "1903:47:121";
+                        readonly src: "1903:47:122";
                     }];
                 };
                 readonly functionSelector: "7a9e5e4b";
@@ -1861,81 +1861,81 @@ export declare const Auth: {
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "setAuthority";
-                readonly nameLocation: "1532:12:121";
+                readonly nameLocation: "1532:12:122";
                 readonly parameters: {
-                    readonly id: 67466;
+                    readonly id: 67166;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 67465;
+                        readonly id: 67165;
                         readonly mutability: "mutable";
                         readonly name: "newAuthority";
-                        readonly nameLocation: "1555:12:121";
+                        readonly nameLocation: "1555:12:122";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 67498;
-                        readonly src: "1545:22:121";
+                        readonly scope: 67198;
+                        readonly src: "1545:22:122";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_Authority_$67530";
+                            readonly typeIdentifier: "t_contract$_Authority_$67230";
                             readonly typeString: "contract Authority";
                         };
                         readonly typeName: {
-                            readonly id: 67464;
+                            readonly id: 67164;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 67463;
+                                readonly id: 67163;
                                 readonly name: "Authority";
-                                readonly nameLocations: readonly ["1545:9:121"];
+                                readonly nameLocations: readonly ["1545:9:122"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 67530;
-                                readonly src: "1545:9:121";
+                                readonly referencedDeclaration: 67230;
+                                readonly src: "1545:9:122";
                             };
-                            readonly referencedDeclaration: 67530;
-                            readonly src: "1545:9:121";
+                            readonly referencedDeclaration: 67230;
+                            readonly src: "1545:9:122";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_Authority_$67530";
+                                readonly typeIdentifier: "t_contract$_Authority_$67230";
                                 readonly typeString: "contract Authority";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1544:24:121";
+                    readonly src: "1544:24:122";
                 };
                 readonly returnParameters: {
-                    readonly id: 67467;
+                    readonly id: 67167;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "1584:0:121";
+                    readonly src: "1584:0:122";
                 };
-                readonly scope: 67517;
+                readonly scope: 67217;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "public";
             }, {
-                readonly id: 67516;
+                readonly id: 67216;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1963:164:121";
+                readonly src: "1963:164:122";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 67515;
+                    readonly id: 67215;
                     readonly nodeType: "Block";
-                    readonly src: "2036:91:121";
+                    readonly src: "2036:91:122";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 67507;
+                            readonly id: 67207;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 67505;
+                                readonly id: 67205;
                                 readonly name: "owner";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67376;
-                                readonly src: "2046:5:121";
+                                readonly referencedDeclaration: 67076;
+                                readonly src: "2046:5:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -1944,61 +1944,61 @@ export declare const Auth: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 67506;
+                                readonly id: 67206;
                                 readonly name: "newOwner";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67500;
-                                readonly src: "2054:8:121";
+                                readonly referencedDeclaration: 67200;
+                                readonly src: "2054:8:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly src: "2046:16:121";
+                            readonly src: "2046:16:122";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             };
                         };
-                        readonly id: 67508;
+                        readonly id: 67208;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "2046:16:121";
+                        readonly src: "2046:16:122";
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly id: 67510;
+                                    readonly id: 67210;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -15;
-                                    readonly src: "2099:3:121";
+                                    readonly src: "2099:3:122";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_magic_message";
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 67511;
+                                readonly id: 67211;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "2103:6:121";
+                                readonly memberLocation: "2103:6:122";
                                 readonly memberName: "sender";
                                 readonly nodeType: "MemberAccess";
-                                readonly src: "2099:10:121";
+                                readonly src: "2099:10:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 67512;
+                                readonly id: 67212;
                                 readonly name: "newOwner";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67500;
-                                readonly src: "2111:8:121";
+                                readonly referencedDeclaration: 67200;
+                                readonly src: "2111:8:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -2012,18 +2012,18 @@ export declare const Auth: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 }];
-                                readonly id: 67509;
+                                readonly id: 67209;
                                 readonly name: "OwnershipTransferred";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 67367;
-                                readonly src: "2078:20:121";
+                                readonly referencedDeclaration: 67067;
+                                readonly src: "2078:20:122";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$";
                                     readonly typeString: "function (address,address)";
                                 };
                             };
-                            readonly id: 67513;
+                            readonly id: 67213;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2032,49 +2032,49 @@ export declare const Auth: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "2078:42:121";
+                            readonly src: "2078:42:122";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 67514;
+                        readonly id: 67214;
                         readonly nodeType: "EmitStatement";
-                        readonly src: "2073:47:121";
+                        readonly src: "2073:47:122";
                     }];
                 };
                 readonly functionSelector: "f2fde38b";
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [{
-                    readonly id: 67503;
+                    readonly id: 67203;
                     readonly kind: "modifierInvocation";
                     readonly modifierName: {
-                        readonly id: 67502;
+                        readonly id: 67202;
                         readonly name: "requiresAuth";
-                        readonly nameLocations: readonly ["2023:12:121"];
+                        readonly nameLocations: readonly ["2023:12:122"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 67422;
-                        readonly src: "2023:12:121";
+                        readonly referencedDeclaration: 67122;
+                        readonly src: "2023:12:122";
                     };
                     readonly nodeType: "ModifierInvocation";
-                    readonly src: "2023:12:121";
+                    readonly src: "2023:12:122";
                 }];
                 readonly name: "transferOwnership";
-                readonly nameLocation: "1972:17:121";
+                readonly nameLocation: "1972:17:122";
                 readonly parameters: {
-                    readonly id: 67501;
+                    readonly id: 67201;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 67500;
+                        readonly id: 67200;
                         readonly mutability: "mutable";
                         readonly name: "newOwner";
-                        readonly nameLocation: "1998:8:121";
+                        readonly nameLocation: "1998:8:122";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 67516;
-                        readonly src: "1990:16:121";
+                        readonly scope: 67216;
+                        readonly src: "1990:16:122";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2082,10 +2082,10 @@ export declare const Auth: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 67499;
+                            readonly id: 67199;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1990:7:121";
+                            readonly src: "1990:7:122";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -2094,15 +2094,15 @@ export declare const Auth: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1989:18:121";
+                    readonly src: "1989:18:122";
                 };
                 readonly returnParameters: {
-                    readonly id: 67504;
+                    readonly id: 67204;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "2036:0:121";
+                    readonly src: "2036:0:122";
                 };
-                readonly scope: 67517;
+                readonly scope: 67217;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "public";
@@ -2113,45 +2113,45 @@ export declare const Auth: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly documentation: {
-                readonly id: 67361;
+                readonly id: 67061;
                 readonly nodeType: "StructuredDocumentation";
-                readonly src: "68:301:121";
+                readonly src: "68:301:122";
                 readonly text: "@notice Provides a flexible and updatable auth pattern which is completely separate from application logic.\n @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/auth/Auth.sol)\n @author Modified from Dappsys (https://github.com/dapphub/ds-auth/blob/master/src/auth.sol)";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [67517];
+            readonly linearizedBaseContracts: readonly [67217];
             readonly name: "Auth";
-            readonly nameLocation: "387:4:121";
-            readonly scope: 67531;
+            readonly nameLocation: "387:4:122";
+            readonly scope: 67231;
             readonly usedErrors: readonly [];
-            readonly usedEvents: readonly [67367, 67374];
+            readonly usedEvents: readonly [67067, 67074];
         }, {
-            readonly id: 67530;
+            readonly id: 67230;
             readonly nodeType: "ContractDefinition";
-            readonly src: "2422:154:121";
+            readonly src: "2422:154:122";
             readonly nodes: readonly [{
-                readonly id: 67529;
+                readonly id: 67229;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "2448:126:121";
+                readonly src: "2448:126:122";
                 readonly nodes: readonly [];
                 readonly functionSelector: "b7009613";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "canCall";
-                readonly nameLocation: "2457:7:121";
+                readonly nameLocation: "2457:7:122";
                 readonly parameters: {
-                    readonly id: 67525;
+                    readonly id: 67225;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 67520;
+                        readonly id: 67220;
                         readonly mutability: "mutable";
                         readonly name: "user";
-                        readonly nameLocation: "2482:4:121";
+                        readonly nameLocation: "2482:4:122";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 67529;
-                        readonly src: "2474:12:121";
+                        readonly scope: 67229;
+                        readonly src: "2474:12:122";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2159,10 +2159,10 @@ export declare const Auth: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 67519;
+                            readonly id: 67219;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2474:7:121";
+                            readonly src: "2474:7:122";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -2172,13 +2172,13 @@ export declare const Auth: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 67522;
+                        readonly id: 67222;
                         readonly mutability: "mutable";
                         readonly name: "target";
-                        readonly nameLocation: "2504:6:121";
+                        readonly nameLocation: "2504:6:122";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 67529;
-                        readonly src: "2496:14:121";
+                        readonly scope: 67229;
+                        readonly src: "2496:14:122";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2186,10 +2186,10 @@ export declare const Auth: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 67521;
+                            readonly id: 67221;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2496:7:121";
+                            readonly src: "2496:7:122";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -2199,13 +2199,13 @@ export declare const Auth: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 67524;
+                        readonly id: 67224;
                         readonly mutability: "mutable";
                         readonly name: "functionSig";
-                        readonly nameLocation: "2527:11:121";
+                        readonly nameLocation: "2527:11:122";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 67529;
-                        readonly src: "2520:18:121";
+                        readonly scope: 67229;
+                        readonly src: "2520:18:122";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2213,10 +2213,10 @@ export declare const Auth: {
                             readonly typeString: "bytes4";
                         };
                         readonly typeName: {
-                            readonly id: 67523;
+                            readonly id: 67223;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2520:6:121";
+                            readonly src: "2520:6:122";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes4";
                                 readonly typeString: "bytes4";
@@ -2224,20 +2224,20 @@ export declare const Auth: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2464:80:121";
+                    readonly src: "2464:80:122";
                 };
                 readonly returnParameters: {
-                    readonly id: 67528;
+                    readonly id: 67228;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 67527;
+                        readonly id: 67227;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 67529;
-                        readonly src: "2568:4:121";
+                        readonly scope: 67229;
+                        readonly src: "2568:4:122";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2245,10 +2245,10 @@ export declare const Auth: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 67526;
+                            readonly id: 67226;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2568:4:121";
+                            readonly src: "2568:4:122";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -2256,9 +2256,9 @@ export declare const Auth: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2567:6:121";
+                    readonly src: "2567:6:122";
                 };
-                readonly scope: 67530;
+                readonly scope: 67230;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -2269,21 +2269,21 @@ export declare const Auth: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly documentation: {
-                readonly id: 67518;
+                readonly id: 67218;
                 readonly nodeType: "StructuredDocumentation";
-                readonly src: "2131:291:121";
+                readonly src: "2131:291:122";
                 readonly text: "@notice A generic interface for a contract which provides authorization data to an Auth instance.\n @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/auth/Auth.sol)\n @author Modified from Dappsys (https://github.com/dapphub/ds-auth/blob/master/src/auth.sol)";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [67530];
+            readonly linearizedBaseContracts: readonly [67230];
             readonly name: "Authority";
-            readonly nameLocation: "2432:9:121";
-            readonly scope: 67531;
+            readonly nameLocation: "2432:9:122";
+            readonly scope: 67231;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];
         readonly license: "AGPL-3.0-only";
     };
-    readonly id: 121;
+    readonly id: 122;
 };
 //# sourceMappingURL=Auth.d.ts.map

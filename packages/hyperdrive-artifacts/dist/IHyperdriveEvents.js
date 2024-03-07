@@ -428,6 +428,12 @@ export const IHyperdriveEvents = {
                     "internalType": "address",
                     "name": "newPauser",
                     "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "status",
+                    "type": "bool"
                 }
             ],
             "name": "PauserUpdated",
@@ -568,7 +574,7 @@ export const IHyperdriveEvents = {
         "linkReferences": {}
     },
     "methodIdentifiers": {},
-    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IHyperdriveEvents.sol\":\"IHyperdriveEvents\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x1841703b12d5b2ca7dedff94c7dd71a4ad0a0b47ca59ba9de98ea14929fb72e5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c192bfc8bee91341d7e7530d71df2fbaec69d7bf0017e7b318dea276b7f3e171\",\"dweb:/ipfs/QmRWCkdXJ7G2FDo4CpsNuRvDgYWzN9U3LXLzM3YKHs9M4y\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]}},\"version\":1}",
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IHyperdriveEvents.sol\":\"IHyperdriveEvents\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x1233242868a6eaeb6e6764df97cd094bfda03978bbedb04592db8ddc3ac6db56\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5cc50aa0bdaff888c940b004ad3a7a0c2aac4c15104419bd216ca48270c3fcb8\",\"dweb:/ipfs/QmQS6jncTRsBmZxDgR6dAofzXgTt1bXSRb8WdBNqKTCKiR\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]}},\"version\":1}",
     "metadata": {
         "compiler": {
             "version": "0.8.20+commit.a1b79de6"
@@ -1003,6 +1009,12 @@ export const IHyperdriveEvents = {
                             "name": "newPauser",
                             "type": "address",
                             "indexed": true
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "status",
+                            "type": "bool",
+                            "indexed": false
                         }
                     ],
                     "type": "event",
@@ -1169,10 +1181,10 @@ export const IHyperdriveEvents = {
         },
         "sources": {
             "contracts/src/interfaces/IHyperdriveEvents.sol": {
-                "keccak256": "0x1841703b12d5b2ca7dedff94c7dd71a4ad0a0b47ca59ba9de98ea14929fb72e5",
+                "keccak256": "0x1233242868a6eaeb6e6764df97cd094bfda03978bbedb04592db8ddc3ac6db56",
                 "urls": [
-                    "bzz-raw://c192bfc8bee91341d7e7530d71df2fbaec69d7bf0017e7b318dea276b7f3e171",
-                    "dweb:/ipfs/QmRWCkdXJ7G2FDo4CpsNuRvDgYWzN9U3LXLzM3YKHs9M4y"
+                    "bzz-raw://5cc50aa0bdaff888c940b004ad3a7a0c2aac4c15104419bd216ca48270c3fcb8",
+                    "dweb:/ipfs/QmQS6jncTRsBmZxDgR6dAofzXgTt1bXSRb8WdBNqKTCKiR"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1189,20 +1201,20 @@ export const IHyperdriveEvents = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IHyperdriveEvents.sol",
-        "id": 7925,
+        "id": 8063,
         "exportedSymbols": {
             "IHyperdriveEvents": [
-                7924
+                8062
             ],
             "IMultiTokenEvents": [
-                8482
+                8623
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "39:3170:48",
+        "src": "39:3183:48",
         "nodes": [
             {
-                "id": 7754,
+                "id": 7890,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:48",
                 "nodes": [],
@@ -1213,23 +1225,23 @@ export const IHyperdriveEvents = {
                 ]
             },
             {
-                "id": 7756,
+                "id": 7892,
                 "nodeType": "ImportDirective",
                 "src": "64:60:48",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IMultiTokenEvents.sol",
                 "file": "./IMultiTokenEvents.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 7925,
-                "sourceUnit": 8483,
+                "scope": 8063,
+                "sourceUnit": 8624,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 7755,
+                            "id": 7891,
                             "name": "IMultiTokenEvents",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8482,
+                            "referencedDeclaration": 8623,
                             "src": "73:17:48",
                             "typeDescriptions": {}
                         },
@@ -1239,18 +1251,18 @@ export const IHyperdriveEvents = {
                 "unitAlias": ""
             },
             {
-                "id": 7924,
+                "id": 8062,
                 "nodeType": "ContractDefinition",
-                "src": "126:3082:48",
+                "src": "126:3095:48",
                 "nodes": [
                     {
-                        "id": 7773,
+                        "id": 7909,
                         "nodeType": "EventDefinition",
                         "src": "246:187:48",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 7759,
+                            "id": 7895,
                             "nodeType": "StructuredDocumentation",
                             "src": "181:60:48",
                             "text": "@notice Emitted when the Hyperdrive pool is initialized."
@@ -1259,18 +1271,18 @@ export const IHyperdriveEvents = {
                         "name": "Initialize",
                         "nameLocation": "252:10:48",
                         "parameters": {
-                            "id": 7772,
+                            "id": 7908,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7761,
+                                    "id": 7897,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "provider",
                                     "nameLocation": "288:8:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7773,
+                                    "scope": 7909,
                                     "src": "272:24:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1279,7 +1291,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7760,
+                                        "id": 7896,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "272:7:48",
@@ -1293,13 +1305,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7763,
+                                    "id": 7899,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "lpAmount",
                                     "nameLocation": "314:8:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7773,
+                                    "scope": 7909,
                                     "src": "306:16:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1308,7 +1320,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7762,
+                                        "id": 7898,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "306:7:48",
@@ -1321,13 +1333,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7765,
+                                    "id": 7901,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "baseAmount",
                                     "nameLocation": "340:10:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7773,
+                                    "scope": 7909,
                                     "src": "332:18:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1336,7 +1348,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7764,
+                                        "id": 7900,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "332:7:48",
@@ -1349,13 +1361,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7767,
+                                    "id": 7903,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "vaultShareAmount",
                                     "nameLocation": "368:16:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7773,
+                                    "scope": 7909,
                                     "src": "360:24:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1364,7 +1376,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7766,
+                                        "id": 7902,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "360:7:48",
@@ -1377,13 +1389,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7769,
+                                    "id": 7905,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "asBase",
                                     "nameLocation": "399:6:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7773,
+                                    "scope": 7909,
                                     "src": "394:11:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1392,7 +1404,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 7768,
+                                        "id": 7904,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "394:4:48",
@@ -1405,13 +1417,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7771,
+                                    "id": 7907,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "apr",
                                     "nameLocation": "423:3:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7773,
+                                    "scope": 7909,
                                     "src": "415:11:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1420,7 +1432,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7770,
+                                        "id": 7906,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "415:7:48",
@@ -1436,13 +1448,13 @@ export const IHyperdriveEvents = {
                         }
                     },
                     {
-                        "id": 7788,
+                        "id": 7924,
                         "nodeType": "EventDefinition",
                         "src": "513:198:48",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 7774,
+                            "id": 7910,
                             "nodeType": "StructuredDocumentation",
                             "src": "439:69:48",
                             "text": "@notice Emitted when an LP adds liquidity to the Hyperdrive pool."
@@ -1451,18 +1463,18 @@ export const IHyperdriveEvents = {
                         "name": "AddLiquidity",
                         "nameLocation": "519:12:48",
                         "parameters": {
-                            "id": 7787,
+                            "id": 7923,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7776,
+                                    "id": 7912,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "provider",
                                     "nameLocation": "557:8:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7788,
+                                    "scope": 7924,
                                     "src": "541:24:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1471,7 +1483,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7775,
+                                        "id": 7911,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "541:7:48",
@@ -1485,13 +1497,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7778,
+                                    "id": 7914,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "lpAmount",
                                     "nameLocation": "583:8:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7788,
+                                    "scope": 7924,
                                     "src": "575:16:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1500,7 +1512,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7777,
+                                        "id": 7913,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "575:7:48",
@@ -1513,13 +1525,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7780,
+                                    "id": 7916,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "baseAmount",
                                     "nameLocation": "609:10:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7788,
+                                    "scope": 7924,
                                     "src": "601:18:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1528,7 +1540,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7779,
+                                        "id": 7915,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "601:7:48",
@@ -1541,13 +1553,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7782,
+                                    "id": 7918,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "vaultShareAmount",
                                     "nameLocation": "637:16:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7788,
+                                    "scope": 7924,
                                     "src": "629:24:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1556,7 +1568,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7781,
+                                        "id": 7917,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "629:7:48",
@@ -1569,13 +1581,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7784,
+                                    "id": 7920,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "asBase",
                                     "nameLocation": "668:6:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7788,
+                                    "scope": 7924,
                                     "src": "663:11:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1584,7 +1596,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 7783,
+                                        "id": 7919,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "663:4:48",
@@ -1597,13 +1609,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7786,
+                                    "id": 7922,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "lpSharePrice",
                                     "nameLocation": "692:12:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7788,
+                                    "scope": 7924,
                                     "src": "684:20:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1612,7 +1624,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7785,
+                                        "id": 7921,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "684:7:48",
@@ -1628,13 +1640,13 @@ export const IHyperdriveEvents = {
                         }
                     },
                     {
-                        "id": 7805,
+                        "id": 7941,
                         "nodeType": "EventDefinition",
                         "src": "796:240:48",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 7789,
+                            "id": 7925,
                             "nodeType": "StructuredDocumentation",
                             "src": "717:74:48",
                             "text": "@notice Emitted when an LP removes liquidity from the Hyperdrive pool."
@@ -1643,18 +1655,18 @@ export const IHyperdriveEvents = {
                         "name": "RemoveLiquidity",
                         "nameLocation": "802:15:48",
                         "parameters": {
-                            "id": 7804,
+                            "id": 7940,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7791,
+                                    "id": 7927,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "provider",
                                     "nameLocation": "843:8:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7805,
+                                    "scope": 7941,
                                     "src": "827:24:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1663,7 +1675,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7790,
+                                        "id": 7926,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "827:7:48",
@@ -1677,13 +1689,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7793,
+                                    "id": 7929,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "lpAmount",
                                     "nameLocation": "869:8:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7805,
+                                    "scope": 7941,
                                     "src": "861:16:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1692,7 +1704,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7792,
+                                        "id": 7928,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "861:7:48",
@@ -1705,13 +1717,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7795,
+                                    "id": 7931,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "baseAmount",
                                     "nameLocation": "895:10:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7805,
+                                    "scope": 7941,
                                     "src": "887:18:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1720,7 +1732,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7794,
+                                        "id": 7930,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "887:7:48",
@@ -1733,13 +1745,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7797,
+                                    "id": 7933,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "vaultShareAmount",
                                     "nameLocation": "923:16:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7805,
+                                    "scope": 7941,
                                     "src": "915:24:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1748,7 +1760,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7796,
+                                        "id": 7932,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "915:7:48",
@@ -1761,13 +1773,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7799,
+                                    "id": 7935,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "asBase",
                                     "nameLocation": "954:6:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7805,
+                                    "scope": 7941,
                                     "src": "949:11:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1776,7 +1788,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 7798,
+                                        "id": 7934,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "949:4:48",
@@ -1789,13 +1801,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7801,
+                                    "id": 7937,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "withdrawalShareAmount",
                                     "nameLocation": "978:21:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7805,
+                                    "scope": 7941,
                                     "src": "970:29:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1804,7 +1816,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7800,
+                                        "id": 7936,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "970:7:48",
@@ -1817,13 +1829,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7803,
+                                    "id": 7939,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "lpSharePrice",
                                     "nameLocation": "1017:12:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7805,
+                                    "scope": 7941,
                                     "src": "1009:20:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1832,7 +1844,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7802,
+                                        "id": 7938,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1009:7:48",
@@ -1848,13 +1860,13 @@ export const IHyperdriveEvents = {
                         }
                     },
                     {
-                        "id": 7818,
+                        "id": 7954,
                         "nodeType": "EventDefinition",
                         "src": "1104:191:48",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 7806,
+                            "id": 7942,
                             "nodeType": "StructuredDocumentation",
                             "src": "1042:57:48",
                             "text": "@notice Emitted when an LP redeems withdrawal shares."
@@ -1863,18 +1875,18 @@ export const IHyperdriveEvents = {
                         "name": "RedeemWithdrawalShares",
                         "nameLocation": "1110:22:48",
                         "parameters": {
-                            "id": 7817,
+                            "id": 7953,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7808,
+                                    "id": 7944,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "provider",
                                     "nameLocation": "1158:8:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7818,
+                                    "scope": 7954,
                                     "src": "1142:24:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1883,7 +1895,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7807,
+                                        "id": 7943,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1142:7:48",
@@ -1897,13 +1909,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7810,
+                                    "id": 7946,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "withdrawalShareAmount",
                                     "nameLocation": "1184:21:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7818,
+                                    "scope": 7954,
                                     "src": "1176:29:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1912,7 +1924,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7809,
+                                        "id": 7945,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1176:7:48",
@@ -1925,13 +1937,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7812,
+                                    "id": 7948,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "baseAmount",
                                     "nameLocation": "1223:10:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7818,
+                                    "scope": 7954,
                                     "src": "1215:18:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1940,7 +1952,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7811,
+                                        "id": 7947,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1215:7:48",
@@ -1953,13 +1965,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7814,
+                                    "id": 7950,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "vaultShareAmount",
                                     "nameLocation": "1251:16:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7818,
+                                    "scope": 7954,
                                     "src": "1243:24:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1968,7 +1980,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7813,
+                                        "id": 7949,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1243:7:48",
@@ -1981,13 +1993,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7816,
+                                    "id": 7952,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "asBase",
                                     "nameLocation": "1282:6:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7818,
+                                    "scope": 7954,
                                     "src": "1277:11:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1996,7 +2008,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 7815,
+                                        "id": 7951,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1277:4:48",
@@ -2012,13 +2024,13 @@ export const IHyperdriveEvents = {
                         }
                     },
                     {
-                        "id": 7835,
+                        "id": 7971,
                         "nodeType": "EventDefinition",
                         "src": "1357:227:48",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 7819,
+                            "id": 7955,
                             "nodeType": "StructuredDocumentation",
                             "src": "1301:51:48",
                             "text": "@notice Emitted when a long position is opened."
@@ -2027,18 +2039,18 @@ export const IHyperdriveEvents = {
                         "name": "OpenLong",
                         "nameLocation": "1363:8:48",
                         "parameters": {
-                            "id": 7834,
+                            "id": 7970,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7821,
+                                    "id": 7957,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "trader",
                                     "nameLocation": "1397:6:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7835,
+                                    "scope": 7971,
                                     "src": "1381:22:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2047,7 +2059,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7820,
+                                        "id": 7956,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1381:7:48",
@@ -2061,13 +2073,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7823,
+                                    "id": 7959,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "assetId",
                                     "nameLocation": "1429:7:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7835,
+                                    "scope": 7971,
                                     "src": "1413:23:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2076,7 +2088,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7822,
+                                        "id": 7958,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1413:7:48",
@@ -2089,13 +2101,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7825,
+                                    "id": 7961,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "maturityTime",
                                     "nameLocation": "1454:12:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7835,
+                                    "scope": 7971,
                                     "src": "1446:20:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2104,7 +2116,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7824,
+                                        "id": 7960,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1446:7:48",
@@ -2117,13 +2129,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7827,
+                                    "id": 7963,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "baseAmount",
                                     "nameLocation": "1484:10:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7835,
+                                    "scope": 7971,
                                     "src": "1476:18:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2132,7 +2144,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7826,
+                                        "id": 7962,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1476:7:48",
@@ -2145,13 +2157,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7829,
+                                    "id": 7965,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "vaultShareAmount",
                                     "nameLocation": "1512:16:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7835,
+                                    "scope": 7971,
                                     "src": "1504:24:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2160,7 +2172,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7828,
+                                        "id": 7964,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1504:7:48",
@@ -2173,13 +2185,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7831,
+                                    "id": 7967,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "asBase",
                                     "nameLocation": "1543:6:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7835,
+                                    "scope": 7971,
                                     "src": "1538:11:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2188,7 +2200,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 7830,
+                                        "id": 7966,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1538:4:48",
@@ -2201,13 +2213,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7833,
+                                    "id": 7969,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "bondAmount",
                                     "nameLocation": "1567:10:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7835,
+                                    "scope": 7971,
                                     "src": "1559:18:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2216,7 +2228,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7832,
+                                        "id": 7968,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1559:7:48",
@@ -2232,13 +2244,13 @@ export const IHyperdriveEvents = {
                         }
                     },
                     {
-                        "id": 7854,
+                        "id": 7990,
                         "nodeType": "EventDefinition",
                         "src": "1647:258:48",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 7836,
+                            "id": 7972,
                             "nodeType": "StructuredDocumentation",
                             "src": "1590:52:48",
                             "text": "@notice Emitted when a short position is opened."
@@ -2247,18 +2259,18 @@ export const IHyperdriveEvents = {
                         "name": "OpenShort",
                         "nameLocation": "1653:9:48",
                         "parameters": {
-                            "id": 7853,
+                            "id": 7989,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7838,
+                                    "id": 7974,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "trader",
                                     "nameLocation": "1688:6:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7854,
+                                    "scope": 7990,
                                     "src": "1672:22:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2267,7 +2279,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7837,
+                                        "id": 7973,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1672:7:48",
@@ -2281,13 +2293,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7840,
+                                    "id": 7976,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "assetId",
                                     "nameLocation": "1720:7:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7854,
+                                    "scope": 7990,
                                     "src": "1704:23:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2296,7 +2308,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7839,
+                                        "id": 7975,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1704:7:48",
@@ -2309,13 +2321,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7842,
+                                    "id": 7978,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "maturityTime",
                                     "nameLocation": "1745:12:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7854,
+                                    "scope": 7990,
                                     "src": "1737:20:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2324,7 +2336,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7841,
+                                        "id": 7977,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1737:7:48",
@@ -2337,13 +2349,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7844,
+                                    "id": 7980,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "baseAmount",
                                     "nameLocation": "1775:10:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7854,
+                                    "scope": 7990,
                                     "src": "1767:18:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2352,7 +2364,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7843,
+                                        "id": 7979,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1767:7:48",
@@ -2365,13 +2377,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7846,
+                                    "id": 7982,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "vaultShareAmount",
                                     "nameLocation": "1803:16:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7854,
+                                    "scope": 7990,
                                     "src": "1795:24:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2380,7 +2392,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7845,
+                                        "id": 7981,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1795:7:48",
@@ -2393,13 +2405,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7848,
+                                    "id": 7984,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "asBase",
                                     "nameLocation": "1834:6:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7854,
+                                    "scope": 7990,
                                     "src": "1829:11:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2408,7 +2420,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 7847,
+                                        "id": 7983,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1829:4:48",
@@ -2421,13 +2433,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7850,
+                                    "id": 7986,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "baseProceeds",
                                     "nameLocation": "1858:12:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7854,
+                                    "scope": 7990,
                                     "src": "1850:20:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2436,7 +2448,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7849,
+                                        "id": 7985,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1850:7:48",
@@ -2449,13 +2461,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7852,
+                                    "id": 7988,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "bondAmount",
                                     "nameLocation": "1888:10:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7854,
+                                    "scope": 7990,
                                     "src": "1880:18:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2464,7 +2476,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7851,
+                                        "id": 7987,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1880:7:48",
@@ -2480,13 +2492,13 @@ export const IHyperdriveEvents = {
                         }
                     },
                     {
-                        "id": 7871,
+                        "id": 8007,
                         "nodeType": "EventDefinition",
                         "src": "1967:228:48",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 7855,
+                            "id": 7991,
                             "nodeType": "StructuredDocumentation",
                             "src": "1911:51:48",
                             "text": "@notice Emitted when a long position is closed."
@@ -2495,18 +2507,18 @@ export const IHyperdriveEvents = {
                         "name": "CloseLong",
                         "nameLocation": "1973:9:48",
                         "parameters": {
-                            "id": 7870,
+                            "id": 8006,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7857,
+                                    "id": 7993,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "trader",
                                     "nameLocation": "2008:6:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7871,
+                                    "scope": 8007,
                                     "src": "1992:22:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2515,7 +2527,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7856,
+                                        "id": 7992,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1992:7:48",
@@ -2529,13 +2541,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7859,
+                                    "id": 7995,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "assetId",
                                     "nameLocation": "2040:7:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7871,
+                                    "scope": 8007,
                                     "src": "2024:23:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2544,7 +2556,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7858,
+                                        "id": 7994,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2024:7:48",
@@ -2557,13 +2569,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7861,
+                                    "id": 7997,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "maturityTime",
                                     "nameLocation": "2065:12:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7871,
+                                    "scope": 8007,
                                     "src": "2057:20:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2572,7 +2584,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7860,
+                                        "id": 7996,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2057:7:48",
@@ -2585,13 +2597,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7863,
+                                    "id": 7999,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "baseAmount",
                                     "nameLocation": "2095:10:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7871,
+                                    "scope": 8007,
                                     "src": "2087:18:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2600,7 +2612,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7862,
+                                        "id": 7998,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2087:7:48",
@@ -2613,13 +2625,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7865,
+                                    "id": 8001,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "vaultShareAmount",
                                     "nameLocation": "2123:16:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7871,
+                                    "scope": 8007,
                                     "src": "2115:24:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2628,7 +2640,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7864,
+                                        "id": 8000,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2115:7:48",
@@ -2641,13 +2653,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7867,
+                                    "id": 8003,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "asBase",
                                     "nameLocation": "2154:6:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7871,
+                                    "scope": 8007,
                                     "src": "2149:11:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2656,7 +2668,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 7866,
+                                        "id": 8002,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2149:4:48",
@@ -2669,13 +2681,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7869,
+                                    "id": 8005,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "bondAmount",
                                     "nameLocation": "2178:10:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7871,
+                                    "scope": 8007,
                                     "src": "2170:18:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2684,7 +2696,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7868,
+                                        "id": 8004,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2170:7:48",
@@ -2700,13 +2712,13 @@ export const IHyperdriveEvents = {
                         }
                     },
                     {
-                        "id": 7888,
+                        "id": 8024,
                         "nodeType": "EventDefinition",
                         "src": "2258:229:48",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 7872,
+                            "id": 8008,
                             "nodeType": "StructuredDocumentation",
                             "src": "2201:52:48",
                             "text": "@notice Emitted when a short position is closed."
@@ -2715,18 +2727,18 @@ export const IHyperdriveEvents = {
                         "name": "CloseShort",
                         "nameLocation": "2264:10:48",
                         "parameters": {
-                            "id": 7887,
+                            "id": 8023,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7874,
+                                    "id": 8010,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "trader",
                                     "nameLocation": "2300:6:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7888,
+                                    "scope": 8024,
                                     "src": "2284:22:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2735,7 +2747,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7873,
+                                        "id": 8009,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2284:7:48",
@@ -2749,13 +2761,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7876,
+                                    "id": 8012,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "assetId",
                                     "nameLocation": "2332:7:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7888,
+                                    "scope": 8024,
                                     "src": "2316:23:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2764,7 +2776,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7875,
+                                        "id": 8011,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2316:7:48",
@@ -2777,13 +2789,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7878,
+                                    "id": 8014,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "maturityTime",
                                     "nameLocation": "2357:12:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7888,
+                                    "scope": 8024,
                                     "src": "2349:20:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2792,7 +2804,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7877,
+                                        "id": 8013,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2349:7:48",
@@ -2805,13 +2817,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7880,
+                                    "id": 8016,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "baseAmount",
                                     "nameLocation": "2387:10:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7888,
+                                    "scope": 8024,
                                     "src": "2379:18:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2820,7 +2832,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7879,
+                                        "id": 8015,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2379:7:48",
@@ -2833,13 +2845,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7882,
+                                    "id": 8018,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "vaultShareAmount",
                                     "nameLocation": "2415:16:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7888,
+                                    "scope": 8024,
                                     "src": "2407:24:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2848,7 +2860,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7881,
+                                        "id": 8017,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2407:7:48",
@@ -2861,13 +2873,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7884,
+                                    "id": 8020,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "asBase",
                                     "nameLocation": "2446:6:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7888,
+                                    "scope": 8024,
                                     "src": "2441:11:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2876,7 +2888,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 7883,
+                                        "id": 8019,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2441:4:48",
@@ -2889,13 +2901,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7886,
+                                    "id": 8022,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "bondAmount",
                                     "nameLocation": "2470:10:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7888,
+                                    "scope": 8024,
                                     "src": "2462:18:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2904,7 +2916,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7885,
+                                        "id": 8021,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2462:7:48",
@@ -2920,13 +2932,13 @@ export const IHyperdriveEvents = {
                         }
                     },
                     {
-                        "id": 7901,
+                        "id": 8037,
                         "nodeType": "EventDefinition",
                         "src": "2547:193:48",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 7889,
+                            "id": 8025,
                             "nodeType": "StructuredDocumentation",
                             "src": "2493:49:48",
                             "text": "@notice Emitted when a checkpoint is created."
@@ -2935,18 +2947,18 @@ export const IHyperdriveEvents = {
                         "name": "CreateCheckpoint",
                         "nameLocation": "2553:16:48",
                         "parameters": {
-                            "id": 7900,
+                            "id": 8036,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7891,
+                                    "id": 8027,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "checkpointTime",
                                     "nameLocation": "2595:14:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7901,
+                                    "scope": 8037,
                                     "src": "2579:30:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2955,7 +2967,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7890,
+                                        "id": 8026,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2579:7:48",
@@ -2968,13 +2980,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7893,
+                                    "id": 8029,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "vaultSharePrice",
                                     "nameLocation": "2627:15:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7901,
+                                    "scope": 8037,
                                     "src": "2619:23:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2983,7 +2995,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7892,
+                                        "id": 8028,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2619:7:48",
@@ -2996,13 +3008,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7895,
+                                    "id": 8031,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "maturedShorts",
                                     "nameLocation": "2660:13:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7901,
+                                    "scope": 8037,
                                     "src": "2652:21:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3011,7 +3023,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7894,
+                                        "id": 8030,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2652:7:48",
@@ -3024,13 +3036,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7897,
+                                    "id": 8033,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "maturedLongs",
                                     "nameLocation": "2691:12:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7901,
+                                    "scope": 8037,
                                     "src": "2683:20:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3039,7 +3051,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7896,
+                                        "id": 8032,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2683:7:48",
@@ -3052,13 +3064,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7899,
+                                    "id": 8035,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "lpSharePrice",
                                     "nameLocation": "2721:12:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7901,
+                                    "scope": 8037,
                                     "src": "2713:20:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3067,7 +3079,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7898,
+                                        "id": 8034,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2713:7:48",
@@ -3083,13 +3095,13 @@ export const IHyperdriveEvents = {
                         }
                     },
                     {
-                        "id": 7908,
+                        "id": 8044,
                         "nodeType": "EventDefinition",
                         "src": "2806:68:48",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 7902,
+                            "id": 8038,
                             "nodeType": "StructuredDocumentation",
                             "src": "2746:55:48",
                             "text": "@notice Emitted when governance fees are collected."
@@ -3098,18 +3110,18 @@ export const IHyperdriveEvents = {
                         "name": "CollectGovernanceFee",
                         "nameLocation": "2812:20:48",
                         "parameters": {
-                            "id": 7907,
+                            "id": 8043,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7904,
+                                    "id": 8040,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "collector",
                                     "nameLocation": "2849:9:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7908,
+                                    "scope": 8044,
                                     "src": "2833:25:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3118,7 +3130,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7903,
+                                        "id": 8039,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2833:7:48",
@@ -3132,13 +3144,13 @@ export const IHyperdriveEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7906,
+                                    "id": 8042,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "fees",
                                     "nameLocation": "2868:4:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7908,
+                                    "scope": 8044,
                                     "src": "2860:12:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3147,7 +3159,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7905,
+                                        "id": 8041,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2860:7:48",
@@ -3163,13 +3175,13 @@ export const IHyperdriveEvents = {
                         }
                     },
                     {
-                        "id": 7913,
+                        "id": 8049,
                         "nodeType": "EventDefinition",
                         "src": "2944:55:48",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 7909,
+                            "id": 8045,
                             "nodeType": "StructuredDocumentation",
                             "src": "2880:59:48",
                             "text": "@notice Emitted when the governance address is updated."
@@ -3178,18 +3190,18 @@ export const IHyperdriveEvents = {
                         "name": "GovernanceUpdated",
                         "nameLocation": "2950:17:48",
                         "parameters": {
-                            "id": 7912,
+                            "id": 8048,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7911,
+                                    "id": 8047,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "newGovernance",
                                     "nameLocation": "2984:13:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7913,
+                                    "scope": 8049,
                                     "src": "2968:29:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3198,7 +3210,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7910,
+                                        "id": 8046,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2968:7:48",
@@ -3215,33 +3227,33 @@ export const IHyperdriveEvents = {
                         }
                     },
                     {
-                        "id": 7918,
+                        "id": 8056,
                         "nodeType": "EventDefinition",
-                        "src": "3055:47:48",
+                        "src": "3055:60:48",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 7914,
+                            "id": 8050,
                             "nodeType": "StructuredDocumentation",
                             "src": "3005:45:48",
                             "text": "@notice Emitted when a pauser is updated."
                         },
-                        "eventSelector": "a4336c0cb1e245b95ad204faed7e940d6dc999684fd8b5e1ff597a0c4efca8ab",
+                        "eventSelector": "902923dcd4814f6cef7005a70e01d5cf2035ab02d4523ef3b865f1d7bab885af",
                         "name": "PauserUpdated",
                         "nameLocation": "3061:13:48",
                         "parameters": {
-                            "id": 7917,
+                            "id": 8055,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7916,
+                                    "id": 8052,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "newPauser",
                                     "nameLocation": "3091:9:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7918,
+                                    "scope": 8056,
                                     "src": "3075:25:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3250,7 +3262,7 @@ export const IHyperdriveEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7915,
+                                        "id": 8051,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3075:7:48",
@@ -3261,40 +3273,17 @@ export const IHyperdriveEvents = {
                                         }
                                     },
                                     "visibility": "internal"
-                                }
-                            ],
-                            "src": "3074:27:48"
-                        }
-                    },
-                    {
-                        "id": 7923,
-                        "nodeType": "EventDefinition",
-                        "src": "3166:40:48",
-                        "nodes": [],
-                        "anonymous": false,
-                        "documentation": {
-                            "id": 7919,
-                            "nodeType": "StructuredDocumentation",
-                            "src": "3108:53:48",
-                            "text": "@notice Emitted when the pause status is updated."
-                        },
-                        "eventSelector": "7c4d1fe30fdbfda9e9c4c43e759ef32e4db5128d4cb58ff3ae9583b89b6242a5",
-                        "name": "PauseStatusUpdated",
-                        "nameLocation": "3172:18:48",
-                        "parameters": {
-                            "id": 7922,
-                            "nodeType": "ParameterList",
-                            "parameters": [
+                                },
                                 {
                                     "constant": false,
-                                    "id": 7921,
+                                    "id": 8054,
                                     "indexed": false,
                                     "mutability": "mutable",
-                                    "name": "isPaused",
-                                    "nameLocation": "3196:8:48",
+                                    "name": "status",
+                                    "nameLocation": "3107:6:48",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7923,
-                                    "src": "3191:13:48",
+                                    "scope": 8056,
+                                    "src": "3102:11:48",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3302,10 +3291,10 @@ export const IHyperdriveEvents = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 7920,
+                                        "id": 8053,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3191:4:48",
+                                        "src": "3102:4:48",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -3314,7 +3303,58 @@ export const IHyperdriveEvents = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3190:15:48"
+                            "src": "3074:40:48"
+                        }
+                    },
+                    {
+                        "id": 8061,
+                        "nodeType": "EventDefinition",
+                        "src": "3179:40:48",
+                        "nodes": [],
+                        "anonymous": false,
+                        "documentation": {
+                            "id": 8057,
+                            "nodeType": "StructuredDocumentation",
+                            "src": "3121:53:48",
+                            "text": "@notice Emitted when the pause status is updated."
+                        },
+                        "eventSelector": "7c4d1fe30fdbfda9e9c4c43e759ef32e4db5128d4cb58ff3ae9583b89b6242a5",
+                        "name": "PauseStatusUpdated",
+                        "nameLocation": "3185:18:48",
+                        "parameters": {
+                            "id": 8060,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 8059,
+                                    "indexed": false,
+                                    "mutability": "mutable",
+                                    "name": "isPaused",
+                                    "nameLocation": "3209:8:48",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 8061,
+                                    "src": "3204:13:48",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bool",
+                                        "typeString": "bool"
+                                    },
+                                    "typeName": {
+                                        "id": 8058,
+                                        "name": "bool",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "3204:4:48",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bool",
+                                            "typeString": "bool"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "3203:15:48"
                         }
                     }
                 ],
@@ -3322,16 +3362,16 @@ export const IHyperdriveEvents = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 7757,
+                            "id": 7893,
                             "name": "IMultiTokenEvents",
                             "nameLocations": [
                                 "157:17:48"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 8482,
+                            "referencedDeclaration": 8623,
                             "src": "157:17:48"
                         },
-                        "id": 7758,
+                        "id": 7894,
                         "nodeType": "InheritanceSpecifier",
                         "src": "157:17:48"
                     }
@@ -3341,30 +3381,30 @@ export const IHyperdriveEvents = {
                 "contractKind": "interface",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    7924,
-                    8482
+                    8062,
+                    8623
                 ],
                 "name": "IHyperdriveEvents",
                 "nameLocation": "136:17:48",
-                "scope": 7925,
+                "scope": 8063,
                 "usedErrors": [],
                 "usedEvents": [
-                    7773,
-                    7788,
-                    7805,
-                    7818,
-                    7835,
-                    7854,
-                    7871,
-                    7888,
-                    7901,
-                    7908,
-                    7913,
-                    7918,
-                    7923,
-                    8463,
-                    8472,
-                    8481
+                    7909,
+                    7924,
+                    7941,
+                    7954,
+                    7971,
+                    7990,
+                    8007,
+                    8024,
+                    8037,
+                    8044,
+                    8049,
+                    8056,
+                    8061,
+                    8604,
+                    8613,
+                    8622
                 ]
             }
         ],
