@@ -1,74 +1,160 @@
-![reactjs-vite-tailwindcss-boilerplate](https://user-images.githubusercontent.com/16243531/217138979-b854309c-4742-4275-a705-f9fec5158217.jpg)
+![Council Kit Logo](../hyperdrive-trading//src//public/HyperdriveLogo.png)
 
-# Hyperdrive-protoype-ui
+# Hyperdrive Trading UI
 
-This is a boilerplate build with Vite, React 18, TypeScript, Vitest, Testing Library, TailwindCSS 3, Eslint and Prettier.
+Description for hyperdrive trading UI
 
-## What is inside?
+Get started with the [Docs](https://github.com/delvtech/council-kit/wiki).
 
-This project uses many tools like:
+Requires `Node 14+`.
 
-- [Vite](https://vitejs.dev)
-- [ReactJS](https://reactjs.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Vitest](https://vitest.dev)
-- [Testing Library](https://testing-library.com)
-- [Tailwindcss](https://tailwindcss.com)
-- [Eslint](https://eslint.org)
-- [Prettier](https://prettier.io)
+## What's inside?
 
-## Getting Started
+This monorepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. It includes the following packages/apps:
 
-### Install
+### Apps
+| Name                                                                                                | Description                                                     |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| [council-ui](https://github.com/delvtech/council-kit/tree/main/apps/council-ui)                   | A reference user interface built with NextJS and using the SDK. |
+| [council-sdk-starter](https://github.com/delvtech/council-kit/tree/main/apps/council-sdk-starter) | A boilerplate TypeScript project that uses the SDK.             |
 
-Access the project directory.
+### Packages
+
+| Name                                                                                                | Description                                                                 |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| [council-sdk](https://github.com/delvtech/council-kit/tree/main/packages/council-sdk)             | A TypeScript SDK for interfacing with the Council protocol.                 |
+| [council-deploy](https://github.com/delvtech/council-kit/tree/main/packages/council-deploy)       | A template for deploying council contracts on Goerli.                |
+| [council-typechain](https://github.com/delvtech/council-kit/tree/main/packages/council-typechain) | Type classes generated from the council protocol contracts using Typechain. |
+
+### Utility Packages
+
+| Name                                                                                            | Description                          |
+| ----------------------------------------------------------------------------------------------- | ------------------------------------ |
+| [@council/eslint-config](https://github.com/delvtech/council-kit/tree/main/packages/@council/eslint-config)     | Package for static type checking.    |
+| [prettier-config](https://github.com/delvtech/council-kit/tree/main/packages/prettier-config) | Package for code formatting.         |
+| [@council/tsconfig](https://github.com/delvtech/council-kit/tree/main/packages/tsconfig)               | Package for TypeScript configuation. |
+
+Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+
+## Monorepo commands
+
+### Build
+
+To build all apps and packages, run the following command:
 
 ```bash
-cd my-app
+yarn build
+
+# build only packages (useful for app development)
+yarn build:packages
+
 ```
 
-Install dependencies.
+### Develop
 
-```bash
-yarn install
-```
-
-Serve with hot reload at <http://localhost:5173>.
+To run the development server for all apps, run the following command:
 
 ```bash
 yarn dev
 ```
 
-### Lint
+### Linting
+
+To run linting on all apps and packages, run the following command:
 
 ```bash
 yarn lint
 ```
 
-### Typecheck
+### Formatting
+
+To run formatting on all apps and packages, run the following command:
 
 ```bash
-yarn typecheck
+yarn format:check
+
+# write formatting changes to files
+yarn format
+
 ```
 
-### Build
+## Development
+
+1. Clone the repo: `git clone git@github.com:delvtech/council-kit.git`
+2. Run `yarn` at the top-level to install all packages across every workspace
+
+### Installing new packages
+
+Here are a few examples of how to install packages in this repo:
 
 ```bash
-yarn build
+# Install prettier for the top-level package.json, useful for tooling that
+# runs against the entire monorepo
+yarn add prettier
+
+# Install lodash for the packages/council-sdk workspace.
+# Note: specify the workspace by the name in its `package.json`, ie: `@council/sdk` not `council-sdk`
+yarn workspace @council/sdk add lodash
 ```
 
-### Test
+### Installing a workspace package
+
+To install a project from the packages/ directory as a dependency, copy it
+directly into your app package.json like this, then run `yarn`.
+
+```json
+{
+  "dependencies": {
+    "@council/sdk": "*",
+    "@council/typechain": "*"
+  }
+}
+```
+
+### Running workspace scripts
+
+To run scripts in workspaces, use the following command:
 
 ```bash
-yarn test
+yarn workspace <workspace-name> <package.json script>
 ```
 
-View and interact with your tests via UI.
+Example
 
 ```bash
-yarn test:ui
+yarn workspace council-ui start
 ```
 
-## License
+## Turborepo
 
-This project is licensed under the MIT License.
+This package uses the [turborepo](https://turbo.build/) monorepo framework. Turborepo provides additional features compared to a plain monorepo such as local/remote command caching and parallel npm script execution.
+
+### Remote Caching
+
+Turborepo can use a technique known as [Remote Caching](https://turborepo.org/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+
+By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+
+```
+cd my-turborepo
+npx turbo login
+```
+
+This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+
+Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
+
+```
+npx turbo link
+```
+
+### Resources
+
+Learn more about the power of Turborepo:
+
+- [Pipelines](https://turborepo.org/docs/core-concepts/pipelines)
+- [Caching](https://turborepo.org/docs/core-concepts/caching)
+- [Remote Caching](https://turborepo.org/docs/core-concepts/remote-caching)
+- [Scoped Tasks](https://turborepo.org/docs/core-concepts/scopes)
+- [Configuration Options](https://turborepo.org/docs/reference/configuration)
+- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
