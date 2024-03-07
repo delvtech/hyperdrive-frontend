@@ -64,7 +64,7 @@ export const localChainAppConfig: AppConfig = {
   ],
   hyperdrives: [
     {
-      address: "0x8002838f37572c02503bf9609717cf3e0e72c311",
+      address: "0x7aba23eab591909f9dc5770cea764b8aa989dd25",
       name: "7d BASE-Maker DSR",
       decimals: 18,
       baseToken: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
@@ -76,13 +76,13 @@ export const localChainAppConfig: AppConfig = {
         baseToken: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
         linkerFactory: "0x06E5aCdA0914B9c79eF21798629c96bFC6b6D11b",
         linkerCodeHash:
-          "0x667d4fd5e9caf594f2719acb9a7e4aa728f4c384e906a974032be6aa1fc2df66",
+          "0xb36944ca91b8aa82a7379308023324088bc57f58f9b278807384b8fa6e9621ff",
         initialVaultSharePrice: 1000000000000000000n,
         minimumShareReserves: 10000000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         positionDuration: 604800n,
         checkpointDuration: 3600n,
-        timeStretch: 873443363379730n,
+        timeStretch: 873443363379729n,
         governance: "0x0000000000000000000000000000000000000000",
         feeCollector: "0x0000000000000000000000000000000000000000",
         fees: {
@@ -94,7 +94,7 @@ export const localChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x1546c8bf7fc378a89f42490c2562c143d540dfaa",
+      address: "0xe1d074d8e81f12a70af59aaae166ae35c9023ae3",
       name: "7d ETH-Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -106,13 +106,13 @@ export const localChainAppConfig: AppConfig = {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
         linkerFactory: "0x06E5aCdA0914B9c79eF21798629c96bFC6b6D11b",
         linkerCodeHash:
-          "0x667d4fd5e9caf594f2719acb9a7e4aa728f4c384e906a974032be6aa1fc2df66",
+          "0xb36944ca91b8aa82a7379308023324088bc57f58f9b278807384b8fa6e9621ff",
         initialVaultSharePrice: 1000000029965753424n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         positionDuration: 604800n,
         checkpointDuration: 3600n,
-        timeStretch: 607084408361255n,
+        timeStretch: 607084408361253n,
         governance: "0x0000000000000000000000000000000000000000",
         feeCollector: "0x0000000000000000000000000000000000000000",
         fees: {
