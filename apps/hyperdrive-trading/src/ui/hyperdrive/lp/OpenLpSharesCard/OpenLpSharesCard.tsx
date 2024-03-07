@@ -185,7 +185,7 @@ export function OpenLpSharesCard({
                     Utilization ratio
                   </p>
                   <p>
-                    {!!finalPreviewWithdrawAmount && !!withdrawalShares
+                    {!!finalPreviewWithdrawAmount
                       ? `${dnum.format(
                           [utilizationRatio, baseToken.decimals],
                           2,
