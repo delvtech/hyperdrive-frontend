@@ -145,7 +145,7 @@ function getMarketImpactLabel(
   )[0];
 
   const isChangeInFixedAprLessThanOneBasisPoint =
-    changeInFixedApr < dnum.from("0.0001", 18)[0];
+    changeInFixedApr < dnum.from("0.0001", 18)[0]; // .01% === .0001
 
   if (isChangeInFixedAprLessThanOneBasisPoint) {
     return "+<0.01%";

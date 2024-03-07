@@ -50,7 +50,7 @@ function formatClosedShortMobileColumnData(
       }),
     },
     {
-      name: `Amount received (${baseToken.symbol})`,
+      name: `Value received (${baseToken.symbol})`,
       value: formatBalance({
         balance: closedShort.baseAmountReceived,
         decimals: baseToken.decimals,
@@ -134,7 +134,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       },
     }),
     columnHelper.accessor("baseAmountReceived", {
-      header: `Amount received (${baseToken.symbol})`,
+      header: `Value received (${baseToken.symbol})`,
       cell: (baseAmountReceived) => {
         const amountReceived = baseAmountReceived.getValue();
         return (

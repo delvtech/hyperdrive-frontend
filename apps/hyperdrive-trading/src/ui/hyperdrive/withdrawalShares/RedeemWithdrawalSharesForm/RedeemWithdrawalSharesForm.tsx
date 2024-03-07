@@ -6,12 +6,15 @@ import {
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
+import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemWithdrawalShares";
+import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { WithdrawTokenPicker } from "src/ui/hyperdrive/WithdrawTokenPicker";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -19,12 +22,10 @@ import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 interface RedeemWithdrawalSharesFormProps {
   hyperdrive: HyperdriveConfig;
-  withdrawalShares: bigint;
 }
 
 export function RedeemWithdrawalSharesForm({
   hyperdrive,
-  withdrawalShares,
 }: RedeemWithdrawalSharesFormProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -36,6 +37,8 @@ export function RedeemWithdrawalSharesForm({
     tokens: appConfig.tokens,
   });
 
+  const { address: account } = useAccount();
+
   const {
     activeItem: activeWithdrawToken,
     setActiveItemId: setActiveWithdrawToken,
@@ -46,42 +49,48 @@ export function RedeemWithdrawalSharesForm({
       ? baseToken.address
       : sharesToken.address,
   });
-  const { address: account } = useAccount();
 
+  // where the user types in an amount of base or shares to redeem
+  const { amount, amountAsBigInt, setAmount } = useNumericInput({
+    decimals: activeWithdrawToken.decimals,
+  });
+
+  // The max button is wired up to this
+  const { withdrawalShares } = useWithdrawalShares({
+    account,
+    hyperdriveAddress: hyperdrive.address,
+  });
   const {
     withdrawalSharesRedeemed: maxWithdrawalSharesRedeemable,
-    proceeds: maxRedeemableProceeds,
+    baseProceeds: maxRedeemableBaseProceeds,
+    sharesProceeds: maxRedeemableSharesProceeds,
   } = usePreviewRedeemWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
     withdrawalSharesIn: withdrawalShares,
     minOutputPerShare: 0n,
     destination: account,
-    asBase:
-      hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
-      activeWithdrawToken.address === baseToken.address,
   });
 
-  // eg: user types in 10 base
-  const { amount, amountAsBigInt, setAmount } = useNumericInput({
+  // Whatever amount of base or shares they type in, we convert it to withdrawal
+  // shares, since that's what the smart contract method requires
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const isBaseTokenWithdrawal =
+    activeWithdrawToken.address === baseToken.address;
+  const convertedAmountToWithdrawalShares = convertAmountToWithdrawalShares({
+    maxRedeemableBaseProceeds,
     decimals: activeWithdrawToken.decimals,
+    maxWithdrawalSharesRedeemable: maxWithdrawalSharesRedeemable,
+    amount: amountAsBigInt,
+    asBase: isBaseTokenWithdrawal,
+    vaultSharePrice: poolInfo?.vaultSharePrice,
   });
 
-  const convertedAmountToWithdrawalShares = calculateWithdrawalSharesFromAmount(
-    {
-      maxRedeemableProceeds,
-      decimals: activeWithdrawToken.decimals,
-      maxWithdrawalSharesRedeemable: maxWithdrawalSharesRedeemable,
-      amountAsBigInt,
-    },
-  );
-
-  const { proceeds, previewRedeemWithdrawalSharesStatus } =
+  const { baseProceeds, sharesProceeds, previewRedeemWithdrawalSharesStatus } =
     usePreviewRedeemWithdrawalShares({
       hyperdriveAddress: hyperdrive.address,
       withdrawalSharesIn: convertedAmountToWithdrawalShares,
       minOutputPerShare: 0n,
       destination: account,
-      asBase: activeWithdrawToken.address === baseToken.address,
     });
 
   const { redeemWithdrawalShares, redeemWithdrawalSharesStatus } =
@@ -92,7 +101,7 @@ export function RedeemWithdrawalSharesForm({
       destination: account,
       asBase:
         hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
-        activeWithdrawToken.address === baseToken.address,
+        isBaseTokenWithdrawal,
       enabled: previewRedeemWithdrawalSharesStatus === "success",
     });
 
@@ -116,12 +125,16 @@ export function RedeemWithdrawalSharesForm({
           }
           value={amount ?? ""}
           stat={`Withdrawable: ${formatBalance({
-            balance: maxRedeemableProceeds || 0n,
+            balance: isBaseTokenWithdrawal
+              ? maxRedeemableBaseProceeds || 0n
+              : maxRedeemableSharesProceeds || 0n,
             decimals: activeWithdrawToken.decimals,
             places: 4,
           })} ${activeWithdrawToken.symbol}`}
           maxValue={formatUnits(
-            maxRedeemableProceeds || 0n,
+            isBaseTokenWithdrawal
+              ? maxRedeemableBaseProceeds || 0n
+              : maxRedeemableSharesProceeds || 0n,
             activeWithdrawToken.decimals,
           )}
           onChange={(newAmount) => setAmount(newAmount)}
@@ -132,11 +145,13 @@ export function RedeemWithdrawalSharesForm({
           <div className="flex justify-between">
             <p>You receive</p>
             <p className="font-bold">
-              {proceeds
+              {baseProceeds && sharesProceeds
                 ? `${formatBalance({
-                    balance: proceeds,
+                    balance: isBaseTokenWithdrawal
+                      ? baseProceeds
+                      : sharesProceeds,
                     decimals: activeWithdrawToken.decimals,
-                    places: 8,
+                    places: 4,
                   })} ${activeWithdrawToken.symbol}`
                 : ""}
             </p>
@@ -151,9 +166,8 @@ export function RedeemWithdrawalSharesForm({
               !redeemWithdrawalShares ||
               redeemWithdrawalSharesStatus === "loading"
             }
-            onClick={(e) => {
+            onClick={() => {
               redeemWithdrawalShares?.();
-              setAmount("0");
             }}
           >
             Redeem withdrawal shares
@@ -166,33 +180,43 @@ export function RedeemWithdrawalSharesForm({
   );
 }
 
-function calculateWithdrawalSharesFromAmount({
-  maxRedeemableProceeds,
+function convertAmountToWithdrawalShares({
+  maxRedeemableBaseProceeds,
   decimals,
   maxWithdrawalSharesRedeemable,
-  amountAsBigInt,
+  amount,
+  vaultSharePrice,
+  asBase,
 }: {
-  maxRedeemableProceeds: bigint | undefined;
+  maxRedeemableBaseProceeds: bigint | undefined;
   decimals: number;
   maxWithdrawalSharesRedeemable: bigint | undefined;
-  amountAsBigInt: bigint | undefined;
+  amount: bigint | undefined;
+  vaultSharePrice: bigint | undefined;
+  asBase: boolean | undefined;
 }) {
   if (
-    !maxRedeemableProceeds ||
+    !maxRedeemableBaseProceeds ||
     !maxWithdrawalSharesRedeemable ||
-    !amountAsBigInt
+    !amount ||
+    !vaultSharePrice
   ) {
     return;
   }
-  // 1 withdrawal share is worth $2
+  // 1 withdrawal share is worth 2 base
   const unitPriceOfRedeemedWithdrawalShare = dnum.divide(
-    [maxRedeemableProceeds, decimals],
+    [maxRedeemableBaseProceeds, decimals],
     [maxWithdrawalSharesRedeemable, decimals],
   )[0];
 
+  // convert amount to base if it's not in base
+  const finalAmount = asBase
+    ? amount
+    : convertSharesToBase({ sharesAmount: amount, vaultSharePrice, decimals });
+
   // Therefore, user would be redeeming 5 withdrawal shares
   const convertedAmountToWithdrawalShares = dnum.divide(
-    [amountAsBigInt, decimals],
+    [finalAmount, decimals],
     [unitPriceOfRedeemedWithdrawalShare, decimals],
   )[0];
 
