@@ -61,7 +61,7 @@ export function OpenWithdrawalSharesCard({
           <div className="flex h-full flex-col justify-between">
             <div className="mb-4 flex flex-col gap-3">
               <LabelValue
-                label="Current value"
+                label="Total"
                 value={
                   <p>
                     {withdrawalSharesCurrentValue ? (

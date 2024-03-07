@@ -146,7 +146,7 @@ export function RemoveLiquidityForm({
         [poolInfo?.vaultSharePrice, hyperdrive.decimals],
       )[0]
     : 0n;
-  const currentLpValue =
+  const activeWithdrawTokenLpValue =
     activeWithdrawToken.address === baseToken.address
       ? currentLpValueInBase
       : currentLpValueInShares;
@@ -175,14 +175,14 @@ export function RemoveLiquidityForm({
             />
           }
           value={amount ?? ""}
-          maxValue={formatUnits(currentLpValue, baseToken.decimals)}
+          maxValue={formatUnits(activeWithdrawTokenLpValue, baseToken.decimals)}
           stat={
             lpShares && !!poolInfo
               ? `Withdrawable: ${formatBalance({
-                  balance: currentLpValue,
+                  balance: activeWithdrawTokenLpValue,
                   decimals: baseToken.decimals,
                   places: 2,
-                })} ${baseToken.symbol}`
+                })} ${activeWithdrawToken.symbol}`
               : undefined
           }
           onChange={(newAmount) => setAmount(newAmount)}
