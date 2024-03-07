@@ -158,7 +158,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       },
     }),
     columnHelper.accessor("baseAmount", {
-      header: `Amount received (${baseToken.symbol})`,
+      header: `Value received (${baseToken.symbol})`,
       cell: ({ getValue }) => {
         const baseAmount = getValue();
         return (
