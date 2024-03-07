@@ -112,7 +112,7 @@ export function OpenLpSharesCard({
               label="Pool share"
               value={
                 <p
-                  className="daisy-tooltip inline-flex cursor-help items-center gap-1 border-b border-dashed border-current"
+                  className="daisy-tooltip inline-flex cursor-help items-center gap-1 border-b border-dashed border-current before:border"
                   data-tip="Your share of the total liquidity in the pool"
                 >
                   {!!lpShares && !!lpSharesTotalSupply ? (
@@ -124,7 +124,7 @@ export function OpenLpSharesCard({
               }
             />
             <LabelValue
-              label={`Value deposited`}
+              label="Value deposited"
               value={
                 <p>
                   {formatBalance({
@@ -160,12 +160,12 @@ export function OpenLpSharesCard({
                     "Profit or loss on your LP position since you opened it."
                   }
                   className={classNames(
-                    "daisy-tooltip flex items-center border-b border-dashed border-current before:border",
+                    "daisy-tooltip flex cursor-help items-center border-b border-dashed border-current before:border",
                     { "text-success": isPositiveChangeInValue },
                     { "text-error": !isPositiveChangeInValue },
                   )}
                 >
-                  <span>{isPositiveChangeInValue ? "+" : ""}</span>
+                  {isPositiveChangeInValue ? "+" : ""}
                   {formatBalance({
                     balance: profit,
                     decimals: baseToken.decimals,
