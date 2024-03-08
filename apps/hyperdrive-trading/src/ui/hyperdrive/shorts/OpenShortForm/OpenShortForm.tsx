@@ -156,7 +156,6 @@ export function OpenShortForm({
       toast.success(
         <CustomToastMessage
           message="Short opened"
-          // TODO: Update link to point to correct block explorer.
           link={makeTransactionURL(hash, chainId)}
         />,
       );

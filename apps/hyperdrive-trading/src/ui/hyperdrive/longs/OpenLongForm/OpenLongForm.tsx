@@ -139,7 +139,6 @@ export function OpenLongForm({
       toast.success(
         <CustomToastMessage
           message="Long opened"
-          // TODO: Update link to point to correct block explorer.
           link={makeTransactionURL(hash, chainId)}
         />,
       );

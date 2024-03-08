@@ -102,7 +102,6 @@ export function CloseShortForm({
       toast.success(
         <CustomToastMessage
           message="Short closed"
-          // TODO: Update link to point to correct block explorer.
           link={makeTransactionURL(hash, chainId)}
         />,
       );

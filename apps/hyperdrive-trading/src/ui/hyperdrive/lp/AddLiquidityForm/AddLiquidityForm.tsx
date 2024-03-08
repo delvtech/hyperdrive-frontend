@@ -121,7 +121,6 @@ export function AddLiquidityForm({
       toast.success(
         <CustomToastMessage
           message="Liquidity added"
-          // TODO: Update link to point to correct block explorer.
           link={makeTransactionURL(hash, chainId)}
         />,
       );

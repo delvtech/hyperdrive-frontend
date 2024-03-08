@@ -116,7 +116,6 @@ export function RemoveLiquidityForm({
       toast.success(
         <CustomToastMessage
           message="Liquidity removed"
-          // TODO: Update link to point to correct block explorer.
           link={makeTransactionURL(hash, chainId)}
         />,
       );
