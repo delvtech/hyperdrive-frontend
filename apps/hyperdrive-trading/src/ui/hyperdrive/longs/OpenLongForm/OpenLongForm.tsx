@@ -6,6 +6,8 @@ import {
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
+import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
+import { SupportedChainId } from "src/chains/supportedChains";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -27,7 +29,7 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useConvertStethTokensToStethShares } from "src/ui/vaults/steth/useConvertStethTokensToStethShares";
 import { getIsSteth } from "src/vaults/isSteth";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
 }
@@ -35,7 +37,7 @@ export function OpenLongForm({
   hyperdrive: hyperdrive,
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
-
+  const chainId = useChainId() as SupportedChainId;
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
@@ -138,7 +140,7 @@ export function OpenLongForm({
         <CustomToastMessage
           message="Long opened"
           // TODO: Update link to point to correct block explorer.
-          link={`https://etherscan.com/tx/${hash}`}
+          link={makeTransactionURL(hash, chainId)}
         />,
       );
     },

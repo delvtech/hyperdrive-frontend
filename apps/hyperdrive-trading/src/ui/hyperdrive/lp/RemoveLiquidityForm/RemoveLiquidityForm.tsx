@@ -8,6 +8,8 @@ import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
+import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
+import { SupportedChainId } from "src/chains/supportedChains";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
@@ -22,7 +24,7 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { WithdrawTokenPicker } from "src/ui/hyperdrive/WithdrawTokenPicker";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 interface RemoveLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
   lpShares: bigint;
@@ -58,6 +60,7 @@ export function RemoveLiquidityForm({
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
   const { address: account } = useAccount();
+  const chainId = useChainId() as SupportedChainId;
 
   // Let users type in an amount of base or shares to withdraw
   const {
@@ -114,7 +117,7 @@ export function RemoveLiquidityForm({
         <CustomToastMessage
           message="Liquidity removed"
           // TODO: Update link to point to correct block explorer.
-          link={`https://etherscan.com/tx/${hash}`}
+          link={makeTransactionURL(hash, chainId)}
         />,
       );
     },

@@ -1,8 +1,8 @@
 import assertNever from "assert-never";
 import { SupportedChainId } from "src/chains/supportedChains";
 
-export function makeEtherscanTransactionURL(
-  transactionHash: string,
+export function makeTransactionURL(
+  transactionHash: string | undefined,
   chainId: SupportedChainId,
 ): string {
   switch (chainId) {

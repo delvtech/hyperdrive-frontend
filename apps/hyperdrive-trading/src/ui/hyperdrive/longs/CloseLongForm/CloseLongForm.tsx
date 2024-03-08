@@ -7,6 +7,8 @@ import {
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
+import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
+import { SupportedChainId } from "src/chains/supportedChains";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
@@ -21,7 +23,7 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
 import { getIsSteth } from "src/vaults/isSteth";
 import { formatUnits, parseUnits } from "viem";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 
 interface CloseLongFormProps {
   hyperdrive: HyperdriveConfig;
@@ -56,6 +58,7 @@ export function CloseLongForm({
   });
 
   const { address: account } = useAccount();
+  const chainId = useChainId() as SupportedChainId;
 
   const {
     amount: bondAmount,
@@ -111,8 +114,7 @@ export function CloseLongForm({
       toast.success(
         <CustomToastMessage
           message="Long closed"
-          // TODO: Update link to point to correct block explorer.
-          link={`https://etherscan.com/tx/${hash}`}
+          link={makeTransactionURL(hash, chainId)}
         />,
       );
     },
