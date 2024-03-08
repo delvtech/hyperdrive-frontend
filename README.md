@@ -1,8 +1,8 @@
-![Council Kit Logo](../hyperdrive-trading//src//public/HyperdriveLogo.png)
+![Council Kit Logo](./apps//hyperdrive-trading/src/public/HyperdriveLogo.png)
 
 # Hyperdrive Trading UI
 
-Description for hyperdrive trading UI
+Description for hyperdrive monorepo
 
 Get started with the [Docs](https://github.com/delvtech/council-kit/wiki).
 
@@ -15,7 +15,7 @@ This monorepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. It
 ### Apps
 | Name                                                                                                | Description                                                     |
 | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| [hyperdrive-trading](https://github.com/delvtech/hyperdrive-monorepo/tree/main/apps/hyperdrive-trading)                   | A user interface implementing the hyperdrive protocol built on the typescript sdk. |
+| [hyperdrive-trading](https://github.com/delvtech/hyperdrive-monorepo/tree/main/apps/hyperdrive-trading)                   | A user interface implementing the hyperdrive protocol built on the Typescript sdk. |
 
 ### Packages
 
@@ -30,11 +30,10 @@ This monorepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. It
 
 | Name                                                                                            | Description                          |
 | ----------------------------------------------------------------------------------------------- | ------------------------------------ |
-| [@council/eslint-config](https://github.com/delvtech/council-kit/tree/main/packages/@council/eslint-config)     | Package for static type checking.    |
-| [prettier-config](https://github.com/delvtech/council-kit/tree/main/packages/prettier-config) | Package for code formatting.         |
-| [@council/tsconfig](https://github.com/delvtech/council-kit/tree/main/packages/tsconfig)               | Package for TypeScript configuation. |
+| [eslint-config](https://github.com/delvtech/hyperdrive-monorepo/tree/main/packages/eslint-config)     | Package for static type checking.    |
+| [prettier-config](https://github.com/delvtech/hyperdrive-monorepo/tree/main/packages/prettier-config) | Package for code formatting.         |
+| [tsconfig](https://github.com/delvtech/hyperdrive-monorepo/tree/main/packages/tsconfig)               | Package for TypeScript configuation. |
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 ## Monorepo commands
 
