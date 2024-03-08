@@ -13,26 +13,25 @@ Requires `Node 14+`.
 This monorepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. It includes the following packages/apps:
 
 ### Apps
-| Name                                                                                                | Description                                                     |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| [hyperdrive-trading](https://github.com/delvtech/hyperdrive-monorepo/tree/main/apps/hyperdrive-trading)                   | A user interface implementing the hyperdrive protocol built on the typescript sdk. |
+
+| Name                                                                                                    | Description                                                                        |
+| ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| [hyperdrive-trading](https://github.com/delvtech/hyperdrive-monorepo/tree/main/apps/hyperdrive-trading) | A user interface implementing the hyperdrive protocol built on the typescript sdk. |
 
 ### Packages
 
-| Name                                                                                                | Description                                                                 |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| [hyperdrive-sdk](https://github.com/delvtech/council-kit/tree/main/packages/council-sdk)             | A TypeScript SDK for the Hyperdrive protocol             |
-| [hyperdrive-viem](https://github.com/delvtech/hyperdrive-monorepo/tree/main/packages/hyperdrive-viem)       |  A Viem implementation of the Hyperdrive Typescript SDK
-
-
+| Name                                                                                                  | Description                                            |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| [hyperdrive-sdk](https://github.com/delvtech/council-kit/tree/main/packages/council-sdk)              | A TypeScript SDK for the Hyperdrive protocol           |
+| [hyperdrive-viem](https://github.com/delvtech/hyperdrive-monorepo/tree/main/packages/hyperdrive-viem) | A Viem implementation of the Hyperdrive Typescript SDK |
 
 ### Utility Packages
 
-| Name                                                                                            | Description                          |
-| ----------------------------------------------------------------------------------------------- | ------------------------------------ |
-| [@council/eslint-config](https://github.com/delvtech/council-kit/tree/main/packages/@council/eslint-config)     | Package for static type checking.    |
-| [prettier-config](https://github.com/delvtech/council-kit/tree/main/packages/prettier-config) | Package for code formatting.         |
-| [@council/tsconfig](https://github.com/delvtech/council-kit/tree/main/packages/tsconfig)               | Package for TypeScript configuation. |
+| Name                                                                                                        | Description                          |
+| ----------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| [@council/eslint-config](https://github.com/delvtech/council-kit/tree/main/packages/@council/eslint-config) | Package for static type checking.    |
+| [prettier-config](https://github.com/delvtech/council-kit/tree/main/packages/prettier-config)               | Package for code formatting.         |
+| [@council/tsconfig](https://github.com/delvtech/council-kit/tree/main/packages/tsconfig)                    | Package for TypeScript configuation. |
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 

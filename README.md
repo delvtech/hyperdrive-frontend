@@ -1,10 +1,11 @@
-![Council Kit Logo](./apps//hyperdrive-trading/src/public/HyperdriveLogo.png)
+![Hyperdrive Logo](./apps//hyperdrive-trading/src/public/HyperdriveLogo.png)
 
 # Hyperdrive Trading UI
 
 Description for hyperdrive monorepo
 
-Get started with the [Docs](https://github.com/delvtech/council-kit/wiki).
+// TODO: add link to docs
+Get started with the [Docs](https://github.com/delvtech).
 
 Requires `Node 14+`.
 
@@ -21,7 +22,7 @@ This monorepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. It
 
 | Name                                                                                                | Description                                                                 |
 | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| [hyperdrive-sdk](https://github.com/delvtech/council-kit/tree/main/packages/council-sdk)             | A TypeScript SDK for the Hyperdrive protocol             |
+| [hyperdrive-sdk](https://github.com/delvtech/hyperdrive-monorepo/tree/main/packages/hyperdrive-sdk)             | A TypeScript SDK for the Hyperdrive protocol             |
 | [hyperdrive-viem](https://github.com/delvtech/hyperdrive-monorepo/tree/main/packages/hyperdrive-viem)       |  A Viem implementation of the Hyperdrive Typescript SDK
 
 
@@ -79,7 +80,7 @@ yarn format
 
 ## Development
 
-1. Clone the repo: `git clone git@github.com:delvtech/council-kit.git`
+1. Clone the repo: `git@github.com:delvtech/hyperdrive-monorepo.git`
 2. Run `yarn` at the top-level to install all packages across every workspace
 
 ### Installing new packages
@@ -91,9 +92,9 @@ Here are a few examples of how to install packages in this repo:
 # runs against the entire monorepo
 yarn add prettier
 
-# Install lodash for the packages/council-sdk workspace.
-# Note: specify the workspace by the name in its `package.json`, ie: `@council/sdk` not `council-sdk`
-yarn workspace @council/sdk add lodash
+# Install lodash for the packages/hyperdrive-sdk workspace.
+# Note: specify the workspace by the name in its `package.json`, ie: `@hyperdrive/sdk` not `hyperdrive-sdk`
+yarn workspace hyperdrive-trading add lodash
 ```
 
 ### Installing a workspace package
@@ -104,8 +105,7 @@ directly into your app package.json like this, then run `yarn`.
 ```json
 {
   "dependencies": {
-    "@council/sdk": "*",
-    "@council/typechain": "*"
+    "@hyperdrive/cli": "*",
   }
 }
 ```
@@ -121,7 +121,7 @@ yarn workspace <workspace-name> <package.json script>
 Example
 
 ```bash
-yarn workspace council-ui start
+yarn workspace hyperdrive-trading test:watch
 ```
 
 ## Turborepo
