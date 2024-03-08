@@ -7,6 +7,8 @@ import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
+import { SupportedChainId } from "src/chains/supportedChains";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -30,7 +32,7 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
 import { getIsSteth } from "src/vaults/isSteth";
 import { formatUnits } from "viem";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 interface OpenShortPositionFormProps {
   hyperdrive: HyperdriveConfig;
 }
@@ -39,6 +41,7 @@ export function OpenShortForm({
   hyperdrive,
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
+  const chainId = useChainId() as SupportedChainId;
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const baseToken = findBaseToken({
@@ -154,7 +157,7 @@ export function OpenShortForm({
         <CustomToastMessage
           message="Short opened"
           // TODO: Update link to point to correct block explorer.
-          link={`https://etherscan.com/tx/${hash}`}
+          link={makeTransactionURL(hash, chainId)}
         />,
       );
     },
