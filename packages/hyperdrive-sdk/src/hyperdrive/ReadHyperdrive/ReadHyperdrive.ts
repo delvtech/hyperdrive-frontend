@@ -1192,7 +1192,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }): ReturnType<IReadHyperdrive, "getLpSharesTotalSupply"> {
     return this.contract.read(
       "totalSupply",
-      { id: LP_ASSET_ID },
+      { tokenId: LP_ASSET_ID },
       args?.options,
     );
   }
@@ -1631,15 +1631,16 @@ export class ReadHyperdrive implements IReadHyperdrive {
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadHyperdrive, "previewRemoveLiquidity"> {
-    const { proceeds, withdrawalShares } = await this.contract.simulateWrite(
-      "removeLiquidity",
-      {
-        _lpShares: lpSharesIn,
-        _minOutputPerShare: minOutputPerShare,
-        _options: { destination, asBase, extraData },
-      },
-      options,
-    );
+    const { 0: proceeds, 1: withdrawalShares } =
+      await this.contract.simulateWrite(
+        "removeLiquidity",
+        {
+          _lpShares: lpSharesIn,
+          _minOutputPerShare: minOutputPerShare,
+          _options: { destination, asBase, extraData },
+        },
+        options,
+      );
 
     return {
       proceeds,
@@ -1662,7 +1663,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadHyperdrive, "previewRedeemWithdrawalShares"> {
-    const { proceeds, withdrawalSharesRedeemed } =
+    const { 0: proceeds, 1: withdrawalSharesRedeemed } =
       await this.contract.simulateWrite(
         "redeemWithdrawalShares",
         {
