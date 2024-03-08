@@ -1963,7 +1963,6 @@ test("getClosedLpShares should account for LP shares closed to base", async () =
   });
   expect(closedLpShares).toEqual([
     {
-      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
       lpAmount: dnum.from("5", 18)[0],
       baseAmount: dnum.from("10", 18)[0],
       lpSharePrice: dnum.from("2", 18)[0],
@@ -2002,7 +2001,6 @@ test("getClosedLpShares should account for LP shares closed to vault shares", as
   });
   expect(closedLpShares).toEqual([
     {
-      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
       lpAmount: dnum.from("5", 18)[0],
       baseAmount: dnum.from("10", 18)[0],
       withdrawalShareAmount: 0n,

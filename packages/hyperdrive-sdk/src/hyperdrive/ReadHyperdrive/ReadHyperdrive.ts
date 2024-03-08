@@ -1293,7 +1293,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
           args;
 
         return {
-          hyperdriveAddress: this.contract.address,
           lpAmount,
           baseAmount,
           withdrawalShareAmount,
