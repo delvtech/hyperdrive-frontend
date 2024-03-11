@@ -24,10 +24,7 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
 
   /**
    * The `sharesAmount` input is denominated in steth tokens since that is what
-   * is shown to the user. This preview function handles converting the steth
-   * tokens into steth shares so that hyperdrive can preview the trade
-   * correctly.
-   */
+   * is shown to the user.    */
   async previewOpenLongWithShares({
     sharesAmount,
     options,
@@ -76,6 +73,10 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     });
   }
 
+  /**
+   * Convert steth tokens into steth shares so that hyperdrive methods can be
+   * called with correct amounts.
+   */
   private convertStethTokensToShares(sharesAmount: bigint) {
     return this.publicClient.readContract({
       abi: MockLido.abi,
