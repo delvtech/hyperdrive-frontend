@@ -84,7 +84,7 @@ const hyperdrive = createReadWriteHyperdrive({
 });
 
 // 4. Send a transaction
-const liquidity = await hyperdrive.pause(true);
+const transactionHash = await hyperdrive.pause(true);
 ```
 
 ## Ethers Quickstart
