@@ -24,8 +24,6 @@ import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
-import { useConvertStethTokensToStethShares } from "src/ui/vaults/steth/useConvertStethTokensToStethShares";
-import { getIsSteth } from "src/vaults/isSteth";
 import { useAccount, useChainId } from "wagmi";
 
 interface AddLiquidityFormProps {
@@ -62,19 +60,6 @@ export function AddLiquidityForm({
     decimals: activeToken.decimals,
   });
 
-  // If depositing in steth, the steth tokens need to be converted to steth
-  // shares to properly preview and/or open the position
-  const isActiveTokenSteth = getIsSteth(activeToken);
-  const { stethShares: stethSharesDepositAmount } =
-    useConvertStethTokensToStethShares({
-      stethTokenAmount: depositAmountAsBigInt,
-      lidoAddress: activeToken.address,
-      enabled: isActiveTokenSteth,
-    });
-  const stethSharesOrDepositAmount = isActiveTokenSteth
-    ? stethSharesDepositAmount
-    : depositAmountAsBigInt;
-
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
@@ -98,7 +83,7 @@ export function AddLiquidityForm({
   // Shared params with the preview and the write method
   const addLiquidityParams = {
     hyperdriveAddress: hyperdrive.address,
-    contribution: stethSharesOrDepositAmount,
+    contribution: depositAmountAsBigInt,
     // TODO: Add slippage control
     minAPR: parseUnits("0", baseToken.decimals),
     maxAPR: parseUnits("999", baseToken.decimals),
