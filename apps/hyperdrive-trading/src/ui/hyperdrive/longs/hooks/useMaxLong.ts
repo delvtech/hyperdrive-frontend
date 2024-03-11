@@ -3,18 +3,16 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
-interface UseMaxLongResult {
-  maxBaseIn: bigint | undefined;
-  maxSharesIn: bigint | undefined;
-  maxBondsOut: bigint | undefined;
-  status: "error" | "idle" | "loading" | "success";
-}
-
 export function useMaxLong({
   hyperdriveAddress,
 }: {
   hyperdriveAddress: Address;
-}): UseMaxLongResult {
+}): {
+  maxBaseIn: bigint | undefined;
+  maxSharesIn: bigint | undefined;
+  maxBondsOut: bigint | undefined;
+  status: "error" | "idle" | "loading" | "success";
+} {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive;
 
