@@ -9,20 +9,20 @@ export const Constants = {
         "linkReferences": {}
     },
     "ast": {
-        "absolutePath": "test/utils/Constants.sol",
-        "id": 139505,
+        "absolutePath": "contracts/src/libraries/Constants.sol",
+        "id": 14124,
         "exportedSymbols": {
             "ETH": [
-                139504
+                14123
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "39:92:178",
+        "src": "39:134:72",
         "nodes": [
             {
-                "id": 139501,
+                "id": 14119,
                 "nodeType": "PragmaDirective",
-                "src": "39:23:178",
+                "src": "39:23:72",
                 "nodes": [],
                 "literals": [
                     "solidity",
@@ -31,15 +31,15 @@ export const Constants = {
                 ]
             },
             {
-                "id": 139504,
+                "id": 14123,
                 "nodeType": "VariableDeclaration",
-                "src": "64:65:178",
+                "src": "106:65:72",
                 "nodes": [],
                 "constant": true,
                 "mutability": "constant",
                 "name": "ETH",
-                "nameLocation": "81:3:178",
-                "scope": 139505,
+                "nameLocation": "123:3:72",
+                "scope": 14124,
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -47,10 +47,10 @@ export const Constants = {
                     "typeString": "address"
                 },
                 "typeName": {
-                    "id": 139502,
+                    "id": 14121,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "64:7:178",
+                    "src": "106:7:72",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -59,14 +59,14 @@ export const Constants = {
                 },
                 "value": {
                     "hexValue": "307845656565654565656545654565654565456545656545454565656565456565656565656545456545",
-                    "id": 139503,
+                    "id": 14122,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "kind": "number",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "87:42:178",
+                    "src": "129:42:72",
                     "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -78,5 +78,5 @@ export const Constants = {
         ],
         "license": "Apache-2.0"
     },
-    "id": 178
+    "id": 72
 };

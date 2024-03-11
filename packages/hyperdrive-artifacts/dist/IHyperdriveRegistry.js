@@ -122,17 +122,17 @@ export const IHyperdriveRegistry = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IHyperdriveRegistry.sol",
-        "id": 8242,
+        "id": 8383,
         "exportedSymbols": {
             "IHyperdriveRegistry": [
-                8241
+                8382
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:360:52",
         "nodes": [
             {
-                "id": 8232,
+                "id": 8373,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:52",
                 "nodes": [],
@@ -143,17 +143,17 @@ export const IHyperdriveRegistry = {
                 ]
             },
             {
-                "id": 8241,
+                "id": 8382,
                 "nodeType": "ContractDefinition",
                 "src": "64:334:52",
                 "nodes": [
                     {
-                        "id": 8240,
+                        "id": 8381,
                         "nodeType": "FunctionDefinition",
                         "src": "294:102:52",
                         "nodes": [],
                         "documentation": {
-                            "id": 8233,
+                            "id": 8374,
                             "nodeType": "StructuredDocumentation",
                             "src": "100:189:52",
                             "text": "@notice Allows anyone to get the info for a hyperdrive instance.\n @param _hyperdriveInstance The hyperdrive instance address.\n @return The uint256 value set by governance."
@@ -165,17 +165,17 @@ export const IHyperdriveRegistry = {
                         "name": "getHyperdriveInfo",
                         "nameLocation": "303:17:52",
                         "parameters": {
-                            "id": 8236,
+                            "id": 8377,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8235,
+                                    "id": 8376,
                                     "mutability": "mutable",
                                     "name": "_hyperdriveInstance",
                                     "nameLocation": "338:19:52",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8240,
+                                    "scope": 8381,
                                     "src": "330:27:52",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -184,7 +184,7 @@ export const IHyperdriveRegistry = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8234,
+                                        "id": 8375,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "330:7:52",
@@ -200,17 +200,17 @@ export const IHyperdriveRegistry = {
                             "src": "320:43:52"
                         },
                         "returnParameters": {
-                            "id": 8239,
+                            "id": 8380,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8238,
+                                    "id": 8379,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8240,
+                                    "scope": 8381,
                                     "src": "387:7:52",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -219,7 +219,7 @@ export const IHyperdriveRegistry = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8237,
+                                        "id": 8378,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "387:7:52",
@@ -233,7 +233,7 @@ export const IHyperdriveRegistry = {
                             ],
                             "src": "386:9:52"
                         },
-                        "scope": 8241,
+                        "scope": 8382,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
@@ -246,11 +246,11 @@ export const IHyperdriveRegistry = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    8241
+                    8382
                 ],
                 "name": "IHyperdriveRegistry",
                 "nameLocation": "74:19:52",
-                "scope": 8242,
+                "scope": 8383,
                 "usedErrors": [],
                 "usedEvents": []
             }

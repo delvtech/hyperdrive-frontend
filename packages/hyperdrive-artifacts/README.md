@@ -29,7 +29,7 @@ argument. This means you can change the version of the contract to generate
 artifacts for in the `package.json`:
 
 ```json
-  "build:src": "sh scripts/build_src.sh v0.8.0"
+  "build:src": "sh scripts/build_src.sh v0.9.0"
 ```
 
 Then run:

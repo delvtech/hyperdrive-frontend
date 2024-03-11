@@ -962,19 +962,19 @@ export const IMulticall3 = {
     },
     "ast": {
         "absolutePath": "lib/forge-std/src/interfaces/IMulticall3.sol",
-        "id": 52850,
+        "id": 52550,
         "exportedSymbols": {
             "IMulticall3": [
-                52849
+                52549
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "32:2153:110",
+        "src": "32:2153:111",
         "nodes": [
             {
-                "id": 52688,
+                "id": 52388,
                 "nodeType": "PragmaDirective",
-                "src": "32:31:110",
+                "src": "32:31:111",
                 "nodes": [],
                 "literals": [
                     "solidity",
@@ -987,9 +987,9 @@ export const IMulticall3 = {
                 ]
             },
             {
-                "id": 52689,
+                "id": 52389,
                 "nodeType": "PragmaDirective",
-                "src": "65:33:110",
+                "src": "65:33:111",
                 "nodes": [],
                 "literals": [
                     "experimental",
@@ -997,26 +997,26 @@ export const IMulticall3 = {
                 ]
             },
             {
-                "id": 52849,
+                "id": 52549,
                 "nodeType": "ContractDefinition",
-                "src": "100:2084:110",
+                "src": "100:2084:111",
                 "nodes": [
                     {
-                        "id": 52694,
+                        "id": 52394,
                         "nodeType": "StructDefinition",
-                        "src": "128:67:110",
+                        "src": "128:67:111",
                         "nodes": [],
                         "canonicalName": "IMulticall3.Call",
                         "members": [
                             {
                                 "constant": false,
-                                "id": 52691,
+                                "id": 52391,
                                 "mutability": "mutable",
                                 "name": "target",
-                                "nameLocation": "158:6:110",
+                                "nameLocation": "158:6:111",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 52694,
-                                "src": "150:14:110",
+                                "scope": 52394,
+                                "src": "150:14:111",
                                 "stateVariable": false,
                                 "storageLocation": "default",
                                 "typeDescriptions": {
@@ -1024,10 +1024,10 @@ export const IMulticall3 = {
                                     "typeString": "address"
                                 },
                                 "typeName": {
-                                    "id": 52690,
+                                    "id": 52390,
                                     "name": "address",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "150:7:110",
+                                    "src": "150:7:111",
                                     "stateMutability": "nonpayable",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_address",
@@ -1038,13 +1038,13 @@ export const IMulticall3 = {
                             },
                             {
                                 "constant": false,
-                                "id": 52693,
+                                "id": 52393,
                                 "mutability": "mutable",
                                 "name": "callData",
-                                "nameLocation": "180:8:110",
+                                "nameLocation": "180:8:111",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 52694,
-                                "src": "174:14:110",
+                                "scope": 52394,
+                                "src": "174:14:111",
                                 "stateVariable": false,
                                 "storageLocation": "default",
                                 "typeDescriptions": {
@@ -1052,10 +1052,10 @@ export const IMulticall3 = {
                                     "typeString": "bytes"
                                 },
                                 "typeName": {
-                                    "id": 52692,
+                                    "id": 52392,
                                     "name": "bytes",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "174:5:110",
+                                    "src": "174:5:111",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_bytes_storage_ptr",
                                         "typeString": "bytes"
@@ -1065,26 +1065,26 @@ export const IMulticall3 = {
                             }
                         ],
                         "name": "Call",
-                        "nameLocation": "135:4:110",
-                        "scope": 52849,
+                        "nameLocation": "135:4:111",
+                        "scope": 52549,
                         "visibility": "public"
                     },
                     {
-                        "id": 52701,
+                        "id": 52401,
                         "nodeType": "StructDefinition",
-                        "src": "201:95:110",
+                        "src": "201:95:111",
                         "nodes": [],
                         "canonicalName": "IMulticall3.Call3",
                         "members": [
                             {
                                 "constant": false,
-                                "id": 52696,
+                                "id": 52396,
                                 "mutability": "mutable",
                                 "name": "target",
-                                "nameLocation": "232:6:110",
+                                "nameLocation": "232:6:111",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 52701,
-                                "src": "224:14:110",
+                                "scope": 52401,
+                                "src": "224:14:111",
                                 "stateVariable": false,
                                 "storageLocation": "default",
                                 "typeDescriptions": {
@@ -1092,10 +1092,10 @@ export const IMulticall3 = {
                                     "typeString": "address"
                                 },
                                 "typeName": {
-                                    "id": 52695,
+                                    "id": 52395,
                                     "name": "address",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "224:7:110",
+                                    "src": "224:7:111",
                                     "stateMutability": "nonpayable",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_address",
@@ -1106,13 +1106,13 @@ export const IMulticall3 = {
                             },
                             {
                                 "constant": false,
-                                "id": 52698,
+                                "id": 52398,
                                 "mutability": "mutable",
                                 "name": "allowFailure",
-                                "nameLocation": "253:12:110",
+                                "nameLocation": "253:12:111",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 52701,
-                                "src": "248:17:110",
+                                "scope": 52401,
+                                "src": "248:17:111",
                                 "stateVariable": false,
                                 "storageLocation": "default",
                                 "typeDescriptions": {
@@ -1120,10 +1120,10 @@ export const IMulticall3 = {
                                     "typeString": "bool"
                                 },
                                 "typeName": {
-                                    "id": 52697,
+                                    "id": 52397,
                                     "name": "bool",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "248:4:110",
+                                    "src": "248:4:111",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_bool",
                                         "typeString": "bool"
@@ -1133,13 +1133,13 @@ export const IMulticall3 = {
                             },
                             {
                                 "constant": false,
-                                "id": 52700,
+                                "id": 52400,
                                 "mutability": "mutable",
                                 "name": "callData",
-                                "nameLocation": "281:8:110",
+                                "nameLocation": "281:8:111",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 52701,
-                                "src": "275:14:110",
+                                "scope": 52401,
+                                "src": "275:14:111",
                                 "stateVariable": false,
                                 "storageLocation": "default",
                                 "typeDescriptions": {
@@ -1147,10 +1147,10 @@ export const IMulticall3 = {
                                     "typeString": "bytes"
                                 },
                                 "typeName": {
-                                    "id": 52699,
+                                    "id": 52399,
                                     "name": "bytes",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "275:5:110",
+                                    "src": "275:5:111",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_bytes_storage_ptr",
                                         "typeString": "bytes"
@@ -1160,26 +1160,26 @@ export const IMulticall3 = {
                             }
                         ],
                         "name": "Call3",
-                        "nameLocation": "208:5:110",
-                        "scope": 52849,
+                        "nameLocation": "208:5:111",
+                        "scope": 52549,
                         "visibility": "public"
                     },
                     {
-                        "id": 52710,
+                        "id": 52410,
                         "nodeType": "StructDefinition",
-                        "src": "302:123:110",
+                        "src": "302:123:111",
                         "nodes": [],
                         "canonicalName": "IMulticall3.Call3Value",
                         "members": [
                             {
                                 "constant": false,
-                                "id": 52703,
+                                "id": 52403,
                                 "mutability": "mutable",
                                 "name": "target",
-                                "nameLocation": "338:6:110",
+                                "nameLocation": "338:6:111",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 52710,
-                                "src": "330:14:110",
+                                "scope": 52410,
+                                "src": "330:14:111",
                                 "stateVariable": false,
                                 "storageLocation": "default",
                                 "typeDescriptions": {
@@ -1187,10 +1187,10 @@ export const IMulticall3 = {
                                     "typeString": "address"
                                 },
                                 "typeName": {
-                                    "id": 52702,
+                                    "id": 52402,
                                     "name": "address",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "330:7:110",
+                                    "src": "330:7:111",
                                     "stateMutability": "nonpayable",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_address",
@@ -1201,13 +1201,13 @@ export const IMulticall3 = {
                             },
                             {
                                 "constant": false,
-                                "id": 52705,
+                                "id": 52405,
                                 "mutability": "mutable",
                                 "name": "allowFailure",
-                                "nameLocation": "359:12:110",
+                                "nameLocation": "359:12:111",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 52710,
-                                "src": "354:17:110",
+                                "scope": 52410,
+                                "src": "354:17:111",
                                 "stateVariable": false,
                                 "storageLocation": "default",
                                 "typeDescriptions": {
@@ -1215,10 +1215,10 @@ export const IMulticall3 = {
                                     "typeString": "bool"
                                 },
                                 "typeName": {
-                                    "id": 52704,
+                                    "id": 52404,
                                     "name": "bool",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "354:4:110",
+                                    "src": "354:4:111",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_bool",
                                         "typeString": "bool"
@@ -1228,13 +1228,13 @@ export const IMulticall3 = {
                             },
                             {
                                 "constant": false,
-                                "id": 52707,
+                                "id": 52407,
                                 "mutability": "mutable",
                                 "name": "value",
-                                "nameLocation": "389:5:110",
+                                "nameLocation": "389:5:111",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 52710,
-                                "src": "381:13:110",
+                                "scope": 52410,
+                                "src": "381:13:111",
                                 "stateVariable": false,
                                 "storageLocation": "default",
                                 "typeDescriptions": {
@@ -1242,10 +1242,10 @@ export const IMulticall3 = {
                                     "typeString": "uint256"
                                 },
                                 "typeName": {
-                                    "id": 52706,
+                                    "id": 52406,
                                     "name": "uint256",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "381:7:110",
+                                    "src": "381:7:111",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_uint256",
                                         "typeString": "uint256"
@@ -1255,13 +1255,13 @@ export const IMulticall3 = {
                             },
                             {
                                 "constant": false,
-                                "id": 52709,
+                                "id": 52409,
                                 "mutability": "mutable",
                                 "name": "callData",
-                                "nameLocation": "410:8:110",
+                                "nameLocation": "410:8:111",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 52710,
-                                "src": "404:14:110",
+                                "scope": 52410,
+                                "src": "404:14:111",
                                 "stateVariable": false,
                                 "storageLocation": "default",
                                 "typeDescriptions": {
@@ -1269,10 +1269,10 @@ export const IMulticall3 = {
                                     "typeString": "bytes"
                                 },
                                 "typeName": {
-                                    "id": 52708,
+                                    "id": 52408,
                                     "name": "bytes",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "404:5:110",
+                                    "src": "404:5:111",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_bytes_storage_ptr",
                                         "typeString": "bytes"
@@ -1282,26 +1282,26 @@ export const IMulticall3 = {
                             }
                         ],
                         "name": "Call3Value",
-                        "nameLocation": "309:10:110",
-                        "scope": 52849,
+                        "nameLocation": "309:10:111",
+                        "scope": 52549,
                         "visibility": "public"
                     },
                     {
-                        "id": 52715,
+                        "id": 52415,
                         "nodeType": "StructDefinition",
-                        "src": "431:69:110",
+                        "src": "431:69:111",
                         "nodes": [],
                         "canonicalName": "IMulticall3.Result",
                         "members": [
                             {
                                 "constant": false,
-                                "id": 52712,
+                                "id": 52412,
                                 "mutability": "mutable",
                                 "name": "success",
-                                "nameLocation": "460:7:110",
+                                "nameLocation": "460:7:111",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 52715,
-                                "src": "455:12:110",
+                                "scope": 52415,
+                                "src": "455:12:111",
                                 "stateVariable": false,
                                 "storageLocation": "default",
                                 "typeDescriptions": {
@@ -1309,10 +1309,10 @@ export const IMulticall3 = {
                                     "typeString": "bool"
                                 },
                                 "typeName": {
-                                    "id": 52711,
+                                    "id": 52411,
                                     "name": "bool",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "455:4:110",
+                                    "src": "455:4:111",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_bool",
                                         "typeString": "bool"
@@ -1322,13 +1322,13 @@ export const IMulticall3 = {
                             },
                             {
                                 "constant": false,
-                                "id": 52714,
+                                "id": 52414,
                                 "mutability": "mutable",
                                 "name": "returnData",
-                                "nameLocation": "483:10:110",
+                                "nameLocation": "483:10:111",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 52715,
-                                "src": "477:16:110",
+                                "scope": 52415,
+                                "src": "477:16:111",
                                 "stateVariable": false,
                                 "storageLocation": "default",
                                 "typeDescriptions": {
@@ -1336,10 +1336,10 @@ export const IMulticall3 = {
                                     "typeString": "bytes"
                                 },
                                 "typeName": {
-                                    "id": 52713,
+                                    "id": 52413,
                                     "name": "bytes",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "477:5:110",
+                                    "src": "477:5:111",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_bytes_storage_ptr",
                                         "typeString": "bytes"
@@ -1349,87 +1349,87 @@ export const IMulticall3 = {
                             }
                         ],
                         "name": "Result",
-                        "nameLocation": "438:6:110",
-                        "scope": 52849,
+                        "nameLocation": "438:6:111",
+                        "scope": 52549,
                         "visibility": "public"
                     },
                     {
-                        "id": 52727,
+                        "id": 52427,
                         "nodeType": "FunctionDefinition",
-                        "src": "506:140:110",
+                        "src": "506:140:111",
                         "nodes": [],
                         "functionSelector": "252dba42",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "aggregate",
-                        "nameLocation": "515:9:110",
+                        "nameLocation": "515:9:111",
                         "parameters": {
-                            "id": 52720,
+                            "id": 52420,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52719,
+                                    "id": 52419,
                                     "mutability": "mutable",
                                     "name": "calls",
-                                    "nameLocation": "541:5:110",
+                                    "nameLocation": "541:5:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52727,
-                                    "src": "525:21:110",
+                                    "scope": 52427,
+                                    "src": "525:21:111",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_Call_$52694_calldata_ptr_$dyn_calldata_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_Call_$52394_calldata_ptr_$dyn_calldata_ptr",
                                         "typeString": "struct IMulticall3.Call[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 52717,
+                                            "id": 52417,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 52716,
+                                                "id": 52416,
                                                 "name": "Call",
                                                 "nameLocations": [
-                                                    "525:4:110"
+                                                    "525:4:111"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 52694,
-                                                "src": "525:4:110"
+                                                "referencedDeclaration": 52394,
+                                                "src": "525:4:111"
                                             },
-                                            "referencedDeclaration": 52694,
-                                            "src": "525:4:110",
+                                            "referencedDeclaration": 52394,
+                                            "src": "525:4:111",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Call_$52694_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Call_$52394_storage_ptr",
                                                 "typeString": "struct IMulticall3.Call"
                                             }
                                         },
-                                        "id": 52718,
+                                        "id": 52418,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "525:6:110",
+                                        "src": "525:6:111",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Call_$52694_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Call_$52394_storage_$dyn_storage_ptr",
                                             "typeString": "struct IMulticall3.Call[]"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "524:23:110"
+                            "src": "524:23:111"
                         },
                         "returnParameters": {
-                            "id": 52726,
+                            "id": 52426,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52722,
+                                    "id": 52422,
                                     "mutability": "mutable",
                                     "name": "blockNumber",
-                                    "nameLocation": "606:11:110",
+                                    "nameLocation": "606:11:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52727,
-                                    "src": "598:19:110",
+                                    "scope": 52427,
+                                    "src": "598:19:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1437,10 +1437,10 @@ export const IMulticall3 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 52721,
+                                        "id": 52421,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "598:7:110",
+                                        "src": "598:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1450,13 +1450,13 @@ export const IMulticall3 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 52725,
+                                    "id": 52425,
                                     "mutability": "mutable",
                                     "name": "returnData",
-                                    "nameLocation": "634:10:110",
+                                    "nameLocation": "634:10:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52727,
-                                    "src": "619:25:110",
+                                    "scope": 52427,
+                                    "src": "619:25:111",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
@@ -1465,18 +1465,18 @@ export const IMulticall3 = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 52723,
+                                            "id": 52423,
                                             "name": "bytes",
                                             "nodeType": "ElementaryTypeName",
-                                            "src": "619:5:110",
+                                            "src": "619:5:111",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bytes_storage_ptr",
                                                 "typeString": "bytes"
                                             }
                                         },
-                                        "id": 52724,
+                                        "id": 52424,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "619:7:110",
+                                        "src": "619:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
                                             "typeString": "bytes[]"
@@ -1485,334 +1485,334 @@ export const IMulticall3 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "597:48:110"
+                            "src": "597:48:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 52738,
+                        "id": 52438,
                         "nodeType": "FunctionDefinition",
-                        "src": "652:98:110",
+                        "src": "652:98:111",
                         "nodes": [],
                         "functionSelector": "82ad56cb",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "aggregate3",
-                        "nameLocation": "661:10:110",
+                        "nameLocation": "661:10:111",
                         "parameters": {
-                            "id": 52732,
+                            "id": 52432,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52731,
+                                    "id": 52431,
                                     "mutability": "mutable",
                                     "name": "calls",
-                                    "nameLocation": "689:5:110",
+                                    "nameLocation": "689:5:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52738,
-                                    "src": "672:22:110",
+                                    "scope": 52438,
+                                    "src": "672:22:111",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_Call3_$52701_calldata_ptr_$dyn_calldata_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_Call3_$52401_calldata_ptr_$dyn_calldata_ptr",
                                         "typeString": "struct IMulticall3.Call3[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 52729,
+                                            "id": 52429,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 52728,
+                                                "id": 52428,
                                                 "name": "Call3",
                                                 "nameLocations": [
-                                                    "672:5:110"
+                                                    "672:5:111"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 52701,
-                                                "src": "672:5:110"
+                                                "referencedDeclaration": 52401,
+                                                "src": "672:5:111"
                                             },
-                                            "referencedDeclaration": 52701,
-                                            "src": "672:5:110",
+                                            "referencedDeclaration": 52401,
+                                            "src": "672:5:111",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Call3_$52701_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Call3_$52401_storage_ptr",
                                                 "typeString": "struct IMulticall3.Call3"
                                             }
                                         },
-                                        "id": 52730,
+                                        "id": 52430,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "672:7:110",
+                                        "src": "672:7:111",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Call3_$52701_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Call3_$52401_storage_$dyn_storage_ptr",
                                             "typeString": "struct IMulticall3.Call3[]"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "671:24:110"
+                            "src": "671:24:111"
                         },
                         "returnParameters": {
-                            "id": 52737,
+                            "id": 52437,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52736,
+                                    "id": 52436,
                                     "mutability": "mutable",
                                     "name": "returnData",
-                                    "nameLocation": "738:10:110",
+                                    "nameLocation": "738:10:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52738,
-                                    "src": "722:26:110",
+                                    "scope": 52438,
+                                    "src": "722:26:111",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_Result_$52715_memory_ptr_$dyn_memory_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_Result_$52415_memory_ptr_$dyn_memory_ptr",
                                         "typeString": "struct IMulticall3.Result[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 52734,
+                                            "id": 52434,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 52733,
+                                                "id": 52433,
                                                 "name": "Result",
                                                 "nameLocations": [
-                                                    "722:6:110"
+                                                    "722:6:111"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 52715,
-                                                "src": "722:6:110"
+                                                "referencedDeclaration": 52415,
+                                                "src": "722:6:111"
                                             },
-                                            "referencedDeclaration": 52715,
-                                            "src": "722:6:110",
+                                            "referencedDeclaration": 52415,
+                                            "src": "722:6:111",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Result_$52715_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Result_$52415_storage_ptr",
                                                 "typeString": "struct IMulticall3.Result"
                                             }
                                         },
-                                        "id": 52735,
+                                        "id": 52435,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "722:8:110",
+                                        "src": "722:8:111",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Result_$52715_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Result_$52415_storage_$dyn_storage_ptr",
                                             "typeString": "struct IMulticall3.Result[]"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "721:28:110"
+                            "src": "721:28:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 52749,
+                        "id": 52449,
                         "nodeType": "FunctionDefinition",
-                        "src": "756:108:110",
+                        "src": "756:108:111",
                         "nodes": [],
                         "functionSelector": "174dea71",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "aggregate3Value",
-                        "nameLocation": "765:15:110",
+                        "nameLocation": "765:15:111",
                         "parameters": {
-                            "id": 52743,
+                            "id": 52443,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52742,
+                                    "id": 52442,
                                     "mutability": "mutable",
                                     "name": "calls",
-                                    "nameLocation": "803:5:110",
+                                    "nameLocation": "803:5:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52749,
-                                    "src": "781:27:110",
+                                    "scope": 52449,
+                                    "src": "781:27:111",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_Call3Value_$52710_calldata_ptr_$dyn_calldata_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_Call3Value_$52410_calldata_ptr_$dyn_calldata_ptr",
                                         "typeString": "struct IMulticall3.Call3Value[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 52740,
+                                            "id": 52440,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 52739,
+                                                "id": 52439,
                                                 "name": "Call3Value",
                                                 "nameLocations": [
-                                                    "781:10:110"
+                                                    "781:10:111"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 52710,
-                                                "src": "781:10:110"
+                                                "referencedDeclaration": 52410,
+                                                "src": "781:10:111"
                                             },
-                                            "referencedDeclaration": 52710,
-                                            "src": "781:10:110",
+                                            "referencedDeclaration": 52410,
+                                            "src": "781:10:111",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Call3Value_$52710_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Call3Value_$52410_storage_ptr",
                                                 "typeString": "struct IMulticall3.Call3Value"
                                             }
                                         },
-                                        "id": 52741,
+                                        "id": 52441,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "781:12:110",
+                                        "src": "781:12:111",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Call3Value_$52710_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Call3Value_$52410_storage_$dyn_storage_ptr",
                                             "typeString": "struct IMulticall3.Call3Value[]"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "780:29:110"
+                            "src": "780:29:111"
                         },
                         "returnParameters": {
-                            "id": 52748,
+                            "id": 52448,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52747,
+                                    "id": 52447,
                                     "mutability": "mutable",
                                     "name": "returnData",
-                                    "nameLocation": "852:10:110",
+                                    "nameLocation": "852:10:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52749,
-                                    "src": "836:26:110",
+                                    "scope": 52449,
+                                    "src": "836:26:111",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_Result_$52715_memory_ptr_$dyn_memory_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_Result_$52415_memory_ptr_$dyn_memory_ptr",
                                         "typeString": "struct IMulticall3.Result[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 52745,
+                                            "id": 52445,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 52744,
+                                                "id": 52444,
                                                 "name": "Result",
                                                 "nameLocations": [
-                                                    "836:6:110"
+                                                    "836:6:111"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 52715,
-                                                "src": "836:6:110"
+                                                "referencedDeclaration": 52415,
+                                                "src": "836:6:111"
                                             },
-                                            "referencedDeclaration": 52715,
-                                            "src": "836:6:110",
+                                            "referencedDeclaration": 52415,
+                                            "src": "836:6:111",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Result_$52715_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Result_$52415_storage_ptr",
                                                 "typeString": "struct IMulticall3.Result"
                                             }
                                         },
-                                        "id": 52746,
+                                        "id": 52446,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "836:8:110",
+                                        "src": "836:8:111",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Result_$52715_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Result_$52415_storage_$dyn_storage_ptr",
                                             "typeString": "struct IMulticall3.Result[]"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "835:28:110"
+                            "src": "835:28:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 52764,
+                        "id": 52464,
                         "nodeType": "FunctionDefinition",
-                        "src": "870:168:110",
+                        "src": "870:168:111",
                         "nodes": [],
                         "functionSelector": "c3077fa9",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "blockAndAggregate",
-                        "nameLocation": "879:17:110",
+                        "nameLocation": "879:17:111",
                         "parameters": {
-                            "id": 52754,
+                            "id": 52454,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52753,
+                                    "id": 52453,
                                     "mutability": "mutable",
                                     "name": "calls",
-                                    "nameLocation": "913:5:110",
+                                    "nameLocation": "913:5:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52764,
-                                    "src": "897:21:110",
+                                    "scope": 52464,
+                                    "src": "897:21:111",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_Call_$52694_calldata_ptr_$dyn_calldata_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_Call_$52394_calldata_ptr_$dyn_calldata_ptr",
                                         "typeString": "struct IMulticall3.Call[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 52751,
+                                            "id": 52451,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 52750,
+                                                "id": 52450,
                                                 "name": "Call",
                                                 "nameLocations": [
-                                                    "897:4:110"
+                                                    "897:4:111"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 52694,
-                                                "src": "897:4:110"
+                                                "referencedDeclaration": 52394,
+                                                "src": "897:4:111"
                                             },
-                                            "referencedDeclaration": 52694,
-                                            "src": "897:4:110",
+                                            "referencedDeclaration": 52394,
+                                            "src": "897:4:111",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Call_$52694_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Call_$52394_storage_ptr",
                                                 "typeString": "struct IMulticall3.Call"
                                             }
                                         },
-                                        "id": 52752,
+                                        "id": 52452,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "897:6:110",
+                                        "src": "897:6:111",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Call_$52694_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Call_$52394_storage_$dyn_storage_ptr",
                                             "typeString": "struct IMulticall3.Call[]"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "896:23:110"
+                            "src": "896:23:111"
                         },
                         "returnParameters": {
-                            "id": 52763,
+                            "id": 52463,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52756,
+                                    "id": 52456,
                                     "mutability": "mutable",
                                     "name": "blockNumber",
-                                    "nameLocation": "978:11:110",
+                                    "nameLocation": "978:11:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52764,
-                                    "src": "970:19:110",
+                                    "scope": 52464,
+                                    "src": "970:19:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1820,10 +1820,10 @@ export const IMulticall3 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 52755,
+                                        "id": 52455,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "970:7:110",
+                                        "src": "970:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1833,13 +1833,13 @@ export const IMulticall3 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 52758,
+                                    "id": 52458,
                                     "mutability": "mutable",
                                     "name": "blockHash",
-                                    "nameLocation": "999:9:110",
+                                    "nameLocation": "999:9:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52764,
-                                    "src": "991:17:110",
+                                    "scope": 52464,
+                                    "src": "991:17:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1847,10 +1847,10 @@ export const IMulticall3 = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 52757,
+                                        "id": 52457,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "991:7:110",
+                                        "src": "991:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -1860,88 +1860,88 @@ export const IMulticall3 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 52762,
+                                    "id": 52462,
                                     "mutability": "mutable",
                                     "name": "returnData",
-                                    "nameLocation": "1026:10:110",
+                                    "nameLocation": "1026:10:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52764,
-                                    "src": "1010:26:110",
+                                    "scope": 52464,
+                                    "src": "1010:26:111",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_Result_$52715_memory_ptr_$dyn_memory_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_Result_$52415_memory_ptr_$dyn_memory_ptr",
                                         "typeString": "struct IMulticall3.Result[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 52760,
+                                            "id": 52460,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 52759,
+                                                "id": 52459,
                                                 "name": "Result",
                                                 "nameLocations": [
-                                                    "1010:6:110"
+                                                    "1010:6:111"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 52715,
-                                                "src": "1010:6:110"
+                                                "referencedDeclaration": 52415,
+                                                "src": "1010:6:111"
                                             },
-                                            "referencedDeclaration": 52715,
-                                            "src": "1010:6:110",
+                                            "referencedDeclaration": 52415,
+                                            "src": "1010:6:111",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Result_$52715_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Result_$52415_storage_ptr",
                                                 "typeString": "struct IMulticall3.Result"
                                             }
                                         },
-                                        "id": 52761,
+                                        "id": 52461,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "1010:8:110",
+                                        "src": "1010:8:111",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Result_$52715_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Result_$52415_storage_$dyn_storage_ptr",
                                             "typeString": "struct IMulticall3.Result[]"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "969:68:110"
+                            "src": "969:68:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 52769,
+                        "id": 52469,
                         "nodeType": "FunctionDefinition",
-                        "src": "1044:62:110",
+                        "src": "1044:62:111",
                         "nodes": [],
                         "functionSelector": "3e64a696",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "getBasefee",
-                        "nameLocation": "1053:10:110",
+                        "nameLocation": "1053:10:111",
                         "parameters": {
-                            "id": 52765,
+                            "id": 52465,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1063:2:110"
+                            "src": "1063:2:111"
                         },
                         "returnParameters": {
-                            "id": 52768,
+                            "id": 52468,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52767,
+                                    "id": 52467,
                                     "mutability": "mutable",
                                     "name": "basefee",
-                                    "nameLocation": "1097:7:110",
+                                    "nameLocation": "1097:7:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52769,
-                                    "src": "1089:15:110",
+                                    "scope": 52469,
+                                    "src": "1089:15:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1949,10 +1949,10 @@ export const IMulticall3 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 52766,
+                                        "id": 52466,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1089:7:110",
+                                        "src": "1089:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1961,37 +1961,37 @@ export const IMulticall3 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1088:17:110"
+                            "src": "1088:17:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 52776,
+                        "id": 52476,
                         "nodeType": "FunctionDefinition",
-                        "src": "1112:85:110",
+                        "src": "1112:85:111",
                         "nodes": [],
                         "functionSelector": "ee82ac5e",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "getBlockHash",
-                        "nameLocation": "1121:12:110",
+                        "nameLocation": "1121:12:111",
                         "parameters": {
-                            "id": 52772,
+                            "id": 52472,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52771,
+                                    "id": 52471,
                                     "mutability": "mutable",
                                     "name": "blockNumber",
-                                    "nameLocation": "1142:11:110",
+                                    "nameLocation": "1142:11:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52776,
-                                    "src": "1134:19:110",
+                                    "scope": 52476,
+                                    "src": "1134:19:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1999,10 +1999,10 @@ export const IMulticall3 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 52770,
+                                        "id": 52470,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1134:7:110",
+                                        "src": "1134:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2011,21 +2011,21 @@ export const IMulticall3 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1133:21:110"
+                            "src": "1133:21:111"
                         },
                         "returnParameters": {
-                            "id": 52775,
+                            "id": 52475,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52774,
+                                    "id": 52474,
                                     "mutability": "mutable",
                                     "name": "blockHash",
-                                    "nameLocation": "1186:9:110",
+                                    "nameLocation": "1186:9:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52776,
-                                    "src": "1178:17:110",
+                                    "scope": 52476,
+                                    "src": "1178:17:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2033,10 +2033,10 @@ export const IMulticall3 = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 52773,
+                                        "id": 52473,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1178:7:110",
+                                        "src": "1178:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -2045,43 +2045,43 @@ export const IMulticall3 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1177:19:110"
+                            "src": "1177:19:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 52781,
+                        "id": 52481,
                         "nodeType": "FunctionDefinition",
-                        "src": "1203:70:110",
+                        "src": "1203:70:111",
                         "nodes": [],
                         "functionSelector": "42cbb15c",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "getBlockNumber",
-                        "nameLocation": "1212:14:110",
+                        "nameLocation": "1212:14:111",
                         "parameters": {
-                            "id": 52777,
+                            "id": 52477,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1226:2:110"
+                            "src": "1226:2:111"
                         },
                         "returnParameters": {
-                            "id": 52780,
+                            "id": 52480,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52779,
+                                    "id": 52479,
                                     "mutability": "mutable",
                                     "name": "blockNumber",
-                                    "nameLocation": "1260:11:110",
+                                    "nameLocation": "1260:11:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52781,
-                                    "src": "1252:19:110",
+                                    "scope": 52481,
+                                    "src": "1252:19:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2089,10 +2089,10 @@ export const IMulticall3 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 52778,
+                                        "id": 52478,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1252:7:110",
+                                        "src": "1252:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2101,43 +2101,43 @@ export const IMulticall3 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1251:21:110"
+                            "src": "1251:21:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 52786,
+                        "id": 52486,
                         "nodeType": "FunctionDefinition",
-                        "src": "1279:62:110",
+                        "src": "1279:62:111",
                         "nodes": [],
                         "functionSelector": "3408e470",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "getChainId",
-                        "nameLocation": "1288:10:110",
+                        "nameLocation": "1288:10:111",
                         "parameters": {
-                            "id": 52782,
+                            "id": 52482,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1298:2:110"
+                            "src": "1298:2:111"
                         },
                         "returnParameters": {
-                            "id": 52785,
+                            "id": 52485,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52784,
+                                    "id": 52484,
                                     "mutability": "mutable",
                                     "name": "chainid",
-                                    "nameLocation": "1332:7:110",
+                                    "nameLocation": "1332:7:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52786,
-                                    "src": "1324:15:110",
+                                    "scope": 52486,
+                                    "src": "1324:15:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2145,10 +2145,10 @@ export const IMulticall3 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 52783,
+                                        "id": 52483,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1324:7:110",
+                                        "src": "1324:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2157,43 +2157,43 @@ export const IMulticall3 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1323:17:110"
+                            "src": "1323:17:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 52791,
+                        "id": 52491,
                         "nodeType": "FunctionDefinition",
-                        "src": "1347:76:110",
+                        "src": "1347:76:111",
                         "nodes": [],
                         "functionSelector": "a8b0574e",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "getCurrentBlockCoinbase",
-                        "nameLocation": "1356:23:110",
+                        "nameLocation": "1356:23:111",
                         "parameters": {
-                            "id": 52787,
+                            "id": 52487,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1379:2:110"
+                            "src": "1379:2:111"
                         },
                         "returnParameters": {
-                            "id": 52790,
+                            "id": 52490,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52789,
+                                    "id": 52489,
                                     "mutability": "mutable",
                                     "name": "coinbase",
-                                    "nameLocation": "1413:8:110",
+                                    "nameLocation": "1413:8:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52791,
-                                    "src": "1405:16:110",
+                                    "scope": 52491,
+                                    "src": "1405:16:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2201,10 +2201,10 @@ export const IMulticall3 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 52788,
+                                        "id": 52488,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1405:7:110",
+                                        "src": "1405:7:111",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -2214,43 +2214,43 @@ export const IMulticall3 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1404:18:110"
+                            "src": "1404:18:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 52796,
+                        "id": 52496,
                         "nodeType": "FunctionDefinition",
-                        "src": "1429:80:110",
+                        "src": "1429:80:111",
                         "nodes": [],
                         "functionSelector": "72425d9d",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "getCurrentBlockDifficulty",
-                        "nameLocation": "1438:25:110",
+                        "nameLocation": "1438:25:111",
                         "parameters": {
-                            "id": 52792,
+                            "id": 52492,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1463:2:110"
+                            "src": "1463:2:111"
                         },
                         "returnParameters": {
-                            "id": 52795,
+                            "id": 52495,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52794,
+                                    "id": 52494,
                                     "mutability": "mutable",
                                     "name": "difficulty",
-                                    "nameLocation": "1497:10:110",
+                                    "nameLocation": "1497:10:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52796,
-                                    "src": "1489:18:110",
+                                    "scope": 52496,
+                                    "src": "1489:18:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2258,10 +2258,10 @@ export const IMulticall3 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 52793,
+                                        "id": 52493,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1489:7:110",
+                                        "src": "1489:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2270,43 +2270,43 @@ export const IMulticall3 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1488:20:110"
+                            "src": "1488:20:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 52801,
+                        "id": 52501,
                         "nodeType": "FunctionDefinition",
-                        "src": "1515:76:110",
+                        "src": "1515:76:111",
                         "nodes": [],
                         "functionSelector": "86d516e8",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "getCurrentBlockGasLimit",
-                        "nameLocation": "1524:23:110",
+                        "nameLocation": "1524:23:111",
                         "parameters": {
-                            "id": 52797,
+                            "id": 52497,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1547:2:110"
+                            "src": "1547:2:111"
                         },
                         "returnParameters": {
-                            "id": 52800,
+                            "id": 52500,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52799,
+                                    "id": 52499,
                                     "mutability": "mutable",
                                     "name": "gaslimit",
-                                    "nameLocation": "1581:8:110",
+                                    "nameLocation": "1581:8:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52801,
-                                    "src": "1573:16:110",
+                                    "scope": 52501,
+                                    "src": "1573:16:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2314,10 +2314,10 @@ export const IMulticall3 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 52798,
+                                        "id": 52498,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1573:7:110",
+                                        "src": "1573:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2326,43 +2326,43 @@ export const IMulticall3 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1572:18:110"
+                            "src": "1572:18:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 52806,
+                        "id": 52506,
                         "nodeType": "FunctionDefinition",
-                        "src": "1597:78:110",
+                        "src": "1597:78:111",
                         "nodes": [],
                         "functionSelector": "0f28c97d",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "getCurrentBlockTimestamp",
-                        "nameLocation": "1606:24:110",
+                        "nameLocation": "1606:24:111",
                         "parameters": {
-                            "id": 52802,
+                            "id": 52502,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1630:2:110"
+                            "src": "1630:2:111"
                         },
                         "returnParameters": {
-                            "id": 52805,
+                            "id": 52505,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52804,
+                                    "id": 52504,
                                     "mutability": "mutable",
                                     "name": "timestamp",
-                                    "nameLocation": "1664:9:110",
+                                    "nameLocation": "1664:9:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52806,
-                                    "src": "1656:17:110",
+                                    "scope": 52506,
+                                    "src": "1656:17:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2370,10 +2370,10 @@ export const IMulticall3 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 52803,
+                                        "id": 52503,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1656:7:110",
+                                        "src": "1656:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2382,37 +2382,37 @@ export const IMulticall3 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1655:19:110"
+                            "src": "1655:19:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 52813,
+                        "id": 52513,
                         "nodeType": "FunctionDefinition",
-                        "src": "1681:77:110",
+                        "src": "1681:77:111",
                         "nodes": [],
                         "functionSelector": "4d2301cc",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "getEthBalance",
-                        "nameLocation": "1690:13:110",
+                        "nameLocation": "1690:13:111",
                         "parameters": {
-                            "id": 52809,
+                            "id": 52509,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52808,
+                                    "id": 52508,
                                     "mutability": "mutable",
                                     "name": "addr",
-                                    "nameLocation": "1712:4:110",
+                                    "nameLocation": "1712:4:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52813,
-                                    "src": "1704:12:110",
+                                    "scope": 52513,
+                                    "src": "1704:12:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2420,10 +2420,10 @@ export const IMulticall3 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 52807,
+                                        "id": 52507,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1704:7:110",
+                                        "src": "1704:7:111",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -2433,21 +2433,21 @@ export const IMulticall3 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1703:14:110"
+                            "src": "1703:14:111"
                         },
                         "returnParameters": {
-                            "id": 52812,
+                            "id": 52512,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52811,
+                                    "id": 52511,
                                     "mutability": "mutable",
                                     "name": "balance",
-                                    "nameLocation": "1749:7:110",
+                                    "nameLocation": "1749:7:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52813,
-                                    "src": "1741:15:110",
+                                    "scope": 52513,
+                                    "src": "1741:15:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2455,10 +2455,10 @@ export const IMulticall3 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 52810,
+                                        "id": 52510,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1741:7:110",
+                                        "src": "1741:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2467,43 +2467,43 @@ export const IMulticall3 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1740:17:110"
+                            "src": "1740:17:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 52818,
+                        "id": 52518,
                         "nodeType": "FunctionDefinition",
-                        "src": "1764:70:110",
+                        "src": "1764:70:111",
                         "nodes": [],
                         "functionSelector": "27e86d6e",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "getLastBlockHash",
-                        "nameLocation": "1773:16:110",
+                        "nameLocation": "1773:16:111",
                         "parameters": {
-                            "id": 52814,
+                            "id": 52514,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1789:2:110"
+                            "src": "1789:2:111"
                         },
                         "returnParameters": {
-                            "id": 52817,
+                            "id": 52517,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52816,
+                                    "id": 52516,
                                     "mutability": "mutable",
                                     "name": "blockHash",
-                                    "nameLocation": "1823:9:110",
+                                    "nameLocation": "1823:9:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52818,
-                                    "src": "1815:17:110",
+                                    "scope": 52518,
+                                    "src": "1815:17:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2511,10 +2511,10 @@ export const IMulticall3 = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 52815,
+                                        "id": 52515,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1815:7:110",
+                                        "src": "1815:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -2523,37 +2523,37 @@ export const IMulticall3 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1814:19:110"
+                            "src": "1814:19:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 52831,
+                        "id": 52531,
                         "nodeType": "FunctionDefinition",
-                        "src": "1840:144:110",
+                        "src": "1840:144:111",
                         "nodes": [],
                         "functionSelector": "bce38bd7",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "tryAggregate",
-                        "nameLocation": "1849:12:110",
+                        "nameLocation": "1849:12:111",
                         "parameters": {
-                            "id": 52825,
+                            "id": 52525,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52820,
+                                    "id": 52520,
                                     "mutability": "mutable",
                                     "name": "requireSuccess",
-                                    "nameLocation": "1867:14:110",
+                                    "nameLocation": "1867:14:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52831,
-                                    "src": "1862:19:110",
+                                    "scope": 52531,
+                                    "src": "1862:19:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2561,10 +2561,10 @@ export const IMulticall3 = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 52819,
+                                        "id": 52519,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1862:4:110",
+                                        "src": "1862:4:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -2574,135 +2574,135 @@ export const IMulticall3 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 52824,
+                                    "id": 52524,
                                     "mutability": "mutable",
                                     "name": "calls",
-                                    "nameLocation": "1899:5:110",
+                                    "nameLocation": "1899:5:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52831,
-                                    "src": "1883:21:110",
+                                    "scope": 52531,
+                                    "src": "1883:21:111",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_Call_$52694_calldata_ptr_$dyn_calldata_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_Call_$52394_calldata_ptr_$dyn_calldata_ptr",
                                         "typeString": "struct IMulticall3.Call[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 52822,
+                                            "id": 52522,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 52821,
+                                                "id": 52521,
                                                 "name": "Call",
                                                 "nameLocations": [
-                                                    "1883:4:110"
+                                                    "1883:4:111"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 52694,
-                                                "src": "1883:4:110"
+                                                "referencedDeclaration": 52394,
+                                                "src": "1883:4:111"
                                             },
-                                            "referencedDeclaration": 52694,
-                                            "src": "1883:4:110",
+                                            "referencedDeclaration": 52394,
+                                            "src": "1883:4:111",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Call_$52694_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Call_$52394_storage_ptr",
                                                 "typeString": "struct IMulticall3.Call"
                                             }
                                         },
-                                        "id": 52823,
+                                        "id": 52523,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "1883:6:110",
+                                        "src": "1883:6:111",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Call_$52694_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Call_$52394_storage_$dyn_storage_ptr",
                                             "typeString": "struct IMulticall3.Call[]"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1861:44:110"
+                            "src": "1861:44:111"
                         },
                         "returnParameters": {
-                            "id": 52830,
+                            "id": 52530,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52829,
+                                    "id": 52529,
                                     "mutability": "mutable",
                                     "name": "returnData",
-                                    "nameLocation": "1972:10:110",
+                                    "nameLocation": "1972:10:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52831,
-                                    "src": "1956:26:110",
+                                    "scope": 52531,
+                                    "src": "1956:26:111",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_Result_$52715_memory_ptr_$dyn_memory_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_Result_$52415_memory_ptr_$dyn_memory_ptr",
                                         "typeString": "struct IMulticall3.Result[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 52827,
+                                            "id": 52527,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 52826,
+                                                "id": 52526,
                                                 "name": "Result",
                                                 "nameLocations": [
-                                                    "1956:6:110"
+                                                    "1956:6:111"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 52715,
-                                                "src": "1956:6:110"
+                                                "referencedDeclaration": 52415,
+                                                "src": "1956:6:111"
                                             },
-                                            "referencedDeclaration": 52715,
-                                            "src": "1956:6:110",
+                                            "referencedDeclaration": 52415,
+                                            "src": "1956:6:111",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Result_$52715_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Result_$52415_storage_ptr",
                                                 "typeString": "struct IMulticall3.Result"
                                             }
                                         },
-                                        "id": 52828,
+                                        "id": 52528,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "1956:8:110",
+                                        "src": "1956:8:111",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Result_$52715_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Result_$52415_storage_$dyn_storage_ptr",
                                             "typeString": "struct IMulticall3.Result[]"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1955:28:110"
+                            "src": "1955:28:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 52848,
+                        "id": 52548,
                         "nodeType": "FunctionDefinition",
-                        "src": "1990:192:110",
+                        "src": "1990:192:111",
                         "nodes": [],
                         "functionSelector": "399542e9",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "tryBlockAndAggregate",
-                        "nameLocation": "1999:20:110",
+                        "nameLocation": "1999:20:111",
                         "parameters": {
-                            "id": 52838,
+                            "id": 52538,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52833,
+                                    "id": 52533,
                                     "mutability": "mutable",
                                     "name": "requireSuccess",
-                                    "nameLocation": "2025:14:110",
+                                    "nameLocation": "2025:14:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52848,
-                                    "src": "2020:19:110",
+                                    "scope": 52548,
+                                    "src": "2020:19:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2710,10 +2710,10 @@ export const IMulticall3 = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 52832,
+                                        "id": 52532,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2020:4:110",
+                                        "src": "2020:4:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -2723,66 +2723,66 @@ export const IMulticall3 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 52837,
+                                    "id": 52537,
                                     "mutability": "mutable",
                                     "name": "calls",
-                                    "nameLocation": "2057:5:110",
+                                    "nameLocation": "2057:5:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52848,
-                                    "src": "2041:21:110",
+                                    "scope": 52548,
+                                    "src": "2041:21:111",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_Call_$52694_calldata_ptr_$dyn_calldata_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_Call_$52394_calldata_ptr_$dyn_calldata_ptr",
                                         "typeString": "struct IMulticall3.Call[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 52835,
+                                            "id": 52535,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 52834,
+                                                "id": 52534,
                                                 "name": "Call",
                                                 "nameLocations": [
-                                                    "2041:4:110"
+                                                    "2041:4:111"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 52694,
-                                                "src": "2041:4:110"
+                                                "referencedDeclaration": 52394,
+                                                "src": "2041:4:111"
                                             },
-                                            "referencedDeclaration": 52694,
-                                            "src": "2041:4:110",
+                                            "referencedDeclaration": 52394,
+                                            "src": "2041:4:111",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Call_$52694_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Call_$52394_storage_ptr",
                                                 "typeString": "struct IMulticall3.Call"
                                             }
                                         },
-                                        "id": 52836,
+                                        "id": 52536,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "2041:6:110",
+                                        "src": "2041:6:111",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Call_$52694_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Call_$52394_storage_$dyn_storage_ptr",
                                             "typeString": "struct IMulticall3.Call[]"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2019:44:110"
+                            "src": "2019:44:111"
                         },
                         "returnParameters": {
-                            "id": 52847,
+                            "id": 52547,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 52840,
+                                    "id": 52540,
                                     "mutability": "mutable",
                                     "name": "blockNumber",
-                                    "nameLocation": "2122:11:110",
+                                    "nameLocation": "2122:11:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52848,
-                                    "src": "2114:19:110",
+                                    "scope": 52548,
+                                    "src": "2114:19:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2790,10 +2790,10 @@ export const IMulticall3 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 52839,
+                                        "id": 52539,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2114:7:110",
+                                        "src": "2114:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2803,13 +2803,13 @@ export const IMulticall3 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 52842,
+                                    "id": 52542,
                                     "mutability": "mutable",
                                     "name": "blockHash",
-                                    "nameLocation": "2143:9:110",
+                                    "nameLocation": "2143:9:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52848,
-                                    "src": "2135:17:110",
+                                    "scope": 52548,
+                                    "src": "2135:17:111",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2817,10 +2817,10 @@ export const IMulticall3 = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 52841,
+                                        "id": 52541,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2135:7:110",
+                                        "src": "2135:7:111",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -2830,54 +2830,54 @@ export const IMulticall3 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 52846,
+                                    "id": 52546,
                                     "mutability": "mutable",
                                     "name": "returnData",
-                                    "nameLocation": "2170:10:110",
+                                    "nameLocation": "2170:10:111",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 52848,
-                                    "src": "2154:26:110",
+                                    "scope": 52548,
+                                    "src": "2154:26:111",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_Result_$52715_memory_ptr_$dyn_memory_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_Result_$52415_memory_ptr_$dyn_memory_ptr",
                                         "typeString": "struct IMulticall3.Result[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 52844,
+                                            "id": 52544,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 52843,
+                                                "id": 52543,
                                                 "name": "Result",
                                                 "nameLocations": [
-                                                    "2154:6:110"
+                                                    "2154:6:111"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 52715,
-                                                "src": "2154:6:110"
+                                                "referencedDeclaration": 52415,
+                                                "src": "2154:6:111"
                                             },
-                                            "referencedDeclaration": 52715,
-                                            "src": "2154:6:110",
+                                            "referencedDeclaration": 52415,
+                                            "src": "2154:6:111",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Result_$52715_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Result_$52415_storage_ptr",
                                                 "typeString": "struct IMulticall3.Result"
                                             }
                                         },
-                                        "id": 52845,
+                                        "id": 52545,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "2154:8:110",
+                                        "src": "2154:8:111",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Result_$52715_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Result_$52415_storage_$dyn_storage_ptr",
                                             "typeString": "struct IMulticall3.Result[]"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2113:68:110"
+                            "src": "2113:68:111"
                         },
-                        "scope": 52849,
+                        "scope": 52549,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
@@ -2890,16 +2890,16 @@ export const IMulticall3 = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    52849
+                    52549
                 ],
                 "name": "IMulticall3",
-                "nameLocation": "110:11:110",
-                "scope": 52850,
+                "nameLocation": "110:11:111",
+                "scope": 52550,
                 "usedErrors": [],
                 "usedEvents": []
             }
         ],
         "license": "MIT"
     },
-    "id": 110
+    "id": 111
 };

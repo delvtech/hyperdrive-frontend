@@ -9,7 +9,6 @@ import { ReactElement } from "react";
 import { parseUnits } from "src/base/parseUnits";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
 import { getIsSteth } from "src/vaults/isSteth";
@@ -78,11 +77,10 @@ export function CurrentValueCell({
           )}
         >
           {getProfitLossText({
-            baseAmountOut: amountOutOrStethTokens,
-            amountInput: openShort.baseAmountPaid,
-            baseDecimals: baseToken.decimals,
-            baseSymbol: baseToken.symbol,
-            showPercentage: false,
+            startAmount: amountOutOrStethTokens,
+            endAmount: openShort.baseAmountPaid,
+            decimals: baseToken.decimals,
+            symbol: baseToken.symbol,
           })}
         </div>
       ) : (
@@ -90,4 +88,27 @@ export function CurrentValueCell({
       )}
     </div>
   );
+}
+
+function getProfitLossText({
+  startAmount,
+  endAmount,
+  symbol,
+  decimals,
+}: {
+  startAmount: bigint;
+  endAmount: bigint;
+  symbol: string;
+  decimals: number;
+}): string {
+  const profitOrLoss = startAmount - endAmount;
+
+  const result = `${formatBalance({
+    balance: profitOrLoss,
+    decimals: decimals,
+    includeCommas: true,
+    places: 4,
+  })} ${symbol}`;
+
+  return result;
 }

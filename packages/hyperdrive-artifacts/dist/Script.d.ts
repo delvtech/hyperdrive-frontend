@@ -1,14 +1,14 @@
 export declare const Script: {
     readonly abi: readonly [{
-        readonly type: "function";
-        readonly name: "IS_SCRIPT";
         readonly inputs: readonly [];
+        readonly name: "IS_SCRIPT";
         readonly outputs: readonly [{
+            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
-            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
+        readonly type: "function";
     }];
     readonly bytecode: {
         readonly object: "0x";

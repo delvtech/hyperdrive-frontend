@@ -747,8 +747,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
       groupBy(openLongEvents, (event) => event.args.assetId.toString()),
       (events) => {
         const baseAmounts = events.map((event) => {
-          const { vaultShareAmount, asBase, baseAmount } = event.args;
-          return calculateBaseAmount({ vaultShareAmount, asBase, baseAmount });
+          const { baseAmount } = event.args;
+          return baseAmount;
         });
 
         return sumBigInt(baseAmounts);
@@ -765,8 +765,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
       groupBy(closeLongEvents, (event) => event.args.assetId.toString()),
       (events) => {
         const baseAmounts = events.map((event) => {
-          const { vaultShareAmount, asBase, baseAmount } = event.args;
-          return calculateBaseAmount({ vaultShareAmount, asBase, baseAmount });
+          const { baseAmount } = event.args;
+          return baseAmount;
         });
         return sumBigInt(baseAmounts);
       },
@@ -1192,7 +1192,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }): ReturnType<IReadHyperdrive, "getLpSharesTotalSupply"> {
     return this.contract.read(
       "totalSupply",
-      { id: LP_ASSET_ID },
+      { tokenId: LP_ASSET_ID },
       args?.options,
     );
   }
@@ -1630,15 +1630,16 @@ export class ReadHyperdrive implements IReadHyperdrive {
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadHyperdrive, "previewRemoveLiquidity"> {
-    const { proceeds, withdrawalShares } = await this.contract.simulateWrite(
-      "removeLiquidity",
-      {
-        _lpShares: lpSharesIn,
-        _minOutputPerShare: minOutputPerShare,
-        _options: { destination, asBase, extraData },
-      },
-      options,
-    );
+    const { 0: proceeds, 1: withdrawalShares } =
+      await this.contract.simulateWrite(
+        "removeLiquidity",
+        {
+          _lpShares: lpSharesIn,
+          _minOutputPerShare: minOutputPerShare,
+          _options: { destination, asBase, extraData },
+        },
+        options,
+      );
 
     return {
       proceeds,
@@ -1661,7 +1662,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadHyperdrive, "previewRedeemWithdrawalShares"> {
-    const { proceeds, withdrawalSharesRedeemed } =
+    const { 0: proceeds, 1: withdrawalSharesRedeemed } =
       await this.contract.simulateWrite(
         "redeemWithdrawalShares",
         {

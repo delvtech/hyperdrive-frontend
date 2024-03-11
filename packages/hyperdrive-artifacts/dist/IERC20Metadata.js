@@ -559,22 +559,22 @@ export const IERC20Metadata = {
     },
     "ast": {
         "absolutePath": "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
-        "id": 66681,
+        "id": 66381,
         "exportedSymbols": {
             "IERC20": [
-                66654
+                66354
             ],
             "IERC20Metadata": [
-                66680
+                66380
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "125:558:115",
+        "src": "125:558:116",
         "nodes": [
             {
-                "id": 66656,
+                "id": 66356,
                 "nodeType": "PragmaDirective",
-                "src": "125:24:115",
+                "src": "125:24:116",
                 "nodes": [],
                 "literals": [
                     "solidity",
@@ -584,24 +584,24 @@ export const IERC20Metadata = {
                 ]
             },
             {
-                "id": 66658,
+                "id": 66358,
                 "nodeType": "ImportDirective",
-                "src": "151:37:115",
+                "src": "151:37:116",
                 "nodes": [],
                 "absolutePath": "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
                 "file": "../IERC20.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 66681,
-                "sourceUnit": 66655,
+                "scope": 66381,
+                "sourceUnit": 66355,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 66657,
+                            "id": 66357,
                             "name": "IERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 66654,
-                            "src": "159:6:115",
+                            "referencedDeclaration": 66354,
+                            "src": "159:6:116",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -610,19 +610,19 @@ export const IERC20Metadata = {
                 "unitAlias": ""
             },
             {
-                "id": 66680,
+                "id": 66380,
                 "nodeType": "ContractDefinition",
-                "src": "277:405:115",
+                "src": "277:405:116",
                 "nodes": [
                     {
-                        "id": 66667,
+                        "id": 66367,
                         "nodeType": "FunctionDefinition",
-                        "src": "377:54:115",
+                        "src": "377:54:116",
                         "nodes": [],
                         "documentation": {
-                            "id": 66662,
+                            "id": 66362,
                             "nodeType": "StructuredDocumentation",
-                            "src": "318:54:115",
+                            "src": "318:54:116",
                             "text": " @dev Returns the name of the token."
                         },
                         "functionSelector": "06fdde03",
@@ -630,26 +630,26 @@ export const IERC20Metadata = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "name",
-                        "nameLocation": "386:4:115",
+                        "nameLocation": "386:4:116",
                         "parameters": {
-                            "id": 66663,
+                            "id": 66363,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "390:2:115"
+                            "src": "390:2:116"
                         },
                         "returnParameters": {
-                            "id": 66666,
+                            "id": 66366,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 66665,
+                                    "id": 66365,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 66667,
-                                    "src": "416:13:115",
+                                    "scope": 66367,
+                                    "src": "416:13:116",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
@@ -657,10 +657,10 @@ export const IERC20Metadata = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 66664,
+                                        "id": 66364,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "416:6:115",
+                                        "src": "416:6:116",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_string_storage_ptr",
                                             "typeString": "string"
@@ -669,22 +669,22 @@ export const IERC20Metadata = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "415:15:115"
+                            "src": "415:15:116"
                         },
-                        "scope": 66680,
+                        "scope": 66380,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 66673,
+                        "id": 66373,
                         "nodeType": "FunctionDefinition",
-                        "src": "498:56:115",
+                        "src": "498:56:116",
                         "nodes": [],
                         "documentation": {
-                            "id": 66668,
+                            "id": 66368,
                             "nodeType": "StructuredDocumentation",
-                            "src": "437:56:115",
+                            "src": "437:56:116",
                             "text": " @dev Returns the symbol of the token."
                         },
                         "functionSelector": "95d89b41",
@@ -692,26 +692,26 @@ export const IERC20Metadata = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "symbol",
-                        "nameLocation": "507:6:115",
+                        "nameLocation": "507:6:116",
                         "parameters": {
-                            "id": 66669,
+                            "id": 66369,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "513:2:115"
+                            "src": "513:2:116"
                         },
                         "returnParameters": {
-                            "id": 66672,
+                            "id": 66372,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 66671,
+                                    "id": 66371,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 66673,
-                                    "src": "539:13:115",
+                                    "scope": 66373,
+                                    "src": "539:13:116",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
@@ -719,10 +719,10 @@ export const IERC20Metadata = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 66670,
+                                        "id": 66370,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "539:6:115",
+                                        "src": "539:6:116",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_string_storage_ptr",
                                             "typeString": "string"
@@ -731,22 +731,22 @@ export const IERC20Metadata = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "538:15:115"
+                            "src": "538:15:116"
                         },
-                        "scope": 66680,
+                        "scope": 66380,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 66679,
+                        "id": 66379,
                         "nodeType": "FunctionDefinition",
-                        "src": "630:50:115",
+                        "src": "630:50:116",
                         "nodes": [],
                         "documentation": {
-                            "id": 66674,
+                            "id": 66374,
                             "nodeType": "StructuredDocumentation",
-                            "src": "560:65:115",
+                            "src": "560:65:116",
                             "text": " @dev Returns the decimals places of the token."
                         },
                         "functionSelector": "313ce567",
@@ -754,26 +754,26 @@ export const IERC20Metadata = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "decimals",
-                        "nameLocation": "639:8:115",
+                        "nameLocation": "639:8:116",
                         "parameters": {
-                            "id": 66675,
+                            "id": 66375,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "647:2:115"
+                            "src": "647:2:116"
                         },
                         "returnParameters": {
-                            "id": 66678,
+                            "id": 66378,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 66677,
+                                    "id": 66377,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 66679,
-                                    "src": "673:5:115",
+                                    "scope": 66379,
+                                    "src": "673:5:116",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -781,10 +781,10 @@ export const IERC20Metadata = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 66676,
+                                        "id": 66376,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "673:5:115",
+                                        "src": "673:5:116",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint8",
                                             "typeString": "uint8"
@@ -793,9 +793,9 @@ export const IERC20Metadata = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "672:7:115"
+                            "src": "672:7:116"
                         },
-                        "scope": 66680,
+                        "scope": 66380,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
@@ -805,45 +805,45 @@ export const IERC20Metadata = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 66660,
+                            "id": 66360,
                             "name": "IERC20",
                             "nameLocations": [
-                                "305:6:115"
+                                "305:6:116"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 66654,
-                            "src": "305:6:115"
+                            "referencedDeclaration": 66354,
+                            "src": "305:6:116"
                         },
-                        "id": 66661,
+                        "id": 66361,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "305:6:115"
+                        "src": "305:6:116"
                     }
                 ],
                 "canonicalName": "IERC20Metadata",
                 "contractDependencies": [],
                 "contractKind": "interface",
                 "documentation": {
-                    "id": 66659,
+                    "id": 66359,
                     "nodeType": "StructuredDocumentation",
-                    "src": "190:86:115",
+                    "src": "190:86:116",
                     "text": " @dev Interface for the optional metadata functions from the ERC20 standard."
                 },
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    66680,
-                    66654
+                    66380,
+                    66354
                 ],
                 "name": "IERC20Metadata",
-                "nameLocation": "287:14:115",
-                "scope": 66681,
+                "nameLocation": "287:14:116",
+                "scope": 66381,
                 "usedErrors": [],
                 "usedEvents": [
-                    66588,
-                    66597
+                    66288,
+                    66297
                 ]
             }
         ],
         "license": "MIT"
     },
-    "id": 115
+    "id": 116
 };

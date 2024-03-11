@@ -1,8 +1,4 @@
-import {
-  Long,
-  calculateFixedRateFromOpenLong,
-  calculateMatureLongYieldAfterFees,
-} from "@delvtech/hyperdrive-viem";
+import { Long } from "@delvtech/hyperdrive-viem";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
@@ -20,7 +16,6 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
@@ -29,6 +24,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { CurrentValueCell } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
+import { FixedRateCell } from "src/ui/hyperdrive/longs/OpenLongsTable/FixedRateCell";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { useAccount } from "wagmi";
 
@@ -188,7 +184,13 @@ function formatOpenLongMobileColumnData(
     },
     {
       name: "Fixed rate (APR)",
-      value: <FixedRateCell hyperdrive={hyperdrive} row={row} />,
+      value: (
+        <FixedRateCell
+          hyperdrive={hyperdrive}
+          baseAmountPaid={row.baseAmountPaid}
+          bondAmount={row.bondAmount}
+        />
+      ),
     },
     {
       name: `Current value`,
@@ -246,55 +248,4 @@ function getMobileColumns({
       },
     }),
   ];
-}
-
-function FixedRateCell({
-  row,
-  hyperdrive,
-}: {
-  row: Long;
-  hyperdrive: HyperdriveConfig;
-}) {
-  const appConfig = useAppConfig();
-  const { poolConfig, baseToken: baseTokenAddress } = hyperdrive;
-  const baseToken = findBaseToken({
-    baseTokenAddress,
-    tokens: appConfig.tokens,
-  });
-  const { baseAmountPaid, bondAmount } = row;
-  const fixedRate = calculateFixedRateFromOpenLong({
-    baseAmount: baseAmountPaid,
-    bondAmount,
-    positionDuration: poolConfig?.positionDuration || 0n,
-    decimals: baseToken.decimals,
-  });
-
-  const yieldAfterFlatFee = calculateMatureLongYieldAfterFees({
-    flatFee: poolConfig?.fees.flat || 0n,
-    bondAmount,
-    baseAmountPaid,
-    decimals: baseToken.decimals,
-  });
-
-  return (
-    <div className="daisy-stat flex flex-row p-0">
-      <span className="daisy-stat-value text-md font-bold">
-        {formatRate(fixedRate)}%
-      </span>
-      <div
-        data-tip={"Yield after fees if held to maturity"}
-        className={
-          "daisy-stat-desc daisy-tooltip mt-1 inline-flex text-xs text-success"
-        }
-      >
-        <span>{"+"}</span>
-        {formatBalance({
-          balance: yieldAfterFlatFee,
-          decimals: baseToken.decimals,
-          places: 4,
-        })}{" "}
-        {baseToken.symbol}
-      </div>
-    </div>
-  );
 }

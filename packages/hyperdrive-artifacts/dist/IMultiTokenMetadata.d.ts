@@ -1,7 +1,7 @@
 export declare const IMultiTokenMetadata: {
     readonly abi: readonly [{
         readonly inputs: readonly [];
-        readonly name: "DOMAIN_SEPARATOR";
+        readonly name: "PERMIT_TYPEHASH";
         readonly outputs: readonly [{
             readonly internalType: "bytes32";
             readonly name: "";
@@ -11,7 +11,7 @@ export declare const IMultiTokenMetadata: {
         readonly type: "function";
     }, {
         readonly inputs: readonly [];
-        readonly name: "PERMIT_TYPEHASH";
+        readonly name: "domainSeparator";
         readonly outputs: readonly [{
             readonly internalType: "bytes32";
             readonly name: "";
@@ -31,10 +31,10 @@ export declare const IMultiTokenMetadata: {
         readonly linkReferences: {};
     };
     readonly methodIdentifiers: {
-        readonly "DOMAIN_SEPARATOR()": "3644e515";
         readonly "PERMIT_TYPEHASH()": "30adf81f";
+        readonly "domainSeparator()": "f698da25";
     };
-    readonly rawMetadata: "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"DOMAIN_SEPARATOR\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"PERMIT_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"DOMAIN_SEPARATOR()\":{\"returns\":{\"_0\":\"The EIP712 domain separator of the MultiToken.\"}},\"PERMIT_TYPEHASH()\":{\"returns\":{\"_0\":\"The EIP712 permit typehash of the MultiToken.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"DOMAIN_SEPARATOR()\":{\"notice\":\"Gets the EIP712 domain separator of the MultiToken.\"},\"PERMIT_TYPEHASH()\":{\"notice\":\"Gets the EIP712 permit typehash of the MultiToken.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IMultiTokenMetadata.sol\":\"IMultiTokenMetadata\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xeabffcfcd0fd642caaa2355dccad38269d25fbd4db1b0db43fd97328bf464862\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6970e3db54bfcca6748db01b871fcee4f8d74fea2e66c39e3320232086633355\",\"dweb:/ipfs/QmPq66eyA4DmnU7m1QpMgKGrJ3ebUeN6e8UEuhb64U3BH2\"]}},\"version\":1}";
+    readonly rawMetadata: "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"PERMIT_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"domainSeparator\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"PERMIT_TYPEHASH()\":{\"returns\":{\"_0\":\"The EIP712 permit typehash of the MultiToken.\"}},\"domainSeparator()\":{\"returns\":{\"_0\":\"The EIP712 domain separator of the MultiToken.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"PERMIT_TYPEHASH()\":{\"notice\":\"Gets the EIP712 permit typehash of the MultiToken.\"},\"domainSeparator()\":{\"notice\":\"Gets the EIP712 domain separator of the MultiToken.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IMultiTokenMetadata.sol\":\"IMultiTokenMetadata\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]}},\"version\":1}";
     readonly metadata: {
         readonly compiler: {
             readonly version: "0.8.20+commit.a1b79de6";
@@ -45,7 +45,7 @@ export declare const IMultiTokenMetadata: {
                 readonly inputs: readonly [];
                 readonly stateMutability: "view";
                 readonly type: "function";
-                readonly name: "DOMAIN_SEPARATOR";
+                readonly name: "PERMIT_TYPEHASH";
                 readonly outputs: readonly [{
                     readonly internalType: "bytes32";
                     readonly name: "";
@@ -55,7 +55,7 @@ export declare const IMultiTokenMetadata: {
                 readonly inputs: readonly [];
                 readonly stateMutability: "view";
                 readonly type: "function";
-                readonly name: "PERMIT_TYPEHASH";
+                readonly name: "domainSeparator";
                 readonly outputs: readonly [{
                     readonly internalType: "bytes32";
                     readonly name: "";
@@ -65,14 +65,14 @@ export declare const IMultiTokenMetadata: {
             readonly devdoc: {
                 readonly kind: "dev";
                 readonly methods: {
-                    readonly "DOMAIN_SEPARATOR()": {
-                        readonly returns: {
-                            readonly _0: "The EIP712 domain separator of the MultiToken.";
-                        };
-                    };
                     readonly "PERMIT_TYPEHASH()": {
                         readonly returns: {
                             readonly _0: "The EIP712 permit typehash of the MultiToken.";
+                        };
+                    };
+                    readonly "domainSeparator()": {
+                        readonly returns: {
+                            readonly _0: "The EIP712 domain separator of the MultiToken.";
                         };
                     };
                 };
@@ -81,11 +81,11 @@ export declare const IMultiTokenMetadata: {
             readonly userdoc: {
                 readonly kind: "user";
                 readonly methods: {
-                    readonly "DOMAIN_SEPARATOR()": {
-                        readonly notice: "Gets the EIP712 domain separator of the MultiToken.";
-                    };
                     readonly "PERMIT_TYPEHASH()": {
                         readonly notice: "Gets the EIP712 permit typehash of the MultiToken.";
+                    };
+                    readonly "domainSeparator()": {
+                        readonly notice: "Gets the EIP712 domain separator of the MultiToken.";
                     };
                 };
                 readonly version: 1;
@@ -107,8 +107,8 @@ export declare const IMultiTokenMetadata: {
         };
         readonly sources: {
             readonly "contracts/src/interfaces/IMultiTokenMetadata.sol": {
-                readonly keccak256: "0xeabffcfcd0fd642caaa2355dccad38269d25fbd4db1b0db43fd97328bf464862";
-                readonly urls: readonly ["bzz-raw://6970e3db54bfcca6748db01b871fcee4f8d74fea2e66c39e3320232086633355", "dweb:/ipfs/QmPq66eyA4DmnU7m1QpMgKGrJ3ebUeN6e8UEuhb64U3BH2"];
+                readonly keccak256: "0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca";
+                readonly urls: readonly ["bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3", "dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG"];
                 readonly license: "Apache-2.0";
             };
         };
@@ -116,29 +116,29 @@ export declare const IMultiTokenMetadata: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IMultiTokenMetadata.sol";
-        readonly id: 8498;
+        readonly id: 8639;
         readonly exportedSymbols: {
-            readonly IMultiTokenMetadata: readonly [8497];
+            readonly IMultiTokenMetadata: readonly [8638];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "39:535:58";
+        readonly src: "39:491:58";
         readonly nodes: readonly [{
-            readonly id: 8484;
+            readonly id: 8625;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:58";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 8497;
+            readonly id: 8638;
             readonly nodeType: "ContractDefinition";
-            readonly src: "64:509:58";
+            readonly src: "64:465:58";
             readonly nodes: readonly [{
-                readonly id: 8490;
+                readonly id: 8631;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "272:59:58";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 8485;
+                    readonly id: 8626;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "100:124:58";
                     readonly text: "@notice Gets the EIP712 permit typehash of the MultiToken.\n @return The EIP712 permit typehash of the MultiToken.";
@@ -150,22 +150,22 @@ export declare const IMultiTokenMetadata: {
                 readonly name: "PERMIT_TYPEHASH";
                 readonly nameLocation: "281:15:58";
                 readonly parameters: {
-                    readonly id: 8486;
+                    readonly id: 8627;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "296:2:58";
                 };
                 readonly returnParameters: {
-                    readonly id: 8489;
+                    readonly id: 8630;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8488;
+                        readonly id: 8629;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8490;
+                        readonly scope: 8631;
                         readonly src: "322:7:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -174,7 +174,7 @@ export declare const IMultiTokenMetadata: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 8487;
+                            readonly id: 8628;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "322:7:58";
@@ -187,45 +187,45 @@ export declare const IMultiTokenMetadata: {
                     }];
                     readonly src: "321:9:58";
                 };
-                readonly scope: 8497;
+                readonly scope: 8638;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 8496;
+                readonly id: 8637;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "511:60:58";
+                readonly src: "468:59:58";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 8491;
+                    readonly id: 8632;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "337:126:58";
                     readonly text: "@notice Gets the EIP712 domain separator of the MultiToken.\n @return The EIP712 domain separator of the MultiToken.";
                 };
-                readonly functionSelector: "3644e515";
+                readonly functionSelector: "f698da25";
                 readonly implemented: false;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
-                readonly name: "DOMAIN_SEPARATOR";
-                readonly nameLocation: "520:16:58";
+                readonly name: "domainSeparator";
+                readonly nameLocation: "477:15:58";
                 readonly parameters: {
-                    readonly id: 8492;
+                    readonly id: 8633;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "536:2:58";
+                    readonly src: "492:2:58";
                 };
                 readonly returnParameters: {
-                    readonly id: 8495;
+                    readonly id: 8636;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8494;
+                        readonly id: 8635;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8496;
-                        readonly src: "562:7:58";
+                        readonly scope: 8637;
+                        readonly src: "518:7:58";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -233,10 +233,10 @@ export declare const IMultiTokenMetadata: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 8493;
+                            readonly id: 8634;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "562:7:58";
+                            readonly src: "518:7:58";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes32";
                                 readonly typeString: "bytes32";
@@ -244,9 +244,9 @@ export declare const IMultiTokenMetadata: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "561:9:58";
+                    readonly src: "517:9:58";
                 };
-                readonly scope: 8497;
+                readonly scope: 8638;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -257,10 +257,10 @@ export declare const IMultiTokenMetadata: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [8497];
+            readonly linearizedBaseContracts: readonly [8638];
             readonly name: "IMultiTokenMetadata";
             readonly nameLocation: "74:19:58";
-            readonly scope: 8498;
+            readonly scope: 8639;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];
