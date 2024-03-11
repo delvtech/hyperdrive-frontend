@@ -25,6 +25,7 @@ import * as dnum from "dnum";
 import { useState } from "react";
 import { formatTimeDifference } from "src/base/formatTimeDifference";
 import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
+import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -431,7 +432,7 @@ function EventNameCell({
   const chainId = useChainId() as SupportedChainId;
   return (
     <a
-      href={makeAddressUrl(transaction?.hash || "", chainId)}
+      href={makeTransactionURL(transaction?.hash || "", chainId)}
       target="_blank"
       rel="noreferrer"
       className="underline"

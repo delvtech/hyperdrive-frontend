@@ -6,6 +6,8 @@ import {
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { parseUnits } from "src/base/parseUnits";
+import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
+import { SupportedChainId } from "src/chains/supportedChains";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -24,7 +26,7 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useConvertStethTokensToStethShares } from "src/ui/vaults/steth/useConvertStethTokensToStethShares";
 import { getIsSteth } from "src/vaults/isSteth";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 
 interface AddLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
@@ -34,6 +36,7 @@ export function AddLiquidityForm({
   hyperdrive,
 }: AddLiquidityFormProps): ReactElement {
   const { address: account } = useAccount();
+  const chainId = useChainId() as SupportedChainId;
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -118,8 +121,7 @@ export function AddLiquidityForm({
       toast.success(
         <CustomToastMessage
           message="Liquidity added"
-          // TODO: Update link to point to correct block explorer.
-          link={`https://etherscan.com/tx/${hash}`}
+          link={makeTransactionURL(hash, chainId)}
         />,
       );
     },
