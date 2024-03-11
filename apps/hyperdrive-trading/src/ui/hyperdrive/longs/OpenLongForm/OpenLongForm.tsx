@@ -27,8 +27,6 @@ import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
-import { useConvertStethTokensToStethShares } from "src/ui/vaults/steth/useConvertStethTokensToStethShares";
-import { getIsSteth } from "src/vaults/isSteth";
 import { useAccount, useChainId } from "wagmi";
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
@@ -59,7 +57,6 @@ export function OpenLongForm({
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
-
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
     account,
     enabled: requiresAllowance,
@@ -115,20 +112,10 @@ export function OpenLongForm({
       direction: "down",
     });
 
-  // If user is depositing steth, the depositAmount must be converted from steth
-  // tokens into steth shares before calling openLong
-  const isActiveTokenSteth =
-    activeToken.address === sharesToken.address && getIsSteth(sharesToken);
-  const { stethShares } = useConvertStethTokensToStethShares({
-    lidoAddress: sharesToken.address,
-    stethTokenAmount: depositAmountAsBigInt,
-    enabled: isActiveTokenSteth,
-  });
-
   const { openLong, openLongStatus } = useOpenLong({
     hyperdriveAddress: hyperdrive.address,
     asBase: activeToken.address === baseToken.address,
-    amount: isActiveTokenSteth ? stethShares : depositAmountAsBigInt,
+    amount: depositAmountAsBigInt,
     ethValue: isActiveTokenEth ? depositAmountAsBigInt : undefined,
     minBondsOut: bondsReceivedAfterSlippage,
     minSharePrice: poolInfo?.vaultSharePrice,

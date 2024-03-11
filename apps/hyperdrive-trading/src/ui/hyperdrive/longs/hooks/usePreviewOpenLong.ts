@@ -1,8 +1,6 @@
-import { findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address } from "viem";
 interface UsePreviewOpenLongOptions {
   hyperdriveAddress: Address;
@@ -24,14 +22,9 @@ export function usePreviewOpenLong({
   amountIn,
   asBase,
 }: UsePreviewOpenLongOptions): UsePreviewOpenLongResult {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const queryEnabled = !!readHyperdrive && !!amountIn;
+  const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
 
-  const appConfig = useAppConfig();
-  const hyperdrive = findHyperdriveConfig({
-    hyperdrives: appConfig.hyperdrives,
-    hyperdriveAddress,
-  });
+  const queryEnabled = !!amountIn && !!hyperdriveModel;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewOpenLong", {
@@ -41,12 +34,15 @@ export function usePreviewOpenLong({
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
-      ? () =>
-          readHyperdrive.previewOpenLong({
-            amountIn,
-            asBase,
-            decimals: hyperdrive.decimals,
-          })
+      ? () => {
+          return asBase
+            ? hyperdriveModel.previewOpenLongWithBase({
+                baseAmount: amountIn,
+              })
+            : hyperdriveModel.previewOpenLongWithShares({
+                sharesAmount: amountIn,
+              });
+        }
       : undefined,
   });
 

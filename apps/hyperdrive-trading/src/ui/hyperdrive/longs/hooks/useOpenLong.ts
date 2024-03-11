@@ -1,9 +1,8 @@
-import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
+import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
@@ -35,18 +34,19 @@ export function useOpenLong({
   onExecuted,
   ethValue,
 }: UseOpenLongOptions): UseOpenLongResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const addTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
+  const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
+
   const mutationEnabled =
     !!amount &&
     !!minBondsOut &&
     !!destination &&
     minSharePrice !== undefined &&
     enabled &&
-    !!readWriteHyperdrive &&
-    !!publicClient;
+    !!publicClient &&
+    !!hyperdriveModel;
 
   const { mutate: openLong, status } = useMutation({
     mutationFn: async () => {
@@ -54,14 +54,21 @@ export function useOpenLong({
         return;
       }
 
-      const hash = await readWriteHyperdrive.openLong({
-        amount,
-        minBondsOut: minBondsOut,
-        destination,
-        minSharePrice,
-        asBase,
-        options: { value: ethValue },
-      });
+      const hash = asBase
+        ? await hyperdriveModel.openLongWithBase({
+            baseAmount: amount,
+            minBondsOut: minBondsOut,
+            destination,
+            minSharePrice,
+            ethValue,
+          })
+        : await hyperdriveModel.openLongWithShares({
+            sharesAmount: amount,
+            minBondsOut: minBondsOut,
+            destination,
+            minSharePrice,
+            ethValue,
+          });
 
       addTransaction({
         hash,
