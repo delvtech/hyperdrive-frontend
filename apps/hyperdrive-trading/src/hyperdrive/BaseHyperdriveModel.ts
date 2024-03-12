@@ -127,6 +127,17 @@ export interface IHyperdriveModel {
     maxAPR: bigint;
     ethValue?: bigint;
   }): Promise<Hash>;
+
+  previewRemoveLiquidityWithBase(args: {
+    lpSharesIn: bigint;
+    minOutputPerShare: bigint;
+    destination: Address;
+  }): Promise<{ proceeds: bigint; withdrawalShares: bigint }>;
+  previewRemoveLiquidityWithShares(args: {
+    lpSharesIn: bigint;
+    minOutputPerShare: bigint;
+    destination: Address;
+  }): Promise<{ proceeds: bigint; withdrawalShares: bigint }>;
 }
 
 export class BaseHyperdriveModel implements IHyperdriveModel {
@@ -168,6 +179,38 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     this.sharesToken = findYieldSourceToken({
       yieldSourceTokenAddress: this.hyperdriveConfig.sharesToken,
       tokens: appConfig.tokens,
+    });
+  }
+  previewRemoveLiquidityWithBase({
+    destination,
+    lpSharesIn,
+    minOutputPerShare,
+  }: {
+    lpSharesIn: bigint;
+    minOutputPerShare: bigint;
+    destination: `0x${string}`;
+  }): Promise<{ proceeds: bigint; withdrawalShares: bigint }> {
+    return this.readWriteHyperdrive.previewRemoveLiquidity({
+      asBase: true,
+      destination,
+      lpSharesIn,
+      minOutputPerShare,
+    });
+  }
+  previewRemoveLiquidityWithShares({
+    destination,
+    lpSharesIn,
+    minOutputPerShare,
+  }: {
+    lpSharesIn: bigint;
+    minOutputPerShare: bigint;
+    destination: `0x${string}`;
+  }): Promise<{ proceeds: bigint; withdrawalShares: bigint }> {
+    return this.readWriteHyperdrive.previewRemoveLiquidity({
+      asBase: false,
+      destination,
+      lpSharesIn,
+      minOutputPerShare,
     });
   }
   closeLongWithBase({
