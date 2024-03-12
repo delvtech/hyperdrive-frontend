@@ -94,6 +94,28 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     );
     return convertedToStethTokens;
   }
+
+  async closeLongWithShares({
+    bondAmountIn,
+    destination,
+    maturityTime,
+    minAmountOut,
+  }: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minAmountOut: bigint;
+    destination: `0x${string}`;
+  }): Promise<Hash> {
+    const convertedMinAmountOut = await this.convertStethTokensToShares(
+      minAmountOut,
+    );
+    return super.closeLongWithShares({
+      bondAmountIn,
+      destination,
+      maturityTime,
+      minAmountOut: convertedMinAmountOut,
+    });
+  }
   async previewOpenShortWithShares({
     bondAmount,
   }: {
