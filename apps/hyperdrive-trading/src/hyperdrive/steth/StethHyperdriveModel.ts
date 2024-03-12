@@ -48,6 +48,72 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     });
   }
 
+  /**
+   * The `contribution` input is denominated in steth tokens since that is what
+   * is shown to the user.
+   */
+  async addLiquidityWithShares({
+    destination,
+    contribution,
+    maxAPR,
+    minAPR,
+    minLpSharePrice,
+    ethValue,
+  }: {
+    destination: Address;
+    contribution: bigint;
+    minAPR: bigint;
+    minLpSharePrice: bigint;
+    maxAPR: bigint;
+    ethValue?: bigint;
+  }): Promise<Hash> {
+    const convertedContribution = await this.convertStethTokensToShares(
+      contribution,
+    );
+
+    return super.addLiquidityWithShares({
+      destination,
+      contribution: convertedContribution,
+      maxAPR,
+      minAPR,
+      minLpSharePrice,
+      ethValue,
+    });
+  }
+
+  /**
+   * The `contribution` input is denominated in steth tokens since that is what
+   * is shown to the user.
+   */
+  async previewAddLiquidityWithShares({
+    destination,
+    contribution,
+    maxAPR,
+    minAPR,
+    minLpSharePrice,
+    ethValue,
+  }: {
+    destination: `0x${string}`;
+    contribution: bigint;
+    minAPR: bigint;
+    minLpSharePrice: bigint;
+    maxAPR: bigint;
+    ethValue?: bigint | undefined;
+  }): Promise<bigint> {
+    const convertedContribution = await this.convertStethTokensToShares(
+      contribution,
+    );
+
+    return super.previewAddLiquidityWithShares({
+      destination,
+      contribution: convertedContribution,
+      maxAPR,
+      minAPR,
+      minLpSharePrice,
+      ethValue,
+    });
+  }
+
   async openLongWithShares({
     destination,
     minBondsOut,

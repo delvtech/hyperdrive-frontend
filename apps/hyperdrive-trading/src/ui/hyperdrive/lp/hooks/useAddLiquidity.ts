@@ -1,5 +1,3 @@
-import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import {
   MutationStatus,
@@ -7,6 +5,7 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
+import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 interface UseAddLiquidityOptions {
@@ -41,10 +40,12 @@ export function useAddLiquidity({
   onExecuted,
   ethValue,
 }: UseAddLiquidityOptions): UseAddLiquidityResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
+
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
+
   const mutationEnabled =
     !!contribution &&
     minAPR !== undefined &&
@@ -52,25 +53,35 @@ export function useAddLiquidity({
     maxAPR !== undefined &&
     !!destination &&
     enabled &&
-    !!readWriteHyperdrive &&
-    !!publicClient;
+    !!publicClient &&
+    !!hyperdriveModel;
 
   const { mutate: addLiquidity, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        const hash = await readWriteHyperdrive.addLiquidity({
-          contribution,
-          minAPR,
-          minLpSharePrice,
-          maxAPR,
-          destination,
-          asBase,
-          options: { value: ethValue },
-        });
+        const hash = asBase
+          ? await hyperdriveModel.addLiquidityWithBase({
+              contribution,
+              minAPR,
+              minLpSharePrice,
+              maxAPR,
+              destination,
+              ethValue,
+            })
+          : await hyperdriveModel.addLiquidityWithShares({
+              contribution,
+              minAPR,
+              minLpSharePrice,
+              maxAPR,
+              destination,
+              ethValue,
+            });
+
         addTransaction({
           hash,
           description: "Add Liquidity",
         });
+
         await waitForTransactionAndInvalidateCache({
           hash,
           queryClient,

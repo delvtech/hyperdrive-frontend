@@ -14,6 +14,7 @@ import {
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import { WalletClient } from "node_modules/viem/_types/clients/createWalletClient";
+import { ReturnType } from "src/base/ReturnType";
 import { sdkCache } from "src/sdk/sdkCache";
 import { Address, Hash, PublicClient } from "viem";
 
@@ -29,6 +30,7 @@ export interface IHyperdriveModel {
   publicClient: PublicClient;
   walletClient: WalletClient;
 
+  // Longs
   previewOpenLongWithBase(args: {
     baseAmount: bigint;
     options?: ContractReadOptions;
@@ -61,6 +63,41 @@ export interface IHyperdriveModel {
     destination: Address;
     minSharePrice: bigint;
     minBondsOut: bigint;
+    ethValue?: bigint;
+  }): Promise<Hash>;
+
+  // LP
+  previewAddLiquidityWithBase(args: {
+    destination: Address;
+    contribution: bigint;
+    minAPR: bigint;
+    minLpSharePrice: bigint;
+    maxAPR: bigint;
+    ethValue?: bigint;
+  }): Promise<bigint>;
+  previewAddLiquidityWithShares(args: {
+    destination: Address;
+    contribution: bigint;
+    minAPR: bigint;
+    minLpSharePrice: bigint;
+    maxAPR: bigint;
+    ethValue?: bigint;
+  }): Promise<bigint>;
+
+  addLiquidityWithBase(args: {
+    destination: Address;
+    contribution: bigint;
+    minAPR: bigint;
+    minLpSharePrice: bigint;
+    maxAPR: bigint;
+    ethValue?: bigint;
+  }): Promise<Hash>;
+  addLiquidityWithShares(args: {
+    destination: Address;
+    contribution: bigint;
+    minAPR: bigint;
+    minLpSharePrice: bigint;
+    maxAPR: bigint;
     ethValue?: bigint;
   }): Promise<Hash>;
 }
@@ -104,6 +141,106 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     this.sharesToken = findYieldSourceToken({
       yieldSourceTokenAddress: this.hyperdriveConfig.sharesToken,
       tokens: appConfig.tokens,
+    });
+  }
+  addLiquidityWithBase({
+    destination,
+    contribution,
+    maxAPR,
+    minAPR,
+    minLpSharePrice,
+    ethValue,
+  }: {
+    destination: Address;
+    contribution: bigint;
+    minAPR: bigint;
+    minLpSharePrice: bigint;
+    maxAPR: bigint;
+    ethValue?: bigint;
+  }): Promise<Hash> {
+    return this.readWriteHyperdrive.addLiquidity({
+      destination,
+      contribution,
+      maxAPR,
+      minAPR,
+      minLpSharePrice,
+      asBase: true,
+      options: { value: ethValue },
+    });
+  }
+  addLiquidityWithShares({
+    destination,
+    contribution,
+    maxAPR,
+    minAPR,
+    minLpSharePrice,
+    ethValue,
+  }: {
+    destination: Address;
+    contribution: bigint;
+    minAPR: bigint;
+    minLpSharePrice: bigint;
+    maxAPR: bigint;
+    ethValue?: bigint;
+  }): Promise<Hash> {
+    return this.readWriteHyperdrive.addLiquidity({
+      destination,
+      contribution,
+      maxAPR,
+      minAPR,
+      minLpSharePrice,
+      asBase: false,
+      options: { value: ethValue },
+    });
+  }
+  async previewAddLiquidityWithBase({
+    destination,
+    contribution,
+    maxAPR,
+    minAPR,
+    minLpSharePrice,
+    ethValue,
+  }: {
+    destination: Address;
+    contribution: bigint;
+    minAPR: bigint;
+    minLpSharePrice: bigint;
+    maxAPR: bigint;
+    ethValue?: bigint;
+  }): ReturnType<IHyperdriveModel, "previewAddLiquidityWithShares"> {
+    return this.readWriteHyperdrive.previewAddLiquidity({
+      destination,
+      asBase: true,
+      contribution,
+      minAPR,
+      minLpSharePrice,
+      maxAPR,
+      options: { value: ethValue },
+    });
+  }
+  async previewAddLiquidityWithShares({
+    destination,
+    contribution,
+    maxAPR,
+    minAPR,
+    minLpSharePrice,
+    ethValue,
+  }: {
+    destination: Address;
+    contribution: bigint;
+    minAPR: bigint;
+    minLpSharePrice: bigint;
+    maxAPR: bigint;
+    ethValue?: bigint;
+  }): ReturnType<IHyperdriveModel, "previewAddLiquidityWithShares"> {
+    return this.readWriteHyperdrive.previewAddLiquidity({
+      destination,
+      asBase: false,
+      contribution,
+      minAPR,
+      minLpSharePrice,
+      maxAPR,
+      options: { value: ethValue },
     });
   }
   openLongWithBase({
