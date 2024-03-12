@@ -47,6 +47,53 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
       options,
     });
   }
+  async openLongWithShares({
+    destination,
+    minBondsOut,
+    minSharePrice,
+    sharesAmount,
+    ethValue,
+  }: {
+    sharesAmount: bigint;
+    destination: `0x${string}`;
+    minSharePrice: bigint;
+    minBondsOut: bigint;
+    ethValue?: bigint | undefined;
+  }): Promise<Hash> {
+    const convertedSharesAmount = await this.convertStethTokensToShares(
+      sharesAmount,
+    );
+    return super.openLongWithShares({
+      destination,
+      minBondsOut,
+      minSharePrice,
+      sharesAmount: convertedSharesAmount,
+      ethValue,
+    });
+  }
+
+  async previewCloseLongWithShares({
+    bondAmountIn,
+    destination,
+    maturityTime,
+    minOutput,
+  }: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minOutput: bigint;
+    destination: `0x${string}`;
+  }): Promise<bigint> {
+    const stethShares = await super.previewCloseLongWithShares({
+      maturityTime,
+      bondAmountIn,
+      destination,
+      minOutput,
+    });
+    const convertedToStethTokens = await this.convertStethSharesToTokens(
+      stethShares,
+    );
+    return convertedToStethTokens;
+  }
 
   /**
    * The `contribution` input is denominated in steth tokens since that is what
@@ -114,28 +161,16 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     });
   }
 
-  async openLongWithShares({
-    destination,
-    minBondsOut,
-    minSharePrice,
-    sharesAmount,
-    ethValue,
-  }: {
-    sharesAmount: bigint;
-    destination: `0x${string}`;
-    minSharePrice: bigint;
-    minBondsOut: bigint;
-    ethValue?: bigint | undefined;
-  }): Promise<Hash> {
-    const convertedSharesAmount = await this.convertStethTokensToShares(
-      sharesAmount,
-    );
-    return super.openLongWithShares({
-      destination,
-      minBondsOut,
-      minSharePrice,
-      sharesAmount: convertedSharesAmount,
-      ethValue,
+  /**
+   * Convert steth tokens into steth shares so that hyperdrive methods can be
+   * called with correct amounts.
+   */
+  private convertStethTokensToShares(stethTokenAmount: bigint) {
+    return this.publicClient.readContract({
+      abi: MockLido.abi,
+      address: this.lidoAddress,
+      functionName: "getSharesByPooledEth",
+      args: [stethTokenAmount],
     });
   }
 
@@ -143,12 +178,12 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
    * Convert steth tokens into steth shares so that hyperdrive methods can be
    * called with correct amounts.
    */
-  private convertStethTokensToShares(sharesAmount: bigint) {
+  private convertStethSharesToTokens(stethShareAmount: bigint) {
     return this.publicClient.readContract({
       abi: MockLido.abi,
       address: this.lidoAddress,
-      functionName: "getSharesByPooledEth",
-      args: [sharesAmount],
+      functionName: "getPooledEthByShares",
+      args: [stethShareAmount],
     });
   }
 }
