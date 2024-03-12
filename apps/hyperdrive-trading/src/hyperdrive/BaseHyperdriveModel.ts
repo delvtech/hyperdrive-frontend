@@ -30,7 +30,7 @@ export interface IHyperdriveModel {
   publicClient: PublicClient;
   walletClient: WalletClient;
 
-  // Longs
+  // Open Longs
   previewOpenLongWithBase(args: {
     baseAmount: bigint;
     options?: ContractReadOptions;
@@ -66,6 +66,7 @@ export interface IHyperdriveModel {
     ethValue?: bigint;
   }): Promise<Hash>;
 
+  // Close Longs
   previewCloseLongWithBase(args: {
     maturityTime: bigint;
     bondAmountIn: bigint;
@@ -93,7 +94,21 @@ export interface IHyperdriveModel {
     destination: Address;
   }): Promise<Hash>;
 
-  // LP
+  // Open Shorts
+  previewOpenShortWithBase(args: { bondAmount: bigint }): Promise<{
+    traderDeposit: bigint;
+    spotPriceAfterOpen: bigint;
+    spotRateAfterOpen: bigint;
+    curveFee: bigint;
+  }>;
+  previewOpenShortWithShares(args: { bondAmount: bigint }): Promise<{
+    traderDeposit: bigint;
+    spotPriceAfterOpen: bigint;
+    spotRateAfterOpen: bigint;
+    curveFee: bigint;
+  }>;
+
+  // Add LP
   previewAddLiquidityWithBase(args: {
     destination: Address;
     contribution: bigint;
@@ -128,6 +143,7 @@ export interface IHyperdriveModel {
     ethValue?: bigint;
   }): Promise<Hash>;
 
+  // Remove LP
   previewRemoveLiquidityWithBase(args: {
     lpSharesIn: bigint;
     minOutputPerShare: bigint;
@@ -179,6 +195,28 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     this.sharesToken = findYieldSourceToken({
       yieldSourceTokenAddress: this.hyperdriveConfig.sharesToken,
       tokens: appConfig.tokens,
+    });
+  }
+  previewOpenShortWithBase({ bondAmount }: { bondAmount: bigint }): Promise<{
+    traderDeposit: bigint;
+    spotPriceAfterOpen: bigint;
+    spotRateAfterOpen: bigint;
+    curveFee: bigint;
+  }> {
+    return this.readWriteHyperdrive.previewOpenShort({
+      amountOfBondsToShort: bondAmount,
+      asBase: true,
+    });
+  }
+  previewOpenShortWithShares({ bondAmount }: { bondAmount: bigint }): Promise<{
+    traderDeposit: bigint;
+    spotPriceAfterOpen: bigint;
+    spotRateAfterOpen: bigint;
+    curveFee: bigint;
+  }> {
+    return this.readWriteHyperdrive.previewOpenShort({
+      amountOfBondsToShort: bondAmount,
+      asBase: false,
     });
   }
   previewRemoveLiquidityWithBase({
