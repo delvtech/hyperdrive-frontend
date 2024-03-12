@@ -1,8 +1,6 @@
-import { findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address } from "viem";
 
 interface UsePreviewOpenShortOptions {
@@ -13,7 +11,7 @@ interface UsePreviewOpenShortOptions {
 
 interface UsePreviewOpenShortResult {
   status: MutationStatus;
-  depositAmount: bigint | undefined;
+  traderDeposit: bigint | undefined;
   spotPriceAfterOpen: bigint | undefined;
   spotRateAfterOpen: bigint | undefined;
   curveFee: bigint | undefined;
@@ -24,13 +22,8 @@ export function usePreviewOpenShort({
   amountOfBondsToShort,
   asBase,
 }: UsePreviewOpenShortOptions): UsePreviewOpenShortResult {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const appConfig = useAppConfig();
-  const hyperdrive = findHyperdriveConfig({
-    hyperdrives: appConfig.hyperdrives,
-    hyperdriveAddress,
-  });
-  const queryEnabled = !!readHyperdrive && !!amountOfBondsToShort;
+  const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
+  const queryEnabled = !!hyperdriveModel && !!amountOfBondsToShort;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewOpenShort", {
@@ -41,16 +34,18 @@ export function usePreviewOpenShort({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          return readHyperdrive.previewOpenShort({
-            amountOfBondsToShort: amountOfBondsToShort,
-            decimals: hyperdrive.decimals,
-            asBase,
-          });
+          return asBase
+            ? hyperdriveModel.previewOpenShortWithBase({
+                bondAmount: amountOfBondsToShort,
+              })
+            : hyperdriveModel.previewOpenShortWithShares({
+                bondAmount: amountOfBondsToShort,
+              });
         }
       : undefined,
   });
   return {
-    depositAmount: data?.traderDeposit,
+    traderDeposit: data?.traderDeposit,
     spotPriceAfterOpen: data?.spotPriceAfterOpen,
     spotRateAfterOpen: data?.spotRateAfterOpen,
     curveFee: data?.curveFee,
