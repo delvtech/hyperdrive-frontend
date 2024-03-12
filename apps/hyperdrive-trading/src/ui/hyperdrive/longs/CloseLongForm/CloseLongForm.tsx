@@ -20,8 +20,6 @@ import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewClo
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
-import { getIsSteth } from "src/vaults/isSteth";
 import { formatUnits, parseUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
@@ -78,19 +76,6 @@ export function CloseLongForm({
       destination: account,
       asBase: activeWithdrawToken.address === baseToken.address,
     });
-
-  // If user is withdrawing steth, the withdrawAmount will be in steth shares,
-  // which must be converted into steth tokens for display purposes
-  const isActiveWithdrawTokenSteth = getIsSteth(activeWithdrawToken);
-  const { stethTokenAmount: stethTokenAmountOut } =
-    useConvertStethSharesToStethTokens({
-      lidoAddress: sharesToken.address,
-      stethShares: withdrawAmount,
-      enabled: isActiveWithdrawTokenSteth,
-    });
-  const stethOrWithdrawTokenAmount = isActiveWithdrawTokenSteth
-    ? stethTokenAmountOut
-    : withdrawAmount;
 
   const minAmountOutAfterSlippage =
     withdrawAmount &&
@@ -177,9 +162,9 @@ export function CloseLongForm({
           label="You receive"
           value={
             <p className="font-bold">
-              {stethOrWithdrawTokenAmount
+              {withdrawAmount
                 ? `${formatBalance({
-                    balance: stethOrWithdrawTokenAmount,
+                    balance: withdrawAmount,
                     decimals: baseToken.decimals,
                     places: 8,
                   })}`

@@ -1,7 +1,7 @@
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
-import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
+import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
@@ -31,29 +31,37 @@ export function useCloseLong({
   enabled = true,
   onExecuted,
 }: UseCloseLongOptions): UseCloseLongResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
+
   const mutationEnabled =
     !!maturityTime &&
     !!bondAmountIn &&
     minAmountOut !== undefined && // check undefined since 0 is valid
     !!destination &&
     enabled &&
-    !!readWriteHyperdrive &&
+    !!hyperdriveModel &&
     !!publicClient;
 
   const { mutate: closeLong, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        const hash = await readWriteHyperdrive.closeLong({
-          bondAmountIn,
-          minAmountOut,
-          destination,
-          asBase,
-          maturityTime,
-        });
+        const hash = asBase
+          ? await hyperdriveModel.closeLongWithBase({
+              bondAmountIn,
+              minAmountOut,
+              destination,
+              maturityTime,
+            })
+          : await hyperdriveModel.closeLongWithShares({
+              bondAmountIn,
+              minAmountOut,
+              destination,
+              maturityTime,
+            });
+
         addTransaction({
           hash,
           description: "Close Long",

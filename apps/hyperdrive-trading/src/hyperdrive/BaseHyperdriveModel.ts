@@ -66,6 +66,33 @@ export interface IHyperdriveModel {
     ethValue?: bigint;
   }): Promise<Hash>;
 
+  previewCloseLongWithBase(args: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minOutput: bigint;
+    destination: Address;
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
+  previewCloseLongWithShares(args: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minOutput: bigint;
+    destination: Address;
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
+  closeLongWithBase(args: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minAmountOut: bigint;
+    destination: Address;
+  }): Promise<Hash>;
+  closeLongWithShares(args: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minAmountOut: bigint;
+    destination: Address;
+  }): Promise<Hash>;
+
   // LP
   previewAddLiquidityWithBase(args: {
     destination: Address;
@@ -143,6 +170,84 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
       tokens: appConfig.tokens,
     });
   }
+  closeLongWithBase({
+    bondAmountIn,
+    destination,
+    maturityTime,
+    minAmountOut,
+  }: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minAmountOut: bigint;
+    destination: `0x${string}`;
+  }): Promise<`0x${string}`> {
+    return this.readWriteHyperdrive.closeLong({
+      bondAmountIn,
+      destination,
+      maturityTime,
+      minAmountOut,
+      asBase: true,
+    });
+  }
+  closeLongWithShares({
+    bondAmountIn,
+    destination,
+    maturityTime,
+    minAmountOut,
+  }: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minAmountOut: bigint;
+    destination: `0x${string}`;
+  }): Promise<`0x${string}`> {
+    return this.readWriteHyperdrive.closeLong({
+      bondAmountIn,
+      destination,
+      maturityTime,
+      minAmountOut,
+      asBase: false,
+    });
+  }
+  previewCloseLongWithBase({
+    bondAmountIn,
+    destination,
+    maturityTime,
+    minOutput,
+  }: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minOutput: bigint;
+    destination: Address;
+  }): Promise<bigint> {
+    return this.readWriteHyperdrive.previewCloseLong({
+      maturityTime,
+      asBase: true,
+      bondAmountIn,
+      destination,
+      minAmountOut: minOutput,
+    });
+  }
+
+  previewCloseLongWithShares({
+    bondAmountIn,
+    destination,
+    maturityTime,
+    minOutput,
+  }: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minOutput: bigint;
+    destination: Address;
+  }): Promise<bigint> {
+    return this.readWriteHyperdrive.previewCloseLong({
+      maturityTime,
+      asBase: false,
+      bondAmountIn,
+      destination,
+      minAmountOut: minOutput,
+    });
+  }
+
   addLiquidityWithBase({
     destination,
     contribution,

@@ -1,16 +1,12 @@
 import { Long } from "@delvtech/hyperdrive-viem";
-import {
-  HyperdriveConfig,
-  findBaseToken,
-  findYieldSourceToken,
-} from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
-import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
-import { getIsSteth } from "src/vaults/isSteth";
 import { parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
@@ -27,44 +23,36 @@ export function CurrentValueCell({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
-  // steth markets can only close you out to steth shares, which must be
-  // converted into steth tokens, which are 1:1 with eth
-  const isStethHyperdrive = getIsSteth(sharesToken);
-  const { amountOut, previewCloseLongStatus } = usePreviewCloseLong({
-    hyperdriveAddress: hyperdrive.address,
-    maturityTime: row.maturity,
-    bondAmountIn: row.bondAmount,
-    minOutput: parseUnits("0", baseToken.decimals),
-    destination: account,
-    // You can only withdraw as base if it's not a steth hyperdrive
-    asBase: !isStethHyperdrive,
-  });
-
-  // Steth tokens are 1:1 with eth so they can be used interchangeably with the
-  // base token
-  const { stethTokenAmount: stethTokenAmountOut } =
-    useConvertStethSharesToStethTokens({
-      lidoAddress: sharesToken.address,
-      stethShares: amountOut,
-      enabled: isStethHyperdrive,
+  const { amountOut: sharesAmountOut, previewCloseLongStatus } =
+    usePreviewCloseLong({
+      hyperdriveAddress: hyperdrive.address,
+      maturityTime: row.maturity,
+      bondAmountIn: row.bondAmount,
+      minOutput: parseUnits("0", baseToken.decimals),
+      destination: account,
+      // Not all hyperdrives can close to base, but they can all close to
+      // shares! To make this component easy, we'll always preview to shares
+      // then do the conversion to base ourselves.
+      asBase: false,
     });
-  const amountOutOrStethTokens = isStethHyperdrive
-    ? stethTokenAmountOut
-    : amountOut;
+
+  // To get the base value of the shares, just do a simple conversion
+  const amountOutInBase = convertSharesToBase({
+    decimals: hyperdrive.decimals,
+    sharesAmount: sharesAmountOut,
+    vaultSharePrice: poolInfo?.vaultSharePrice,
+  });
 
   const currentValueLabel = formatBalance({
-    balance: amountOutOrStethTokens || 0n,
+    balance: amountOutInBase || 0n,
     decimals: baseToken.decimals,
     places: 4,
   });
 
   const isPositiveChangeInValue =
-    amountOutOrStethTokens && amountOutOrStethTokens > row.baseAmountPaid;
+    amountOutInBase && amountOutInBase > row.baseAmountPaid;
   if (previewCloseLongStatus === "error") {
     return <div>Insufficient Liquidity</div>;
   }
@@ -82,9 +70,9 @@ export function CurrentValueCell({
         )}
       >
         <span>{isPositiveChangeInValue ? "+" : ""}</span>
-        {amountOutOrStethTokens
+        {amountOutInBase
           ? `${formatBalance({
-              balance: amountOutOrStethTokens - row.baseAmountPaid,
+              balance: amountOutInBase - row.baseAmountPaid,
               decimals: baseToken.decimals,
               places: 4,
             })} ${baseToken.symbol}`
