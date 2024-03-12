@@ -1,8 +1,4 @@
-import {
-  findBaseToken,
-  findYieldSourceToken,
-  HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
@@ -19,10 +15,8 @@ import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
-import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
+import { useUtilizationRatio } from "src/ui/hyperdrive/lp/hooks/useUtilizationRatio";
 import { RemoveLiquidityForm } from "src/ui/hyperdrive/lp/RemoveLiquidityForm/RemoveLiquidityForm";
-import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
-import { getIsSteth } from "src/vaults/isSteth";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
@@ -37,10 +31,6 @@ export function OpenLpSharesCard({
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
-    tokens: appConfig.tokens,
-  });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
 
@@ -65,34 +55,11 @@ export function OpenLpSharesCard({
   const profit = dnum.subtract([currentValue, 18], [baseAmountPaid, 18])[0];
   const isPositiveChangeInValue = profit > 0n;
 
-  // If this is a steth market, we need to convert the amount out into steth
-  // tokens, which are 1:1 with eth
-  const isSteth = getIsSteth(sharesToken);
-  const { proceeds: previewWithdrawAmount, withdrawalShares } =
-    usePreviewRemoveLiquidity({
-      hyperdriveAddress: hyperdrive.address,
-      lpSharesIn: lpShares,
-      minOutputPerShare: 1n,
-      destination: account,
-      asBase: !isSteth,
-    });
-  const { stethTokenAmount } = useConvertStethSharesToStethTokens({
-    lidoAddress: sharesToken.address,
-    enabled: isSteth,
-    stethShares: previewWithdrawAmount,
+  const utilizationRatio = useUtilizationRatio({
+    hyperdrive,
+    account,
   });
-  const finalPreviewWithdrawAmount = isSteth
-    ? stethTokenAmount
-    : previewWithdrawAmount;
 
-  const utilizationRatio =
-    !!withdrawalShares && !!lpShares
-      ? calculateRatio({
-          a: withdrawalShares,
-          b: lpShares,
-          decimals: baseToken.decimals,
-        })
-      : 0n;
   const poolShare =
     !!lpShares && !!lpSharesTotalSupply
       ? calculateRatio({
@@ -185,7 +152,7 @@ export function OpenLpSharesCard({
                     Utilization ratio
                   </p>
                   <p>
-                    {!!finalPreviewWithdrawAmount
+                    {!!utilizationRatio
                       ? `${dnum.format(
                           [utilizationRatio, baseToken.decimals],
                           2,
@@ -203,7 +170,7 @@ export function OpenLpSharesCard({
                   // remove this defensive coding once negative interest is
                   // fixed.
                   Math.min(
-                    +formatUnits(utilizationRatio, baseToken.decimals),
+                    +formatUnits(utilizationRatio || 0n, baseToken.decimals),
                     100,
                   )
                 }
