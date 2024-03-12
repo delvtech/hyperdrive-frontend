@@ -1,6 +1,6 @@
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
+import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address } from "viem";
 
 interface UsePreviewCloseLongOptions {
@@ -31,14 +31,14 @@ export function usePreviewCloseLong({
   asBase = true,
   enabled = true,
 }: UsePreviewCloseLongOptions): UsePreviewCloseLongResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
   const queryEnabled =
-    !!readWriteHyperdrive &&
     !!hyperdriveAddress &&
     !!maturityTime &&
     !!bondAmountIn &&
     minOutput !== undefined && // check undefined since 0 is valid
     !!destination &&
+    !!hyperdriveModel &&
     enabled;
 
   const { data, status } = useQuery({
@@ -52,13 +52,19 @@ export function usePreviewCloseLong({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? () =>
-          readWriteHyperdrive.previewCloseLong({
-            maturityTime,
-            bondAmountIn,
-            minAmountOut: minOutput,
-            destination,
-            asBase,
-          })
+          asBase
+            ? hyperdriveModel.previewCloseLongWithBase({
+                maturityTime,
+                bondAmountIn,
+                minOutput,
+                destination,
+              })
+            : hyperdriveModel.previewCloseLongWithShares({
+                maturityTime,
+                bondAmountIn,
+                minOutput,
+                destination,
+              })
       : undefined,
   });
 
