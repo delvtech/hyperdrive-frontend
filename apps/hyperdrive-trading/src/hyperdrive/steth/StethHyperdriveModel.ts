@@ -271,6 +271,24 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
       ethValue,
     });
   }
+  async removeLiquidityWithShares({
+    destination,
+    lpSharesIn,
+    minOutputPerShare,
+  }: {
+    lpSharesIn: bigint;
+    minOutputPerShare: bigint;
+    destination: `0x${string}`;
+  }): Promise<Hash> {
+    const convertedMinOutputPerShare = await this.convertStethTokensToShares(
+      minOutputPerShare,
+    );
+    return super.removeLiquidityWithShares({
+      destination,
+      lpSharesIn,
+      minOutputPerShare: convertedMinOutputPerShare,
+    });
+  }
 
   /**
    * Convert steth tokens into steth shares so that hyperdrive methods can be
