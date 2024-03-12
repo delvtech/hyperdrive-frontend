@@ -24,8 +24,6 @@ export function CurrentValueCell({
     tokens: appConfig.tokens,
   });
 
-  // steth markets can only close you out to steth shares, which must be
-  // converted into steth tokens, which are 1:1 with eth
   const { amountOut: currentValueInShares } = usePreviewCloseShort({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: openShort.maturity,
