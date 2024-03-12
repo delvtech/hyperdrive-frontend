@@ -20,7 +20,7 @@ export function Tabs({
         <input
           key={id}
           className={classNames(
-            "daisy-tab",
+            "daisy-tab font-chakraPetch",
             "!border-b-0", // override the bottom border since lifted tabs style doesn't need it, and it creates a stray line beneath the tab
             {
               "daisy-tab-active font-bold": activeTabId === id,

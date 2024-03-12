@@ -7,10 +7,7 @@ export function Navbar(): ReactElement {
   return (
     <div className="daisy-navbar">
       <div className="daisy-navbar-start ml-2">
-        <Link
-          to={"/"}
-          className="text-h6 inline-flex items-center gap-2 font-extrabold uppercase tracking-widest"
-        >
+        <Link to={"/"} className="inline-flex items-center ">
           <HyperdriveLogo />
         </Link>
       </div>

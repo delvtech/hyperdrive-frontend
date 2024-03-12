@@ -9,7 +9,7 @@ import { PositionCard } from "src/ui/landing/PositionCards/PositionCard";
 export function PositionCards(): ReactElement {
   return (
     <div className="flex flex-col items-center justify-evenly gap-10">
-      <span className="gradient-text text-center text-h3">How it works</span>
+      <h3 className="gradient-text text-center ">How it works</h3>
       <div className="flex flex-wrap justify-center gap-20">
         <PositionCard
           title={

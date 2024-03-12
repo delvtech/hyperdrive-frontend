@@ -12,7 +12,7 @@ export function PriceBadges({
   longPrice: bigint;
 }): ReactElement {
   return (
-    <div className="flex flex-col gap-2 md:flex-row md:gap-4">
+    <div className="flex flex-col gap-2 font-dmMono md:flex-row md:gap-4">
       <div className="daisy-badge daisy-badge-neutral daisy-badge-lg py-4 text-md text-neutral-content">
         1 hy{baseToken.symbol} ≈{" "}
         {formatBalance({

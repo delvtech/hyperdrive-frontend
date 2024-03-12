@@ -6,14 +6,14 @@ export function Hero(): ReactElement {
     <div className="daisy-hero">
       <div className="daisy-hero-content text-center">
         <div className="max-w-4xl">
-          <h2 className="gradient-text mb-5 text-h3 font-bold md:text-h1">
+          <h1 className="gradient-text mb-5 text-h3 font-medium md:text-h1">
             Fixed and variable yields at your control.
-          </h2>
-          <h4 className="mb-5 text-h5 text-neutral-content">
-            Go Long to lock in a predictable fixed rate of return, go Short to
-            get multiplied exposure to the variable rate, or LP to profit from
-            rates volatility.
-          </h4>
+          </h1>
+          <h5 className="mb-5 font-inter text-neutral-content">
+            Open a Long to lock in a predictable fixed rate of return, open a
+            Short to get multiplied exposure to the variable rate, or LP to
+            profit from rates volatility.
+          </h5>
           <a
             target="_blank"
             rel="noreferrer"
