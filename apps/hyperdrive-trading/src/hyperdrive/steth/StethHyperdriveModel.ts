@@ -115,6 +115,33 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     };
   }
 
+  async previewCloseShortWithShares({
+    destination,
+    maturityTime,
+    minAmountOut,
+    shortAmountIn,
+  }: {
+    maturityTime: bigint;
+    shortAmountIn: bigint;
+    minAmountOut: bigint;
+    destination: `0x${string}`;
+  }): Promise<{ amountOut: bigint }> {
+    const result = await super.previewCloseShortWithShares({
+      destination,
+      maturityTime,
+      minAmountOut,
+      shortAmountIn,
+    });
+    const convertedAmountOut = await this.convertStethSharesToTokens(
+      result.amountOut,
+    );
+
+    return {
+      ...result,
+      amountOut: convertedAmountOut,
+    };
+  }
+
   /**
    * The `contribution` input is denominated in steth tokens since that is what
    * is shown to the user.

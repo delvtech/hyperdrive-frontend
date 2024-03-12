@@ -108,6 +108,20 @@ export interface IHyperdriveModel {
     curveFee: bigint;
   }>;
 
+  // Close Shorts
+  previewCloseShortWithBase(args: {
+    maturityTime: bigint;
+    shortAmountIn: bigint;
+    minAmountOut: bigint;
+    destination: Address;
+  }): Promise<{ amountOut: bigint }>;
+  previewCloseShortWithShares(args: {
+    maturityTime: bigint;
+    shortAmountIn: bigint;
+    minAmountOut: bigint;
+    destination: Address;
+  }): Promise<{ amountOut: bigint }>;
+
   // Add LP
   previewAddLiquidityWithBase(args: {
     destination: Address;
@@ -196,6 +210,46 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
       yieldSourceTokenAddress: this.hyperdriveConfig.sharesToken,
       tokens: appConfig.tokens,
     });
+  }
+  async previewCloseShortWithBase({
+    maturityTime,
+    destination,
+    minAmountOut,
+    shortAmountIn,
+  }: {
+    maturityTime: bigint;
+    shortAmountIn: bigint;
+    minAmountOut: bigint;
+    destination: `0x${string}`;
+  }): Promise<{ amountOut: bigint }> {
+    const amountOut = await this.readWriteHyperdrive.previewCloseShort({
+      asBase: true,
+      destination,
+      maturityTime,
+      minAmountOut,
+      shortAmountIn,
+    });
+    return { amountOut };
+  }
+  async previewCloseShortWithShares({
+    destination,
+    maturityTime,
+    minAmountOut,
+    shortAmountIn,
+  }: {
+    maturityTime: bigint;
+    shortAmountIn: bigint;
+    minAmountOut: bigint;
+    destination: `0x${string}`;
+  }): Promise<{ amountOut: bigint }> {
+    const amountOut = await this.readWriteHyperdrive.previewCloseShort({
+      asBase: false,
+      destination,
+      maturityTime,
+      minAmountOut,
+      shortAmountIn,
+    });
+    return { amountOut };
   }
   previewOpenShortWithBase({ bondAmount }: { bondAmount: bigint }): Promise<{
     traderDeposit: bigint;
