@@ -128,6 +128,26 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     });
   }
 
+  async previewRemoveLiquidityWithShares({
+    destination,
+    lpSharesIn,
+    minOutputPerShare,
+  }: {
+    lpSharesIn: bigint;
+    minOutputPerShare: bigint;
+    destination: `0x${string}`;
+  }): Promise<{ proceeds: bigint; withdrawalShares: bigint }> {
+    const { proceeds, withdrawalShares } =
+      await super.previewRemoveLiquidityWithShares({
+        destination,
+        lpSharesIn,
+        minOutputPerShare,
+      });
+
+    const convertedProceeds = await this.convertStethSharesToTokens(proceeds);
+
+    return { proceeds: convertedProceeds, withdrawalShares };
+  }
   /**
    * The `contribution` input is denominated in steth tokens since that is what
    * is shown to the user.
