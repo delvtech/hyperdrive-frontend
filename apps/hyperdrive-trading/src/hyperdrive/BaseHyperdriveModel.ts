@@ -1,5 +1,6 @@
 import {
   ContractReadOptions,
+  ContractWriteOptions,
   ReadWriteHyperdrive,
   createReadWriteHyperdrive,
 } from "@delvtech/hyperdrive-viem";
@@ -52,18 +53,22 @@ export interface IHyperdriveModel {
     curveFee: bigint;
   }>;
   openLongWithBase(args: {
-    destination: Address;
-    minSharePrice: bigint;
-    minBondsOut: bigint;
-    baseAmount: bigint;
-    ethValue?: bigint;
+    args: {
+      destination: Address;
+      minSharePrice: bigint;
+      minBondsOut: bigint;
+      baseAmount: bigint;
+    };
+    options?: ContractWriteOptions;
   }): Promise<Hash>;
   openLongWithShares(args: {
-    sharesAmount: bigint;
-    destination: Address;
-    minSharePrice: bigint;
-    minBondsOut: bigint;
-    ethValue?: bigint;
+    args: {
+      sharesAmount: bigint;
+      destination: Address;
+      minSharePrice: bigint;
+      minBondsOut: bigint;
+    };
+    options?: ContractWriteOptions;
   }): Promise<Hash>;
 
   // Close Longs
@@ -578,47 +583,29 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     });
   }
   openLongWithBase({
-    destination,
-    minBondsOut,
-    minSharePrice,
-    baseAmount,
-    ethValue,
-  }: {
-    destination: `0x${string}`;
-    minSharePrice: bigint;
-    minBondsOut: bigint;
-    baseAmount: bigint;
-    ethValue?: bigint | undefined;
-  }): Promise<Hash> {
+    args: { destination, minBondsOut, minSharePrice, baseAmount },
+    options,
+  }: Parameters<IHyperdriveModel["openLongWithBase"]>[0]): Promise<Hash> {
     return this.readWriteHyperdrive.openLong({
       amount: baseAmount,
       destination,
       minBondsOut,
       minSharePrice,
       asBase: true,
-      options: { value: ethValue },
+      options,
     });
   }
   openLongWithShares({
-    destination,
-    minBondsOut,
-    minSharePrice,
-    sharesAmount,
-    ethValue,
-  }: {
-    sharesAmount: bigint;
-    destination: `0x${string}`;
-    minSharePrice: bigint;
-    minBondsOut: bigint;
-    ethValue?: bigint | undefined;
-  }): Promise<Hash> {
+    args: { destination, minBondsOut, minSharePrice, sharesAmount },
+    options,
+  }: Parameters<IHyperdriveModel["openLongWithShares"]>[0]): Promise<Hash> {
     return this.readWriteHyperdrive.openLong({
       amount: sharesAmount,
       destination,
       minBondsOut,
       minSharePrice,
       asBase: false,
-      options: { value: ethValue },
+      options,
     });
   }
   async previewOpenLongWithBase({
