@@ -32,7 +32,7 @@ export interface IHyperdriveModel {
   walletClient: WalletClient;
 
   // Open Longs
-  previewOpenLongWithBase(args: {
+  previewOpenLongWithBase(params: {
     baseAmount: bigint;
     options?: ContractReadOptions;
   }): Promise<{
@@ -42,7 +42,7 @@ export interface IHyperdriveModel {
     spotRateAfterOpen: bigint;
     curveFee: bigint;
   }>;
-  previewOpenLongWithShares(args: {
+  previewOpenLongWithShares(params: {
     sharesAmount: bigint;
     options?: ContractReadOptions;
   }): Promise<{
@@ -52,47 +52,49 @@ export interface IHyperdriveModel {
     spotRateAfterOpen: bigint;
     curveFee: bigint;
   }>;
-  openLongWithBase(args: {
+  openLongWithBase(params: {
     args: {
       destination: Address;
-      minSharePrice: bigint;
+      minVaultSharePrice: bigint;
       minBondsOut: bigint;
       baseAmount: bigint;
     };
     options?: ContractWriteOptions;
+    onTransactionMined?: (hash: Hash) => void;
   }): Promise<Hash>;
-  openLongWithShares(args: {
+  openLongWithShares(params: {
     args: {
       sharesAmount: bigint;
       destination: Address;
-      minSharePrice: bigint;
+      minVaultSharePrice: bigint;
       minBondsOut: bigint;
     };
     options?: ContractWriteOptions;
+    onTransactionMined?: (hash: Hash) => void;
   }): Promise<Hash>;
 
   // Close Longs
-  previewCloseLongWithBase(args: {
+  previewCloseLongWithBase(params: {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minOutput: bigint;
     destination: Address;
     options?: ContractReadOptions;
   }): Promise<bigint>;
-  previewCloseLongWithShares(args: {
+  previewCloseLongWithShares(params: {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minOutput: bigint;
     destination: Address;
     options?: ContractReadOptions;
   }): Promise<bigint>;
-  closeLongWithBase(args: {
+  closeLongWithBase(params: {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
     destination: Address;
   }): Promise<Hash>;
-  closeLongWithShares(args: {
+  closeLongWithShares(params: {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
@@ -100,13 +102,13 @@ export interface IHyperdriveModel {
   }): Promise<Hash>;
 
   // Open Shorts
-  previewOpenShortWithBase(args: { bondAmount: bigint }): Promise<{
+  previewOpenShortWithBase(params: { bondAmount: bigint }): Promise<{
     traderDeposit: bigint;
     spotPriceAfterOpen: bigint;
     spotRateAfterOpen: bigint;
     curveFee: bigint;
   }>;
-  previewOpenShortWithShares(args: { bondAmount: bigint }): Promise<{
+  previewOpenShortWithShares(params: { bondAmount: bigint }): Promise<{
     traderDeposit: bigint;
     spotPriceAfterOpen: bigint;
     spotRateAfterOpen: bigint;
@@ -114,26 +116,26 @@ export interface IHyperdriveModel {
   }>;
 
   // Close Shorts
-  previewCloseShortWithBase(args: {
+  previewCloseShortWithBase(params: {
     maturityTime: bigint;
     shortAmountIn: bigint;
     minAmountOut: bigint;
     destination: Address;
   }): Promise<{ amountOut: bigint }>;
-  previewCloseShortWithShares(args: {
+  previewCloseShortWithShares(params: {
     maturityTime: bigint;
     shortAmountIn: bigint;
     minAmountOut: bigint;
     destination: Address;
   }): Promise<{ amountOut: bigint }>;
 
-  closeShortWithBase(args: {
+  closeShortWithBase(params: {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
     destination: Address;
   }): Promise<Hash>;
-  closeShortWithShares(args: {
+  closeShortWithShares(params: {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
@@ -141,7 +143,7 @@ export interface IHyperdriveModel {
   }): Promise<Hash>;
 
   // Add LP
-  previewAddLiquidityWithBase(args: {
+  previewAddLiquidityWithBase(params: {
     destination: Address;
     contribution: bigint;
     minAPR: bigint;
@@ -149,7 +151,7 @@ export interface IHyperdriveModel {
     maxAPR: bigint;
     ethValue?: bigint;
   }): Promise<bigint>;
-  previewAddLiquidityWithShares(args: {
+  previewAddLiquidityWithShares(params: {
     destination: Address;
     contribution: bigint;
     minAPR: bigint;
@@ -158,7 +160,7 @@ export interface IHyperdriveModel {
     ethValue?: bigint;
   }): Promise<bigint>;
 
-  addLiquidityWithBase(args: {
+  addLiquidityWithBase(params: {
     destination: Address;
     contribution: bigint;
     minAPR: bigint;
@@ -166,7 +168,7 @@ export interface IHyperdriveModel {
     maxAPR: bigint;
     ethValue?: bigint;
   }): Promise<Hash>;
-  addLiquidityWithShares(args: {
+  addLiquidityWithShares(params: {
     destination: Address;
     contribution: bigint;
     minAPR: bigint;
@@ -176,23 +178,23 @@ export interface IHyperdriveModel {
   }): Promise<Hash>;
 
   // Remove LP
-  previewRemoveLiquidityWithBase(args: {
+  previewRemoveLiquidityWithBase(params: {
     lpSharesIn: bigint;
     minOutputPerShare: bigint;
     destination: Address;
   }): Promise<{ proceeds: bigint; withdrawalShares: bigint }>;
-  previewRemoveLiquidityWithShares(args: {
+  previewRemoveLiquidityWithShares(params: {
     lpSharesIn: bigint;
     minOutputPerShare: bigint;
     destination: Address;
   }): Promise<{ proceeds: bigint; withdrawalShares: bigint }>;
 
-  removeLiquidityWithBase(args: {
+  removeLiquidityWithBase(params: {
     lpSharesIn: bigint;
     minOutputPerShare: bigint;
     destination: Address;
   }): Promise<Hash>;
-  removeLiquidityWithShares(args: {
+  removeLiquidityWithShares(params: {
     lpSharesIn: bigint;
     minOutputPerShare: bigint;
     destination: Address;
@@ -250,10 +252,12 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     destination: `0x${string}`;
   }): Promise<`0x${string}`> {
     return this.readWriteHyperdrive.removeLiquidity({
-      destination,
-      lpSharesIn,
-      minOutputPerShare,
-      asBase: true,
+      args: {
+        destination,
+        lpSharesIn,
+        minOutputPerShare,
+        asBase: true,
+      },
     });
   }
   removeLiquidityWithShares({
@@ -266,10 +270,12 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     destination: `0x${string}`;
   }): Promise<`0x${string}`> {
     return this.readWriteHyperdrive.removeLiquidity({
-      destination,
-      lpSharesIn,
-      minOutputPerShare,
-      asBase: true,
+      args: {
+        destination,
+        lpSharesIn,
+        minOutputPerShare,
+        asBase: true,
+      },
     });
   }
   closeShortWithBase({
@@ -284,11 +290,13 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     destination: Address;
   }): Promise<Hash> {
     return this.readWriteHyperdrive.closeShort({
-      bondAmountIn,
-      destination,
-      maturityTime,
-      minAmountOut,
-      asBase: true,
+      args: {
+        bondAmountIn,
+        destination,
+        maturityTime,
+        minAmountOut,
+        asBase: true,
+      },
     });
   }
   closeShortWithShares({
@@ -303,11 +311,13 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     destination: Address;
   }): Promise<Hash> {
     return this.readWriteHyperdrive.closeShort({
-      bondAmountIn,
-      destination,
-      maturityTime,
-      minAmountOut,
-      asBase: false,
+      args: {
+        bondAmountIn,
+        destination,
+        maturityTime,
+        minAmountOut,
+        asBase: false,
+      },
     });
   }
   async previewCloseShortWithBase({
@@ -416,11 +426,13 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     destination: `0x${string}`;
   }): Promise<`0x${string}`> {
     return this.readWriteHyperdrive.closeLong({
-      bondAmountIn,
-      destination,
-      maturityTime,
-      minAmountOut,
-      asBase: true,
+      args: {
+        bondAmountIn,
+        destination,
+        maturityTime,
+        minAmountOut,
+        asBase: true,
+      },
     });
   }
   closeLongWithShares({
@@ -435,11 +447,13 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     destination: `0x${string}`;
   }): Promise<`0x${string}`> {
     return this.readWriteHyperdrive.closeLong({
-      bondAmountIn,
-      destination,
-      maturityTime,
-      minAmountOut,
-      asBase: false,
+      args: {
+        bondAmountIn,
+        destination,
+        maturityTime,
+        minAmountOut,
+        asBase: false,
+      },
     });
   }
   previewCloseLongWithBase({
@@ -498,12 +512,14 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     ethValue?: bigint;
   }): Promise<Hash> {
     return this.readWriteHyperdrive.addLiquidity({
-      destination,
-      contribution,
-      maxAPR,
-      minAPR,
-      minLpSharePrice,
-      asBase: true,
+      args: {
+        destination,
+        contribution,
+        maxAPR,
+        minAPR,
+        minLpSharePrice,
+        asBase: true,
+      },
       options: { value: ethValue },
     });
   }
@@ -523,12 +539,14 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     ethValue?: bigint;
   }): Promise<Hash> {
     return this.readWriteHyperdrive.addLiquidity({
-      destination,
-      contribution,
-      maxAPR,
-      minAPR,
-      minLpSharePrice,
-      asBase: false,
+      args: {
+        destination,
+        contribution,
+        maxAPR,
+        minAPR,
+        minLpSharePrice,
+        asBase: false,
+      },
       options: { value: ethValue },
     });
   }
@@ -583,29 +601,37 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     });
   }
   openLongWithBase({
-    args: { destination, minBondsOut, minSharePrice, baseAmount },
+    args: { destination, minBondsOut, minVaultSharePrice, baseAmount },
     options,
+    onTransactionMined,
   }: Parameters<IHyperdriveModel["openLongWithBase"]>[0]): Promise<Hash> {
     return this.readWriteHyperdrive.openLong({
-      amount: baseAmount,
-      destination,
-      minBondsOut,
-      minSharePrice,
-      asBase: true,
+      args: {
+        amount: baseAmount,
+        destination,
+        minBondsOut,
+        minVaultSharePrice,
+        asBase: true,
+      },
       options,
+      onTransactionMined,
     });
   }
   openLongWithShares({
-    args: { destination, minBondsOut, minSharePrice, sharesAmount },
+    args: { destination, minBondsOut, minVaultSharePrice, sharesAmount },
     options,
+    onTransactionMined,
   }: Parameters<IHyperdriveModel["openLongWithShares"]>[0]): Promise<Hash> {
     return this.readWriteHyperdrive.openLong({
-      amount: sharesAmount,
-      destination,
-      minBondsOut,
-      minSharePrice,
-      asBase: false,
+      args: {
+        amount: sharesAmount,
+        destination,
+        minBondsOut,
+        minVaultSharePrice,
+        asBase: false,
+      },
       options,
+      onTransactionMined,
     });
   }
   async previewOpenLongWithBase({

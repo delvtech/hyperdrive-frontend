@@ -51,7 +51,7 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     });
   }
   async openLongWithShares({
-    args: { destination, minBondsOut, minSharePrice, sharesAmount },
+    args: { destination, minBondsOut, minVaultSharePrice, sharesAmount },
     options,
   }: Parameters<IHyperdriveModel["openLongWithShares"]>[0]): Promise<Hash> {
     const convertedSharesAmount = await this.convertStethTokensToShares(
@@ -61,7 +61,7 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
       args: {
         destination,
         minBondsOut,
-        minSharePrice,
+        minVaultSharePrice,
         sharesAmount: convertedSharesAmount,
       },
       options,
