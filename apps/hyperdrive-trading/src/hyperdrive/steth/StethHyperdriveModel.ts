@@ -1,6 +1,7 @@
 import { MockLido } from "@delvtech/hyperdrive-artifacts/MockLido";
 import { ContractReadOptions } from "@delvtech/hyperdrive-viem";
 import { AppConfig } from "@hyperdrive/appconfig";
+import { ExtractMethodParams } from "src/base/ExtractMethodParams";
 import {
   BaseHyperdriveModel,
   IHyperdriveModel,
@@ -92,24 +93,25 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
   }
 
   async closeLongWithShares({
-    bondAmountIn,
-    destination,
-    maturityTime,
-    minAmountOut,
-  }: {
-    maturityTime: bigint;
-    bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: `0x${string}`;
-  }): Promise<Hash> {
+    args: { bondAmountIn, destination, maturityTime, minAmountOut },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "closeLongWithShares"
+  >): Promise<Hash> {
     const convertedMinAmountOut = await this.convertStethTokensToShares(
       minAmountOut,
     );
     return super.closeLongWithShares({
-      bondAmountIn,
-      destination,
-      maturityTime,
-      minAmountOut: convertedMinAmountOut,
+      args: {
+        bondAmountIn,
+        destination,
+        maturityTime,
+        minAmountOut: convertedMinAmountOut,
+      },
+      options,
+      onTransactionMined,
     });
   }
   async previewOpenShortWithShares({
@@ -161,24 +163,25 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
   }
 
   async closeShortWithShares({
-    bondAmountIn,
-    destination,
-    maturityTime,
-    minAmountOut,
-  }: {
-    maturityTime: bigint;
-    bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: Address;
-  }): Promise<Hash> {
+    args: { bondAmountIn, destination, maturityTime, minAmountOut },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "closeShortWithShares"
+  >): Promise<Hash> {
     const convertedMinAmountOut = await this.convertStethTokensToShares(
       minAmountOut,
     );
     return super.closeShortWithShares({
-      bondAmountIn,
-      destination,
-      maturityTime,
-      minAmountOut: convertedMinAmountOut,
+      args: {
+        bondAmountIn,
+        destination,
+        maturityTime,
+        minAmountOut: convertedMinAmountOut,
+      },
+      options,
+      onTransactionMined,
     });
   }
 
@@ -187,31 +190,27 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
    * is shown to the user.
    */
   async addLiquidityWithShares({
-    destination,
-    contribution,
-    maxAPR,
-    minAPR,
-    minLpSharePrice,
-    ethValue,
-  }: {
-    destination: Address;
-    contribution: bigint;
-    minAPR: bigint;
-    minLpSharePrice: bigint;
-    maxAPR: bigint;
-    ethValue?: bigint;
-  }): Promise<Hash> {
+    args: { destination, contribution, maxAPR, minAPR, minLpSharePrice },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "addLiquidityWithShares"
+  >): Promise<Hash> {
     const convertedContribution = await this.convertStethTokensToShares(
       contribution,
     );
 
     return super.addLiquidityWithShares({
-      destination,
-      contribution: convertedContribution,
-      maxAPR,
-      minAPR,
-      minLpSharePrice,
-      ethValue,
+      args: {
+        destination,
+        contribution: convertedContribution,
+        maxAPR,
+        minAPR,
+        minLpSharePrice,
+      },
+      options,
+      onTransactionMined,
     });
   }
 
@@ -268,21 +267,24 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     });
   }
   async removeLiquidityWithShares({
-    destination,
-    lpSharesIn,
-    minOutputPerShare,
-  }: {
-    lpSharesIn: bigint;
-    minOutputPerShare: bigint;
-    destination: `0x${string}`;
-  }): Promise<Hash> {
+    args: { destination, lpSharesIn, minOutputPerShare },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "removeLiquidityWithShares"
+  >): Promise<Hash> {
     const convertedMinOutputPerShare = await this.convertStethTokensToShares(
       minOutputPerShare,
     );
     return super.removeLiquidityWithShares({
-      destination,
-      lpSharesIn,
-      minOutputPerShare: convertedMinOutputPerShare,
+      args: {
+        destination,
+        lpSharesIn,
+        minOutputPerShare: convertedMinOutputPerShare,
+      },
+      options,
+      onTransactionMined,
     });
   }
 

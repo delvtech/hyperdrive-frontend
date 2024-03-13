@@ -15,6 +15,7 @@ import {
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import { WalletClient } from "node_modules/viem/_types/clients/createWalletClient";
+import { ExtractMethodParams } from "src/base/ExtractMethodParams";
 import { ReturnType } from "src/base/ReturnType";
 import { sdkCache } from "src/sdk/sdkCache";
 import { Address, Hash, PublicClient } from "viem";
@@ -89,16 +90,24 @@ export interface IHyperdriveModel {
     options?: ContractReadOptions;
   }): Promise<bigint>;
   closeLongWithBase(params: {
-    maturityTime: bigint;
-    bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: Address;
+    args: {
+      maturityTime: bigint;
+      bondAmountIn: bigint;
+      minAmountOut: bigint;
+      destination: Address;
+    };
+    options?: ContractWriteOptions;
+    onTransactionMined?: (hash: Hash) => void;
   }): Promise<Hash>;
   closeLongWithShares(params: {
-    maturityTime: bigint;
-    bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: Address;
+    args: {
+      maturityTime: bigint;
+      bondAmountIn: bigint;
+      minAmountOut: bigint;
+      destination: Address;
+    };
+    options?: ContractWriteOptions;
+    onTransactionMined?: (hash: Hash) => void;
   }): Promise<Hash>;
 
   // Open Shorts
@@ -130,16 +139,24 @@ export interface IHyperdriveModel {
   }): Promise<{ amountOut: bigint }>;
 
   closeShortWithBase(params: {
-    maturityTime: bigint;
-    bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: Address;
+    args: {
+      maturityTime: bigint;
+      bondAmountIn: bigint;
+      minAmountOut: bigint;
+      destination: Address;
+    };
+    options?: ContractWriteOptions;
+    onTransactionMined?: (hash: Hash) => void;
   }): Promise<Hash>;
   closeShortWithShares(params: {
-    maturityTime: bigint;
-    bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: Address;
+    args: {
+      maturityTime: bigint;
+      bondAmountIn: bigint;
+      minAmountOut: bigint;
+      destination: Address;
+    };
+    options?: ContractWriteOptions;
+    onTransactionMined?: (hash: Hash) => void;
   }): Promise<Hash>;
 
   // Add LP
@@ -161,20 +178,26 @@ export interface IHyperdriveModel {
   }): Promise<bigint>;
 
   addLiquidityWithBase(params: {
-    destination: Address;
-    contribution: bigint;
-    minAPR: bigint;
-    minLpSharePrice: bigint;
-    maxAPR: bigint;
-    ethValue?: bigint;
+    args: {
+      destination: Address;
+      contribution: bigint;
+      minAPR: bigint;
+      minLpSharePrice: bigint;
+      maxAPR: bigint;
+    };
+    options?: ContractWriteOptions;
+    onTransactionMined?: (hash: Hash) => void;
   }): Promise<Hash>;
   addLiquidityWithShares(params: {
-    destination: Address;
-    contribution: bigint;
-    minAPR: bigint;
-    minLpSharePrice: bigint;
-    maxAPR: bigint;
-    ethValue?: bigint;
+    args: {
+      destination: Address;
+      contribution: bigint;
+      minAPR: bigint;
+      minLpSharePrice: bigint;
+      maxAPR: bigint;
+    };
+    options?: ContractWriteOptions;
+    onTransactionMined?: (hash: Hash) => void;
   }): Promise<Hash>;
 
   // Remove LP
@@ -190,14 +213,22 @@ export interface IHyperdriveModel {
   }): Promise<{ proceeds: bigint; withdrawalShares: bigint }>;
 
   removeLiquidityWithBase(params: {
-    lpSharesIn: bigint;
-    minOutputPerShare: bigint;
-    destination: Address;
+    args: {
+      lpSharesIn: bigint;
+      minOutputPerShare: bigint;
+      destination: Address;
+    };
+    options?: ContractWriteOptions;
+    onTransactionMined?: (hash: Hash) => void;
   }): Promise<Hash>;
   removeLiquidityWithShares(params: {
-    lpSharesIn: bigint;
-    minOutputPerShare: bigint;
-    destination: Address;
+    args: {
+      lpSharesIn: bigint;
+      minOutputPerShare: bigint;
+      destination: Address;
+    };
+    options?: ContractWriteOptions;
+    onTransactionMined?: (hash: Hash) => void;
   }): Promise<Hash>;
 }
 
@@ -243,14 +274,13 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     });
   }
   removeLiquidityWithBase({
-    destination,
-    lpSharesIn,
-    minOutputPerShare,
-  }: {
-    lpSharesIn: bigint;
-    minOutputPerShare: bigint;
-    destination: `0x${string}`;
-  }): Promise<`0x${string}`> {
+    args: { destination, lpSharesIn, minOutputPerShare },
+    onTransactionMined,
+    options,
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "removeLiquidityWithBase"
+  >): Promise<Hash> {
     return this.readWriteHyperdrive.removeLiquidity({
       args: {
         destination,
@@ -258,17 +288,18 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
         minOutputPerShare,
         asBase: true,
       },
+      options,
+      onTransactionMined,
     });
   }
   removeLiquidityWithShares({
-    destination,
-    lpSharesIn,
-    minOutputPerShare,
-  }: {
-    lpSharesIn: bigint;
-    minOutputPerShare: bigint;
-    destination: `0x${string}`;
-  }): Promise<`0x${string}`> {
+    args: { destination, lpSharesIn, minOutputPerShare },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "removeLiquidityWithShares"
+  >): Promise<Hash> {
     return this.readWriteHyperdrive.removeLiquidity({
       args: {
         destination,
@@ -276,19 +307,18 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
         minOutputPerShare,
         asBase: true,
       },
+      onTransactionMined,
+      options,
     });
   }
   closeShortWithBase({
-    bondAmountIn,
-    destination,
-    maturityTime,
-    minAmountOut,
-  }: {
-    maturityTime: bigint;
-    bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: Address;
-  }): Promise<Hash> {
+    args: { bondAmountIn, destination, maturityTime, minAmountOut },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "closeShortWithBase"
+  >): Promise<Hash> {
     return this.readWriteHyperdrive.closeShort({
       args: {
         bondAmountIn,
@@ -297,19 +327,18 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
         minAmountOut,
         asBase: true,
       },
+      options,
+      onTransactionMined,
     });
   }
   closeShortWithShares({
-    bondAmountIn,
-    destination,
-    maturityTime,
-    minAmountOut,
-  }: {
-    maturityTime: bigint;
-    bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: Address;
-  }): Promise<Hash> {
+    args: { bondAmountIn, destination, maturityTime, minAmountOut },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "closeShortWithShares"
+  >): Promise<Hash> {
     return this.readWriteHyperdrive.closeShort({
       args: {
         bondAmountIn,
@@ -318,6 +347,8 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
         minAmountOut,
         asBase: false,
       },
+      onTransactionMined,
+      options,
     });
   }
   async previewCloseShortWithBase({
@@ -415,16 +446,13 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     });
   }
   closeLongWithBase({
-    bondAmountIn,
-    destination,
-    maturityTime,
-    minAmountOut,
-  }: {
-    maturityTime: bigint;
-    bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: `0x${string}`;
-  }): Promise<`0x${string}`> {
+    args: { bondAmountIn, destination, maturityTime, minAmountOut },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "closeLongWithBase"
+  >): Promise<`0x${string}`> {
     return this.readWriteHyperdrive.closeLong({
       args: {
         bondAmountIn,
@@ -433,19 +461,18 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
         minAmountOut,
         asBase: true,
       },
+      options,
+      onTransactionMined,
     });
   }
   closeLongWithShares({
-    bondAmountIn,
-    destination,
-    maturityTime,
-    minAmountOut,
-  }: {
-    maturityTime: bigint;
-    bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: `0x${string}`;
-  }): Promise<`0x${string}`> {
+    args: { bondAmountIn, destination, maturityTime, minAmountOut },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "closeLongWithShares"
+  >): Promise<`0x${string}`> {
     return this.readWriteHyperdrive.closeLong({
       args: {
         bondAmountIn,
@@ -454,6 +481,8 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
         minAmountOut,
         asBase: false,
       },
+      onTransactionMined,
+      options,
     });
   }
   previewCloseLongWithBase({
@@ -497,20 +526,13 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
   }
 
   addLiquidityWithBase({
-    destination,
-    contribution,
-    maxAPR,
-    minAPR,
-    minLpSharePrice,
-    ethValue,
-  }: {
-    destination: Address;
-    contribution: bigint;
-    minAPR: bigint;
-    minLpSharePrice: bigint;
-    maxAPR: bigint;
-    ethValue?: bigint;
-  }): Promise<Hash> {
+    args: { destination, contribution, maxAPR, minAPR, minLpSharePrice },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "addLiquidityWithBase"
+  >): Promise<Hash> {
     return this.readWriteHyperdrive.addLiquidity({
       args: {
         destination,
@@ -520,24 +542,18 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
         minLpSharePrice,
         asBase: true,
       },
-      options: { value: ethValue },
+      options,
+      onTransactionMined,
     });
   }
   addLiquidityWithShares({
-    destination,
-    contribution,
-    maxAPR,
-    minAPR,
-    minLpSharePrice,
-    ethValue,
-  }: {
-    destination: Address;
-    contribution: bigint;
-    minAPR: bigint;
-    minLpSharePrice: bigint;
-    maxAPR: bigint;
-    ethValue?: bigint;
-  }): Promise<Hash> {
+    args: { destination, contribution, maxAPR, minAPR, minLpSharePrice },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "addLiquidityWithShares"
+  >): Promise<Hash> {
     return this.readWriteHyperdrive.addLiquidity({
       args: {
         destination,
@@ -547,7 +563,8 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
         minLpSharePrice,
         asBase: false,
       },
-      options: { value: ethValue },
+      options,
+      onTransactionMined,
     });
   }
   async previewAddLiquidityWithBase({
@@ -604,7 +621,7 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     args: { destination, minBondsOut, minVaultSharePrice, baseAmount },
     options,
     onTransactionMined,
-  }: Parameters<IHyperdriveModel["openLongWithBase"]>[0]): Promise<Hash> {
+  }: ExtractMethodParams<IHyperdriveModel, "openLongWithBase">): Promise<Hash> {
     return this.readWriteHyperdrive.openLong({
       args: {
         amount: baseAmount,
@@ -621,7 +638,10 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     args: { destination, minBondsOut, minVaultSharePrice, sharesAmount },
     options,
     onTransactionMined,
-  }: Parameters<IHyperdriveModel["openLongWithShares"]>[0]): Promise<Hash> {
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "openLongWithShares"
+  >): Promise<Hash> {
     return this.readWriteHyperdrive.openLong({
       args: {
         amount: sharesAmount,
