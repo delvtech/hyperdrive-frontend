@@ -3,7 +3,7 @@ import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
-import { Address } from "viem";
+import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
 
 interface UseOpenLongOptions {
@@ -54,37 +54,41 @@ export function useOpenLong({
         return;
       }
 
-      const openLongOptions: ContractWriteOptions = {
+      const options: ContractWriteOptions = {
         value: ethValue,
-        onTransactionMined: () => queryClient.invalidateQueries(),
       };
 
-      const hash = asBase
+      function onTransactionMined(hash: Hash) {
+        queryClient.invalidateQueries();
+        onExecuted?.(hash);
+      }
+
+      const txHash = asBase
         ? await hyperdriveModel.openLongWithBase({
             args: {
               baseAmount: amount,
               minBondsOut: minBondsOut,
               destination,
-              minSharePrice,
+              minVaultSharePrice: minSharePrice,
             },
-            options: openLongOptions,
+            options,
+            onTransactionMined,
           })
         : await hyperdriveModel.openLongWithShares({
             args: {
               sharesAmount: amount,
               minBondsOut: minBondsOut,
               destination,
-              minSharePrice,
+              minVaultSharePrice: minSharePrice,
             },
-            options: openLongOptions,
+            options,
+            onTransactionMined,
           });
 
       addTransaction({
-        hash,
+        hash: txHash,
         description: "Open Long",
       });
-
-      onExecuted?.(hash);
     },
   });
   return {
