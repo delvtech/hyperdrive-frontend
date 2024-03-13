@@ -5,7 +5,6 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
@@ -55,6 +54,7 @@ export function useOpenShort({
   const { mutate: openShort, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
+        // TODO: Get this from HyperdriveModel instead
         const hash = await readWriteHyperdrive.openShort({
           args: {
             bondAmount: amountBondShorts,
@@ -75,17 +75,15 @@ export function useOpenShort({
                 })
               : undefined,
           },
+          onTransactionMined: (txHash) => {
+            queryClient.invalidateQueries();
+            onExecuted?.(txHash);
+          },
         });
         addTransaction({
           hash,
           description: "Open Short",
         });
-        await waitForTransactionAndInvalidateCache({
-          publicClient,
-          queryClient,
-          hash,
-        });
-        onExecuted?.(hash);
       }
     },
   });

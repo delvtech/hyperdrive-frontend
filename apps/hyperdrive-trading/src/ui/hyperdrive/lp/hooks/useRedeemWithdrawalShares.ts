@@ -6,7 +6,6 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
@@ -54,15 +53,13 @@ export function useRedeemWithdrawalShares({
             destination,
             asBase,
           },
+          onTransactionMined: () => {
+            queryClient.invalidateQueries();
+          },
         });
         addTransaction({
           hash,
           description: "Redeem Withdrawal Shares",
-        });
-        await waitForTransactionAndInvalidateCache({
-          publicClient,
-          queryClient,
-          hash,
         });
       }
     },
