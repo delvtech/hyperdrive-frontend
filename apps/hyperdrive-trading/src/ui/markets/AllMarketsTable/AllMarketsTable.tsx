@@ -7,9 +7,7 @@ export function AllMarketsTable(): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   return (
     <div className="flex w-full flex-col items-center">
-      <span className="gradient-text mb-8 text-center text-h3">
-        Available Markets
-      </span>
+      <h3 className="gradient-text mb-8 text-center">Available Markets</h3>
       <div className="daisy-card daisy-card-bordered flex w-full md:p-6">
         {isTailwindSmallScreen ? (
           <AllMarketsTableMobile />

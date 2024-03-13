@@ -7,9 +7,9 @@ import { faqData } from "src/ui/onboarding/FAQ/faqData";
 export function FAQ(): ReactElement {
   return (
     <div className="mt-8 flex w-full flex-col">
-      <span className="gradient-text mb-8 text-center text-h3">
+      <h3 className="gradient-text mb-8 text-center">
         Frequently Asked Questions
-      </span>
+      </h3>
       <div className="flex flex-row gap-6 rounded-box bg-base-200 p-12">
         <FAQEntries />
       </div>
@@ -28,7 +28,7 @@ export function FAQEntries(): JSX.Element {
         {faqData.map((faq) => (
           <Disclosure
             key={faq.question}
-            title={<span className="text-h5">{faq.question}</span>}
+            title={<h5>{faq.question}</h5>}
             description={faq.answer}
           />
         ))}
@@ -58,9 +58,7 @@ export function FAQEntries(): JSX.Element {
 
         {/* answers */}
         <div className="col-span-2 flex flex-col">
-          <span className="mb-4 text-h5 font-bold">
-            {selectedFAQ?.question}
-          </span>
+          <h5 className="mb-4 font-semibold">{selectedFAQ?.question}</h5>
           <div>{selectedFAQ?.answer}</div>
         </div>
       </div>

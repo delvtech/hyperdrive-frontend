@@ -18,9 +18,9 @@ export function MarketHeader({
   return (
     <div className="my-2 flex items-center gap-2 md:my-0">
       <div className="flex w-full flex-col items-start gap-1">
-        <span className="gradient-text items-center text-h1 md:my-0">
+        <h1 className="gradient-text items-center md:my-0">
           {hyperdrive.name}
-        </span>
+        </h1>
         {longPrice ? (
           <PriceBadges longPrice={longPrice} baseToken={baseToken} />
         ) : null}

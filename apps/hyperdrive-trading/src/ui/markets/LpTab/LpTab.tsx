@@ -39,7 +39,7 @@ export function LpTab({
       positions={
         <div className="flex flex-col items-center lg:min-w-[720px]">
           <div className="flex w-full justify-between px-4 py-8 md:px-0">
-            <h5 className="font-bold">LP position</h5>
+            <h5 className="font-semibold">LP position</h5>
             <OpenClosedFilter />
           </div>
 
@@ -94,7 +94,7 @@ export function LpTab({
         </div>
       }
       transactionForm={<AddLiquidityForm hyperdrive={hyperdrive} />}
-      transactionFormHeading={"Add Liquidity"}
+      transactionFormHeading="Add Liquidity"
     />
   );
 }

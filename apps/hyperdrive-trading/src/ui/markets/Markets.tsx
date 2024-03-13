@@ -14,9 +14,9 @@ export function Markets(): ReactElement {
       <div className="daisy-hero max-w-6xl justify-start text-center lg:text-left">
         <div className="daisy-hero-content px-0">
           <div className="mx-6 max-w-3xl ">
-            <span className="gradient-text mb-6 text-h2 font-bold lg:text-h1">
+            <h1 className="gradient-text mb-6 text-h2 font-bold lg:text-h1">
               Hyperdrive Markets
-            </span>
+            </h1>
             <p className="mb-5 mt-3 text-neutral-content lg:mb-16">
               Select from the markets below to start earning fixed or variable
               rates on the most trusted assets in DeFi.

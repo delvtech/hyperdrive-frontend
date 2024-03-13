@@ -28,6 +28,11 @@ module.exports = {
         900: "#10191D",
       },
     },
+    fontFamily: {
+      chakraPetch: ["Chakra Petch"],
+      inter: ["Inter"],
+      dmMono: ["DM Mono"],
+    },
     fontSize: {
       // body texts
       lg: ["18px", { lineHeight: "22px" }],
@@ -45,7 +50,7 @@ module.exports = {
       h2: ["40px", { lineHeight: "48px" }],
       h3: ["32px", { lineHeight: "38px" }],
       h4: ["24px", { lineHeight: "30px" }],
-      h5: ["20px", { lineHeight: "24px" }],
+      h5: ["20px", { lineHeight: "28px" }],
     },
   },
   plugins: [require("daisyui"), require("tailwindcss-debug-screens")],

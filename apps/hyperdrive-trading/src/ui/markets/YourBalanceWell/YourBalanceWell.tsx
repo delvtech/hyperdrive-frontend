@@ -34,7 +34,7 @@ export function YourBalanceWell({
 
   return (
     <Well elevation="flat">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center">
         <Stat
           label="Your available balance"
           value={

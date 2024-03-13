@@ -23,7 +23,7 @@ export function PositionCard({
         <div className="mb-8 flex w-12 justify-center rounded-lg bg-gray-600 p-4">
           {icon}
         </div>
-        <p className="mb-6 text-h4 font-bold">{title}</p>
+        <h4 className="mb-6 font-semibold">{title}</h4>
         <p className="text-p2 mb-8 text-neutral-content">{subtitle}</p>
         <div className="flex flex-col gap-6">
           {checklist.map((item, idx) => (

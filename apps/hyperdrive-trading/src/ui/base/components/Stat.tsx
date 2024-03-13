@@ -15,12 +15,12 @@ export function Stat({ label, value, description }: StatProps): ReactElement {
     >
       <div className="mb-1 whitespace-nowrap text-h4 font-bold">{value}</div>
       {description ? (
-        <p className="text-sm text-neutral-content">
+        <p className="font-dmMono text-sm text-neutral-content">
           {label}
           <InformationCircleIcon className="group-hover:text-gray-500 ml-1 inline-block w-4 text-neutral-content opacity-0 transition duration-150 ease-in-out group-hover:opacity-100" />
         </p>
       ) : (
-        <p className="text-sm text-neutral-content">{label}</p>
+        <p className="font-dmMono text-sm text-neutral-content">{label}</p>
       )}
     </div>
   );
