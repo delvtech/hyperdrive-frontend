@@ -1,7 +1,10 @@
 import { MockLido } from "@delvtech/hyperdrive-artifacts/MockLido";
 import { ContractReadOptions } from "@delvtech/hyperdrive-viem";
 import { AppConfig } from "@hyperdrive/appconfig";
-import { BaseHyperdriveModel } from "src/hyperdrive/BaseHyperdriveModel";
+import {
+  BaseHyperdriveModel,
+  IHyperdriveModel,
+} from "src/hyperdrive/BaseHyperdriveModel";
 import { Address, Hash, PublicClient, WalletClient } from "viem";
 
 export class StethHyperdriveModel extends BaseHyperdriveModel {
@@ -48,27 +51,20 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     });
   }
   async openLongWithShares({
-    destination,
-    minBondsOut,
-    minSharePrice,
-    sharesAmount,
-    ethValue,
-  }: {
-    sharesAmount: bigint;
-    destination: `0x${string}`;
-    minSharePrice: bigint;
-    minBondsOut: bigint;
-    ethValue?: bigint | undefined;
-  }): Promise<Hash> {
+    args: { destination, minBondsOut, minSharePrice, sharesAmount },
+    options,
+  }: Parameters<IHyperdriveModel["openLongWithShares"]>[0]): Promise<Hash> {
     const convertedSharesAmount = await this.convertStethTokensToShares(
       sharesAmount,
     );
     return super.openLongWithShares({
-      destination,
-      minBondsOut,
-      minSharePrice,
-      sharesAmount: convertedSharesAmount,
-      ethValue,
+      args: {
+        destination,
+        minBondsOut,
+        minSharePrice,
+        sharesAmount: convertedSharesAmount,
+      },
+      options,
     });
   }
 

@@ -1,7 +1,7 @@
+import { ContractWriteOptions } from "@delvtech/hyperdrive-viem";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
@@ -54,31 +54,34 @@ export function useOpenLong({
         return;
       }
 
+      const openLongOptions: ContractWriteOptions = {
+        value: ethValue,
+        onTransactionMined: () => queryClient.invalidateQueries(),
+      };
+
       const hash = asBase
         ? await hyperdriveModel.openLongWithBase({
-            baseAmount: amount,
-            minBondsOut: minBondsOut,
-            destination,
-            minSharePrice,
-            ethValue,
+            args: {
+              baseAmount: amount,
+              minBondsOut: minBondsOut,
+              destination,
+              minSharePrice,
+            },
+            options: openLongOptions,
           })
         : await hyperdriveModel.openLongWithShares({
-            sharesAmount: amount,
-            minBondsOut: minBondsOut,
-            destination,
-            minSharePrice,
-            ethValue,
+            args: {
+              sharesAmount: amount,
+              minBondsOut: minBondsOut,
+              destination,
+              minSharePrice,
+            },
+            options: openLongOptions,
           });
 
       addTransaction({
         hash,
         description: "Open Long",
-      });
-
-      await waitForTransactionAndInvalidateCache({
-        publicClient,
-        queryClient,
-        hash,
       });
 
       onExecuted?.(hash);

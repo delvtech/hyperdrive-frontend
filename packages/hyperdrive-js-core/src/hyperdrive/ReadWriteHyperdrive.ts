@@ -222,6 +222,7 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.deleteRead("getMarketState");
+      options?.onTransactionMined?.(hash);
     });
     return hash;
   }
@@ -251,6 +252,7 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
+      options?.onTransactionMined?.(hash);
     });
     return hash;
   }
@@ -284,6 +286,7 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
+      options?.onTransactionMined?.(hash);
     });
     return hash;
   }
@@ -317,6 +320,7 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
+      options?.onTransactionMined?.(hash);
     });
     return hash;
   }
@@ -350,6 +354,7 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
+      options?.onTransactionMined?.(hash);
     });
     return hash;
   }
@@ -383,6 +388,7 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
+      options?.onTransactionMined?.(hash);
     });
     return hash;
   }
@@ -419,6 +425,7 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
+      options?.onTransactionMined?.(hash);
     });
     return hash;
   }
@@ -449,6 +456,7 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
+      options?.onTransactionMined?.(hash);
     });
     return hash;
   }
@@ -479,6 +487,7 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
+      options?.onTransactionMined?.(hash);
     });
     return hash;
   }

@@ -9,7 +9,7 @@ export function Hero(): ReactElement {
           <h1 className="gradient-text mb-5 text-h3 font-medium md:text-h1">
             Fixed and variable yields at your control.
           </h1>
-          <h5 className="mb-5 font-inter text-neutral-content">
+          <h5 className="mb-5 font-inter text-base-content">
             Open a Long to lock in a predictable fixed rate of return, open a
             Short to get multiplied exposure to the variable rate, or LP to
             profit from rates volatility.
