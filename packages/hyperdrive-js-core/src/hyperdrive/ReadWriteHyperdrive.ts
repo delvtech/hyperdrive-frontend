@@ -8,12 +8,6 @@ import { ContractWriteOptions } from "@delvtech/evm-client";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { ReturnType } from "src/base/ReturnType";
 
-type ReadWriteParams<Args> = {
-  args: Args;
-  options?: ContractWriteOptions;
-  onTransactionMined?: (hash: `0x${string}`) => void;
-};
-
 export interface IReadWriteHyperdrive extends IReadHyperdrive {
   /**
    * Allows anyone to mint a new checkpoint.
@@ -36,7 +30,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @param args.contribution - The amount of base to supply.
    * @param args.apr - The target APR.
    * @param args.destination - The destination of the LP shares.
-   * @param args.asUnderlying - If true the user is charged in underlying if false
+   * @param args.asBase - If true the user is charged in underlying if false
    *                      the contract transfers in yield source directly. Note
    *                      - for some paths one choice may be disabled or
    *                      blocked.
@@ -47,7 +41,8 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
       contribution: bigint;
       apr: bigint;
       destination: `0x${string}`;
-      asUnderlying?: boolean;
+      asBase?: boolean;
+      extraData?: `0x${string}`;
     }>,
   ): Promise<`0x${string}`>;
 
@@ -65,8 +60,10 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     params: ReadWriteParams<{
       destination: `0x${string}`;
       amount: bigint;
+      minVaultSharePrice: bigint;
       minBondsOut: bigint;
-      asUnderlying?: boolean;
+      asBase?: boolean;
+      extraData?: `0x${string}`;
     }>,
   ): Promise<`0x${string}`>;
 
@@ -83,9 +80,11 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
   openShort(
     params: ReadWriteParams<{
       destination: `0x${string}`;
+      minVaultSharePrice: bigint;
       bondAmount: bigint;
       maxDeposit: bigint;
-      asUnderlying?: boolean;
+      asBase?: boolean;
+      extraData?: `0x${string}`;
     }>,
   ): Promise<`0x${string}`>;
 
@@ -105,7 +104,8 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
       bondAmountIn: bigint;
       minAmountOut: bigint;
       destination: `0x${string}`;
-      asUnderlying?: boolean;
+      asBase?: boolean;
+      extraData?: `0x${string}`;
     }>,
   ): Promise<`0x${string}`>;
 
@@ -120,13 +120,13 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @return The amount of base tokens produced by closing this short
    */
   closeShort(
-    args: ReadWriteParams<{
+    params: ReadWriteParams<{
       maturityTime: bigint;
       bondAmountIn: bigint;
       minAmountOut: bigint;
       destination: `0x${string}`;
-      asUnderlying?: boolean;
-      options?: ContractWriteOptions;
+      asBase?: boolean;
+      extraData?: `0x${string}`;
     }>,
   ): Promise<`0x${string}`>;
 
@@ -148,7 +148,8 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
       minAPR: bigint;
       minLpSharePrice: bigint;
       maxAPR: bigint;
-      asUnderlying?: boolean;
+      asBase?: boolean;
+      extraData?: `0x${string}`;
     }>,
   ): Promise<`0x${string}`>;
 
@@ -168,7 +169,8 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
       destination: `0x${string}`;
       lpSharesIn: bigint;
       minOutputPerShare: bigint;
-      asUnderlying?: boolean;
+      asBase?: boolean;
+      extraData?: `0x${string}`;
     }>,
   ): Promise<`0x${string}`>;
 
@@ -187,7 +189,8 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
       withdrawalSharesIn: bigint;
       minOutputPerShare: bigint;
       destination: `0x${string}`;
-      asUnderlying?: boolean;
+      asBase?: boolean;
+      extraData?: `0x${string}`;
     }>,
   ): Promise<`0x${string}`>;
 }
@@ -207,10 +210,11 @@ export class ReadWriteHyperdrive
     this.contract = contract;
   }
 
-  async checkpoint(
-    time: number,
-    options?: ContractWriteOptions,
-  ): Promise<`0x${string}`> {
+  async checkpoint({
+    args: { time },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<"checkpoint">): Promise<`0x${string}`> {
     const hash = await this.contract.write(
       "checkpoint",
       { _checkpointTime: BigInt(time) },
@@ -218,14 +222,16 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
+      onTransactionMined?.(hash);
     });
     return hash;
   }
 
-  async pause(
-    paused: boolean,
-    options?: ContractWriteOptions,
-  ): Promise<`0x${string}`> {
+  async pause({
+    args: { paused },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<"pause">): Promise<`0x${string}`> {
     const hash = await this.contract.write(
       "pause",
       { _status: paused },
@@ -233,126 +239,121 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.deleteRead("getMarketState");
-      options?.onTransactionMined?.(hash);
+      onTransactionMined?.(hash);
     });
     return hash;
   }
 
-  async initialize(
+  async initialize({
     args: {
-      contribution: bigint;
-      apr: bigint;
-      destination: `0x${string}`;
-      asBase: boolean;
-      extraData: `0x${string}`;
+      contribution,
+      apr,
+      destination,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
     },
-    options?: ContractWriteOptions,
-  ): Promise<`0x${string}`> {
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<"initialize">): Promise<`0x${string}`> {
     const hash = await this.contract.write(
       "initialize",
       {
-        _apr: args.apr,
-        _contribution: args.contribution,
+        _apr: apr,
+        _contribution: contribution,
         _options: {
-          destination: args.destination,
-          asBase: args.asBase,
-          extraData: args.extraData,
+          destination: destination,
+          asBase: asBase,
+          extraData: extraData,
         },
       },
       options,
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
-      options?.onTransactionMined?.(hash);
+      onTransactionMined?.(hash);
     });
     return hash;
   }
 
   async openLong({
-    destination,
-    amount,
-    minBondsOut,
-    minSharePrice,
-    asBase = true,
-    extraData = DEFAULT_EXTRA_DATA,
+    args: {
+      destination,
+      amount,
+      minBondsOut,
+      minVaultSharePrice,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
+    },
     options,
-  }: {
-    destination: `0x${string}`;
-    amount: bigint;
-    minBondsOut: bigint;
-    minSharePrice: bigint;
-    asBase?: boolean;
-    extraData?: `0x${string}`;
-    options?: ContractWriteOptions;
-  }): ReturnType<IReadWriteHyperdrive, "openLong"> {
+    onTransactionMined,
+  }: ExtractMethodParams<"openLong">): ReturnType<
+    IReadWriteHyperdrive,
+    "openLong"
+  > {
     const hash = await this.contract.write(
       "openLong",
       {
         _amount: amount,
         _minOutput: minBondsOut,
-        _minVaultSharePrice: minSharePrice,
+        _minVaultSharePrice: minVaultSharePrice,
         _options: { destination, asBase, extraData },
       },
       options,
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
-      options?.onTransactionMined?.(hash);
+      onTransactionMined?.(hash);
     });
     return hash;
   }
 
   async openShort({
-    destination,
-    bondAmount,
-    minSharePrice,
-    maxDeposit,
-    asBase = true,
-    extraData = DEFAULT_EXTRA_DATA,
+    args: {
+      destination,
+      bondAmount,
+      minVaultSharePrice,
+      maxDeposit,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
+    },
     options,
-  }: {
-    destination: `0x${string}`;
-    bondAmount: bigint;
-    minSharePrice: bigint;
-    maxDeposit: bigint;
-    asBase?: boolean;
-    extraData?: `0x${string}`;
-    options?: ContractWriteOptions;
-  }): ReturnType<IReadWriteHyperdrive, "openShort"> {
+    onTransactionMined,
+  }: ExtractMethodParams<"openShort">): ReturnType<
+    IReadWriteHyperdrive,
+    "openShort"
+  > {
     const hash = await this.contract.write(
       "openShort",
       {
         _bondAmount: bondAmount,
         _maxDeposit: maxDeposit,
-        _minVaultSharePrice: minSharePrice,
+        _minVaultSharePrice: minVaultSharePrice,
         _options: { destination, asBase, extraData },
       },
       options,
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
-      options?.onTransactionMined?.(hash);
+      onTransactionMined?.(hash);
     });
     return hash;
   }
 
   async closeLong({
-    maturityTime,
-    bondAmountIn,
-    minAmountOut,
-    destination,
-    asBase = true,
-    extraData = DEFAULT_EXTRA_DATA,
+    args: {
+      maturityTime,
+      bondAmountIn,
+      minAmountOut,
+      destination,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
+    },
     options,
-  }: {
-    maturityTime: bigint;
-    bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: `0x${string}`;
-    asBase?: boolean;
-    extraData?: `0x${string}`;
-    options?: ContractWriteOptions;
-  }): ReturnType<IReadWriteHyperdrive, "closeLong"> {
+    onTransactionMined,
+  }: ExtractMethodParams<"closeLong">): ReturnType<
+    IReadWriteHyperdrive,
+    "closeLong"
+  > {
     const hash = await this.contract.write(
       "closeLong",
       {
@@ -365,28 +366,26 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
-      options?.onTransactionMined?.(hash);
+      onTransactionMined?.(hash);
     });
     return hash;
   }
 
   async closeShort({
-    maturityTime,
-    bondAmountIn,
-    minAmountOut,
-    destination,
-    asBase = true,
-    extraData = DEFAULT_EXTRA_DATA,
+    args: {
+      maturityTime,
+      bondAmountIn,
+      minAmountOut,
+      destination,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
+    },
     options,
-  }: {
-    maturityTime: bigint;
-    bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: `0x${string}`;
-    asBase?: boolean;
-    extraData?: `0x${string}`;
-    options?: ContractWriteOptions;
-  }): ReturnType<IReadWriteHyperdrive, "closeShort"> {
+    onTransactionMined,
+  }: ExtractMethodParams<"closeShort">): ReturnType<
+    IReadWriteHyperdrive,
+    "closeShort"
+  > {
     const hash = await this.contract.write(
       "closeShort",
       {
@@ -399,30 +398,27 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
-      options?.onTransactionMined?.(hash);
+      onTransactionMined?.(hash);
     });
     return hash;
   }
 
   async addLiquidity({
-    destination,
-    contribution,
-    minAPR,
-    minLpSharePrice,
-    maxAPR,
-    asBase = true,
-    extraData = DEFAULT_EXTRA_DATA,
+    args: {
+      destination,
+      contribution,
+      minAPR,
+      minLpSharePrice,
+      maxAPR,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
+    },
     options,
-  }: {
-    destination: `0x${string}`;
-    contribution: bigint;
-    minAPR: bigint;
-    minLpSharePrice: bigint;
-    maxAPR: bigint;
-    asBase?: boolean;
-    extraData?: `0x${string}`;
-    options?: ContractWriteOptions;
-  }): ReturnType<IReadWriteHyperdrive, "addLiquidity"> {
+    onTransactionMined,
+  }: ExtractMethodParams<"addLiquidity">): ReturnType<
+    IReadWriteHyperdrive,
+    "addLiquidity"
+  > {
     const hash = await this.contract.write(
       "addLiquidity",
       {
@@ -436,26 +432,25 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
-      options?.onTransactionMined?.(hash);
+      onTransactionMined?.(hash);
     });
     return hash;
   }
 
   async removeLiquidity({
-    destination,
-    lpSharesIn,
-    minOutputPerShare,
-    asBase = true,
-    extraData = DEFAULT_EXTRA_DATA,
+    args: {
+      destination,
+      lpSharesIn,
+      minOutputPerShare,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
+    },
     options,
-  }: {
-    destination: `0x${string}`;
-    lpSharesIn: bigint;
-    minOutputPerShare: bigint;
-    asBase?: boolean;
-    extraData?: `0x${string}`;
-    options?: ContractWriteOptions;
-  }): ReturnType<IReadWriteHyperdrive, "removeLiquidity"> {
+    onTransactionMined,
+  }: ExtractMethodParams<"removeLiquidity">): ReturnType<
+    IReadWriteHyperdrive,
+    "removeLiquidity"
+  > {
     const hash = await this.contract.write(
       "removeLiquidity",
       {
@@ -467,26 +462,25 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
-      options?.onTransactionMined?.(hash);
+      onTransactionMined?.(hash);
     });
     return hash;
   }
 
   async redeemWithdrawalShares({
-    withdrawalSharesIn,
-    minOutputPerShare,
-    destination,
-    asBase = true,
-    extraData = DEFAULT_EXTRA_DATA,
+    args: {
+      withdrawalSharesIn,
+      minOutputPerShare,
+      destination,
+      asBase = true,
+      extraData = DEFAULT_EXTRA_DATA,
+    },
     options,
-  }: {
-    withdrawalSharesIn: bigint;
-    minOutputPerShare: bigint;
-    destination: `0x${string}`;
-    asBase?: boolean;
-    extraData?: `0x${string}`;
-    options?: ContractWriteOptions;
-  }): ReturnType<IReadWriteHyperdrive, "redeemWithdrawalShares"> {
+    onTransactionMined,
+  }: ExtractMethodParams<"redeemWithdrawalShares">): ReturnType<
+    IReadWriteHyperdrive,
+    "redeemWithdrawalShares"
+  > {
     const hash = await this.contract.write(
       "redeemWithdrawalShares",
       {
@@ -498,8 +492,17 @@ export class ReadWriteHyperdrive
     );
     this.network.waitForTransaction(hash).then(() => {
       this.contract.clearCache();
-      options?.onTransactionMined?.(hash);
+      onTransactionMined?.(hash);
     });
     return hash;
   }
 }
+
+type ReadWriteParams<Args> = {
+  args: Args;
+  options?: ContractWriteOptions;
+  onTransactionMined?: (hash: `0x${string}`) => void;
+};
+
+type ExtractMethodParams<MethodName extends keyof IReadWriteHyperdrive> =
+  Parameters<IReadWriteHyperdrive[MethodName]>[0];
