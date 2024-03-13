@@ -95,6 +95,97 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     return convertedToStethTokens;
   }
 
+  async closeLongWithShares({
+    bondAmountIn,
+    destination,
+    maturityTime,
+    minAmountOut,
+  }: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minAmountOut: bigint;
+    destination: `0x${string}`;
+  }): Promise<Hash> {
+    const convertedMinAmountOut = await this.convertStethTokensToShares(
+      minAmountOut,
+    );
+    return super.closeLongWithShares({
+      bondAmountIn,
+      destination,
+      maturityTime,
+      minAmountOut: convertedMinAmountOut,
+    });
+  }
+  async previewOpenShortWithShares({
+    bondAmount,
+  }: {
+    bondAmount: bigint;
+  }): Promise<{
+    traderDeposit: bigint;
+    spotPriceAfterOpen: bigint;
+    spotRateAfterOpen: bigint;
+    curveFee: bigint;
+  }> {
+    const result = await super.previewOpenShortWithShares({ bondAmount });
+    const convertedTraderDeposit = await this.convertStethSharesToTokens(
+      result.traderDeposit,
+    );
+
+    return {
+      ...result,
+      traderDeposit: convertedTraderDeposit,
+    };
+  }
+
+  async previewCloseShortWithShares({
+    destination,
+    maturityTime,
+    minAmountOut,
+    shortAmountIn,
+  }: {
+    maturityTime: bigint;
+    shortAmountIn: bigint;
+    minAmountOut: bigint;
+    destination: `0x${string}`;
+  }): Promise<{ amountOut: bigint }> {
+    const result = await super.previewCloseShortWithShares({
+      destination,
+      maturityTime,
+      minAmountOut,
+      shortAmountIn,
+    });
+    const convertedAmountOut = await this.convertStethSharesToTokens(
+      result.amountOut,
+    );
+
+    return {
+      ...result,
+      amountOut: convertedAmountOut,
+    };
+  }
+
+  async closeShortWithShares({
+    bondAmountIn,
+    destination,
+    maturityTime,
+    minAmountOut,
+  }: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minAmountOut: bigint;
+    destination: Address;
+  }): Promise<Hash> {
+    const convertedMinAmountOut = await this.convertStethTokensToShares(
+      minAmountOut,
+    );
+    return super.closeShortWithShares({
+      bondAmountIn,
+      destination,
+      maturityTime,
+      minAmountOut: convertedMinAmountOut,
+    });
+  }
+
   /**
    * The `contribution` input is denominated in steth tokens since that is what
    * is shown to the user.
@@ -178,6 +269,24 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
       minAPR,
       minLpSharePrice,
       ethValue,
+    });
+  }
+  async removeLiquidityWithShares({
+    destination,
+    lpSharesIn,
+    minOutputPerShare,
+  }: {
+    lpSharesIn: bigint;
+    minOutputPerShare: bigint;
+    destination: `0x${string}`;
+  }): Promise<Hash> {
+    const convertedMinOutputPerShare = await this.convertStethTokensToShares(
+      minOutputPerShare,
+    );
+    return super.removeLiquidityWithShares({
+      destination,
+      lpSharesIn,
+      minOutputPerShare: convertedMinOutputPerShare,
     });
   }
 

@@ -302,8 +302,6 @@ export interface IReadHyperdrive {
   previewOpenShort(args: {
     amountOfBondsToShort: bigint;
     asBase: boolean;
-    // TODO: Remove `decimals` param and just use this.getDecimals() internally
-    decimals: number;
     options?: ContractReadOptions;
   }): Promise<{
     maturityTime: bigint;
@@ -1438,8 +1436,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async previewOpenShort({
     amountOfBondsToShort,
     asBase,
-    // TODO: Remove in favor of this.getDecimals();
-    decimals,
     options,
   }: Parameters<IReadHyperdrive["previewOpenShort"]>[0]): ReturnType<
     IReadHyperdrive,
@@ -1448,6 +1444,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
+    const decimals = await this.getDecimals();
     const { timestamp: blockTimestamp } = await getBlockOrThrow(
       this.network,
       options,
@@ -1466,9 +1463,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
     );
     // calcOpenShort only returns the preview in terms of base, so if the user
     // wants to deposit shares we need to convert that value to shares.
-    let depositAmount = baseDepositAmount;
+    let traderDeposit = baseDepositAmount;
     if (!asBase) {
-      depositAmount = convertBaseToShares({
+      traderDeposit = convertBaseToShares({
         decimals,
         vaultSharePrice: poolInfo.vaultSharePrice,
         baseAmount: baseDepositAmount,
@@ -1518,7 +1515,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
     return {
       maturityTime: checkpointId + poolConfig.positionDuration,
-      traderDeposit: depositAmount,
+      traderDeposit,
       spotPriceAfterOpen,
       spotRateAfterOpen,
       curveFee,

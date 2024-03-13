@@ -1,17 +1,13 @@
 import { OpenShort } from "@delvtech/hyperdrive-viem";
-import {
-  HyperdriveConfig,
-  findBaseToken,
-  findYieldSourceToken,
-} from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { parseUnits } from "src/base/parseUnits";
+import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
-import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
-import { getIsSteth } from "src/vaults/isSteth";
 import { useAccount } from "wagmi";
 
 export function CurrentValueCell({
@@ -27,47 +23,40 @@ export function CurrentValueCell({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
 
-  // steth markets can only close you out to steth shares, which must be
-  // converted into steth tokens, which are 1:1 with eth
-  const isStethHyperdrive = getIsSteth(sharesToken);
-  const { amountOut } = usePreviewCloseShort({
+  const { amountOut: currentValueInShares } = usePreviewCloseShort({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: openShort.maturity,
     shortAmountIn: openShort.bondAmount,
     minAmountOut: parseUnits("0", baseToken.decimals),
     destination: account,
-    asBase: !isStethHyperdrive,
+    // Withdraw as shares and convert to base separately to show the current
+    // value, as not all hyperdrives allow withdrawing to base, (see
+    // HyperdriveConfig).
+    asBase: false,
   });
-  const { stethTokenAmount: stethTokenAmountOut } =
-    useConvertStethSharesToStethTokens({
-      lidoAddress: sharesToken.address,
-      stethShares: amountOut,
-      enabled: isStethHyperdrive,
-    });
-  const amountOutOrStethTokens = isStethHyperdrive
-    ? stethTokenAmountOut
-    : amountOut;
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const currentValueInBase = convertSharesToBase({
+    sharesAmount: currentValueInShares,
+    decimals: hyperdrive.decimals,
+    vaultSharePrice: poolInfo?.vaultSharePrice,
+  });
 
   const currentValueLabel = formatBalance({
-    balance: amountOutOrStethTokens || 0n,
+    balance: currentValueInBase || 0n,
     decimals: baseToken.decimals,
     places: 4,
   });
 
   const isPositiveChangeInValue =
-    amountOutOrStethTokens && amountOutOrStethTokens > openShort.baseAmountPaid;
+    currentValueInBase && currentValueInBase > openShort.baseAmountPaid;
 
   return (
     <div className="daisy-stat p-0">
       <span className="daisy-stat-value text-md font-bold">
         {currentValueLabel?.toString()}
       </span>
-      {amountOutOrStethTokens && openShort.bondAmount !== 0n ? (
+      {currentValueInBase && openShort.bondAmount !== 0n ? (
         <div
           data-tip={"Profit/Loss since open, after closing fees."}
           className={classNames(
@@ -77,7 +66,7 @@ export function CurrentValueCell({
           )}
         >
           {getProfitLossText({
-            startAmount: amountOutOrStethTokens,
+            startAmount: currentValueInBase,
             endAmount: openShort.baseAmountPaid,
             decimals: baseToken.decimals,
             symbol: baseToken.symbol,

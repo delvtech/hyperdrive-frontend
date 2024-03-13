@@ -1,5 +1,3 @@
-import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import {
   MutationStatus,
@@ -7,6 +5,7 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
+import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
@@ -34,27 +33,32 @@ export function useRemoveLiquidity({
   enabled,
   onExecuted,
 }: UseRemoveLiquidityOptions): UseRemoveLiquidityResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
   const mutationEnabled =
+    enabled &&
     !!lpSharesIn &&
     minOutputPerShare !== undefined &&
     !!destination &&
-    enabled &&
-    !!readWriteHyperdrive &&
+    !!hyperdriveModel &&
     !!publicClient;
 
   const { mutate: removeLiquidity, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        const hash = await readWriteHyperdrive.removeLiquidity({
-          lpSharesIn,
-          minOutputPerShare,
-          destination,
-          asBase,
-        });
+        const hash = asBase
+          ? await hyperdriveModel.removeLiquidityWithBase({
+              lpSharesIn,
+              minOutputPerShare,
+              destination,
+            })
+          : await hyperdriveModel.removeLiquidityWithShares({
+              destination,
+              lpSharesIn,
+              minOutputPerShare,
+            });
         addTransaction({
           hash,
           description: "Remove Liquidity",

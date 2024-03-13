@@ -29,8 +29,6 @@ import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { useConvertStethSharesToStethTokens } from "src/ui/vaults/steth/useConvertStethSharesToStethTokens";
-import { getIsSteth } from "src/vaults/isSteth";
 import { formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 interface OpenShortPositionFormProps {
@@ -52,7 +50,6 @@ export function OpenShortForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
-  const isStethHyperdrive = getIsSteth(sharesToken);
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
@@ -91,7 +88,7 @@ export function OpenShortForm({
   });
 
   const {
-    depositAmount,
+    traderDeposit,
     spotRateAfterOpen,
     curveFee,
     status: openShortPreviewStatus,
@@ -101,28 +98,14 @@ export function OpenShortForm({
     asBase: activeToken.address === baseToken.address,
   });
 
-  // If depositing in shares, steth shares needs to be converted to steth tokens
-  // to determine if the user has enough balance and to show a meaningful value
-  // to the user
-  const isActiveTokenSteth = getIsSteth(activeToken);
-  const { stethTokenAmount: stethTokenDepositAmount } =
-    useConvertStethSharesToStethTokens({
-      stethShares: depositAmount,
-      lidoAddress: activeToken.address,
-      enabled: isActiveTokenSteth,
-    });
-  const stethOrDepositTokenAmount = isActiveTokenSteth
-    ? stethTokenDepositAmount
-    : depositAmount;
-
   const hasEnoughBalance = getHasEnoughBalance({
-    amount: stethOrDepositTokenAmount,
+    amount: traderDeposit,
     balance: activeTokenBalance?.value,
   });
 
   const hasEnoughAllowance = getHasEnoughAllowance({
     allowance: activeTokenAllowance,
-    amount: stethOrDepositTokenAmount,
+    amount: traderDeposit,
     requiresAllowance,
   });
 
@@ -144,12 +127,9 @@ export function OpenShortForm({
     destination: account,
     enabled: openShortPreviewStatus === "success" && hasEnoughAllowance,
     asBase: activeToken.address === baseToken.address,
-    // In a steth market where the user wants to deposit eth, we must pass the
-    // eth amount required from the preview calculation
-    ethValue:
-      activeToken.address === baseToken.address && isStethHyperdrive
-        ? depositAmount
-        : undefined,
+    // Some hyperdrives allow native eth deposits, so we must include the
+    // traderDeposit as msg.value
+    ethValue: isActiveTokenEth ? traderDeposit : undefined,
 
     onExecuted: (hash) => {
       setAmount("");
@@ -195,14 +175,14 @@ export function OpenShortForm({
         <OpenShortPreview
           hyperdrive={hyperdrive}
           tokenIn={activeToken}
-          costBasis={stethOrDepositTokenAmount}
+          costBasis={traderDeposit}
           shortSize={amountOfBondsToShortAsBigInt}
           spotRateAfterOpen={spotRateAfterOpen}
           curveFee={curveFee}
         />
       }
       disclaimer={(() => {
-        if (stethOrDepositTokenAmount && !!amountOfBondsToShortAsBigInt) {
+        if (traderDeposit && !!amountOfBondsToShortAsBigInt) {
           return (
             <div className="flex flex-col gap-4">
               {!hasEnoughBalance ? (
@@ -214,7 +194,7 @@ export function OpenShortForm({
                 You pay{" "}
                 <strong>
                   {formatBalance({
-                    balance: stethOrDepositTokenAmount || 0n,
+                    balance: traderDeposit || 0n,
                     decimals: activeToken.decimals,
                     includeCommas: true,
                     places: 6,
@@ -278,11 +258,8 @@ export function OpenShortForm({
               spender={hyperdrive.address}
               token={activeToken}
               tokenBalance={activeTokenBalance}
-              amountAsBigInt={stethOrDepositTokenAmount}
-              amount={formatUnits(
-                stethOrDepositTokenAmount || 0n,
-                activeToken.decimals,
-              )}
+              amountAsBigInt={traderDeposit}
+              amount={formatUnits(traderDeposit || 0n, activeToken.decimals)}
             />
           );
         }
