@@ -19,7 +19,7 @@ Use the Hyperdrive TypeScript SDK with your web3 library of choice:
 
 | Web3 Library                   | Package                                                                                                               |
 | ------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| [Viem](https://viem.sh)        | [`@delvtech/hyperdrive-viem`](https://www.github.com/delvtech/hyperdrive-monorepo/tree/main/packages/hyperdrive-viem) |
+| [Viem](https://viem.sh)        | [`@delvtech/hyperdrive-viem`](https://www.github.com/delvtech/hyperdrive-frontend/tree/main/packages/hyperdrive-viem) |
 | [Ethers](https://ethers.org/)  | `@delvtech/hyperdrive-ethers` _(coming soon)_                                                                         |
 | [Web3.js](https://web3js.org/) | `@delvtech/hyperdrive-web3` _(coming soon)_                                                                           |
 
@@ -31,7 +31,7 @@ package uses a corresponding `@delvtech/evm-client` binding package.
 
 | SDK binding package                                                                                                   | EVM Client binding package                                                                                       |
 | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| [`@delvtech/hyperdrive-viem`](https://www.github.com/delvtech/hyperdrive-monorepo/tree/main/packages/hyperdrive-viem) | [`@delvtech/evm-client-viem`](https://www.github.com/delvtech/evm-client/tree/main/packages/evm-client-viem)     |
+| [`@delvtech/hyperdrive-viem`](https://www.github.com/delvtech/hyperdrive-frontend/tree/main/packages/hyperdrive-viem) | [`@delvtech/evm-client-viem`](https://www.github.com/delvtech/evm-client/tree/main/packages/evm-client-viem)     |
 | `@delvtech/hyperdrive-ethers` _(coming soon)_                                                                         | [`@delvtech/evm-client-ethers`](https://www.github.com/delvtech/evm-client/tree/main/packages/evm-client-ethers) |
 | `@delvtech/hyperdrive-web3` _(coming soon)_                                                                           | `@delvtech/evm-client-web3` _(coming soon)_                                                                      |
 

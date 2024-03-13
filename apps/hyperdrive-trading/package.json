@@ -10,7 +10,7 @@
     "url": "https://github.com/delvtech"
   },
   "bugs": {
-    "url": "https://github.com/delvtech/hyperdrive-monorepo/issues"
+    "url": "https://github.com/delvtech/hyperdrive-frontend/issues"
   },
   "scripts": {
     "build": "bash ./scripts/build-app.sh",

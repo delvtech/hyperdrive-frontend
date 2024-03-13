@@ -1,6 +1,6 @@
 FROM node:lts
 
-WORKDIR ./hyperdrive-monorepo
+WORKDIR ./hyperdrive-frontend
 
 COPY ./apps/ ./apps/
 COPY ./packages/ ./packages/
