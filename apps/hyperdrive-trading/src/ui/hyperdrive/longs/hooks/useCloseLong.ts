@@ -1,8 +1,7 @@
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
-import { Address } from "viem";
+import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
 
 interface UseCloseLongOptions {
@@ -48,30 +47,34 @@ export function useCloseLong({
   const { mutate: closeLong, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
+        function onTransactionMined(txHash: Hash) {
+          queryClient.invalidateQueries();
+          onExecuted?.(txHash);
+        }
         const hash = asBase
           ? await hyperdriveModel.closeLongWithBase({
-              bondAmountIn,
-              minAmountOut,
-              destination,
-              maturityTime,
+              args: {
+                bondAmountIn,
+                minAmountOut,
+                destination,
+                maturityTime,
+              },
+              onTransactionMined,
             })
           : await hyperdriveModel.closeLongWithShares({
-              bondAmountIn,
-              minAmountOut,
-              destination,
-              maturityTime,
+              args: {
+                bondAmountIn,
+                minAmountOut,
+                destination,
+                maturityTime,
+              },
+              onTransactionMined,
             });
 
         addTransaction({
           hash,
           description: "Close Long",
         });
-        await waitForTransactionAndInvalidateCache({
-          publicClient,
-          hash,
-          queryClient,
-        });
-        onExecuted?.(hash);
       }
     },
   });
