@@ -1,4 +1,4 @@
-name: Publish the hyperdrive-monorepo image
+name: Publish the hyperdrive-frontend image
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}/hyperdrive-monorepo
+  IMAGE_NAME: ${{ github.repository }}/hyperdrive-frontend
 
 jobs:
   push-image:

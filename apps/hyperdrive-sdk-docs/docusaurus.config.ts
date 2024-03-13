@@ -55,7 +55,7 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/delvtech/hyperdrive-monorepo",
+          editUrl: "https://github.com/delvtech/hyperdrive-frontend",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -86,7 +86,7 @@ const config: Config = {
           docId: "cli/index",
         },
         {
-          href: "https://github.com/delvtech/hyperdrive-monorepo",
+          href: "https://github.com/delvtech/hyperdrive-frontend",
           label: "GitHub",
           position: "right",
         },
@@ -126,7 +126,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/delvtech/hyperdrive-monorepo",
+              href: "https://github.com/delvtech/hyperdrive-frontend",
             },
             {
               label: "DELV Blog",

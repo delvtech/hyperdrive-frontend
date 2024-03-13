@@ -6,7 +6,7 @@ title: Integrate with React
 ## Overview
 
 In this short guide, we'll use [Wagmi](https://wagmi.sh) and
-[`@delvtech/hyperdrive-viem`](https://github.com/delvtech/hyperdrive-monorepo/tree/main/packages/hyperdrive-viem)
+[`@delvtech/hyperdrive-viem`](https://github.com/delvtech/hyperdrive-frontend/tree/main/packages/hyperdrive-viem)
 to create `useReadHyperdrive` and `useReadWriteHyperdrive` hooks for React apps.
 The steps will be similar for other implementations of the SDK.
 
