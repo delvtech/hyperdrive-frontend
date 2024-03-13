@@ -8,23 +8,27 @@ import { ContractWriteOptions } from "@delvtech/evm-client";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { ReturnType } from "src/base/ReturnType";
 
+type ReadWriteParams<Args> = {
+  args: Args;
+  options?: ContractWriteOptions;
+  onTransactionMined?: (hash: `0x${string}`) => void;
+};
+
 export interface IReadWriteHyperdrive extends IReadHyperdrive {
   /**
    * Allows anyone to mint a new checkpoint.
    * @param time - The time (in seconds) of the checkpoint to create.
    */
-  checkpoint(
-    time: number,
-    options?: ContractWriteOptions,
-  ): Promise<`0x${string}`>;
+  checkpoint(params: ReadWriteParams<{ time: number }>): Promise<`0x${string}`>;
 
   /**
    * Allows an authorized address to pause this contract
    * @param paused - True to pause all deposits and false to unpause them
    */
   pause(
-    paused: boolean,
-    options?: ContractWriteOptions,
+    params: ReadWriteParams<{
+      paused: boolean;
+    }>,
   ): Promise<`0x${string}`>;
 
   /**
@@ -39,13 +43,12 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @returns The initial number of LP shares created.
    */
   initialize(
-    args: {
+    params: ReadWriteParams<{
       contribution: bigint;
       apr: bigint;
       destination: `0x${string}`;
       asUnderlying?: boolean;
-    },
-    options?: ContractWriteOptions,
+    }>,
   ): Promise<`0x${string}`>;
 
   /**
@@ -58,13 +61,14 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @return bondProceeds - The amount of bonds the user received
    *
    */
-  openLong(args: {
-    destination: `0x${string}`;
-    amount: bigint;
-    minBondsOut: bigint;
-    asUnderlying?: boolean;
-    options?: ContractWriteOptions;
-  }): Promise<`0x${string}`>;
+  openLong(
+    params: ReadWriteParams<{
+      destination: `0x${string}`;
+      amount: bigint;
+      minBondsOut: bigint;
+      asUnderlying?: boolean;
+    }>,
+  ): Promise<`0x${string}`>;
 
   /**
    * Opens a new short position.
@@ -76,13 +80,14 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @return maturityTime - The maturity time of the short.
    * @return traderDeposit - The amount the user deposited for this trade.
    */
-  openShort(args: {
-    destination: `0x${string}`;
-    bondAmount: bigint;
-    maxDeposit: bigint;
-    asUnderlying?: boolean;
-    options?: ContractWriteOptions;
-  }): Promise<`0x${string}`>;
+  openShort(
+    params: ReadWriteParams<{
+      destination: `0x${string}`;
+      bondAmount: bigint;
+      maxDeposit: bigint;
+      asUnderlying?: boolean;
+    }>,
+  ): Promise<`0x${string}`>;
 
   /**
    * Closes a long position.
@@ -94,14 +99,15 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @param options - Contract Write Options
    * @return The amount of underlying asset the user receives.
    */
-  closeLong(args: {
-    maturityTime: bigint;
-    bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: `0x${string}`;
-    asUnderlying?: boolean;
-    options?: ContractWriteOptions;
-  }): Promise<`0x${string}`>;
+  closeLong(
+    params: ReadWriteParams<{
+      maturityTime: bigint;
+      bondAmountIn: bigint;
+      minAmountOut: bigint;
+      destination: `0x${string}`;
+      asUnderlying?: boolean;
+    }>,
+  ): Promise<`0x${string}`>;
 
   /**
    * Closes a short position.
@@ -113,14 +119,16 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @param options - Contract Write Options
    * @return The amount of base tokens produced by closing this short
    */
-  closeShort(args: {
-    maturityTime: bigint;
-    bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: `0x${string}`;
-    asUnderlying?: boolean;
-    options?: ContractWriteOptions;
-  }): Promise<`0x${string}`>;
+  closeShort(
+    args: ReadWriteParams<{
+      maturityTime: bigint;
+      bondAmountIn: bigint;
+      minAmountOut: bigint;
+      destination: `0x${string}`;
+      asUnderlying?: boolean;
+      options?: ContractWriteOptions;
+    }>,
+  ): Promise<`0x${string}`>;
 
   /**
    * Adds liquidity to the pool.
@@ -133,15 +141,16 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @param options - Contract Write Options
    * @return lpShares The number of LP tokens created
    */
-  addLiquidity(args: {
-    destination: `0x${string}`;
-    contribution: bigint;
-    minAPR: bigint;
-    minLpSharePrice: bigint;
-    maxAPR: bigint;
-    asUnderlying?: boolean;
-    options?: ContractWriteOptions;
-  }): Promise<`0x${string}`>;
+  addLiquidity(
+    params: ReadWriteParams<{
+      destination: `0x${string}`;
+      contribution: bigint;
+      minAPR: bigint;
+      minLpSharePrice: bigint;
+      maxAPR: bigint;
+      asUnderlying?: boolean;
+    }>,
+  ): Promise<`0x${string}`>;
 
   /**
    * Removes liquidity from the pool.
@@ -154,13 +163,14 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    receives a proportional amount of the pool's idle capital
    * @returns withdrawShares - The base that the LP receives buys out some of their LP  shares, but it may not be sufficient to fully buy the LP out. In this case, the LP receives withdrawal shares equal in value to the present value they are owed. As idle capital becomes available, the pool will buy back these shares.
    */
-  removeLiquidity(args: {
-    destination: `0x${string}`;
-    lpSharesIn: bigint;
-    minOutputPerShare: bigint;
-    asUnderlying?: boolean;
-    options?: ContractWriteOptions;
-  }): Promise<`0x${string}`>;
+  removeLiquidity(
+    params: ReadWriteParams<{
+      destination: `0x${string}`;
+      lpSharesIn: bigint;
+      minOutputPerShare: bigint;
+      asUnderlying?: boolean;
+    }>,
+  ): Promise<`0x${string}`>;
 
   /**
    * Redeems withdrawal shares.
@@ -172,13 +182,14 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @return baseProceeds The amount of base the LP received.
    * @return sharesRedeemed The amount of withdrawal shares that were redeemed.
    */
-  redeemWithdrawalShares(args: {
-    withdrawalSharesIn: bigint;
-    minOutputPerShare: bigint;
-    destination: `0x${string}`;
-    asUnderlying?: boolean;
-    options?: ContractWriteOptions;
-  }): Promise<`0x${string}`>;
+  redeemWithdrawalShares(
+    params: ReadWriteParams<{
+      withdrawalSharesIn: bigint;
+      minOutputPerShare: bigint;
+      destination: `0x${string}`;
+      asUnderlying?: boolean;
+    }>,
+  ): Promise<`0x${string}`>;
 }
 
 export interface ReadWriteHyperdriveOptions extends ReadHyperdriveOptions {
