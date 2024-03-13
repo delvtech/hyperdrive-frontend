@@ -48,10 +48,12 @@ export function useRedeemWithdrawalShares({
     mutationFn: async () => {
       if (mutationEnabled) {
         const hash = await readWriteHyperdrive.redeemWithdrawalShares({
-          withdrawalSharesIn,
-          minOutputPerShare,
-          destination,
-          asBase,
+          args: {
+            withdrawalSharesIn,
+            minOutputPerShare,
+            destination,
+            asBase,
+          },
         });
         addTransaction({
           hash,

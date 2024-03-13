@@ -14,7 +14,7 @@ interface UseOpenShortOptions {
   hyperdriveAddress: Address;
   amountBondShorts: bigint | undefined;
   maxBaseAmountIn: bigint | undefined;
-  minSharePrice: bigint | undefined;
+  minVaultSharePrice: bigint | undefined;
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
@@ -32,7 +32,7 @@ export function useOpenShort({
   hyperdriveAddress,
   amountBondShorts,
   maxBaseAmountIn,
-  minSharePrice,
+  minVaultSharePrice,
   destination,
   asBase = true,
   enabled,
@@ -47,7 +47,7 @@ export function useOpenShort({
     !!amountBondShorts &&
     !!maxBaseAmountIn &&
     !!destination &&
-    minSharePrice !== undefined &&
+    minVaultSharePrice !== undefined &&
     enabled &&
     !!readWriteHyperdrive &&
     !!publicClient;
@@ -56,11 +56,13 @@ export function useOpenShort({
     mutationFn: async () => {
       if (mutationEnabled) {
         const hash = await readWriteHyperdrive.openShort({
-          bondAmount: amountBondShorts,
-          destination,
-          minSharePrice,
-          maxDeposit: maxBaseAmountIn,
-          asBase,
+          args: {
+            bondAmount: amountBondShorts,
+            destination,
+            minVaultSharePrice,
+            maxDeposit: maxBaseAmountIn,
+            asBase,
+          },
           options: {
             value: ethValue
               ? // Pad the eth value by 1% so that the tx goes through, the
