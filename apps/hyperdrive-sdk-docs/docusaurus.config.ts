@@ -18,8 +18,8 @@ const config: Config = {
 
       // Plugin / TypeDoc options
       {
-        id: "hyperdrive-sdk",
-        entryPoints: ["../../packages/hyperdrive-sdk"],
+        id: "hyperdrive-js-core",
+        entryPoints: ["../../packages/hyperdrive-js-core"],
         entryPointStrategy: "packages",
         sidebar: {
           fullNames: true,
