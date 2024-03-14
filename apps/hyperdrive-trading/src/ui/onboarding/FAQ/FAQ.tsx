@@ -58,7 +58,9 @@ export function FAQEntries(): JSX.Element {
 
         {/* answers */}
         <div className="col-span-2 flex flex-col">
-          <h5 className="gradient-text mb-4">{selectedFAQ?.question}</h5>
+          <h5 className="gradient-text mb-4 font-medium">
+            {selectedFAQ?.question}
+          </h5>
           <div className="text-base-content">{selectedFAQ?.answer}</div>
         </div>
       </div>

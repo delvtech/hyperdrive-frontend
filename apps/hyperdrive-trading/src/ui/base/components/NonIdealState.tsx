@@ -15,7 +15,7 @@ export function NonIdealState({
     <div className="flex flex-col items-center justify-center gap-4">
       {icon}
       <div className="flex flex-col gap-1.5 text-center">
-        <h5 className="gradient-text font-bold">{heading}</h5>
+        <h5 className="gradient-text font-medium">{heading}</h5>
         <p className="text-neutral-content">{text}</p>
       </div>
       {action}
