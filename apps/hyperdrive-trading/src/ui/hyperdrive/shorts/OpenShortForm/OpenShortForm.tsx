@@ -123,7 +123,7 @@ export function OpenShortForm({
     amountBondShorts: amountOfBondsToShortAsBigInt,
     minVaultSharePrice: poolInfo?.vaultSharePrice,
     // TODO: handle slippage
-    maxBaseAmountIn: MAX_UINT256,
+    maxDeposit: MAX_UINT256,
     destination: account,
     enabled: openShortPreviewStatus === "success" && hasEnoughAllowance,
     asBase: activeToken.address === baseToken.address,

@@ -5,15 +5,14 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
-import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
+import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
 interface UseOpenShortOptions {
   hyperdriveAddress: Address;
   amountBondShorts: bigint | undefined;
-  maxBaseAmountIn: bigint | undefined;
+  maxDeposit: bigint | undefined;
   minVaultSharePrice: bigint | undefined;
   destination: Address | undefined;
   asBase?: boolean;
@@ -31,7 +30,7 @@ interface UseOpenShortResult {
 export function useOpenShort({
   hyperdriveAddress,
   amountBondShorts,
-  maxBaseAmountIn,
+  maxDeposit,
   minVaultSharePrice,
   destination,
   asBase = true,
@@ -39,53 +38,67 @@ export function useOpenShort({
   ethValue,
   onExecuted,
 }: UseOpenShortOptions): UseOpenShortResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
   const mutationEnabled =
     !!amountBondShorts &&
-    !!maxBaseAmountIn &&
+    !!maxDeposit &&
     !!destination &&
     minVaultSharePrice !== undefined &&
     enabled &&
-    !!readWriteHyperdrive &&
+    !!hyperdriveModel &&
     !!publicClient;
 
   const { mutate: openShort, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        const hash = await readWriteHyperdrive.openShort({
-          args: {
-            bondAmount: amountBondShorts,
-            destination,
-            minVaultSharePrice,
-            maxDeposit: maxBaseAmountIn,
-            asBase,
-          },
-          options: {
-            value: ethValue
-              ? // Pad the eth value by 1% so that the tx goes through, the
-                // contract will refund any amount that it doesn't spend
-                adjustAmountByPercentage({
-                  amount: ethValue,
-                  decimals: 18,
-                  direction: "up",
-                  percentage: 1n,
-                })
-              : undefined,
-          },
-        });
+        const openShortOptions = {
+          value: ethValue
+            ? // Pad the eth value by 1% so that the tx goes through, the
+              // contract will refund any amount that it doesn't spend
+              adjustAmountByPercentage({
+                amount: ethValue,
+                decimals: 18,
+                direction: "up",
+                percentage: 1n,
+              })
+            : undefined,
+        };
+
+        const hash = asBase
+          ? await hyperdriveModel.openShortWithBase({
+              args: {
+                bondAmount: amountBondShorts,
+                destination,
+                minVaultSharePrice,
+                maxDeposit: maxDeposit,
+              },
+              options: openShortOptions,
+              onTransactionMined: (txHash) => {
+                queryClient.invalidateQueries();
+                onExecuted?.(txHash);
+              },
+            })
+          : await hyperdriveModel.openShortWithShares({
+              args: {
+                bondAmount: amountBondShorts,
+                destination,
+                minVaultSharePrice,
+                maxDeposit: maxDeposit,
+              },
+              options: openShortOptions,
+              onTransactionMined: (txHash) => {
+                queryClient.invalidateQueries();
+                onExecuted?.(txHash);
+              },
+            });
+
         addTransaction({
           hash,
           description: "Open Short",
         });
-        await waitForTransactionAndInvalidateCache({
-          publicClient,
-          queryClient,
-          hash,
-        });
-        onExecuted?.(hash);
       }
     },
   });

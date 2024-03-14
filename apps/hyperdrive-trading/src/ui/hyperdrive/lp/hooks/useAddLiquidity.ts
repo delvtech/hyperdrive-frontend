@@ -4,9 +4,8 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
-import { Address } from "viem";
+import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
 interface UseAddLiquidityOptions {
   hyperdriveAddress: Address;
@@ -59,35 +58,38 @@ export function useAddLiquidity({
   const { mutate: addLiquidity, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
+        function onTransactionMined(txHash: Hash) {
+          queryClient.invalidateQueries();
+          onExecuted?.(txHash);
+        }
         const hash = asBase
           ? await hyperdriveModel.addLiquidityWithBase({
-              contribution,
-              minAPR,
-              minLpSharePrice,
-              maxAPR,
-              destination,
-              ethValue,
+              args: {
+                contribution,
+                minAPR,
+                minLpSharePrice,
+                maxAPR,
+                destination,
+              },
+              options: { value: ethValue },
+              onTransactionMined,
             })
           : await hyperdriveModel.addLiquidityWithShares({
-              contribution,
-              minAPR,
-              minLpSharePrice,
-              maxAPR,
-              destination,
-              ethValue,
+              args: {
+                contribution,
+                minAPR,
+                minLpSharePrice,
+                maxAPR,
+                destination,
+              },
+              options: { value: ethValue },
+              onTransactionMined,
             });
 
         addTransaction({
           hash,
           description: "Add Liquidity",
         });
-
-        await waitForTransactionAndInvalidateCache({
-          hash,
-          queryClient,
-          publicClient,
-        });
-        onExecuted?.(hash);
       }
     },
   });
