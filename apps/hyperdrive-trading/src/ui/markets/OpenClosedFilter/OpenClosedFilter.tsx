@@ -13,14 +13,14 @@ export function OpenClosedFilter(): ReactElement {
 
   return (
     <div
-      className={classNames("daisy-tabs-boxed daisy-tabs daisy-tabs-sm", {
+      className={classNames("daisy-tabs daisy-tabs-sm", {
         "daisy-tab-disabled cursor-not-allowed": !isConnected,
       })}
     >
       <Link
-        className={classNames("daisy-tab", {
-          "daisy-tab-active font-medium":
-            activeOpenOrClosedTab === "Open" && isConnected,
+        className={classNames("daisy-tab ", {
+          "opacity-80 hover:opacity-100": activeOpenOrClosedTab !== "Open",
+          "font-bold": activeOpenOrClosedTab === "Open" && isConnected,
           "daisy-link-secondary daisy-tab-disabled cursor-not-allowed":
             !isConnected,
         })}
@@ -33,8 +33,9 @@ export function OpenClosedFilter(): ReactElement {
       </Link>
 
       <Link
-        className={classNames("daisy-tab", {
-          "daisy-tab-active font-medium": activeOpenOrClosedTab === "Closed",
+        className={classNames("hover:text-white daisy-tab", {
+          "opacity-80 hover:opacity-100": activeOpenOrClosedTab !== "Closed",
+          "font-bold ": activeOpenOrClosedTab === "Closed" && isConnected,
           "daisy-link-secondary daisy-tab-disabled cursor-not-allowed":
             !isConnected,
         })}
