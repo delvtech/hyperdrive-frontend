@@ -1610,11 +1610,11 @@ export class ReadHyperdrive implements IReadHyperdrive {
       },
       options,
     );
-    const { vaultSharePrice } = await this.getPoolInfo();
+    const { vaultSharePrice, lpSharePrice } = await this.getPoolInfo();
     const decimals = await this.getDecimals();
     const lpSharesOutInBase = dnum.multiply(
       [lpSharesOut, decimals],
-      [vaultSharePrice, decimals],
+      [lpSharePrice, decimals],
     )[0];
     const valueOfLpShares = asBase
       ? lpSharesOutInBase
