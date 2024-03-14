@@ -24,7 +24,7 @@ export function LongsShortsLpTabs({
         {
           id: "Longs",
           content: <LongsTab hyperdrive={hyperdrive} />,
-          label: "Longs",
+          label: "Long",
           onClick: () => {
             navigate({
               params: { address },
@@ -35,7 +35,7 @@ export function LongsShortsLpTabs({
         {
           id: "Shorts",
           content: <ShortsTab hyperdrive={hyperdrive} />,
-          label: "Shorts",
+          label: "Short",
           onClick: () => {
             navigate({
               params: { address },

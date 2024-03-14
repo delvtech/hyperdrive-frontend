@@ -37,6 +37,7 @@ export function MarketDetailsBody({
       )}
 
       <LongsShortsLpTabs hyperdrive={hyperdrive} />
+
       <TransactionAndFaqTabs hyperdrive={hyperdrive} />
     </div>
   );
