@@ -124,6 +124,28 @@ export interface IHyperdriveModel {
     curveFee: bigint;
   }>;
 
+  openShortWithBase(params: {
+    args: {
+      bondAmount: bigint;
+      destination: Address;
+      minVaultSharePrice: bigint;
+      maxDeposit: bigint;
+    };
+    options?: ContractWriteOptions;
+    onTransactionMined?: (hash: Hash) => void;
+  }): Promise<Hash>;
+
+  openShortWithShares(params: {
+    args: {
+      bondAmount: bigint;
+      destination: Address;
+      minVaultSharePrice: bigint;
+      maxDeposit: bigint;
+    };
+    options?: ContractWriteOptions;
+    onTransactionMined?: (hash: Hash) => void;
+  }): Promise<Hash>;
+
   // Close Shorts
   previewCloseShortWithBase(params: {
     maturityTime: bigint;
@@ -271,6 +293,46 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
     this.sharesToken = findYieldSourceToken({
       yieldSourceTokenAddress: this.hyperdriveConfig.sharesToken,
       tokens: appConfig.tokens,
+    });
+  }
+  openShortWithBase({
+    args: { bondAmount, destination, minVaultSharePrice, maxDeposit },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "openShortWithBase"
+  >): Promise<`0x${string}`> {
+    return this.readWriteHyperdrive.openShort({
+      args: {
+        bondAmount,
+        destination,
+        maxDeposit,
+        minVaultSharePrice,
+        asBase: true,
+      },
+      options,
+      onTransactionMined,
+    });
+  }
+  openShortWithShares({
+    args: { bondAmount, destination, minVaultSharePrice, maxDeposit },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "openShortWithShares"
+  >): Promise<`0x${string}`> {
+    return this.readWriteHyperdrive.openShort({
+      args: {
+        bondAmount,
+        destination,
+        maxDeposit,
+        minVaultSharePrice,
+        asBase: false,
+      },
+      options,
+      onTransactionMined,
     });
   }
   removeLiquidityWithBase({

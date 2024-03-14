@@ -135,6 +135,29 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     };
   }
 
+  async openShortWithShares({
+    args: { bondAmount, destination, maxDeposit, minVaultSharePrice },
+    options,
+    onTransactionMined,
+  }: ExtractMethodParams<
+    IHyperdriveModel,
+    "openShortWithShares"
+  >): Promise<Hash> {
+    const convertedMaxDeposit = await this.convertStethTokensToShares(
+      maxDeposit,
+    );
+    return super.openShortWithShares({
+      args: {
+        bondAmount,
+        destination,
+        maxDeposit: convertedMaxDeposit,
+        minVaultSharePrice,
+      },
+      options,
+      onTransactionMined,
+    });
+  }
+
   async previewCloseShortWithShares({
     destination,
     maturityTime,
