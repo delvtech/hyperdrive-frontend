@@ -1,36 +1,82 @@
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import classNames from "classnames";
+import * as dnum from "dnum";
 import { ReactElement } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface AddLiquidityPreviewProps {
   hyperdrive: HyperdriveConfig;
-  lpShares: bigint;
+  slippagePaid: bigint | undefined;
+  poolShareAfterDeposit: bigint | undefined;
+  depositAmount: bigint | undefined;
+  depositTokenDecimals: number;
+  depositTokenSymbol: string;
 }
 
 export function AddLiquidityPreview({
   hyperdrive,
-  lpShares,
+  poolShareAfterDeposit,
+  depositAmount,
+  depositTokenSymbol,
+  depositTokenDecimals,
+  slippagePaid,
 }: AddLiquidityPreviewProps): ReactElement {
-  const appConfig = useAppConfig();
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
-    tokens: appConfig.tokens,
-  });
   return (
     <div className="flex flex-col gap-3">
       <LabelValue
-        label="You receive"
+        label="You deposit"
         value={
           <p className="font-bold">
-            {formatBalance({
-              balance: lpShares,
-              decimals: baseToken.decimals,
-              places: 4,
-            })}{" "}
-            LP Shares
+            {depositAmount
+              ? `${formatBalance({
+                  balance: depositAmount,
+                  decimals: depositTokenDecimals,
+                  places: 4,
+                })} ${depositTokenSymbol}`
+              : "-"}
           </p>
+        }
+      />
+      <LabelValue
+        label="Slippage paid"
+        value={
+          <span
+            className={classNames(
+              "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
+              { "border-b border-dashed border-current": slippagePaid },
+            )}
+            data-tip="Slippage paid for adding liquidity"
+          >
+            {slippagePaid
+              ? `${formatBalance({
+                  balance: slippagePaid,
+                  decimals: depositTokenDecimals,
+                  places: 4,
+                })} ${depositTokenSymbol}`
+              : "-"}
+          </span>
+        }
+      />
+      <LabelValue
+        label="Your pool share"
+        value={
+          <span
+            className={classNames(
+              "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
+              {
+                "border-b border-dashed border-current": poolShareAfterDeposit,
+              },
+            )}
+            data-tip="Your share of the total liquidity in the pool"
+          >
+            {poolShareAfterDeposit
+              ? `${dnum.format(
+                  [poolShareAfterDeposit, hyperdrive.decimals],
+                  4,
+                )}%`
+              : "-"}
+          </span>
         }
       />
     </div>

@@ -28,7 +28,7 @@ export function TransactionView({
       <div className="mt-4 flex flex-col gap-8">
         <Well transparent elevation="flat">
           <div className="space-y-6">
-            <h5 className="font-semibold">Preview transaction</h5>
+            <h5 className="font-medium">Preview transaction</h5>
             {transactionPreview}
           </div>
         </Well>

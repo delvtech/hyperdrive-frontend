@@ -150,7 +150,7 @@ function formatTransactionTableMobileData(
       value: <AccountCell account={row.trader} />,
     },
     {
-      name: "Block number",
+      name: "Time",
       value: <BlockInfo blockNumber={row.blockNumber} />,
     },
   ];
@@ -435,7 +435,7 @@ function EventNameCell({
       href={makeTransactionURL(transaction?.hash || "", chainId)}
       target="_blank"
       rel="noreferrer"
-      className="underline"
+      className="daisy-link-hover daisy-link"
     >
       {name}
     </a>
@@ -449,7 +449,7 @@ function AccountCell({ account }: { account: Address }) {
       href={makeAddressUrl(account, chainId)}
       target="_blank"
       rel="noreferrer"
-      className="underline"
+      className="daisy-link-hover daisy-link"
     >
       {formatAddress(account)}
     </a>

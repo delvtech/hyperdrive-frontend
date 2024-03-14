@@ -3,6 +3,22 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,css}", "index.html"],
   theme: {
     colors: {
+      aquamarine: {
+        100: "#E8FFF7",
+        DEFAULT: "#15FFAB",
+        600: "#11cc89",
+      },
+      "sky-blue": {
+        100: "#95ECFF",
+        DEFAULT: "#14D0F9",
+        800: "#00A7CC",
+      },
+      eggplant: {
+        100: "#F3E9ED",
+        DEFAULT: "#753F53",
+        600: "#462632",
+      },
+
       // Used for primary buttons, links, tabs and states
       lime: {
         100: "#DFFF99",
@@ -59,18 +75,18 @@ module.exports = {
     themes: [
       {
         hyperdrive: {
-          primary: "#BAFF29", // lime DEFAULT
+          primary: "#15FFAB", // Aquamarine DEFAULT
           "primary-content": "#10191D", // Neutral-900
 
-          accent: "#9BF3F0", // teal DEFAULT
+          accent: "#14D0F9", // teal DEFAULT
           "accent-content": "#10191D", // Neutral-900
 
           neutral: "#1A272D", // Neutral-800
           "neutral-content": "#9CBBC9", // Neutral-800
 
-          "base-100": "#10191D", // Neutral-900
-          "base-200": "#1A272D", // Neutral-800
-          "base-content": "#EFF4F6", // Neutral-50
+          "base-100": "#10191D", // Gray-900
+          "base-200": "#1A272D", // Gray-800
+          "base-content": "#EFF4F6", // Gray-50
 
           error: "#FF5757",
           success: "#36D399",

@@ -275,7 +275,7 @@ export class StethHyperdriveModel extends BaseHyperdriveModel {
     minLpSharePrice: bigint;
     maxAPR: bigint;
     ethValue?: bigint | undefined;
-  }): Promise<bigint> {
+  }): Promise<{ lpSharesOut: bigint; slippagePaid: bigint }> {
     const convertedContribution = await this.convertStethTokensToShares(
       contribution,
     );

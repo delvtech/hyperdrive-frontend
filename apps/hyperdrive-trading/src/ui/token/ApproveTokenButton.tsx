@@ -29,7 +29,7 @@ export default function ApproveTokenButton({
 }): JSX.Element {
   const [selectedOption, setSelectedOption] = useState<
     "Unlimited" | "FixedAmount" | "Custom"
-  >("Unlimited");
+  >("FixedAmount");
   const {
     amount: customAmount,
     amountAsBigInt: customAmountAsBigInt,
@@ -87,7 +87,7 @@ export default function ApproveTokenButton({
               </button>
               <div className="flex flex-col items-start">
                 <h5 className="mb-2 font-bold">Approve {token.symbol}</h5>
-                <p className="flex max-w-[250px] text-left text-sm text-gray-400">
+                <p className="flex text-left text-sm text-gray-400">
                   Approve this market to spend your {token.symbol}
                 </p>
               </div>

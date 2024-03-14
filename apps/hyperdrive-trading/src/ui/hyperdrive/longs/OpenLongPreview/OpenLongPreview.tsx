@@ -43,12 +43,6 @@ export function OpenLongPreview({
 
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
-  // The pool's curve fee is applied to the fixed rate, so if the fixed rate is
-  // 4.5%, the effective fixed rate is 4%, then the pool fee is .45%.
-  const poolFee = dnum.mul(
-    [hyperdrive.poolConfig.fees.curve || 0n, 18],
-    [fixedAPR?.apr || 1n, 18],
-  );
   return (
     <div className="flex flex-col gap-3">
       <LabelValue
@@ -127,7 +121,7 @@ export function OpenLongPreview({
             )}
             data-tip={`The net market impact on the fixed rate after opening the long.`}
           >
-            {spotRateAfterOpen ? `-${formatRate(changeInFixedApr)}% APR` : "-"}
+            {getMarketImpactLabel(fixedAPR?.apr, spotRateAfterOpen)}
           </span>
         }
       />
@@ -165,4 +159,25 @@ export function OpenLongPreview({
       />
     </div>
   );
+}
+
+function getMarketImpactLabel(
+  currentFixedRate: bigint | undefined,
+  spotRateAfterOpenLong: bigint | undefined,
+) {
+  if (spotRateAfterOpenLong === undefined || currentFixedRate === undefined) {
+    return "-";
+  }
+  const changeInFixedApr = dnum.subtract(
+    [currentFixedRate, 18],
+    [spotRateAfterOpenLong, 18],
+  )[0];
+
+  const isChangeInFixedAprLessThanOneBasisPoint =
+    changeInFixedApr < dnum.from("0.0001", 18)[0]; // .01% === .0001
+
+  if (isChangeInFixedAprLessThanOneBasisPoint) {
+    return "-<0.01%";
+  }
+  return `-${formatRate(changeInFixedApr)}%`;
 }

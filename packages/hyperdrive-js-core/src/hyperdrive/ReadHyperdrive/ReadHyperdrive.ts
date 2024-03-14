@@ -323,7 +323,7 @@ export interface IReadHyperdrive {
     asBase: boolean;
     extraData?: `0x${string}`;
     options: ContractWriteOptions;
-  }): Promise<bigint>;
+  }): Promise<{ lpSharesOut: bigint; slippagePaid: bigint }>;
 
   /**
    * Predicts the amount of base asset and withdrawlshares a user will receive when removing liquidity.
@@ -1580,7 +1580,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     );
   }
 
-  previewAddLiquidity({
+  async previewAddLiquidity({
     contribution,
     minAPR,
     minLpSharePrice,
@@ -1599,7 +1599,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     extraData?: `0x${string}`;
     options?: ContractWriteOptions;
   }): ReturnType<IReadHyperdrive, "previewAddLiquidity"> {
-    return this.contract.simulateWrite(
+    const lpSharesOut = await this.contract.simulateWrite(
       "addLiquidity",
       {
         _contribution: contribution,
@@ -1610,6 +1610,28 @@ export class ReadHyperdrive implements IReadHyperdrive {
       },
       options,
     );
+    const { vaultSharePrice, lpSharePrice } = await this.getPoolInfo();
+    const decimals = await this.getDecimals();
+    const lpSharesOutInBase = dnum.multiply(
+      [lpSharesOut, decimals],
+      [lpSharePrice, decimals],
+    )[0];
+    const valueOfLpShares = asBase
+      ? lpSharesOutInBase
+      : convertBaseToShares({
+          baseAmount: lpSharesOutInBase,
+          vaultSharePrice,
+          decimals,
+        });
+
+    const slippagePaid = dnum.subtract(
+      [contribution, decimals],
+      [valueOfLpShares, decimals],
+    )[0];
+    return {
+      lpSharesOut,
+      slippagePaid,
+    };
   }
 
   async previewRemoveLiquidity({

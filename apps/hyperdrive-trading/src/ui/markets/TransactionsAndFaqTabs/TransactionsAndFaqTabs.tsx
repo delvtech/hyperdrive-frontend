@@ -1,5 +1,5 @@
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
-import { ReactElement, useState } from "react";
+import { ReactElement } from "react";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { FAQEntries } from "src/ui/onboarding/FAQ/FAQ";
@@ -11,24 +11,31 @@ export function TransactionAndFaqTabs({
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const [activeTab, setActiveTab] = useState<Tab>("Transactions");
   return (
-    <Tabs
-      tabs={[
-        {
-          id: "Transactions",
-          label: "Transactions",
-          content: <TransactionTable hyperdrive={hyperdrive} />,
-          onClick: () => setActiveTab("Transactions"),
-        },
-        {
-          id: "FAQ",
-          label: "FAQ",
-          onClick: () => setActiveTab("FAQ"),
-          content: <FAQEntries />,
-        },
-      ]}
-      activeTabId={activeTab}
-    />
+    <>
+      <Tabs
+        activeTabId="Transactions"
+        tabs={[
+          {
+            id: "Transactions",
+            label: "Transactions",
+            content: <TransactionTable hyperdrive={hyperdrive} />,
+            onClick: () => {},
+          },
+        ]}
+      />
+
+      <Tabs
+        activeTabId="FAQ"
+        tabs={[
+          {
+            id: "FAQ",
+            label: "FAQ",
+            onClick: () => {},
+            content: <FAQEntries />,
+          },
+        ]}
+      />
+    </>
   );
 }
