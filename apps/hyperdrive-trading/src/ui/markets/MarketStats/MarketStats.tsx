@@ -66,10 +66,10 @@ export function MarketStats({
         value={
           lpApyStatus !== "loading" ? (
             <span className="flex items-center gap-1.5">
-              {lpApy === 0 ? "No Data" : `${lpApy?.toFixed(2)}%`}
+              {lpApy === undefined ? "no data" : `${lpApy?.toFixed(2)}%`}
             </span>
           ) : (
-            <Skeleton className="opacity-50" />
+            <Skeleton className="w-20" />
           )
         }
         description={`The LP's annual return projection assuming the past 12-hour performance rate continues for a year.`}
