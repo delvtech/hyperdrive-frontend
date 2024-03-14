@@ -46,10 +46,10 @@ function formatMobileColumnData(row: MarketTableRowData) {
       ),
     },
     {
-      name: "Yield Source APY",
+      name: "Variable Rate",
       value: <YieldSourceApy yieldSourceAddress={row.market.sharesToken} />,
     },
-    { name: "Fixed Rate", value: row.longAPR },
+    { name: "Fixed Rate", value: `${row.longAPR}% APR` },
     {
       name: "LP APY",
       value: <LpApyCell hyperdriveAddress={row.market.address} />,

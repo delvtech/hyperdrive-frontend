@@ -10,9 +10,9 @@ export function Hero(): ReactElement {
             Fixed and variable yields at your control.
           </h1>
           <h5 className="mb-5 font-inter text-base-content">
-            Open a Long to lock in a predictable fixed rate of return, open a
-            Short to get multiplied exposure to the variable rate, or LP to
-            profit from rates volatility.
+            Open a Long to lock in a predictable fixed rate, open a Short to get
+            multiplied exposure to the variable rate, or LP to profit from rates
+            volatility.
           </h5>
           <a
             target="_blank"

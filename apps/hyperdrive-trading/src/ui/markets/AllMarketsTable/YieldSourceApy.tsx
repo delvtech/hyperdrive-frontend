@@ -12,7 +12,7 @@ export function YieldSourceApy({
   });
   return (
     <span className="flex items-center gap-1.5">
-      {vaultRate?.formatted || 0}% APY
+      {vaultRate?.formatted || 0}%
     </span>
   );
 }

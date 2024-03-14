@@ -48,10 +48,7 @@ function getColumns() {
     }),
     columnHelper.accessor("market.name", {
       header: () => (
-        <TextWithTooltip
-          label="Yield Source"
-          tooltip="The underlying yield bearing asset"
-        />
+        <p className="text-sm text-neutral-content">Yield Source</p>
       ),
       cell: ({ row }) => {
         return (
@@ -75,8 +72,8 @@ function getColumns() {
       header: () => {
         return (
           <TextWithTooltip
-            label="Yield Source APY"
-            tooltip={`Yield Source APY (Annual Percentage Yield) reflects the annualized rate you could earn from the yield source's variable returns.`}
+            label="Variable Rate"
+            tooltip={`The yield source's variable rate (Annual Percentage Yield)`}
           />
         );
       },
@@ -94,12 +91,16 @@ function getColumns() {
       header: () => (
         <TextWithTooltip
           label="Fixed Rate"
-          tooltip={`Fixed rate earned from opening longs, before fees and slippage are applied`}
+          tooltip={`Fixed rate (Annual Percentage Rate) earned from opening a long, before fees and slippage are applied`}
         />
       ),
       cell: ({ getValue }) => {
         const fixedRate = getValue();
-        return <span key="fixed-rate">{fixedRate}%</span>;
+        return (
+          <span key="fixed-rate" className="font-bold">
+            {fixedRate}%
+          </span>
+        );
       },
     }),
     columnHelper.display({
@@ -107,7 +108,7 @@ function getColumns() {
       header: () => (
         <TextWithTooltip
           label="LP APY"
-          tooltip={`This indicates the LP's yearly return projection, derived from the past 12 hours' performance. It presumes the same return rate persists throughout the year.`}
+          tooltip={`The LP's yearly projected return, derived from the past 12 hours of trading activity.`}
         />
       ),
       cell: ({ row }) => {
