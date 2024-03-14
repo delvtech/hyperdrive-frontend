@@ -8,7 +8,7 @@ module.exports = {
         DEFAULT: "#15FFAB",
         600: "#11cc89",
       },
-      skyBlue: {
+      "sky-blue": {
         100: "#95ECFF",
         DEFAULT: "#14D0F9",
         800: "#00A7CC",
