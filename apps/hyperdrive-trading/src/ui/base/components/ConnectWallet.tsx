@@ -22,7 +22,7 @@ export function ConnectWalletButton(): JSX.Element {
               if (!connected) {
                 return (
                   <button
-                    className="daisy-btn daisy-btn-circle daisy-btn-primary w-32"
+                    className="daisy-btn daisy-btn-circle daisy-btn-primary w-full px-8"
                     onClick={openConnectModal}
                   >
                     Connect Wallet
