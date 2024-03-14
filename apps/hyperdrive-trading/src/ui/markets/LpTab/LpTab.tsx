@@ -1,4 +1,3 @@
-import { WalletIcon } from "@heroicons/react/24/outline";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
@@ -51,7 +50,6 @@ export function LpTab({
                     <NonIdealState
                       heading="No wallet connected"
                       text="Connect your wallet to view your Longs."
-                      icon={<WalletIcon height="64" />}
                       action={<ConnectWalletButton />}
                     />
                   );

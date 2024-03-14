@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-key */
 import { OpenShort } from "@delvtech/hyperdrive-viem";
-import { WalletIcon } from "@heroicons/react/24/outline";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
@@ -30,7 +29,6 @@ export function OpenShortsTable({
         <NonIdealState
           heading="No wallet connected"
           text="Connect your wallet to view your Shorts."
-          icon={<WalletIcon height="64" />}
           action={<ConnectWalletButton />}
         />
       </div>
