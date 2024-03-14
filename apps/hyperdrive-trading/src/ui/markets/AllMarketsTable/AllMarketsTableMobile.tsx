@@ -9,7 +9,7 @@ import {
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
+import { LpApyCell } from "src/ui/markets/AllMarketsTable/LpApyCell";
 import { YieldSourceApy } from "src/ui/markets/AllMarketsTable/YieldSourceApy";
 import {
   MarketTableRowData,
@@ -147,14 +147,6 @@ export function AllMarketsTableMobile(): ReactElement {
       </tbody>
     </table>
   );
-}
-function LpApyCell({
-  hyperdriveAddress,
-}: {
-  hyperdriveAddress: Address;
-}): ReactElement {
-  const { lpApy } = useLpApy(hyperdriveAddress);
-  return <span>{lpApy?.toFixed(2)}%</span>;
 }
 
 function GoToMarketButton({
