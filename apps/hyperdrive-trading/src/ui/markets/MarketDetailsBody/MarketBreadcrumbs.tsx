@@ -8,7 +8,7 @@ export function MarketBreadcrumbs(): ReactElement {
       <div className="daisy-breadcrumbs md:text-md">
         <ul>
           <li>
-            <Link to="/" className="text-accent">
+            <Link to="/" className="text-primary">
               <ArrowLeftIcon className="mr-1 h-4" />
               Back to home
             </Link>

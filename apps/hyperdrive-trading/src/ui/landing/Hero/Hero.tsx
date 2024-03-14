@@ -18,7 +18,7 @@ export function Hero(): ReactElement {
             target="_blank"
             rel="noreferrer"
             href="https://delv-tech.notion.site/Hyperdrive-Docs-6c014b9270af4483861b1c2ffa7f3a88"
-            className="daisy-btn daisy-btn-ghost text-accent"
+            className="daisy-btn daisy-btn-ghost text-primary"
           >
             Learn more <ArrowRightIcon className="inline h-4" />
           </a>

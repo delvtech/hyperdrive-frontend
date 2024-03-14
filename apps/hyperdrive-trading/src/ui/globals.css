@@ -42,6 +42,6 @@ div[data-rk] {
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-teal-900 to-primary bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
   }
 }
