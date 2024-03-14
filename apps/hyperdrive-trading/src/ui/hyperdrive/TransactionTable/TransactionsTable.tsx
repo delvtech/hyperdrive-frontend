@@ -150,7 +150,7 @@ function formatTransactionTableMobileData(
       value: <AccountCell account={row.trader} />,
     },
     {
-      name: "Block number",
+      name: "Time",
       value: <BlockInfo blockNumber={row.blockNumber} />,
     },
   ];
