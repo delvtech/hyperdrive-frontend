@@ -39,15 +39,15 @@ export function FAQEntries(): JSX.Element {
     <div className="ml-8 mt-8 flex min-h-[400px] max-w-6xl flex-col">
       <div className="grid grid-cols-3 gap-8">
         {/* questions */}
-        <div className="col-span-1 flex flex-col text-left">
+        <div className="col-span-1 flex flex-col gap-4 text-left">
           {faqData.map(({ question, key }) => (
             <button
               key={key}
               onClick={() => setSelectedFAQKey(key)}
               className={classNames(
-                "daisy-btn daisy-btn-ghost daisy-btn-wide justify-start text-left",
+                "daisy-btn daisy-btn-ghost daisy-btn-wide justify-start text-left font-normal leading-5",
                 {
-                  "opacity-40": selectedFAQKey !== key,
+                  "opacity-80": selectedFAQKey !== key,
                 },
               )}
             >
@@ -58,8 +58,8 @@ export function FAQEntries(): JSX.Element {
 
         {/* answers */}
         <div className="col-span-2 flex flex-col">
-          <h5 className="mb-4 font-semibold">{selectedFAQ?.question}</h5>
-          <div>{selectedFAQ?.answer}</div>
+          <h5 className="gradient-text mb-4">{selectedFAQ?.question}</h5>
+          <div className="text-base-content">{selectedFAQ?.answer}</div>
         </div>
       </div>
     </div>
