@@ -10,7 +10,7 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
-import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { LpApyCell } from "src/ui/markets/AllMarketsTable/LpApyCell";
 import { YieldSourceApy } from "src/ui/markets/AllMarketsTable/YieldSourceApy";
 import {
@@ -136,11 +136,11 @@ function getColumns() {
             className="flex flex-row items-center justify-start"
           >
             <img className="mr-1 h-4" src={row.original.baseToken.iconUrl} />
-            {formatBalance({
-              balance: liquidity,
+            {formatCompact({
+              value: liquidity,
               decimals: row.original.baseToken.decimals,
-              places: 0,
-            })}
+            })}{" "}
+            {row.original.baseToken.symbol}
           </span>
         );
       },
