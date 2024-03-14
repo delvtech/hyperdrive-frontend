@@ -9,11 +9,9 @@ import * as dnum from "dnum";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { calculateRatio } from "src/base/calculateRatio";
-import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
 import { parseUnits } from "src/base/parseUnits";
 import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
 import { SupportedChainId } from "src/chains/supportedChains";
-import { convertBaseToShares } from "src/hyperdrive/convertBaseToShares";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -21,7 +19,6 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
-import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/AddLiquidityPreview";
 import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
@@ -78,6 +75,7 @@ export function AddLiquidityForm({
   const requiresAllowance = !isActiveTokenEth;
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
     account,
+
     spender: hyperdrive.address,
     tokenAddress: activeToken.address,
     enabled: requiresAllowance,
@@ -109,30 +107,11 @@ export function AddLiquidityForm({
     enabled: hasEnoughAllowance && hasEnoughBalance,
   };
 
-  const { lpSharesOut, status: addLiquidityPreviewStatus } =
-    usePreviewAddLiquidity(addLiquidityParams);
-
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
-  const lpSharesOutInBase = calculateValueFromPrice({
-    amount: lpSharesOut || 0n,
-    unitPrice: poolInfo?.vaultSharePrice || 0n,
-    decimals: hyperdrive.decimals,
-  });
-  const lpSharesOutInActiveToken = isBaseActiveToken
-    ? lpSharesOutInBase
-    : convertBaseToShares({
-        baseAmount: lpSharesOutInBase,
-        vaultSharePrice: poolInfo?.vaultSharePrice,
-        decimals: hyperdrive.decimals,
-      });
-
-  const slippagePaid =
-    poolInfo && depositAmountAsBigInt && lpSharesOutInActiveToken
-      ? dnum.subtract(
-          [depositAmountAsBigInt, hyperdrive.decimals],
-          [lpSharesOutInActiveToken, hyperdrive.decimals],
-        )[0]
-      : undefined;
+  const {
+    lpSharesOut,
+    status: addLiquidityPreviewStatus,
+    slippagePaid,
+  } = usePreviewAddLiquidity(addLiquidityParams);
 
   const { lpSharesTotalSupply } = useLpSharesTotalSupply({
     hyperdriveAddress: hyperdrive.address,
@@ -198,7 +177,6 @@ export function AddLiquidityForm({
           depositTokenSymbol={activeToken.symbol}
           slippagePaid={slippagePaid}
           poolShareAfterDeposit={poolShareAfterDeposit}
-          lpSharesOut={lpSharesOut}
         />
       }
       disclaimer={

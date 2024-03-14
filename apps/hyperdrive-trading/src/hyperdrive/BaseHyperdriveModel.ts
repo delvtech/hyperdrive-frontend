@@ -150,7 +150,7 @@ export interface IHyperdriveModel {
     minLpSharePrice: bigint;
     maxAPR: bigint;
     ethValue?: bigint;
-  }): Promise<bigint>;
+  }): Promise<{ lpSharesOut: bigint; slippagePaid: bigint }>;
   previewAddLiquidityWithShares(params: {
     destination: Address;
     contribution: bigint;
@@ -158,7 +158,7 @@ export interface IHyperdriveModel {
     minLpSharePrice: bigint;
     maxAPR: bigint;
     ethValue?: bigint;
-  }): Promise<bigint>;
+  }): Promise<{ lpSharesOut: bigint; slippagePaid: bigint }>;
 
   addLiquidityWithBase(params: {
     destination: Address;

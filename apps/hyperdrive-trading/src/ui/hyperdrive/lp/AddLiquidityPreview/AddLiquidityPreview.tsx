@@ -7,7 +7,6 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface AddLiquidityPreviewProps {
   hyperdrive: HyperdriveConfig;
-  lpSharesOut: bigint | undefined;
   slippagePaid: bigint | undefined;
   poolShareAfterDeposit: bigint | undefined;
   depositAmount: bigint | undefined;
@@ -17,7 +16,6 @@ interface AddLiquidityPreviewProps {
 
 export function AddLiquidityPreview({
   hyperdrive,
-  lpSharesOut,
   poolShareAfterDeposit,
   depositAmount,
   depositTokenSymbol,
