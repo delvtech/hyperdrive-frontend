@@ -45,9 +45,10 @@ export function FAQEntries(): JSX.Element {
               key={key}
               onClick={() => setSelectedFAQKey(key)}
               className={classNames(
-                "daisy-btn daisy-btn-ghost daisy-btn-wide justify-start text-left font-normal leading-5",
+                "daisy-btn-md justify-start text-left text-md font-normal hover:opacity-100",
                 {
                   "opacity-80": selectedFAQKey !== key,
+                  "gradient-text": selectedFAQKey === key,
                 },
               )}
             >
