@@ -167,7 +167,7 @@ export function AllMarketsTableDesktop(): ReactElement {
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <table className="daisy-table daisy-table-zebra daisy-table-lg">
+    <table className="daisy-table daisy-table-zebra daisy-table-lg ">
       <thead>
         {tableInstance.getHeaderGroups().map((headerGroup) => (
           <tr key={headerGroup.id}>

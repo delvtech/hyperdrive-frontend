@@ -20,7 +20,7 @@ export function PositionCards(): ReactElement {
           subtitle="Simple, predictable, fixed-rate returns."
           icon={<ClockIcon className="h-4 shrink-0" />}
           checklist={[
-            "Principal-protected profits",
+            "Principal-protected profits at maturity",
             "Minimal risk and maintenance",
             "Exit at any time",
           ]}
@@ -31,7 +31,7 @@ export function PositionCards(): ReactElement {
               Variable rates → go <span className="text-primary">Short</span>
             </span>
           }
-          subtitle="Get multiplied exposure to the most trusted variable rates in DeFi."
+          subtitle="Get multiplied exposure to reputable variable rates in DeFi."
           icon={<BoltIcon className="h-4 shrink-0" />}
           checklist={[
             "Speculate on rates",
@@ -40,7 +40,11 @@ export function PositionCards(): ReactElement {
           ]}
         />
         <PositionCard
-          title="Add Liquidity"
+          title={
+            <span>
+              Earn Yield → <span className="text-primary">Add Liquidity</span>
+            </span>
+          }
           subtitle="Earn market-making fees plus yield on idle capital."
           icon={<SquaresPlusIcon className="h-4 shrink-0" />}
           checklist={[
