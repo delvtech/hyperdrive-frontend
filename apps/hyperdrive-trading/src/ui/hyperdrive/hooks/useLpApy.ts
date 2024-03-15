@@ -10,7 +10,6 @@ export function useLpApy(hyperdriveAddress: Address): {
   lpApyStatus: "error" | "success" | "loading";
 } {
   const chainId = useChainId();
-  const isDevnet = !!import.meta.env.VITE_LOCALHOST_NODE_RPC_URL;
   const { data: blockNumber } = useBlockNumber();
   const { poolInfo: currentPoolInfo } = usePoolInfo({ hyperdriveAddress });
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
@@ -26,7 +25,9 @@ export function useLpApy(hyperdriveAddress: Address): {
           readHyperdrive.getLpApy({
             // If on devnet, start from block 1, otherwise start from 7 days ago
             // TODO: Update this on mainnet and testnet according to average daily blocks
-            fromBlock: isDevnet ? 1n : blockNumber - 7000n * 7n,
+            fromBlock: [31337, 42069].includes(chainId)
+              ? 1n
+              : blockNumber - 7000n * 7n,
             toBlock: blockNumber,
           })
       : undefined,
