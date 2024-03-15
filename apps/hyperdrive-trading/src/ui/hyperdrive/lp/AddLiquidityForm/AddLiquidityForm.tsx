@@ -6,7 +6,7 @@ import {
   TokenConfig,
 } from "@hyperdrive/appconfig";
 import * as dnum from "dnum";
-import { ReactElement } from "react";
+import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { calculateRatio } from "src/base/calculateRatio";
 import { parseUnits } from "src/base/parseUnits";
@@ -34,10 +34,12 @@ import { useAccount, useChainId } from "wagmi";
 
 interface AddLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
+  onAddLiquidity?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function AddLiquidityForm({
   hyperdrive,
+  onAddLiquidity,
 }: AddLiquidityFormProps): ReactElement {
   const { address: account } = useAccount();
   const chainId = useChainId() as SupportedChainId;
@@ -216,7 +218,10 @@ export function AddLiquidityForm({
           <button
             disabled={!addLiquidity || addLiquidityStatus === "loading"}
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            onClick={() => addLiquidity?.()}
+            onClick={(e) => {
+              addLiquidity?.();
+              onAddLiquidity?.(e);
+            }}
           >
             Add liquidity
           </button>

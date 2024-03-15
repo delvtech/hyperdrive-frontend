@@ -3,7 +3,7 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { MAX_UINT256 } from "src/base/constants";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
@@ -33,10 +33,12 @@ import { formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 interface OpenShortPositionFormProps {
   hyperdrive: HyperdriveConfig;
+  onOpenShort?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function OpenShortForm({
   hyperdrive,
+  onOpenShort,
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
   const chainId = useChainId() as SupportedChainId;
@@ -267,7 +269,10 @@ export function OpenShortForm({
           <button
             disabled={!openShort || openShortSubmittedStatus === "loading"}
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            onClick={() => openShort?.()}
+            onClick={(e) => {
+              openShort?.();
+              onOpenShort?.(e);
+            }}
           >
             Open Short
           </button>

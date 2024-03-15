@@ -236,5 +236,14 @@ function getColumns({
         return <CurrentValueCell hyperdrive={hyperdrive} row={row.original} />;
       },
     }),
+    columnHelper.display({
+      header: "",
+      id: "go-to-market",
+      cell: () => (
+        <button className="daisy-btn daisy-btn-md rounded-full">
+          Close long
+        </button>
+      ),
+    }),
   ];
 }

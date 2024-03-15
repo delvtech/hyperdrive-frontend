@@ -1,7 +1,7 @@
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { ClosedLongsTable } from "src/ui/hyperdrive/longs/ClosedLongsTable/ClosedLongsTable";
-import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
+import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { OpenLongsTable } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenLongsTable";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
 import { OpenClosedFilter } from "src/ui/markets/OpenClosedFilter/OpenClosedFilter";
@@ -18,9 +18,15 @@ export function LongsTab({
     <MarketDetailsTab
       positions={
         <div className="flex flex-col">
-          <div className="flex items-center justify-between px-4 py-8 md:px-0">
+          <div className="flex items-center justify-between px-4 py-8">
             <h5 className="font-medium">Long positions</h5>
-            <OpenClosedFilter />
+            <div className="flex items-center gap-4">
+              <OpenLongModalButton
+                modalId="open-long"
+                hyperdrive={hyperdrive}
+              />
+              <OpenClosedFilter />
+            </div>
           </div>
           {activeOpenOrClosedTab === "Open" ? (
             <OpenLongsTable hyperdrive={hyperdrive} />
@@ -29,8 +35,6 @@ export function LongsTab({
           )}
         </div>
       }
-      transactionForm={<OpenLongForm hyperdrive={hyperdrive} />}
-      transactionFormHeading="Open long"
     />
   );
 }
