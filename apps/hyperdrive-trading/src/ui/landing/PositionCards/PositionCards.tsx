@@ -14,7 +14,7 @@ export function PositionCards(): ReactElement {
         <PositionCard
           title={
             <span>
-              Fixed rates → go <span className="text-primary">Long</span>
+              Fixed Rates → Go <span className="text-primary">Long</span>
             </span>
           }
           subtitle="Simple, predictable, fixed-rate returns."
@@ -28,7 +28,7 @@ export function PositionCards(): ReactElement {
         <PositionCard
           title={
             <span>
-              Variable rates → go <span className="text-primary">Short</span>
+              Variable Rates → Go <span className="text-primary">Short</span>
             </span>
           }
           subtitle="Get multiplied exposure to reputable variable rates in DeFi."
@@ -42,7 +42,7 @@ export function PositionCards(): ReactElement {
         <PositionCard
           title={
             <span>
-              Earn Yield → <span className="text-primary">Add Liquidity</span>
+              Earn Yield → Add <span className="text-primary">Liquidity</span>
             </span>
           }
           subtitle="Earn market-making fees plus yield on idle capital."
