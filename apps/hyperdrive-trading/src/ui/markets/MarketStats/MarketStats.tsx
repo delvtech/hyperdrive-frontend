@@ -9,7 +9,7 @@ import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
-import { useMockYieldSourceRate } from "src/ui/vaults/useMockYieldSourceRate";
+import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { useBlockNumber } from "wagmi";
 export function MarketStats({
   hyperdrive,
@@ -35,8 +35,8 @@ export function MarketStats({
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive.address);
   const { lpApy, lpApyStatus } = useLpApy(hyperdrive.address);
 
-  const { vaultRate } = useMockYieldSourceRate({
-    vaultAddress: hyperdrive.sharesToken,
+  const { vaultRate } = useYieldSourceRate({
+    hyperdriveAddress: hyperdrive.address,
   });
 
   return (

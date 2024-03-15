@@ -81,7 +81,7 @@ function getColumns() {
         return (
           <YieldSourceApy
             key="yield-source-apy"
-            yieldSourceAddress={row.original.market.sharesToken}
+            hyperdriveAddress={row.original.market.address}
           />
         );
       },
