@@ -43,7 +43,6 @@ export function TokenInput({
     <div className="flex w-full flex-col">
       <label className="daisy-label flex justify-between">
         <span className="daisy-label-text">{inputLabel}</span>
-        {stat ? <span className="daisy-label-text">{stat}</span> : null}
       </label>
 
       <label className="daisy-join items-center">
@@ -102,6 +101,9 @@ export function TokenInput({
             Max
           </button>
         ) : null}
+      </label>
+      <label className="daisy-label flex justify-end">
+        {stat ? <span className="daisy-label-text ">{stat}</span> : null}
       </label>
     </div>
   );

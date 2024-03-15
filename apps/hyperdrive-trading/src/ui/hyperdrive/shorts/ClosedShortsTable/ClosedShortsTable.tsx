@@ -1,5 +1,4 @@
 import { ClosedShort } from "@delvtech/hyperdrive-viem";
-import { WalletIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
   HyperdriveConfig,
@@ -187,7 +186,6 @@ export function ClosedShortsTable({
         <NonIdealState
           heading="No wallet connected"
           text="Connect your wallet to view your Shorts."
-          icon={<WalletIcon height="64" />}
           action={<ConnectWalletButton />}
         />
       </div>

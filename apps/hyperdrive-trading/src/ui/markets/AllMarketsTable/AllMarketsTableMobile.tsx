@@ -8,7 +8,7 @@ import {
 } from "@tanstack/react-table";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { LpApyCell } from "src/ui/markets/AllMarketsTable/LpApyCell";
 import { YieldSourceApy } from "src/ui/markets/AllMarketsTable/YieldSourceApy";
 import {
@@ -46,10 +46,10 @@ function formatMobileColumnData(row: MarketTableRowData) {
       ),
     },
     {
-      name: "Yield Source APY",
+      name: "Variable Rate",
       value: <YieldSourceApy yieldSourceAddress={row.market.sharesToken} />,
     },
-    { name: "Fixed Rate", value: row.longAPR },
+    { name: "Fixed Rate", value: `${row.longAPR}% APR` },
     {
       name: "LP APY",
       value: <LpApyCell hyperdriveAddress={row.market.address} />,
@@ -62,11 +62,11 @@ function formatMobileColumnData(row: MarketTableRowData) {
           className="flex flex-row items-center justify-start"
         >
           <img className="mr-1 h-4" src={row.baseToken.iconUrl} />
-          {formatBalance({
-            balance: row.liquidity,
+          {formatCompact({
+            value: row.liquidity,
             decimals: row.baseToken.decimals,
-            places: 0,
-          })}
+          })}{" "}
+          {row.baseToken.symbol}
         </span>
       ),
     },
