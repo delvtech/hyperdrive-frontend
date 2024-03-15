@@ -4,7 +4,13 @@ import defaultTypeDocConfig from "./typedoc.json";
 
 const config: Config = {
   title: "Hyperdrive SDK Docs",
-  favicon: "img/favicon.ico",
+  favicon: "/img/favicon.svg",
+
+  stylesheets: [
+    "https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700",
+    "https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500",
+    "https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap",
+  ],
 
   // Set the production url of your site here
   url: "https://hyperdrive.delv.tech",
@@ -13,6 +19,7 @@ const config: Config = {
   baseUrl: "/",
 
   plugins: [
+    "docusaurus-plugin-sass",
     [
       "docusaurus-plugin-typedoc",
 
@@ -55,10 +62,11 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/delvtech/hyperdrive-frontend",
+          editUrl:
+            "https://github.com/delvtech/hyperdrive-frontend/tree/main/apps/hyperdrive-sdk-docs/",
         },
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: "./src/css/custom.scss",
         },
       },
     ],
@@ -77,16 +85,16 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "SDK",
+          label: "Docs",
         },
+        // {
+        //   type: "doc",
+        //   position: "left",
+        //   label: "CLI",
+        //   docId: "cli/index",
+        // },
         {
-          type: "doc",
-          position: "left",
-          label: "CLI",
-          docId: "cli/index",
-        },
-        {
-          href: "https://github.com/delvtech/hyperdrive-frontend",
+          href: "https://github.com/delvtech/hyperdrive-frontend/tree/main/packages/hyperdrive-js-core",
           label: "GitHub",
           position: "right",
         },
@@ -99,13 +107,21 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "SDK",
-              to: "/docs/sdk",
+              label: "Getting Started",
+              to: "/docs/sdk/",
             },
             {
-              label: "CLI",
-              to: "/docs/cli",
+              label: "Open a Position",
+              to: "/docs/sdk/guides/position",
             },
+            {
+              label: "Integrate with React",
+              to: "/docs/sdk/guides/react",
+            },
+            // {
+            //   label: "CLI",
+            //   to: "/docs/cli",
+            // },
           ],
         },
         {
@@ -113,7 +129,7 @@ const config: Config = {
           items: [
             {
               label: "Discord",
-              href: "https://discord.gg/EEfKmfQdtx",
+              href: "https://delv.tech/discord",
             },
             {
               label: "X",
@@ -126,7 +142,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/delvtech/hyperdrive-frontend",
+              href: "https://github.com/delvtech/hyperdrive-frontend/tree/main/packages/hyperdrive-js-core",
             },
             {
               label: "DELV Blog",

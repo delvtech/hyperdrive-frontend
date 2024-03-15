@@ -10,7 +10,7 @@ This package contains the core logic for interacting with the Hyperdrive
 contracts, but doesn't include a web3 library for communicating with a network.
 For this, we publish thin binding packages which seamlessly integrate the SDK
 with a specific web3 library and re-export everything from the core. This design
-enables us to be flexible in the web3 libraries (and even persisitence layers)
+enables us to be flexible in the web3 libraries (and even persistence layers)
 we support.
 
 ## Binding Packages
