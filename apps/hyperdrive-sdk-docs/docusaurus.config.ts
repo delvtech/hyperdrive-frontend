@@ -62,7 +62,8 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/delvtech/hyperdrive-frontend",
+          editUrl:
+            "https://github.com/delvtech/hyperdrive-frontend/tree/main/apps/hyperdrive-sdk-docs/",
         },
         theme: {
           customCss: "./src/css/custom.scss",
@@ -93,7 +94,7 @@ const config: Config = {
         //   docId: "cli/index",
         // },
         {
-          href: "https://github.com/delvtech/hyperdrive-frontend",
+          href: "https://github.com/delvtech/hyperdrive-frontend/tree/main/packages/hyperdrive-js-core",
           label: "GitHub",
           position: "right",
         },
@@ -106,13 +107,21 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "SDK",
-              to: "/docs/sdk",
+              label: "Getting Started",
+              to: "/docs/sdk/",
             },
             {
-              label: "CLI",
-              to: "/docs/cli",
+              label: "Open a Position",
+              to: "/docs/sdk/guides/position",
             },
+            {
+              label: "Integrate with React",
+              to: "/docs/sdk/guides/react",
+            },
+            // {
+            //   label: "CLI",
+            //   to: "/docs/cli",
+            // },
           ],
         },
         {
@@ -120,7 +129,7 @@ const config: Config = {
           items: [
             {
               label: "Discord",
-              href: "https://discord.gg/EEfKmfQdtx",
+              href: "https://delv.tech/discord",
             },
             {
               label: "X",
@@ -133,7 +142,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/delvtech/hyperdrive-frontend",
+              href: "https://github.com/delvtech/hyperdrive-frontend/tree/main/packages/hyperdrive-js-core",
             },
             {
               label: "DELV Blog",
