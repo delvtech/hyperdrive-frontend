@@ -4,7 +4,7 @@ import defaultTypeDocConfig from "./typedoc.json";
 
 const config: Config = {
   title: "Hyperdrive SDK Docs",
-  favicon: "img/favicon.ico",
+  favicon: "/img/favicon.svg",
 
   stylesheets: [
     "https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700",
