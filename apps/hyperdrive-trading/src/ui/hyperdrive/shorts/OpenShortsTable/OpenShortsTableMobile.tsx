@@ -182,7 +182,7 @@ function formatOpenShortMobileColumnData(
       }),
     },
     {
-      name: `Amount paid`,
+      name: `Value paid (${baseToken.symbol})`,
       value: formatBalance({
         balance: openShort.baseAmountPaid,
         decimals: baseToken.decimals,

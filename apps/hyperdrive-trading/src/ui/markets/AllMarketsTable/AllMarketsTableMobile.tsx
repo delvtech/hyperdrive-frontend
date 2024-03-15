@@ -47,7 +47,7 @@ function formatMobileColumnData(row: MarketTableRowData) {
     },
     {
       name: "Variable Rate",
-      value: <YieldSourceApy yieldSourceAddress={row.market.sharesToken} />,
+      value: <YieldSourceApy hyperdriveAddress={row.market.address} />,
     },
     { name: "Fixed Rate", value: `${row.longAPR}% APR` },
     {

@@ -1,3 +1,4 @@
+import { MockERC4626 } from "@delvtech/hyperdrive-artifacts/MockERC4626";
 import {
   ContractReadOptions,
   ContractWriteOptions,
@@ -31,6 +32,8 @@ export interface IHyperdriveModel {
 
   publicClient: PublicClient;
   walletClient: WalletClient;
+
+  getYieldSourceRate(): Promise<bigint>;
 
   // Open Longs
   previewOpenLongWithBase(params: {
@@ -294,6 +297,22 @@ export class BaseHyperdriveModel implements IHyperdriveModel {
       yieldSourceTokenAddress: this.hyperdriveConfig.sharesToken,
       tokens: appConfig.tokens,
     });
+  }
+  async getYieldSourceRate(): Promise<bigint> {
+    const chainId = await this.publicClient.getChainId();
+    switch (chainId) {
+      case 31337:
+      case 42069:
+      default:
+        const rate = await this.publicClient.readContract({
+          address: this.sharesToken.address,
+          // Both MockLido and MockERC4626 contain the getRate method, so this
+          // abi can be used for both
+          abi: MockERC4626.abi,
+          functionName: "getRate",
+        });
+        return rate;
+    }
   }
   openShortWithBase({
     args: { bondAmount, destination, minVaultSharePrice, maxDeposit },

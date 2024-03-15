@@ -1,34 +1,33 @@
-import { MockERC4626 } from "@delvtech/hyperdrive-artifacts/MockERC4626";
 import { useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { useHyperdriveModel } from "src/ui/hyperdrive/hooks/useHyperdriveModel";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
 interface UseVaultRateOptions {
-  vaultAddress: Address | undefined;
+  hyperdriveAddress: Address | undefined;
 }
 
-export function useMockYieldSourceRate({ vaultAddress }: UseVaultRateOptions): {
+export function useYieldSourceRate({
+  hyperdriveAddress,
+}: UseVaultRateOptions): {
   vaultRate: { vaultRate: bigint; formatted: string } | undefined;
   vaultRateStatus: "error" | "success" | "loading";
 } {
   const publicClient = usePublicClient();
+  const hyperdriveModel = useHyperdriveModel(hyperdriveAddress);
 
-  const queryEnabled = !!vaultAddress && !!publicClient;
+  const queryEnabled =
+    !!hyperdriveAddress && !!hyperdriveModel && !!publicClient;
   const { data: vaultRate, status: vaultRateStatus } = useQuery({
+    enabled: queryEnabled,
     queryKey: makeQueryKey("vaultRate", {
-      vaultAddress,
+      hyperdriveAddress,
     }),
     queryFn: queryEnabled
       ? async () => {
-          const rate = await publicClient.readContract({
-            address: vaultAddress,
-            // Both MockLido and MockERC4626 contain the getRate method, so this
-            // abi can be used for both
-            abi: MockERC4626.abi,
-            functionName: "getRate",
-          });
+          const rate = await hyperdriveModel.getYieldSourceRate();
           return {
             vaultRate: rate,
             formatted: formatRate(rate),

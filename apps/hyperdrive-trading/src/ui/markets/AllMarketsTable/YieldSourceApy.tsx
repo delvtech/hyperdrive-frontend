@@ -1,14 +1,14 @@
 import { ReactElement } from "react";
-import { useMockYieldSourceRate } from "src/ui/vaults/useMockYieldSourceRate";
+import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
 
 export function YieldSourceApy({
-  yieldSourceAddress,
+  hyperdriveAddress,
 }: {
-  yieldSourceAddress: Address;
+  hyperdriveAddress: Address;
 }): ReactElement {
-  const { vaultRate } = useMockYieldSourceRate({
-    vaultAddress: yieldSourceAddress,
+  const { vaultRate } = useYieldSourceRate({
+    hyperdriveAddress,
   });
   return (
     <span className="flex items-center gap-1.5">
