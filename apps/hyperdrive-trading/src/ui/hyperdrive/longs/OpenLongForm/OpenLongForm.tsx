@@ -4,7 +4,7 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
 import { SupportedChainId } from "src/chains/supportedChains";
@@ -30,9 +30,11 @@ import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useAccount, useChainId } from "wagmi";
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
+  onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 export function OpenLongForm({
   hyperdrive: hyperdrive,
+  onOpenLong,
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
   const chainId = useChainId() as SupportedChainId;
@@ -229,7 +231,10 @@ export function OpenLongForm({
           <button
             disabled={!openLong || openLongStatus === "loading"}
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            onClick={() => openLong?.()}
+            onClick={(e) => {
+              openLong?.();
+              onOpenLong?.(e);
+            }}
           >
             Open Long
           </button>

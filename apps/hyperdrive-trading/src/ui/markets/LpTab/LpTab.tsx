@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
+import { AddLiquidityModalButton } from "src/ui/hyperdrive/lp/AddLiquidityModalButton/AddLiquidityModalButton";
 import { ClosedLpTable } from "src/ui/hyperdrive/lp/ClosedLpTable/ClosedLpTable";
 import { OpenLpSharesCard } from "src/ui/hyperdrive/lp/OpenLpSharesCard/OpenLpSharesCard";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
@@ -37,9 +37,15 @@ export function LpTab({
     <MarketDetailsTab
       positions={
         <div className="flex flex-col items-center lg:min-w-[720px]">
-          <div className="flex w-full justify-between px-4 py-8 md:px-0">
+          <div className="flex w-full justify-between px-4 py-8">
             <h5 className="font-medium">LP position</h5>
-            <OpenClosedFilter />
+            <div className="flex items-center gap-4">
+              <AddLiquidityModalButton
+                modalId="add-lp"
+                hyperdrive={hyperdrive}
+              />
+              <OpenClosedFilter />
+            </div>
           </div>
 
           {activeOpenOrClosedTab === "Open" ? (
@@ -91,8 +97,6 @@ export function LpTab({
           )}
         </div>
       }
-      transactionForm={<AddLiquidityForm hyperdrive={hyperdrive} />}
-      transactionFormHeading="Add Liquidity"
     />
   );
 }

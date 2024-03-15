@@ -173,5 +173,14 @@ function getColumns(
         );
       },
     }),
+    columnHelper.display({
+      header: "",
+      id: "go-to-market",
+      cell: () => (
+        <button className="daisy-btn daisy-btn-md rounded-full">
+          Close Short
+        </button>
+      ),
+    }),
   ];
 }
