@@ -617,19 +617,19 @@ export const IERC20 = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IERC20.sol",
-        "id": 6921,
+        "id": 10320,
         "exportedSymbols": {
             "IERC20": [
-                6920
+                10319
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "39:2650:37",
+        "src": "39:2650:79",
         "nodes": [
             {
-                "id": 6827,
+                "id": 10226,
                 "nodeType": "PragmaDirective",
-                "src": "39:23:37",
+                "src": "39:23:79",
                 "nodes": [],
                 "literals": [
                     "solidity",
@@ -638,39 +638,39 @@ export const IERC20 = {
                 ]
             },
             {
-                "id": 6920,
+                "id": 10319,
                 "nodeType": "ContractDefinition",
-                "src": "64:2624:37",
+                "src": "64:2624:79",
                 "nodes": [
                     {
-                        "id": 6836,
+                        "id": 10235,
                         "nodeType": "EventDefinition",
-                        "src": "168:72:37",
+                        "src": "168:72:79",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 6828,
+                            "id": 10227,
                             "nodeType": "StructuredDocumentation",
-                            "src": "87:76:37",
+                            "src": "87:76:79",
                             "text": "@notice Emitted when tokens are transferred from one account to another."
                         },
                         "eventSelector": "ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                         "name": "Transfer",
-                        "nameLocation": "174:8:37",
+                        "nameLocation": "174:8:79",
                         "parameters": {
-                            "id": 6835,
+                            "id": 10234,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6830,
+                                    "id": 10229,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "from",
-                                    "nameLocation": "199:4:37",
+                                    "nameLocation": "199:4:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6836,
-                                    "src": "183:20:37",
+                                    "scope": 10235,
+                                    "src": "183:20:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -678,10 +678,10 @@ export const IERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 6829,
+                                        "id": 10228,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "183:7:37",
+                                        "src": "183:7:79",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -692,14 +692,14 @@ export const IERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6832,
+                                    "id": 10231,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "221:2:37",
+                                    "nameLocation": "221:2:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6836,
-                                    "src": "205:18:37",
+                                    "scope": 10235,
+                                    "src": "205:18:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -707,10 +707,10 @@ export const IERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 6831,
+                                        "id": 10230,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "205:7:37",
+                                        "src": "205:7:79",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -721,14 +721,14 @@ export const IERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6834,
+                                    "id": 10233,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "value",
-                                    "nameLocation": "233:5:37",
+                                    "nameLocation": "233:5:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6836,
-                                    "src": "225:13:37",
+                                    "scope": 10235,
+                                    "src": "225:13:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -736,10 +736,10 @@ export const IERC20 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6833,
+                                        "id": 10232,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "225:7:37",
+                                        "src": "225:7:79",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -748,38 +748,38 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "182:57:37"
+                            "src": "182:57:79"
                         }
                     },
                     {
-                        "id": 6845,
+                        "id": 10244,
                         "nodeType": "EventDefinition",
-                        "src": "320:108:37",
+                        "src": "320:108:79",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 6837,
+                            "id": 10236,
                             "nodeType": "StructuredDocumentation",
-                            "src": "246:69:37",
+                            "src": "246:69:79",
                             "text": "@notice Emitted when an owner changes the approval for a spender."
                         },
                         "eventSelector": "8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
                         "name": "Approval",
-                        "nameLocation": "326:8:37",
+                        "nameLocation": "326:8:79",
                         "parameters": {
-                            "id": 6844,
+                            "id": 10243,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6839,
+                                    "id": 10238,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "owner",
-                                    "nameLocation": "360:5:37",
+                                    "nameLocation": "360:5:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6845,
-                                    "src": "344:21:37",
+                                    "scope": 10244,
+                                    "src": "344:21:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -787,10 +787,10 @@ export const IERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 6838,
+                                        "id": 10237,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "344:7:37",
+                                        "src": "344:7:79",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -801,14 +801,14 @@ export const IERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6841,
+                                    "id": 10240,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "spender",
-                                    "nameLocation": "391:7:37",
+                                    "nameLocation": "391:7:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6845,
-                                    "src": "375:23:37",
+                                    "scope": 10244,
+                                    "src": "375:23:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -816,10 +816,10 @@ export const IERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 6840,
+                                        "id": 10239,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "375:7:37",
+                                        "src": "375:7:79",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -830,14 +830,14 @@ export const IERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6843,
+                                    "id": 10242,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "value",
-                                    "nameLocation": "416:5:37",
+                                    "nameLocation": "416:5:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6845,
-                                    "src": "408:13:37",
+                                    "scope": 10244,
+                                    "src": "408:13:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -845,10 +845,10 @@ export const IERC20 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6842,
+                                        "id": 10241,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "408:7:37",
+                                        "src": "408:7:79",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -857,18 +857,18 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "334:93:37"
+                            "src": "334:93:79"
                         }
                     },
                     {
-                        "id": 6855,
+                        "id": 10254,
                         "nodeType": "FunctionDefinition",
-                        "src": "694:74:37",
+                        "src": "694:74:79",
                         "nodes": [],
                         "documentation": {
-                            "id": 6846,
+                            "id": 10245,
                             "nodeType": "StructuredDocumentation",
-                            "src": "434:255:37",
+                            "src": "434:255:79",
                             "text": "@notice Updates the allowance of a spender on behalf of the sender.\n @param spender The account with the allowance.\n @param amount The new allowance of the spender.\n @return A flag indicating whether or not the approval succeeded."
                         },
                         "functionSelector": "095ea7b3",
@@ -876,20 +876,20 @@ export const IERC20 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "approve",
-                        "nameLocation": "703:7:37",
+                        "nameLocation": "703:7:79",
                         "parameters": {
-                            "id": 6851,
+                            "id": 10250,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6848,
+                                    "id": 10247,
                                     "mutability": "mutable",
                                     "name": "spender",
-                                    "nameLocation": "719:7:37",
+                                    "nameLocation": "719:7:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6855,
-                                    "src": "711:15:37",
+                                    "scope": 10254,
+                                    "src": "711:15:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -897,10 +897,10 @@ export const IERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 6847,
+                                        "id": 10246,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "711:7:37",
+                                        "src": "711:7:79",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -911,13 +911,13 @@ export const IERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6850,
+                                    "id": 10249,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "736:6:37",
+                                    "nameLocation": "736:6:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6855,
-                                    "src": "728:14:37",
+                                    "scope": 10254,
+                                    "src": "728:14:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -925,10 +925,10 @@ export const IERC20 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6849,
+                                        "id": 10248,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "728:7:37",
+                                        "src": "728:7:79",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -937,21 +937,21 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "710:33:37"
+                            "src": "710:33:79"
                         },
                         "returnParameters": {
-                            "id": 6854,
+                            "id": 10253,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6853,
+                                    "id": 10252,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6855,
-                                    "src": "762:4:37",
+                                    "scope": 10254,
+                                    "src": "762:4:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -959,10 +959,10 @@ export const IERC20 = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 6852,
+                                        "id": 10251,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "762:4:37",
+                                        "src": "762:4:79",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -971,22 +971,22 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "761:6:37"
+                            "src": "761:6:79"
                         },
-                        "scope": 6920,
+                        "scope": 10319,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 6865,
+                        "id": 10264,
                         "nodeType": "FunctionDefinition",
-                        "src": "1042:70:37",
+                        "src": "1042:70:79",
                         "nodes": [],
                         "documentation": {
-                            "id": 6856,
+                            "id": 10255,
                             "nodeType": "StructuredDocumentation",
-                            "src": "774:263:37",
+                            "src": "774:263:79",
                             "text": "@notice Transfers tokens from the sender's account to another account.\n @param to The recipient of the tokens.\n @param amount The amount of tokens that will be transferred.\n @return A flag indicating whether or not the transfer succeeded."
                         },
                         "functionSelector": "a9059cbb",
@@ -994,20 +994,20 @@ export const IERC20 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "transfer",
-                        "nameLocation": "1051:8:37",
+                        "nameLocation": "1051:8:79",
                         "parameters": {
-                            "id": 6861,
+                            "id": 10260,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6858,
+                                    "id": 10257,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "1068:2:37",
+                                    "nameLocation": "1068:2:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6865,
-                                    "src": "1060:10:37",
+                                    "scope": 10264,
+                                    "src": "1060:10:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1015,10 +1015,10 @@ export const IERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 6857,
+                                        "id": 10256,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1060:7:37",
+                                        "src": "1060:7:79",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1029,13 +1029,13 @@ export const IERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6860,
+                                    "id": 10259,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "1080:6:37",
+                                    "nameLocation": "1080:6:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6865,
-                                    "src": "1072:14:37",
+                                    "scope": 10264,
+                                    "src": "1072:14:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1043,10 +1043,10 @@ export const IERC20 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6859,
+                                        "id": 10258,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1072:7:37",
+                                        "src": "1072:7:79",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1055,21 +1055,21 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1059:28:37"
+                            "src": "1059:28:79"
                         },
                         "returnParameters": {
-                            "id": 6864,
+                            "id": 10263,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6863,
+                                    "id": 10262,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6865,
-                                    "src": "1106:4:37",
+                                    "scope": 10264,
+                                    "src": "1106:4:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1077,10 +1077,10 @@ export const IERC20 = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 6862,
+                                        "id": 10261,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1106:4:37",
+                                        "src": "1106:4:79",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -1089,22 +1089,22 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1105:6:37"
+                            "src": "1105:6:79"
                         },
-                        "scope": 6920,
+                        "scope": 10319,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 6877,
+                        "id": 10276,
                         "nodeType": "FunctionDefinition",
-                        "src": "1471:118:37",
+                        "src": "1471:118:79",
                         "nodes": [],
                         "documentation": {
-                            "id": 6866,
+                            "id": 10265,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1118:348:37",
+                            "src": "1118:348:79",
                             "text": "@notice Transfers tokens from an owner to a recipient. This draws from\n         the sender's allowance.\n @param from The owner of the tokens.\n @param to The recipient of the tokens.\n @param amount The amount of tokens that will be transferred.\n @return A flag indicating whether or not the transfer succeeded."
                         },
                         "functionSelector": "23b872dd",
@@ -1112,20 +1112,20 @@ export const IERC20 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "transferFrom",
-                        "nameLocation": "1480:12:37",
+                        "nameLocation": "1480:12:79",
                         "parameters": {
-                            "id": 6873,
+                            "id": 10272,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6868,
+                                    "id": 10267,
                                     "mutability": "mutable",
                                     "name": "from",
-                                    "nameLocation": "1510:4:37",
+                                    "nameLocation": "1510:4:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6877,
-                                    "src": "1502:12:37",
+                                    "scope": 10276,
+                                    "src": "1502:12:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1133,10 +1133,10 @@ export const IERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 6867,
+                                        "id": 10266,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1502:7:37",
+                                        "src": "1502:7:79",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1147,13 +1147,13 @@ export const IERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6870,
+                                    "id": 10269,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "1532:2:37",
+                                    "nameLocation": "1532:2:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6877,
-                                    "src": "1524:10:37",
+                                    "scope": 10276,
+                                    "src": "1524:10:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1161,10 +1161,10 @@ export const IERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 6869,
+                                        "id": 10268,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1524:7:37",
+                                        "src": "1524:7:79",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1175,13 +1175,13 @@ export const IERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6872,
+                                    "id": 10271,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "1552:6:37",
+                                    "nameLocation": "1552:6:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6877,
-                                    "src": "1544:14:37",
+                                    "scope": 10276,
+                                    "src": "1544:14:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1189,10 +1189,10 @@ export const IERC20 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6871,
+                                        "id": 10270,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1544:7:37",
+                                        "src": "1544:7:79",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1201,21 +1201,21 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1492:72:37"
+                            "src": "1492:72:79"
                         },
                         "returnParameters": {
-                            "id": 6876,
+                            "id": 10275,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6875,
+                                    "id": 10274,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6877,
-                                    "src": "1583:4:37",
+                                    "scope": 10276,
+                                    "src": "1583:4:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1223,10 +1223,10 @@ export const IERC20 = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 6874,
+                                        "id": 10273,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1583:4:37",
+                                        "src": "1583:4:79",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -1235,22 +1235,22 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1582:6:37"
+                            "src": "1582:6:79"
                         },
-                        "scope": 6920,
+                        "scope": 10319,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 6883,
+                        "id": 10282,
                         "nodeType": "FunctionDefinition",
-                        "src": "1668:54:37",
+                        "src": "1668:54:79",
                         "nodes": [],
                         "documentation": {
-                            "id": 6878,
+                            "id": 10277,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1595:68:37",
+                            "src": "1595:68:79",
                             "text": "@notice Gets the token's name.\n @return The token's name."
                         },
                         "functionSelector": "06fdde03",
@@ -1258,26 +1258,26 @@ export const IERC20 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "name",
-                        "nameLocation": "1677:4:37",
+                        "nameLocation": "1677:4:79",
                         "parameters": {
-                            "id": 6879,
+                            "id": 10278,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1681:2:37"
+                            "src": "1681:2:79"
                         },
                         "returnParameters": {
-                            "id": 6882,
+                            "id": 10281,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6881,
+                                    "id": 10280,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6883,
-                                    "src": "1707:13:37",
+                                    "scope": 10282,
+                                    "src": "1707:13:79",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
@@ -1285,10 +1285,10 @@ export const IERC20 = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 6880,
+                                        "id": 10279,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1707:6:37",
+                                        "src": "1707:6:79",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_string_storage_ptr",
                                             "typeString": "string"
@@ -1297,22 +1297,22 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1706:15:37"
+                            "src": "1706:15:79"
                         },
-                        "scope": 6920,
+                        "scope": 10319,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 6889,
+                        "id": 10288,
                         "nodeType": "FunctionDefinition",
-                        "src": "1805:56:37",
+                        "src": "1805:56:79",
                         "nodes": [],
                         "documentation": {
-                            "id": 6884,
+                            "id": 10283,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1728:72:37",
+                            "src": "1728:72:79",
                             "text": "@notice Gets the token's symbol.\n @return The token's symbol."
                         },
                         "functionSelector": "95d89b41",
@@ -1320,26 +1320,26 @@ export const IERC20 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "symbol",
-                        "nameLocation": "1814:6:37",
+                        "nameLocation": "1814:6:79",
                         "parameters": {
-                            "id": 6885,
+                            "id": 10284,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1820:2:37"
+                            "src": "1820:2:79"
                         },
                         "returnParameters": {
-                            "id": 6888,
+                            "id": 10287,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6887,
+                                    "id": 10286,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6889,
-                                    "src": "1846:13:37",
+                                    "scope": 10288,
+                                    "src": "1846:13:79",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
@@ -1347,10 +1347,10 @@ export const IERC20 = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 6886,
+                                        "id": 10285,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1846:6:37",
+                                        "src": "1846:6:79",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_string_storage_ptr",
                                             "typeString": "string"
@@ -1359,22 +1359,22 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1845:15:37"
+                            "src": "1845:15:79"
                         },
-                        "scope": 6920,
+                        "scope": 10319,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 6895,
+                        "id": 10294,
                         "nodeType": "FunctionDefinition",
-                        "src": "1948:50:37",
+                        "src": "1948:50:79",
                         "nodes": [],
                         "documentation": {
-                            "id": 6890,
+                            "id": 10289,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1867:76:37",
+                            "src": "1867:76:79",
                             "text": "@notice Gets the token's decimals.\n @return The token's decimals."
                         },
                         "functionSelector": "313ce567",
@@ -1382,26 +1382,26 @@ export const IERC20 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "decimals",
-                        "nameLocation": "1957:8:37",
+                        "nameLocation": "1957:8:79",
                         "parameters": {
-                            "id": 6891,
+                            "id": 10290,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1965:2:37"
+                            "src": "1965:2:79"
                         },
                         "returnParameters": {
-                            "id": 6894,
+                            "id": 10293,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6893,
+                                    "id": 10292,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6895,
-                                    "src": "1991:5:37",
+                                    "scope": 10294,
+                                    "src": "1991:5:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1409,10 +1409,10 @@ export const IERC20 = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 6892,
+                                        "id": 10291,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1991:5:37",
+                                        "src": "1991:5:79",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint8",
                                             "typeString": "uint8"
@@ -1421,22 +1421,22 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1990:7:37"
+                            "src": "1990:7:79"
                         },
-                        "scope": 6920,
+                        "scope": 10319,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 6901,
+                        "id": 10300,
                         "nodeType": "FunctionDefinition",
-                        "src": "2093:55:37",
+                        "src": "2093:55:79",
                         "nodes": [],
                         "documentation": {
-                            "id": 6896,
+                            "id": 10295,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2004:84:37",
+                            "src": "2004:84:79",
                             "text": "@notice Gets the token's total supply.\n @return The token's total supply."
                         },
                         "functionSelector": "18160ddd",
@@ -1444,26 +1444,26 @@ export const IERC20 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "totalSupply",
-                        "nameLocation": "2102:11:37",
+                        "nameLocation": "2102:11:79",
                         "parameters": {
-                            "id": 6897,
+                            "id": 10296,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "2113:2:37"
+                            "src": "2113:2:79"
                         },
                         "returnParameters": {
-                            "id": 6900,
+                            "id": 10299,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6899,
+                                    "id": 10298,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6901,
-                                    "src": "2139:7:37",
+                                    "scope": 10300,
+                                    "src": "2139:7:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1471,10 +1471,10 @@ export const IERC20 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6898,
+                                        "id": 10297,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2139:7:37",
+                                        "src": "2139:7:79",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1483,22 +1483,22 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2138:9:37"
+                            "src": "2138:9:79"
                         },
-                        "scope": 6920,
+                        "scope": 10319,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 6911,
+                        "id": 10310,
                         "nodeType": "FunctionDefinition",
-                        "src": "2372:105:37",
+                        "src": "2372:105:79",
                         "nodes": [],
                         "documentation": {
-                            "id": 6902,
+                            "id": 10301,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2154:213:37",
+                            "src": "2154:213:79",
                             "text": "@notice Gets the allowance of a spender for an owner.\n @param owner The owner of the tokens.\n @param spender The spender of the tokens.\n @return The allowance of the spender for the owner."
                         },
                         "functionSelector": "dd62ed3e",
@@ -1506,20 +1506,20 @@ export const IERC20 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "allowance",
-                        "nameLocation": "2381:9:37",
+                        "nameLocation": "2381:9:79",
                         "parameters": {
-                            "id": 6907,
+                            "id": 10306,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6904,
+                                    "id": 10303,
                                     "mutability": "mutable",
                                     "name": "owner",
-                                    "nameLocation": "2408:5:37",
+                                    "nameLocation": "2408:5:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6911,
-                                    "src": "2400:13:37",
+                                    "scope": 10310,
+                                    "src": "2400:13:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1527,10 +1527,10 @@ export const IERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 6903,
+                                        "id": 10302,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2400:7:37",
+                                        "src": "2400:7:79",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1541,13 +1541,13 @@ export const IERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6906,
+                                    "id": 10305,
                                     "mutability": "mutable",
                                     "name": "spender",
-                                    "nameLocation": "2431:7:37",
+                                    "nameLocation": "2431:7:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6911,
-                                    "src": "2423:15:37",
+                                    "scope": 10310,
+                                    "src": "2423:15:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1555,10 +1555,10 @@ export const IERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 6905,
+                                        "id": 10304,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2423:7:37",
+                                        "src": "2423:7:79",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1568,21 +1568,21 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2390:54:37"
+                            "src": "2390:54:79"
                         },
                         "returnParameters": {
-                            "id": 6910,
+                            "id": 10309,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6909,
+                                    "id": 10308,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6911,
-                                    "src": "2468:7:37",
+                                    "scope": 10310,
+                                    "src": "2468:7:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1590,10 +1590,10 @@ export const IERC20 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6908,
+                                        "id": 10307,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2468:7:37",
+                                        "src": "2468:7:79",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1602,22 +1602,22 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2467:9:37"
+                            "src": "2467:9:79"
                         },
-                        "scope": 6920,
+                        "scope": 10319,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 6919,
+                        "id": 10318,
                         "nodeType": "FunctionDefinition",
-                        "src": "2618:68:37",
+                        "src": "2618:68:79",
                         "nodes": [],
                         "documentation": {
-                            "id": 6912,
+                            "id": 10311,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2483:130:37",
+                            "src": "2483:130:79",
                             "text": "@notice Gets the balance of an account.\n @param account The owner of the tokens.\n @return The account's balance."
                         },
                         "functionSelector": "70a08231",
@@ -1625,20 +1625,20 @@ export const IERC20 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "balanceOf",
-                        "nameLocation": "2627:9:37",
+                        "nameLocation": "2627:9:79",
                         "parameters": {
-                            "id": 6915,
+                            "id": 10314,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6914,
+                                    "id": 10313,
                                     "mutability": "mutable",
                                     "name": "account",
-                                    "nameLocation": "2645:7:37",
+                                    "nameLocation": "2645:7:79",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6919,
-                                    "src": "2637:15:37",
+                                    "scope": 10318,
+                                    "src": "2637:15:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1646,10 +1646,10 @@ export const IERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 6913,
+                                        "id": 10312,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2637:7:37",
+                                        "src": "2637:7:79",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1659,21 +1659,21 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2636:17:37"
+                            "src": "2636:17:79"
                         },
                         "returnParameters": {
-                            "id": 6918,
+                            "id": 10317,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6917,
+                                    "id": 10316,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6919,
-                                    "src": "2677:7:37",
+                                    "scope": 10318,
+                                    "src": "2677:7:79",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1681,10 +1681,10 @@ export const IERC20 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6916,
+                                        "id": 10315,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2677:7:37",
+                                        "src": "2677:7:79",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1693,9 +1693,9 @@ export const IERC20 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2676:9:37"
+                            "src": "2676:9:79"
                         },
-                        "scope": 6920,
+                        "scope": 10319,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
@@ -1708,19 +1708,19 @@ export const IERC20 = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    6920
+                    10319
                 ],
                 "name": "IERC20",
-                "nameLocation": "74:6:37",
-                "scope": 6921,
+                "nameLocation": "74:6:79",
+                "scope": 10320,
                 "usedErrors": [],
                 "usedEvents": [
-                    6836,
-                    6845
+                    10235,
+                    10244
                 ]
             }
         ],
         "license": "Apache-2.0"
     },
-    "id": 37
+    "id": 79
 };

@@ -1,6 +1,28 @@
 export const HyperdriveTarget0 = {
     "abi": [
         {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "target",
+                    "type": "address"
+                }
+            ],
+            "name": "AddressEmptyCode",
+            "type": "error"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "AddressInsufficientBalance",
+            "type": "error"
+        },
+        {
             "inputs": [],
             "name": "BatchInputLengthMismatch",
             "type": "error"
@@ -13,6 +35,11 @@ export const HyperdriveTarget0 = {
         {
             "inputs": [],
             "name": "ExpiredDeadline",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "FailedInnerCall",
             "type": "error"
         },
         {
@@ -75,6 +102,22 @@ export const HyperdriveTarget0 = {
                 }
             ],
             "name": "ReturnData",
+            "type": "error"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                }
+            ],
+            "name": "SafeERC20FailedOperation",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "SweepFailed",
             "type": "error"
         },
         {
@@ -191,6 +234,12 @@ export const HyperdriveTarget0 = {
                 },
                 {
                     "indexed": true,
+                    "internalType": "address",
+                    "name": "destination",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
                     "internalType": "uint256",
                     "name": "assetId",
                     "type": "uint256"
@@ -240,6 +289,12 @@ export const HyperdriveTarget0 = {
                 },
                 {
                     "indexed": true,
+                    "internalType": "address",
+                    "name": "destination",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
                     "internalType": "uint256",
                     "name": "assetId",
                     "type": "uint256"
@@ -267,6 +322,12 @@ export const HyperdriveTarget0 = {
                     "internalType": "bool",
                     "name": "asBase",
                     "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "basePayment",
+                    "type": "uint256"
                 },
                 {
                     "indexed": false,
@@ -332,6 +393,19 @@ export const HyperdriveTarget0 = {
                 }
             ],
             "name": "CreateCheckpoint",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newFeeCollector",
+                    "type": "address"
+                }
+            ],
+            "name": "FeeCollectorUpdated",
             "type": "event"
         },
         {
@@ -536,6 +610,12 @@ export const HyperdriveTarget0 = {
                     "type": "address"
                 },
                 {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "destination",
+                    "type": "address"
+                },
+                {
                     "indexed": false,
                     "internalType": "uint256",
                     "name": "withdrawalShareAmount",
@@ -570,6 +650,12 @@ export const HyperdriveTarget0 = {
                     "indexed": true,
                     "internalType": "address",
                     "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "destination",
                     "type": "address"
                 },
                 {
@@ -610,6 +696,38 @@ export const HyperdriveTarget0 = {
                 }
             ],
             "name": "RemoveLiquidity",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "collector",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "target",
+                    "type": "address"
+                }
+            ],
+            "name": "Sweep",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newSweepCollector",
+                    "type": "address"
+                }
+            ],
+            "name": "SweepCollectorUpdated",
             "type": "event"
         },
         {
@@ -942,6 +1060,11 @@ export const HyperdriveTarget0 = {
                         {
                             "internalType": "address",
                             "name": "feeCollector",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "sweepCollector",
                             "type": "address"
                         },
                         {
@@ -1380,6 +1503,19 @@ export const HyperdriveTarget0 = {
                     "type": "address"
                 }
             ],
+            "name": "setFeeCollector",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_who",
+                    "type": "address"
+                }
+            ],
             "name": "setGovernance",
             "outputs": [],
             "stateMutability": "nonpayable",
@@ -1399,6 +1535,32 @@ export const HyperdriveTarget0 = {
                 }
             ],
             "name": "setPauser",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_who",
+                    "type": "address"
+                }
+            ],
+            "name": "setSweepCollector",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "contract IERC20",
+                    "name": "_target",
+                    "type": "address"
+                }
+            ],
+            "name": "sweep",
             "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
@@ -1537,14 +1699,17 @@ export const HyperdriveTarget0 = {
         "setApproval(uint256,address,uint256)": "9cd241af",
         "setApprovalBridge(uint256,address,uint256,address)": "4ed2d6ac",
         "setApprovalForAll(address,bool)": "a22cb465",
+        "setFeeCollector(address)": "a42dce80",
         "setGovernance(address)": "ab033ea9",
         "setPauser(address,bool)": "7180c8ca",
+        "setSweepCollector(address)": "e4af29d1",
+        "sweep(address)": "01681a62",
         "symbol(uint256)": "4e41a1fb",
         "totalSupply(uint256)": "bd85b039",
         "transferFrom(uint256,address,address,uint256)": "1c0f12b6",
         "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc"
     },
-    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"BatchInputLengthMismatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ExpInvalidExponent\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ExpiredDeadline\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"enum IHyperdrive.InsufficientLiquidityReason\",\"name\":\"reason\",\"type\":\"uint8\"}],\"name\":\"InsufficientLiquidity\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidERC20Bridge\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFeeDestination\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidPresentValue\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidSignature\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidTimestamp\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LnInvalidInput\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"RestrictedZeroAddress\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"ReturnData\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Unauthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UnsafeCastToInt256\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"baseToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"ids\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"values\",\"type\":\"uint256[]\"}],\"name\":\"batchTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"collectGovernanceFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"proceeds\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_checkpointTime\",\"type\":\"uint256\"}],\"name\":\"getCheckpoint\",\"outputs\":[{\"components\":[{\"internalType\":\"uint128\",\"name\":\"vaultSharePrice\",\"type\":\"uint128\"}],\"internalType\":\"struct IHyperdrive.Checkpoint\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_checkpointTime\",\"type\":\"uint256\"}],\"name\":\"getCheckpointExposure\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getMarketState\",\"outputs\":[{\"components\":[{\"internalType\":\"uint128\",\"name\":\"shareReserves\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"bondReserves\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"longExposure\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"longsOutstanding\",\"type\":\"uint128\"},{\"internalType\":\"int128\",\"name\":\"shareAdjustment\",\"type\":\"int128\"},{\"internalType\":\"uint128\",\"name\":\"shortsOutstanding\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"longAverageMaturityTime\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"shortAverageMaturityTime\",\"type\":\"uint128\"},{\"internalType\":\"bool\",\"name\":\"isInitialized\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"},{\"internalType\":\"uint112\",\"name\":\"zombieBaseProceeds\",\"type\":\"uint112\"},{\"internalType\":\"uint128\",\"name\":\"zombieShareReserves\",\"type\":\"uint128\"}],\"internalType\":\"struct IHyperdrive.MarketState\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPoolConfig\",\"outputs\":[{\"components\":[{\"internalType\":\"contract IERC20\",\"name\":\"baseToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"linkerFactory\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"linkerCodeHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"initialVaultSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumTransactionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"checkpointDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"feeCollector\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"fees\",\"type\":\"tuple\"}],\"internalType\":\"struct IHyperdrive.PoolConfig\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPoolInfo\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"shareReserves\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"shareAdjustment\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"zombieBaseProceeds\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"zombieShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"bondReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lpTotalSupply\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"longsOutstanding\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"longAverageMaturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shortsOutstanding\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shortAverageMaturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawalSharesReadyToWithdraw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawalSharesProceeds\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"longExposure\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.PoolInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUncollectedGovernanceFees\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getWithdrawPool\",\"outputs\":[{\"components\":[{\"internalType\":\"uint128\",\"name\":\"readyToWithdraw\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"proceeds\",\"type\":\"uint128\"}],\"internalType\":\"struct IHyperdrive.WithdrawPool\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"isApprovedForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"}],\"name\":\"isPauser\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_slots\",\"type\":\"uint256[]\"}],\"name\":\"load\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"nonces\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"_status\",\"type\":\"bool\"}],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"perTokenApprovals\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"domainSeparator\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"permitTypeHash\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permitForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"setApproval\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"setApprovalBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_who\",\"type\":\"address\"}],\"name\":\"setGovernance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"who\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"setPauser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"transferFromBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{\"balanceOf(uint256,address)\":{\"params\":{\"account\":\"The account.\",\"tokenId\":\"The sub-token id.\"},\"returns\":{\"_0\":\"The balance.\"}},\"baseToken()\":{\"returns\":{\"_0\":\"The base token.\"}},\"batchTransferFrom(address,address,uint256[],uint256[])\":{\"params\":{\"from\":\"The source account.\",\"ids\":\"The array of token ids of the asset to transfer.\",\"to\":\"The destination account.\",\"values\":\"The amount of each token to transfer.\"}},\"collectGovernanceFee((address,bool,bytes))\":{\"params\":{\"_options\":\"The options that configure how the fees are settled.\"},\"returns\":{\"proceeds\":\"The governance fees collected. The units of this         quantity are either base or vault shares, depending on the value         of `_options.asBase`.\"}},\"constructor\":{\"params\":{\"_config\":\"The configuration of the Hyperdrive pool.\"}},\"decimals()\":{\"returns\":{\"_0\":\"The decimals of the MultiToken.\"}},\"getCheckpoint(uint256)\":{\"params\":{\"_checkpointTime\":\"The checkpoint time.\"},\"returns\":{\"_0\":\"The checkpoint.\"}},\"getCheckpointExposure(uint256)\":{\"params\":{\"_checkpointTime\":\"The checkpoint time.\"},\"returns\":{\"_0\":\"The checkpoint exposure.\"}},\"getMarketState()\":{\"returns\":{\"_0\":\"The market state.\"}},\"getPoolConfig()\":{\"details\":\"These parameters are immutable, so this should only need to be      called once.\",\"returns\":{\"_0\":\"The PoolConfig struct.\"}},\"getPoolInfo()\":{\"returns\":{\"_0\":\"The pool info.\"}},\"getUncollectedGovernanceFees()\":{\"returns\":{\"_0\":\"Governance fees denominated in shares yet to be collected.\"}},\"getWithdrawPool()\":{\"returns\":{\"_0\":\"Hyperdrive's withdrawal pool information.\"}},\"isApprovedForAll(address,address)\":{\"params\":{\"account\":\"The account.\",\"operator\":\"The operator.\"},\"returns\":{\"_0\":\"The approval status.\"}},\"isPauser(address)\":{\"params\":{\"_account\":\"The account to check.\"},\"returns\":{\"_0\":\"The pauser status.\"}},\"load(uint256[])\":{\"params\":{\"_slots\":\"The storage slots the caller wants the data from.\"},\"returns\":{\"_0\":\"A raw array of loaded data.\"}},\"name(uint256)\":{\"params\":{\"tokenId\":\"The sub-token id.\"},\"returns\":{\"_0\":\"The name.\"}},\"nonces(address)\":{\"params\":{\"account\":\"The account.\"},\"returns\":{\"_0\":\"The signature nonce.\"}},\"pause(bool)\":{\"params\":{\"_status\":\"True to pause all deposits and false to unpause them.\"}},\"perTokenApprovals(uint256,address,address)\":{\"params\":{\"account\":\"The account.\",\"spender\":\"The spender.\",\"tokenId\":\"The sub-token id.\"},\"returns\":{\"_0\":\"The approval status.\"}},\"permitForAll(bytes32,bytes32,address,address,bool,uint256,uint8,bytes32,bytes32)\":{\"details\":\"The signature for this function follows EIP 712 standard and should      be generated with the eth_signTypedData JSON RPC call instead of      the eth_sign JSON RPC call. If using out of date parity signing      libraries the v component may need to be adjusted. Also it is very      rare but possible for v to be other values, those values are not      supported.\",\"params\":{\"_approved\":\"A boolean of the approval status to set to.\",\"deadline\":\"The timestamp which the signature must be submitted by        to be valid.\",\"domainSeparator\":\"The EIP712 domain separator of the contract.\",\"owner\":\"The owner of the account which is having the new approval set.\",\"permitTypeHash\":\"The EIP712 domain separator of the contract.\",\"r\":\"The r component of the ECDSA signature.\",\"s\":\"The s component of the ECDSA signature.\",\"spender\":\"The address which will be allowed to spend owner's tokens.\",\"v\":\"Extra ECDSA data which allows public key recovery from        signature assumed to be 27 or 28.\"}},\"setApproval(uint256,address,uint256)\":{\"params\":{\"amount\":\"The max tokens the approved person can use, setting to        uint256.max will cause the value to never decrement (saving gas        on transfer).\",\"operator\":\"The address who will be able to use the tokens.\",\"tokenID\":\"The asset to approve the use of.\"}},\"setApprovalBridge(uint256,address,uint256,address)\":{\"params\":{\"amount\":\"The max tokens the approved person can use, setting to        uint256.max will cause the value to never decrement [saving gas        on transfer].\",\"caller\":\"The eth address which called the linking contract.\",\"operator\":\"The address who will be able to use the tokens.\",\"tokenID\":\"The asset to approve the use of.\"}},\"setApprovalForAll(address,bool)\":{\"params\":{\"approved\":\"True to approve, false to remove approval.\",\"operator\":\"The eth address which can access the caller's assets.\"}},\"setGovernance(address)\":{\"params\":{\"_who\":\"The new governance address.\"}},\"setPauser(address,bool)\":{\"params\":{\"status\":\"The new pauser status.\",\"who\":\"The address to change.\"}},\"symbol(uint256)\":{\"params\":{\"tokenId\":\"The sub-token id.\"},\"returns\":{\"_0\":\"The symbol.\"}},\"totalSupply(uint256)\":{\"params\":{\"tokenId\":\"The sub-token id.\"},\"returns\":{\"_0\":\"The total supply.\"}},\"transferFrom(uint256,address,address,uint256)\":{\"params\":{\"amount\":\"The amount of token to move.\",\"from\":\"The address whose balance will be reduced.\",\"to\":\"The address whose balance will be increased.\",\"tokenID\":\"The token identifier.\"}},\"transferFromBridge(uint256,address,address,uint256,address)\":{\"params\":{\"amount\":\"The amount of token to move.\",\"caller\":\"The msg.sender from the bridge.\",\"from\":\"The address whose balance will be reduced.\",\"to\":\"The address whose balance will be increased.\",\"tokenID\":\"The token identifier.\"}}},\"title\":\"HyperdriveTarget0\",\"version\":1},\"userdoc\":{\"errors\":{\"BatchInputLengthMismatch()\":[{\"notice\":\"Thrown when the inputs to a batch transfer don't match in         length.\"}],\"ExpInvalidExponent()\":[{\"notice\":\"Thrown when the exponent to `FixedPointMath.exp` would cause the         the result to be larger than the representable scale.\"}],\"ExpiredDeadline()\":[{\"notice\":\"Thrown when a permit signature is expired.\"}],\"InsufficientLiquidity(uint8)\":[{\"notice\":\"Thrown when the pool doesn't have sufficient liquidity to         complete the trade.\"}],\"InvalidERC20Bridge()\":[{\"notice\":\"Thrown when the caller of one of MultiToken's bridge-only         functions is not the corresponding bridge.\"}],\"InvalidFeeDestination()\":[{\"notice\":\"Thrown when a destination other than the fee collector is         specified in `collectGovernanceFee`.\"}],\"InvalidPresentValue()\":[{\"notice\":\"Thrown when the present value calculation fails.\"}],\"InvalidSignature()\":[{\"notice\":\"Thrown when an invalid signature is used provide permit access         to the MultiToken. A signature is considered to be invalid if         it fails to recover to the owner's address.\"}],\"InvalidTimestamp()\":[{\"notice\":\"Thrown when the timestamp used to construct an asset ID exceeds         the uint248 scale.\"}],\"LnInvalidInput()\":[{\"notice\":\"Thrown when the input to `FixedPointMath.ln` is less than or         equal to zero.\"}],\"RestrictedZeroAddress()\":[{\"notice\":\"Thrown when the owner passed to permit is the zero address. This         prevents users from spending the funds in address zero by         sending an invalid signature to ecrecover.\"}],\"ReturnData(bytes)\":[{\"notice\":\"Thrown by a read-only function called by the proxy. Unlike a         normal error, this error actually indicates that a read-only         call succeeded. The data that it wraps is the return data from         the read-only call.\"}],\"Unauthorized()\":[{\"notice\":\"Thrown when an unauthorized user attempts to access admin         functionality.\"}],\"UnsafeCastToInt256()\":[{\"notice\":\"Thrown when casting a value to a int256 that is outside of the         int256 scale.\"}]},\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{\"balanceOf(uint256,address)\":{\"notice\":\"Gets an account's balance of a sub-token.\"},\"baseToken()\":{\"notice\":\"Gets the base token.\"},\"batchTransferFrom(address,address,uint256[],uint256[])\":{\"notice\":\"Transfers several assets from one account to another.\"},\"collectGovernanceFee((address,bool,bytes))\":{\"notice\":\"This function collects the governance fees accrued by the pool.\"},\"constructor\":{\"notice\":\"Instantiates target0.\"},\"decimals()\":{\"notice\":\"Gets the decimals of the MultiToken. This is the same as the         decimals used by the base token.\"},\"getCheckpoint(uint256)\":{\"notice\":\"Gets a specified checkpoint.\"},\"getCheckpointExposure(uint256)\":{\"notice\":\"Gets the checkpoint exposure at a specified time.\"},\"getMarketState()\":{\"notice\":\"Gets the market state.\"},\"getPoolConfig()\":{\"notice\":\"Gets the pool's configuration parameters.\"},\"getPoolInfo()\":{\"notice\":\"Gets info about the pool's reserves and other state that is         important to evaluate potential trades.\"},\"getUncollectedGovernanceFees()\":{\"notice\":\"Gets info about the fees presently accrued by the pool.\"},\"getWithdrawPool()\":{\"notice\":\"Gets information about the withdrawal pool.\"},\"isApprovedForAll(address,address)\":{\"notice\":\"Gets the approval status of an operator for an account.\"},\"isPauser(address)\":{\"notice\":\"Gets the pauser status of an address.\"},\"load(uint256[])\":{\"notice\":\"Allows plugin data libs to provide getters or other complex         logic instead of the main.\"},\"name(uint256)\":{\"notice\":\"Gets the name of a sub-token.\"},\"nonces(address)\":{\"notice\":\"Gets the permitForAll signature nonce for an account.\"},\"pause(bool)\":{\"notice\":\"Allows an authorized address to pause this contract.\"},\"perTokenApprovals(uint256,address,address)\":{\"notice\":\"Gets the approval status of an operator for an account.\"},\"permitForAll(bytes32,bytes32,address,address,bool,uint256,uint8,bytes32,bytes32)\":{\"notice\":\"Allows a caller who is not the owner of an account to execute         the functionality of 'approve' for all assets with the owner's         signature.\"},\"setApproval(uint256,address,uint256)\":{\"notice\":\"Allows a user to set an approval for an individual asset with         specific amount.\"},\"setApprovalBridge(uint256,address,uint256,address)\":{\"notice\":\"Allows the compatibility linking contract to forward calls to         set asset approvals.\"},\"setApprovalForAll(address,bool)\":{\"notice\":\"Allows a user to approve an operator to use all of their assets.\"},\"setGovernance(address)\":{\"notice\":\"Allows governance to change governance.\"},\"setPauser(address,bool)\":{\"notice\":\"Allows governance to change the pauser status of an address.\"},\"symbol(uint256)\":{\"notice\":\"Gets the symbol of a sub-token.\"},\"totalSupply(uint256)\":{\"notice\":\"Gets the total supply of a sub-token.\"},\"transferFrom(uint256,address,address,uint256)\":{\"notice\":\"Transfers an amount of assets from the source to the destination.\"},\"transferFromBridge(uint256,address,address,uint256,address)\":{\"notice\":\"Permissioned transfer for the bridge to access, only callable by         the ERC20 linking bridge.\"}},\"notice\":\"Hyperdrive's target 0 logic contract.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/external/HyperdriveTarget0.sol\":\"HyperdriveTarget0\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/external/HyperdriveTarget0.sol\":{\"keccak256\":\"0xea27bb5ed4b35c9f1a4d42102108f07289520ab27e8e33fcac6809f8123955d8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://488203c6bcf5d3cbb092800a9457e77cde06a80f406794cea42ed86b839a824b\",\"dweb:/ipfs/QmRGZNWhrAhubpWvkQtCryUMWG4XKscSEYJ9uxePHzozDy\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x7cc4f7a8878cf02f9896f930882ccb6839b20f63c85efc4a66e88af46c57c317\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://de756bba0e3622e5ddaff774a989fa20b4be7c49806dd972efc11f2cef523213\",\"dweb:/ipfs/QmPWwZo7TsF8ccFYbGVXhZMo85FYjKmyTnEYGV3V936YG2\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0xd15fb3cb39e359f334b7f836f23026d162de7b5be66d9aab3ac11dede9357a76\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b8b6fdcb4a2a45a3dbb8a70e9451fdd6aa5e23ee75d8960e42a149e9138a32eb\",\"dweb:/ipfs/QmNQiGzu6qhssorP8UMtaRbxygqzajPg3rB4phnbfQuMzF\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x1233242868a6eaeb6e6764df97cd094bfda03978bbedb04592db8ddc3ac6db56\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5cc50aa0bdaff888c940b004ad3a7a0c2aac4c15104419bd216ca48270c3fcb8\",\"dweb:/ipfs/QmQS6jncTRsBmZxDgR6dAofzXgTt1bXSRb8WdBNqKTCKiR\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x5922cbd86a7267c8fd19e3dc7a6f2636bad2b3330c28bca8e66adc7cd8ce2b55\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ced8bce3f3c15a9f0bcdd11ba16e69651179edd6b16e267936788f4ab4d6eabf\",\"dweb:/ipfs/QmcoZPj4h2ym6r13KDU7JG2GoVdDWa1GwfKL2jjFRsp8H6\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/internal/HyperdriveAdmin.sol\":{\"keccak256\":\"0x8807f9479246301d783b015d6b7f2d7f7e03ab3685302848c57436ebb36a1ce5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://28a4f5d567a5c086ac2ae7e346c207422844865aa5e416909c522556245f8fc9\",\"dweb:/ipfs/QmUXZ2aeMFh86LCxyB4xQTuU4fR5xTcN9VwVtKzZNkv1dX\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0xfc6947a6bfff9ca937fc2654ee56203dbc2ffc3c8bffe40c1334ebc9c81804bc\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b29d5b70c6cb40ede4e496cbeee4937c5318b43536a450d7c246166d326c85fa\",\"dweb:/ipfs/QmcDD9Bs4Gueepjs92CYJC9UFBMFYSN1QfbfqBJMQECkWj\"]},\"contracts/src/internal/HyperdriveCheckpoint.sol\":{\"keccak256\":\"0x3514b829c99e0015385ff08dd1479e452529a6283e8b6800946542ff21dc9649\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://37ffd17baea5080f4184372ac835bf60694760499756235a61e41a480f4ab3c7\",\"dweb:/ipfs/QmUzEnJhRhpW18MH7GyXsug9u5FLehNfgjR7RAhZizLLVd\"]},\"contracts/src/internal/HyperdriveLP.sol\":{\"keccak256\":\"0x800d540f89ed4f6f40376e0e586246ab48b79a78f1fb4b7ff979b350fafb8a12\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4aa17285692fa2872fe544d4f4b8fa2b29d68be5380806c804465788e2bdb1ba\",\"dweb:/ipfs/Qmag8aW8ADj9grs9vSL33mpM2F3kbFjh6ePKGGv7pXAGdV\"]},\"contracts/src/internal/HyperdriveLong.sol\":{\"keccak256\":\"0x20aad0da5f27cbdded488149694f0c126bfada17ebea0a690f5386a19b826ed0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://de8345bda127a4c5c101fb2668ede0011dbd82ff1ca3dcabd37905d56485efba\",\"dweb:/ipfs/QmYc3Jkm8c5FB1oEZwgWTNGEa8q96WWEJNyjumD8nirBdk\"]},\"contracts/src/internal/HyperdriveMultiToken.sol\":{\"keccak256\":\"0x21a9aafb8e23a22c77111e13538fa8f709446e4f3a64ef84b2eebc2aa9d04373\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://41517912353540de5b430587ca8220f9d34d4432d3c723951d5fb618d5907b5d\",\"dweb:/ipfs/QmU3cTCrAq94digVS97s5af1Pu86uGBpmpus6w7828fUbG\"]},\"contracts/src/internal/HyperdriveShort.sol\":{\"keccak256\":\"0xa6a716eac09df69f29b4fd76314104895b18c350679132de2db805e673d3650c\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5d1e6f1092fa727453030eca383b77182755c972b83b74e6d3cf5937cc50caca\",\"dweb:/ipfs/QmNk5UeZ9ZzNLuivQQjkihaVrQ6y1pnFUn1PdWvpfDJnSU\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xfeac73551892783afcce85d23fb910baf2ad729d218756f3597ad23e3dcb077f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1f659070705bee17efda43c36f71d22b035752f610624c59238cae559c60530d\",\"dweb:/ipfs/QmTEXNYSWa8w3wY2TWzDPNZXxdThMFEbrtRwcQHfyN2CJb\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xe86d38d659ce3191d0423a4ee9b6592218a0e59dd72f3e0ec60cfa83809b266e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://91d15d179f83429f36db12d5eac3f575727e16f1505d4cb1b95a11d0876c7534\",\"dweb:/ipfs/QmQDHYp8pgd9maivqkaH2mZ8qtb5ZEmK34n4oDmvAo8nrh\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x8fde664589dfd8a26b6d39aed585388f7c179bf508ffe7688dc6c796a68dc785\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3406b91898282977f3630976461eb344764c0f321d35588b1e31408b64f64263\",\"dweb:/ipfs/QmVGGknjaaG9wnyPHUWAMpDJZ4tANu6hmEQcUU1HnUQ5U5\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c\",\"dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}",
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"AddressEmptyCode\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"AddressInsufficientBalance\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BatchInputLengthMismatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ExpInvalidExponent\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ExpiredDeadline\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FailedInnerCall\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"enum IHyperdrive.InsufficientLiquidityReason\",\"name\":\"reason\",\"type\":\"uint8\"}],\"name\":\"InsufficientLiquidity\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidERC20Bridge\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFeeDestination\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidPresentValue\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidSignature\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidTimestamp\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LnInvalidInput\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"RestrictedZeroAddress\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"ReturnData\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"SafeERC20FailedOperation\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SweepFailed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Unauthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UnsafeCastToInt256\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"basePayment\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newFeeCollector\",\"type\":\"address\"}],\"name\":\"FeeCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"Sweep\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newSweepCollector\",\"type\":\"address\"}],\"name\":\"SweepCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"baseToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"ids\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"values\",\"type\":\"uint256[]\"}],\"name\":\"batchTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"collectGovernanceFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"proceeds\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_checkpointTime\",\"type\":\"uint256\"}],\"name\":\"getCheckpoint\",\"outputs\":[{\"components\":[{\"internalType\":\"uint128\",\"name\":\"vaultSharePrice\",\"type\":\"uint128\"}],\"internalType\":\"struct IHyperdrive.Checkpoint\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_checkpointTime\",\"type\":\"uint256\"}],\"name\":\"getCheckpointExposure\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getMarketState\",\"outputs\":[{\"components\":[{\"internalType\":\"uint128\",\"name\":\"shareReserves\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"bondReserves\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"longExposure\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"longsOutstanding\",\"type\":\"uint128\"},{\"internalType\":\"int128\",\"name\":\"shareAdjustment\",\"type\":\"int128\"},{\"internalType\":\"uint128\",\"name\":\"shortsOutstanding\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"longAverageMaturityTime\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"shortAverageMaturityTime\",\"type\":\"uint128\"},{\"internalType\":\"bool\",\"name\":\"isInitialized\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"},{\"internalType\":\"uint112\",\"name\":\"zombieBaseProceeds\",\"type\":\"uint112\"},{\"internalType\":\"uint128\",\"name\":\"zombieShareReserves\",\"type\":\"uint128\"}],\"internalType\":\"struct IHyperdrive.MarketState\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPoolConfig\",\"outputs\":[{\"components\":[{\"internalType\":\"contract IERC20\",\"name\":\"baseToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"linkerFactory\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"linkerCodeHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"initialVaultSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumTransactionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"checkpointDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"feeCollector\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"sweepCollector\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"fees\",\"type\":\"tuple\"}],\"internalType\":\"struct IHyperdrive.PoolConfig\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPoolInfo\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"shareReserves\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"shareAdjustment\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"zombieBaseProceeds\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"zombieShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"bondReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lpTotalSupply\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"longsOutstanding\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"longAverageMaturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shortsOutstanding\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shortAverageMaturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawalSharesReadyToWithdraw\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawalSharesProceeds\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"longExposure\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.PoolInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUncollectedGovernanceFees\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getWithdrawPool\",\"outputs\":[{\"components\":[{\"internalType\":\"uint128\",\"name\":\"readyToWithdraw\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"proceeds\",\"type\":\"uint128\"}],\"internalType\":\"struct IHyperdrive.WithdrawPool\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"isApprovedForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"}],\"name\":\"isPauser\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_slots\",\"type\":\"uint256[]\"}],\"name\":\"load\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"nonces\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"_status\",\"type\":\"bool\"}],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"perTokenApprovals\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"domainSeparator\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"permitTypeHash\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permitForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"setApproval\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"setApprovalBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_who\",\"type\":\"address\"}],\"name\":\"setFeeCollector\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_who\",\"type\":\"address\"}],\"name\":\"setGovernance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"who\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"setPauser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_who\",\"type\":\"address\"}],\"name\":\"setSweepCollector\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"_target\",\"type\":\"address\"}],\"name\":\"sweep\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"transferFromBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"errors\":{\"AddressEmptyCode(address)\":[{\"details\":\"There's no code at `target` (it is not a contract).\"}],\"AddressInsufficientBalance(address)\":[{\"details\":\"The ETH balance of the account is not enough to perform the operation.\"}],\"FailedInnerCall()\":[{\"details\":\"A call to an address target failed. The target may have reverted.\"}],\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}],\"SafeERC20FailedOperation(address)\":[{\"details\":\"An operation with an ERC20 token failed.\"}]},\"kind\":\"dev\",\"methods\":{\"balanceOf(uint256,address)\":{\"params\":{\"account\":\"The account.\",\"tokenId\":\"The sub-token id.\"},\"returns\":{\"_0\":\"The balance.\"}},\"baseToken()\":{\"returns\":{\"_0\":\"The base token.\"}},\"batchTransferFrom(address,address,uint256[],uint256[])\":{\"params\":{\"from\":\"The source account.\",\"ids\":\"The array of token ids of the asset to transfer.\",\"to\":\"The destination account.\",\"values\":\"The amount of each token to transfer.\"}},\"collectGovernanceFee((address,bool,bytes))\":{\"params\":{\"_options\":\"The options that configure how the fees are settled.\"},\"returns\":{\"proceeds\":\"The governance fees collected. The units of this         quantity are either base or vault shares, depending on the value         of `_options.asBase`.\"}},\"constructor\":{\"params\":{\"_config\":\"The configuration of the Hyperdrive pool.\"}},\"decimals()\":{\"returns\":{\"_0\":\"The decimals of the MultiToken.\"}},\"getCheckpoint(uint256)\":{\"params\":{\"_checkpointTime\":\"The checkpoint time.\"},\"returns\":{\"_0\":\"The checkpoint.\"}},\"getCheckpointExposure(uint256)\":{\"params\":{\"_checkpointTime\":\"The checkpoint time.\"},\"returns\":{\"_0\":\"The checkpoint exposure.\"}},\"getMarketState()\":{\"returns\":{\"_0\":\"The market state.\"}},\"getPoolConfig()\":{\"details\":\"These parameters are immutable, so this should only need to be      called once.\",\"returns\":{\"_0\":\"The PoolConfig struct.\"}},\"getPoolInfo()\":{\"returns\":{\"_0\":\"The pool info.\"}},\"getUncollectedGovernanceFees()\":{\"returns\":{\"_0\":\"Governance fees denominated in shares yet to be collected.\"}},\"getWithdrawPool()\":{\"returns\":{\"_0\":\"Hyperdrive's withdrawal pool information.\"}},\"isApprovedForAll(address,address)\":{\"params\":{\"account\":\"The account.\",\"operator\":\"The operator.\"},\"returns\":{\"_0\":\"The approval status.\"}},\"isPauser(address)\":{\"params\":{\"_account\":\"The account to check.\"},\"returns\":{\"_0\":\"The pauser status.\"}},\"load(uint256[])\":{\"params\":{\"_slots\":\"The storage slots the caller wants the data from.\"},\"returns\":{\"_0\":\"A raw array of loaded data.\"}},\"name(uint256)\":{\"params\":{\"tokenId\":\"The sub-token id.\"},\"returns\":{\"_0\":\"The name.\"}},\"nonces(address)\":{\"params\":{\"account\":\"The account.\"},\"returns\":{\"_0\":\"The signature nonce.\"}},\"pause(bool)\":{\"params\":{\"_status\":\"True to pause all deposits and false to unpause them.\"}},\"perTokenApprovals(uint256,address,address)\":{\"params\":{\"account\":\"The account.\",\"spender\":\"The spender.\",\"tokenId\":\"The sub-token id.\"},\"returns\":{\"_0\":\"The approval status.\"}},\"permitForAll(bytes32,bytes32,address,address,bool,uint256,uint8,bytes32,bytes32)\":{\"details\":\"The signature for this function follows EIP 712 standard and should      be generated with the eth_signTypedData JSON RPC call instead of      the eth_sign JSON RPC call. If using out of date parity signing      libraries the v component may need to be adjusted. Also it is very      rare but possible for v to be other values, those values are not      supported.\",\"params\":{\"_approved\":\"A boolean of the approval status to set to.\",\"deadline\":\"The timestamp which the signature must be submitted by        to be valid.\",\"domainSeparator\":\"The EIP712 domain separator of the contract.\",\"owner\":\"The owner of the account which is having the new approval set.\",\"permitTypeHash\":\"The EIP712 domain separator of the contract.\",\"r\":\"The r component of the ECDSA signature.\",\"s\":\"The s component of the ECDSA signature.\",\"spender\":\"The address which will be allowed to spend owner's tokens.\",\"v\":\"Extra ECDSA data which allows public key recovery from        signature assumed to be 27 or 28.\"}},\"setApproval(uint256,address,uint256)\":{\"params\":{\"amount\":\"The max tokens the approved person can use, setting to        uint256.max will cause the value to never decrement (saving gas        on transfer).\",\"operator\":\"The address who will be able to use the tokens.\",\"tokenID\":\"The asset to approve the use of.\"}},\"setApprovalBridge(uint256,address,uint256,address)\":{\"params\":{\"amount\":\"The max tokens the approved person can use, setting to        uint256.max will cause the value to never decrement [saving gas        on transfer].\",\"caller\":\"The eth address which called the linking contract.\",\"operator\":\"The address who will be able to use the tokens.\",\"tokenID\":\"The asset to approve the use of.\"}},\"setApprovalForAll(address,bool)\":{\"params\":{\"approved\":\"True to approve, false to remove approval.\",\"operator\":\"The eth address which can access the caller's assets.\"}},\"setFeeCollector(address)\":{\"params\":{\"_who\":\"The new fee collector address.\"}},\"setGovernance(address)\":{\"params\":{\"_who\":\"The new governance address.\"}},\"setPauser(address,bool)\":{\"params\":{\"status\":\"The new pauser status.\",\"who\":\"The address to change.\"}},\"setSweepCollector(address)\":{\"params\":{\"_who\":\"The new sweep collector address.\"}},\"sweep(address)\":{\"details\":\"WARN: It is unlikely but possible that there is a selector overlap      with 'transfer'. Any integrating contracts should be checked      for that, as it may result in an unexpected call from this address.\",\"params\":{\"_target\":\"The target token to sweep.\"}},\"symbol(uint256)\":{\"params\":{\"tokenId\":\"The sub-token id.\"},\"returns\":{\"_0\":\"The symbol.\"}},\"totalSupply(uint256)\":{\"params\":{\"tokenId\":\"The sub-token id.\"},\"returns\":{\"_0\":\"The total supply.\"}},\"transferFrom(uint256,address,address,uint256)\":{\"params\":{\"amount\":\"The amount of token to move.\",\"from\":\"The address whose balance will be reduced.\",\"to\":\"The address whose balance will be increased.\",\"tokenID\":\"The token identifier.\"}},\"transferFromBridge(uint256,address,address,uint256,address)\":{\"params\":{\"amount\":\"The amount of token to move.\",\"caller\":\"The msg.sender from the bridge.\",\"from\":\"The address whose balance will be reduced.\",\"to\":\"The address whose balance will be increased.\",\"tokenID\":\"The token identifier.\"}}},\"title\":\"HyperdriveTarget0\",\"version\":1},\"userdoc\":{\"errors\":{\"BatchInputLengthMismatch()\":[{\"notice\":\"Thrown when the inputs to a batch transfer don't match in         length.\"}],\"ExpInvalidExponent()\":[{\"notice\":\"Thrown when the exponent to `FixedPointMath.exp` would cause the         the result to be larger than the representable scale.\"}],\"ExpiredDeadline()\":[{\"notice\":\"Thrown when a permit signature is expired.\"}],\"InsufficientLiquidity(uint8)\":[{\"notice\":\"Thrown when the pool doesn't have sufficient liquidity to         complete the trade.\"}],\"InvalidERC20Bridge()\":[{\"notice\":\"Thrown when the caller of one of MultiToken's bridge-only         functions is not the corresponding bridge.\"}],\"InvalidFeeDestination()\":[{\"notice\":\"Thrown when a destination other than the fee collector is         specified in `collectGovernanceFee`.\"}],\"InvalidPresentValue()\":[{\"notice\":\"Thrown when the present value calculation fails.\"}],\"InvalidSignature()\":[{\"notice\":\"Thrown when an invalid signature is used provide permit access         to the MultiToken. A signature is considered to be invalid if         it fails to recover to the owner's address.\"}],\"InvalidTimestamp()\":[{\"notice\":\"Thrown when the timestamp used to construct an asset ID exceeds         the uint248 scale.\"}],\"LnInvalidInput()\":[{\"notice\":\"Thrown when the input to `FixedPointMath.ln` is less than or         equal to zero.\"}],\"RestrictedZeroAddress()\":[{\"notice\":\"Thrown when the owner passed to permit is the zero address. This         prevents users from spending the funds in address zero by         sending an invalid signature to ecrecover.\"}],\"ReturnData(bytes)\":[{\"notice\":\"Thrown by a read-only function called by the proxy. Unlike a         normal error, this error actually indicates that a read-only         call succeeded. The data that it wraps is the return data from         the read-only call.\"}],\"SweepFailed()\":[{\"notice\":\"Thrown when an asset is swept from the pool and one of the         pool's depository assets changes.\"}],\"Unauthorized()\":[{\"notice\":\"Thrown when an unauthorized user attempts to access admin         functionality.\"}],\"UnsafeCastToInt256()\":[{\"notice\":\"Thrown when casting a value to a int256 that is outside of the         int256 scale.\"}]},\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"FeeCollectorUpdated(address)\":{\"notice\":\"Emitted when the fee collector address is updated.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"Sweep(address,address)\":{\"notice\":\"Emitted when tokens are swept.\"},\"SweepCollectorUpdated(address)\":{\"notice\":\"Emitted when the sweep collector address is updated.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{\"balanceOf(uint256,address)\":{\"notice\":\"Gets an account's balance of a sub-token.\"},\"baseToken()\":{\"notice\":\"Gets the base token.\"},\"batchTransferFrom(address,address,uint256[],uint256[])\":{\"notice\":\"Transfers several assets from one account to another.\"},\"collectGovernanceFee((address,bool,bytes))\":{\"notice\":\"This function collects the governance fees accrued by the pool.\"},\"constructor\":{\"notice\":\"Instantiates target0.\"},\"decimals()\":{\"notice\":\"Gets the decimals of the MultiToken. This is the same as the         decimals used by the base token.\"},\"getCheckpoint(uint256)\":{\"notice\":\"Gets a specified checkpoint.\"},\"getCheckpointExposure(uint256)\":{\"notice\":\"Gets the checkpoint exposure at a specified time.\"},\"getMarketState()\":{\"notice\":\"Gets the market state.\"},\"getPoolConfig()\":{\"notice\":\"Gets the pool's configuration parameters.\"},\"getPoolInfo()\":{\"notice\":\"Gets info about the pool's reserves and other state that is         important to evaluate potential trades.\"},\"getUncollectedGovernanceFees()\":{\"notice\":\"Gets info about the fees presently accrued by the pool.\"},\"getWithdrawPool()\":{\"notice\":\"Gets information about the withdrawal pool.\"},\"isApprovedForAll(address,address)\":{\"notice\":\"Gets the approval status of an operator for an account.\"},\"isPauser(address)\":{\"notice\":\"Gets the pauser status of an address.\"},\"load(uint256[])\":{\"notice\":\"Allows plugin data libs to provide getters or other complex         logic instead of the main.\"},\"name(uint256)\":{\"notice\":\"Gets the name of a sub-token.\"},\"nonces(address)\":{\"notice\":\"Gets the permitForAll signature nonce for an account.\"},\"pause(bool)\":{\"notice\":\"Allows an authorized address to pause this contract.\"},\"perTokenApprovals(uint256,address,address)\":{\"notice\":\"Gets the approval status of an operator for an account.\"},\"permitForAll(bytes32,bytes32,address,address,bool,uint256,uint8,bytes32,bytes32)\":{\"notice\":\"Allows a caller who is not the owner of an account to execute         the functionality of 'approve' for all assets with the owner's         signature.\"},\"setApproval(uint256,address,uint256)\":{\"notice\":\"Allows a user to set an approval for an individual asset with         specific amount.\"},\"setApprovalBridge(uint256,address,uint256,address)\":{\"notice\":\"Allows the compatibility linking contract to forward calls to         set asset approvals.\"},\"setApprovalForAll(address,bool)\":{\"notice\":\"Allows a user to approve an operator to use all of their assets.\"},\"setFeeCollector(address)\":{\"notice\":\"Allows governance to change the fee collector.\"},\"setGovernance(address)\":{\"notice\":\"Allows governance to change governance.\"},\"setPauser(address,bool)\":{\"notice\":\"Allows governance to change the pauser status of an address.\"},\"setSweepCollector(address)\":{\"notice\":\"Allows governance to change the sweep collector.\"},\"sweep(address)\":{\"notice\":\"Transfers the contract's balance of a target token to the sweep         collector address.\"},\"symbol(uint256)\":{\"notice\":\"Gets the symbol of a sub-token.\"},\"totalSupply(uint256)\":{\"notice\":\"Gets the total supply of a sub-token.\"},\"transferFrom(uint256,address,address,uint256)\":{\"notice\":\"Transfers an amount of assets from the source to the destination.\"},\"transferFromBridge(uint256,address,address,uint256,address)\":{\"notice\":\"Permissioned transfer for the bridge to access, only callable by         the ERC20 linking bridge.\"}},\"notice\":\"Hyperdrive's target 0 logic contract.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/external/HyperdriveTarget0.sol\":\"HyperdriveTarget0\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/external/HyperdriveTarget0.sol\":{\"keccak256\":\"0x7336935ca8a1b3985f01f923c8444e0eaeffe1ce71ae2a84bf2514cc502b913d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://bd572503e6cc9f49d7cacef4242fa485035b7e46090c82bbfe2f4e9f9ed14597\",\"dweb:/ipfs/QmaXKWM58hzKtwtq7jn6pwY5UF7EtaL2sQW6mNXpaonckZ\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xb8ee04f3090b498966970e210f7de0f982f6445628556f2f176385423d8c5952\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://db789f03faa935c6e3b0882b6e873e8f683c9c8841a4b128366dcbe7321911bf\",\"dweb:/ipfs/QmSQh1cX79nApuSAfJbVN99dmEaE4CK9QwWfEGcwhJMBLK\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c\",\"dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x5922cbd86a7267c8fd19e3dc7a6f2636bad2b3330c28bca8e66adc7cd8ce2b55\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ced8bce3f3c15a9f0bcdd11ba16e69651179edd6b16e267936788f4ab4d6eabf\",\"dweb:/ipfs/QmcoZPj4h2ym6r13KDU7JG2GoVdDWa1GwfKL2jjFRsp8H6\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/internal/HyperdriveAdmin.sol\":{\"keccak256\":\"0x683548d598b303bc8bab561818a2f88c100f6d26fda478e89c02b46cf710726d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://054a605eeb41760fbe1922bb32f511c87e1ca4dd04f3fa64f40783060b371603\",\"dweb:/ipfs/QmezP1mjnbPCwdDCrh4GjL7RVzU61ohTrcW6A7yxLiKcQM\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6\",\"dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN\"]},\"contracts/src/internal/HyperdriveCheckpoint.sol\":{\"keccak256\":\"0x3514b829c99e0015385ff08dd1479e452529a6283e8b6800946542ff21dc9649\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://37ffd17baea5080f4184372ac835bf60694760499756235a61e41a480f4ab3c7\",\"dweb:/ipfs/QmUzEnJhRhpW18MH7GyXsug9u5FLehNfgjR7RAhZizLLVd\"]},\"contracts/src/internal/HyperdriveLP.sol\":{\"keccak256\":\"0x72410851e77940e66681e23b9d10f3c3de0e8c9a3e5b1cca627e93bba431775d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://82a9292f388b16572cc5c5e873d1ead666ddcc3e436cf5d7fb036fd6c63ee9a2\",\"dweb:/ipfs/Qmauzxkn46ACS4XV43m2MbDF91KYP4ExYwSxL3cm1SDL6j\"]},\"contracts/src/internal/HyperdriveLong.sol\":{\"keccak256\":\"0xe791adb5c58a73ff2c978fcc79153f9042702e2c4fc5d71f60534323d5ba4832\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7ec4adf40e5f90574c7484ddeeed41cbe1f60b29847b18b169aa3130b8882aa7\",\"dweb:/ipfs/QmeY9y922jhcLzGw9d4VUNNoDkUeFhTJ8ZVThrvqzcGGjm\"]},\"contracts/src/internal/HyperdriveMultiToken.sol\":{\"keccak256\":\"0x21a9aafb8e23a22c77111e13538fa8f709446e4f3a64ef84b2eebc2aa9d04373\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://41517912353540de5b430587ca8220f9d34d4432d3c723951d5fb618d5907b5d\",\"dweb:/ipfs/QmU3cTCrAq94digVS97s5af1Pu86uGBpmpus6w7828fUbG\"]},\"contracts/src/internal/HyperdriveShort.sol\":{\"keccak256\":\"0xc42b5a9ee5eee3cb9177b136eb9f4b81a4b51d9468f8faa97309934b6b371bc5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b9291237fcdbb8ff97517acd19499cfa4afc6d670a89fd5cc0309a201a7b1006\",\"dweb:/ipfs/QmfQmUwvGhJgPFyNaHvur8AViePBzvSBNAdaZJBwMkY5Je\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xf13ba4bcf41673bc04e4ae32a29c31b62514d66cfedee70b0d3bff574efc0e4a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e505639a656cf7c908e7c64cfd5cae6f4174a679de19d17a3f12f6e3fc4b2195\",\"dweb:/ipfs/QmNmcmz9nV9uDyeouo8yWAKMoMqEVx6JMTfZwCRa9QU83N\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002\",\"dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x5b3c0d159b1945a14227028d835e011bf740e007f664cba049ece1b6ab963067\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d8f4fef22462dabc799b2f8124440a7cc57076f7ceecb46219c69b09f50baf5f\",\"dweb:/ipfs/Qmcw9iC1RZt4Nh7dGH1yR7vUi6qZHJf6ReAvF2uLFHESqZ\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c\",\"dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy\"]},\"lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol\":{\"keccak256\":\"0x60c65f701957fdd6faea1acb0bb45825791d473693ed9ecb34726fdfaa849dd7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ea290300e0efc4d901244949dc4d877fd46e6c5e43dc2b26620e8efab3ab803f\",\"dweb:/ipfs/QmcLLJppxKeJWqHxE2CUkcfhuRTgHSn8J4kijcLa5MYhSt\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xc3e1fa9d1987f8d349dfb4d6fe93bf2ca014b52ba335cfac30bfe71e357e6f80\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c5703ccdeb7b1d685e375ed719117e9edf2ab4bc544f24f23b0d50ec82257229\",\"dweb:/ipfs/QmTdwkbQq7owpCiyuzE7eh5LrD2ddrBCZ5WHVsWPi1RrTS\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0xaa761817f6cd7892fcf158b3c776b34551cde36f48ff9703d53898bc45a94ea2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ad7c8d4d08938c8dfc43d75a148863fb324b80cf53e0a36f7e5a4ac29008850\",\"dweb:/ipfs/QmcrhfPgVNf5mkdhQvy1pMv51TFokD3Y4Wa5WZhFqVh8UV\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"keccak256\":\"0x6008dabfe393240d73d7dd7688033f72740d570aa422254d29a7dce8568f3aff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f5196ec75139918c6c7bb4251b36395e668f1fa6d206beba7e7520e74913940d\",\"dweb:/ipfs/QmSyqjksXxmm2mCG6qRd1yuwLykypkSVBbnBnGqJRcuJMi\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x37bb49513c49c87c4642a891b13b63571bc87013dde806617aa1efb54605f386\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b3036b3a83b7c48f96641f2a9002b9f2dcb6a5958dd670894ada21ae8229b3d0\",\"dweb:/ipfs/QmUNfSBdoVtjhETaUJCYcaC7pTMgbhht926tJ2uXJbiVd3\"]},\"lib/openzeppelin-contracts/contracts/utils/Address.sol\":{\"keccak256\":\"0xaf28a975a78550e45f65e559a3ad6a5ad43b9b8a37366999abd1b7084eb70721\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b7bd24e224f67f65bfadf85dc2929fa965456bb2415478bd0125471b5ce35245\",\"dweb:/ipfs/QmRaydGr8BTHs1kvaZfsNU69pKzUAGFrvABn1KiRSbE51y\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12\",\"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}",
     "metadata": {
         "compiler": {
             "version": "0.8.20+commit.a1b79de6"
@@ -1552,6 +1717,28 @@ export const HyperdriveTarget0 = {
         "language": "Solidity",
         "output": {
             "abi": [
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "target",
+                            "type": "address"
+                        }
+                    ],
+                    "type": "error",
+                    "name": "AddressEmptyCode"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "account",
+                            "type": "address"
+                        }
+                    ],
+                    "type": "error",
+                    "name": "AddressInsufficientBalance"
+                },
                 {
                     "inputs": [],
                     "type": "error",
@@ -1566,6 +1753,11 @@ export const HyperdriveTarget0 = {
                     "inputs": [],
                     "type": "error",
                     "name": "ExpiredDeadline"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "FailedInnerCall"
                 },
                 {
                     "inputs": [
@@ -1628,6 +1820,22 @@ export const HyperdriveTarget0 = {
                     ],
                     "type": "error",
                     "name": "ReturnData"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "token",
+                            "type": "address"
+                        }
+                    ],
+                    "type": "error",
+                    "name": "SafeERC20FailedOperation"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "SweepFailed"
                 },
                 {
                     "inputs": [],
@@ -1741,6 +1949,12 @@ export const HyperdriveTarget0 = {
                             "indexed": true
                         },
                         {
+                            "internalType": "address",
+                            "name": "destination",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
                             "internalType": "uint256",
                             "name": "assetId",
                             "type": "uint256",
@@ -1790,6 +2004,12 @@ export const HyperdriveTarget0 = {
                             "indexed": true
                         },
                         {
+                            "internalType": "address",
+                            "name": "destination",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
                             "internalType": "uint256",
                             "name": "assetId",
                             "type": "uint256",
@@ -1817,6 +2037,12 @@ export const HyperdriveTarget0 = {
                             "internalType": "bool",
                             "name": "asBase",
                             "type": "bool",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "basePayment",
+                            "type": "uint256",
                             "indexed": false
                         },
                         {
@@ -1884,6 +2110,19 @@ export const HyperdriveTarget0 = {
                     ],
                     "type": "event",
                     "name": "CreateCheckpoint",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "newFeeCollector",
+                            "type": "address",
+                            "indexed": true
+                        }
+                    ],
+                    "type": "event",
+                    "name": "FeeCollectorUpdated",
                     "anonymous": false
                 },
                 {
@@ -2087,6 +2326,12 @@ export const HyperdriveTarget0 = {
                             "indexed": true
                         },
                         {
+                            "internalType": "address",
+                            "name": "destination",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
                             "internalType": "uint256",
                             "name": "withdrawalShareAmount",
                             "type": "uint256",
@@ -2120,6 +2365,12 @@ export const HyperdriveTarget0 = {
                         {
                             "internalType": "address",
                             "name": "provider",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "destination",
                             "type": "address",
                             "indexed": true
                         },
@@ -2162,6 +2413,38 @@ export const HyperdriveTarget0 = {
                     ],
                     "type": "event",
                     "name": "RemoveLiquidity",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "collector",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "target",
+                            "type": "address",
+                            "indexed": true
+                        }
+                    ],
+                    "type": "event",
+                    "name": "Sweep",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "newSweepCollector",
+                            "type": "address",
+                            "indexed": true
+                        }
+                    ],
+                    "type": "event",
+                    "name": "SweepCollectorUpdated",
                     "anonymous": false
                 },
                 {
@@ -2498,6 +2781,11 @@ export const HyperdriveTarget0 = {
                                 {
                                     "internalType": "address",
                                     "name": "feeCollector",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "sweepCollector",
                                     "type": "address"
                                 },
                                 {
@@ -2928,6 +3216,18 @@ export const HyperdriveTarget0 = {
                     ],
                     "stateMutability": "nonpayable",
                     "type": "function",
+                    "name": "setFeeCollector"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_who",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
                     "name": "setGovernance"
                 },
                 {
@@ -2946,6 +3246,30 @@ export const HyperdriveTarget0 = {
                     "stateMutability": "nonpayable",
                     "type": "function",
                     "name": "setPauser"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "_who",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "setSweepCollector"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "contract IERC20",
+                            "name": "_target",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "sweep"
                 },
                 {
                     "inputs": [
@@ -3221,6 +3545,11 @@ export const HyperdriveTarget0 = {
                             "operator": "The eth address which can access the caller's assets."
                         }
                     },
+                    "setFeeCollector(address)": {
+                        "params": {
+                            "_who": "The new fee collector address."
+                        }
+                    },
                     "setGovernance(address)": {
                         "params": {
                             "_who": "The new governance address."
@@ -3230,6 +3559,17 @@ export const HyperdriveTarget0 = {
                         "params": {
                             "status": "The new pauser status.",
                             "who": "The address to change."
+                        }
+                    },
+                    "setSweepCollector(address)": {
+                        "params": {
+                            "_who": "The new sweep collector address."
+                        }
+                    },
+                    "sweep(address)": {
+                        "details": "WARN: It is unlikely but possible that there is a selector overlap      with 'transfer'. Any integrating contracts should be checked      for that, as it may result in an unexpected call from this address.",
+                        "params": {
+                            "_target": "The target token to sweep."
                         }
                     },
                     "symbol(uint256)": {
@@ -3343,11 +3683,20 @@ export const HyperdriveTarget0 = {
                     "setApprovalForAll(address,bool)": {
                         "notice": "Allows a user to approve an operator to use all of their assets."
                     },
+                    "setFeeCollector(address)": {
+                        "notice": "Allows governance to change the fee collector."
+                    },
                     "setGovernance(address)": {
                         "notice": "Allows governance to change governance."
                     },
                     "setPauser(address,bool)": {
                         "notice": "Allows governance to change the pauser status of an address."
+                    },
+                    "setSweepCollector(address)": {
+                        "notice": "Allows governance to change the sweep collector."
+                    },
+                    "sweep(address)": {
+                        "notice": "Transfers the contract's balance of a target token to the sweep         collector address."
                     },
                     "symbol(uint256)": {
                         "notice": "Gets the symbol of a sub-token."
@@ -3390,10 +3739,10 @@ export const HyperdriveTarget0 = {
         },
         "sources": {
             "contracts/src/external/HyperdriveTarget0.sol": {
-                "keccak256": "0xea27bb5ed4b35c9f1a4d42102108f07289520ab27e8e33fcac6809f8123955d8",
+                "keccak256": "0x7336935ca8a1b3985f01f923c8444e0eaeffe1ce71ae2a84bf2514cc502b913d",
                 "urls": [
-                    "bzz-raw://488203c6bcf5d3cbb092800a9457e77cde06a80f406794cea42ed86b839a824b",
-                    "dweb:/ipfs/QmRGZNWhrAhubpWvkQtCryUMWG4XKscSEYJ9uxePHzozDy"
+                    "bzz-raw://bd572503e6cc9f49d7cacef4242fa485035b7e46090c82bbfe2f4e9f9ed14597",
+                    "dweb:/ipfs/QmaXKWM58hzKtwtq7jn6pwY5UF7EtaL2sQW6mNXpaonckZ"
                 ],
                 "license": "Apache-2.0"
             },
@@ -3406,26 +3755,26 @@ export const HyperdriveTarget0 = {
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdrive.sol": {
-                "keccak256": "0x7cc4f7a8878cf02f9896f930882ccb6839b20f63c85efc4a66e88af46c57c317",
+                "keccak256": "0xb8ee04f3090b498966970e210f7de0f982f6445628556f2f176385423d8c5952",
                 "urls": [
-                    "bzz-raw://de756bba0e3622e5ddaff774a989fa20b4be7c49806dd972efc11f2cef523213",
-                    "dweb:/ipfs/QmPWwZo7TsF8ccFYbGVXhZMo85FYjKmyTnEYGV3V936YG2"
+                    "bzz-raw://db789f03faa935c6e3b0882b6e873e8f683c9c8841a4b128366dcbe7321911bf",
+                    "dweb:/ipfs/QmSQh1cX79nApuSAfJbVN99dmEaE4CK9QwWfEGcwhJMBLK"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdriveCore.sol": {
-                "keccak256": "0xd15fb3cb39e359f334b7f836f23026d162de7b5be66d9aab3ac11dede9357a76",
+                "keccak256": "0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e",
                 "urls": [
-                    "bzz-raw://b8b6fdcb4a2a45a3dbb8a70e9451fdd6aa5e23ee75d8960e42a149e9138a32eb",
-                    "dweb:/ipfs/QmNQiGzu6qhssorP8UMtaRbxygqzajPg3rB4phnbfQuMzF"
+                    "bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24",
+                    "dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdriveEvents.sol": {
-                "keccak256": "0x1233242868a6eaeb6e6764df97cd094bfda03978bbedb04592db8ddc3ac6db56",
+                "keccak256": "0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0",
                 "urls": [
-                    "bzz-raw://5cc50aa0bdaff888c940b004ad3a7a0c2aac4c15104419bd216ca48270c3fcb8",
-                    "dweb:/ipfs/QmQS6jncTRsBmZxDgR6dAofzXgTt1bXSRb8WdBNqKTCKiR"
+                    "bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c",
+                    "dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG"
                 ],
                 "license": "Apache-2.0"
             },
@@ -3478,18 +3827,18 @@ export const HyperdriveTarget0 = {
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveAdmin.sol": {
-                "keccak256": "0x8807f9479246301d783b015d6b7f2d7f7e03ab3685302848c57436ebb36a1ce5",
+                "keccak256": "0x683548d598b303bc8bab561818a2f88c100f6d26fda478e89c02b46cf710726d",
                 "urls": [
-                    "bzz-raw://28a4f5d567a5c086ac2ae7e346c207422844865aa5e416909c522556245f8fc9",
-                    "dweb:/ipfs/QmUXZ2aeMFh86LCxyB4xQTuU4fR5xTcN9VwVtKzZNkv1dX"
+                    "bzz-raw://054a605eeb41760fbe1922bb32f511c87e1ca4dd04f3fa64f40783060b371603",
+                    "dweb:/ipfs/QmezP1mjnbPCwdDCrh4GjL7RVzU61ohTrcW6A7yxLiKcQM"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveBase.sol": {
-                "keccak256": "0xfc6947a6bfff9ca937fc2654ee56203dbc2ffc3c8bffe40c1334ebc9c81804bc",
+                "keccak256": "0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb",
                 "urls": [
-                    "bzz-raw://b29d5b70c6cb40ede4e496cbeee4937c5318b43536a450d7c246166d326c85fa",
-                    "dweb:/ipfs/QmcDD9Bs4Gueepjs92CYJC9UFBMFYSN1QfbfqBJMQECkWj"
+                    "bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6",
+                    "dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN"
                 ],
                 "license": "Apache-2.0"
             },
@@ -3502,18 +3851,18 @@ export const HyperdriveTarget0 = {
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveLP.sol": {
-                "keccak256": "0x800d540f89ed4f6f40376e0e586246ab48b79a78f1fb4b7ff979b350fafb8a12",
+                "keccak256": "0x72410851e77940e66681e23b9d10f3c3de0e8c9a3e5b1cca627e93bba431775d",
                 "urls": [
-                    "bzz-raw://4aa17285692fa2872fe544d4f4b8fa2b29d68be5380806c804465788e2bdb1ba",
-                    "dweb:/ipfs/Qmag8aW8ADj9grs9vSL33mpM2F3kbFjh6ePKGGv7pXAGdV"
+                    "bzz-raw://82a9292f388b16572cc5c5e873d1ead666ddcc3e436cf5d7fb036fd6c63ee9a2",
+                    "dweb:/ipfs/Qmauzxkn46ACS4XV43m2MbDF91KYP4ExYwSxL3cm1SDL6j"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveLong.sol": {
-                "keccak256": "0x20aad0da5f27cbdded488149694f0c126bfada17ebea0a690f5386a19b826ed0",
+                "keccak256": "0xe791adb5c58a73ff2c978fcc79153f9042702e2c4fc5d71f60534323d5ba4832",
                 "urls": [
-                    "bzz-raw://de8345bda127a4c5c101fb2668ede0011dbd82ff1ca3dcabd37905d56485efba",
-                    "dweb:/ipfs/QmYc3Jkm8c5FB1oEZwgWTNGEa8q96WWEJNyjumD8nirBdk"
+                    "bzz-raw://7ec4adf40e5f90574c7484ddeeed41cbe1f60b29847b18b169aa3130b8882aa7",
+                    "dweb:/ipfs/QmeY9y922jhcLzGw9d4VUNNoDkUeFhTJ8ZVThrvqzcGGjm"
                 ],
                 "license": "Apache-2.0"
             },
@@ -3526,18 +3875,18 @@ export const HyperdriveTarget0 = {
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveShort.sol": {
-                "keccak256": "0xa6a716eac09df69f29b4fd76314104895b18c350679132de2db805e673d3650c",
+                "keccak256": "0xc42b5a9ee5eee3cb9177b136eb9f4b81a4b51d9468f8faa97309934b6b371bc5",
                 "urls": [
-                    "bzz-raw://5d1e6f1092fa727453030eca383b77182755c972b83b74e6d3cf5937cc50caca",
-                    "dweb:/ipfs/QmNk5UeZ9ZzNLuivQQjkihaVrQ6y1pnFUn1PdWvpfDJnSU"
+                    "bzz-raw://b9291237fcdbb8ff97517acd19499cfa4afc6d670a89fd5cc0309a201a7b1006",
+                    "dweb:/ipfs/QmfQmUwvGhJgPFyNaHvur8AViePBzvSBNAdaZJBwMkY5Je"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveStorage.sol": {
-                "keccak256": "0xfeac73551892783afcce85d23fb910baf2ad729d218756f3597ad23e3dcb077f",
+                "keccak256": "0xf13ba4bcf41673bc04e4ae32a29c31b62514d66cfedee70b0d3bff574efc0e4a",
                 "urls": [
-                    "bzz-raw://1f659070705bee17efda43c36f71d22b035752f610624c59238cae559c60530d",
-                    "dweb:/ipfs/QmTEXNYSWa8w3wY2TWzDPNZXxdThMFEbrtRwcQHfyN2CJb"
+                    "bzz-raw://e505639a656cf7c908e7c64cfd5cae6f4174a679de19d17a3f12f6e3fc4b2195",
+                    "dweb:/ipfs/QmNmcmz9nV9uDyeouo8yWAKMoMqEVx6JMTfZwCRa9QU83N"
                 ],
                 "license": "Apache-2.0"
             },
@@ -3566,18 +3915,18 @@ export const HyperdriveTarget0 = {
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/HyperdriveMath.sol": {
-                "keccak256": "0xe86d38d659ce3191d0423a4ee9b6592218a0e59dd72f3e0ec60cfa83809b266e",
+                "keccak256": "0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab",
                 "urls": [
-                    "bzz-raw://91d15d179f83429f36db12d5eac3f575727e16f1505d4cb1b95a11d0876c7534",
-                    "dweb:/ipfs/QmQDHYp8pgd9maivqkaH2mZ8qtb5ZEmK34n4oDmvAo8nrh"
+                    "bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002",
+                    "dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/LPMath.sol": {
-                "keccak256": "0x8fde664589dfd8a26b6d39aed585388f7c179bf508ffe7688dc6c796a68dc785",
+                "keccak256": "0x5b3c0d159b1945a14227028d835e011bf740e007f664cba049ece1b6ab963067",
                 "urls": [
-                    "bzz-raw://3406b91898282977f3630976461eb344764c0f321d35588b1e31408b64f64263",
-                    "dweb:/ipfs/QmVGGknjaaG9wnyPHUWAMpDJZ4tANu6hmEQcUU1HnUQ5U5"
+                    "bzz-raw://d8f4fef22462dabc799b2f8124440a7cc57076f7ceecb46219c69b09f50baf5f",
+                    "dweb:/ipfs/Qmcw9iC1RZt4Nh7dGH1yR7vUi6qZHJf6ReAvF2uLFHESqZ"
                 ],
                 "license": "Apache-2.0"
             },
@@ -3597,6 +3946,70 @@ export const HyperdriveTarget0 = {
                 ],
                 "license": "Apache-2.0"
             },
+            "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol": {
+                "keccak256": "0x60c65f701957fdd6faea1acb0bb45825791d473693ed9ecb34726fdfaa849dd7",
+                "urls": [
+                    "bzz-raw://ea290300e0efc4d901244949dc4d877fd46e6c5e43dc2b26620e8efab3ab803f",
+                    "dweb:/ipfs/QmcLLJppxKeJWqHxE2CUkcfhuRTgHSn8J4kijcLa5MYhSt"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol": {
+                "keccak256": "0xc3e1fa9d1987f8d349dfb4d6fe93bf2ca014b52ba335cfac30bfe71e357e6f80",
+                "urls": [
+                    "bzz-raw://c5703ccdeb7b1d685e375ed719117e9edf2ab4bc544f24f23b0d50ec82257229",
+                    "dweb:/ipfs/QmTdwkbQq7owpCiyuzE7eh5LrD2ddrBCZ5WHVsWPi1RrTS"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+                "keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
+                "urls": [
+                    "bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
+                    "dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+                "keccak256": "0xaa761817f6cd7892fcf158b3c776b34551cde36f48ff9703d53898bc45a94ea2",
+                "urls": [
+                    "bzz-raw://0ad7c8d4d08938c8dfc43d75a148863fb324b80cf53e0a36f7e5a4ac29008850",
+                    "dweb:/ipfs/QmcrhfPgVNf5mkdhQvy1pMv51TFokD3Y4Wa5WZhFqVh8UV"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol": {
+                "keccak256": "0x6008dabfe393240d73d7dd7688033f72740d570aa422254d29a7dce8568f3aff",
+                "urls": [
+                    "bzz-raw://f5196ec75139918c6c7bb4251b36395e668f1fa6d206beba7e7520e74913940d",
+                    "dweb:/ipfs/QmSyqjksXxmm2mCG6qRd1yuwLykypkSVBbnBnGqJRcuJMi"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol": {
+                "keccak256": "0x37bb49513c49c87c4642a891b13b63571bc87013dde806617aa1efb54605f386",
+                "urls": [
+                    "bzz-raw://b3036b3a83b7c48f96641f2a9002b9f2dcb6a5958dd670894ada21ae8229b3d0",
+                    "dweb:/ipfs/QmUNfSBdoVtjhETaUJCYcaC7pTMgbhht926tJ2uXJbiVd3"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/utils/Address.sol": {
+                "keccak256": "0xaf28a975a78550e45f65e559a3ad6a5ad43b9b8a37366999abd1b7084eb70721",
+                "urls": [
+                    "bzz-raw://b7bd24e224f67f65bfadf85dc2929fa965456bb2415478bd0125471b5ce35245",
+                    "dweb:/ipfs/QmRaydGr8BTHs1kvaZfsNU69pKzUAGFrvABn1KiRSbE51y"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+                "keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+                "urls": [
+                    "bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+                    "dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+                ],
+                "license": "MIT"
+            },
             "lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol": {
                 "keccak256": "0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236",
                 "urls": [
@@ -3610,55 +4023,58 @@ export const HyperdriveTarget0 = {
     },
     "ast": {
         "absolutePath": "contracts/src/external/HyperdriveTarget0.sol",
-        "id": 3258,
+        "id": 5403,
         "exportedSymbols": {
             "AssetId": [
-                14117
+                18594
             ],
             "FixedPointMath": [
-                14917
+                19394
             ],
             "HyperdriveAdmin": [
-                8936
+                13157
             ],
             "HyperdriveCheckpoint": [
-                10381
+                14797
             ],
             "HyperdriveLP": [
-                11279
+                15699
             ],
             "HyperdriveLong": [
-                12198
+                16633
             ],
             "HyperdriveMultiToken": [
-                12682
+                17117
             ],
             "HyperdriveShort": [
-                13634
+                18103
             ],
             "HyperdriveStorage": [
-                13842
+                18319
             ],
             "HyperdriveTarget0": [
-                3257
+                5402
+            ],
+            "IERC20": [
+                10319
             ],
             "IHyperdrive": [
-                7616
+                11028
             ],
             "IHyperdriveRead": [
-                8371
+                11865
             ],
             "LPMath": [
-                17396
+                22086
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "39:17097:16",
+        "src": "39:18101:37",
         "nodes": [
             {
-                "id": 2496,
+                "id": 4604,
                 "nodeType": "PragmaDirective",
-                "src": "39:23:16",
+                "src": "39:23:37",
                 "nodes": [],
                 "literals": [
                     "solidity",
@@ -3667,24 +4083,50 @@ export const HyperdriveTarget0 = {
                 ]
             },
             {
-                "id": 2498,
+                "id": 4606,
                 "nodeType": "ImportDirective",
-                "src": "64:60:16",
+                "src": "64:50:37",
+                "nodes": [],
+                "absolutePath": "contracts/src/interfaces/IERC20.sol",
+                "file": "../interfaces/IERC20.sol",
+                "nameLocation": "-1:-1:-1",
+                "scope": 5403,
+                "sourceUnit": 10320,
+                "symbolAliases": [
+                    {
+                        "foreign": {
+                            "id": 4605,
+                            "name": "IERC20",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 10319,
+                            "src": "73:6:37",
+                            "typeDescriptions": {}
+                        },
+                        "nameLocation": "-1:-1:-1"
+                    }
+                ],
+                "unitAlias": ""
+            },
+            {
+                "id": 4608,
+                "nodeType": "ImportDirective",
+                "src": "115:60:37",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
                 "file": "../interfaces/IHyperdrive.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 3258,
-                "sourceUnit": 7617,
+                "scope": 5403,
+                "sourceUnit": 11029,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 2497,
+                            "id": 4607,
                             "name": "IHyperdrive",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 7616,
-                            "src": "73:11:16",
+                            "referencedDeclaration": 11028,
+                            "src": "124:11:37",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -3693,24 +4135,24 @@ export const HyperdriveTarget0 = {
                 "unitAlias": ""
             },
             {
-                "id": 2500,
+                "id": 4610,
                 "nodeType": "ImportDirective",
-                "src": "125:68:16",
+                "src": "176:68:37",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IHyperdriveRead.sol",
                 "file": "../interfaces/IHyperdriveRead.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 3258,
-                "sourceUnit": 8372,
+                "scope": 5403,
+                "sourceUnit": 11866,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 2499,
+                            "id": 4609,
                             "name": "IHyperdriveRead",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8371,
-                            "src": "134:15:16",
+                            "referencedDeclaration": 11865,
+                            "src": "185:15:37",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -3719,24 +4161,24 @@ export const HyperdriveTarget0 = {
                 "unitAlias": ""
             },
             {
-                "id": 2502,
+                "id": 4612,
                 "nodeType": "ImportDirective",
-                "src": "194:66:16",
+                "src": "245:66:37",
                 "nodes": [],
                 "absolutePath": "contracts/src/internal/HyperdriveAdmin.sol",
                 "file": "../internal/HyperdriveAdmin.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 3258,
-                "sourceUnit": 8937,
+                "scope": 5403,
+                "sourceUnit": 13158,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 2501,
+                            "id": 4611,
                             "name": "HyperdriveAdmin",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8936,
-                            "src": "203:15:16",
+                            "referencedDeclaration": 13157,
+                            "src": "254:15:37",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -3745,24 +4187,24 @@ export const HyperdriveTarget0 = {
                 "unitAlias": ""
             },
             {
-                "id": 2504,
+                "id": 4614,
                 "nodeType": "ImportDirective",
-                "src": "261:76:16",
+                "src": "312:76:37",
                 "nodes": [],
                 "absolutePath": "contracts/src/internal/HyperdriveCheckpoint.sol",
                 "file": "../internal/HyperdriveCheckpoint.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 3258,
-                "sourceUnit": 10382,
+                "scope": 5403,
+                "sourceUnit": 14798,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 2503,
+                            "id": 4613,
                             "name": "HyperdriveCheckpoint",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10381,
-                            "src": "270:20:16",
+                            "referencedDeclaration": 14797,
+                            "src": "321:20:37",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -3771,24 +4213,24 @@ export const HyperdriveTarget0 = {
                 "unitAlias": ""
             },
             {
-                "id": 2506,
+                "id": 4616,
                 "nodeType": "ImportDirective",
-                "src": "338:64:16",
+                "src": "389:64:37",
                 "nodes": [],
                 "absolutePath": "contracts/src/internal/HyperdriveLong.sol",
                 "file": "../internal/HyperdriveLong.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 3258,
-                "sourceUnit": 12199,
+                "scope": 5403,
+                "sourceUnit": 16634,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 2505,
+                            "id": 4615,
                             "name": "HyperdriveLong",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 12198,
-                            "src": "347:14:16",
+                            "referencedDeclaration": 16633,
+                            "src": "398:14:37",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -3797,24 +4239,24 @@ export const HyperdriveTarget0 = {
                 "unitAlias": ""
             },
             {
-                "id": 2508,
+                "id": 4618,
                 "nodeType": "ImportDirective",
-                "src": "403:60:16",
+                "src": "454:60:37",
                 "nodes": [],
                 "absolutePath": "contracts/src/internal/HyperdriveLP.sol",
                 "file": "../internal/HyperdriveLP.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 3258,
-                "sourceUnit": 11280,
+                "scope": 5403,
+                "sourceUnit": 15700,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 2507,
+                            "id": 4617,
                             "name": "HyperdriveLP",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11279,
-                            "src": "412:12:16",
+                            "referencedDeclaration": 15699,
+                            "src": "463:12:37",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -3823,24 +4265,24 @@ export const HyperdriveTarget0 = {
                 "unitAlias": ""
             },
             {
-                "id": 2510,
+                "id": 4620,
                 "nodeType": "ImportDirective",
-                "src": "464:76:16",
+                "src": "515:76:37",
                 "nodes": [],
                 "absolutePath": "contracts/src/internal/HyperdriveMultiToken.sol",
                 "file": "../internal/HyperdriveMultiToken.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 3258,
-                "sourceUnit": 12683,
+                "scope": 5403,
+                "sourceUnit": 17118,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 2509,
+                            "id": 4619,
                             "name": "HyperdriveMultiToken",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 12682,
-                            "src": "473:20:16",
+                            "referencedDeclaration": 17117,
+                            "src": "524:20:37",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -3849,24 +4291,24 @@ export const HyperdriveTarget0 = {
                 "unitAlias": ""
             },
             {
-                "id": 2512,
+                "id": 4622,
                 "nodeType": "ImportDirective",
-                "src": "541:66:16",
+                "src": "592:66:37",
                 "nodes": [],
                 "absolutePath": "contracts/src/internal/HyperdriveShort.sol",
                 "file": "../internal/HyperdriveShort.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 3258,
-                "sourceUnit": 13635,
+                "scope": 5403,
+                "sourceUnit": 18104,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 2511,
+                            "id": 4621,
                             "name": "HyperdriveShort",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 13634,
-                            "src": "550:15:16",
+                            "referencedDeclaration": 18103,
+                            "src": "601:15:37",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -3875,24 +4317,24 @@ export const HyperdriveTarget0 = {
                 "unitAlias": ""
             },
             {
-                "id": 2514,
+                "id": 4624,
                 "nodeType": "ImportDirective",
-                "src": "608:70:16",
+                "src": "659:70:37",
                 "nodes": [],
                 "absolutePath": "contracts/src/internal/HyperdriveStorage.sol",
                 "file": "../internal/HyperdriveStorage.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 3258,
-                "sourceUnit": 13843,
+                "scope": 5403,
+                "sourceUnit": 18320,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 2513,
+                            "id": 4623,
                             "name": "HyperdriveStorage",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 13842,
-                            "src": "617:17:16",
+                            "referencedDeclaration": 18319,
+                            "src": "668:17:37",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -3901,24 +4343,24 @@ export const HyperdriveTarget0 = {
                 "unitAlias": ""
             },
             {
-                "id": 2516,
+                "id": 4626,
                 "nodeType": "ImportDirective",
-                "src": "679:51:16",
+                "src": "730:51:37",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/AssetId.sol",
                 "file": "../libraries/AssetId.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 3258,
-                "sourceUnit": 14118,
+                "scope": 5403,
+                "sourceUnit": 18595,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 2515,
+                            "id": 4625,
                             "name": "AssetId",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 14117,
-                            "src": "688:7:16",
+                            "referencedDeclaration": 18594,
+                            "src": "739:7:37",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -3927,24 +4369,24 @@ export const HyperdriveTarget0 = {
                 "unitAlias": ""
             },
             {
-                "id": 2518,
+                "id": 4628,
                 "nodeType": "ImportDirective",
-                "src": "731:65:16",
+                "src": "782:65:37",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/FixedPointMath.sol",
                 "file": "../libraries/FixedPointMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 3258,
-                "sourceUnit": 14918,
+                "scope": 5403,
+                "sourceUnit": 19395,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 2517,
+                            "id": 4627,
                             "name": "FixedPointMath",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 14917,
-                            "src": "740:14:16",
+                            "referencedDeclaration": 19394,
+                            "src": "791:14:37",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -3953,24 +4395,24 @@ export const HyperdriveTarget0 = {
                 "unitAlias": ""
             },
             {
-                "id": 2520,
+                "id": 4630,
                 "nodeType": "ImportDirective",
-                "src": "797:49:16",
+                "src": "848:49:37",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/LPMath.sol",
                 "file": "../libraries/LPMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 3258,
-                "sourceUnit": 17397,
+                "scope": 5403,
+                "sourceUnit": 22087,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 2519,
+                            "id": 4629,
                             "name": "LPMath",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 17396,
-                            "src": "806:6:16",
+                            "referencedDeclaration": 22086,
+                            "src": "857:6:37",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -3979,31 +4421,31 @@ export const HyperdriveTarget0 = {
                 "unitAlias": ""
             },
             {
-                "id": 3257,
+                "id": 5402,
                 "nodeType": "ContractDefinition",
-                "src": "1168:15967:16",
+                "src": "1219:16920:37",
                 "nodes": [
                     {
-                        "id": 2538,
+                        "id": 4648,
                         "nodeType": "UsingForDirective",
-                        "src": "1365:33:16",
+                        "src": "1416:33:37",
                         "nodes": [],
                         "global": false,
                         "libraryName": {
-                            "id": 2536,
+                            "id": 4646,
                             "name": "FixedPointMath",
                             "nameLocations": [
-                                "1371:14:16"
+                                "1422:14:37"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 14917,
-                            "src": "1371:14:16"
+                            "referencedDeclaration": 19394,
+                            "src": "1422:14:37"
                         },
                         "typeName": {
-                            "id": 2537,
+                            "id": 4647,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "1390:7:16",
+                            "src": "1441:7:37",
                             "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -4011,21 +4453,21 @@ export const HyperdriveTarget0 = {
                         }
                     },
                     {
-                        "id": 2549,
+                        "id": 4659,
                         "nodeType": "FunctionDefinition",
-                        "src": "1507:94:16",
+                        "src": "1558:94:37",
                         "nodes": [],
                         "body": {
-                            "id": 2548,
+                            "id": 4658,
                             "nodeType": "Block",
-                            "src": "1599:2:16",
+                            "src": "1650:2:37",
                             "nodes": [],
                             "statements": []
                         },
                         "documentation": {
-                            "id": 2539,
+                            "id": 4649,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1404:98:16",
+                            "src": "1455:98:37",
                             "text": "@notice Instantiates target0.\n @param _config The configuration of the Hyperdrive pool."
                         },
                         "implemented": true,
@@ -4034,115 +4476,115 @@ export const HyperdriveTarget0 = {
                             {
                                 "arguments": [
                                     {
-                                        "id": 2545,
+                                        "id": 4655,
                                         "name": "_config",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 2542,
-                                        "src": "1590:7:16",
+                                        "referencedDeclaration": 4652,
+                                        "src": "1641:7:37",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolConfig_$7407_memory_ptr",
+                                            "typeIdentifier": "t_struct$_PoolConfig_$10819_memory_ptr",
                                             "typeString": "struct IHyperdrive.PoolConfig memory"
                                         }
                                     }
                                 ],
-                                "id": 2546,
+                                "id": 4656,
                                 "kind": "baseConstructorSpecifier",
                                 "modifierName": {
-                                    "id": 2544,
+                                    "id": 4654,
                                     "name": "HyperdriveStorage",
                                     "nameLocations": [
-                                        "1572:17:16"
+                                        "1623:17:37"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 13842,
-                                    "src": "1572:17:16"
+                                    "referencedDeclaration": 18319,
+                                    "src": "1623:17:37"
                                 },
                                 "nodeType": "ModifierInvocation",
-                                "src": "1572:26:16"
+                                "src": "1623:26:37"
                             }
                         ],
                         "name": "",
                         "nameLocation": "-1:-1:-1",
                         "parameters": {
-                            "id": 2543,
+                            "id": 4653,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2542,
+                                    "id": 4652,
                                     "mutability": "mutable",
                                     "name": "_config",
-                                    "nameLocation": "1558:7:16",
+                                    "nameLocation": "1609:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2549,
-                                    "src": "1528:37:16",
+                                    "scope": 4659,
+                                    "src": "1579:37:37",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_PoolConfig_$7407_memory_ptr",
+                                        "typeIdentifier": "t_struct$_PoolConfig_$10819_memory_ptr",
                                         "typeString": "struct IHyperdrive.PoolConfig"
                                     },
                                     "typeName": {
-                                        "id": 2541,
+                                        "id": 4651,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 2540,
+                                            "id": 4650,
                                             "name": "IHyperdrive.PoolConfig",
                                             "nameLocations": [
-                                                "1528:11:16",
-                                                "1540:10:16"
+                                                "1579:11:37",
+                                                "1591:10:37"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 7407,
-                                            "src": "1528:22:16"
+                                            "referencedDeclaration": 10819,
+                                            "src": "1579:22:37"
                                         },
-                                        "referencedDeclaration": 7407,
-                                        "src": "1528:22:16",
+                                        "referencedDeclaration": 10819,
+                                        "src": "1579:22:37",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolConfig_$7407_storage_ptr",
+                                            "typeIdentifier": "t_struct$_PoolConfig_$10819_storage_ptr",
                                             "typeString": "struct IHyperdrive.PoolConfig"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1518:53:16"
+                            "src": "1569:53:37"
                         },
                         "returnParameters": {
-                            "id": 2547,
+                            "id": 4657,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1599:0:16"
+                            "src": "1650:0:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 2563,
+                        "id": 4673,
                         "nodeType": "FunctionDefinition",
-                        "src": "1976:174:16",
+                        "src": "2027:174:37",
                         "nodes": [],
                         "body": {
-                            "id": 2562,
+                            "id": 4672,
                             "nodeType": "Block",
-                            "src": "2095:55:16",
+                            "src": "2146:55:37",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 2559,
+                                                "id": 4669,
                                                 "name": "_options",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2553,
-                                                "src": "2134:8:16",
+                                                "referencedDeclaration": 4663,
+                                                "src": "2185:8:37",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_Options_$7463_calldata_ptr",
+                                                    "typeIdentifier": "t_struct$_Options_$10875_calldata_ptr",
                                                     "typeString": "struct IHyperdrive.Options calldata"
                                                 }
                                             }
@@ -4150,22 +4592,22 @@ export const HyperdriveTarget0 = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_struct$_Options_$7463_calldata_ptr",
+                                                    "typeIdentifier": "t_struct$_Options_$10875_calldata_ptr",
                                                     "typeString": "struct IHyperdrive.Options calldata"
                                                 }
                                             ],
-                                            "id": 2558,
+                                            "id": 4668,
                                             "name": "_collectGovernanceFee",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 8849,
-                                            "src": "2112:21:16",
+                                            "referencedDeclaration": 12931,
+                                            "src": "2163:21:37",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Options_$7463_calldata_ptr_$returns$_t_uint256_$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Options_$10875_calldata_ptr_$returns$_t_uint256_$",
                                                 "typeString": "function (struct IHyperdrive.Options calldata) returns (uint256)"
                                             }
                                         },
-                                        "id": 2560,
+                                        "id": 4670,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4174,24 +4616,24 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "2112:31:16",
+                                        "src": "2163:31:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 2557,
-                                    "id": 2561,
+                                    "functionReturnParameters": 4667,
+                                    "id": 4671,
                                     "nodeType": "Return",
-                                    "src": "2105:38:16"
+                                    "src": "2156:38:37"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 2550,
+                            "id": 4660,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1626:345:16",
+                            "src": "1677:345:37",
                             "text": "@notice This function collects the governance fees accrued by the pool.\n @param _options The options that configure how the fees are settled.\n @return proceeds The governance fees collected. The units of this\n         quantity are either base or vault shares, depending on the value\n         of `_options.asBase`."
                         },
                         "functionSelector": "3e691db9",
@@ -4199,65 +4641,65 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "collectGovernanceFee",
-                        "nameLocation": "1985:20:16",
+                        "nameLocation": "2036:20:37",
                         "parameters": {
-                            "id": 2554,
+                            "id": 4664,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2553,
+                                    "id": 4663,
                                     "mutability": "mutable",
                                     "name": "_options",
-                                    "nameLocation": "2044:8:16",
+                                    "nameLocation": "2095:8:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2563,
-                                    "src": "2015:37:16",
+                                    "scope": 4673,
+                                    "src": "2066:37:37",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Options_$7463_calldata_ptr",
+                                        "typeIdentifier": "t_struct$_Options_$10875_calldata_ptr",
                                         "typeString": "struct IHyperdrive.Options"
                                     },
                                     "typeName": {
-                                        "id": 2552,
+                                        "id": 4662,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 2551,
+                                            "id": 4661,
                                             "name": "IHyperdrive.Options",
                                             "nameLocations": [
-                                                "2015:11:16",
-                                                "2027:7:16"
+                                                "2066:11:37",
+                                                "2078:7:37"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 7463,
-                                            "src": "2015:19:16"
+                                            "referencedDeclaration": 10875,
+                                            "src": "2066:19:37"
                                         },
-                                        "referencedDeclaration": 7463,
-                                        "src": "2015:19:16",
+                                        "referencedDeclaration": 10875,
+                                        "src": "2066:19:37",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Options_$7463_storage_ptr",
+                                            "typeIdentifier": "t_struct$_Options_$10875_storage_ptr",
                                             "typeString": "struct IHyperdrive.Options"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2005:53:16"
+                            "src": "2056:53:37"
                         },
                         "returnParameters": {
-                            "id": 2557,
+                            "id": 4667,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2556,
+                                    "id": 4666,
                                     "mutability": "mutable",
                                     "name": "proceeds",
-                                    "nameLocation": "2085:8:16",
+                                    "nameLocation": "2136:8:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2563,
-                                    "src": "2077:16:16",
+                                    "scope": 4673,
+                                    "src": "2128:16:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -4265,10 +4707,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 2555,
+                                        "id": 4665,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2077:7:16",
+                                        "src": "2128:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -4277,34 +4719,34 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2076:18:16"
+                            "src": "2127:18:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2574,
+                        "id": 4684,
                         "nodeType": "FunctionDefinition",
-                        "src": "2302:70:16",
+                        "src": "2353:70:37",
                         "nodes": [],
                         "body": {
-                            "id": 2573,
+                            "id": 4683,
                             "nodeType": "Block",
-                            "src": "2340:32:16",
+                            "src": "2391:32:37",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 2570,
+                                                "id": 4680,
                                                 "name": "_status",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2566,
-                                                "src": "2357:7:16",
+                                                "referencedDeclaration": 4676,
+                                                "src": "2408:7:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -4318,18 +4760,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bool"
                                                 }
                                             ],
-                                            "id": 2569,
+                                            "id": 4679,
                                             "name": "_pause",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 8878,
-                                            "src": "2350:6:16",
+                                            "referencedDeclaration": 12960,
+                                            "src": "2401:6:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_bool_$returns$__$",
                                                 "typeString": "function (bool)"
                                             }
                                         },
-                                        "id": 2571,
+                                        "id": 4681,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4338,23 +4780,23 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "2350:15:16",
+                                        "src": "2401:15:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2572,
+                                    "id": 4682,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "2350:15:16"
+                                    "src": "2401:15:37"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 2564,
+                            "id": 4674,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2156:141:16",
+                            "src": "2207:141:37",
                             "text": "@notice Allows an authorized address to pause this contract.\n @param _status True to pause all deposits and false to unpause them."
                         },
                         "functionSelector": "02329a29",
@@ -4362,20 +4804,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "pause",
-                        "nameLocation": "2311:5:16",
+                        "nameLocation": "2362:5:37",
                         "parameters": {
-                            "id": 2567,
+                            "id": 4677,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2566,
+                                    "id": 4676,
                                     "mutability": "mutable",
                                     "name": "_status",
-                                    "nameLocation": "2322:7:16",
+                                    "nameLocation": "2373:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2574,
-                                    "src": "2317:12:16",
+                                    "scope": 4684,
+                                    "src": "2368:12:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -4383,10 +4825,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 2565,
+                                        "id": 4675,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2317:4:16",
+                                        "src": "2368:4:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -4395,40 +4837,40 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2316:14:16"
+                            "src": "2367:14:37"
                         },
                         "returnParameters": {
-                            "id": 2568,
+                            "id": 4678,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "2340:0:16"
+                            "src": "2391:0:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2585,
+                        "id": 4695,
                         "nodeType": "FunctionDefinition",
-                        "src": "2482:83:16",
+                        "src": "2543:87:37",
                         "nodes": [],
                         "body": {
-                            "id": 2584,
+                            "id": 4694,
                             "nodeType": "Block",
-                            "src": "2528:37:16",
+                            "src": "2591:39:37",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 2581,
+                                                "id": 4691,
                                                 "name": "_who",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2577,
-                                                "src": "2553:4:16",
+                                                "referencedDeclaration": 4687,
+                                                "src": "2618:4:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
@@ -4442,18 +4884,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "address"
                                                 }
                                             ],
-                                            "id": 2580,
-                                            "name": "_setGovernance",
+                                            "id": 4690,
+                                            "name": "_setFeeCollector",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 8904,
-                                            "src": "2538:14:16",
+                                            "referencedDeclaration": 12986,
+                                            "src": "2601:16:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                                                 "typeString": "function (address)"
                                             }
                                         },
-                                        "id": 2582,
+                                        "id": 4692,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4462,23 +4904,273 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "2538:20:16",
+                                        "src": "2601:22:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2583,
+                                    "id": 4693,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "2538:20:16"
+                                    "src": "2601:22:37"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 2575,
+                            "id": 4685,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2378:99:16",
+                            "src": "2429:109:37",
+                            "text": "@notice Allows governance to change the fee collector.\n @param _who The new fee collector address."
+                        },
+                        "functionSelector": "a42dce80",
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "setFeeCollector",
+                        "nameLocation": "2552:15:37",
+                        "parameters": {
+                            "id": 4688,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 4687,
+                                    "mutability": "mutable",
+                                    "name": "_who",
+                                    "nameLocation": "2576:4:37",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 4695,
+                                    "src": "2568:12:37",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                    },
+                                    "typeName": {
+                                        "id": 4686,
+                                        "name": "address",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "2568:7:37",
+                                        "stateMutability": "nonpayable",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "2567:14:37"
+                        },
+                        "returnParameters": {
+                            "id": 4689,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "2591:0:37"
+                        },
+                        "scope": 5402,
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "external"
+                    },
+                    {
+                        "id": 4706,
+                        "nodeType": "FunctionDefinition",
+                        "src": "2754:91:37",
+                        "nodes": [],
+                        "body": {
+                            "id": 4705,
+                            "nodeType": "Block",
+                            "src": "2804:41:37",
+                            "nodes": [],
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "id": 4702,
+                                                "name": "_who",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 4698,
+                                                "src": "2833:4:37",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            ],
+                                            "id": 4701,
+                                            "name": "_setSweepCollector",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 13012,
+                                            "src": "2814:18:37",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                                                "typeString": "function (address)"
+                                            }
+                                        },
+                                        "id": 4703,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "2814:24:37",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 4704,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "2814:24:37"
+                                }
+                            ]
+                        },
+                        "documentation": {
+                            "id": 4696,
+                            "nodeType": "StructuredDocumentation",
+                            "src": "2636:113:37",
+                            "text": "@notice Allows governance to change the sweep collector.\n @param _who The new sweep collector address."
+                        },
+                        "functionSelector": "e4af29d1",
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "setSweepCollector",
+                        "nameLocation": "2763:17:37",
+                        "parameters": {
+                            "id": 4699,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 4698,
+                                    "mutability": "mutable",
+                                    "name": "_who",
+                                    "nameLocation": "2789:4:37",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 4706,
+                                    "src": "2781:12:37",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                    },
+                                    "typeName": {
+                                        "id": 4697,
+                                        "name": "address",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "2781:7:37",
+                                        "stateMutability": "nonpayable",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "2780:14:37"
+                        },
+                        "returnParameters": {
+                            "id": 4700,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "2804:0:37"
+                        },
+                        "scope": 5402,
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "external"
+                    },
+                    {
+                        "id": 4717,
+                        "nodeType": "FunctionDefinition",
+                        "src": "2955:83:37",
+                        "nodes": [],
+                        "body": {
+                            "id": 4716,
+                            "nodeType": "Block",
+                            "src": "3001:37:37",
+                            "nodes": [],
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "id": 4713,
+                                                "name": "_who",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 4709,
+                                                "src": "3026:4:37",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            ],
+                                            "id": 4712,
+                                            "name": "_setGovernance",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 13038,
+                                            "src": "3011:14:37",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                                                "typeString": "function (address)"
+                                            }
+                                        },
+                                        "id": 4714,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "3011:20:37",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 4715,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "3011:20:37"
+                                }
+                            ]
+                        },
+                        "documentation": {
+                            "id": 4707,
+                            "nodeType": "StructuredDocumentation",
+                            "src": "2851:99:37",
                             "text": "@notice Allows governance to change governance.\n @param _who The new governance address."
                         },
                         "functionSelector": "ab033ea9",
@@ -4486,20 +5178,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "setGovernance",
-                        "nameLocation": "2491:13:16",
+                        "nameLocation": "2964:13:37",
                         "parameters": {
-                            "id": 2578,
+                            "id": 4710,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2577,
+                                    "id": 4709,
                                     "mutability": "mutable",
                                     "name": "_who",
-                                    "nameLocation": "2513:4:16",
+                                    "nameLocation": "2986:4:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2585,
-                                    "src": "2505:12:16",
+                                    "scope": 4717,
+                                    "src": "2978:12:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -4507,10 +5199,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2576,
+                                        "id": 4708,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2505:7:16",
+                                        "src": "2978:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -4520,52 +5212,52 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2504:14:16"
+                            "src": "2977:14:37"
                         },
                         "returnParameters": {
-                            "id": 2579,
+                            "id": 4711,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "2528:0:16"
+                            "src": "3001:0:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2599,
+                        "id": 4731,
                         "nodeType": "FunctionDefinition",
-                        "src": "2735:94:16",
+                        "src": "3208:94:37",
                         "nodes": [],
                         "body": {
-                            "id": 2598,
+                            "id": 4730,
                             "nodeType": "Block",
-                            "src": "2789:40:16",
+                            "src": "3262:40:37",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 2594,
+                                                "id": 4726,
                                                 "name": "who",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2588,
-                                                "src": "2810:3:16",
+                                                "referencedDeclaration": 4720,
+                                                "src": "3283:3:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 2595,
+                                                "id": 4727,
                                                 "name": "status",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2590,
-                                                "src": "2815:6:16",
+                                                "referencedDeclaration": 4722,
+                                                "src": "3288:6:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -4583,18 +5275,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bool"
                                                 }
                                             ],
-                                            "id": 2593,
+                                            "id": 4725,
                                             "name": "_setPauser",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 8935,
-                                            "src": "2799:10:16",
+                                            "referencedDeclaration": 13069,
+                                            "src": "3272:10:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_bool_$returns$__$",
                                                 "typeString": "function (address,bool)"
                                             }
                                         },
-                                        "id": 2596,
+                                        "id": 4728,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4603,23 +5295,23 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "2799:23:16",
+                                        "src": "3272:23:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2597,
+                                    "id": 4729,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "2799:23:16"
+                                    "src": "3272:23:37"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 2586,
+                            "id": 4718,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2571:159:16",
+                            "src": "3044:159:37",
                             "text": "@notice Allows governance to change the pauser status of an address.\n @param who The address to change.\n @param status The new pauser status."
                         },
                         "functionSelector": "7180c8ca",
@@ -4627,20 +5319,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "setPauser",
-                        "nameLocation": "2744:9:16",
+                        "nameLocation": "3217:9:37",
                         "parameters": {
-                            "id": 2591,
+                            "id": 4723,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2588,
+                                    "id": 4720,
                                     "mutability": "mutable",
                                     "name": "who",
-                                    "nameLocation": "2762:3:16",
+                                    "nameLocation": "3235:3:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2599,
-                                    "src": "2754:11:16",
+                                    "scope": 4731,
+                                    "src": "3227:11:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -4648,10 +5340,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2587,
+                                        "id": 4719,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2754:7:16",
+                                        "src": "3227:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -4662,13 +5354,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2590,
+                                    "id": 4722,
                                     "mutability": "mutable",
                                     "name": "status",
-                                    "nameLocation": "2772:6:16",
+                                    "nameLocation": "3245:6:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2599,
-                                    "src": "2767:11:16",
+                                    "scope": 4731,
+                                    "src": "3240:11:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -4676,10 +5368,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 2589,
+                                        "id": 4721,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2767:4:16",
+                                        "src": "3240:4:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -4688,76 +5380,210 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2753:26:16"
+                            "src": "3226:26:37"
                         },
                         "returnParameters": {
-                            "id": 2592,
+                            "id": 4724,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "2789:0:16"
+                            "src": "3262:0:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2621,
+                        "id": 4743,
                         "nodeType": "FunctionDefinition",
-                        "src": "3163:240:16",
+                        "src": "3708:72:37",
                         "nodes": [],
                         "body": {
-                            "id": 2620,
+                            "id": 4742,
                             "nodeType": "Block",
-                            "src": "3291:112:16",
+                            "src": "3748:32:37",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 2612,
+                                                "id": 4739,
+                                                "name": "_target",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 4735,
+                                                "src": "3765:7:37",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_contract$_IERC20_$10319",
+                                                    "typeString": "contract IERC20"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_contract$_IERC20_$10319",
+                                                    "typeString": "contract IERC20"
+                                                }
+                                            ],
+                                            "id": 4738,
+                                            "name": "_sweep",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 13156,
+                                            "src": "3758:6:37",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$10319_$returns$__$",
+                                                "typeString": "function (contract IERC20)"
+                                            }
+                                        },
+                                        "id": 4740,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "3758:15:37",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 4741,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "3758:15:37"
+                                }
+                            ]
+                        },
+                        "documentation": {
+                            "id": 4732,
+                            "nodeType": "StructuredDocumentation",
+                            "src": "3308:395:37",
+                            "text": "@notice Transfers the contract's balance of a target token to the sweep\n         collector address.\n @dev WARN: It is unlikely but possible that there is a selector overlap\n      with 'transfer'. Any integrating contracts should be checked\n      for that, as it may result in an unexpected call from this address.\n @param _target The target token to sweep."
+                        },
+                        "functionSelector": "01681a62",
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "sweep",
+                        "nameLocation": "3717:5:37",
+                        "parameters": {
+                            "id": 4736,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 4735,
+                                    "mutability": "mutable",
+                                    "name": "_target",
+                                    "nameLocation": "3730:7:37",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 4743,
+                                    "src": "3723:14:37",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_contract$_IERC20_$10319",
+                                        "typeString": "contract IERC20"
+                                    },
+                                    "typeName": {
+                                        "id": 4734,
+                                        "nodeType": "UserDefinedTypeName",
+                                        "pathNode": {
+                                            "id": 4733,
+                                            "name": "IERC20",
+                                            "nameLocations": [
+                                                "3723:6:37"
+                                            ],
+                                            "nodeType": "IdentifierPath",
+                                            "referencedDeclaration": 10319,
+                                            "src": "3723:6:37"
+                                        },
+                                        "referencedDeclaration": 10319,
+                                        "src": "3723:6:37",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_contract$_IERC20_$10319",
+                                            "typeString": "contract IERC20"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "3722:16:37"
+                        },
+                        "returnParameters": {
+                            "id": 4737,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "3748:0:37"
+                        },
+                        "scope": 5402,
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "external"
+                    },
+                    {
+                        "id": 4765,
+                        "nodeType": "FunctionDefinition",
+                        "src": "4114:240:37",
+                        "nodes": [],
+                        "body": {
+                            "id": 4764,
+                            "nodeType": "Block",
+                            "src": "4242:112:37",
+                            "nodes": [],
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "id": 4756,
                                                 "name": "tokenID",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2602,
-                                                "src": "3358:7:16",
+                                                "referencedDeclaration": 4746,
+                                                "src": "4309:7:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 2613,
+                                                "id": 4757,
                                                 "name": "from",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2604,
-                                                "src": "3367:4:16",
+                                                "referencedDeclaration": 4748,
+                                                "src": "4318:4:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 2614,
+                                                "id": 4758,
                                                 "name": "to",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2606,
-                                                "src": "3373:2:16",
+                                                "referencedDeclaration": 4750,
+                                                "src": "4324:2:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 2615,
+                                                "id": 4759,
                                                 "name": "amount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2608,
-                                                "src": "3377:6:16",
+                                                "referencedDeclaration": 4752,
+                                                "src": "4328:6:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -4765,26 +5591,26 @@ export const HyperdriveTarget0 = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 2616,
+                                                    "id": 4760,
                                                     "name": "msg",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
                                                     "referencedDeclaration": -15,
-                                                    "src": "3385:3:16",
+                                                    "src": "4336:3:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_magic_message",
                                                         "typeString": "msg"
                                                     }
                                                 },
-                                                "id": 2617,
+                                                "id": 4761,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "3389:6:16",
+                                                "memberLocation": "4340:6:37",
                                                 "memberName": "sender",
                                                 "nodeType": "MemberAccess",
-                                                "src": "3385:10:16",
+                                                "src": "4336:10:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
@@ -4814,18 +5640,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "address"
                                                 }
                                             ],
-                                            "id": 2611,
+                                            "id": 4755,
                                             "name": "_transferFrom",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 12406,
-                                            "src": "3344:13:16",
+                                            "referencedDeclaration": 16841,
+                                            "src": "4295:13:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_address_$_t_uint256_$_t_address_$returns$__$",
                                                 "typeString": "function (uint256,address,address,uint256,address)"
                                             }
                                         },
-                                        "id": 2618,
+                                        "id": 4762,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4834,23 +5660,23 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "3344:52:16",
+                                        "src": "4295:52:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2619,
+                                    "id": 4763,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "3344:52:16"
+                                    "src": "4295:52:37"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 2600,
+                            "id": 4744,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2859:299:16",
+                            "src": "3810:299:37",
                             "text": "@notice Transfers an amount of assets from the source to the destination.\n @param tokenID The token identifier.\n @param from The address whose balance will be reduced.\n @param to The address whose balance will be increased.\n @param amount The amount of token to move."
                         },
                         "functionSelector": "1c0f12b6",
@@ -4858,20 +5684,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "transferFrom",
-                        "nameLocation": "3172:12:16",
+                        "nameLocation": "4123:12:37",
                         "parameters": {
-                            "id": 2609,
+                            "id": 4753,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2602,
+                                    "id": 4746,
                                     "mutability": "mutable",
                                     "name": "tokenID",
-                                    "nameLocation": "3202:7:16",
+                                    "nameLocation": "4153:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2621,
-                                    "src": "3194:15:16",
+                                    "scope": 4765,
+                                    "src": "4145:15:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -4879,10 +5705,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 2601,
+                                        "id": 4745,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3194:7:16",
+                                        "src": "4145:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -4892,13 +5718,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2604,
+                                    "id": 4748,
                                     "mutability": "mutable",
                                     "name": "from",
-                                    "nameLocation": "3227:4:16",
+                                    "nameLocation": "4178:4:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2621,
-                                    "src": "3219:12:16",
+                                    "scope": 4765,
+                                    "src": "4170:12:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -4906,10 +5732,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2603,
+                                        "id": 4747,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3219:7:16",
+                                        "src": "4170:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -4920,13 +5746,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2606,
+                                    "id": 4750,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "3249:2:16",
+                                    "nameLocation": "4200:2:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2621,
-                                    "src": "3241:10:16",
+                                    "scope": 4765,
+                                    "src": "4192:10:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -4934,10 +5760,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2605,
+                                        "id": 4749,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3241:7:16",
+                                        "src": "4192:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -4948,13 +5774,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2608,
+                                    "id": 4752,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "3269:6:16",
+                                    "nameLocation": "4220:6:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2621,
-                                    "src": "3261:14:16",
+                                    "scope": 4765,
+                                    "src": "4212:14:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -4962,10 +5788,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 2607,
+                                        "id": 4751,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3261:7:16",
+                                        "src": "4212:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -4974,88 +5800,88 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3184:97:16"
+                            "src": "4135:97:37"
                         },
                         "returnParameters": {
-                            "id": 2610,
+                            "id": 4754,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "3291:0:16"
+                            "src": "4242:0:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2647,
+                        "id": 4791,
                         "nodeType": "FunctionDefinition",
-                        "src": "3808:285:16",
+                        "src": "4759:285:37",
                         "nodes": [],
                         "body": {
-                            "id": 2646,
+                            "id": 4790,
                             "nodeType": "Block",
-                            "src": "3986:107:16",
+                            "src": "4937:107:37",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 2639,
+                                                "id": 4783,
                                                 "name": "tokenID",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2624,
-                                                "src": "4052:7:16",
+                                                "referencedDeclaration": 4768,
+                                                "src": "5003:7:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 2640,
+                                                "id": 4784,
                                                 "name": "from",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2626,
-                                                "src": "4061:4:16",
+                                                "referencedDeclaration": 4770,
+                                                "src": "5012:4:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 2641,
+                                                "id": 4785,
                                                 "name": "to",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2628,
-                                                "src": "4067:2:16",
+                                                "referencedDeclaration": 4772,
+                                                "src": "5018:2:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 2642,
+                                                "id": 4786,
                                                 "name": "amount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2630,
-                                                "src": "4071:6:16",
+                                                "referencedDeclaration": 4774,
+                                                "src": "5022:6:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 2643,
+                                                "id": 4787,
                                                 "name": "caller",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2632,
-                                                "src": "4079:6:16",
+                                                "referencedDeclaration": 4776,
+                                                "src": "5030:6:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
@@ -5085,18 +5911,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "address"
                                                 }
                                             ],
-                                            "id": 2638,
+                                            "id": 4782,
                                             "name": "_transferFrom",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 12406,
-                                            "src": "4038:13:16",
+                                            "referencedDeclaration": 16841,
+                                            "src": "4989:13:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_address_$_t_uint256_$_t_address_$returns$__$",
                                                 "typeString": "function (uint256,address,address,uint256,address)"
                                             }
                                         },
-                                        "id": 2644,
+                                        "id": 4788,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5105,23 +5931,23 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "4038:48:16",
+                                        "src": "4989:48:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2645,
+                                    "id": 4789,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "4038:48:16"
+                                    "src": "4989:48:37"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 2622,
+                            "id": 4766,
                             "nodeType": "StructuredDocumentation",
-                            "src": "3409:394:16",
+                            "src": "4360:394:37",
                             "text": "@notice Permissioned transfer for the bridge to access, only callable by\n         the ERC20 linking bridge.\n @param tokenID The token identifier.\n @param from The address whose balance will be reduced.\n @param to The address whose balance will be increased.\n @param amount The amount of token to move.\n @param caller The msg.sender from the bridge."
                         },
                         "functionSelector": "e44808bc",
@@ -5131,49 +5957,49 @@ export const HyperdriveTarget0 = {
                             {
                                 "arguments": [
                                     {
-                                        "id": 2635,
+                                        "id": 4779,
                                         "name": "tokenID",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 2624,
-                                        "src": "3977:7:16",
+                                        "referencedDeclaration": 4768,
+                                        "src": "4928:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     }
                                 ],
-                                "id": 2636,
+                                "id": 4780,
                                 "kind": "modifierInvocation",
                                 "modifierName": {
-                                    "id": 2634,
+                                    "id": 4778,
                                     "name": "onlyLinker",
                                     "nameLocations": [
-                                        "3966:10:16"
+                                        "4917:10:37"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 12231,
-                                    "src": "3966:10:16"
+                                    "referencedDeclaration": 16666,
+                                    "src": "4917:10:37"
                                 },
                                 "nodeType": "ModifierInvocation",
-                                "src": "3966:19:16"
+                                "src": "4917:19:37"
                             }
                         ],
                         "name": "transferFromBridge",
-                        "nameLocation": "3817:18:16",
+                        "nameLocation": "4768:18:37",
                         "parameters": {
-                            "id": 2633,
+                            "id": 4777,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2624,
+                                    "id": 4768,
                                     "mutability": "mutable",
                                     "name": "tokenID",
-                                    "nameLocation": "3853:7:16",
+                                    "nameLocation": "4804:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2647,
-                                    "src": "3845:15:16",
+                                    "scope": 4791,
+                                    "src": "4796:15:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -5181,10 +6007,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 2623,
+                                        "id": 4767,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3845:7:16",
+                                        "src": "4796:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -5194,13 +6020,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2626,
+                                    "id": 4770,
                                     "mutability": "mutable",
                                     "name": "from",
-                                    "nameLocation": "3878:4:16",
+                                    "nameLocation": "4829:4:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2647,
-                                    "src": "3870:12:16",
+                                    "scope": 4791,
+                                    "src": "4821:12:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -5208,10 +6034,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2625,
+                                        "id": 4769,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3870:7:16",
+                                        "src": "4821:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -5222,13 +6048,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2628,
+                                    "id": 4772,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "3900:2:16",
+                                    "nameLocation": "4851:2:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2647,
-                                    "src": "3892:10:16",
+                                    "scope": 4791,
+                                    "src": "4843:10:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -5236,10 +6062,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2627,
+                                        "id": 4771,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3892:7:16",
+                                        "src": "4843:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -5250,13 +6076,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2630,
+                                    "id": 4774,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "3920:6:16",
+                                    "nameLocation": "4871:6:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2647,
-                                    "src": "3912:14:16",
+                                    "scope": 4791,
+                                    "src": "4863:14:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -5264,10 +6090,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 2629,
+                                        "id": 4773,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3912:7:16",
+                                        "src": "4863:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -5277,13 +6103,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2632,
+                                    "id": 4776,
                                     "mutability": "mutable",
                                     "name": "caller",
-                                    "nameLocation": "3944:6:16",
+                                    "nameLocation": "4895:6:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2647,
-                                    "src": "3936:14:16",
+                                    "scope": 4791,
+                                    "src": "4887:14:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -5291,10 +6117,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2631,
+                                        "id": 4775,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3936:7:16",
+                                        "src": "4887:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -5304,76 +6130,76 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3835:121:16"
+                            "src": "4786:121:37"
                         },
                         "returnParameters": {
-                            "id": 2637,
+                            "id": 4781,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "3986:0:16"
+                            "src": "4937:0:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2670,
+                        "id": 4814,
                         "nodeType": "FunctionDefinition",
-                        "src": "4600:225:16",
+                        "src": "5551:225:37",
                         "nodes": [],
                         "body": {
-                            "id": 2669,
+                            "id": 4813,
                             "nodeType": "Block",
-                            "src": "4761:64:16",
+                            "src": "5712:64:37",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 2663,
+                                                "id": 4807,
                                                 "name": "tokenID",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2650,
-                                                "src": "4784:7:16",
+                                                "referencedDeclaration": 4794,
+                                                "src": "5735:7:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 2664,
+                                                "id": 4808,
                                                 "name": "operator",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2652,
-                                                "src": "4793:8:16",
+                                                "referencedDeclaration": 4796,
+                                                "src": "5744:8:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 2665,
+                                                "id": 4809,
                                                 "name": "amount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2654,
-                                                "src": "4803:6:16",
+                                                "referencedDeclaration": 4798,
+                                                "src": "5754:6:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 2666,
+                                                "id": 4810,
                                                 "name": "caller",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2656,
-                                                "src": "4811:6:16",
+                                                "referencedDeclaration": 4800,
+                                                "src": "5762:6:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
@@ -5399,18 +6225,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "address"
                                                 }
                                             ],
-                                            "id": 2662,
+                                            "id": 4806,
                                             "name": "_setApproval",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 12435,
-                                            "src": "4771:12:16",
+                                            "referencedDeclaration": 16870,
+                                            "src": "5722:12:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_uint256_$_t_address_$returns$__$",
                                                 "typeString": "function (uint256,address,uint256,address)"
                                             }
                                         },
-                                        "id": 2667,
+                                        "id": 4811,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5419,23 +6245,23 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "4771:47:16",
+                                        "src": "5722:47:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2668,
+                                    "id": 4812,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "4771:47:16"
+                                    "src": "5722:47:37"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 2648,
+                            "id": 4792,
                             "nodeType": "StructuredDocumentation",
-                            "src": "4099:496:16",
+                            "src": "5050:496:37",
                             "text": "@notice Allows the compatibility linking contract to forward calls to\n         set asset approvals.\n @param tokenID The asset to approve the use of.\n @param operator The address who will be able to use the tokens.\n @param amount The max tokens the approved person can use, setting to\n        uint256.max will cause the value to never decrement [saving gas\n        on transfer].\n @param caller The eth address which called the linking contract."
                         },
                         "functionSelector": "4ed2d6ac",
@@ -5445,49 +6271,49 @@ export const HyperdriveTarget0 = {
                             {
                                 "arguments": [
                                     {
-                                        "id": 2659,
+                                        "id": 4803,
                                         "name": "tokenID",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 2650,
-                                        "src": "4752:7:16",
+                                        "referencedDeclaration": 4794,
+                                        "src": "5703:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     }
                                 ],
-                                "id": 2660,
+                                "id": 4804,
                                 "kind": "modifierInvocation",
                                 "modifierName": {
-                                    "id": 2658,
+                                    "id": 4802,
                                     "name": "onlyLinker",
                                     "nameLocations": [
-                                        "4741:10:16"
+                                        "5692:10:37"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 12231,
-                                    "src": "4741:10:16"
+                                    "referencedDeclaration": 16666,
+                                    "src": "5692:10:37"
                                 },
                                 "nodeType": "ModifierInvocation",
-                                "src": "4741:19:16"
+                                "src": "5692:19:37"
                             }
                         ],
                         "name": "setApprovalBridge",
-                        "nameLocation": "4609:17:16",
+                        "nameLocation": "5560:17:37",
                         "parameters": {
-                            "id": 2657,
+                            "id": 4801,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2650,
+                                    "id": 4794,
                                     "mutability": "mutable",
                                     "name": "tokenID",
-                                    "nameLocation": "4644:7:16",
+                                    "nameLocation": "5595:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2670,
-                                    "src": "4636:15:16",
+                                    "scope": 4814,
+                                    "src": "5587:15:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -5495,10 +6321,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 2649,
+                                        "id": 4793,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4636:7:16",
+                                        "src": "5587:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -5508,13 +6334,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2652,
+                                    "id": 4796,
                                     "mutability": "mutable",
                                     "name": "operator",
-                                    "nameLocation": "4669:8:16",
+                                    "nameLocation": "5620:8:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2670,
-                                    "src": "4661:16:16",
+                                    "scope": 4814,
+                                    "src": "5612:16:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -5522,10 +6348,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2651,
+                                        "id": 4795,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4661:7:16",
+                                        "src": "5612:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -5536,13 +6362,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2654,
+                                    "id": 4798,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "4695:6:16",
+                                    "nameLocation": "5646:6:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2670,
-                                    "src": "4687:14:16",
+                                    "scope": 4814,
+                                    "src": "5638:14:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -5550,10 +6376,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 2653,
+                                        "id": 4797,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4687:7:16",
+                                        "src": "5638:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -5563,13 +6389,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2656,
+                                    "id": 4800,
                                     "mutability": "mutable",
                                     "name": "caller",
-                                    "nameLocation": "4719:6:16",
+                                    "nameLocation": "5670:6:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2670,
-                                    "src": "4711:14:16",
+                                    "scope": 4814,
+                                    "src": "5662:14:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -5577,10 +6403,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2655,
+                                        "id": 4799,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4711:7:16",
+                                        "src": "5662:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -5590,33 +6416,33 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "4626:105:16"
+                            "src": "5577:105:37"
                         },
                         "returnParameters": {
-                            "id": 2661,
+                            "id": 4805,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "4761:0:16"
+                            "src": "5712:0:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2695,
+                        "id": 4839,
                         "nodeType": "FunctionDefinition",
-                        "src": "5057:277:16",
+                        "src": "6008:277:37",
                         "nodes": [],
                         "body": {
-                            "id": 2694,
+                            "id": 4838,
                             "nodeType": "Block",
-                            "src": "5126:208:16",
+                            "src": "6077:208:37",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 2685,
+                                        "id": 4829,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5624,40 +6450,40 @@ export const HyperdriveTarget0 = {
                                         "leftHandSide": {
                                             "baseExpression": {
                                                 "baseExpression": {
-                                                    "id": 2678,
+                                                    "id": 4822,
                                                     "name": "_isApprovedForAll",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13740,
-                                                    "src": "5173:17:16",
+                                                    "referencedDeclaration": 18212,
+                                                    "src": "6124:17:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_bool_$_$",
                                                         "typeString": "mapping(address => mapping(address => bool))"
                                                     }
                                                 },
-                                                "id": 2682,
+                                                "id": 4826,
                                                 "indexExpression": {
                                                     "expression": {
-                                                        "id": 2679,
+                                                        "id": 4823,
                                                         "name": "msg",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -15,
-                                                        "src": "5191:3:16",
+                                                        "src": "6142:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_message",
                                                             "typeString": "msg"
                                                         }
                                                     },
-                                                    "id": 2680,
+                                                    "id": 4824,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "5195:6:16",
+                                                    "memberLocation": "6146:6:37",
                                                     "memberName": "sender",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "5191:10:16",
+                                                    "src": "6142:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_address",
                                                         "typeString": "address"
@@ -5668,20 +6494,20 @@ export const HyperdriveTarget0 = {
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "nodeType": "IndexAccess",
-                                                "src": "5173:29:16",
+                                                "src": "6124:29:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                                                     "typeString": "mapping(address => bool)"
                                                 }
                                             },
-                                            "id": 2683,
+                                            "id": 4827,
                                             "indexExpression": {
-                                                "id": 2681,
+                                                "id": 4825,
                                                 "name": "operator",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2673,
-                                                "src": "5203:8:16",
+                                                "referencedDeclaration": 4817,
+                                                "src": "6154:8:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
@@ -5692,7 +6518,7 @@ export const HyperdriveTarget0 = {
                                             "isPure": false,
                                             "lValueRequested": true,
                                             "nodeType": "IndexAccess",
-                                            "src": "5173:39:16",
+                                            "src": "6124:39:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
@@ -5701,76 +6527,76 @@ export const HyperdriveTarget0 = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 2684,
+                                            "id": 4828,
                                             "name": "approved",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 2675,
-                                            "src": "5215:8:16",
+                                            "referencedDeclaration": 4819,
+                                            "src": "6166:8:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
                                             }
                                         },
-                                        "src": "5173:50:16",
+                                        "src": "6124:50:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 2686,
+                                    "id": 4830,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "5173:50:16"
+                                    "src": "6124:50:37"
                                 },
                                 {
                                     "eventCall": {
                                         "arguments": [
                                             {
                                                 "expression": {
-                                                    "id": 2688,
+                                                    "id": 4832,
                                                     "name": "msg",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
                                                     "referencedDeclaration": -15,
-                                                    "src": "5296:3:16",
+                                                    "src": "6247:3:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_magic_message",
                                                         "typeString": "msg"
                                                     }
                                                 },
-                                                "id": 2689,
+                                                "id": 4833,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "5300:6:16",
+                                                "memberLocation": "6251:6:37",
                                                 "memberName": "sender",
                                                 "nodeType": "MemberAccess",
-                                                "src": "5296:10:16",
+                                                "src": "6247:10:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 2690,
+                                                "id": 4834,
                                                 "name": "operator",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2673,
-                                                "src": "5308:8:16",
+                                                "referencedDeclaration": 4817,
+                                                "src": "6259:8:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 2691,
+                                                "id": 4835,
                                                 "name": "approved",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2675,
-                                                "src": "5318:8:16",
+                                                "referencedDeclaration": 4819,
+                                                "src": "6269:8:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -5792,18 +6618,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bool"
                                                 }
                                             ],
-                                            "id": 2687,
+                                            "id": 4831,
                                             "name": "ApprovalForAll",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 8622,
-                                            "src": "5281:14:16",
+                                            "referencedDeclaration": 12116,
+                                            "src": "6232:14:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_bool_$returns$__$",
                                                 "typeString": "function (address,address,bool)"
                                             }
                                         },
-                                        "id": 2692,
+                                        "id": 4836,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5812,23 +6638,23 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "5281:46:16",
+                                        "src": "6232:46:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2693,
+                                    "id": 4837,
                                     "nodeType": "EmitStatement",
-                                    "src": "5276:51:16"
+                                    "src": "6227:51:37"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 2671,
+                            "id": 4815,
                             "nodeType": "StructuredDocumentation",
-                            "src": "4831:221:16",
+                            "src": "5782:221:37",
                             "text": "@notice Allows a user to approve an operator to use all of their assets.\n @param operator The eth address which can access the caller's assets.\n @param approved True to approve, false to remove approval."
                         },
                         "functionSelector": "a22cb465",
@@ -5836,20 +6662,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "setApprovalForAll",
-                        "nameLocation": "5066:17:16",
+                        "nameLocation": "6017:17:37",
                         "parameters": {
-                            "id": 2676,
+                            "id": 4820,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2673,
+                                    "id": 4817,
                                     "mutability": "mutable",
                                     "name": "operator",
-                                    "nameLocation": "5092:8:16",
+                                    "nameLocation": "6043:8:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2695,
-                                    "src": "5084:16:16",
+                                    "scope": 4839,
+                                    "src": "6035:16:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -5857,10 +6683,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2672,
+                                        "id": 4816,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "5084:7:16",
+                                        "src": "6035:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -5871,13 +6697,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2675,
+                                    "id": 4819,
                                     "mutability": "mutable",
                                     "name": "approved",
-                                    "nameLocation": "5107:8:16",
+                                    "nameLocation": "6058:8:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2695,
-                                    "src": "5102:13:16",
+                                    "scope": 4839,
+                                    "src": "6053:13:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -5885,10 +6711,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 2674,
+                                        "id": 4818,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "5102:4:16",
+                                        "src": "6053:4:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -5897,64 +6723,64 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "5083:33:16"
+                            "src": "6034:33:37"
                         },
                         "returnParameters": {
-                            "id": 2677,
+                            "id": 4821,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "5126:0:16"
+                            "src": "6077:0:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2714,
+                        "id": 4858,
                         "nodeType": "FunctionDefinition",
-                        "src": "5764:179:16",
+                        "src": "6715:179:37",
                         "nodes": [],
                         "body": {
-                            "id": 2713,
+                            "id": 4857,
                             "nodeType": "Block",
-                            "src": "5875:68:16",
+                            "src": "6826:68:37",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 2706,
+                                                "id": 4850,
                                                 "name": "tokenID",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2698,
-                                                "src": "5898:7:16",
+                                                "referencedDeclaration": 4842,
+                                                "src": "6849:7:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 2707,
+                                                "id": 4851,
                                                 "name": "operator",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2700,
-                                                "src": "5907:8:16",
+                                                "referencedDeclaration": 4844,
+                                                "src": "6858:8:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 2708,
+                                                "id": 4852,
                                                 "name": "amount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2702,
-                                                "src": "5917:6:16",
+                                                "referencedDeclaration": 4846,
+                                                "src": "6868:6:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -5962,26 +6788,26 @@ export const HyperdriveTarget0 = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 2709,
+                                                    "id": 4853,
                                                     "name": "msg",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
                                                     "referencedDeclaration": -15,
-                                                    "src": "5925:3:16",
+                                                    "src": "6876:3:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_magic_message",
                                                         "typeString": "msg"
                                                     }
                                                 },
-                                                "id": 2710,
+                                                "id": 4854,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "5929:6:16",
+                                                "memberLocation": "6880:6:37",
                                                 "memberName": "sender",
                                                 "nodeType": "MemberAccess",
-                                                "src": "5925:10:16",
+                                                "src": "6876:10:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
@@ -6007,18 +6833,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "address"
                                                 }
                                             ],
-                                            "id": 2705,
+                                            "id": 4849,
                                             "name": "_setApproval",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 12435,
-                                            "src": "5885:12:16",
+                                            "referencedDeclaration": 16870,
+                                            "src": "6836:12:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_uint256_$_t_address_$returns$__$",
                                                 "typeString": "function (uint256,address,uint256,address)"
                                             }
                                         },
-                                        "id": 2711,
+                                        "id": 4855,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6027,23 +6853,23 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "5885:51:16",
+                                        "src": "6836:51:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2712,
+                                    "id": 4856,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "5885:51:16"
+                                    "src": "6836:51:37"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 2696,
+                            "id": 4840,
                             "nodeType": "StructuredDocumentation",
-                            "src": "5340:419:16",
+                            "src": "6291:419:37",
                             "text": "@notice Allows a user to set an approval for an individual asset with\n         specific amount.\n @param tokenID The asset to approve the use of.\n @param operator The address who will be able to use the tokens.\n @param amount The max tokens the approved person can use, setting to\n        uint256.max will cause the value to never decrement (saving gas\n        on transfer)."
                         },
                         "functionSelector": "9cd241af",
@@ -6051,20 +6877,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "setApproval",
-                        "nameLocation": "5773:11:16",
+                        "nameLocation": "6724:11:37",
                         "parameters": {
-                            "id": 2703,
+                            "id": 4847,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2698,
+                                    "id": 4842,
                                     "mutability": "mutable",
                                     "name": "tokenID",
-                                    "nameLocation": "5802:7:16",
+                                    "nameLocation": "6753:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2714,
-                                    "src": "5794:15:16",
+                                    "scope": 4858,
+                                    "src": "6745:15:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6072,10 +6898,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 2697,
+                                        "id": 4841,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "5794:7:16",
+                                        "src": "6745:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -6085,13 +6911,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2700,
+                                    "id": 4844,
                                     "mutability": "mutable",
                                     "name": "operator",
-                                    "nameLocation": "5827:8:16",
+                                    "nameLocation": "6778:8:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2714,
-                                    "src": "5819:16:16",
+                                    "scope": 4858,
+                                    "src": "6770:16:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6099,10 +6925,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2699,
+                                        "id": 4843,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "5819:7:16",
+                                        "src": "6770:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -6113,13 +6939,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2702,
+                                    "id": 4846,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "5853:6:16",
+                                    "nameLocation": "6804:6:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2714,
-                                    "src": "5845:14:16",
+                                    "scope": 4858,
+                                    "src": "6796:14:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6127,10 +6953,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 2701,
+                                        "id": 4845,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "5845:7:16",
+                                        "src": "6796:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -6139,76 +6965,76 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "5784:81:16"
+                            "src": "6735:81:37"
                         },
                         "returnParameters": {
-                            "id": 2704,
+                            "id": 4848,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "5875:0:16"
+                            "src": "6826:0:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2736,
+                        "id": 4880,
                         "nodeType": "FunctionDefinition",
-                        "src": "6230:209:16",
+                        "src": "7181:209:37",
                         "nodes": [],
                         "body": {
-                            "id": 2735,
+                            "id": 4879,
                             "nodeType": "Block",
-                            "src": "6381:58:16",
+                            "src": "7332:58:37",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 2729,
+                                                "id": 4873,
                                                 "name": "from",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2717,
-                                                "src": "6410:4:16",
+                                                "referencedDeclaration": 4861,
+                                                "src": "7361:4:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 2730,
+                                                "id": 4874,
                                                 "name": "to",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2719,
-                                                "src": "6416:2:16",
+                                                "referencedDeclaration": 4863,
+                                                "src": "7367:2:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 2731,
+                                                "id": 4875,
                                                 "name": "ids",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2722,
-                                                "src": "6420:3:16",
+                                                "referencedDeclaration": 4866,
+                                                "src": "7371:3:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
                                                     "typeString": "uint256[] calldata"
                                                 }
                                             },
                                             {
-                                                "id": 2732,
+                                                "id": 4876,
                                                 "name": "values",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2725,
-                                                "src": "6425:6:16",
+                                                "referencedDeclaration": 4869,
+                                                "src": "7376:6:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
                                                     "typeString": "uint256[] calldata"
@@ -6234,18 +7060,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "uint256[] calldata"
                                                 }
                                             ],
-                                            "id": 2728,
+                                            "id": 4872,
                                             "name": "_batchTransferFrom",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 12305,
-                                            "src": "6391:18:16",
+                                            "referencedDeclaration": 16740,
+                                            "src": "7342:18:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_array$_t_uint256_$dyn_calldata_ptr_$_t_array$_t_uint256_$dyn_calldata_ptr_$returns$__$",
                                                 "typeString": "function (address,address,uint256[] calldata,uint256[] calldata)"
                                             }
                                         },
-                                        "id": 2733,
+                                        "id": 4877,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6254,23 +7080,23 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "6391:41:16",
+                                        "src": "7342:41:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2734,
+                                    "id": 4878,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "6391:41:16"
+                                    "src": "7342:41:37"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 2715,
+                            "id": 4859,
                             "nodeType": "StructuredDocumentation",
-                            "src": "5949:276:16",
+                            "src": "6900:276:37",
                             "text": "@notice Transfers several assets from one account to another.\n @param from The source account.\n @param to The destination account.\n @param ids The array of token ids of the asset to transfer.\n @param values The amount of each token to transfer."
                         },
                         "functionSelector": "17fad7fc",
@@ -6278,20 +7104,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "batchTransferFrom",
-                        "nameLocation": "6239:17:16",
+                        "nameLocation": "7190:17:37",
                         "parameters": {
-                            "id": 2726,
+                            "id": 4870,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2717,
+                                    "id": 4861,
                                     "mutability": "mutable",
                                     "name": "from",
-                                    "nameLocation": "6274:4:16",
+                                    "nameLocation": "7225:4:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2736,
-                                    "src": "6266:12:16",
+                                    "scope": 4880,
+                                    "src": "7217:12:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6299,10 +7125,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2716,
+                                        "id": 4860,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "6266:7:16",
+                                        "src": "7217:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -6313,13 +7139,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2719,
+                                    "id": 4863,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "6296:2:16",
+                                    "nameLocation": "7247:2:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2736,
-                                    "src": "6288:10:16",
+                                    "scope": 4880,
+                                    "src": "7239:10:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6327,10 +7153,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2718,
+                                        "id": 4862,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "6288:7:16",
+                                        "src": "7239:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -6341,13 +7167,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2722,
+                                    "id": 4866,
                                     "mutability": "mutable",
                                     "name": "ids",
-                                    "nameLocation": "6327:3:16",
+                                    "nameLocation": "7278:3:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2736,
-                                    "src": "6308:22:16",
+                                    "scope": 4880,
+                                    "src": "7259:22:37",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
                                     "typeDescriptions": {
@@ -6356,18 +7182,18 @@ export const HyperdriveTarget0 = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 2720,
+                                            "id": 4864,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
-                                            "src": "6308:7:16",
+                                            "src": "7259:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 2721,
+                                        "id": 4865,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "6308:9:16",
+                                        "src": "7259:9:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                                             "typeString": "uint256[]"
@@ -6377,13 +7203,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2725,
+                                    "id": 4869,
                                     "mutability": "mutable",
                                     "name": "values",
-                                    "nameLocation": "6359:6:16",
+                                    "nameLocation": "7310:6:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2736,
-                                    "src": "6340:25:16",
+                                    "scope": 4880,
+                                    "src": "7291:25:37",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
                                     "typeDescriptions": {
@@ -6392,18 +7218,18 @@ export const HyperdriveTarget0 = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 2723,
+                                            "id": 4867,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
-                                            "src": "6340:7:16",
+                                            "src": "7291:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 2724,
+                                        "id": 4868,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "6340:9:16",
+                                        "src": "7291:9:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                                             "typeString": "uint256[]"
@@ -6412,136 +7238,136 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "6256:115:16"
+                            "src": "7207:115:37"
                         },
                         "returnParameters": {
-                            "id": 2727,
+                            "id": 4871,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "6381:0:16"
+                            "src": "7332:0:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2771,
+                        "id": 4915,
                         "nodeType": "FunctionDefinition",
-                        "src": "7775:482:16",
+                        "src": "8726:482:37",
                         "nodes": [],
                         "body": {
-                            "id": 2770,
+                            "id": 4914,
                             "nodeType": "Block",
-                            "src": "8030:227:16",
+                            "src": "8981:227:37",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 2759,
+                                                "id": 4903,
                                                 "name": "domainSeparator",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2739,
-                                                "src": "8067:15:16",
+                                                "referencedDeclaration": 4883,
+                                                "src": "9018:15:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes32",
                                                     "typeString": "bytes32"
                                                 }
                                             },
                                             {
-                                                "id": 2760,
+                                                "id": 4904,
                                                 "name": "permitTypeHash",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2741,
-                                                "src": "8096:14:16",
+                                                "referencedDeclaration": 4885,
+                                                "src": "9047:14:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes32",
                                                     "typeString": "bytes32"
                                                 }
                                             },
                                             {
-                                                "id": 2761,
+                                                "id": 4905,
                                                 "name": "owner",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2743,
-                                                "src": "8124:5:16",
+                                                "referencedDeclaration": 4887,
+                                                "src": "9075:5:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 2762,
+                                                "id": 4906,
                                                 "name": "spender",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2745,
-                                                "src": "8143:7:16",
+                                                "referencedDeclaration": 4889,
+                                                "src": "9094:7:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 2763,
+                                                "id": 4907,
                                                 "name": "_approved",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2747,
-                                                "src": "8164:9:16",
+                                                "referencedDeclaration": 4891,
+                                                "src": "9115:9:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
                                                 }
                                             },
                                             {
-                                                "id": 2764,
+                                                "id": 4908,
                                                 "name": "deadline",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2749,
-                                                "src": "8187:8:16",
+                                                "referencedDeclaration": 4893,
+                                                "src": "9138:8:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 2765,
+                                                "id": 4909,
                                                 "name": "v",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2751,
-                                                "src": "8209:1:16",
+                                                "referencedDeclaration": 4895,
+                                                "src": "9160:1:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint8",
                                                     "typeString": "uint8"
                                                 }
                                             },
                                             {
-                                                "id": 2766,
+                                                "id": 4910,
                                                 "name": "r",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2753,
-                                                "src": "8224:1:16",
+                                                "referencedDeclaration": 4897,
+                                                "src": "9175:1:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes32",
                                                     "typeString": "bytes32"
                                                 }
                                             },
                                             {
-                                                "id": 2767,
+                                                "id": 4911,
                                                 "name": "s",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2755,
-                                                "src": "8239:1:16",
+                                                "referencedDeclaration": 4899,
+                                                "src": "9190:1:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes32",
                                                     "typeString": "bytes32"
@@ -6587,18 +7413,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes32"
                                                 }
                                             ],
-                                            "id": 2758,
+                                            "id": 4902,
                                             "name": "_permitForAll",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 12633,
-                                            "src": "8040:13:16",
+                                            "referencedDeclaration": 17068,
+                                            "src": "8991:13:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_bytes32_$_t_address_$_t_address_$_t_bool_$_t_uint256_$_t_uint8_$_t_bytes32_$_t_bytes32_$returns$__$",
                                                 "typeString": "function (bytes32,bytes32,address,address,bool,uint256,uint8,bytes32,bytes32)"
                                             }
                                         },
-                                        "id": 2768,
+                                        "id": 4912,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6607,23 +7433,23 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "8040:210:16",
+                                        "src": "8991:210:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2769,
+                                    "id": 4913,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "8040:210:16"
+                                    "src": "8991:210:37"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 2737,
+                            "id": 4881,
                             "nodeType": "StructuredDocumentation",
-                            "src": "6445:1325:16",
+                            "src": "7396:1325:37",
                             "text": "@notice Allows a caller who is not the owner of an account to execute\n         the functionality of 'approve' for all assets with the owner's\n         signature.\n @param domainSeparator The EIP712 domain separator of the contract.\n @param permitTypeHash The EIP712 domain separator of the contract.\n @param owner The owner of the account which is having the new approval set.\n @param spender The address which will be allowed to spend owner's tokens.\n @param _approved A boolean of the approval status to set to.\n @param deadline The timestamp which the signature must be submitted by\n        to be valid.\n @param v Extra ECDSA data which allows public key recovery from\n        signature assumed to be 27 or 28.\n @param r The r component of the ECDSA signature.\n @param s The s component of the ECDSA signature.\n @dev The signature for this function follows EIP 712 standard and should\n      be generated with the eth_signTypedData JSON RPC call instead of\n      the eth_sign JSON RPC call. If using out of date parity signing\n      libraries the v component may need to be adjusted. Also it is very\n      rare but possible for v to be other values, those values are not\n      supported."
                         },
                         "functionSelector": "14e5f07b",
@@ -6631,20 +7457,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "permitForAll",
-                        "nameLocation": "7784:12:16",
+                        "nameLocation": "8735:12:37",
                         "parameters": {
-                            "id": 2756,
+                            "id": 4900,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2739,
+                                    "id": 4883,
                                     "mutability": "mutable",
                                     "name": "domainSeparator",
-                                    "nameLocation": "7814:15:16",
+                                    "nameLocation": "8765:15:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2771,
-                                    "src": "7806:23:16",
+                                    "scope": 4915,
+                                    "src": "8757:23:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6652,10 +7478,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 2738,
+                                        "id": 4882,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "7806:7:16",
+                                        "src": "8757:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -6665,13 +7491,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2741,
+                                    "id": 4885,
                                     "mutability": "mutable",
                                     "name": "permitTypeHash",
-                                    "nameLocation": "7847:14:16",
+                                    "nameLocation": "8798:14:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2771,
-                                    "src": "7839:22:16",
+                                    "scope": 4915,
+                                    "src": "8790:22:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6679,10 +7505,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 2740,
+                                        "id": 4884,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "7839:7:16",
+                                        "src": "8790:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -6692,13 +7518,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2743,
+                                    "id": 4887,
                                     "mutability": "mutable",
                                     "name": "owner",
-                                    "nameLocation": "7879:5:16",
+                                    "nameLocation": "8830:5:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2771,
-                                    "src": "7871:13:16",
+                                    "scope": 4915,
+                                    "src": "8822:13:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6706,10 +7532,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2742,
+                                        "id": 4886,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "7871:7:16",
+                                        "src": "8822:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -6720,13 +7546,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2745,
+                                    "id": 4889,
                                     "mutability": "mutable",
                                     "name": "spender",
-                                    "nameLocation": "7902:7:16",
+                                    "nameLocation": "8853:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2771,
-                                    "src": "7894:15:16",
+                                    "scope": 4915,
+                                    "src": "8845:15:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6734,10 +7560,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2744,
+                                        "id": 4888,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "7894:7:16",
+                                        "src": "8845:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -6748,13 +7574,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2747,
+                                    "id": 4891,
                                     "mutability": "mutable",
                                     "name": "_approved",
-                                    "nameLocation": "7924:9:16",
+                                    "nameLocation": "8875:9:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2771,
-                                    "src": "7919:14:16",
+                                    "scope": 4915,
+                                    "src": "8870:14:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6762,10 +7588,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 2746,
+                                        "id": 4890,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "7919:4:16",
+                                        "src": "8870:4:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -6775,13 +7601,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2749,
+                                    "id": 4893,
                                     "mutability": "mutable",
                                     "name": "deadline",
-                                    "nameLocation": "7951:8:16",
+                                    "nameLocation": "8902:8:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2771,
-                                    "src": "7943:16:16",
+                                    "scope": 4915,
+                                    "src": "8894:16:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6789,10 +7615,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 2748,
+                                        "id": 4892,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "7943:7:16",
+                                        "src": "8894:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -6802,13 +7628,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2751,
+                                    "id": 4895,
                                     "mutability": "mutable",
                                     "name": "v",
-                                    "nameLocation": "7975:1:16",
+                                    "nameLocation": "8926:1:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2771,
-                                    "src": "7969:7:16",
+                                    "scope": 4915,
+                                    "src": "8920:7:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6816,10 +7642,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 2750,
+                                        "id": 4894,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "7969:5:16",
+                                        "src": "8920:5:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint8",
                                             "typeString": "uint8"
@@ -6829,13 +7655,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2753,
+                                    "id": 4897,
                                     "mutability": "mutable",
                                     "name": "r",
-                                    "nameLocation": "7994:1:16",
+                                    "nameLocation": "8945:1:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2771,
-                                    "src": "7986:9:16",
+                                    "scope": 4915,
+                                    "src": "8937:9:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6843,10 +7669,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 2752,
+                                        "id": 4896,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "7986:7:16",
+                                        "src": "8937:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -6856,13 +7682,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 2755,
+                                    "id": 4899,
                                     "mutability": "mutable",
                                     "name": "s",
-                                    "nameLocation": "8013:1:16",
+                                    "nameLocation": "8964:1:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2771,
-                                    "src": "8005:9:16",
+                                    "scope": 4915,
+                                    "src": "8956:9:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6870,10 +7696,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 2754,
+                                        "id": 4898,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8005:7:16",
+                                        "src": "8956:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -6882,28 +7708,28 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "7796:224:16"
+                            "src": "8747:224:37"
                         },
                         "returnParameters": {
-                            "id": 2757,
+                            "id": 4901,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "8030:0:16"
+                            "src": "8981:0:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2789,
+                        "id": 4933,
                         "nodeType": "FunctionDefinition",
-                        "src": "8419:121:16",
+                        "src": "9370:121:37",
                         "nodes": [],
                         "body": {
-                            "id": 2788,
+                            "id": 4932,
                             "nodeType": "Block",
-                            "src": "8484:56:16",
+                            "src": "9435:56:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -6913,25 +7739,25 @@ export const HyperdriveTarget0 = {
                                                 "arguments": [
                                                     {
                                                         "baseExpression": {
-                                                            "id": 2782,
+                                                            "id": 4926,
                                                             "name": "_pausers",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 13715,
-                                                            "src": "8513:8:16",
+                                                            "referencedDeclaration": 18187,
+                                                            "src": "9464:8:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                                                                 "typeString": "mapping(address => bool)"
                                                             }
                                                         },
-                                                        "id": 2784,
+                                                        "id": 4928,
                                                         "indexExpression": {
-                                                            "id": 2783,
+                                                            "id": 4927,
                                                             "name": "_account",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 2774,
-                                                            "src": "8522:8:16",
+                                                            "referencedDeclaration": 4918,
+                                                            "src": "9473:8:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
@@ -6942,7 +7768,7 @@ export const HyperdriveTarget0 = {
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "nodeType": "IndexAccess",
-                                                        "src": "8513:18:16",
+                                                        "src": "9464:18:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
                                                             "typeString": "bool"
@@ -6957,32 +7783,32 @@ export const HyperdriveTarget0 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 2780,
+                                                        "id": 4924,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "8502:3:16",
+                                                        "src": "9453:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 2781,
+                                                    "id": 4925,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "8506:6:16",
+                                                    "memberLocation": "9457:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "8502:10:16",
+                                                    "src": "9453:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 2785,
+                                                "id": 4929,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -6991,7 +7817,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "8502:30:16",
+                                                "src": "9453:30:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -7006,18 +7832,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 2779,
+                                            "id": 4923,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "8494:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "9445:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 2786,
+                                        "id": 4930,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7026,26 +7852,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "8494:39:16",
+                                        "src": "9445:39:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2787,
+                                    "id": 4931,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "8494:39:16"
+                                    "src": "9445:39:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8360
+                            11854
                         ],
                         "documentation": {
-                            "id": 2772,
+                            "id": 4916,
                             "nodeType": "StructuredDocumentation",
-                            "src": "8284:130:16",
+                            "src": "9235:130:37",
                             "text": "@notice Gets the pauser status of an address.\n @param _account The account to check.\n @return The pauser status."
                         },
                         "functionSelector": "46fbf68e",
@@ -7053,20 +7879,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "isPauser",
-                        "nameLocation": "8428:8:16",
+                        "nameLocation": "9379:8:37",
                         "parameters": {
-                            "id": 2775,
+                            "id": 4919,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2774,
+                                    "id": 4918,
                                     "mutability": "mutable",
                                     "name": "_account",
-                                    "nameLocation": "8445:8:16",
+                                    "nameLocation": "9396:8:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2789,
-                                    "src": "8437:16:16",
+                                    "scope": 4933,
+                                    "src": "9388:16:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7074,10 +7900,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2773,
+                                        "id": 4917,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8437:7:16",
+                                        "src": "9388:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -7087,21 +7913,21 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "8436:18:16"
+                            "src": "9387:18:37"
                         },
                         "returnParameters": {
-                            "id": 2778,
+                            "id": 4922,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2777,
+                                    "id": 4921,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2789,
-                                    "src": "8478:4:16",
+                                    "scope": 4933,
+                                    "src": "9429:4:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7109,10 +7935,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 2776,
+                                        "id": 4920,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8478:4:16",
+                                        "src": "9429:4:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -7121,22 +7947,22 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "8477:6:16"
+                            "src": "9428:6:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2803,
+                        "id": 4947,
                         "nodeType": "FunctionDefinition",
-                        "src": "8615:101:16",
+                        "src": "9566:101:37",
                         "nodes": [],
                         "body": {
-                            "id": 2802,
+                            "id": 4946,
                             "nodeType": "Block",
-                            "src": "8668:48:16",
+                            "src": "9619:48:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -7145,14 +7971,14 @@ export const HyperdriveTarget0 = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 2798,
+                                                        "id": 4942,
                                                         "name": "_baseToken",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 13657,
-                                                        "src": "8697:10:16",
+                                                        "referencedDeclaration": 18126,
+                                                        "src": "9648:10:37",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_IERC20_$6920",
+                                                            "typeIdentifier": "t_contract$_IERC20_$10319",
                                                             "typeString": "contract IERC20"
                                                         }
                                                     }
@@ -7160,37 +7986,37 @@ export const HyperdriveTarget0 = {
                                                 "expression": {
                                                     "argumentTypes": [
                                                         {
-                                                            "typeIdentifier": "t_contract$_IERC20_$6920",
+                                                            "typeIdentifier": "t_contract$_IERC20_$10319",
                                                             "typeString": "contract IERC20"
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 2796,
+                                                        "id": 4940,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "8686:3:16",
+                                                        "src": "9637:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 2797,
+                                                    "id": 4941,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "8690:6:16",
+                                                    "memberLocation": "9641:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "8686:10:16",
+                                                    "src": "9637:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 2799,
+                                                "id": 4943,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -7199,7 +8025,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "8686:22:16",
+                                                "src": "9637:22:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -7214,18 +8040,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 2795,
+                                            "id": 4939,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "8678:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "9629:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 2800,
+                                        "id": 4944,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7234,26 +8060,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "8678:31:16",
+                                        "src": "9629:31:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2801,
+                                    "id": 4945,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "8678:31:16"
+                                    "src": "9629:31:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8301
+                            11795
                         ],
                         "documentation": {
-                            "id": 2790,
+                            "id": 4934,
                             "nodeType": "StructuredDocumentation",
-                            "src": "8546:64:16",
+                            "src": "9497:64:37",
                             "text": "@notice Gets the base token.\n @return The base token."
                         },
                         "functionSelector": "c55dae63",
@@ -7261,26 +8087,26 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "baseToken",
-                        "nameLocation": "8624:9:16",
+                        "nameLocation": "9575:9:37",
                         "parameters": {
-                            "id": 2791,
+                            "id": 4935,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "8633:2:16"
+                            "src": "9584:2:37"
                         },
                         "returnParameters": {
-                            "id": 2794,
+                            "id": 4938,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2793,
+                                    "id": 4937,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2803,
-                                    "src": "8659:7:16",
+                                    "scope": 4947,
+                                    "src": "9610:7:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7288,10 +8114,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 2792,
+                                        "id": 4936,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8659:7:16",
+                                        "src": "9610:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -7301,22 +8127,22 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "8658:9:16"
+                            "src": "9609:9:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2822,
+                        "id": 4966,
                         "nodeType": "FunctionDefinition",
-                        "src": "8851:183:16",
+                        "src": "9802:183:37",
                         "nodes": [],
                         "body": {
-                            "id": 2821,
+                            "id": 4965,
                             "nodeType": "Block",
-                            "src": "8967:67:16",
+                            "src": "9918:67:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -7326,25 +8152,25 @@ export const HyperdriveTarget0 = {
                                                 "arguments": [
                                                     {
                                                         "baseExpression": {
-                                                            "id": 2815,
+                                                            "id": 4959,
                                                             "name": "_checkpoints",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 13701,
-                                                            "src": "8996:12:16",
+                                                            "referencedDeclaration": 18170,
+                                                            "src": "9947:12:37",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$7312_storage_$",
+                                                                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$10718_storage_$",
                                                                 "typeString": "mapping(uint256 => struct IHyperdrive.Checkpoint storage ref)"
                                                             }
                                                         },
-                                                        "id": 2817,
+                                                        "id": 4961,
                                                         "indexExpression": {
-                                                            "id": 2816,
+                                                            "id": 4960,
                                                             "name": "_checkpointTime",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 2806,
-                                                            "src": "9009:15:16",
+                                                            "referencedDeclaration": 4950,
+                                                            "src": "9960:15:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -7355,9 +8181,9 @@ export const HyperdriveTarget0 = {
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "nodeType": "IndexAccess",
-                                                        "src": "8996:29:16",
+                                                        "src": "9947:29:37",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_Checkpoint_$7312_storage",
+                                                            "typeIdentifier": "t_struct$_Checkpoint_$10718_storage",
                                                             "typeString": "struct IHyperdrive.Checkpoint storage ref"
                                                         }
                                                     }
@@ -7365,37 +8191,37 @@ export const HyperdriveTarget0 = {
                                                 "expression": {
                                                     "argumentTypes": [
                                                         {
-                                                            "typeIdentifier": "t_struct$_Checkpoint_$7312_storage",
+                                                            "typeIdentifier": "t_struct$_Checkpoint_$10718_storage",
                                                             "typeString": "struct IHyperdrive.Checkpoint storage ref"
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 2813,
+                                                        "id": 4957,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "8985:3:16",
+                                                        "src": "9936:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 2814,
+                                                    "id": 4958,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "8989:6:16",
+                                                    "memberLocation": "9940:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "8985:10:16",
+                                                    "src": "9936:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 2818,
+                                                "id": 4962,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -7404,7 +8230,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "8985:41:16",
+                                                "src": "9936:41:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -7419,18 +8245,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 2812,
+                                            "id": 4956,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "8977:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "9928:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 2819,
+                                        "id": 4963,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7439,26 +8265,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "8977:50:16",
+                                        "src": "9928:50:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2820,
+                                    "id": 4964,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "8977:50:16"
+                                    "src": "9928:50:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8310
+                            11804
                         ],
                         "documentation": {
-                            "id": 2804,
+                            "id": 4948,
                             "nodeType": "StructuredDocumentation",
-                            "src": "8722:124:16",
+                            "src": "9673:124:37",
                             "text": "@notice Gets a specified checkpoint.\n @param _checkpointTime The checkpoint time.\n @return The checkpoint."
                         },
                         "functionSelector": "20fc4881",
@@ -7466,20 +8292,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "getCheckpoint",
-                        "nameLocation": "8860:13:16",
+                        "nameLocation": "9811:13:37",
                         "parameters": {
-                            "id": 2807,
+                            "id": 4951,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2806,
+                                    "id": 4950,
                                     "mutability": "mutable",
                                     "name": "_checkpointTime",
-                                    "nameLocation": "8891:15:16",
+                                    "nameLocation": "9842:15:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2822,
-                                    "src": "8883:23:16",
+                                    "scope": 4966,
+                                    "src": "9834:23:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7487,10 +8313,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 2805,
+                                        "id": 4949,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8883:7:16",
+                                        "src": "9834:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -7499,67 +8325,67 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "8873:39:16"
+                            "src": "9824:39:37"
                         },
                         "returnParameters": {
-                            "id": 2811,
+                            "id": 4955,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2810,
+                                    "id": 4954,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2822,
-                                    "src": "8936:29:16",
+                                    "scope": 4966,
+                                    "src": "9887:29:37",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Checkpoint_$7312_memory_ptr",
+                                        "typeIdentifier": "t_struct$_Checkpoint_$10718_memory_ptr",
                                         "typeString": "struct IHyperdrive.Checkpoint"
                                     },
                                     "typeName": {
-                                        "id": 2809,
+                                        "id": 4953,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 2808,
+                                            "id": 4952,
                                             "name": "IHyperdrive.Checkpoint",
                                             "nameLocations": [
-                                                "8936:11:16",
-                                                "8948:10:16"
+                                                "9887:11:37",
+                                                "9899:10:37"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 7312,
-                                            "src": "8936:22:16"
+                                            "referencedDeclaration": 10718,
+                                            "src": "9887:22:37"
                                         },
-                                        "referencedDeclaration": 7312,
-                                        "src": "8936:22:16",
+                                        "referencedDeclaration": 10718,
+                                        "src": "9887:22:37",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Checkpoint_$7312_storage_ptr",
+                                            "typeIdentifier": "t_struct$_Checkpoint_$10718_storage_ptr",
                                             "typeString": "struct IHyperdrive.Checkpoint"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "8935:31:16"
+                            "src": "9886:31:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2842,
+                        "id": 4986,
                         "nodeType": "FunctionDefinition",
-                        "src": "9199:213:16",
+                        "src": "10150:213:37",
                         "nodes": [],
                         "body": {
-                            "id": 2841,
+                            "id": 4985,
                             "nodeType": "Block",
-                            "src": "9300:112:16",
+                            "src": "10251:112:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -7574,18 +8400,18 @@ export const HyperdriveTarget0 = {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 },
-                                                                "id": 2836,
+                                                                "id": 4980,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftExpression": {
-                                                                    "id": 2834,
+                                                                    "id": 4978,
                                                                     "name": "_checkpointTime",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 2825,
-                                                                    "src": "9358:15:16",
+                                                                    "referencedDeclaration": 4969,
+                                                                    "src": "10309:15:37",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
@@ -7594,18 +8420,18 @@ export const HyperdriveTarget0 = {
                                                                 "nodeType": "BinaryOperation",
                                                                 "operator": "+",
                                                                 "rightExpression": {
-                                                                    "id": 2835,
+                                                                    "id": 4979,
                                                                     "name": "_positionDuration",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 13663,
-                                                                    "src": "9376:17:16",
+                                                                    "referencedDeclaration": 18132,
+                                                                    "src": "10327:17:37",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
                                                                     }
                                                                 },
-                                                                "src": "9358:35:16",
+                                                                "src": "10309:35:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
@@ -7619,18 +8445,18 @@ export const HyperdriveTarget0 = {
                                                                     "typeString": "uint256"
                                                                 }
                                                             ],
-                                                            "id": 2833,
+                                                            "id": 4977,
                                                             "name": "_nonNettedLongs",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 9190,
-                                                            "src": "9342:15:16",
+                                                            "referencedDeclaration": 13606,
+                                                            "src": "10293:15:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_int256_$",
                                                                 "typeString": "function (uint256) view returns (int256)"
                                                             }
                                                         },
-                                                        "id": 2837,
+                                                        "id": 4981,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -7639,7 +8465,7 @@ export const HyperdriveTarget0 = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "9342:52:16",
+                                                        "src": "10293:52:37",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -7655,32 +8481,32 @@ export const HyperdriveTarget0 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 2831,
+                                                        "id": 4975,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "9331:3:16",
+                                                        "src": "10282:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 2832,
+                                                    "id": 4976,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "9335:6:16",
+                                                    "memberLocation": "10286:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "9331:10:16",
+                                                    "src": "10282:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 2838,
+                                                "id": 4982,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -7689,7 +8515,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "9331:64:16",
+                                                "src": "10282:64:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -7704,18 +8530,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 2830,
+                                            "id": 4974,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "9310:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "10261:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 2839,
+                                        "id": 4983,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7724,26 +8550,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "9310:95:16",
+                                        "src": "10261:95:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2840,
+                                    "id": 4984,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "9310:95:16"
+                                    "src": "10261:95:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8318
+                            11812
                         ],
                         "documentation": {
-                            "id": 2823,
+                            "id": 4967,
                             "nodeType": "StructuredDocumentation",
-                            "src": "9040:154:16",
+                            "src": "9991:154:37",
                             "text": "@notice Gets the checkpoint exposure at a specified time.\n @param _checkpointTime The checkpoint time.\n @return The checkpoint exposure."
                         },
                         "functionSelector": "cf210e65",
@@ -7751,20 +8577,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "getCheckpointExposure",
-                        "nameLocation": "9208:21:16",
+                        "nameLocation": "10159:21:37",
                         "parameters": {
-                            "id": 2826,
+                            "id": 4970,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2825,
+                                    "id": 4969,
                                     "mutability": "mutable",
                                     "name": "_checkpointTime",
-                                    "nameLocation": "9247:15:16",
+                                    "nameLocation": "10198:15:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2842,
-                                    "src": "9239:23:16",
+                                    "scope": 4986,
+                                    "src": "10190:23:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7772,10 +8598,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 2824,
+                                        "id": 4968,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "9239:7:16",
+                                        "src": "10190:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -7784,21 +8610,21 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "9229:39:16"
+                            "src": "10180:39:37"
                         },
                         "returnParameters": {
-                            "id": 2829,
+                            "id": 4973,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2828,
+                                    "id": 4972,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2842,
-                                    "src": "9292:6:16",
+                                    "scope": 4986,
+                                    "src": "10243:6:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7806,10 +8632,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 2827,
+                                        "id": 4971,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "9292:6:16",
+                                        "src": "10243:6:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
@@ -7818,22 +8644,22 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "9291:8:16"
+                            "src": "10242:8:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2877,
+                        "id": 5022,
                         "nodeType": "FunctionDefinition",
-                        "src": "9617:1075:16",
+                        "src": "10568:1128:37",
                         "nodes": [],
                         "body": {
-                            "id": 2876,
+                            "id": 5021,
                             "nodeType": "Block",
-                            "src": "9724:968:16",
+                            "src": "10675:1021:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -7844,132 +8670,144 @@ export const HyperdriveTarget0 = {
                                                     {
                                                         "arguments": [
                                                             {
-                                                                "id": 2854,
+                                                                "id": 4998,
                                                                 "name": "_baseToken",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13657,
-                                                                "src": "9839:10:16",
+                                                                "referencedDeclaration": 18126,
+                                                                "src": "10790:10:37",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$6920",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$10319",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 2855,
+                                                                "id": 4999,
                                                                 "name": "_linkerFactory",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13718,
-                                                                "src": "9886:14:16",
+                                                                "referencedDeclaration": 18190,
+                                                                "src": "10837:14:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 2856,
+                                                                "id": 5000,
                                                                 "name": "_linkerCodeHash",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13721,
-                                                                "src": "9938:15:16",
+                                                                "referencedDeclaration": 18193,
+                                                                "src": "10889:15:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_bytes32",
                                                                     "typeString": "bytes32"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 2857,
+                                                                "id": 5001,
                                                                 "name": "_initialVaultSharePrice",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13681,
-                                                                "src": "9999:23:16",
+                                                                "referencedDeclaration": 18150,
+                                                                "src": "10950:23:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 2858,
+                                                                "id": 5002,
                                                                 "name": "_minimumShareReserves",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13684,
-                                                                "src": "10066:21:16",
+                                                                "referencedDeclaration": 18153,
+                                                                "src": "11017:21:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 2859,
+                                                                "id": 5003,
                                                                 "name": "_minimumTransactionAmount",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13687,
-                                                                "src": "10135:25:16",
+                                                                "referencedDeclaration": 18156,
+                                                                "src": "11086:25:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 2860,
+                                                                "id": 5004,
                                                                 "name": "_positionDuration",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13663,
-                                                                "src": "10200:17:16",
+                                                                "referencedDeclaration": 18132,
+                                                                "src": "11151:17:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 2861,
+                                                                "id": 5005,
                                                                 "name": "_checkpointDuration",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13660,
-                                                                "src": "10259:19:16",
+                                                                "referencedDeclaration": 18129,
+                                                                "src": "11210:19:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 2862,
+                                                                "id": 5006,
                                                                 "name": "_timeStretch",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13666,
-                                                                "src": "10313:12:16",
+                                                                "referencedDeclaration": 18135,
+                                                                "src": "11264:12:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 2863,
+                                                                "id": 5007,
                                                                 "name": "_governance",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13707,
-                                                                "src": "10359:11:16",
+                                                                "referencedDeclaration": 18179,
+                                                                "src": "11310:11:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 2864,
+                                                                "id": 5008,
                                                                 "name": "_feeCollector",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13704,
-                                                                "src": "10406:13:16",
+                                                                "referencedDeclaration": 18173,
+                                                                "src": "11357:13:37",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_address",
+                                                                    "typeString": "address"
+                                                                }
+                                                            },
+                                                            {
+                                                                "id": 5009,
+                                                                "name": "_sweepCollector",
+                                                                "nodeType": "Identifier",
+                                                                "overloadedDeclarations": [],
+                                                                "referencedDeclaration": 18176,
+                                                                "src": "11408:15:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
@@ -7978,48 +8816,48 @@ export const HyperdriveTarget0 = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 2867,
+                                                                        "id": 5012,
                                                                         "name": "_curveFee",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 13669,
-                                                                        "src": "10489:9:16",
+                                                                        "referencedDeclaration": 18138,
+                                                                        "src": "11493:9:37",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
                                                                     {
-                                                                        "id": 2868,
+                                                                        "id": 5013,
                                                                         "name": "_flatFee",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 13672,
-                                                                        "src": "10524:8:16",
+                                                                        "referencedDeclaration": 18141,
+                                                                        "src": "11528:8:37",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
                                                                     {
-                                                                        "id": 2869,
+                                                                        "id": 5014,
                                                                         "name": "_governanceLPFee",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 13675,
-                                                                        "src": "10558:16:16",
+                                                                        "referencedDeclaration": 18144,
+                                                                        "src": "11562:16:37",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
                                                                     {
-                                                                        "id": 2870,
+                                                                        "id": 5015,
                                                                         "name": "_governanceZombieFee",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 13678,
-                                                                        "src": "10600:20:16",
+                                                                        "referencedDeclaration": 18147,
+                                                                        "src": "11604:20:37",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
@@ -8046,33 +8884,33 @@ export const HyperdriveTarget0 = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 2865,
+                                                                        "id": 5010,
                                                                         "name": "IHyperdrive",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 7616,
-                                                                        "src": "10447:11:16",
+                                                                        "referencedDeclaration": 11028,
+                                                                        "src": "11451:11:37",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7616_$",
+                                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$11028_$",
                                                                             "typeString": "type(contract IHyperdrive)"
                                                                         }
                                                                     },
-                                                                    "id": 2866,
+                                                                    "id": 5011,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
-                                                                    "memberLocation": "10459:4:16",
+                                                                    "memberLocation": "11463:4:37",
                                                                     "memberName": "Fees",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 7332,
-                                                                    "src": "10447:16:16",
+                                                                    "referencedDeclaration": 10738,
+                                                                    "src": "11451:16:37",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_type$_t_struct$_Fees_$7332_storage_ptr_$",
+                                                                        "typeIdentifier": "t_type$_t_struct$_Fees_$10738_storage_ptr_$",
                                                                         "typeString": "type(struct IHyperdrive.Fees storage pointer)"
                                                                     }
                                                                 },
-                                                                "id": 2871,
+                                                                "id": 5016,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -8081,10 +8919,10 @@ export const HyperdriveTarget0 = {
                                                                 "nameLocations": [],
                                                                 "names": [],
                                                                 "nodeType": "FunctionCall",
-                                                                "src": "10447:195:16",
+                                                                "src": "11451:195:37",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_struct$_Fees_$7332_memory_ptr",
+                                                                    "typeIdentifier": "t_struct$_Fees_$10738_memory_ptr",
                                                                     "typeString": "struct IHyperdrive.Fees memory"
                                                                 }
                                                             }
@@ -8092,7 +8930,7 @@ export const HyperdriveTarget0 = {
                                                         "expression": {
                                                             "argumentTypes": [
                                                                 {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$6920",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$10319",
                                                                     "typeString": "contract IERC20"
                                                                 },
                                                                 {
@@ -8136,56 +8974,61 @@ export const HyperdriveTarget0 = {
                                                                     "typeString": "address"
                                                                 },
                                                                 {
-                                                                    "typeIdentifier": "t_struct$_Fees_$7332_memory_ptr",
+                                                                    "typeIdentifier": "t_address",
+                                                                    "typeString": "address"
+                                                                },
+                                                                {
+                                                                    "typeIdentifier": "t_struct$_Fees_$10738_memory_ptr",
                                                                     "typeString": "struct IHyperdrive.Fees memory"
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 2852,
+                                                                "id": 4996,
                                                                 "name": "IHyperdrive",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 7616,
-                                                                "src": "9783:11:16",
+                                                                "referencedDeclaration": 11028,
+                                                                "src": "10734:11:37",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7616_$",
+                                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$11028_$",
                                                                     "typeString": "type(contract IHyperdrive)"
                                                                 }
                                                             },
-                                                            "id": 2853,
+                                                            "id": 4997,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "9795:10:16",
+                                                            "memberLocation": "10746:10:37",
                                                             "memberName": "PoolConfig",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 7407,
-                                                            "src": "9783:22:16",
+                                                            "referencedDeclaration": 10819,
+                                                            "src": "10734:22:37",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_struct$_PoolConfig_$7407_storage_ptr_$",
+                                                                "typeIdentifier": "t_type$_t_struct$_PoolConfig_$10819_storage_ptr_$",
                                                                 "typeString": "type(struct IHyperdrive.PoolConfig storage pointer)"
                                                             }
                                                         },
-                                                        "id": 2872,
+                                                        "id": 5017,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "kind": "structConstructorCall",
                                                         "lValueRequested": false,
                                                         "nameLocations": [
-                                                            "9828:9:16",
-                                                            "9871:13:16",
-                                                            "9922:14:16",
-                                                            "9975:22:16",
-                                                            "10044:20:16",
-                                                            "10109:24:16",
-                                                            "10182:16:16",
-                                                            "10239:18:16",
-                                                            "10300:11:16",
-                                                            "10347:10:16",
-                                                            "10392:12:16",
-                                                            "10441:4:16"
+                                                            "10779:9:37",
+                                                            "10822:13:37",
+                                                            "10873:14:37",
+                                                            "10926:22:37",
+                                                            "10995:20:37",
+                                                            "11060:24:37",
+                                                            "11133:16:37",
+                                                            "11190:18:37",
+                                                            "11251:11:37",
+                                                            "11298:10:37",
+                                                            "11343:12:37",
+                                                            "11392:14:37",
+                                                            "11445:4:37"
                                                         ],
                                                         "names": [
                                                             "baseToken",
@@ -8199,13 +9042,14 @@ export const HyperdriveTarget0 = {
                                                             "timeStretch",
                                                             "governance",
                                                             "feeCollector",
+                                                            "sweepCollector",
                                                             "fees"
                                                         ],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "9783:878:16",
+                                                        "src": "10734:931:37",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_PoolConfig_$7407_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_PoolConfig_$10819_memory_ptr",
                                                             "typeString": "struct IHyperdrive.PoolConfig memory"
                                                         }
                                                     }
@@ -8213,37 +9057,37 @@ export const HyperdriveTarget0 = {
                                                 "expression": {
                                                     "argumentTypes": [
                                                         {
-                                                            "typeIdentifier": "t_struct$_PoolConfig_$7407_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_PoolConfig_$10819_memory_ptr",
                                                             "typeString": "struct IHyperdrive.PoolConfig memory"
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 2850,
+                                                        "id": 4994,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "9755:3:16",
+                                                        "src": "10706:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 2851,
+                                                    "id": 4995,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "9759:6:16",
+                                                    "memberLocation": "10710:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "9755:10:16",
+                                                    "src": "10706:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 2873,
+                                                "id": 5018,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -8252,7 +9096,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "9755:920:16",
+                                                "src": "10706:973:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -8267,18 +9111,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 2849,
+                                            "id": 4993,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "9734:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "10685:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 2874,
+                                        "id": 5019,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8287,26 +9131,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "9734:951:16",
+                                        "src": "10685:1004:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2875,
+                                    "id": 5020,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "9734:951:16"
+                                    "src": "10685:1004:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8332
+                            11826
                         ],
                         "documentation": {
-                            "id": 2843,
+                            "id": 4987,
                             "nodeType": "StructuredDocumentation",
-                            "src": "9418:194:16",
+                            "src": "10369:194:37",
                             "text": "@notice Gets the pool's configuration parameters.\n @dev These parameters are immutable, so this should only need to be\n      called once.\n @return The PoolConfig struct."
                         },
                         "functionSelector": "b0d96580",
@@ -8314,88 +9158,88 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "getPoolConfig",
-                        "nameLocation": "9626:13:16",
+                        "nameLocation": "10577:13:37",
                         "parameters": {
-                            "id": 2844,
+                            "id": 4988,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "9639:2:16"
+                            "src": "10590:2:37"
                         },
                         "returnParameters": {
-                            "id": 2848,
+                            "id": 4992,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2847,
+                                    "id": 4991,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2877,
-                                    "src": "9689:29:16",
+                                    "scope": 5022,
+                                    "src": "10640:29:37",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_PoolConfig_$7407_memory_ptr",
+                                        "typeIdentifier": "t_struct$_PoolConfig_$10819_memory_ptr",
                                         "typeString": "struct IHyperdrive.PoolConfig"
                                     },
                                     "typeName": {
-                                        "id": 2846,
+                                        "id": 4990,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 2845,
+                                            "id": 4989,
                                             "name": "IHyperdrive.PoolConfig",
                                             "nameLocations": [
-                                                "9689:11:16",
-                                                "9701:10:16"
+                                                "10640:11:37",
+                                                "10652:10:37"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 7407,
-                                            "src": "9689:22:16"
+                                            "referencedDeclaration": 10819,
+                                            "src": "10640:22:37"
                                         },
-                                        "referencedDeclaration": 7407,
-                                        "src": "9689:22:16",
+                                        "referencedDeclaration": 10819,
+                                        "src": "10640:22:37",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolConfig_$7407_storage_ptr",
+                                            "typeIdentifier": "t_struct$_PoolConfig_$10819_storage_ptr",
                                             "typeString": "struct IHyperdrive.PoolConfig"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "9688:31:16"
+                            "src": "10639:31:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2973,
+                        "id": 5118,
                         "nodeType": "FunctionDefinition",
-                        "src": "10861:1619:16",
+                        "src": "11865:1619:37",
                         "nodes": [],
                         "body": {
-                            "id": 2972,
+                            "id": 5117,
                             "nodeType": "Block",
-                            "src": "10936:1544:16",
+                            "src": "11940:1544:37",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        2885
+                                        5030
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 2885,
+                                            "id": 5030,
                                             "mutability": "mutable",
                                             "name": "vaultSharePrice",
-                                            "nameLocation": "10954:15:16",
+                                            "nameLocation": "11958:15:37",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 2972,
-                                            "src": "10946:23:16",
+                                            "scope": 5117,
+                                            "src": "11950:23:37",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -8403,10 +9247,10 @@ export const HyperdriveTarget0 = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 2884,
+                                                "id": 5029,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "10946:7:16",
+                                                "src": "11950:7:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -8415,23 +9259,23 @@ export const HyperdriveTarget0 = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 2888,
+                                    "id": 5033,
                                     "initialValue": {
                                         "arguments": [],
                                         "expression": {
                                             "argumentTypes": [],
-                                            "id": 2886,
+                                            "id": 5031,
                                             "name": "_pricePerVaultShare",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 9032,
-                                            "src": "10972:19:16",
+                                            "referencedDeclaration": 13352,
+                                            "src": "11976:19:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                                                 "typeString": "function () view returns (uint256)"
                                             }
                                         },
-                                        "id": 2887,
+                                        "id": 5032,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8440,7 +9284,7 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "10972:21:16",
+                                        "src": "11976:21:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
@@ -8448,22 +9292,22 @@ export const HyperdriveTarget0 = {
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "10946:47:16"
+                                    "src": "11950:47:37"
                                 },
                                 {
                                     "assignments": [
-                                        2890
+                                        5035
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 2890,
+                                            "id": 5035,
                                             "mutability": "mutable",
                                             "name": "lpTotalSupply",
-                                            "nameLocation": "11011:13:16",
+                                            "nameLocation": "12015:13:37",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 2972,
-                                            "src": "11003:21:16",
+                                            "scope": 5117,
+                                            "src": "12007:21:37",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -8471,10 +9315,10 @@ export const HyperdriveTarget0 = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 2889,
+                                                "id": 5034,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "11003:7:16",
+                                                "src": "12007:7:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -8483,13 +9327,13 @@ export const HyperdriveTarget0 = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 2903,
+                                    "id": 5048,
                                     "initialValue": {
                                         "commonType": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 2902,
+                                        "id": 5047,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8499,48 +9343,48 @@ export const HyperdriveTarget0 = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 2899,
+                                            "id": 5044,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
                                                 "baseExpression": {
-                                                    "id": 2891,
+                                                    "id": 5036,
                                                     "name": "_totalSupply",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13733,
-                                                    "src": "11027:12:16",
+                                                    "referencedDeclaration": 18205,
+                                                    "src": "12031:12:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                                                         "typeString": "mapping(uint256 => uint256)"
                                                     }
                                                 },
-                                                "id": 2894,
+                                                "id": 5039,
                                                 "indexExpression": {
                                                     "expression": {
-                                                        "id": 2892,
+                                                        "id": 5037,
                                                         "name": "AssetId",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 14117,
-                                                        "src": "11040:7:16",
+                                                        "referencedDeclaration": 18594,
+                                                        "src": "12044:7:37",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_type$_t_contract$_AssetId_$14117_$",
+                                                            "typeIdentifier": "t_type$_t_contract$_AssetId_$18594_$",
                                                             "typeString": "type(library AssetId)"
                                                         }
                                                     },
-                                                    "id": 2893,
+                                                    "id": 5038,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "11048:12:16",
+                                                    "memberLocation": "12052:12:37",
                                                     "memberName": "_LP_ASSET_ID",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 13850,
-                                                    "src": "11040:20:16",
+                                                    "referencedDeclaration": 18327,
+                                                    "src": "12044:20:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -8551,7 +9395,7 @@ export const HyperdriveTarget0 = {
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "nodeType": "IndexAccess",
-                                                "src": "11027:34:16",
+                                                "src": "12031:34:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -8561,41 +9405,41 @@ export const HyperdriveTarget0 = {
                                             "operator": "+",
                                             "rightExpression": {
                                                 "baseExpression": {
-                                                    "id": 2895,
+                                                    "id": 5040,
                                                     "name": "_totalSupply",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13733,
-                                                    "src": "11076:12:16",
+                                                    "referencedDeclaration": 18205,
+                                                    "src": "12080:12:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                                                         "typeString": "mapping(uint256 => uint256)"
                                                     }
                                                 },
-                                                "id": 2898,
+                                                "id": 5043,
                                                 "indexExpression": {
                                                     "expression": {
-                                                        "id": 2896,
+                                                        "id": 5041,
                                                         "name": "AssetId",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 14117,
-                                                        "src": "11089:7:16",
+                                                        "referencedDeclaration": 18594,
+                                                        "src": "12093:7:37",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_type$_t_contract$_AssetId_$14117_$",
+                                                            "typeIdentifier": "t_type$_t_contract$_AssetId_$18594_$",
                                                             "typeString": "type(library AssetId)"
                                                         }
                                                     },
-                                                    "id": 2897,
+                                                    "id": 5042,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "11097:26:16",
+                                                    "memberLocation": "12101:26:37",
                                                     "memberName": "_WITHDRAWAL_SHARE_ASSET_ID",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 13859,
-                                                    "src": "11089:34:16",
+                                                    "referencedDeclaration": 18336,
+                                                    "src": "12093:34:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -8606,13 +9450,13 @@ export const HyperdriveTarget0 = {
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "nodeType": "IndexAccess",
-                                                "src": "11076:48:16",
+                                                "src": "12080:48:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "src": "11027:97:16",
+                                            "src": "12031:97:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -8622,55 +9466,55 @@ export const HyperdriveTarget0 = {
                                         "operator": "-",
                                         "rightExpression": {
                                             "expression": {
-                                                "id": 2900,
+                                                "id": 5045,
                                                 "name": "_withdrawPool",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 13695,
-                                                "src": "11139:13:16",
+                                                "referencedDeclaration": 18164,
+                                                "src": "12143:13:37",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_WithdrawPool_$7319_storage",
+                                                    "typeIdentifier": "t_struct$_WithdrawPool_$10725_storage",
                                                     "typeString": "struct IHyperdrive.WithdrawPool storage ref"
                                                 }
                                             },
-                                            "id": 2901,
+                                            "id": 5046,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "11153:15:16",
+                                            "memberLocation": "12157:15:37",
                                             "memberName": "readyToWithdraw",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 7315,
-                                            "src": "11139:29:16",
+                                            "referencedDeclaration": 10721,
+                                            "src": "12143:29:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint128",
                                                 "typeString": "uint128"
                                             }
                                         },
-                                        "src": "11027:141:16",
+                                        "src": "12031:141:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "11003:165:16"
+                                    "src": "12007:165:37"
                                 },
                                 {
                                     "assignments": [
-                                        2905
+                                        5050
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 2905,
+                                            "id": 5050,
                                             "mutability": "mutable",
                                             "name": "presentValue",
-                                            "nameLocation": "11186:12:16",
+                                            "nameLocation": "12190:12:37",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 2972,
-                                            "src": "11178:20:16",
+                                            "scope": 5117,
+                                            "src": "12182:20:37",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -8678,10 +9522,10 @@ export const HyperdriveTarget0 = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 2904,
+                                                "id": 5049,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "11178:7:16",
+                                                "src": "12182:7:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -8690,25 +9534,25 @@ export const HyperdriveTarget0 = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 2920,
+                                    "id": 5065,
                                     "initialValue": {
                                         "condition": {
                                             "commonType": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 2908,
+                                            "id": 5053,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 2906,
+                                                "id": 5051,
                                                 "name": "vaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2885,
-                                                "src": "11201:15:16",
+                                                "referencedDeclaration": 5030,
+                                                "src": "12205:15:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -8718,21 +9562,21 @@ export const HyperdriveTarget0 = {
                                             "operator": ">",
                                             "rightExpression": {
                                                 "hexValue": "30",
-                                                "id": 2907,
+                                                "id": 5052,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "kind": "number",
                                                 "lValueRequested": false,
                                                 "nodeType": "Literal",
-                                                "src": "11219:1:16",
+                                                "src": "12223:1:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_rational_0_by_1",
                                                     "typeString": "int_const 0"
                                                 },
                                                 "value": "0"
                                             },
-                                            "src": "11201:19:16",
+                                            "src": "12205:19:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
@@ -8740,36 +9584,36 @@ export const HyperdriveTarget0 = {
                                         },
                                         "falseExpression": {
                                             "hexValue": "30",
-                                            "id": 2918,
+                                            "id": 5063,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
                                             "kind": "number",
                                             "lValueRequested": false,
                                             "nodeType": "Literal",
-                                            "src": "11378:1:16",
+                                            "src": "12382:1:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_rational_0_by_1",
                                                 "typeString": "int_const 0"
                                             },
                                             "value": "0"
                                         },
-                                        "id": 2919,
+                                        "id": 5064,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "nodeType": "Conditional",
-                                        "src": "11201:178:16",
+                                        "src": "12205:178:37",
                                         "trueExpression": {
                                             "arguments": [
                                                 {
-                                                    "id": 2916,
+                                                    "id": 5061,
                                                     "name": "vaultSharePrice",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 2885,
-                                                    "src": "11347:15:16",
+                                                    "referencedDeclaration": 5030,
+                                                    "src": "12351:15:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -8788,12 +9632,12 @@ export const HyperdriveTarget0 = {
                                                         {
                                                             "arguments": [
                                                                 {
-                                                                    "id": 2912,
+                                                                    "id": 5057,
                                                                     "name": "vaultSharePrice",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 2885,
-                                                                    "src": "11304:15:16",
+                                                                    "referencedDeclaration": 5030,
+                                                                    "src": "12308:15:37",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
@@ -8807,18 +9651,18 @@ export const HyperdriveTarget0 = {
                                                                         "typeString": "uint256"
                                                                     }
                                                                 ],
-                                                                "id": 2911,
+                                                                "id": 5056,
                                                                 "name": "_getPresentValueParams",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 9319,
-                                                                "src": "11281:22:16",
+                                                                "referencedDeclaration": 13735,
+                                                                "src": "12285:22:37",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_struct$_PresentValueParams_$15790_memory_ptr_$",
+                                                                    "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_struct$_PresentValueParams_$20394_memory_ptr_$",
                                                                     "typeString": "function (uint256) view returns (struct LPMath.PresentValueParams memory)"
                                                                 }
                                                             },
-                                                            "id": 2913,
+                                                            "id": 5058,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -8827,10 +9671,10 @@ export const HyperdriveTarget0 = {
                                                             "nameLocations": [],
                                                             "names": [],
                                                             "nodeType": "FunctionCall",
-                                                            "src": "11281:39:16",
+                                                            "src": "12285:39:37",
                                                             "tryCall": false,
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_PresentValueParams_$15790_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PresentValueParams_$20394_memory_ptr",
                                                                 "typeString": "struct LPMath.PresentValueParams memory"
                                                             }
                                                         }
@@ -8838,38 +9682,38 @@ export const HyperdriveTarget0 = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_struct$_PresentValueParams_$15790_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PresentValueParams_$20394_memory_ptr",
                                                                 "typeString": "struct LPMath.PresentValueParams memory"
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 2909,
+                                                            "id": 5054,
                                                             "name": "LPMath",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 17396,
-                                                            "src": "11235:6:16",
+                                                            "referencedDeclaration": 22086,
+                                                            "src": "12239:6:37",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_LPMath_$17396_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_LPMath_$22086_$",
                                                                 "typeString": "type(library LPMath)"
                                                             }
                                                         },
-                                                        "id": 2910,
+                                                        "id": 5055,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "11259:21:16",
+                                                        "memberLocation": "12263:21:37",
                                                         "memberName": "calculatePresentValue",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 15819,
-                                                        "src": "11235:45:16",
+                                                        "referencedDeclaration": 20423,
+                                                        "src": "12239:45:37",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_function_internal_pure$_t_struct$_PresentValueParams_$15790_memory_ptr_$returns$_t_uint256_$",
+                                                            "typeIdentifier": "t_function_internal_pure$_t_struct$_PresentValueParams_$20394_memory_ptr_$returns$_t_uint256_$",
                                                             "typeString": "function (struct LPMath.PresentValueParams memory) pure returns (uint256)"
                                                         }
                                                     },
-                                                    "id": 2914,
+                                                    "id": 5059,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -8878,29 +9722,29 @@ export const HyperdriveTarget0 = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "11235:86:16",
+                                                    "src": "12239:86:37",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 2915,
+                                                "id": 5060,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "11339:7:16",
+                                                "memberLocation": "12343:7:37",
                                                 "memberName": "mulDown",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 14197,
-                                                "src": "11235:111:16",
+                                                "referencedDeclaration": 18674,
+                                                "src": "12239:111:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 2917,
+                                            "id": 5062,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -8909,7 +9753,7 @@ export const HyperdriveTarget0 = {
                                             "nameLocations": [],
                                             "names": [],
                                             "nodeType": "FunctionCall",
-                                            "src": "11235:128:16",
+                                            "src": "12239:128:37",
                                             "tryCall": false,
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -8922,78 +9766,78 @@ export const HyperdriveTarget0 = {
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "11178:201:16"
+                                    "src": "12182:201:37"
                                 },
                                 {
                                     "assignments": [
-                                        2925
+                                        5070
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 2925,
+                                            "id": 5070,
                                             "mutability": "mutable",
                                             "name": "poolInfo",
-                                            "nameLocation": "11417:8:16",
+                                            "nameLocation": "12421:8:37",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 2972,
-                                            "src": "11389:36:16",
+                                            "scope": 5117,
+                                            "src": "12393:36:37",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_PoolInfo_$7453_memory_ptr",
+                                                "typeIdentifier": "t_struct$_PoolInfo_$10865_memory_ptr",
                                                 "typeString": "struct IHyperdrive.PoolInfo"
                                             },
                                             "typeName": {
-                                                "id": 2924,
+                                                "id": 5069,
                                                 "nodeType": "UserDefinedTypeName",
                                                 "pathNode": {
-                                                    "id": 2923,
+                                                    "id": 5068,
                                                     "name": "IHyperdrive.PoolInfo",
                                                     "nameLocations": [
-                                                        "11389:11:16",
-                                                        "11401:8:16"
+                                                        "12393:11:37",
+                                                        "12405:8:37"
                                                     ],
                                                     "nodeType": "IdentifierPath",
-                                                    "referencedDeclaration": 7453,
-                                                    "src": "11389:20:16"
+                                                    "referencedDeclaration": 10865,
+                                                    "src": "12393:20:37"
                                                 },
-                                                "referencedDeclaration": 7453,
-                                                "src": "11389:20:16",
+                                                "referencedDeclaration": 10865,
+                                                "src": "12393:20:37",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_PoolInfo_$7453_storage_ptr",
+                                                    "typeIdentifier": "t_struct$_PoolInfo_$10865_storage_ptr",
                                                     "typeString": "struct IHyperdrive.PoolInfo"
                                                 }
                                             },
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 2964,
+                                    "id": 5109,
                                     "initialValue": {
                                         "arguments": [
                                             {
                                                 "expression": {
-                                                    "id": 2928,
+                                                    "id": 5073,
                                                     "name": "_marketState",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13691,
-                                                    "src": "11478:12:16",
+                                                    "referencedDeclaration": 18160,
+                                                    "src": "12482:12:37",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                        "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                         "typeString": "struct IHyperdrive.MarketState storage ref"
                                                     }
                                                 },
-                                                "id": 2929,
+                                                "id": 5074,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "11491:13:16",
+                                                "memberLocation": "12495:13:37",
                                                 "memberName": "shareReserves",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 7274,
-                                                "src": "11478:26:16",
+                                                "referencedDeclaration": 10680,
+                                                "src": "12482:26:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint128",
                                                     "typeString": "uint128"
@@ -9001,27 +9845,27 @@ export const HyperdriveTarget0 = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 2930,
+                                                    "id": 5075,
                                                     "name": "_marketState",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13691,
-                                                    "src": "11535:12:16",
+                                                    "referencedDeclaration": 18160,
+                                                    "src": "12539:12:37",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                        "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                         "typeString": "struct IHyperdrive.MarketState storage ref"
                                                     }
                                                 },
-                                                "id": 2931,
+                                                "id": 5076,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "11548:15:16",
+                                                "memberLocation": "12552:15:37",
                                                 "memberName": "shareAdjustment",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 7286,
-                                                "src": "11535:28:16",
+                                                "referencedDeclaration": 10692,
+                                                "src": "12539:28:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int128",
                                                     "typeString": "int128"
@@ -9029,27 +9873,27 @@ export const HyperdriveTarget0 = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 2932,
+                                                    "id": 5077,
                                                     "name": "_marketState",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13691,
-                                                    "src": "11597:12:16",
+                                                    "referencedDeclaration": 18160,
+                                                    "src": "12601:12:37",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                        "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                         "typeString": "struct IHyperdrive.MarketState storage ref"
                                                     }
                                                 },
-                                                "id": 2933,
+                                                "id": 5078,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "11610:18:16",
+                                                "memberLocation": "12614:18:37",
                                                 "memberName": "zombieBaseProceeds",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 7304,
-                                                "src": "11597:31:16",
+                                                "referencedDeclaration": 10710,
+                                                "src": "12601:31:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint112",
                                                     "typeString": "uint112"
@@ -9057,27 +9901,27 @@ export const HyperdriveTarget0 = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 2934,
+                                                    "id": 5079,
                                                     "name": "_marketState",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13691,
-                                                    "src": "11663:12:16",
+                                                    "referencedDeclaration": 18160,
+                                                    "src": "12667:12:37",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                        "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                         "typeString": "struct IHyperdrive.MarketState storage ref"
                                                     }
                                                 },
-                                                "id": 2935,
+                                                "id": 5080,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "11676:19:16",
+                                                "memberLocation": "12680:19:37",
                                                 "memberName": "zombieShareReserves",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 7307,
-                                                "src": "11663:32:16",
+                                                "referencedDeclaration": 10713,
+                                                "src": "12667:32:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint128",
                                                     "typeString": "uint128"
@@ -9085,39 +9929,39 @@ export const HyperdriveTarget0 = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 2936,
+                                                    "id": 5081,
                                                     "name": "_marketState",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13691,
-                                                    "src": "11723:12:16",
+                                                    "referencedDeclaration": 18160,
+                                                    "src": "12727:12:37",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                        "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                         "typeString": "struct IHyperdrive.MarketState storage ref"
                                                     }
                                                 },
-                                                "id": 2937,
+                                                "id": 5082,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "11736:12:16",
+                                                "memberLocation": "12740:12:37",
                                                 "memberName": "bondReserves",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 7277,
-                                                "src": "11723:25:16",
+                                                "referencedDeclaration": 10683,
+                                                "src": "12727:25:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint128",
                                                     "typeString": "uint128"
                                                 }
                                             },
                                             {
-                                                "id": 2938,
+                                                "id": 5083,
                                                 "name": "vaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2885,
-                                                "src": "11779:15:16",
+                                                "referencedDeclaration": 5030,
+                                                "src": "12783:15:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -9125,27 +9969,27 @@ export const HyperdriveTarget0 = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 2939,
+                                                    "id": 5084,
                                                     "name": "_marketState",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13691,
-                                                    "src": "11826:12:16",
+                                                    "referencedDeclaration": 18160,
+                                                    "src": "12830:12:37",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                        "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                         "typeString": "struct IHyperdrive.MarketState storage ref"
                                                     }
                                                 },
-                                                "id": 2940,
+                                                "id": 5085,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "11839:16:16",
+                                                "memberLocation": "12843:16:37",
                                                 "memberName": "longsOutstanding",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 7283,
-                                                "src": "11826:29:16",
+                                                "referencedDeclaration": 10689,
+                                                "src": "12830:29:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint128",
                                                     "typeString": "uint128"
@@ -9153,27 +9997,27 @@ export const HyperdriveTarget0 = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 2941,
+                                                    "id": 5086,
                                                     "name": "_marketState",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13691,
-                                                    "src": "11894:12:16",
+                                                    "referencedDeclaration": 18160,
+                                                    "src": "12898:12:37",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                        "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                         "typeString": "struct IHyperdrive.MarketState storage ref"
                                                     }
                                                 },
-                                                "id": 2942,
+                                                "id": 5087,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "11907:23:16",
+                                                "memberLocation": "12911:23:37",
                                                 "memberName": "longAverageMaturityTime",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 7292,
-                                                "src": "11894:36:16",
+                                                "referencedDeclaration": 10698,
+                                                "src": "12898:36:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint128",
                                                     "typeString": "uint128"
@@ -9181,27 +10025,27 @@ export const HyperdriveTarget0 = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 2943,
+                                                    "id": 5088,
                                                     "name": "_marketState",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13691,
-                                                    "src": "11963:12:16",
+                                                    "referencedDeclaration": 18160,
+                                                    "src": "12967:12:37",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                        "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                         "typeString": "struct IHyperdrive.MarketState storage ref"
                                                     }
                                                 },
-                                                "id": 2944,
+                                                "id": 5089,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "11976:17:16",
+                                                "memberLocation": "12980:17:37",
                                                 "memberName": "shortsOutstanding",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 7289,
-                                                "src": "11963:30:16",
+                                                "referencedDeclaration": 10695,
+                                                "src": "12967:30:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint128",
                                                     "typeString": "uint128"
@@ -9209,39 +10053,39 @@ export const HyperdriveTarget0 = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 2945,
+                                                    "id": 5090,
                                                     "name": "_marketState",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13691,
-                                                    "src": "12033:12:16",
+                                                    "referencedDeclaration": 18160,
+                                                    "src": "13037:12:37",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                        "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                         "typeString": "struct IHyperdrive.MarketState storage ref"
                                                     }
                                                 },
-                                                "id": 2946,
+                                                "id": 5091,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "12046:24:16",
+                                                "memberLocation": "13050:24:37",
                                                 "memberName": "shortAverageMaturityTime",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 7295,
-                                                "src": "12033:37:16",
+                                                "referencedDeclaration": 10701,
+                                                "src": "13037:37:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint128",
                                                     "typeString": "uint128"
                                                 }
                                             },
                                             {
-                                                "id": 2947,
+                                                "id": 5092,
                                                 "name": "lpTotalSupply",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 2890,
-                                                "src": "12099:13:16",
+                                                "referencedDeclaration": 5035,
+                                                "src": "13103:13:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -9253,18 +10097,18 @@ export const HyperdriveTarget0 = {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     },
-                                                    "id": 2950,
+                                                    "id": 5095,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
-                                                        "id": 2948,
+                                                        "id": 5093,
                                                         "name": "lpTotalSupply",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 2890,
-                                                        "src": "12140:13:16",
+                                                        "referencedDeclaration": 5035,
+                                                        "src": "13144:13:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -9274,21 +10118,21 @@ export const HyperdriveTarget0 = {
                                                     "operator": "==",
                                                     "rightExpression": {
                                                         "hexValue": "30",
-                                                        "id": 2949,
+                                                        "id": 5094,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
                                                         "kind": "number",
                                                         "lValueRequested": false,
                                                         "nodeType": "Literal",
-                                                        "src": "12157:1:16",
+                                                        "src": "13161:1:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_rational_0_by_1",
                                                             "typeString": "int_const 0"
                                                         },
                                                         "value": "0"
                                                     },
-                                                    "src": "12140:18:16",
+                                                    "src": "13144:18:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bool",
                                                         "typeString": "bool"
@@ -9297,12 +10141,12 @@ export const HyperdriveTarget0 = {
                                                 "falseExpression": {
                                                     "arguments": [
                                                         {
-                                                            "id": 2954,
+                                                            "id": 5099,
                                                             "name": "lpTotalSupply",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 2890,
-                                                            "src": "12218:13:16",
+                                                            "referencedDeclaration": 5035,
+                                                            "src": "13222:13:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -9317,33 +10161,33 @@ export const HyperdriveTarget0 = {
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 2952,
+                                                            "id": 5097,
                                                             "name": "presentValue",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 2905,
-                                                            "src": "12197:12:16",
+                                                            "referencedDeclaration": 5050,
+                                                            "src": "13201:12:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             }
                                                         },
-                                                        "id": 2953,
+                                                        "id": 5098,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "12210:7:16",
+                                                        "memberLocation": "13214:7:37",
                                                         "memberName": "divDown",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 14215,
-                                                        "src": "12197:20:16",
+                                                        "referencedDeclaration": 18692,
+                                                        "src": "13201:20:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                             "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                         }
                                                     },
-                                                    "id": 2955,
+                                                    "id": 5100,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -9352,30 +10196,30 @@ export const HyperdriveTarget0 = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "12197:35:16",
+                                                    "src": "13201:35:37",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 2956,
+                                                "id": 5101,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "nodeType": "Conditional",
-                                                "src": "12140:92:16",
+                                                "src": "13144:92:37",
                                                 "trueExpression": {
                                                     "hexValue": "30",
-                                                    "id": 2951,
+                                                    "id": 5096,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "kind": "number",
                                                     "lValueRequested": false,
                                                     "nodeType": "Literal",
-                                                    "src": "12177:1:16",
+                                                    "src": "13181:1:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_rational_0_by_1",
                                                         "typeString": "int_const 0"
@@ -9389,27 +10233,27 @@ export const HyperdriveTarget0 = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 2957,
+                                                    "id": 5102,
                                                     "name": "_withdrawPool",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13695,
-                                                    "src": "12279:13:16",
+                                                    "referencedDeclaration": 18164,
+                                                    "src": "13283:13:37",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_WithdrawPool_$7319_storage",
+                                                        "typeIdentifier": "t_struct$_WithdrawPool_$10725_storage",
                                                         "typeString": "struct IHyperdrive.WithdrawPool storage ref"
                                                     }
                                                 },
-                                                "id": 2958,
+                                                "id": 5103,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "12293:15:16",
+                                                "memberLocation": "13297:15:37",
                                                 "memberName": "readyToWithdraw",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 7315,
-                                                "src": "12279:29:16",
+                                                "referencedDeclaration": 10721,
+                                                "src": "13283:29:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint128",
                                                     "typeString": "uint128"
@@ -9417,27 +10261,27 @@ export const HyperdriveTarget0 = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 2959,
+                                                    "id": 5104,
                                                     "name": "_withdrawPool",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13695,
-                                                    "src": "12348:13:16",
+                                                    "referencedDeclaration": 18164,
+                                                    "src": "13352:13:37",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_WithdrawPool_$7319_storage",
+                                                        "typeIdentifier": "t_struct$_WithdrawPool_$10725_storage",
                                                         "typeString": "struct IHyperdrive.WithdrawPool storage ref"
                                                     }
                                                 },
-                                                "id": 2960,
+                                                "id": 5105,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "12362:8:16",
+                                                "memberLocation": "13366:8:37",
                                                 "memberName": "proceeds",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 7318,
-                                                "src": "12348:22:16",
+                                                "referencedDeclaration": 10724,
+                                                "src": "13352:22:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint128",
                                                     "typeString": "uint128"
@@ -9445,27 +10289,27 @@ export const HyperdriveTarget0 = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 2961,
+                                                    "id": 5106,
                                                     "name": "_marketState",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13691,
-                                                    "src": "12398:12:16",
+                                                    "referencedDeclaration": 18160,
+                                                    "src": "13402:12:37",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                        "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                         "typeString": "struct IHyperdrive.MarketState storage ref"
                                                     }
                                                 },
-                                                "id": 2962,
+                                                "id": 5107,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "12411:12:16",
+                                                "memberLocation": "13415:12:37",
                                                 "memberName": "longExposure",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 7280,
-                                                "src": "12398:25:16",
+                                                "referencedDeclaration": 10686,
+                                                "src": "13402:25:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint128",
                                                     "typeString": "uint128"
@@ -9536,54 +10380,54 @@ export const HyperdriveTarget0 = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 2926,
+                                                "id": 5071,
                                                 "name": "IHyperdrive",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 7616,
-                                                "src": "11428:11:16",
+                                                "referencedDeclaration": 11028,
+                                                "src": "12432:11:37",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7616_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$11028_$",
                                                     "typeString": "type(contract IHyperdrive)"
                                                 }
                                             },
-                                            "id": 2927,
+                                            "id": 5072,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "11440:8:16",
+                                            "memberLocation": "12444:8:37",
                                             "memberName": "PoolInfo",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 7453,
-                                            "src": "11428:20:16",
+                                            "referencedDeclaration": 10865,
+                                            "src": "12432:20:37",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_type$_t_struct$_PoolInfo_$7453_storage_ptr_$",
+                                                "typeIdentifier": "t_type$_t_struct$_PoolInfo_$10865_storage_ptr_$",
                                                 "typeString": "type(struct IHyperdrive.PoolInfo storage pointer)"
                                             }
                                         },
-                                        "id": 2963,
+                                        "id": 5108,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "kind": "structConstructorCall",
                                         "lValueRequested": false,
                                         "nameLocations": [
-                                            "11463:13:16",
-                                            "11518:15:16",
-                                            "11577:18:16",
-                                            "11642:19:16",
-                                            "11709:12:16",
-                                            "11762:15:16",
-                                            "11808:16:16",
-                                            "11869:23:16",
-                                            "11944:17:16",
-                                            "12007:24:16",
-                                            "12084:13:16",
-                                            "12126:12:16",
-                                            "12246:31:16",
-                                            "12322:24:16",
-                                            "12384:12:16"
+                                            "12467:13:37",
+                                            "12522:15:37",
+                                            "12581:18:37",
+                                            "12646:19:37",
+                                            "12713:12:37",
+                                            "12766:15:37",
+                                            "12812:16:37",
+                                            "12873:23:37",
+                                            "12948:17:37",
+                                            "13011:24:37",
+                                            "13088:13:37",
+                                            "13130:12:37",
+                                            "13250:31:37",
+                                            "13326:24:37",
+                                            "13388:12:37"
                                         ],
                                         "names": [
                                             "shareReserves",
@@ -9603,15 +10447,15 @@ export const HyperdriveTarget0 = {
                                             "longExposure"
                                         ],
                                         "nodeType": "FunctionCall",
-                                        "src": "11428:1006:16",
+                                        "src": "12432:1006:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolInfo_$7453_memory_ptr",
+                                            "typeIdentifier": "t_struct$_PoolInfo_$10865_memory_ptr",
                                             "typeString": "struct IHyperdrive.PoolInfo memory"
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "11389:1045:16"
+                                    "src": "12393:1045:37"
                                 },
                                 {
                                     "expression": {
@@ -9619,14 +10463,14 @@ export const HyperdriveTarget0 = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 2968,
+                                                        "id": 5113,
                                                         "name": "poolInfo",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 2925,
-                                                        "src": "12463:8:16",
+                                                        "referencedDeclaration": 5070,
+                                                        "src": "13467:8:37",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_PoolInfo_$7453_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_PoolInfo_$10865_memory_ptr",
                                                             "typeString": "struct IHyperdrive.PoolInfo memory"
                                                         }
                                                     }
@@ -9634,37 +10478,37 @@ export const HyperdriveTarget0 = {
                                                 "expression": {
                                                     "argumentTypes": [
                                                         {
-                                                            "typeIdentifier": "t_struct$_PoolInfo_$7453_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_PoolInfo_$10865_memory_ptr",
                                                             "typeString": "struct IHyperdrive.PoolInfo memory"
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 2966,
+                                                        "id": 5111,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "12452:3:16",
+                                                        "src": "13456:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 2967,
+                                                    "id": 5112,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "12456:6:16",
+                                                    "memberLocation": "13460:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "12452:10:16",
+                                                    "src": "13456:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 2969,
+                                                "id": 5114,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -9673,7 +10517,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "12452:20:16",
+                                                "src": "13456:20:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -9688,18 +10532,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 2965,
+                                            "id": 5110,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "12444:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "13448:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 2970,
+                                        "id": 5115,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -9708,26 +10552,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "12444:29:16",
+                                        "src": "13448:29:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2971,
+                                    "id": 5116,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "12444:29:16"
+                                    "src": "13448:29:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8339
+                            11833
                         ],
                         "documentation": {
-                            "id": 2878,
+                            "id": 5023,
                             "nodeType": "StructuredDocumentation",
-                            "src": "10698:158:16",
+                            "src": "11702:158:37",
                             "text": "@notice Gets info about the pool's reserves and other state that is\n         important to evaluate potential trades.\n @return The pool info."
                         },
                         "functionSelector": "60246c88",
@@ -9735,72 +10579,72 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "getPoolInfo",
-                        "nameLocation": "10870:11:16",
+                        "nameLocation": "11874:11:37",
                         "parameters": {
-                            "id": 2879,
+                            "id": 5024,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "10881:2:16"
+                            "src": "11885:2:37"
                         },
                         "returnParameters": {
-                            "id": 2883,
+                            "id": 5028,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2882,
+                                    "id": 5027,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2973,
-                                    "src": "10907:27:16",
+                                    "scope": 5118,
+                                    "src": "11911:27:37",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_PoolInfo_$7453_memory_ptr",
+                                        "typeIdentifier": "t_struct$_PoolInfo_$10865_memory_ptr",
                                         "typeString": "struct IHyperdrive.PoolInfo"
                                     },
                                     "typeName": {
-                                        "id": 2881,
+                                        "id": 5026,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 2880,
+                                            "id": 5025,
                                             "name": "IHyperdrive.PoolInfo",
                                             "nameLocations": [
-                                                "10907:11:16",
-                                                "10919:8:16"
+                                                "11911:11:37",
+                                                "11923:8:37"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 7453,
-                                            "src": "10907:20:16"
+                                            "referencedDeclaration": 10865,
+                                            "src": "11911:20:37"
                                         },
-                                        "referencedDeclaration": 7453,
-                                        "src": "10907:20:16",
+                                        "referencedDeclaration": 10865,
+                                        "src": "11911:20:37",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolInfo_$7453_storage_ptr",
+                                            "typeIdentifier": "t_struct$_PoolInfo_$10865_storage_ptr",
                                             "typeString": "struct IHyperdrive.PoolInfo"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "10906:29:16"
+                            "src": "11910:29:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 2994,
+                        "id": 5139,
                         "nodeType": "FunctionDefinition",
-                        "src": "12604:367:16",
+                        "src": "13608:367:37",
                         "nodes": [],
                         "body": {
-                            "id": 2993,
+                            "id": 5138,
                             "nodeType": "Block",
-                            "src": "12715:256:16",
+                            "src": "13719:256:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -9812,27 +10656,27 @@ export const HyperdriveTarget0 = {
                                                         "arguments": [
                                                             {
                                                                 "expression": {
-                                                                    "id": 2985,
+                                                                    "id": 5130,
                                                                     "name": "_withdrawPool",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 13695,
-                                                                    "src": "12838:13:16",
+                                                                    "referencedDeclaration": 18164,
+                                                                    "src": "13842:13:37",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_struct$_WithdrawPool_$7319_storage",
+                                                                        "typeIdentifier": "t_struct$_WithdrawPool_$10725_storage",
                                                                         "typeString": "struct IHyperdrive.WithdrawPool storage ref"
                                                                     }
                                                                 },
-                                                                "id": 2986,
+                                                                "id": 5131,
                                                                 "isConstant": false,
                                                                 "isLValue": true,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
-                                                                "memberLocation": "12852:15:16",
+                                                                "memberLocation": "13856:15:37",
                                                                 "memberName": "readyToWithdraw",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 7315,
-                                                                "src": "12838:29:16",
+                                                                "referencedDeclaration": 10721,
+                                                                "src": "13842:29:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint128",
                                                                     "typeString": "uint128"
@@ -9840,27 +10684,27 @@ export const HyperdriveTarget0 = {
                                                             },
                                                             {
                                                                 "expression": {
-                                                                    "id": 2987,
+                                                                    "id": 5132,
                                                                     "name": "_withdrawPool",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 13695,
-                                                                    "src": "12899:13:16",
+                                                                    "referencedDeclaration": 18164,
+                                                                    "src": "13903:13:37",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_struct$_WithdrawPool_$7319_storage",
+                                                                        "typeIdentifier": "t_struct$_WithdrawPool_$10725_storage",
                                                                         "typeString": "struct IHyperdrive.WithdrawPool storage ref"
                                                                     }
                                                                 },
-                                                                "id": 2988,
+                                                                "id": 5133,
                                                                 "isConstant": false,
                                                                 "isLValue": true,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
-                                                                "memberLocation": "12913:8:16",
+                                                                "memberLocation": "13917:8:37",
                                                                 "memberName": "proceeds",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 7318,
-                                                                "src": "12899:22:16",
+                                                                "referencedDeclaration": 10724,
+                                                                "src": "13903:22:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint128",
                                                                     "typeString": "uint128"
@@ -9879,51 +10723,51 @@ export const HyperdriveTarget0 = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 2983,
+                                                                "id": 5128,
                                                                 "name": "IHyperdrive",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 7616,
-                                                                "src": "12774:11:16",
+                                                                "referencedDeclaration": 11028,
+                                                                "src": "13778:11:37",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7616_$",
+                                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$11028_$",
                                                                     "typeString": "type(contract IHyperdrive)"
                                                                 }
                                                             },
-                                                            "id": 2984,
+                                                            "id": 5129,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "12786:12:16",
+                                                            "memberLocation": "13790:12:37",
                                                             "memberName": "WithdrawPool",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 7319,
-                                                            "src": "12774:24:16",
+                                                            "referencedDeclaration": 10725,
+                                                            "src": "13778:24:37",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_struct$_WithdrawPool_$7319_storage_ptr_$",
+                                                                "typeIdentifier": "t_type$_t_struct$_WithdrawPool_$10725_storage_ptr_$",
                                                                 "typeString": "type(struct IHyperdrive.WithdrawPool storage pointer)"
                                                             }
                                                         },
-                                                        "id": 2989,
+                                                        "id": 5134,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "kind": "structConstructorCall",
                                                         "lValueRequested": false,
                                                         "nameLocations": [
-                                                            "12821:15:16",
-                                                            "12889:8:16"
+                                                            "13825:15:37",
+                                                            "13893:8:37"
                                                         ],
                                                         "names": [
                                                             "readyToWithdraw",
                                                             "proceeds"
                                                         ],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "12774:166:16",
+                                                        "src": "13778:166:37",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_WithdrawPool_$7319_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_WithdrawPool_$10725_memory_ptr",
                                                             "typeString": "struct IHyperdrive.WithdrawPool memory"
                                                         }
                                                     }
@@ -9931,37 +10775,37 @@ export const HyperdriveTarget0 = {
                                                 "expression": {
                                                     "argumentTypes": [
                                                         {
-                                                            "typeIdentifier": "t_struct$_WithdrawPool_$7319_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_WithdrawPool_$10725_memory_ptr",
                                                             "typeString": "struct IHyperdrive.WithdrawPool memory"
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 2981,
+                                                        "id": 5126,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "12746:3:16",
+                                                        "src": "13750:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 2982,
+                                                    "id": 5127,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "12750:6:16",
+                                                    "memberLocation": "13754:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "12746:10:16",
+                                                    "src": "13750:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 2990,
+                                                "id": 5135,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -9970,7 +10814,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "12746:208:16",
+                                                "src": "13750:208:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -9985,18 +10829,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 2980,
+                                            "id": 5125,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "12725:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "13729:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 2991,
+                                        "id": 5136,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -10005,26 +10849,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "12725:239:16",
+                                        "src": "13729:239:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 2992,
+                                    "id": 5137,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "12725:239:16"
+                                    "src": "13729:239:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8352
+                            11846
                         ],
                         "documentation": {
-                            "id": 2974,
+                            "id": 5119,
                             "nodeType": "StructuredDocumentation",
-                            "src": "12486:113:16",
+                            "src": "13490:113:37",
                             "text": "@notice Gets information about the withdrawal pool.\n @return Hyperdrive's withdrawal pool information."
                         },
                         "functionSelector": "fba56008",
@@ -10032,72 +10876,72 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "getWithdrawPool",
-                        "nameLocation": "12613:15:16",
+                        "nameLocation": "13617:15:37",
                         "parameters": {
-                            "id": 2975,
+                            "id": 5120,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "12628:2:16"
+                            "src": "13632:2:37"
                         },
                         "returnParameters": {
-                            "id": 2979,
+                            "id": 5124,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2978,
+                                    "id": 5123,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 2994,
-                                    "src": "12678:31:16",
+                                    "scope": 5139,
+                                    "src": "13682:31:37",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_WithdrawPool_$7319_memory_ptr",
+                                        "typeIdentifier": "t_struct$_WithdrawPool_$10725_memory_ptr",
                                         "typeString": "struct IHyperdrive.WithdrawPool"
                                     },
                                     "typeName": {
-                                        "id": 2977,
+                                        "id": 5122,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 2976,
+                                            "id": 5121,
                                             "name": "IHyperdrive.WithdrawPool",
                                             "nameLocations": [
-                                                "12678:11:16",
-                                                "12690:12:16"
+                                                "13682:11:37",
+                                                "13694:12:37"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 7319,
-                                            "src": "12678:24:16"
+                                            "referencedDeclaration": 10725,
+                                            "src": "13682:24:37"
                                         },
-                                        "referencedDeclaration": 7319,
-                                        "src": "12678:24:16",
+                                        "referencedDeclaration": 10725,
+                                        "src": "13682:24:37",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_WithdrawPool_$7319_storage_ptr",
+                                            "typeIdentifier": "t_struct$_WithdrawPool_$10725_storage_ptr",
                                             "typeString": "struct IHyperdrive.WithdrawPool"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "12677:33:16"
+                            "src": "13681:33:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 3008,
+                        "id": 5153,
                         "nodeType": "FunctionDefinition",
-                        "src": "13124:132:16",
+                        "src": "14128:132:37",
                         "nodes": [],
                         "body": {
-                            "id": 3007,
+                            "id": 5152,
                             "nodeType": "Block",
-                            "src": "13196:60:16",
+                            "src": "14200:60:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -10106,12 +10950,12 @@ export const HyperdriveTarget0 = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 3003,
+                                                        "id": 5148,
                                                         "name": "_governanceFeesAccrued",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 13710,
-                                                        "src": "13225:22:16",
+                                                        "referencedDeclaration": 18182,
+                                                        "src": "14229:22:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -10126,32 +10970,32 @@ export const HyperdriveTarget0 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 3001,
+                                                        "id": 5146,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "13214:3:16",
+                                                        "src": "14218:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 3002,
+                                                    "id": 5147,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "13218:6:16",
+                                                    "memberLocation": "14222:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "13214:10:16",
+                                                    "src": "14218:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 3004,
+                                                "id": 5149,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -10160,7 +11004,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "13214:34:16",
+                                                "src": "14218:34:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -10175,18 +11019,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 3000,
+                                            "id": 5145,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "13206:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "14210:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 3005,
+                                        "id": 5150,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -10195,26 +11039,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "13206:43:16",
+                                        "src": "14210:43:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 3006,
+                                    "id": 5151,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "13206:43:16"
+                                    "src": "14210:43:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8345
+                            11839
                         ],
                         "documentation": {
-                            "id": 2995,
+                            "id": 5140,
                             "nodeType": "StructuredDocumentation",
-                            "src": "12977:142:16",
+                            "src": "13981:142:37",
                             "text": "@notice Gets info about the fees presently accrued by the pool.\n @return Governance fees denominated in shares yet to be collected."
                         },
                         "functionSelector": "c69e16ad",
@@ -10222,26 +11066,26 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "getUncollectedGovernanceFees",
-                        "nameLocation": "13133:28:16",
+                        "nameLocation": "14137:28:37",
                         "parameters": {
-                            "id": 2996,
+                            "id": 5141,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "13161:2:16"
+                            "src": "14165:2:37"
                         },
                         "returnParameters": {
-                            "id": 2999,
+                            "id": 5144,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 2998,
+                                    "id": 5143,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3008,
-                                    "src": "13187:7:16",
+                                    "scope": 5153,
+                                    "src": "14191:7:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -10249,10 +11093,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 2997,
+                                        "id": 5142,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "13187:7:16",
+                                        "src": "14191:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -10261,22 +11105,22 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "13186:9:16"
+                            "src": "14190:9:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 3023,
+                        "id": 5168,
                         "nodeType": "FunctionDefinition",
-                        "src": "13335:159:16",
+                        "src": "14339:159:37",
                         "nodes": [],
                         "body": {
-                            "id": 3022,
+                            "id": 5167,
                             "nodeType": "Block",
-                            "src": "13444:50:16",
+                            "src": "14448:50:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -10285,14 +11129,14 @@ export const HyperdriveTarget0 = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 3018,
+                                                        "id": 5163,
                                                         "name": "_marketState",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 13691,
-                                                        "src": "13473:12:16",
+                                                        "referencedDeclaration": 18160,
+                                                        "src": "14477:12:37",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                            "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                             "typeString": "struct IHyperdrive.MarketState storage ref"
                                                         }
                                                     }
@@ -10300,37 +11144,37 @@ export const HyperdriveTarget0 = {
                                                 "expression": {
                                                     "argumentTypes": [
                                                         {
-                                                            "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                            "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                             "typeString": "struct IHyperdrive.MarketState storage ref"
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 3016,
+                                                        "id": 5161,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "13462:3:16",
+                                                        "src": "14466:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 3017,
+                                                    "id": 5162,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "13466:6:16",
+                                                    "memberLocation": "14470:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "13462:10:16",
+                                                    "src": "14466:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 3019,
+                                                "id": 5164,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -10339,7 +11183,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "13462:24:16",
+                                                "src": "14466:24:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -10354,18 +11198,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 3015,
+                                            "id": 5160,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "13454:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "14458:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 3020,
+                                        "id": 5165,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -10374,26 +11218,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "13454:33:16",
+                                        "src": "14458:33:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 3021,
+                                    "id": 5166,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "13454:33:16"
+                                    "src": "14458:33:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8325
+                            11819
                         ],
                         "documentation": {
-                            "id": 3009,
+                            "id": 5154,
                             "nodeType": "StructuredDocumentation",
-                            "src": "13262:68:16",
+                            "src": "14266:68:37",
                             "text": "@notice Gets the market state.\n @return The market state."
                         },
                         "functionSelector": "d8165743",
@@ -10401,88 +11245,88 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "getMarketState",
-                        "nameLocation": "13344:14:16",
+                        "nameLocation": "14348:14:37",
                         "parameters": {
-                            "id": 3010,
+                            "id": 5155,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "13358:2:16"
+                            "src": "14362:2:37"
                         },
                         "returnParameters": {
-                            "id": 3014,
+                            "id": 5159,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3013,
+                                    "id": 5158,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3023,
-                                    "src": "13408:30:16",
+                                    "scope": 5168,
+                                    "src": "14412:30:37",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_MarketState_$7308_memory_ptr",
+                                        "typeIdentifier": "t_struct$_MarketState_$10714_memory_ptr",
                                         "typeString": "struct IHyperdrive.MarketState"
                                     },
                                     "typeName": {
-                                        "id": 3012,
+                                        "id": 5157,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 3011,
+                                            "id": 5156,
                                             "name": "IHyperdrive.MarketState",
                                             "nameLocations": [
-                                                "13408:11:16",
-                                                "13420:11:16"
+                                                "14412:11:37",
+                                                "14424:11:37"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 7308,
-                                            "src": "13408:23:16"
+                                            "referencedDeclaration": 10714,
+                                            "src": "14412:23:37"
                                         },
-                                        "referencedDeclaration": 7308,
-                                        "src": "13408:23:16",
+                                        "referencedDeclaration": 10714,
+                                        "src": "14412:23:37",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_MarketState_$7308_storage_ptr",
+                                            "typeIdentifier": "t_struct$_MarketState_$10714_storage_ptr",
                                             "typeString": "struct IHyperdrive.MarketState"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "13407:32:16"
+                            "src": "14411:32:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 3083,
+                        "id": 5228,
                         "nodeType": "FunctionDefinition",
-                        "src": "13735:565:16",
+                        "src": "14739:565:37",
                         "nodes": [],
                         "body": {
-                            "id": 3082,
+                            "id": 5227,
                             "nodeType": "Block",
-                            "src": "13831:469:16",
+                            "src": "14835:469:37",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        3037
+                                        5182
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 3037,
+                                            "id": 5182,
                                             "mutability": "mutable",
                                             "name": "loaded",
-                                            "nameLocation": "13858:6:16",
+                                            "nameLocation": "14862:6:37",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 3082,
-                                            "src": "13841:23:16",
+                                            "scope": 5227,
+                                            "src": "14845:23:37",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
                                             "typeDescriptions": {
@@ -10491,18 +11335,18 @@ export const HyperdriveTarget0 = {
                                             },
                                             "typeName": {
                                                 "baseType": {
-                                                    "id": 3035,
+                                                    "id": 5180,
                                                     "name": "bytes32",
                                                     "nodeType": "ElementaryTypeName",
-                                                    "src": "13841:7:16",
+                                                    "src": "14845:7:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bytes32",
                                                         "typeString": "bytes32"
                                                     }
                                                 },
-                                                "id": 3036,
+                                                "id": 5181,
                                                 "nodeType": "ArrayTypeName",
-                                                "src": "13841:9:16",
+                                                "src": "14845:9:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                                                     "typeString": "bytes32[]"
@@ -10511,31 +11355,31 @@ export const HyperdriveTarget0 = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 3044,
+                                    "id": 5189,
                                     "initialValue": {
                                         "arguments": [
                                             {
                                                 "expression": {
-                                                    "id": 3041,
+                                                    "id": 5186,
                                                     "name": "_slots",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 3027,
-                                                    "src": "13881:6:16",
+                                                    "referencedDeclaration": 5172,
+                                                    "src": "14885:6:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
                                                         "typeString": "uint256[] calldata"
                                                     }
                                                 },
-                                                "id": 3042,
+                                                "id": 5187,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "13888:6:16",
+                                                "memberLocation": "14892:6:37",
                                                 "memberName": "length",
                                                 "nodeType": "MemberAccess",
-                                                "src": "13881:13:16",
+                                                "src": "14885:13:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -10549,38 +11393,38 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 3040,
+                                            "id": 5185,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
                                             "lValueRequested": false,
                                             "nodeType": "NewExpression",
-                                            "src": "13867:13:16",
+                                            "src": "14871:13:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_bytes32_$dyn_memory_ptr_$",
                                                 "typeString": "function (uint256) pure returns (bytes32[] memory)"
                                             },
                                             "typeName": {
                                                 "baseType": {
-                                                    "id": 3038,
+                                                    "id": 5183,
                                                     "name": "bytes32",
                                                     "nodeType": "ElementaryTypeName",
-                                                    "src": "13871:7:16",
+                                                    "src": "14875:7:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bytes32",
                                                         "typeString": "bytes32"
                                                     }
                                                 },
-                                                "id": 3039,
+                                                "id": 5184,
                                                 "nodeType": "ArrayTypeName",
-                                                "src": "13871:9:16",
+                                                "src": "14875:9:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                                                     "typeString": "bytes32[]"
                                                 }
                                             }
                                         },
-                                        "id": 3043,
+                                        "id": 5188,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -10589,7 +11433,7 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "13867:28:16",
+                                        "src": "14871:28:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
@@ -10597,28 +11441,28 @@ export const HyperdriveTarget0 = {
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "13841:54:16"
+                                    "src": "14845:54:37"
                                 },
                                 {
                                     "body": {
-                                        "id": 3073,
+                                        "id": 5218,
                                         "nodeType": "Block",
-                                        "src": "14003:253:16",
+                                        "src": "15007:253:37",
                                         "statements": [
                                             {
                                                 "assignments": [
-                                                    3054
+                                                    5199
                                                 ],
                                                 "declarations": [
                                                     {
                                                         "constant": false,
-                                                        "id": 3054,
+                                                        "id": 5199,
                                                         "mutability": "mutable",
                                                         "name": "slot",
-                                                        "nameLocation": "14025:4:16",
+                                                        "nameLocation": "15029:4:37",
                                                         "nodeType": "VariableDeclaration",
-                                                        "scope": 3073,
-                                                        "src": "14017:12:16",
+                                                        "scope": 5218,
+                                                        "src": "15021:12:37",
                                                         "stateVariable": false,
                                                         "storageLocation": "default",
                                                         "typeDescriptions": {
@@ -10626,10 +11470,10 @@ export const HyperdriveTarget0 = {
                                                             "typeString": "uint256"
                                                         },
                                                         "typeName": {
-                                                            "id": 3053,
+                                                            "id": 5198,
                                                             "name": "uint256",
                                                             "nodeType": "ElementaryTypeName",
-                                                            "src": "14017:7:16",
+                                                            "src": "15021:7:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -10638,28 +11482,28 @@ export const HyperdriveTarget0 = {
                                                         "visibility": "internal"
                                                     }
                                                 ],
-                                                "id": 3058,
+                                                "id": 5203,
                                                 "initialValue": {
                                                     "baseExpression": {
-                                                        "id": 3055,
+                                                        "id": 5200,
                                                         "name": "_slots",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 3027,
-                                                        "src": "14032:6:16",
+                                                        "referencedDeclaration": 5172,
+                                                        "src": "15036:6:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
                                                             "typeString": "uint256[] calldata"
                                                         }
                                                     },
-                                                    "id": 3057,
+                                                    "id": 5202,
                                                     "indexExpression": {
-                                                        "id": 3056,
+                                                        "id": 5201,
                                                         "name": "i",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 3046,
-                                                        "src": "14039:1:16",
+                                                        "referencedDeclaration": 5191,
+                                                        "src": "15043:1:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -10670,29 +11514,29 @@ export const HyperdriveTarget0 = {
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "nodeType": "IndexAccess",
-                                                    "src": "14032:9:16",
+                                                    "src": "15036:9:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
                                                 "nodeType": "VariableDeclarationStatement",
-                                                "src": "14017:24:16"
+                                                "src": "15021:24:37"
                                             },
                                             {
                                                 "assignments": [
-                                                    3060
+                                                    5205
                                                 ],
                                                 "declarations": [
                                                     {
                                                         "constant": false,
-                                                        "id": 3060,
+                                                        "id": 5205,
                                                         "mutability": "mutable",
                                                         "name": "data",
-                                                        "nameLocation": "14063:4:16",
+                                                        "nameLocation": "15067:4:37",
                                                         "nodeType": "VariableDeclaration",
-                                                        "scope": 3073,
-                                                        "src": "14055:12:16",
+                                                        "scope": 5218,
+                                                        "src": "15059:12:37",
                                                         "stateVariable": false,
                                                         "storageLocation": "default",
                                                         "typeDescriptions": {
@@ -10700,10 +11544,10 @@ export const HyperdriveTarget0 = {
                                                             "typeString": "bytes32"
                                                         },
                                                         "typeName": {
-                                                            "id": 3059,
+                                                            "id": 5204,
                                                             "name": "bytes32",
                                                             "nodeType": "ElementaryTypeName",
-                                                            "src": "14055:7:16",
+                                                            "src": "15059:7:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes32",
                                                                 "typeString": "bytes32"
@@ -10712,39 +11556,39 @@ export const HyperdriveTarget0 = {
                                                         "visibility": "internal"
                                                     }
                                                 ],
-                                                "id": 3061,
+                                                "id": 5206,
                                                 "nodeType": "VariableDeclarationStatement",
-                                                "src": "14055:12:16"
+                                                "src": "15059:12:37"
                                             },
                                             {
                                                 "AST": {
                                                     "nodeType": "YulBlock",
-                                                    "src": "14106:51:16",
+                                                    "src": "15110:51:37",
                                                     "statements": [
                                                         {
                                                             "nodeType": "YulAssignment",
-                                                            "src": "14124:19:16",
+                                                            "src": "15128:19:37",
                                                             "value": {
                                                                 "arguments": [
                                                                     {
                                                                         "name": "slot",
                                                                         "nodeType": "YulIdentifier",
-                                                                        "src": "14138:4:16"
+                                                                        "src": "15142:4:37"
                                                                     }
                                                                 ],
                                                                 "functionName": {
                                                                     "name": "sload",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "14132:5:16"
+                                                                    "src": "15136:5:37"
                                                                 },
                                                                 "nodeType": "YulFunctionCall",
-                                                                "src": "14132:11:16"
+                                                                "src": "15136:11:37"
                                                             },
                                                             "variableNames": [
                                                                 {
                                                                     "name": "data",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "14124:4:16"
+                                                                    "src": "15128:4:37"
                                                                 }
                                                             ]
                                                         }
@@ -10753,55 +11597,55 @@ export const HyperdriveTarget0 = {
                                                 "evmVersion": "paris",
                                                 "externalReferences": [
                                                     {
-                                                        "declaration": 3060,
+                                                        "declaration": 5205,
                                                         "isOffset": false,
                                                         "isSlot": false,
-                                                        "src": "14124:4:16",
+                                                        "src": "15128:4:37",
                                                         "valueSize": 1
                                                     },
                                                     {
-                                                        "declaration": 3054,
+                                                        "declaration": 5199,
                                                         "isOffset": false,
                                                         "isSlot": false,
-                                                        "src": "14138:4:16",
+                                                        "src": "15142:4:37",
                                                         "valueSize": 1
                                                     }
                                                 ],
                                                 "flags": [
                                                     "memory-safe"
                                                 ],
-                                                "id": 3062,
+                                                "id": 5207,
                                                 "nodeType": "InlineAssembly",
-                                                "src": "14081:76:16"
+                                                "src": "15085:76:37"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 3067,
+                                                    "id": 5212,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
                                                         "baseExpression": {
-                                                            "id": 3063,
+                                                            "id": 5208,
                                                             "name": "loaded",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 3037,
-                                                            "src": "14170:6:16",
+                                                            "referencedDeclaration": 5182,
+                                                            "src": "15174:6:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                                                                 "typeString": "bytes32[] memory"
                                                             }
                                                         },
-                                                        "id": 3065,
+                                                        "id": 5210,
                                                         "indexExpression": {
-                                                            "id": 3064,
+                                                            "id": 5209,
                                                             "name": "i",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 3046,
-                                                            "src": "14177:1:16",
+                                                            "referencedDeclaration": 5191,
+                                                            "src": "15181:1:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -10812,7 +11656,7 @@ export const HyperdriveTarget0 = {
                                                         "isPure": false,
                                                         "lValueRequested": true,
                                                         "nodeType": "IndexAccess",
-                                                        "src": "14170:9:16",
+                                                        "src": "15174:9:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
                                                             "typeString": "bytes32"
@@ -10821,35 +11665,35 @@ export const HyperdriveTarget0 = {
                                                     "nodeType": "Assignment",
                                                     "operator": "=",
                                                     "rightHandSide": {
-                                                        "id": 3066,
+                                                        "id": 5211,
                                                         "name": "data",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 3060,
-                                                        "src": "14182:4:16",
+                                                        "referencedDeclaration": 5205,
+                                                        "src": "15186:4:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
                                                             "typeString": "bytes32"
                                                         }
                                                     },
-                                                    "src": "14170:16:16",
+                                                    "src": "15174:16:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bytes32",
                                                         "typeString": "bytes32"
                                                     }
                                                 },
-                                                "id": 3068,
+                                                "id": 5213,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "14170:16:16"
+                                                "src": "15174:16:37"
                                             },
                                             {
-                                                "id": 3072,
+                                                "id": 5217,
                                                 "nodeType": "UncheckedBlock",
-                                                "src": "14200:46:16",
+                                                "src": "15204:46:37",
                                                 "statements": [
                                                     {
                                                         "expression": {
-                                                            "id": 3070,
+                                                            "id": 5215,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -10857,14 +11701,14 @@ export const HyperdriveTarget0 = {
                                                             "nodeType": "UnaryOperation",
                                                             "operator": "++",
                                                             "prefix": true,
-                                                            "src": "14228:3:16",
+                                                            "src": "15232:3:37",
                                                             "subExpression": {
-                                                                "id": 3069,
+                                                                "id": 5214,
                                                                 "name": "i",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 3046,
-                                                                "src": "14230:1:16",
+                                                                "referencedDeclaration": 5191,
+                                                                "src": "15234:1:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
@@ -10875,9 +11719,9 @@ export const HyperdriveTarget0 = {
                                                                 "typeString": "uint256"
                                                             }
                                                         },
-                                                        "id": 3071,
+                                                        "id": 5216,
                                                         "nodeType": "ExpressionStatement",
-                                                        "src": "14228:3:16"
+                                                        "src": "15232:3:37"
                                                     }
                                                 ]
                                             }
@@ -10888,18 +11732,18 @@ export const HyperdriveTarget0 = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 3052,
+                                        "id": 5197,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 3049,
+                                            "id": 5194,
                                             "name": "i",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3046,
-                                            "src": "13982:1:16",
+                                            "referencedDeclaration": 5191,
+                                            "src": "14986:1:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -10909,52 +11753,52 @@ export const HyperdriveTarget0 = {
                                         "operator": "<",
                                         "rightExpression": {
                                             "expression": {
-                                                "id": 3050,
+                                                "id": 5195,
                                                 "name": "_slots",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 3027,
-                                                "src": "13986:6:16",
+                                                "referencedDeclaration": 5172,
+                                                "src": "14990:6:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
                                                     "typeString": "uint256[] calldata"
                                                 }
                                             },
-                                            "id": 3051,
+                                            "id": 5196,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "13993:6:16",
+                                            "memberLocation": "14997:6:37",
                                             "memberName": "length",
                                             "nodeType": "MemberAccess",
-                                            "src": "13986:13:16",
+                                            "src": "14990:13:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "src": "13982:17:16",
+                                        "src": "14986:17:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 3074,
+                                    "id": 5219,
                                     "initializationExpression": {
                                         "assignments": [
-                                            3046
+                                            5191
                                         ],
                                         "declarations": [
                                             {
                                                 "constant": false,
-                                                "id": 3046,
+                                                "id": 5191,
                                                 "mutability": "mutable",
                                                 "name": "i",
-                                                "nameLocation": "13975:1:16",
+                                                "nameLocation": "14979:1:37",
                                                 "nodeType": "VariableDeclaration",
-                                                "scope": 3074,
-                                                "src": "13967:9:16",
+                                                "scope": 5219,
+                                                "src": "14971:9:37",
                                                 "stateVariable": false,
                                                 "storageLocation": "default",
                                                 "typeDescriptions": {
@@ -10962,10 +11806,10 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "uint256"
                                                 },
                                                 "typeName": {
-                                                    "id": 3045,
+                                                    "id": 5190,
                                                     "name": "uint256",
                                                     "nodeType": "ElementaryTypeName",
-                                                    "src": "13967:7:16",
+                                                    "src": "14971:7:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -10974,17 +11818,17 @@ export const HyperdriveTarget0 = {
                                                 "visibility": "internal"
                                             }
                                         ],
-                                        "id": 3048,
+                                        "id": 5193,
                                         "initialValue": {
                                             "hexValue": "30",
-                                            "id": 3047,
+                                            "id": 5192,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
                                             "kind": "number",
                                             "lValueRequested": false,
                                             "nodeType": "Literal",
-                                            "src": "13979:1:16",
+                                            "src": "14983:1:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_rational_0_by_1",
                                                 "typeString": "int_const 0"
@@ -10992,10 +11836,10 @@ export const HyperdriveTarget0 = {
                                             "value": "0"
                                         },
                                         "nodeType": "VariableDeclarationStatement",
-                                        "src": "13967:13:16"
+                                        "src": "14971:13:37"
                                     },
                                     "nodeType": "ForStatement",
-                                    "src": "13962:294:16"
+                                    "src": "14966:294:37"
                                 },
                                 {
                                     "expression": {
@@ -11003,12 +11847,12 @@ export const HyperdriveTarget0 = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 3078,
+                                                        "id": 5223,
                                                         "name": "loaded",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 3037,
-                                                        "src": "14285:6:16",
+                                                        "referencedDeclaration": 5182,
+                                                        "src": "15289:6:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                                                             "typeString": "bytes32[] memory"
@@ -11023,32 +11867,32 @@ export const HyperdriveTarget0 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 3076,
+                                                        "id": 5221,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "14274:3:16",
+                                                        "src": "15278:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 3077,
+                                                    "id": 5222,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "14278:6:16",
+                                                    "memberLocation": "15282:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "14274:10:16",
+                                                    "src": "15278:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 3079,
+                                                "id": 5224,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -11057,7 +11901,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "14274:18:16",
+                                                "src": "15278:18:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -11072,18 +11916,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 3075,
+                                            "id": 5220,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "14266:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "15270:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 3080,
+                                        "id": 5225,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -11092,26 +11936,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "14266:27:16",
+                                        "src": "15270:27:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 3081,
+                                    "id": 5226,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "14266:27:16"
+                                    "src": "15270:27:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8370
+                            11864
                         ],
                         "documentation": {
-                            "id": 3024,
+                            "id": 5169,
                             "nodeType": "StructuredDocumentation",
-                            "src": "13500:230:16",
+                            "src": "14504:230:37",
                             "text": "@notice Allows plugin data libs to provide getters or other complex\n         logic instead of the main.\n @param _slots The storage slots the caller wants the data from.\n @return A raw array of loaded data."
                         },
                         "functionSelector": "becee9c3",
@@ -11119,20 +11963,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "load",
-                        "nameLocation": "13744:4:16",
+                        "nameLocation": "14748:4:37",
                         "parameters": {
-                            "id": 3028,
+                            "id": 5173,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3027,
+                                    "id": 5172,
                                     "mutability": "mutable",
                                     "name": "_slots",
-                                    "nameLocation": "13777:6:16",
+                                    "nameLocation": "14781:6:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3083,
-                                    "src": "13758:25:16",
+                                    "scope": 5228,
+                                    "src": "14762:25:37",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
                                     "typeDescriptions": {
@@ -11141,18 +11985,18 @@ export const HyperdriveTarget0 = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 3025,
+                                            "id": 5170,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
-                                            "src": "13758:7:16",
+                                            "src": "14762:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 3026,
+                                        "id": 5171,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "13758:9:16",
+                                        "src": "14762:9:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                                             "typeString": "uint256[]"
@@ -11161,21 +12005,21 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "13748:41:16"
+                            "src": "14752:41:37"
                         },
                         "returnParameters": {
-                            "id": 3032,
+                            "id": 5177,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3031,
+                                    "id": 5176,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3083,
-                                    "src": "13813:16:16",
+                                    "scope": 5228,
+                                    "src": "14817:16:37",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
@@ -11184,18 +12028,18 @@ export const HyperdriveTarget0 = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 3029,
+                                            "id": 5174,
                                             "name": "bytes32",
                                             "nodeType": "ElementaryTypeName",
-                                            "src": "13813:7:16",
+                                            "src": "14817:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bytes32",
                                                 "typeString": "bytes32"
                                             }
                                         },
-                                        "id": 3030,
+                                        "id": 5175,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "13813:9:16",
+                                        "src": "14817:9:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                                             "typeString": "bytes32[]"
@@ -11204,22 +12048,22 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "13812:18:16"
+                            "src": "14816:18:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 3105,
+                        "id": 5250,
                         "nodeType": "FunctionDefinition",
-                        "src": "14470:173:16",
+                        "src": "15474:173:37",
                         "nodes": [],
                         "body": {
-                            "id": 3104,
+                            "id": 5249,
                             "nodeType": "Block",
-                            "src": "14577:66:16",
+                            "src": "15581:66:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -11230,25 +12074,25 @@ export const HyperdriveTarget0 = {
                                                     {
                                                         "baseExpression": {
                                                             "baseExpression": {
-                                                                "id": 3096,
+                                                                "id": 5241,
                                                                 "name": "_balanceOf",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13728,
-                                                                "src": "14606:10:16",
+                                                                "referencedDeclaration": 18200,
+                                                                "src": "15610:10:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_uint256_$_$",
                                                                     "typeString": "mapping(uint256 => mapping(address => uint256))"
                                                                 }
                                                             },
-                                                            "id": 3098,
+                                                            "id": 5243,
                                                             "indexExpression": {
-                                                                "id": 3097,
+                                                                "id": 5242,
                                                                 "name": "tokenId",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 3086,
-                                                                "src": "14617:7:16",
+                                                                "referencedDeclaration": 5231,
+                                                                "src": "15621:7:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
@@ -11259,20 +12103,20 @@ export const HyperdriveTarget0 = {
                                                             "isPure": false,
                                                             "lValueRequested": false,
                                                             "nodeType": "IndexAccess",
-                                                            "src": "14606:19:16",
+                                                            "src": "15610:19:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                                                                 "typeString": "mapping(address => uint256)"
                                                             }
                                                         },
-                                                        "id": 3100,
+                                                        "id": 5245,
                                                         "indexExpression": {
-                                                            "id": 3099,
+                                                            "id": 5244,
                                                             "name": "account",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 3088,
-                                                            "src": "14626:7:16",
+                                                            "referencedDeclaration": 5233,
+                                                            "src": "15630:7:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
@@ -11283,7 +12127,7 @@ export const HyperdriveTarget0 = {
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "nodeType": "IndexAccess",
-                                                        "src": "14606:28:16",
+                                                        "src": "15610:28:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -11298,32 +12142,32 @@ export const HyperdriveTarget0 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 3094,
+                                                        "id": 5239,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "14595:3:16",
+                                                        "src": "15599:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 3095,
+                                                    "id": 5240,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "14599:6:16",
+                                                    "memberLocation": "15603:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "14595:10:16",
+                                                    "src": "15599:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 3101,
+                                                "id": 5246,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -11332,7 +12176,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "14595:40:16",
+                                                "src": "15599:40:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -11347,18 +12191,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 3093,
+                                            "id": 5238,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "14587:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "15591:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 3102,
+                                        "id": 5247,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -11367,26 +12211,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "14587:49:16",
+                                        "src": "15591:49:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 3103,
+                                    "id": 5248,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "14587:49:16"
+                                    "src": "15591:49:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8702
+                            12196
                         ],
                         "documentation": {
-                            "id": 3084,
+                            "id": 5229,
                             "nodeType": "StructuredDocumentation",
-                            "src": "14306:159:16",
+                            "src": "15310:159:37",
                             "text": "@notice Gets an account's balance of a sub-token.\n @param tokenId The sub-token id.\n @param account The account.\n @return The balance."
                         },
                         "functionSelector": "3656eec2",
@@ -11394,20 +12238,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "balanceOf",
-                        "nameLocation": "14479:9:16",
+                        "nameLocation": "15483:9:37",
                         "parameters": {
-                            "id": 3089,
+                            "id": 5234,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3086,
+                                    "id": 5231,
                                     "mutability": "mutable",
                                     "name": "tokenId",
-                                    "nameLocation": "14506:7:16",
+                                    "nameLocation": "15510:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3105,
-                                    "src": "14498:15:16",
+                                    "scope": 5250,
+                                    "src": "15502:15:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -11415,10 +12259,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 3085,
+                                        "id": 5230,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "14498:7:16",
+                                        "src": "15502:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -11428,13 +12272,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 3088,
+                                    "id": 5233,
                                     "mutability": "mutable",
                                     "name": "account",
-                                    "nameLocation": "14531:7:16",
+                                    "nameLocation": "15535:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3105,
-                                    "src": "14523:15:16",
+                                    "scope": 5250,
+                                    "src": "15527:15:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -11442,10 +12286,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 3087,
+                                        "id": 5232,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "14523:7:16",
+                                        "src": "15527:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -11455,21 +12299,21 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "14488:56:16"
+                            "src": "15492:56:37"
                         },
                         "returnParameters": {
-                            "id": 3092,
+                            "id": 5237,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3091,
+                                    "id": 5236,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3105,
-                                    "src": "14568:7:16",
+                                    "scope": 5250,
+                                    "src": "15572:7:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -11477,10 +12321,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 3090,
+                                        "id": 5235,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "14568:7:16",
+                                        "src": "15572:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -11489,22 +12333,22 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "14567:9:16"
+                            "src": "15571:9:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 3123,
+                        "id": 5268,
                         "nodeType": "FunctionDefinition",
-                        "src": "14778:129:16",
+                        "src": "15782:129:37",
                         "nodes": [],
                         "body": {
-                            "id": 3122,
+                            "id": 5267,
                             "nodeType": "Block",
-                            "src": "14848:59:16",
+                            "src": "15852:59:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -11514,25 +12358,25 @@ export const HyperdriveTarget0 = {
                                                 "arguments": [
                                                     {
                                                         "baseExpression": {
-                                                            "id": 3116,
+                                                            "id": 5261,
                                                             "name": "_totalSupply",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 13733,
-                                                            "src": "14877:12:16",
+                                                            "referencedDeclaration": 18205,
+                                                            "src": "15881:12:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                                                                 "typeString": "mapping(uint256 => uint256)"
                                                             }
                                                         },
-                                                        "id": 3118,
+                                                        "id": 5263,
                                                         "indexExpression": {
-                                                            "id": 3117,
+                                                            "id": 5262,
                                                             "name": "tokenId",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 3108,
-                                                            "src": "14890:7:16",
+                                                            "referencedDeclaration": 5253,
+                                                            "src": "15894:7:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -11543,7 +12387,7 @@ export const HyperdriveTarget0 = {
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "nodeType": "IndexAccess",
-                                                        "src": "14877:21:16",
+                                                        "src": "15881:21:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -11558,32 +12402,32 @@ export const HyperdriveTarget0 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 3114,
+                                                        "id": 5259,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "14866:3:16",
+                                                        "src": "15870:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 3115,
+                                                    "id": 5260,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "14870:6:16",
+                                                    "memberLocation": "15874:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "14866:10:16",
+                                                    "src": "15870:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 3119,
+                                                "id": 5264,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -11592,7 +12436,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "14866:33:16",
+                                                "src": "15870:33:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -11607,18 +12451,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 3113,
+                                            "id": 5258,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "14858:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "15862:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 3120,
+                                        "id": 5265,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -11627,26 +12471,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "14858:42:16",
+                                        "src": "15862:42:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 3121,
+                                    "id": 5266,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "14858:42:16"
+                                    "src": "15862:42:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8670
+                            12164
                         ],
                         "documentation": {
-                            "id": 3106,
+                            "id": 5251,
                             "nodeType": "StructuredDocumentation",
-                            "src": "14649:124:16",
+                            "src": "15653:124:37",
                             "text": "@notice Gets the total supply of a sub-token.\n @param tokenId The sub-token id.\n @return The total supply."
                         },
                         "functionSelector": "bd85b039",
@@ -11654,20 +12498,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "totalSupply",
-                        "nameLocation": "14787:11:16",
+                        "nameLocation": "15791:11:37",
                         "parameters": {
-                            "id": 3109,
+                            "id": 5254,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3108,
+                                    "id": 5253,
                                     "mutability": "mutable",
                                     "name": "tokenId",
-                                    "nameLocation": "14807:7:16",
+                                    "nameLocation": "15811:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3123,
-                                    "src": "14799:15:16",
+                                    "scope": 5268,
+                                    "src": "15803:15:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -11675,10 +12519,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 3107,
+                                        "id": 5252,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "14799:7:16",
+                                        "src": "15803:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -11687,21 +12531,21 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "14798:17:16"
+                            "src": "15802:17:37"
                         },
                         "returnParameters": {
-                            "id": 3112,
+                            "id": 5257,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3111,
+                                    "id": 5256,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3123,
-                                    "src": "14839:7:16",
+                                    "scope": 5268,
+                                    "src": "15843:7:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -11709,10 +12553,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 3110,
+                                        "id": 5255,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "14839:7:16",
+                                        "src": "15843:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -11721,22 +12565,22 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "14838:9:16"
+                            "src": "15842:9:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 3145,
+                        "id": 5290,
                         "nodeType": "FunctionDefinition",
-                        "src": "15096:186:16",
+                        "src": "16100:186:37",
                         "nodes": [],
                         "body": {
-                            "id": 3144,
+                            "id": 5289,
                             "nodeType": "Block",
-                            "src": "15208:74:16",
+                            "src": "16212:74:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -11747,25 +12591,25 @@ export const HyperdriveTarget0 = {
                                                     {
                                                         "baseExpression": {
                                                             "baseExpression": {
-                                                                "id": 3136,
+                                                                "id": 5281,
                                                                 "name": "_isApprovedForAll",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13740,
-                                                                "src": "15237:17:16",
+                                                                "referencedDeclaration": 18212,
+                                                                "src": "16241:17:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_bool_$_$",
                                                                     "typeString": "mapping(address => mapping(address => bool))"
                                                                 }
                                                             },
-                                                            "id": 3138,
+                                                            "id": 5283,
                                                             "indexExpression": {
-                                                                "id": 3137,
+                                                                "id": 5282,
                                                                 "name": "account",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 3126,
-                                                                "src": "15255:7:16",
+                                                                "referencedDeclaration": 5271,
+                                                                "src": "16259:7:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
@@ -11776,20 +12620,20 @@ export const HyperdriveTarget0 = {
                                                             "isPure": false,
                                                             "lValueRequested": false,
                                                             "nodeType": "IndexAccess",
-                                                            "src": "15237:26:16",
+                                                            "src": "16241:26:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                                                                 "typeString": "mapping(address => bool)"
                                                             }
                                                         },
-                                                        "id": 3140,
+                                                        "id": 5285,
                                                         "indexExpression": {
-                                                            "id": 3139,
+                                                            "id": 5284,
                                                             "name": "operator",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 3128,
-                                                            "src": "15264:8:16",
+                                                            "referencedDeclaration": 5273,
+                                                            "src": "16268:8:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
@@ -11800,7 +12644,7 @@ export const HyperdriveTarget0 = {
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "nodeType": "IndexAccess",
-                                                        "src": "15237:36:16",
+                                                        "src": "16241:36:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
                                                             "typeString": "bool"
@@ -11815,32 +12659,32 @@ export const HyperdriveTarget0 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 3134,
+                                                        "id": 5279,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "15226:3:16",
+                                                        "src": "16230:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 3135,
+                                                    "id": 5280,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "15230:6:16",
+                                                    "memberLocation": "16234:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "15226:10:16",
+                                                    "src": "16230:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 3141,
+                                                "id": 5286,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -11849,7 +12693,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "15226:48:16",
+                                                "src": "16230:48:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -11864,18 +12708,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 3133,
+                                            "id": 5278,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "15218:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "16222:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 3142,
+                                        "id": 5287,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -11884,26 +12728,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "15218:57:16",
+                                        "src": "16222:57:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 3143,
+                                    "id": 5288,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "15218:57:16"
+                                    "src": "16222:57:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8680
+                            12174
                         ],
                         "documentation": {
-                            "id": 3124,
+                            "id": 5269,
                             "nodeType": "StructuredDocumentation",
-                            "src": "14913:178:16",
+                            "src": "15917:178:37",
                             "text": "@notice Gets the approval status of an operator for an account.\n @param account The account.\n @param operator The operator.\n @return The approval status."
                         },
                         "functionSelector": "e985e9c5",
@@ -11911,20 +12755,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "isApprovedForAll",
-                        "nameLocation": "15105:16:16",
+                        "nameLocation": "16109:16:37",
                         "parameters": {
-                            "id": 3129,
+                            "id": 5274,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3126,
+                                    "id": 5271,
                                     "mutability": "mutable",
                                     "name": "account",
-                                    "nameLocation": "15139:7:16",
+                                    "nameLocation": "16143:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3145,
-                                    "src": "15131:15:16",
+                                    "scope": 5290,
+                                    "src": "16135:15:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -11932,10 +12776,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 3125,
+                                        "id": 5270,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "15131:7:16",
+                                        "src": "16135:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -11946,13 +12790,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 3128,
+                                    "id": 5273,
                                     "mutability": "mutable",
                                     "name": "operator",
-                                    "nameLocation": "15164:8:16",
+                                    "nameLocation": "16168:8:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3145,
-                                    "src": "15156:16:16",
+                                    "scope": 5290,
+                                    "src": "16160:16:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -11960,10 +12804,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 3127,
+                                        "id": 5272,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "15156:7:16",
+                                        "src": "16160:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -11973,21 +12817,21 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "15121:57:16"
+                            "src": "16125:57:37"
                         },
                         "returnParameters": {
-                            "id": 3132,
+                            "id": 5277,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3131,
+                                    "id": 5276,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3145,
-                                    "src": "15202:4:16",
+                                    "scope": 5290,
+                                    "src": "16206:4:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -11995,10 +12839,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 3130,
+                                        "id": 5275,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "15202:4:16",
+                                        "src": "16206:4:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -12007,22 +12851,22 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "15201:6:16"
+                            "src": "16205:6:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 3171,
+                        "id": 5316,
                         "nodeType": "FunctionDefinition",
-                        "src": "15510:223:16",
+                        "src": "16514:223:37",
                         "nodes": [],
                         "body": {
-                            "id": 3170,
+                            "id": 5315,
                             "nodeType": "Block",
-                            "src": "15650:83:16",
+                            "src": "16654:83:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -12034,25 +12878,25 @@ export const HyperdriveTarget0 = {
                                                         "baseExpression": {
                                                             "baseExpression": {
                                                                 "baseExpression": {
-                                                                    "id": 3160,
+                                                                    "id": 5305,
                                                                     "name": "_perTokenApprovals",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 13749,
-                                                                    "src": "15679:18:16",
+                                                                    "referencedDeclaration": 18221,
+                                                                    "src": "16683:18:37",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$_$",
                                                                         "typeString": "mapping(uint256 => mapping(address => mapping(address => uint256)))"
                                                                     }
                                                                 },
-                                                                "id": 3162,
+                                                                "id": 5307,
                                                                 "indexExpression": {
-                                                                    "id": 3161,
+                                                                    "id": 5306,
                                                                     "name": "tokenId",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 3148,
-                                                                    "src": "15698:7:16",
+                                                                    "referencedDeclaration": 5293,
+                                                                    "src": "16702:7:37",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
@@ -12063,20 +12907,20 @@ export const HyperdriveTarget0 = {
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "nodeType": "IndexAccess",
-                                                                "src": "15679:27:16",
+                                                                "src": "16683:27:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$",
                                                                     "typeString": "mapping(address => mapping(address => uint256))"
                                                                 }
                                                             },
-                                                            "id": 3164,
+                                                            "id": 5309,
                                                             "indexExpression": {
-                                                                "id": 3163,
+                                                                "id": 5308,
                                                                 "name": "account",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 3150,
-                                                                "src": "15707:7:16",
+                                                                "referencedDeclaration": 5295,
+                                                                "src": "16711:7:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
@@ -12087,20 +12931,20 @@ export const HyperdriveTarget0 = {
                                                             "isPure": false,
                                                             "lValueRequested": false,
                                                             "nodeType": "IndexAccess",
-                                                            "src": "15679:36:16",
+                                                            "src": "16683:36:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                                                                 "typeString": "mapping(address => uint256)"
                                                             }
                                                         },
-                                                        "id": 3166,
+                                                        "id": 5311,
                                                         "indexExpression": {
-                                                            "id": 3165,
+                                                            "id": 5310,
                                                             "name": "spender",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 3152,
-                                                            "src": "15716:7:16",
+                                                            "referencedDeclaration": 5297,
+                                                            "src": "16720:7:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
@@ -12111,7 +12955,7 @@ export const HyperdriveTarget0 = {
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "nodeType": "IndexAccess",
-                                                        "src": "15679:45:16",
+                                                        "src": "16683:45:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -12126,32 +12970,32 @@ export const HyperdriveTarget0 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 3158,
+                                                        "id": 5303,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "15668:3:16",
+                                                        "src": "16672:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 3159,
+                                                    "id": 5304,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "15672:6:16",
+                                                    "memberLocation": "16676:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "15668:10:16",
+                                                    "src": "16672:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 3167,
+                                                "id": 5312,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -12160,7 +13004,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "15668:57:16",
+                                                "src": "16672:57:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -12175,18 +13019,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 3157,
+                                            "id": 5302,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "15660:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "16664:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 3168,
+                                        "id": 5313,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -12195,26 +13039,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "15660:66:16",
+                                        "src": "16664:66:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 3169,
+                                    "id": 5314,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "15660:66:16"
+                                    "src": "16664:66:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8692
+                            12186
                         ],
                         "documentation": {
-                            "id": 3146,
+                            "id": 5291,
                             "nodeType": "StructuredDocumentation",
-                            "src": "15288:217:16",
+                            "src": "16292:217:37",
                             "text": "@notice Gets the approval status of an operator for an account.\n @param tokenId The sub-token id.\n @param account The account.\n @param spender The spender.\n @return The approval status."
                         },
                         "functionSelector": "21ff32a9",
@@ -12222,20 +13066,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "perTokenApprovals",
-                        "nameLocation": "15519:17:16",
+                        "nameLocation": "16523:17:37",
                         "parameters": {
-                            "id": 3153,
+                            "id": 5298,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3148,
+                                    "id": 5293,
                                     "mutability": "mutable",
                                     "name": "tokenId",
-                                    "nameLocation": "15554:7:16",
+                                    "nameLocation": "16558:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3171,
-                                    "src": "15546:15:16",
+                                    "scope": 5316,
+                                    "src": "16550:15:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12243,10 +13087,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 3147,
+                                        "id": 5292,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "15546:7:16",
+                                        "src": "16550:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -12256,13 +13100,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 3150,
+                                    "id": 5295,
                                     "mutability": "mutable",
                                     "name": "account",
-                                    "nameLocation": "15579:7:16",
+                                    "nameLocation": "16583:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3171,
-                                    "src": "15571:15:16",
+                                    "scope": 5316,
+                                    "src": "16575:15:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12270,10 +13114,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 3149,
+                                        "id": 5294,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "15571:7:16",
+                                        "src": "16575:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -12284,13 +13128,13 @@ export const HyperdriveTarget0 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 3152,
+                                    "id": 5297,
                                     "mutability": "mutable",
                                     "name": "spender",
-                                    "nameLocation": "15604:7:16",
+                                    "nameLocation": "16608:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3171,
-                                    "src": "15596:15:16",
+                                    "scope": 5316,
+                                    "src": "16600:15:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12298,10 +13142,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 3151,
+                                        "id": 5296,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "15596:7:16",
+                                        "src": "16600:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -12311,21 +13155,21 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "15536:81:16"
+                            "src": "16540:81:37"
                         },
                         "returnParameters": {
-                            "id": 3156,
+                            "id": 5301,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3155,
+                                    "id": 5300,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3171,
-                                    "src": "15641:7:16",
+                                    "scope": 5316,
+                                    "src": "16645:7:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12333,10 +13177,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 3154,
+                                        "id": 5299,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "15641:7:16",
+                                        "src": "16645:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -12345,22 +13189,22 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "15640:9:16"
+                            "src": "16644:9:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 3187,
+                        "id": 5332,
                         "nodeType": "FunctionDefinition",
-                        "src": "15913:117:16",
+                        "src": "16917:117:37",
                         "nodes": [],
                         "body": {
-                            "id": 3186,
+                            "id": 5331,
                             "nodeType": "Block",
-                            "src": "15971:59:16",
+                            "src": "16975:59:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -12373,33 +13217,33 @@ export const HyperdriveTarget0 = {
                                                         "expression": {
                                                             "argumentTypes": [],
                                                             "expression": {
-                                                                "id": 3180,
+                                                                "id": 5325,
                                                                 "name": "_baseToken",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13657,
-                                                                "src": "16000:10:16",
+                                                                "referencedDeclaration": 18126,
+                                                                "src": "17004:10:37",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$6920",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$10319",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             },
-                                                            "id": 3181,
+                                                            "id": 5326,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "16011:8:16",
+                                                            "memberLocation": "17015:8:37",
                                                             "memberName": "decimals",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 6895,
-                                                            "src": "16000:19:16",
+                                                            "referencedDeclaration": 10294,
+                                                            "src": "17004:19:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_external_view$__$returns$_t_uint8_$",
                                                                 "typeString": "function () view external returns (uint8)"
                                                             }
                                                         },
-                                                        "id": 3182,
+                                                        "id": 5327,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -12408,7 +13252,7 @@ export const HyperdriveTarget0 = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "16000:21:16",
+                                                        "src": "17004:21:37",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint8",
@@ -12424,32 +13268,32 @@ export const HyperdriveTarget0 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 3178,
+                                                        "id": 5323,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "15989:3:16",
+                                                        "src": "16993:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 3179,
+                                                    "id": 5324,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "15993:6:16",
+                                                    "memberLocation": "16997:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "15989:10:16",
+                                                    "src": "16993:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 3183,
+                                                "id": 5328,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -12458,7 +13302,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "15989:33:16",
+                                                "src": "16993:33:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -12473,18 +13317,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 3177,
+                                            "id": 5322,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "15981:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "16985:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 3184,
+                                        "id": 5329,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -12493,26 +13337,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "15981:42:16",
+                                        "src": "16985:42:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 3185,
+                                    "id": 5330,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "15981:42:16"
+                                    "src": "16985:42:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8646
+                            12140
                         ],
                         "documentation": {
-                            "id": 3172,
+                            "id": 5317,
                             "nodeType": "StructuredDocumentation",
-                            "src": "15739:169:16",
+                            "src": "16743:169:37",
                             "text": "@notice Gets the decimals of the MultiToken. This is the same as the\n         decimals used by the base token.\n @return The decimals of the MultiToken."
                         },
                         "functionSelector": "313ce567",
@@ -12520,26 +13364,26 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "decimals",
-                        "nameLocation": "15922:8:16",
+                        "nameLocation": "16926:8:37",
                         "parameters": {
-                            "id": 3173,
+                            "id": 5318,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "15930:2:16"
+                            "src": "16934:2:37"
                         },
                         "returnParameters": {
-                            "id": 3176,
+                            "id": 5321,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3175,
+                                    "id": 5320,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3187,
-                                    "src": "15964:5:16",
+                                    "scope": 5332,
+                                    "src": "16968:5:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12547,10 +13391,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 3174,
+                                        "id": 5319,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "15964:5:16",
+                                        "src": "16968:5:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint8",
                                             "typeString": "uint8"
@@ -12559,22 +13403,22 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "15963:7:16"
+                            "src": "16967:7:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 3206,
+                        "id": 5351,
                         "nodeType": "FunctionDefinition",
-                        "src": "16149:137:16",
+                        "src": "17153:137:37",
                         "nodes": [],
                         "body": {
-                            "id": 3205,
+                            "id": 5350,
                             "nodeType": "Block",
-                            "src": "16218:68:16",
+                            "src": "17222:68:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -12585,12 +13429,12 @@ export const HyperdriveTarget0 = {
                                                     {
                                                         "arguments": [
                                                             {
-                                                                "id": 3200,
+                                                                "id": 5345,
                                                                 "name": "tokenId",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 3190,
-                                                                "src": "16269:7:16",
+                                                                "referencedDeclaration": 5335,
+                                                                "src": "17273:7:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
@@ -12605,33 +13449,33 @@ export const HyperdriveTarget0 = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 3198,
+                                                                "id": 5343,
                                                                 "name": "AssetId",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 14117,
-                                                                "src": "16247:7:16",
+                                                                "referencedDeclaration": 18594,
+                                                                "src": "17251:7:37",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_type$_t_contract$_AssetId_$14117_$",
+                                                                    "typeIdentifier": "t_type$_t_contract$_AssetId_$18594_$",
                                                                     "typeString": "type(library AssetId)"
                                                                 }
                                                             },
-                                                            "id": 3199,
+                                                            "id": 5344,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "16255:13:16",
+                                                            "memberLocation": "17259:13:37",
                                                             "memberName": "assetIdToName",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 13978,
-                                                            "src": "16247:21:16",
+                                                            "referencedDeclaration": 18455,
+                                                            "src": "17251:21:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                                 "typeString": "function (uint256) pure returns (string memory)"
                                                             }
                                                         },
-                                                        "id": 3201,
+                                                        "id": 5346,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -12640,7 +13484,7 @@ export const HyperdriveTarget0 = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "16247:30:16",
+                                                        "src": "17251:30:37",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_string_memory_ptr",
@@ -12656,32 +13500,32 @@ export const HyperdriveTarget0 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 3196,
+                                                        "id": 5341,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "16236:3:16",
+                                                        "src": "17240:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 3197,
+                                                    "id": 5342,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "16240:6:16",
+                                                    "memberLocation": "17244:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "16236:10:16",
+                                                    "src": "17240:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 3202,
+                                                "id": 5347,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -12690,7 +13534,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "16236:42:16",
+                                                "src": "17240:42:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -12705,18 +13549,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 3195,
+                                            "id": 5340,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "16228:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "17232:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 3203,
+                                        "id": 5348,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -12725,26 +13569,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "16228:51:16",
+                                        "src": "17232:51:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 3204,
+                                    "id": 5349,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "16228:51:16"
+                                    "src": "17232:51:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8654
+                            12148
                         ],
                         "documentation": {
-                            "id": 3188,
+                            "id": 5333,
                             "nodeType": "StructuredDocumentation",
-                            "src": "16036:108:16",
+                            "src": "17040:108:37",
                             "text": "@notice Gets the name of a sub-token.\n @param tokenId The sub-token id.\n @return The name."
                         },
                         "functionSelector": "00ad800c",
@@ -12752,20 +13596,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "name",
-                        "nameLocation": "16158:4:16",
+                        "nameLocation": "17162:4:37",
                         "parameters": {
-                            "id": 3191,
+                            "id": 5336,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3190,
+                                    "id": 5335,
                                     "mutability": "mutable",
                                     "name": "tokenId",
-                                    "nameLocation": "16171:7:16",
+                                    "nameLocation": "17175:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3206,
-                                    "src": "16163:15:16",
+                                    "scope": 5351,
+                                    "src": "17167:15:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -12773,10 +13617,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 3189,
+                                        "id": 5334,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "16163:7:16",
+                                        "src": "17167:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -12785,21 +13629,21 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "16162:17:16"
+                            "src": "17166:17:37"
                         },
                         "returnParameters": {
-                            "id": 3194,
+                            "id": 5339,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3193,
+                                    "id": 5338,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3206,
-                                    "src": "16203:13:16",
+                                    "scope": 5351,
+                                    "src": "17207:13:37",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
@@ -12807,10 +13651,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 3192,
+                                        "id": 5337,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "16203:6:16",
+                                        "src": "17207:6:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_string_storage_ptr",
                                             "typeString": "string"
@@ -12819,22 +13663,22 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "16202:15:16"
+                            "src": "17206:15:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 3225,
+                        "id": 5370,
                         "nodeType": "FunctionDefinition",
-                        "src": "16409:141:16",
+                        "src": "17413:141:37",
                         "nodes": [],
                         "body": {
-                            "id": 3224,
+                            "id": 5369,
                             "nodeType": "Block",
-                            "src": "16480:70:16",
+                            "src": "17484:70:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -12845,12 +13689,12 @@ export const HyperdriveTarget0 = {
                                                     {
                                                         "arguments": [
                                                             {
-                                                                "id": 3219,
+                                                                "id": 5364,
                                                                 "name": "tokenId",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 3209,
-                                                                "src": "16533:7:16",
+                                                                "referencedDeclaration": 5354,
+                                                                "src": "17537:7:37",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
@@ -12865,33 +13709,33 @@ export const HyperdriveTarget0 = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 3217,
+                                                                "id": 5362,
                                                                 "name": "AssetId",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 14117,
-                                                                "src": "16509:7:16",
+                                                                "referencedDeclaration": 18594,
+                                                                "src": "17513:7:37",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_type$_t_contract$_AssetId_$14117_$",
+                                                                    "typeIdentifier": "t_type$_t_contract$_AssetId_$18594_$",
                                                                     "typeString": "type(library AssetId)"
                                                                 }
                                                             },
-                                                            "id": 3218,
+                                                            "id": 5363,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "16517:15:16",
+                                                            "memberLocation": "17521:15:37",
                                                             "memberName": "assetIdToSymbol",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 14056,
-                                                            "src": "16509:23:16",
+                                                            "referencedDeclaration": 18533,
+                                                            "src": "17513:23:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                                 "typeString": "function (uint256) pure returns (string memory)"
                                                             }
                                                         },
-                                                        "id": 3220,
+                                                        "id": 5365,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -12900,7 +13744,7 @@ export const HyperdriveTarget0 = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "16509:32:16",
+                                                        "src": "17513:32:37",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_string_memory_ptr",
@@ -12916,32 +13760,32 @@ export const HyperdriveTarget0 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 3215,
+                                                        "id": 5360,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "16498:3:16",
+                                                        "src": "17502:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 3216,
+                                                    "id": 5361,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "16502:6:16",
+                                                    "memberLocation": "17506:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "16498:10:16",
+                                                    "src": "17502:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 3221,
+                                                "id": 5366,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -12950,7 +13794,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "16498:44:16",
+                                                "src": "17502:44:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -12965,18 +13809,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 3214,
+                                            "id": 5359,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "16490:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "17494:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 3222,
+                                        "id": 5367,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -12985,26 +13829,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "16490:53:16",
+                                        "src": "17494:53:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 3223,
+                                    "id": 5368,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "16490:53:16"
+                                    "src": "17494:53:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8662
+                            12156
                         ],
                         "documentation": {
-                            "id": 3207,
+                            "id": 5352,
                             "nodeType": "StructuredDocumentation",
-                            "src": "16292:112:16",
+                            "src": "17296:112:37",
                             "text": "@notice Gets the symbol of a sub-token.\n @param tokenId The sub-token id.\n @return The symbol."
                         },
                         "functionSelector": "4e41a1fb",
@@ -13012,20 +13856,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "symbol",
-                        "nameLocation": "16418:6:16",
+                        "nameLocation": "17422:6:37",
                         "parameters": {
-                            "id": 3210,
+                            "id": 5355,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3209,
+                                    "id": 5354,
                                     "mutability": "mutable",
                                     "name": "tokenId",
-                                    "nameLocation": "16433:7:16",
+                                    "nameLocation": "17437:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3225,
-                                    "src": "16425:15:16",
+                                    "scope": 5370,
+                                    "src": "17429:15:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -13033,10 +13877,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 3208,
+                                        "id": 5353,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "16425:7:16",
+                                        "src": "17429:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -13045,21 +13889,21 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "16424:17:16"
+                            "src": "17428:17:37"
                         },
                         "returnParameters": {
-                            "id": 3213,
+                            "id": 5358,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3212,
+                                    "id": 5357,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3225,
-                                    "src": "16465:13:16",
+                                    "scope": 5370,
+                                    "src": "17469:13:37",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
@@ -13067,10 +13911,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 3211,
+                                        "id": 5356,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "16465:6:16",
+                                        "src": "17469:6:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_string_storage_ptr",
                                             "typeString": "string"
@@ -13079,22 +13923,22 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "16464:15:16"
+                            "src": "17468:15:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 3243,
+                        "id": 5388,
                         "nodeType": "FunctionDefinition",
-                        "src": "16699:119:16",
+                        "src": "17703:119:37",
                         "nodes": [],
                         "body": {
-                            "id": 3242,
+                            "id": 5387,
                             "nodeType": "Block",
-                            "src": "16764:54:16",
+                            "src": "17768:54:37",
                             "nodes": [],
                             "statements": [
                                 {
@@ -13104,25 +13948,25 @@ export const HyperdriveTarget0 = {
                                                 "arguments": [
                                                     {
                                                         "baseExpression": {
-                                                            "id": 3236,
+                                                            "id": 5381,
                                                             "name": "_nonces",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 13754,
-                                                            "src": "16793:7:16",
+                                                            "referencedDeclaration": 18226,
+                                                            "src": "17797:7:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                                                                 "typeString": "mapping(address => uint256)"
                                                             }
                                                         },
-                                                        "id": 3238,
+                                                        "id": 5383,
                                                         "indexExpression": {
-                                                            "id": 3237,
+                                                            "id": 5382,
                                                             "name": "account",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 3228,
-                                                            "src": "16801:7:16",
+                                                            "referencedDeclaration": 5373,
+                                                            "src": "17805:7:37",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
                                                                 "typeString": "address"
@@ -13133,7 +13977,7 @@ export const HyperdriveTarget0 = {
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "nodeType": "IndexAccess",
-                                                        "src": "16793:16:16",
+                                                        "src": "17797:16:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -13148,32 +13992,32 @@ export const HyperdriveTarget0 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 3234,
+                                                        "id": 5379,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "16782:3:16",
+                                                        "src": "17786:3:37",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 3235,
+                                                    "id": 5380,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "16786:6:16",
+                                                    "memberLocation": "17790:6:37",
                                                     "memberName": "encode",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "16782:10:16",
+                                                    "src": "17786:10:37",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 3239,
+                                                "id": 5384,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -13182,7 +14026,7 @@ export const HyperdriveTarget0 = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "16782:28:16",
+                                                "src": "17786:28:37",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -13197,18 +14041,18 @@ export const HyperdriveTarget0 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 3233,
+                                            "id": 5378,
                                             "name": "_revert",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 3256,
-                                            "src": "16774:7:16",
+                                            "referencedDeclaration": 5401,
+                                            "src": "17778:7:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 3240,
+                                        "id": 5385,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -13217,26 +14061,26 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "16774:37:16",
+                                        "src": "17778:37:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 3241,
+                                    "id": 5386,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "16774:37:16"
+                                    "src": "17778:37:37"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            8710
+                            12204
                         ],
                         "documentation": {
-                            "id": 3226,
+                            "id": 5371,
                             "nodeType": "StructuredDocumentation",
-                            "src": "16556:138:16",
+                            "src": "17560:138:37",
                             "text": "@notice Gets the permitForAll signature nonce for an account.\n @param account The account.\n @return The signature nonce."
                         },
                         "functionSelector": "7ecebe00",
@@ -13244,20 +14088,20 @@ export const HyperdriveTarget0 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "nonces",
-                        "nameLocation": "16708:6:16",
+                        "nameLocation": "17712:6:37",
                         "parameters": {
-                            "id": 3229,
+                            "id": 5374,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3228,
+                                    "id": 5373,
                                     "mutability": "mutable",
                                     "name": "account",
-                                    "nameLocation": "16723:7:16",
+                                    "nameLocation": "17727:7:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3243,
-                                    "src": "16715:15:16",
+                                    "scope": 5388,
+                                    "src": "17719:15:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -13265,10 +14109,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 3227,
+                                        "id": 5372,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "16715:7:16",
+                                        "src": "17719:7:37",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -13278,21 +14122,21 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "16714:17:16"
+                            "src": "17718:17:37"
                         },
                         "returnParameters": {
-                            "id": 3232,
+                            "id": 5377,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3231,
+                                    "id": 5376,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3243,
-                                    "src": "16755:7:16",
+                                    "scope": 5388,
+                                    "src": "17759:7:37",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -13300,10 +14144,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 3230,
+                                        "id": 5375,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "16755:7:16",
+                                        "src": "17759:7:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -13312,34 +14156,34 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "16754:9:16"
+                            "src": "17758:9:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 3256,
+                        "id": 5401,
                         "nodeType": "FunctionDefinition",
-                        "src": "17027:106:16",
+                        "src": "18031:106:37",
                         "nodes": [],
                         "body": {
-                            "id": 3255,
+                            "id": 5400,
                             "nodeType": "Block",
-                            "src": "17079:54:16",
+                            "src": "18083:54:37",
                             "nodes": [],
                             "statements": [
                                 {
                                     "errorCall": {
                                         "arguments": [
                                             {
-                                                "id": 3252,
+                                                "id": 5397,
                                                 "name": "_bytes",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 3246,
-                                                "src": "17119:6:16",
+                                                "referencedDeclaration": 5391,
+                                                "src": "18123:6:37",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
                                                     "typeString": "bytes memory"
@@ -13354,33 +14198,33 @@ export const HyperdriveTarget0 = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 3249,
+                                                "id": 5394,
                                                 "name": "IHyperdrive",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 7616,
-                                                "src": "17096:11:16",
+                                                "referencedDeclaration": 11028,
+                                                "src": "18100:11:37",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7616_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$11028_$",
                                                     "typeString": "type(contract IHyperdrive)"
                                                 }
                                             },
-                                            "id": 3251,
+                                            "id": 5396,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "17108:10:16",
+                                            "memberLocation": "18112:10:37",
                                             "memberName": "ReturnData",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 7555,
-                                            "src": "17096:22:16",
+                                            "referencedDeclaration": 10964,
+                                            "src": "18100:22:37",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_error_pure$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (bytes memory) pure"
                                             }
                                         },
-                                        "id": 3253,
+                                        "id": 5398,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -13389,43 +14233,43 @@ export const HyperdriveTarget0 = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "17096:30:16",
+                                        "src": "18100:30:37",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 3254,
+                                    "id": 5399,
                                     "nodeType": "RevertStatement",
-                                    "src": "17089:37:16"
+                                    "src": "18093:37:37"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 3244,
+                            "id": 5389,
                             "nodeType": "StructuredDocumentation",
-                            "src": "16845:177:16",
+                            "src": "17849:177:37",
                             "text": "@dev Reverts with the provided bytes. This is useful in getters used\n      with the force-revert delegatecall pattern.\n @param _bytes The bytes to revert with."
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_revert",
-                        "nameLocation": "17036:7:16",
+                        "nameLocation": "18040:7:37",
                         "parameters": {
-                            "id": 3247,
+                            "id": 5392,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 3246,
+                                    "id": 5391,
                                     "mutability": "mutable",
                                     "name": "_bytes",
-                                    "nameLocation": "17057:6:16",
+                                    "nameLocation": "18061:6:37",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 3256,
-                                    "src": "17044:19:16",
+                                    "scope": 5401,
+                                    "src": "18048:19:37",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
@@ -13433,10 +14277,10 @@ export const HyperdriveTarget0 = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 3245,
+                                        "id": 5390,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "17044:5:16",
+                                        "src": "18048:5:37",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes_storage_ptr",
                                             "typeString": "bytes"
@@ -13445,15 +14289,15 @@ export const HyperdriveTarget0 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "17043:21:16"
+                            "src": "18047:21:37"
                         },
                         "returnParameters": {
-                            "id": 3248,
+                            "id": 5393,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "17079:0:16"
+                            "src": "18083:0:37"
                         },
-                        "scope": 3257,
+                        "scope": 5402,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
@@ -13463,177 +14307,185 @@ export const HyperdriveTarget0 = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 2522,
+                            "id": 4632,
                             "name": "IHyperdriveRead",
                             "nameLocations": [
-                                "1211:15:16"
+                                "1262:15:37"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 8371,
-                            "src": "1211:15:16"
+                            "referencedDeclaration": 11865,
+                            "src": "1262:15:37"
                         },
-                        "id": 2523,
+                        "id": 4633,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "1211:15:16"
+                        "src": "1262:15:37"
                     },
                     {
                         "baseName": {
-                            "id": 2524,
+                            "id": 4634,
                             "name": "HyperdriveAdmin",
                             "nameLocations": [
-                                "1232:15:16"
+                                "1283:15:37"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 8936,
-                            "src": "1232:15:16"
+                            "referencedDeclaration": 13157,
+                            "src": "1283:15:37"
                         },
-                        "id": 2525,
+                        "id": 4635,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "1232:15:16"
+                        "src": "1283:15:37"
                     },
                     {
                         "baseName": {
-                            "id": 2526,
+                            "id": 4636,
                             "name": "HyperdriveMultiToken",
                             "nameLocations": [
-                                "1253:20:16"
+                                "1304:20:37"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 12682,
-                            "src": "1253:20:16"
+                            "referencedDeclaration": 17117,
+                            "src": "1304:20:37"
                         },
-                        "id": 2527,
+                        "id": 4637,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "1253:20:16"
+                        "src": "1304:20:37"
                     },
                     {
                         "baseName": {
-                            "id": 2528,
+                            "id": 4638,
                             "name": "HyperdriveLP",
                             "nameLocations": [
-                                "1279:12:16"
+                                "1330:12:37"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 11279,
-                            "src": "1279:12:16"
+                            "referencedDeclaration": 15699,
+                            "src": "1330:12:37"
                         },
-                        "id": 2529,
+                        "id": 4639,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "1279:12:16"
+                        "src": "1330:12:37"
                     },
                     {
                         "baseName": {
-                            "id": 2530,
+                            "id": 4640,
                             "name": "HyperdriveLong",
                             "nameLocations": [
-                                "1297:14:16"
+                                "1348:14:37"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 12198,
-                            "src": "1297:14:16"
+                            "referencedDeclaration": 16633,
+                            "src": "1348:14:37"
                         },
-                        "id": 2531,
+                        "id": 4641,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "1297:14:16"
+                        "src": "1348:14:37"
                     },
                     {
                         "baseName": {
-                            "id": 2532,
+                            "id": 4642,
                             "name": "HyperdriveShort",
                             "nameLocations": [
-                                "1317:15:16"
+                                "1368:15:37"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 13634,
-                            "src": "1317:15:16"
+                            "referencedDeclaration": 18103,
+                            "src": "1368:15:37"
                         },
-                        "id": 2533,
+                        "id": 4643,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "1317:15:16"
+                        "src": "1368:15:37"
                     },
                     {
                         "baseName": {
-                            "id": 2534,
+                            "id": 4644,
                             "name": "HyperdriveCheckpoint",
                             "nameLocations": [
-                                "1338:20:16"
+                                "1389:20:37"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 10381,
-                            "src": "1338:20:16"
+                            "referencedDeclaration": 14797,
+                            "src": "1389:20:37"
                         },
-                        "id": 2535,
+                        "id": 4645,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "1338:20:16"
+                        "src": "1389:20:37"
                     }
                 ],
                 "canonicalName": "HyperdriveTarget0",
                 "contractDependencies": [],
                 "contractKind": "contract",
                 "documentation": {
-                    "id": 2521,
+                    "id": 4631,
                     "nodeType": "StructuredDocumentation",
-                    "src": "848:320:16",
+                    "src": "899:320:37",
                     "text": "@author DELV\n @title HyperdriveTarget0\n @notice Hyperdrive's target 0 logic contract.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."
                 },
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    3257,
-                    10381,
-                    13634,
-                    12198,
-                    11279,
-                    12682,
-                    8936,
-                    9917,
-                    13842,
-                    67058,
-                    8062,
-                    8623,
-                    8371,
-                    8711
+                    5402,
+                    14797,
+                    18103,
+                    16633,
+                    15699,
+                    17117,
+                    13157,
+                    14333,
+                    18319,
+                    71995,
+                    11551,
+                    12117,
+                    11865,
+                    12205
                 ],
                 "name": "HyperdriveTarget0",
-                "nameLocation": "1186:17:16",
-                "scope": 3258,
+                "nameLocation": "1237:17:37",
+                "scope": 5403,
                 "usedErrors": [
-                    7472,
-                    7478,
-                    7481,
-                    7490,
-                    7502,
-                    7505,
-                    7514,
-                    7520,
-                    7523,
-                    7526,
-                    7550,
-                    7555,
-                    7567,
-                    7582,
-                    67003
+                    10884,
+                    10890,
+                    10893,
+                    10902,
+                    10914,
+                    10917,
+                    10926,
+                    10929,
+                    10932,
+                    10935,
+                    10959,
+                    10964,
+                    10967,
+                    10976,
+                    10991,
+                    71370,
+                    71651,
+                    71656,
+                    71659,
+                    71940
                 ],
                 "usedEvents": [
-                    7909,
-                    7924,
-                    7941,
-                    7954,
-                    7971,
-                    7990,
-                    8007,
-                    8024,
-                    8037,
-                    8044,
-                    8049,
-                    8056,
-                    8061,
-                    8604,
-                    8613,
-                    8622
+                    11371,
+                    11386,
+                    11405,
+                    11420,
+                    11437,
+                    11456,
+                    11475,
+                    11496,
+                    11509,
+                    11516,
+                    11521,
+                    11526,
+                    11531,
+                    11538,
+                    11543,
+                    11550,
+                    12098,
+                    12107,
+                    12116
                 ]
             }
         ],
         "license": "Apache-2.0"
     },
-    "id": 16
+    "id": 37
 };

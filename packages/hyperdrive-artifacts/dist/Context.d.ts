@@ -55,89 +55,89 @@ export declare const Context: {
     };
     readonly ast: {
         readonly absolutePath: "lib/openzeppelin-contracts/contracts/utils/Context.sol";
-        readonly id: 66990;
+        readonly id: 71927;
         readonly exportedSymbols: {
-            readonly Context: readonly [66989];
+            readonly Context: readonly [71926];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "101:862:120";
+        readonly src: "101:862:170";
         readonly nodes: readonly [{
-            readonly id: 66961;
+            readonly id: 71898;
             readonly nodeType: "PragmaDirective";
-            readonly src: "101:24:120";
+            readonly src: "101:24:170";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "^", "0.8", ".20"];
         }, {
-            readonly id: 66989;
+            readonly id: 71926;
             readonly nodeType: "ContractDefinition";
-            readonly src: "624:338:120";
+            readonly src: "624:338:170";
             readonly nodes: readonly [{
-                readonly id: 66971;
+                readonly id: 71908;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "656:96:120";
+                readonly src: "656:96:170";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 66970;
+                    readonly id: 71907;
                     readonly nodeType: "Block";
-                    readonly src: "718:34:120";
+                    readonly src: "718:34:170";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly expression: {
-                                readonly id: 66967;
+                                readonly id: 71904;
                                 readonly name: "msg";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
                                 readonly referencedDeclaration: -15;
-                                readonly src: "735:3:120";
+                                readonly src: "735:3:170";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_magic_message";
                                     readonly typeString: "msg";
                                 };
                             };
-                            readonly id: 66968;
+                            readonly id: 71905;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
-                            readonly memberLocation: "739:6:120";
+                            readonly memberLocation: "739:6:170";
                             readonly memberName: "sender";
                             readonly nodeType: "MemberAccess";
-                            readonly src: "735:10:120";
+                            readonly src: "735:10:170";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             };
                         };
-                        readonly functionReturnParameters: 66966;
-                        readonly id: 66969;
+                        readonly functionReturnParameters: 71903;
+                        readonly id: 71906;
                         readonly nodeType: "Return";
-                        readonly src: "728:17:120";
+                        readonly src: "728:17:170";
                     }];
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_msgSender";
-                readonly nameLocation: "665:10:120";
+                readonly nameLocation: "665:10:170";
                 readonly parameters: {
-                    readonly id: 66963;
+                    readonly id: 71900;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "675:2:120";
+                    readonly src: "675:2:170";
                 };
                 readonly returnParameters: {
-                    readonly id: 66966;
+                    readonly id: 71903;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 66965;
+                        readonly id: 71902;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 66971;
-                        readonly src: "709:7:120";
+                        readonly scope: 71908;
+                        readonly src: "709:7:170";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -145,10 +145,10 @@ export declare const Context: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 66964;
+                            readonly id: 71901;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "709:7:120";
+                            readonly src: "709:7:170";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -157,79 +157,79 @@ export declare const Context: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "708:9:120";
+                    readonly src: "708:9:170";
                 };
-                readonly scope: 66989;
+                readonly scope: 71926;
                 readonly stateMutability: "view";
                 readonly virtual: true;
                 readonly visibility: "internal";
             }, {
-                readonly id: 66980;
+                readonly id: 71917;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "758:99:120";
+                readonly src: "758:99:170";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 66979;
+                    readonly id: 71916;
                     readonly nodeType: "Block";
-                    readonly src: "825:32:120";
+                    readonly src: "825:32:170";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly expression: {
-                                readonly id: 66976;
+                                readonly id: 71913;
                                 readonly name: "msg";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
                                 readonly referencedDeclaration: -15;
-                                readonly src: "842:3:120";
+                                readonly src: "842:3:170";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_magic_message";
                                     readonly typeString: "msg";
                                 };
                             };
-                            readonly id: 66977;
+                            readonly id: 71914;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
-                            readonly memberLocation: "846:4:120";
+                            readonly memberLocation: "846:4:170";
                             readonly memberName: "data";
                             readonly nodeType: "MemberAccess";
-                            readonly src: "842:8:120";
+                            readonly src: "842:8:170";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes_calldata_ptr";
                                 readonly typeString: "bytes calldata";
                             };
                         };
-                        readonly functionReturnParameters: 66975;
-                        readonly id: 66978;
+                        readonly functionReturnParameters: 71912;
+                        readonly id: 71915;
                         readonly nodeType: "Return";
-                        readonly src: "835:15:120";
+                        readonly src: "835:15:170";
                     }];
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_msgData";
-                readonly nameLocation: "767:8:120";
+                readonly nameLocation: "767:8:170";
                 readonly parameters: {
-                    readonly id: 66972;
+                    readonly id: 71909;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "775:2:120";
+                    readonly src: "775:2:170";
                 };
                 readonly returnParameters: {
-                    readonly id: 66975;
+                    readonly id: 71912;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 66974;
+                        readonly id: 71911;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 66980;
-                        readonly src: "809:14:120";
+                        readonly scope: 71917;
+                        readonly src: "809:14:170";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
@@ -237,10 +237,10 @@ export declare const Context: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 66973;
+                            readonly id: 71910;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "809:5:120";
+                            readonly src: "809:5:170";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes_storage_ptr";
                                 readonly typeString: "bytes";
@@ -248,68 +248,68 @@ export declare const Context: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "808:16:120";
+                    readonly src: "808:16:170";
                 };
-                readonly scope: 66989;
+                readonly scope: 71926;
                 readonly stateMutability: "view";
                 readonly virtual: true;
                 readonly visibility: "internal";
             }, {
-                readonly id: 66988;
+                readonly id: 71925;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "863:97:120";
+                readonly src: "863:97:170";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 66987;
+                    readonly id: 71924;
                     readonly nodeType: "Block";
-                    readonly src: "935:25:120";
+                    readonly src: "935:25:170";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly hexValue: "30";
-                            readonly id: 66985;
+                            readonly id: 71922;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
                             readonly kind: "number";
                             readonly lValueRequested: false;
                             readonly nodeType: "Literal";
-                            readonly src: "952:1:120";
+                            readonly src: "952:1:170";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_rational_0_by_1";
                                 readonly typeString: "int_const 0";
                             };
                             readonly value: "0";
                         };
-                        readonly functionReturnParameters: 66984;
-                        readonly id: 66986;
+                        readonly functionReturnParameters: 71921;
+                        readonly id: 71923;
                         readonly nodeType: "Return";
-                        readonly src: "945:8:120";
+                        readonly src: "945:8:170";
                     }];
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_contextSuffixLength";
-                readonly nameLocation: "872:20:120";
+                readonly nameLocation: "872:20:170";
                 readonly parameters: {
-                    readonly id: 66981;
+                    readonly id: 71918;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "892:2:120";
+                    readonly src: "892:2:170";
                 };
                 readonly returnParameters: {
-                    readonly id: 66984;
+                    readonly id: 71921;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 66983;
+                        readonly id: 71920;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 66988;
-                        readonly src: "926:7:120";
+                        readonly scope: 71925;
+                        readonly src: "926:7:170";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -317,10 +317,10 @@ export declare const Context: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 66982;
+                            readonly id: 71919;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "926:7:120";
+                            readonly src: "926:7:170";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -328,9 +328,9 @@ export declare const Context: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "925:9:120";
+                    readonly src: "925:9:170";
                 };
-                readonly scope: 66989;
+                readonly scope: 71926;
                 readonly stateMutability: "view";
                 readonly virtual: true;
                 readonly visibility: "internal";
@@ -341,21 +341,21 @@ export declare const Context: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly documentation: {
-                readonly id: 66962;
+                readonly id: 71899;
                 readonly nodeType: "StructuredDocumentation";
-                readonly src: "127:496:120";
+                readonly src: "127:496:170";
                 readonly text: " @dev Provides information about the current execution context, including the\n sender of the transaction and its data. While these are generally available\n via msg.sender and msg.data, they should not be accessed in such a direct\n manner, since when dealing with meta-transactions the account sending and\n paying for execution may not be the actual sender (as far as an application\n is concerned).\n This contract is only required for intermediate, library-like contracts.";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [66989];
+            readonly linearizedBaseContracts: readonly [71926];
             readonly name: "Context";
-            readonly nameLocation: "642:7:120";
-            readonly scope: 66990;
+            readonly nameLocation: "642:7:170";
+            readonly scope: 71927;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];
         readonly license: "MIT";
     };
-    readonly id: 120;
+    readonly id: 170;
 };
 //# sourceMappingURL=Context.d.ts.map

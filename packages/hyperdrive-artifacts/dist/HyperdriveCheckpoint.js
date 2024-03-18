@@ -109,6 +109,12 @@ export const HyperdriveCheckpoint = {
                 },
                 {
                     "indexed": true,
+                    "internalType": "address",
+                    "name": "destination",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
                     "internalType": "uint256",
                     "name": "assetId",
                     "type": "uint256"
@@ -158,6 +164,12 @@ export const HyperdriveCheckpoint = {
                 },
                 {
                     "indexed": true,
+                    "internalType": "address",
+                    "name": "destination",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
                     "internalType": "uint256",
                     "name": "assetId",
                     "type": "uint256"
@@ -185,6 +197,12 @@ export const HyperdriveCheckpoint = {
                     "internalType": "bool",
                     "name": "asBase",
                     "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "basePayment",
+                    "type": "uint256"
                 },
                 {
                     "indexed": false,
@@ -250,6 +268,19 @@ export const HyperdriveCheckpoint = {
                 }
             ],
             "name": "CreateCheckpoint",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newFeeCollector",
+                    "type": "address"
+                }
+            ],
+            "name": "FeeCollectorUpdated",
             "type": "event"
         },
         {
@@ -454,6 +485,12 @@ export const HyperdriveCheckpoint = {
                     "type": "address"
                 },
                 {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "destination",
+                    "type": "address"
+                },
+                {
                     "indexed": false,
                     "internalType": "uint256",
                     "name": "withdrawalShareAmount",
@@ -488,6 +525,12 @@ export const HyperdriveCheckpoint = {
                     "indexed": true,
                     "internalType": "address",
                     "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "destination",
                     "type": "address"
                 },
                 {
@@ -528,6 +571,38 @@ export const HyperdriveCheckpoint = {
                 }
             ],
             "name": "RemoveLiquidity",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "collector",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "target",
+                    "type": "address"
+                }
+            ],
+            "name": "Sweep",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newSweepCollector",
+                    "type": "address"
+                }
+            ],
+            "name": "SweepCollectorUpdated",
             "type": "event"
         },
         {
@@ -579,7 +654,7 @@ export const HyperdriveCheckpoint = {
         "linkReferences": {}
     },
     "methodIdentifiers": {},
-    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{},\"notice\":\"Implements the checkpoint accounting for Hyperdrive.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/internal/HyperdriveCheckpoint.sol\":\"HyperdriveCheckpoint\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x7cc4f7a8878cf02f9896f930882ccb6839b20f63c85efc4a66e88af46c57c317\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://de756bba0e3622e5ddaff774a989fa20b4be7c49806dd972efc11f2cef523213\",\"dweb:/ipfs/QmPWwZo7TsF8ccFYbGVXhZMo85FYjKmyTnEYGV3V936YG2\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0xd15fb3cb39e359f334b7f836f23026d162de7b5be66d9aab3ac11dede9357a76\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b8b6fdcb4a2a45a3dbb8a70e9451fdd6aa5e23ee75d8960e42a149e9138a32eb\",\"dweb:/ipfs/QmNQiGzu6qhssorP8UMtaRbxygqzajPg3rB4phnbfQuMzF\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x1233242868a6eaeb6e6764df97cd094bfda03978bbedb04592db8ddc3ac6db56\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5cc50aa0bdaff888c940b004ad3a7a0c2aac4c15104419bd216ca48270c3fcb8\",\"dweb:/ipfs/QmQS6jncTRsBmZxDgR6dAofzXgTt1bXSRb8WdBNqKTCKiR\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x5922cbd86a7267c8fd19e3dc7a6f2636bad2b3330c28bca8e66adc7cd8ce2b55\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ced8bce3f3c15a9f0bcdd11ba16e69651179edd6b16e267936788f4ab4d6eabf\",\"dweb:/ipfs/QmcoZPj4h2ym6r13KDU7JG2GoVdDWa1GwfKL2jjFRsp8H6\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0xfc6947a6bfff9ca937fc2654ee56203dbc2ffc3c8bffe40c1334ebc9c81804bc\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b29d5b70c6cb40ede4e496cbeee4937c5318b43536a450d7c246166d326c85fa\",\"dweb:/ipfs/QmcDD9Bs4Gueepjs92CYJC9UFBMFYSN1QfbfqBJMQECkWj\"]},\"contracts/src/internal/HyperdriveCheckpoint.sol\":{\"keccak256\":\"0x3514b829c99e0015385ff08dd1479e452529a6283e8b6800946542ff21dc9649\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://37ffd17baea5080f4184372ac835bf60694760499756235a61e41a480f4ab3c7\",\"dweb:/ipfs/QmUzEnJhRhpW18MH7GyXsug9u5FLehNfgjR7RAhZizLLVd\"]},\"contracts/src/internal/HyperdriveLP.sol\":{\"keccak256\":\"0x800d540f89ed4f6f40376e0e586246ab48b79a78f1fb4b7ff979b350fafb8a12\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4aa17285692fa2872fe544d4f4b8fa2b29d68be5380806c804465788e2bdb1ba\",\"dweb:/ipfs/Qmag8aW8ADj9grs9vSL33mpM2F3kbFjh6ePKGGv7pXAGdV\"]},\"contracts/src/internal/HyperdriveLong.sol\":{\"keccak256\":\"0x20aad0da5f27cbdded488149694f0c126bfada17ebea0a690f5386a19b826ed0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://de8345bda127a4c5c101fb2668ede0011dbd82ff1ca3dcabd37905d56485efba\",\"dweb:/ipfs/QmYc3Jkm8c5FB1oEZwgWTNGEa8q96WWEJNyjumD8nirBdk\"]},\"contracts/src/internal/HyperdriveMultiToken.sol\":{\"keccak256\":\"0x21a9aafb8e23a22c77111e13538fa8f709446e4f3a64ef84b2eebc2aa9d04373\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://41517912353540de5b430587ca8220f9d34d4432d3c723951d5fb618d5907b5d\",\"dweb:/ipfs/QmU3cTCrAq94digVS97s5af1Pu86uGBpmpus6w7828fUbG\"]},\"contracts/src/internal/HyperdriveShort.sol\":{\"keccak256\":\"0xa6a716eac09df69f29b4fd76314104895b18c350679132de2db805e673d3650c\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5d1e6f1092fa727453030eca383b77182755c972b83b74e6d3cf5937cc50caca\",\"dweb:/ipfs/QmNk5UeZ9ZzNLuivQQjkihaVrQ6y1pnFUn1PdWvpfDJnSU\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xfeac73551892783afcce85d23fb910baf2ad729d218756f3597ad23e3dcb077f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1f659070705bee17efda43c36f71d22b035752f610624c59238cae559c60530d\",\"dweb:/ipfs/QmTEXNYSWa8w3wY2TWzDPNZXxdThMFEbrtRwcQHfyN2CJb\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xe86d38d659ce3191d0423a4ee9b6592218a0e59dd72f3e0ec60cfa83809b266e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://91d15d179f83429f36db12d5eac3f575727e16f1505d4cb1b95a11d0876c7534\",\"dweb:/ipfs/QmQDHYp8pgd9maivqkaH2mZ8qtb5ZEmK34n4oDmvAo8nrh\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x8fde664589dfd8a26b6d39aed585388f7c179bf508ffe7688dc6c796a68dc785\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3406b91898282977f3630976461eb344764c0f321d35588b1e31408b64f64263\",\"dweb:/ipfs/QmVGGknjaaG9wnyPHUWAMpDJZ4tANu6hmEQcUU1HnUQ5U5\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c\",\"dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}",
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"basePayment\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newFeeCollector\",\"type\":\"address\"}],\"name\":\"FeeCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"Sweep\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newSweepCollector\",\"type\":\"address\"}],\"name\":\"SweepCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"FeeCollectorUpdated(address)\":{\"notice\":\"Emitted when the fee collector address is updated.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"Sweep(address,address)\":{\"notice\":\"Emitted when tokens are swept.\"},\"SweepCollectorUpdated(address)\":{\"notice\":\"Emitted when the sweep collector address is updated.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{},\"notice\":\"Implements the checkpoint accounting for Hyperdrive.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/internal/HyperdriveCheckpoint.sol\":\"HyperdriveCheckpoint\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xb8ee04f3090b498966970e210f7de0f982f6445628556f2f176385423d8c5952\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://db789f03faa935c6e3b0882b6e873e8f683c9c8841a4b128366dcbe7321911bf\",\"dweb:/ipfs/QmSQh1cX79nApuSAfJbVN99dmEaE4CK9QwWfEGcwhJMBLK\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c\",\"dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x5922cbd86a7267c8fd19e3dc7a6f2636bad2b3330c28bca8e66adc7cd8ce2b55\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ced8bce3f3c15a9f0bcdd11ba16e69651179edd6b16e267936788f4ab4d6eabf\",\"dweb:/ipfs/QmcoZPj4h2ym6r13KDU7JG2GoVdDWa1GwfKL2jjFRsp8H6\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6\",\"dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN\"]},\"contracts/src/internal/HyperdriveCheckpoint.sol\":{\"keccak256\":\"0x3514b829c99e0015385ff08dd1479e452529a6283e8b6800946542ff21dc9649\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://37ffd17baea5080f4184372ac835bf60694760499756235a61e41a480f4ab3c7\",\"dweb:/ipfs/QmUzEnJhRhpW18MH7GyXsug9u5FLehNfgjR7RAhZizLLVd\"]},\"contracts/src/internal/HyperdriveLP.sol\":{\"keccak256\":\"0x72410851e77940e66681e23b9d10f3c3de0e8c9a3e5b1cca627e93bba431775d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://82a9292f388b16572cc5c5e873d1ead666ddcc3e436cf5d7fb036fd6c63ee9a2\",\"dweb:/ipfs/Qmauzxkn46ACS4XV43m2MbDF91KYP4ExYwSxL3cm1SDL6j\"]},\"contracts/src/internal/HyperdriveLong.sol\":{\"keccak256\":\"0xe791adb5c58a73ff2c978fcc79153f9042702e2c4fc5d71f60534323d5ba4832\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7ec4adf40e5f90574c7484ddeeed41cbe1f60b29847b18b169aa3130b8882aa7\",\"dweb:/ipfs/QmeY9y922jhcLzGw9d4VUNNoDkUeFhTJ8ZVThrvqzcGGjm\"]},\"contracts/src/internal/HyperdriveMultiToken.sol\":{\"keccak256\":\"0x21a9aafb8e23a22c77111e13538fa8f709446e4f3a64ef84b2eebc2aa9d04373\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://41517912353540de5b430587ca8220f9d34d4432d3c723951d5fb618d5907b5d\",\"dweb:/ipfs/QmU3cTCrAq94digVS97s5af1Pu86uGBpmpus6w7828fUbG\"]},\"contracts/src/internal/HyperdriveShort.sol\":{\"keccak256\":\"0xc42b5a9ee5eee3cb9177b136eb9f4b81a4b51d9468f8faa97309934b6b371bc5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b9291237fcdbb8ff97517acd19499cfa4afc6d670a89fd5cc0309a201a7b1006\",\"dweb:/ipfs/QmfQmUwvGhJgPFyNaHvur8AViePBzvSBNAdaZJBwMkY5Je\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xf13ba4bcf41673bc04e4ae32a29c31b62514d66cfedee70b0d3bff574efc0e4a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e505639a656cf7c908e7c64cfd5cae6f4174a679de19d17a3f12f6e3fc4b2195\",\"dweb:/ipfs/QmNmcmz9nV9uDyeouo8yWAKMoMqEVx6JMTfZwCRa9QU83N\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002\",\"dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x5b3c0d159b1945a14227028d835e011bf740e007f664cba049ece1b6ab963067\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d8f4fef22462dabc799b2f8124440a7cc57076f7ceecb46219c69b09f50baf5f\",\"dweb:/ipfs/Qmcw9iC1RZt4Nh7dGH1yR7vUi6qZHJf6ReAvF2uLFHESqZ\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c\",\"dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}",
     "metadata": {
         "compiler": {
             "version": "0.8.20+commit.a1b79de6"
@@ -694,6 +769,12 @@ export const HyperdriveCheckpoint = {
                             "indexed": true
                         },
                         {
+                            "internalType": "address",
+                            "name": "destination",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
                             "internalType": "uint256",
                             "name": "assetId",
                             "type": "uint256",
@@ -743,6 +824,12 @@ export const HyperdriveCheckpoint = {
                             "indexed": true
                         },
                         {
+                            "internalType": "address",
+                            "name": "destination",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
                             "internalType": "uint256",
                             "name": "assetId",
                             "type": "uint256",
@@ -770,6 +857,12 @@ export const HyperdriveCheckpoint = {
                             "internalType": "bool",
                             "name": "asBase",
                             "type": "bool",
+                            "indexed": false
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "basePayment",
+                            "type": "uint256",
                             "indexed": false
                         },
                         {
@@ -837,6 +930,19 @@ export const HyperdriveCheckpoint = {
                     ],
                     "type": "event",
                     "name": "CreateCheckpoint",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "newFeeCollector",
+                            "type": "address",
+                            "indexed": true
+                        }
+                    ],
+                    "type": "event",
+                    "name": "FeeCollectorUpdated",
                     "anonymous": false
                 },
                 {
@@ -1040,6 +1146,12 @@ export const HyperdriveCheckpoint = {
                             "indexed": true
                         },
                         {
+                            "internalType": "address",
+                            "name": "destination",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
                             "internalType": "uint256",
                             "name": "withdrawalShareAmount",
                             "type": "uint256",
@@ -1073,6 +1185,12 @@ export const HyperdriveCheckpoint = {
                         {
                             "internalType": "address",
                             "name": "provider",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "destination",
                             "type": "address",
                             "indexed": true
                         },
@@ -1115,6 +1233,38 @@ export const HyperdriveCheckpoint = {
                     ],
                     "type": "event",
                     "name": "RemoveLiquidity",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "collector",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "target",
+                            "type": "address",
+                            "indexed": true
+                        }
+                    ],
+                    "type": "event",
+                    "name": "Sweep",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "newSweepCollector",
+                            "type": "address",
+                            "indexed": true
+                        }
+                    ],
+                    "type": "event",
+                    "name": "SweepCollectorUpdated",
                     "anonymous": false
                 },
                 {
@@ -1199,26 +1349,26 @@ export const HyperdriveCheckpoint = {
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdrive.sol": {
-                "keccak256": "0x7cc4f7a8878cf02f9896f930882ccb6839b20f63c85efc4a66e88af46c57c317",
+                "keccak256": "0xb8ee04f3090b498966970e210f7de0f982f6445628556f2f176385423d8c5952",
                 "urls": [
-                    "bzz-raw://de756bba0e3622e5ddaff774a989fa20b4be7c49806dd972efc11f2cef523213",
-                    "dweb:/ipfs/QmPWwZo7TsF8ccFYbGVXhZMo85FYjKmyTnEYGV3V936YG2"
+                    "bzz-raw://db789f03faa935c6e3b0882b6e873e8f683c9c8841a4b128366dcbe7321911bf",
+                    "dweb:/ipfs/QmSQh1cX79nApuSAfJbVN99dmEaE4CK9QwWfEGcwhJMBLK"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdriveCore.sol": {
-                "keccak256": "0xd15fb3cb39e359f334b7f836f23026d162de7b5be66d9aab3ac11dede9357a76",
+                "keccak256": "0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e",
                 "urls": [
-                    "bzz-raw://b8b6fdcb4a2a45a3dbb8a70e9451fdd6aa5e23ee75d8960e42a149e9138a32eb",
-                    "dweb:/ipfs/QmNQiGzu6qhssorP8UMtaRbxygqzajPg3rB4phnbfQuMzF"
+                    "bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24",
+                    "dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdriveEvents.sol": {
-                "keccak256": "0x1233242868a6eaeb6e6764df97cd094bfda03978bbedb04592db8ddc3ac6db56",
+                "keccak256": "0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0",
                 "urls": [
-                    "bzz-raw://5cc50aa0bdaff888c940b004ad3a7a0c2aac4c15104419bd216ca48270c3fcb8",
-                    "dweb:/ipfs/QmQS6jncTRsBmZxDgR6dAofzXgTt1bXSRb8WdBNqKTCKiR"
+                    "bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c",
+                    "dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1271,10 +1421,10 @@ export const HyperdriveCheckpoint = {
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveBase.sol": {
-                "keccak256": "0xfc6947a6bfff9ca937fc2654ee56203dbc2ffc3c8bffe40c1334ebc9c81804bc",
+                "keccak256": "0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb",
                 "urls": [
-                    "bzz-raw://b29d5b70c6cb40ede4e496cbeee4937c5318b43536a450d7c246166d326c85fa",
-                    "dweb:/ipfs/QmcDD9Bs4Gueepjs92CYJC9UFBMFYSN1QfbfqBJMQECkWj"
+                    "bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6",
+                    "dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1287,18 +1437,18 @@ export const HyperdriveCheckpoint = {
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveLP.sol": {
-                "keccak256": "0x800d540f89ed4f6f40376e0e586246ab48b79a78f1fb4b7ff979b350fafb8a12",
+                "keccak256": "0x72410851e77940e66681e23b9d10f3c3de0e8c9a3e5b1cca627e93bba431775d",
                 "urls": [
-                    "bzz-raw://4aa17285692fa2872fe544d4f4b8fa2b29d68be5380806c804465788e2bdb1ba",
-                    "dweb:/ipfs/Qmag8aW8ADj9grs9vSL33mpM2F3kbFjh6ePKGGv7pXAGdV"
+                    "bzz-raw://82a9292f388b16572cc5c5e873d1ead666ddcc3e436cf5d7fb036fd6c63ee9a2",
+                    "dweb:/ipfs/Qmauzxkn46ACS4XV43m2MbDF91KYP4ExYwSxL3cm1SDL6j"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveLong.sol": {
-                "keccak256": "0x20aad0da5f27cbdded488149694f0c126bfada17ebea0a690f5386a19b826ed0",
+                "keccak256": "0xe791adb5c58a73ff2c978fcc79153f9042702e2c4fc5d71f60534323d5ba4832",
                 "urls": [
-                    "bzz-raw://de8345bda127a4c5c101fb2668ede0011dbd82ff1ca3dcabd37905d56485efba",
-                    "dweb:/ipfs/QmYc3Jkm8c5FB1oEZwgWTNGEa8q96WWEJNyjumD8nirBdk"
+                    "bzz-raw://7ec4adf40e5f90574c7484ddeeed41cbe1f60b29847b18b169aa3130b8882aa7",
+                    "dweb:/ipfs/QmeY9y922jhcLzGw9d4VUNNoDkUeFhTJ8ZVThrvqzcGGjm"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1311,18 +1461,18 @@ export const HyperdriveCheckpoint = {
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveShort.sol": {
-                "keccak256": "0xa6a716eac09df69f29b4fd76314104895b18c350679132de2db805e673d3650c",
+                "keccak256": "0xc42b5a9ee5eee3cb9177b136eb9f4b81a4b51d9468f8faa97309934b6b371bc5",
                 "urls": [
-                    "bzz-raw://5d1e6f1092fa727453030eca383b77182755c972b83b74e6d3cf5937cc50caca",
-                    "dweb:/ipfs/QmNk5UeZ9ZzNLuivQQjkihaVrQ6y1pnFUn1PdWvpfDJnSU"
+                    "bzz-raw://b9291237fcdbb8ff97517acd19499cfa4afc6d670a89fd5cc0309a201a7b1006",
+                    "dweb:/ipfs/QmfQmUwvGhJgPFyNaHvur8AViePBzvSBNAdaZJBwMkY5Je"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveStorage.sol": {
-                "keccak256": "0xfeac73551892783afcce85d23fb910baf2ad729d218756f3597ad23e3dcb077f",
+                "keccak256": "0xf13ba4bcf41673bc04e4ae32a29c31b62514d66cfedee70b0d3bff574efc0e4a",
                 "urls": [
-                    "bzz-raw://1f659070705bee17efda43c36f71d22b035752f610624c59238cae559c60530d",
-                    "dweb:/ipfs/QmTEXNYSWa8w3wY2TWzDPNZXxdThMFEbrtRwcQHfyN2CJb"
+                    "bzz-raw://e505639a656cf7c908e7c64cfd5cae6f4174a679de19d17a3f12f6e3fc4b2195",
+                    "dweb:/ipfs/QmNmcmz9nV9uDyeouo8yWAKMoMqEVx6JMTfZwCRa9QU83N"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1351,18 +1501,18 @@ export const HyperdriveCheckpoint = {
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/HyperdriveMath.sol": {
-                "keccak256": "0xe86d38d659ce3191d0423a4ee9b6592218a0e59dd72f3e0ec60cfa83809b266e",
+                "keccak256": "0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab",
                 "urls": [
-                    "bzz-raw://91d15d179f83429f36db12d5eac3f575727e16f1505d4cb1b95a11d0876c7534",
-                    "dweb:/ipfs/QmQDHYp8pgd9maivqkaH2mZ8qtb5ZEmK34n4oDmvAo8nrh"
+                    "bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002",
+                    "dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/LPMath.sol": {
-                "keccak256": "0x8fde664589dfd8a26b6d39aed585388f7c179bf508ffe7688dc6c796a68dc785",
+                "keccak256": "0x5b3c0d159b1945a14227028d835e011bf740e007f664cba049ece1b6ab963067",
                 "urls": [
-                    "bzz-raw://3406b91898282977f3630976461eb344764c0f321d35588b1e31408b64f64263",
-                    "dweb:/ipfs/QmVGGknjaaG9wnyPHUWAMpDJZ4tANu6hmEQcUU1HnUQ5U5"
+                    "bzz-raw://d8f4fef22462dabc799b2f8124440a7cc57076f7ceecb46219c69b09f50baf5f",
+                    "dweb:/ipfs/Qmcw9iC1RZt4Nh7dGH1yR7vUi6qZHJf6ReAvF2uLFHESqZ"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1395,49 +1545,49 @@ export const HyperdriveCheckpoint = {
     },
     "ast": {
         "absolutePath": "contracts/src/internal/HyperdriveCheckpoint.sol",
-        "id": 10382,
+        "id": 14798,
         "exportedSymbols": {
             "AssetId": [
-                14117
+                18594
             ],
             "FixedPointMath": [
-                14917
+                19394
             ],
             "HyperdriveBase": [
-                9917
+                14333
             ],
             "HyperdriveCheckpoint": [
-                10381
+                14797
             ],
             "HyperdriveLong": [
-                12198
+                16633
             ],
             "HyperdriveMath": [
-                15630
+                20142
             ],
             "HyperdriveShort": [
-                13634
+                18103
             ],
             "IHyperdrive": [
-                7616
+                11028
             ],
             "IHyperdriveEvents": [
-                8062
+                11551
             ],
             "LPMath": [
-                17396
+                22086
             ],
             "SafeCast": [
-                17575
+                22265
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "39:13449:65",
+        "src": "39:13449:115",
         "nodes": [
             {
-                "id": 9919,
+                "id": 14335,
                 "nodeType": "PragmaDirective",
-                "src": "39:23:65",
+                "src": "39:23:115",
                 "nodes": [],
                 "literals": [
                     "solidity",
@@ -1446,24 +1596,24 @@ export const HyperdriveCheckpoint = {
                 ]
             },
             {
-                "id": 9921,
+                "id": 14337,
                 "nodeType": "ImportDirective",
-                "src": "64:60:65",
+                "src": "64:60:115",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
                 "file": "../interfaces/IHyperdrive.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 10382,
-                "sourceUnit": 7617,
+                "scope": 14798,
+                "sourceUnit": 11029,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 9920,
+                            "id": 14336,
                             "name": "IHyperdrive",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 7616,
-                            "src": "73:11:65",
+                            "referencedDeclaration": 11028,
+                            "src": "73:11:115",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -1472,24 +1622,24 @@ export const HyperdriveCheckpoint = {
                 "unitAlias": ""
             },
             {
-                "id": 9923,
+                "id": 14339,
                 "nodeType": "ImportDirective",
-                "src": "125:72:65",
+                "src": "125:72:115",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IHyperdriveEvents.sol",
                 "file": "../interfaces/IHyperdriveEvents.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 10382,
-                "sourceUnit": 8063,
+                "scope": 14798,
+                "sourceUnit": 11552,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 9922,
+                            "id": 14338,
                             "name": "IHyperdriveEvents",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8062,
-                            "src": "134:17:65",
+                            "referencedDeclaration": 11551,
+                            "src": "134:17:115",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -1498,24 +1648,24 @@ export const HyperdriveCheckpoint = {
                 "unitAlias": ""
             },
             {
-                "id": 9925,
+                "id": 14341,
                 "nodeType": "ImportDirective",
-                "src": "198:51:65",
+                "src": "198:51:115",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/AssetId.sol",
                 "file": "../libraries/AssetId.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 10382,
-                "sourceUnit": 14118,
+                "scope": 14798,
+                "sourceUnit": 18595,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 9924,
+                            "id": 14340,
                             "name": "AssetId",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 14117,
-                            "src": "207:7:65",
+                            "referencedDeclaration": 18594,
+                            "src": "207:7:115",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -1524,24 +1674,24 @@ export const HyperdriveCheckpoint = {
                 "unitAlias": ""
             },
             {
-                "id": 9927,
+                "id": 14343,
                 "nodeType": "ImportDirective",
-                "src": "250:65:65",
+                "src": "250:65:115",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/FixedPointMath.sol",
                 "file": "../libraries/FixedPointMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 10382,
-                "sourceUnit": 14918,
+                "scope": 14798,
+                "sourceUnit": 19395,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 9926,
+                            "id": 14342,
                             "name": "FixedPointMath",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 14917,
-                            "src": "259:14:65",
+                            "referencedDeclaration": 19394,
+                            "src": "259:14:115",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -1550,24 +1700,24 @@ export const HyperdriveCheckpoint = {
                 "unitAlias": ""
             },
             {
-                "id": 9929,
+                "id": 14345,
                 "nodeType": "ImportDirective",
-                "src": "316:65:65",
+                "src": "316:65:115",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/HyperdriveMath.sol",
                 "file": "../libraries/HyperdriveMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 10382,
-                "sourceUnit": 15631,
+                "scope": 14798,
+                "sourceUnit": 20143,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 9928,
+                            "id": 14344,
                             "name": "HyperdriveMath",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 15630,
-                            "src": "325:14:65",
+                            "referencedDeclaration": 20142,
+                            "src": "325:14:115",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -1576,24 +1726,24 @@ export const HyperdriveCheckpoint = {
                 "unitAlias": ""
             },
             {
-                "id": 9931,
+                "id": 14347,
                 "nodeType": "ImportDirective",
-                "src": "382:49:65",
+                "src": "382:49:115",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/LPMath.sol",
                 "file": "../libraries/LPMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 10382,
-                "sourceUnit": 17397,
+                "scope": 14798,
+                "sourceUnit": 22087,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 9930,
+                            "id": 14346,
                             "name": "LPMath",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 17396,
-                            "src": "391:6:65",
+                            "referencedDeclaration": 22086,
+                            "src": "391:6:115",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -1602,24 +1752,24 @@ export const HyperdriveCheckpoint = {
                 "unitAlias": ""
             },
             {
-                "id": 9933,
+                "id": 14349,
                 "nodeType": "ImportDirective",
-                "src": "432:53:65",
+                "src": "432:53:115",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/SafeCast.sol",
                 "file": "../libraries/SafeCast.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 10382,
-                "sourceUnit": 17576,
+                "scope": 14798,
+                "sourceUnit": 22266,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 9932,
+                            "id": 14348,
                             "name": "SafeCast",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 17575,
-                            "src": "441:8:65",
+                            "referencedDeclaration": 22265,
+                            "src": "441:8:115",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -1628,24 +1778,24 @@ export const HyperdriveCheckpoint = {
                 "unitAlias": ""
             },
             {
-                "id": 9935,
+                "id": 14351,
                 "nodeType": "ImportDirective",
-                "src": "486:54:65",
+                "src": "486:54:115",
                 "nodes": [],
                 "absolutePath": "contracts/src/internal/HyperdriveBase.sol",
                 "file": "./HyperdriveBase.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 10382,
-                "sourceUnit": 9918,
+                "scope": 14798,
+                "sourceUnit": 14334,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 9934,
+                            "id": 14350,
                             "name": "HyperdriveBase",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 9917,
-                            "src": "495:14:65",
+                            "referencedDeclaration": 14333,
+                            "src": "495:14:115",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -1654,24 +1804,24 @@ export const HyperdriveCheckpoint = {
                 "unitAlias": ""
             },
             {
-                "id": 9937,
+                "id": 14353,
                 "nodeType": "ImportDirective",
-                "src": "541:54:65",
+                "src": "541:54:115",
                 "nodes": [],
                 "absolutePath": "contracts/src/internal/HyperdriveLong.sol",
                 "file": "./HyperdriveLong.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 10382,
-                "sourceUnit": 12199,
+                "scope": 14798,
+                "sourceUnit": 16634,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 9936,
+                            "id": 14352,
                             "name": "HyperdriveLong",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 12198,
-                            "src": "550:14:65",
+                            "referencedDeclaration": 16633,
+                            "src": "550:14:115",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -1680,24 +1830,24 @@ export const HyperdriveCheckpoint = {
                 "unitAlias": ""
             },
             {
-                "id": 9939,
+                "id": 14355,
                 "nodeType": "ImportDirective",
-                "src": "596:56:65",
+                "src": "596:56:115",
                 "nodes": [],
                 "absolutePath": "contracts/src/internal/HyperdriveShort.sol",
                 "file": "./HyperdriveShort.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 10382,
-                "sourceUnit": 13635,
+                "scope": 14798,
+                "sourceUnit": 18104,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 9938,
+                            "id": 14354,
                             "name": "HyperdriveShort",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 13634,
-                            "src": "605:15:65",
+                            "referencedDeclaration": 18103,
+                            "src": "605:15:115",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -1706,31 +1856,31 @@ export const HyperdriveCheckpoint = {
                 "unitAlias": ""
             },
             {
-                "id": 10381,
+                "id": 14797,
                 "nodeType": "ContractDefinition",
-                "src": "960:12527:65",
+                "src": "960:12527:115",
                 "nodes": [
                     {
-                        "id": 9951,
+                        "id": 14367,
                         "nodeType": "UsingForDirective",
-                        "src": "1091:33:65",
+                        "src": "1091:33:115",
                         "nodes": [],
                         "global": false,
                         "libraryName": {
-                            "id": 9949,
+                            "id": 14365,
                             "name": "FixedPointMath",
                             "nameLocations": [
-                                "1097:14:65"
+                                "1097:14:115"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 14917,
-                            "src": "1097:14:65"
+                            "referencedDeclaration": 19394,
+                            "src": "1097:14:115"
                         },
                         "typeName": {
-                            "id": 9950,
+                            "id": 14366,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "1116:7:65",
+                            "src": "1116:7:115",
                             "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -1738,26 +1888,26 @@ export const HyperdriveCheckpoint = {
                         }
                     },
                     {
-                        "id": 9954,
+                        "id": 14370,
                         "nodeType": "UsingForDirective",
-                        "src": "1129:32:65",
+                        "src": "1129:32:115",
                         "nodes": [],
                         "global": false,
                         "libraryName": {
-                            "id": 9952,
+                            "id": 14368,
                             "name": "FixedPointMath",
                             "nameLocations": [
-                                "1135:14:65"
+                                "1135:14:115"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 14917,
-                            "src": "1135:14:65"
+                            "referencedDeclaration": 19394,
+                            "src": "1135:14:115"
                         },
                         "typeName": {
-                            "id": 9953,
+                            "id": 14369,
                             "name": "int256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "1154:6:65",
+                            "src": "1154:6:115",
                             "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -1765,26 +1915,26 @@ export const HyperdriveCheckpoint = {
                         }
                     },
                     {
-                        "id": 9957,
+                        "id": 14373,
                         "nodeType": "UsingForDirective",
-                        "src": "1166:27:65",
+                        "src": "1166:27:115",
                         "nodes": [],
                         "global": false,
                         "libraryName": {
-                            "id": 9955,
+                            "id": 14371,
                             "name": "SafeCast",
                             "nameLocations": [
-                                "1172:8:65"
+                                "1172:8:115"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 17575,
-                            "src": "1172:8:65"
+                            "referencedDeclaration": 22265,
+                            "src": "1172:8:115"
                         },
                         "typeName": {
-                            "id": 9956,
+                            "id": 14372,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "1185:7:65",
+                            "src": "1185:7:115",
                             "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -1792,14 +1942,14 @@ export const HyperdriveCheckpoint = {
                         }
                     },
                     {
-                        "id": 10050,
+                        "id": 14466,
                         "nodeType": "FunctionDefinition",
-                        "src": "1347:1644:65",
+                        "src": "1347:1644:115",
                         "nodes": [],
                         "body": {
-                            "id": 10049,
+                            "id": 14465,
                             "nodeType": "Block",
-                            "src": "1415:1576:65",
+                            "src": "1415:1576:115",
                             "nodes": [],
                             "statements": [
                                 {
@@ -1808,7 +1958,7 @@ export const HyperdriveCheckpoint = {
                                             "typeIdentifier": "t_uint128",
                                             "typeString": "uint128"
                                         },
-                                        "id": 9970,
+                                        "id": 14386,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1816,25 +1966,25 @@ export const HyperdriveCheckpoint = {
                                         "leftExpression": {
                                             "expression": {
                                                 "baseExpression": {
-                                                    "id": 9965,
+                                                    "id": 14381,
                                                     "name": "_checkpoints",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13701,
-                                                    "src": "1494:12:65",
+                                                    "referencedDeclaration": 18170,
+                                                    "src": "1494:12:115",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$7312_storage_$",
+                                                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$10718_storage_$",
                                                         "typeString": "mapping(uint256 => struct IHyperdrive.Checkpoint storage ref)"
                                                     }
                                                 },
-                                                "id": 9967,
+                                                "id": 14383,
                                                 "indexExpression": {
-                                                    "id": 9966,
+                                                    "id": 14382,
                                                     "name": "_checkpointTime",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 9960,
-                                                    "src": "1507:15:65",
+                                                    "referencedDeclaration": 14376,
+                                                    "src": "1507:15:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -1845,22 +1995,22 @@ export const HyperdriveCheckpoint = {
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "nodeType": "IndexAccess",
-                                                "src": "1494:29:65",
+                                                "src": "1494:29:115",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_Checkpoint_$7312_storage",
+                                                    "typeIdentifier": "t_struct$_Checkpoint_$10718_storage",
                                                     "typeString": "struct IHyperdrive.Checkpoint storage ref"
                                                 }
                                             },
-                                            "id": 9968,
+                                            "id": 14384,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "1524:15:65",
+                                            "memberLocation": "1524:15:115",
                                             "memberName": "vaultSharePrice",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 7311,
-                                            "src": "1494:45:65",
+                                            "referencedDeclaration": 10717,
+                                            "src": "1494:45:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint128",
                                                 "typeString": "uint128"
@@ -1870,57 +2020,57 @@ export const HyperdriveCheckpoint = {
                                         "operator": "!=",
                                         "rightExpression": {
                                             "hexValue": "30",
-                                            "id": 9969,
+                                            "id": 14385,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
                                             "kind": "number",
                                             "lValueRequested": false,
                                             "nodeType": "Literal",
-                                            "src": "1543:1:65",
+                                            "src": "1543:1:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_rational_0_by_1",
                                                 "typeString": "int_const 0"
                                             },
                                             "value": "0"
                                         },
-                                        "src": "1494:50:65",
+                                        "src": "1494:50:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 9973,
+                                    "id": 14389,
                                     "nodeType": "IfStatement",
-                                    "src": "1490:87:65",
+                                    "src": "1490:87:115",
                                     "trueBody": {
-                                        "id": 9972,
+                                        "id": 14388,
                                         "nodeType": "Block",
-                                        "src": "1546:31:65",
+                                        "src": "1546:31:115",
                                         "statements": [
                                             {
-                                                "functionReturnParameters": 9964,
-                                                "id": 9971,
+                                                "functionReturnParameters": 14380,
+                                                "id": 14387,
                                                 "nodeType": "Return",
-                                                "src": "1560:7:65"
+                                                "src": "1560:7:115"
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "assignments": [
-                                        9975
+                                        14391
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 9975,
+                                            "id": 14391,
                                             "mutability": "mutable",
                                             "name": "latestCheckpoint",
-                                            "nameLocation": "1764:16:65",
+                                            "nameLocation": "1764:16:115",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 10049,
-                                            "src": "1756:24:65",
+                                            "scope": 14465,
+                                            "src": "1756:24:115",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -1928,10 +2078,10 @@ export const HyperdriveCheckpoint = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 9974,
+                                                "id": 14390,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "1756:7:65",
+                                                "src": "1756:7:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -1940,23 +2090,23 @@ export const HyperdriveCheckpoint = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 9978,
+                                    "id": 14394,
                                     "initialValue": {
                                         "arguments": [],
                                         "expression": {
                                             "argumentTypes": [],
-                                            "id": 9976,
+                                            "id": 14392,
                                             "name": "_latestCheckpoint",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 9142,
-                                            "src": "1783:17:65",
+                                            "referencedDeclaration": 13558,
+                                            "src": "1783:17:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                                                 "typeString": "function () view returns (uint256)"
                                             }
                                         },
-                                        "id": 9977,
+                                        "id": 14393,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1965,7 +2115,7 @@ export const HyperdriveCheckpoint = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "1783:19:65",
+                                        "src": "1783:19:115",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
@@ -1973,7 +2123,7 @@ export const HyperdriveCheckpoint = {
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "1756:46:65"
+                                    "src": "1756:46:115"
                                 },
                                 {
                                     "condition": {
@@ -1981,7 +2131,7 @@ export const HyperdriveCheckpoint = {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         },
-                                        "id": 9987,
+                                        "id": 14403,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1991,7 +2141,7 @@ export const HyperdriveCheckpoint = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 9983,
+                                            "id": 14399,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2001,18 +2151,18 @@ export const HyperdriveCheckpoint = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 9981,
+                                                "id": 14397,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 9979,
+                                                    "id": 14395,
                                                     "name": "_checkpointTime",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 9960,
-                                                    "src": "1829:15:65",
+                                                    "referencedDeclaration": 14376,
+                                                    "src": "1829:15:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -2021,18 +2171,18 @@ export const HyperdriveCheckpoint = {
                                                 "nodeType": "BinaryOperation",
                                                 "operator": "%",
                                                 "rightExpression": {
-                                                    "id": 9980,
+                                                    "id": 14396,
                                                     "name": "_checkpointDuration",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13660,
-                                                    "src": "1847:19:65",
+                                                    "referencedDeclaration": 18129,
+                                                    "src": "1847:19:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "src": "1829:37:65",
+                                                "src": "1829:37:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -2042,21 +2192,21 @@ export const HyperdriveCheckpoint = {
                                             "operator": "!=",
                                             "rightExpression": {
                                                 "hexValue": "30",
-                                                "id": 9982,
+                                                "id": 14398,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "kind": "number",
                                                 "lValueRequested": false,
                                                 "nodeType": "Literal",
-                                                "src": "1870:1:65",
+                                                "src": "1870:1:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_rational_0_by_1",
                                                     "typeString": "int_const 0"
                                                 },
                                                 "value": "0"
                                             },
-                                            "src": "1829:42:65",
+                                            "src": "1829:42:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
@@ -2069,18 +2219,18 @@ export const HyperdriveCheckpoint = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 9986,
+                                            "id": 14402,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 9984,
+                                                "id": 14400,
                                                 "name": "latestCheckpoint",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 9975,
-                                                "src": "1887:16:65",
+                                                "referencedDeclaration": 14391,
+                                                "src": "1887:16:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -2089,36 +2239,36 @@ export const HyperdriveCheckpoint = {
                                             "nodeType": "BinaryOperation",
                                             "operator": "<",
                                             "rightExpression": {
-                                                "id": 9985,
+                                                "id": 14401,
                                                 "name": "_checkpointTime",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 9960,
-                                                "src": "1906:15:65",
+                                                "referencedDeclaration": 14376,
+                                                "src": "1906:15:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "src": "1887:34:65",
+                                            "src": "1887:34:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
                                             }
                                         },
-                                        "src": "1829:92:65",
+                                        "src": "1829:92:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 9994,
+                                    "id": 14410,
                                     "nodeType": "IfStatement",
-                                    "src": "1812:187:65",
+                                    "src": "1812:187:115",
                                     "trueBody": {
-                                        "id": 9993,
+                                        "id": 14409,
                                         "nodeType": "Block",
-                                        "src": "1932:67:65",
+                                        "src": "1932:67:115",
                                         "statements": [
                                             {
                                                 "errorCall": {
@@ -2126,33 +2276,33 @@ export const HyperdriveCheckpoint = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 9988,
+                                                            "id": 14404,
                                                             "name": "IHyperdrive",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 7616,
-                                                            "src": "1953:11:65",
+                                                            "referencedDeclaration": 11028,
+                                                            "src": "1953:11:115",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7616_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$11028_$",
                                                                 "typeString": "type(contract IHyperdrive)"
                                                             }
                                                         },
-                                                        "id": 9990,
+                                                        "id": 14406,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "1965:21:65",
+                                                        "memberLocation": "1965:21:115",
                                                         "memberName": "InvalidCheckpointTime",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 7499,
-                                                        "src": "1953:33:65",
+                                                        "referencedDeclaration": 10911,
+                                                        "src": "1953:33:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 9991,
+                                                    "id": 14407,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2161,16 +2311,16 @@ export const HyperdriveCheckpoint = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "1953:35:65",
+                                                    "src": "1953:35:115",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$__$",
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 9992,
+                                                "id": 14408,
                                                 "nodeType": "RevertStatement",
-                                                "src": "1946:42:65"
+                                                "src": "1946:42:115"
                                             }
                                         ]
                                     }
@@ -2181,18 +2331,18 @@ export const HyperdriveCheckpoint = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 9997,
+                                        "id": 14413,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 9995,
+                                            "id": 14411,
                                             "name": "_checkpointTime",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 9960,
-                                            "src": "2245:15:65",
+                                            "referencedDeclaration": 14376,
+                                            "src": "2245:15:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -2201,48 +2351,48 @@ export const HyperdriveCheckpoint = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "==",
                                         "rightExpression": {
-                                            "id": 9996,
+                                            "id": 14412,
                                             "name": "latestCheckpoint",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 9975,
-                                            "src": "2264:16:65",
+                                            "referencedDeclaration": 14391,
+                                            "src": "2264:16:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "src": "2245:35:65",
+                                        "src": "2245:35:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
                                     "falseBody": {
-                                        "id": 10047,
+                                        "id": 14463,
                                         "nodeType": "Block",
-                                        "src": "2370:615:65",
+                                        "src": "2370:615:115",
                                         "statements": [
                                             {
                                                 "body": {
-                                                    "id": 10045,
+                                                    "id": 14461,
                                                     "nodeType": "Block",
-                                                    "src": "2514:461:65",
+                                                    "src": "2514:461:115",
                                                     "statements": [
                                                         {
                                                             "assignments": [
-                                                                10014
+                                                                14430
                                                             ],
                                                             "declarations": [
                                                                 {
                                                                     "constant": false,
-                                                                    "id": 10014,
+                                                                    "id": 14430,
                                                                     "mutability": "mutable",
                                                                     "name": "closestVaultSharePrice",
-                                                                    "nameLocation": "2540:22:65",
+                                                                    "nameLocation": "2540:22:115",
                                                                     "nodeType": "VariableDeclaration",
-                                                                    "scope": 10045,
-                                                                    "src": "2532:30:65",
+                                                                    "scope": 14461,
+                                                                    "src": "2532:30:115",
                                                                     "stateVariable": false,
                                                                     "storageLocation": "default",
                                                                     "typeDescriptions": {
@@ -2250,10 +2400,10 @@ export const HyperdriveCheckpoint = {
                                                                         "typeString": "uint256"
                                                                     },
                                                                     "typeName": {
-                                                                        "id": 10013,
+                                                                        "id": 14429,
                                                                         "name": "uint256",
                                                                         "nodeType": "ElementaryTypeName",
-                                                                        "src": "2532:7:65",
+                                                                        "src": "2532:7:115",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
@@ -2262,29 +2412,29 @@ export const HyperdriveCheckpoint = {
                                                                     "visibility": "internal"
                                                                 }
                                                             ],
-                                                            "id": 10019,
+                                                            "id": 14435,
                                                             "initialValue": {
                                                                 "expression": {
                                                                     "baseExpression": {
-                                                                        "id": 10015,
+                                                                        "id": 14431,
                                                                         "name": "_checkpoints",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 13701,
-                                                                        "src": "2565:12:65",
+                                                                        "referencedDeclaration": 18170,
+                                                                        "src": "2565:12:115",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$7312_storage_$",
+                                                                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$10718_storage_$",
                                                                             "typeString": "mapping(uint256 => struct IHyperdrive.Checkpoint storage ref)"
                                                                         }
                                                                     },
-                                                                    "id": 10017,
+                                                                    "id": 14433,
                                                                     "indexExpression": {
-                                                                        "id": 10016,
+                                                                        "id": 14432,
                                                                         "name": "time",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 10006,
-                                                                        "src": "2578:4:65",
+                                                                        "referencedDeclaration": 14422,
+                                                                        "src": "2578:4:115",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
@@ -2295,29 +2445,29 @@ export const HyperdriveCheckpoint = {
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
                                                                     "nodeType": "IndexAccess",
-                                                                    "src": "2565:18:65",
+                                                                    "src": "2565:18:115",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_struct$_Checkpoint_$7312_storage",
+                                                                        "typeIdentifier": "t_struct$_Checkpoint_$10718_storage",
                                                                         "typeString": "struct IHyperdrive.Checkpoint storage ref"
                                                                     }
                                                                 },
-                                                                "id": 10018,
+                                                                "id": 14434,
                                                                 "isConstant": false,
                                                                 "isLValue": true,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
-                                                                "memberLocation": "2605:15:65",
+                                                                "memberLocation": "2605:15:115",
                                                                 "memberName": "vaultSharePrice",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 7311,
-                                                                "src": "2565:55:65",
+                                                                "referencedDeclaration": 10717,
+                                                                "src": "2565:55:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint128",
                                                                     "typeString": "uint128"
                                                                 }
                                                             },
                                                             "nodeType": "VariableDeclarationStatement",
-                                                            "src": "2532:88:65"
+                                                            "src": "2532:88:115"
                                                         },
                                                         {
                                                             "condition": {
@@ -2325,7 +2475,7 @@ export const HyperdriveCheckpoint = {
                                                                     "typeIdentifier": "t_bool",
                                                                     "typeString": "bool"
                                                                 },
-                                                                "id": 10026,
+                                                                "id": 14442,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -2335,18 +2485,18 @@ export const HyperdriveCheckpoint = {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
                                                                     },
-                                                                    "id": 10022,
+                                                                    "id": 14438,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
                                                                     "leftExpression": {
-                                                                        "id": 10020,
+                                                                        "id": 14436,
                                                                         "name": "time",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 10006,
-                                                                        "src": "2642:4:65",
+                                                                        "referencedDeclaration": 14422,
+                                                                        "src": "2642:4:115",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
@@ -2355,18 +2505,18 @@ export const HyperdriveCheckpoint = {
                                                                     "nodeType": "BinaryOperation",
                                                                     "operator": "==",
                                                                     "rightExpression": {
-                                                                        "id": 10021,
+                                                                        "id": 14437,
                                                                         "name": "latestCheckpoint",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 9975,
-                                                                        "src": "2650:16:65",
+                                                                        "referencedDeclaration": 14391,
+                                                                        "src": "2650:16:115",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "src": "2642:24:65",
+                                                                    "src": "2642:24:115",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_bool",
                                                                         "typeString": "bool"
@@ -2379,18 +2529,18 @@ export const HyperdriveCheckpoint = {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
                                                                     },
-                                                                    "id": 10025,
+                                                                    "id": 14441,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
                                                                     "leftExpression": {
-                                                                        "id": 10023,
+                                                                        "id": 14439,
                                                                         "name": "closestVaultSharePrice",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 10014,
-                                                                        "src": "2670:22:65",
+                                                                        "referencedDeclaration": 14430,
+                                                                        "src": "2670:22:115",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
@@ -2400,54 +2550,54 @@ export const HyperdriveCheckpoint = {
                                                                     "operator": "==",
                                                                     "rightExpression": {
                                                                         "hexValue": "30",
-                                                                        "id": 10024,
+                                                                        "id": 14440,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
                                                                         "kind": "number",
                                                                         "lValueRequested": false,
                                                                         "nodeType": "Literal",
-                                                                        "src": "2696:1:65",
+                                                                        "src": "2696:1:115",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_rational_0_by_1",
                                                                             "typeString": "int_const 0"
                                                                         },
                                                                         "value": "0"
                                                                     },
-                                                                    "src": "2670:27:65",
+                                                                    "src": "2670:27:115",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_bool",
                                                                         "typeString": "bool"
                                                                     }
                                                                 },
-                                                                "src": "2642:55:65",
+                                                                "src": "2642:55:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_bool",
                                                                     "typeString": "bool"
                                                                 }
                                                             },
-                                                            "id": 10033,
+                                                            "id": 14449,
                                                             "nodeType": "IfStatement",
-                                                            "src": "2638:148:65",
+                                                            "src": "2638:148:115",
                                                             "trueBody": {
-                                                                "id": 10032,
+                                                                "id": 14448,
                                                                 "nodeType": "Block",
-                                                                "src": "2699:87:65",
+                                                                "src": "2699:87:115",
                                                                 "statements": [
                                                                     {
                                                                         "expression": {
-                                                                            "id": 10030,
+                                                                            "id": 14446,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
                                                                             "lValueRequested": false,
                                                                             "leftHandSide": {
-                                                                                "id": 10027,
+                                                                                "id": 14443,
                                                                                 "name": "closestVaultSharePrice",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
-                                                                                "referencedDeclaration": 10014,
-                                                                                "src": "2721:22:65",
+                                                                                "referencedDeclaration": 14430,
+                                                                                "src": "2721:22:115",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_uint256",
                                                                                     "typeString": "uint256"
@@ -2459,18 +2609,18 @@ export const HyperdriveCheckpoint = {
                                                                                 "arguments": [],
                                                                                 "expression": {
                                                                                     "argumentTypes": [],
-                                                                                    "id": 10028,
+                                                                                    "id": 14444,
                                                                                     "name": "_pricePerVaultShare",
                                                                                     "nodeType": "Identifier",
                                                                                     "overloadedDeclarations": [],
-                                                                                    "referencedDeclaration": 9032,
-                                                                                    "src": "2746:19:65",
+                                                                                    "referencedDeclaration": 13352,
+                                                                                    "src": "2746:19:115",
                                                                                     "typeDescriptions": {
                                                                                         "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                                                                                         "typeString": "function () view returns (uint256)"
                                                                                     }
                                                                                 },
-                                                                                "id": 10029,
+                                                                                "id": 14445,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": false,
@@ -2479,22 +2629,22 @@ export const HyperdriveCheckpoint = {
                                                                                 "nameLocations": [],
                                                                                 "names": [],
                                                                                 "nodeType": "FunctionCall",
-                                                                                "src": "2746:21:65",
+                                                                                "src": "2746:21:115",
                                                                                 "tryCall": false,
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_uint256",
                                                                                     "typeString": "uint256"
                                                                                 }
                                                                             },
-                                                                            "src": "2721:46:65",
+                                                                            "src": "2721:46:115",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_uint256",
                                                                                 "typeString": "uint256"
                                                                             }
                                                                         },
-                                                                        "id": 10031,
+                                                                        "id": 14447,
                                                                         "nodeType": "ExpressionStatement",
-                                                                        "src": "2721:46:65"
+                                                                        "src": "2721:46:115"
                                                                     }
                                                                 ]
                                                             }
@@ -2505,18 +2655,18 @@ export const HyperdriveCheckpoint = {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 },
-                                                                "id": 10036,
+                                                                "id": 14452,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftExpression": {
-                                                                    "id": 10034,
+                                                                    "id": 14450,
                                                                     "name": "closestVaultSharePrice",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 10014,
-                                                                    "src": "2807:22:65",
+                                                                    "referencedDeclaration": 14430,
+                                                                    "src": "2807:22:115",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
@@ -2526,56 +2676,56 @@ export const HyperdriveCheckpoint = {
                                                                 "operator": "!=",
                                                                 "rightExpression": {
                                                                     "hexValue": "30",
-                                                                    "id": 10035,
+                                                                    "id": 14451,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
                                                                     "kind": "number",
                                                                     "lValueRequested": false,
                                                                     "nodeType": "Literal",
-                                                                    "src": "2833:1:65",
+                                                                    "src": "2833:1:115",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_rational_0_by_1",
                                                                         "typeString": "int_const 0"
                                                                     },
                                                                     "value": "0"
                                                                 },
-                                                                "src": "2807:27:65",
+                                                                "src": "2807:27:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_bool",
                                                                     "typeString": "bool"
                                                                 }
                                                             },
-                                                            "id": 10044,
+                                                            "id": 14460,
                                                             "nodeType": "IfStatement",
-                                                            "src": "2803:158:65",
+                                                            "src": "2803:158:115",
                                                             "trueBody": {
-                                                                "id": 10043,
+                                                                "id": 14459,
                                                                 "nodeType": "Block",
-                                                                "src": "2836:125:65",
+                                                                "src": "2836:125:115",
                                                                 "statements": [
                                                                     {
                                                                         "expression": {
                                                                             "arguments": [
                                                                                 {
-                                                                                    "id": 10038,
+                                                                                    "id": 14454,
                                                                                     "name": "_checkpointTime",
                                                                                     "nodeType": "Identifier",
                                                                                     "overloadedDeclarations": [],
-                                                                                    "referencedDeclaration": 9960,
-                                                                                    "src": "2875:15:65",
+                                                                                    "referencedDeclaration": 14376,
+                                                                                    "src": "2875:15:115",
                                                                                     "typeDescriptions": {
                                                                                         "typeIdentifier": "t_uint256",
                                                                                         "typeString": "uint256"
                                                                                     }
                                                                                 },
                                                                                 {
-                                                                                    "id": 10039,
+                                                                                    "id": 14455,
                                                                                     "name": "closestVaultSharePrice",
                                                                                     "nodeType": "Identifier",
                                                                                     "overloadedDeclarations": [],
-                                                                                    "referencedDeclaration": 10014,
-                                                                                    "src": "2892:22:65",
+                                                                                    "referencedDeclaration": 14430,
+                                                                                    "src": "2892:22:115",
                                                                                     "typeDescriptions": {
                                                                                         "typeIdentifier": "t_uint256",
                                                                                         "typeString": "uint256"
@@ -2593,20 +2743,20 @@ export const HyperdriveCheckpoint = {
                                                                                         "typeString": "uint256"
                                                                                     }
                                                                                 ],
-                                                                                "id": 10037,
+                                                                                "id": 14453,
                                                                                 "name": "_applyCheckpoint",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [
-                                                                                    10305
+                                                                                    14721
                                                                                 ],
-                                                                                "referencedDeclaration": 10305,
-                                                                                "src": "2858:16:65",
+                                                                                "referencedDeclaration": 14721,
+                                                                                "src": "2858:16:115",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                                                     "typeString": "function (uint256,uint256) returns (uint256)"
                                                                                 }
                                                                             },
-                                                                            "id": 10040,
+                                                                            "id": 14456,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
@@ -2615,42 +2765,42 @@ export const HyperdriveCheckpoint = {
                                                                             "nameLocations": [],
                                                                             "names": [],
                                                                             "nodeType": "FunctionCall",
-                                                                            "src": "2858:57:65",
+                                                                            "src": "2858:57:115",
                                                                             "tryCall": false,
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_uint256",
                                                                                 "typeString": "uint256"
                                                                             }
                                                                         },
-                                                                        "id": 10041,
+                                                                        "id": 14457,
                                                                         "nodeType": "ExpressionStatement",
-                                                                        "src": "2858:57:65"
+                                                                        "src": "2858:57:115"
                                                                     },
                                                                     {
-                                                                        "id": 10042,
+                                                                        "id": 14458,
                                                                         "nodeType": "Break",
-                                                                        "src": "2937:5:65"
+                                                                        "src": "2937:5:115"
                                                                     }
                                                                 ]
                                                             }
                                                         }
                                                     ]
                                                 },
-                                                "id": 10046,
+                                                "id": 14462,
                                                 "initializationExpression": {
                                                     "assignments": [
-                                                        10006
+                                                        14422
                                                     ],
                                                     "declarations": [
                                                         {
                                                             "constant": false,
-                                                            "id": 10006,
+                                                            "id": 14422,
                                                             "mutability": "mutable",
                                                             "name": "time",
-                                                            "nameLocation": "2414:4:65",
+                                                            "nameLocation": "2414:4:115",
                                                             "nodeType": "VariableDeclaration",
-                                                            "scope": 10046,
-                                                            "src": "2406:12:65",
+                                                            "scope": 14462,
+                                                            "src": "2406:12:115",
                                                             "stateVariable": false,
                                                             "storageLocation": "default",
                                                             "typeDescriptions": {
@@ -2658,10 +2808,10 @@ export const HyperdriveCheckpoint = {
                                                                 "typeString": "uint256"
                                                             },
                                                             "typeName": {
-                                                                "id": 10005,
+                                                                "id": 14421,
                                                                 "name": "uint256",
                                                                 "nodeType": "ElementaryTypeName",
-                                                                "src": "2406:7:65",
+                                                                "src": "2406:7:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
@@ -2670,36 +2820,36 @@ export const HyperdriveCheckpoint = {
                                                             "visibility": "internal"
                                                         }
                                                     ],
-                                                    "id": 10008,
+                                                    "id": 14424,
                                                     "initialValue": {
-                                                        "id": 10007,
+                                                        "id": 14423,
                                                         "name": "_checkpointTime",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 9960,
-                                                        "src": "2421:15:65",
+                                                        "referencedDeclaration": 14376,
+                                                        "src": "2421:15:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
                                                     "nodeType": "VariableDeclarationStatement",
-                                                    "src": "2406:30:65"
+                                                    "src": "2406:30:115"
                                                 },
                                                 "loopExpression": {
                                                     "expression": {
-                                                        "id": 10011,
+                                                        "id": 14427,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftHandSide": {
-                                                            "id": 10009,
+                                                            "id": 14425,
                                                             "name": "time",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10006,
-                                                            "src": "2472:4:65",
+                                                            "referencedDeclaration": 14422,
+                                                            "src": "2472:4:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -2708,50 +2858,50 @@ export const HyperdriveCheckpoint = {
                                                         "nodeType": "Assignment",
                                                         "operator": "+=",
                                                         "rightHandSide": {
-                                                            "id": 10010,
+                                                            "id": 14426,
                                                             "name": "_checkpointDuration",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 13660,
-                                                            "src": "2480:19:65",
+                                                            "referencedDeclaration": 18129,
+                                                            "src": "2480:19:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             }
                                                         },
-                                                        "src": "2472:27:65",
+                                                        "src": "2472:27:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "id": 10012,
+                                                    "id": 14428,
                                                     "nodeType": "ExpressionStatement",
-                                                    "src": "2472:27:65"
+                                                    "src": "2472:27:115"
                                                 },
                                                 "nodeType": "ForStatement",
-                                                "src": "2384:591:65"
+                                                "src": "2384:591:115"
                                             }
                                         ]
                                     },
-                                    "id": 10048,
+                                    "id": 14464,
                                     "nodeType": "IfStatement",
-                                    "src": "2241:744:65",
+                                    "src": "2241:744:115",
                                     "trueBody": {
-                                        "id": 10004,
+                                        "id": 14420,
                                         "nodeType": "Block",
-                                        "src": "2282:82:65",
+                                        "src": "2282:82:115",
                                         "statements": [
                                             {
                                                 "expression": {
                                                     "arguments": [
                                                         {
-                                                            "id": 9999,
+                                                            "id": 14415,
                                                             "name": "latestCheckpoint",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 9975,
-                                                            "src": "2313:16:65",
+                                                            "referencedDeclaration": 14391,
+                                                            "src": "2313:16:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -2761,18 +2911,18 @@ export const HyperdriveCheckpoint = {
                                                             "arguments": [],
                                                             "expression": {
                                                                 "argumentTypes": [],
-                                                                "id": 10000,
+                                                                "id": 14416,
                                                                 "name": "_pricePerVaultShare",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 9032,
-                                                                "src": "2331:19:65",
+                                                                "referencedDeclaration": 13352,
+                                                                "src": "2331:19:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                                                                     "typeString": "function () view returns (uint256)"
                                                                 }
                                                             },
-                                                            "id": 10001,
+                                                            "id": 14417,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -2781,7 +2931,7 @@ export const HyperdriveCheckpoint = {
                                                             "nameLocations": [],
                                                             "names": [],
                                                             "nodeType": "FunctionCall",
-                                                            "src": "2331:21:65",
+                                                            "src": "2331:21:115",
                                                             "tryCall": false,
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -2800,20 +2950,20 @@ export const HyperdriveCheckpoint = {
                                                                 "typeString": "uint256"
                                                             }
                                                         ],
-                                                        "id": 9998,
+                                                        "id": 14414,
                                                         "name": "_applyCheckpoint",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [
-                                                            10305
+                                                            14721
                                                         ],
-                                                        "referencedDeclaration": 10305,
-                                                        "src": "2296:16:65",
+                                                        "referencedDeclaration": 14721,
+                                                        "src": "2296:16:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                             "typeString": "function (uint256,uint256) returns (uint256)"
                                                         }
                                                     },
-                                                    "id": 10002,
+                                                    "id": 14418,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2822,16 +2972,16 @@ export const HyperdriveCheckpoint = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "2296:57:65",
+                                                    "src": "2296:57:115",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 10003,
+                                                "id": 14419,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "2296:57:65"
+                                                "src": "2296:57:115"
                                             }
                                         ]
                                     }
@@ -2839,46 +2989,46 @@ export const HyperdriveCheckpoint = {
                             ]
                         },
                         "documentation": {
-                            "id": 9958,
+                            "id": 14374,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1199:143:65",
+                            "src": "1199:143:115",
                             "text": "@dev Attempts to mint a checkpoint with the specified checkpoint time.\n @param _checkpointTime The time of the checkpoint to create."
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [
                             {
-                                "id": 9963,
+                                "id": 14379,
                                 "kind": "modifierInvocation",
                                 "modifierName": {
-                                    "id": 9962,
+                                    "id": 14378,
                                     "name": "nonReentrant",
                                     "nameLocations": [
-                                        "1402:12:65"
+                                        "1402:12:115"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 67022,
-                                    "src": "1402:12:65"
+                                    "referencedDeclaration": 71959,
+                                    "src": "1402:12:115"
                                 },
                                 "nodeType": "ModifierInvocation",
-                                "src": "1402:12:65"
+                                "src": "1402:12:115"
                             }
                         ],
                         "name": "_checkpoint",
-                        "nameLocation": "1356:11:65",
+                        "nameLocation": "1356:11:115",
                         "parameters": {
-                            "id": 9961,
+                            "id": 14377,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 9960,
+                                    "id": 14376,
                                     "mutability": "mutable",
                                     "name": "_checkpointTime",
-                                    "nameLocation": "1376:15:65",
+                                    "nameLocation": "1376:15:115",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10050,
-                                    "src": "1368:23:65",
+                                    "scope": 14466,
+                                    "src": "1368:23:115",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2886,10 +3036,10 @@ export const HyperdriveCheckpoint = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 9959,
+                                        "id": 14375,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1368:7:65",
+                                        "src": "1368:7:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2898,96 +3048,96 @@ export const HyperdriveCheckpoint = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1367:25:65"
+                            "src": "1367:25:115"
                         },
                         "returnParameters": {
-                            "id": 9964,
+                            "id": 14380,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1415:0:65"
+                            "src": "1415:0:115"
                         },
-                        "scope": 10381,
+                        "scope": 14797,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 10305,
+                        "id": 14721,
                         "nodeType": "FunctionDefinition",
-                        "src": "3253:7270:65",
+                        "src": "3253:7270:115",
                         "nodes": [],
                         "body": {
-                            "id": 10304,
+                            "id": 14720,
                             "nodeType": "Block",
-                            "src": "3388:7135:65",
+                            "src": "3388:7135:115",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        10065
+                                        14481
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 10065,
+                                            "id": 14481,
                                             "mutability": "mutable",
                                             "name": "checkpoint_",
-                                            "nameLocation": "3497:11:65",
+                                            "nameLocation": "3497:11:115",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 10304,
-                                            "src": "3466:42:65",
+                                            "scope": 14720,
+                                            "src": "3466:42:115",
                                             "stateVariable": false,
                                             "storageLocation": "storage",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Checkpoint_$7312_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Checkpoint_$10718_storage_ptr",
                                                 "typeString": "struct IHyperdrive.Checkpoint"
                                             },
                                             "typeName": {
-                                                "id": 10064,
+                                                "id": 14480,
                                                 "nodeType": "UserDefinedTypeName",
                                                 "pathNode": {
-                                                    "id": 10063,
+                                                    "id": 14479,
                                                     "name": "IHyperdrive.Checkpoint",
                                                     "nameLocations": [
-                                                        "3466:11:65",
-                                                        "3478:10:65"
+                                                        "3466:11:115",
+                                                        "3478:10:115"
                                                     ],
                                                     "nodeType": "IdentifierPath",
-                                                    "referencedDeclaration": 7312,
-                                                    "src": "3466:22:65"
+                                                    "referencedDeclaration": 10718,
+                                                    "src": "3466:22:115"
                                                 },
-                                                "referencedDeclaration": 7312,
-                                                "src": "3466:22:65",
+                                                "referencedDeclaration": 10718,
+                                                "src": "3466:22:115",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_Checkpoint_$7312_storage_ptr",
+                                                    "typeIdentifier": "t_struct$_Checkpoint_$10718_storage_ptr",
                                                     "typeString": "struct IHyperdrive.Checkpoint"
                                                 }
                                             },
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 10069,
+                                    "id": 14485,
                                     "initialValue": {
                                         "baseExpression": {
-                                            "id": 10066,
+                                            "id": 14482,
                                             "name": "_checkpoints",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 13701,
-                                            "src": "3511:12:65",
+                                            "referencedDeclaration": 18170,
+                                            "src": "3511:12:115",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$7312_storage_$",
+                                                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$10718_storage_$",
                                                 "typeString": "mapping(uint256 => struct IHyperdrive.Checkpoint storage ref)"
                                             }
                                         },
-                                        "id": 10068,
+                                        "id": 14484,
                                         "indexExpression": {
-                                            "id": 10067,
+                                            "id": 14483,
                                             "name": "_checkpointTime",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 10053,
-                                            "src": "3537:15:65",
+                                            "referencedDeclaration": 14469,
+                                            "src": "3537:15:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -2998,14 +3148,14 @@ export const HyperdriveCheckpoint = {
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "nodeType": "IndexAccess",
-                                        "src": "3511:51:65",
+                                        "src": "3511:51:115",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Checkpoint_$7312_storage",
+                                            "typeIdentifier": "t_struct$_Checkpoint_$10718_storage",
                                             "typeString": "struct IHyperdrive.Checkpoint storage ref"
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "3466:96:65"
+                                    "src": "3466:96:115"
                                 },
                                 {
                                     "condition": {
@@ -3013,7 +3163,7 @@ export const HyperdriveCheckpoint = {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         },
-                                        "id": 10078,
+                                        "id": 14494,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3023,34 +3173,34 @@ export const HyperdriveCheckpoint = {
                                                 "typeIdentifier": "t_uint128",
                                                 "typeString": "uint128"
                                             },
-                                            "id": 10073,
+                                            "id": 14489,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
                                                 "expression": {
-                                                    "id": 10070,
+                                                    "id": 14486,
                                                     "name": "checkpoint_",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 10065,
-                                                    "src": "3589:11:65",
+                                                    "referencedDeclaration": 14481,
+                                                    "src": "3589:11:115",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_Checkpoint_$7312_storage_ptr",
+                                                        "typeIdentifier": "t_struct$_Checkpoint_$10718_storage_ptr",
                                                         "typeString": "struct IHyperdrive.Checkpoint storage pointer"
                                                     }
                                                 },
-                                                "id": 10071,
+                                                "id": 14487,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "3601:15:65",
+                                                "memberLocation": "3601:15:115",
                                                 "memberName": "vaultSharePrice",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 7311,
-                                                "src": "3589:27:65",
+                                                "referencedDeclaration": 10717,
+                                                "src": "3589:27:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint128",
                                                     "typeString": "uint128"
@@ -3060,21 +3210,21 @@ export const HyperdriveCheckpoint = {
                                             "operator": "!=",
                                             "rightExpression": {
                                                 "hexValue": "30",
-                                                "id": 10072,
+                                                "id": 14488,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "kind": "number",
                                                 "lValueRequested": false,
                                                 "nodeType": "Literal",
-                                                "src": "3620:1:65",
+                                                "src": "3620:1:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_rational_0_by_1",
                                                     "typeString": "int_const 0"
                                                 },
                                                 "value": "0"
                                             },
-                                            "src": "3589:32:65",
+                                            "src": "3589:32:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
@@ -3087,18 +3237,18 @@ export const HyperdriveCheckpoint = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 10077,
+                                            "id": 14493,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 10074,
+                                                "id": 14490,
                                                 "name": "_checkpointTime",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10053,
-                                                "src": "3637:15:65",
+                                                "referencedDeclaration": 14469,
+                                                "src": "3637:15:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -3108,118 +3258,118 @@ export const HyperdriveCheckpoint = {
                                             "operator": ">",
                                             "rightExpression": {
                                                 "expression": {
-                                                    "id": 10075,
+                                                    "id": 14491,
                                                     "name": "block",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
                                                     "referencedDeclaration": -4,
-                                                    "src": "3655:5:65",
+                                                    "src": "3655:5:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_magic_block",
                                                         "typeString": "block"
                                                     }
                                                 },
-                                                "id": 10076,
+                                                "id": 14492,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "3661:9:65",
+                                                "memberLocation": "3661:9:115",
                                                 "memberName": "timestamp",
                                                 "nodeType": "MemberAccess",
-                                                "src": "3655:15:65",
+                                                "src": "3655:15:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "src": "3637:33:65",
+                                            "src": "3637:33:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
                                             }
                                         },
-                                        "src": "3589:81:65",
+                                        "src": "3589:81:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 10083,
+                                    "id": 14499,
                                     "nodeType": "IfStatement",
-                                    "src": "3572:168:65",
+                                    "src": "3572:168:115",
                                     "trueBody": {
-                                        "id": 10082,
+                                        "id": 14498,
                                         "nodeType": "Block",
-                                        "src": "3681:59:65",
+                                        "src": "3681:59:115",
                                         "statements": [
                                             {
                                                 "expression": {
                                                     "expression": {
-                                                        "id": 10079,
+                                                        "id": 14495,
                                                         "name": "checkpoint_",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10065,
-                                                        "src": "3702:11:65",
+                                                        "referencedDeclaration": 14481,
+                                                        "src": "3702:11:115",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_Checkpoint_$7312_storage_ptr",
+                                                            "typeIdentifier": "t_struct$_Checkpoint_$10718_storage_ptr",
                                                             "typeString": "struct IHyperdrive.Checkpoint storage pointer"
                                                         }
                                                     },
-                                                    "id": 10080,
+                                                    "id": 14496,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "3714:15:65",
+                                                    "memberLocation": "3714:15:115",
                                                     "memberName": "vaultSharePrice",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 7311,
-                                                    "src": "3702:27:65",
+                                                    "referencedDeclaration": 10717,
+                                                    "src": "3702:27:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint128",
                                                         "typeString": "uint128"
                                                     }
                                                 },
-                                                "functionReturnParameters": 10060,
-                                                "id": 10081,
+                                                "functionReturnParameters": 14476,
+                                                "id": 14497,
                                                 "nodeType": "Return",
-                                                "src": "3695:34:65"
+                                                "src": "3695:34:115"
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "expression": {
-                                        "id": 10090,
+                                        "id": 14506,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "expression": {
-                                                "id": 10084,
+                                                "id": 14500,
                                                 "name": "checkpoint_",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10065,
-                                                "src": "3802:11:65",
+                                                "referencedDeclaration": 14481,
+                                                "src": "3802:11:115",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_Checkpoint_$7312_storage_ptr",
+                                                    "typeIdentifier": "t_struct$_Checkpoint_$10718_storage_ptr",
                                                     "typeString": "struct IHyperdrive.Checkpoint storage pointer"
                                                 }
                                             },
-                                            "id": 10086,
+                                            "id": 14502,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
                                             "lValueRequested": true,
-                                            "memberLocation": "3814:15:65",
+                                            "memberLocation": "3814:15:115",
                                             "memberName": "vaultSharePrice",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 7311,
-                                            "src": "3802:27:65",
+                                            "referencedDeclaration": 10717,
+                                            "src": "3802:27:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint128",
                                                 "typeString": "uint128"
@@ -3232,33 +3382,33 @@ export const HyperdriveCheckpoint = {
                                             "expression": {
                                                 "argumentTypes": [],
                                                 "expression": {
-                                                    "id": 10087,
+                                                    "id": 14503,
                                                     "name": "_vaultSharePrice",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 10055,
-                                                    "src": "3832:16:65",
+                                                    "referencedDeclaration": 14471,
+                                                    "src": "3832:16:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 10088,
+                                                "id": 14504,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "3849:9:65",
+                                                "memberLocation": "3849:9:115",
                                                 "memberName": "toUint128",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 17461,
-                                                "src": "3832:26:65",
+                                                "referencedDeclaration": 22151,
+                                                "src": "3832:26:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256) pure returns (uint128)"
                                                 }
                                             },
-                                            "id": 10089,
+                                            "id": 14505,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3267,33 +3417,33 @@ export const HyperdriveCheckpoint = {
                                             "nameLocations": [],
                                             "names": [],
                                             "nodeType": "FunctionCall",
-                                            "src": "3832:28:65",
+                                            "src": "3832:28:115",
                                             "tryCall": false,
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint128",
                                                 "typeString": "uint128"
                                             }
                                         },
-                                        "src": "3802:58:65",
+                                        "src": "3802:58:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint128",
                                             "typeString": "uint128"
                                         }
                                     },
-                                    "id": 10091,
+                                    "id": 14507,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "3802:58:65"
+                                    "src": "3802:58:115"
                                 },
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 10093,
+                                                "id": 14509,
                                                 "name": "_vaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10055,
-                                                "src": "3970:16:65",
+                                                "referencedDeclaration": 14471,
+                                                "src": "3970:16:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -3307,18 +3457,18 @@ export const HyperdriveCheckpoint = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 10092,
+                                            "id": 14508,
                                             "name": "_collectZombieInterest",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 9611,
-                                            "src": "3947:22:65",
+                                            "referencedDeclaration": 14027,
+                                            "src": "3947:22:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$_t_uint256_$_t_uint256_$",
                                                 "typeString": "function (uint256) returns (uint256,uint256)"
                                             }
                                         },
-                                        "id": 10094,
+                                        "id": 14510,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3327,31 +3477,31 @@ export const HyperdriveCheckpoint = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "3947:40:65",
+                                        "src": "3947:40:115",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$",
                                             "typeString": "tuple(uint256,uint256)"
                                         }
                                     },
-                                    "id": 10095,
+                                    "id": 14511,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "3947:40:65"
+                                    "src": "3947:40:115"
                                 },
                                 {
                                     "assignments": [
-                                        10097
+                                        14513
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 10097,
+                                            "id": 14513,
                                             "mutability": "mutable",
                                             "name": "openVaultSharePrice",
-                                            "nameLocation": "4459:19:65",
+                                            "nameLocation": "4459:19:115",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 10304,
-                                            "src": "4451:27:65",
+                                            "scope": 14720,
+                                            "src": "4451:27:115",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -3359,10 +3509,10 @@ export const HyperdriveCheckpoint = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 10096,
+                                                "id": 14512,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "4451:7:65",
+                                                "src": "4451:7:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -3371,39 +3521,39 @@ export const HyperdriveCheckpoint = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 10104,
+                                    "id": 14520,
                                     "initialValue": {
                                         "expression": {
                                             "baseExpression": {
-                                                "id": 10098,
+                                                "id": 14514,
                                                 "name": "_checkpoints",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 13701,
-                                                "src": "4481:12:65",
+                                                "referencedDeclaration": 18170,
+                                                "src": "4481:12:115",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$7312_storage_$",
+                                                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$10718_storage_$",
                                                     "typeString": "mapping(uint256 => struct IHyperdrive.Checkpoint storage ref)"
                                                 }
                                             },
-                                            "id": 10102,
+                                            "id": 14518,
                                             "indexExpression": {
                                                 "commonType": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 10101,
+                                                "id": 14517,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 10099,
+                                                    "id": 14515,
                                                     "name": "_checkpointTime",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 10053,
-                                                    "src": "4507:15:65",
+                                                    "referencedDeclaration": 14469,
+                                                    "src": "4507:15:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -3412,18 +3562,18 @@ export const HyperdriveCheckpoint = {
                                                 "nodeType": "BinaryOperation",
                                                 "operator": "-",
                                                 "rightExpression": {
-                                                    "id": 10100,
+                                                    "id": 14516,
                                                     "name": "_positionDuration",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13663,
-                                                    "src": "4525:17:65",
+                                                    "referencedDeclaration": 18132,
+                                                    "src": "4525:17:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "src": "4507:35:65",
+                                                "src": "4507:35:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -3434,44 +3584,44 @@ export const HyperdriveCheckpoint = {
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "nodeType": "IndexAccess",
-                                            "src": "4481:71:65",
+                                            "src": "4481:71:115",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Checkpoint_$7312_storage",
+                                                "typeIdentifier": "t_struct$_Checkpoint_$10718_storage",
                                                 "typeString": "struct IHyperdrive.Checkpoint storage ref"
                                             }
                                         },
-                                        "id": 10103,
+                                        "id": 14519,
                                         "isConstant": false,
                                         "isLValue": true,
                                         "isPure": false,
                                         "lValueRequested": false,
-                                        "memberLocation": "4553:15:65",
+                                        "memberLocation": "4553:15:115",
                                         "memberName": "vaultSharePrice",
                                         "nodeType": "MemberAccess",
-                                        "referencedDeclaration": 7311,
-                                        "src": "4481:87:65",
+                                        "referencedDeclaration": 10717,
+                                        "src": "4481:87:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint128",
                                             "typeString": "uint128"
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "4451:117:65"
+                                    "src": "4451:117:115"
                                 },
                                 {
                                     "assignments": [
-                                        10106
+                                        14522
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 10106,
+                                            "id": 14522,
                                             "mutability": "mutable",
                                             "name": "shortAssetId",
-                                            "nameLocation": "4586:12:65",
+                                            "nameLocation": "4586:12:115",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 10304,
-                                            "src": "4578:20:65",
+                                            "scope": 14720,
+                                            "src": "4578:20:115",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -3479,10 +3629,10 @@ export const HyperdriveCheckpoint = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 10105,
+                                                "id": 14521,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "4578:7:65",
+                                                "src": "4578:7:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -3491,60 +3641,60 @@ export const HyperdriveCheckpoint = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 10114,
+                                    "id": 14530,
                                     "initialValue": {
                                         "arguments": [
                                             {
                                                 "expression": {
                                                     "expression": {
-                                                        "id": 10109,
+                                                        "id": 14525,
                                                         "name": "AssetId",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 14117,
-                                                        "src": "4636:7:65",
+                                                        "referencedDeclaration": 18594,
+                                                        "src": "4636:7:115",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_type$_t_contract$_AssetId_$14117_$",
+                                                            "typeIdentifier": "t_type$_t_contract$_AssetId_$18594_$",
                                                             "typeString": "type(library AssetId)"
                                                         }
                                                     },
-                                                    "id": 10110,
+                                                    "id": 14526,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "4644:13:65",
+                                                    "memberLocation": "4644:13:115",
                                                     "memberName": "AssetIdPrefix",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 13864,
-                                                    "src": "4636:21:65",
+                                                    "referencedDeclaration": 18341,
+                                                    "src": "4636:21:115",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$13864_$",
+                                                        "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$18341_$",
                                                         "typeString": "type(enum AssetId.AssetIdPrefix)"
                                                     }
                                                 },
-                                                "id": 10111,
+                                                "id": 14527,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "lValueRequested": false,
-                                                "memberLocation": "4658:5:65",
+                                                "memberLocation": "4658:5:115",
                                                 "memberName": "Short",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 13862,
-                                                "src": "4636:27:65",
+                                                "referencedDeclaration": 18339,
+                                                "src": "4636:27:115",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$13864",
+                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$18341",
                                                     "typeString": "enum AssetId.AssetIdPrefix"
                                                 }
                                             },
                                             {
-                                                "id": 10112,
+                                                "id": 14528,
                                                 "name": "_checkpointTime",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10053,
-                                                "src": "4677:15:65",
+                                                "referencedDeclaration": 14469,
+                                                "src": "4677:15:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -3554,7 +3704,7 @@ export const HyperdriveCheckpoint = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$13864",
+                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$18341",
                                                     "typeString": "enum AssetId.AssetIdPrefix"
                                                 },
                                                 {
@@ -3563,33 +3713,33 @@ export const HyperdriveCheckpoint = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 10107,
+                                                "id": 14523,
                                                 "name": "AssetId",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 14117,
-                                                "src": "4601:7:65",
+                                                "referencedDeclaration": 18594,
+                                                "src": "4601:7:115",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_AssetId_$14117_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_AssetId_$18594_$",
                                                     "typeString": "type(library AssetId)"
                                                 }
                                             },
-                                            "id": 10108,
+                                            "id": 14524,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "4609:13:65",
+                                            "memberLocation": "4609:13:115",
                                             "memberName": "encodeAssetId",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 13887,
-                                            "src": "4601:21:65",
+                                            "referencedDeclaration": 18364,
+                                            "src": "4601:21:115",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_pure$_t_enum$_AssetIdPrefix_$13864_$_t_uint256_$returns$_t_uint256_$",
+                                                "typeIdentifier": "t_function_internal_pure$_t_enum$_AssetIdPrefix_$18341_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (enum AssetId.AssetIdPrefix,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 10113,
+                                        "id": 14529,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3598,7 +3748,7 @@ export const HyperdriveCheckpoint = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "4601:101:65",
+                                        "src": "4601:101:115",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
@@ -3606,22 +3756,22 @@ export const HyperdriveCheckpoint = {
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "4578:124:65"
+                                    "src": "4578:124:115"
                                 },
                                 {
                                     "assignments": [
-                                        10116
+                                        14532
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 10116,
+                                            "id": 14532,
                                             "mutability": "mutable",
                                             "name": "maturedShortsAmount",
-                                            "nameLocation": "4720:19:65",
+                                            "nameLocation": "4720:19:115",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 10304,
-                                            "src": "4712:27:65",
+                                            "scope": 14720,
+                                            "src": "4712:27:115",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -3629,10 +3779,10 @@ export const HyperdriveCheckpoint = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 10115,
+                                                "id": 14531,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "4712:7:65",
+                                                "src": "4712:7:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -3641,28 +3791,28 @@ export const HyperdriveCheckpoint = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 10120,
+                                    "id": 14536,
                                     "initialValue": {
                                         "baseExpression": {
-                                            "id": 10117,
+                                            "id": 14533,
                                             "name": "_totalSupply",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 13733,
-                                            "src": "4742:12:65",
+                                            "referencedDeclaration": 18205,
+                                            "src": "4742:12:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                                                 "typeString": "mapping(uint256 => uint256)"
                                             }
                                         },
-                                        "id": 10119,
+                                        "id": 14535,
                                         "indexExpression": {
-                                            "id": 10118,
+                                            "id": 14534,
                                             "name": "shortAssetId",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 10106,
-                                            "src": "4755:12:65",
+                                            "referencedDeclaration": 14522,
+                                            "src": "4755:12:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -3673,29 +3823,29 @@ export const HyperdriveCheckpoint = {
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "nodeType": "IndexAccess",
-                                        "src": "4742:26:65",
+                                        "src": "4742:26:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "4712:56:65"
+                                    "src": "4712:56:115"
                                 },
                                 {
                                     "assignments": [
-                                        10122
+                                        14538
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 10122,
+                                            "id": 14538,
                                             "mutability": "mutable",
                                             "name": "positionsClosed",
-                                            "nameLocation": "4783:15:65",
+                                            "nameLocation": "4783:15:115",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 10304,
-                                            "src": "4778:20:65",
+                                            "scope": 14720,
+                                            "src": "4778:20:115",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -3703,10 +3853,10 @@ export const HyperdriveCheckpoint = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 10121,
+                                                "id": 14537,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "4778:4:65",
+                                                "src": "4778:4:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -3715,9 +3865,9 @@ export const HyperdriveCheckpoint = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 10123,
+                                    "id": 14539,
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "4778:20:65"
+                                    "src": "4778:20:115"
                                 },
                                 {
                                     "condition": {
@@ -3725,18 +3875,18 @@ export const HyperdriveCheckpoint = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 10126,
+                                        "id": 14542,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 10124,
+                                            "id": 14540,
                                             "name": "maturedShortsAmount",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 10116,
-                                            "src": "4812:19:65",
+                                            "referencedDeclaration": 14532,
+                                            "src": "4812:19:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -3746,48 +3896,48 @@ export const HyperdriveCheckpoint = {
                                         "operator": ">",
                                         "rightExpression": {
                                             "hexValue": "30",
-                                            "id": 10125,
+                                            "id": 14541,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
                                             "kind": "number",
                                             "lValueRequested": false,
                                             "nodeType": "Literal",
-                                            "src": "4834:1:65",
+                                            "src": "4834:1:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_rational_0_by_1",
                                                 "typeString": "int_const 0"
                                             },
                                             "value": "0"
                                         },
-                                        "src": "4812:23:65",
+                                        "src": "4812:23:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 10192,
+                                    "id": 14608,
                                     "nodeType": "IfStatement",
-                                    "src": "4808:2275:65",
+                                    "src": "4808:2275:115",
                                     "trueBody": {
-                                        "id": 10191,
+                                        "id": 14607,
                                         "nodeType": "Block",
-                                        "src": "4837:2246:65",
+                                        "src": "4837:2246:115",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 10129,
+                                                    "id": 14545,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 10127,
+                                                        "id": 14543,
                                                         "name": "positionsClosed",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10122,
-                                                        "src": "5008:15:65",
+                                                        "referencedDeclaration": 14538,
+                                                        "src": "5008:15:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
                                                             "typeString": "bool"
@@ -3797,45 +3947,45 @@ export const HyperdriveCheckpoint = {
                                                     "operator": "=",
                                                     "rightHandSide": {
                                                         "hexValue": "74727565",
-                                                        "id": 10128,
+                                                        "id": 14544,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
                                                         "kind": "bool",
                                                         "lValueRequested": false,
                                                         "nodeType": "Literal",
-                                                        "src": "5026:4:65",
+                                                        "src": "5026:4:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
                                                             "typeString": "bool"
                                                         },
                                                         "value": "true"
                                                     },
-                                                    "src": "5008:22:65",
+                                                    "src": "5008:22:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bool",
                                                         "typeString": "bool"
                                                     }
                                                 },
-                                                "id": 10130,
+                                                "id": 14546,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "5008:22:65"
+                                                "src": "5008:22:115"
                                             },
                                             {
                                                 "assignments": [
-                                                    10132,
-                                                    10134
+                                                    14548,
+                                                    14550
                                                 ],
                                                 "declarations": [
                                                     {
                                                         "constant": false,
-                                                        "id": 10132,
+                                                        "id": 14548,
                                                         "mutability": "mutable",
                                                         "name": "shareProceeds",
-                                                        "nameLocation": "5197:13:65",
+                                                        "nameLocation": "5197:13:115",
                                                         "nodeType": "VariableDeclaration",
-                                                        "scope": 10191,
-                                                        "src": "5189:21:65",
+                                                        "scope": 14607,
+                                                        "src": "5189:21:115",
                                                         "stateVariable": false,
                                                         "storageLocation": "default",
                                                         "typeDescriptions": {
@@ -3843,10 +3993,10 @@ export const HyperdriveCheckpoint = {
                                                             "typeString": "uint256"
                                                         },
                                                         "typeName": {
-                                                            "id": 10131,
+                                                            "id": 14547,
                                                             "name": "uint256",
                                                             "nodeType": "ElementaryTypeName",
-                                                            "src": "5189:7:65",
+                                                            "src": "5189:7:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -3856,13 +4006,13 @@ export const HyperdriveCheckpoint = {
                                                     },
                                                     {
                                                         "constant": false,
-                                                        "id": 10134,
+                                                        "id": 14550,
                                                         "mutability": "mutable",
                                                         "name": "governanceFee",
-                                                        "nameLocation": "5236:13:65",
+                                                        "nameLocation": "5236:13:115",
                                                         "nodeType": "VariableDeclaration",
-                                                        "scope": 10191,
-                                                        "src": "5228:21:65",
+                                                        "scope": 14607,
+                                                        "src": "5228:21:115",
                                                         "stateVariable": false,
                                                         "storageLocation": "default",
                                                         "typeDescriptions": {
@@ -3870,10 +4020,10 @@ export const HyperdriveCheckpoint = {
                                                             "typeString": "uint256"
                                                         },
                                                         "typeName": {
-                                                            "id": 10133,
+                                                            "id": 14549,
                                                             "name": "uint256",
                                                             "nodeType": "ElementaryTypeName",
-                                                            "src": "5228:7:65",
+                                                            "src": "5228:7:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -3882,40 +4032,40 @@ export const HyperdriveCheckpoint = {
                                                         "visibility": "internal"
                                                     }
                                                 ],
-                                                "id": 10141,
+                                                "id": 14557,
                                                 "initialValue": {
                                                     "arguments": [
                                                         {
-                                                            "id": 10136,
+                                                            "id": 14552,
                                                             "name": "maturedShortsAmount",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10116,
-                                                            "src": "5313:19:65",
+                                                            "referencedDeclaration": 14532,
+                                                            "src": "5313:19:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             }
                                                         },
                                                         {
-                                                            "id": 10137,
+                                                            "id": 14553,
                                                             "name": "_vaultSharePrice",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10055,
-                                                            "src": "5354:16:65",
+                                                            "referencedDeclaration": 14471,
+                                                            "src": "5354:16:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             }
                                                         },
                                                         {
-                                                            "id": 10138,
+                                                            "id": 14554,
                                                             "name": "openVaultSharePrice",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10097,
-                                                            "src": "5392:19:65",
+                                                            "referencedDeclaration": 14513,
+                                                            "src": "5392:19:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -3923,14 +4073,14 @@ export const HyperdriveCheckpoint = {
                                                         },
                                                         {
                                                             "hexValue": "66616c7365",
-                                                            "id": 10139,
+                                                            "id": 14555,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "kind": "bool",
                                                             "lValueRequested": false,
                                                             "nodeType": "Literal",
-                                                            "src": "5433:5:65",
+                                                            "src": "5433:5:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bool",
                                                                 "typeString": "bool"
@@ -3957,18 +4107,18 @@ export const HyperdriveCheckpoint = {
                                                                 "typeString": "bool"
                                                             }
                                                         ],
-                                                        "id": 10135,
+                                                        "id": 14551,
                                                         "name": "_calculateMaturedProceeds",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10380,
-                                                        "src": "5266:25:65",
+                                                        "referencedDeclaration": 14796,
+                                                        "src": "5266:25:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_view$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$_t_uint256_$",
                                                             "typeString": "function (uint256,uint256,uint256,bool) view returns (uint256,uint256)"
                                                         }
                                                     },
-                                                    "id": 10140,
+                                                    "id": 14556,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3977,7 +4127,7 @@ export const HyperdriveCheckpoint = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "5266:190:65",
+                                                    "src": "5266:190:115",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$",
@@ -3985,22 +4135,22 @@ export const HyperdriveCheckpoint = {
                                                     }
                                                 },
                                                 "nodeType": "VariableDeclarationStatement",
-                                                "src": "5171:285:65"
+                                                "src": "5171:285:115"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 10144,
+                                                    "id": 14560,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 10142,
+                                                        "id": 14558,
                                                         "name": "_governanceFeesAccrued",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 13710,
-                                                        "src": "5470:22:65",
+                                                        "referencedDeclaration": 18182,
+                                                        "src": "5470:22:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -4009,37 +4159,37 @@ export const HyperdriveCheckpoint = {
                                                     "nodeType": "Assignment",
                                                     "operator": "+=",
                                                     "rightHandSide": {
-                                                        "id": 10143,
+                                                        "id": 14559,
                                                         "name": "governanceFee",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10134,
-                                                        "src": "5496:13:65",
+                                                        "referencedDeclaration": 14550,
+                                                        "src": "5496:13:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "5470:39:65",
+                                                    "src": "5470:39:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 10145,
+                                                "id": 14561,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "5470:39:65"
+                                                "src": "5470:39:115"
                                             },
                                             {
                                                 "expression": {
                                                     "arguments": [
                                                         {
-                                                            "id": 10147,
+                                                            "id": 14563,
                                                             "name": "maturedShortsAmount",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10116,
-                                                            "src": "5557:19:65",
+                                                            "referencedDeclaration": 14532,
+                                                            "src": "5557:19:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -4047,14 +4197,14 @@ export const HyperdriveCheckpoint = {
                                                         },
                                                         {
                                                             "hexValue": "30",
-                                                            "id": 10148,
+                                                            "id": 14564,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "kind": "number",
                                                             "lValueRequested": false,
                                                             "nodeType": "Literal",
-                                                            "src": "5594:1:65",
+                                                            "src": "5594:1:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_rational_0_by_1",
                                                                 "typeString": "int_const 0"
@@ -4062,12 +4212,12 @@ export const HyperdriveCheckpoint = {
                                                             "value": "0"
                                                         },
                                                         {
-                                                            "id": 10149,
+                                                            "id": 14565,
                                                             "name": "shareProceeds",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10132,
-                                                            "src": "5613:13:65",
+                                                            "referencedDeclaration": 14548,
+                                                            "src": "5613:13:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -4078,33 +4228,33 @@ export const HyperdriveCheckpoint = {
                                                             "expression": {
                                                                 "argumentTypes": [],
                                                                 "expression": {
-                                                                    "id": 10150,
+                                                                    "id": 14566,
                                                                     "name": "shareProceeds",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 10132,
-                                                                    "src": "5644:13:65",
+                                                                    "referencedDeclaration": 14548,
+                                                                    "src": "5644:13:115",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
                                                                     }
                                                                 },
-                                                                "id": 10151,
+                                                                "id": 14567,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
-                                                                "memberLocation": "5658:8:65",
+                                                                "memberLocation": "5658:8:115",
                                                                 "memberName": "toInt256",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 17574,
-                                                                "src": "5644:22:65",
+                                                                "referencedDeclaration": 22264,
+                                                                "src": "5644:22:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_int256_$attached_to$_t_uint256_$",
                                                                     "typeString": "function (uint256) pure returns (int256)"
                                                                 }
                                                             },
-                                                            "id": 10152,
+                                                            "id": 14568,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -4113,7 +4263,7 @@ export const HyperdriveCheckpoint = {
                                                             "nameLocations": [],
                                                             "names": [],
                                                             "nodeType": "FunctionCall",
-                                                            "src": "5644:24:65",
+                                                            "src": "5644:24:115",
                                                             "tryCall": false,
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_int256",
@@ -4121,12 +4271,12 @@ export const HyperdriveCheckpoint = {
                                                             }
                                                         },
                                                         {
-                                                            "id": 10153,
+                                                            "id": 14569,
                                                             "name": "_checkpointTime",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10053,
-                                                            "src": "5732:15:65",
+                                                            "referencedDeclaration": 14469,
+                                                            "src": "5732:15:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -4156,18 +4306,18 @@ export const HyperdriveCheckpoint = {
                                                                 "typeString": "uint256"
                                                             }
                                                         ],
-                                                        "id": 10146,
+                                                        "id": 14562,
                                                         "name": "_applyCloseShort",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 13322,
-                                                        "src": "5523:16:65",
+                                                        "referencedDeclaration": 17791,
+                                                        "src": "5523:16:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$returns$__$",
                                                             "typeString": "function (uint256,uint256,uint256,int256,uint256)"
                                                         }
                                                     },
-                                                    "id": 10154,
+                                                    "id": 14570,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -4176,31 +4326,31 @@ export const HyperdriveCheckpoint = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "5523:238:65",
+                                                    "src": "5523:238:115",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$__$",
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 10155,
+                                                "id": 14571,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "5523:238:65"
+                                                "src": "5523:238:115"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 10158,
+                                                    "id": 14574,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 10156,
+                                                        "id": 14572,
                                                         "name": "shareProceeds",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10132,
-                                                        "src": "5995:13:65",
+                                                        "referencedDeclaration": 14548,
+                                                        "src": "5995:13:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -4209,41 +4359,41 @@ export const HyperdriveCheckpoint = {
                                                     "nodeType": "Assignment",
                                                     "operator": "+=",
                                                     "rightHandSide": {
-                                                        "id": 10157,
+                                                        "id": 14573,
                                                         "name": "governanceFee",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10134,
-                                                        "src": "6012:13:65",
+                                                        "referencedDeclaration": 14550,
+                                                        "src": "6012:13:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "5995:30:65",
+                                                    "src": "5995:30:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 10159,
+                                                "id": 14575,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "5995:30:65"
+                                                "src": "5995:30:115"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 10170,
+                                                    "id": 14586,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 10160,
+                                                        "id": 14576,
                                                         "name": "shareProceeds",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10132,
-                                                        "src": "6407:13:65",
+                                                        "referencedDeclaration": 14548,
+                                                        "src": "6407:13:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -4254,72 +4404,72 @@ export const HyperdriveCheckpoint = {
                                                     "rightHandSide": {
                                                         "arguments": [
                                                             {
-                                                                "id": 10163,
+                                                                "id": 14579,
                                                                 "name": "maturedShortsAmount",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 10116,
-                                                                "src": "6482:19:65",
+                                                                "referencedDeclaration": 14532,
+                                                                "src": "6482:19:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 10164,
+                                                                "id": 14580,
                                                                 "name": "shareProceeds",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 10132,
-                                                                "src": "6519:13:65",
+                                                                "referencedDeclaration": 14548,
+                                                                "src": "6519:13:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 10165,
+                                                                "id": 14581,
                                                                 "name": "openVaultSharePrice",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 10097,
-                                                                "src": "6550:19:65",
+                                                                "referencedDeclaration": 14513,
+                                                                "src": "6550:19:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 10166,
+                                                                "id": 14582,
                                                                 "name": "_vaultSharePrice",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 10055,
-                                                                "src": "6587:16:65",
+                                                                "referencedDeclaration": 14471,
+                                                                "src": "6587:16:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 10167,
+                                                                "id": 14583,
                                                                 "name": "_vaultSharePrice",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 10055,
-                                                                "src": "6621:16:65",
+                                                                "referencedDeclaration": 14471,
+                                                                "src": "6621:16:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 10168,
+                                                                "id": 14584,
                                                                 "name": "_flatFee",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 13672,
-                                                                "src": "6655:8:65",
+                                                                "referencedDeclaration": 18141,
+                                                                "src": "6655:8:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
@@ -4354,33 +4504,33 @@ export const HyperdriveCheckpoint = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 10161,
+                                                                "id": 14577,
                                                                 "name": "HyperdriveMath",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 15630,
-                                                                "src": "6423:14:65",
+                                                                "referencedDeclaration": 20142,
+                                                                "src": "6423:14:115",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$15630_$",
+                                                                    "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$20142_$",
                                                                     "typeString": "type(library HyperdriveMath)"
                                                                 }
                                                             },
-                                                            "id": 10162,
+                                                            "id": 14578,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "6438:26:65",
+                                                            "memberLocation": "6438:26:115",
                                                             "memberName": "calculateShortProceedsDown",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 15281,
-                                                            "src": "6423:41:65",
+                                                            "referencedDeclaration": 19793,
+                                                            "src": "6423:41:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 10169,
+                                                        "id": 14585,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -4389,53 +4539,53 @@ export const HyperdriveCheckpoint = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "6423:254:65",
+                                                        "src": "6423:254:115",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "6407:270:65",
+                                                    "src": "6407:270:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 10171,
+                                                "id": 14587,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "6407:270:65"
+                                                "src": "6407:270:115"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 10181,
+                                                    "id": 14597,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
                                                         "expression": {
-                                                            "id": 10172,
+                                                            "id": 14588,
                                                             "name": "_marketState",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 13691,
-                                                            "src": "6877:12:65",
+                                                            "referencedDeclaration": 18160,
+                                                            "src": "6877:12:115",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                                "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                                 "typeString": "struct IHyperdrive.MarketState storage ref"
                                                             }
                                                         },
-                                                        "id": 10174,
+                                                        "id": 14590,
                                                         "isConstant": false,
                                                         "isLValue": true,
                                                         "isPure": false,
                                                         "lValueRequested": true,
-                                                        "memberLocation": "6890:18:65",
+                                                        "memberLocation": "6890:18:115",
                                                         "memberName": "zombieBaseProceeds",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 7304,
-                                                        "src": "6877:31:65",
+                                                        "referencedDeclaration": 10710,
+                                                        "src": "6877:31:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint112",
                                                             "typeString": "uint112"
@@ -4450,12 +4600,12 @@ export const HyperdriveCheckpoint = {
                                                             "expression": {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 10177,
+                                                                        "id": 14593,
                                                                         "name": "_vaultSharePrice",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 10055,
-                                                                        "src": "6951:16:65",
+                                                                        "referencedDeclaration": 14471,
+                                                                        "src": "6951:16:115",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
@@ -4470,33 +4620,33 @@ export const HyperdriveCheckpoint = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 10175,
+                                                                        "id": 14591,
                                                                         "name": "shareProceeds",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 10132,
-                                                                        "src": "6912:13:65",
+                                                                        "referencedDeclaration": 14548,
+                                                                        "src": "6912:13:115",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 10176,
+                                                                    "id": 14592,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
-                                                                    "memberLocation": "6943:7:65",
+                                                                    "memberLocation": "6943:7:115",
                                                                     "memberName": "mulDown",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 14197,
-                                                                    "src": "6912:38:65",
+                                                                    "referencedDeclaration": 18674,
+                                                                    "src": "6912:38:115",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 10178,
+                                                                "id": 14594,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -4505,29 +4655,29 @@ export const HyperdriveCheckpoint = {
                                                                 "nameLocations": [],
                                                                 "names": [],
                                                                 "nodeType": "FunctionCall",
-                                                                "src": "6912:56:65",
+                                                                "src": "6912:56:115",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 10179,
+                                                            "id": 14595,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "6986:9:65",
+                                                            "memberLocation": "6986:9:115",
                                                             "memberName": "toUint112",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 17431,
-                                                            "src": "6912:83:65",
+                                                            "referencedDeclaration": 22121,
+                                                            "src": "6912:83:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint112_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256) pure returns (uint112)"
                                                             }
                                                         },
-                                                        "id": 10180,
+                                                        "id": 14596,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -4536,53 +4686,53 @@ export const HyperdriveCheckpoint = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "6912:85:65",
+                                                        "src": "6912:85:115",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint112",
                                                             "typeString": "uint112"
                                                         }
                                                     },
-                                                    "src": "6877:120:65",
+                                                    "src": "6877:120:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint112",
                                                         "typeString": "uint112"
                                                     }
                                                 },
-                                                "id": 10182,
+                                                "id": 14598,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "6877:120:65"
+                                                "src": "6877:120:115"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 10189,
+                                                    "id": 14605,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
                                                         "expression": {
-                                                            "id": 10183,
+                                                            "id": 14599,
                                                             "name": "_marketState",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 13691,
-                                                            "src": "7011:12:65",
+                                                            "referencedDeclaration": 18160,
+                                                            "src": "7011:12:115",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                                "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                                 "typeString": "struct IHyperdrive.MarketState storage ref"
                                                             }
                                                         },
-                                                        "id": 10185,
+                                                        "id": 14601,
                                                         "isConstant": false,
                                                         "isLValue": true,
                                                         "isPure": false,
                                                         "lValueRequested": true,
-                                                        "memberLocation": "7024:19:65",
+                                                        "memberLocation": "7024:19:115",
                                                         "memberName": "zombieShareReserves",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 7307,
-                                                        "src": "7011:32:65",
+                                                        "referencedDeclaration": 10713,
+                                                        "src": "7011:32:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint128",
                                                             "typeString": "uint128"
@@ -4595,33 +4745,33 @@ export const HyperdriveCheckpoint = {
                                                         "expression": {
                                                             "argumentTypes": [],
                                                             "expression": {
-                                                                "id": 10186,
+                                                                "id": 14602,
                                                                 "name": "shareProceeds",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 10132,
-                                                                "src": "7047:13:65",
+                                                                "referencedDeclaration": 14548,
+                                                                "src": "7047:13:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 10187,
+                                                            "id": 14603,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "7061:9:65",
+                                                            "memberLocation": "7061:9:115",
                                                             "memberName": "toUint128",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 17461,
-                                                            "src": "7047:23:65",
+                                                            "referencedDeclaration": 22151,
+                                                            "src": "7047:23:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256) pure returns (uint128)"
                                                             }
                                                         },
-                                                        "id": 10188,
+                                                        "id": 14604,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -4630,40 +4780,40 @@ export const HyperdriveCheckpoint = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "7047:25:65",
+                                                        "src": "7047:25:115",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint128",
                                                             "typeString": "uint128"
                                                         }
                                                     },
-                                                    "src": "7011:61:65",
+                                                    "src": "7011:61:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint128",
                                                         "typeString": "uint128"
                                                     }
                                                 },
-                                                "id": 10190,
+                                                "id": 14606,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "7011:61:65"
+                                                "src": "7011:61:115"
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "assignments": [
-                                        10194
+                                        14610
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 10194,
+                                            "id": 14610,
                                             "mutability": "mutable",
                                             "name": "longAssetId",
-                                            "nameLocation": "7209:11:65",
+                                            "nameLocation": "7209:11:115",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 10304,
-                                            "src": "7201:19:65",
+                                            "scope": 14720,
+                                            "src": "7201:19:115",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -4671,10 +4821,10 @@ export const HyperdriveCheckpoint = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 10193,
+                                                "id": 14609,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "7201:7:65",
+                                                "src": "7201:7:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -4683,60 +4833,60 @@ export const HyperdriveCheckpoint = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 10202,
+                                    "id": 14618,
                                     "initialValue": {
                                         "arguments": [
                                             {
                                                 "expression": {
                                                     "expression": {
-                                                        "id": 10197,
+                                                        "id": 14613,
                                                         "name": "AssetId",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 14117,
-                                                        "src": "7258:7:65",
+                                                        "referencedDeclaration": 18594,
+                                                        "src": "7258:7:115",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_type$_t_contract$_AssetId_$14117_$",
+                                                            "typeIdentifier": "t_type$_t_contract$_AssetId_$18594_$",
                                                             "typeString": "type(library AssetId)"
                                                         }
                                                     },
-                                                    "id": 10198,
+                                                    "id": 14614,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "7266:13:65",
+                                                    "memberLocation": "7266:13:115",
                                                     "memberName": "AssetIdPrefix",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 13864,
-                                                    "src": "7258:21:65",
+                                                    "referencedDeclaration": 18341,
+                                                    "src": "7258:21:115",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$13864_$",
+                                                        "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$18341_$",
                                                         "typeString": "type(enum AssetId.AssetIdPrefix)"
                                                     }
                                                 },
-                                                "id": 10199,
+                                                "id": 14615,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "lValueRequested": false,
-                                                "memberLocation": "7280:4:65",
+                                                "memberLocation": "7280:4:115",
                                                 "memberName": "Long",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 13861,
-                                                "src": "7258:26:65",
+                                                "referencedDeclaration": 18338,
+                                                "src": "7258:26:115",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$13864",
+                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$18341",
                                                     "typeString": "enum AssetId.AssetIdPrefix"
                                                 }
                                             },
                                             {
-                                                "id": 10200,
+                                                "id": 14616,
                                                 "name": "_checkpointTime",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10053,
-                                                "src": "7298:15:65",
+                                                "referencedDeclaration": 14469,
+                                                "src": "7298:15:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -4746,7 +4896,7 @@ export const HyperdriveCheckpoint = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$13864",
+                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$18341",
                                                     "typeString": "enum AssetId.AssetIdPrefix"
                                                 },
                                                 {
@@ -4755,33 +4905,33 @@ export const HyperdriveCheckpoint = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 10195,
+                                                "id": 14611,
                                                 "name": "AssetId",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 14117,
-                                                "src": "7223:7:65",
+                                                "referencedDeclaration": 18594,
+                                                "src": "7223:7:115",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_AssetId_$14117_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_AssetId_$18594_$",
                                                     "typeString": "type(library AssetId)"
                                                 }
                                             },
-                                            "id": 10196,
+                                            "id": 14612,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "7231:13:65",
+                                            "memberLocation": "7231:13:115",
                                             "memberName": "encodeAssetId",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 13887,
-                                            "src": "7223:21:65",
+                                            "referencedDeclaration": 18364,
+                                            "src": "7223:21:115",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_pure$_t_enum$_AssetIdPrefix_$13864_$_t_uint256_$returns$_t_uint256_$",
+                                                "typeIdentifier": "t_function_internal_pure$_t_enum$_AssetIdPrefix_$18341_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (enum AssetId.AssetIdPrefix,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 10201,
+                                        "id": 14617,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4790,7 +4940,7 @@ export const HyperdriveCheckpoint = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "7223:100:65",
+                                        "src": "7223:100:115",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
@@ -4798,22 +4948,22 @@ export const HyperdriveCheckpoint = {
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "7201:122:65"
+                                    "src": "7201:122:115"
                                 },
                                 {
                                     "assignments": [
-                                        10204
+                                        14620
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 10204,
+                                            "id": 14620,
                                             "mutability": "mutable",
                                             "name": "maturedLongsAmount",
-                                            "nameLocation": "7341:18:65",
+                                            "nameLocation": "7341:18:115",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 10304,
-                                            "src": "7333:26:65",
+                                            "scope": 14720,
+                                            "src": "7333:26:115",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -4821,10 +4971,10 @@ export const HyperdriveCheckpoint = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 10203,
+                                                "id": 14619,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "7333:7:65",
+                                                "src": "7333:7:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -4833,28 +4983,28 @@ export const HyperdriveCheckpoint = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 10208,
+                                    "id": 14624,
                                     "initialValue": {
                                         "baseExpression": {
-                                            "id": 10205,
+                                            "id": 14621,
                                             "name": "_totalSupply",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 13733,
-                                            "src": "7362:12:65",
+                                            "referencedDeclaration": 18205,
+                                            "src": "7362:12:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                                                 "typeString": "mapping(uint256 => uint256)"
                                             }
                                         },
-                                        "id": 10207,
+                                        "id": 14623,
                                         "indexExpression": {
-                                            "id": 10206,
+                                            "id": 14622,
                                             "name": "longAssetId",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 10194,
-                                            "src": "7375:11:65",
+                                            "referencedDeclaration": 14610,
+                                            "src": "7375:11:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -4865,14 +5015,14 @@ export const HyperdriveCheckpoint = {
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "nodeType": "IndexAccess",
-                                        "src": "7362:25:65",
+                                        "src": "7362:25:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "7333:54:65"
+                                    "src": "7333:54:115"
                                 },
                                 {
                                     "condition": {
@@ -4880,18 +5030,18 @@ export const HyperdriveCheckpoint = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 10211,
+                                        "id": 14627,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 10209,
+                                            "id": 14625,
                                             "name": "maturedLongsAmount",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 10204,
-                                            "src": "7401:18:65",
+                                            "referencedDeclaration": 14620,
+                                            "src": "7401:18:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -4901,48 +5051,48 @@ export const HyperdriveCheckpoint = {
                                         "operator": ">",
                                         "rightExpression": {
                                             "hexValue": "30",
-                                            "id": 10210,
+                                            "id": 14626,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
                                             "kind": "number",
                                             "lValueRequested": false,
                                             "nodeType": "Literal",
-                                            "src": "7422:1:65",
+                                            "src": "7422:1:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_rational_0_by_1",
                                                 "typeString": "int_const 0"
                                             },
                                             "value": "0"
                                         },
-                                        "src": "7401:22:65",
+                                        "src": "7401:22:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 10269,
+                                    "id": 14685,
                                     "nodeType": "IfStatement",
-                                    "src": "7397:1597:65",
+                                    "src": "7397:1597:115",
                                     "trueBody": {
-                                        "id": 10268,
+                                        "id": 14684,
                                         "nodeType": "Block",
-                                        "src": "7425:1569:65",
+                                        "src": "7425:1569:115",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 10214,
+                                                    "id": 14630,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 10212,
+                                                        "id": 14628,
                                                         "name": "positionsClosed",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10122,
-                                                        "src": "7595:15:65",
+                                                        "referencedDeclaration": 14538,
+                                                        "src": "7595:15:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
                                                             "typeString": "bool"
@@ -4952,45 +5102,45 @@ export const HyperdriveCheckpoint = {
                                                     "operator": "=",
                                                     "rightHandSide": {
                                                         "hexValue": "74727565",
-                                                        "id": 10213,
+                                                        "id": 14629,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
                                                         "kind": "bool",
                                                         "lValueRequested": false,
                                                         "nodeType": "Literal",
-                                                        "src": "7613:4:65",
+                                                        "src": "7613:4:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bool",
                                                             "typeString": "bool"
                                                         },
                                                         "value": "true"
                                                     },
-                                                    "src": "7595:22:65",
+                                                    "src": "7595:22:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bool",
                                                         "typeString": "bool"
                                                     }
                                                 },
-                                                "id": 10215,
+                                                "id": 14631,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "7595:22:65"
+                                                "src": "7595:22:115"
                                             },
                                             {
                                                 "assignments": [
-                                                    10217,
-                                                    10219
+                                                    14633,
+                                                    14635
                                                 ],
                                                 "declarations": [
                                                     {
                                                         "constant": false,
-                                                        "id": 10217,
+                                                        "id": 14633,
                                                         "mutability": "mutable",
                                                         "name": "shareProceeds",
-                                                        "nameLocation": "7783:13:65",
+                                                        "nameLocation": "7783:13:115",
                                                         "nodeType": "VariableDeclaration",
-                                                        "scope": 10268,
-                                                        "src": "7775:21:65",
+                                                        "scope": 14684,
+                                                        "src": "7775:21:115",
                                                         "stateVariable": false,
                                                         "storageLocation": "default",
                                                         "typeDescriptions": {
@@ -4998,10 +5148,10 @@ export const HyperdriveCheckpoint = {
                                                             "typeString": "uint256"
                                                         },
                                                         "typeName": {
-                                                            "id": 10216,
+                                                            "id": 14632,
                                                             "name": "uint256",
                                                             "nodeType": "ElementaryTypeName",
-                                                            "src": "7775:7:65",
+                                                            "src": "7775:7:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -5011,13 +5161,13 @@ export const HyperdriveCheckpoint = {
                                                     },
                                                     {
                                                         "constant": false,
-                                                        "id": 10219,
+                                                        "id": 14635,
                                                         "mutability": "mutable",
                                                         "name": "governanceFee",
-                                                        "nameLocation": "7822:13:65",
+                                                        "nameLocation": "7822:13:115",
                                                         "nodeType": "VariableDeclaration",
-                                                        "scope": 10268,
-                                                        "src": "7814:21:65",
+                                                        "scope": 14684,
+                                                        "src": "7814:21:115",
                                                         "stateVariable": false,
                                                         "storageLocation": "default",
                                                         "typeDescriptions": {
@@ -5025,10 +5175,10 @@ export const HyperdriveCheckpoint = {
                                                             "typeString": "uint256"
                                                         },
                                                         "typeName": {
-                                                            "id": 10218,
+                                                            "id": 14634,
                                                             "name": "uint256",
                                                             "nodeType": "ElementaryTypeName",
-                                                            "src": "7814:7:65",
+                                                            "src": "7814:7:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -5037,40 +5187,40 @@ export const HyperdriveCheckpoint = {
                                                         "visibility": "internal"
                                                     }
                                                 ],
-                                                "id": 10226,
+                                                "id": 14642,
                                                 "initialValue": {
                                                     "arguments": [
                                                         {
-                                                            "id": 10221,
+                                                            "id": 14637,
                                                             "name": "maturedLongsAmount",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10204,
-                                                            "src": "7899:18:65",
+                                                            "referencedDeclaration": 14620,
+                                                            "src": "7899:18:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             }
                                                         },
                                                         {
-                                                            "id": 10222,
+                                                            "id": 14638,
                                                             "name": "_vaultSharePrice",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10055,
-                                                            "src": "7939:16:65",
+                                                            "referencedDeclaration": 14471,
+                                                            "src": "7939:16:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             }
                                                         },
                                                         {
-                                                            "id": 10223,
+                                                            "id": 14639,
                                                             "name": "openVaultSharePrice",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10097,
-                                                            "src": "7977:19:65",
+                                                            "referencedDeclaration": 14513,
+                                                            "src": "7977:19:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -5078,14 +5228,14 @@ export const HyperdriveCheckpoint = {
                                                         },
                                                         {
                                                             "hexValue": "74727565",
-                                                            "id": 10224,
+                                                            "id": 14640,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "kind": "bool",
                                                             "lValueRequested": false,
                                                             "nodeType": "Literal",
-                                                            "src": "8018:4:65",
+                                                            "src": "8018:4:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bool",
                                                                 "typeString": "bool"
@@ -5112,18 +5262,18 @@ export const HyperdriveCheckpoint = {
                                                                 "typeString": "bool"
                                                             }
                                                         ],
-                                                        "id": 10220,
+                                                        "id": 14636,
                                                         "name": "_calculateMaturedProceeds",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10380,
-                                                        "src": "7852:25:65",
+                                                        "referencedDeclaration": 14796,
+                                                        "src": "7852:25:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_view$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$_t_uint256_$",
                                                             "typeString": "function (uint256,uint256,uint256,bool) view returns (uint256,uint256)"
                                                         }
                                                     },
-                                                    "id": 10225,
+                                                    "id": 14641,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -5132,7 +5282,7 @@ export const HyperdriveCheckpoint = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "7852:188:65",
+                                                    "src": "7852:188:115",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$",
@@ -5140,22 +5290,22 @@ export const HyperdriveCheckpoint = {
                                                     }
                                                 },
                                                 "nodeType": "VariableDeclarationStatement",
-                                                "src": "7757:283:65"
+                                                "src": "7757:283:115"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 10229,
+                                                    "id": 14645,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 10227,
+                                                        "id": 14643,
                                                         "name": "_governanceFeesAccrued",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 13710,
-                                                        "src": "8054:22:65",
+                                                        "referencedDeclaration": 18182,
+                                                        "src": "8054:22:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -5164,41 +5314,41 @@ export const HyperdriveCheckpoint = {
                                                     "nodeType": "Assignment",
                                                     "operator": "+=",
                                                     "rightHandSide": {
-                                                        "id": 10228,
+                                                        "id": 14644,
                                                         "name": "governanceFee",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10219,
-                                                        "src": "8080:13:65",
+                                                        "referencedDeclaration": 14635,
+                                                        "src": "8080:13:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "8054:39:65",
+                                                    "src": "8054:39:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 10230,
+                                                "id": 14646,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "8054:39:65"
+                                                "src": "8054:39:115"
                                             },
                                             {
                                                 "assignments": [
-                                                    10232
+                                                    14648
                                                 ],
                                                 "declarations": [
                                                     {
                                                         "constant": false,
-                                                        "id": 10232,
+                                                        "id": 14648,
                                                         "mutability": "mutable",
                                                         "name": "checkpointTime",
-                                                        "nameLocation": "8115:14:65",
+                                                        "nameLocation": "8115:14:115",
                                                         "nodeType": "VariableDeclaration",
-                                                        "scope": 10268,
-                                                        "src": "8107:22:65",
+                                                        "scope": 14684,
+                                                        "src": "8107:22:115",
                                                         "stateVariable": false,
                                                         "storageLocation": "default",
                                                         "typeDescriptions": {
@@ -5206,10 +5356,10 @@ export const HyperdriveCheckpoint = {
                                                             "typeString": "uint256"
                                                         },
                                                         "typeName": {
-                                                            "id": 10231,
+                                                            "id": 14647,
                                                             "name": "uint256",
                                                             "nodeType": "ElementaryTypeName",
-                                                            "src": "8107:7:65",
+                                                            "src": "8107:7:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -5218,32 +5368,32 @@ export const HyperdriveCheckpoint = {
                                                         "visibility": "internal"
                                                     }
                                                 ],
-                                                "id": 10234,
+                                                "id": 14650,
                                                 "initialValue": {
-                                                    "id": 10233,
+                                                    "id": 14649,
                                                     "name": "_checkpointTime",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 10053,
-                                                    "src": "8132:15:65",
+                                                    "referencedDeclaration": 14469,
+                                                    "src": "8132:15:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
                                                 "nodeType": "VariableDeclarationStatement",
-                                                "src": "8107:40:65"
+                                                "src": "8107:40:115"
                                             },
                                             {
                                                 "expression": {
                                                     "arguments": [
                                                         {
-                                                            "id": 10236,
+                                                            "id": 14652,
                                                             "name": "maturedLongsAmount",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10204,
-                                                            "src": "8224:18:65",
+                                                            "referencedDeclaration": 14620,
+                                                            "src": "8224:18:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -5251,14 +5401,14 @@ export const HyperdriveCheckpoint = {
                                                         },
                                                         {
                                                             "hexValue": "30",
-                                                            "id": 10237,
+                                                            "id": 14653,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "kind": "number",
                                                             "lValueRequested": false,
                                                             "nodeType": "Literal",
-                                                            "src": "8260:1:65",
+                                                            "src": "8260:1:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_rational_0_by_1",
                                                                 "typeString": "int_const 0"
@@ -5266,12 +5416,12 @@ export const HyperdriveCheckpoint = {
                                                             "value": "0"
                                                         },
                                                         {
-                                                            "id": 10238,
+                                                            "id": 14654,
                                                             "name": "shareProceeds",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10217,
-                                                            "src": "8279:13:65",
+                                                            "referencedDeclaration": 14633,
+                                                            "src": "8279:13:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -5282,33 +5432,33 @@ export const HyperdriveCheckpoint = {
                                                             "expression": {
                                                                 "argumentTypes": [],
                                                                 "expression": {
-                                                                    "id": 10239,
+                                                                    "id": 14655,
                                                                     "name": "shareProceeds",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 10217,
-                                                                    "src": "8310:13:65",
+                                                                    "referencedDeclaration": 14633,
+                                                                    "src": "8310:13:115",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
                                                                     }
                                                                 },
-                                                                "id": 10240,
+                                                                "id": 14656,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
-                                                                "memberLocation": "8324:8:65",
+                                                                "memberLocation": "8324:8:115",
                                                                 "memberName": "toInt256",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 17574,
-                                                                "src": "8310:22:65",
+                                                                "referencedDeclaration": 22264,
+                                                                "src": "8310:22:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_int256_$attached_to$_t_uint256_$",
                                                                     "typeString": "function (uint256) pure returns (int256)"
                                                                 }
                                                             },
-                                                            "id": 10241,
+                                                            "id": 14657,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -5317,7 +5467,7 @@ export const HyperdriveCheckpoint = {
                                                             "nameLocations": [],
                                                             "names": [],
                                                             "nodeType": "FunctionCall",
-                                                            "src": "8310:24:65",
+                                                            "src": "8310:24:115",
                                                             "tryCall": false,
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_int256",
@@ -5325,12 +5475,12 @@ export const HyperdriveCheckpoint = {
                                                             }
                                                         },
                                                         {
-                                                            "id": 10242,
+                                                            "id": 14658,
                                                             "name": "checkpointTime",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10232,
-                                                            "src": "8398:14:65",
+                                                            "referencedDeclaration": 14648,
+                                                            "src": "8398:14:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -5360,18 +5510,18 @@ export const HyperdriveCheckpoint = {
                                                                 "typeString": "uint256"
                                                             }
                                                         ],
-                                                        "id": 10235,
+                                                        "id": 14651,
                                                         "name": "_applyCloseLong",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 11940,
-                                                        "src": "8191:15:65",
+                                                        "referencedDeclaration": 16375,
+                                                        "src": "8191:15:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$returns$__$",
                                                             "typeString": "function (uint256,uint256,uint256,int256,uint256)"
                                                         }
                                                     },
-                                                    "id": 10243,
+                                                    "id": 14659,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -5380,31 +5530,31 @@ export const HyperdriveCheckpoint = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "8191:235:65",
+                                                    "src": "8191:235:115",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$__$",
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 10244,
+                                                "id": 14660,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "8191:235:65"
+                                                "src": "8191:235:115"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 10247,
+                                                    "id": 14663,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 10245,
+                                                        "id": 14661,
                                                         "name": "shareProceeds",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10217,
-                                                        "src": "8560:13:65",
+                                                        "referencedDeclaration": 14633,
+                                                        "src": "8560:13:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -5413,57 +5563,57 @@ export const HyperdriveCheckpoint = {
                                                     "nodeType": "Assignment",
                                                     "operator": "-=",
                                                     "rightHandSide": {
-                                                        "id": 10246,
+                                                        "id": 14662,
                                                         "name": "governanceFee",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10219,
-                                                        "src": "8577:13:65",
+                                                        "referencedDeclaration": 14635,
+                                                        "src": "8577:13:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "8560:30:65",
+                                                    "src": "8560:30:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 10248,
+                                                "id": 14664,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "8560:30:65"
+                                                "src": "8560:30:115"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 10258,
+                                                    "id": 14674,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
                                                         "expression": {
-                                                            "id": 10249,
+                                                            "id": 14665,
                                                             "name": "_marketState",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 13691,
-                                                            "src": "8788:12:65",
+                                                            "referencedDeclaration": 18160,
+                                                            "src": "8788:12:115",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                                "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                                 "typeString": "struct IHyperdrive.MarketState storage ref"
                                                             }
                                                         },
-                                                        "id": 10251,
+                                                        "id": 14667,
                                                         "isConstant": false,
                                                         "isLValue": true,
                                                         "isPure": false,
                                                         "lValueRequested": true,
-                                                        "memberLocation": "8801:18:65",
+                                                        "memberLocation": "8801:18:115",
                                                         "memberName": "zombieBaseProceeds",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 7304,
-                                                        "src": "8788:31:65",
+                                                        "referencedDeclaration": 10710,
+                                                        "src": "8788:31:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint112",
                                                             "typeString": "uint112"
@@ -5478,12 +5628,12 @@ export const HyperdriveCheckpoint = {
                                                             "expression": {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 10254,
+                                                                        "id": 14670,
                                                                         "name": "_vaultSharePrice",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 10055,
-                                                                        "src": "8862:16:65",
+                                                                        "referencedDeclaration": 14471,
+                                                                        "src": "8862:16:115",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
@@ -5498,33 +5648,33 @@ export const HyperdriveCheckpoint = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 10252,
+                                                                        "id": 14668,
                                                                         "name": "shareProceeds",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 10217,
-                                                                        "src": "8823:13:65",
+                                                                        "referencedDeclaration": 14633,
+                                                                        "src": "8823:13:115",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 10253,
+                                                                    "id": 14669,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
-                                                                    "memberLocation": "8854:7:65",
+                                                                    "memberLocation": "8854:7:115",
                                                                     "memberName": "mulDown",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 14197,
-                                                                    "src": "8823:38:65",
+                                                                    "referencedDeclaration": 18674,
+                                                                    "src": "8823:38:115",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                     }
                                                                 },
-                                                                "id": 10255,
+                                                                "id": 14671,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -5533,29 +5683,29 @@ export const HyperdriveCheckpoint = {
                                                                 "nameLocations": [],
                                                                 "names": [],
                                                                 "nodeType": "FunctionCall",
-                                                                "src": "8823:56:65",
+                                                                "src": "8823:56:115",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 10256,
+                                                            "id": 14672,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "8897:9:65",
+                                                            "memberLocation": "8897:9:115",
                                                             "memberName": "toUint112",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 17431,
-                                                            "src": "8823:83:65",
+                                                            "referencedDeclaration": 22121,
+                                                            "src": "8823:83:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint112_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256) pure returns (uint112)"
                                                             }
                                                         },
-                                                        "id": 10257,
+                                                        "id": 14673,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -5564,53 +5714,53 @@ export const HyperdriveCheckpoint = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "8823:85:65",
+                                                        "src": "8823:85:115",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint112",
                                                             "typeString": "uint112"
                                                         }
                                                     },
-                                                    "src": "8788:120:65",
+                                                    "src": "8788:120:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint112",
                                                         "typeString": "uint112"
                                                     }
                                                 },
-                                                "id": 10259,
+                                                "id": 14675,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "8788:120:65"
+                                                "src": "8788:120:115"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 10266,
+                                                    "id": 14682,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
                                                         "expression": {
-                                                            "id": 10260,
+                                                            "id": 14676,
                                                             "name": "_marketState",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 13691,
-                                                            "src": "8922:12:65",
+                                                            "referencedDeclaration": 18160,
+                                                            "src": "8922:12:115",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_MarketState_$7308_storage",
+                                                                "typeIdentifier": "t_struct$_MarketState_$10714_storage",
                                                                 "typeString": "struct IHyperdrive.MarketState storage ref"
                                                             }
                                                         },
-                                                        "id": 10262,
+                                                        "id": 14678,
                                                         "isConstant": false,
                                                         "isLValue": true,
                                                         "isPure": false,
                                                         "lValueRequested": true,
-                                                        "memberLocation": "8935:19:65",
+                                                        "memberLocation": "8935:19:115",
                                                         "memberName": "zombieShareReserves",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 7307,
-                                                        "src": "8922:32:65",
+                                                        "referencedDeclaration": 10713,
+                                                        "src": "8922:32:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint128",
                                                             "typeString": "uint128"
@@ -5623,33 +5773,33 @@ export const HyperdriveCheckpoint = {
                                                         "expression": {
                                                             "argumentTypes": [],
                                                             "expression": {
-                                                                "id": 10263,
+                                                                "id": 14679,
                                                                 "name": "shareProceeds",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 10217,
-                                                                "src": "8958:13:65",
+                                                                "referencedDeclaration": 14633,
+                                                                "src": "8958:13:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 10264,
+                                                            "id": 14680,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "8972:9:65",
+                                                            "memberLocation": "8972:9:115",
                                                             "memberName": "toUint128",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 17461,
-                                                            "src": "8958:23:65",
+                                                            "referencedDeclaration": 22151,
+                                                            "src": "8958:23:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256) pure returns (uint128)"
                                                             }
                                                         },
-                                                        "id": 10265,
+                                                        "id": 14681,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -5658,46 +5808,46 @@ export const HyperdriveCheckpoint = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "8958:25:65",
+                                                        "src": "8958:25:115",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint128",
                                                             "typeString": "uint128"
                                                         }
                                                     },
-                                                    "src": "8922:61:65",
+                                                    "src": "8922:61:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint128",
                                                         "typeString": "uint128"
                                                     }
                                                 },
-                                                "id": 10267,
+                                                "id": 14683,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "8922:61:65"
+                                                "src": "8922:61:115"
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "condition": {
-                                        "id": 10270,
+                                        "id": 14686,
                                         "name": "positionsClosed",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 10122,
-                                        "src": "9145:15:65",
+                                        "referencedDeclaration": 14538,
+                                        "src": "9145:15:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 10287,
+                                    "id": 14703,
                                     "nodeType": "IfStatement",
-                                    "src": "9141:701:65",
+                                    "src": "9141:701:115",
                                     "trueBody": {
-                                        "id": 10286,
+                                        "id": 14702,
                                         "nodeType": "Block",
-                                        "src": "9162:680:65",
+                                        "src": "9162:680:115",
                                         "statements": [
                                             {
                                                 "expression": {
@@ -5707,7 +5857,7 @@ export const HyperdriveCheckpoint = {
                                                                 "typeIdentifier": "t_int256",
                                                                 "typeString": "int256"
                                                             },
-                                                            "id": 10278,
+                                                            "id": 14694,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -5717,33 +5867,33 @@ export const HyperdriveCheckpoint = {
                                                                 "expression": {
                                                                     "argumentTypes": [],
                                                                     "expression": {
-                                                                        "id": 10272,
+                                                                        "id": 14688,
                                                                         "name": "maturedLongsAmount",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 10204,
-                                                                        "src": "9402:18:65",
+                                                                        "referencedDeclaration": 14620,
+                                                                        "src": "9402:18:115",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 10273,
+                                                                    "id": 14689,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
-                                                                    "memberLocation": "9421:8:65",
+                                                                    "memberLocation": "9421:8:115",
                                                                     "memberName": "toInt256",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 17574,
-                                                                    "src": "9402:27:65",
+                                                                    "referencedDeclaration": 22264,
+                                                                    "src": "9402:27:115",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_int256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256) pure returns (int256)"
                                                                     }
                                                                 },
-                                                                "id": 10274,
+                                                                "id": 14690,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -5752,7 +5902,7 @@ export const HyperdriveCheckpoint = {
                                                                 "nameLocations": [],
                                                                 "names": [],
                                                                 "nodeType": "FunctionCall",
-                                                                "src": "9402:29:65",
+                                                                "src": "9402:29:115",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_int256",
@@ -5766,33 +5916,33 @@ export const HyperdriveCheckpoint = {
                                                                 "expression": {
                                                                     "argumentTypes": [],
                                                                     "expression": {
-                                                                        "id": 10275,
+                                                                        "id": 14691,
                                                                         "name": "maturedShortsAmount",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 10116,
-                                                                        "src": "9434:19:65",
+                                                                        "referencedDeclaration": 14532,
+                                                                        "src": "9434:19:115",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         }
                                                                     },
-                                                                    "id": 10276,
+                                                                    "id": 14692,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
-                                                                    "memberLocation": "9454:8:65",
+                                                                    "memberLocation": "9454:8:115",
                                                                     "memberName": "toInt256",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 17574,
-                                                                    "src": "9434:28:65",
+                                                                    "referencedDeclaration": 22264,
+                                                                    "src": "9434:28:115",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_int256_$attached_to$_t_uint256_$",
                                                                         "typeString": "function (uint256) pure returns (int256)"
                                                                     }
                                                                 },
-                                                                "id": 10277,
+                                                                "id": 14693,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -5801,14 +5951,14 @@ export const HyperdriveCheckpoint = {
                                                                 "nameLocations": [],
                                                                 "names": [],
                                                                 "nodeType": "FunctionCall",
-                                                                "src": "9434:30:65",
+                                                                "src": "9434:30:115",
                                                                 "tryCall": false,
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_int256",
                                                                     "typeString": "int256"
                                                                 }
                                                             },
-                                                            "src": "9402:62:65",
+                                                            "src": "9402:62:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_int256",
                                                                 "typeString": "int256"
@@ -5816,14 +5966,14 @@ export const HyperdriveCheckpoint = {
                                                         },
                                                         {
                                                             "hexValue": "30",
-                                                            "id": 10279,
+                                                            "id": 14695,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "kind": "number",
                                                             "lValueRequested": false,
                                                             "nodeType": "Literal",
-                                                            "src": "9482:1:65",
+                                                            "src": "9482:1:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_rational_0_by_1",
                                                                 "typeString": "int_const 0"
@@ -5842,18 +5992,18 @@ export const HyperdriveCheckpoint = {
                                                                 "typeString": "int_const 0"
                                                             }
                                                         ],
-                                                        "id": 10271,
+                                                        "id": 14687,
                                                         "name": "_updateLongExposure",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 9431,
-                                                        "src": "9365:19:65",
+                                                        "referencedDeclaration": 13847,
+                                                        "src": "9365:19:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_nonpayable$_t_int256_$_t_int256_$returns$__$",
                                                             "typeString": "function (int256,int256)"
                                                         }
                                                     },
-                                                    "id": 10280,
+                                                    "id": 14696,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -5862,27 +6012,27 @@ export const HyperdriveCheckpoint = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "9365:132:65",
+                                                    "src": "9365:132:115",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$__$",
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 10281,
+                                                "id": 14697,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "9365:132:65"
+                                                "src": "9365:132:115"
                                             },
                                             {
                                                 "expression": {
                                                     "arguments": [
                                                         {
-                                                            "id": 10283,
+                                                            "id": 14699,
                                                             "name": "_vaultSharePrice",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10055,
-                                                            "src": "9814:16:65",
+                                                            "referencedDeclaration": 14471,
+                                                            "src": "9814:16:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -5896,18 +6046,18 @@ export const HyperdriveCheckpoint = {
                                                                 "typeString": "uint256"
                                                             }
                                                         ],
-                                                        "id": 10282,
+                                                        "id": 14698,
                                                         "name": "_distributeExcessIdleSafe",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 11202,
-                                                        "src": "9788:25:65",
+                                                        "referencedDeclaration": 15622,
+                                                        "src": "9788:25:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$_t_bool_$",
                                                             "typeString": "function (uint256) returns (bool)"
                                                         }
                                                     },
-                                                    "id": 10284,
+                                                    "id": 14700,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -5916,35 +6066,35 @@ export const HyperdriveCheckpoint = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "9788:43:65",
+                                                    "src": "9788:43:115",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bool",
                                                         "typeString": "bool"
                                                     }
                                                 },
-                                                "id": 10285,
+                                                "id": 14701,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "9788:43:65"
+                                                "src": "9788:43:115"
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "assignments": [
-                                        10289,
+                                        14705,
                                         null
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 10289,
+                                            "id": 14705,
                                             "mutability": "mutable",
                                             "name": "lpSharePrice",
-                                            "nameLocation": "10229:12:65",
+                                            "nameLocation": "10229:12:115",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 10304,
-                                            "src": "10221:20:65",
+                                            "scope": 14720,
+                                            "src": "10221:20:115",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -5952,10 +6102,10 @@ export const HyperdriveCheckpoint = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 10288,
+                                                "id": 14704,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "10221:7:65",
+                                                "src": "10221:7:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -5965,16 +6115,16 @@ export const HyperdriveCheckpoint = {
                                         },
                                         null
                                     ],
-                                    "id": 10293,
+                                    "id": 14709,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 10291,
+                                                "id": 14707,
                                                 "name": "_vaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10055,
-                                                "src": "10274:16:65",
+                                                "referencedDeclaration": 14471,
+                                                "src": "10274:16:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -5988,18 +6138,18 @@ export const HyperdriveCheckpoint = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 10290,
+                                            "id": 14706,
                                             "name": "_calculateLPSharePriceSafe",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 9727,
-                                            "src": "10247:26:65",
+                                            "referencedDeclaration": 14143,
+                                            "src": "10247:26:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_uint256_$_t_bool_$",
                                                 "typeString": "function (uint256) view returns (uint256,bool)"
                                             }
                                         },
-                                        "id": 10292,
+                                        "id": 14708,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6008,7 +6158,7 @@ export const HyperdriveCheckpoint = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "10247:44:65",
+                                        "src": "10247:44:115",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$_t_uint256_$_t_bool_$",
@@ -6016,66 +6166,66 @@ export const HyperdriveCheckpoint = {
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "10220:71:65"
+                                    "src": "10220:71:115"
                                 },
                                 {
                                     "eventCall": {
                                         "arguments": [
                                             {
-                                                "id": 10295,
+                                                "id": 14711,
                                                 "name": "_checkpointTime",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10053,
-                                                "src": "10336:15:65",
+                                                "referencedDeclaration": 14469,
+                                                "src": "10336:15:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 10296,
+                                                "id": 14712,
                                                 "name": "_vaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10055,
-                                                "src": "10365:16:65",
+                                                "referencedDeclaration": 14471,
+                                                "src": "10365:16:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 10297,
+                                                "id": 14713,
                                                 "name": "maturedShortsAmount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10116,
-                                                "src": "10395:19:65",
+                                                "referencedDeclaration": 14532,
+                                                "src": "10395:19:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 10298,
+                                                "id": 14714,
                                                 "name": "maturedLongsAmount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10204,
-                                                "src": "10428:18:65",
+                                                "referencedDeclaration": 14620,
+                                                "src": "10428:18:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 10299,
+                                                "id": 14715,
                                                 "name": "lpSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10289,
-                                                "src": "10460:12:65",
+                                                "referencedDeclaration": 14705,
+                                                "src": "10460:12:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -6105,18 +6255,18 @@ export const HyperdriveCheckpoint = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 10294,
+                                            "id": 14710,
                                             "name": "CreateCheckpoint",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 8037,
-                                            "src": "10306:16:65",
+                                            "referencedDeclaration": 11509,
+                                            "src": "10306:16:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$",
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256)"
                                             }
                                         },
-                                        "id": 10300,
+                                        "id": 14716,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6125,70 +6275,70 @@ export const HyperdriveCheckpoint = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "10306:176:65",
+                                        "src": "10306:176:115",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 10301,
+                                    "id": 14717,
                                     "nodeType": "EmitStatement",
-                                    "src": "10301:181:65"
+                                    "src": "10301:181:115"
                                 },
                                 {
                                     "expression": {
-                                        "id": 10302,
+                                        "id": 14718,
                                         "name": "_vaultSharePrice",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 10055,
-                                        "src": "10500:16:65",
+                                        "referencedDeclaration": 14471,
+                                        "src": "10500:16:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 10060,
-                                    "id": 10303,
+                                    "functionReturnParameters": 14476,
+                                    "id": 14719,
                                     "nodeType": "Return",
-                                    "src": "10493:23:65"
+                                    "src": "10493:23:115"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            9056
+                            13472
                         ],
                         "documentation": {
-                            "id": 10051,
+                            "id": 14467,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2997:251:65",
+                            "src": "2997:251:115",
                             "text": "@dev Creates a new checkpoint if necessary.\n @param _checkpointTime The time of the checkpoint to create.\n @param _vaultSharePrice The current vault share price.\n @return The opening vault share price of the latest checkpoint."
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_applyCheckpoint",
-                        "nameLocation": "3262:16:65",
+                        "nameLocation": "3262:16:115",
                         "overrides": {
-                            "id": 10057,
+                            "id": 14473,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
-                            "src": "3361:8:65"
+                            "src": "3361:8:115"
                         },
                         "parameters": {
-                            "id": 10056,
+                            "id": 14472,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 10053,
+                                    "id": 14469,
                                     "mutability": "mutable",
                                     "name": "_checkpointTime",
-                                    "nameLocation": "3296:15:65",
+                                    "nameLocation": "3296:15:115",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10305,
-                                    "src": "3288:23:65",
+                                    "scope": 14721,
+                                    "src": "3288:23:115",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6196,10 +6346,10 @@ export const HyperdriveCheckpoint = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 10052,
+                                        "id": 14468,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3288:7:65",
+                                        "src": "3288:7:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -6209,13 +6359,13 @@ export const HyperdriveCheckpoint = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10055,
+                                    "id": 14471,
                                     "mutability": "mutable",
                                     "name": "_vaultSharePrice",
-                                    "nameLocation": "3329:16:65",
+                                    "nameLocation": "3329:16:115",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10305,
-                                    "src": "3321:24:65",
+                                    "scope": 14721,
+                                    "src": "3321:24:115",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6223,10 +6373,10 @@ export const HyperdriveCheckpoint = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 10054,
+                                        "id": 14470,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3321:7:65",
+                                        "src": "3321:7:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -6235,21 +6385,21 @@ export const HyperdriveCheckpoint = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3278:73:65"
+                            "src": "3278:73:115"
                         },
                         "returnParameters": {
-                            "id": 10060,
+                            "id": 14476,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 10059,
+                                    "id": 14475,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10305,
-                                    "src": "3379:7:65",
+                                    "scope": 14721,
+                                    "src": "3379:7:115",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6257,10 +6407,10 @@ export const HyperdriveCheckpoint = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 10058,
+                                        "id": 14474,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3379:7:65",
+                                        "src": "3379:7:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -6269,38 +6419,38 @@ export const HyperdriveCheckpoint = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3378:9:65"
+                            "src": "3378:9:115"
                         },
-                        "scope": 10381,
+                        "scope": 14797,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 10380,
+                        "id": 14796,
                         "nodeType": "FunctionDefinition",
-                        "src": "11087:2398:65",
+                        "src": "11087:2398:115",
                         "nodes": [],
                         "body": {
-                            "id": 10379,
+                            "id": 14795,
                             "nodeType": "Block",
-                            "src": "11320:2165:65",
+                            "src": "11320:2165:115",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 10326,
+                                        "id": 14742,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 10321,
+                                            "id": 14737,
                                             "name": "shareProceeds",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 10317,
-                                            "src": "11664:13:65",
+                                            "referencedDeclaration": 14733,
+                                            "src": "11664:13:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -6311,12 +6461,12 @@ export const HyperdriveCheckpoint = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 10324,
+                                                    "id": 14740,
                                                     "name": "_vaultSharePrice",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 10310,
-                                                    "src": "11700:16:65",
+                                                    "referencedDeclaration": 14726,
+                                                    "src": "11700:16:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -6331,33 +6481,33 @@ export const HyperdriveCheckpoint = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 10322,
+                                                    "id": 14738,
                                                     "name": "_bondAmount",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 10308,
-                                                    "src": "11680:11:65",
+                                                    "referencedDeclaration": 14724,
+                                                    "src": "11680:11:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 10323,
+                                                "id": 14739,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "11692:7:65",
+                                                "memberLocation": "11692:7:115",
                                                 "memberName": "divDown",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 14215,
-                                                "src": "11680:19:65",
+                                                "referencedDeclaration": 18692,
+                                                "src": "11680:19:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 10325,
+                                            "id": 14741,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -6366,37 +6516,37 @@ export const HyperdriveCheckpoint = {
                                             "nameLocations": [],
                                             "names": [],
                                             "nodeType": "FunctionCall",
-                                            "src": "11680:37:65",
+                                            "src": "11680:37:115",
                                             "tryCall": false,
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "src": "11664:53:65",
+                                        "src": "11664:53:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 10327,
+                                    "id": 14743,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "11664:53:65"
+                                    "src": "11664:53:115"
                                 },
                                 {
                                     "assignments": [
-                                        10329
+                                        14745
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 10329,
+                                            "id": 14745,
                                             "mutability": "mutable",
                                             "name": "flatFee",
-                                            "nameLocation": "11735:7:65",
+                                            "nameLocation": "11735:7:115",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 10379,
-                                            "src": "11727:15:65",
+                                            "scope": 14795,
+                                            "src": "11727:15:115",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -6404,10 +6554,10 @@ export const HyperdriveCheckpoint = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 10328,
+                                                "id": 14744,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "11727:7:65",
+                                                "src": "11727:7:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -6416,16 +6566,16 @@ export const HyperdriveCheckpoint = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 10334,
+                                    "id": 14750,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 10332,
+                                                "id": 14748,
                                                 "name": "_flatFee",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 13672,
-                                                "src": "11767:8:65",
+                                                "referencedDeclaration": 18141,
+                                                "src": "11767:8:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -6440,33 +6590,33 @@ export const HyperdriveCheckpoint = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 10330,
+                                                "id": 14746,
                                                 "name": "shareProceeds",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10317,
-                                                "src": "11745:13:65",
+                                                "referencedDeclaration": 14733,
+                                                "src": "11745:13:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
-                                            "id": 10331,
+                                            "id": 14747,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "11759:7:65",
+                                            "memberLocation": "11759:7:115",
                                             "memberName": "mulDown",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 14197,
-                                            "src": "11745:21:65",
+                                            "referencedDeclaration": 18674,
+                                            "src": "11745:21:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 10333,
+                                        "id": 14749,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6475,7 +6625,7 @@ export const HyperdriveCheckpoint = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "11745:31:65",
+                                        "src": "11745:31:115",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
@@ -6483,22 +6633,22 @@ export const HyperdriveCheckpoint = {
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "11727:49:65"
+                                    "src": "11727:49:115"
                                 },
                                 {
                                     "expression": {
-                                        "id": 10340,
+                                        "id": 14756,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 10335,
+                                            "id": 14751,
                                             "name": "governanceFee",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 10319,
-                                            "src": "11786:13:65",
+                                            "referencedDeclaration": 14735,
+                                            "src": "11786:13:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -6509,12 +6659,12 @@ export const HyperdriveCheckpoint = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 10338,
+                                                    "id": 14754,
                                                     "name": "_governanceLPFee",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 13675,
-                                                    "src": "11818:16:65",
+                                                    "referencedDeclaration": 18144,
+                                                    "src": "11818:16:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -6529,33 +6679,33 @@ export const HyperdriveCheckpoint = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 10336,
+                                                    "id": 14752,
                                                     "name": "flatFee",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 10329,
-                                                    "src": "11802:7:65",
+                                                    "referencedDeclaration": 14745,
+                                                    "src": "11802:7:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 10337,
+                                                "id": 14753,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
-                                                "memberLocation": "11810:7:65",
+                                                "memberLocation": "11810:7:115",
                                                 "memberName": "mulDown",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 14197,
-                                                "src": "11802:15:65",
+                                                "referencedDeclaration": 18674,
+                                                "src": "11802:15:115",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 10339,
+                                            "id": 14755,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -6564,55 +6714,55 @@ export const HyperdriveCheckpoint = {
                                             "nameLocations": [],
                                             "names": [],
                                             "nodeType": "FunctionCall",
-                                            "src": "11802:33:65",
+                                            "src": "11802:33:115",
                                             "tryCall": false,
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "src": "11786:49:65",
+                                        "src": "11786:49:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 10341,
+                                    "id": 14757,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "11786:49:65"
+                                    "src": "11786:49:115"
                                 },
                                 {
                                     "condition": {
-                                        "id": 10342,
+                                        "id": 14758,
                                         "name": "_isLong",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 10314,
-                                        "src": "12262:7:65",
+                                        "referencedDeclaration": 14730,
+                                        "src": "12262:7:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
                                     "falseBody": {
-                                        "id": 10356,
+                                        "id": 14772,
                                         "nodeType": "Block",
-                                        "src": "12750:65:65",
+                                        "src": "12750:65:115",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 10354,
+                                                    "id": 14770,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 10350,
+                                                        "id": 14766,
                                                         "name": "shareProceeds",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10317,
-                                                        "src": "12764:13:65",
+                                                        "referencedDeclaration": 14733,
+                                                        "src": "12764:13:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -6625,18 +6775,18 @@ export const HyperdriveCheckpoint = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 10353,
+                                                        "id": 14769,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 10351,
+                                                            "id": 14767,
                                                             "name": "flatFee",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10329,
-                                                            "src": "12781:7:65",
+                                                            "referencedDeclaration": 14745,
+                                                            "src": "12781:7:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -6645,57 +6795,57 @@ export const HyperdriveCheckpoint = {
                                                         "nodeType": "BinaryOperation",
                                                         "operator": "-",
                                                         "rightExpression": {
-                                                            "id": 10352,
+                                                            "id": 14768,
                                                             "name": "governanceFee",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10319,
-                                                            "src": "12791:13:65",
+                                                            "referencedDeclaration": 14735,
+                                                            "src": "12791:13:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             }
                                                         },
-                                                        "src": "12781:23:65",
+                                                        "src": "12781:23:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "12764:40:65",
+                                                    "src": "12764:40:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 10355,
+                                                "id": 14771,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "12764:40:65"
+                                                "src": "12764:40:115"
                                             }
                                         ]
                                     },
-                                    "id": 10357,
+                                    "id": 14773,
                                     "nodeType": "IfStatement",
-                                    "src": "12258:557:65",
+                                    "src": "12258:557:115",
                                     "trueBody": {
-                                        "id": 10349,
+                                        "id": 14765,
                                         "nodeType": "Block",
-                                        "src": "12271:65:65",
+                                        "src": "12271:65:115",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 10347,
+                                                    "id": 14763,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 10343,
+                                                        "id": 14759,
                                                         "name": "shareProceeds",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10317,
-                                                        "src": "12285:13:65",
+                                                        "referencedDeclaration": 14733,
+                                                        "src": "12285:13:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -6708,18 +6858,18 @@ export const HyperdriveCheckpoint = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 10346,
+                                                        "id": 14762,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 10344,
+                                                            "id": 14760,
                                                             "name": "flatFee",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10329,
-                                                            "src": "12302:7:65",
+                                                            "referencedDeclaration": 14745,
+                                                            "src": "12302:7:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -6728,32 +6878,32 @@ export const HyperdriveCheckpoint = {
                                                         "nodeType": "BinaryOperation",
                                                         "operator": "-",
                                                         "rightExpression": {
-                                                            "id": 10345,
+                                                            "id": 14761,
                                                             "name": "governanceFee",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10319,
-                                                            "src": "12312:13:65",
+                                                            "referencedDeclaration": 14735,
+                                                            "src": "12312:13:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             }
                                                         },
-                                                        "src": "12302:23:65",
+                                                        "src": "12302:23:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "12285:40:65",
+                                                    "src": "12285:40:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 10348,
+                                                "id": 14764,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "12285:40:65"
+                                                "src": "12285:40:115"
                                             }
                                         ]
                                     }
@@ -6764,18 +6914,18 @@ export const HyperdriveCheckpoint = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 10360,
+                                        "id": 14776,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 10358,
+                                            "id": 14774,
                                             "name": "_vaultSharePrice",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 10310,
-                                            "src": "13014:16:65",
+                                            "referencedDeclaration": 14726,
+                                            "src": "13014:16:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -6784,45 +6934,45 @@ export const HyperdriveCheckpoint = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<",
                                         "rightExpression": {
-                                            "id": 10359,
+                                            "id": 14775,
                                             "name": "_openVaultSharePrice",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 10312,
-                                            "src": "13033:20:65",
+                                            "referencedDeclaration": 14728,
+                                            "src": "13033:20:115",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "src": "13014:39:65",
+                                        "src": "13014:39:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 10378,
+                                    "id": 14794,
                                     "nodeType": "IfStatement",
-                                    "src": "13010:469:65",
+                                    "src": "13010:469:115",
                                     "trueBody": {
-                                        "id": 10377,
+                                        "id": 14793,
                                         "nodeType": "Block",
-                                        "src": "13055:424:65",
+                                        "src": "13055:424:115",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 10367,
+                                                    "id": 14783,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 10361,
+                                                        "id": 14777,
                                                         "name": "shareProceeds",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10317,
-                                                        "src": "13132:13:65",
+                                                        "referencedDeclaration": 14733,
+                                                        "src": "13132:13:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -6833,24 +6983,24 @@ export const HyperdriveCheckpoint = {
                                                     "rightHandSide": {
                                                         "arguments": [
                                                             {
-                                                                "id": 10364,
+                                                                "id": 14780,
                                                                 "name": "_vaultSharePrice",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 10310,
-                                                                "src": "13190:16:65",
+                                                                "referencedDeclaration": 14726,
+                                                                "src": "13190:16:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 10365,
+                                                                "id": 14781,
                                                                 "name": "_openVaultSharePrice",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 10312,
-                                                                "src": "13224:20:65",
+                                                                "referencedDeclaration": 14728,
+                                                                "src": "13224:20:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
@@ -6869,33 +7019,33 @@ export const HyperdriveCheckpoint = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 10362,
+                                                                "id": 14778,
                                                                 "name": "shareProceeds",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 10317,
-                                                                "src": "13148:13:65",
+                                                                "referencedDeclaration": 14733,
+                                                                "src": "13148:13:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 10363,
+                                                            "id": 14779,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "13162:10:65",
+                                                            "memberLocation": "13162:10:115",
                                                             "memberName": "mulDivDown",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 14179,
-                                                            "src": "13148:24:65",
+                                                            "referencedDeclaration": 18656,
+                                                            "src": "13148:24:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 10366,
+                                                        "id": 14782,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -6904,37 +7054,37 @@ export const HyperdriveCheckpoint = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "13148:110:65",
+                                                        "src": "13148:110:115",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "13132:126:65",
+                                                    "src": "13132:126:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 10368,
+                                                "id": 14784,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "13132:126:65"
+                                                "src": "13132:126:115"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 10375,
+                                                    "id": 14791,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 10369,
+                                                        "id": 14785,
                                                         "name": "governanceFee",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10319,
-                                                        "src": "13342:13:65",
+                                                        "referencedDeclaration": 14735,
+                                                        "src": "13342:13:115",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
@@ -6945,24 +7095,24 @@ export const HyperdriveCheckpoint = {
                                                     "rightHandSide": {
                                                         "arguments": [
                                                             {
-                                                                "id": 10372,
+                                                                "id": 14788,
                                                                 "name": "_vaultSharePrice",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 10310,
-                                                                "src": "13400:16:65",
+                                                                "referencedDeclaration": 14726,
+                                                                "src": "13400:16:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 10373,
+                                                                "id": 14789,
                                                                 "name": "_openVaultSharePrice",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 10312,
-                                                                "src": "13434:20:65",
+                                                                "referencedDeclaration": 14728,
+                                                                "src": "13434:20:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
@@ -6981,33 +7131,33 @@ export const HyperdriveCheckpoint = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 10370,
+                                                                "id": 14786,
                                                                 "name": "governanceFee",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 10319,
-                                                                "src": "13358:13:65",
+                                                                "referencedDeclaration": 14735,
+                                                                "src": "13358:13:115",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 10371,
+                                                            "id": 14787,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "13372:10:65",
+                                                            "memberLocation": "13372:10:115",
                                                             "memberName": "mulDivDown",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 14179,
-                                                            "src": "13358:24:65",
+                                                            "referencedDeclaration": 18656,
+                                                            "src": "13358:24:115",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                                                 "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                                             }
                                                         },
-                                                        "id": 10374,
+                                                        "id": 14790,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -7016,22 +7166,22 @@ export const HyperdriveCheckpoint = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "13358:110:65",
+                                                        "src": "13358:110:115",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         }
                                                     },
-                                                    "src": "13342:126:65",
+                                                    "src": "13342:126:115",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 10376,
+                                                "id": 14792,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "13342:126:65"
+                                                "src": "13342:126:115"
                                             }
                                         ]
                                     }
@@ -7039,29 +7189,29 @@ export const HyperdriveCheckpoint = {
                             ]
                         },
                         "documentation": {
-                            "id": 10306,
+                            "id": 14722,
                             "nodeType": "StructuredDocumentation",
-                            "src": "10529:553:65",
+                            "src": "10529:553:115",
                             "text": "@dev Calculates the proceeds of the holders of a given position at\n      maturity.\n @param _bondAmount The bond amount of the position.\n @param _vaultSharePrice The current vault share price.\n @param _openVaultSharePrice The vault share price at the beginning of\n        the position's checkpoint.\n @param _isLong A flag indicating whether or not the position is a long.\n @return shareProceeds The proceeds of the holders in shares.\n @return governanceFee The fee paid to governance in shares."
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_calculateMaturedProceeds",
-                        "nameLocation": "11096:25:65",
+                        "nameLocation": "11096:25:115",
                         "parameters": {
-                            "id": 10315,
+                            "id": 14731,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 10308,
+                                    "id": 14724,
                                     "mutability": "mutable",
                                     "name": "_bondAmount",
-                                    "nameLocation": "11139:11:65",
+                                    "nameLocation": "11139:11:115",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10380,
-                                    "src": "11131:19:65",
+                                    "scope": 14796,
+                                    "src": "11131:19:115",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7069,10 +7219,10 @@ export const HyperdriveCheckpoint = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 10307,
+                                        "id": 14723,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "11131:7:65",
+                                        "src": "11131:7:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -7082,13 +7232,13 @@ export const HyperdriveCheckpoint = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10310,
+                                    "id": 14726,
                                     "mutability": "mutable",
                                     "name": "_vaultSharePrice",
-                                    "nameLocation": "11168:16:65",
+                                    "nameLocation": "11168:16:115",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10380,
-                                    "src": "11160:24:65",
+                                    "scope": 14796,
+                                    "src": "11160:24:115",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7096,10 +7246,10 @@ export const HyperdriveCheckpoint = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 10309,
+                                        "id": 14725,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "11160:7:65",
+                                        "src": "11160:7:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -7109,13 +7259,13 @@ export const HyperdriveCheckpoint = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10312,
+                                    "id": 14728,
                                     "mutability": "mutable",
                                     "name": "_openVaultSharePrice",
-                                    "nameLocation": "11202:20:65",
+                                    "nameLocation": "11202:20:115",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10380,
-                                    "src": "11194:28:65",
+                                    "scope": 14796,
+                                    "src": "11194:28:115",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7123,10 +7273,10 @@ export const HyperdriveCheckpoint = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 10311,
+                                        "id": 14727,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "11194:7:65",
+                                        "src": "11194:7:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -7136,13 +7286,13 @@ export const HyperdriveCheckpoint = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10314,
+                                    "id": 14730,
                                     "mutability": "mutable",
                                     "name": "_isLong",
-                                    "nameLocation": "11237:7:65",
+                                    "nameLocation": "11237:7:115",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10380,
-                                    "src": "11232:12:65",
+                                    "scope": 14796,
+                                    "src": "11232:12:115",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7150,10 +7300,10 @@ export const HyperdriveCheckpoint = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 10313,
+                                        "id": 14729,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "11232:4:65",
+                                        "src": "11232:4:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -7162,21 +7312,21 @@ export const HyperdriveCheckpoint = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "11121:129:65"
+                            "src": "11121:129:115"
                         },
                         "returnParameters": {
-                            "id": 10320,
+                            "id": 14736,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 10317,
+                                    "id": 14733,
                                     "mutability": "mutable",
                                     "name": "shareProceeds",
-                                    "nameLocation": "11282:13:65",
+                                    "nameLocation": "11282:13:115",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10380,
-                                    "src": "11274:21:65",
+                                    "scope": 14796,
+                                    "src": "11274:21:115",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7184,10 +7334,10 @@ export const HyperdriveCheckpoint = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 10316,
+                                        "id": 14732,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "11274:7:65",
+                                        "src": "11274:7:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -7197,13 +7347,13 @@ export const HyperdriveCheckpoint = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 10319,
+                                    "id": 14735,
                                     "mutability": "mutable",
                                     "name": "governanceFee",
-                                    "nameLocation": "11305:13:65",
+                                    "nameLocation": "11305:13:115",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 10380,
-                                    "src": "11297:21:65",
+                                    "scope": 14796,
+                                    "src": "11297:21:115",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7211,10 +7361,10 @@ export const HyperdriveCheckpoint = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 10318,
+                                        "id": 14734,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "11297:7:65",
+                                        "src": "11297:7:115",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -7223,9 +7373,9 @@ export const HyperdriveCheckpoint = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "11273:46:65"
+                            "src": "11273:46:115"
                         },
-                        "scope": 10381,
+                        "scope": 14797,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "internal"
@@ -7235,114 +7385,117 @@ export const HyperdriveCheckpoint = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 9941,
+                            "id": 14357,
                             "name": "IHyperdriveEvents",
                             "nameLocations": [
-                                "1006:17:65"
+                                "1006:17:115"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 8062,
-                            "src": "1006:17:65"
+                            "referencedDeclaration": 11551,
+                            "src": "1006:17:115"
                         },
-                        "id": 9942,
+                        "id": 14358,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "1006:17:65"
+                        "src": "1006:17:115"
                     },
                     {
                         "baseName": {
-                            "id": 9943,
+                            "id": 14359,
                             "name": "HyperdriveBase",
                             "nameLocations": [
-                                "1029:14:65"
+                                "1029:14:115"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 9917,
-                            "src": "1029:14:65"
+                            "referencedDeclaration": 14333,
+                            "src": "1029:14:115"
                         },
-                        "id": 9944,
+                        "id": 14360,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "1029:14:65"
+                        "src": "1029:14:115"
                     },
                     {
                         "baseName": {
-                            "id": 9945,
+                            "id": 14361,
                             "name": "HyperdriveLong",
                             "nameLocations": [
-                                "1049:14:65"
+                                "1049:14:115"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 12198,
-                            "src": "1049:14:65"
+                            "referencedDeclaration": 16633,
+                            "src": "1049:14:115"
                         },
-                        "id": 9946,
+                        "id": 14362,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "1049:14:65"
+                        "src": "1049:14:115"
                     },
                     {
                         "baseName": {
-                            "id": 9947,
+                            "id": 14363,
                             "name": "HyperdriveShort",
                             "nameLocations": [
-                                "1069:15:65"
+                                "1069:15:115"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 13634,
-                            "src": "1069:15:65"
+                            "referencedDeclaration": 18103,
+                            "src": "1069:15:115"
                         },
-                        "id": 9948,
+                        "id": 14364,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "1069:15:65"
+                        "src": "1069:15:115"
                     }
                 ],
                 "canonicalName": "HyperdriveCheckpoint",
                 "contractDependencies": [],
                 "contractKind": "contract",
                 "documentation": {
-                    "id": 9940,
+                    "id": 14356,
                     "nodeType": "StructuredDocumentation",
-                    "src": "654:306:65",
+                    "src": "654:306:115",
                     "text": "@author DELV\n @notice Implements the checkpoint accounting for Hyperdrive.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."
                 },
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    10381,
-                    13634,
-                    12198,
-                    11279,
-                    12682,
-                    9917,
-                    13842,
-                    67058,
-                    8062,
-                    8623
+                    14797,
+                    18103,
+                    16633,
+                    15699,
+                    17117,
+                    14333,
+                    18319,
+                    71995,
+                    11551,
+                    12117
                 ],
                 "name": "HyperdriveCheckpoint",
-                "nameLocation": "978:20:65",
-                "scope": 10382,
+                "nameLocation": "978:20:115",
+                "scope": 14798,
                 "usedErrors": [
-                    67003
+                    71940
                 ],
                 "usedEvents": [
-                    7909,
-                    7924,
-                    7941,
-                    7954,
-                    7971,
-                    7990,
-                    8007,
-                    8024,
-                    8037,
-                    8044,
-                    8049,
-                    8056,
-                    8061,
-                    8604,
-                    8613,
-                    8622
+                    11371,
+                    11386,
+                    11405,
+                    11420,
+                    11437,
+                    11456,
+                    11475,
+                    11496,
+                    11509,
+                    11516,
+                    11521,
+                    11526,
+                    11531,
+                    11538,
+                    11543,
+                    11550,
+                    12098,
+                    12107,
+                    12116
                 ]
             }
         ],
         "license": "Apache-2.0"
     },
-    "id": 65
+    "id": 115
 };

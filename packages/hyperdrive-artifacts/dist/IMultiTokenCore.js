@@ -553,19 +553,19 @@ export const IMultiTokenCore = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IMultiTokenCore.sol",
-        "id": 8590,
+        "id": 12084,
         "exportedSymbols": {
             "IMultiTokenCore": [
-                8589
+                12083
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "39:4378:56",
+        "src": "39:4378:99",
         "nodes": [
             {
-                "id": 8500,
+                "id": 11994,
                 "nodeType": "PragmaDirective",
-                "src": "39:23:56",
+                "src": "39:23:99",
                 "nodes": [],
                 "literals": [
                     "solidity",
@@ -574,19 +574,19 @@ export const IMultiTokenCore = {
                 ]
             },
             {
-                "id": 8589,
+                "id": 12083,
                 "nodeType": "ContractDefinition",
-                "src": "64:4352:56",
+                "src": "64:4352:99",
                 "nodes": [
                     {
-                        "id": 8512,
+                        "id": 12006,
                         "nodeType": "FunctionDefinition",
-                        "src": "400:128:56",
+                        "src": "400:128:99",
                         "nodes": [],
                         "documentation": {
-                            "id": 8501,
+                            "id": 11995,
                             "nodeType": "StructuredDocumentation",
-                            "src": "96:299:56",
+                            "src": "96:299:99",
                             "text": "@notice Transfers an amount of assets from the source to the destination.\n @param tokenID The token identifier.\n @param from The address whose balance will be reduced.\n @param to The address whose balance will be increased.\n @param amount The amount of token to move."
                         },
                         "functionSelector": "1c0f12b6",
@@ -594,20 +594,20 @@ export const IMultiTokenCore = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "transferFrom",
-                        "nameLocation": "409:12:56",
+                        "nameLocation": "409:12:99",
                         "parameters": {
-                            "id": 8510,
+                            "id": 12004,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8503,
+                                    "id": 11997,
                                     "mutability": "mutable",
                                     "name": "tokenID",
-                                    "nameLocation": "439:7:56",
+                                    "nameLocation": "439:7:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8512,
-                                    "src": "431:15:56",
+                                    "scope": 12006,
+                                    "src": "431:15:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -615,10 +615,10 @@ export const IMultiTokenCore = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8502,
+                                        "id": 11996,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "431:7:56",
+                                        "src": "431:7:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -628,13 +628,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8505,
+                                    "id": 11999,
                                     "mutability": "mutable",
                                     "name": "from",
-                                    "nameLocation": "464:4:56",
+                                    "nameLocation": "464:4:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8512,
-                                    "src": "456:12:56",
+                                    "scope": 12006,
+                                    "src": "456:12:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -642,10 +642,10 @@ export const IMultiTokenCore = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8504,
+                                        "id": 11998,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "456:7:56",
+                                        "src": "456:7:99",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -656,13 +656,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8507,
+                                    "id": 12001,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "486:2:56",
+                                    "nameLocation": "486:2:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8512,
-                                    "src": "478:10:56",
+                                    "scope": 12006,
+                                    "src": "478:10:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -670,10 +670,10 @@ export const IMultiTokenCore = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8506,
+                                        "id": 12000,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "478:7:56",
+                                        "src": "478:7:99",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -684,13 +684,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8509,
+                                    "id": 12003,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "506:6:56",
+                                    "nameLocation": "506:6:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8512,
-                                    "src": "498:14:56",
+                                    "scope": 12006,
+                                    "src": "498:14:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -698,10 +698,10 @@ export const IMultiTokenCore = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8508,
+                                        "id": 12002,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "498:7:56",
+                                        "src": "498:7:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -710,28 +710,28 @@ export const IMultiTokenCore = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "421:97:56"
+                            "src": "421:97:99"
                         },
                         "returnParameters": {
-                            "id": 8511,
+                            "id": 12005,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "527:0:56"
+                            "src": "527:0:99"
                         },
-                        "scope": 8589,
+                        "scope": 12083,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 8526,
+                        "id": 12020,
                         "nodeType": "FunctionDefinition",
-                        "src": "953:158:56",
+                        "src": "953:158:99",
                         "nodes": [],
                         "documentation": {
-                            "id": 8513,
+                            "id": 12007,
                             "nodeType": "StructuredDocumentation",
-                            "src": "534:414:56",
+                            "src": "534:414:99",
                             "text": "@notice Permissioned transfer for the bridge to access, only callable by\n         the ERC20 linking bridge.\n @param tokenID The token identifier.\n @param from The address whose balance will be reduced.\n @param to The address whose balance will be increased.\n @param amount The amount of token to move.\n @param caller The msg.sender or the caller of the ERC20Forwarder."
                         },
                         "functionSelector": "e44808bc",
@@ -739,20 +739,20 @@ export const IMultiTokenCore = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "transferFromBridge",
-                        "nameLocation": "962:18:56",
+                        "nameLocation": "962:18:99",
                         "parameters": {
-                            "id": 8524,
+                            "id": 12018,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8515,
+                                    "id": 12009,
                                     "mutability": "mutable",
                                     "name": "tokenID",
-                                    "nameLocation": "998:7:56",
+                                    "nameLocation": "998:7:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8526,
-                                    "src": "990:15:56",
+                                    "scope": 12020,
+                                    "src": "990:15:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -760,10 +760,10 @@ export const IMultiTokenCore = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8514,
+                                        "id": 12008,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "990:7:56",
+                                        "src": "990:7:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -773,13 +773,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8517,
+                                    "id": 12011,
                                     "mutability": "mutable",
                                     "name": "from",
-                                    "nameLocation": "1023:4:56",
+                                    "nameLocation": "1023:4:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8526,
-                                    "src": "1015:12:56",
+                                    "scope": 12020,
+                                    "src": "1015:12:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -787,10 +787,10 @@ export const IMultiTokenCore = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8516,
+                                        "id": 12010,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1015:7:56",
+                                        "src": "1015:7:99",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -801,13 +801,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8519,
+                                    "id": 12013,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "1045:2:56",
+                                    "nameLocation": "1045:2:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8526,
-                                    "src": "1037:10:56",
+                                    "scope": 12020,
+                                    "src": "1037:10:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -815,10 +815,10 @@ export const IMultiTokenCore = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8518,
+                                        "id": 12012,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1037:7:56",
+                                        "src": "1037:7:99",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -829,13 +829,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8521,
+                                    "id": 12015,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "1065:6:56",
+                                    "nameLocation": "1065:6:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8526,
-                                    "src": "1057:14:56",
+                                    "scope": 12020,
+                                    "src": "1057:14:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -843,10 +843,10 @@ export const IMultiTokenCore = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8520,
+                                        "id": 12014,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1057:7:56",
+                                        "src": "1057:7:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -856,13 +856,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8523,
+                                    "id": 12017,
                                     "mutability": "mutable",
                                     "name": "caller",
-                                    "nameLocation": "1089:6:56",
+                                    "nameLocation": "1089:6:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8526,
-                                    "src": "1081:14:56",
+                                    "scope": 12020,
+                                    "src": "1081:14:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -870,10 +870,10 @@ export const IMultiTokenCore = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8522,
+                                        "id": 12016,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1081:7:56",
+                                        "src": "1081:7:99",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -883,28 +883,28 @@ export const IMultiTokenCore = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "980:121:56"
+                            "src": "980:121:99"
                         },
                         "returnParameters": {
-                            "id": 8525,
+                            "id": 12019,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1110:0:56"
+                            "src": "1110:0:99"
                         },
-                        "scope": 8589,
+                        "scope": 12083,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 8536,
+                        "id": 12030,
                         "nodeType": "FunctionDefinition",
-                        "src": "1541:111:56",
+                        "src": "1541:111:99",
                         "nodes": [],
                         "documentation": {
-                            "id": 8527,
+                            "id": 12021,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1117:419:56",
+                            "src": "1117:419:99",
                             "text": "@notice Allows a user to set an approval for an individual asset with\n         specific amount.\n @param tokenID The asset to approve the use of.\n @param operator The address who will be able to use the tokens.\n @param amount The max tokens the approved person can use, setting to\n        uint256.max will cause the value to never decrement (saving gas\n        on transfer)."
                         },
                         "functionSelector": "9cd241af",
@@ -912,20 +912,20 @@ export const IMultiTokenCore = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "setApproval",
-                        "nameLocation": "1550:11:56",
+                        "nameLocation": "1550:11:99",
                         "parameters": {
-                            "id": 8534,
+                            "id": 12028,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8529,
+                                    "id": 12023,
                                     "mutability": "mutable",
                                     "name": "tokenID",
-                                    "nameLocation": "1579:7:56",
+                                    "nameLocation": "1579:7:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8536,
-                                    "src": "1571:15:56",
+                                    "scope": 12030,
+                                    "src": "1571:15:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -933,10 +933,10 @@ export const IMultiTokenCore = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8528,
+                                        "id": 12022,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1571:7:56",
+                                        "src": "1571:7:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -946,13 +946,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8531,
+                                    "id": 12025,
                                     "mutability": "mutable",
                                     "name": "operator",
-                                    "nameLocation": "1604:8:56",
+                                    "nameLocation": "1604:8:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8536,
-                                    "src": "1596:16:56",
+                                    "scope": 12030,
+                                    "src": "1596:16:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -960,10 +960,10 @@ export const IMultiTokenCore = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8530,
+                                        "id": 12024,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1596:7:56",
+                                        "src": "1596:7:99",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -974,13 +974,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8533,
+                                    "id": 12027,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "1630:6:56",
+                                    "nameLocation": "1630:6:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8536,
-                                    "src": "1622:14:56",
+                                    "scope": 12030,
+                                    "src": "1622:14:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -988,10 +988,10 @@ export const IMultiTokenCore = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8532,
+                                        "id": 12026,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1622:7:56",
+                                        "src": "1622:7:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1000,28 +1000,28 @@ export const IMultiTokenCore = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1561:81:56"
+                            "src": "1561:81:99"
                         },
                         "returnParameters": {
-                            "id": 8535,
+                            "id": 12029,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1651:0:56"
+                            "src": "1651:0:99"
                         },
-                        "scope": 8589,
+                        "scope": 12083,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 8548,
+                        "id": 12042,
                         "nodeType": "FunctionDefinition",
-                        "src": "2159:141:56",
+                        "src": "2159:141:99",
                         "nodes": [],
                         "documentation": {
-                            "id": 8537,
+                            "id": 12031,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1658:496:56",
+                            "src": "1658:496:99",
                             "text": "@notice Allows the compatibility linking contract to forward calls to\n         set asset approvals.\n @param tokenID The asset to approve the use of.\n @param operator The address who will be able to use the tokens.\n @param amount The max tokens the approved person can use, setting to\n        uint256.max will cause the value to never decrement [saving gas\n        on transfer].\n @param caller The eth address which called the linking contract."
                         },
                         "functionSelector": "4ed2d6ac",
@@ -1029,20 +1029,20 @@ export const IMultiTokenCore = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "setApprovalBridge",
-                        "nameLocation": "2168:17:56",
+                        "nameLocation": "2168:17:99",
                         "parameters": {
-                            "id": 8546,
+                            "id": 12040,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8539,
+                                    "id": 12033,
                                     "mutability": "mutable",
                                     "name": "tokenID",
-                                    "nameLocation": "2203:7:56",
+                                    "nameLocation": "2203:7:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8548,
-                                    "src": "2195:15:56",
+                                    "scope": 12042,
+                                    "src": "2195:15:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1050,10 +1050,10 @@ export const IMultiTokenCore = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8538,
+                                        "id": 12032,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2195:7:56",
+                                        "src": "2195:7:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1063,13 +1063,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8541,
+                                    "id": 12035,
                                     "mutability": "mutable",
                                     "name": "operator",
-                                    "nameLocation": "2228:8:56",
+                                    "nameLocation": "2228:8:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8548,
-                                    "src": "2220:16:56",
+                                    "scope": 12042,
+                                    "src": "2220:16:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1077,10 +1077,10 @@ export const IMultiTokenCore = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8540,
+                                        "id": 12034,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2220:7:56",
+                                        "src": "2220:7:99",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1091,13 +1091,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8543,
+                                    "id": 12037,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "2254:6:56",
+                                    "nameLocation": "2254:6:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8548,
-                                    "src": "2246:14:56",
+                                    "scope": 12042,
+                                    "src": "2246:14:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1105,10 +1105,10 @@ export const IMultiTokenCore = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8542,
+                                        "id": 12036,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2246:7:56",
+                                        "src": "2246:7:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1118,13 +1118,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8545,
+                                    "id": 12039,
                                     "mutability": "mutable",
                                     "name": "caller",
-                                    "nameLocation": "2278:6:56",
+                                    "nameLocation": "2278:6:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8548,
-                                    "src": "2270:14:56",
+                                    "scope": 12042,
+                                    "src": "2270:14:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1132,10 +1132,10 @@ export const IMultiTokenCore = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8544,
+                                        "id": 12038,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2270:7:56",
+                                        "src": "2270:7:99",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1145,28 +1145,28 @@ export const IMultiTokenCore = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2185:105:56"
+                            "src": "2185:105:99"
                         },
                         "returnParameters": {
-                            "id": 8547,
+                            "id": 12041,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "2299:0:56"
+                            "src": "2299:0:99"
                         },
-                        "scope": 8589,
+                        "scope": 12083,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 8556,
+                        "id": 12050,
                         "nodeType": "FunctionDefinition",
-                        "src": "2532:69:56",
+                        "src": "2532:69:99",
                         "nodes": [],
                         "documentation": {
-                            "id": 8549,
+                            "id": 12043,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2306:221:56",
+                            "src": "2306:221:99",
                             "text": "@notice Allows a user to approve an operator to use all of their assets.\n @param operator The eth address which can access the caller's assets.\n @param approved True to approve, false to remove approval."
                         },
                         "functionSelector": "a22cb465",
@@ -1174,20 +1174,20 @@ export const IMultiTokenCore = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "setApprovalForAll",
-                        "nameLocation": "2541:17:56",
+                        "nameLocation": "2541:17:99",
                         "parameters": {
-                            "id": 8554,
+                            "id": 12048,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8551,
+                                    "id": 12045,
                                     "mutability": "mutable",
                                     "name": "operator",
-                                    "nameLocation": "2567:8:56",
+                                    "nameLocation": "2567:8:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8556,
-                                    "src": "2559:16:56",
+                                    "scope": 12050,
+                                    "src": "2559:16:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1195,10 +1195,10 @@ export const IMultiTokenCore = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8550,
+                                        "id": 12044,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2559:7:56",
+                                        "src": "2559:7:99",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1209,13 +1209,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8553,
+                                    "id": 12047,
                                     "mutability": "mutable",
                                     "name": "approved",
-                                    "nameLocation": "2582:8:56",
+                                    "nameLocation": "2582:8:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8556,
-                                    "src": "2577:13:56",
+                                    "scope": 12050,
+                                    "src": "2577:13:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1223,10 +1223,10 @@ export const IMultiTokenCore = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 8552,
+                                        "id": 12046,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2577:4:56",
+                                        "src": "2577:4:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -1235,28 +1235,28 @@ export const IMultiTokenCore = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2558:33:56"
+                            "src": "2558:33:99"
                         },
                         "returnParameters": {
-                            "id": 8555,
+                            "id": 12049,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "2600:0:56"
+                            "src": "2600:0:99"
                         },
-                        "scope": 8589,
+                        "scope": 12083,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 8570,
+                        "id": 12064,
                         "nodeType": "FunctionDefinition",
-                        "src": "2888:151:56",
+                        "src": "2888:151:99",
                         "nodes": [],
                         "documentation": {
-                            "id": 8557,
+                            "id": 12051,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2607:276:56",
+                            "src": "2607:276:99",
                             "text": "@notice Transfers several assets from one account to another.\n @param from The source account.\n @param to The destination account.\n @param ids The array of token ids of the asset to transfer.\n @param values The amount of each token to transfer."
                         },
                         "functionSelector": "17fad7fc",
@@ -1264,20 +1264,20 @@ export const IMultiTokenCore = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "batchTransferFrom",
-                        "nameLocation": "2897:17:56",
+                        "nameLocation": "2897:17:99",
                         "parameters": {
-                            "id": 8568,
+                            "id": 12062,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8559,
+                                    "id": 12053,
                                     "mutability": "mutable",
                                     "name": "from",
-                                    "nameLocation": "2932:4:56",
+                                    "nameLocation": "2932:4:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8570,
-                                    "src": "2924:12:56",
+                                    "scope": 12064,
+                                    "src": "2924:12:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1285,10 +1285,10 @@ export const IMultiTokenCore = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8558,
+                                        "id": 12052,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2924:7:56",
+                                        "src": "2924:7:99",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1299,13 +1299,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8561,
+                                    "id": 12055,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "2954:2:56",
+                                    "nameLocation": "2954:2:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8570,
-                                    "src": "2946:10:56",
+                                    "scope": 12064,
+                                    "src": "2946:10:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1313,10 +1313,10 @@ export const IMultiTokenCore = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8560,
+                                        "id": 12054,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2946:7:56",
+                                        "src": "2946:7:99",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1327,13 +1327,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8564,
+                                    "id": 12058,
                                     "mutability": "mutable",
                                     "name": "ids",
-                                    "nameLocation": "2985:3:56",
+                                    "nameLocation": "2985:3:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8570,
-                                    "src": "2966:22:56",
+                                    "scope": 12064,
+                                    "src": "2966:22:99",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
                                     "typeDescriptions": {
@@ -1342,18 +1342,18 @@ export const IMultiTokenCore = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 8562,
+                                            "id": 12056,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
-                                            "src": "2966:7:56",
+                                            "src": "2966:7:99",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 8563,
+                                        "id": 12057,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "2966:9:56",
+                                        "src": "2966:9:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                                             "typeString": "uint256[]"
@@ -1363,13 +1363,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8567,
+                                    "id": 12061,
                                     "mutability": "mutable",
                                     "name": "values",
-                                    "nameLocation": "3017:6:56",
+                                    "nameLocation": "3017:6:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8570,
-                                    "src": "2998:25:56",
+                                    "scope": 12064,
+                                    "src": "2998:25:99",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
                                     "typeDescriptions": {
@@ -1378,18 +1378,18 @@ export const IMultiTokenCore = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 8565,
+                                            "id": 12059,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
-                                            "src": "2998:7:56",
+                                            "src": "2998:7:99",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 8566,
+                                        "id": 12060,
                                         "nodeType": "ArrayTypeName",
-                                        "src": "2998:9:56",
+                                        "src": "2998:9:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                                             "typeString": "uint256[]"
@@ -1398,28 +1398,28 @@ export const IMultiTokenCore = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2914:115:56"
+                            "src": "2914:115:99"
                         },
                         "returnParameters": {
-                            "id": 8569,
+                            "id": 12063,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "3038:0:56"
+                            "src": "3038:0:99"
                         },
-                        "scope": 8589,
+                        "scope": 12083,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 8588,
+                        "id": 12082,
                         "nodeType": "FunctionDefinition",
-                        "src": "4224:190:56",
+                        "src": "4224:190:99",
                         "nodes": [],
                         "documentation": {
-                            "id": 8571,
+                            "id": 12065,
                             "nodeType": "StructuredDocumentation",
-                            "src": "3045:1174:56",
+                            "src": "3045:1174:99",
                             "text": "@notice Allows a caller who is not the owner of an account to execute the\n         functionality of 'approve' for all assets with the owner's\n         signature.\n @param owner The owner of the account which is having the new approval set.\n @param spender The address which will be allowed to spend owner's tokens.\n @param _approved A boolean of the approval status to set to.\n @param deadline The timestamp which the signature must be submitted by\n        to be valid.\n @param v Extra ECDSA data which allows public key recovery from\n        signature assumed to be 27 or 28.\n @param r The r component of the ECDSA signature.\n @param s The s component of the ECDSA signature.\n @dev The signature for this function follows EIP 712 standard and should\n      be generated with the eth_signTypedData JSON RPC call instead of\n      the eth_sign JSON RPC call. If using out of date parity signing\n      libraries the v component may need to be adjusted. Also it is very\n      rare but possible for v to be other values, those values are not\n      supported."
                         },
                         "functionSelector": "9032c726",
@@ -1427,20 +1427,20 @@ export const IMultiTokenCore = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "permitForAll",
-                        "nameLocation": "4233:12:56",
+                        "nameLocation": "4233:12:99",
                         "parameters": {
-                            "id": 8586,
+                            "id": 12080,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8573,
+                                    "id": 12067,
                                     "mutability": "mutable",
                                     "name": "owner",
-                                    "nameLocation": "4263:5:56",
+                                    "nameLocation": "4263:5:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8588,
-                                    "src": "4255:13:56",
+                                    "scope": 12082,
+                                    "src": "4255:13:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1448,10 +1448,10 @@ export const IMultiTokenCore = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8572,
+                                        "id": 12066,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4255:7:56",
+                                        "src": "4255:7:99",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1462,13 +1462,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8575,
+                                    "id": 12069,
                                     "mutability": "mutable",
                                     "name": "spender",
-                                    "nameLocation": "4286:7:56",
+                                    "nameLocation": "4286:7:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8588,
-                                    "src": "4278:15:56",
+                                    "scope": 12082,
+                                    "src": "4278:15:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1476,10 +1476,10 @@ export const IMultiTokenCore = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8574,
+                                        "id": 12068,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4278:7:56",
+                                        "src": "4278:7:99",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1490,13 +1490,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8577,
+                                    "id": 12071,
                                     "mutability": "mutable",
                                     "name": "_approved",
-                                    "nameLocation": "4308:9:56",
+                                    "nameLocation": "4308:9:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8588,
-                                    "src": "4303:14:56",
+                                    "scope": 12082,
+                                    "src": "4303:14:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1504,10 +1504,10 @@ export const IMultiTokenCore = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 8576,
+                                        "id": 12070,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4303:4:56",
+                                        "src": "4303:4:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -1517,13 +1517,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8579,
+                                    "id": 12073,
                                     "mutability": "mutable",
                                     "name": "deadline",
-                                    "nameLocation": "4335:8:56",
+                                    "nameLocation": "4335:8:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8588,
-                                    "src": "4327:16:56",
+                                    "scope": 12082,
+                                    "src": "4327:16:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1531,10 +1531,10 @@ export const IMultiTokenCore = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8578,
+                                        "id": 12072,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4327:7:56",
+                                        "src": "4327:7:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1544,13 +1544,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8581,
+                                    "id": 12075,
                                     "mutability": "mutable",
                                     "name": "v",
-                                    "nameLocation": "4359:1:56",
+                                    "nameLocation": "4359:1:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8588,
-                                    "src": "4353:7:56",
+                                    "scope": 12082,
+                                    "src": "4353:7:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1558,10 +1558,10 @@ export const IMultiTokenCore = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 8580,
+                                        "id": 12074,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4353:5:56",
+                                        "src": "4353:5:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint8",
                                             "typeString": "uint8"
@@ -1571,13 +1571,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8583,
+                                    "id": 12077,
                                     "mutability": "mutable",
                                     "name": "r",
-                                    "nameLocation": "4378:1:56",
+                                    "nameLocation": "4378:1:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8588,
-                                    "src": "4370:9:56",
+                                    "scope": 12082,
+                                    "src": "4370:9:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1585,10 +1585,10 @@ export const IMultiTokenCore = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 8582,
+                                        "id": 12076,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4370:7:56",
+                                        "src": "4370:7:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -1598,13 +1598,13 @@ export const IMultiTokenCore = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8585,
+                                    "id": 12079,
                                     "mutability": "mutable",
                                     "name": "s",
-                                    "nameLocation": "4397:1:56",
+                                    "nameLocation": "4397:1:99",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8588,
-                                    "src": "4389:9:56",
+                                    "scope": 12082,
+                                    "src": "4389:9:99",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1612,10 +1612,10 @@ export const IMultiTokenCore = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 8584,
+                                        "id": 12078,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4389:7:56",
+                                        "src": "4389:7:99",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -1624,15 +1624,15 @@ export const IMultiTokenCore = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "4245:159:56"
+                            "src": "4245:159:99"
                         },
                         "returnParameters": {
-                            "id": 8587,
+                            "id": 12081,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "4413:0:56"
+                            "src": "4413:0:99"
                         },
-                        "scope": 8589,
+                        "scope": 12083,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
@@ -1645,16 +1645,16 @@ export const IMultiTokenCore = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    8589
+                    12083
                 ],
                 "name": "IMultiTokenCore",
-                "nameLocation": "74:15:56",
-                "scope": 8590,
+                "nameLocation": "74:15:99",
+                "scope": 12084,
                 "usedErrors": [],
                 "usedEvents": []
             }
         ],
         "license": "Apache-2.0"
     },
-    "id": 56
+    "id": 99
 };
