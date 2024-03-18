@@ -373,25 +373,38 @@ export function TransactionTable({
           ))}
         </thead>
 
-        <tbody>
-          {tableInstance.getRowModel().rows.map((row) => {
-            return (
-              <tr key={row.id} className="h-20">
-                <>
-                  {row.getVisibleCells().map((cell) => {
-                    return (
-                      <td key={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </td>
-                    );
-                  })}
-                </>
-              </tr>
-            );
+        <tbody
+          className={classNames({
+            "relative h-52": !tableInstance.getFilteredRowModel().rows.length,
           })}
+        >
+          {tableInstance.getFilteredRowModel().rows.length ? (
+            tableInstance.getRowModel().rows.map((row) => {
+              return (
+                <tr key={row.id} className="h-20">
+                  <>
+                    {row.getVisibleCells().map((cell) => {
+                      return (
+                        <td key={cell.id}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext(),
+                          )}
+                        </td>
+                      );
+                    })}
+                  </>
+                </tr>
+              );
+            })
+          ) : (
+            <div className="absolute flex h-52 w-full justify-center">
+              <NonIdealState
+                heading="There are no transactions for this position type."
+                text="Open a position or add liquidity to see transactions here."
+              />
+            </div>
+          )}
         </tbody>
       </table>
       <div className="flex h-24 items-center justify-center gap-2">
