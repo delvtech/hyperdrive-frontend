@@ -6,12 +6,12 @@ import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransac
 import { Address, formatUnits } from "viem";
 import { usePublicClient, useWriteContract } from "wagmi";
 
-export function useMintBaseToken({
-  baseToken,
+export function useMintToken({
+  token,
   destination,
   amount,
 }: {
-  baseToken: TokenConfig;
+  token: TokenConfig<any>;
   destination: Address | undefined;
   amount: bigint;
 }): { mint: (() => void) | undefined } {
@@ -24,7 +24,7 @@ export function useMintBaseToken({
     ? () =>
         writeContract(
           {
-            address: baseToken.address,
+            address: token.address,
             abi: ERC20Mintable.abi,
             functionName: "mint",
             args: [destination, amount],
@@ -33,8 +33,8 @@ export function useMintBaseToken({
             onSuccess: (hash) => {
               addRecentTransaction({
                 hash: hash,
-                description: `Mint ${formatUnits(amount, baseToken.decimals)} ${
-                  baseToken.symbol
+                description: `Mint ${formatUnits(amount, token.decimals)} ${
+                  token.symbol
                 }`,
               });
               waitForTransactionAndInvalidateCache({

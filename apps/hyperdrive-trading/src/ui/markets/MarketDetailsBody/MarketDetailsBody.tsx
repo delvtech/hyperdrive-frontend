@@ -26,7 +26,7 @@ export function MarketDetailsBody({
           <MarketHeader hyperdrive={hyperdrive} />
         </div>
         {isTailwindSmallScreen ? undefined : (
-          <YourBalanceWell tokenAddress={hyperdrive.baseToken} />
+          <YourBalanceWell hyperdrive={hyperdrive} />
         )}
       </div>
 
