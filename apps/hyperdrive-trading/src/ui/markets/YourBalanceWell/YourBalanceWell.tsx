@@ -84,6 +84,8 @@ function AvailableAsset({
     token: token,
     destination: account,
   });
+
+  // approving a 0 allowance is how to "revoke" allowances
   const { approve: revokeAllowance } = useApproveToken({
     tokenAddress: token.address,
     amount: 0n,
