@@ -165,7 +165,7 @@ export function CloseShortForm({
       disclaimer={
         !!amountAsBigInt && isAmountLargerThanPositionSize ? (
           <p className="text-center text-error">Insufficient balance</p>
-        ) : null
+        ) : undefined
       }
       actionButton={
         account ? (
