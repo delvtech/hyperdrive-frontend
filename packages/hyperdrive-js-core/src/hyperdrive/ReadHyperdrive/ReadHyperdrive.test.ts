@@ -520,6 +520,7 @@ test("getOpenLongs should account for longs partially closed to base", async () 
           assetId: 1n,
           maturityTime: timestamp,
           trader: BOB,
+          destination: BOB,
 
           // received back 1 base
           asBase: true,
@@ -680,6 +681,7 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
           assetId: 1n,
           maturityTime: timestamp,
           trader: BOB,
+          destination: BOB,
 
           // received back 2.5 base
           asBase: true,
@@ -777,6 +779,7 @@ test("getOpenLongs should account for longs partially closed to shares", async (
           assetId: 1n,
           maturityTime: timestamp,
           trader: BOB,
+          destination: BOB,
 
           // received back 0.8 shares
           asBase: false,
@@ -882,6 +885,7 @@ test("getOpenLongs should account for longs fully closed to shares", async () =>
           assetId: 1n,
           maturityTime: timestamp,
           trader: BOB,
+          destination: BOB,
 
           // received back 2 shares, and no base
           asBase: false,
@@ -938,6 +942,7 @@ test("getClosedLongs should account for closing out to base", async () => {
           assetId: 1n,
           maturityTime: timestamp,
           trader: BOB,
+          destination: BOB,
 
           // received back 2.2 base, and no shares
           asBase: true,
@@ -1004,6 +1009,7 @@ test("getClosedLongs should account for closing out to shares", async () => {
           assetId: 1n,
           maturityTime: timestamp,
           trader: BOB,
+          destination: BOB,
 
           // received back 1.9 shares, and no base
           asBase: false,
@@ -1341,6 +1347,8 @@ test("getOpenShorts should account for shorts partially closed to base", async (
           bondAmount: dnum.from("50", 18)[0],
           maturityTime: timestamp,
           trader: BOB,
+          destination: BOB,
+          basePayment: dnum.from("1", 18)[0],
         },
       },
     ],
@@ -1449,6 +1457,8 @@ test("getOpenShorts should account for shorts fully closed to base", async () =>
           bondAmount: dnum.from("100", 18)[0],
           maturityTime: timestamp,
           trader: BOB,
+          destination: BOB,
+          basePayment: dnum.from("2", 18)[0],
         },
       },
     ],
@@ -1550,6 +1560,8 @@ test("getOpenShorts should account for shorts partially closed to shares", async
           bondAmount: dnum.from("50", 18)[0],
           maturityTime: timestamp,
           trader: BOB,
+          destination: BOB,
+          basePayment: dnum.from("0.99", 18)[0], // did not close out to base
         },
       },
     ],
@@ -1660,6 +1672,8 @@ test("getOpenShorts should account for shorts fully closed to shares", async () 
           bondAmount: dnum.from("100", 18)[0],
           maturityTime: timestamp,
           trader: BOB,
+          destination: BOB,
+          basePayment: dnum.from("0.99", 18)[0], // did not close out to base
         },
       },
     ],
@@ -1721,6 +1735,8 @@ test("getClosedShorts should account for shorts closed to base", async () => {
           bondAmount: dnum.from("100", 18)[0],
           maturityTime: timestamp,
           trader: BOB,
+          destination: BOB,
+          basePayment: dnum.from("2", 18)[0], // did not close out to base
         },
       },
     ],
@@ -1787,6 +1803,8 @@ test("getClosedShorts should account for shorts closed to shares", async () => {
           bondAmount: dnum.from("100", 18)[0],
           maturityTime: timestamp,
           trader: BOB,
+          destination: BOB,
+          basePayment: dnum.from("1.21", 18)[0],
         },
       },
     ],
@@ -1863,6 +1881,7 @@ test("getOpenLpPosition should return zero when a position is fully closed", asy
         provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
         vaultShareAmount: dnum.from("498.567723245858722697", 18)[0],
         withdrawalShareAmount: 0n,
+        destination: BOB,
       },
     },
   ]);
@@ -1923,6 +1942,7 @@ test("getOpenLpPosition should return the current lpShareBalance and baseAmountP
         provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
         vaultShareAmount: dnum.from("498.567723245858722697", 18)[0],
         withdrawalShareAmount: 0n,
+        destination: BOB,
       },
     },
   ]);
@@ -1952,6 +1972,7 @@ test("getClosedLpShares should account for LP shares closed to base", async () =
         withdrawalShareAmount: 0n,
         lpAmount: dnum.from("5", 18)[0],
         lpSharePrice: dnum.from("2", 18)[0],
+        destination: BOB,
       },
     },
   ]);
@@ -1990,6 +2011,7 @@ test("getClosedLpShares should account for LP shares closed to vault shares", as
         withdrawalShareAmount: 0n,
         lpAmount: dnum.from("5", 18)[0],
         lpSharePrice: dnum.from("2", 18)[0],
+        destination: BOB,
       },
     },
   ]);
@@ -2025,6 +2047,7 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
         vaultShareAmount: dnum.from("9.8", 18)[0],
         provider: BOB,
         withdrawalShareAmount: dnum.from("5", 18)[0],
+        destination: BOB,
       },
     },
   ]);
@@ -2059,6 +2082,7 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
         vaultShareAmount: dnum.from("8", 18)[0],
         provider: BOB,
         withdrawalShareAmount: dnum.from("5", 18)[0],
+        destination: BOB,
       },
     },
   ]);

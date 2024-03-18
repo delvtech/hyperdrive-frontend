@@ -2,12 +2,12 @@ export declare const BalancerErrors: {
     readonly abi: readonly [];
     readonly bytecode: {
         readonly object: "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220266e2ba104e84b33f292012d642257d0222fb24ff031ac88ba274f6fcb83c50464736f6c63430008140033";
-        readonly sourceMap: "5206:10031:128:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;5206:10031:128;;;;;;;;;;;;;;;;;";
+        readonly sourceMap: "5206:10031:178:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;5206:10031:178;;;;;;;;;;;;;;;;;";
         readonly linkReferences: {};
     };
     readonly deployedBytecode: {
         readonly object: "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220266e2ba104e84b33f292012d642257d0222fb24ff031ac88ba274f6fcb83c50464736f6c63430008140033";
-        readonly sourceMap: "5206:10031:128:-:0;;;;;;;;";
+        readonly sourceMap: "5206:10031:178:-:0;;;;;;;;";
         readonly linkReferences: {};
     };
     readonly methodIdentifiers: {};
@@ -55,33 +55,33 @@ export declare const BalancerErrors: {
     };
     readonly ast: {
         readonly absolutePath: "test/3rdPartyLibs/BalancerErrors.sol";
-        readonly id: 69263;
+        readonly id: 74200;
         readonly exportedSymbols: {
-            readonly BalancerErrors: readonly [69262];
-            readonly _require: readonly [68706, 68725];
-            readonly _revert: readonly [68737, 68757];
+            readonly BalancerErrors: readonly [74199];
+            readonly _require: readonly [73643, 73662];
+            readonly _revert: readonly [73674, 73694];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "688:14550:128";
+        readonly src: "688:14550:178";
         readonly nodes: readonly [{
-            readonly id: 68690;
+            readonly id: 73627;
             readonly nodeType: "PragmaDirective";
-            readonly src: "688:31:128";
+            readonly src: "688:31:178";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.7", ".0", "<", "0.9", ".0"];
         }, {
-            readonly id: 68706;
+            readonly id: 73643;
             readonly nodeType: "FunctionDefinition";
-            readonly src: "926:101:128";
+            readonly src: "926:101:178";
             readonly nodes: readonly [];
             readonly body: {
-                readonly id: 68705;
+                readonly id: 73642;
                 readonly nodeType: "Block";
-                readonly src: "984:43:128";
+                readonly src: "984:43:178";
                 readonly nodes: readonly [];
                 readonly statements: readonly [{
                     readonly condition: {
-                        readonly id: 68699;
+                        readonly id: 73636;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: false;
@@ -89,14 +89,14 @@ export declare const BalancerErrors: {
                         readonly nodeType: "UnaryOperation";
                         readonly operator: "!";
                         readonly prefix: true;
-                        readonly src: "994:10:128";
+                        readonly src: "994:10:178";
                         readonly subExpression: {
-                            readonly id: 68698;
+                            readonly id: 73635;
                             readonly name: "condition";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 68693;
-                            readonly src: "995:9:128";
+                            readonly referencedDeclaration: 73630;
+                            readonly src: "995:9:178";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -107,18 +107,18 @@ export declare const BalancerErrors: {
                             readonly typeString: "bool";
                         };
                     };
-                    readonly id: 68704;
+                    readonly id: 73641;
                     readonly nodeType: "IfStatement";
-                    readonly src: "990:34:128";
+                    readonly src: "990:34:178";
                     readonly trueBody: {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 68701;
+                                readonly id: 73638;
                                 readonly name: "errorCode";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 68695;
-                                readonly src: "1014:9:128";
+                                readonly referencedDeclaration: 73632;
+                                readonly src: "1014:9:178";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -129,18 +129,18 @@ export declare const BalancerErrors: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 68700;
+                                readonly id: 73637;
                                 readonly name: "_revert";
                                 readonly nodeType: "Identifier";
-                                readonly overloadedDeclarations: readonly [68737, 68757];
-                                readonly referencedDeclaration: 68737;
-                                readonly src: "1006:7:128";
+                                readonly overloadedDeclarations: readonly [73674, 73694];
+                                readonly referencedDeclaration: 73674;
+                                readonly src: "1006:7:178";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$__$";
                                     readonly typeString: "function (uint256) pure";
                                 };
                             };
-                            readonly id: 68702;
+                            readonly id: 73639;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -149,42 +149,42 @@ export declare const BalancerErrors: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "1006:18:128";
+                            readonly src: "1006:18:178";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 68703;
+                        readonly id: 73640;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "1006:18:128";
+                        readonly src: "1006:18:178";
                     };
                 }];
             };
             readonly documentation: {
-                readonly id: 68691;
+                readonly id: 73628;
                 readonly nodeType: "StructuredDocumentation";
-                readonly src: "741:184:128";
+                readonly src: "741:184:178";
                 readonly text: " @dev Reverts if `condition` is false, with a revert reason containing `errorCode`. Only codes up to 999 are\n supported.\n Uses the default 'BAL' prefix for the error code";
             };
             readonly implemented: true;
             readonly kind: "freeFunction";
             readonly modifiers: readonly [];
             readonly name: "_require";
-            readonly nameLocation: "935:8:128";
+            readonly nameLocation: "935:8:178";
             readonly parameters: {
-                readonly id: 68696;
+                readonly id: 73633;
                 readonly nodeType: "ParameterList";
                 readonly parameters: readonly [{
                     readonly constant: false;
-                    readonly id: 68693;
+                    readonly id: 73630;
                     readonly mutability: "mutable";
                     readonly name: "condition";
-                    readonly nameLocation: "949:9:128";
+                    readonly nameLocation: "949:9:178";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 68706;
-                    readonly src: "944:14:128";
+                    readonly scope: 73643;
+                    readonly src: "944:14:178";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -192,10 +192,10 @@ export declare const BalancerErrors: {
                         readonly typeString: "bool";
                     };
                     readonly typeName: {
-                        readonly id: 68692;
+                        readonly id: 73629;
                         readonly name: "bool";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "944:4:128";
+                        readonly src: "944:4:178";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_bool";
                             readonly typeString: "bool";
@@ -204,13 +204,13 @@ export declare const BalancerErrors: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 68695;
+                    readonly id: 73632;
                     readonly mutability: "mutable";
                     readonly name: "errorCode";
-                    readonly nameLocation: "968:9:128";
+                    readonly nameLocation: "968:9:178";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 68706;
-                    readonly src: "960:17:128";
+                    readonly scope: 73643;
+                    readonly src: "960:17:178";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -218,10 +218,10 @@ export declare const BalancerErrors: {
                         readonly typeString: "uint256";
                     };
                     readonly typeName: {
-                        readonly id: 68694;
+                        readonly id: 73631;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "960:7:128";
+                        readonly src: "960:7:178";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_uint256";
                             readonly typeString: "uint256";
@@ -229,31 +229,31 @@ export declare const BalancerErrors: {
                     };
                     readonly visibility: "internal";
                 }];
-                readonly src: "943:35:128";
+                readonly src: "943:35:178";
             };
             readonly returnParameters: {
-                readonly id: 68697;
+                readonly id: 73634;
                 readonly nodeType: "ParameterList";
                 readonly parameters: readonly [];
-                readonly src: "984:0:128";
+                readonly src: "984:0:178";
             };
-            readonly scope: 69263;
+            readonly scope: 74200;
             readonly stateMutability: "pure";
             readonly virtual: false;
             readonly visibility: "internal";
         }, {
-            readonly id: 68725;
+            readonly id: 73662;
             readonly nodeType: "FunctionDefinition";
-            readonly src: "1162:124:128";
+            readonly src: "1162:124:178";
             readonly nodes: readonly [];
             readonly body: {
-                readonly id: 68724;
+                readonly id: 73661;
                 readonly nodeType: "Block";
-                readonly src: "1235:51:128";
+                readonly src: "1235:51:178";
                 readonly nodes: readonly [];
                 readonly statements: readonly [{
                     readonly condition: {
-                        readonly id: 68717;
+                        readonly id: 73654;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: false;
@@ -261,14 +261,14 @@ export declare const BalancerErrors: {
                         readonly nodeType: "UnaryOperation";
                         readonly operator: "!";
                         readonly prefix: true;
-                        readonly src: "1245:10:128";
+                        readonly src: "1245:10:178";
                         readonly subExpression: {
-                            readonly id: 68716;
+                            readonly id: 73653;
                             readonly name: "condition";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 68709;
-                            readonly src: "1246:9:128";
+                            readonly referencedDeclaration: 73646;
+                            readonly src: "1246:9:178";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
@@ -279,29 +279,29 @@ export declare const BalancerErrors: {
                             readonly typeString: "bool";
                         };
                     };
-                    readonly id: 68723;
+                    readonly id: 73660;
                     readonly nodeType: "IfStatement";
-                    readonly src: "1241:42:128";
+                    readonly src: "1241:42:178";
                     readonly trueBody: {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 68719;
+                                readonly id: 73656;
                                 readonly name: "errorCode";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 68711;
-                                readonly src: "1265:9:128";
+                                readonly referencedDeclaration: 73648;
+                                readonly src: "1265:9:178";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 68720;
+                                readonly id: 73657;
                                 readonly name: "prefix";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 68713;
-                                readonly src: "1276:6:128";
+                                readonly referencedDeclaration: 73650;
+                                readonly src: "1276:6:178";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes3";
                                     readonly typeString: "bytes3";
@@ -315,18 +315,18 @@ export declare const BalancerErrors: {
                                     readonly typeIdentifier: "t_bytes3";
                                     readonly typeString: "bytes3";
                                 }];
-                                readonly id: 68718;
+                                readonly id: 73655;
                                 readonly name: "_revert";
                                 readonly nodeType: "Identifier";
-                                readonly overloadedDeclarations: readonly [68737, 68757];
-                                readonly referencedDeclaration: 68757;
-                                readonly src: "1257:7:128";
+                                readonly overloadedDeclarations: readonly [73674, 73694];
+                                readonly referencedDeclaration: 73694;
+                                readonly src: "1257:7:178";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_bytes3_$returns$__$";
                                     readonly typeString: "function (uint256,bytes3) pure";
                                 };
                             };
-                            readonly id: 68721;
+                            readonly id: 73658;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -335,42 +335,42 @@ export declare const BalancerErrors: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "1257:26:128";
+                            readonly src: "1257:26:178";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 68722;
+                        readonly id: 73659;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "1257:26:128";
+                        readonly src: "1257:26:178";
                     };
                 }];
             };
             readonly documentation: {
-                readonly id: 68707;
+                readonly id: 73644;
                 readonly nodeType: "StructuredDocumentation";
-                readonly src: "1029:132:128";
+                readonly src: "1029:132:178";
                 readonly text: " @dev Reverts if `condition` is false, with a revert reason containing `errorCode`. Only codes up to 999 are\n supported.";
             };
             readonly implemented: true;
             readonly kind: "freeFunction";
             readonly modifiers: readonly [];
             readonly name: "_require";
-            readonly nameLocation: "1171:8:128";
+            readonly nameLocation: "1171:8:178";
             readonly parameters: {
-                readonly id: 68714;
+                readonly id: 73651;
                 readonly nodeType: "ParameterList";
                 readonly parameters: readonly [{
                     readonly constant: false;
-                    readonly id: 68709;
+                    readonly id: 73646;
                     readonly mutability: "mutable";
                     readonly name: "condition";
-                    readonly nameLocation: "1185:9:128";
+                    readonly nameLocation: "1185:9:178";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 68725;
-                    readonly src: "1180:14:128";
+                    readonly scope: 73662;
+                    readonly src: "1180:14:178";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -378,10 +378,10 @@ export declare const BalancerErrors: {
                         readonly typeString: "bool";
                     };
                     readonly typeName: {
-                        readonly id: 68708;
+                        readonly id: 73645;
                         readonly name: "bool";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "1180:4:128";
+                        readonly src: "1180:4:178";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_bool";
                             readonly typeString: "bool";
@@ -390,13 +390,13 @@ export declare const BalancerErrors: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 68711;
+                    readonly id: 73648;
                     readonly mutability: "mutable";
                     readonly name: "errorCode";
-                    readonly nameLocation: "1204:9:128";
+                    readonly nameLocation: "1204:9:178";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 68725;
-                    readonly src: "1196:17:128";
+                    readonly scope: 73662;
+                    readonly src: "1196:17:178";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -404,10 +404,10 @@ export declare const BalancerErrors: {
                         readonly typeString: "uint256";
                     };
                     readonly typeName: {
-                        readonly id: 68710;
+                        readonly id: 73647;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "1196:7:128";
+                        readonly src: "1196:7:178";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_uint256";
                             readonly typeString: "uint256";
@@ -416,13 +416,13 @@ export declare const BalancerErrors: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 68713;
+                    readonly id: 73650;
                     readonly mutability: "mutable";
                     readonly name: "prefix";
-                    readonly nameLocation: "1222:6:128";
+                    readonly nameLocation: "1222:6:178";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 68725;
-                    readonly src: "1215:13:128";
+                    readonly scope: 73662;
+                    readonly src: "1215:13:178";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -430,10 +430,10 @@ export declare const BalancerErrors: {
                         readonly typeString: "bytes3";
                     };
                     readonly typeName: {
-                        readonly id: 68712;
+                        readonly id: 73649;
                         readonly name: "bytes3";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "1215:6:128";
+                        readonly src: "1215:6:178";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_bytes3";
                             readonly typeString: "bytes3";
@@ -441,51 +441,51 @@ export declare const BalancerErrors: {
                     };
                     readonly visibility: "internal";
                 }];
-                readonly src: "1179:50:128";
+                readonly src: "1179:50:178";
             };
             readonly returnParameters: {
-                readonly id: 68715;
+                readonly id: 73652;
                 readonly nodeType: "ParameterList";
                 readonly parameters: readonly [];
-                readonly src: "1235:0:128";
+                readonly src: "1235:0:178";
             };
-            readonly scope: 69263;
+            readonly scope: 74200;
             readonly stateMutability: "pure";
             readonly virtual: false;
             readonly visibility: "internal";
         }, {
-            readonly id: 68737;
+            readonly id: 73674;
             readonly nodeType: "FunctionDefinition";
-            readonly src: "1445:126:128";
+            readonly src: "1445:126:178";
             readonly nodes: readonly [];
             readonly body: {
-                readonly id: 68736;
+                readonly id: 73673;
                 readonly nodeType: "Block";
-                readonly src: "1486:85:128";
+                readonly src: "1486:85:178";
                 readonly nodes: readonly [];
                 readonly statements: readonly [{
                     readonly expression: {
                         readonly arguments: readonly [{
-                            readonly id: 68732;
+                            readonly id: 73669;
                             readonly name: "errorCode";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 68728;
-                            readonly src: "1500:9:128";
+                            readonly referencedDeclaration: 73665;
+                            readonly src: "1500:9:178";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         }, {
                             readonly hexValue: "3078343234313463";
-                            readonly id: 68733;
+                            readonly id: 73670;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
                             readonly kind: "number";
                             readonly lValueRequested: false;
                             readonly nodeType: "Literal";
-                            readonly src: "1511:8:128";
+                            readonly src: "1511:8:178";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_rational_4342092_by_1";
                                 readonly typeString: "int_const 4342092";
@@ -500,18 +500,18 @@ export declare const BalancerErrors: {
                                 readonly typeIdentifier: "t_rational_4342092_by_1";
                                 readonly typeString: "int_const 4342092";
                             }];
-                            readonly id: 68731;
+                            readonly id: 73668;
                             readonly name: "_revert";
                             readonly nodeType: "Identifier";
-                            readonly overloadedDeclarations: readonly [68737, 68757];
-                            readonly referencedDeclaration: 68757;
-                            readonly src: "1492:7:128";
+                            readonly overloadedDeclarations: readonly [73674, 73694];
+                            readonly referencedDeclaration: 73694;
+                            readonly src: "1492:7:178";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_bytes3_$returns$__$";
                                 readonly typeString: "function (uint256,bytes3) pure";
                             };
                         };
-                        readonly id: 68734;
+                        readonly id: 73671;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: false;
@@ -520,41 +520,41 @@ export declare const BalancerErrors: {
                         readonly nameLocations: readonly [];
                         readonly names: readonly [];
                         readonly nodeType: "FunctionCall";
-                        readonly src: "1492:28:128";
+                        readonly src: "1492:28:178";
                         readonly tryCall: false;
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_tuple$__$";
                             readonly typeString: "tuple()";
                         };
                     };
-                    readonly id: 68735;
+                    readonly id: 73672;
                     readonly nodeType: "ExpressionStatement";
-                    readonly src: "1492:28:128";
+                    readonly src: "1492:28:178";
                 }];
             };
             readonly documentation: {
-                readonly id: 68726;
+                readonly id: 73663;
                 readonly nodeType: "StructuredDocumentation";
-                readonly src: "1288:156:128";
+                readonly src: "1288:156:178";
                 readonly text: " @dev Reverts with a revert reason containing `errorCode`. Only codes up to 999 are supported.\n Uses the default 'BAL' prefix for the error code";
             };
             readonly implemented: true;
             readonly kind: "freeFunction";
             readonly modifiers: readonly [];
             readonly name: "_revert";
-            readonly nameLocation: "1454:7:128";
+            readonly nameLocation: "1454:7:178";
             readonly parameters: {
-                readonly id: 68729;
+                readonly id: 73666;
                 readonly nodeType: "ParameterList";
                 readonly parameters: readonly [{
                     readonly constant: false;
-                    readonly id: 68728;
+                    readonly id: 73665;
                     readonly mutability: "mutable";
                     readonly name: "errorCode";
-                    readonly nameLocation: "1470:9:128";
+                    readonly nameLocation: "1470:9:178";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 68737;
-                    readonly src: "1462:17:128";
+                    readonly scope: 73674;
+                    readonly src: "1462:17:178";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -562,10 +562,10 @@ export declare const BalancerErrors: {
                         readonly typeString: "uint256";
                     };
                     readonly typeName: {
-                        readonly id: 68727;
+                        readonly id: 73664;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "1462:7:128";
+                        readonly src: "1462:7:178";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_uint256";
                             readonly typeString: "uint256";
@@ -573,39 +573,39 @@ export declare const BalancerErrors: {
                     };
                     readonly visibility: "internal";
                 }];
-                readonly src: "1461:19:128";
+                readonly src: "1461:19:178";
             };
             readonly returnParameters: {
-                readonly id: 68730;
+                readonly id: 73667;
                 readonly nodeType: "ParameterList";
                 readonly parameters: readonly [];
-                readonly src: "1486:0:128";
+                readonly src: "1486:0:178";
             };
-            readonly scope: 69263;
+            readonly scope: 74200;
             readonly stateMutability: "pure";
             readonly virtual: false;
             readonly visibility: "internal";
         }, {
-            readonly id: 68757;
+            readonly id: 73694;
             readonly nodeType: "FunctionDefinition";
-            readonly src: "1678:3526:128";
+            readonly src: "1678:3526:178";
             readonly nodes: readonly [];
             readonly body: {
-                readonly id: 68756;
+                readonly id: 73693;
                 readonly nodeType: "Block";
-                readonly src: "1734:3470:128";
+                readonly src: "1734:3470:178";
                 readonly nodes: readonly [];
                 readonly statements: readonly [{
-                    readonly assignments: readonly [68746];
+                    readonly assignments: readonly [73683];
                     readonly declarations: readonly [{
                         readonly constant: false;
-                        readonly id: 68746;
+                        readonly id: 73683;
                         readonly mutability: "mutable";
                         readonly name: "prefixUint";
-                        readonly nameLocation: "1748:10:128";
+                        readonly nameLocation: "1748:10:178";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 68756;
-                        readonly src: "1740:18:128";
+                        readonly scope: 73693;
+                        readonly src: "1740:18:178";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -613,10 +613,10 @@ export declare const BalancerErrors: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 68745;
+                            readonly id: 73682;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1740:7:128";
+                            readonly src: "1740:7:178";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -624,16 +624,16 @@ export declare const BalancerErrors: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly id: 68754;
+                    readonly id: 73691;
                     readonly initialValue: {
                         readonly arguments: readonly [{
                             readonly arguments: readonly [{
-                                readonly id: 68751;
+                                readonly id: 73688;
                                 readonly name: "prefix";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 68742;
-                                readonly src: "1776:6:128";
+                                readonly referencedDeclaration: 73679;
+                                readonly src: "1776:6:178";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes3";
                                     readonly typeString: "bytes3";
@@ -644,26 +644,26 @@ export declare const BalancerErrors: {
                                     readonly typeIdentifier: "t_bytes3";
                                     readonly typeString: "bytes3";
                                 }];
-                                readonly id: 68750;
+                                readonly id: 73687;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
                                 readonly lValueRequested: false;
                                 readonly nodeType: "ElementaryTypeNameExpression";
-                                readonly src: "1769:6:128";
+                                readonly src: "1769:6:178";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_type$_t_uint24_$";
                                     readonly typeString: "type(uint24)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 68749;
+                                    readonly id: 73686;
                                     readonly name: "uint24";
                                     readonly nodeType: "ElementaryTypeName";
-                                    readonly src: "1769:6:128";
+                                    readonly src: "1769:6:178";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 68752;
+                            readonly id: 73689;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -672,7 +672,7 @@ export declare const BalancerErrors: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "1769:14:128";
+                            readonly src: "1769:14:178";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint24";
@@ -684,26 +684,26 @@ export declare const BalancerErrors: {
                                 readonly typeIdentifier: "t_uint24";
                                 readonly typeString: "uint24";
                             }];
-                            readonly id: 68748;
+                            readonly id: 73685;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
                             readonly lValueRequested: false;
                             readonly nodeType: "ElementaryTypeNameExpression";
-                            readonly src: "1761:7:128";
+                            readonly src: "1761:7:178";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_type$_t_uint256_$";
                                 readonly typeString: "type(uint256)";
                             };
                             readonly typeName: {
-                                readonly id: 68747;
+                                readonly id: 73684;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "1761:7:128";
+                                readonly src: "1761:7:178";
                                 readonly typeDescriptions: {};
                             };
                         };
-                        readonly id: 68753;
+                        readonly id: 73690;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: false;
@@ -712,7 +712,7 @@ export declare const BalancerErrors: {
                         readonly nameLocations: readonly [];
                         readonly names: readonly [];
                         readonly nodeType: "FunctionCall";
-                        readonly src: "1761:23:128";
+                        readonly src: "1761:23:178";
                         readonly tryCall: false;
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_uint256";
@@ -720,354 +720,354 @@ export declare const BalancerErrors: {
                         };
                     };
                     readonly nodeType: "VariableDeclarationStatement";
-                    readonly src: "1740:44:128";
+                    readonly src: "1740:44:178";
                 }, {
                     readonly AST: {
                         readonly nodeType: "YulBlock";
-                        readonly src: "2573:2629:128";
+                        readonly src: "2573:2629:178";
                         readonly statements: readonly [{
                             readonly nodeType: "YulVariableDeclaration";
-                            readonly src: "2847:42:128";
+                            readonly src: "2847:42:178";
                             readonly value: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly name: "errorCode";
                                         readonly nodeType: "YulIdentifier";
-                                        readonly src: "2868:9:128";
+                                        readonly src: "2868:9:178";
                                     }, {
                                         readonly kind: "number";
                                         readonly nodeType: "YulLiteral";
-                                        readonly src: "2879:2:128";
+                                        readonly src: "2879:2:178";
                                         readonly type: "";
                                         readonly value: "10";
                                     }];
                                     readonly functionName: {
                                         readonly name: "mod";
                                         readonly nodeType: "YulIdentifier";
-                                        readonly src: "2864:3:128";
+                                        readonly src: "2864:3:178";
                                     };
                                     readonly nodeType: "YulFunctionCall";
-                                    readonly src: "2864:18:128";
+                                    readonly src: "2864:18:178";
                                 }, {
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "2884:4:128";
+                                    readonly src: "2884:4:178";
                                     readonly type: "";
                                     readonly value: "0x30";
                                 }];
                                 readonly functionName: {
                                     readonly name: "add";
                                     readonly nodeType: "YulIdentifier";
-                                    readonly src: "2860:3:128";
+                                    readonly src: "2860:3:178";
                                 };
                                 readonly nodeType: "YulFunctionCall";
-                                readonly src: "2860:29:128";
+                                readonly src: "2860:29:178";
                             };
                             readonly variables: readonly [{
                                 readonly name: "units";
                                 readonly nodeType: "YulTypedName";
-                                readonly src: "2851:5:128";
+                                readonly src: "2851:5:178";
                                 readonly type: "";
                             }];
                         }, {
                             readonly nodeType: "YulAssignment";
-                            readonly src: "2899:31:128";
+                            readonly src: "2899:31:178";
                             readonly value: {
                                 readonly arguments: readonly [{
                                     readonly name: "errorCode";
                                     readonly nodeType: "YulIdentifier";
-                                    readonly src: "2916:9:128";
+                                    readonly src: "2916:9:178";
                                 }, {
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "2927:2:128";
+                                    readonly src: "2927:2:178";
                                     readonly type: "";
                                     readonly value: "10";
                                 }];
                                 readonly functionName: {
                                     readonly name: "div";
                                     readonly nodeType: "YulIdentifier";
-                                    readonly src: "2912:3:128";
+                                    readonly src: "2912:3:178";
                                 };
                                 readonly nodeType: "YulFunctionCall";
-                                readonly src: "2912:18:128";
+                                readonly src: "2912:18:178";
                             };
                             readonly variableNames: readonly [{
                                 readonly name: "errorCode";
                                 readonly nodeType: "YulIdentifier";
-                                readonly src: "2899:9:128";
+                                readonly src: "2899:9:178";
                             }];
                         }, {
                             readonly nodeType: "YulVariableDeclaration";
-                            readonly src: "2939:43:128";
+                            readonly src: "2939:43:178";
                             readonly value: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly name: "errorCode";
                                         readonly nodeType: "YulIdentifier";
-                                        readonly src: "2961:9:128";
+                                        readonly src: "2961:9:178";
                                     }, {
                                         readonly kind: "number";
                                         readonly nodeType: "YulLiteral";
-                                        readonly src: "2972:2:128";
+                                        readonly src: "2972:2:178";
                                         readonly type: "";
                                         readonly value: "10";
                                     }];
                                     readonly functionName: {
                                         readonly name: "mod";
                                         readonly nodeType: "YulIdentifier";
-                                        readonly src: "2957:3:128";
+                                        readonly src: "2957:3:178";
                                     };
                                     readonly nodeType: "YulFunctionCall";
-                                    readonly src: "2957:18:128";
+                                    readonly src: "2957:18:178";
                                 }, {
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "2977:4:128";
+                                    readonly src: "2977:4:178";
                                     readonly type: "";
                                     readonly value: "0x30";
                                 }];
                                 readonly functionName: {
                                     readonly name: "add";
                                     readonly nodeType: "YulIdentifier";
-                                    readonly src: "2953:3:128";
+                                    readonly src: "2953:3:178";
                                 };
                                 readonly nodeType: "YulFunctionCall";
-                                readonly src: "2953:29:128";
+                                readonly src: "2953:29:178";
                             };
                             readonly variables: readonly [{
                                 readonly name: "tenths";
                                 readonly nodeType: "YulTypedName";
-                                readonly src: "2943:6:128";
+                                readonly src: "2943:6:178";
                                 readonly type: "";
                             }];
                         }, {
                             readonly nodeType: "YulAssignment";
-                            readonly src: "2992:31:128";
+                            readonly src: "2992:31:178";
                             readonly value: {
                                 readonly arguments: readonly [{
                                     readonly name: "errorCode";
                                     readonly nodeType: "YulIdentifier";
-                                    readonly src: "3009:9:128";
+                                    readonly src: "3009:9:178";
                                 }, {
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "3020:2:128";
+                                    readonly src: "3020:2:178";
                                     readonly type: "";
                                     readonly value: "10";
                                 }];
                                 readonly functionName: {
                                     readonly name: "div";
                                     readonly nodeType: "YulIdentifier";
-                                    readonly src: "3005:3:128";
+                                    readonly src: "3005:3:178";
                                 };
                                 readonly nodeType: "YulFunctionCall";
-                                readonly src: "3005:18:128";
+                                readonly src: "3005:18:178";
                             };
                             readonly variableNames: readonly [{
                                 readonly name: "errorCode";
                                 readonly nodeType: "YulIdentifier";
-                                readonly src: "2992:9:128";
+                                readonly src: "2992:9:178";
                             }];
                         }, {
                             readonly nodeType: "YulVariableDeclaration";
-                            readonly src: "3032:45:128";
+                            readonly src: "3032:45:178";
                             readonly value: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly name: "errorCode";
                                         readonly nodeType: "YulIdentifier";
-                                        readonly src: "3056:9:128";
+                                        readonly src: "3056:9:178";
                                     }, {
                                         readonly kind: "number";
                                         readonly nodeType: "YulLiteral";
-                                        readonly src: "3067:2:128";
+                                        readonly src: "3067:2:178";
                                         readonly type: "";
                                         readonly value: "10";
                                     }];
                                     readonly functionName: {
                                         readonly name: "mod";
                                         readonly nodeType: "YulIdentifier";
-                                        readonly src: "3052:3:128";
+                                        readonly src: "3052:3:178";
                                     };
                                     readonly nodeType: "YulFunctionCall";
-                                    readonly src: "3052:18:128";
+                                    readonly src: "3052:18:178";
                                 }, {
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "3072:4:128";
+                                    readonly src: "3072:4:178";
                                     readonly type: "";
                                     readonly value: "0x30";
                                 }];
                                 readonly functionName: {
                                     readonly name: "add";
                                     readonly nodeType: "YulIdentifier";
-                                    readonly src: "3048:3:128";
+                                    readonly src: "3048:3:178";
                                 };
                                 readonly nodeType: "YulFunctionCall";
-                                readonly src: "3048:29:128";
+                                readonly src: "3048:29:178";
                             };
                             readonly variables: readonly [{
                                 readonly name: "hundreds";
                                 readonly nodeType: "YulTypedName";
-                                readonly src: "3036:8:128";
+                                readonly src: "3036:8:178";
                                 readonly type: "";
                             }];
                         }, {
                             readonly nodeType: "YulVariableDeclaration";
-                            readonly src: "3710:61:128";
+                            readonly src: "3710:61:178";
                             readonly value: {
                                 readonly arguments: readonly [{
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "3737:2:128";
+                                    readonly src: "3737:2:178";
                                     readonly type: "";
                                     readonly value: "24";
                                 }, {
                                     readonly arguments: readonly [{
                                         readonly kind: "number";
                                         readonly nodeType: "YulLiteral";
-                                        readonly src: "3745:4:128";
+                                        readonly src: "3745:4:178";
                                         readonly type: "";
                                         readonly value: "0x23";
                                     }, {
                                         readonly arguments: readonly [{
                                             readonly kind: "number";
                                             readonly nodeType: "YulLiteral";
-                                            readonly src: "3755:1:128";
+                                            readonly src: "3755:1:178";
                                             readonly type: "";
                                             readonly value: "8";
                                         }, {
                                             readonly name: "prefixUint";
                                             readonly nodeType: "YulIdentifier";
-                                            readonly src: "3758:10:128";
+                                            readonly src: "3758:10:178";
                                         }];
                                         readonly functionName: {
                                             readonly name: "shl";
                                             readonly nodeType: "YulIdentifier";
-                                            readonly src: "3751:3:128";
+                                            readonly src: "3751:3:178";
                                         };
                                         readonly nodeType: "YulFunctionCall";
-                                        readonly src: "3751:18:128";
+                                        readonly src: "3751:18:178";
                                     }];
                                     readonly functionName: {
                                         readonly name: "add";
                                         readonly nodeType: "YulIdentifier";
-                                        readonly src: "3741:3:128";
+                                        readonly src: "3741:3:178";
                                     };
                                     readonly nodeType: "YulFunctionCall";
-                                    readonly src: "3741:29:128";
+                                    readonly src: "3741:29:178";
                                 }];
                                 readonly functionName: {
                                     readonly name: "shl";
                                     readonly nodeType: "YulIdentifier";
-                                    readonly src: "3733:3:128";
+                                    readonly src: "3733:3:178";
                                 };
                                 readonly nodeType: "YulFunctionCall";
-                                readonly src: "3733:38:128";
+                                readonly src: "3733:38:178";
                             };
                             readonly variables: readonly [{
                                 readonly name: "formattedPrefix";
                                 readonly nodeType: "YulTypedName";
-                                readonly src: "3714:15:128";
+                                readonly src: "3714:15:178";
                                 readonly type: "";
                             }];
                         }, {
                             readonly nodeType: "YulVariableDeclaration";
-                            readonly src: "3781:182:128";
+                            readonly src: "3781:182:178";
                             readonly value: {
                                 readonly arguments: readonly [{
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "3818:3:128";
+                                    readonly src: "3818:3:178";
                                     readonly type: "";
                                     readonly value: "200";
                                 }, {
                                     readonly arguments: readonly [{
                                         readonly name: "formattedPrefix";
                                         readonly nodeType: "YulIdentifier";
-                                        readonly src: "3856:15:128";
+                                        readonly src: "3856:15:178";
                                     }, {
                                         readonly arguments: readonly [{
                                             readonly arguments: readonly [{
                                                 readonly name: "units";
                                                 readonly nodeType: "YulIdentifier";
-                                                readonly src: "3897:5:128";
+                                                readonly src: "3897:5:178";
                                             }, {
                                                 readonly arguments: readonly [{
                                                     readonly kind: "number";
                                                     readonly nodeType: "YulLiteral";
-                                                    readonly src: "3908:1:128";
+                                                    readonly src: "3908:1:178";
                                                     readonly type: "";
                                                     readonly value: "8";
                                                 }, {
                                                     readonly name: "tenths";
                                                     readonly nodeType: "YulIdentifier";
-                                                    readonly src: "3911:6:128";
+                                                    readonly src: "3911:6:178";
                                                 }];
                                                 readonly functionName: {
                                                     readonly name: "shl";
                                                     readonly nodeType: "YulIdentifier";
-                                                    readonly src: "3904:3:128";
+                                                    readonly src: "3904:3:178";
                                                 };
                                                 readonly nodeType: "YulFunctionCall";
-                                                readonly src: "3904:14:128";
+                                                readonly src: "3904:14:178";
                                             }];
                                             readonly functionName: {
                                                 readonly name: "add";
                                                 readonly nodeType: "YulIdentifier";
-                                                readonly src: "3893:3:128";
+                                                readonly src: "3893:3:178";
                                             };
                                             readonly nodeType: "YulFunctionCall";
-                                            readonly src: "3893:26:128";
+                                            readonly src: "3893:26:178";
                                         }, {
                                             readonly arguments: readonly [{
                                                 readonly kind: "number";
                                                 readonly nodeType: "YulLiteral";
-                                                readonly src: "3925:2:128";
+                                                readonly src: "3925:2:178";
                                                 readonly type: "";
                                                 readonly value: "16";
                                             }, {
                                                 readonly name: "hundreds";
                                                 readonly nodeType: "YulIdentifier";
-                                                readonly src: "3929:8:128";
+                                                readonly src: "3929:8:178";
                                             }];
                                             readonly functionName: {
                                                 readonly name: "shl";
                                                 readonly nodeType: "YulIdentifier";
-                                                readonly src: "3921:3:128";
+                                                readonly src: "3921:3:178";
                                             };
                                             readonly nodeType: "YulFunctionCall";
-                                            readonly src: "3921:17:128";
+                                            readonly src: "3921:17:178";
                                         }];
                                         readonly functionName: {
                                             readonly name: "add";
                                             readonly nodeType: "YulIdentifier";
-                                            readonly src: "3889:3:128";
+                                            readonly src: "3889:3:178";
                                         };
                                         readonly nodeType: "YulFunctionCall";
-                                        readonly src: "3889:50:128";
+                                        readonly src: "3889:50:178";
                                     }];
                                     readonly functionName: {
                                         readonly name: "add";
                                         readonly nodeType: "YulIdentifier";
-                                        readonly src: "3835:3:128";
+                                        readonly src: "3835:3:178";
                                     };
                                     readonly nodeType: "YulFunctionCall";
-                                    readonly src: "3835:118:128";
+                                    readonly src: "3835:118:178";
                                 }];
                                 readonly functionName: {
                                     readonly name: "shl";
                                     readonly nodeType: "YulIdentifier";
-                                    readonly src: "3801:3:128";
+                                    readonly src: "3801:3:178";
                                 };
                                 readonly nodeType: "YulFunctionCall";
-                                readonly src: "3801:162:128";
+                                readonly src: "3801:162:178";
                             };
                             readonly variables: readonly [{
                                 readonly name: "revertReason";
                                 readonly nodeType: "YulTypedName";
-                                readonly src: "3785:12:128";
+                                readonly src: "3785:12:178";
                                 readonly type: "";
                             }];
                         }, {
@@ -1075,204 +1075,204 @@ export declare const BalancerErrors: {
                                 readonly arguments: readonly [{
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "4491:3:128";
+                                    readonly src: "4491:3:178";
                                     readonly type: "";
                                     readonly value: "0x0";
                                 }, {
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "4508:66:128";
+                                    readonly src: "4508:66:178";
                                     readonly type: "";
                                     readonly value: "0x08c379a000000000000000000000000000000000000000000000000000000000";
                                 }];
                                 readonly functionName: {
                                     readonly name: "mstore";
                                     readonly nodeType: "YulIdentifier";
-                                    readonly src: "4471:6:128";
+                                    readonly src: "4471:6:178";
                                 };
                                 readonly nodeType: "YulFunctionCall";
-                                readonly src: "4471:113:128";
+                                readonly src: "4471:113:178";
                             };
                             readonly nodeType: "YulExpressionStatement";
-                            readonly src: "4471:113:128";
+                            readonly src: "4471:113:178";
                         }, {
                             readonly expression: {
                                 readonly arguments: readonly [{
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "4730:4:128";
+                                    readonly src: "4730:4:178";
                                     readonly type: "";
                                     readonly value: "0x04";
                                 }, {
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "4748:66:128";
+                                    readonly src: "4748:66:178";
                                     readonly type: "";
                                     readonly value: "0x0000000000000000000000000000000000000000000000000000000000000020";
                                 }];
                                 readonly functionName: {
                                     readonly name: "mstore";
                                     readonly nodeType: "YulIdentifier";
-                                    readonly src: "4710:6:128";
+                                    readonly src: "4710:6:178";
                                 };
                                 readonly nodeType: "YulFunctionCall";
-                                readonly src: "4710:114:128";
+                                readonly src: "4710:114:178";
                             };
                             readonly nodeType: "YulExpressionStatement";
-                            readonly src: "4710:114:128";
+                            readonly src: "4710:114:178";
                         }, {
                             readonly expression: {
                                 readonly arguments: readonly [{
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "4893:4:128";
+                                    readonly src: "4893:4:178";
                                     readonly type: "";
                                     readonly value: "0x24";
                                 }, {
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "4899:1:128";
+                                    readonly src: "4899:1:178";
                                     readonly type: "";
                                     readonly value: "7";
                                 }];
                                 readonly functionName: {
                                     readonly name: "mstore";
                                     readonly nodeType: "YulIdentifier";
-                                    readonly src: "4886:6:128";
+                                    readonly src: "4886:6:178";
                                 };
                                 readonly nodeType: "YulFunctionCall";
-                                readonly src: "4886:15:128";
+                                readonly src: "4886:15:178";
                             };
                             readonly nodeType: "YulExpressionStatement";
-                            readonly src: "4886:15:128";
+                            readonly src: "4886:15:178";
                         }, {
                             readonly expression: {
                                 readonly arguments: readonly [{
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "4966:4:128";
+                                    readonly src: "4966:4:178";
                                     readonly type: "";
                                     readonly value: "0x44";
                                 }, {
                                     readonly name: "revertReason";
                                     readonly nodeType: "YulIdentifier";
-                                    readonly src: "4972:12:128";
+                                    readonly src: "4972:12:178";
                                 }];
                                 readonly functionName: {
                                     readonly name: "mstore";
                                     readonly nodeType: "YulIdentifier";
-                                    readonly src: "4959:6:128";
+                                    readonly src: "4959:6:178";
                                 };
                                 readonly nodeType: "YulFunctionCall";
-                                readonly src: "4959:26:128";
+                                readonly src: "4959:26:178";
                             };
                             readonly nodeType: "YulExpressionStatement";
-                            readonly src: "4959:26:128";
+                            readonly src: "4959:26:178";
                         }, {
                             readonly expression: {
                                 readonly arguments: readonly [{
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "5189:1:128";
+                                    readonly src: "5189:1:178";
                                     readonly type: "";
                                     readonly value: "0";
                                 }, {
                                     readonly kind: "number";
                                     readonly nodeType: "YulLiteral";
-                                    readonly src: "5192:3:128";
+                                    readonly src: "5192:3:178";
                                     readonly type: "";
                                     readonly value: "100";
                                 }];
                                 readonly functionName: {
                                     readonly name: "revert";
                                     readonly nodeType: "YulIdentifier";
-                                    readonly src: "5182:6:128";
+                                    readonly src: "5182:6:178";
                                 };
                                 readonly nodeType: "YulFunctionCall";
-                                readonly src: "5182:14:128";
+                                readonly src: "5182:14:178";
                             };
                             readonly nodeType: "YulExpressionStatement";
-                            readonly src: "5182:14:128";
+                            readonly src: "5182:14:178";
                         }];
                     };
                     readonly evmVersion: "paris";
                     readonly externalReferences: readonly [{
-                        readonly declaration: 68740;
+                        readonly declaration: 73677;
                         readonly isOffset: false;
                         readonly isSlot: false;
-                        readonly src: "2868:9:128";
+                        readonly src: "2868:9:178";
                         readonly valueSize: 1;
                     }, {
-                        readonly declaration: 68740;
+                        readonly declaration: 73677;
                         readonly isOffset: false;
                         readonly isSlot: false;
-                        readonly src: "2899:9:128";
+                        readonly src: "2899:9:178";
                         readonly valueSize: 1;
                     }, {
-                        readonly declaration: 68740;
+                        readonly declaration: 73677;
                         readonly isOffset: false;
                         readonly isSlot: false;
-                        readonly src: "2916:9:128";
+                        readonly src: "2916:9:178";
                         readonly valueSize: 1;
                     }, {
-                        readonly declaration: 68740;
+                        readonly declaration: 73677;
                         readonly isOffset: false;
                         readonly isSlot: false;
-                        readonly src: "2961:9:128";
+                        readonly src: "2961:9:178";
                         readonly valueSize: 1;
                     }, {
-                        readonly declaration: 68740;
+                        readonly declaration: 73677;
                         readonly isOffset: false;
                         readonly isSlot: false;
-                        readonly src: "2992:9:128";
+                        readonly src: "2992:9:178";
                         readonly valueSize: 1;
                     }, {
-                        readonly declaration: 68740;
+                        readonly declaration: 73677;
                         readonly isOffset: false;
                         readonly isSlot: false;
-                        readonly src: "3009:9:128";
+                        readonly src: "3009:9:178";
                         readonly valueSize: 1;
                     }, {
-                        readonly declaration: 68740;
+                        readonly declaration: 73677;
                         readonly isOffset: false;
                         readonly isSlot: false;
-                        readonly src: "3056:9:128";
+                        readonly src: "3056:9:178";
                         readonly valueSize: 1;
                     }, {
-                        readonly declaration: 68746;
+                        readonly declaration: 73683;
                         readonly isOffset: false;
                         readonly isSlot: false;
-                        readonly src: "3758:10:128";
+                        readonly src: "3758:10:178";
                         readonly valueSize: 1;
                     }];
-                    readonly id: 68755;
+                    readonly id: 73692;
                     readonly nodeType: "InlineAssembly";
-                    readonly src: "2564:2638:128";
+                    readonly src: "2564:2638:178";
                 }];
             };
             readonly documentation: {
-                readonly id: 68738;
+                readonly id: 73675;
                 readonly nodeType: "StructuredDocumentation";
-                readonly src: "1573:104:128";
+                readonly src: "1573:104:178";
                 readonly text: " @dev Reverts with a revert reason containing `errorCode`. Only codes up to 999 are supported.";
             };
             readonly implemented: true;
             readonly kind: "freeFunction";
             readonly modifiers: readonly [];
             readonly name: "_revert";
-            readonly nameLocation: "1687:7:128";
+            readonly nameLocation: "1687:7:178";
             readonly parameters: {
-                readonly id: 68743;
+                readonly id: 73680;
                 readonly nodeType: "ParameterList";
                 readonly parameters: readonly [{
                     readonly constant: false;
-                    readonly id: 68740;
+                    readonly id: 73677;
                     readonly mutability: "mutable";
                     readonly name: "errorCode";
-                    readonly nameLocation: "1703:9:128";
+                    readonly nameLocation: "1703:9:178";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 68757;
-                    readonly src: "1695:17:128";
+                    readonly scope: 73694;
+                    readonly src: "1695:17:178";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -1280,10 +1280,10 @@ export declare const BalancerErrors: {
                         readonly typeString: "uint256";
                     };
                     readonly typeName: {
-                        readonly id: 68739;
+                        readonly id: 73676;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "1695:7:128";
+                        readonly src: "1695:7:178";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_uint256";
                             readonly typeString: "uint256";
@@ -1292,13 +1292,13 @@ export declare const BalancerErrors: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 68742;
+                    readonly id: 73679;
                     readonly mutability: "mutable";
                     readonly name: "prefix";
-                    readonly nameLocation: "1721:6:128";
+                    readonly nameLocation: "1721:6:178";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 68757;
-                    readonly src: "1714:13:128";
+                    readonly scope: 73694;
+                    readonly src: "1714:13:178";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
                     readonly typeDescriptions: {
@@ -1306,10 +1306,10 @@ export declare const BalancerErrors: {
                         readonly typeString: "bytes3";
                     };
                     readonly typeName: {
-                        readonly id: 68741;
+                        readonly id: 73678;
                         readonly name: "bytes3";
                         readonly nodeType: "ElementaryTypeName";
-                        readonly src: "1714:6:128";
+                        readonly src: "1714:6:178";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_bytes3";
                             readonly typeString: "bytes3";
@@ -1317,32 +1317,32 @@ export declare const BalancerErrors: {
                     };
                     readonly visibility: "internal";
                 }];
-                readonly src: "1694:34:128";
+                readonly src: "1694:34:178";
             };
             readonly returnParameters: {
-                readonly id: 68744;
+                readonly id: 73681;
                 readonly nodeType: "ParameterList";
                 readonly parameters: readonly [];
-                readonly src: "1734:0:128";
+                readonly src: "1734:0:178";
             };
-            readonly scope: 69263;
+            readonly scope: 74200;
             readonly stateMutability: "pure";
             readonly virtual: false;
             readonly visibility: "internal";
         }, {
-            readonly id: 69262;
+            readonly id: 74199;
             readonly nodeType: "ContractDefinition";
-            readonly src: "5206:10031:128";
+            readonly src: "5206:10031:178";
             readonly nodes: readonly [{
-                readonly id: 68760;
+                readonly id: 73697;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "5247:42:128";
+                readonly src: "5247:42:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ADD_OVERFLOW";
-                readonly nameLocation: "5273:12:128";
-                readonly scope: 69262;
+                readonly nameLocation: "5273:12:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1350,10 +1350,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68758;
+                    readonly id: 73695;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "5247:7:128";
+                    readonly src: "5247:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -1361,14 +1361,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "30";
-                    readonly id: 68759;
+                    readonly id: 73696;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "5288:1:128";
+                    readonly src: "5288:1:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_0_by_1";
                         readonly typeString: "int_const 0";
@@ -1377,15 +1377,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68763;
+                readonly id: 73700;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "5295:42:128";
+                readonly src: "5295:42:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "SUB_OVERFLOW";
-                readonly nameLocation: "5321:12:128";
-                readonly scope: 69262;
+                readonly nameLocation: "5321:12:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1393,10 +1393,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68761;
+                    readonly id: 73698;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "5295:7:128";
+                    readonly src: "5295:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -1404,14 +1404,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "31";
-                    readonly id: 68762;
+                    readonly id: 73699;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "5336:1:128";
+                    readonly src: "5336:1:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_1_by_1";
                         readonly typeString: "int_const 1";
@@ -1420,15 +1420,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68766;
+                readonly id: 73703;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "5343:43:128";
+                readonly src: "5343:43:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "SUB_UNDERFLOW";
-                readonly nameLocation: "5369:13:128";
-                readonly scope: 69262;
+                readonly nameLocation: "5369:13:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1436,10 +1436,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68764;
+                    readonly id: 73701;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "5343:7:128";
+                    readonly src: "5343:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -1447,14 +1447,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "32";
-                    readonly id: 68765;
+                    readonly id: 73702;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "5385:1:128";
+                    readonly src: "5385:1:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_2_by_1";
                         readonly typeString: "int_const 2";
@@ -1463,15 +1463,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68769;
+                readonly id: 73706;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "5392:42:128";
+                readonly src: "5392:42:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MUL_OVERFLOW";
-                readonly nameLocation: "5418:12:128";
-                readonly scope: 69262;
+                readonly nameLocation: "5418:12:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1479,10 +1479,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68767;
+                    readonly id: 73704;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "5392:7:128";
+                    readonly src: "5392:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -1490,14 +1490,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "33";
-                    readonly id: 68768;
+                    readonly id: 73705;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "5433:1:128";
+                    readonly src: "5433:1:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_3_by_1";
                         readonly typeString: "int_const 3";
@@ -1506,15 +1506,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68772;
+                readonly id: 73709;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "5440:43:128";
+                readonly src: "5440:43:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ZERO_DIVISION";
-                readonly nameLocation: "5466:13:128";
-                readonly scope: 69262;
+                readonly nameLocation: "5466:13:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1522,10 +1522,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68770;
+                    readonly id: 73707;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "5440:7:128";
+                    readonly src: "5440:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -1533,14 +1533,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "34";
-                    readonly id: 68771;
+                    readonly id: 73708;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "5482:1:128";
+                    readonly src: "5482:1:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_4_by_1";
                         readonly typeString: "int_const 4";
@@ -1549,15 +1549,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68775;
+                readonly id: 73712;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "5489:42:128";
+                readonly src: "5489:42:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "DIV_INTERNAL";
-                readonly nameLocation: "5515:12:128";
-                readonly scope: 69262;
+                readonly nameLocation: "5515:12:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1565,10 +1565,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68773;
+                    readonly id: 73710;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "5489:7:128";
+                    readonly src: "5489:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -1576,14 +1576,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "35";
-                    readonly id: 68774;
+                    readonly id: 73711;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "5530:1:128";
+                    readonly src: "5530:1:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_5_by_1";
                         readonly typeString: "int_const 5";
@@ -1592,15 +1592,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68778;
+                readonly id: 73715;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "5537:45:128";
+                readonly src: "5537:45:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "X_OUT_OF_BOUNDS";
-                readonly nameLocation: "5563:15:128";
-                readonly scope: 69262;
+                readonly nameLocation: "5563:15:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1608,10 +1608,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68776;
+                    readonly id: 73713;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "5537:7:128";
+                    readonly src: "5537:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -1619,14 +1619,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "36";
-                    readonly id: 68777;
+                    readonly id: 73714;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "5581:1:128";
+                    readonly src: "5581:1:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_6_by_1";
                         readonly typeString: "int_const 6";
@@ -1635,15 +1635,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68781;
+                readonly id: 73718;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "5588:45:128";
+                readonly src: "5588:45:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "Y_OUT_OF_BOUNDS";
-                readonly nameLocation: "5614:15:128";
-                readonly scope: 69262;
+                readonly nameLocation: "5614:15:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1651,10 +1651,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68779;
+                    readonly id: 73716;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "5588:7:128";
+                    readonly src: "5588:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -1662,14 +1662,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "37";
-                    readonly id: 68780;
+                    readonly id: 73717;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "5632:1:128";
+                    readonly src: "5632:1:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_7_by_1";
                         readonly typeString: "int_const 7";
@@ -1678,15 +1678,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68784;
+                readonly id: 73721;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "5639:51:128";
+                readonly src: "5639:51:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "PRODUCT_OUT_OF_BOUNDS";
-                readonly nameLocation: "5665:21:128";
-                readonly scope: 69262;
+                readonly nameLocation: "5665:21:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1694,10 +1694,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68782;
+                    readonly id: 73719;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "5639:7:128";
+                    readonly src: "5639:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -1705,14 +1705,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "38";
-                    readonly id: 68783;
+                    readonly id: 73720;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "5689:1:128";
+                    readonly src: "5689:1:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_8_by_1";
                         readonly typeString: "int_const 8";
@@ -1721,15 +1721,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68787;
+                readonly id: 73724;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "5696:46:128";
+                readonly src: "5696:46:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INVALID_EXPONENT";
-                readonly nameLocation: "5722:16:128";
-                readonly scope: 69262;
+                readonly nameLocation: "5722:16:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1737,10 +1737,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68785;
+                    readonly id: 73722;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "5696:7:128";
+                    readonly src: "5696:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -1748,14 +1748,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "39";
-                    readonly id: 68786;
+                    readonly id: 73723;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "5741:1:128";
+                    readonly src: "5741:1:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_9_by_1";
                         readonly typeString: "int_const 9";
@@ -1764,15 +1764,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68790;
+                readonly id: 73727;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "5762:45:128";
+                readonly src: "5762:45:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "OUT_OF_BOUNDS";
-                readonly nameLocation: "5788:13:128";
-                readonly scope: 69262;
+                readonly nameLocation: "5788:13:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1780,10 +1780,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68788;
+                    readonly id: 73725;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "5762:7:128";
+                    readonly src: "5762:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -1791,14 +1791,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "313030";
-                    readonly id: 68789;
+                    readonly id: 73726;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "5804:3:128";
+                    readonly src: "5804:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_100_by_1";
                         readonly typeString: "int_const 100";
@@ -1807,15 +1807,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68793;
+                readonly id: 73730;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "5813:46:128";
+                readonly src: "5813:46:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UNSORTED_ARRAY";
-                readonly nameLocation: "5839:14:128";
-                readonly scope: 69262;
+                readonly nameLocation: "5839:14:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1823,10 +1823,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68791;
+                    readonly id: 73728;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "5813:7:128";
+                    readonly src: "5813:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -1834,14 +1834,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "313031";
-                    readonly id: 68792;
+                    readonly id: 73729;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "5856:3:128";
+                    readonly src: "5856:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_101_by_1";
                         readonly typeString: "int_const 101";
@@ -1850,15 +1850,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68796;
+                readonly id: 73733;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "5865:47:128";
+                readonly src: "5865:47:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UNSORTED_TOKENS";
-                readonly nameLocation: "5891:15:128";
-                readonly scope: 69262;
+                readonly nameLocation: "5891:15:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1866,10 +1866,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68794;
+                    readonly id: 73731;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "5865:7:128";
+                    readonly src: "5865:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -1877,14 +1877,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "313032";
-                    readonly id: 68795;
+                    readonly id: 73732;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "5909:3:128";
+                    readonly src: "5909:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_102_by_1";
                         readonly typeString: "int_const 102";
@@ -1893,15 +1893,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68799;
+                readonly id: 73736;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "5918:53:128";
+                readonly src: "5918:53:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INPUT_LENGTH_MISMATCH";
-                readonly nameLocation: "5944:21:128";
-                readonly scope: 69262;
+                readonly nameLocation: "5944:21:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1909,10 +1909,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68797;
+                    readonly id: 73734;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "5918:7:128";
+                    readonly src: "5918:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -1920,14 +1920,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "313033";
-                    readonly id: 68798;
+                    readonly id: 73735;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "5968:3:128";
+                    readonly src: "5968:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_103_by_1";
                         readonly typeString: "int_const 103";
@@ -1936,15 +1936,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68802;
+                readonly id: 73739;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "5977:42:128";
+                readonly src: "5977:42:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ZERO_TOKEN";
-                readonly nameLocation: "6003:10:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6003:10:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1952,10 +1952,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68800;
+                    readonly id: 73737;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "5977:7:128";
+                    readonly src: "5977:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -1963,14 +1963,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "313034";
-                    readonly id: 68801;
+                    readonly id: 73738;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6016:3:128";
+                    readonly src: "6016:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_104_by_1";
                         readonly typeString: "int_const 104";
@@ -1979,15 +1979,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68805;
+                readonly id: 73742;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6025:49:128";
+                readonly src: "6025:49:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INSUFFICIENT_DATA";
-                readonly nameLocation: "6051:17:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6051:17:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1995,10 +1995,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68803;
+                    readonly id: 73740;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6025:7:128";
+                    readonly src: "6025:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2006,14 +2006,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "313035";
-                    readonly id: 68804;
+                    readonly id: 73741;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6071:3:128";
+                    readonly src: "6071:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_105_by_1";
                         readonly typeString: "int_const 105";
@@ -2022,15 +2022,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68808;
+                readonly id: 73745;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6101:42:128";
+                readonly src: "6101:42:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MIN_TOKENS";
-                readonly nameLocation: "6127:10:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6127:10:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2038,10 +2038,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68806;
+                    readonly id: 73743;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6101:7:128";
+                    readonly src: "6101:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2049,14 +2049,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "323030";
-                    readonly id: 68807;
+                    readonly id: 73744;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6140:3:128";
+                    readonly src: "6140:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_200_by_1";
                         readonly typeString: "int_const 200";
@@ -2065,15 +2065,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68811;
+                readonly id: 73748;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6149:42:128";
+                readonly src: "6149:42:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MAX_TOKENS";
-                readonly nameLocation: "6175:10:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6175:10:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2081,10 +2081,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68809;
+                    readonly id: 73746;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6149:7:128";
+                    readonly src: "6149:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2092,14 +2092,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "323031";
-                    readonly id: 68810;
+                    readonly id: 73747;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6188:3:128";
+                    readonly src: "6188:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_201_by_1";
                         readonly typeString: "int_const 201";
@@ -2108,15 +2108,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68814;
+                readonly id: 73751;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6197:55:128";
+                readonly src: "6197:55:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MAX_SWAP_FEE_PERCENTAGE";
-                readonly nameLocation: "6223:23:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6223:23:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2124,10 +2124,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68812;
+                    readonly id: 73749;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6197:7:128";
+                    readonly src: "6197:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2135,14 +2135,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "323032";
-                    readonly id: 68813;
+                    readonly id: 73750;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6249:3:128";
+                    readonly src: "6249:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_202_by_1";
                         readonly typeString: "int_const 202";
@@ -2151,15 +2151,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68817;
+                readonly id: 73754;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6258:55:128";
+                readonly src: "6258:55:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MIN_SWAP_FEE_PERCENTAGE";
-                readonly nameLocation: "6284:23:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6284:23:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2167,10 +2167,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68815;
+                    readonly id: 73752;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6258:7:128";
+                    readonly src: "6258:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2178,14 +2178,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "323033";
-                    readonly id: 68816;
+                    readonly id: 73753;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6310:3:128";
+                    readonly src: "6310:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_203_by_1";
                         readonly typeString: "int_const 203";
@@ -2194,15 +2194,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68820;
+                readonly id: 73757;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6319:43:128";
+                readonly src: "6319:43:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MINIMUM_BPT";
-                readonly nameLocation: "6345:11:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6345:11:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2210,10 +2210,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68818;
+                    readonly id: 73755;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6319:7:128";
+                    readonly src: "6319:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2221,14 +2221,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "323034";
-                    readonly id: 68819;
+                    readonly id: 73756;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6359:3:128";
+                    readonly src: "6359:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_204_by_1";
                         readonly typeString: "int_const 204";
@@ -2237,15 +2237,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68823;
+                readonly id: 73760;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6368:48:128";
+                readonly src: "6368:48:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "CALLER_NOT_VAULT";
-                readonly nameLocation: "6394:16:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6394:16:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2253,10 +2253,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68821;
+                    readonly id: 73758;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6368:7:128";
+                    readonly src: "6368:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2264,14 +2264,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "323035";
-                    readonly id: 68822;
+                    readonly id: 73759;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6413:3:128";
+                    readonly src: "6413:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_205_by_1";
                         readonly typeString: "int_const 205";
@@ -2280,15 +2280,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68826;
+                readonly id: 73763;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6422:45:128";
+                readonly src: "6422:45:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UNINITIALIZED";
-                readonly nameLocation: "6448:13:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6448:13:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2296,10 +2296,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68824;
+                    readonly id: 73761;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6422:7:128";
+                    readonly src: "6422:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2307,14 +2307,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "323036";
-                    readonly id: 68825;
+                    readonly id: 73762;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6464:3:128";
+                    readonly src: "6464:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_206_by_1";
                         readonly typeString: "int_const 206";
@@ -2323,15 +2323,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68829;
+                readonly id: 73766;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6473:49:128";
+                readonly src: "6473:49:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "BPT_IN_MAX_AMOUNT";
-                readonly nameLocation: "6499:17:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6499:17:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2339,10 +2339,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68827;
+                    readonly id: 73764;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6473:7:128";
+                    readonly src: "6473:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2350,14 +2350,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "323037";
-                    readonly id: 68828;
+                    readonly id: 73765;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6519:3:128";
+                    readonly src: "6519:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_207_by_1";
                         readonly typeString: "int_const 207";
@@ -2366,15 +2366,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68832;
+                readonly id: 73769;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6528:50:128";
+                readonly src: "6528:50:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "BPT_OUT_MIN_AMOUNT";
-                readonly nameLocation: "6554:18:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6554:18:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2382,10 +2382,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68830;
+                    readonly id: 73767;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6528:7:128";
+                    readonly src: "6528:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2393,14 +2393,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "323038";
-                    readonly id: 68831;
+                    readonly id: 73768;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6575:3:128";
+                    readonly src: "6575:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_208_by_1";
                         readonly typeString: "int_const 208";
@@ -2409,15 +2409,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68835;
+                readonly id: 73772;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6584:46:128";
+                readonly src: "6584:46:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "EXPIRED_PERMIT";
-                readonly nameLocation: "6610:14:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6610:14:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2425,10 +2425,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68833;
+                    readonly id: 73770;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6584:7:128";
+                    readonly src: "6584:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2436,14 +2436,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "323039";
-                    readonly id: 68834;
+                    readonly id: 73771;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6627:3:128";
+                    readonly src: "6627:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_209_by_1";
                         readonly typeString: "int_const 209";
@@ -2452,15 +2452,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68838;
+                readonly id: 73775;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6636:46:128";
+                readonly src: "6636:46:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "NOT_TWO_TOKENS";
-                readonly nameLocation: "6662:14:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6662:14:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2468,10 +2468,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68836;
+                    readonly id: 73773;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6636:7:128";
+                    readonly src: "6636:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2479,14 +2479,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "323130";
-                    readonly id: 68837;
+                    readonly id: 73774;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6679:3:128";
+                    readonly src: "6679:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_210_by_1";
                         readonly typeString: "int_const 210";
@@ -2495,15 +2495,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68841;
+                readonly id: 73778;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6688:40:128";
+                readonly src: "6688:40:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "DISABLED";
-                readonly nameLocation: "6714:8:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6714:8:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2511,10 +2511,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68839;
+                    readonly id: 73776;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6688:7:128";
+                    readonly src: "6688:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2522,14 +2522,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "323131";
-                    readonly id: 68840;
+                    readonly id: 73777;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6725:3:128";
+                    readonly src: "6725:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_211_by_1";
                         readonly typeString: "int_const 211";
@@ -2538,15 +2538,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68844;
+                readonly id: 73781;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6748:39:128";
+                readonly src: "6748:39:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MIN_AMP";
-                readonly nameLocation: "6774:7:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6774:7:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2554,10 +2554,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68842;
+                    readonly id: 73779;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6748:7:128";
+                    readonly src: "6748:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2565,14 +2565,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333030";
-                    readonly id: 68843;
+                    readonly id: 73780;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6784:3:128";
+                    readonly src: "6784:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_300_by_1";
                         readonly typeString: "int_const 300";
@@ -2581,15 +2581,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68847;
+                readonly id: 73784;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6793:39:128";
+                readonly src: "6793:39:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MAX_AMP";
-                readonly nameLocation: "6819:7:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6819:7:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2597,10 +2597,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68845;
+                    readonly id: 73782;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6793:7:128";
+                    readonly src: "6793:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2608,14 +2608,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333031";
-                    readonly id: 68846;
+                    readonly id: 73783;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6829:3:128";
+                    readonly src: "6829:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_301_by_1";
                         readonly typeString: "int_const 301";
@@ -2624,15 +2624,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68850;
+                readonly id: 73787;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6838:42:128";
+                readonly src: "6838:42:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MIN_WEIGHT";
-                readonly nameLocation: "6864:10:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6864:10:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2640,10 +2640,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68848;
+                    readonly id: 73785;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6838:7:128";
+                    readonly src: "6838:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2651,14 +2651,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333032";
-                    readonly id: 68849;
+                    readonly id: 73786;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6877:3:128";
+                    readonly src: "6877:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_302_by_1";
                         readonly typeString: "int_const 302";
@@ -2667,15 +2667,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68853;
+                readonly id: 73790;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6886:49:128";
+                readonly src: "6886:49:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MAX_STABLE_TOKENS";
-                readonly nameLocation: "6912:17:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6912:17:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2683,10 +2683,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68851;
+                    readonly id: 73788;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6886:7:128";
+                    readonly src: "6886:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2694,14 +2694,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333033";
-                    readonly id: 68852;
+                    readonly id: 73789;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6932:3:128";
+                    readonly src: "6932:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_303_by_1";
                         readonly typeString: "int_const 303";
@@ -2710,15 +2710,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68856;
+                readonly id: 73793;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6941:44:128";
+                readonly src: "6941:44:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MAX_IN_RATIO";
-                readonly nameLocation: "6967:12:128";
-                readonly scope: 69262;
+                readonly nameLocation: "6967:12:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2726,10 +2726,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68854;
+                    readonly id: 73791;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6941:7:128";
+                    readonly src: "6941:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2737,14 +2737,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333034";
-                    readonly id: 68855;
+                    readonly id: 73792;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "6982:3:128";
+                    readonly src: "6982:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_304_by_1";
                         readonly typeString: "int_const 304";
@@ -2753,15 +2753,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68859;
+                readonly id: 73796;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "6991:45:128";
+                readonly src: "6991:45:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MAX_OUT_RATIO";
-                readonly nameLocation: "7017:13:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7017:13:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2769,10 +2769,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68857;
+                    readonly id: 73794;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "6991:7:128";
+                    readonly src: "6991:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2780,14 +2780,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333035";
-                    readonly id: 68858;
+                    readonly id: 73795;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7033:3:128";
+                    readonly src: "7033:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_305_by_1";
                         readonly typeString: "int_const 305";
@@ -2796,15 +2796,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68862;
+                readonly id: 73799;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7042:56:128";
+                readonly src: "7042:56:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MIN_BPT_IN_FOR_TOKEN_OUT";
-                readonly nameLocation: "7068:24:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7068:24:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2812,10 +2812,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68860;
+                    readonly id: 73797;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7042:7:128";
+                    readonly src: "7042:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2823,14 +2823,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333036";
-                    readonly id: 68861;
+                    readonly id: 73798;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7095:3:128";
+                    readonly src: "7095:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_306_by_1";
                         readonly typeString: "int_const 306";
@@ -2839,15 +2839,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68865;
+                readonly id: 73802;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7104:56:128";
+                readonly src: "7104:56:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MAX_OUT_BPT_FOR_TOKEN_IN";
-                readonly nameLocation: "7130:24:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7130:24:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2855,10 +2855,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68863;
+                    readonly id: 73800;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7104:7:128";
+                    readonly src: "7104:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2866,14 +2866,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333037";
-                    readonly id: 68864;
+                    readonly id: 73801;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7157:3:128";
+                    readonly src: "7157:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_307_by_1";
                         readonly typeString: "int_const 307";
@@ -2882,15 +2882,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68868;
+                readonly id: 73805;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7166:59:128";
+                readonly src: "7166:59:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "NORMALIZED_WEIGHT_INVARIANT";
-                readonly nameLocation: "7192:27:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7192:27:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2898,10 +2898,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68866;
+                    readonly id: 73803;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7166:7:128";
+                    readonly src: "7166:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2909,14 +2909,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333038";
-                    readonly id: 68867;
+                    readonly id: 73804;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7222:3:128";
+                    readonly src: "7222:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_308_by_1";
                         readonly typeString: "int_const 308";
@@ -2925,15 +2925,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68871;
+                readonly id: 73808;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7231:45:128";
+                readonly src: "7231:45:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INVALID_TOKEN";
-                readonly nameLocation: "7257:13:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7257:13:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2941,10 +2941,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68869;
+                    readonly id: 73806;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7231:7:128";
+                    readonly src: "7231:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2952,14 +2952,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333039";
-                    readonly id: 68870;
+                    readonly id: 73807;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7273:3:128";
+                    readonly src: "7273:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_309_by_1";
                         readonly typeString: "int_const 309";
@@ -2968,15 +2968,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68874;
+                readonly id: 73811;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7282:51:128";
+                readonly src: "7282:51:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UNHANDLED_JOIN_KIND";
-                readonly nameLocation: "7308:19:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7308:19:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -2984,10 +2984,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68872;
+                    readonly id: 73809;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7282:7:128";
+                    readonly src: "7282:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -2995,14 +2995,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333130";
-                    readonly id: 68873;
+                    readonly id: 73810;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7330:3:128";
+                    readonly src: "7330:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_310_by_1";
                         readonly typeString: "int_const 310";
@@ -3011,15 +3011,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68877;
+                readonly id: 73814;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7339:46:128";
+                readonly src: "7339:46:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ZERO_INVARIANT";
-                readonly nameLocation: "7365:14:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7365:14:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3027,10 +3027,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68875;
+                    readonly id: 73812;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7339:7:128";
+                    readonly src: "7339:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3038,14 +3038,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333131";
-                    readonly id: 68876;
+                    readonly id: 73813;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7382:3:128";
+                    readonly src: "7382:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_311_by_1";
                         readonly typeString: "int_const 311";
@@ -3054,15 +3054,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68880;
+                readonly id: 73817;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7391:60:128";
+                readonly src: "7391:60:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ORACLE_INVALID_SECONDS_QUERY";
-                readonly nameLocation: "7417:28:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7417:28:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3070,10 +3070,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68878;
+                    readonly id: 73815;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7391:7:128";
+                    readonly src: "7391:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3081,14 +3081,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333132";
-                    readonly id: 68879;
+                    readonly id: 73816;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7448:3:128";
+                    readonly src: "7448:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_312_by_1";
                         readonly typeString: "int_const 312";
@@ -3097,15 +3097,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68883;
+                readonly id: 73820;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7457:54:128";
+                readonly src: "7457:54:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ORACLE_NOT_INITIALIZED";
-                readonly nameLocation: "7483:22:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7483:22:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3113,10 +3113,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68881;
+                    readonly id: 73818;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7457:7:128";
+                    readonly src: "7457:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3124,14 +3124,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333133";
-                    readonly id: 68882;
+                    readonly id: 73819;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7508:3:128";
+                    readonly src: "7508:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_313_by_1";
                         readonly typeString: "int_const 313";
@@ -3140,15 +3140,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68886;
+                readonly id: 73823;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7517:52:128";
+                readonly src: "7517:52:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ORACLE_QUERY_TOO_OLD";
-                readonly nameLocation: "7543:20:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7543:20:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3156,10 +3156,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68884;
+                    readonly id: 73821;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7517:7:128";
+                    readonly src: "7517:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3167,14 +3167,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333134";
-                    readonly id: 68885;
+                    readonly id: 73822;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7566:3:128";
+                    readonly src: "7566:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_314_by_1";
                         readonly typeString: "int_const 314";
@@ -3183,15 +3183,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68889;
+                readonly id: 73826;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7575:52:128";
+                readonly src: "7575:52:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ORACLE_INVALID_INDEX";
-                readonly nameLocation: "7601:20:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7601:20:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3199,10 +3199,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68887;
+                    readonly id: 73824;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7575:7:128";
+                    readonly src: "7575:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3210,14 +3210,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333135";
-                    readonly id: 68888;
+                    readonly id: 73825;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7624:3:128";
+                    readonly src: "7624:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_315_by_1";
                         readonly typeString: "int_const 315";
@@ -3226,15 +3226,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68892;
+                readonly id: 73829;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7633:47:128";
+                readonly src: "7633:47:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ORACLE_BAD_SECS";
-                readonly nameLocation: "7659:15:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7659:15:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3242,10 +3242,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68890;
+                    readonly id: 73827;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7633:7:128";
+                    readonly src: "7633:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3253,14 +3253,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333136";
-                    readonly id: 68891;
+                    readonly id: 73828;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7677:3:128";
+                    readonly src: "7677:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_316_by_1";
                         readonly typeString: "int_const 316";
@@ -3269,15 +3269,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68895;
+                readonly id: 73832;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7686:54:128";
+                readonly src: "7686:54:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "AMP_END_TIME_TOO_CLOSE";
-                readonly nameLocation: "7712:22:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7712:22:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3285,10 +3285,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68893;
+                    readonly id: 73830;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7686:7:128";
+                    readonly src: "7686:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3296,14 +3296,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333137";
-                    readonly id: 68894;
+                    readonly id: 73831;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7737:3:128";
+                    readonly src: "7737:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_317_by_1";
                         readonly typeString: "int_const 317";
@@ -3312,15 +3312,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68898;
+                readonly id: 73835;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7746:50:128";
+                readonly src: "7746:50:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "AMP_ONGOING_UPDATE";
-                readonly nameLocation: "7772:18:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7772:18:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3328,10 +3328,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68896;
+                    readonly id: 73833;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7746:7:128";
+                    readonly src: "7746:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3339,14 +3339,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333138";
-                    readonly id: 68897;
+                    readonly id: 73834;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7793:3:128";
+                    readonly src: "7793:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_318_by_1";
                         readonly typeString: "int_const 318";
@@ -3355,15 +3355,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68901;
+                readonly id: 73838;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7802:49:128";
+                readonly src: "7802:49:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "AMP_RATE_TOO_HIGH";
-                readonly nameLocation: "7828:17:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7828:17:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3371,10 +3371,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68899;
+                    readonly id: 73836;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7802:7:128";
+                    readonly src: "7802:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3382,14 +3382,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333139";
-                    readonly id: 68900;
+                    readonly id: 73837;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7848:3:128";
+                    readonly src: "7848:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_319_by_1";
                         readonly typeString: "int_const 319";
@@ -3398,15 +3398,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68904;
+                readonly id: 73841;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7857:53:128";
+                readonly src: "7857:53:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "AMP_NO_ONGOING_UPDATE";
-                readonly nameLocation: "7883:21:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7883:21:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3414,10 +3414,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68902;
+                    readonly id: 73839;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7857:7:128";
+                    readonly src: "7857:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3425,14 +3425,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333230";
-                    readonly id: 68903;
+                    readonly id: 73840;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7907:3:128";
+                    readonly src: "7907:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_320_by_1";
                         readonly typeString: "int_const 320";
@@ -3441,15 +3441,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68907;
+                readonly id: 73844;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7916:63:128";
+                readonly src: "7916:63:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "STABLE_INVARIANT_DIDNT_CONVERGE";
-                readonly nameLocation: "7942:31:128";
-                readonly scope: 69262;
+                readonly nameLocation: "7942:31:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3457,10 +3457,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68905;
+                    readonly id: 73842;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7916:7:128";
+                    readonly src: "7916:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3468,14 +3468,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333231";
-                    readonly id: 68906;
+                    readonly id: 73843;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "7976:3:128";
+                    readonly src: "7976:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_321_by_1";
                         readonly typeString: "int_const 321";
@@ -3484,15 +3484,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68910;
+                readonly id: 73847;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "7985:65:128";
+                readonly src: "7985:65:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "STABLE_GET_BALANCE_DIDNT_CONVERGE";
-                readonly nameLocation: "8011:33:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8011:33:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3500,10 +3500,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68908;
+                    readonly id: 73845;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "7985:7:128";
+                    readonly src: "7985:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3511,14 +3511,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333232";
-                    readonly id: 68909;
+                    readonly id: 73846;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8047:3:128";
+                    readonly src: "8047:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_322_by_1";
                         readonly typeString: "int_const 322";
@@ -3527,15 +3527,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68913;
+                readonly id: 73850;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8056:52:128";
+                readonly src: "8056:52:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "RELAYER_NOT_CONTRACT";
-                readonly nameLocation: "8082:20:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8082:20:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3543,10 +3543,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68911;
+                    readonly id: 73848;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8056:7:128";
+                    readonly src: "8056:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3554,14 +3554,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333233";
-                    readonly id: 68912;
+                    readonly id: 73849;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8105:3:128";
+                    readonly src: "8105:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_323_by_1";
                         readonly typeString: "int_const 323";
@@ -3570,15 +3570,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68916;
+                readonly id: 73853;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8114:60:128";
+                readonly src: "8114:60:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "BASE_POOL_RELAYER_NOT_CALLED";
-                readonly nameLocation: "8140:28:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8140:28:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3586,10 +3586,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68914;
+                    readonly id: 73851;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8114:7:128";
+                    readonly src: "8114:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3597,14 +3597,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333234";
-                    readonly id: 68915;
+                    readonly id: 73852;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8171:3:128";
+                    readonly src: "8171:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_324_by_1";
                         readonly typeString: "int_const 324";
@@ -3613,15 +3613,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68919;
+                readonly id: 73856;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8180:61:128";
+                readonly src: "8180:61:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "REBALANCING_RELAYER_REENTERED";
-                readonly nameLocation: "8206:29:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8206:29:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3629,10 +3629,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68917;
+                    readonly id: 73854;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8180:7:128";
+                    readonly src: "8180:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3640,14 +3640,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333235";
-                    readonly id: 68918;
+                    readonly id: 73855;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8238:3:128";
+                    readonly src: "8238:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_325_by_1";
                         readonly typeString: "int_const 325";
@@ -3656,15 +3656,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68922;
+                readonly id: 73859;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8247:58:128";
+                readonly src: "8247:58:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "GRADUAL_UPDATE_TIME_TRAVEL";
-                readonly nameLocation: "8273:26:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8273:26:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3672,10 +3672,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68920;
+                    readonly id: 73857;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8247:7:128";
+                    readonly src: "8247:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3683,14 +3683,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333236";
-                    readonly id: 68921;
+                    readonly id: 73858;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8302:3:128";
+                    readonly src: "8302:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_326_by_1";
                         readonly typeString: "int_const 326";
@@ -3699,15 +3699,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68925;
+                readonly id: 73862;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8311:46:128";
+                readonly src: "8311:46:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "SWAPS_DISABLED";
-                readonly nameLocation: "8337:14:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8337:14:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3715,10 +3715,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68923;
+                    readonly id: 73860;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8311:7:128";
+                    readonly src: "8311:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3726,14 +3726,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333237";
-                    readonly id: 68924;
+                    readonly id: 73861;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8354:3:128";
+                    readonly src: "8354:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_327_by_1";
                         readonly typeString: "int_const 327";
@@ -3742,15 +3742,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68928;
+                readonly id: 73865;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8363:55:128";
+                readonly src: "8363:55:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "CALLER_IS_NOT_LBP_OWNER";
-                readonly nameLocation: "8389:23:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8389:23:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3758,10 +3758,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68926;
+                    readonly id: 73863;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8363:7:128";
+                    readonly src: "8363:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3769,14 +3769,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333238";
-                    readonly id: 68927;
+                    readonly id: 73864;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8415:3:128";
+                    readonly src: "8415:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_328_by_1";
                         readonly typeString: "int_const 328";
@@ -3785,15 +3785,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68931;
+                readonly id: 73868;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8424:51:128";
+                readonly src: "8424:51:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "PRICE_RATE_OVERFLOW";
-                readonly nameLocation: "8450:19:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8450:19:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3801,10 +3801,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68929;
+                    readonly id: 73866;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8424:7:128";
+                    readonly src: "8424:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3812,14 +3812,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333239";
-                    readonly id: 68930;
+                    readonly id: 73867;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8472:3:128";
+                    readonly src: "8472:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_329_by_1";
                         readonly typeString: "int_const 329";
@@ -3828,15 +3828,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68934;
+                readonly id: 73871;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8481:75:128";
+                readonly src: "8481:75:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INVALID_JOIN_EXIT_KIND_WHILE_SWAPS_DISABLED";
-                readonly nameLocation: "8507:43:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8507:43:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3844,10 +3844,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68932;
+                    readonly id: 73869;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8481:7:128";
+                    readonly src: "8481:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3855,14 +3855,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333330";
-                    readonly id: 68933;
+                    readonly id: 73870;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8553:3:128";
+                    readonly src: "8553:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_330_by_1";
                         readonly typeString: "int_const 330";
@@ -3871,15 +3871,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68937;
+                readonly id: 73874;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8562:54:128";
+                readonly src: "8562:54:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "WEIGHT_CHANGE_TOO_FAST";
-                readonly nameLocation: "8588:22:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8588:22:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3887,10 +3887,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68935;
+                    readonly id: 73872;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8562:7:128";
+                    readonly src: "8562:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3898,14 +3898,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333331";
-                    readonly id: 68936;
+                    readonly id: 73873;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8613:3:128";
+                    readonly src: "8613:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_331_by_1";
                         readonly typeString: "int_const 331";
@@ -3914,15 +3914,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68940;
+                readonly id: 73877;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8622:63:128";
+                readonly src: "8622:63:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "LOWER_GREATER_THAN_UPPER_TARGET";
-                readonly nameLocation: "8648:31:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8648:31:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3930,10 +3930,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68938;
+                    readonly id: 73875;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8622:7:128";
+                    readonly src: "8622:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3941,14 +3941,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333332";
-                    readonly id: 68939;
+                    readonly id: 73876;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8682:3:128";
+                    readonly src: "8682:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_332_by_1";
                         readonly typeString: "int_const 332";
@@ -3957,15 +3957,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68943;
+                readonly id: 73880;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8691:53:128";
+                readonly src: "8691:53:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UPPER_TARGET_TOO_HIGH";
-                readonly nameLocation: "8717:21:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8717:21:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -3973,10 +3973,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68941;
+                    readonly id: 73878;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8691:7:128";
+                    readonly src: "8691:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -3984,14 +3984,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333333";
-                    readonly id: 68942;
+                    readonly id: 73879;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8741:3:128";
+                    readonly src: "8741:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_333_by_1";
                         readonly typeString: "int_const 333";
@@ -4000,15 +4000,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68946;
+                readonly id: 73883;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8750:56:128";
+                readonly src: "8750:56:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UNHANDLED_BY_LINEAR_POOL";
-                readonly nameLocation: "8776:24:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8776:24:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4016,10 +4016,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68944;
+                    readonly id: 73881;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8750:7:128";
+                    readonly src: "8750:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4027,14 +4027,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333334";
-                    readonly id: 68945;
+                    readonly id: 73882;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8803:3:128";
+                    readonly src: "8803:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_334_by_1";
                         readonly typeString: "int_const 334";
@@ -4043,15 +4043,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68949;
+                readonly id: 73886;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8812:51:128";
+                readonly src: "8812:51:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "OUT_OF_TARGET_RANGE";
-                readonly nameLocation: "8838:19:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8838:19:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4059,10 +4059,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68947;
+                    readonly id: 73884;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8812:7:128";
+                    readonly src: "8812:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4070,14 +4070,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333335";
-                    readonly id: 68948;
+                    readonly id: 73885;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8860:3:128";
+                    readonly src: "8860:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_335_by_1";
                         readonly typeString: "int_const 335";
@@ -4086,15 +4086,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68952;
+                readonly id: 73889;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8869:51:128";
+                readonly src: "8869:51:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UNHANDLED_EXIT_KIND";
-                readonly nameLocation: "8895:19:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8895:19:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4102,10 +4102,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68950;
+                    readonly id: 73887;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8869:7:128";
+                    readonly src: "8869:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4113,14 +4113,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333336";
-                    readonly id: 68951;
+                    readonly id: 73888;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8917:3:128";
+                    readonly src: "8917:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_336_by_1";
                         readonly typeString: "int_const 336";
@@ -4129,15 +4129,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68955;
+                readonly id: 73892;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8926:49:128";
+                readonly src: "8926:49:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UNAUTHORIZED_EXIT";
-                readonly nameLocation: "8952:17:128";
-                readonly scope: 69262;
+                readonly nameLocation: "8952:17:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4145,10 +4145,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68953;
+                    readonly id: 73890;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8926:7:128";
+                    readonly src: "8926:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4156,14 +4156,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333337";
-                    readonly id: 68954;
+                    readonly id: 73891;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "8972:3:128";
+                    readonly src: "8972:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_337_by_1";
                         readonly typeString: "int_const 337";
@@ -4172,15 +4172,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68958;
+                readonly id: 73895;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "8981:66:128";
+                readonly src: "8981:66:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MAX_MANAGEMENT_SWAP_FEE_PERCENTAGE";
-                readonly nameLocation: "9007:34:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9007:34:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4188,10 +4188,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68956;
+                    readonly id: 73893;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "8981:7:128";
+                    readonly src: "8981:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4199,14 +4199,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333338";
-                    readonly id: 68957;
+                    readonly id: 73894;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9044:3:128";
+                    readonly src: "9044:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_338_by_1";
                         readonly typeString: "int_const 338";
@@ -4215,15 +4215,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68961;
+                readonly id: 73898;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "9053:57:128";
+                readonly src: "9053:57:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UNHANDLED_BY_MANAGED_POOL";
-                readonly nameLocation: "9079:25:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9079:25:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4231,10 +4231,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68959;
+                    readonly id: 73896;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "9053:7:128";
+                    readonly src: "9053:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4242,14 +4242,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333339";
-                    readonly id: 68960;
+                    readonly id: 73897;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9107:3:128";
+                    readonly src: "9107:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_339_by_1";
                         readonly typeString: "int_const 339";
@@ -4258,15 +4258,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68964;
+                readonly id: 73901;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "9116:57:128";
+                readonly src: "9116:57:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UNHANDLED_BY_PHANTOM_POOL";
-                readonly nameLocation: "9142:25:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9142:25:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4274,10 +4274,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68962;
+                    readonly id: 73899;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "9116:7:128";
+                    readonly src: "9116:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4285,14 +4285,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333430";
-                    readonly id: 68963;
+                    readonly id: 73900;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9170:3:128";
+                    readonly src: "9170:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_340_by_1";
                         readonly typeString: "int_const 340";
@@ -4301,15 +4301,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68967;
+                readonly id: 73904;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "9179:65:128";
+                readonly src: "9179:65:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "TOKEN_DOES_NOT_HAVE_RATE_PROVIDER";
-                readonly nameLocation: "9205:33:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9205:33:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4317,10 +4317,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68965;
+                    readonly id: 73902;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "9179:7:128";
+                    readonly src: "9179:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4328,14 +4328,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333431";
-                    readonly id: 68966;
+                    readonly id: 73903;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9241:3:128";
+                    readonly src: "9241:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_341_by_1";
                         readonly typeString: "int_const 341";
@@ -4344,15 +4344,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68970;
+                readonly id: 73907;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "9250:54:128";
+                readonly src: "9250:54:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INVALID_INITIALIZATION";
-                readonly nameLocation: "9276:22:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9276:22:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4360,10 +4360,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68968;
+                    readonly id: 73905;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "9250:7:128";
+                    readonly src: "9250:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4371,14 +4371,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333432";
-                    readonly id: 68969;
+                    readonly id: 73906;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9301:3:128";
+                    readonly src: "9301:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_342_by_1";
                         readonly typeString: "int_const 342";
@@ -4387,15 +4387,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68973;
+                readonly id: 73910;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "9310:55:128";
+                readonly src: "9310:55:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "OUT_OF_NEW_TARGET_RANGE";
-                readonly nameLocation: "9336:23:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9336:23:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4403,10 +4403,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68971;
+                    readonly id: 73908;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "9310:7:128";
+                    readonly src: "9310:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4414,14 +4414,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333433";
-                    readonly id: 68972;
+                    readonly id: 73909;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9362:3:128";
+                    readonly src: "9362:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_343_by_1";
                         readonly typeString: "int_const 343";
@@ -4430,15 +4430,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68976;
+                readonly id: 73913;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "9371:48:128";
+                readonly src: "9371:48:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "FEATURE_DISABLED";
-                readonly nameLocation: "9397:16:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9397:16:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4446,10 +4446,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68974;
+                    readonly id: 73911;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "9371:7:128";
+                    readonly src: "9371:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4457,14 +4457,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333434";
-                    readonly id: 68975;
+                    readonly id: 73912;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9416:3:128";
+                    readonly src: "9416:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_344_by_1";
                         readonly typeString: "int_const 344";
@@ -4473,15 +4473,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68979;
+                readonly id: 73916;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "9425:61:128";
+                readonly src: "9425:61:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UNINITIALIZED_POOL_CONTROLLER";
-                readonly nameLocation: "9451:29:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9451:29:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4489,10 +4489,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68977;
+                    readonly id: 73914;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "9425:7:128";
+                    readonly src: "9425:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4500,14 +4500,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333435";
-                    readonly id: 68978;
+                    readonly id: 73915;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9483:3:128";
+                    readonly src: "9483:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_345_by_1";
                         readonly typeString: "int_const 345";
@@ -4516,15 +4516,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68982;
+                readonly id: 73919;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "9492:62:128";
+                readonly src: "9492:62:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "SET_SWAP_FEE_DURING_FEE_CHANGE";
-                readonly nameLocation: "9518:30:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9518:30:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4532,10 +4532,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68980;
+                    readonly id: 73917;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "9492:7:128";
+                    readonly src: "9492:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4543,14 +4543,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333436";
-                    readonly id: 68981;
+                    readonly id: 73918;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9551:3:128";
+                    readonly src: "9551:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_346_by_1";
                         readonly typeString: "int_const 346";
@@ -4559,15 +4559,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68985;
+                readonly id: 73922;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "9560:63:128";
+                readonly src: "9560:63:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "SET_SWAP_FEE_PENDING_FEE_CHANGE";
-                readonly nameLocation: "9586:31:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9586:31:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4575,10 +4575,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68983;
+                    readonly id: 73920;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "9560:7:128";
+                    readonly src: "9560:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4586,14 +4586,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333437";
-                    readonly id: 68984;
+                    readonly id: 73921;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9620:3:128";
+                    readonly src: "9620:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_347_by_1";
                         readonly typeString: "int_const 347";
@@ -4602,15 +4602,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68988;
+                readonly id: 73925;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "9629:66:128";
+                readonly src: "9629:66:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "CHANGE_TOKENS_DURING_WEIGHT_CHANGE";
-                readonly nameLocation: "9655:34:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9655:34:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4618,10 +4618,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68986;
+                    readonly id: 73923;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "9629:7:128";
+                    readonly src: "9629:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4629,14 +4629,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333438";
-                    readonly id: 68987;
+                    readonly id: 73924;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9692:3:128";
+                    readonly src: "9692:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_348_by_1";
                         readonly typeString: "int_const 348";
@@ -4645,15 +4645,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68991;
+                readonly id: 73928;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "9701:67:128";
+                readonly src: "9701:67:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "CHANGE_TOKENS_PENDING_WEIGHT_CHANGE";
-                readonly nameLocation: "9727:35:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9727:35:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4661,10 +4661,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68989;
+                    readonly id: 73926;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "9701:7:128";
+                    readonly src: "9701:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4672,14 +4672,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333439";
-                    readonly id: 68990;
+                    readonly id: 73927;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9765:3:128";
+                    readonly src: "9765:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_349_by_1";
                         readonly typeString: "int_const 349";
@@ -4688,15 +4688,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68994;
+                readonly id: 73931;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "9774:42:128";
+                readonly src: "9774:42:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MAX_WEIGHT";
-                readonly nameLocation: "9800:10:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9800:10:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4704,10 +4704,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68992;
+                    readonly id: 73929;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "9774:7:128";
+                    readonly src: "9774:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4715,14 +4715,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333530";
-                    readonly id: 68993;
+                    readonly id: 73930;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9813:3:128";
+                    readonly src: "9813:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_350_by_1";
                         readonly typeString: "int_const 350";
@@ -4731,15 +4731,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 68997;
+                readonly id: 73934;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "9822:49:128";
+                readonly src: "9822:49:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UNAUTHORIZED_JOIN";
-                readonly nameLocation: "9848:17:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9848:17:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4747,10 +4747,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68995;
+                    readonly id: 73932;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "9822:7:128";
+                    readonly src: "9822:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4758,14 +4758,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333531";
-                    readonly id: 68996;
+                    readonly id: 73933;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9868:3:128";
+                    readonly src: "9868:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_351_by_1";
                         readonly typeString: "int_const 351";
@@ -4774,15 +4774,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69000;
+                readonly id: 73937;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "9877:65:128";
+                readonly src: "9877:65:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MAX_MANAGEMENT_AUM_FEE_PERCENTAGE";
-                readonly nameLocation: "9903:33:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9903:33:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4790,10 +4790,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 68998;
+                    readonly id: 73935;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "9877:7:128";
+                    readonly src: "9877:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4801,14 +4801,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333532";
-                    readonly id: 68999;
+                    readonly id: 73936;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9939:3:128";
+                    readonly src: "9939:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_352_by_1";
                         readonly typeString: "int_const 352";
@@ -4817,15 +4817,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69003;
+                readonly id: 73940;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "9948:49:128";
+                readonly src: "9948:49:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "FRACTIONAL_TARGET";
-                readonly nameLocation: "9974:17:128";
-                readonly scope: 69262;
+                readonly nameLocation: "9974:17:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4833,10 +4833,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69001;
+                    readonly id: 73938;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "9948:7:128";
+                    readonly src: "9948:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4844,14 +4844,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333533";
-                    readonly id: 69002;
+                    readonly id: 73939;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "9994:3:128";
+                    readonly src: "9994:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_353_by_1";
                         readonly typeString: "int_const 353";
@@ -4860,15 +4860,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69006;
+                readonly id: 73943;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10003:49:128";
+                readonly src: "10003:49:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ADD_OR_REMOVE_BPT";
-                readonly nameLocation: "10029:17:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10029:17:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4876,10 +4876,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69004;
+                    readonly id: 73941;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10003:7:128";
+                    readonly src: "10003:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4887,14 +4887,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333534";
-                    readonly id: 69005;
+                    readonly id: 73942;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10049:3:128";
+                    readonly src: "10049:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_354_by_1";
                         readonly typeString: "int_const 354";
@@ -4903,15 +4903,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69009;
+                readonly id: 73946;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10058:62:128";
+                readonly src: "10058:62:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INVALID_CIRCUIT_BREAKER_BOUNDS";
-                readonly nameLocation: "10084:30:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10084:30:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4919,10 +4919,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69007;
+                    readonly id: 73944;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10058:7:128";
+                    readonly src: "10058:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4930,14 +4930,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333535";
-                    readonly id: 69008;
+                    readonly id: 73945;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10117:3:128";
+                    readonly src: "10117:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_355_by_1";
                         readonly typeString: "int_const 355";
@@ -4946,15 +4946,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69012;
+                readonly id: 73949;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10126:55:128";
+                readonly src: "10126:55:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "CIRCUIT_BREAKER_TRIPPED";
-                readonly nameLocation: "10152:23:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10152:23:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -4962,10 +4962,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69010;
+                    readonly id: 73947;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10126:7:128";
+                    readonly src: "10126:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -4973,14 +4973,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333536";
-                    readonly id: 69011;
+                    readonly id: 73948;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10178:3:128";
+                    readonly src: "10178:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_356_by_1";
                         readonly typeString: "int_const 356";
@@ -4989,15 +4989,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69015;
+                readonly id: 73952;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10187:54:128";
+                readonly src: "10187:54:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MALICIOUS_QUERY_REVERT";
-                readonly nameLocation: "10213:22:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10213:22:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5005,10 +5005,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69013;
+                    readonly id: 73950;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10187:7:128";
+                    readonly src: "10187:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5016,14 +5016,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333537";
-                    readonly id: 69014;
+                    readonly id: 73951;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10238:3:128";
+                    readonly src: "10238:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_357_by_1";
                         readonly typeString: "int_const 357";
@@ -5032,15 +5032,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69018;
+                readonly id: 73955;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10247:52:128";
+                readonly src: "10247:52:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "JOINS_EXITS_DISABLED";
-                readonly nameLocation: "10273:20:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10273:20:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5048,10 +5048,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69016;
+                    readonly id: 73953;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10247:7:128";
+                    readonly src: "10247:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5059,14 +5059,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "333538";
-                    readonly id: 69017;
+                    readonly id: 73954;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10296:3:128";
+                    readonly src: "10296:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_358_by_1";
                         readonly typeString: "int_const 358";
@@ -5075,15 +5075,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69021;
+                readonly id: 73958;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10317:42:128";
+                readonly src: "10317:42:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "REENTRANCY";
-                readonly nameLocation: "10343:10:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10343:10:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5091,10 +5091,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69019;
+                    readonly id: 73956;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10317:7:128";
+                    readonly src: "10317:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5102,14 +5102,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343030";
-                    readonly id: 69020;
+                    readonly id: 73957;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10356:3:128";
+                    readonly src: "10356:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_400_by_1";
                         readonly typeString: "int_const 400";
@@ -5118,15 +5118,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69024;
+                readonly id: 73961;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10365:50:128";
+                readonly src: "10365:50:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "SENDER_NOT_ALLOWED";
-                readonly nameLocation: "10391:18:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10391:18:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5134,10 +5134,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69022;
+                    readonly id: 73959;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10365:7:128";
+                    readonly src: "10365:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5145,14 +5145,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343031";
-                    readonly id: 69023;
+                    readonly id: 73960;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10412:3:128";
+                    readonly src: "10412:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_401_by_1";
                         readonly typeString: "int_const 401";
@@ -5161,15 +5161,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69027;
+                readonly id: 73964;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10421:38:128";
+                readonly src: "10421:38:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "PAUSED";
-                readonly nameLocation: "10447:6:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10447:6:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5177,10 +5177,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69025;
+                    readonly id: 73962;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10421:7:128";
+                    readonly src: "10421:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5188,14 +5188,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343032";
-                    readonly id: 69026;
+                    readonly id: 73963;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10456:3:128";
+                    readonly src: "10456:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_402_by_1";
                         readonly typeString: "int_const 402";
@@ -5204,15 +5204,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69030;
+                readonly id: 73967;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10465:52:128";
+                readonly src: "10465:52:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "PAUSE_WINDOW_EXPIRED";
-                readonly nameLocation: "10491:20:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10491:20:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5220,10 +5220,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69028;
+                    readonly id: 73965;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10465:7:128";
+                    readonly src: "10465:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5231,14 +5231,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343033";
-                    readonly id: 69029;
+                    readonly id: 73966;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10514:3:128";
+                    readonly src: "10514:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_403_by_1";
                         readonly typeString: "int_const 403";
@@ -5247,15 +5247,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69033;
+                readonly id: 73970;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10523:57:128";
+                readonly src: "10523:57:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MAX_PAUSE_WINDOW_DURATION";
-                readonly nameLocation: "10549:25:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10549:25:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5263,10 +5263,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69031;
+                    readonly id: 73968;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10523:7:128";
+                    readonly src: "10523:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5274,14 +5274,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343034";
-                    readonly id: 69032;
+                    readonly id: 73969;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10577:3:128";
+                    readonly src: "10577:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_404_by_1";
                         readonly typeString: "int_const 404";
@@ -5290,15 +5290,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69036;
+                readonly id: 73973;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10586:58:128";
+                readonly src: "10586:58:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MAX_BUFFER_PERIOD_DURATION";
-                readonly nameLocation: "10612:26:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10612:26:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5306,10 +5306,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69034;
+                    readonly id: 73971;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10586:7:128";
+                    readonly src: "10586:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5317,14 +5317,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343035";
-                    readonly id: 69035;
+                    readonly id: 73972;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10641:3:128";
+                    readonly src: "10641:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_405_by_1";
                         readonly typeString: "int_const 405";
@@ -5333,15 +5333,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69039;
+                readonly id: 73976;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10650:52:128";
+                readonly src: "10650:52:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INSUFFICIENT_BALANCE";
-                readonly nameLocation: "10676:20:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10676:20:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5349,10 +5349,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69037;
+                    readonly id: 73974;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10650:7:128";
+                    readonly src: "10650:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5360,14 +5360,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343036";
-                    readonly id: 69038;
+                    readonly id: 73975;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10699:3:128";
+                    readonly src: "10699:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_406_by_1";
                         readonly typeString: "int_const 406";
@@ -5376,15 +5376,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69042;
+                readonly id: 73979;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10708:54:128";
+                readonly src: "10708:54:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INSUFFICIENT_ALLOWANCE";
-                readonly nameLocation: "10734:22:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10734:22:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5392,10 +5392,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69040;
+                    readonly id: 73977;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10708:7:128";
+                    readonly src: "10708:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5403,14 +5403,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343037";
-                    readonly id: 69041;
+                    readonly id: 73978;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10759:3:128";
+                    readonly src: "10759:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_407_by_1";
                         readonly typeString: "int_const 407";
@@ -5419,15 +5419,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69045;
+                readonly id: 73982;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10768:64:128";
+                readonly src: "10768:64:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ERC20_TRANSFER_FROM_ZERO_ADDRESS";
-                readonly nameLocation: "10794:32:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10794:32:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5435,10 +5435,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69043;
+                    readonly id: 73980;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10768:7:128";
+                    readonly src: "10768:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5446,14 +5446,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343038";
-                    readonly id: 69044;
+                    readonly id: 73981;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10829:3:128";
+                    readonly src: "10829:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_408_by_1";
                         readonly typeString: "int_const 408";
@@ -5462,15 +5462,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69048;
+                readonly id: 73985;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10838:62:128";
+                readonly src: "10838:62:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ERC20_TRANSFER_TO_ZERO_ADDRESS";
-                readonly nameLocation: "10864:30:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10864:30:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5478,10 +5478,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69046;
+                    readonly id: 73983;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10838:7:128";
+                    readonly src: "10838:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5489,14 +5489,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343039";
-                    readonly id: 69047;
+                    readonly id: 73984;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10897:3:128";
+                    readonly src: "10897:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_409_by_1";
                         readonly typeString: "int_const 409";
@@ -5505,15 +5505,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69051;
+                readonly id: 73988;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10906:58:128";
+                readonly src: "10906:58:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ERC20_MINT_TO_ZERO_ADDRESS";
-                readonly nameLocation: "10932:26:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10932:26:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5521,10 +5521,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69049;
+                    readonly id: 73986;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10906:7:128";
+                    readonly src: "10906:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5532,14 +5532,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343130";
-                    readonly id: 69050;
+                    readonly id: 73987;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "10961:3:128";
+                    readonly src: "10961:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_410_by_1";
                         readonly typeString: "int_const 410";
@@ -5548,15 +5548,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69054;
+                readonly id: 73991;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "10970:60:128";
+                readonly src: "10970:60:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ERC20_BURN_FROM_ZERO_ADDRESS";
-                readonly nameLocation: "10996:28:128";
-                readonly scope: 69262;
+                readonly nameLocation: "10996:28:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5564,10 +5564,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69052;
+                    readonly id: 73989;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "10970:7:128";
+                    readonly src: "10970:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5575,14 +5575,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343131";
-                    readonly id: 69053;
+                    readonly id: 73990;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "11027:3:128";
+                    readonly src: "11027:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_411_by_1";
                         readonly typeString: "int_const 411";
@@ -5591,15 +5591,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69057;
+                readonly id: 73994;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "11036:63:128";
+                readonly src: "11036:63:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ERC20_APPROVE_FROM_ZERO_ADDRESS";
-                readonly nameLocation: "11062:31:128";
-                readonly scope: 69262;
+                readonly nameLocation: "11062:31:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5607,10 +5607,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69055;
+                    readonly id: 73992;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "11036:7:128";
+                    readonly src: "11036:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5618,14 +5618,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343132";
-                    readonly id: 69056;
+                    readonly id: 73993;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "11096:3:128";
+                    readonly src: "11096:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_412_by_1";
                         readonly typeString: "int_const 412";
@@ -5634,15 +5634,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69060;
+                readonly id: 73997;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "11105:61:128";
+                readonly src: "11105:61:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ERC20_APPROVE_TO_ZERO_ADDRESS";
-                readonly nameLocation: "11131:29:128";
-                readonly scope: 69262;
+                readonly nameLocation: "11131:29:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5650,10 +5650,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69058;
+                    readonly id: 73995;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "11105:7:128";
+                    readonly src: "11105:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5661,14 +5661,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343133";
-                    readonly id: 69059;
+                    readonly id: 73996;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "11163:3:128";
+                    readonly src: "11163:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_413_by_1";
                         readonly typeString: "int_const 413";
@@ -5677,15 +5677,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69063;
+                readonly id: 74000;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "11172:64:128";
+                readonly src: "11172:64:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ERC20_TRANSFER_EXCEEDS_ALLOWANCE";
-                readonly nameLocation: "11198:32:128";
-                readonly scope: 69262;
+                readonly nameLocation: "11198:32:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5693,10 +5693,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69061;
+                    readonly id: 73998;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "11172:7:128";
+                    readonly src: "11172:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5704,14 +5704,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343134";
-                    readonly id: 69062;
+                    readonly id: 73999;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "11233:3:128";
+                    readonly src: "11233:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_414_by_1";
                         readonly typeString: "int_const 414";
@@ -5720,15 +5720,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69066;
+                readonly id: 74003;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "11242:68:128";
+                readonly src: "11242:68:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ERC20_DECREASED_ALLOWANCE_BELOW_ZERO";
-                readonly nameLocation: "11268:36:128";
-                readonly scope: 69262;
+                readonly nameLocation: "11268:36:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5736,10 +5736,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69064;
+                    readonly id: 74001;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "11242:7:128";
+                    readonly src: "11242:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5747,14 +5747,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343135";
-                    readonly id: 69065;
+                    readonly id: 74002;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "11307:3:128";
+                    readonly src: "11307:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_415_by_1";
                         readonly typeString: "int_const 415";
@@ -5763,15 +5763,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69069;
+                readonly id: 74006;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "11316:62:128";
+                readonly src: "11316:62:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ERC20_TRANSFER_EXCEEDS_BALANCE";
-                readonly nameLocation: "11342:30:128";
-                readonly scope: 69262;
+                readonly nameLocation: "11342:30:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5779,10 +5779,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69067;
+                    readonly id: 74004;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "11316:7:128";
+                    readonly src: "11316:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5790,14 +5790,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343136";
-                    readonly id: 69068;
+                    readonly id: 74005;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "11375:3:128";
+                    readonly src: "11375:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_416_by_1";
                         readonly typeString: "int_const 416";
@@ -5806,15 +5806,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69072;
+                readonly id: 74009;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "11384:60:128";
+                readonly src: "11384:60:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ERC20_BURN_EXCEEDS_ALLOWANCE";
-                readonly nameLocation: "11410:28:128";
-                readonly scope: 69262;
+                readonly nameLocation: "11410:28:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5822,10 +5822,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69070;
+                    readonly id: 74007;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "11384:7:128";
+                    readonly src: "11384:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5833,14 +5833,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343137";
-                    readonly id: 69071;
+                    readonly id: 74008;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "11441:3:128";
+                    readonly src: "11441:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_417_by_1";
                         readonly typeString: "int_const 417";
@@ -5849,15 +5849,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69075;
+                readonly id: 74012;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "11450:54:128";
+                readonly src: "11450:54:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "SAFE_ERC20_CALL_FAILED";
-                readonly nameLocation: "11476:22:128";
-                readonly scope: 69262;
+                readonly nameLocation: "11476:22:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5865,10 +5865,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69073;
+                    readonly id: 74010;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "11450:7:128";
+                    readonly src: "11450:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5876,14 +5876,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343138";
-                    readonly id: 69074;
+                    readonly id: 74011;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "11501:3:128";
+                    readonly src: "11501:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_418_by_1";
                         readonly typeString: "int_const 418";
@@ -5892,15 +5892,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69078;
+                readonly id: 74015;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "11510:60:128";
+                readonly src: "11510:60:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ADDRESS_INSUFFICIENT_BALANCE";
-                readonly nameLocation: "11536:28:128";
-                readonly scope: 69262;
+                readonly nameLocation: "11536:28:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5908,10 +5908,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69076;
+                    readonly id: 74013;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "11510:7:128";
+                    readonly src: "11510:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5919,14 +5919,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343139";
-                    readonly id: 69077;
+                    readonly id: 74014;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "11567:3:128";
+                    readonly src: "11567:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_419_by_1";
                         readonly typeString: "int_const 419";
@@ -5935,15 +5935,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69081;
+                readonly id: 74018;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "11576:57:128";
+                readonly src: "11576:57:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ADDRESS_CANNOT_SEND_VALUE";
-                readonly nameLocation: "11602:25:128";
-                readonly scope: 69262;
+                readonly nameLocation: "11602:25:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5951,10 +5951,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69079;
+                    readonly id: 74016;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "11576:7:128";
+                    readonly src: "11576:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -5962,14 +5962,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343230";
-                    readonly id: 69080;
+                    readonly id: 74017;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "11630:3:128";
+                    readonly src: "11630:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_420_by_1";
                         readonly typeString: "int_const 420";
@@ -5978,15 +5978,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69084;
+                readonly id: 74021;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "11639:63:128";
+                readonly src: "11639:63:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "SAFE_CAST_VALUE_CANT_FIT_INT256";
-                readonly nameLocation: "11665:31:128";
-                readonly scope: 69262;
+                readonly nameLocation: "11665:31:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -5994,10 +5994,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69082;
+                    readonly id: 74019;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "11639:7:128";
+                    readonly src: "11639:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6005,14 +6005,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343231";
-                    readonly id: 69083;
+                    readonly id: 74020;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "11699:3:128";
+                    readonly src: "11699:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_421_by_1";
                         readonly typeString: "int_const 421";
@@ -6021,15 +6021,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69087;
+                readonly id: 74024;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "11708:54:128";
+                readonly src: "11708:54:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "GRANT_SENDER_NOT_ADMIN";
-                readonly nameLocation: "11734:22:128";
-                readonly scope: 69262;
+                readonly nameLocation: "11734:22:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6037,10 +6037,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69085;
+                    readonly id: 74022;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "11708:7:128";
+                    readonly src: "11708:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6048,14 +6048,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343232";
-                    readonly id: 69086;
+                    readonly id: 74023;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "11759:3:128";
+                    readonly src: "11759:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_422_by_1";
                         readonly typeString: "int_const 422";
@@ -6064,15 +6064,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69090;
+                readonly id: 74027;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "11768:55:128";
+                readonly src: "11768:55:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "REVOKE_SENDER_NOT_ADMIN";
-                readonly nameLocation: "11794:23:128";
-                readonly scope: 69262;
+                readonly nameLocation: "11794:23:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6080,10 +6080,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69088;
+                    readonly id: 74025;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "11768:7:128";
+                    readonly src: "11768:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6091,14 +6091,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343233";
-                    readonly id: 69089;
+                    readonly id: 74026;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "11820:3:128";
+                    readonly src: "11820:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_423_by_1";
                         readonly typeString: "int_const 423";
@@ -6107,15 +6107,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69093;
+                readonly id: 74030;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "11829:59:128";
+                readonly src: "11829:59:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "RENOUNCE_SENDER_NOT_ALLOWED";
-                readonly nameLocation: "11855:27:128";
-                readonly scope: 69262;
+                readonly nameLocation: "11855:27:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6123,10 +6123,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69091;
+                    readonly id: 74028;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "11829:7:128";
+                    readonly src: "11829:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6134,14 +6134,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343234";
-                    readonly id: 69092;
+                    readonly id: 74029;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "11885:3:128";
+                    readonly src: "11885:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_424_by_1";
                         readonly typeString: "int_const 424";
@@ -6150,15 +6150,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69096;
+                readonly id: 74033;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "11894:53:128";
+                readonly src: "11894:53:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "BUFFER_PERIOD_EXPIRED";
-                readonly nameLocation: "11920:21:128";
-                readonly scope: 69262;
+                readonly nameLocation: "11920:21:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6166,10 +6166,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69094;
+                    readonly id: 74031;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "11894:7:128";
+                    readonly src: "11894:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6177,14 +6177,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343235";
-                    readonly id: 69095;
+                    readonly id: 74032;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "11944:3:128";
+                    readonly src: "11944:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_425_by_1";
                         readonly typeString: "int_const 425";
@@ -6193,15 +6193,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69099;
+                readonly id: 74036;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "11953:51:128";
+                readonly src: "11953:51:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "CALLER_IS_NOT_OWNER";
-                readonly nameLocation: "11979:19:128";
-                readonly scope: 69262;
+                readonly nameLocation: "11979:19:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6209,10 +6209,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69097;
+                    readonly id: 74034;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "11953:7:128";
+                    readonly src: "11953:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6220,14 +6220,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343236";
-                    readonly id: 69098;
+                    readonly id: 74035;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12001:3:128";
+                    readonly src: "12001:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_426_by_1";
                         readonly typeString: "int_const 426";
@@ -6236,15 +6236,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69102;
+                readonly id: 74039;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12010:49:128";
+                readonly src: "12010:49:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "NEW_OWNER_IS_ZERO";
-                readonly nameLocation: "12036:17:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12036:17:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6252,10 +6252,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69100;
+                    readonly id: 74037;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12010:7:128";
+                    readonly src: "12010:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6263,14 +6263,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343237";
-                    readonly id: 69101;
+                    readonly id: 74038;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12056:3:128";
+                    readonly src: "12056:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_427_by_1";
                         readonly typeString: "int_const 427";
@@ -6279,15 +6279,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69105;
+                readonly id: 74042;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12065:54:128";
+                readonly src: "12065:54:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "CODE_DEPLOYMENT_FAILED";
-                readonly nameLocation: "12091:22:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12091:22:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6295,10 +6295,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69103;
+                    readonly id: 74040;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12065:7:128";
+                    readonly src: "12065:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6306,14 +6306,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343238";
-                    readonly id: 69104;
+                    readonly id: 74041;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12116:3:128";
+                    readonly src: "12116:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_428_by_1";
                         readonly typeString: "int_const 428";
@@ -6322,15 +6322,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69108;
+                readonly id: 74045;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12125:52:128";
+                readonly src: "12125:52:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "CALL_TO_NON_CONTRACT";
-                readonly nameLocation: "12151:20:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12151:20:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6338,10 +6338,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69106;
+                    readonly id: 74043;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12125:7:128";
+                    readonly src: "12125:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6349,14 +6349,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343239";
-                    readonly id: 69107;
+                    readonly id: 74044;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12174:3:128";
+                    readonly src: "12174:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_429_by_1";
                         readonly typeString: "int_const 429";
@@ -6365,15 +6365,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69111;
+                readonly id: 74048;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12183:53:128";
+                readonly src: "12183:53:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "LOW_LEVEL_CALL_FAILED";
-                readonly nameLocation: "12209:21:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12209:21:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6381,10 +6381,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69109;
+                    readonly id: 74046;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12183:7:128";
+                    readonly src: "12183:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6392,14 +6392,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343330";
-                    readonly id: 69110;
+                    readonly id: 74047;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12233:3:128";
+                    readonly src: "12233:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_430_by_1";
                         readonly typeString: "int_const 430";
@@ -6408,15 +6408,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69114;
+                readonly id: 74051;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12242:42:128";
+                readonly src: "12242:42:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "NOT_PAUSED";
-                readonly nameLocation: "12268:10:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12268:10:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6424,10 +6424,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69112;
+                    readonly id: 74049;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12242:7:128";
+                    readonly src: "12242:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6435,14 +6435,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343331";
-                    readonly id: 69113;
+                    readonly id: 74050;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12281:3:128";
+                    readonly src: "12281:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_431_by_1";
                         readonly typeString: "int_const 431";
@@ -6451,15 +6451,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69117;
+                readonly id: 74054;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12290:59:128";
+                readonly src: "12290:59:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ADDRESS_ALREADY_ALLOWLISTED";
-                readonly nameLocation: "12316:27:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12316:27:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6467,10 +6467,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69115;
+                    readonly id: 74052;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12290:7:128";
+                    readonly src: "12290:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6478,14 +6478,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343332";
-                    readonly id: 69116;
+                    readonly id: 74053;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12346:3:128";
+                    readonly src: "12346:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_432_by_1";
                         readonly typeString: "int_const 432";
@@ -6494,15 +6494,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69120;
+                readonly id: 74057;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12355:55:128";
+                readonly src: "12355:55:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ADDRESS_NOT_ALLOWLISTED";
-                readonly nameLocation: "12381:23:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12381:23:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6510,10 +6510,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69118;
+                    readonly id: 74055;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12355:7:128";
+                    readonly src: "12355:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6521,14 +6521,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343333";
-                    readonly id: 69119;
+                    readonly id: 74056;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12407:3:128";
+                    readonly src: "12407:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_433_by_1";
                         readonly typeString: "int_const 433";
@@ -6537,15 +6537,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69123;
+                readonly id: 74060;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12416:58:128";
+                readonly src: "12416:58:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ERC20_BURN_EXCEEDS_BALANCE";
-                readonly nameLocation: "12442:26:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12442:26:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6553,10 +6553,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69121;
+                    readonly id: 74058;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12416:7:128";
+                    readonly src: "12416:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6564,14 +6564,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343334";
-                    readonly id: 69122;
+                    readonly id: 74059;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12471:3:128";
+                    readonly src: "12471:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_434_by_1";
                         readonly typeString: "int_const 434";
@@ -6580,15 +6580,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69126;
+                readonly id: 74063;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12480:49:128";
+                readonly src: "12480:49:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INVALID_OPERATION";
-                readonly nameLocation: "12506:17:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12506:17:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6596,10 +6596,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69124;
+                    readonly id: 74061;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12480:7:128";
+                    readonly src: "12480:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6607,14 +6607,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343335";
-                    readonly id: 69125;
+                    readonly id: 74062;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12526:3:128";
+                    readonly src: "12526:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_435_by_1";
                         readonly typeString: "int_const 435";
@@ -6623,15 +6623,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69129;
+                readonly id: 74066;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12535:46:128";
+                readonly src: "12535:46:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "CODEC_OVERFLOW";
-                readonly nameLocation: "12561:14:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12561:14:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6639,10 +6639,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69127;
+                    readonly id: 74064;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12535:7:128";
+                    readonly src: "12535:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6650,14 +6650,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343336";
-                    readonly id: 69128;
+                    readonly id: 74065;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12578:3:128";
+                    readonly src: "12578:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_436_by_1";
                         readonly typeString: "int_const 436";
@@ -6666,15 +6666,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69132;
+                readonly id: 74069;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12587:48:128";
+                readonly src: "12587:48:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "IN_RECOVERY_MODE";
-                readonly nameLocation: "12613:16:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12613:16:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6682,10 +6682,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69130;
+                    readonly id: 74067;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12587:7:128";
+                    readonly src: "12587:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6693,14 +6693,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343337";
-                    readonly id: 69131;
+                    readonly id: 74068;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12632:3:128";
+                    readonly src: "12632:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_437_by_1";
                         readonly typeString: "int_const 437";
@@ -6709,15 +6709,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69135;
+                readonly id: 74072;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12641:52:128";
+                readonly src: "12641:52:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "NOT_IN_RECOVERY_MODE";
-                readonly nameLocation: "12667:20:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12667:20:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6725,10 +6725,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69133;
+                    readonly id: 74070;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12641:7:128";
+                    readonly src: "12641:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6736,14 +6736,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343338";
-                    readonly id: 69134;
+                    readonly id: 74071;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12690:3:128";
+                    readonly src: "12690:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_438_by_1";
                         readonly typeString: "int_const 438";
@@ -6752,15 +6752,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69138;
+                readonly id: 74075;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12699:47:128";
+                readonly src: "12699:47:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INDUCED_FAILURE";
-                readonly nameLocation: "12725:15:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12725:15:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6768,10 +6768,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69136;
+                    readonly id: 74073;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12699:7:128";
+                    readonly src: "12699:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6779,14 +6779,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343339";
-                    readonly id: 69137;
+                    readonly id: 74074;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12743:3:128";
+                    readonly src: "12743:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_439_by_1";
                         readonly typeString: "int_const 439";
@@ -6795,15 +6795,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69141;
+                readonly id: 74078;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12752:49:128";
+                readonly src: "12752:49:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "EXPIRED_SIGNATURE";
-                readonly nameLocation: "12778:17:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12778:17:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6811,10 +6811,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69139;
+                    readonly id: 74076;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12752:7:128";
+                    readonly src: "12752:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6822,14 +6822,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343430";
-                    readonly id: 69140;
+                    readonly id: 74077;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12798:3:128";
+                    readonly src: "12798:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_440_by_1";
                         readonly typeString: "int_const 440";
@@ -6838,15 +6838,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69144;
+                readonly id: 74081;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12807:51:128";
+                readonly src: "12807:51:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MALFORMED_SIGNATURE";
-                readonly nameLocation: "12833:19:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12833:19:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6854,10 +6854,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69142;
+                    readonly id: 74079;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12807:7:128";
+                    readonly src: "12807:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6865,14 +6865,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343431";
-                    readonly id: 69143;
+                    readonly id: 74080;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12855:3:128";
+                    readonly src: "12855:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_441_by_1";
                         readonly typeString: "int_const 441";
@@ -6881,15 +6881,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69147;
+                readonly id: 74084;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12864:63:128";
+                readonly src: "12864:63:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "SAFE_CAST_VALUE_CANT_FIT_UINT64";
-                readonly nameLocation: "12890:31:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12890:31:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6897,10 +6897,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69145;
+                    readonly id: 74082;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12864:7:128";
+                    readonly src: "12864:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6908,14 +6908,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343432";
-                    readonly id: 69146;
+                    readonly id: 74083;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12924:3:128";
+                    readonly src: "12924:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_442_by_1";
                         readonly typeString: "int_const 442";
@@ -6924,15 +6924,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69150;
+                readonly id: 74087;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12933:50:128";
+                readonly src: "12933:50:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UNHANDLED_FEE_TYPE";
-                readonly nameLocation: "12959:18:128";
-                readonly scope: 69262;
+                readonly nameLocation: "12959:18:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6940,10 +6940,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69148;
+                    readonly id: 74085;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12933:7:128";
+                    readonly src: "12933:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6951,14 +6951,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343433";
-                    readonly id: 69149;
+                    readonly id: 74086;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "12980:3:128";
+                    readonly src: "12980:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_443_by_1";
                         readonly typeString: "int_const 443";
@@ -6967,15 +6967,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69153;
+                readonly id: 74090;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "12989:46:128";
+                readonly src: "12989:46:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "BURN_FROM_ZERO";
-                readonly nameLocation: "13015:14:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13015:14:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -6983,10 +6983,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69151;
+                    readonly id: 74088;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "12989:7:128";
+                    readonly src: "12989:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -6994,14 +6994,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "343434";
-                    readonly id: 69152;
+                    readonly id: 74089;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13032:3:128";
+                    readonly src: "13032:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_444_by_1";
                         readonly typeString: "int_const 444";
@@ -7010,15 +7010,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69156;
+                readonly id: 74093;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13055:47:128";
+                readonly src: "13055:47:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INVALID_POOL_ID";
-                readonly nameLocation: "13081:15:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13081:15:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7026,10 +7026,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69154;
+                    readonly id: 74091;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13055:7:128";
+                    readonly src: "13055:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7037,14 +7037,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353030";
-                    readonly id: 69155;
+                    readonly id: 74092;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13099:3:128";
+                    readonly src: "13099:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_500_by_1";
                         readonly typeString: "int_const 500";
@@ -7053,15 +7053,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69159;
+                readonly id: 74096;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13108:47:128";
+                readonly src: "13108:47:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "CALLER_NOT_POOL";
-                readonly nameLocation: "13134:15:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13134:15:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7069,10 +7069,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69157;
+                    readonly id: 74094;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13108:7:128";
+                    readonly src: "13108:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7080,14 +7080,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353031";
-                    readonly id: 69158;
+                    readonly id: 74095;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13152:3:128";
+                    readonly src: "13152:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_501_by_1";
                         readonly typeString: "int_const 501";
@@ -7096,15 +7096,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69162;
+                readonly id: 74099;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13161:56:128";
+                readonly src: "13161:56:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "SENDER_NOT_ASSET_MANAGER";
-                readonly nameLocation: "13187:24:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13187:24:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7112,10 +7112,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69160;
+                    readonly id: 74097;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13161:7:128";
+                    readonly src: "13161:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7123,14 +7123,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353032";
-                    readonly id: 69161;
+                    readonly id: 74098;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13214:3:128";
+                    readonly src: "13214:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_502_by_1";
                         readonly typeString: "int_const 502";
@@ -7139,15 +7139,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69165;
+                readonly id: 74102;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13223:57:128";
+                readonly src: "13223:57:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "USER_DOESNT_ALLOW_RELAYER";
-                readonly nameLocation: "13249:25:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13249:25:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7155,10 +7155,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69163;
+                    readonly id: 74100;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13223:7:128";
+                    readonly src: "13223:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7166,14 +7166,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353033";
-                    readonly id: 69164;
+                    readonly id: 74101;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13277:3:128";
+                    readonly src: "13277:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_503_by_1";
                         readonly typeString: "int_const 503";
@@ -7182,15 +7182,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69168;
+                readonly id: 74105;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13286:49:128";
+                readonly src: "13286:49:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INVALID_SIGNATURE";
-                readonly nameLocation: "13312:17:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13312:17:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7198,10 +7198,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69166;
+                    readonly id: 74103;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13286:7:128";
+                    readonly src: "13286:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7209,14 +7209,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353034";
-                    readonly id: 69167;
+                    readonly id: 74104;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13332:3:128";
+                    readonly src: "13332:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_504_by_1";
                         readonly typeString: "int_const 504";
@@ -7225,15 +7225,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69171;
+                readonly id: 74108;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13341:46:128";
+                readonly src: "13341:46:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "EXIT_BELOW_MIN";
-                readonly nameLocation: "13367:14:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13367:14:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7241,10 +7241,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69169;
+                    readonly id: 74106;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13341:7:128";
+                    readonly src: "13341:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7252,14 +7252,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353035";
-                    readonly id: 69170;
+                    readonly id: 74107;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13384:3:128";
+                    readonly src: "13384:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_505_by_1";
                         readonly typeString: "int_const 505";
@@ -7268,15 +7268,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69174;
+                readonly id: 74111;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13393:46:128";
+                readonly src: "13393:46:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "JOIN_ABOVE_MAX";
-                readonly nameLocation: "13419:14:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13419:14:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7284,10 +7284,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69172;
+                    readonly id: 74109;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13393:7:128";
+                    readonly src: "13393:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7295,14 +7295,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353036";
-                    readonly id: 69173;
+                    readonly id: 74110;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13436:3:128";
+                    readonly src: "13436:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_506_by_1";
                         readonly typeString: "int_const 506";
@@ -7311,15 +7311,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69177;
+                readonly id: 74114;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13445:42:128";
+                readonly src: "13445:42:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "SWAP_LIMIT";
-                readonly nameLocation: "13471:10:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13471:10:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7327,10 +7327,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69175;
+                    readonly id: 74112;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13445:7:128";
+                    readonly src: "13445:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7338,14 +7338,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353037";
-                    readonly id: 69176;
+                    readonly id: 74113;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13484:3:128";
+                    readonly src: "13484:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_507_by_1";
                         readonly typeString: "int_const 507";
@@ -7354,15 +7354,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69180;
+                readonly id: 74117;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13493:45:128";
+                readonly src: "13493:45:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "SWAP_DEADLINE";
-                readonly nameLocation: "13519:13:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13519:13:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7370,10 +7370,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69178;
+                    readonly id: 74115;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13493:7:128";
+                    readonly src: "13493:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7381,14 +7381,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353038";
-                    readonly id: 69179;
+                    readonly id: 74116;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13535:3:128";
+                    readonly src: "13535:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_508_by_1";
                         readonly typeString: "int_const 508";
@@ -7397,15 +7397,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69183;
+                readonly id: 74120;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13544:54:128";
+                readonly src: "13544:54:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "CANNOT_SWAP_SAME_TOKEN";
-                readonly nameLocation: "13570:22:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13570:22:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7413,10 +7413,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69181;
+                    readonly id: 74118;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13544:7:128";
+                    readonly src: "13544:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7424,14 +7424,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353039";
-                    readonly id: 69182;
+                    readonly id: 74119;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13595:3:128";
+                    readonly src: "13595:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_509_by_1";
                         readonly typeString: "int_const 509";
@@ -7440,15 +7440,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69186;
+                readonly id: 74123;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13604:60:128";
+                readonly src: "13604:60:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UNKNOWN_AMOUNT_IN_FIRST_SWAP";
-                readonly nameLocation: "13630:28:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13630:28:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7456,10 +7456,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69184;
+                    readonly id: 74121;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13604:7:128";
+                    readonly src: "13604:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7467,14 +7467,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353130";
-                    readonly id: 69185;
+                    readonly id: 74122;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13661:3:128";
+                    readonly src: "13661:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_510_by_1";
                         readonly typeString: "int_const 510";
@@ -7483,15 +7483,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69189;
+                readonly id: 74126;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13670:60:128";
+                readonly src: "13670:60:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "MALCONSTRUCTED_MULTIHOP_SWAP";
-                readonly nameLocation: "13696:28:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13696:28:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7499,10 +7499,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69187;
+                    readonly id: 74124;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13670:7:128";
+                    readonly src: "13670:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7510,14 +7510,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353131";
-                    readonly id: 69188;
+                    readonly id: 74125;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13727:3:128";
+                    readonly src: "13727:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_511_by_1";
                         readonly typeString: "int_const 511";
@@ -7526,15 +7526,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69192;
+                readonly id: 74129;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13736:57:128";
+                readonly src: "13736:57:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INTERNAL_BALANCE_OVERFLOW";
-                readonly nameLocation: "13762:25:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13762:25:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7542,10 +7542,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69190;
+                    readonly id: 74127;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13736:7:128";
+                    readonly src: "13736:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7553,14 +7553,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353132";
-                    readonly id: 69191;
+                    readonly id: 74128;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13790:3:128";
+                    readonly src: "13790:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_512_by_1";
                         readonly typeString: "int_const 512";
@@ -7569,15 +7569,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69195;
+                readonly id: 74132;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13799:61:128";
+                readonly src: "13799:61:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INSUFFICIENT_INTERNAL_BALANCE";
-                readonly nameLocation: "13825:29:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13825:29:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7585,10 +7585,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69193;
+                    readonly id: 74130;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13799:7:128";
+                    readonly src: "13799:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7596,14 +7596,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353133";
-                    readonly id: 69194;
+                    readonly id: 74131;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13857:3:128";
+                    readonly src: "13857:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_513_by_1";
                         readonly typeString: "int_const 513";
@@ -7612,15 +7612,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69198;
+                readonly id: 74135;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13866:60:128";
+                readonly src: "13866:60:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INVALID_ETH_INTERNAL_BALANCE";
-                readonly nameLocation: "13892:28:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13892:28:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7628,10 +7628,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69196;
+                    readonly id: 74133;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13866:7:128";
+                    readonly src: "13866:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7639,14 +7639,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353134";
-                    readonly id: 69197;
+                    readonly id: 74134;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13923:3:128";
+                    readonly src: "13923:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_514_by_1";
                         readonly typeString: "int_const 514";
@@ -7655,15 +7655,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69201;
+                readonly id: 74138;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13932:57:128";
+                readonly src: "13932:57:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INVALID_POST_LOAN_BALANCE";
-                readonly nameLocation: "13958:25:128";
-                readonly scope: 69262;
+                readonly nameLocation: "13958:25:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7671,10 +7671,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69199;
+                    readonly id: 74136;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13932:7:128";
+                    readonly src: "13932:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7682,14 +7682,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353135";
-                    readonly id: 69200;
+                    readonly id: 74137;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "13986:3:128";
+                    readonly src: "13986:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_515_by_1";
                         readonly typeString: "int_const 515";
@@ -7698,15 +7698,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69204;
+                readonly id: 74141;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "13995:48:128";
+                readonly src: "13995:48:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INSUFFICIENT_ETH";
-                readonly nameLocation: "14021:16:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14021:16:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7714,10 +7714,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69202;
+                    readonly id: 74139;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "13995:7:128";
+                    readonly src: "13995:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7725,14 +7725,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353136";
-                    readonly id: 69203;
+                    readonly id: 74140;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14040:3:128";
+                    readonly src: "14040:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_516_by_1";
                         readonly typeString: "int_const 516";
@@ -7741,15 +7741,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69207;
+                readonly id: 74144;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14049:47:128";
+                readonly src: "14049:47:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UNALLOCATED_ETH";
-                readonly nameLocation: "14075:15:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14075:15:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7757,10 +7757,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69205;
+                    readonly id: 74142;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14049:7:128";
+                    readonly src: "14049:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7768,14 +7768,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353137";
-                    readonly id: 69206;
+                    readonly id: 74143;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14093:3:128";
+                    readonly src: "14093:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_517_by_1";
                         readonly typeString: "int_const 517";
@@ -7784,15 +7784,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69210;
+                readonly id: 74147;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14102:44:128";
+                readonly src: "14102:44:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "ETH_TRANSFER";
-                readonly nameLocation: "14128:12:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14128:12:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7800,10 +7800,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69208;
+                    readonly id: 74145;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14102:7:128";
+                    readonly src: "14102:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7811,14 +7811,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353138";
-                    readonly id: 69209;
+                    readonly id: 74146;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14143:3:128";
+                    readonly src: "14143:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_518_by_1";
                         readonly typeString: "int_const 518";
@@ -7827,15 +7827,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69213;
+                readonly id: 74150;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14152:55:128";
+                readonly src: "14152:55:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "CANNOT_USE_ETH_SENTINEL";
-                readonly nameLocation: "14178:23:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14178:23:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7843,10 +7843,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69211;
+                    readonly id: 74148;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14152:7:128";
+                    readonly src: "14152:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7854,14 +7854,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353139";
-                    readonly id: 69212;
+                    readonly id: 74149;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14204:3:128";
+                    readonly src: "14204:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_519_by_1";
                         readonly typeString: "int_const 519";
@@ -7870,15 +7870,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69216;
+                readonly id: 74153;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14213:47:128";
+                readonly src: "14213:47:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "TOKENS_MISMATCH";
-                readonly nameLocation: "14239:15:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14239:15:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7886,10 +7886,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69214;
+                    readonly id: 74151;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14213:7:128";
+                    readonly src: "14213:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7897,14 +7897,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353230";
-                    readonly id: 69215;
+                    readonly id: 74152;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14257:3:128";
+                    readonly src: "14257:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_520_by_1";
                         readonly typeString: "int_const 520";
@@ -7913,15 +7913,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69219;
+                readonly id: 74156;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14266:52:128";
+                readonly src: "14266:52:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "TOKEN_NOT_REGISTERED";
-                readonly nameLocation: "14292:20:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14292:20:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7929,10 +7929,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69217;
+                    readonly id: 74154;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14266:7:128";
+                    readonly src: "14266:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7940,14 +7940,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353231";
-                    readonly id: 69218;
+                    readonly id: 74155;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14315:3:128";
+                    readonly src: "14315:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_521_by_1";
                         readonly typeString: "int_const 521";
@@ -7956,15 +7956,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69222;
+                readonly id: 74159;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14324:56:128";
+                readonly src: "14324:56:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "TOKEN_ALREADY_REGISTERED";
-                readonly nameLocation: "14350:24:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14350:24:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -7972,10 +7972,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69220;
+                    readonly id: 74157;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14324:7:128";
+                    readonly src: "14324:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -7983,14 +7983,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353232";
-                    readonly id: 69221;
+                    readonly id: 74158;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14377:3:128";
+                    readonly src: "14377:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_522_by_1";
                         readonly typeString: "int_const 522";
@@ -7999,15 +7999,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69225;
+                readonly id: 74162;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14386:50:128";
+                readonly src: "14386:50:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "TOKENS_ALREADY_SET";
-                readonly nameLocation: "14412:18:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14412:18:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -8015,10 +8015,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69223;
+                    readonly id: 74160;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14386:7:128";
+                    readonly src: "14386:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -8026,14 +8026,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353233";
-                    readonly id: 69224;
+                    readonly id: 74161;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14433:3:128";
+                    readonly src: "14433:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_523_by_1";
                         readonly typeString: "int_const 523";
@@ -8042,15 +8042,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69228;
+                readonly id: 74165;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14442:55:128";
+                readonly src: "14442:55:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "TOKENS_LENGTH_MUST_BE_2";
-                readonly nameLocation: "14468:23:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14468:23:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -8058,10 +8058,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69226;
+                    readonly id: 74163;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14442:7:128";
+                    readonly src: "14442:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -8069,14 +8069,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353234";
-                    readonly id: 69227;
+                    readonly id: 74164;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14494:3:128";
+                    readonly src: "14494:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_524_by_1";
                         readonly typeString: "int_const 524";
@@ -8085,15 +8085,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69231;
+                readonly id: 74168;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14503:53:128";
+                readonly src: "14503:53:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "NONZERO_TOKEN_BALANCE";
-                readonly nameLocation: "14529:21:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14529:21:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -8101,10 +8101,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69229;
+                    readonly id: 74166;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14503:7:128";
+                    readonly src: "14503:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -8112,14 +8112,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353235";
-                    readonly id: 69230;
+                    readonly id: 74167;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14553:3:128";
+                    readonly src: "14553:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_525_by_1";
                         readonly typeString: "int_const 525";
@@ -8128,15 +8128,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69234;
+                readonly id: 74171;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14562:54:128";
+                readonly src: "14562:54:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "BALANCE_TOTAL_OVERFLOW";
-                readonly nameLocation: "14588:22:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14588:22:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -8144,10 +8144,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69232;
+                    readonly id: 74169;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14562:7:128";
+                    readonly src: "14562:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -8155,14 +8155,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353236";
-                    readonly id: 69233;
+                    readonly id: 74170;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14613:3:128";
+                    readonly src: "14613:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_526_by_1";
                         readonly typeString: "int_const 526";
@@ -8171,15 +8171,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69237;
+                readonly id: 74174;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14622:46:128";
+                readonly src: "14622:46:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "POOL_NO_TOKENS";
-                readonly nameLocation: "14648:14:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14648:14:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -8187,10 +8187,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69235;
+                    readonly id: 74172;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14622:7:128";
+                    readonly src: "14622:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -8198,14 +8198,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353237";
-                    readonly id: 69236;
+                    readonly id: 74173;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14665:3:128";
+                    readonly src: "14665:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_527_by_1";
                         readonly typeString: "int_const 527";
@@ -8214,15 +8214,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69240;
+                readonly id: 74177;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14674:63:128";
+                readonly src: "14674:63:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INSUFFICIENT_FLASH_LOAN_BALANCE";
-                readonly nameLocation: "14700:31:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14700:31:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -8230,10 +8230,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69238;
+                    readonly id: 74175;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14674:7:128";
+                    readonly src: "14674:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -8241,14 +8241,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "353238";
-                    readonly id: 69239;
+                    readonly id: 74176;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14734:3:128";
+                    readonly src: "14734:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_528_by_1";
                         readonly typeString: "int_const 528";
@@ -8257,15 +8257,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69243;
+                readonly id: 74180;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14756:60:128";
+                readonly src: "14756:60:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "SWAP_FEE_PERCENTAGE_TOO_HIGH";
-                readonly nameLocation: "14782:28:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14782:28:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -8273,10 +8273,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69241;
+                    readonly id: 74178;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14756:7:128";
+                    readonly src: "14756:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -8284,14 +8284,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "363030";
-                    readonly id: 69242;
+                    readonly id: 74179;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14813:3:128";
+                    readonly src: "14813:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_600_by_1";
                         readonly typeString: "int_const 600";
@@ -8300,15 +8300,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69246;
+                readonly id: 74183;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14822:66:128";
+                readonly src: "14822:66:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "FLASH_LOAN_FEE_PERCENTAGE_TOO_HIGH";
-                readonly nameLocation: "14848:34:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14848:34:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -8316,10 +8316,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69244;
+                    readonly id: 74181;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14822:7:128";
+                    readonly src: "14822:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -8327,14 +8327,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "363031";
-                    readonly id: 69245;
+                    readonly id: 74182;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14885:3:128";
+                    readonly src: "14885:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_601_by_1";
                         readonly typeString: "int_const 601";
@@ -8343,15 +8343,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69249;
+                readonly id: 74186;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14894:66:128";
+                readonly src: "14894:66:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "INSUFFICIENT_FLASH_LOAN_FEE_AMOUNT";
-                readonly nameLocation: "14920:34:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14920:34:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -8359,10 +8359,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69247;
+                    readonly id: 74184;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14894:7:128";
+                    readonly src: "14894:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -8370,14 +8370,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "363032";
-                    readonly id: 69248;
+                    readonly id: 74185;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "14957:3:128";
+                    readonly src: "14957:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_602_by_1";
                         readonly typeString: "int_const 602";
@@ -8386,15 +8386,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69252;
+                readonly id: 74189;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "14966:59:128";
+                readonly src: "14966:59:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "AUM_FEE_PERCENTAGE_TOO_HIGH";
-                readonly nameLocation: "14992:27:128";
-                readonly scope: 69262;
+                readonly nameLocation: "14992:27:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -8402,10 +8402,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69250;
+                    readonly id: 74187;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "14966:7:128";
+                    readonly src: "14966:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -8413,14 +8413,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "363033";
-                    readonly id: 69251;
+                    readonly id: 74188;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "15022:3:128";
+                    readonly src: "15022:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_603_by_1";
                         readonly typeString: "int_const 603";
@@ -8429,15 +8429,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69255;
+                readonly id: 74192;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "15051:64:128";
+                readonly src: "15051:64:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "SPLITTER_FEE_PERCENTAGE_TOO_HIGH";
-                readonly nameLocation: "15077:32:128";
-                readonly scope: 69262;
+                readonly nameLocation: "15077:32:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -8445,10 +8445,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69253;
+                    readonly id: 74190;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "15051:7:128";
+                    readonly src: "15051:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -8456,14 +8456,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "373030";
-                    readonly id: 69254;
+                    readonly id: 74191;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "15112:3:128";
+                    readonly src: "15112:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_700_by_1";
                         readonly typeString: "int_const 700";
@@ -8472,15 +8472,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69258;
+                readonly id: 74195;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "15134:45:128";
+                readonly src: "15134:45:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "UNIMPLEMENTED";
-                readonly nameLocation: "15160:13:128";
-                readonly scope: 69262;
+                readonly nameLocation: "15160:13:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -8488,10 +8488,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69256;
+                    readonly id: 74193;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "15134:7:128";
+                    readonly src: "15134:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -8499,14 +8499,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "393938";
-                    readonly id: 69257;
+                    readonly id: 74194;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "15176:3:128";
+                    readonly src: "15176:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_998_by_1";
                         readonly typeString: "int_const 998";
@@ -8515,15 +8515,15 @@ export declare const BalancerErrors: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 69261;
+                readonly id: 74198;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "15185:49:128";
+                readonly src: "15185:49:178";
                 readonly nodes: readonly [];
                 readonly constant: true;
                 readonly mutability: "constant";
                 readonly name: "SHOULD_NOT_HAPPEN";
-                readonly nameLocation: "15211:17:128";
-                readonly scope: 69262;
+                readonly nameLocation: "15211:17:178";
+                readonly scope: 74199;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -8531,10 +8531,10 @@ export declare const BalancerErrors: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 69259;
+                    readonly id: 74196;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "15185:7:128";
+                    readonly src: "15185:7:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
@@ -8542,14 +8542,14 @@ export declare const BalancerErrors: {
                 };
                 readonly value: {
                     readonly hexValue: "393939";
-                    readonly id: 69260;
+                    readonly id: 74197;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
                     readonly kind: "number";
                     readonly lValueRequested: false;
                     readonly nodeType: "Literal";
-                    readonly src: "15231:3:128";
+                    readonly src: "15231:3:178";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_rational_999_by_1";
                         readonly typeString: "int_const 999";
@@ -8564,15 +8564,15 @@ export declare const BalancerErrors: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "library";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [69262];
+            readonly linearizedBaseContracts: readonly [74199];
             readonly name: "BalancerErrors";
-            readonly nameLocation: "5214:14:128";
-            readonly scope: 69263;
+            readonly nameLocation: "5214:14:178";
+            readonly scope: 74200;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];
         readonly license: "GPL-3.0-or-later";
     };
-    readonly id: 128;
+    readonly id: 178;
 };
 //# sourceMappingURL=BalancerErrors.d.ts.map

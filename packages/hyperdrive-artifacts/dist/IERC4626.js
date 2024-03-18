@@ -1457,22 +1457,22 @@ export const IERC4626 = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IERC4626.sol",
-        "id": 7204,
+        "id": 10603,
         "exportedSymbols": {
             "IERC20": [
-                6920
+                10319
             ],
             "IERC4626": [
-                7203
+                10602
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "152:5540:40",
+        "src": "152:5540:82",
         "nodes": [
             {
-                "id": 7039,
+                "id": 10438,
                 "nodeType": "PragmaDirective",
-                "src": "152:23:40",
+                "src": "152:23:82",
                 "nodes": [],
                 "literals": [
                     "solidity",
@@ -1481,24 +1481,24 @@ export const IERC4626 = {
                 ]
             },
             {
-                "id": 7041,
+                "id": 10440,
                 "nodeType": "ImportDirective",
-                "src": "177:38:40",
+                "src": "177:38:82",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IERC20.sol",
                 "file": "./IERC20.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 7204,
-                "sourceUnit": 6921,
+                "scope": 10603,
+                "sourceUnit": 10320,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 7040,
+                            "id": 10439,
                             "name": "IERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6920,
-                            "src": "186:6:40",
+                            "referencedDeclaration": 10319,
+                            "src": "186:6:82",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -1507,39 +1507,39 @@ export const IERC4626 = {
                 "unitAlias": ""
             },
             {
-                "id": 7203,
+                "id": 10602,
                 "nodeType": "ContractDefinition",
-                "src": "295:5396:40",
+                "src": "295:5396:82",
                 "nodes": [
                     {
-                        "id": 7055,
+                        "id": 10454,
                         "nodeType": "EventDefinition",
-                        "src": "610:134:40",
+                        "src": "610:134:82",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 7045,
+                            "id": 10444,
                             "nodeType": "StructuredDocumentation",
-                            "src": "494:111:40",
+                            "src": "494:111:82",
                             "text": "@notice `sender` has exchanged `assets` for `shares`,\n and transferred those `shares` to `receiver`."
                         },
                         "eventSelector": "dcbc1c05240f31ff3ad067ef1ee35ce4997762752e3a095284754544f4c709d7",
                         "name": "Deposit",
-                        "nameLocation": "616:7:40",
+                        "nameLocation": "616:7:82",
                         "parameters": {
-                            "id": 7054,
+                            "id": 10453,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7047,
+                                    "id": 10446,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "sender",
-                                    "nameLocation": "649:6:40",
+                                    "nameLocation": "649:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7055,
-                                    "src": "633:22:40",
+                                    "scope": 10454,
+                                    "src": "633:22:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1547,10 +1547,10 @@ export const IERC4626 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7046,
+                                        "id": 10445,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "633:7:40",
+                                        "src": "633:7:82",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1561,14 +1561,14 @@ export const IERC4626 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7049,
+                                    "id": 10448,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "receiver",
-                                    "nameLocation": "681:8:40",
+                                    "nameLocation": "681:8:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7055,
-                                    "src": "665:24:40",
+                                    "scope": 10454,
+                                    "src": "665:24:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1576,10 +1576,10 @@ export const IERC4626 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7048,
+                                        "id": 10447,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "665:7:40",
+                                        "src": "665:7:82",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1590,14 +1590,14 @@ export const IERC4626 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7051,
+                                    "id": 10450,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "assets",
-                                    "nameLocation": "707:6:40",
+                                    "nameLocation": "707:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7055,
-                                    "src": "699:14:40",
+                                    "scope": 10454,
+                                    "src": "699:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1605,10 +1605,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7050,
+                                        "id": 10449,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "699:7:40",
+                                        "src": "699:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1618,14 +1618,14 @@ export const IERC4626 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7053,
+                                    "id": 10452,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "shares",
-                                    "nameLocation": "731:6:40",
+                                    "nameLocation": "731:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7055,
-                                    "src": "723:14:40",
+                                    "scope": 10454,
+                                    "src": "723:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1633,10 +1633,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7052,
+                                        "id": 10451,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "723:7:40",
+                                        "src": "723:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1645,38 +1645,38 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "623:120:40"
+                            "src": "623:120:82"
                         }
                     },
                     {
-                        "id": 7066,
+                        "id": 10465,
                         "nodeType": "EventDefinition",
-                        "src": "866:135:40",
+                        "src": "866:135:82",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 7056,
+                            "id": 10455,
                             "nodeType": "StructuredDocumentation",
-                            "src": "750:111:40",
+                            "src": "750:111:82",
                             "text": "@notice `sender` has exchanged `shares` for `assets`,\n and transferred those `assets` to `receiver`."
                         },
                         "eventSelector": "f341246adaac6f497bc2a656f546ab9e182111d630394f0c57c710a59a2cb567",
                         "name": "Withdraw",
-                        "nameLocation": "872:8:40",
+                        "nameLocation": "872:8:82",
                         "parameters": {
-                            "id": 7065,
+                            "id": 10464,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7058,
+                                    "id": 10457,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "sender",
-                                    "nameLocation": "906:6:40",
+                                    "nameLocation": "906:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7066,
-                                    "src": "890:22:40",
+                                    "scope": 10465,
+                                    "src": "890:22:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1684,10 +1684,10 @@ export const IERC4626 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7057,
+                                        "id": 10456,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "890:7:40",
+                                        "src": "890:7:82",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1698,14 +1698,14 @@ export const IERC4626 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7060,
+                                    "id": 10459,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "receiver",
-                                    "nameLocation": "938:8:40",
+                                    "nameLocation": "938:8:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7066,
-                                    "src": "922:24:40",
+                                    "scope": 10465,
+                                    "src": "922:24:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1713,10 +1713,10 @@ export const IERC4626 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7059,
+                                        "id": 10458,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "922:7:40",
+                                        "src": "922:7:82",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1727,14 +1727,14 @@ export const IERC4626 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7062,
+                                    "id": 10461,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "assets",
-                                    "nameLocation": "964:6:40",
+                                    "nameLocation": "964:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7066,
-                                    "src": "956:14:40",
+                                    "scope": 10465,
+                                    "src": "956:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1742,10 +1742,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7061,
+                                        "id": 10460,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "956:7:40",
+                                        "src": "956:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1755,14 +1755,14 @@ export const IERC4626 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7064,
+                                    "id": 10463,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "shares",
-                                    "nameLocation": "988:6:40",
+                                    "nameLocation": "988:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7066,
-                                    "src": "980:14:40",
+                                    "scope": 10465,
+                                    "src": "980:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1770,10 +1770,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7063,
+                                        "id": 10462,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "980:7:40",
+                                        "src": "980:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1782,18 +1782,18 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "880:120:40"
+                            "src": "880:120:82"
                         }
                     },
                     {
-                        "id": 7072,
+                        "id": 10471,
                         "nodeType": "FunctionDefinition",
-                        "src": "1303:63:40",
+                        "src": "1303:63:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7067,
+                            "id": 10466,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1173:125:40",
+                            "src": "1173:125:82",
                             "text": "@notice The address of the underlying ERC20 token used for\n the Vault for accounting, depositing, and withdrawing."
                         },
                         "functionSelector": "38d52e0f",
@@ -1801,26 +1801,26 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "asset",
-                        "nameLocation": "1312:5:40",
+                        "nameLocation": "1312:5:82",
                         "parameters": {
-                            "id": 7068,
+                            "id": 10467,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1317:2:40"
+                            "src": "1317:2:82"
                         },
                         "returnParameters": {
-                            "id": 7071,
+                            "id": 10470,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7070,
+                                    "id": 10469,
                                     "mutability": "mutable",
                                     "name": "asset",
-                                    "nameLocation": "1359:5:40",
+                                    "nameLocation": "1359:5:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7072,
-                                    "src": "1351:13:40",
+                                    "scope": 10471,
+                                    "src": "1351:13:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1828,10 +1828,10 @@ export const IERC4626 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7069,
+                                        "id": 10468,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1351:7:40",
+                                        "src": "1351:7:82",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1841,22 +1841,22 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1350:15:40"
+                            "src": "1350:15:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 7078,
+                        "id": 10477,
                         "nodeType": "FunctionDefinition",
-                        "src": "1461:75:40",
+                        "src": "1461:75:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7073,
+                            "id": 10472,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1372:84:40",
+                            "src": "1372:84:82",
                             "text": "@notice Total amount of the underlying asset that\n is \"managed\" by Vault."
                         },
                         "functionSelector": "01e1d114",
@@ -1864,26 +1864,26 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "totalAssets",
-                        "nameLocation": "1470:11:40",
+                        "nameLocation": "1470:11:82",
                         "parameters": {
-                            "id": 7074,
+                            "id": 10473,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1481:2:40"
+                            "src": "1481:2:82"
                         },
                         "returnParameters": {
-                            "id": 7077,
+                            "id": 10476,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7076,
+                                    "id": 10475,
                                     "mutability": "mutable",
                                     "name": "totalAssets",
-                                    "nameLocation": "1523:11:40",
+                                    "nameLocation": "1523:11:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7078,
-                                    "src": "1515:19:40",
+                                    "scope": 10477,
+                                    "src": "1515:19:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1891,10 +1891,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7075,
+                                        "id": 10474,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1515:7:40",
+                                        "src": "1515:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1903,22 +1903,22 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1514:21:40"
+                            "src": "1514:21:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 7088,
+                        "id": 10487,
                         "nodeType": "FunctionDefinition",
-                        "src": "1835:115:40",
+                        "src": "1835:115:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7079,
+                            "id": 10478,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1716:114:40",
+                            "src": "1716:114:82",
                             "text": "@notice Mints `shares` Vault shares to `receiver` by\n depositing exactly `assets` of underlying tokens."
                         },
                         "functionSelector": "6e553f65",
@@ -1926,20 +1926,20 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "deposit",
-                        "nameLocation": "1844:7:40",
+                        "nameLocation": "1844:7:82",
                         "parameters": {
-                            "id": 7084,
+                            "id": 10483,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7081,
+                                    "id": 10480,
                                     "mutability": "mutable",
                                     "name": "assets",
-                                    "nameLocation": "1869:6:40",
+                                    "nameLocation": "1869:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7088,
-                                    "src": "1861:14:40",
+                                    "scope": 10487,
+                                    "src": "1861:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1947,10 +1947,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7080,
+                                        "id": 10479,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1861:7:40",
+                                        "src": "1861:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1960,13 +1960,13 @@ export const IERC4626 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7083,
+                                    "id": 10482,
                                     "mutability": "mutable",
                                     "name": "receiver",
-                                    "nameLocation": "1893:8:40",
+                                    "nameLocation": "1893:8:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7088,
-                                    "src": "1885:16:40",
+                                    "scope": 10487,
+                                    "src": "1885:16:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1974,10 +1974,10 @@ export const IERC4626 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7082,
+                                        "id": 10481,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1885:7:40",
+                                        "src": "1885:7:82",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1987,21 +1987,21 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1851:56:40"
+                            "src": "1851:56:82"
                         },
                         "returnParameters": {
-                            "id": 7087,
+                            "id": 10486,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7086,
+                                    "id": 10485,
                                     "mutability": "mutable",
                                     "name": "shares",
-                                    "nameLocation": "1942:6:40",
+                                    "nameLocation": "1942:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7088,
-                                    "src": "1934:14:40",
+                                    "scope": 10487,
+                                    "src": "1934:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2009,10 +2009,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7085,
+                                        "id": 10484,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1934:7:40",
+                                        "src": "1934:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2021,22 +2021,22 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1933:16:40"
+                            "src": "1933:16:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 7098,
+                        "id": 10497,
                         "nodeType": "FunctionDefinition",
-                        "src": "2075:112:40",
+                        "src": "2075:112:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7089,
+                            "id": 10488,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1956:114:40",
+                            "src": "1956:114:82",
                             "text": "@notice Mints exactly `shares` Vault shares to `receiver`\n by depositing `assets` of underlying tokens."
                         },
                         "functionSelector": "94bf804d",
@@ -2044,20 +2044,20 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "mint",
-                        "nameLocation": "2084:4:40",
+                        "nameLocation": "2084:4:82",
                         "parameters": {
-                            "id": 7094,
+                            "id": 10493,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7091,
+                                    "id": 10490,
                                     "mutability": "mutable",
                                     "name": "shares",
-                                    "nameLocation": "2106:6:40",
+                                    "nameLocation": "2106:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7098,
-                                    "src": "2098:14:40",
+                                    "scope": 10497,
+                                    "src": "2098:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2065,10 +2065,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7090,
+                                        "id": 10489,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2098:7:40",
+                                        "src": "2098:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2078,13 +2078,13 @@ export const IERC4626 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7093,
+                                    "id": 10492,
                                     "mutability": "mutable",
                                     "name": "receiver",
-                                    "nameLocation": "2130:8:40",
+                                    "nameLocation": "2130:8:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7098,
-                                    "src": "2122:16:40",
+                                    "scope": 10497,
+                                    "src": "2122:16:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2092,10 +2092,10 @@ export const IERC4626 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7092,
+                                        "id": 10491,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2122:7:40",
+                                        "src": "2122:7:82",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -2105,21 +2105,21 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2088:56:40"
+                            "src": "2088:56:82"
                         },
                         "returnParameters": {
-                            "id": 7097,
+                            "id": 10496,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7096,
+                                    "id": 10495,
                                     "mutability": "mutable",
                                     "name": "assets",
-                                    "nameLocation": "2179:6:40",
+                                    "nameLocation": "2179:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7098,
-                                    "src": "2171:14:40",
+                                    "scope": 10497,
+                                    "src": "2171:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2127,10 +2127,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7095,
+                                        "id": 10494,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2171:7:40",
+                                        "src": "2171:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2139,22 +2139,22 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2170:16:40"
+                            "src": "2170:16:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 7110,
+                        "id": 10509,
                         "nodeType": "FunctionDefinition",
-                        "src": "2302:139:40",
+                        "src": "2302:139:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7099,
+                            "id": 10498,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2193:104:40",
+                            "src": "2193:104:82",
                             "text": "@notice Redeems `shares` from `owner` and sends `assets`\n of underlying tokens to `receiver`."
                         },
                         "functionSelector": "b460af94",
@@ -2162,20 +2162,20 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "withdraw",
-                        "nameLocation": "2311:8:40",
+                        "nameLocation": "2311:8:82",
                         "parameters": {
-                            "id": 7106,
+                            "id": 10505,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7101,
+                                    "id": 10500,
                                     "mutability": "mutable",
                                     "name": "assets",
-                                    "nameLocation": "2337:6:40",
+                                    "nameLocation": "2337:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7110,
-                                    "src": "2329:14:40",
+                                    "scope": 10509,
+                                    "src": "2329:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2183,10 +2183,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7100,
+                                        "id": 10499,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2329:7:40",
+                                        "src": "2329:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2196,13 +2196,13 @@ export const IERC4626 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7103,
+                                    "id": 10502,
                                     "mutability": "mutable",
                                     "name": "receiver",
-                                    "nameLocation": "2361:8:40",
+                                    "nameLocation": "2361:8:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7110,
-                                    "src": "2353:16:40",
+                                    "scope": 10509,
+                                    "src": "2353:16:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2210,10 +2210,10 @@ export const IERC4626 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7102,
+                                        "id": 10501,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2353:7:40",
+                                        "src": "2353:7:82",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -2224,13 +2224,13 @@ export const IERC4626 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7105,
+                                    "id": 10504,
                                     "mutability": "mutable",
                                     "name": "owner",
-                                    "nameLocation": "2387:5:40",
+                                    "nameLocation": "2387:5:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7110,
-                                    "src": "2379:13:40",
+                                    "scope": 10509,
+                                    "src": "2379:13:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2238,10 +2238,10 @@ export const IERC4626 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7104,
+                                        "id": 10503,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2379:7:40",
+                                        "src": "2379:7:82",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -2251,21 +2251,21 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2319:79:40"
+                            "src": "2319:79:82"
                         },
                         "returnParameters": {
-                            "id": 7109,
+                            "id": 10508,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7108,
+                                    "id": 10507,
                                     "mutability": "mutable",
                                     "name": "shares",
-                                    "nameLocation": "2433:6:40",
+                                    "nameLocation": "2433:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7110,
-                                    "src": "2425:14:40",
+                                    "scope": 10509,
+                                    "src": "2425:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2273,10 +2273,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7107,
+                                        "id": 10506,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2425:7:40",
+                                        "src": "2425:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2285,22 +2285,22 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2424:16:40"
+                            "src": "2424:16:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 7122,
+                        "id": 10521,
                         "nodeType": "FunctionDefinition",
-                        "src": "2556:137:40",
+                        "src": "2556:137:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7111,
+                            "id": 10510,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2447:104:40",
+                            "src": "2447:104:82",
                             "text": "@notice Redeems `shares` from `owner` and sends `assets`\n of underlying tokens to `receiver`."
                         },
                         "functionSelector": "ba087652",
@@ -2308,20 +2308,20 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "redeem",
-                        "nameLocation": "2565:6:40",
+                        "nameLocation": "2565:6:82",
                         "parameters": {
-                            "id": 7118,
+                            "id": 10517,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7113,
+                                    "id": 10512,
                                     "mutability": "mutable",
                                     "name": "shares",
-                                    "nameLocation": "2589:6:40",
+                                    "nameLocation": "2589:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7122,
-                                    "src": "2581:14:40",
+                                    "scope": 10521,
+                                    "src": "2581:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2329,10 +2329,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7112,
+                                        "id": 10511,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2581:7:40",
+                                        "src": "2581:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2342,13 +2342,13 @@ export const IERC4626 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7115,
+                                    "id": 10514,
                                     "mutability": "mutable",
                                     "name": "receiver",
-                                    "nameLocation": "2613:8:40",
+                                    "nameLocation": "2613:8:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7122,
-                                    "src": "2605:16:40",
+                                    "scope": 10521,
+                                    "src": "2605:16:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2356,10 +2356,10 @@ export const IERC4626 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7114,
+                                        "id": 10513,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2605:7:40",
+                                        "src": "2605:7:82",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -2370,13 +2370,13 @@ export const IERC4626 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 7117,
+                                    "id": 10516,
                                     "mutability": "mutable",
                                     "name": "owner",
-                                    "nameLocation": "2639:5:40",
+                                    "nameLocation": "2639:5:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7122,
-                                    "src": "2631:13:40",
+                                    "scope": 10521,
+                                    "src": "2631:13:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2384,10 +2384,10 @@ export const IERC4626 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7116,
+                                        "id": 10515,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2631:7:40",
+                                        "src": "2631:7:82",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -2397,21 +2397,21 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2571:79:40"
+                            "src": "2571:79:82"
                         },
                         "returnParameters": {
-                            "id": 7121,
+                            "id": 10520,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7120,
+                                    "id": 10519,
                                     "mutability": "mutable",
                                     "name": "assets",
-                                    "nameLocation": "2685:6:40",
+                                    "nameLocation": "2685:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7122,
-                                    "src": "2677:14:40",
+                                    "scope": 10521,
+                                    "src": "2677:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2419,10 +2419,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7119,
+                                        "id": 10518,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2677:7:40",
+                                        "src": "2677:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2431,22 +2431,22 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2676:16:40"
+                            "src": "2676:16:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 7130,
+                        "id": 10529,
                         "nodeType": "FunctionDefinition",
-                        "src": "3044:102:40",
+                        "src": "3044:102:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7123,
+                            "id": 10522,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2871:168:40",
+                            "src": "2871:168:82",
                             "text": "@notice The amount of shares that the vault would\n exchange for the amount of assets provided, in an\n ideal scenario where all the conditions are met."
                         },
                         "functionSelector": "c6e6f592",
@@ -2454,20 +2454,20 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "convertToShares",
-                        "nameLocation": "3053:15:40",
+                        "nameLocation": "3053:15:82",
                         "parameters": {
-                            "id": 7126,
+                            "id": 10525,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7125,
+                                    "id": 10524,
                                     "mutability": "mutable",
                                     "name": "assets",
-                                    "nameLocation": "3086:6:40",
+                                    "nameLocation": "3086:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7130,
-                                    "src": "3078:14:40",
+                                    "scope": 10529,
+                                    "src": "3078:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2475,10 +2475,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7124,
+                                        "id": 10523,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3078:7:40",
+                                        "src": "3078:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2487,21 +2487,21 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3068:30:40"
+                            "src": "3068:30:82"
                         },
                         "returnParameters": {
-                            "id": 7129,
+                            "id": 10528,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7128,
+                                    "id": 10527,
                                     "mutability": "mutable",
                                     "name": "shares",
-                                    "nameLocation": "3138:6:40",
+                                    "nameLocation": "3138:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7130,
-                                    "src": "3130:14:40",
+                                    "scope": 10529,
+                                    "src": "3130:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2509,10 +2509,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7127,
+                                        "id": 10526,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3130:7:40",
+                                        "src": "3130:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2521,22 +2521,22 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3129:16:40"
+                            "src": "3129:16:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 7138,
+                        "id": 10537,
                         "nodeType": "FunctionDefinition",
-                        "src": "3325:102:40",
+                        "src": "3325:102:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7131,
+                            "id": 10530,
                             "nodeType": "StructuredDocumentation",
-                            "src": "3152:168:40",
+                            "src": "3152:168:82",
                             "text": "@notice The amount of assets that the vault would\n exchange for the amount of shares provided, in an\n ideal scenario where all the conditions are met."
                         },
                         "functionSelector": "07a2d13a",
@@ -2544,20 +2544,20 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "convertToAssets",
-                        "nameLocation": "3334:15:40",
+                        "nameLocation": "3334:15:82",
                         "parameters": {
-                            "id": 7134,
+                            "id": 10533,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7133,
+                                    "id": 10532,
                                     "mutability": "mutable",
                                     "name": "shares",
-                                    "nameLocation": "3367:6:40",
+                                    "nameLocation": "3367:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7138,
-                                    "src": "3359:14:40",
+                                    "scope": 10537,
+                                    "src": "3359:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2565,10 +2565,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7132,
+                                        "id": 10531,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3359:7:40",
+                                        "src": "3359:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2577,21 +2577,21 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3349:30:40"
+                            "src": "3349:30:82"
                         },
                         "returnParameters": {
-                            "id": 7137,
+                            "id": 10536,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7136,
+                                    "id": 10535,
                                     "mutability": "mutable",
                                     "name": "assets",
-                                    "nameLocation": "3419:6:40",
+                                    "nameLocation": "3419:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7138,
-                                    "src": "3411:14:40",
+                                    "scope": 10537,
+                                    "src": "3411:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2599,10 +2599,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7135,
+                                        "id": 10534,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3411:7:40",
+                                        "src": "3411:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2611,22 +2611,22 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3410:16:40"
+                            "src": "3410:16:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 7146,
+                        "id": 10545,
                         "nodeType": "FunctionDefinition",
-                        "src": "3637:99:40",
+                        "src": "3637:99:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7139,
+                            "id": 10538,
                             "nodeType": "StructuredDocumentation",
-                            "src": "3433:199:40",
+                            "src": "3433:199:82",
                             "text": "@notice Total number of underlying assets that can\n be deposited by `owner` into the Vault, where `owner`\n corresponds to the input parameter `receiver` of a\n `deposit` call."
                         },
                         "functionSelector": "402d267d",
@@ -2634,20 +2634,20 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "maxDeposit",
-                        "nameLocation": "3646:10:40",
+                        "nameLocation": "3646:10:82",
                         "parameters": {
-                            "id": 7142,
+                            "id": 10541,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7141,
+                                    "id": 10540,
                                     "mutability": "mutable",
                                     "name": "owner",
-                                    "nameLocation": "3674:5:40",
+                                    "nameLocation": "3674:5:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7146,
-                                    "src": "3666:13:40",
+                                    "scope": 10545,
+                                    "src": "3666:13:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2655,10 +2655,10 @@ export const IERC4626 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7140,
+                                        "id": 10539,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3666:7:40",
+                                        "src": "3666:7:82",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -2668,21 +2668,21 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3656:29:40"
+                            "src": "3656:29:82"
                         },
                         "returnParameters": {
-                            "id": 7145,
+                            "id": 10544,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7144,
+                                    "id": 10543,
                                     "mutability": "mutable",
                                     "name": "maxAssets",
-                                    "nameLocation": "3725:9:40",
+                                    "nameLocation": "3725:9:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7146,
-                                    "src": "3717:17:40",
+                                    "scope": 10545,
+                                    "src": "3717:17:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2690,10 +2690,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7143,
+                                        "id": 10542,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3717:7:40",
+                                        "src": "3717:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2702,22 +2702,22 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3716:19:40"
+                            "src": "3716:19:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 7154,
+                        "id": 10553,
                         "nodeType": "FunctionDefinition",
-                        "src": "3909:101:40",
+                        "src": "3909:101:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7147,
+                            "id": 10546,
                             "nodeType": "StructuredDocumentation",
-                            "src": "3742:162:40",
+                            "src": "3742:162:82",
                             "text": "@notice Allows an on-chain or off-chain user to simulate\n the effects of their deposit at the current block, given\n current on-chain conditions."
                         },
                         "functionSelector": "ef8b30f7",
@@ -2725,20 +2725,20 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "previewDeposit",
-                        "nameLocation": "3918:14:40",
+                        "nameLocation": "3918:14:82",
                         "parameters": {
-                            "id": 7150,
+                            "id": 10549,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7149,
+                                    "id": 10548,
                                     "mutability": "mutable",
                                     "name": "assets",
-                                    "nameLocation": "3950:6:40",
+                                    "nameLocation": "3950:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7154,
-                                    "src": "3942:14:40",
+                                    "scope": 10553,
+                                    "src": "3942:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2746,10 +2746,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7148,
+                                        "id": 10547,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3942:7:40",
+                                        "src": "3942:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2758,21 +2758,21 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3932:30:40"
+                            "src": "3932:30:82"
                         },
                         "returnParameters": {
-                            "id": 7153,
+                            "id": 10552,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7152,
+                                    "id": 10551,
                                     "mutability": "mutable",
                                     "name": "shares",
-                                    "nameLocation": "4002:6:40",
+                                    "nameLocation": "4002:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7154,
-                                    "src": "3994:14:40",
+                                    "scope": 10553,
+                                    "src": "3994:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2780,10 +2780,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7151,
+                                        "id": 10550,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3994:7:40",
+                                        "src": "3994:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2792,22 +2792,22 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3993:16:40"
+                            "src": "3993:16:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 7162,
+                        "id": 10561,
                         "nodeType": "FunctionDefinition",
-                        "src": "4192:96:40",
+                        "src": "4192:96:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7155,
+                            "id": 10554,
                             "nodeType": "StructuredDocumentation",
-                            "src": "4016:171:40",
+                            "src": "4016:171:82",
                             "text": "@notice Total number of underlying shares that can be minted\n for `owner`, where `owner` corresponds to the input\n parameter `receiver` of a `mint` call."
                         },
                         "functionSelector": "c63d75b6",
@@ -2815,20 +2815,20 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "maxMint",
-                        "nameLocation": "4201:7:40",
+                        "nameLocation": "4201:7:82",
                         "parameters": {
-                            "id": 7158,
+                            "id": 10557,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7157,
+                                    "id": 10556,
                                     "mutability": "mutable",
                                     "name": "owner",
-                                    "nameLocation": "4226:5:40",
+                                    "nameLocation": "4226:5:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7162,
-                                    "src": "4218:13:40",
+                                    "scope": 10561,
+                                    "src": "4218:13:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2836,10 +2836,10 @@ export const IERC4626 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7156,
+                                        "id": 10555,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4218:7:40",
+                                        "src": "4218:7:82",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -2849,21 +2849,21 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "4208:29:40"
+                            "src": "4208:29:82"
                         },
                         "returnParameters": {
-                            "id": 7161,
+                            "id": 10560,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7160,
+                                    "id": 10559,
                                     "mutability": "mutable",
                                     "name": "maxShares",
-                                    "nameLocation": "4277:9:40",
+                                    "nameLocation": "4277:9:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7162,
-                                    "src": "4269:17:40",
+                                    "scope": 10561,
+                                    "src": "4269:17:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2871,10 +2871,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7159,
+                                        "id": 10558,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4269:7:40",
+                                        "src": "4269:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2883,22 +2883,22 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "4268:19:40"
+                            "src": "4268:19:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 7170,
+                        "id": 10569,
                         "nodeType": "FunctionDefinition",
-                        "src": "4458:98:40",
+                        "src": "4458:98:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7163,
+                            "id": 10562,
                             "nodeType": "StructuredDocumentation",
-                            "src": "4294:159:40",
+                            "src": "4294:159:82",
                             "text": "@notice Allows an on-chain or off-chain user to simulate\n the effects of their mint at the current block, given\n current on-chain conditions."
                         },
                         "functionSelector": "b3d7f6b9",
@@ -2906,20 +2906,20 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "previewMint",
-                        "nameLocation": "4467:11:40",
+                        "nameLocation": "4467:11:82",
                         "parameters": {
-                            "id": 7166,
+                            "id": 10565,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7165,
+                                    "id": 10564,
                                     "mutability": "mutable",
                                     "name": "shares",
-                                    "nameLocation": "4496:6:40",
+                                    "nameLocation": "4496:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7170,
-                                    "src": "4488:14:40",
+                                    "scope": 10569,
+                                    "src": "4488:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2927,10 +2927,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7164,
+                                        "id": 10563,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4488:7:40",
+                                        "src": "4488:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2939,21 +2939,21 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "4478:30:40"
+                            "src": "4478:30:82"
                         },
                         "returnParameters": {
-                            "id": 7169,
+                            "id": 10568,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7168,
+                                    "id": 10567,
                                     "mutability": "mutable",
                                     "name": "assets",
-                                    "nameLocation": "4548:6:40",
+                                    "nameLocation": "4548:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7170,
-                                    "src": "4540:14:40",
+                                    "scope": 10569,
+                                    "src": "4540:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2961,10 +2961,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7167,
+                                        "id": 10566,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4540:7:40",
+                                        "src": "4540:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2973,22 +2973,22 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "4539:16:40"
+                            "src": "4539:16:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 7178,
+                        "id": 10577,
                         "nodeType": "FunctionDefinition",
-                        "src": "4748:100:40",
+                        "src": "4748:100:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7171,
+                            "id": 10570,
                             "nodeType": "StructuredDocumentation",
-                            "src": "4562:181:40",
+                            "src": "4562:181:82",
                             "text": "@notice Total number of underlying assets that can be\n withdrawn from the Vault by `owner`, where `owner`\n corresponds to the input parameter of a `withdraw` call."
                         },
                         "functionSelector": "ce96cb77",
@@ -2996,20 +2996,20 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "maxWithdraw",
-                        "nameLocation": "4757:11:40",
+                        "nameLocation": "4757:11:82",
                         "parameters": {
-                            "id": 7174,
+                            "id": 10573,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7173,
+                                    "id": 10572,
                                     "mutability": "mutable",
                                     "name": "owner",
-                                    "nameLocation": "4786:5:40",
+                                    "nameLocation": "4786:5:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7178,
-                                    "src": "4778:13:40",
+                                    "scope": 10577,
+                                    "src": "4778:13:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3017,10 +3017,10 @@ export const IERC4626 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7172,
+                                        "id": 10571,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4778:7:40",
+                                        "src": "4778:7:82",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -3030,21 +3030,21 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "4768:29:40"
+                            "src": "4768:29:82"
                         },
                         "returnParameters": {
-                            "id": 7177,
+                            "id": 10576,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7176,
+                                    "id": 10575,
                                     "mutability": "mutable",
                                     "name": "maxAssets",
-                                    "nameLocation": "4837:9:40",
+                                    "nameLocation": "4837:9:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7178,
-                                    "src": "4829:17:40",
+                                    "scope": 10577,
+                                    "src": "4829:17:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3052,10 +3052,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7175,
+                                        "id": 10574,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4829:7:40",
+                                        "src": "4829:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3064,22 +3064,22 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "4828:19:40"
+                            "src": "4828:19:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 7186,
+                        "id": 10585,
                         "nodeType": "FunctionDefinition",
-                        "src": "5024:102:40",
+                        "src": "5024:102:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7179,
+                            "id": 10578,
                             "nodeType": "StructuredDocumentation",
-                            "src": "4854:165:40",
+                            "src": "4854:165:82",
                             "text": "@notice Allows an on-chain or off-chain user to simulate\n the effects of their withdrawal at the current block,\n given current on-chain conditions."
                         },
                         "functionSelector": "0a28a477",
@@ -3087,20 +3087,20 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "previewWithdraw",
-                        "nameLocation": "5033:15:40",
+                        "nameLocation": "5033:15:82",
                         "parameters": {
-                            "id": 7182,
+                            "id": 10581,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7181,
+                                    "id": 10580,
                                     "mutability": "mutable",
                                     "name": "assets",
-                                    "nameLocation": "5066:6:40",
+                                    "nameLocation": "5066:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7186,
-                                    "src": "5058:14:40",
+                                    "scope": 10585,
+                                    "src": "5058:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3108,10 +3108,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7180,
+                                        "id": 10579,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "5058:7:40",
+                                        "src": "5058:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3120,21 +3120,21 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "5048:30:40"
+                            "src": "5048:30:82"
                         },
                         "returnParameters": {
-                            "id": 7185,
+                            "id": 10584,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7184,
+                                    "id": 10583,
                                     "mutability": "mutable",
                                     "name": "shares",
-                                    "nameLocation": "5118:6:40",
+                                    "nameLocation": "5118:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7186,
-                                    "src": "5110:14:40",
+                                    "scope": 10585,
+                                    "src": "5110:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3142,10 +3142,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7183,
+                                        "id": 10582,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "5110:7:40",
+                                        "src": "5110:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3154,22 +3154,22 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "5109:16:40"
+                            "src": "5109:16:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 7194,
+                        "id": 10593,
                         "nodeType": "FunctionDefinition",
-                        "src": "5315:98:40",
+                        "src": "5315:98:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7187,
+                            "id": 10586,
                             "nodeType": "StructuredDocumentation",
-                            "src": "5132:178:40",
+                            "src": "5132:178:82",
                             "text": "@notice Total number of underlying shares that can be\n redeemed from the Vault by `owner`, where `owner` corresponds\n to the input parameter of a `redeem` call."
                         },
                         "functionSelector": "d905777e",
@@ -3177,20 +3177,20 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "maxRedeem",
-                        "nameLocation": "5324:9:40",
+                        "nameLocation": "5324:9:82",
                         "parameters": {
-                            "id": 7190,
+                            "id": 10589,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7189,
+                                    "id": 10588,
                                     "mutability": "mutable",
                                     "name": "owner",
-                                    "nameLocation": "5351:5:40",
+                                    "nameLocation": "5351:5:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7194,
-                                    "src": "5343:13:40",
+                                    "scope": 10593,
+                                    "src": "5343:13:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3198,10 +3198,10 @@ export const IERC4626 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 7188,
+                                        "id": 10587,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "5343:7:40",
+                                        "src": "5343:7:82",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -3211,21 +3211,21 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "5333:29:40"
+                            "src": "5333:29:82"
                         },
                         "returnParameters": {
-                            "id": 7193,
+                            "id": 10592,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7192,
+                                    "id": 10591,
                                     "mutability": "mutable",
                                     "name": "maxShares",
-                                    "nameLocation": "5402:9:40",
+                                    "nameLocation": "5402:9:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7194,
-                                    "src": "5394:17:40",
+                                    "scope": 10593,
+                                    "src": "5394:17:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3233,10 +3233,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7191,
+                                        "id": 10590,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "5394:7:40",
+                                        "src": "5394:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3245,22 +3245,22 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "5393:19:40"
+                            "src": "5393:19:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "external"
                     },
                     {
-                        "id": 7202,
+                        "id": 10601,
                         "nodeType": "FunctionDefinition",
-                        "src": "5589:100:40",
+                        "src": "5589:100:82",
                         "nodes": [],
                         "documentation": {
-                            "id": 7195,
+                            "id": 10594,
                             "nodeType": "StructuredDocumentation",
-                            "src": "5419:165:40",
+                            "src": "5419:165:82",
                             "text": "@notice Allows an on-chain or off-chain user to simulate\n the effects of their redemption at the current block,\n given current on-chain conditions."
                         },
                         "functionSelector": "4cdad506",
@@ -3268,20 +3268,20 @@ export const IERC4626 = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "previewRedeem",
-                        "nameLocation": "5598:13:40",
+                        "nameLocation": "5598:13:82",
                         "parameters": {
-                            "id": 7198,
+                            "id": 10597,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7197,
+                                    "id": 10596,
                                     "mutability": "mutable",
                                     "name": "shares",
-                                    "nameLocation": "5629:6:40",
+                                    "nameLocation": "5629:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7202,
-                                    "src": "5621:14:40",
+                                    "scope": 10601,
+                                    "src": "5621:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3289,10 +3289,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7196,
+                                        "id": 10595,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "5621:7:40",
+                                        "src": "5621:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3301,21 +3301,21 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "5611:30:40"
+                            "src": "5611:30:82"
                         },
                         "returnParameters": {
-                            "id": 7201,
+                            "id": 10600,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 7200,
+                                    "id": 10599,
                                     "mutability": "mutable",
                                     "name": "assets",
-                                    "nameLocation": "5681:6:40",
+                                    "nameLocation": "5681:6:82",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 7202,
-                                    "src": "5673:14:40",
+                                    "scope": 10601,
+                                    "src": "5673:14:82",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3323,10 +3323,10 @@ export const IERC4626 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 7199,
+                                        "id": 10598,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "5673:7:40",
+                                        "src": "5673:7:82",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3335,9 +3335,9 @@ export const IERC4626 = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "5672:16:40"
+                            "src": "5672:16:82"
                         },
-                        "scope": 7203,
+                        "scope": 10602,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "external"
@@ -3347,47 +3347,47 @@ export const IERC4626 = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 7043,
+                            "id": 10442,
                             "name": "IERC20",
                             "nameLocations": [
-                                "325:6:40"
+                                "325:6:82"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 6920,
-                            "src": "325:6:40"
+                            "referencedDeclaration": 10319,
+                            "src": "325:6:82"
                         },
-                        "id": 7044,
+                        "id": 10443,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "325:6:40"
+                        "src": "325:6:82"
                     }
                 ],
                 "canonicalName": "IERC4626",
                 "contractDependencies": [],
                 "contractKind": "contract",
                 "documentation": {
-                    "id": 7042,
+                    "id": 10441,
                     "nodeType": "StructuredDocumentation",
-                    "src": "217:78:40",
+                    "src": "217:78:82",
                     "text": "@title ERC4626 interface\n See: https://eips.ethereum.org/EIPS/eip-4626"
                 },
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    7203,
-                    6920
+                    10602,
+                    10319
                 ],
                 "name": "IERC4626",
-                "nameLocation": "313:8:40",
-                "scope": 7204,
+                "nameLocation": "313:8:82",
+                "scope": 10603,
                 "usedErrors": [],
                 "usedEvents": [
-                    6836,
-                    6845,
-                    7055,
-                    7066
+                    10235,
+                    10244,
+                    10454,
+                    10465
                 ]
             }
         ],
         "license": "GPL-2.0-or-later"
     },
-    "id": 40
+    "id": 82
 };

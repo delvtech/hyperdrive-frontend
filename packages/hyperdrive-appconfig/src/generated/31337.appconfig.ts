@@ -64,7 +64,7 @@ export const localChainAppConfig: AppConfig = {
   ],
   hyperdrives: [
     {
-      address: "0x7aba23eab591909f9dc5770cea764b8aa989dd25",
+      address: "0x5a7e8a85db4e5734387bd66d189f32cca918ea4f",
       name: "7d BASE-Maker DSR",
       decimals: 18,
       baseToken: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
@@ -76,7 +76,7 @@ export const localChainAppConfig: AppConfig = {
         baseToken: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
         linkerFactory: "0x06E5aCdA0914B9c79eF21798629c96bFC6b6D11b",
         linkerCodeHash:
-          "0xb36944ca91b8aa82a7379308023324088bc57f58f9b278807384b8fa6e9621ff",
+          "0xcfc344a29876bb5d70c21a041d9622124bfe596ad1a4fab50dc505dfe84cd0d2",
         initialVaultSharePrice: 1000000000000000000n,
         minimumShareReserves: 10000000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
@@ -85,16 +85,17 @@ export const localChainAppConfig: AppConfig = {
         timeStretch: 873443363379729n,
         governance: "0x0000000000000000000000000000000000000000",
         feeCollector: "0x0000000000000000000000000000000000000000",
+        sweepCollector: "0x0000000000000000000000000000000000000000",
         fees: {
           curve: 10000000000000000n,
-          flat: 500000000000000n,
+          flat: 9615384615384n,
           governanceLP: 150000000000000000n,
           governanceZombie: 30000000000000000n,
         },
       },
     },
     {
-      address: "0xe1d074d8e81f12a70af59aaae166ae35c9023ae3",
+      address: "0xbb6a61c5f8b4194ddaf99a6edb1c184f14892e54",
       name: "7d ETH-Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -106,7 +107,7 @@ export const localChainAppConfig: AppConfig = {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
         linkerFactory: "0x06E5aCdA0914B9c79eF21798629c96bFC6b6D11b",
         linkerCodeHash:
-          "0xb36944ca91b8aa82a7379308023324088bc57f58f9b278807384b8fa6e9621ff",
+          "0xcfc344a29876bb5d70c21a041d9622124bfe596ad1a4fab50dc505dfe84cd0d2",
         initialVaultSharePrice: 1000000029965753424n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
@@ -115,9 +116,10 @@ export const localChainAppConfig: AppConfig = {
         timeStretch: 607084408361253n,
         governance: "0x0000000000000000000000000000000000000000",
         feeCollector: "0x0000000000000000000000000000000000000000",
+        sweepCollector: "0x0000000000000000000000000000000000000000",
         fees: {
           curve: 10000000000000000n,
-          flat: 500000000000000n,
+          flat: 9615384615384n,
           governanceLP: 150000000000000000n,
           governanceZombie: 30000000000000000n,
         },

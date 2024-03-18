@@ -986,25 +986,25 @@ export const IERC20Forwarder = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IERC20Forwarder.sol",
-        "id": 6990,
+        "id": 10389,
         "exportedSymbols": {
             "IERC20": [
-                6920
+                10319
             ],
             "IERC20Forwarder": [
-                6989
+                10388
             ],
             "IMultiToken": [
-                8498
+                11992
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "39:2823:38",
+        "src": "39:2823:80",
         "nodes": [
             {
-                "id": 6922,
+                "id": 10321,
                 "nodeType": "PragmaDirective",
-                "src": "39:23:38",
+                "src": "39:23:80",
                 "nodes": [],
                 "literals": [
                     "solidity",
@@ -1013,24 +1013,24 @@ export const IERC20Forwarder = {
                 ]
             },
             {
-                "id": 6924,
+                "id": 10323,
                 "nodeType": "ImportDirective",
-                "src": "64:38:38",
+                "src": "64:38:80",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IERC20.sol",
                 "file": "./IERC20.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 6990,
-                "sourceUnit": 6921,
+                "scope": 10389,
+                "sourceUnit": 10320,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 6923,
+                            "id": 10322,
                             "name": "IERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6920,
-                            "src": "73:6:38",
+                            "referencedDeclaration": 10319,
+                            "src": "73:6:80",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -1039,24 +1039,24 @@ export const IERC20Forwarder = {
                 "unitAlias": ""
             },
             {
-                "id": 6926,
+                "id": 10325,
                 "nodeType": "ImportDirective",
-                "src": "103:48:38",
+                "src": "103:48:80",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IMultiToken.sol",
                 "file": "./IMultiToken.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 6990,
-                "sourceUnit": 8499,
+                "scope": 10389,
+                "sourceUnit": 11993,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 6925,
+                            "id": 10324,
                             "name": "IMultiToken",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8498,
-                            "src": "112:11:38",
+                            "referencedDeclaration": 11992,
+                            "src": "112:11:80",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -1065,82 +1065,82 @@ export const IERC20Forwarder = {
                 "unitAlias": ""
             },
             {
-                "id": 6989,
+                "id": 10388,
                 "nodeType": "ContractDefinition",
-                "src": "153:2708:38",
+                "src": "153:2708:80",
                 "nodes": [
                     {
-                        "id": 6931,
+                        "id": 10330,
                         "nodeType": "ErrorDefinition",
-                        "src": "323:24:38",
+                        "src": "323:24:80",
                         "nodes": [],
                         "documentation": {
-                            "id": 6929,
+                            "id": 10328,
                             "nodeType": "StructuredDocumentation",
-                            "src": "215:103:38",
+                            "src": "215:103:80",
                             "text": "@notice Thrown when a permit signature is submitted after its deadline\n         has expired."
                         },
                         "errorSelector": "f87d9271",
                         "name": "ExpiredDeadline",
-                        "nameLocation": "329:15:38",
+                        "nameLocation": "329:15:80",
                         "parameters": {
-                            "id": 6930,
+                            "id": 10329,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "344:2:38"
+                            "src": "344:2:80"
                         }
                     },
                     {
-                        "id": 6934,
+                        "id": 10333,
                         "nodeType": "ErrorDefinition",
-                        "src": "456:25:38",
+                        "src": "456:25:80",
                         "nodes": [],
                         "documentation": {
-                            "id": 6932,
+                            "id": 10331,
                             "nodeType": "StructuredDocumentation",
-                            "src": "353:98:38",
+                            "src": "353:98:80",
                             "text": "@notice Thrown when a permit signature doesn't recover to the owner's\n         address."
                         },
                         "errorSelector": "8baa579f",
                         "name": "InvalidSignature",
-                        "nameLocation": "462:16:38",
+                        "nameLocation": "462:16:80",
                         "parameters": {
-                            "id": 6933,
+                            "id": 10332,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "478:2:38"
+                            "src": "478:2:80"
                         }
                     },
                     {
-                        "id": 6937,
+                        "id": 10336,
                         "nodeType": "ErrorDefinition",
-                        "src": "564:30:38",
+                        "src": "564:30:80",
                         "nodes": [],
                         "documentation": {
-                            "id": 6935,
+                            "id": 10334,
                             "nodeType": "StructuredDocumentation",
-                            "src": "487:72:38",
+                            "src": "487:72:80",
                             "text": "@notice Thrown when a permit signature recovers to the zero address."
                         },
                         "errorSelector": "f0dd15fd",
                         "name": "RestrictedZeroAddress",
-                        "nameLocation": "570:21:38",
+                        "nameLocation": "570:21:80",
                         "parameters": {
-                            "id": 6936,
+                            "id": 10335,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "591:2:38"
+                            "src": "591:2:80"
                         }
                     },
                     {
-                        "id": 6955,
+                        "id": 10354,
                         "nodeType": "FunctionDefinition",
-                        "src": "1777:183:38",
+                        "src": "1777:183:80",
                         "nodes": [],
                         "documentation": {
-                            "id": 6938,
+                            "id": 10337,
                             "nodeType": "StructuredDocumentation",
-                            "src": "623:1149:38",
+                            "src": "623:1149:80",
                             "text": "@notice This function allows a caller who is not the owner of an account\n         to execute the functionality of 'approve' with the owner's\n         signature.\n @dev The signature for this function follows EIP712 standard and should\n      be generated with the eth_signTypedData JSON RPC call instead of\n      the eth_sign JSON RPC call. If using out of date parity signing\n      libraries the v component may need to be adjusted. Also it is very\n      rare but possible for v to be other values. Those values are not\n      supported.\n @param owner The owner of the account which is having the new approval set.\n @param spender The address which will be allowed to spend owner's tokens.\n @param value The new allowance value.\n @param deadline The timestamp which the signature must be submitted by\n        to be valid.\n @param v Extra ECDSA data which allows public key recovery from\n        signature assumed to be 27 or 28.\n @param r The r component of the ECDSA signature.\n @param s The s component of the ECDSA signature."
                         },
                         "functionSelector": "d505accf",
@@ -1148,20 +1148,20 @@ export const IERC20Forwarder = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "permit",
-                        "nameLocation": "1786:6:38",
+                        "nameLocation": "1786:6:80",
                         "parameters": {
-                            "id": 6953,
+                            "id": 10352,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6940,
+                                    "id": 10339,
                                     "mutability": "mutable",
                                     "name": "owner",
-                                    "nameLocation": "1810:5:38",
+                                    "nameLocation": "1810:5:80",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6955,
-                                    "src": "1802:13:38",
+                                    "scope": 10354,
+                                    "src": "1802:13:80",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1169,10 +1169,10 @@ export const IERC20Forwarder = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 6939,
+                                        "id": 10338,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1802:7:38",
+                                        "src": "1802:7:80",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1183,13 +1183,13 @@ export const IERC20Forwarder = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6942,
+                                    "id": 10341,
                                     "mutability": "mutable",
                                     "name": "spender",
-                                    "nameLocation": "1833:7:38",
+                                    "nameLocation": "1833:7:80",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6955,
-                                    "src": "1825:15:38",
+                                    "scope": 10354,
+                                    "src": "1825:15:80",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1197,10 +1197,10 @@ export const IERC20Forwarder = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 6941,
+                                        "id": 10340,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1825:7:38",
+                                        "src": "1825:7:80",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1211,13 +1211,13 @@ export const IERC20Forwarder = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6944,
+                                    "id": 10343,
                                     "mutability": "mutable",
                                     "name": "value",
-                                    "nameLocation": "1858:5:38",
+                                    "nameLocation": "1858:5:80",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6955,
-                                    "src": "1850:13:38",
+                                    "scope": 10354,
+                                    "src": "1850:13:80",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1225,10 +1225,10 @@ export const IERC20Forwarder = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6943,
+                                        "id": 10342,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1850:7:38",
+                                        "src": "1850:7:80",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1238,13 +1238,13 @@ export const IERC20Forwarder = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6946,
+                                    "id": 10345,
                                     "mutability": "mutable",
                                     "name": "deadline",
-                                    "nameLocation": "1881:8:38",
+                                    "nameLocation": "1881:8:80",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6955,
-                                    "src": "1873:16:38",
+                                    "scope": 10354,
+                                    "src": "1873:16:80",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1252,10 +1252,10 @@ export const IERC20Forwarder = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6945,
+                                        "id": 10344,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1873:7:38",
+                                        "src": "1873:7:80",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1265,13 +1265,13 @@ export const IERC20Forwarder = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6948,
+                                    "id": 10347,
                                     "mutability": "mutable",
                                     "name": "v",
-                                    "nameLocation": "1905:1:38",
+                                    "nameLocation": "1905:1:80",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6955,
-                                    "src": "1899:7:38",
+                                    "scope": 10354,
+                                    "src": "1899:7:80",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1279,10 +1279,10 @@ export const IERC20Forwarder = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 6947,
+                                        "id": 10346,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1899:5:38",
+                                        "src": "1899:5:80",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint8",
                                             "typeString": "uint8"
@@ -1292,13 +1292,13 @@ export const IERC20Forwarder = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6950,
+                                    "id": 10349,
                                     "mutability": "mutable",
                                     "name": "r",
-                                    "nameLocation": "1924:1:38",
+                                    "nameLocation": "1924:1:80",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6955,
-                                    "src": "1916:9:38",
+                                    "scope": 10354,
+                                    "src": "1916:9:80",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1306,10 +1306,10 @@ export const IERC20Forwarder = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 6949,
+                                        "id": 10348,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1916:7:38",
+                                        "src": "1916:7:80",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -1319,13 +1319,13 @@ export const IERC20Forwarder = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 6952,
+                                    "id": 10351,
                                     "mutability": "mutable",
                                     "name": "s",
-                                    "nameLocation": "1943:1:38",
+                                    "nameLocation": "1943:1:80",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6955,
-                                    "src": "1935:9:38",
+                                    "scope": 10354,
+                                    "src": "1935:9:80",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1333,10 +1333,10 @@ export const IERC20Forwarder = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 6951,
+                                        "id": 10350,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1935:7:38",
+                                        "src": "1935:7:80",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -1345,28 +1345,28 @@ export const IERC20Forwarder = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1792:158:38"
+                            "src": "1792:158:80"
                         },
                         "returnParameters": {
-                            "id": 6954,
+                            "id": 10353,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1959:0:38"
+                            "src": "1959:0:80"
                         },
-                        "scope": 6989,
+                        "scope": 10388,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 6963,
+                        "id": 10362,
                         "nodeType": "FunctionDefinition",
-                        "src": "2081:62:38",
+                        "src": "2081:62:80",
                         "nodes": [],
                         "documentation": {
-                            "id": 6956,
+                            "id": 10355,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1966:110:38",
+                            "src": "1966:110:80",
                             "text": "@notice Gets a user's nonce for permit.\n @param user The user's address.\n @return The nonce."
                         },
                         "functionSelector": "7ecebe00",
@@ -1374,20 +1374,20 @@ export const IERC20Forwarder = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "nonces",
-                        "nameLocation": "2090:6:38",
+                        "nameLocation": "2090:6:80",
                         "parameters": {
-                            "id": 6959,
+                            "id": 10358,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6958,
+                                    "id": 10357,
                                     "mutability": "mutable",
                                     "name": "user",
-                                    "nameLocation": "2105:4:38",
+                                    "nameLocation": "2105:4:80",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6963,
-                                    "src": "2097:12:38",
+                                    "scope": 10362,
+                                    "src": "2097:12:80",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1395,10 +1395,10 @@ export const IERC20Forwarder = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 6957,
+                                        "id": 10356,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2097:7:38",
+                                        "src": "2097:7:80",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1408,21 +1408,21 @@ export const IERC20Forwarder = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2096:14:38"
+                            "src": "2096:14:80"
                         },
                         "returnParameters": {
-                            "id": 6962,
+                            "id": 10361,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6961,
+                                    "id": 10360,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6963,
-                                    "src": "2134:7:38",
+                                    "scope": 10362,
+                                    "src": "2134:7:80",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1430,10 +1430,10 @@ export const IERC20Forwarder = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6960,
+                                        "id": 10359,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2134:7:38",
+                                        "src": "2134:7:80",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1442,22 +1442,22 @@ export const IERC20Forwarder = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2133:9:38"
+                            "src": "2133:9:80"
                         },
-                        "scope": 6989,
+                        "scope": 10388,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 6970,
+                        "id": 10369,
                         "nodeType": "FunctionDefinition",
-                        "src": "2250:53:38",
+                        "src": "2250:53:80",
                         "nodes": [],
                         "documentation": {
-                            "id": 6964,
+                            "id": 10363,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2149:96:38",
+                            "src": "2149:96:80",
                             "text": "@notice Gets the target MultiToken of this forwarder.\n @return The target MultiToken."
                         },
                         "functionSelector": "fc0c546a",
@@ -1465,71 +1465,71 @@ export const IERC20Forwarder = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "token",
-                        "nameLocation": "2259:5:38",
+                        "nameLocation": "2259:5:80",
                         "parameters": {
-                            "id": 6965,
+                            "id": 10364,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "2264:2:38"
+                            "src": "2264:2:80"
                         },
                         "returnParameters": {
-                            "id": 6969,
+                            "id": 10368,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6968,
+                                    "id": 10367,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6970,
-                                    "src": "2290:11:38",
+                                    "scope": 10369,
+                                    "src": "2290:11:80",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_IMultiToken_$8498",
+                                        "typeIdentifier": "t_contract$_IMultiToken_$11992",
                                         "typeString": "contract IMultiToken"
                                     },
                                     "typeName": {
-                                        "id": 6967,
+                                        "id": 10366,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 6966,
+                                            "id": 10365,
                                             "name": "IMultiToken",
                                             "nameLocations": [
-                                                "2290:11:38"
+                                                "2290:11:80"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 8498,
-                                            "src": "2290:11:38"
+                                            "referencedDeclaration": 11992,
+                                            "src": "2290:11:80"
                                         },
-                                        "referencedDeclaration": 8498,
-                                        "src": "2290:11:38",
+                                        "referencedDeclaration": 11992,
+                                        "src": "2290:11:80",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IMultiToken_$8498",
+                                            "typeIdentifier": "t_contract$_IMultiToken_$11992",
                                             "typeString": "contract IMultiToken"
                                         }
                                     },
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2289:13:38"
+                            "src": "2289:13:80"
                         },
-                        "scope": 6989,
+                        "scope": 10388,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 6976,
+                        "id": 10375,
                         "nodeType": "FunctionDefinition",
-                        "src": "2406:51:38",
+                        "src": "2406:51:80",
                         "nodes": [],
                         "documentation": {
-                            "id": 6971,
+                            "id": 10370,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2309:92:38",
+                            "src": "2309:92:80",
                             "text": "@notice Gets the target token ID of this forwarder.\n @return The target token ID."
                         },
                         "functionSelector": "17d70f7c",
@@ -1537,26 +1537,26 @@ export const IERC20Forwarder = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "tokenId",
-                        "nameLocation": "2415:7:38",
+                        "nameLocation": "2415:7:80",
                         "parameters": {
-                            "id": 6972,
+                            "id": 10371,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "2422:2:38"
+                            "src": "2422:2:80"
                         },
                         "returnParameters": {
-                            "id": 6975,
+                            "id": 10374,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6974,
+                                    "id": 10373,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6976,
-                                    "src": "2448:7:38",
+                                    "scope": 10375,
+                                    "src": "2448:7:80",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1564,10 +1564,10 @@ export const IERC20Forwarder = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 6973,
+                                        "id": 10372,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2448:7:38",
+                                        "src": "2448:7:80",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -1576,22 +1576,22 @@ export const IERC20Forwarder = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2447:9:38"
+                            "src": "2447:9:80"
                         },
-                        "scope": 6989,
+                        "scope": 10388,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 6982,
+                        "id": 10381,
                         "nodeType": "FunctionDefinition",
-                        "src": "2564:59:38",
+                        "src": "2564:59:80",
                         "nodes": [],
                         "documentation": {
-                            "id": 6977,
+                            "id": 10376,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2463:96:38",
+                            "src": "2463:96:80",
                             "text": "@notice The EIP712 domain separator for this contract.\n @return The domain separator."
                         },
                         "functionSelector": "f698da25",
@@ -1599,26 +1599,26 @@ export const IERC20Forwarder = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "domainSeparator",
-                        "nameLocation": "2573:15:38",
+                        "nameLocation": "2573:15:80",
                         "parameters": {
-                            "id": 6978,
+                            "id": 10377,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "2588:2:38"
+                            "src": "2588:2:80"
                         },
                         "returnParameters": {
-                            "id": 6981,
+                            "id": 10380,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6980,
+                                    "id": 10379,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6982,
-                                    "src": "2614:7:38",
+                                    "scope": 10381,
+                                    "src": "2614:7:80",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1626,10 +1626,10 @@ export const IERC20Forwarder = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 6979,
+                                        "id": 10378,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2614:7:38",
+                                        "src": "2614:7:80",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -1638,22 +1638,22 @@ export const IERC20Forwarder = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2613:9:38"
+                            "src": "2613:9:80"
                         },
-                        "scope": 6989,
+                        "scope": 10388,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 6988,
+                        "id": 10387,
                         "nodeType": "FunctionDefinition",
-                        "src": "2800:59:38",
+                        "src": "2800:59:80",
                         "nodes": [],
                         "documentation": {
-                            "id": 6983,
+                            "id": 10382,
                             "nodeType": "StructuredDocumentation",
-                            "src": "2629:113:38",
+                            "src": "2629:113:80",
                             "text": "@notice The EIP712 typehash for the permit struct used by this contract.\n @return The permit typehash."
                         },
                         "functionSelector": "30adf81f",
@@ -1661,26 +1661,26 @@ export const IERC20Forwarder = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "PERMIT_TYPEHASH",
-                        "nameLocation": "2809:15:38",
+                        "nameLocation": "2809:15:80",
                         "parameters": {
-                            "id": 6984,
+                            "id": 10383,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "2824:2:38"
+                            "src": "2824:2:80"
                         },
                         "returnParameters": {
-                            "id": 6987,
+                            "id": 10386,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 6986,
+                                    "id": 10385,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 6988,
-                                    "src": "2850:7:38",
+                                    "scope": 10387,
+                                    "src": "2850:7:80",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -1688,10 +1688,10 @@ export const IERC20Forwarder = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 6985,
+                                        "id": 10384,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "2850:7:38",
+                                        "src": "2850:7:80",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -1700,9 +1700,9 @@ export const IERC20Forwarder = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "2849:9:38"
+                            "src": "2849:9:80"
                         },
-                        "scope": 6989,
+                        "scope": 10388,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
@@ -1712,18 +1712,18 @@ export const IERC20Forwarder = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 6927,
+                            "id": 10326,
                             "name": "IERC20",
                             "nameLocations": [
-                                "182:6:38"
+                                "182:6:80"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 6920,
-                            "src": "182:6:38"
+                            "referencedDeclaration": 10319,
+                            "src": "182:6:80"
                         },
-                        "id": 6928,
+                        "id": 10327,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "182:6:38"
+                        "src": "182:6:80"
                     }
                 ],
                 "canonicalName": "IERC20Forwarder",
@@ -1731,24 +1731,24 @@ export const IERC20Forwarder = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    6989,
-                    6920
+                    10388,
+                    10319
                 ],
                 "name": "IERC20Forwarder",
-                "nameLocation": "163:15:38",
-                "scope": 6990,
+                "nameLocation": "163:15:80",
+                "scope": 10389,
                 "usedErrors": [
-                    6931,
-                    6934,
-                    6937
+                    10330,
+                    10333,
+                    10336
                 ],
                 "usedEvents": [
-                    6836,
-                    6845
+                    10235,
+                    10244
                 ]
             }
         ],
         "license": "Apache-2.0"
     },
-    "id": 38
+    "id": 80
 };

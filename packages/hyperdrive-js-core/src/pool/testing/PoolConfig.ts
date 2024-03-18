@@ -5,6 +5,7 @@ export const simplePoolConfig: PoolConfig = {
   baseToken: ZERO_ADDRESS,
   governance: ZERO_ADDRESS,
   feeCollector: ZERO_ADDRESS,
+  sweepCollector: ZERO_ADDRESS,
   fees: {
     curve: 100000000000000000n,
     flat: 500000000000000n,

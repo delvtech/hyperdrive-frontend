@@ -87,6 +87,11 @@ export declare const ERC4626Base: {
             readonly type: "address";
         }, {
             readonly indexed: true;
+            readonly internalType: "address";
+            readonly name: "destination";
+            readonly type: "address";
+        }, {
+            readonly indexed: true;
             readonly internalType: "uint256";
             readonly name: "assetId";
             readonly type: "uint256";
@@ -127,6 +132,11 @@ export declare const ERC4626Base: {
             readonly type: "address";
         }, {
             readonly indexed: true;
+            readonly internalType: "address";
+            readonly name: "destination";
+            readonly type: "address";
+        }, {
+            readonly indexed: true;
             readonly internalType: "uint256";
             readonly name: "assetId";
             readonly type: "uint256";
@@ -150,6 +160,11 @@ export declare const ERC4626Base: {
             readonly internalType: "bool";
             readonly name: "asBase";
             readonly type: "bool";
+        }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
+            readonly name: "basePayment";
+            readonly type: "uint256";
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
@@ -202,6 +217,16 @@ export declare const ERC4626Base: {
             readonly type: "uint256";
         }];
         readonly name: "CreateCheckpoint";
+        readonly type: "event";
+    }, {
+        readonly anonymous: false;
+        readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
+            readonly name: "newFeeCollector";
+            readonly type: "address";
+        }];
+        readonly name: "FeeCollectorUpdated";
         readonly type: "event";
     }, {
         readonly anonymous: false;
@@ -366,6 +391,11 @@ export declare const ERC4626Base: {
             readonly name: "provider";
             readonly type: "address";
         }, {
+            readonly indexed: true;
+            readonly internalType: "address";
+            readonly name: "destination";
+            readonly type: "address";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
             readonly name: "withdrawalShareAmount";
@@ -394,6 +424,11 @@ export declare const ERC4626Base: {
             readonly indexed: true;
             readonly internalType: "address";
             readonly name: "provider";
+            readonly type: "address";
+        }, {
+            readonly indexed: true;
+            readonly internalType: "address";
+            readonly name: "destination";
             readonly type: "address";
         }, {
             readonly indexed: false;
@@ -427,6 +462,31 @@ export declare const ERC4626Base: {
             readonly type: "uint256";
         }];
         readonly name: "RemoveLiquidity";
+        readonly type: "event";
+    }, {
+        readonly anonymous: false;
+        readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
+            readonly name: "collector";
+            readonly type: "address";
+        }, {
+            readonly indexed: true;
+            readonly internalType: "address";
+            readonly name: "target";
+            readonly type: "address";
+        }];
+        readonly name: "Sweep";
+        readonly type: "event";
+    }, {
+        readonly anonymous: false;
+        readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
+            readonly name: "newSweepCollector";
+            readonly type: "address";
+        }];
+        readonly name: "SweepCollectorUpdated";
         readonly type: "event";
     }, {
         readonly anonymous: false;
@@ -470,7 +530,7 @@ export declare const ERC4626Base: {
         readonly linkReferences: {};
     };
     readonly methodIdentifiers: {};
-    readonly rawMetadata: "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"This Hyperdrive implementation is designed to work with standard      ERC4626 vaults. Non-standard implementations may not work correctly      and should be carefully checked.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"__vault\":\"The ERC4626 compatible vault.\"}}},\"stateVariables\":{\"_vault\":{\"details\":\"The ERC4626 vault that this pool uses as a yield source.\"}},\"title\":\"ERC4626Base\",\"version\":1},\"userdoc\":{\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"Instantiates the ERC4626 Hyperdrive base contract.\"}},\"notice\":\"The base contract for the ERC4626 Hyperdrive implementation.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/instances/erc4626/ERC4626Base.sol\":\"ERC4626Base\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/instances/erc4626/ERC4626Base.sol\":{\"keccak256\":\"0xee1d1cbc761adf6eec60161512631235beb00d0655ef3dcd0ec7531c4048304f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://278e515459a4d84a0c44da78949247ece0be57fe16fa9afd1a1c39f14e6f79d7\",\"dweb:/ipfs/QmQhSrHbgLEHzM6sLFmAwgvDycGkYDVXhHrdFj2T3vgZuT\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IERC4626.sol\":{\"keccak256\":\"0x7d99427dc97cc1b469d205de5ced0eb15c6e305d0a7ef73d45fe7ef47ce7231e\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://c7726091d2f569ff79057a693324886e2a5558c586684460b51cd20612be59d3\",\"dweb:/ipfs/QmZv6BBe22fZRaC5iYiTuZMD2ZgUXvMBHjwZLikVSoXjDP\"]},\"contracts/src/interfaces/IERC4626Hyperdrive.sol\":{\"keccak256\":\"0xc7f5a5cbfc5ba21f72fc7699d616e2483d4589514a14b6e39f624d0f4d9453e7\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a4d7b144f357e86bfd23c805bb670226aa0c87b078babcd4dd3ec8b8f0b3374f\",\"dweb:/ipfs/QmTYNfB4ABRtPjCVck2uq5wQA8PvxBS45mPkVevc82TTFa\"]},\"contracts/src/interfaces/IERC4626HyperdriveCore.sol\":{\"keccak256\":\"0x94cce9f221023ebf9d4ed4fbafac76d67aee4ee0aa7771c89fcd2d374dfb490a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5ed09d2369f7e9c057d20b0c069f6b9e5242d4c9cd85b3bd49ace51ad16fdba0\",\"dweb:/ipfs/QmNzy2ewTJePinzG4L4SAfxxBySPFJW5Shxb5w4ocBgn5F\"]},\"contracts/src/interfaces/IERC4626HyperdriveRead.sol\":{\"keccak256\":\"0x2039eef677ba37898e8e42dcb321d11d3c87f739122fd03726241252326dea33\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://31eacdd274ac0d6ff2969cb465e0fddb262d223f78f9001d7252bd7370449c73\",\"dweb:/ipfs/QmVNRFMvXk1r8h9pCdSsRhQr5rkj8XgGpNoLwhb6Q6Hzbk\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x7cc4f7a8878cf02f9896f930882ccb6839b20f63c85efc4a66e88af46c57c317\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://de756bba0e3622e5ddaff774a989fa20b4be7c49806dd972efc11f2cef523213\",\"dweb:/ipfs/QmPWwZo7TsF8ccFYbGVXhZMo85FYjKmyTnEYGV3V936YG2\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0xd15fb3cb39e359f334b7f836f23026d162de7b5be66d9aab3ac11dede9357a76\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b8b6fdcb4a2a45a3dbb8a70e9451fdd6aa5e23ee75d8960e42a149e9138a32eb\",\"dweb:/ipfs/QmNQiGzu6qhssorP8UMtaRbxygqzajPg3rB4phnbfQuMzF\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x1233242868a6eaeb6e6764df97cd094bfda03978bbedb04592db8ddc3ac6db56\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5cc50aa0bdaff888c940b004ad3a7a0c2aac4c15104419bd216ca48270c3fcb8\",\"dweb:/ipfs/QmQS6jncTRsBmZxDgR6dAofzXgTt1bXSRb8WdBNqKTCKiR\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x5922cbd86a7267c8fd19e3dc7a6f2636bad2b3330c28bca8e66adc7cd8ce2b55\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ced8bce3f3c15a9f0bcdd11ba16e69651179edd6b16e267936788f4ab4d6eabf\",\"dweb:/ipfs/QmcoZPj4h2ym6r13KDU7JG2GoVdDWa1GwfKL2jjFRsp8H6\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0xfc6947a6bfff9ca937fc2654ee56203dbc2ffc3c8bffe40c1334ebc9c81804bc\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b29d5b70c6cb40ede4e496cbeee4937c5318b43536a450d7c246166d326c85fa\",\"dweb:/ipfs/QmcDD9Bs4Gueepjs92CYJC9UFBMFYSN1QfbfqBJMQECkWj\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xfeac73551892783afcce85d23fb910baf2ad729d218756f3597ad23e3dcb077f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1f659070705bee17efda43c36f71d22b035752f610624c59238cae559c60530d\",\"dweb:/ipfs/QmTEXNYSWa8w3wY2TWzDPNZXxdThMFEbrtRwcQHfyN2CJb\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xe86d38d659ce3191d0423a4ee9b6592218a0e59dd72f3e0ec60cfa83809b266e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://91d15d179f83429f36db12d5eac3f575727e16f1505d4cb1b95a11d0876c7534\",\"dweb:/ipfs/QmQDHYp8pgd9maivqkaH2mZ8qtb5ZEmK34n4oDmvAo8nrh\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x8fde664589dfd8a26b6d39aed585388f7c179bf508ffe7688dc6c796a68dc785\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3406b91898282977f3630976461eb344764c0f321d35588b1e31408b64f64263\",\"dweb:/ipfs/QmVGGknjaaG9wnyPHUWAMpDJZ4tANu6hmEQcUU1HnUQ5U5\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c\",\"dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy\"]},\"lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol\":{\"keccak256\":\"0x60c65f701957fdd6faea1acb0bb45825791d473693ed9ecb34726fdfaa849dd7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ea290300e0efc4d901244949dc4d877fd46e6c5e43dc2b26620e8efab3ab803f\",\"dweb:/ipfs/QmcLLJppxKeJWqHxE2CUkcfhuRTgHSn8J4kijcLa5MYhSt\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xc3e1fa9d1987f8d349dfb4d6fe93bf2ca014b52ba335cfac30bfe71e357e6f80\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c5703ccdeb7b1d685e375ed719117e9edf2ab4bc544f24f23b0d50ec82257229\",\"dweb:/ipfs/QmTdwkbQq7owpCiyuzE7eh5LrD2ddrBCZ5WHVsWPi1RrTS\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0xaa761817f6cd7892fcf158b3c776b34551cde36f48ff9703d53898bc45a94ea2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ad7c8d4d08938c8dfc43d75a148863fb324b80cf53e0a36f7e5a4ac29008850\",\"dweb:/ipfs/QmcrhfPgVNf5mkdhQvy1pMv51TFokD3Y4Wa5WZhFqVh8UV\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"keccak256\":\"0x6008dabfe393240d73d7dd7688033f72740d570aa422254d29a7dce8568f3aff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f5196ec75139918c6c7bb4251b36395e668f1fa6d206beba7e7520e74913940d\",\"dweb:/ipfs/QmSyqjksXxmm2mCG6qRd1yuwLykypkSVBbnBnGqJRcuJMi\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x37bb49513c49c87c4642a891b13b63571bc87013dde806617aa1efb54605f386\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b3036b3a83b7c48f96641f2a9002b9f2dcb6a5958dd670894ada21ae8229b3d0\",\"dweb:/ipfs/QmUNfSBdoVtjhETaUJCYcaC7pTMgbhht926tJ2uXJbiVd3\"]},\"lib/openzeppelin-contracts/contracts/utils/Address.sol\":{\"keccak256\":\"0xaf28a975a78550e45f65e559a3ad6a5ad43b9b8a37366999abd1b7084eb70721\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b7bd24e224f67f65bfadf85dc2929fa965456bb2415478bd0125471b5ce35245\",\"dweb:/ipfs/QmRaydGr8BTHs1kvaZfsNU69pKzUAGFrvABn1KiRSbE51y\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12\",\"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}";
+    readonly rawMetadata: "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"basePayment\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newFeeCollector\",\"type\":\"address\"}],\"name\":\"FeeCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"Sweep\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newSweepCollector\",\"type\":\"address\"}],\"name\":\"SweepCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"This Hyperdrive implementation is designed to work with standard      ERC4626 vaults. Non-standard implementations may not work correctly      and should be carefully checked.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"__vault\":\"The ERC4626 compatible vault.\"}}},\"stateVariables\":{\"_vault\":{\"details\":\"The ERC4626 vault that this pool uses as a yield source.\"}},\"title\":\"ERC4626Base\",\"version\":1},\"userdoc\":{\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"FeeCollectorUpdated(address)\":{\"notice\":\"Emitted when the fee collector address is updated.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"Sweep(address,address)\":{\"notice\":\"Emitted when tokens are swept.\"},\"SweepCollectorUpdated(address)\":{\"notice\":\"Emitted when the sweep collector address is updated.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"Instantiates the ERC4626 Hyperdrive base contract.\"}},\"notice\":\"The base contract for the ERC4626 Hyperdrive implementation.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/instances/erc4626/ERC4626Base.sol\":\"ERC4626Base\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/instances/erc4626/ERC4626Base.sol\":{\"keccak256\":\"0x946feca7353542dc4095e98601d99be5e1c75ef1bb8e6d53fdb119d62618eb18\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://506a0ba5690c1ad5f0f9f0ed21e1635ac37d9dcb2b0a11db92c04acdfa853cad\",\"dweb:/ipfs/QmdteWqBq6K3XAKvyPbpKGCVERwvEN8r2pkTTv8hZc73gb\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IERC4626.sol\":{\"keccak256\":\"0x7d99427dc97cc1b469d205de5ced0eb15c6e305d0a7ef73d45fe7ef47ce7231e\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://c7726091d2f569ff79057a693324886e2a5558c586684460b51cd20612be59d3\",\"dweb:/ipfs/QmZv6BBe22fZRaC5iYiTuZMD2ZgUXvMBHjwZLikVSoXjDP\"]},\"contracts/src/interfaces/IERC4626Hyperdrive.sol\":{\"keccak256\":\"0x95d34e3dbf7a85d9d5d0071baddf3a8d73cf8a68a5c062d7656f4984b3ef5cb6\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2067273085c326e2f1789d1f571ea6fe4ecf211e551ffcda03b98ae0c9cdb724\",\"dweb:/ipfs/QmYxrY9uCXkaTSTCqvQvYx9phDcvkJim1JFbopxJRFEPbw\"]},\"contracts/src/interfaces/IERC4626HyperdriveRead.sol\":{\"keccak256\":\"0x2039eef677ba37898e8e42dcb321d11d3c87f739122fd03726241252326dea33\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://31eacdd274ac0d6ff2969cb465e0fddb262d223f78f9001d7252bd7370449c73\",\"dweb:/ipfs/QmVNRFMvXk1r8h9pCdSsRhQr5rkj8XgGpNoLwhb6Q6Hzbk\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xb8ee04f3090b498966970e210f7de0f982f6445628556f2f176385423d8c5952\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://db789f03faa935c6e3b0882b6e873e8f683c9c8841a4b128366dcbe7321911bf\",\"dweb:/ipfs/QmSQh1cX79nApuSAfJbVN99dmEaE4CK9QwWfEGcwhJMBLK\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c\",\"dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x5922cbd86a7267c8fd19e3dc7a6f2636bad2b3330c28bca8e66adc7cd8ce2b55\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ced8bce3f3c15a9f0bcdd11ba16e69651179edd6b16e267936788f4ab4d6eabf\",\"dweb:/ipfs/QmcoZPj4h2ym6r13KDU7JG2GoVdDWa1GwfKL2jjFRsp8H6\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6\",\"dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xf13ba4bcf41673bc04e4ae32a29c31b62514d66cfedee70b0d3bff574efc0e4a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e505639a656cf7c908e7c64cfd5cae6f4174a679de19d17a3f12f6e3fc4b2195\",\"dweb:/ipfs/QmNmcmz9nV9uDyeouo8yWAKMoMqEVx6JMTfZwCRa9QU83N\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002\",\"dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x5b3c0d159b1945a14227028d835e011bf740e007f664cba049ece1b6ab963067\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d8f4fef22462dabc799b2f8124440a7cc57076f7ceecb46219c69b09f50baf5f\",\"dweb:/ipfs/Qmcw9iC1RZt4Nh7dGH1yR7vUi6qZHJf6ReAvF2uLFHESqZ\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x4a9c91313bed7cda6ef503af23c9f777008b5258e9cb2176eab6acc52be79891\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://88da1f5502a12fe1024be90f6a6ea08556cc1f2660ab8cbeb5e07640abb7711c\",\"dweb:/ipfs/QmVQoG9TyrAsVYcgvgZfgA5pQk8V8wvS4BewGNP4B3Txyy\"]},\"lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol\":{\"keccak256\":\"0x60c65f701957fdd6faea1acb0bb45825791d473693ed9ecb34726fdfaa849dd7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ea290300e0efc4d901244949dc4d877fd46e6c5e43dc2b26620e8efab3ab803f\",\"dweb:/ipfs/QmcLLJppxKeJWqHxE2CUkcfhuRTgHSn8J4kijcLa5MYhSt\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xc3e1fa9d1987f8d349dfb4d6fe93bf2ca014b52ba335cfac30bfe71e357e6f80\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c5703ccdeb7b1d685e375ed719117e9edf2ab4bc544f24f23b0d50ec82257229\",\"dweb:/ipfs/QmTdwkbQq7owpCiyuzE7eh5LrD2ddrBCZ5WHVsWPi1RrTS\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0xaa761817f6cd7892fcf158b3c776b34551cde36f48ff9703d53898bc45a94ea2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ad7c8d4d08938c8dfc43d75a148863fb324b80cf53e0a36f7e5a4ac29008850\",\"dweb:/ipfs/QmcrhfPgVNf5mkdhQvy1pMv51TFokD3Y4Wa5WZhFqVh8UV\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"keccak256\":\"0x6008dabfe393240d73d7dd7688033f72740d570aa422254d29a7dce8568f3aff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f5196ec75139918c6c7bb4251b36395e668f1fa6d206beba7e7520e74913940d\",\"dweb:/ipfs/QmSyqjksXxmm2mCG6qRd1yuwLykypkSVBbnBnGqJRcuJMi\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x37bb49513c49c87c4642a891b13b63571bc87013dde806617aa1efb54605f386\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b3036b3a83b7c48f96641f2a9002b9f2dcb6a5958dd670894ada21ae8229b3d0\",\"dweb:/ipfs/QmUNfSBdoVtjhETaUJCYcaC7pTMgbhht926tJ2uXJbiVd3\"]},\"lib/openzeppelin-contracts/contracts/utils/Address.sol\":{\"keccak256\":\"0xaf28a975a78550e45f65e559a3ad6a5ad43b9b8a37366999abd1b7084eb70721\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b7bd24e224f67f65bfadf85dc2929fa965456bb2415478bd0125471b5ce35245\",\"dweb:/ipfs/QmRaydGr8BTHs1kvaZfsNU69pKzUAGFrvABn1KiRSbE51y\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12\",\"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}";
     readonly metadata: {
         readonly compiler: {
             readonly version: "0.8.20+commit.a1b79de6";
@@ -563,6 +623,11 @@ export declare const ERC4626Base: {
                     readonly type: "address";
                     readonly indexed: true;
                 }, {
+                    readonly internalType: "address";
+                    readonly name: "destination";
+                    readonly type: "address";
+                    readonly indexed: true;
+                }, {
                     readonly internalType: "uint256";
                     readonly name: "assetId";
                     readonly type: "uint256";
@@ -603,6 +668,11 @@ export declare const ERC4626Base: {
                     readonly type: "address";
                     readonly indexed: true;
                 }, {
+                    readonly internalType: "address";
+                    readonly name: "destination";
+                    readonly type: "address";
+                    readonly indexed: true;
+                }, {
                     readonly internalType: "uint256";
                     readonly name: "assetId";
                     readonly type: "uint256";
@@ -626,6 +696,11 @@ export declare const ERC4626Base: {
                     readonly internalType: "bool";
                     readonly name: "asBase";
                     readonly type: "bool";
+                    readonly indexed: false;
+                }, {
+                    readonly internalType: "uint256";
+                    readonly name: "basePayment";
+                    readonly type: "uint256";
                     readonly indexed: false;
                 }, {
                     readonly internalType: "uint256";
@@ -680,6 +755,16 @@ export declare const ERC4626Base: {
                 }];
                 readonly type: "event";
                 readonly name: "CreateCheckpoint";
+                readonly anonymous: false;
+            }, {
+                readonly inputs: readonly [{
+                    readonly internalType: "address";
+                    readonly name: "newFeeCollector";
+                    readonly type: "address";
+                    readonly indexed: true;
+                }];
+                readonly type: "event";
+                readonly name: "FeeCollectorUpdated";
                 readonly anonymous: false;
             }, {
                 readonly inputs: readonly [{
@@ -843,6 +928,11 @@ export declare const ERC4626Base: {
                     readonly type: "address";
                     readonly indexed: true;
                 }, {
+                    readonly internalType: "address";
+                    readonly name: "destination";
+                    readonly type: "address";
+                    readonly indexed: true;
+                }, {
                     readonly internalType: "uint256";
                     readonly name: "withdrawalShareAmount";
                     readonly type: "uint256";
@@ -870,6 +960,11 @@ export declare const ERC4626Base: {
                 readonly inputs: readonly [{
                     readonly internalType: "address";
                     readonly name: "provider";
+                    readonly type: "address";
+                    readonly indexed: true;
+                }, {
+                    readonly internalType: "address";
+                    readonly name: "destination";
                     readonly type: "address";
                     readonly indexed: true;
                 }, {
@@ -905,6 +1000,31 @@ export declare const ERC4626Base: {
                 }];
                 readonly type: "event";
                 readonly name: "RemoveLiquidity";
+                readonly anonymous: false;
+            }, {
+                readonly inputs: readonly [{
+                    readonly internalType: "address";
+                    readonly name: "collector";
+                    readonly type: "address";
+                    readonly indexed: true;
+                }, {
+                    readonly internalType: "address";
+                    readonly name: "target";
+                    readonly type: "address";
+                    readonly indexed: true;
+                }];
+                readonly type: "event";
+                readonly name: "Sweep";
+                readonly anonymous: false;
+            }, {
+                readonly inputs: readonly [{
+                    readonly internalType: "address";
+                    readonly name: "newSweepCollector";
+                    readonly type: "address";
+                    readonly indexed: true;
+                }];
+                readonly type: "event";
+                readonly name: "SweepCollectorUpdated";
                 readonly anonymous: false;
             }, {
                 readonly inputs: readonly [{
@@ -974,8 +1094,8 @@ export declare const ERC4626Base: {
         };
         readonly sources: {
             readonly "contracts/src/instances/erc4626/ERC4626Base.sol": {
-                readonly keccak256: "0xee1d1cbc761adf6eec60161512631235beb00d0655ef3dcd0ec7531c4048304f";
-                readonly urls: readonly ["bzz-raw://278e515459a4d84a0c44da78949247ece0be57fe16fa9afd1a1c39f14e6f79d7", "dweb:/ipfs/QmQhSrHbgLEHzM6sLFmAwgvDycGkYDVXhHrdFj2T3vgZuT"];
+                readonly keccak256: "0x946feca7353542dc4095e98601d99be5e1c75ef1bb8e6d53fdb119d62618eb18";
+                readonly urls: readonly ["bzz-raw://506a0ba5690c1ad5f0f9f0ed21e1635ac37d9dcb2b0a11db92c04acdfa853cad", "dweb:/ipfs/QmdteWqBq6K3XAKvyPbpKGCVERwvEN8r2pkTTv8hZc73gb"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/interfaces/IERC20.sol": {
@@ -989,13 +1109,8 @@ export declare const ERC4626Base: {
                 readonly license: "GPL-2.0-or-later";
             };
             readonly "contracts/src/interfaces/IERC4626Hyperdrive.sol": {
-                readonly keccak256: "0xc7f5a5cbfc5ba21f72fc7699d616e2483d4589514a14b6e39f624d0f4d9453e7";
-                readonly urls: readonly ["bzz-raw://a4d7b144f357e86bfd23c805bb670226aa0c87b078babcd4dd3ec8b8f0b3374f", "dweb:/ipfs/QmTYNfB4ABRtPjCVck2uq5wQA8PvxBS45mPkVevc82TTFa"];
-                readonly license: "Apache-2.0";
-            };
-            readonly "contracts/src/interfaces/IERC4626HyperdriveCore.sol": {
-                readonly keccak256: "0x94cce9f221023ebf9d4ed4fbafac76d67aee4ee0aa7771c89fcd2d374dfb490a";
-                readonly urls: readonly ["bzz-raw://5ed09d2369f7e9c057d20b0c069f6b9e5242d4c9cd85b3bd49ace51ad16fdba0", "dweb:/ipfs/QmNzy2ewTJePinzG4L4SAfxxBySPFJW5Shxb5w4ocBgn5F"];
+                readonly keccak256: "0x95d34e3dbf7a85d9d5d0071baddf3a8d73cf8a68a5c062d7656f4984b3ef5cb6";
+                readonly urls: readonly ["bzz-raw://2067273085c326e2f1789d1f571ea6fe4ecf211e551ffcda03b98ae0c9cdb724", "dweb:/ipfs/QmYxrY9uCXkaTSTCqvQvYx9phDcvkJim1JFbopxJRFEPbw"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/interfaces/IERC4626HyperdriveRead.sol": {
@@ -1004,18 +1119,18 @@ export declare const ERC4626Base: {
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/interfaces/IHyperdrive.sol": {
-                readonly keccak256: "0x7cc4f7a8878cf02f9896f930882ccb6839b20f63c85efc4a66e88af46c57c317";
-                readonly urls: readonly ["bzz-raw://de756bba0e3622e5ddaff774a989fa20b4be7c49806dd972efc11f2cef523213", "dweb:/ipfs/QmPWwZo7TsF8ccFYbGVXhZMo85FYjKmyTnEYGV3V936YG2"];
+                readonly keccak256: "0xb8ee04f3090b498966970e210f7de0f982f6445628556f2f176385423d8c5952";
+                readonly urls: readonly ["bzz-raw://db789f03faa935c6e3b0882b6e873e8f683c9c8841a4b128366dcbe7321911bf", "dweb:/ipfs/QmSQh1cX79nApuSAfJbVN99dmEaE4CK9QwWfEGcwhJMBLK"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/interfaces/IHyperdriveCore.sol": {
-                readonly keccak256: "0xd15fb3cb39e359f334b7f836f23026d162de7b5be66d9aab3ac11dede9357a76";
-                readonly urls: readonly ["bzz-raw://b8b6fdcb4a2a45a3dbb8a70e9451fdd6aa5e23ee75d8960e42a149e9138a32eb", "dweb:/ipfs/QmNQiGzu6qhssorP8UMtaRbxygqzajPg3rB4phnbfQuMzF"];
+                readonly keccak256: "0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e";
+                readonly urls: readonly ["bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24", "dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/interfaces/IHyperdriveEvents.sol": {
-                readonly keccak256: "0x1233242868a6eaeb6e6764df97cd094bfda03978bbedb04592db8ddc3ac6db56";
-                readonly urls: readonly ["bzz-raw://5cc50aa0bdaff888c940b004ad3a7a0c2aac4c15104419bd216ca48270c3fcb8", "dweb:/ipfs/QmQS6jncTRsBmZxDgR6dAofzXgTt1bXSRb8WdBNqKTCKiR"];
+                readonly keccak256: "0x812ccb32dff907e8614c89a65196eec239eceb3e63f9f14dde2b2269c75a67c0";
+                readonly urls: readonly ["bzz-raw://da5f2ce974bfcd8185342c121c879ba5aef23e1e4e7b36cf9fcba68296b8892c", "dweb:/ipfs/QmSho3PWs9bzejTYYjySuXcH9tVP4xFnkbUmSzQA54g8eG"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/interfaces/IHyperdriveRead.sol": {
@@ -1049,13 +1164,13 @@ export declare const ERC4626Base: {
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/internal/HyperdriveBase.sol": {
-                readonly keccak256: "0xfc6947a6bfff9ca937fc2654ee56203dbc2ffc3c8bffe40c1334ebc9c81804bc";
-                readonly urls: readonly ["bzz-raw://b29d5b70c6cb40ede4e496cbeee4937c5318b43536a450d7c246166d326c85fa", "dweb:/ipfs/QmcDD9Bs4Gueepjs92CYJC9UFBMFYSN1QfbfqBJMQECkWj"];
+                readonly keccak256: "0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb";
+                readonly urls: readonly ["bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6", "dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/internal/HyperdriveStorage.sol": {
-                readonly keccak256: "0xfeac73551892783afcce85d23fb910baf2ad729d218756f3597ad23e3dcb077f";
-                readonly urls: readonly ["bzz-raw://1f659070705bee17efda43c36f71d22b035752f610624c59238cae559c60530d", "dweb:/ipfs/QmTEXNYSWa8w3wY2TWzDPNZXxdThMFEbrtRwcQHfyN2CJb"];
+                readonly keccak256: "0xf13ba4bcf41673bc04e4ae32a29c31b62514d66cfedee70b0d3bff574efc0e4a";
+                readonly urls: readonly ["bzz-raw://e505639a656cf7c908e7c64cfd5cae6f4174a679de19d17a3f12f6e3fc4b2195", "dweb:/ipfs/QmNmcmz9nV9uDyeouo8yWAKMoMqEVx6JMTfZwCRa9QU83N"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/libraries/AssetId.sol": {
@@ -1074,13 +1189,13 @@ export declare const ERC4626Base: {
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/libraries/HyperdriveMath.sol": {
-                readonly keccak256: "0xe86d38d659ce3191d0423a4ee9b6592218a0e59dd72f3e0ec60cfa83809b266e";
-                readonly urls: readonly ["bzz-raw://91d15d179f83429f36db12d5eac3f575727e16f1505d4cb1b95a11d0876c7534", "dweb:/ipfs/QmQDHYp8pgd9maivqkaH2mZ8qtb5ZEmK34n4oDmvAo8nrh"];
+                readonly keccak256: "0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab";
+                readonly urls: readonly ["bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002", "dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/libraries/LPMath.sol": {
-                readonly keccak256: "0x8fde664589dfd8a26b6d39aed585388f7c179bf508ffe7688dc6c796a68dc785";
-                readonly urls: readonly ["bzz-raw://3406b91898282977f3630976461eb344764c0f321d35588b1e31408b64f64263", "dweb:/ipfs/QmVGGknjaaG9wnyPHUWAMpDJZ4tANu6hmEQcUU1HnUQ5U5"];
+                readonly keccak256: "0x5b3c0d159b1945a14227028d835e011bf740e007f664cba049ece1b6ab963067";
+                readonly urls: readonly ["bzz-raw://d8f4fef22462dabc799b2f8124440a7cc57076f7ceecb46219c69b09f50baf5f", "dweb:/ipfs/Qmcw9iC1RZt4Nh7dGH1yR7vUi6qZHJf6ReAvF2uLFHESqZ"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/libraries/SafeCast.sol": {
@@ -1143,357 +1258,357 @@ export declare const ERC4626Base: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/instances/erc4626/ERC4626Base.sol";
-        readonly id: 5812;
+        readonly id: 7984;
         readonly exportedSymbols: {
-            readonly ERC20: readonly [66276];
-            readonly ERC4626Base: readonly [5811];
-            readonly FixedPointMath: readonly [14917];
-            readonly HyperdriveBase: readonly [9917];
-            readonly IERC4626: readonly [7203];
-            readonly IERC4626Hyperdrive: readonly [7218];
-            readonly IHyperdrive: readonly [7616];
-            readonly ONE: readonly [14151];
-            readonly SafeERC20: readonly [66706];
+            readonly ERC20: readonly [71213];
+            readonly ERC4626Base: readonly [7983];
+            readonly FixedPointMath: readonly [19394];
+            readonly HyperdriveBase: readonly [14333];
+            readonly IERC4626: readonly [10602];
+            readonly IERC4626Hyperdrive: readonly [10613];
+            readonly IHyperdrive: readonly [11028];
+            readonly ONE: readonly [18628];
+            readonly SafeERC20: readonly [71643];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "39:6639:23";
+        readonly src: "39:5835:44";
         readonly nodes: readonly [{
-            readonly id: 5581;
+            readonly id: 7724;
             readonly nodeType: "PragmaDirective";
-            readonly src: "39:23:23";
+            readonly src: "39:23:44";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 5583;
+            readonly id: 7726;
             readonly nodeType: "ImportDirective";
-            readonly src: "64:59:23";
+            readonly src: "64:59:44";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
             readonly file: "openzeppelin/token/ERC20/ERC20.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 5812;
-            readonly sourceUnit: 66277;
+            readonly scope: 7984;
+            readonly sourceUnit: 71214;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 5582;
+                    readonly id: 7725;
                     readonly name: "ERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 66276;
-                    readonly src: "73:5:23";
+                    readonly referencedDeclaration: 71213;
+                    readonly src: "73:5:44";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 5585;
+            readonly id: 7728;
             readonly nodeType: "ImportDirective";
-            readonly src: "124:73:23";
+            readonly src: "124:73:44";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol";
             readonly file: "openzeppelin/token/ERC20/utils/SafeERC20.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 5812;
-            readonly sourceUnit: 66707;
+            readonly scope: 7984;
+            readonly sourceUnit: 71644;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 5584;
+                    readonly id: 7727;
                     readonly name: "SafeERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 66706;
-                    readonly src: "133:9:23";
+                    readonly referencedDeclaration: 71643;
+                    readonly src: "133:9:44";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 5587;
+            readonly id: 7730;
             readonly nodeType: "ImportDirective";
-            readonly src: "198:57:23";
+            readonly src: "198:57:44";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IERC4626.sol";
             readonly file: "../../interfaces/IERC4626.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 5812;
-            readonly sourceUnit: 7204;
+            readonly scope: 7984;
+            readonly sourceUnit: 10603;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 5586;
+                    readonly id: 7729;
                     readonly name: "IERC4626";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 7203;
-                    readonly src: "207:8:23";
+                    readonly referencedDeclaration: 10602;
+                    readonly src: "207:8:44";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 5589;
+            readonly id: 7732;
             readonly nodeType: "ImportDirective";
-            readonly src: "256:63:23";
+            readonly src: "256:63:44";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
             readonly file: "../../interfaces/IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 5812;
-            readonly sourceUnit: 7617;
+            readonly scope: 7984;
+            readonly sourceUnit: 11029;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 5588;
+                    readonly id: 7731;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 7616;
-                    readonly src: "265:11:23";
+                    readonly referencedDeclaration: 11028;
+                    readonly src: "265:11:44";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 5591;
+            readonly id: 7734;
             readonly nodeType: "ImportDirective";
-            readonly src: "320:77:23";
+            readonly src: "320:77:44";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IERC4626Hyperdrive.sol";
             readonly file: "../../interfaces/IERC4626Hyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 5812;
-            readonly sourceUnit: 7219;
+            readonly scope: 7984;
+            readonly sourceUnit: 10614;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 5590;
+                    readonly id: 7733;
                     readonly name: "IERC4626Hyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 7218;
-                    readonly src: "329:18:23";
+                    readonly referencedDeclaration: 10613;
+                    readonly src: "329:18:44";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 5593;
+            readonly id: 7736;
             readonly nodeType: "ImportDirective";
-            readonly src: "398:67:23";
+            readonly src: "398:67:44";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/internal/HyperdriveBase.sol";
             readonly file: "../../internal/HyperdriveBase.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 5812;
-            readonly sourceUnit: 9918;
+            readonly scope: 7984;
+            readonly sourceUnit: 14334;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 5592;
+                    readonly id: 7735;
                     readonly name: "HyperdriveBase";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 9917;
-                    readonly src: "407:14:23";
+                    readonly referencedDeclaration: 14333;
+                    readonly src: "407:14:44";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 5596;
+            readonly id: 7739;
             readonly nodeType: "ImportDirective";
-            readonly src: "466:73:23";
+            readonly src: "466:73:44";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/FixedPointMath.sol";
             readonly file: "../../libraries/FixedPointMath.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 5812;
-            readonly sourceUnit: 14918;
+            readonly scope: 7984;
+            readonly sourceUnit: 19395;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 5594;
+                    readonly id: 7737;
                     readonly name: "FixedPointMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 14917;
-                    readonly src: "475:14:23";
+                    readonly referencedDeclaration: 19394;
+                    readonly src: "475:14:44";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }, {
                 readonly foreign: {
-                    readonly id: 5595;
+                    readonly id: 7738;
                     readonly name: "ONE";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 14151;
-                    readonly src: "491:3:23";
+                    readonly referencedDeclaration: 18628;
+                    readonly src: "491:3:44";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 5811;
+            readonly id: 7983;
             readonly nodeType: "ContractDefinition";
-            readonly src: "1071:5606:23";
+            readonly src: "1071:4802:44";
             readonly nodes: readonly [{
-                readonly id: 5602;
+                readonly id: 7745;
                 readonly nodeType: "UsingForDirective";
-                readonly src: "1125:33:23";
+                readonly src: "1125:33:44";
                 readonly nodes: readonly [];
                 readonly global: false;
                 readonly libraryName: {
-                    readonly id: 5600;
+                    readonly id: 7743;
                     readonly name: "FixedPointMath";
-                    readonly nameLocations: readonly ["1131:14:23"];
+                    readonly nameLocations: readonly ["1131:14:44"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 14917;
-                    readonly src: "1131:14:23";
+                    readonly referencedDeclaration: 19394;
+                    readonly src: "1131:14:44";
                 };
                 readonly typeName: {
-                    readonly id: 5601;
+                    readonly id: 7744;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
-                    readonly src: "1150:7:23";
+                    readonly src: "1150:7:44";
                     readonly typeDescriptions: {
                         readonly typeIdentifier: "t_uint256";
                         readonly typeString: "uint256";
                     };
                 };
             }, {
-                readonly id: 5606;
+                readonly id: 7749;
                 readonly nodeType: "UsingForDirective";
-                readonly src: "1163:26:23";
+                readonly src: "1163:26:44";
                 readonly nodes: readonly [];
                 readonly global: false;
                 readonly libraryName: {
-                    readonly id: 5603;
+                    readonly id: 7746;
                     readonly name: "SafeERC20";
-                    readonly nameLocations: readonly ["1169:9:23"];
+                    readonly nameLocations: readonly ["1169:9:44"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 66706;
-                    readonly src: "1169:9:23";
+                    readonly referencedDeclaration: 71643;
+                    readonly src: "1169:9:44";
                 };
                 readonly typeName: {
-                    readonly id: 5605;
+                    readonly id: 7748;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 5604;
+                        readonly id: 7747;
                         readonly name: "ERC20";
-                        readonly nameLocations: readonly ["1183:5:23"];
+                        readonly nameLocations: readonly ["1183:5:44"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 66276;
-                        readonly src: "1183:5:23";
+                        readonly referencedDeclaration: 71213;
+                        readonly src: "1183:5:44";
                     };
-                    readonly referencedDeclaration: 66276;
-                    readonly src: "1183:5:23";
+                    readonly referencedDeclaration: 71213;
+                    readonly src: "1183:5:44";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_ERC20_$66276";
+                        readonly typeIdentifier: "t_contract$_ERC20_$71213";
                         readonly typeString: "contract ERC20";
                     };
                 };
             }, {
-                readonly id: 5610;
+                readonly id: 7753;
                 readonly nodeType: "VariableDeclaration";
-                readonly src: "1265:34:23";
+                readonly src: "1265:34:44";
                 readonly nodes: readonly [];
                 readonly constant: false;
                 readonly documentation: {
-                    readonly id: 5607;
+                    readonly id: 7750;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "1195:65:23";
+                    readonly src: "1195:65:44";
                     readonly text: "@dev The ERC4626 vault that this pool uses as a yield source.";
                 };
                 readonly mutability: "immutable";
                 readonly name: "_vault";
-                readonly nameLocation: "1293:6:23";
-                readonly scope: 5811;
+                readonly nameLocation: "1293:6:44";
+                readonly scope: 7983;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_IERC4626_$7203";
+                    readonly typeIdentifier: "t_contract$_IERC4626_$10602";
                     readonly typeString: "contract IERC4626";
                 };
                 readonly typeName: {
-                    readonly id: 5609;
+                    readonly id: 7752;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 5608;
+                        readonly id: 7751;
                         readonly name: "IERC4626";
-                        readonly nameLocations: readonly ["1265:8:23"];
+                        readonly nameLocations: readonly ["1265:8:44"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 7203;
-                        readonly src: "1265:8:23";
+                        readonly referencedDeclaration: 10602;
+                        readonly src: "1265:8:44";
                     };
-                    readonly referencedDeclaration: 7203;
-                    readonly src: "1265:8:23";
+                    readonly referencedDeclaration: 10602;
+                    readonly src: "1265:8:44";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_IERC4626_$7203";
+                        readonly typeIdentifier: "t_contract$_IERC4626_$10602";
                         readonly typeString: "contract IERC4626";
                     };
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 5622;
+                readonly id: 7765;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1426:105:23";
+                readonly src: "1426:105:44";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 5621;
+                    readonly id: 7764;
                     readonly nodeType: "Block";
-                    readonly src: "1456:75:23";
+                    readonly src: "1456:75:44";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 5619;
+                            readonly id: 7762;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 5617;
+                                readonly id: 7760;
                                 readonly name: "_vault";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 5610;
-                                readonly src: "1508:6:23";
+                                readonly referencedDeclaration: 7753;
+                                readonly src: "1508:6:44";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IERC4626_$7203";
+                                    readonly typeIdentifier: "t_contract$_IERC4626_$10602";
                                     readonly typeString: "contract IERC4626";
                                 };
                             };
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 5618;
+                                readonly id: 7761;
                                 readonly name: "__vault";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 5614;
-                                readonly src: "1517:7:23";
+                                readonly referencedDeclaration: 7757;
+                                readonly src: "1517:7:44";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IERC4626_$7203";
+                                    readonly typeIdentifier: "t_contract$_IERC4626_$10602";
                                     readonly typeString: "contract IERC4626";
                                 };
                             };
-                            readonly src: "1508:16:23";
+                            readonly src: "1508:16:44";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IERC4626_$7203";
+                                readonly typeIdentifier: "t_contract$_IERC4626_$10602";
                                 readonly typeString: "contract IERC4626";
                             };
                         };
-                        readonly id: 5620;
+                        readonly id: 7763;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "1508:16:23";
+                        readonly src: "1508:16:44";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 5611;
+                    readonly id: 7754;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "1306:115:23";
+                    readonly src: "1306:115:44";
                     readonly text: "@notice Instantiates the ERC4626 Hyperdrive base contract.\n @param __vault The ERC4626 compatible vault.";
                 };
                 readonly implemented: true;
@@ -1502,1228 +1617,152 @@ export declare const ERC4626Base: {
                 readonly name: "";
                 readonly nameLocation: "-1:-1:-1";
                 readonly parameters: {
-                    readonly id: 5615;
+                    readonly id: 7758;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 5614;
+                        readonly id: 7757;
                         readonly mutability: "mutable";
                         readonly name: "__vault";
-                        readonly nameLocation: "1447:7:23";
+                        readonly nameLocation: "1447:7:44";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 5622;
-                        readonly src: "1438:16:23";
+                        readonly scope: 7765;
+                        readonly src: "1438:16:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IERC4626_$7203";
+                            readonly typeIdentifier: "t_contract$_IERC4626_$10602";
                             readonly typeString: "contract IERC4626";
                         };
                         readonly typeName: {
-                            readonly id: 5613;
+                            readonly id: 7756;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 5612;
+                                readonly id: 7755;
                                 readonly name: "IERC4626";
-                                readonly nameLocations: readonly ["1438:8:23"];
+                                readonly nameLocations: readonly ["1438:8:44"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 7203;
-                                readonly src: "1438:8:23";
+                                readonly referencedDeclaration: 10602;
+                                readonly src: "1438:8:44";
                             };
-                            readonly referencedDeclaration: 7203;
-                            readonly src: "1438:8:23";
+                            readonly referencedDeclaration: 10602;
+                            readonly src: "1438:8:44";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IERC4626_$7203";
+                                readonly typeIdentifier: "t_contract$_IERC4626_$10602";
                                 readonly typeString: "contract IERC4626";
                             };
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1437:18:23";
+                    readonly src: "1437:18:44";
                 };
                 readonly returnParameters: {
-                    readonly id: 5616;
+                    readonly id: 7759;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "1456:0:23";
+                    readonly src: "1456:0:44";
                 };
-                readonly scope: 5811;
+                readonly scope: 7983;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 5710;
+                readonly id: 7826;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "2335:1468:23";
+                readonly src: "1853:833:44";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 5709;
+                    readonly id: 7825;
                     readonly nodeType: "Block";
-                    readonly src: "2533:1270:23";
+                    readonly src: "1993:693:44";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly condition: {
-                            readonly expression: {
-                                readonly id: 5636;
-                                readonly name: "_options";
-                                readonly nodeType: "Identifier";
-                                readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 5628;
-                                readonly src: "2547:8:23";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Options_$7463_calldata_ptr";
-                                    readonly typeString: "struct IHyperdrive.Options calldata";
-                                };
-                            };
-                            readonly id: 5637;
-                            readonly isConstant: false;
-                            readonly isLValue: false;
-                            readonly isPure: false;
-                            readonly lValueRequested: false;
-                            readonly memberLocation: "2556:6:23";
-                            readonly memberName: "asBase";
-                            readonly nodeType: "MemberAccess";
-                            readonly referencedDeclaration: 7459;
-                            readonly src: "2547:15:23";
-                            readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_bool";
-                                readonly typeString: "bool";
-                            };
-                        };
-                        readonly falseBody: {
-                            readonly id: 5702;
-                            readonly nodeType: "Block";
-                            readonly src: "3276:472:23";
-                            readonly statements: readonly [{
-                                readonly expression: {
-                                    readonly id: 5684;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftHandSide: {
-                                        readonly id: 5682;
-                                        readonly name: "sharesMinted";
-                                        readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 5632;
-                                        readonly src: "3498:12:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
-                                        };
-                                    };
-                                    readonly nodeType: "Assignment";
-                                    readonly operator: "=";
-                                    readonly rightHandSide: {
-                                        readonly id: 5683;
-                                        readonly name: "_amount";
-                                        readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 5625;
-                                        readonly src: "3513:7:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
-                                        };
-                                    };
-                                    readonly src: "3498:22:23";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_uint256";
-                                        readonly typeString: "uint256";
-                                    };
-                                };
-                                readonly id: 5685;
-                                readonly nodeType: "ExpressionStatement";
-                                readonly src: "3498:22:23";
-                            }, {
-                                readonly expression: {
-                                    readonly arguments: readonly [{
-                                        readonly expression: {
-                                            readonly id: 5693;
-                                            readonly name: "msg";
-                                            readonly nodeType: "Identifier";
-                                            readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: -15;
-                                            readonly src: "3652:3:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_magic_message";
-                                                readonly typeString: "msg";
-                                            };
-                                        };
-                                        readonly id: 5694;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly memberLocation: "3656:6:23";
-                                        readonly memberName: "sender";
-                                        readonly nodeType: "MemberAccess";
-                                        readonly src: "3652:10:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_address";
-                                            readonly typeString: "address";
-                                        };
-                                    }, {
-                                        readonly arguments: readonly [{
-                                            readonly id: 5697;
-                                            readonly name: "this";
-                                            readonly nodeType: "Identifier";
-                                            readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: -28;
-                                            readonly src: "3688:4:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_ERC4626Base_$5811";
-                                                readonly typeString: "contract ERC4626Base";
-                                            };
-                                        }];
-                                        readonly expression: {
-                                            readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_ERC4626Base_$5811";
-                                                readonly typeString: "contract ERC4626Base";
-                                            }];
-                                            readonly id: 5696;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: true;
-                                            readonly lValueRequested: false;
-                                            readonly nodeType: "ElementaryTypeNameExpression";
-                                            readonly src: "3680:7:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_address_$";
-                                                readonly typeString: "type(address)";
-                                            };
-                                            readonly typeName: {
-                                                readonly id: 5695;
-                                                readonly name: "address";
-                                                readonly nodeType: "ElementaryTypeName";
-                                                readonly src: "3680:7:23";
-                                                readonly typeDescriptions: {};
-                                            };
-                                        };
-                                        readonly id: 5698;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly kind: "typeConversion";
-                                        readonly lValueRequested: false;
-                                        readonly nameLocations: readonly [];
-                                        readonly names: readonly [];
-                                        readonly nodeType: "FunctionCall";
-                                        readonly src: "3680:13:23";
-                                        readonly tryCall: false;
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_address";
-                                            readonly typeString: "address";
-                                        };
-                                    }, {
-                                        readonly id: 5699;
-                                        readonly name: "sharesMinted";
-                                        readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 5632;
-                                        readonly src: "3711:12:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
-                                        };
-                                    }];
-                                    readonly expression: {
-                                        readonly argumentTypes: readonly [{
-                                            readonly typeIdentifier: "t_address";
-                                            readonly typeString: "address";
-                                        }, {
-                                            readonly typeIdentifier: "t_address";
-                                            readonly typeString: "address";
-                                        }, {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
-                                        }];
-                                        readonly expression: {
-                                            readonly arguments: readonly [{
-                                                readonly arguments: readonly [{
-                                                    readonly id: 5689;
-                                                    readonly name: "_vault";
-                                                    readonly nodeType: "Identifier";
-                                                    readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 5610;
-                                                    readonly src: "3609:6:23";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_contract$_IERC4626_$7203";
-                                                        readonly typeString: "contract IERC4626";
-                                                    };
-                                                }];
-                                                readonly expression: {
-                                                    readonly argumentTypes: readonly [{
-                                                        readonly typeIdentifier: "t_contract$_IERC4626_$7203";
-                                                        readonly typeString: "contract IERC4626";
-                                                    }];
-                                                    readonly id: 5688;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: true;
-                                                    readonly lValueRequested: false;
-                                                    readonly nodeType: "ElementaryTypeNameExpression";
-                                                    readonly src: "3601:7:23";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_type$_t_address_$";
-                                                        readonly typeString: "type(address)";
-                                                    };
-                                                    readonly typeName: {
-                                                        readonly id: 5687;
-                                                        readonly name: "address";
-                                                        readonly nodeType: "ElementaryTypeName";
-                                                        readonly src: "3601:7:23";
-                                                        readonly typeDescriptions: {};
-                                                    };
-                                                };
-                                                readonly id: 5690;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly kind: "typeConversion";
-                                                readonly lValueRequested: false;
-                                                readonly nameLocations: readonly [];
-                                                readonly names: readonly [];
-                                                readonly nodeType: "FunctionCall";
-                                                readonly src: "3601:15:23";
-                                                readonly tryCall: false;
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_address";
-                                                    readonly typeString: "address";
-                                                };
-                                            }];
-                                            readonly expression: {
-                                                readonly argumentTypes: readonly [{
-                                                    readonly typeIdentifier: "t_address";
-                                                    readonly typeString: "address";
-                                                }];
-                                                readonly id: 5686;
-                                                readonly name: "ERC20";
-                                                readonly nodeType: "Identifier";
-                                                readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 66276;
-                                                readonly src: "3595:5:23";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_type$_t_contract$_ERC20_$66276_$";
-                                                    readonly typeString: "type(contract ERC20)";
-                                                };
-                                            };
-                                            readonly id: 5691;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly kind: "typeConversion";
-                                            readonly lValueRequested: false;
-                                            readonly nameLocations: readonly [];
-                                            readonly names: readonly [];
-                                            readonly nodeType: "FunctionCall";
-                                            readonly src: "3595:22:23";
-                                            readonly tryCall: false;
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_ERC20_$66276";
-                                                readonly typeString: "contract ERC20";
-                                            };
-                                        };
-                                        readonly id: 5692;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly memberLocation: "3618:16:23";
-                                        readonly memberName: "safeTransferFrom";
-                                        readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 66493;
-                                        readonly src: "3595:39:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$66354_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$66354_$";
-                                            readonly typeString: "function (contract IERC20,address,address,uint256)";
-                                        };
-                                    };
-                                    readonly id: 5700;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly kind: "functionCall";
-                                    readonly lValueRequested: false;
-                                    readonly nameLocations: readonly [];
-                                    readonly names: readonly [];
-                                    readonly nodeType: "FunctionCall";
-                                    readonly src: "3595:142:23";
-                                    readonly tryCall: false;
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_tuple$__$";
-                                        readonly typeString: "tuple()";
-                                    };
-                                };
-                                readonly id: 5701;
-                                readonly nodeType: "ExpressionStatement";
-                                readonly src: "3595:142:23";
-                            }];
-                        };
-                        readonly id: 5703;
-                        readonly nodeType: "IfStatement";
-                        readonly src: "2543:1205:23";
-                        readonly trueBody: {
-                            readonly id: 5681;
-                            readonly nodeType: "Block";
-                            readonly src: "2564:706:23";
-                            readonly statements: readonly [{
-                                readonly expression: {
-                                    readonly arguments: readonly [{
-                                        readonly expression: {
-                                            readonly id: 5645;
-                                            readonly name: "msg";
-                                            readonly nodeType: "Identifier";
-                                            readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: -15;
-                                            readonly src: "2691:3:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_magic_message";
-                                                readonly typeString: "msg";
-                                            };
-                                        };
-                                        readonly id: 5646;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly memberLocation: "2695:6:23";
-                                        readonly memberName: "sender";
-                                        readonly nodeType: "MemberAccess";
-                                        readonly src: "2691:10:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_address";
-                                            readonly typeString: "address";
-                                        };
-                                    }, {
-                                        readonly arguments: readonly [{
-                                            readonly id: 5649;
-                                            readonly name: "this";
-                                            readonly nodeType: "Identifier";
-                                            readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: -28;
-                                            readonly src: "2727:4:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_ERC4626Base_$5811";
-                                                readonly typeString: "contract ERC4626Base";
-                                            };
-                                        }];
-                                        readonly expression: {
-                                            readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_ERC4626Base_$5811";
-                                                readonly typeString: "contract ERC4626Base";
-                                            }];
-                                            readonly id: 5648;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: true;
-                                            readonly lValueRequested: false;
-                                            readonly nodeType: "ElementaryTypeNameExpression";
-                                            readonly src: "2719:7:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_address_$";
-                                                readonly typeString: "type(address)";
-                                            };
-                                            readonly typeName: {
-                                                readonly id: 5647;
-                                                readonly name: "address";
-                                                readonly nodeType: "ElementaryTypeName";
-                                                readonly src: "2719:7:23";
-                                                readonly typeDescriptions: {};
-                                            };
-                                        };
-                                        readonly id: 5650;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly kind: "typeConversion";
-                                        readonly lValueRequested: false;
-                                        readonly nameLocations: readonly [];
-                                        readonly names: readonly [];
-                                        readonly nodeType: "FunctionCall";
-                                        readonly src: "2719:13:23";
-                                        readonly tryCall: false;
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_address";
-                                            readonly typeString: "address";
-                                        };
-                                    }, {
-                                        readonly id: 5651;
-                                        readonly name: "_amount";
-                                        readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 5625;
-                                        readonly src: "2750:7:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
-                                        };
-                                    }];
-                                    readonly expression: {
-                                        readonly argumentTypes: readonly [{
-                                            readonly typeIdentifier: "t_address";
-                                            readonly typeString: "address";
-                                        }, {
-                                            readonly typeIdentifier: "t_address";
-                                            readonly typeString: "address";
-                                        }, {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
-                                        }];
-                                        readonly expression: {
-                                            readonly arguments: readonly [{
-                                                readonly arguments: readonly [{
-                                                    readonly id: 5641;
-                                                    readonly name: "_baseToken";
-                                                    readonly nodeType: "Identifier";
-                                                    readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 13657;
-                                                    readonly src: "2644:10:23";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_contract$_IERC20_$6920";
-                                                        readonly typeString: "contract IERC20";
-                                                    };
-                                                }];
-                                                readonly expression: {
-                                                    readonly argumentTypes: readonly [{
-                                                        readonly typeIdentifier: "t_contract$_IERC20_$6920";
-                                                        readonly typeString: "contract IERC20";
-                                                    }];
-                                                    readonly id: 5640;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: true;
-                                                    readonly lValueRequested: false;
-                                                    readonly nodeType: "ElementaryTypeNameExpression";
-                                                    readonly src: "2636:7:23";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_type$_t_address_$";
-                                                        readonly typeString: "type(address)";
-                                                    };
-                                                    readonly typeName: {
-                                                        readonly id: 5639;
-                                                        readonly name: "address";
-                                                        readonly nodeType: "ElementaryTypeName";
-                                                        readonly src: "2636:7:23";
-                                                        readonly typeDescriptions: {};
-                                                    };
-                                                };
-                                                readonly id: 5642;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly kind: "typeConversion";
-                                                readonly lValueRequested: false;
-                                                readonly nameLocations: readonly [];
-                                                readonly names: readonly [];
-                                                readonly nodeType: "FunctionCall";
-                                                readonly src: "2636:19:23";
-                                                readonly tryCall: false;
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_address";
-                                                    readonly typeString: "address";
-                                                };
-                                            }];
-                                            readonly expression: {
-                                                readonly argumentTypes: readonly [{
-                                                    readonly typeIdentifier: "t_address";
-                                                    readonly typeString: "address";
-                                                }];
-                                                readonly id: 5638;
-                                                readonly name: "ERC20";
-                                                readonly nodeType: "Identifier";
-                                                readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 66276;
-                                                readonly src: "2630:5:23";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_type$_t_contract$_ERC20_$66276_$";
-                                                    readonly typeString: "type(contract ERC20)";
-                                                };
-                                            };
-                                            readonly id: 5643;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly kind: "typeConversion";
-                                            readonly lValueRequested: false;
-                                            readonly nameLocations: readonly [];
-                                            readonly names: readonly [];
-                                            readonly nodeType: "FunctionCall";
-                                            readonly src: "2630:26:23";
-                                            readonly tryCall: false;
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_ERC20_$66276";
-                                                readonly typeString: "contract ERC20";
-                                            };
-                                        };
-                                        readonly id: 5644;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly memberLocation: "2657:16:23";
-                                        readonly memberName: "safeTransferFrom";
-                                        readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 66493;
-                                        readonly src: "2630:43:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$66354_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$66354_$";
-                                            readonly typeString: "function (contract IERC20,address,address,uint256)";
-                                        };
-                                    };
-                                    readonly id: 5652;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly kind: "functionCall";
-                                    readonly lValueRequested: false;
-                                    readonly nameLocations: readonly [];
-                                    readonly names: readonly [];
-                                    readonly nodeType: "FunctionCall";
-                                    readonly src: "2630:141:23";
-                                    readonly tryCall: false;
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_tuple$__$";
-                                        readonly typeString: "tuple()";
-                                    };
-                                };
-                                readonly id: 5653;
-                                readonly nodeType: "ExpressionStatement";
-                                readonly src: "2630:141:23";
-                            }, {
-                                readonly expression: {
-                                    readonly arguments: readonly [{
-                                        readonly arguments: readonly [{
-                                            readonly id: 5663;
-                                            readonly name: "_vault";
-                                            readonly nodeType: "Identifier";
-                                            readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 5610;
-                                            readonly src: "3142:6:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_IERC4626_$7203";
-                                                readonly typeString: "contract IERC4626";
-                                            };
-                                        }];
-                                        readonly expression: {
-                                            readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_IERC4626_$7203";
-                                                readonly typeString: "contract IERC4626";
-                                            }];
-                                            readonly id: 5662;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: true;
-                                            readonly lValueRequested: false;
-                                            readonly nodeType: "ElementaryTypeNameExpression";
-                                            readonly src: "3134:7:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_address_$";
-                                                readonly typeString: "type(address)";
-                                            };
-                                            readonly typeName: {
-                                                readonly id: 5661;
-                                                readonly name: "address";
-                                                readonly nodeType: "ElementaryTypeName";
-                                                readonly src: "3134:7:23";
-                                                readonly typeDescriptions: {};
-                                            };
-                                        };
-                                        readonly id: 5664;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly kind: "typeConversion";
-                                        readonly lValueRequested: false;
-                                        readonly nameLocations: readonly [];
-                                        readonly names: readonly [];
-                                        readonly nodeType: "FunctionCall";
-                                        readonly src: "3134:15:23";
-                                        readonly tryCall: false;
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_address";
-                                            readonly typeString: "address";
-                                        };
-                                    }, {
-                                        readonly commonType: {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
-                                        };
-                                        readonly id: 5667;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly leftExpression: {
-                                            readonly id: 5665;
-                                            readonly name: "_amount";
-                                            readonly nodeType: "Identifier";
-                                            readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 5625;
-                                            readonly src: "3167:7:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_uint256";
-                                                readonly typeString: "uint256";
-                                            };
-                                        };
-                                        readonly nodeType: "BinaryOperation";
-                                        readonly operator: "+";
-                                        readonly rightExpression: {
-                                            readonly hexValue: "31";
-                                            readonly id: 5666;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: true;
-                                            readonly kind: "number";
-                                            readonly lValueRequested: false;
-                                            readonly nodeType: "Literal";
-                                            readonly src: "3177:1:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_rational_1_by_1";
-                                                readonly typeString: "int_const 1";
-                                            };
-                                            readonly value: "1";
-                                        };
-                                        readonly src: "3167:11:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
-                                        };
-                                    }];
-                                    readonly expression: {
-                                        readonly argumentTypes: readonly [{
-                                            readonly typeIdentifier: "t_address";
-                                            readonly typeString: "address";
-                                        }, {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
-                                        }];
-                                        readonly expression: {
-                                            readonly arguments: readonly [{
-                                                readonly arguments: readonly [{
-                                                    readonly id: 5657;
-                                                    readonly name: "_baseToken";
-                                                    readonly nodeType: "Identifier";
-                                                    readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 13657;
-                                                    readonly src: "3091:10:23";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_contract$_IERC20_$6920";
-                                                        readonly typeString: "contract IERC20";
-                                                    };
-                                                }];
-                                                readonly expression: {
-                                                    readonly argumentTypes: readonly [{
-                                                        readonly typeIdentifier: "t_contract$_IERC20_$6920";
-                                                        readonly typeString: "contract IERC20";
-                                                    }];
-                                                    readonly id: 5656;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: true;
-                                                    readonly lValueRequested: false;
-                                                    readonly nodeType: "ElementaryTypeNameExpression";
-                                                    readonly src: "3083:7:23";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_type$_t_address_$";
-                                                        readonly typeString: "type(address)";
-                                                    };
-                                                    readonly typeName: {
-                                                        readonly id: 5655;
-                                                        readonly name: "address";
-                                                        readonly nodeType: "ElementaryTypeName";
-                                                        readonly src: "3083:7:23";
-                                                        readonly typeDescriptions: {};
-                                                    };
-                                                };
-                                                readonly id: 5658;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly kind: "typeConversion";
-                                                readonly lValueRequested: false;
-                                                readonly nameLocations: readonly [];
-                                                readonly names: readonly [];
-                                                readonly nodeType: "FunctionCall";
-                                                readonly src: "3083:19:23";
-                                                readonly tryCall: false;
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_address";
-                                                    readonly typeString: "address";
-                                                };
-                                            }];
-                                            readonly expression: {
-                                                readonly argumentTypes: readonly [{
-                                                    readonly typeIdentifier: "t_address";
-                                                    readonly typeString: "address";
-                                                }];
-                                                readonly id: 5654;
-                                                readonly name: "ERC20";
-                                                readonly nodeType: "Identifier";
-                                                readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 66276;
-                                                readonly src: "3077:5:23";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_type$_t_contract$_ERC20_$66276_$";
-                                                    readonly typeString: "type(contract ERC20)";
-                                                };
-                                            };
-                                            readonly id: 5659;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly kind: "typeConversion";
-                                            readonly lValueRequested: false;
-                                            readonly nameLocations: readonly [];
-                                            readonly names: readonly [];
-                                            readonly nodeType: "FunctionCall";
-                                            readonly src: "3077:26:23";
-                                            readonly tryCall: false;
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_ERC20_$66276";
-                                                readonly typeString: "contract ERC20";
-                                            };
-                                        };
-                                        readonly id: 5660;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly memberLocation: "3104:12:23";
-                                        readonly memberName: "forceApprove";
-                                        readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 66614;
-                                        readonly src: "3077:39:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$66354_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$66354_$";
-                                            readonly typeString: "function (contract IERC20,address,uint256)";
-                                        };
-                                    };
-                                    readonly id: 5668;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly kind: "functionCall";
-                                    readonly lValueRequested: false;
-                                    readonly nameLocations: readonly [];
-                                    readonly names: readonly [];
-                                    readonly nodeType: "FunctionCall";
-                                    readonly src: "3077:115:23";
-                                    readonly tryCall: false;
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_tuple$__$";
-                                        readonly typeString: "tuple()";
-                                    };
-                                };
-                                readonly id: 5669;
-                                readonly nodeType: "ExpressionStatement";
-                                readonly src: "3077:115:23";
-                            }, {
-                                readonly expression: {
-                                    readonly id: 5679;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftHandSide: {
-                                        readonly id: 5670;
-                                        readonly name: "sharesMinted";
-                                        readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 5632;
-                                        readonly src: "3206:12:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
-                                        };
-                                    };
-                                    readonly nodeType: "Assignment";
-                                    readonly operator: "=";
-                                    readonly rightHandSide: {
-                                        readonly arguments: readonly [{
-                                            readonly id: 5673;
-                                            readonly name: "_amount";
-                                            readonly nodeType: "Identifier";
-                                            readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 5625;
-                                            readonly src: "3236:7:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_uint256";
-                                                readonly typeString: "uint256";
-                                            };
-                                        }, {
-                                            readonly arguments: readonly [{
-                                                readonly id: 5676;
-                                                readonly name: "this";
-                                                readonly nodeType: "Identifier";
-                                                readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: -28;
-                                                readonly src: "3253:4:23";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_contract$_ERC4626Base_$5811";
-                                                    readonly typeString: "contract ERC4626Base";
-                                                };
-                                            }];
-                                            readonly expression: {
-                                                readonly argumentTypes: readonly [{
-                                                    readonly typeIdentifier: "t_contract$_ERC4626Base_$5811";
-                                                    readonly typeString: "contract ERC4626Base";
-                                                }];
-                                                readonly id: 5675;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: true;
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "ElementaryTypeNameExpression";
-                                                readonly src: "3245:7:23";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_type$_t_address_$";
-                                                    readonly typeString: "type(address)";
-                                                };
-                                                readonly typeName: {
-                                                    readonly id: 5674;
-                                                    readonly name: "address";
-                                                    readonly nodeType: "ElementaryTypeName";
-                                                    readonly src: "3245:7:23";
-                                                    readonly typeDescriptions: {};
-                                                };
-                                            };
-                                            readonly id: 5677;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly kind: "typeConversion";
-                                            readonly lValueRequested: false;
-                                            readonly nameLocations: readonly [];
-                                            readonly names: readonly [];
-                                            readonly nodeType: "FunctionCall";
-                                            readonly src: "3245:13:23";
-                                            readonly tryCall: false;
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_address";
-                                                readonly typeString: "address";
-                                            };
-                                        }];
-                                        readonly expression: {
-                                            readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_uint256";
-                                                readonly typeString: "uint256";
-                                            }, {
-                                                readonly typeIdentifier: "t_address";
-                                                readonly typeString: "address";
-                                            }];
-                                            readonly expression: {
-                                                readonly id: 5671;
-                                                readonly name: "_vault";
-                                                readonly nodeType: "Identifier";
-                                                readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 5610;
-                                                readonly src: "3221:6:23";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_contract$_IERC4626_$7203";
-                                                    readonly typeString: "contract IERC4626";
-                                                };
-                                            };
-                                            readonly id: 5672;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly lValueRequested: false;
-                                            readonly memberLocation: "3228:7:23";
-                                            readonly memberName: "deposit";
-                                            readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 7088;
-                                            readonly src: "3221:14:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_function_external_nonpayable$_t_uint256_$_t_address_$returns$_t_uint256_$";
-                                                readonly typeString: "function (uint256,address) external returns (uint256)";
-                                            };
-                                        };
-                                        readonly id: 5678;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly kind: "functionCall";
-                                        readonly lValueRequested: false;
-                                        readonly nameLocations: readonly [];
-                                        readonly names: readonly [];
-                                        readonly nodeType: "FunctionCall";
-                                        readonly src: "3221:38:23";
-                                        readonly tryCall: false;
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
-                                        };
-                                    };
-                                    readonly src: "3206:53:23";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_uint256";
-                                        readonly typeString: "uint256";
-                                    };
-                                };
-                                readonly id: 5680;
-                                readonly nodeType: "ExpressionStatement";
-                                readonly src: "3206:53:23";
-                            }];
-                        };
-                    }, {
                         readonly expression: {
-                            readonly id: 5707;
-                            readonly isConstant: false;
-                            readonly isLValue: false;
-                            readonly isPure: false;
-                            readonly lValueRequested: false;
-                            readonly leftHandSide: {
-                                readonly id: 5704;
-                                readonly name: "vaultSharePrice";
-                                readonly nodeType: "Identifier";
-                                readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 5634;
-                                readonly src: "3757:15:23";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_uint256";
-                                    readonly typeString: "uint256";
-                                };
-                            };
-                            readonly nodeType: "Assignment";
-                            readonly operator: "=";
-                            readonly rightHandSide: {
-                                readonly arguments: readonly [];
+                            readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly argumentTypes: readonly [];
-                                    readonly id: 5705;
-                                    readonly name: "_pricePerVaultShare";
+                                    readonly id: 7785;
+                                    readonly name: "msg";
                                     readonly nodeType: "Identifier";
-                                    readonly overloadedDeclarations: readonly [5793];
-                                    readonly referencedDeclaration: 5793;
-                                    readonly src: "3775:19:23";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: -15;
+                                    readonly src: "2108:3:44";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_function_internal_view$__$returns$_t_uint256_$";
-                                        readonly typeString: "function () view returns (uint256)";
+                                        readonly typeIdentifier: "t_magic_message";
+                                        readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 5706;
+                                readonly id: 7786;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
-                                readonly kind: "functionCall";
+                                readonly lValueRequested: false;
+                                readonly memberLocation: "2112:6:44";
+                                readonly memberName: "sender";
+                                readonly nodeType: "MemberAccess";
+                                readonly src: "2108:10:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                };
+                            }, {
+                                readonly arguments: readonly [{
+                                    readonly id: 7789;
+                                    readonly name: "this";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: -28;
+                                    readonly src: "2140:4:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeString: "contract ERC4626Base";
+                                    };
+                                }];
+                                readonly expression: {
+                                    readonly argumentTypes: readonly [{
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeString: "contract ERC4626Base";
+                                    }];
+                                    readonly id: 7788;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: true;
+                                    readonly lValueRequested: false;
+                                    readonly nodeType: "ElementaryTypeNameExpression";
+                                    readonly src: "2132:7:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_type$_t_address_$";
+                                        readonly typeString: "type(address)";
+                                    };
+                                    readonly typeName: {
+                                        readonly id: 7787;
+                                        readonly name: "address";
+                                        readonly nodeType: "ElementaryTypeName";
+                                        readonly src: "2132:7:44";
+                                        readonly typeDescriptions: {};
+                                    };
+                                };
+                                readonly id: 7790;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly kind: "typeConversion";
                                 readonly lValueRequested: false;
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "3775:21:23";
+                                readonly src: "2132:13:44";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_uint256";
-                                    readonly typeString: "uint256";
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
                                 };
-                            };
-                            readonly src: "3757:39:23";
-                            readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_uint256";
-                                readonly typeString: "uint256";
-                            };
-                        };
-                        readonly id: 5708;
-                        readonly nodeType: "ExpressionStatement";
-                        readonly src: "3757:39:23";
-                    }];
-                };
-                readonly baseFunctions: readonly [9013];
-                readonly documentation: {
-                    readonly id: 5623;
-                    readonly nodeType: "StructuredDocumentation";
-                    readonly src: "1563:767:23";
-                    readonly text: "@notice Accepts a trader's deposit in either base or vault shares. If\n         the deposit is settled in base, the base is deposited into the\n         yield source immediately.\n @param _amount The amount of token to transfer. The units of this\n        quantity are either base or vault shares, depending on the value\n        of `_options.asBase`.\n @param _options The options that configure the deposit. The only option\n        used in this implementation is `_options.asBase`, which\n        determines if the deposit is settled in base or vault shares.\n @return sharesMinted The amount deposited measured in vault shares.\n @return vaultSharePrice The vault share price at the time of deposit.";
-                };
-                readonly implemented: true;
-                readonly kind: "function";
-                readonly modifiers: readonly [];
-                readonly name: "_deposit";
-                readonly nameLocation: "2344:8:23";
-                readonly overrides: {
-                    readonly id: 5630;
-                    readonly nodeType: "OverrideSpecifier";
-                    readonly overrides: readonly [];
-                    readonly src: "2456:8:23";
-                };
-                readonly parameters: {
-                    readonly id: 5629;
-                    readonly nodeType: "ParameterList";
-                    readonly parameters: readonly [{
-                        readonly constant: false;
-                        readonly id: 5625;
-                        readonly mutability: "mutable";
-                        readonly name: "_amount";
-                        readonly nameLocation: "2370:7:23";
-                        readonly nodeType: "VariableDeclaration";
-                        readonly scope: 5710;
-                        readonly src: "2362:15:23";
-                        readonly stateVariable: false;
-                        readonly storageLocation: "default";
-                        readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_uint256";
-                            readonly typeString: "uint256";
-                        };
-                        readonly typeName: {
-                            readonly id: 5624;
-                            readonly name: "uint256";
-                            readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2362:7:23";
-                            readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_uint256";
-                                readonly typeString: "uint256";
-                            };
-                        };
-                        readonly visibility: "internal";
-                    }, {
-                        readonly constant: false;
-                        readonly id: 5628;
-                        readonly mutability: "mutable";
-                        readonly name: "_options";
-                        readonly nameLocation: "2416:8:23";
-                        readonly nodeType: "VariableDeclaration";
-                        readonly scope: 5710;
-                        readonly src: "2387:37:23";
-                        readonly stateVariable: false;
-                        readonly storageLocation: "calldata";
-                        readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Options_$7463_calldata_ptr";
-                            readonly typeString: "struct IHyperdrive.Options";
-                        };
-                        readonly typeName: {
-                            readonly id: 5627;
-                            readonly nodeType: "UserDefinedTypeName";
-                            readonly pathNode: {
-                                readonly id: 5626;
-                                readonly name: "IHyperdrive.Options";
-                                readonly nameLocations: readonly ["2387:11:23", "2399:7:23"];
-                                readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 7463;
-                                readonly src: "2387:19:23";
-                            };
-                            readonly referencedDeclaration: 7463;
-                            readonly src: "2387:19:23";
-                            readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Options_$7463_storage_ptr";
-                                readonly typeString: "struct IHyperdrive.Options";
-                            };
-                        };
-                        readonly visibility: "internal";
-                    }];
-                    readonly src: "2352:78:23";
-                };
-                readonly returnParameters: {
-                    readonly id: 5635;
-                    readonly nodeType: "ParameterList";
-                    readonly parameters: readonly [{
-                        readonly constant: false;
-                        readonly id: 5632;
-                        readonly mutability: "mutable";
-                        readonly name: "sharesMinted";
-                        readonly nameLocation: "2490:12:23";
-                        readonly nodeType: "VariableDeclaration";
-                        readonly scope: 5710;
-                        readonly src: "2482:20:23";
-                        readonly stateVariable: false;
-                        readonly storageLocation: "default";
-                        readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_uint256";
-                            readonly typeString: "uint256";
-                        };
-                        readonly typeName: {
-                            readonly id: 5631;
-                            readonly name: "uint256";
-                            readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2482:7:23";
-                            readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_uint256";
-                                readonly typeString: "uint256";
-                            };
-                        };
-                        readonly visibility: "internal";
-                    }, {
-                        readonly constant: false;
-                        readonly id: 5634;
-                        readonly mutability: "mutable";
-                        readonly name: "vaultSharePrice";
-                        readonly nameLocation: "2512:15:23";
-                        readonly nodeType: "VariableDeclaration";
-                        readonly scope: 5710;
-                        readonly src: "2504:23:23";
-                        readonly stateVariable: false;
-                        readonly storageLocation: "default";
-                        readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_uint256";
-                            readonly typeString: "uint256";
-                        };
-                        readonly typeName: {
-                            readonly id: 5633;
-                            readonly name: "uint256";
-                            readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2504:7:23";
-                            readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_uint256";
-                                readonly typeString: "uint256";
-                            };
-                        };
-                        readonly visibility: "internal";
-                    }];
-                    readonly src: "2481:47:23";
-                };
-                readonly scope: 5811;
-                readonly stateMutability: "nonpayable";
-                readonly virtual: false;
-                readonly visibility: "internal";
-            }, {
-                readonly id: 5780;
-                readonly nodeType: "FunctionDefinition";
-                readonly src: "4677:1492:23";
-                readonly nodes: readonly [];
-                readonly body: {
-                    readonly id: 5779;
-                    readonly nodeType: "Block";
-                    readonly src: "4860:1309:23";
-                    readonly nodes: readonly [];
-                    readonly statements: readonly [{
-                        readonly assignments: readonly [5725];
-                        readonly declarations: readonly [{
-                            readonly constant: false;
-                            readonly id: 5725;
-                            readonly mutability: "mutable";
-                            readonly name: "baseAmount";
-                            readonly nameLocation: "5159:10:23";
-                            readonly nodeType: "VariableDeclaration";
-                            readonly scope: 5779;
-                            readonly src: "5151:18:23";
-                            readonly stateVariable: false;
-                            readonly storageLocation: "default";
-                            readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_uint256";
-                                readonly typeString: "uint256";
-                            };
-                            readonly typeName: {
-                                readonly id: 5724;
-                                readonly name: "uint256";
-                                readonly nodeType: "ElementaryTypeName";
-                                readonly src: "5151:7:23";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_uint256";
-                                    readonly typeString: "uint256";
-                                };
-                            };
-                            readonly visibility: "internal";
-                        }];
-                        readonly id: 5730;
-                        readonly initialValue: {
-                            readonly arguments: readonly [{
-                                readonly id: 5728;
-                                readonly name: "_vaultSharePrice";
+                            }, {
+                                readonly id: 7791;
+                                readonly name: "_baseAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 5715;
-                                readonly src: "5188:16:23";
+                                readonly referencedDeclaration: 7768;
+                                readonly src: "2159:11:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -2731,37 +1770,117 @@ export declare const ERC4626Base: {
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                }, {
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                }, {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 5726;
-                                    readonly name: "_shares";
-                                    readonly nodeType: "Identifier";
-                                    readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 5713;
-                                    readonly src: "5172:7:23";
+                                    readonly arguments: readonly [{
+                                        readonly arguments: readonly [{
+                                            readonly id: 7781;
+                                            readonly name: "_baseToken";
+                                            readonly nodeType: "Identifier";
+                                            readonly overloadedDeclarations: readonly [];
+                                            readonly referencedDeclaration: 18126;
+                                            readonly src: "2065:10:44";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                                readonly typeString: "contract IERC20";
+                                            };
+                                        }];
+                                        readonly expression: {
+                                            readonly argumentTypes: readonly [{
+                                                readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                                readonly typeString: "contract IERC20";
+                                            }];
+                                            readonly id: 7780;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: true;
+                                            readonly lValueRequested: false;
+                                            readonly nodeType: "ElementaryTypeNameExpression";
+                                            readonly src: "2057:7:44";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_type$_t_address_$";
+                                                readonly typeString: "type(address)";
+                                            };
+                                            readonly typeName: {
+                                                readonly id: 7779;
+                                                readonly name: "address";
+                                                readonly nodeType: "ElementaryTypeName";
+                                                readonly src: "2057:7:44";
+                                                readonly typeDescriptions: {};
+                                            };
+                                        };
+                                        readonly id: 7782;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: false;
+                                        readonly kind: "typeConversion";
+                                        readonly lValueRequested: false;
+                                        readonly nameLocations: readonly [];
+                                        readonly names: readonly [];
+                                        readonly nodeType: "FunctionCall";
+                                        readonly src: "2057:19:44";
+                                        readonly tryCall: false;
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_address";
+                                            readonly typeString: "address";
+                                        };
+                                    }];
+                                    readonly expression: {
+                                        readonly argumentTypes: readonly [{
+                                            readonly typeIdentifier: "t_address";
+                                            readonly typeString: "address";
+                                        }];
+                                        readonly id: 7778;
+                                        readonly name: "ERC20";
+                                        readonly nodeType: "Identifier";
+                                        readonly overloadedDeclarations: readonly [];
+                                        readonly referencedDeclaration: 71213;
+                                        readonly src: "2051:5:44";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$71213_$";
+                                            readonly typeString: "type(contract ERC20)";
+                                        };
+                                    };
+                                    readonly id: 7783;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly kind: "typeConversion";
+                                    readonly lValueRequested: false;
+                                    readonly nameLocations: readonly [];
+                                    readonly names: readonly [];
+                                    readonly nodeType: "FunctionCall";
+                                    readonly src: "2051:26:44";
+                                    readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_uint256";
-                                        readonly typeString: "uint256";
+                                        readonly typeIdentifier: "t_contract$_ERC20_$71213";
+                                        readonly typeString: "contract ERC20";
                                     };
                                 };
-                                readonly id: 5727;
+                                readonly id: 7784;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "5180:7:23";
-                                readonly memberName: "mulDown";
+                                readonly memberLocation: "2078:16:44";
+                                readonly memberName: "safeTransferFrom";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 14197;
-                                readonly src: "5172:15:23";
+                                readonly referencedDeclaration: 71430;
+                                readonly src: "2051:43:44";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
-                                    readonly typeString: "function (uint256,uint256) pure returns (uint256)";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71291_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71291_$";
+                                    readonly typeString: "function (contract IERC20,address,address,uint256)";
                                 };
                             };
-                            readonly id: 5729;
+                            readonly id: 7792;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2770,7 +1889,384 @@ export declare const ERC4626Base: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "5172:33:23";
+                            readonly src: "2051:129:44";
+                            readonly tryCall: false;
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_tuple$__$";
+                                readonly typeString: "tuple()";
+                            };
+                        };
+                        readonly id: 7793;
+                        readonly nodeType: "ExpressionStatement";
+                        readonly src: "2051:129:44";
+                    }, {
+                        readonly expression: {
+                            readonly arguments: readonly [{
+                                readonly arguments: readonly [{
+                                    readonly id: 7803;
+                                    readonly name: "_vault";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 7753;
+                                    readonly src: "2523:6:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                        readonly typeString: "contract IERC4626";
+                                    };
+                                }];
+                                readonly expression: {
+                                    readonly argumentTypes: readonly [{
+                                        readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                        readonly typeString: "contract IERC4626";
+                                    }];
+                                    readonly id: 7802;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: true;
+                                    readonly lValueRequested: false;
+                                    readonly nodeType: "ElementaryTypeNameExpression";
+                                    readonly src: "2515:7:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_type$_t_address_$";
+                                        readonly typeString: "type(address)";
+                                    };
+                                    readonly typeName: {
+                                        readonly id: 7801;
+                                        readonly name: "address";
+                                        readonly nodeType: "ElementaryTypeName";
+                                        readonly src: "2515:7:44";
+                                        readonly typeDescriptions: {};
+                                    };
+                                };
+                                readonly id: 7804;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly kind: "typeConversion";
+                                readonly lValueRequested: false;
+                                readonly nameLocations: readonly [];
+                                readonly names: readonly [];
+                                readonly nodeType: "FunctionCall";
+                                readonly src: "2515:15:44";
+                                readonly tryCall: false;
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                };
+                            }, {
+                                readonly commonType: {
+                                    readonly typeIdentifier: "t_uint256";
+                                    readonly typeString: "uint256";
+                                };
+                                readonly id: 7807;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly leftExpression: {
+                                    readonly id: 7805;
+                                    readonly name: "_baseAmount";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 7768;
+                                    readonly src: "2544:11:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_uint256";
+                                        readonly typeString: "uint256";
+                                    };
+                                };
+                                readonly nodeType: "BinaryOperation";
+                                readonly operator: "+";
+                                readonly rightExpression: {
+                                    readonly hexValue: "31";
+                                    readonly id: 7806;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: true;
+                                    readonly kind: "number";
+                                    readonly lValueRequested: false;
+                                    readonly nodeType: "Literal";
+                                    readonly src: "2558:1:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_rational_1_by_1";
+                                        readonly typeString: "int_const 1";
+                                    };
+                                    readonly value: "1";
+                                };
+                                readonly src: "2544:15:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_uint256";
+                                    readonly typeString: "uint256";
+                                };
+                            }];
+                            readonly expression: {
+                                readonly argumentTypes: readonly [{
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                }, {
+                                    readonly typeIdentifier: "t_uint256";
+                                    readonly typeString: "uint256";
+                                }];
+                                readonly expression: {
+                                    readonly arguments: readonly [{
+                                        readonly arguments: readonly [{
+                                            readonly id: 7797;
+                                            readonly name: "_baseToken";
+                                            readonly nodeType: "Identifier";
+                                            readonly overloadedDeclarations: readonly [];
+                                            readonly referencedDeclaration: 18126;
+                                            readonly src: "2476:10:44";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                                readonly typeString: "contract IERC20";
+                                            };
+                                        }];
+                                        readonly expression: {
+                                            readonly argumentTypes: readonly [{
+                                                readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                                readonly typeString: "contract IERC20";
+                                            }];
+                                            readonly id: 7796;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: true;
+                                            readonly lValueRequested: false;
+                                            readonly nodeType: "ElementaryTypeNameExpression";
+                                            readonly src: "2468:7:44";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_type$_t_address_$";
+                                                readonly typeString: "type(address)";
+                                            };
+                                            readonly typeName: {
+                                                readonly id: 7795;
+                                                readonly name: "address";
+                                                readonly nodeType: "ElementaryTypeName";
+                                                readonly src: "2468:7:44";
+                                                readonly typeDescriptions: {};
+                                            };
+                                        };
+                                        readonly id: 7798;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: false;
+                                        readonly kind: "typeConversion";
+                                        readonly lValueRequested: false;
+                                        readonly nameLocations: readonly [];
+                                        readonly names: readonly [];
+                                        readonly nodeType: "FunctionCall";
+                                        readonly src: "2468:19:44";
+                                        readonly tryCall: false;
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_address";
+                                            readonly typeString: "address";
+                                        };
+                                    }];
+                                    readonly expression: {
+                                        readonly argumentTypes: readonly [{
+                                            readonly typeIdentifier: "t_address";
+                                            readonly typeString: "address";
+                                        }];
+                                        readonly id: 7794;
+                                        readonly name: "ERC20";
+                                        readonly nodeType: "Identifier";
+                                        readonly overloadedDeclarations: readonly [];
+                                        readonly referencedDeclaration: 71213;
+                                        readonly src: "2462:5:44";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$71213_$";
+                                            readonly typeString: "type(contract ERC20)";
+                                        };
+                                    };
+                                    readonly id: 7799;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly kind: "typeConversion";
+                                    readonly lValueRequested: false;
+                                    readonly nameLocations: readonly [];
+                                    readonly names: readonly [];
+                                    readonly nodeType: "FunctionCall";
+                                    readonly src: "2462:26:44";
+                                    readonly tryCall: false;
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_contract$_ERC20_$71213";
+                                        readonly typeString: "contract ERC20";
+                                    };
+                                };
+                                readonly id: 7800;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly memberLocation: "2489:12:44";
+                                readonly memberName: "forceApprove";
+                                readonly nodeType: "MemberAccess";
+                                readonly referencedDeclaration: 71551;
+                                readonly src: "2462:39:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71291_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71291_$";
+                                    readonly typeString: "function (contract IERC20,address,uint256)";
+                                };
+                            };
+                            readonly id: 7808;
+                            readonly isConstant: false;
+                            readonly isLValue: false;
+                            readonly isPure: false;
+                            readonly kind: "functionCall";
+                            readonly lValueRequested: false;
+                            readonly nameLocations: readonly [];
+                            readonly names: readonly [];
+                            readonly nodeType: "FunctionCall";
+                            readonly src: "2462:107:44";
+                            readonly tryCall: false;
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_tuple$__$";
+                                readonly typeString: "tuple()";
+                            };
+                        };
+                        readonly id: 7809;
+                        readonly nodeType: "ExpressionStatement";
+                        readonly src: "2462:107:44";
+                    }, {
+                        readonly assignments: readonly [7811];
+                        readonly declarations: readonly [{
+                            readonly constant: false;
+                            readonly id: 7811;
+                            readonly mutability: "mutable";
+                            readonly name: "sharesMinted";
+                            readonly nameLocation: "2587:12:44";
+                            readonly nodeType: "VariableDeclaration";
+                            readonly scope: 7825;
+                            readonly src: "2579:20:44";
+                            readonly stateVariable: false;
+                            readonly storageLocation: "default";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                            readonly typeName: {
+                                readonly id: 7810;
+                                readonly name: "uint256";
+                                readonly nodeType: "ElementaryTypeName";
+                                readonly src: "2579:7:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_uint256";
+                                    readonly typeString: "uint256";
+                                };
+                            };
+                            readonly visibility: "internal";
+                        }];
+                        readonly id: 7820;
+                        readonly initialValue: {
+                            readonly arguments: readonly [{
+                                readonly id: 7814;
+                                readonly name: "_baseAmount";
+                                readonly nodeType: "Identifier";
+                                readonly overloadedDeclarations: readonly [];
+                                readonly referencedDeclaration: 7768;
+                                readonly src: "2617:11:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_uint256";
+                                    readonly typeString: "uint256";
+                                };
+                            }, {
+                                readonly arguments: readonly [{
+                                    readonly id: 7817;
+                                    readonly name: "this";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: -28;
+                                    readonly src: "2638:4:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeString: "contract ERC4626Base";
+                                    };
+                                }];
+                                readonly expression: {
+                                    readonly argumentTypes: readonly [{
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeString: "contract ERC4626Base";
+                                    }];
+                                    readonly id: 7816;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: true;
+                                    readonly lValueRequested: false;
+                                    readonly nodeType: "ElementaryTypeNameExpression";
+                                    readonly src: "2630:7:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_type$_t_address_$";
+                                        readonly typeString: "type(address)";
+                                    };
+                                    readonly typeName: {
+                                        readonly id: 7815;
+                                        readonly name: "address";
+                                        readonly nodeType: "ElementaryTypeName";
+                                        readonly src: "2630:7:44";
+                                        readonly typeDescriptions: {};
+                                    };
+                                };
+                                readonly id: 7818;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly kind: "typeConversion";
+                                readonly lValueRequested: false;
+                                readonly nameLocations: readonly [];
+                                readonly names: readonly [];
+                                readonly nodeType: "FunctionCall";
+                                readonly src: "2630:13:44";
+                                readonly tryCall: false;
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                };
+                            }];
+                            readonly expression: {
+                                readonly argumentTypes: readonly [{
+                                    readonly typeIdentifier: "t_uint256";
+                                    readonly typeString: "uint256";
+                                }, {
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                }];
+                                readonly expression: {
+                                    readonly id: 7812;
+                                    readonly name: "_vault";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 7753;
+                                    readonly src: "2602:6:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                        readonly typeString: "contract IERC4626";
+                                    };
+                                };
+                                readonly id: 7813;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly memberLocation: "2609:7:44";
+                                readonly memberName: "deposit";
+                                readonly nodeType: "MemberAccess";
+                                readonly referencedDeclaration: 10487;
+                                readonly src: "2602:14:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_function_external_nonpayable$_t_uint256_$_t_address_$returns$_t_uint256_$";
+                                    readonly typeString: "function (uint256,address) external returns (uint256)";
+                                };
+                            };
+                            readonly id: 7819;
+                            readonly isConstant: false;
+                            readonly isLValue: false;
+                            readonly isPure: false;
+                            readonly kind: "functionCall";
+                            readonly lValueRequested: false;
+                            readonly nameLocations: readonly [];
+                            readonly names: readonly [];
+                            readonly nodeType: "FunctionCall";
+                            readonly src: "2602:42:44";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
@@ -2778,21 +2274,538 @@ export declare const ERC4626Base: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "5151:54:23";
+                        readonly src: "2579:65:44";
                     }, {
                         readonly expression: {
-                            readonly id: 5736;
+                            readonly components: readonly [{
+                                readonly id: 7821;
+                                readonly name: "sharesMinted";
+                                readonly nodeType: "Identifier";
+                                readonly overloadedDeclarations: readonly [];
+                                readonly referencedDeclaration: 7811;
+                                readonly src: "2663:12:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_uint256";
+                                    readonly typeString: "uint256";
+                                };
+                            }, {
+                                readonly hexValue: "30";
+                                readonly id: 7822;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: true;
+                                readonly kind: "number";
+                                readonly lValueRequested: false;
+                                readonly nodeType: "Literal";
+                                readonly src: "2677:1:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_rational_0_by_1";
+                                    readonly typeString: "int_const 0";
+                                };
+                                readonly value: "0";
+                            }];
+                            readonly id: 7823;
+                            readonly isConstant: false;
+                            readonly isInlineArray: false;
+                            readonly isLValue: false;
+                            readonly isPure: false;
+                            readonly lValueRequested: false;
+                            readonly nodeType: "TupleExpression";
+                            readonly src: "2662:17:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_tuple$_t_uint256_$_t_rational_0_by_1_$";
+                                readonly typeString: "tuple(uint256,int_const 0)";
+                            };
+                        };
+                        readonly functionReturnParameters: 7777;
+                        readonly id: 7824;
+                        readonly nodeType: "Return";
+                        readonly src: "2655:24:44";
+                    }];
+                };
+                readonly baseFunctions: readonly [13364];
+                readonly documentation: {
+                    readonly id: 7766;
+                    readonly nodeType: "StructuredDocumentation";
+                    readonly src: "1563:285:44";
+                    readonly text: "@dev Accepts a deposit from the user in base.\n @param _baseAmount The base amount to deposit.\n @return The shares that were minted in the deposit.\n @return The amount of ETH to refund. Since this yield source isn't\n         payable, this is always zero.";
+                };
+                readonly implemented: true;
+                readonly kind: "function";
+                readonly modifiers: readonly [];
+                readonly name: "_depositWithBase";
+                readonly nameLocation: "1862:16:44";
+                readonly overrides: {
+                    readonly id: 7772;
+                    readonly nodeType: "OverrideSpecifier";
+                    readonly overrides: readonly [];
+                    readonly src: "1957:8:44";
+                };
+                readonly parameters: {
+                    readonly id: 7771;
+                    readonly nodeType: "ParameterList";
+                    readonly parameters: readonly [{
+                        readonly constant: false;
+                        readonly id: 7768;
+                        readonly mutability: "mutable";
+                        readonly name: "_baseAmount";
+                        readonly nameLocation: "1896:11:44";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7826;
+                        readonly src: "1888:19:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "default";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_uint256";
+                            readonly typeString: "uint256";
+                        };
+                        readonly typeName: {
+                            readonly id: 7767;
+                            readonly name: "uint256";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "1888:7:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }, {
+                        readonly constant: false;
+                        readonly id: 7770;
+                        readonly mutability: "mutable";
+                        readonly name: "";
+                        readonly nameLocation: "-1:-1:-1";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7826;
+                        readonly src: "1917:14:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "calldata";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_bytes_calldata_ptr";
+                            readonly typeString: "bytes";
+                        };
+                        readonly typeName: {
+                            readonly id: 7769;
+                            readonly name: "bytes";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "1917:5:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_bytes_storage_ptr";
+                                readonly typeString: "bytes";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }];
+                    readonly src: "1878:69:44";
+                };
+                readonly returnParameters: {
+                    readonly id: 7777;
+                    readonly nodeType: "ParameterList";
+                    readonly parameters: readonly [{
+                        readonly constant: false;
+                        readonly id: 7774;
+                        readonly mutability: "mutable";
+                        readonly name: "";
+                        readonly nameLocation: "-1:-1:-1";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7826;
+                        readonly src: "1975:7:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "default";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_uint256";
+                            readonly typeString: "uint256";
+                        };
+                        readonly typeName: {
+                            readonly id: 7773;
+                            readonly name: "uint256";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "1975:7:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }, {
+                        readonly constant: false;
+                        readonly id: 7776;
+                        readonly mutability: "mutable";
+                        readonly name: "";
+                        readonly nameLocation: "-1:-1:-1";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7826;
+                        readonly src: "1984:7:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "default";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_uint256";
+                            readonly typeString: "uint256";
+                        };
+                        readonly typeName: {
+                            readonly id: 7775;
+                            readonly name: "uint256";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "1984:7:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }];
+                    readonly src: "1974:18:44";
+                };
+                readonly scope: 7983;
+                readonly stateMutability: "nonpayable";
+                readonly virtual: false;
+                readonly visibility: "internal";
+            }, {
+                readonly id: 7852;
+                readonly nodeType: "FunctionDefinition";
+                readonly src: "2804:315:44";
+                readonly nodes: readonly [];
+                readonly body: {
+                    readonly id: 7851;
+                    readonly nodeType: "Block";
+                    readonly src: "2920:199:44";
+                    readonly nodes: readonly [];
+                    readonly statements: readonly [{
+                        readonly expression: {
+                            readonly arguments: readonly [{
+                                readonly expression: {
+                                    readonly id: 7842;
+                                    readonly name: "msg";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: -15;
+                                    readonly src: "3039:3:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_magic_message";
+                                        readonly typeString: "msg";
+                                    };
+                                };
+                                readonly id: 7843;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly memberLocation: "3043:6:44";
+                                readonly memberName: "sender";
+                                readonly nodeType: "MemberAccess";
+                                readonly src: "3039:10:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                };
+                            }, {
+                                readonly arguments: readonly [{
+                                    readonly id: 7846;
+                                    readonly name: "this";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: -28;
+                                    readonly src: "3071:4:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeString: "contract ERC4626Base";
+                                    };
+                                }];
+                                readonly expression: {
+                                    readonly argumentTypes: readonly [{
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeString: "contract ERC4626Base";
+                                    }];
+                                    readonly id: 7845;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: true;
+                                    readonly lValueRequested: false;
+                                    readonly nodeType: "ElementaryTypeNameExpression";
+                                    readonly src: "3063:7:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_type$_t_address_$";
+                                        readonly typeString: "type(address)";
+                                    };
+                                    readonly typeName: {
+                                        readonly id: 7844;
+                                        readonly name: "address";
+                                        readonly nodeType: "ElementaryTypeName";
+                                        readonly src: "3063:7:44";
+                                        readonly typeDescriptions: {};
+                                    };
+                                };
+                                readonly id: 7847;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly kind: "typeConversion";
+                                readonly lValueRequested: false;
+                                readonly nameLocations: readonly [];
+                                readonly names: readonly [];
+                                readonly nodeType: "FunctionCall";
+                                readonly src: "3063:13:44";
+                                readonly tryCall: false;
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                };
+                            }, {
+                                readonly id: 7848;
+                                readonly name: "_shareAmount";
+                                readonly nodeType: "Identifier";
+                                readonly overloadedDeclarations: readonly [];
+                                readonly referencedDeclaration: 7829;
+                                readonly src: "3090:12:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_uint256";
+                                    readonly typeString: "uint256";
+                                };
+                            }];
+                            readonly expression: {
+                                readonly argumentTypes: readonly [{
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                }, {
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                }, {
+                                    readonly typeIdentifier: "t_uint256";
+                                    readonly typeString: "uint256";
+                                }];
+                                readonly expression: {
+                                    readonly arguments: readonly [{
+                                        readonly arguments: readonly [{
+                                            readonly id: 7838;
+                                            readonly name: "_vault";
+                                            readonly nodeType: "Identifier";
+                                            readonly overloadedDeclarations: readonly [];
+                                            readonly referencedDeclaration: 7753;
+                                            readonly src: "3000:6:44";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                                readonly typeString: "contract IERC4626";
+                                            };
+                                        }];
+                                        readonly expression: {
+                                            readonly argumentTypes: readonly [{
+                                                readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                                readonly typeString: "contract IERC4626";
+                                            }];
+                                            readonly id: 7837;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: true;
+                                            readonly lValueRequested: false;
+                                            readonly nodeType: "ElementaryTypeNameExpression";
+                                            readonly src: "2992:7:44";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_type$_t_address_$";
+                                                readonly typeString: "type(address)";
+                                            };
+                                            readonly typeName: {
+                                                readonly id: 7836;
+                                                readonly name: "address";
+                                                readonly nodeType: "ElementaryTypeName";
+                                                readonly src: "2992:7:44";
+                                                readonly typeDescriptions: {};
+                                            };
+                                        };
+                                        readonly id: 7839;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: false;
+                                        readonly kind: "typeConversion";
+                                        readonly lValueRequested: false;
+                                        readonly nameLocations: readonly [];
+                                        readonly names: readonly [];
+                                        readonly nodeType: "FunctionCall";
+                                        readonly src: "2992:15:44";
+                                        readonly tryCall: false;
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_address";
+                                            readonly typeString: "address";
+                                        };
+                                    }];
+                                    readonly expression: {
+                                        readonly argumentTypes: readonly [{
+                                            readonly typeIdentifier: "t_address";
+                                            readonly typeString: "address";
+                                        }];
+                                        readonly id: 7835;
+                                        readonly name: "ERC20";
+                                        readonly nodeType: "Identifier";
+                                        readonly overloadedDeclarations: readonly [];
+                                        readonly referencedDeclaration: 71213;
+                                        readonly src: "2986:5:44";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$71213_$";
+                                            readonly typeString: "type(contract ERC20)";
+                                        };
+                                    };
+                                    readonly id: 7840;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly kind: "typeConversion";
+                                    readonly lValueRequested: false;
+                                    readonly nameLocations: readonly [];
+                                    readonly names: readonly [];
+                                    readonly nodeType: "FunctionCall";
+                                    readonly src: "2986:22:44";
+                                    readonly tryCall: false;
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_contract$_ERC20_$71213";
+                                        readonly typeString: "contract ERC20";
+                                    };
+                                };
+                                readonly id: 7841;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly memberLocation: "3009:16:44";
+                                readonly memberName: "safeTransferFrom";
+                                readonly nodeType: "MemberAccess";
+                                readonly referencedDeclaration: 71430;
+                                readonly src: "2986:39:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71291_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71291_$";
+                                    readonly typeString: "function (contract IERC20,address,address,uint256)";
+                                };
+                            };
+                            readonly id: 7849;
+                            readonly isConstant: false;
+                            readonly isLValue: false;
+                            readonly isPure: false;
+                            readonly kind: "functionCall";
+                            readonly lValueRequested: false;
+                            readonly nameLocations: readonly [];
+                            readonly names: readonly [];
+                            readonly nodeType: "FunctionCall";
+                            readonly src: "2986:126:44";
+                            readonly tryCall: false;
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_tuple$__$";
+                                readonly typeString: "tuple()";
+                            };
+                        };
+                        readonly id: 7850;
+                        readonly nodeType: "ExpressionStatement";
+                        readonly src: "2986:126:44";
+                    }];
+                };
+                readonly baseFunctions: readonly [13372];
+                readonly documentation: {
+                    readonly id: 7827;
+                    readonly nodeType: "StructuredDocumentation";
+                    readonly src: "2692:107:44";
+                    readonly text: "@dev Process a deposit in vault shares.\n @param _shareAmount The vault shares amount to deposit.";
+                };
+                readonly implemented: true;
+                readonly kind: "function";
+                readonly modifiers: readonly [];
+                readonly name: "_depositWithShares";
+                readonly nameLocation: "2813:18:44";
+                readonly overrides: {
+                    readonly id: 7833;
+                    readonly nodeType: "OverrideSpecifier";
+                    readonly overrides: readonly [];
+                    readonly src: "2911:8:44";
+                };
+                readonly parameters: {
+                    readonly id: 7832;
+                    readonly nodeType: "ParameterList";
+                    readonly parameters: readonly [{
+                        readonly constant: false;
+                        readonly id: 7829;
+                        readonly mutability: "mutable";
+                        readonly name: "_shareAmount";
+                        readonly nameLocation: "2849:12:44";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7852;
+                        readonly src: "2841:20:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "default";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_uint256";
+                            readonly typeString: "uint256";
+                        };
+                        readonly typeName: {
+                            readonly id: 7828;
+                            readonly name: "uint256";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "2841:7:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }, {
+                        readonly constant: false;
+                        readonly id: 7831;
+                        readonly mutability: "mutable";
+                        readonly name: "";
+                        readonly nameLocation: "-1:-1:-1";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7852;
+                        readonly src: "2871:14:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "calldata";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_bytes_calldata_ptr";
+                            readonly typeString: "bytes";
+                        };
+                        readonly typeName: {
+                            readonly id: 7830;
+                            readonly name: "bytes";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "2871:5:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_bytes_storage_ptr";
+                                readonly typeString: "bytes";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }];
+                    readonly src: "2831:70:44";
+                };
+                readonly returnParameters: {
+                    readonly id: 7834;
+                    readonly nodeType: "ParameterList";
+                    readonly parameters: readonly [];
+                    readonly src: "2920:0:44";
+                };
+                readonly scope: 7983;
+                readonly stateMutability: "nonpayable";
+                readonly virtual: false;
+                readonly visibility: "internal";
+            }, {
+                readonly id: 7880;
+                readonly nodeType: "FunctionDefinition";
+                readonly src: "3415:460:44";
+                readonly nodes: readonly [];
+                readonly body: {
+                    readonly id: 7879;
+                    readonly nodeType: "Block";
+                    readonly src: "3594:281:44";
+                    readonly nodes: readonly [];
+                    readonly statements: readonly [{
+                        readonly expression: {
+                            readonly id: 7875;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 5731;
-                                readonly name: "_shares";
+                                readonly id: 7865;
+                                readonly name: "amountWithdrawn";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 5713;
-                                readonly src: "5215:7:23";
+                                readonly referencedDeclaration: 7863;
+                                readonly src: "3715:15:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -2802,50 +2815,119 @@ export declare const ERC4626Base: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 5734;
-                                    readonly name: "baseAmount";
+                                    readonly id: 7868;
+                                    readonly name: "_shareAmount";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 5725;
-                                    readonly src: "5248:10:23";
+                                    readonly referencedDeclaration: 7855;
+                                    readonly src: "3760:12:44";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
+                                    };
+                                }, {
+                                    readonly id: 7869;
+                                    readonly name: "_destination";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 7857;
+                                    readonly src: "3786:12:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_address";
+                                        readonly typeString: "address";
+                                    };
+                                }, {
+                                    readonly arguments: readonly [{
+                                        readonly id: 7872;
+                                        readonly name: "this";
+                                        readonly nodeType: "Identifier";
+                                        readonly overloadedDeclarations: readonly [];
+                                        readonly referencedDeclaration: -28;
+                                        readonly src: "3820:4:44";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                            readonly typeString: "contract ERC4626Base";
+                                        };
+                                    }];
+                                    readonly expression: {
+                                        readonly argumentTypes: readonly [{
+                                            readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                            readonly typeString: "contract ERC4626Base";
+                                        }];
+                                        readonly id: 7871;
+                                        readonly isConstant: false;
+                                        readonly isLValue: false;
+                                        readonly isPure: true;
+                                        readonly lValueRequested: false;
+                                        readonly nodeType: "ElementaryTypeNameExpression";
+                                        readonly src: "3812:7:44";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_type$_t_address_$";
+                                            readonly typeString: "type(address)";
+                                        };
+                                        readonly typeName: {
+                                            readonly id: 7870;
+                                            readonly name: "address";
+                                            readonly nodeType: "ElementaryTypeName";
+                                            readonly src: "3812:7:44";
+                                            readonly typeDescriptions: {};
+                                        };
+                                    };
+                                    readonly id: 7873;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly kind: "typeConversion";
+                                    readonly lValueRequested: false;
+                                    readonly nameLocations: readonly [];
+                                    readonly names: readonly [];
+                                    readonly nodeType: "FunctionCall";
+                                    readonly src: "3812:13:44";
+                                    readonly tryCall: false;
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_address";
+                                        readonly typeString: "address";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
+                                    }, {
+                                        readonly typeIdentifier: "t_address";
+                                        readonly typeString: "address";
+                                    }, {
+                                        readonly typeIdentifier: "t_address";
+                                        readonly typeString: "address";
                                     }];
                                     readonly expression: {
-                                        readonly id: 5732;
+                                        readonly id: 7866;
                                         readonly name: "_vault";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 5610;
-                                        readonly src: "5225:6:23";
+                                        readonly referencedDeclaration: 7753;
+                                        readonly src: "3733:6:44";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_IERC4626_$7203";
+                                            readonly typeIdentifier: "t_contract$_IERC4626_$10602";
                                             readonly typeString: "contract IERC4626";
                                         };
                                     };
-                                    readonly id: 5733;
+                                    readonly id: 7867;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
-                                    readonly memberLocation: "5232:15:23";
-                                    readonly memberName: "convertToShares";
+                                    readonly memberLocation: "3740:6:44";
+                                    readonly memberName: "redeem";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 7130;
-                                    readonly src: "5225:22:23";
+                                    readonly referencedDeclaration: 10521;
+                                    readonly src: "3733:13:44";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_function_external_view$_t_uint256_$returns$_t_uint256_$";
-                                        readonly typeString: "function (uint256) view external returns (uint256)";
+                                        readonly typeIdentifier: "t_function_external_nonpayable$_t_uint256_$_t_address_$_t_address_$returns$_t_uint256_$";
+                                        readonly typeString: "function (uint256,address,address) external returns (uint256)";
                                     };
                                 };
-                                readonly id: 5735;
+                                readonly id: 7874;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2854,283 +2936,570 @@ export declare const ERC4626Base: {
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "5225:34:23";
+                                readonly src: "3733:102:44";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly src: "5215:44:23";
+                            readonly src: "3715:120:44";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 5737;
+                        readonly id: 7876;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "5215:44:23";
+                        readonly src: "3715:120:44";
                     }, {
-                        readonly condition: {
-                            readonly commonType: {
+                        readonly expression: {
+                            readonly id: 7877;
+                            readonly name: "amountWithdrawn";
+                            readonly nodeType: "Identifier";
+                            readonly overloadedDeclarations: readonly [];
+                            readonly referencedDeclaration: 7863;
+                            readonly src: "3853:15:44";
+                            readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 5740;
-                            readonly isConstant: false;
-                            readonly isLValue: false;
-                            readonly isPure: false;
-                            readonly lValueRequested: false;
-                            readonly leftExpression: {
-                                readonly id: 5738;
-                                readonly name: "_shares";
+                        };
+                        readonly functionReturnParameters: 7864;
+                        readonly id: 7878;
+                        readonly nodeType: "Return";
+                        readonly src: "3846:22:44";
+                    }];
+                };
+                readonly baseFunctions: readonly [13384];
+                readonly documentation: {
+                    readonly id: 7853;
+                    readonly nodeType: "StructuredDocumentation";
+                    readonly src: "3125:285:44";
+                    readonly text: "@dev Process a withdrawal in base and send the proceeds to the\n      destination.\n @param _shareAmount The amount of vault shares to withdraw.\n @param _destination The destination of the withdrawal.\n @return amountWithdrawn The amount of base withdrawn.";
+                };
+                readonly implemented: true;
+                readonly kind: "function";
+                readonly modifiers: readonly [];
+                readonly name: "_withdrawWithBase";
+                readonly nameLocation: "3424:17:44";
+                readonly overrides: {
+                    readonly id: 7861;
+                    readonly nodeType: "OverrideSpecifier";
+                    readonly overrides: readonly [];
+                    readonly src: "3551:8:44";
+                };
+                readonly parameters: {
+                    readonly id: 7860;
+                    readonly nodeType: "ParameterList";
+                    readonly parameters: readonly [{
+                        readonly constant: false;
+                        readonly id: 7855;
+                        readonly mutability: "mutable";
+                        readonly name: "_shareAmount";
+                        readonly nameLocation: "3459:12:44";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7880;
+                        readonly src: "3451:20:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "default";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_uint256";
+                            readonly typeString: "uint256";
+                        };
+                        readonly typeName: {
+                            readonly id: 7854;
+                            readonly name: "uint256";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "3451:7:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }, {
+                        readonly constant: false;
+                        readonly id: 7857;
+                        readonly mutability: "mutable";
+                        readonly name: "_destination";
+                        readonly nameLocation: "3489:12:44";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7880;
+                        readonly src: "3481:20:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "default";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_address";
+                            readonly typeString: "address";
+                        };
+                        readonly typeName: {
+                            readonly id: 7856;
+                            readonly name: "address";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "3481:7:44";
+                            readonly stateMutability: "nonpayable";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_address";
+                                readonly typeString: "address";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }, {
+                        readonly constant: false;
+                        readonly id: 7859;
+                        readonly mutability: "mutable";
+                        readonly name: "";
+                        readonly nameLocation: "-1:-1:-1";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7880;
+                        readonly src: "3511:14:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "calldata";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_bytes_calldata_ptr";
+                            readonly typeString: "bytes";
+                        };
+                        readonly typeName: {
+                            readonly id: 7858;
+                            readonly name: "bytes";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "3511:5:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_bytes_storage_ptr";
+                                readonly typeString: "bytes";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }];
+                    readonly src: "3441:100:44";
+                };
+                readonly returnParameters: {
+                    readonly id: 7864;
+                    readonly nodeType: "ParameterList";
+                    readonly parameters: readonly [{
+                        readonly constant: false;
+                        readonly id: 7863;
+                        readonly mutability: "mutable";
+                        readonly name: "amountWithdrawn";
+                        readonly nameLocation: "3577:15:44";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7880;
+                        readonly src: "3569:23:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "default";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_uint256";
+                            readonly typeString: "uint256";
+                        };
+                        readonly typeName: {
+                            readonly id: 7862;
+                            readonly name: "uint256";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "3569:7:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }];
+                    readonly src: "3568:25:44";
+                };
+                readonly scope: 7983;
+                readonly stateMutability: "nonpayable";
+                readonly virtual: false;
+                readonly visibility: "internal";
+            }, {
+                readonly id: 7903;
+                readonly nodeType: "FunctionDefinition";
+                readonly src: "4117:280:44";
+                readonly nodes: readonly [];
+                readonly body: {
+                    readonly id: 7902;
+                    readonly nodeType: "Block";
+                    readonly src: "4264:133:44";
+                    readonly nodes: readonly [];
+                    readonly statements: readonly [{
+                        readonly expression: {
+                            readonly arguments: readonly [{
+                                readonly id: 7898;
+                                readonly name: "_destination";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 5713;
-                                readonly src: "5347:7:23";
+                                readonly referencedDeclaration: 7885;
+                                readonly src: "4363:12:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                };
+                            }, {
+                                readonly id: 7899;
+                                readonly name: "_shareAmount";
+                                readonly nodeType: "Identifier";
+                                readonly overloadedDeclarations: readonly [];
+                                readonly referencedDeclaration: 7883;
+                                readonly src: "4377:12:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                            };
-                            readonly nodeType: "BinaryOperation";
-                            readonly operator: "==";
-                            readonly rightExpression: {
-                                readonly hexValue: "30";
-                                readonly id: 5739;
-                                readonly isConstant: false;
-                                readonly isLValue: false;
-                                readonly isPure: true;
-                                readonly kind: "number";
-                                readonly lValueRequested: false;
-                                readonly nodeType: "Literal";
-                                readonly src: "5358:1:23";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_rational_0_by_1";
-                                    readonly typeString: "int_const 0";
-                                };
-                                readonly value: "0";
-                            };
-                            readonly src: "5347:12:23";
-                            readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_bool";
-                                readonly typeString: "bool";
-                            };
-                        };
-                        readonly id: 5744;
-                        readonly nodeType: "IfStatement";
-                        readonly src: "5343:51:23";
-                        readonly trueBody: {
-                            readonly id: 5743;
-                            readonly nodeType: "Block";
-                            readonly src: "5361:33:23";
-                            readonly statements: readonly [{
-                                readonly expression: {
-                                    readonly hexValue: "30";
-                                    readonly id: 5741;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: true;
-                                    readonly kind: "number";
-                                    readonly lValueRequested: false;
-                                    readonly nodeType: "Literal";
-                                    readonly src: "5382:1:23";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_rational_0_by_1";
-                                        readonly typeString: "int_const 0";
-                                    };
-                                    readonly value: "0";
-                                };
-                                readonly functionReturnParameters: 5723;
-                                readonly id: 5742;
-                                readonly nodeType: "Return";
-                                readonly src: "5375:8:23";
                             }];
-                        };
-                    }, {
-                        readonly condition: {
                             readonly expression: {
-                                readonly id: 5745;
-                                readonly name: "_options";
-                                readonly nodeType: "Identifier";
-                                readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 5718;
-                                readonly src: "5545:8:23";
-                                readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Options_$7463_calldata_ptr";
-                                    readonly typeString: "struct IHyperdrive.Options calldata";
-                                };
-                            };
-                            readonly id: 5746;
-                            readonly isConstant: false;
-                            readonly isLValue: false;
-                            readonly isPure: false;
-                            readonly lValueRequested: false;
-                            readonly memberLocation: "5554:6:23";
-                            readonly memberName: "asBase";
-                            readonly nodeType: "MemberAccess";
-                            readonly referencedDeclaration: 7459;
-                            readonly src: "5545:15:23";
-                            readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_bool";
-                                readonly typeString: "bool";
-                            };
-                        };
-                        readonly falseBody: {
-                            readonly id: 5777;
-                            readonly nodeType: "Block";
-                            readonly src: "5976:187:23";
-                            readonly statements: readonly [{
+                                readonly argumentTypes: readonly [{
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                }, {
+                                    readonly typeIdentifier: "t_uint256";
+                                    readonly typeString: "uint256";
+                                }];
                                 readonly expression: {
                                     readonly arguments: readonly [{
-                                        readonly expression: {
-                                            readonly id: 5768;
-                                            readonly name: "_options";
+                                        readonly arguments: readonly [{
+                                            readonly id: 7894;
+                                            readonly name: "_vault";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 5718;
-                                            readonly src: "6083:8:23";
+                                            readonly referencedDeclaration: 7753;
+                                            readonly src: "4341:6:44";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_struct$_Options_$7463_calldata_ptr";
-                                                readonly typeString: "struct IHyperdrive.Options calldata";
+                                                readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                                readonly typeString: "contract IERC4626";
+                                            };
+                                        }];
+                                        readonly expression: {
+                                            readonly argumentTypes: readonly [{
+                                                readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                                readonly typeString: "contract IERC4626";
+                                            }];
+                                            readonly id: 7893;
+                                            readonly isConstant: false;
+                                            readonly isLValue: false;
+                                            readonly isPure: true;
+                                            readonly lValueRequested: false;
+                                            readonly nodeType: "ElementaryTypeNameExpression";
+                                            readonly src: "4333:7:44";
+                                            readonly typeDescriptions: {
+                                                readonly typeIdentifier: "t_type$_t_address_$";
+                                                readonly typeString: "type(address)";
+                                            };
+                                            readonly typeName: {
+                                                readonly id: 7892;
+                                                readonly name: "address";
+                                                readonly nodeType: "ElementaryTypeName";
+                                                readonly src: "4333:7:44";
+                                                readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 5769;
+                                        readonly id: 7895;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
+                                        readonly kind: "typeConversion";
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "6092:11:23";
-                                        readonly memberName: "destination";
-                                        readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 7456;
-                                        readonly src: "6083:20:23";
+                                        readonly nameLocations: readonly [];
+                                        readonly names: readonly [];
+                                        readonly nodeType: "FunctionCall";
+                                        readonly src: "4333:15:44";
+                                        readonly tryCall: false;
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
-                                        };
-                                    }, {
-                                        readonly id: 5770;
-                                        readonly name: "_shares";
-                                        readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 5713;
-                                        readonly src: "6105:7:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
                                         };
                                     }];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [{
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
-                                        }, {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
                                         }];
+                                        readonly id: 7891;
+                                        readonly name: "ERC20";
+                                        readonly nodeType: "Identifier";
+                                        readonly overloadedDeclarations: readonly [];
+                                        readonly referencedDeclaration: 71213;
+                                        readonly src: "4327:5:44";
+                                        readonly typeDescriptions: {
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$71213_$";
+                                            readonly typeString: "type(contract ERC20)";
+                                        };
+                                    };
+                                    readonly id: 7896;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: false;
+                                    readonly kind: "typeConversion";
+                                    readonly lValueRequested: false;
+                                    readonly nameLocations: readonly [];
+                                    readonly names: readonly [];
+                                    readonly nodeType: "FunctionCall";
+                                    readonly src: "4327:22:44";
+                                    readonly tryCall: false;
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_contract$_ERC20_$71213";
+                                        readonly typeString: "contract ERC20";
+                                    };
+                                };
+                                readonly id: 7897;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly memberLocation: "4350:12:44";
+                                readonly memberName: "safeTransfer";
+                                readonly nodeType: "MemberAccess";
+                                readonly referencedDeclaration: 71403;
+                                readonly src: "4327:35:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71291_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71291_$";
+                                    readonly typeString: "function (contract IERC20,address,uint256)";
+                                };
+                            };
+                            readonly id: 7900;
+                            readonly isConstant: false;
+                            readonly isLValue: false;
+                            readonly isPure: false;
+                            readonly kind: "functionCall";
+                            readonly lValueRequested: false;
+                            readonly nameLocations: readonly [];
+                            readonly names: readonly [];
+                            readonly nodeType: "FunctionCall";
+                            readonly src: "4327:63:44";
+                            readonly tryCall: false;
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_tuple$__$";
+                                readonly typeString: "tuple()";
+                            };
+                        };
+                        readonly id: 7901;
+                        readonly nodeType: "ExpressionStatement";
+                        readonly src: "4327:63:44";
+                    }];
+                };
+                readonly baseFunctions: readonly [13394];
+                readonly documentation: {
+                    readonly id: 7881;
+                    readonly nodeType: "StructuredDocumentation";
+                    readonly src: "3881:231:44";
+                    readonly text: "@dev Process a withdrawal in vault shares and send the proceeds to the\n      destination.\n @param _shareAmount The amount of vault shares to withdraw.\n @param _destination The destination of the withdrawal.";
+                };
+                readonly implemented: true;
+                readonly kind: "function";
+                readonly modifiers: readonly [];
+                readonly name: "_withdrawWithShares";
+                readonly nameLocation: "4126:19:44";
+                readonly overrides: {
+                    readonly id: 7889;
+                    readonly nodeType: "OverrideSpecifier";
+                    readonly overrides: readonly [];
+                    readonly src: "4255:8:44";
+                };
+                readonly parameters: {
+                    readonly id: 7888;
+                    readonly nodeType: "ParameterList";
+                    readonly parameters: readonly [{
+                        readonly constant: false;
+                        readonly id: 7883;
+                        readonly mutability: "mutable";
+                        readonly name: "_shareAmount";
+                        readonly nameLocation: "4163:12:44";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7903;
+                        readonly src: "4155:20:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "default";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_uint256";
+                            readonly typeString: "uint256";
+                        };
+                        readonly typeName: {
+                            readonly id: 7882;
+                            readonly name: "uint256";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "4155:7:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }, {
+                        readonly constant: false;
+                        readonly id: 7885;
+                        readonly mutability: "mutable";
+                        readonly name: "_destination";
+                        readonly nameLocation: "4193:12:44";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7903;
+                        readonly src: "4185:20:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "default";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_address";
+                            readonly typeString: "address";
+                        };
+                        readonly typeName: {
+                            readonly id: 7884;
+                            readonly name: "address";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "4185:7:44";
+                            readonly stateMutability: "nonpayable";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_address";
+                                readonly typeString: "address";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }, {
+                        readonly constant: false;
+                        readonly id: 7887;
+                        readonly mutability: "mutable";
+                        readonly name: "";
+                        readonly nameLocation: "-1:-1:-1";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7903;
+                        readonly src: "4215:14:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "calldata";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_bytes_calldata_ptr";
+                            readonly typeString: "bytes";
+                        };
+                        readonly typeName: {
+                            readonly id: 7886;
+                            readonly name: "bytes";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "4215:5:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_bytes_storage_ptr";
+                                readonly typeString: "bytes";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }];
+                    readonly src: "4145:100:44";
+                };
+                readonly returnParameters: {
+                    readonly id: 7890;
+                    readonly nodeType: "ParameterList";
+                    readonly parameters: readonly [];
+                    readonly src: "4264:0:44";
+                };
+                readonly scope: 7983;
+                readonly stateMutability: "nonpayable";
+                readonly virtual: false;
+                readonly visibility: "internal";
+            }, {
+                readonly id: 7920;
+                readonly nodeType: "FunctionDefinition";
+                readonly src: "4515:145:44";
+                readonly nodes: readonly [];
+                readonly body: {
+                    readonly id: 7919;
+                    readonly nodeType: "Block";
+                    readonly src: "4568:92:44";
+                    readonly nodes: readonly [];
+                    readonly statements: readonly [{
+                        readonly condition: {
+                            readonly commonType: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                            readonly id: 7911;
+                            readonly isConstant: false;
+                            readonly isLValue: false;
+                            readonly isPure: false;
+                            readonly lValueRequested: false;
+                            readonly leftExpression: {
+                                readonly expression: {
+                                    readonly id: 7908;
+                                    readonly name: "msg";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: -15;
+                                    readonly src: "4582:3:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_magic_message";
+                                        readonly typeString: "msg";
+                                    };
+                                };
+                                readonly id: 7909;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly memberLocation: "4586:5:44";
+                                readonly memberName: "value";
+                                readonly nodeType: "MemberAccess";
+                                readonly src: "4582:9:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_uint256";
+                                    readonly typeString: "uint256";
+                                };
+                            };
+                            readonly nodeType: "BinaryOperation";
+                            readonly operator: "!=";
+                            readonly rightExpression: {
+                                readonly hexValue: "30";
+                                readonly id: 7910;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: true;
+                                readonly kind: "number";
+                                readonly lValueRequested: false;
+                                readonly nodeType: "Literal";
+                                readonly src: "4595:1:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_rational_0_by_1";
+                                    readonly typeString: "int_const 0";
+                                };
+                                readonly value: "0";
+                            };
+                            readonly src: "4582:14:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_bool";
+                                readonly typeString: "bool";
+                            };
+                        };
+                        readonly id: 7918;
+                        readonly nodeType: "IfStatement";
+                        readonly src: "4578:76:44";
+                        readonly trueBody: {
+                            readonly id: 7917;
+                            readonly nodeType: "Block";
+                            readonly src: "4598:56:44";
+                            readonly statements: readonly [{
+                                readonly errorCall: {
+                                    readonly arguments: readonly [];
+                                    readonly expression: {
+                                        readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly arguments: readonly [{
-                                                readonly arguments: readonly [{
-                                                    readonly id: 5764;
-                                                    readonly name: "_vault";
-                                                    readonly nodeType: "Identifier";
-                                                    readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 5610;
-                                                    readonly src: "6061:6:23";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_contract$_IERC4626_$7203";
-                                                        readonly typeString: "contract IERC4626";
-                                                    };
-                                                }];
-                                                readonly expression: {
-                                                    readonly argumentTypes: readonly [{
-                                                        readonly typeIdentifier: "t_contract$_IERC4626_$7203";
-                                                        readonly typeString: "contract IERC4626";
-                                                    }];
-                                                    readonly id: 5763;
-                                                    readonly isConstant: false;
-                                                    readonly isLValue: false;
-                                                    readonly isPure: true;
-                                                    readonly lValueRequested: false;
-                                                    readonly nodeType: "ElementaryTypeNameExpression";
-                                                    readonly src: "6053:7:23";
-                                                    readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_type$_t_address_$";
-                                                        readonly typeString: "type(address)";
-                                                    };
-                                                    readonly typeName: {
-                                                        readonly id: 5762;
-                                                        readonly name: "address";
-                                                        readonly nodeType: "ElementaryTypeName";
-                                                        readonly src: "6053:7:23";
-                                                        readonly typeDescriptions: {};
-                                                    };
-                                                };
-                                                readonly id: 5765;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: false;
-                                                readonly kind: "typeConversion";
-                                                readonly lValueRequested: false;
-                                                readonly nameLocations: readonly [];
-                                                readonly names: readonly [];
-                                                readonly nodeType: "FunctionCall";
-                                                readonly src: "6053:15:23";
-                                                readonly tryCall: false;
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_address";
-                                                    readonly typeString: "address";
-                                                };
-                                            }];
-                                            readonly expression: {
-                                                readonly argumentTypes: readonly [{
-                                                    readonly typeIdentifier: "t_address";
-                                                    readonly typeString: "address";
-                                                }];
-                                                readonly id: 5761;
-                                                readonly name: "ERC20";
-                                                readonly nodeType: "Identifier";
-                                                readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 66276;
-                                                readonly src: "6047:5:23";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_type$_t_contract$_ERC20_$66276_$";
-                                                    readonly typeString: "type(contract ERC20)";
-                                                };
-                                            };
-                                            readonly id: 5766;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly kind: "typeConversion";
-                                            readonly lValueRequested: false;
-                                            readonly nameLocations: readonly [];
-                                            readonly names: readonly [];
-                                            readonly nodeType: "FunctionCall";
-                                            readonly src: "6047:22:23";
-                                            readonly tryCall: false;
+                                            readonly id: 7912;
+                                            readonly name: "IHyperdrive";
+                                            readonly nodeType: "Identifier";
+                                            readonly overloadedDeclarations: readonly [];
+                                            readonly referencedDeclaration: 11028;
+                                            readonly src: "4619:11:44";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_ERC20_$66276";
-                                                readonly typeString: "contract ERC20";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11028_$";
+                                                readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 5767;
+                                        readonly id: 7914;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "6070:12:23";
-                                        readonly memberName: "safeTransfer";
+                                        readonly memberLocation: "4631:10:44";
+                                        readonly memberName: "NotPayable";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 66466;
-                                        readonly src: "6047:35:23";
+                                        readonly referencedDeclaration: 10947;
+                                        readonly src: "4619:22:44";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$66354_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$66354_$";
-                                            readonly typeString: "function (contract IERC20,address,uint256)";
+                                            readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
+                                            readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 5771;
+                                    readonly id: 7915;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3139,412 +3508,73 @@ export declare const ERC4626Base: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "6047:66:23";
+                                    readonly src: "4619:24:44";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 5772;
-                                readonly nodeType: "ExpressionStatement";
-                                readonly src: "6047:66:23";
-                            }, {
-                                readonly expression: {
-                                    readonly id: 5775;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftHandSide: {
-                                        readonly id: 5773;
-                                        readonly name: "amountWithdrawn";
-                                        readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 5722;
-                                        readonly src: "6127:15:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
-                                        };
-                                    };
-                                    readonly nodeType: "Assignment";
-                                    readonly operator: "=";
-                                    readonly rightHandSide: {
-                                        readonly id: 5774;
-                                        readonly name: "_shares";
-                                        readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 5713;
-                                        readonly src: "6145:7:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
-                                        };
-                                    };
-                                    readonly src: "6127:25:23";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_uint256";
-                                        readonly typeString: "uint256";
-                                    };
-                                };
-                                readonly id: 5776;
-                                readonly nodeType: "ExpressionStatement";
-                                readonly src: "6127:25:23";
-                            }];
-                        };
-                        readonly id: 5778;
-                        readonly nodeType: "IfStatement";
-                        readonly src: "5541:622:23";
-                        readonly trueBody: {
-                            readonly id: 5760;
-                            readonly nodeType: "Block";
-                            readonly src: "5562:283:23";
-                            readonly statements: readonly [{
-                                readonly expression: {
-                                    readonly id: 5758;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly lValueRequested: false;
-                                    readonly leftHandSide: {
-                                        readonly id: 5747;
-                                        readonly name: "amountWithdrawn";
-                                        readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 5722;
-                                        readonly src: "5695:15:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
-                                        };
-                                    };
-                                    readonly nodeType: "Assignment";
-                                    readonly operator: "=";
-                                    readonly rightHandSide: {
-                                        readonly arguments: readonly [{
-                                            readonly id: 5750;
-                                            readonly name: "_shares";
-                                            readonly nodeType: "Identifier";
-                                            readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 5713;
-                                            readonly src: "5744:7:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_uint256";
-                                                readonly typeString: "uint256";
-                                            };
-                                        }, {
-                                            readonly expression: {
-                                                readonly id: 5751;
-                                                readonly name: "_options";
-                                                readonly nodeType: "Identifier";
-                                                readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 5718;
-                                                readonly src: "5769:8:23";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_struct$_Options_$7463_calldata_ptr";
-                                                    readonly typeString: "struct IHyperdrive.Options calldata";
-                                                };
-                                            };
-                                            readonly id: 5752;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly lValueRequested: false;
-                                            readonly memberLocation: "5778:11:23";
-                                            readonly memberName: "destination";
-                                            readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 7456;
-                                            readonly src: "5769:20:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_address";
-                                                readonly typeString: "address";
-                                            };
-                                        }, {
-                                            readonly arguments: readonly [{
-                                                readonly id: 5755;
-                                                readonly name: "this";
-                                                readonly nodeType: "Identifier";
-                                                readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: -28;
-                                                readonly src: "5815:4:23";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_contract$_ERC4626Base_$5811";
-                                                    readonly typeString: "contract ERC4626Base";
-                                                };
-                                            }];
-                                            readonly expression: {
-                                                readonly argumentTypes: readonly [{
-                                                    readonly typeIdentifier: "t_contract$_ERC4626Base_$5811";
-                                                    readonly typeString: "contract ERC4626Base";
-                                                }];
-                                                readonly id: 5754;
-                                                readonly isConstant: false;
-                                                readonly isLValue: false;
-                                                readonly isPure: true;
-                                                readonly lValueRequested: false;
-                                                readonly nodeType: "ElementaryTypeNameExpression";
-                                                readonly src: "5807:7:23";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_type$_t_address_$";
-                                                    readonly typeString: "type(address)";
-                                                };
-                                                readonly typeName: {
-                                                    readonly id: 5753;
-                                                    readonly name: "address";
-                                                    readonly nodeType: "ElementaryTypeName";
-                                                    readonly src: "5807:7:23";
-                                                    readonly typeDescriptions: {};
-                                                };
-                                            };
-                                            readonly id: 5756;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly kind: "typeConversion";
-                                            readonly lValueRequested: false;
-                                            readonly nameLocations: readonly [];
-                                            readonly names: readonly [];
-                                            readonly nodeType: "FunctionCall";
-                                            readonly src: "5807:13:23";
-                                            readonly tryCall: false;
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_address";
-                                                readonly typeString: "address";
-                                            };
-                                        }];
-                                        readonly expression: {
-                                            readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_uint256";
-                                                readonly typeString: "uint256";
-                                            }, {
-                                                readonly typeIdentifier: "t_address";
-                                                readonly typeString: "address";
-                                            }, {
-                                                readonly typeIdentifier: "t_address";
-                                                readonly typeString: "address";
-                                            }];
-                                            readonly expression: {
-                                                readonly id: 5748;
-                                                readonly name: "_vault";
-                                                readonly nodeType: "Identifier";
-                                                readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 5610;
-                                                readonly src: "5713:6:23";
-                                                readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_contract$_IERC4626_$7203";
-                                                    readonly typeString: "contract IERC4626";
-                                                };
-                                            };
-                                            readonly id: 5749;
-                                            readonly isConstant: false;
-                                            readonly isLValue: false;
-                                            readonly isPure: false;
-                                            readonly lValueRequested: false;
-                                            readonly memberLocation: "5720:6:23";
-                                            readonly memberName: "redeem";
-                                            readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 7122;
-                                            readonly src: "5713:13:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_function_external_nonpayable$_t_uint256_$_t_address_$_t_address_$returns$_t_uint256_$";
-                                                readonly typeString: "function (uint256,address,address) external returns (uint256)";
-                                            };
-                                        };
-                                        readonly id: 5757;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly kind: "functionCall";
-                                        readonly lValueRequested: false;
-                                        readonly nameLocations: readonly [];
-                                        readonly names: readonly [];
-                                        readonly nodeType: "FunctionCall";
-                                        readonly src: "5713:121:23";
-                                        readonly tryCall: false;
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_uint256";
-                                            readonly typeString: "uint256";
-                                        };
-                                    };
-                                    readonly src: "5695:139:23";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_uint256";
-                                        readonly typeString: "uint256";
-                                    };
-                                };
-                                readonly id: 5759;
-                                readonly nodeType: "ExpressionStatement";
-                                readonly src: "5695:139:23";
+                                readonly id: 7916;
+                                readonly nodeType: "RevertStatement";
+                                readonly src: "4612:31:44";
                             }];
                         };
                     }];
                 };
-                readonly baseFunctions: readonly [9026];
+                readonly baseFunctions: readonly [13398];
                 readonly documentation: {
-                    readonly id: 5711;
+                    readonly id: 7904;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "3809:863:23";
-                    readonly text: "@notice Processes a trader's withdrawal in either base or vault shares.\n         If the withdrawal is settled in base, the base is withdrawn from\n         the yield source.\n @param _shares The amount of vault shares to withdraw from Hyperdrive.\n @param _vaultSharePrice The vault share price.\n @param _options The options that configure the withdrawal. The options\n        used in this implementation are `_options.destination`, which\n        specifies the recipient of the withdrawal, and `_options.asBase`,\n        which determines if the withdrawal is settled in base or vault\n        shares.\n @return amountWithdrawn The proceeds of the withdrawal. The units of\n         this quantity are vault shares since this yield source doesn't\n         support withdrawals in base.";
+                    readonly src: "4403:107:44";
+                    readonly text: "@dev Ensure that ether wasn't sent because ERC4626 vaults don't support\n      deposits of ether.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
-                readonly name: "_withdraw";
-                readonly nameLocation: "4686:9:23";
+                readonly name: "_checkMessageValue";
+                readonly nameLocation: "4524:18:44";
                 readonly overrides: {
-                    readonly id: 5720;
+                    readonly id: 7906;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
-                    readonly src: "4817:8:23";
+                    readonly src: "4559:8:44";
                 };
                 readonly parameters: {
-                    readonly id: 5719;
+                    readonly id: 7905;
                     readonly nodeType: "ParameterList";
-                    readonly parameters: readonly [{
-                        readonly constant: false;
-                        readonly id: 5713;
-                        readonly mutability: "mutable";
-                        readonly name: "_shares";
-                        readonly nameLocation: "4713:7:23";
-                        readonly nodeType: "VariableDeclaration";
-                        readonly scope: 5780;
-                        readonly src: "4705:15:23";
-                        readonly stateVariable: false;
-                        readonly storageLocation: "default";
-                        readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_uint256";
-                            readonly typeString: "uint256";
-                        };
-                        readonly typeName: {
-                            readonly id: 5712;
-                            readonly name: "uint256";
-                            readonly nodeType: "ElementaryTypeName";
-                            readonly src: "4705:7:23";
-                            readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_uint256";
-                                readonly typeString: "uint256";
-                            };
-                        };
-                        readonly visibility: "internal";
-                    }, {
-                        readonly constant: false;
-                        readonly id: 5715;
-                        readonly mutability: "mutable";
-                        readonly name: "_vaultSharePrice";
-                        readonly nameLocation: "4738:16:23";
-                        readonly nodeType: "VariableDeclaration";
-                        readonly scope: 5780;
-                        readonly src: "4730:24:23";
-                        readonly stateVariable: false;
-                        readonly storageLocation: "default";
-                        readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_uint256";
-                            readonly typeString: "uint256";
-                        };
-                        readonly typeName: {
-                            readonly id: 5714;
-                            readonly name: "uint256";
-                            readonly nodeType: "ElementaryTypeName";
-                            readonly src: "4730:7:23";
-                            readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_uint256";
-                                readonly typeString: "uint256";
-                            };
-                        };
-                        readonly visibility: "internal";
-                    }, {
-                        readonly constant: false;
-                        readonly id: 5718;
-                        readonly mutability: "mutable";
-                        readonly name: "_options";
-                        readonly nameLocation: "4793:8:23";
-                        readonly nodeType: "VariableDeclaration";
-                        readonly scope: 5780;
-                        readonly src: "4764:37:23";
-                        readonly stateVariable: false;
-                        readonly storageLocation: "calldata";
-                        readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Options_$7463_calldata_ptr";
-                            readonly typeString: "struct IHyperdrive.Options";
-                        };
-                        readonly typeName: {
-                            readonly id: 5717;
-                            readonly nodeType: "UserDefinedTypeName";
-                            readonly pathNode: {
-                                readonly id: 5716;
-                                readonly name: "IHyperdrive.Options";
-                                readonly nameLocations: readonly ["4764:11:23", "4776:7:23"];
-                                readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 7463;
-                                readonly src: "4764:19:23";
-                            };
-                            readonly referencedDeclaration: 7463;
-                            readonly src: "4764:19:23";
-                            readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Options_$7463_storage_ptr";
-                                readonly typeString: "struct IHyperdrive.Options";
-                            };
-                        };
-                        readonly visibility: "internal";
-                    }];
-                    readonly src: "4695:112:23";
+                    readonly parameters: readonly [];
+                    readonly src: "4542:2:44";
                 };
                 readonly returnParameters: {
-                    readonly id: 5723;
+                    readonly id: 7907;
                     readonly nodeType: "ParameterList";
-                    readonly parameters: readonly [{
-                        readonly constant: false;
-                        readonly id: 5722;
-                        readonly mutability: "mutable";
-                        readonly name: "amountWithdrawn";
-                        readonly nameLocation: "4843:15:23";
-                        readonly nodeType: "VariableDeclaration";
-                        readonly scope: 5780;
-                        readonly src: "4835:23:23";
-                        readonly stateVariable: false;
-                        readonly storageLocation: "default";
-                        readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_uint256";
-                            readonly typeString: "uint256";
-                        };
-                        readonly typeName: {
-                            readonly id: 5721;
-                            readonly name: "uint256";
-                            readonly nodeType: "ElementaryTypeName";
-                            readonly src: "4835:7:23";
-                            readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_uint256";
-                                readonly typeString: "uint256";
-                            };
-                        };
-                        readonly visibility: "internal";
-                    }];
-                    readonly src: "4834:25:23";
+                    readonly parameters: readonly [];
+                    readonly src: "4568:0:44";
                 };
-                readonly scope: 5811;
-                readonly stateMutability: "nonpayable";
+                readonly scope: 7983;
+                readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 5793;
+                readonly id: 7935;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "6289:123:23";
+                readonly src: "4821:161:44";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 5792;
+                    readonly id: 7934;
                     readonly nodeType: "Block";
-                    readonly src: "6361:51:23";
+                    readonly src: "4922:60:44";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 5789;
-                                readonly name: "ONE";
+                                readonly id: 7931;
+                                readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14151;
-                                readonly src: "6401:3:23";
+                                readonly referencedDeclaration: 7923;
+                                readonly src: "4962:12:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -3556,33 +3586,33 @@ export declare const ERC4626Base: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 5787;
+                                    readonly id: 7929;
                                     readonly name: "_vault";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 5610;
-                                    readonly src: "6378:6:23";
+                                    readonly referencedDeclaration: 7753;
+                                    readonly src: "4939:6:44";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC4626_$7203";
+                                        readonly typeIdentifier: "t_contract$_IERC4626_$10602";
                                         readonly typeString: "contract IERC4626";
                                     };
                                 };
-                                readonly id: 5788;
+                                readonly id: 7930;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "6385:15:23";
+                                readonly memberLocation: "4946:15:44";
                                 readonly memberName: "convertToAssets";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 7138;
-                                readonly src: "6378:22:23";
+                                readonly referencedDeclaration: 10537;
+                                readonly src: "4939:22:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 5790;
+                            readonly id: 7932;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3591,55 +3621,49 @@ export declare const ERC4626Base: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "6378:27:23";
+                            readonly src: "4939:36:44";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 5786;
-                        readonly id: 5791;
+                        readonly functionReturnParameters: 7928;
+                        readonly id: 7933;
                         readonly nodeType: "Return";
-                        readonly src: "6371:34:23";
+                        readonly src: "4932:43:44";
                     }];
                 };
-                readonly baseFunctions: readonly [9032];
+                readonly baseFunctions: readonly [13428];
                 readonly documentation: {
-                    readonly id: 5781;
+                    readonly id: 7921;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "6175:109:23";
-                    readonly text: "@notice Loads the vault share price from the yield source.\n @return The current vault share price.";
+                    readonly src: "4666:150:44";
+                    readonly text: "@dev Convert an amount of vault shares to an amount of base.\n @param _shareAmount The vault shares amount.\n @return The base amount.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
-                readonly name: "_pricePerVaultShare";
-                readonly nameLocation: "6298:19:23";
+                readonly name: "_convertToBase";
+                readonly nameLocation: "4830:14:44";
                 readonly overrides: {
-                    readonly id: 5783;
+                    readonly id: 7925;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
-                    readonly src: "6334:8:23";
+                    readonly src: "4895:8:44";
                 };
                 readonly parameters: {
-                    readonly id: 5782;
-                    readonly nodeType: "ParameterList";
-                    readonly parameters: readonly [];
-                    readonly src: "6317:2:23";
-                };
-                readonly returnParameters: {
-                    readonly id: 5786;
+                    readonly id: 7924;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 5785;
+                        readonly id: 7923;
                         readonly mutability: "mutable";
-                        readonly name: "";
-                        readonly nameLocation: "-1:-1:-1";
+                        readonly name: "_shareAmount";
+                        readonly nameLocation: "4862:12:44";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 5793;
-                        readonly src: "6352:7:23";
+                        readonly scope: 7935;
+                        readonly src: "4854:20:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3647,10 +3671,10 @@ export declare const ERC4626Base: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 5784;
+                            readonly id: 7922;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "6352:7:23";
+                            readonly src: "4854:7:44";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3658,177 +3682,563 @@ export declare const ERC4626Base: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "6351:9:23";
+                    readonly src: "4844:36:44";
                 };
-                readonly scope: 5811;
+                readonly returnParameters: {
+                    readonly id: 7928;
+                    readonly nodeType: "ParameterList";
+                    readonly parameters: readonly [{
+                        readonly constant: false;
+                        readonly id: 7927;
+                        readonly mutability: "mutable";
+                        readonly name: "";
+                        readonly nameLocation: "-1:-1:-1";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7935;
+                        readonly src: "4913:7:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "default";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_uint256";
+                            readonly typeString: "uint256";
+                        };
+                        readonly typeName: {
+                            readonly id: 7926;
+                            readonly name: "uint256";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "4913:7:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }];
+                    readonly src: "4912:9:44";
+                };
+                readonly scope: 7983;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 5810;
+                readonly id: 7950;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "6530:145:23";
+                readonly src: "5142:161:44";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 5809;
+                    readonly id: 7949;
                     readonly nodeType: "Block";
-                    readonly src: "6583:92:23";
+                    readonly src: "5244:59:44";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly condition: {
-                            readonly commonType: {
-                                readonly typeIdentifier: "t_uint256";
-                                readonly typeString: "uint256";
-                            };
-                            readonly id: 5801;
-                            readonly isConstant: false;
-                            readonly isLValue: false;
-                            readonly isPure: false;
-                            readonly lValueRequested: false;
-                            readonly leftExpression: {
-                                readonly expression: {
-                                    readonly id: 5798;
-                                    readonly name: "msg";
-                                    readonly nodeType: "Identifier";
-                                    readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: -15;
-                                    readonly src: "6597:3:23";
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_magic_message";
-                                        readonly typeString: "msg";
-                                    };
-                                };
-                                readonly id: 5799;
-                                readonly isConstant: false;
-                                readonly isLValue: false;
-                                readonly isPure: false;
-                                readonly lValueRequested: false;
-                                readonly memberLocation: "6601:5:23";
-                                readonly memberName: "value";
-                                readonly nodeType: "MemberAccess";
-                                readonly src: "6597:9:23";
+                        readonly expression: {
+                            readonly arguments: readonly [{
+                                readonly id: 7946;
+                                readonly name: "_baseAmount";
+                                readonly nodeType: "Identifier";
+                                readonly overloadedDeclarations: readonly [];
+                                readonly referencedDeclaration: 7938;
+                                readonly src: "5284:11:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                            };
-                            readonly nodeType: "BinaryOperation";
-                            readonly operator: "!=";
-                            readonly rightExpression: {
-                                readonly hexValue: "30";
-                                readonly id: 5800;
+                            }];
+                            readonly expression: {
+                                readonly argumentTypes: readonly [{
+                                    readonly typeIdentifier: "t_uint256";
+                                    readonly typeString: "uint256";
+                                }];
+                                readonly expression: {
+                                    readonly id: 7944;
+                                    readonly name: "_vault";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 7753;
+                                    readonly src: "5261:6:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                        readonly typeString: "contract IERC4626";
+                                    };
+                                };
+                                readonly id: 7945;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
-                                readonly isPure: true;
-                                readonly kind: "number";
+                                readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly nodeType: "Literal";
-                                readonly src: "6610:1:23";
+                                readonly memberLocation: "5268:15:44";
+                                readonly memberName: "convertToShares";
+                                readonly nodeType: "MemberAccess";
+                                readonly referencedDeclaration: 10529;
+                                readonly src: "5261:22:44";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_rational_0_by_1";
-                                    readonly typeString: "int_const 0";
+                                    readonly typeIdentifier: "t_function_external_view$_t_uint256_$returns$_t_uint256_$";
+                                    readonly typeString: "function (uint256) view external returns (uint256)";
                                 };
-                                readonly value: "0";
                             };
-                            readonly src: "6597:14:23";
+                            readonly id: 7947;
+                            readonly isConstant: false;
+                            readonly isLValue: false;
+                            readonly isPure: false;
+                            readonly kind: "functionCall";
+                            readonly lValueRequested: false;
+                            readonly nameLocations: readonly [];
+                            readonly names: readonly [];
+                            readonly nodeType: "FunctionCall";
+                            readonly src: "5261:35:44";
+                            readonly tryCall: false;
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_bool";
-                                readonly typeString: "bool";
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 5808;
-                        readonly nodeType: "IfStatement";
-                        readonly src: "6593:76:23";
-                        readonly trueBody: {
-                            readonly id: 5807;
-                            readonly nodeType: "Block";
-                            readonly src: "6613:56:23";
-                            readonly statements: readonly [{
-                                readonly errorCall: {
-                                    readonly arguments: readonly [];
-                                    readonly expression: {
-                                        readonly argumentTypes: readonly [];
-                                        readonly expression: {
-                                            readonly id: 5802;
-                                            readonly name: "IHyperdrive";
-                                            readonly nodeType: "Identifier";
-                                            readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 7616;
-                                            readonly src: "6634:11:23";
-                                            readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$7616_$";
-                                                readonly typeString: "type(contract IHyperdrive)";
-                                            };
-                                        };
-                                        readonly id: 5804;
-                                        readonly isConstant: false;
-                                        readonly isLValue: false;
-                                        readonly isPure: false;
-                                        readonly lValueRequested: false;
-                                        readonly memberLocation: "6646:10:23";
-                                        readonly memberName: "NotPayable";
-                                        readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 7538;
-                                        readonly src: "6634:22:23";
-                                        readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
-                                            readonly typeString: "function () pure";
-                                        };
-                                    };
-                                    readonly id: 5805;
-                                    readonly isConstant: false;
-                                    readonly isLValue: false;
-                                    readonly isPure: false;
-                                    readonly kind: "functionCall";
-                                    readonly lValueRequested: false;
-                                    readonly nameLocations: readonly [];
-                                    readonly names: readonly [];
-                                    readonly nodeType: "FunctionCall";
-                                    readonly src: "6634:24:23";
-                                    readonly tryCall: false;
-                                    readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_tuple$__$";
-                                        readonly typeString: "tuple()";
-                                    };
-                                };
-                                readonly id: 5806;
-                                readonly nodeType: "RevertStatement";
-                                readonly src: "6627:31:23";
-                            }];
-                        };
+                        readonly functionReturnParameters: 7943;
+                        readonly id: 7948;
+                        readonly nodeType: "Return";
+                        readonly src: "5254:42:44";
                     }];
                 };
-                readonly baseFunctions: readonly [8978];
+                readonly baseFunctions: readonly [13436];
                 readonly documentation: {
-                    readonly id: 5794;
+                    readonly id: 7936;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "6418:107:23";
-                    readonly text: "@dev Ensure that ether wasn't sent because ERC4626 vaults don't support\n      deposits of ether.";
+                    readonly src: "4988:149:44";
+                    readonly text: "@dev Convert an amount of base to an amount of vault shares.\n @param _baseAmount The base amount.\n @return The vault shares amount.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
-                readonly name: "_checkMessageValue";
-                readonly nameLocation: "6539:18:23";
+                readonly name: "_convertToShares";
+                readonly nameLocation: "5151:16:44";
                 readonly overrides: {
-                    readonly id: 5796;
+                    readonly id: 7940;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
-                    readonly src: "6574:8:23";
+                    readonly src: "5217:8:44";
                 };
                 readonly parameters: {
-                    readonly id: 5795;
+                    readonly id: 7939;
                     readonly nodeType: "ParameterList";
-                    readonly parameters: readonly [];
-                    readonly src: "6557:2:23";
+                    readonly parameters: readonly [{
+                        readonly constant: false;
+                        readonly id: 7938;
+                        readonly mutability: "mutable";
+                        readonly name: "_baseAmount";
+                        readonly nameLocation: "5185:11:44";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7950;
+                        readonly src: "5177:19:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "default";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_uint256";
+                            readonly typeString: "uint256";
+                        };
+                        readonly typeName: {
+                            readonly id: 7937;
+                            readonly name: "uint256";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "5177:7:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }];
+                    readonly src: "5167:35:44";
                 };
                 readonly returnParameters: {
-                    readonly id: 5797;
+                    readonly id: 7943;
+                    readonly nodeType: "ParameterList";
+                    readonly parameters: readonly [{
+                        readonly constant: false;
+                        readonly id: 7942;
+                        readonly mutability: "mutable";
+                        readonly name: "";
+                        readonly nameLocation: "-1:-1:-1";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7950;
+                        readonly src: "5235:7:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "default";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_uint256";
+                            readonly typeString: "uint256";
+                        };
+                        readonly typeName: {
+                            readonly id: 7941;
+                            readonly name: "uint256";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "5235:7:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }];
+                    readonly src: "5234:9:44";
+                };
+                readonly scope: 7983;
+                readonly stateMutability: "view";
+                readonly virtual: false;
+                readonly visibility: "internal";
+            }, {
+                readonly id: 7966;
+                readonly nodeType: "FunctionDefinition";
+                readonly src: "5423:122:44";
+                readonly nodes: readonly [];
+                readonly body: {
+                    readonly id: 7965;
+                    readonly nodeType: "Block";
+                    readonly src: "5486:59:44";
+                    readonly nodes: readonly [];
+                    readonly statements: readonly [{
+                        readonly expression: {
+                            readonly arguments: readonly [{
+                                readonly arguments: readonly [{
+                                    readonly id: 7961;
+                                    readonly name: "this";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: -28;
+                                    readonly src: "5532:4:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeString: "contract ERC4626Base";
+                                    };
+                                }];
+                                readonly expression: {
+                                    readonly argumentTypes: readonly [{
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeString: "contract ERC4626Base";
+                                    }];
+                                    readonly id: 7960;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: true;
+                                    readonly lValueRequested: false;
+                                    readonly nodeType: "ElementaryTypeNameExpression";
+                                    readonly src: "5524:7:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_type$_t_address_$";
+                                        readonly typeString: "type(address)";
+                                    };
+                                    readonly typeName: {
+                                        readonly id: 7959;
+                                        readonly name: "address";
+                                        readonly nodeType: "ElementaryTypeName";
+                                        readonly src: "5524:7:44";
+                                        readonly typeDescriptions: {};
+                                    };
+                                };
+                                readonly id: 7962;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly kind: "typeConversion";
+                                readonly lValueRequested: false;
+                                readonly nameLocations: readonly [];
+                                readonly names: readonly [];
+                                readonly nodeType: "FunctionCall";
+                                readonly src: "5524:13:44";
+                                readonly tryCall: false;
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                };
+                            }];
+                            readonly expression: {
+                                readonly argumentTypes: readonly [{
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                }];
+                                readonly expression: {
+                                    readonly id: 7957;
+                                    readonly name: "_baseToken";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 18126;
+                                    readonly src: "5503:10:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                        readonly typeString: "contract IERC20";
+                                    };
+                                };
+                                readonly id: 7958;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly memberLocation: "5514:9:44";
+                                readonly memberName: "balanceOf";
+                                readonly nodeType: "MemberAccess";
+                                readonly referencedDeclaration: 10318;
+                                readonly src: "5503:20:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_function_external_view$_t_address_$returns$_t_uint256_$";
+                                    readonly typeString: "function (address) view external returns (uint256)";
+                                };
+                            };
+                            readonly id: 7963;
+                            readonly isConstant: false;
+                            readonly isLValue: false;
+                            readonly isPure: false;
+                            readonly kind: "functionCall";
+                            readonly lValueRequested: false;
+                            readonly nameLocations: readonly [];
+                            readonly names: readonly [];
+                            readonly nodeType: "FunctionCall";
+                            readonly src: "5503:35:44";
+                            readonly tryCall: false;
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                        };
+                        readonly functionReturnParameters: 7956;
+                        readonly id: 7964;
+                        readonly nodeType: "Return";
+                        readonly src: "5496:42:44";
+                    }];
+                };
+                readonly baseFunctions: readonly [13442];
+                readonly documentation: {
+                    readonly id: 7951;
+                    readonly nodeType: "StructuredDocumentation";
+                    readonly src: "5309:109:44";
+                    readonly text: "@dev Gets the total amount of base held by the pool.\n @return baseAmount The total amount of base.";
+                };
+                readonly implemented: true;
+                readonly kind: "function";
+                readonly modifiers: readonly [];
+                readonly name: "_totalBase";
+                readonly nameLocation: "5432:10:44";
+                readonly overrides: {
+                    readonly id: 7953;
+                    readonly nodeType: "OverrideSpecifier";
+                    readonly overrides: readonly [];
+                    readonly src: "5459:8:44";
+                };
+                readonly parameters: {
+                    readonly id: 7952;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "6583:0:23";
+                    readonly src: "5442:2:44";
                 };
-                readonly scope: 5811;
+                readonly returnParameters: {
+                    readonly id: 7956;
+                    readonly nodeType: "ParameterList";
+                    readonly parameters: readonly [{
+                        readonly constant: false;
+                        readonly id: 7955;
+                        readonly mutability: "mutable";
+                        readonly name: "";
+                        readonly nameLocation: "-1:-1:-1";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7966;
+                        readonly src: "5477:7:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "default";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_uint256";
+                            readonly typeString: "uint256";
+                        };
+                        readonly typeName: {
+                            readonly id: 7954;
+                            readonly name: "uint256";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "5477:7:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }];
+                    readonly src: "5476:9:44";
+                };
+                readonly scope: 7983;
+                readonly stateMutability: "view";
+                readonly virtual: false;
+                readonly visibility: "internal";
+            }, {
+                readonly id: 7982;
+                readonly nodeType: "FunctionDefinition";
+                readonly src: "5703:168:44";
+                readonly nodes: readonly [];
+                readonly body: {
+                    readonly id: 7981;
+                    readonly nodeType: "Block";
+                    readonly src: "5816:55:44";
+                    readonly nodes: readonly [];
+                    readonly statements: readonly [{
+                        readonly expression: {
+                            readonly arguments: readonly [{
+                                readonly arguments: readonly [{
+                                    readonly id: 7977;
+                                    readonly name: "this";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: -28;
+                                    readonly src: "5858:4:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeString: "contract ERC4626Base";
+                                    };
+                                }];
+                                readonly expression: {
+                                    readonly argumentTypes: readonly [{
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeString: "contract ERC4626Base";
+                                    }];
+                                    readonly id: 7976;
+                                    readonly isConstant: false;
+                                    readonly isLValue: false;
+                                    readonly isPure: true;
+                                    readonly lValueRequested: false;
+                                    readonly nodeType: "ElementaryTypeNameExpression";
+                                    readonly src: "5850:7:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_type$_t_address_$";
+                                        readonly typeString: "type(address)";
+                                    };
+                                    readonly typeName: {
+                                        readonly id: 7975;
+                                        readonly name: "address";
+                                        readonly nodeType: "ElementaryTypeName";
+                                        readonly src: "5850:7:44";
+                                        readonly typeDescriptions: {};
+                                    };
+                                };
+                                readonly id: 7978;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly kind: "typeConversion";
+                                readonly lValueRequested: false;
+                                readonly nameLocations: readonly [];
+                                readonly names: readonly [];
+                                readonly nodeType: "FunctionCall";
+                                readonly src: "5850:13:44";
+                                readonly tryCall: false;
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                };
+                            }];
+                            readonly expression: {
+                                readonly argumentTypes: readonly [{
+                                    readonly typeIdentifier: "t_address";
+                                    readonly typeString: "address";
+                                }];
+                                readonly expression: {
+                                    readonly id: 7973;
+                                    readonly name: "_vault";
+                                    readonly nodeType: "Identifier";
+                                    readonly overloadedDeclarations: readonly [];
+                                    readonly referencedDeclaration: 7753;
+                                    readonly src: "5833:6:44";
+                                    readonly typeDescriptions: {
+                                        readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                        readonly typeString: "contract IERC4626";
+                                    };
+                                };
+                                readonly id: 7974;
+                                readonly isConstant: false;
+                                readonly isLValue: false;
+                                readonly isPure: false;
+                                readonly lValueRequested: false;
+                                readonly memberLocation: "5840:9:44";
+                                readonly memberName: "balanceOf";
+                                readonly nodeType: "MemberAccess";
+                                readonly referencedDeclaration: 10318;
+                                readonly src: "5833:16:44";
+                                readonly typeDescriptions: {
+                                    readonly typeIdentifier: "t_function_external_view$_t_address_$returns$_t_uint256_$";
+                                    readonly typeString: "function (address) view external returns (uint256)";
+                                };
+                            };
+                            readonly id: 7979;
+                            readonly isConstant: false;
+                            readonly isLValue: false;
+                            readonly isPure: false;
+                            readonly kind: "functionCall";
+                            readonly lValueRequested: false;
+                            readonly nameLocations: readonly [];
+                            readonly names: readonly [];
+                            readonly nodeType: "FunctionCall";
+                            readonly src: "5833:31:44";
+                            readonly tryCall: false;
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                        };
+                        readonly functionReturnParameters: 7972;
+                        readonly id: 7980;
+                        readonly nodeType: "Return";
+                        readonly src: "5826:38:44";
+                    }];
+                };
+                readonly baseFunctions: readonly [13448];
+                readonly documentation: {
+                    readonly id: 7967;
+                    readonly nodeType: "StructuredDocumentation";
+                    readonly src: "5551:147:44";
+                    readonly text: "@dev Gets the total amount of shares held by the pool in the yield\n      source.\n @return shareAmount The total amount of shares.";
+                };
+                readonly implemented: true;
+                readonly kind: "function";
+                readonly modifiers: readonly [];
+                readonly name: "_totalShares";
+                readonly nameLocation: "5712:12:44";
+                readonly overrides: {
+                    readonly id: 7969;
+                    readonly nodeType: "OverrideSpecifier";
+                    readonly overrides: readonly [];
+                    readonly src: "5765:8:44";
+                };
+                readonly parameters: {
+                    readonly id: 7968;
+                    readonly nodeType: "ParameterList";
+                    readonly parameters: readonly [];
+                    readonly src: "5724:2:44";
+                };
+                readonly returnParameters: {
+                    readonly id: 7972;
+                    readonly nodeType: "ParameterList";
+                    readonly parameters: readonly [{
+                        readonly constant: false;
+                        readonly id: 7971;
+                        readonly mutability: "mutable";
+                        readonly name: "shareAmount";
+                        readonly nameLocation: "5799:11:44";
+                        readonly nodeType: "VariableDeclaration";
+                        readonly scope: 7982;
+                        readonly src: "5791:19:44";
+                        readonly stateVariable: false;
+                        readonly storageLocation: "default";
+                        readonly typeDescriptions: {
+                            readonly typeIdentifier: "t_uint256";
+                            readonly typeString: "uint256";
+                        };
+                        readonly typeName: {
+                            readonly id: 7970;
+                            readonly name: "uint256";
+                            readonly nodeType: "ElementaryTypeName";
+                            readonly src: "5791:7:44";
+                            readonly typeDescriptions: {
+                                readonly typeIdentifier: "t_uint256";
+                                readonly typeString: "uint256";
+                            };
+                        };
+                        readonly visibility: "internal";
+                    }];
+                    readonly src: "5790:21:44";
+                };
+                readonly scope: 7983;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
@@ -3836,36 +4246,36 @@ export declare const ERC4626Base: {
             readonly abstract: true;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 5598;
+                    readonly id: 7741;
                     readonly name: "HyperdriveBase";
-                    readonly nameLocations: readonly ["1104:14:23"];
+                    readonly nameLocations: readonly ["1104:14:44"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 9917;
-                    readonly src: "1104:14:23";
+                    readonly referencedDeclaration: 14333;
+                    readonly src: "1104:14:44";
                 };
-                readonly id: 5599;
+                readonly id: 7742;
                 readonly nodeType: "InheritanceSpecifier";
-                readonly src: "1104:14:23";
+                readonly src: "1104:14:44";
             }];
             readonly canonicalName: "ERC4626Base";
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly documentation: {
-                readonly id: 5597;
+                readonly id: 7740;
                 readonly nodeType: "StructuredDocumentation";
-                readonly src: "541:530:23";
+                readonly src: "541:530:44";
                 readonly text: "@author DELV\n @title ERC4626Base\n @notice The base contract for the ERC4626 Hyperdrive implementation.\n @dev This Hyperdrive implementation is designed to work with standard\n      ERC4626 vaults. Non-standard implementations may not work correctly\n      and should be carefully checked.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [5811, 9917, 13842, 67058, 8062, 8623];
+            readonly linearizedBaseContracts: readonly [7983, 14333, 18319, 71995, 11551, 12117];
             readonly name: "ERC4626Base";
-            readonly nameLocation: "1089:11:23";
-            readonly scope: 5812;
-            readonly usedErrors: readonly [67003];
-            readonly usedEvents: readonly [7909, 7924, 7941, 7954, 7971, 7990, 8007, 8024, 8037, 8044, 8049, 8056, 8061, 8604, 8613, 8622];
+            readonly nameLocation: "1089:11:44";
+            readonly scope: 7984;
+            readonly usedErrors: readonly [71940];
+            readonly usedEvents: readonly [11371, 11386, 11405, 11420, 11437, 11456, 11475, 11496, 11509, 11516, 11521, 11526, 11531, 11538, 11543, 11550, 12098, 12107, 12116];
         }];
         readonly license: "Apache-2.0";
     };
-    readonly id: 23;
+    readonly id: 44;
 };
 //# sourceMappingURL=ERC4626Base.d.ts.map

@@ -142,19 +142,19 @@ export const IMultiTokenMetadata = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IMultiTokenMetadata.sol",
-        "id": 8639,
+        "id": 12133,
         "exportedSymbols": {
             "IMultiTokenMetadata": [
-                8638
+                12132
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "39:491:58",
+        "src": "39:491:101",
         "nodes": [
             {
-                "id": 8625,
+                "id": 12119,
                 "nodeType": "PragmaDirective",
-                "src": "39:23:58",
+                "src": "39:23:101",
                 "nodes": [],
                 "literals": [
                     "solidity",
@@ -163,19 +163,19 @@ export const IMultiTokenMetadata = {
                 ]
             },
             {
-                "id": 8638,
+                "id": 12132,
                 "nodeType": "ContractDefinition",
-                "src": "64:465:58",
+                "src": "64:465:101",
                 "nodes": [
                     {
-                        "id": 8631,
+                        "id": 12125,
                         "nodeType": "FunctionDefinition",
-                        "src": "272:59:58",
+                        "src": "272:59:101",
                         "nodes": [],
                         "documentation": {
-                            "id": 8626,
+                            "id": 12120,
                             "nodeType": "StructuredDocumentation",
-                            "src": "100:124:58",
+                            "src": "100:124:101",
                             "text": "@notice Gets the EIP712 permit typehash of the MultiToken.\n @return The EIP712 permit typehash of the MultiToken."
                         },
                         "functionSelector": "30adf81f",
@@ -183,26 +183,26 @@ export const IMultiTokenMetadata = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "PERMIT_TYPEHASH",
-                        "nameLocation": "281:15:58",
+                        "nameLocation": "281:15:101",
                         "parameters": {
-                            "id": 8627,
+                            "id": 12121,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "296:2:58"
+                            "src": "296:2:101"
                         },
                         "returnParameters": {
-                            "id": 8630,
+                            "id": 12124,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8629,
+                                    "id": 12123,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8631,
-                                    "src": "322:7:58",
+                                    "scope": 12125,
+                                    "src": "322:7:101",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -210,10 +210,10 @@ export const IMultiTokenMetadata = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 8628,
+                                        "id": 12122,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "322:7:58",
+                                        "src": "322:7:101",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -222,22 +222,22 @@ export const IMultiTokenMetadata = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "321:9:58"
+                            "src": "321:9:101"
                         },
-                        "scope": 8638,
+                        "scope": 12132,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 8637,
+                        "id": 12131,
                         "nodeType": "FunctionDefinition",
-                        "src": "468:59:58",
+                        "src": "468:59:101",
                         "nodes": [],
                         "documentation": {
-                            "id": 8632,
+                            "id": 12126,
                             "nodeType": "StructuredDocumentation",
-                            "src": "337:126:58",
+                            "src": "337:126:101",
                             "text": "@notice Gets the EIP712 domain separator of the MultiToken.\n @return The EIP712 domain separator of the MultiToken."
                         },
                         "functionSelector": "f698da25",
@@ -245,26 +245,26 @@ export const IMultiTokenMetadata = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "domainSeparator",
-                        "nameLocation": "477:15:58",
+                        "nameLocation": "477:15:101",
                         "parameters": {
-                            "id": 8633,
+                            "id": 12127,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "492:2:58"
+                            "src": "492:2:101"
                         },
                         "returnParameters": {
-                            "id": 8636,
+                            "id": 12130,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8635,
+                                    "id": 12129,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8637,
-                                    "src": "518:7:58",
+                                    "scope": 12131,
+                                    "src": "518:7:101",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -272,10 +272,10 @@ export const IMultiTokenMetadata = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 8634,
+                                        "id": 12128,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "518:7:58",
+                                        "src": "518:7:101",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -284,9 +284,9 @@ export const IMultiTokenMetadata = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "517:9:58"
+                            "src": "517:9:101"
                         },
-                        "scope": 8638,
+                        "scope": 12132,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
@@ -299,16 +299,16 @@ export const IMultiTokenMetadata = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    8638
+                    12132
                 ],
                 "name": "IMultiTokenMetadata",
-                "nameLocation": "74:19:58",
-                "scope": 8639,
+                "nameLocation": "74:19:101",
+                "scope": 12133,
                 "usedErrors": [],
                 "usedEvents": []
             }
         ],
         "license": "Apache-2.0"
     },
-    "id": 58
+    "id": 101
 };
