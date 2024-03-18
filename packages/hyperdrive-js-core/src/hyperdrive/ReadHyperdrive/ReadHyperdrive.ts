@@ -32,7 +32,7 @@ import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { hyperwasm } from "src/hyperwasm";
-import { getBlockOrThrow } from "src/evm-client/getBlockOrThrow";
+import { getBlockOrThrow } from "src/network/getBlockOrThrow";
 import { convertSharesToBase } from "src/hyperdrive/utils/convertSharesToBase";
 import { convertBaseToShares } from "src/hyperdrive/utils/convertBaseToShares";
 import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
