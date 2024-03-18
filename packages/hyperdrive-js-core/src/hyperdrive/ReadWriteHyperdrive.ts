@@ -2,11 +2,11 @@ import { IReadWriteHyperdriveContract } from "src/hyperdrive/HyperdriveContract"
 import {
   IReadHyperdrive,
   ReadHyperdrive,
-  ReadHyperdriveOptions,
 } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
 import { ContractWriteOptions } from "@delvtech/evm-client";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { ReturnType } from "src/base/ReturnType";
+import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
 
 export interface IReadWriteHyperdrive extends IReadHyperdrive {
   /**
@@ -195,20 +195,14 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
   ): Promise<`0x${string}`>;
 }
 
-export interface ReadWriteHyperdriveOptions extends ReadHyperdriveOptions {
-  contract: IReadWriteHyperdriveContract;
-}
+export interface ReadWriteHyperdriveOptions
+  extends ReadWriteContractModelOptions {}
 
 export class ReadWriteHyperdrive
   extends ReadHyperdrive
   implements IReadWriteHyperdrive
 {
-  protected readonly contract: IReadWriteHyperdriveContract;
-
-  constructor({ contract, network }: ReadWriteHyperdriveOptions) {
-    super({ contract, network });
-    this.contract = contract;
-  }
+  protected declare contract: IReadWriteHyperdriveContract;
 
   async checkpoint({
     args: { time },
