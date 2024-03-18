@@ -18,6 +18,12 @@ div[data-rk] {
   scrollbar-gutter: stable;
 }
 
+.daisy-tab {
+  /* Adjust the Daisy Tabs component border to match the brighter border used in
+   * the app */
+  --tab-border-color: var(--fallback-nc, oklch(var(--nc) / 0.2));
+}
+
 @layer base {
   h1 {
     @apply font-chakraPetch text-h1;
