@@ -7,6 +7,7 @@ import {
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
+import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -39,8 +40,8 @@ export function YourBalanceWell({
   return (
     <Well elevation="flat">
       <div className="flex flex-col">
-        <p className="mb-1 text-sm text-neutral-content">Available Assets</p>
-        <div className="flex flex-col">
+        <p className="mb-2 text-sm text-neutral-content">Available Assets</p>
+        <div className="flex flex-col gap-2">
           <AvailableAsset token={baseToken} spender={hyperdrive.address} />
           <AvailableAsset token={sharesToken} spender={hyperdrive.address} />
         </div>
@@ -56,6 +57,7 @@ function AvailableAsset({
   token: TokenConfig<any>;
 }) {
   const { address: account } = useAccount();
+  const isEth = token.address === ETH_MAGIC_NUMBER;
   const tokenBalance = useTokenBalance({
     account: account,
     tokenAddress: token.address,
@@ -89,7 +91,7 @@ function AvailableAsset({
   });
   return (
     <div className="flex whitespace-nowrap ">
-      <div className="flex items-center gap-1 font-bold">
+      <div className="flex items-center gap-1 text-h5 font-bold">
         <img src={token.iconUrl} className="h-8 rounded-full  p-1" />
         {formatBalance({
           balance: tokenBalance?.value || 0n,
@@ -99,44 +101,46 @@ function AvailableAsset({
         {token.symbol}
       </div>
 
-      <div className="daisy-dropdown daisy-dropdown-end">
-        <div tabIndex={0} role="button" className="daisy-btn daisy-btn-sm">
-          <EllipsisVerticalIcon className="h-4" />
-        </div>
-        <ul
-          tabIndex={0}
-          className="daisy-menu daisy-dropdown-content z-[1] w-52 rounded-box bg-base-100 p-4 shadow"
-        >
-          <li className="daisy-menu-title flex-row justify-between text-xs text-neutral-content">
-            <span>Allowance</span>
-            <span className="font-normal">
-              {isUnlimited
-                ? "Unlimited"
-                : formatBalance({
-                    balance: allowance || 0n,
-                    decimals: token.decimals,
-                    places: 4,
-                  })}
-            </span>
-          </li>
-          <li>
-            <button
-              className="disabled:daisy-btn-disabled disabled:cursor-not-allowed disabled:text-neutral-500"
-              disabled={!allowance}
-              onClick={() => revokeAllowance?.()}
-            >
-              <span>Revoke Allowance</span>
-            </button>
-          </li>
-          {import.meta.env.DEV ? (
+      {isEth ? undefined : (
+        <div className="daisy-dropdown daisy-dropdown-end">
+          <div tabIndex={0} role="button" className="daisy-btn daisy-btn-sm">
+            <EllipsisVerticalIcon className="h-4" />
+          </div>
+          <ul
+            tabIndex={0}
+            className="daisy-menu daisy-dropdown-content z-[1] w-52 rounded-box bg-base-100 p-4 shadow"
+          >
+            <li className="daisy-menu-title flex-row justify-between text-xs text-neutral-content">
+              <span>Allowance</span>
+              <span className="font-normal">
+                {isUnlimited
+                  ? "Unlimited"
+                  : formatBalance({
+                      balance: allowance || 0n,
+                      decimals: token.decimals,
+                      places: 4,
+                    })}
+              </span>
+            </li>
             <li>
-              <button disabled={!mint} onClick={() => mint?.()}>
-                Mint
+              <button
+                className="disabled:daisy-btn-disabled disabled:cursor-not-allowed disabled:text-neutral-500"
+                disabled={!allowance}
+                onClick={() => revokeAllowance?.()}
+              >
+                <span>Revoke Allowance</span>
               </button>
             </li>
-          ) : undefined}
-        </ul>
-      </div>
+            {import.meta.env.DEV ? (
+              <li>
+                <button disabled={!mint} onClick={() => mint?.()}>
+                  Mint
+                </button>
+              </li>
+            ) : undefined}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
