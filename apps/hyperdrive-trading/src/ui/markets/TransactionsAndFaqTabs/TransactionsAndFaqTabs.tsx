@@ -4,8 +4,6 @@ import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { FAQEntries } from "src/ui/onboarding/FAQ/FAQ";
 
-type Tab = "Transactions" | "FAQ";
-
 export function TransactionAndFaqTabs({
   hyperdrive,
 }: {
@@ -18,7 +16,7 @@ export function TransactionAndFaqTabs({
         tabs={[
           {
             id: "Transactions",
-            label: "Transactions",
+            label: "All Transactions",
             content: <TransactionTable hyperdrive={hyperdrive} />,
             onClick: () => {},
           },
