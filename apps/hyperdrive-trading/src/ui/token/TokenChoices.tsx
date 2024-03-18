@@ -4,6 +4,12 @@ import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { Address } from "viem";
 
+export interface TokenChoice {
+  disabled?: boolean;
+  tokenConfig: TokenConfig<any>;
+  tokenBalance?: bigint;
+}
+
 export function TokenChoices({
   label,
   onTokenChange,
@@ -12,11 +18,7 @@ export function TokenChoices({
   vertical = false,
 }: {
   label: string;
-  tokens: {
-    disabled?: boolean;
-    tokenConfig: TokenConfig<any>;
-    tokenBalance?: bigint;
-  }[];
+  tokens: TokenChoice[];
   selectedTokenAddress: Address;
   onTokenChange: (tokenAddress: Address) => void;
   vertical?: boolean;

@@ -18,7 +18,7 @@ import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useCloseShort } from "src/ui/hyperdrive/shorts/hooks/useCloseShort";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import { TokenChoices } from "src/ui/token/TokenChoices";
+import { TokenChoice, TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
@@ -104,6 +104,11 @@ export function CloseShortForm({
       );
     },
   });
+  const withdrawTokenChoices: TokenChoice[] = [{ tokenConfig: sharesToken }];
+  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
+    // base token should be listed first if it's enabled
+    withdrawTokenChoices.unshift({ tokenConfig: baseToken });
+  }
 
   return (
     <TransactionView
@@ -129,21 +134,16 @@ export function CloseShortForm({
         />
       }
       setting={
-        <TokenChoices
-          label="Choose withdrawal asset"
-          tokens={[
-            {
-              tokenConfig: baseToken,
-              disabled:
-                !hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled,
-            },
-            {
-              tokenConfig: sharesToken,
-            },
-          ]}
-          selectedTokenAddress={activeWithdrawToken.address}
-          onTokenChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
-        />
+        withdrawTokenChoices.length > 1 ? (
+          <TokenChoices
+            label="Choose withdrawal asset"
+            tokens={withdrawTokenChoices}
+            selectedTokenAddress={activeWithdrawToken.address}
+            onTokenChange={(tokenAddress) =>
+              setActiveWithdrawToken(tokenAddress)
+            }
+          />
+        ) : undefined
       }
       transactionPreview={
         <LabelValue
@@ -165,7 +165,7 @@ export function CloseShortForm({
       disclaimer={
         !!amountAsBigInt && isAmountLargerThanPositionSize ? (
           <p className="text-center text-error">Insufficient balance</p>
-        ) : null
+        ) : undefined
       }
       actionButton={
         account ? (
