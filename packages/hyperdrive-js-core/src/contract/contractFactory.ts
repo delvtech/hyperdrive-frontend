@@ -19,6 +19,9 @@ export type ReadContractFactory = <TAbi extends Abi = Abi>(
   options: ContractFactoryOptions<TAbi>,
 ) => CachedReadContract<TAbi>;
 
+/**
+ * A factory function that creates a `CachedReadWriteContract` instance.
+ */
 export type ReadWriteContractFactory = <TAbi extends Abi = Abi>(
   options: ContractFactoryOptions<TAbi>,
 ) => CachedReadWriteContract<TAbi>;
