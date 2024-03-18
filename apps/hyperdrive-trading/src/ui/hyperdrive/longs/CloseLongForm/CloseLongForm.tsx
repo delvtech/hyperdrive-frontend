@@ -18,7 +18,7 @@ import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import { TokenChoices } from "src/ui/token/TokenChoices";
+import { TokenChoice, TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits, parseUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
@@ -105,6 +105,11 @@ export function CloseLongForm({
     },
   });
 
+  const withdrawTokenChoices: TokenChoice[] = [{ tokenConfig: sharesToken }];
+  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
+    // base token should be listed first if it's enabled
+    withdrawTokenChoices.unshift({ tokenConfig: baseToken });
+  }
   return (
     <TransactionView
       disclaimer={
@@ -141,21 +146,16 @@ export function CloseLongForm({
         />
       }
       setting={
-        <TokenChoices
-          label="Choose withdrawal asset"
-          tokens={[
-            {
-              tokenConfig: baseToken,
-              disabled:
-                !hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled,
-            },
-            {
-              tokenConfig: sharesToken,
-            },
-          ]}
-          selectedTokenAddress={activeWithdrawToken.address}
-          onTokenChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
-        />
+        withdrawTokenChoices.length > 1 ? (
+          <TokenChoices
+            label="Choose withdrawal asset"
+            tokens={withdrawTokenChoices}
+            selectedTokenAddress={activeWithdrawToken.address}
+            onTokenChange={(tokenAddress) =>
+              setActiveWithdrawToken(tokenAddress)
+            }
+          />
+        ) : null
       }
       transactionPreview={
         <LabelValue
