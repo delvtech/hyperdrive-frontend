@@ -83,6 +83,7 @@ export const cloudChainAppConfig: AppConfig = {
         minimumTransactionAmount: 1000000000000000n,
         positionDuration: 31536000n,
         checkpointDuration: 86400n,
+        sweepCollector: "0x0000000000000000000000000000000000000000",
         timeStretch: 44463125629060298n,
         governance: "0x6043bF4ec8834F918242BaCA0F1F3805F2a2988D",
         feeCollector: "0x6043bF4ec8834F918242BaCA0F1F3805F2a2988D",
@@ -106,6 +107,7 @@ export const cloudChainAppConfig: AppConfig = {
       poolConfig: {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
         linkerFactory: "0x8d4928532f2DD0E2f31F447d7902197E54DB2302",
+        sweepCollector: "0x0000000000000000000000000000000000000000",
         linkerCodeHash:
           "0xb36944ca91b8aa82a7379308023324088bc57f58f9b278807384b8fa6e9621ff",
         initialVaultSharePrice: 1000000029965753424n,
