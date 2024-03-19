@@ -34,7 +34,7 @@ function formatClosedLongMobileColumnData(
 ) {
   return [
     {
-      name: "Matures on",
+      name: "Matures On",
       value: (
         <span>
           {new Date(Number(closedLong.maturity * 1000n)).toLocaleDateString()}
@@ -54,7 +54,7 @@ function formatClosedLongMobileColumnData(
       ),
     },
     {
-      name: `Value received (${baseToken.symbol})`,
+      name: `Value Received (${baseToken.symbol})`,
       value: (
         <BaseAmountReceivedCell
           hyperdrive={hyperdrive}
@@ -63,7 +63,7 @@ function formatClosedLongMobileColumnData(
       ),
     },
     {
-      name: "Closed on",
+      name: "Closed On",
       value: (
         <span>
           {new Date(
@@ -127,7 +127,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   });
   return [
     columnHelper.display({
-      header: `Matures on`,
+      header: `Matures On`,
       cell: ({ row }) => {
         const maturity = new Date(Number(row.original.maturity * 1000n));
         return <span>{maturity.toLocaleDateString()}</span>;
@@ -150,7 +150,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
     }),
     columnHelper.display({
       id: "baseReceived",
-      header: `Value received (${baseToken.symbol})`,
+      header: `Value Received (${baseToken.symbol})`,
       cell: ({ row }) => {
         return (
           <BaseAmountReceivedCell
@@ -161,7 +161,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       },
     }),
     columnHelper.accessor("closedTimestamp", {
-      header: `Closed on`,
+      header: `Closed On`,
       cell: ({ row }) => {
         return new Date(
           Number(row.original.closedTimestamp * 1000n),

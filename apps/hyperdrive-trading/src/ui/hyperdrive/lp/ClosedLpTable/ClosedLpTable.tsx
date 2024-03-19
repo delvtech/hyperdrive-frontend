@@ -47,13 +47,13 @@ function formatClosedLpMobileColumnData(
 
   return [
     {
-      name: "Closed on",
+      name: "Closed On",
       value: new Date(
         Number(closedLpShares.closedTimestamp * 1000n),
       ).toLocaleDateString(),
     },
     {
-      name: "Shares closed",
+      name: "Shares Closed",
       value: formatBalance({
         balance: shares,
         decimals: baseToken.decimals,
@@ -69,7 +69,7 @@ function formatClosedLpMobileColumnData(
       }),
     },
     {
-      name: "Withdrawal shares",
+      name: "Withdrawal Shares",
       value: isWithdrawalShare
         ? "N/A"
         : formatBalance({
@@ -140,7 +140,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       },
     }),
     columnHelper.display({
-      header: "Shares closed",
+      header: "Shares Closed",
       cell: ({ row }) => {
         const isWithdrawalShare = row.original.redeemedTimestamp;
         const shares = isWithdrawalShare
@@ -158,7 +158,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       },
     }),
     columnHelper.accessor("baseAmount", {
-      header: `Value received (${baseToken.symbol})`,
+      header: `Value Received (${baseToken.symbol})`,
       cell: ({ getValue }) => {
         const baseAmount = getValue();
         return (
@@ -173,7 +173,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       },
     }),
     columnHelper.display({
-      header: "Withdrawal shares received",
+      header: "Withdrawal Shares Received",
       cell: ({ row }) => {
         const isWithdrawalShare = row.original.redeemedTimestamp;
         const withdrawalShareAmount = row.original.withdrawalShareAmount;
@@ -192,7 +192,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       },
     }),
     columnHelper.display({
-      header: "Closed on",
+      header: "Closed On",
       cell: ({ row }) => {
         const closedTimestamp =
           row.original.closedTimestamp || row.original.redeemedTimestamp;
@@ -243,7 +243,7 @@ export function ClosedLpTable({
       <div className="my-28">
         <NonIdealState
           heading="No wallet connected"
-          text="Connect your wallet to view your LP positions."
+          text="Connect your wallet to view your LP positions"
           action={<ConnectWalletButton />}
         />
       </div>
@@ -267,7 +267,10 @@ export function ClosedLpTable({
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th className="sticky top-0 bg-base-100" key={header.id}>
+                <th
+                  className="sticky top-0 bg-base-100 font-normal text-gray-400"
+                  key={header.id}
+                >
                   {header.isPlaceholder
                     ? null
                     : flexRender(

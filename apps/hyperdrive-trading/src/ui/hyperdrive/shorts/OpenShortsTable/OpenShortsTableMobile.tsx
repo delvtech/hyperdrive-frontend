@@ -170,7 +170,7 @@ function formatOpenShortMobileColumnData(
   });
   return [
     {
-      name: "Matures on",
+      name: "Matures On",
       value: <MaturesOnCell maturity={openShort.maturity} />,
     },
     {
@@ -182,7 +182,7 @@ function formatOpenShortMobileColumnData(
       }),
     },
     {
-      name: `Value paid (${baseToken.symbol})`,
+      name: `Value Paid (${baseToken.symbol})`,
       value: formatBalance({
         balance: openShort.baseAmountPaid,
         decimals: baseToken.decimals,
@@ -194,7 +194,7 @@ function formatOpenShortMobileColumnData(
       value: <AccruedYieldCell hyperdrive={hyperdrive} openShort={openShort} />,
     },
     {
-      name: `Current value`,
+      name: `Current Value`,
       value: <CurrentValueCell hyperdrive={hyperdrive} openShort={openShort} />,
     },
   ];

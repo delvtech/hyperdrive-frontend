@@ -166,7 +166,7 @@ function getColumns({
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",
-      header: `Matures on`,
+      header: `Matures On`,
       cell: ({ row }) => {
         return <MaturesOnCell maturity={row.original.maturity} />;
       },
@@ -188,7 +188,7 @@ function getColumns({
     }),
     columnHelper.accessor("baseAmountPaid", {
       id: "valuePaid",
-      header: `Value paid (${baseToken.symbol})`,
+      header: `Value Paid (${baseToken.symbol})`,
       cell: (baseAmountPaid) => {
         const amountPaid = baseAmountPaid.getValue();
         return formatBalance({
@@ -200,7 +200,7 @@ function getColumns({
     }),
     columnHelper.accessor("assetId", {
       id: "fixedRate",
-      header: `Fixed rate (APR)`,
+      header: `Fixed Rate (APR)`,
       cell: ({ row }) => {
         return (
           <FixedRateCell
@@ -231,7 +231,7 @@ function getColumns({
     }),
     columnHelper.display({
       id: "value",
-      header: `Current value (${baseToken.symbol})`,
+      header: `Current Value (${baseToken.symbol})`,
       cell: ({ row }) => {
         return <CurrentValueCell hyperdrive={hyperdrive} row={row.original} />;
       },

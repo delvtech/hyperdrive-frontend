@@ -36,17 +36,17 @@ export default function Footer(): ReactElement {
           className="daisy-link-hover daisy-link"
           href="https://www.delv.tech/"
         >
-          About us
+          About Us
         </a>
       </nav>
       <nav>
         {/* TODO: Add links to legal pages */}
         <header className={footerTitleClassName}>Legal</header>
         <a className="daisy-link-hover daisy-link" href={termsOfUseUrl}>
-          Terms of use
+          Terms Of Use
         </a>
         <a className="daisy-link-hover daisy-link" href={privacyPolicyUrl}>
-          Privacy policy
+          Privacy Policy
         </a>
       </nav>
     </footer>

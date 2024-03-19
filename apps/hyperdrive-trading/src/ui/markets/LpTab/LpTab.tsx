@@ -38,7 +38,7 @@ export function LpTab({
       positions={
         <div className="flex flex-col items-center">
           <div className="flex w-full items-center justify-between px-4 py-8">
-            <h5 className="font-medium">LP position</h5>
+            <h5 className="font-medium">LP Position</h5>
             <div className="flex items-center gap-4">
               <AddLiquidityModalButton
                 modalId="add-lp"

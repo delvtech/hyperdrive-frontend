@@ -44,7 +44,7 @@ export function OpenLongModalButton({
           className="daisy-btn daisy-btn-primary rounded-full"
           onClick={() => showModal()}
         >
-          + Open a long
+          + Open a Long
         </button>
       )}
     </Modal>

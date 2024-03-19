@@ -35,7 +35,7 @@ function formatClosedShortMobileColumnData(
   });
   return [
     {
-      name: "Matures on",
+      name: "Matures On",
       value: new Date(
         Number(closedShort.maturity * 1000n),
       ).toLocaleDateString(),
@@ -49,7 +49,7 @@ function formatClosedShortMobileColumnData(
       }),
     },
     {
-      name: `Value received (${baseToken.symbol})`,
+      name: `Value Received (${baseToken.symbol})`,
       value: formatBalance({
         balance: closedShort.baseAmountReceived,
         decimals: baseToken.decimals,
@@ -57,7 +57,7 @@ function formatClosedShortMobileColumnData(
       }),
     },
     {
-      name: "Closed",
+      name: "Closed On",
       value: new Date(
         Number(closedShort.closedTimestamp * 1000n),
       ).toLocaleDateString(),
@@ -116,7 +116,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
 
   return [
     columnHelper.display({
-      header: `Matures on`,
+      header: `Matures On`,
       cell: ({ row }) => {
         const maturity = new Date(Number(row.original.maturity * 1000n));
         return <span>{maturity.toLocaleDateString()}</span>;
@@ -133,7 +133,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       },
     }),
     columnHelper.accessor("baseAmountReceived", {
-      header: `Value received (${baseToken.symbol})`,
+      header: `Value Received (${baseToken.symbol})`,
       cell: (baseAmountReceived) => {
         const amountReceived = baseAmountReceived.getValue();
         return (
@@ -148,7 +148,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       },
     }),
     columnHelper.accessor("closedTimestamp", {
-      header: `Closed`,
+      header: `Closed On`,
       cell: (closedTimestamp) => {
         return (
           <span>
@@ -185,7 +185,7 @@ export function ClosedShortsTable({
       <div className="my-28">
         <NonIdealState
           heading="No wallet connected"
-          text="Connect your wallet to view your Shorts."
+          text="Connect your wallet to view your Shorts"
           action={<ConnectWalletButton />}
         />
       </div>
