@@ -6,7 +6,6 @@ import {
   StEthHyperdriveAbi,
   stEthHyperdriveAbi,
 } from "src/hyperdrive/steth/abi";
-import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { ReadEth } from "src/token/eth/ReadEth";
 
 export interface ReadStEthHyperdriveOptions extends ReadContractModelOptions {
