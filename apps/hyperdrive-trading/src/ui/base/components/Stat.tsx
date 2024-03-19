@@ -1,4 +1,5 @@
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 
 interface StatProps {
@@ -20,7 +21,15 @@ export function Stat({
       {description ? (
         <p
           data-tip={description}
-          className={`group daisy-tooltip cursor-help text-sm text-neutral-content before:text-start daisy-tooltip-${tooltipPosition}`}
+          className={classNames(
+            `group daisy-tooltip cursor-help text-sm text-neutral-content before:text-start`,
+            {
+              "daisy-tooltip-top": tooltipPosition === "top",
+              "daisy-tooltip-bottom": tooltipPosition === "bottom",
+              "daisy-tooltip-left": tooltipPosition === "left",
+              "daisy-tooltip-right": tooltipPosition === "right",
+            },
+          )}
         >
           {label}
           <InformationCircleIcon className="group-hover:text-gray-500 ml-1 inline-block w-4 text-neutral-content opacity-0 transition duration-150 ease-in-out group-hover:opacity-100" />
