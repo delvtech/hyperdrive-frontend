@@ -239,9 +239,15 @@ function getColumns({
     columnHelper.display({
       header: "",
       id: "go-to-market",
-      cell: () => (
-        <button className="daisy-btn daisy-btn-md rounded-full">
-          Close long
+      cell: ({ row }) => (
+        <button
+          className="daisy-btn bg-gray-600 hover:bg-gray-700"
+          onClick={() => {
+            const modalId = `${row.original.assetId}`;
+            (window as any)[modalId].showModal();
+          }}
+        >
+          Close Long
         </button>
       ),
     }),

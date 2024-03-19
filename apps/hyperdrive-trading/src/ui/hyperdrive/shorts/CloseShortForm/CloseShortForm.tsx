@@ -180,7 +180,7 @@ export function CloseShortForm({
               closeShort?.();
             }}
           >
-            Close short
+            Close Short
           </button>
         ) : (
           <ConnectButton />
