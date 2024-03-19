@@ -345,7 +345,7 @@ export function TransactionTable({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky top-0 z-10 h-16 bg-base-100"
+                  className="sticky top-0 z-10 h-10 bg-base-100 text-sm"
                   key={header.id}
                 >
                   <div

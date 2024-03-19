@@ -11,7 +11,7 @@ export default function Footer(): ReactElement {
     <footer className="daisy-footer max-w-6xl p-10 text-base-content">
       <aside>
         <Link
-          to={"/"}
+          to="/"
           className="text-h6 inline-flex items-center gap-2 font-extrabold uppercase tracking-widest"
         >
           <HyperdriveLogo />
@@ -36,17 +36,17 @@ export default function Footer(): ReactElement {
           className="daisy-link-hover daisy-link"
           href="https://www.delv.tech/"
         >
-          About us
+          About Us
         </a>
       </nav>
       <nav>
         {/* TODO: Add links to legal pages */}
         <header className={footerTitleClassName}>Legal</header>
         <a className="daisy-link-hover daisy-link" href={termsOfUseUrl}>
-          Terms of use
+          Terms of Use
         </a>
         <a className="daisy-link-hover daisy-link" href={privacyPolicyUrl}>
-          Privacy policy
+          Privacy Policy
         </a>
       </nav>
     </footer>

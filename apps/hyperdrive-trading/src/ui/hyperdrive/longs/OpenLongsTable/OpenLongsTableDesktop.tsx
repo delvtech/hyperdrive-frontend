@@ -51,7 +51,7 @@ export function OpenLongsTableDesktop({
       <div className="my-28">
         <NonIdealState
           heading="No wallet connected"
-          text="Connect your wallet to view your Longs."
+          text="Connect your wallet to view your Longs"
           action={<ConnectWalletButton />}
         />
       </div>
@@ -91,7 +91,7 @@ export function OpenLongsTableDesktop({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky z-10 font-normal text-gray-400"
+                  className="sticky z-10 text-sm font-normal text-gray-400"
                   key={header.id}
                 >
                   <div
@@ -166,7 +166,7 @@ function getColumns({
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",
-      header: `Matures on`,
+      header: `Matures On`,
       cell: ({ row }) => {
         return <MaturesOnCell maturity={row.original.maturity} />;
       },
@@ -188,7 +188,7 @@ function getColumns({
     }),
     columnHelper.accessor("baseAmountPaid", {
       id: "valuePaid",
-      header: `Value paid (${baseToken.symbol})`,
+      header: `Value Paid (${baseToken.symbol})`,
       cell: (baseAmountPaid) => {
         const amountPaid = baseAmountPaid.getValue();
         return formatBalance({
@@ -200,7 +200,7 @@ function getColumns({
     }),
     columnHelper.accessor("assetId", {
       id: "fixedRate",
-      header: `Fixed rate (APR)`,
+      header: `Fixed Rate (APR)`,
       cell: ({ row }) => {
         return (
           <FixedRateCell
@@ -231,7 +231,7 @@ function getColumns({
     }),
     columnHelper.display({
       id: "value",
-      header: `Current value (${baseToken.symbol})`,
+      header: `Current Value (${baseToken.symbol})`,
       cell: ({ row }) => {
         return <CurrentValueCell hyperdrive={hyperdrive} row={row.original} />;
       },

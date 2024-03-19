@@ -63,7 +63,7 @@ export function OpenShortsTableDesktop({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky z-10 font-normal text-gray-400"
+                  className="sticky z-10 text-sm font-normal text-gray-400"
                   key={header.id}
                 >
                   <div
@@ -130,7 +130,7 @@ function getColumns(
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",
-      header: `Matures on`,
+      header: `Matures On`,
       cell: ({ row }) => {
         return <MaturesOnCell maturity={row.original.maturity} />;
       },
@@ -147,7 +147,7 @@ function getColumns(
       },
     }),
     columnHelper.accessor("baseAmountPaid", {
-      header: `Value paid (${baseToken.symbol})`,
+      header: `Value Paid (${baseToken.symbol})`,
       cell: (baseAmountPaid) => {
         const amountPaid = baseAmountPaid.getValue();
         return formatBalance({
@@ -158,7 +158,7 @@ function getColumns(
       },
     }),
     columnHelper.display({
-      header: `Yield earned (${baseToken.symbol})`,
+      header: `Yield Earned (${baseToken.symbol})`,
       cell: ({ row }) => {
         return (
           <AccruedYieldCell hyperdrive={hyperdrive} openShort={row.original} />
@@ -166,7 +166,7 @@ function getColumns(
       },
     }),
     columnHelper.display({
-      header: `Current value (${baseToken.symbol})`,
+      header: `Current Value (${baseToken.symbol})`,
       cell: ({ row }) => {
         return (
           <CurrentValueCell hyperdrive={hyperdrive} openShort={row.original} />
