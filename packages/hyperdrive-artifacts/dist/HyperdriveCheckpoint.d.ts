@@ -1,523 +1,523 @@
 export declare const HyperdriveCheckpoint: {
     readonly abi: readonly [{
-        readonly inputs: readonly [];
-        readonly name: "ReentrancyGuardReentrantCall";
-        readonly type: "error";
-    }, {
-        readonly anonymous: false;
+        readonly type: "event";
+        readonly name: "AddLiquidity";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "provider";
             readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "lpAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "baseAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "lpSharePrice";
-            readonly type: "uint256";
-        }];
-        readonly name: "AddLiquidity";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
+            readonly name: "lpAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "baseAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "vaultShareAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
+            readonly name: "lpSharePrice";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "Approval";
+        readonly inputs: readonly [{
             readonly name: "owner";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "spender";
             readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "value";
-            readonly type: "uint256";
-        }];
-        readonly name: "Approval";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
+            readonly name: "value";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "ApprovalForAll";
+        readonly inputs: readonly [{
             readonly name: "account";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "operator";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
             readonly name: "approved";
             readonly type: "bool";
-        }];
-        readonly name: "ApprovalForAll";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "trader";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "destination";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "uint256";
-            readonly name: "assetId";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "maturityTime";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "baseAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
-            readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "CloseLong";
+        readonly inputs: readonly [{
+            readonly name: "trader";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
+            readonly name: "destination";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "assetId";
+            readonly type: "uint256";
+            readonly indexed: true;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "maturityTime";
+            readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "baseAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "vaultShareAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
             readonly name: "bondAmount";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "CloseLong";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "CloseShort";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "trader";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "destination";
             readonly type: "address";
-        }, {
             readonly indexed: true;
-            readonly internalType: "uint256";
+            readonly internalType: "address";
+        }, {
             readonly name: "assetId";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
+            readonly indexed: true;
             readonly internalType: "uint256";
+        }, {
             readonly name: "maturityTime";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
             readonly name: "basePayment";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "bondAmount";
             readonly type: "uint256";
-        }];
-        readonly name: "CloseShort";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "collector";
-            readonly type: "address";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "CollectGovernanceFee";
+        readonly inputs: readonly [{
+            readonly name: "collector";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
             readonly name: "fees";
             readonly type: "uint256";
-        }];
-        readonly name: "CollectGovernanceFee";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
+            readonly indexed: false;
             readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "CreateCheckpoint";
+        readonly inputs: readonly [{
             readonly name: "checkpointTime";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
+            readonly indexed: true;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "maturedShorts";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "maturedLongs";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "lpSharePrice";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "CreateCheckpoint";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "FeeCollectorUpdated";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "newFeeCollector";
             readonly type: "address";
-        }];
-        readonly name: "FeeCollectorUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "GovernanceUpdated";
+        readonly inputs: readonly [{
             readonly name: "newGovernance";
             readonly type: "address";
-        }];
-        readonly name: "GovernanceUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "Initialize";
+        readonly inputs: readonly [{
             readonly name: "provider";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
             readonly name: "lpAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
             readonly name: "apr";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "Initialize";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "OpenLong";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "trader";
             readonly type: "address";
-        }, {
             readonly indexed: true;
-            readonly internalType: "uint256";
+            readonly internalType: "address";
+        }, {
             readonly name: "assetId";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
+            readonly indexed: true;
             readonly internalType: "uint256";
+        }, {
             readonly name: "maturityTime";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
             readonly name: "bondAmount";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "OpenLong";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "OpenShort";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "trader";
             readonly type: "address";
-        }, {
             readonly indexed: true;
-            readonly internalType: "uint256";
+            readonly internalType: "address";
+        }, {
             readonly name: "assetId";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
+            readonly indexed: true;
             readonly internalType: "uint256";
+        }, {
             readonly name: "maturityTime";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
             readonly name: "baseProceeds";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "bondAmount";
             readonly type: "uint256";
-        }];
-        readonly name: "OpenShort";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: false;
-            readonly internalType: "bool";
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "PauseStatusUpdated";
+        readonly inputs: readonly [{
             readonly name: "isPaused";
             readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
         }];
-        readonly name: "PauseStatusUpdated";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "PauserUpdated";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "newPauser";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
             readonly name: "status";
             readonly type: "bool";
-        }];
-        readonly name: "PauserUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "provider";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "destination";
-            readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "withdrawalShareAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "baseAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
-            readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
         }];
-        readonly name: "RedeemWithdrawalShares";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "RedeemWithdrawalShares";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "provider";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "destination";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
+            readonly name: "withdrawalShareAmount";
+            readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "baseAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "vaultShareAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "RemoveLiquidity";
+        readonly inputs: readonly [{
+            readonly name: "provider";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "destination";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
             readonly name: "lpAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
-            readonly internalType: "bool";
+            readonly internalType: "uint256";
+        }, {
             readonly name: "asBase";
             readonly type: "bool";
-        }, {
             readonly indexed: false;
-            readonly internalType: "uint256";
+            readonly internalType: "bool";
+        }, {
             readonly name: "withdrawalShareAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "lpSharePrice";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "RemoveLiquidity";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "Sweep";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "collector";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "target";
             readonly type: "address";
-        }];
-        readonly name: "Sweep";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "SweepCollectorUpdated";
+        readonly inputs: readonly [{
             readonly name: "newSweepCollector";
             readonly type: "address";
-        }];
-        readonly name: "SweepCollectorUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "TransferSingle";
+        readonly inputs: readonly [{
             readonly name: "operator";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "from";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "to";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
             readonly name: "id";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "value";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "TransferSingle";
-        readonly type: "event";
+        readonly anonymous: false;
+    }, {
+        readonly type: "error";
+        readonly name: "ReentrancyGuardReentrantCall";
+        readonly inputs: readonly [];
     }];
     readonly bytecode: {
         readonly object: "0x";
@@ -1213,45 +1213,45 @@ export declare const HyperdriveCheckpoint: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/internal/HyperdriveCheckpoint.sol";
-        readonly id: 14798;
+        readonly id: 14846;
         readonly exportedSymbols: {
-            readonly AssetId: readonly [18594];
-            readonly FixedPointMath: readonly [19394];
-            readonly HyperdriveBase: readonly [14333];
-            readonly HyperdriveCheckpoint: readonly [14797];
-            readonly HyperdriveLong: readonly [16633];
-            readonly HyperdriveMath: readonly [20142];
-            readonly HyperdriveShort: readonly [18103];
-            readonly IHyperdrive: readonly [11028];
-            readonly IHyperdriveEvents: readonly [11551];
-            readonly LPMath: readonly [22086];
-            readonly SafeCast: readonly [22265];
+            readonly AssetId: readonly [18642];
+            readonly FixedPointMath: readonly [19442];
+            readonly HyperdriveBase: readonly [14381];
+            readonly HyperdriveCheckpoint: readonly [14845];
+            readonly HyperdriveLong: readonly [16681];
+            readonly HyperdriveMath: readonly [20190];
+            readonly HyperdriveShort: readonly [18151];
+            readonly IHyperdrive: readonly [11076];
+            readonly IHyperdriveEvents: readonly [11599];
+            readonly LPMath: readonly [22134];
+            readonly SafeCast: readonly [22313];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:13449:115";
         readonly nodes: readonly [{
-            readonly id: 14335;
+            readonly id: 14383;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:115";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 14337;
+            readonly id: 14385;
             readonly nodeType: "ImportDirective";
             readonly src: "64:60:115";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
             readonly file: "../interfaces/IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 14798;
-            readonly sourceUnit: 11029;
+            readonly scope: 14846;
+            readonly sourceUnit: 11077;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 14336;
+                    readonly id: 14384;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11028;
+                    readonly referencedDeclaration: 11076;
                     readonly src: "73:11:115";
                     readonly typeDescriptions: {};
                 };
@@ -1259,22 +1259,22 @@ export declare const HyperdriveCheckpoint: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 14339;
+            readonly id: 14387;
             readonly nodeType: "ImportDirective";
             readonly src: "125:72:115";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdriveEvents.sol";
             readonly file: "../interfaces/IHyperdriveEvents.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 14798;
-            readonly sourceUnit: 11552;
+            readonly scope: 14846;
+            readonly sourceUnit: 11600;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 14338;
+                    readonly id: 14386;
                     readonly name: "IHyperdriveEvents";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11551;
+                    readonly referencedDeclaration: 11599;
                     readonly src: "134:17:115";
                     readonly typeDescriptions: {};
                 };
@@ -1282,22 +1282,22 @@ export declare const HyperdriveCheckpoint: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 14341;
+            readonly id: 14389;
             readonly nodeType: "ImportDirective";
             readonly src: "198:51:115";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/AssetId.sol";
             readonly file: "../libraries/AssetId.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 14798;
-            readonly sourceUnit: 18595;
+            readonly scope: 14846;
+            readonly sourceUnit: 18643;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 14340;
+                    readonly id: 14388;
                     readonly name: "AssetId";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 18594;
+                    readonly referencedDeclaration: 18642;
                     readonly src: "207:7:115";
                     readonly typeDescriptions: {};
                 };
@@ -1305,22 +1305,22 @@ export declare const HyperdriveCheckpoint: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 14343;
+            readonly id: 14391;
             readonly nodeType: "ImportDirective";
             readonly src: "250:65:115";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/FixedPointMath.sol";
             readonly file: "../libraries/FixedPointMath.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 14798;
-            readonly sourceUnit: 19395;
+            readonly scope: 14846;
+            readonly sourceUnit: 19443;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 14342;
+                    readonly id: 14390;
                     readonly name: "FixedPointMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 19394;
+                    readonly referencedDeclaration: 19442;
                     readonly src: "259:14:115";
                     readonly typeDescriptions: {};
                 };
@@ -1328,22 +1328,22 @@ export declare const HyperdriveCheckpoint: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 14345;
+            readonly id: 14393;
             readonly nodeType: "ImportDirective";
             readonly src: "316:65:115";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/HyperdriveMath.sol";
             readonly file: "../libraries/HyperdriveMath.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 14798;
-            readonly sourceUnit: 20143;
+            readonly scope: 14846;
+            readonly sourceUnit: 20191;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 14344;
+                    readonly id: 14392;
                     readonly name: "HyperdriveMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 20142;
+                    readonly referencedDeclaration: 20190;
                     readonly src: "325:14:115";
                     readonly typeDescriptions: {};
                 };
@@ -1351,22 +1351,22 @@ export declare const HyperdriveCheckpoint: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 14347;
+            readonly id: 14395;
             readonly nodeType: "ImportDirective";
             readonly src: "382:49:115";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/LPMath.sol";
             readonly file: "../libraries/LPMath.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 14798;
-            readonly sourceUnit: 22087;
+            readonly scope: 14846;
+            readonly sourceUnit: 22135;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 14346;
+                    readonly id: 14394;
                     readonly name: "LPMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 22086;
+                    readonly referencedDeclaration: 22134;
                     readonly src: "391:6:115";
                     readonly typeDescriptions: {};
                 };
@@ -1374,22 +1374,22 @@ export declare const HyperdriveCheckpoint: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 14349;
+            readonly id: 14397;
             readonly nodeType: "ImportDirective";
             readonly src: "432:53:115";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/SafeCast.sol";
             readonly file: "../libraries/SafeCast.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 14798;
-            readonly sourceUnit: 22266;
+            readonly scope: 14846;
+            readonly sourceUnit: 22314;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 14348;
+                    readonly id: 14396;
                     readonly name: "SafeCast";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 22265;
+                    readonly referencedDeclaration: 22313;
                     readonly src: "441:8:115";
                     readonly typeDescriptions: {};
                 };
@@ -1397,22 +1397,22 @@ export declare const HyperdriveCheckpoint: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 14351;
+            readonly id: 14399;
             readonly nodeType: "ImportDirective";
             readonly src: "486:54:115";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/internal/HyperdriveBase.sol";
             readonly file: "./HyperdriveBase.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 14798;
-            readonly sourceUnit: 14334;
+            readonly scope: 14846;
+            readonly sourceUnit: 14382;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 14350;
+                    readonly id: 14398;
                     readonly name: "HyperdriveBase";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 14333;
+                    readonly referencedDeclaration: 14381;
                     readonly src: "495:14:115";
                     readonly typeDescriptions: {};
                 };
@@ -1420,22 +1420,22 @@ export declare const HyperdriveCheckpoint: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 14353;
+            readonly id: 14401;
             readonly nodeType: "ImportDirective";
             readonly src: "541:54:115";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/internal/HyperdriveLong.sol";
             readonly file: "./HyperdriveLong.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 14798;
-            readonly sourceUnit: 16634;
+            readonly scope: 14846;
+            readonly sourceUnit: 16682;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 14352;
+                    readonly id: 14400;
                     readonly name: "HyperdriveLong";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 16633;
+                    readonly referencedDeclaration: 16681;
                     readonly src: "550:14:115";
                     readonly typeDescriptions: {};
                 };
@@ -1443,22 +1443,22 @@ export declare const HyperdriveCheckpoint: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 14355;
+            readonly id: 14403;
             readonly nodeType: "ImportDirective";
             readonly src: "596:56:115";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/internal/HyperdriveShort.sol";
             readonly file: "./HyperdriveShort.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 14798;
-            readonly sourceUnit: 18104;
+            readonly scope: 14846;
+            readonly sourceUnit: 18152;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 14354;
+                    readonly id: 14402;
                     readonly name: "HyperdriveShort";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 18103;
+                    readonly referencedDeclaration: 18151;
                     readonly src: "605:15:115";
                     readonly typeDescriptions: {};
                 };
@@ -1466,25 +1466,25 @@ export declare const HyperdriveCheckpoint: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 14797;
+            readonly id: 14845;
             readonly nodeType: "ContractDefinition";
             readonly src: "960:12527:115";
             readonly nodes: readonly [{
-                readonly id: 14367;
+                readonly id: 14415;
                 readonly nodeType: "UsingForDirective";
                 readonly src: "1091:33:115";
                 readonly nodes: readonly [];
                 readonly global: false;
                 readonly libraryName: {
-                    readonly id: 14365;
+                    readonly id: 14413;
                     readonly name: "FixedPointMath";
                     readonly nameLocations: readonly ["1097:14:115"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 19394;
+                    readonly referencedDeclaration: 19442;
                     readonly src: "1097:14:115";
                 };
                 readonly typeName: {
-                    readonly id: 14366;
+                    readonly id: 14414;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1116:7:115";
@@ -1494,21 +1494,21 @@ export declare const HyperdriveCheckpoint: {
                     };
                 };
             }, {
-                readonly id: 14370;
+                readonly id: 14418;
                 readonly nodeType: "UsingForDirective";
                 readonly src: "1129:32:115";
                 readonly nodes: readonly [];
                 readonly global: false;
                 readonly libraryName: {
-                    readonly id: 14368;
+                    readonly id: 14416;
                     readonly name: "FixedPointMath";
                     readonly nameLocations: readonly ["1135:14:115"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 19394;
+                    readonly referencedDeclaration: 19442;
                     readonly src: "1135:14:115";
                 };
                 readonly typeName: {
-                    readonly id: 14369;
+                    readonly id: 14417;
                     readonly name: "int256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1154:6:115";
@@ -1518,21 +1518,21 @@ export declare const HyperdriveCheckpoint: {
                     };
                 };
             }, {
-                readonly id: 14373;
+                readonly id: 14421;
                 readonly nodeType: "UsingForDirective";
                 readonly src: "1166:27:115";
                 readonly nodes: readonly [];
                 readonly global: false;
                 readonly libraryName: {
-                    readonly id: 14371;
+                    readonly id: 14419;
                     readonly name: "SafeCast";
                     readonly nameLocations: readonly ["1172:8:115"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 22265;
+                    readonly referencedDeclaration: 22313;
                     readonly src: "1172:8:115";
                 };
                 readonly typeName: {
-                    readonly id: 14372;
+                    readonly id: 14420;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1185:7:115";
@@ -1542,12 +1542,12 @@ export declare const HyperdriveCheckpoint: {
                     };
                 };
             }, {
-                readonly id: 14466;
+                readonly id: 14514;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1347:1644:115";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 14465;
+                    readonly id: 14513;
                     readonly nodeType: "Block";
                     readonly src: "1415:1576:115";
                     readonly nodes: readonly [];
@@ -1557,7 +1557,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeIdentifier: "t_uint128";
                                 readonly typeString: "uint128";
                             };
-                            readonly id: 14386;
+                            readonly id: 14434;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1565,24 +1565,24 @@ export declare const HyperdriveCheckpoint: {
                             readonly leftExpression: {
                                 readonly expression: {
                                     readonly baseExpression: {
-                                        readonly id: 14381;
+                                        readonly id: 14429;
                                         readonly name: "_checkpoints";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18170;
+                                        readonly referencedDeclaration: 18218;
                                         readonly src: "1494:12:115";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$10718_storage_$";
+                                            readonly typeIdentifier: "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$10766_storage_$";
                                             readonly typeString: "mapping(uint256 => struct IHyperdrive.Checkpoint storage ref)";
                                         };
                                     };
-                                    readonly id: 14383;
+                                    readonly id: 14431;
                                     readonly indexExpression: {
-                                        readonly id: 14382;
+                                        readonly id: 14430;
                                         readonly name: "_checkpointTime";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14376;
+                                        readonly referencedDeclaration: 14424;
                                         readonly src: "1507:15:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -1596,11 +1596,11 @@ export declare const HyperdriveCheckpoint: {
                                     readonly nodeType: "IndexAccess";
                                     readonly src: "1494:29:115";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_Checkpoint_$10718_storage";
+                                        readonly typeIdentifier: "t_struct$_Checkpoint_$10766_storage";
                                         readonly typeString: "struct IHyperdrive.Checkpoint storage ref";
                                     };
                                 };
-                                readonly id: 14384;
+                                readonly id: 14432;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -1608,7 +1608,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly memberLocation: "1524:15:115";
                                 readonly memberName: "vaultSharePrice";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10717;
+                                readonly referencedDeclaration: 10765;
                                 readonly src: "1494:45:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint128";
@@ -1619,7 +1619,7 @@ export declare const HyperdriveCheckpoint: {
                             readonly operator: "!=";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 14385;
+                                readonly id: 14433;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -1639,30 +1639,30 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 14389;
+                        readonly id: 14437;
                         readonly nodeType: "IfStatement";
                         readonly src: "1490:87:115";
                         readonly trueBody: {
-                            readonly id: 14388;
+                            readonly id: 14436;
                             readonly nodeType: "Block";
                             readonly src: "1546:31:115";
                             readonly statements: readonly [{
-                                readonly functionReturnParameters: 14380;
-                                readonly id: 14387;
+                                readonly functionReturnParameters: 14428;
+                                readonly id: 14435;
                                 readonly nodeType: "Return";
                                 readonly src: "1560:7:115";
                             }];
                         };
                     }, {
-                        readonly assignments: readonly [14391];
+                        readonly assignments: readonly [14439];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 14391;
+                            readonly id: 14439;
                             readonly mutability: "mutable";
                             readonly name: "latestCheckpoint";
                             readonly nameLocation: "1764:16:115";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 14465;
+                            readonly scope: 14513;
                             readonly src: "1756:24:115";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1671,7 +1671,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 14390;
+                                readonly id: 14438;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1756:7:115";
@@ -1682,23 +1682,23 @@ export declare const HyperdriveCheckpoint: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 14394;
+                        readonly id: 14442;
                         readonly initialValue: {
                             readonly arguments: readonly [];
                             readonly expression: {
                                 readonly argumentTypes: readonly [];
-                                readonly id: 14392;
+                                readonly id: 14440;
                                 readonly name: "_latestCheckpoint";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 13558;
+                                readonly referencedDeclaration: 13606;
                                 readonly src: "1783:17:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_view$__$returns$_t_uint256_$";
                                     readonly typeString: "function () view returns (uint256)";
                                 };
                             };
-                            readonly id: 14393;
+                            readonly id: 14441;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1722,7 +1722,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
-                            readonly id: 14403;
+                            readonly id: 14451;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1732,7 +1732,7 @@ export declare const HyperdriveCheckpoint: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 14399;
+                                readonly id: 14447;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1742,17 +1742,17 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
-                                    readonly id: 14397;
+                                    readonly id: 14445;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 14395;
+                                        readonly id: 14443;
                                         readonly name: "_checkpointTime";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14376;
+                                        readonly referencedDeclaration: 14424;
                                         readonly src: "1829:15:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -1762,11 +1762,11 @@ export declare const HyperdriveCheckpoint: {
                                     readonly nodeType: "BinaryOperation";
                                     readonly operator: "%";
                                     readonly rightExpression: {
-                                        readonly id: 14396;
+                                        readonly id: 14444;
                                         readonly name: "_checkpointDuration";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18129;
+                                        readonly referencedDeclaration: 18177;
                                         readonly src: "1847:19:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -1783,7 +1783,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly operator: "!=";
                                 readonly rightExpression: {
                                     readonly hexValue: "30";
-                                    readonly id: 14398;
+                                    readonly id: 14446;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1810,17 +1810,17 @@ export declare const HyperdriveCheckpoint: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 14402;
+                                readonly id: 14450;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 14400;
+                                    readonly id: 14448;
                                     readonly name: "latestCheckpoint";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 14391;
+                                    readonly referencedDeclaration: 14439;
                                     readonly src: "1887:16:115";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -1830,11 +1830,11 @@ export declare const HyperdriveCheckpoint: {
                                 readonly nodeType: "BinaryOperation";
                                 readonly operator: "<";
                                 readonly rightExpression: {
-                                    readonly id: 14401;
+                                    readonly id: 14449;
                                     readonly name: "_checkpointTime";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 14376;
+                                    readonly referencedDeclaration: 14424;
                                     readonly src: "1906:15:115";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -1853,11 +1853,11 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 14410;
+                        readonly id: 14458;
                         readonly nodeType: "IfStatement";
                         readonly src: "1812:187:115";
                         readonly trueBody: {
-                            readonly id: 14409;
+                            readonly id: 14457;
                             readonly nodeType: "Block";
                             readonly src: "1932:67:115";
                             readonly statements: readonly [{
@@ -1866,18 +1866,18 @@ export declare const HyperdriveCheckpoint: {
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 14404;
+                                            readonly id: 14452;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11028;
+                                            readonly referencedDeclaration: 11076;
                                             readonly src: "1953:11:115";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11028_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 14406;
+                                        readonly id: 14454;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1885,14 +1885,14 @@ export declare const HyperdriveCheckpoint: {
                                         readonly memberLocation: "1965:21:115";
                                         readonly memberName: "InvalidCheckpointTime";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10911;
+                                        readonly referencedDeclaration: 10959;
                                         readonly src: "1953:33:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 14407;
+                                    readonly id: 14455;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1908,7 +1908,7 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 14408;
+                                readonly id: 14456;
                                 readonly nodeType: "RevertStatement";
                                 readonly src: "1946:42:115";
                             }];
@@ -1919,17 +1919,17 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 14413;
+                            readonly id: 14461;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 14411;
+                                readonly id: 14459;
                                 readonly name: "_checkpointTime";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14376;
+                                readonly referencedDeclaration: 14424;
                                 readonly src: "2245:15:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1939,11 +1939,11 @@ export declare const HyperdriveCheckpoint: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "==";
                             readonly rightExpression: {
-                                readonly id: 14412;
+                                readonly id: 14460;
                                 readonly name: "latestCheckpoint";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14391;
+                                readonly referencedDeclaration: 14439;
                                 readonly src: "2264:16:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1957,24 +1957,24 @@ export declare const HyperdriveCheckpoint: {
                             };
                         };
                         readonly falseBody: {
-                            readonly id: 14463;
+                            readonly id: 14511;
                             readonly nodeType: "Block";
                             readonly src: "2370:615:115";
                             readonly statements: readonly [{
                                 readonly body: {
-                                    readonly id: 14461;
+                                    readonly id: 14509;
                                     readonly nodeType: "Block";
                                     readonly src: "2514:461:115";
                                     readonly statements: readonly [{
-                                        readonly assignments: readonly [14430];
+                                        readonly assignments: readonly [14478];
                                         readonly declarations: readonly [{
                                             readonly constant: false;
-                                            readonly id: 14430;
+                                            readonly id: 14478;
                                             readonly mutability: "mutable";
                                             readonly name: "closestVaultSharePrice";
                                             readonly nameLocation: "2540:22:115";
                                             readonly nodeType: "VariableDeclaration";
-                                            readonly scope: 14461;
+                                            readonly scope: 14509;
                                             readonly src: "2532:30:115";
                                             readonly stateVariable: false;
                                             readonly storageLocation: "default";
@@ -1983,7 +1983,7 @@ export declare const HyperdriveCheckpoint: {
                                                 readonly typeString: "uint256";
                                             };
                                             readonly typeName: {
-                                                readonly id: 14429;
+                                                readonly id: 14477;
                                                 readonly name: "uint256";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "2532:7:115";
@@ -1994,28 +1994,28 @@ export declare const HyperdriveCheckpoint: {
                                             };
                                             readonly visibility: "internal";
                                         }];
-                                        readonly id: 14435;
+                                        readonly id: 14483;
                                         readonly initialValue: {
                                             readonly expression: {
                                                 readonly baseExpression: {
-                                                    readonly id: 14431;
+                                                    readonly id: 14479;
                                                     readonly name: "_checkpoints";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 18170;
+                                                    readonly referencedDeclaration: 18218;
                                                     readonly src: "2565:12:115";
                                                     readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$10718_storage_$";
+                                                        readonly typeIdentifier: "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$10766_storage_$";
                                                         readonly typeString: "mapping(uint256 => struct IHyperdrive.Checkpoint storage ref)";
                                                     };
                                                 };
-                                                readonly id: 14433;
+                                                readonly id: 14481;
                                                 readonly indexExpression: {
-                                                    readonly id: 14432;
+                                                    readonly id: 14480;
                                                     readonly name: "time";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 14422;
+                                                    readonly referencedDeclaration: 14470;
                                                     readonly src: "2578:4:115";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -2029,11 +2029,11 @@ export declare const HyperdriveCheckpoint: {
                                                 readonly nodeType: "IndexAccess";
                                                 readonly src: "2565:18:115";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_struct$_Checkpoint_$10718_storage";
+                                                    readonly typeIdentifier: "t_struct$_Checkpoint_$10766_storage";
                                                     readonly typeString: "struct IHyperdrive.Checkpoint storage ref";
                                                 };
                                             };
-                                            readonly id: 14434;
+                                            readonly id: 14482;
                                             readonly isConstant: false;
                                             readonly isLValue: true;
                                             readonly isPure: false;
@@ -2041,7 +2041,7 @@ export declare const HyperdriveCheckpoint: {
                                             readonly memberLocation: "2605:15:115";
                                             readonly memberName: "vaultSharePrice";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 10717;
+                                            readonly referencedDeclaration: 10765;
                                             readonly src: "2565:55:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint128";
@@ -2056,7 +2056,7 @@ export declare const HyperdriveCheckpoint: {
                                                 readonly typeIdentifier: "t_bool";
                                                 readonly typeString: "bool";
                                             };
-                                            readonly id: 14442;
+                                            readonly id: 14490;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -2066,17 +2066,17 @@ export declare const HyperdriveCheckpoint: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
-                                                readonly id: 14438;
+                                                readonly id: 14486;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftExpression: {
-                                                    readonly id: 14436;
+                                                    readonly id: 14484;
                                                     readonly name: "time";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 14422;
+                                                    readonly referencedDeclaration: 14470;
                                                     readonly src: "2642:4:115";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -2086,11 +2086,11 @@ export declare const HyperdriveCheckpoint: {
                                                 readonly nodeType: "BinaryOperation";
                                                 readonly operator: "==";
                                                 readonly rightExpression: {
-                                                    readonly id: 14437;
+                                                    readonly id: 14485;
                                                     readonly name: "latestCheckpoint";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 14391;
+                                                    readonly referencedDeclaration: 14439;
                                                     readonly src: "2650:16:115";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -2110,17 +2110,17 @@ export declare const HyperdriveCheckpoint: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
-                                                readonly id: 14441;
+                                                readonly id: 14489;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftExpression: {
-                                                    readonly id: 14439;
+                                                    readonly id: 14487;
                                                     readonly name: "closestVaultSharePrice";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 14430;
+                                                    readonly referencedDeclaration: 14478;
                                                     readonly src: "2670:22:115";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -2131,7 +2131,7 @@ export declare const HyperdriveCheckpoint: {
                                                 readonly operator: "==";
                                                 readonly rightExpression: {
                                                     readonly hexValue: "30";
-                                                    readonly id: 14440;
+                                                    readonly id: 14488;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -2157,26 +2157,26 @@ export declare const HyperdriveCheckpoint: {
                                                 readonly typeString: "bool";
                                             };
                                         };
-                                        readonly id: 14449;
+                                        readonly id: 14497;
                                         readonly nodeType: "IfStatement";
                                         readonly src: "2638:148:115";
                                         readonly trueBody: {
-                                            readonly id: 14448;
+                                            readonly id: 14496;
                                             readonly nodeType: "Block";
                                             readonly src: "2699:87:115";
                                             readonly statements: readonly [{
                                                 readonly expression: {
-                                                    readonly id: 14446;
+                                                    readonly id: 14494;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
                                                     readonly lValueRequested: false;
                                                     readonly leftHandSide: {
-                                                        readonly id: 14443;
+                                                        readonly id: 14491;
                                                         readonly name: "closestVaultSharePrice";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 14430;
+                                                        readonly referencedDeclaration: 14478;
                                                         readonly src: "2721:22:115";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_uint256";
@@ -2189,18 +2189,18 @@ export declare const HyperdriveCheckpoint: {
                                                         readonly arguments: readonly [];
                                                         readonly expression: {
                                                             readonly argumentTypes: readonly [];
-                                                            readonly id: 14444;
+                                                            readonly id: 14492;
                                                             readonly name: "_pricePerVaultShare";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 13352;
+                                                            readonly referencedDeclaration: 13400;
                                                             readonly src: "2746:19:115";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_function_internal_view$__$returns$_t_uint256_$";
                                                                 readonly typeString: "function () view returns (uint256)";
                                                             };
                                                         };
-                                                        readonly id: 14445;
+                                                        readonly id: 14493;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -2222,7 +2222,7 @@ export declare const HyperdriveCheckpoint: {
                                                         readonly typeString: "uint256";
                                                     };
                                                 };
-                                                readonly id: 14447;
+                                                readonly id: 14495;
                                                 readonly nodeType: "ExpressionStatement";
                                                 readonly src: "2721:46:115";
                                             }];
@@ -2233,17 +2233,17 @@ export declare const HyperdriveCheckpoint: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             };
-                                            readonly id: 14452;
+                                            readonly id: 14500;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
                                             readonly lValueRequested: false;
                                             readonly leftExpression: {
-                                                readonly id: 14450;
+                                                readonly id: 14498;
                                                 readonly name: "closestVaultSharePrice";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 14430;
+                                                readonly referencedDeclaration: 14478;
                                                 readonly src: "2807:22:115";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
@@ -2254,7 +2254,7 @@ export declare const HyperdriveCheckpoint: {
                                             readonly operator: "!=";
                                             readonly rightExpression: {
                                                 readonly hexValue: "30";
-                                                readonly id: 14451;
+                                                readonly id: 14499;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -2274,32 +2274,32 @@ export declare const HyperdriveCheckpoint: {
                                                 readonly typeString: "bool";
                                             };
                                         };
-                                        readonly id: 14460;
+                                        readonly id: 14508;
                                         readonly nodeType: "IfStatement";
                                         readonly src: "2803:158:115";
                                         readonly trueBody: {
-                                            readonly id: 14459;
+                                            readonly id: 14507;
                                             readonly nodeType: "Block";
                                             readonly src: "2836:125:115";
                                             readonly statements: readonly [{
                                                 readonly expression: {
                                                     readonly arguments: readonly [{
-                                                        readonly id: 14454;
+                                                        readonly id: 14502;
                                                         readonly name: "_checkpointTime";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 14376;
+                                                        readonly referencedDeclaration: 14424;
                                                         readonly src: "2875:15:115";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_uint256";
                                                             readonly typeString: "uint256";
                                                         };
                                                     }, {
-                                                        readonly id: 14455;
+                                                        readonly id: 14503;
                                                         readonly name: "closestVaultSharePrice";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 14430;
+                                                        readonly referencedDeclaration: 14478;
                                                         readonly src: "2892:22:115";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_uint256";
@@ -2314,18 +2314,18 @@ export declare const HyperdriveCheckpoint: {
                                                             readonly typeIdentifier: "t_uint256";
                                                             readonly typeString: "uint256";
                                                         }];
-                                                        readonly id: 14453;
+                                                        readonly id: 14501;
                                                         readonly name: "_applyCheckpoint";
                                                         readonly nodeType: "Identifier";
-                                                        readonly overloadedDeclarations: readonly [14721];
-                                                        readonly referencedDeclaration: 14721;
+                                                        readonly overloadedDeclarations: readonly [14769];
+                                                        readonly referencedDeclaration: 14769;
                                                         readonly src: "2858:16:115";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                                             readonly typeString: "function (uint256,uint256) returns (uint256)";
                                                         };
                                                     };
-                                                    readonly id: 14456;
+                                                    readonly id: 14504;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
@@ -2341,28 +2341,28 @@ export declare const HyperdriveCheckpoint: {
                                                         readonly typeString: "uint256";
                                                     };
                                                 };
-                                                readonly id: 14457;
+                                                readonly id: 14505;
                                                 readonly nodeType: "ExpressionStatement";
                                                 readonly src: "2858:57:115";
                                             }, {
-                                                readonly id: 14458;
+                                                readonly id: 14506;
                                                 readonly nodeType: "Break";
                                                 readonly src: "2937:5:115";
                                             }];
                                         };
                                     }];
                                 };
-                                readonly id: 14462;
+                                readonly id: 14510;
                                 readonly initializationExpression: {
-                                    readonly assignments: readonly [14422];
+                                    readonly assignments: readonly [14470];
                                     readonly declarations: readonly [{
                                         readonly constant: false;
-                                        readonly id: 14422;
+                                        readonly id: 14470;
                                         readonly mutability: "mutable";
                                         readonly name: "time";
                                         readonly nameLocation: "2414:4:115";
                                         readonly nodeType: "VariableDeclaration";
-                                        readonly scope: 14462;
+                                        readonly scope: 14510;
                                         readonly src: "2406:12:115";
                                         readonly stateVariable: false;
                                         readonly storageLocation: "default";
@@ -2371,7 +2371,7 @@ export declare const HyperdriveCheckpoint: {
                                             readonly typeString: "uint256";
                                         };
                                         readonly typeName: {
-                                            readonly id: 14421;
+                                            readonly id: 14469;
                                             readonly name: "uint256";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "2406:7:115";
@@ -2382,13 +2382,13 @@ export declare const HyperdriveCheckpoint: {
                                         };
                                         readonly visibility: "internal";
                                     }];
-                                    readonly id: 14424;
+                                    readonly id: 14472;
                                     readonly initialValue: {
-                                        readonly id: 14423;
+                                        readonly id: 14471;
                                         readonly name: "_checkpointTime";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14376;
+                                        readonly referencedDeclaration: 14424;
                                         readonly src: "2421:15:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -2400,17 +2400,17 @@ export declare const HyperdriveCheckpoint: {
                                 };
                                 readonly loopExpression: {
                                     readonly expression: {
-                                        readonly id: 14427;
+                                        readonly id: 14475;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftHandSide: {
-                                            readonly id: 14425;
+                                            readonly id: 14473;
                                             readonly name: "time";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 14422;
+                                            readonly referencedDeclaration: 14470;
                                             readonly src: "2472:4:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -2420,11 +2420,11 @@ export declare const HyperdriveCheckpoint: {
                                         readonly nodeType: "Assignment";
                                         readonly operator: "+=";
                                         readonly rightHandSide: {
-                                            readonly id: 14426;
+                                            readonly id: 14474;
                                             readonly name: "_checkpointDuration";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18129;
+                                            readonly referencedDeclaration: 18177;
                                             readonly src: "2480:19:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -2437,7 +2437,7 @@ export declare const HyperdriveCheckpoint: {
                                             readonly typeString: "uint256";
                                         };
                                     };
-                                    readonly id: 14428;
+                                    readonly id: 14476;
                                     readonly nodeType: "ExpressionStatement";
                                     readonly src: "2472:27:115";
                                 };
@@ -2445,21 +2445,21 @@ export declare const HyperdriveCheckpoint: {
                                 readonly src: "2384:591:115";
                             }];
                         };
-                        readonly id: 14464;
+                        readonly id: 14512;
                         readonly nodeType: "IfStatement";
                         readonly src: "2241:744:115";
                         readonly trueBody: {
-                            readonly id: 14420;
+                            readonly id: 14468;
                             readonly nodeType: "Block";
                             readonly src: "2282:82:115";
                             readonly statements: readonly [{
                                 readonly expression: {
                                     readonly arguments: readonly [{
-                                        readonly id: 14415;
+                                        readonly id: 14463;
                                         readonly name: "latestCheckpoint";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14391;
+                                        readonly referencedDeclaration: 14439;
                                         readonly src: "2313:16:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -2469,18 +2469,18 @@ export declare const HyperdriveCheckpoint: {
                                         readonly arguments: readonly [];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [];
-                                            readonly id: 14416;
+                                            readonly id: 14464;
                                             readonly name: "_pricePerVaultShare";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 13352;
+                                            readonly referencedDeclaration: 13400;
                                             readonly src: "2331:19:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_internal_view$__$returns$_t_uint256_$";
                                                 readonly typeString: "function () view returns (uint256)";
                                             };
                                         };
-                                        readonly id: 14417;
+                                        readonly id: 14465;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2504,18 +2504,18 @@ export declare const HyperdriveCheckpoint: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         }];
-                                        readonly id: 14414;
+                                        readonly id: 14462;
                                         readonly name: "_applyCheckpoint";
                                         readonly nodeType: "Identifier";
-                                        readonly overloadedDeclarations: readonly [14721];
-                                        readonly referencedDeclaration: 14721;
+                                        readonly overloadedDeclarations: readonly [14769];
+                                        readonly referencedDeclaration: 14769;
                                         readonly src: "2296:16:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                             readonly typeString: "function (uint256,uint256) returns (uint256)";
                                         };
                                     };
-                                    readonly id: 14418;
+                                    readonly id: 14466;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2531,7 +2531,7 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 14419;
+                                readonly id: 14467;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "2296:57:115";
                             }];
@@ -2539,7 +2539,7 @@ export declare const HyperdriveCheckpoint: {
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 14374;
+                    readonly id: 14422;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1199:143:115";
                     readonly text: "@dev Attempts to mint a checkpoint with the specified checkpoint time.\n @param _checkpointTime The time of the checkpoint to create.";
@@ -2547,14 +2547,14 @@ export declare const HyperdriveCheckpoint: {
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [{
-                    readonly id: 14379;
+                    readonly id: 14427;
                     readonly kind: "modifierInvocation";
                     readonly modifierName: {
-                        readonly id: 14378;
+                        readonly id: 14426;
                         readonly name: "nonReentrant";
                         readonly nameLocations: readonly ["1402:12:115"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 71959;
+                        readonly referencedDeclaration: 72007;
                         readonly src: "1402:12:115";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -2563,16 +2563,16 @@ export declare const HyperdriveCheckpoint: {
                 readonly name: "_checkpoint";
                 readonly nameLocation: "1356:11:115";
                 readonly parameters: {
-                    readonly id: 14377;
+                    readonly id: 14425;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 14376;
+                        readonly id: 14424;
                         readonly mutability: "mutable";
                         readonly name: "_checkpointTime";
                         readonly nameLocation: "1376:15:115";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 14466;
+                        readonly scope: 14514;
                         readonly src: "1368:23:115";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2581,7 +2581,7 @@ export declare const HyperdriveCheckpoint: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 14375;
+                            readonly id: 14423;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1368:7:115";
@@ -2595,83 +2595,83 @@ export declare const HyperdriveCheckpoint: {
                     readonly src: "1367:25:115";
                 };
                 readonly returnParameters: {
-                    readonly id: 14380;
+                    readonly id: 14428;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1415:0:115";
                 };
-                readonly scope: 14797;
+                readonly scope: 14845;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 14721;
+                readonly id: 14769;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3253:7270:115";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 14720;
+                    readonly id: 14768;
                     readonly nodeType: "Block";
                     readonly src: "3388:7135:115";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [14481];
+                        readonly assignments: readonly [14529];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 14481;
+                            readonly id: 14529;
                             readonly mutability: "mutable";
                             readonly name: "checkpoint_";
                             readonly nameLocation: "3497:11:115";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 14720;
+                            readonly scope: 14768;
                             readonly src: "3466:42:115";
                             readonly stateVariable: false;
                             readonly storageLocation: "storage";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Checkpoint_$10718_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Checkpoint_$10766_storage_ptr";
                                 readonly typeString: "struct IHyperdrive.Checkpoint";
                             };
                             readonly typeName: {
-                                readonly id: 14480;
+                                readonly id: 14528;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 14479;
+                                    readonly id: 14527;
                                     readonly name: "IHyperdrive.Checkpoint";
                                     readonly nameLocations: readonly ["3466:11:115", "3478:10:115"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 10718;
+                                    readonly referencedDeclaration: 10766;
                                     readonly src: "3466:22:115";
                                 };
-                                readonly referencedDeclaration: 10718;
+                                readonly referencedDeclaration: 10766;
                                 readonly src: "3466:22:115";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Checkpoint_$10718_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Checkpoint_$10766_storage_ptr";
                                     readonly typeString: "struct IHyperdrive.Checkpoint";
                                 };
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 14485;
+                        readonly id: 14533;
                         readonly initialValue: {
                             readonly baseExpression: {
-                                readonly id: 14482;
+                                readonly id: 14530;
                                 readonly name: "_checkpoints";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18170;
+                                readonly referencedDeclaration: 18218;
                                 readonly src: "3511:12:115";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$10718_storage_$";
+                                    readonly typeIdentifier: "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$10766_storage_$";
                                     readonly typeString: "mapping(uint256 => struct IHyperdrive.Checkpoint storage ref)";
                                 };
                             };
-                            readonly id: 14484;
+                            readonly id: 14532;
                             readonly indexExpression: {
-                                readonly id: 14483;
+                                readonly id: 14531;
                                 readonly name: "_checkpointTime";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14469;
+                                readonly referencedDeclaration: 14517;
                                 readonly src: "3537:15:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2685,7 +2685,7 @@ export declare const HyperdriveCheckpoint: {
                             readonly nodeType: "IndexAccess";
                             readonly src: "3511:51:115";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Checkpoint_$10718_storage";
+                                readonly typeIdentifier: "t_struct$_Checkpoint_$10766_storage";
                                 readonly typeString: "struct IHyperdrive.Checkpoint storage ref";
                             };
                         };
@@ -2697,7 +2697,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
-                            readonly id: 14494;
+                            readonly id: 14542;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2707,25 +2707,25 @@ export declare const HyperdriveCheckpoint: {
                                     readonly typeIdentifier: "t_uint128";
                                     readonly typeString: "uint128";
                                 };
-                                readonly id: 14489;
+                                readonly id: 14537;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
                                     readonly expression: {
-                                        readonly id: 14486;
+                                        readonly id: 14534;
                                         readonly name: "checkpoint_";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14481;
+                                        readonly referencedDeclaration: 14529;
                                         readonly src: "3589:11:115";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_Checkpoint_$10718_storage_ptr";
+                                            readonly typeIdentifier: "t_struct$_Checkpoint_$10766_storage_ptr";
                                             readonly typeString: "struct IHyperdrive.Checkpoint storage pointer";
                                         };
                                     };
-                                    readonly id: 14487;
+                                    readonly id: 14535;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -2733,7 +2733,7 @@ export declare const HyperdriveCheckpoint: {
                                     readonly memberLocation: "3601:15:115";
                                     readonly memberName: "vaultSharePrice";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 10717;
+                                    readonly referencedDeclaration: 10765;
                                     readonly src: "3589:27:115";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint128";
@@ -2744,7 +2744,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly operator: "!=";
                                 readonly rightExpression: {
                                     readonly hexValue: "30";
-                                    readonly id: 14488;
+                                    readonly id: 14536;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2771,17 +2771,17 @@ export declare const HyperdriveCheckpoint: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 14493;
+                                readonly id: 14541;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 14490;
+                                    readonly id: 14538;
                                     readonly name: "_checkpointTime";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 14469;
+                                    readonly referencedDeclaration: 14517;
                                     readonly src: "3637:15:115";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -2792,7 +2792,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly operator: ">";
                                 readonly rightExpression: {
                                     readonly expression: {
-                                        readonly id: 14491;
+                                        readonly id: 14539;
                                         readonly name: "block";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -2803,7 +2803,7 @@ export declare const HyperdriveCheckpoint: {
                                             readonly typeString: "block";
                                         };
                                     };
-                                    readonly id: 14492;
+                                    readonly id: 14540;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2829,28 +2829,28 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 14499;
+                        readonly id: 14547;
                         readonly nodeType: "IfStatement";
                         readonly src: "3572:168:115";
                         readonly trueBody: {
-                            readonly id: 14498;
+                            readonly id: 14546;
                             readonly nodeType: "Block";
                             readonly src: "3681:59:115";
                             readonly statements: readonly [{
                                 readonly expression: {
                                     readonly expression: {
-                                        readonly id: 14495;
+                                        readonly id: 14543;
                                         readonly name: "checkpoint_";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14481;
+                                        readonly referencedDeclaration: 14529;
                                         readonly src: "3702:11:115";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_Checkpoint_$10718_storage_ptr";
+                                            readonly typeIdentifier: "t_struct$_Checkpoint_$10766_storage_ptr";
                                             readonly typeString: "struct IHyperdrive.Checkpoint storage pointer";
                                         };
                                     };
-                                    readonly id: 14496;
+                                    readonly id: 14544;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -2858,40 +2858,40 @@ export declare const HyperdriveCheckpoint: {
                                     readonly memberLocation: "3714:15:115";
                                     readonly memberName: "vaultSharePrice";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 10717;
+                                    readonly referencedDeclaration: 10765;
                                     readonly src: "3702:27:115";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint128";
                                         readonly typeString: "uint128";
                                     };
                                 };
-                                readonly functionReturnParameters: 14476;
-                                readonly id: 14497;
+                                readonly functionReturnParameters: 14524;
+                                readonly id: 14545;
                                 readonly nodeType: "Return";
                                 readonly src: "3695:34:115";
                             }];
                         };
                     }, {
                         readonly expression: {
-                            readonly id: 14506;
+                            readonly id: 14554;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly expression: {
-                                    readonly id: 14500;
+                                    readonly id: 14548;
                                     readonly name: "checkpoint_";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 14481;
+                                    readonly referencedDeclaration: 14529;
                                     readonly src: "3802:11:115";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_Checkpoint_$10718_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_Checkpoint_$10766_storage_ptr";
                                         readonly typeString: "struct IHyperdrive.Checkpoint storage pointer";
                                     };
                                 };
-                                readonly id: 14502;
+                                readonly id: 14550;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -2899,7 +2899,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly memberLocation: "3814:15:115";
                                 readonly memberName: "vaultSharePrice";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10717;
+                                readonly referencedDeclaration: 10765;
                                 readonly src: "3802:27:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint128";
@@ -2913,18 +2913,18 @@ export declare const HyperdriveCheckpoint: {
                                 readonly expression: {
                                     readonly argumentTypes: readonly [];
                                     readonly expression: {
-                                        readonly id: 14503;
+                                        readonly id: 14551;
                                         readonly name: "_vaultSharePrice";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14471;
+                                        readonly referencedDeclaration: 14519;
                                         readonly src: "3832:16:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
                                     };
-                                    readonly id: 14504;
+                                    readonly id: 14552;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2932,14 +2932,14 @@ export declare const HyperdriveCheckpoint: {
                                     readonly memberLocation: "3849:9:115";
                                     readonly memberName: "toUint128";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 22151;
+                                    readonly referencedDeclaration: 22199;
                                     readonly src: "3832:26:115";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$";
                                         readonly typeString: "function (uint256) pure returns (uint128)";
                                     };
                                 };
-                                readonly id: 14505;
+                                readonly id: 14553;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2961,17 +2961,17 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "uint128";
                             };
                         };
-                        readonly id: 14507;
+                        readonly id: 14555;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3802:58:115";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 14509;
+                                readonly id: 14557;
                                 readonly name: "_vaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14471;
+                                readonly referencedDeclaration: 14519;
                                 readonly src: "3970:16:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2983,18 +2983,18 @@ export declare const HyperdriveCheckpoint: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 14508;
+                                readonly id: 14556;
                                 readonly name: "_collectZombieInterest";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14027;
+                                readonly referencedDeclaration: 14075;
                                 readonly src: "3947:22:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_nonpayable$_t_uint256_$returns$_t_uint256_$_t_uint256_$";
                                     readonly typeString: "function (uint256) returns (uint256,uint256)";
                                 };
                             };
-                            readonly id: 14510;
+                            readonly id: 14558;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3010,19 +3010,19 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "tuple(uint256,uint256)";
                             };
                         };
-                        readonly id: 14511;
+                        readonly id: 14559;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3947:40:115";
                     }, {
-                        readonly assignments: readonly [14513];
+                        readonly assignments: readonly [14561];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 14513;
+                            readonly id: 14561;
                             readonly mutability: "mutable";
                             readonly name: "openVaultSharePrice";
                             readonly nameLocation: "4459:19:115";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 14720;
+                            readonly scope: 14768;
                             readonly src: "4451:27:115";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -3031,7 +3031,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 14512;
+                                readonly id: 14560;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4451:7:115";
@@ -3042,38 +3042,38 @@ export declare const HyperdriveCheckpoint: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 14520;
+                        readonly id: 14568;
                         readonly initialValue: {
                             readonly expression: {
                                 readonly baseExpression: {
-                                    readonly id: 14514;
+                                    readonly id: 14562;
                                     readonly name: "_checkpoints";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18170;
+                                    readonly referencedDeclaration: 18218;
                                     readonly src: "4481:12:115";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$10718_storage_$";
+                                        readonly typeIdentifier: "t_mapping$_t_uint256_$_t_struct$_Checkpoint_$10766_storage_$";
                                         readonly typeString: "mapping(uint256 => struct IHyperdrive.Checkpoint storage ref)";
                                     };
                                 };
-                                readonly id: 14518;
+                                readonly id: 14566;
                                 readonly indexExpression: {
                                     readonly commonType: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
-                                    readonly id: 14517;
+                                    readonly id: 14565;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 14515;
+                                        readonly id: 14563;
                                         readonly name: "_checkpointTime";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14469;
+                                        readonly referencedDeclaration: 14517;
                                         readonly src: "4507:15:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -3083,11 +3083,11 @@ export declare const HyperdriveCheckpoint: {
                                     readonly nodeType: "BinaryOperation";
                                     readonly operator: "-";
                                     readonly rightExpression: {
-                                        readonly id: 14516;
+                                        readonly id: 14564;
                                         readonly name: "_positionDuration";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18132;
+                                        readonly referencedDeclaration: 18180;
                                         readonly src: "4525:17:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -3107,11 +3107,11 @@ export declare const HyperdriveCheckpoint: {
                                 readonly nodeType: "IndexAccess";
                                 readonly src: "4481:71:115";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Checkpoint_$10718_storage";
+                                    readonly typeIdentifier: "t_struct$_Checkpoint_$10766_storage";
                                     readonly typeString: "struct IHyperdrive.Checkpoint storage ref";
                                 };
                             };
-                            readonly id: 14519;
+                            readonly id: 14567;
                             readonly isConstant: false;
                             readonly isLValue: true;
                             readonly isPure: false;
@@ -3119,7 +3119,7 @@ export declare const HyperdriveCheckpoint: {
                             readonly memberLocation: "4553:15:115";
                             readonly memberName: "vaultSharePrice";
                             readonly nodeType: "MemberAccess";
-                            readonly referencedDeclaration: 10717;
+                            readonly referencedDeclaration: 10765;
                             readonly src: "4481:87:115";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint128";
@@ -3129,15 +3129,15 @@ export declare const HyperdriveCheckpoint: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "4451:117:115";
                     }, {
-                        readonly assignments: readonly [14522];
+                        readonly assignments: readonly [14570];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 14522;
+                            readonly id: 14570;
                             readonly mutability: "mutable";
                             readonly name: "shortAssetId";
                             readonly nameLocation: "4586:12:115";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 14720;
+                            readonly scope: 14768;
                             readonly src: "4578:20:115";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -3146,7 +3146,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 14521;
+                                readonly id: 14569;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4578:7:115";
@@ -3157,23 +3157,23 @@ export declare const HyperdriveCheckpoint: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 14530;
+                        readonly id: 14578;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly expression: {
                                     readonly expression: {
-                                        readonly id: 14525;
+                                        readonly id: 14573;
                                         readonly name: "AssetId";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18594;
+                                        readonly referencedDeclaration: 18642;
                                         readonly src: "4636:7:115";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18594_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18642_$";
                                             readonly typeString: "type(library AssetId)";
                                         };
                                     };
-                                    readonly id: 14526;
+                                    readonly id: 14574;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3181,14 +3181,14 @@ export declare const HyperdriveCheckpoint: {
                                     readonly memberLocation: "4644:13:115";
                                     readonly memberName: "AssetIdPrefix";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 18341;
+                                    readonly referencedDeclaration: 18389;
                                     readonly src: "4636:21:115";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18341_$";
+                                        readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18389_$";
                                         readonly typeString: "type(enum AssetId.AssetIdPrefix)";
                                     };
                                 };
-                                readonly id: 14527;
+                                readonly id: 14575;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -3196,18 +3196,18 @@ export declare const HyperdriveCheckpoint: {
                                 readonly memberLocation: "4658:5:115";
                                 readonly memberName: "Short";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18339;
+                                readonly referencedDeclaration: 18387;
                                 readonly src: "4636:27:115";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 };
                             }, {
-                                readonly id: 14528;
+                                readonly id: 14576;
                                 readonly name: "_checkpointTime";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14469;
+                                readonly referencedDeclaration: 14517;
                                 readonly src: "4677:15:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -3216,25 +3216,25 @@ export declare const HyperdriveCheckpoint: {
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 }, {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 14523;
+                                    readonly id: 14571;
                                     readonly name: "AssetId";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18594;
+                                    readonly referencedDeclaration: 18642;
                                     readonly src: "4601:7:115";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18594_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18642_$";
                                         readonly typeString: "type(library AssetId)";
                                     };
                                 };
-                                readonly id: 14524;
+                                readonly id: 14572;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3242,14 +3242,14 @@ export declare const HyperdriveCheckpoint: {
                                 readonly memberLocation: "4609:13:115";
                                 readonly memberName: "encodeAssetId";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18364;
+                                readonly referencedDeclaration: 18412;
                                 readonly src: "4601:21:115";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_pure$_t_enum$_AssetIdPrefix_$18341_$_t_uint256_$returns$_t_uint256_$";
+                                    readonly typeIdentifier: "t_function_internal_pure$_t_enum$_AssetIdPrefix_$18389_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (enum AssetId.AssetIdPrefix,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 14529;
+                            readonly id: 14577;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3268,15 +3268,15 @@ export declare const HyperdriveCheckpoint: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "4578:124:115";
                     }, {
-                        readonly assignments: readonly [14532];
+                        readonly assignments: readonly [14580];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 14532;
+                            readonly id: 14580;
                             readonly mutability: "mutable";
                             readonly name: "maturedShortsAmount";
                             readonly nameLocation: "4720:19:115";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 14720;
+                            readonly scope: 14768;
                             readonly src: "4712:27:115";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -3285,7 +3285,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 14531;
+                                readonly id: 14579;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4712:7:115";
@@ -3296,27 +3296,27 @@ export declare const HyperdriveCheckpoint: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 14536;
+                        readonly id: 14584;
                         readonly initialValue: {
                             readonly baseExpression: {
-                                readonly id: 14533;
+                                readonly id: 14581;
                                 readonly name: "_totalSupply";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18205;
+                                readonly referencedDeclaration: 18253;
                                 readonly src: "4742:12:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_mapping$_t_uint256_$_t_uint256_$";
                                     readonly typeString: "mapping(uint256 => uint256)";
                                 };
                             };
-                            readonly id: 14535;
+                            readonly id: 14583;
                             readonly indexExpression: {
-                                readonly id: 14534;
+                                readonly id: 14582;
                                 readonly name: "shortAssetId";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14522;
+                                readonly referencedDeclaration: 14570;
                                 readonly src: "4755:12:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -3337,15 +3337,15 @@ export declare const HyperdriveCheckpoint: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "4712:56:115";
                     }, {
-                        readonly assignments: readonly [14538];
+                        readonly assignments: readonly [14586];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 14538;
+                            readonly id: 14586;
                             readonly mutability: "mutable";
                             readonly name: "positionsClosed";
                             readonly nameLocation: "4783:15:115";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 14720;
+                            readonly scope: 14768;
                             readonly src: "4778:20:115";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -3354,7 +3354,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 14537;
+                                readonly id: 14585;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4778:4:115";
@@ -3365,7 +3365,7 @@ export declare const HyperdriveCheckpoint: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 14539;
+                        readonly id: 14587;
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "4778:20:115";
                     }, {
@@ -3374,17 +3374,17 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 14542;
+                            readonly id: 14590;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 14540;
+                                readonly id: 14588;
                                 readonly name: "maturedShortsAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14532;
+                                readonly referencedDeclaration: 14580;
                                 readonly src: "4812:19:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -3395,7 +3395,7 @@ export declare const HyperdriveCheckpoint: {
                             readonly operator: ">";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 14541;
+                                readonly id: 14589;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -3415,26 +3415,26 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 14608;
+                        readonly id: 14656;
                         readonly nodeType: "IfStatement";
                         readonly src: "4808:2275:115";
                         readonly trueBody: {
-                            readonly id: 14607;
+                            readonly id: 14655;
                             readonly nodeType: "Block";
                             readonly src: "4837:2246:115";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 14545;
+                                    readonly id: 14593;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 14543;
+                                        readonly id: 14591;
                                         readonly name: "positionsClosed";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14538;
+                                        readonly referencedDeclaration: 14586;
                                         readonly src: "5008:15:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bool";
@@ -3445,7 +3445,7 @@ export declare const HyperdriveCheckpoint: {
                                     readonly operator: "=";
                                     readonly rightHandSide: {
                                         readonly hexValue: "74727565";
-                                        readonly id: 14544;
+                                        readonly id: 14592;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -3465,19 +3465,19 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "bool";
                                     };
                                 };
-                                readonly id: 14546;
+                                readonly id: 14594;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "5008:22:115";
                             }, {
-                                readonly assignments: readonly [14548, 14550];
+                                readonly assignments: readonly [14596, 14598];
                                 readonly declarations: readonly [{
                                     readonly constant: false;
-                                    readonly id: 14548;
+                                    readonly id: 14596;
                                     readonly mutability: "mutable";
                                     readonly name: "shareProceeds";
                                     readonly nameLocation: "5197:13:115";
                                     readonly nodeType: "VariableDeclaration";
-                                    readonly scope: 14607;
+                                    readonly scope: 14655;
                                     readonly src: "5189:21:115";
                                     readonly stateVariable: false;
                                     readonly storageLocation: "default";
@@ -3486,7 +3486,7 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     };
                                     readonly typeName: {
-                                        readonly id: 14547;
+                                        readonly id: 14595;
                                         readonly name: "uint256";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "5189:7:115";
@@ -3498,12 +3498,12 @@ export declare const HyperdriveCheckpoint: {
                                     readonly visibility: "internal";
                                 }, {
                                     readonly constant: false;
-                                    readonly id: 14550;
+                                    readonly id: 14598;
                                     readonly mutability: "mutable";
                                     readonly name: "governanceFee";
                                     readonly nameLocation: "5236:13:115";
                                     readonly nodeType: "VariableDeclaration";
-                                    readonly scope: 14607;
+                                    readonly scope: 14655;
                                     readonly src: "5228:21:115";
                                     readonly stateVariable: false;
                                     readonly storageLocation: "default";
@@ -3512,7 +3512,7 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     };
                                     readonly typeName: {
-                                        readonly id: 14549;
+                                        readonly id: 14597;
                                         readonly name: "uint256";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "5228:7:115";
@@ -3523,36 +3523,36 @@ export declare const HyperdriveCheckpoint: {
                                     };
                                     readonly visibility: "internal";
                                 }];
-                                readonly id: 14557;
+                                readonly id: 14605;
                                 readonly initialValue: {
                                     readonly arguments: readonly [{
-                                        readonly id: 14552;
+                                        readonly id: 14600;
                                         readonly name: "maturedShortsAmount";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14532;
+                                        readonly referencedDeclaration: 14580;
                                         readonly src: "5313:19:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
                                     }, {
-                                        readonly id: 14553;
+                                        readonly id: 14601;
                                         readonly name: "_vaultSharePrice";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14471;
+                                        readonly referencedDeclaration: 14519;
                                         readonly src: "5354:16:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
                                     }, {
-                                        readonly id: 14554;
+                                        readonly id: 14602;
                                         readonly name: "openVaultSharePrice";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14513;
+                                        readonly referencedDeclaration: 14561;
                                         readonly src: "5392:19:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -3560,7 +3560,7 @@ export declare const HyperdriveCheckpoint: {
                                         };
                                     }, {
                                         readonly hexValue: "66616c7365";
-                                        readonly id: 14555;
+                                        readonly id: 14603;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -3588,18 +3588,18 @@ export declare const HyperdriveCheckpoint: {
                                             readonly typeIdentifier: "t_bool";
                                             readonly typeString: "bool";
                                         }];
-                                        readonly id: 14551;
+                                        readonly id: 14599;
                                         readonly name: "_calculateMaturedProceeds";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14796;
+                                        readonly referencedDeclaration: 14844;
                                         readonly src: "5266:25:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_view$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$_t_uint256_$";
                                             readonly typeString: "function (uint256,uint256,uint256,bool) view returns (uint256,uint256)";
                                         };
                                     };
-                                    readonly id: 14556;
+                                    readonly id: 14604;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3619,17 +3619,17 @@ export declare const HyperdriveCheckpoint: {
                                 readonly src: "5171:285:115";
                             }, {
                                 readonly expression: {
-                                    readonly id: 14560;
+                                    readonly id: 14608;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 14558;
+                                        readonly id: 14606;
                                         readonly name: "_governanceFeesAccrued";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18182;
+                                        readonly referencedDeclaration: 18230;
                                         readonly src: "5470:22:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -3639,11 +3639,11 @@ export declare const HyperdriveCheckpoint: {
                                     readonly nodeType: "Assignment";
                                     readonly operator: "+=";
                                     readonly rightHandSide: {
-                                        readonly id: 14559;
+                                        readonly id: 14607;
                                         readonly name: "governanceFee";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14550;
+                                        readonly referencedDeclaration: 14598;
                                         readonly src: "5496:13:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -3656,17 +3656,17 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 14561;
+                                readonly id: 14609;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "5470:39:115";
                             }, {
                                 readonly expression: {
                                     readonly arguments: readonly [{
-                                        readonly id: 14563;
+                                        readonly id: 14611;
                                         readonly name: "maturedShortsAmount";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14532;
+                                        readonly referencedDeclaration: 14580;
                                         readonly src: "5557:19:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -3674,7 +3674,7 @@ export declare const HyperdriveCheckpoint: {
                                         };
                                     }, {
                                         readonly hexValue: "30";
-                                        readonly id: 14564;
+                                        readonly id: 14612;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -3688,11 +3688,11 @@ export declare const HyperdriveCheckpoint: {
                                         };
                                         readonly value: "0";
                                     }, {
-                                        readonly id: 14565;
+                                        readonly id: 14613;
                                         readonly name: "shareProceeds";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14548;
+                                        readonly referencedDeclaration: 14596;
                                         readonly src: "5613:13:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -3703,18 +3703,18 @@ export declare const HyperdriveCheckpoint: {
                                         readonly expression: {
                                             readonly argumentTypes: readonly [];
                                             readonly expression: {
-                                                readonly id: 14566;
+                                                readonly id: 14614;
                                                 readonly name: "shareProceeds";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 14548;
+                                                readonly referencedDeclaration: 14596;
                                                 readonly src: "5644:13:115";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
                                             };
-                                            readonly id: 14567;
+                                            readonly id: 14615;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -3722,14 +3722,14 @@ export declare const HyperdriveCheckpoint: {
                                             readonly memberLocation: "5658:8:115";
                                             readonly memberName: "toInt256";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 22264;
+                                            readonly referencedDeclaration: 22312;
                                             readonly src: "5644:22:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_int256_$attached_to$_t_uint256_$";
                                                 readonly typeString: "function (uint256) pure returns (int256)";
                                             };
                                         };
-                                        readonly id: 14568;
+                                        readonly id: 14616;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -3745,11 +3745,11 @@ export declare const HyperdriveCheckpoint: {
                                             readonly typeString: "int256";
                                         };
                                     }, {
-                                        readonly id: 14569;
+                                        readonly id: 14617;
                                         readonly name: "_checkpointTime";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14469;
+                                        readonly referencedDeclaration: 14517;
                                         readonly src: "5732:15:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -3773,18 +3773,18 @@ export declare const HyperdriveCheckpoint: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         }];
-                                        readonly id: 14562;
+                                        readonly id: 14610;
                                         readonly name: "_applyCloseShort";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 17791;
+                                        readonly referencedDeclaration: 17839;
                                         readonly src: "5523:16:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$returns$__$";
                                             readonly typeString: "function (uint256,uint256,uint256,int256,uint256)";
                                         };
                                     };
-                                    readonly id: 14570;
+                                    readonly id: 14618;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3800,22 +3800,22 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 14571;
+                                readonly id: 14619;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "5523:238:115";
                             }, {
                                 readonly expression: {
-                                    readonly id: 14574;
+                                    readonly id: 14622;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 14572;
+                                        readonly id: 14620;
                                         readonly name: "shareProceeds";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14548;
+                                        readonly referencedDeclaration: 14596;
                                         readonly src: "5995:13:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -3825,11 +3825,11 @@ export declare const HyperdriveCheckpoint: {
                                     readonly nodeType: "Assignment";
                                     readonly operator: "+=";
                                     readonly rightHandSide: {
-                                        readonly id: 14573;
+                                        readonly id: 14621;
                                         readonly name: "governanceFee";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14550;
+                                        readonly referencedDeclaration: 14598;
                                         readonly src: "6012:13:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -3842,22 +3842,22 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 14575;
+                                readonly id: 14623;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "5995:30:115";
                             }, {
                                 readonly expression: {
-                                    readonly id: 14586;
+                                    readonly id: 14634;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 14576;
+                                        readonly id: 14624;
                                         readonly name: "shareProceeds";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14548;
+                                        readonly referencedDeclaration: 14596;
                                         readonly src: "6407:13:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -3868,66 +3868,66 @@ export declare const HyperdriveCheckpoint: {
                                     readonly operator: "=";
                                     readonly rightHandSide: {
                                         readonly arguments: readonly [{
-                                            readonly id: 14579;
+                                            readonly id: 14627;
                                             readonly name: "maturedShortsAmount";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 14532;
+                                            readonly referencedDeclaration: 14580;
                                             readonly src: "6482:19:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             };
                                         }, {
-                                            readonly id: 14580;
+                                            readonly id: 14628;
                                             readonly name: "shareProceeds";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 14548;
+                                            readonly referencedDeclaration: 14596;
                                             readonly src: "6519:13:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             };
                                         }, {
-                                            readonly id: 14581;
+                                            readonly id: 14629;
                                             readonly name: "openVaultSharePrice";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 14513;
+                                            readonly referencedDeclaration: 14561;
                                             readonly src: "6550:19:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             };
                                         }, {
-                                            readonly id: 14582;
+                                            readonly id: 14630;
                                             readonly name: "_vaultSharePrice";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 14471;
+                                            readonly referencedDeclaration: 14519;
                                             readonly src: "6587:16:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             };
                                         }, {
-                                            readonly id: 14583;
+                                            readonly id: 14631;
                                             readonly name: "_vaultSharePrice";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 14471;
+                                            readonly referencedDeclaration: 14519;
                                             readonly src: "6621:16:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             };
                                         }, {
-                                            readonly id: 14584;
+                                            readonly id: 14632;
                                             readonly name: "_flatFee";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18141;
+                                            readonly referencedDeclaration: 18189;
                                             readonly src: "6655:8:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -3955,18 +3955,18 @@ export declare const HyperdriveCheckpoint: {
                                                 readonly typeString: "uint256";
                                             }];
                                             readonly expression: {
-                                                readonly id: 14577;
+                                                readonly id: 14625;
                                                 readonly name: "HyperdriveMath";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 20142;
+                                                readonly referencedDeclaration: 20190;
                                                 readonly src: "6423:14:115";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20142_$";
+                                                    readonly typeIdentifier: "t_type$_t_contract$_HyperdriveMath_$20190_$";
                                                     readonly typeString: "type(library HyperdriveMath)";
                                                 };
                                             };
-                                            readonly id: 14578;
+                                            readonly id: 14626;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -3974,14 +3974,14 @@ export declare const HyperdriveCheckpoint: {
                                             readonly memberLocation: "6438:26:115";
                                             readonly memberName: "calculateShortProceedsDown";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 19793;
+                                            readonly referencedDeclaration: 19841;
                                             readonly src: "6423:41:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$";
                                                 readonly typeString: "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)";
                                             };
                                         };
-                                        readonly id: 14585;
+                                        readonly id: 14633;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -4003,30 +4003,30 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 14587;
+                                readonly id: 14635;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "6407:270:115";
                             }, {
                                 readonly expression: {
-                                    readonly id: 14597;
+                                    readonly id: 14645;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
                                         readonly expression: {
-                                            readonly id: 14588;
+                                            readonly id: 14636;
                                             readonly name: "_marketState";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18160;
+                                            readonly referencedDeclaration: 18208;
                                             readonly src: "6877:12:115";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_struct$_MarketState_$10714_storage";
+                                                readonly typeIdentifier: "t_struct$_MarketState_$10762_storage";
                                                 readonly typeString: "struct IHyperdrive.MarketState storage ref";
                                             };
                                         };
-                                        readonly id: 14590;
+                                        readonly id: 14638;
                                         readonly isConstant: false;
                                         readonly isLValue: true;
                                         readonly isPure: false;
@@ -4034,7 +4034,7 @@ export declare const HyperdriveCheckpoint: {
                                         readonly memberLocation: "6890:18:115";
                                         readonly memberName: "zombieBaseProceeds";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10710;
+                                        readonly referencedDeclaration: 10758;
                                         readonly src: "6877:31:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint112";
@@ -4049,11 +4049,11 @@ export declare const HyperdriveCheckpoint: {
                                             readonly argumentTypes: readonly [];
                                             readonly expression: {
                                                 readonly arguments: readonly [{
-                                                    readonly id: 14593;
+                                                    readonly id: 14641;
                                                     readonly name: "_vaultSharePrice";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 14471;
+                                                    readonly referencedDeclaration: 14519;
                                                     readonly src: "6951:16:115";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -4066,18 +4066,18 @@ export declare const HyperdriveCheckpoint: {
                                                         readonly typeString: "uint256";
                                                     }];
                                                     readonly expression: {
-                                                        readonly id: 14591;
+                                                        readonly id: 14639;
                                                         readonly name: "shareProceeds";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 14548;
+                                                        readonly referencedDeclaration: 14596;
                                                         readonly src: "6912:13:115";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_uint256";
                                                             readonly typeString: "uint256";
                                                         };
                                                     };
-                                                    readonly id: 14592;
+                                                    readonly id: 14640;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
@@ -4085,14 +4085,14 @@ export declare const HyperdriveCheckpoint: {
                                                     readonly memberLocation: "6943:7:115";
                                                     readonly memberName: "mulDown";
                                                     readonly nodeType: "MemberAccess";
-                                                    readonly referencedDeclaration: 18674;
+                                                    readonly referencedDeclaration: 18722;
                                                     readonly src: "6912:38:115";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
                                                         readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                                     };
                                                 };
-                                                readonly id: 14594;
+                                                readonly id: 14642;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -4108,7 +4108,7 @@ export declare const HyperdriveCheckpoint: {
                                                     readonly typeString: "uint256";
                                                 };
                                             };
-                                            readonly id: 14595;
+                                            readonly id: 14643;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -4116,14 +4116,14 @@ export declare const HyperdriveCheckpoint: {
                                             readonly memberLocation: "6986:9:115";
                                             readonly memberName: "toUint112";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 22121;
+                                            readonly referencedDeclaration: 22169;
                                             readonly src: "6912:83:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_uint112_$attached_to$_t_uint256_$";
                                                 readonly typeString: "function (uint256) pure returns (uint112)";
                                             };
                                         };
-                                        readonly id: 14596;
+                                        readonly id: 14644;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -4145,30 +4145,30 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint112";
                                     };
                                 };
-                                readonly id: 14598;
+                                readonly id: 14646;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "6877:120:115";
                             }, {
                                 readonly expression: {
-                                    readonly id: 14605;
+                                    readonly id: 14653;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
                                         readonly expression: {
-                                            readonly id: 14599;
+                                            readonly id: 14647;
                                             readonly name: "_marketState";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18160;
+                                            readonly referencedDeclaration: 18208;
                                             readonly src: "7011:12:115";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_struct$_MarketState_$10714_storage";
+                                                readonly typeIdentifier: "t_struct$_MarketState_$10762_storage";
                                                 readonly typeString: "struct IHyperdrive.MarketState storage ref";
                                             };
                                         };
-                                        readonly id: 14601;
+                                        readonly id: 14649;
                                         readonly isConstant: false;
                                         readonly isLValue: true;
                                         readonly isPure: false;
@@ -4176,7 +4176,7 @@ export declare const HyperdriveCheckpoint: {
                                         readonly memberLocation: "7024:19:115";
                                         readonly memberName: "zombieShareReserves";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10713;
+                                        readonly referencedDeclaration: 10761;
                                         readonly src: "7011:32:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint128";
@@ -4190,18 +4190,18 @@ export declare const HyperdriveCheckpoint: {
                                         readonly expression: {
                                             readonly argumentTypes: readonly [];
                                             readonly expression: {
-                                                readonly id: 14602;
+                                                readonly id: 14650;
                                                 readonly name: "shareProceeds";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 14548;
+                                                readonly referencedDeclaration: 14596;
                                                 readonly src: "7047:13:115";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
                                             };
-                                            readonly id: 14603;
+                                            readonly id: 14651;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -4209,14 +4209,14 @@ export declare const HyperdriveCheckpoint: {
                                             readonly memberLocation: "7061:9:115";
                                             readonly memberName: "toUint128";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 22151;
+                                            readonly referencedDeclaration: 22199;
                                             readonly src: "7047:23:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$";
                                                 readonly typeString: "function (uint256) pure returns (uint128)";
                                             };
                                         };
-                                        readonly id: 14604;
+                                        readonly id: 14652;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -4238,21 +4238,21 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint128";
                                     };
                                 };
-                                readonly id: 14606;
+                                readonly id: 14654;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "7011:61:115";
                             }];
                         };
                     }, {
-                        readonly assignments: readonly [14610];
+                        readonly assignments: readonly [14658];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 14610;
+                            readonly id: 14658;
                             readonly mutability: "mutable";
                             readonly name: "longAssetId";
                             readonly nameLocation: "7209:11:115";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 14720;
+                            readonly scope: 14768;
                             readonly src: "7201:19:115";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -4261,7 +4261,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 14609;
+                                readonly id: 14657;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "7201:7:115";
@@ -4272,23 +4272,23 @@ export declare const HyperdriveCheckpoint: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 14618;
+                        readonly id: 14666;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly expression: {
                                     readonly expression: {
-                                        readonly id: 14613;
+                                        readonly id: 14661;
                                         readonly name: "AssetId";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18594;
+                                        readonly referencedDeclaration: 18642;
                                         readonly src: "7258:7:115";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18594_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18642_$";
                                             readonly typeString: "type(library AssetId)";
                                         };
                                     };
-                                    readonly id: 14614;
+                                    readonly id: 14662;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4296,14 +4296,14 @@ export declare const HyperdriveCheckpoint: {
                                     readonly memberLocation: "7266:13:115";
                                     readonly memberName: "AssetIdPrefix";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 18341;
+                                    readonly referencedDeclaration: 18389;
                                     readonly src: "7258:21:115";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18341_$";
+                                        readonly typeIdentifier: "t_type$_t_enum$_AssetIdPrefix_$18389_$";
                                         readonly typeString: "type(enum AssetId.AssetIdPrefix)";
                                     };
                                 };
-                                readonly id: 14615;
+                                readonly id: 14663;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -4311,18 +4311,18 @@ export declare const HyperdriveCheckpoint: {
                                 readonly memberLocation: "7280:4:115";
                                 readonly memberName: "Long";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18338;
+                                readonly referencedDeclaration: 18386;
                                 readonly src: "7258:26:115";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 };
                             }, {
-                                readonly id: 14616;
+                                readonly id: 14664;
                                 readonly name: "_checkpointTime";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14469;
+                                readonly referencedDeclaration: 14517;
                                 readonly src: "7298:15:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -4331,25 +4331,25 @@ export declare const HyperdriveCheckpoint: {
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 }, {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 14611;
+                                    readonly id: 14659;
                                     readonly name: "AssetId";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18594;
+                                    readonly referencedDeclaration: 18642;
                                     readonly src: "7223:7:115";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18594_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18642_$";
                                         readonly typeString: "type(library AssetId)";
                                     };
                                 };
-                                readonly id: 14612;
+                                readonly id: 14660;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -4357,14 +4357,14 @@ export declare const HyperdriveCheckpoint: {
                                 readonly memberLocation: "7231:13:115";
                                 readonly memberName: "encodeAssetId";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18364;
+                                readonly referencedDeclaration: 18412;
                                 readonly src: "7223:21:115";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_pure$_t_enum$_AssetIdPrefix_$18341_$_t_uint256_$returns$_t_uint256_$";
+                                    readonly typeIdentifier: "t_function_internal_pure$_t_enum$_AssetIdPrefix_$18389_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (enum AssetId.AssetIdPrefix,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 14617;
+                            readonly id: 14665;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4383,15 +4383,15 @@ export declare const HyperdriveCheckpoint: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "7201:122:115";
                     }, {
-                        readonly assignments: readonly [14620];
+                        readonly assignments: readonly [14668];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 14620;
+                            readonly id: 14668;
                             readonly mutability: "mutable";
                             readonly name: "maturedLongsAmount";
                             readonly nameLocation: "7341:18:115";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 14720;
+                            readonly scope: 14768;
                             readonly src: "7333:26:115";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -4400,7 +4400,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 14619;
+                                readonly id: 14667;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "7333:7:115";
@@ -4411,27 +4411,27 @@ export declare const HyperdriveCheckpoint: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 14624;
+                        readonly id: 14672;
                         readonly initialValue: {
                             readonly baseExpression: {
-                                readonly id: 14621;
+                                readonly id: 14669;
                                 readonly name: "_totalSupply";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18205;
+                                readonly referencedDeclaration: 18253;
                                 readonly src: "7362:12:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_mapping$_t_uint256_$_t_uint256_$";
                                     readonly typeString: "mapping(uint256 => uint256)";
                                 };
                             };
-                            readonly id: 14623;
+                            readonly id: 14671;
                             readonly indexExpression: {
-                                readonly id: 14622;
+                                readonly id: 14670;
                                 readonly name: "longAssetId";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14610;
+                                readonly referencedDeclaration: 14658;
                                 readonly src: "7375:11:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -4457,17 +4457,17 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 14627;
+                            readonly id: 14675;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 14625;
+                                readonly id: 14673;
                                 readonly name: "maturedLongsAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14620;
+                                readonly referencedDeclaration: 14668;
                                 readonly src: "7401:18:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -4478,7 +4478,7 @@ export declare const HyperdriveCheckpoint: {
                             readonly operator: ">";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 14626;
+                                readonly id: 14674;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -4498,26 +4498,26 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 14685;
+                        readonly id: 14733;
                         readonly nodeType: "IfStatement";
                         readonly src: "7397:1597:115";
                         readonly trueBody: {
-                            readonly id: 14684;
+                            readonly id: 14732;
                             readonly nodeType: "Block";
                             readonly src: "7425:1569:115";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 14630;
+                                    readonly id: 14678;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 14628;
+                                        readonly id: 14676;
                                         readonly name: "positionsClosed";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14538;
+                                        readonly referencedDeclaration: 14586;
                                         readonly src: "7595:15:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bool";
@@ -4528,7 +4528,7 @@ export declare const HyperdriveCheckpoint: {
                                     readonly operator: "=";
                                     readonly rightHandSide: {
                                         readonly hexValue: "74727565";
-                                        readonly id: 14629;
+                                        readonly id: 14677;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -4548,19 +4548,19 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "bool";
                                     };
                                 };
-                                readonly id: 14631;
+                                readonly id: 14679;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "7595:22:115";
                             }, {
-                                readonly assignments: readonly [14633, 14635];
+                                readonly assignments: readonly [14681, 14683];
                                 readonly declarations: readonly [{
                                     readonly constant: false;
-                                    readonly id: 14633;
+                                    readonly id: 14681;
                                     readonly mutability: "mutable";
                                     readonly name: "shareProceeds";
                                     readonly nameLocation: "7783:13:115";
                                     readonly nodeType: "VariableDeclaration";
-                                    readonly scope: 14684;
+                                    readonly scope: 14732;
                                     readonly src: "7775:21:115";
                                     readonly stateVariable: false;
                                     readonly storageLocation: "default";
@@ -4569,7 +4569,7 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     };
                                     readonly typeName: {
-                                        readonly id: 14632;
+                                        readonly id: 14680;
                                         readonly name: "uint256";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "7775:7:115";
@@ -4581,12 +4581,12 @@ export declare const HyperdriveCheckpoint: {
                                     readonly visibility: "internal";
                                 }, {
                                     readonly constant: false;
-                                    readonly id: 14635;
+                                    readonly id: 14683;
                                     readonly mutability: "mutable";
                                     readonly name: "governanceFee";
                                     readonly nameLocation: "7822:13:115";
                                     readonly nodeType: "VariableDeclaration";
-                                    readonly scope: 14684;
+                                    readonly scope: 14732;
                                     readonly src: "7814:21:115";
                                     readonly stateVariable: false;
                                     readonly storageLocation: "default";
@@ -4595,7 +4595,7 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     };
                                     readonly typeName: {
-                                        readonly id: 14634;
+                                        readonly id: 14682;
                                         readonly name: "uint256";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "7814:7:115";
@@ -4606,36 +4606,36 @@ export declare const HyperdriveCheckpoint: {
                                     };
                                     readonly visibility: "internal";
                                 }];
-                                readonly id: 14642;
+                                readonly id: 14690;
                                 readonly initialValue: {
                                     readonly arguments: readonly [{
-                                        readonly id: 14637;
+                                        readonly id: 14685;
                                         readonly name: "maturedLongsAmount";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14620;
+                                        readonly referencedDeclaration: 14668;
                                         readonly src: "7899:18:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
                                     }, {
-                                        readonly id: 14638;
+                                        readonly id: 14686;
                                         readonly name: "_vaultSharePrice";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14471;
+                                        readonly referencedDeclaration: 14519;
                                         readonly src: "7939:16:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
                                     }, {
-                                        readonly id: 14639;
+                                        readonly id: 14687;
                                         readonly name: "openVaultSharePrice";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14513;
+                                        readonly referencedDeclaration: 14561;
                                         readonly src: "7977:19:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -4643,7 +4643,7 @@ export declare const HyperdriveCheckpoint: {
                                         };
                                     }, {
                                         readonly hexValue: "74727565";
-                                        readonly id: 14640;
+                                        readonly id: 14688;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -4671,18 +4671,18 @@ export declare const HyperdriveCheckpoint: {
                                             readonly typeIdentifier: "t_bool";
                                             readonly typeString: "bool";
                                         }];
-                                        readonly id: 14636;
+                                        readonly id: 14684;
                                         readonly name: "_calculateMaturedProceeds";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14796;
+                                        readonly referencedDeclaration: 14844;
                                         readonly src: "7852:25:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_view$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$_t_uint256_$";
                                             readonly typeString: "function (uint256,uint256,uint256,bool) view returns (uint256,uint256)";
                                         };
                                     };
-                                    readonly id: 14641;
+                                    readonly id: 14689;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4702,17 +4702,17 @@ export declare const HyperdriveCheckpoint: {
                                 readonly src: "7757:283:115";
                             }, {
                                 readonly expression: {
-                                    readonly id: 14645;
+                                    readonly id: 14693;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 14643;
+                                        readonly id: 14691;
                                         readonly name: "_governanceFeesAccrued";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 18182;
+                                        readonly referencedDeclaration: 18230;
                                         readonly src: "8054:22:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -4722,11 +4722,11 @@ export declare const HyperdriveCheckpoint: {
                                     readonly nodeType: "Assignment";
                                     readonly operator: "+=";
                                     readonly rightHandSide: {
-                                        readonly id: 14644;
+                                        readonly id: 14692;
                                         readonly name: "governanceFee";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14635;
+                                        readonly referencedDeclaration: 14683;
                                         readonly src: "8080:13:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -4739,19 +4739,19 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 14646;
+                                readonly id: 14694;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "8054:39:115";
                             }, {
-                                readonly assignments: readonly [14648];
+                                readonly assignments: readonly [14696];
                                 readonly declarations: readonly [{
                                     readonly constant: false;
-                                    readonly id: 14648;
+                                    readonly id: 14696;
                                     readonly mutability: "mutable";
                                     readonly name: "checkpointTime";
                                     readonly nameLocation: "8115:14:115";
                                     readonly nodeType: "VariableDeclaration";
-                                    readonly scope: 14684;
+                                    readonly scope: 14732;
                                     readonly src: "8107:22:115";
                                     readonly stateVariable: false;
                                     readonly storageLocation: "default";
@@ -4760,7 +4760,7 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     };
                                     readonly typeName: {
-                                        readonly id: 14647;
+                                        readonly id: 14695;
                                         readonly name: "uint256";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "8107:7:115";
@@ -4771,13 +4771,13 @@ export declare const HyperdriveCheckpoint: {
                                     };
                                     readonly visibility: "internal";
                                 }];
-                                readonly id: 14650;
+                                readonly id: 14698;
                                 readonly initialValue: {
-                                    readonly id: 14649;
+                                    readonly id: 14697;
                                     readonly name: "_checkpointTime";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 14469;
+                                    readonly referencedDeclaration: 14517;
                                     readonly src: "8132:15:115";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -4789,11 +4789,11 @@ export declare const HyperdriveCheckpoint: {
                             }, {
                                 readonly expression: {
                                     readonly arguments: readonly [{
-                                        readonly id: 14652;
+                                        readonly id: 14700;
                                         readonly name: "maturedLongsAmount";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14620;
+                                        readonly referencedDeclaration: 14668;
                                         readonly src: "8224:18:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -4801,7 +4801,7 @@ export declare const HyperdriveCheckpoint: {
                                         };
                                     }, {
                                         readonly hexValue: "30";
-                                        readonly id: 14653;
+                                        readonly id: 14701;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -4815,11 +4815,11 @@ export declare const HyperdriveCheckpoint: {
                                         };
                                         readonly value: "0";
                                     }, {
-                                        readonly id: 14654;
+                                        readonly id: 14702;
                                         readonly name: "shareProceeds";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14633;
+                                        readonly referencedDeclaration: 14681;
                                         readonly src: "8279:13:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -4830,18 +4830,18 @@ export declare const HyperdriveCheckpoint: {
                                         readonly expression: {
                                             readonly argumentTypes: readonly [];
                                             readonly expression: {
-                                                readonly id: 14655;
+                                                readonly id: 14703;
                                                 readonly name: "shareProceeds";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 14633;
+                                                readonly referencedDeclaration: 14681;
                                                 readonly src: "8310:13:115";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
                                             };
-                                            readonly id: 14656;
+                                            readonly id: 14704;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -4849,14 +4849,14 @@ export declare const HyperdriveCheckpoint: {
                                             readonly memberLocation: "8324:8:115";
                                             readonly memberName: "toInt256";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 22264;
+                                            readonly referencedDeclaration: 22312;
                                             readonly src: "8310:22:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_int256_$attached_to$_t_uint256_$";
                                                 readonly typeString: "function (uint256) pure returns (int256)";
                                             };
                                         };
-                                        readonly id: 14657;
+                                        readonly id: 14705;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -4872,11 +4872,11 @@ export declare const HyperdriveCheckpoint: {
                                             readonly typeString: "int256";
                                         };
                                     }, {
-                                        readonly id: 14658;
+                                        readonly id: 14706;
                                         readonly name: "checkpointTime";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14648;
+                                        readonly referencedDeclaration: 14696;
                                         readonly src: "8398:14:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -4900,18 +4900,18 @@ export declare const HyperdriveCheckpoint: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         }];
-                                        readonly id: 14651;
+                                        readonly id: 14699;
                                         readonly name: "_applyCloseLong";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 16375;
+                                        readonly referencedDeclaration: 16423;
                                         readonly src: "8191:15:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$returns$__$";
                                             readonly typeString: "function (uint256,uint256,uint256,int256,uint256)";
                                         };
                                     };
-                                    readonly id: 14659;
+                                    readonly id: 14707;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4927,22 +4927,22 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 14660;
+                                readonly id: 14708;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "8191:235:115";
                             }, {
                                 readonly expression: {
-                                    readonly id: 14663;
+                                    readonly id: 14711;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 14661;
+                                        readonly id: 14709;
                                         readonly name: "shareProceeds";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14633;
+                                        readonly referencedDeclaration: 14681;
                                         readonly src: "8560:13:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -4952,11 +4952,11 @@ export declare const HyperdriveCheckpoint: {
                                     readonly nodeType: "Assignment";
                                     readonly operator: "-=";
                                     readonly rightHandSide: {
-                                        readonly id: 14662;
+                                        readonly id: 14710;
                                         readonly name: "governanceFee";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14635;
+                                        readonly referencedDeclaration: 14683;
                                         readonly src: "8577:13:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -4969,30 +4969,30 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 14664;
+                                readonly id: 14712;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "8560:30:115";
                             }, {
                                 readonly expression: {
-                                    readonly id: 14674;
+                                    readonly id: 14722;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
                                         readonly expression: {
-                                            readonly id: 14665;
+                                            readonly id: 14713;
                                             readonly name: "_marketState";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18160;
+                                            readonly referencedDeclaration: 18208;
                                             readonly src: "8788:12:115";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_struct$_MarketState_$10714_storage";
+                                                readonly typeIdentifier: "t_struct$_MarketState_$10762_storage";
                                                 readonly typeString: "struct IHyperdrive.MarketState storage ref";
                                             };
                                         };
-                                        readonly id: 14667;
+                                        readonly id: 14715;
                                         readonly isConstant: false;
                                         readonly isLValue: true;
                                         readonly isPure: false;
@@ -5000,7 +5000,7 @@ export declare const HyperdriveCheckpoint: {
                                         readonly memberLocation: "8801:18:115";
                                         readonly memberName: "zombieBaseProceeds";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10710;
+                                        readonly referencedDeclaration: 10758;
                                         readonly src: "8788:31:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint112";
@@ -5015,11 +5015,11 @@ export declare const HyperdriveCheckpoint: {
                                             readonly argumentTypes: readonly [];
                                             readonly expression: {
                                                 readonly arguments: readonly [{
-                                                    readonly id: 14670;
+                                                    readonly id: 14718;
                                                     readonly name: "_vaultSharePrice";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 14471;
+                                                    readonly referencedDeclaration: 14519;
                                                     readonly src: "8862:16:115";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -5032,18 +5032,18 @@ export declare const HyperdriveCheckpoint: {
                                                         readonly typeString: "uint256";
                                                     }];
                                                     readonly expression: {
-                                                        readonly id: 14668;
+                                                        readonly id: 14716;
                                                         readonly name: "shareProceeds";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 14633;
+                                                        readonly referencedDeclaration: 14681;
                                                         readonly src: "8823:13:115";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_uint256";
                                                             readonly typeString: "uint256";
                                                         };
                                                     };
-                                                    readonly id: 14669;
+                                                    readonly id: 14717;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
@@ -5051,14 +5051,14 @@ export declare const HyperdriveCheckpoint: {
                                                     readonly memberLocation: "8854:7:115";
                                                     readonly memberName: "mulDown";
                                                     readonly nodeType: "MemberAccess";
-                                                    readonly referencedDeclaration: 18674;
+                                                    readonly referencedDeclaration: 18722;
                                                     readonly src: "8823:38:115";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
                                                         readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                                     };
                                                 };
-                                                readonly id: 14671;
+                                                readonly id: 14719;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -5074,7 +5074,7 @@ export declare const HyperdriveCheckpoint: {
                                                     readonly typeString: "uint256";
                                                 };
                                             };
-                                            readonly id: 14672;
+                                            readonly id: 14720;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -5082,14 +5082,14 @@ export declare const HyperdriveCheckpoint: {
                                             readonly memberLocation: "8897:9:115";
                                             readonly memberName: "toUint112";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 22121;
+                                            readonly referencedDeclaration: 22169;
                                             readonly src: "8823:83:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_uint112_$attached_to$_t_uint256_$";
                                                 readonly typeString: "function (uint256) pure returns (uint112)";
                                             };
                                         };
-                                        readonly id: 14673;
+                                        readonly id: 14721;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -5111,30 +5111,30 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint112";
                                     };
                                 };
-                                readonly id: 14675;
+                                readonly id: 14723;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "8788:120:115";
                             }, {
                                 readonly expression: {
-                                    readonly id: 14682;
+                                    readonly id: 14730;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
                                         readonly expression: {
-                                            readonly id: 14676;
+                                            readonly id: 14724;
                                             readonly name: "_marketState";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18160;
+                                            readonly referencedDeclaration: 18208;
                                             readonly src: "8922:12:115";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_struct$_MarketState_$10714_storage";
+                                                readonly typeIdentifier: "t_struct$_MarketState_$10762_storage";
                                                 readonly typeString: "struct IHyperdrive.MarketState storage ref";
                                             };
                                         };
-                                        readonly id: 14678;
+                                        readonly id: 14726;
                                         readonly isConstant: false;
                                         readonly isLValue: true;
                                         readonly isPure: false;
@@ -5142,7 +5142,7 @@ export declare const HyperdriveCheckpoint: {
                                         readonly memberLocation: "8935:19:115";
                                         readonly memberName: "zombieShareReserves";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10713;
+                                        readonly referencedDeclaration: 10761;
                                         readonly src: "8922:32:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint128";
@@ -5156,18 +5156,18 @@ export declare const HyperdriveCheckpoint: {
                                         readonly expression: {
                                             readonly argumentTypes: readonly [];
                                             readonly expression: {
-                                                readonly id: 14679;
+                                                readonly id: 14727;
                                                 readonly name: "shareProceeds";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 14633;
+                                                readonly referencedDeclaration: 14681;
                                                 readonly src: "8958:13:115";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
                                             };
-                                            readonly id: 14680;
+                                            readonly id: 14728;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -5175,14 +5175,14 @@ export declare const HyperdriveCheckpoint: {
                                             readonly memberLocation: "8972:9:115";
                                             readonly memberName: "toUint128";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 22151;
+                                            readonly referencedDeclaration: 22199;
                                             readonly src: "8958:23:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$";
                                                 readonly typeString: "function (uint256) pure returns (uint128)";
                                             };
                                         };
-                                        readonly id: 14681;
+                                        readonly id: 14729;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -5204,29 +5204,29 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint128";
                                     };
                                 };
-                                readonly id: 14683;
+                                readonly id: 14731;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "8922:61:115";
                             }];
                         };
                     }, {
                         readonly condition: {
-                            readonly id: 14686;
+                            readonly id: 14734;
                             readonly name: "positionsClosed";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 14538;
+                            readonly referencedDeclaration: 14586;
                             readonly src: "9145:15:115";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 14703;
+                        readonly id: 14751;
                         readonly nodeType: "IfStatement";
                         readonly src: "9141:701:115";
                         readonly trueBody: {
-                            readonly id: 14702;
+                            readonly id: 14750;
                             readonly nodeType: "Block";
                             readonly src: "9162:680:115";
                             readonly statements: readonly [{
@@ -5236,7 +5236,7 @@ export declare const HyperdriveCheckpoint: {
                                             readonly typeIdentifier: "t_int256";
                                             readonly typeString: "int256";
                                         };
-                                        readonly id: 14694;
+                                        readonly id: 14742;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -5246,18 +5246,18 @@ export declare const HyperdriveCheckpoint: {
                                             readonly expression: {
                                                 readonly argumentTypes: readonly [];
                                                 readonly expression: {
-                                                    readonly id: 14688;
+                                                    readonly id: 14736;
                                                     readonly name: "maturedLongsAmount";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 14620;
+                                                    readonly referencedDeclaration: 14668;
                                                     readonly src: "9402:18:115";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
                                                         readonly typeString: "uint256";
                                                     };
                                                 };
-                                                readonly id: 14689;
+                                                readonly id: 14737;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -5265,14 +5265,14 @@ export declare const HyperdriveCheckpoint: {
                                                 readonly memberLocation: "9421:8:115";
                                                 readonly memberName: "toInt256";
                                                 readonly nodeType: "MemberAccess";
-                                                readonly referencedDeclaration: 22264;
+                                                readonly referencedDeclaration: 22312;
                                                 readonly src: "9402:27:115";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_int256_$attached_to$_t_uint256_$";
                                                     readonly typeString: "function (uint256) pure returns (int256)";
                                                 };
                                             };
-                                            readonly id: 14690;
+                                            readonly id: 14738;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -5295,18 +5295,18 @@ export declare const HyperdriveCheckpoint: {
                                             readonly expression: {
                                                 readonly argumentTypes: readonly [];
                                                 readonly expression: {
-                                                    readonly id: 14691;
+                                                    readonly id: 14739;
                                                     readonly name: "maturedShortsAmount";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 14532;
+                                                    readonly referencedDeclaration: 14580;
                                                     readonly src: "9434:19:115";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
                                                         readonly typeString: "uint256";
                                                     };
                                                 };
-                                                readonly id: 14692;
+                                                readonly id: 14740;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -5314,14 +5314,14 @@ export declare const HyperdriveCheckpoint: {
                                                 readonly memberLocation: "9454:8:115";
                                                 readonly memberName: "toInt256";
                                                 readonly nodeType: "MemberAccess";
-                                                readonly referencedDeclaration: 22264;
+                                                readonly referencedDeclaration: 22312;
                                                 readonly src: "9434:28:115";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_int256_$attached_to$_t_uint256_$";
                                                     readonly typeString: "function (uint256) pure returns (int256)";
                                                 };
                                             };
-                                            readonly id: 14693;
+                                            readonly id: 14741;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -5344,7 +5344,7 @@ export declare const HyperdriveCheckpoint: {
                                         };
                                     }, {
                                         readonly hexValue: "30";
-                                        readonly id: 14695;
+                                        readonly id: 14743;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -5366,18 +5366,18 @@ export declare const HyperdriveCheckpoint: {
                                             readonly typeIdentifier: "t_rational_0_by_1";
                                             readonly typeString: "int_const 0";
                                         }];
-                                        readonly id: 14687;
+                                        readonly id: 14735;
                                         readonly name: "_updateLongExposure";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 13847;
+                                        readonly referencedDeclaration: 13895;
                                         readonly src: "9365:19:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_nonpayable$_t_int256_$_t_int256_$returns$__$";
                                             readonly typeString: "function (int256,int256)";
                                         };
                                     };
-                                    readonly id: 14696;
+                                    readonly id: 14744;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -5393,17 +5393,17 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 14697;
+                                readonly id: 14745;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "9365:132:115";
                             }, {
                                 readonly expression: {
                                     readonly arguments: readonly [{
-                                        readonly id: 14699;
+                                        readonly id: 14747;
                                         readonly name: "_vaultSharePrice";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14471;
+                                        readonly referencedDeclaration: 14519;
                                         readonly src: "9814:16:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -5415,18 +5415,18 @@ export declare const HyperdriveCheckpoint: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         }];
-                                        readonly id: 14698;
+                                        readonly id: 14746;
                                         readonly name: "_distributeExcessIdleSafe";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 15622;
+                                        readonly referencedDeclaration: 15670;
                                         readonly src: "9788:25:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_nonpayable$_t_uint256_$returns$_t_bool_$";
                                             readonly typeString: "function (uint256) returns (bool)";
                                         };
                                     };
-                                    readonly id: 14700;
+                                    readonly id: 14748;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -5442,21 +5442,21 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "bool";
                                     };
                                 };
-                                readonly id: 14701;
+                                readonly id: 14749;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "9788:43:115";
                             }];
                         };
                     }, {
-                        readonly assignments: readonly [14705, null];
+                        readonly assignments: readonly [14753, null];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 14705;
+                            readonly id: 14753;
                             readonly mutability: "mutable";
                             readonly name: "lpSharePrice";
                             readonly nameLocation: "10229:12:115";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 14720;
+                            readonly scope: 14768;
                             readonly src: "10221:20:115";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -5465,7 +5465,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 14704;
+                                readonly id: 14752;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "10221:7:115";
@@ -5476,14 +5476,14 @@ export declare const HyperdriveCheckpoint: {
                             };
                             readonly visibility: "internal";
                         }, null];
-                        readonly id: 14709;
+                        readonly id: 14757;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 14707;
+                                readonly id: 14755;
                                 readonly name: "_vaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14471;
+                                readonly referencedDeclaration: 14519;
                                 readonly src: "10274:16:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -5495,18 +5495,18 @@ export declare const HyperdriveCheckpoint: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 14706;
+                                readonly id: 14754;
                                 readonly name: "_calculateLPSharePriceSafe";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14143;
+                                readonly referencedDeclaration: 14191;
                                 readonly src: "10247:26:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_view$_t_uint256_$returns$_t_uint256_$_t_bool_$";
                                     readonly typeString: "function (uint256) view returns (uint256,bool)";
                                 };
                             };
-                            readonly id: 14708;
+                            readonly id: 14756;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -5527,55 +5527,55 @@ export declare const HyperdriveCheckpoint: {
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
-                                readonly id: 14711;
+                                readonly id: 14759;
                                 readonly name: "_checkpointTime";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14469;
+                                readonly referencedDeclaration: 14517;
                                 readonly src: "10336:15:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 14712;
+                                readonly id: 14760;
                                 readonly name: "_vaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14471;
+                                readonly referencedDeclaration: 14519;
                                 readonly src: "10365:16:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 14713;
+                                readonly id: 14761;
                                 readonly name: "maturedShortsAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14532;
+                                readonly referencedDeclaration: 14580;
                                 readonly src: "10395:19:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 14714;
+                                readonly id: 14762;
                                 readonly name: "maturedLongsAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14620;
+                                readonly referencedDeclaration: 14668;
                                 readonly src: "10428:18:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 14715;
+                                readonly id: 14763;
                                 readonly name: "lpSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14705;
+                                readonly referencedDeclaration: 14753;
                                 readonly src: "10460:12:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -5599,18 +5599,18 @@ export declare const HyperdriveCheckpoint: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 14710;
+                                readonly id: 14758;
                                 readonly name: "CreateCheckpoint";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 11509;
+                                readonly referencedDeclaration: 11557;
                                 readonly src: "10306:16:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$";
                                     readonly typeString: "function (uint256,uint256,uint256,uint256,uint256)";
                                 };
                             };
-                            readonly id: 14716;
+                            readonly id: 14764;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -5626,31 +5626,31 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 14717;
+                        readonly id: 14765;
                         readonly nodeType: "EmitStatement";
                         readonly src: "10301:181:115";
                     }, {
                         readonly expression: {
-                            readonly id: 14718;
+                            readonly id: 14766;
                             readonly name: "_vaultSharePrice";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 14471;
+                            readonly referencedDeclaration: 14519;
                             readonly src: "10500:16:115";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 14476;
-                        readonly id: 14719;
+                        readonly functionReturnParameters: 14524;
+                        readonly id: 14767;
                         readonly nodeType: "Return";
                         readonly src: "10493:23:115";
                     }];
                 };
-                readonly baseFunctions: readonly [13472];
+                readonly baseFunctions: readonly [13520];
                 readonly documentation: {
-                    readonly id: 14467;
+                    readonly id: 14515;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2997:251:115";
                     readonly text: "@dev Creates a new checkpoint if necessary.\n @param _checkpointTime The time of the checkpoint to create.\n @param _vaultSharePrice The current vault share price.\n @return The opening vault share price of the latest checkpoint.";
@@ -5661,22 +5661,22 @@ export declare const HyperdriveCheckpoint: {
                 readonly name: "_applyCheckpoint";
                 readonly nameLocation: "3262:16:115";
                 readonly overrides: {
-                    readonly id: 14473;
+                    readonly id: 14521;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "3361:8:115";
                 };
                 readonly parameters: {
-                    readonly id: 14472;
+                    readonly id: 14520;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 14469;
+                        readonly id: 14517;
                         readonly mutability: "mutable";
                         readonly name: "_checkpointTime";
                         readonly nameLocation: "3296:15:115";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 14721;
+                        readonly scope: 14769;
                         readonly src: "3288:23:115";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5685,7 +5685,7 @@ export declare const HyperdriveCheckpoint: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 14468;
+                            readonly id: 14516;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3288:7:115";
@@ -5697,12 +5697,12 @@ export declare const HyperdriveCheckpoint: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 14471;
+                        readonly id: 14519;
                         readonly mutability: "mutable";
                         readonly name: "_vaultSharePrice";
                         readonly nameLocation: "3329:16:115";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 14721;
+                        readonly scope: 14769;
                         readonly src: "3321:24:115";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5711,7 +5711,7 @@ export declare const HyperdriveCheckpoint: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 14470;
+                            readonly id: 14518;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3321:7:115";
@@ -5725,16 +5725,16 @@ export declare const HyperdriveCheckpoint: {
                     readonly src: "3278:73:115";
                 };
                 readonly returnParameters: {
-                    readonly id: 14476;
+                    readonly id: 14524;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 14475;
+                        readonly id: 14523;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 14721;
+                        readonly scope: 14769;
                         readonly src: "3379:7:115";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5743,7 +5743,7 @@ export declare const HyperdriveCheckpoint: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 14474;
+                            readonly id: 14522;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3379:7:115";
@@ -5756,33 +5756,33 @@ export declare const HyperdriveCheckpoint: {
                     }];
                     readonly src: "3378:9:115";
                 };
-                readonly scope: 14797;
+                readonly scope: 14845;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 14796;
+                readonly id: 14844;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "11087:2398:115";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 14795;
+                    readonly id: 14843;
                     readonly nodeType: "Block";
                     readonly src: "11320:2165:115";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 14742;
+                            readonly id: 14790;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 14737;
+                                readonly id: 14785;
                                 readonly name: "shareProceeds";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14733;
+                                readonly referencedDeclaration: 14781;
                                 readonly src: "11664:13:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -5793,11 +5793,11 @@ export declare const HyperdriveCheckpoint: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 14740;
+                                    readonly id: 14788;
                                     readonly name: "_vaultSharePrice";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 14726;
+                                    readonly referencedDeclaration: 14774;
                                     readonly src: "11700:16:115";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -5810,18 +5810,18 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     }];
                                     readonly expression: {
-                                        readonly id: 14738;
+                                        readonly id: 14786;
                                         readonly name: "_bondAmount";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14724;
+                                        readonly referencedDeclaration: 14772;
                                         readonly src: "11680:11:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
                                     };
-                                    readonly id: 14739;
+                                    readonly id: 14787;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -5829,14 +5829,14 @@ export declare const HyperdriveCheckpoint: {
                                     readonly memberLocation: "11692:7:115";
                                     readonly memberName: "divDown";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 18692;
+                                    readonly referencedDeclaration: 18740;
                                     readonly src: "11680:19:115";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
                                         readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                     };
                                 };
-                                readonly id: 14741;
+                                readonly id: 14789;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -5858,19 +5858,19 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 14743;
+                        readonly id: 14791;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "11664:53:115";
                     }, {
-                        readonly assignments: readonly [14745];
+                        readonly assignments: readonly [14793];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 14745;
+                            readonly id: 14793;
                             readonly mutability: "mutable";
                             readonly name: "flatFee";
                             readonly nameLocation: "11735:7:115";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 14795;
+                            readonly scope: 14843;
                             readonly src: "11727:15:115";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -5879,7 +5879,7 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 14744;
+                                readonly id: 14792;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "11727:7:115";
@@ -5890,14 +5890,14 @@ export declare const HyperdriveCheckpoint: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 14750;
+                        readonly id: 14798;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 14748;
+                                readonly id: 14796;
                                 readonly name: "_flatFee";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 18141;
+                                readonly referencedDeclaration: 18189;
                                 readonly src: "11767:8:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -5910,18 +5910,18 @@ export declare const HyperdriveCheckpoint: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 14746;
+                                    readonly id: 14794;
                                     readonly name: "shareProceeds";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 14733;
+                                    readonly referencedDeclaration: 14781;
                                     readonly src: "11745:13:115";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 14747;
+                                readonly id: 14795;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -5929,14 +5929,14 @@ export declare const HyperdriveCheckpoint: {
                                 readonly memberLocation: "11759:7:115";
                                 readonly memberName: "mulDown";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18674;
+                                readonly referencedDeclaration: 18722;
                                 readonly src: "11745:21:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
                                     readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 14749;
+                            readonly id: 14797;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -5956,17 +5956,17 @@ export declare const HyperdriveCheckpoint: {
                         readonly src: "11727:49:115";
                     }, {
                         readonly expression: {
-                            readonly id: 14756;
+                            readonly id: 14804;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 14751;
+                                readonly id: 14799;
                                 readonly name: "governanceFee";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14735;
+                                readonly referencedDeclaration: 14783;
                                 readonly src: "11786:13:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -5977,11 +5977,11 @@ export declare const HyperdriveCheckpoint: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 14754;
+                                    readonly id: 14802;
                                     readonly name: "_governanceLPFee";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18144;
+                                    readonly referencedDeclaration: 18192;
                                     readonly src: "11818:16:115";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -5994,18 +5994,18 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     }];
                                     readonly expression: {
-                                        readonly id: 14752;
+                                        readonly id: 14800;
                                         readonly name: "flatFee";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14745;
+                                        readonly referencedDeclaration: 14793;
                                         readonly src: "11802:7:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
                                     };
-                                    readonly id: 14753;
+                                    readonly id: 14801;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -6013,14 +6013,14 @@ export declare const HyperdriveCheckpoint: {
                                     readonly memberLocation: "11810:7:115";
                                     readonly memberName: "mulDown";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 18674;
+                                    readonly referencedDeclaration: 18722;
                                     readonly src: "11802:15:115";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
                                         readonly typeString: "function (uint256,uint256) pure returns (uint256)";
                                     };
                                 };
-                                readonly id: 14755;
+                                readonly id: 14803;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -6042,16 +6042,16 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 14757;
+                        readonly id: 14805;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "11786:49:115";
                     }, {
                         readonly condition: {
-                            readonly id: 14758;
+                            readonly id: 14806;
                             readonly name: "_isLong";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 14730;
+                            readonly referencedDeclaration: 14778;
                             readonly src: "12262:7:115";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
@@ -6059,22 +6059,22 @@ export declare const HyperdriveCheckpoint: {
                             };
                         };
                         readonly falseBody: {
-                            readonly id: 14772;
+                            readonly id: 14820;
                             readonly nodeType: "Block";
                             readonly src: "12750:65:115";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 14770;
+                                    readonly id: 14818;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 14766;
+                                        readonly id: 14814;
                                         readonly name: "shareProceeds";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14733;
+                                        readonly referencedDeclaration: 14781;
                                         readonly src: "12764:13:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -6088,17 +6088,17 @@ export declare const HyperdriveCheckpoint: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
-                                        readonly id: 14769;
+                                        readonly id: 14817;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
-                                            readonly id: 14767;
+                                            readonly id: 14815;
                                             readonly name: "flatFee";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 14745;
+                                            readonly referencedDeclaration: 14793;
                                             readonly src: "12781:7:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -6108,11 +6108,11 @@ export declare const HyperdriveCheckpoint: {
                                         readonly nodeType: "BinaryOperation";
                                         readonly operator: "-";
                                         readonly rightExpression: {
-                                            readonly id: 14768;
+                                            readonly id: 14816;
                                             readonly name: "governanceFee";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 14735;
+                                            readonly referencedDeclaration: 14783;
                                             readonly src: "12791:13:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -6131,31 +6131,31 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 14771;
+                                readonly id: 14819;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "12764:40:115";
                             }];
                         };
-                        readonly id: 14773;
+                        readonly id: 14821;
                         readonly nodeType: "IfStatement";
                         readonly src: "12258:557:115";
                         readonly trueBody: {
-                            readonly id: 14765;
+                            readonly id: 14813;
                             readonly nodeType: "Block";
                             readonly src: "12271:65:115";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 14763;
+                                    readonly id: 14811;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 14759;
+                                        readonly id: 14807;
                                         readonly name: "shareProceeds";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14733;
+                                        readonly referencedDeclaration: 14781;
                                         readonly src: "12285:13:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -6169,17 +6169,17 @@ export declare const HyperdriveCheckpoint: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
-                                        readonly id: 14762;
+                                        readonly id: 14810;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
-                                            readonly id: 14760;
+                                            readonly id: 14808;
                                             readonly name: "flatFee";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 14745;
+                                            readonly referencedDeclaration: 14793;
                                             readonly src: "12302:7:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -6189,11 +6189,11 @@ export declare const HyperdriveCheckpoint: {
                                         readonly nodeType: "BinaryOperation";
                                         readonly operator: "-";
                                         readonly rightExpression: {
-                                            readonly id: 14761;
+                                            readonly id: 14809;
                                             readonly name: "governanceFee";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 14735;
+                                            readonly referencedDeclaration: 14783;
                                             readonly src: "12312:13:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -6212,7 +6212,7 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 14764;
+                                readonly id: 14812;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "12285:40:115";
                             }];
@@ -6223,17 +6223,17 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 14776;
+                            readonly id: 14824;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 14774;
+                                readonly id: 14822;
                                 readonly name: "_vaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14726;
+                                readonly referencedDeclaration: 14774;
                                 readonly src: "13014:16:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -6243,11 +6243,11 @@ export declare const HyperdriveCheckpoint: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "<";
                             readonly rightExpression: {
-                                readonly id: 14775;
+                                readonly id: 14823;
                                 readonly name: "_openVaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 14728;
+                                readonly referencedDeclaration: 14776;
                                 readonly src: "13033:20:115";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -6260,26 +6260,26 @@ export declare const HyperdriveCheckpoint: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 14794;
+                        readonly id: 14842;
                         readonly nodeType: "IfStatement";
                         readonly src: "13010:469:115";
                         readonly trueBody: {
-                            readonly id: 14793;
+                            readonly id: 14841;
                             readonly nodeType: "Block";
                             readonly src: "13055:424:115";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 14783;
+                                    readonly id: 14831;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 14777;
+                                        readonly id: 14825;
                                         readonly name: "shareProceeds";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14733;
+                                        readonly referencedDeclaration: 14781;
                                         readonly src: "13132:13:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -6290,22 +6290,22 @@ export declare const HyperdriveCheckpoint: {
                                     readonly operator: "=";
                                     readonly rightHandSide: {
                                         readonly arguments: readonly [{
-                                            readonly id: 14780;
+                                            readonly id: 14828;
                                             readonly name: "_vaultSharePrice";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 14726;
+                                            readonly referencedDeclaration: 14774;
                                             readonly src: "13190:16:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             };
                                         }, {
-                                            readonly id: 14781;
+                                            readonly id: 14829;
                                             readonly name: "_openVaultSharePrice";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 14728;
+                                            readonly referencedDeclaration: 14776;
                                             readonly src: "13224:20:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -6321,18 +6321,18 @@ export declare const HyperdriveCheckpoint: {
                                                 readonly typeString: "uint256";
                                             }];
                                             readonly expression: {
-                                                readonly id: 14778;
+                                                readonly id: 14826;
                                                 readonly name: "shareProceeds";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 14733;
+                                                readonly referencedDeclaration: 14781;
                                                 readonly src: "13148:13:115";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
                                             };
-                                            readonly id: 14779;
+                                            readonly id: 14827;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -6340,14 +6340,14 @@ export declare const HyperdriveCheckpoint: {
                                             readonly memberLocation: "13162:10:115";
                                             readonly memberName: "mulDivDown";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 18656;
+                                            readonly referencedDeclaration: 18704;
                                             readonly src: "13148:24:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
                                                 readonly typeString: "function (uint256,uint256,uint256) pure returns (uint256)";
                                             };
                                         };
-                                        readonly id: 14782;
+                                        readonly id: 14830;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -6369,22 +6369,22 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 14784;
+                                readonly id: 14832;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "13132:126:115";
                             }, {
                                 readonly expression: {
-                                    readonly id: 14791;
+                                    readonly id: 14839;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 14785;
+                                        readonly id: 14833;
                                         readonly name: "governanceFee";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 14735;
+                                        readonly referencedDeclaration: 14783;
                                         readonly src: "13342:13:115";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -6395,22 +6395,22 @@ export declare const HyperdriveCheckpoint: {
                                     readonly operator: "=";
                                     readonly rightHandSide: {
                                         readonly arguments: readonly [{
-                                            readonly id: 14788;
+                                            readonly id: 14836;
                                             readonly name: "_vaultSharePrice";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 14726;
+                                            readonly referencedDeclaration: 14774;
                                             readonly src: "13400:16:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
                                                 readonly typeString: "uint256";
                                             };
                                         }, {
-                                            readonly id: 14789;
+                                            readonly id: 14837;
                                             readonly name: "_openVaultSharePrice";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 14728;
+                                            readonly referencedDeclaration: 14776;
                                             readonly src: "13434:20:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -6426,18 +6426,18 @@ export declare const HyperdriveCheckpoint: {
                                                 readonly typeString: "uint256";
                                             }];
                                             readonly expression: {
-                                                readonly id: 14786;
+                                                readonly id: 14834;
                                                 readonly name: "governanceFee";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 14735;
+                                                readonly referencedDeclaration: 14783;
                                                 readonly src: "13358:13:115";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
                                             };
-                                            readonly id: 14787;
+                                            readonly id: 14835;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -6445,14 +6445,14 @@ export declare const HyperdriveCheckpoint: {
                                             readonly memberLocation: "13372:10:115";
                                             readonly memberName: "mulDivDown";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 18656;
+                                            readonly referencedDeclaration: 18704;
                                             readonly src: "13358:24:115";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$";
                                                 readonly typeString: "function (uint256,uint256,uint256) pure returns (uint256)";
                                             };
                                         };
-                                        readonly id: 14790;
+                                        readonly id: 14838;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -6474,7 +6474,7 @@ export declare const HyperdriveCheckpoint: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 14792;
+                                readonly id: 14840;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "13342:126:115";
                             }];
@@ -6482,7 +6482,7 @@ export declare const HyperdriveCheckpoint: {
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 14722;
+                    readonly id: 14770;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "10529:553:115";
                     readonly text: "@dev Calculates the proceeds of the holders of a given position at\n      maturity.\n @param _bondAmount The bond amount of the position.\n @param _vaultSharePrice The current vault share price.\n @param _openVaultSharePrice The vault share price at the beginning of\n        the position's checkpoint.\n @param _isLong A flag indicating whether or not the position is a long.\n @return shareProceeds The proceeds of the holders in shares.\n @return governanceFee The fee paid to governance in shares.";
@@ -6493,16 +6493,16 @@ export declare const HyperdriveCheckpoint: {
                 readonly name: "_calculateMaturedProceeds";
                 readonly nameLocation: "11096:25:115";
                 readonly parameters: {
-                    readonly id: 14731;
+                    readonly id: 14779;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 14724;
+                        readonly id: 14772;
                         readonly mutability: "mutable";
                         readonly name: "_bondAmount";
                         readonly nameLocation: "11139:11:115";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 14796;
+                        readonly scope: 14844;
                         readonly src: "11131:19:115";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6511,7 +6511,7 @@ export declare const HyperdriveCheckpoint: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 14723;
+                            readonly id: 14771;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11131:7:115";
@@ -6523,12 +6523,12 @@ export declare const HyperdriveCheckpoint: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 14726;
+                        readonly id: 14774;
                         readonly mutability: "mutable";
                         readonly name: "_vaultSharePrice";
                         readonly nameLocation: "11168:16:115";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 14796;
+                        readonly scope: 14844;
                         readonly src: "11160:24:115";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6537,7 +6537,7 @@ export declare const HyperdriveCheckpoint: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 14725;
+                            readonly id: 14773;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11160:7:115";
@@ -6549,12 +6549,12 @@ export declare const HyperdriveCheckpoint: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 14728;
+                        readonly id: 14776;
                         readonly mutability: "mutable";
                         readonly name: "_openVaultSharePrice";
                         readonly nameLocation: "11202:20:115";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 14796;
+                        readonly scope: 14844;
                         readonly src: "11194:28:115";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6563,7 +6563,7 @@ export declare const HyperdriveCheckpoint: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 14727;
+                            readonly id: 14775;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11194:7:115";
@@ -6575,12 +6575,12 @@ export declare const HyperdriveCheckpoint: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 14730;
+                        readonly id: 14778;
                         readonly mutability: "mutable";
                         readonly name: "_isLong";
                         readonly nameLocation: "11237:7:115";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 14796;
+                        readonly scope: 14844;
                         readonly src: "11232:12:115";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6589,7 +6589,7 @@ export declare const HyperdriveCheckpoint: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 14729;
+                            readonly id: 14777;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11232:4:115";
@@ -6603,16 +6603,16 @@ export declare const HyperdriveCheckpoint: {
                     readonly src: "11121:129:115";
                 };
                 readonly returnParameters: {
-                    readonly id: 14736;
+                    readonly id: 14784;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 14733;
+                        readonly id: 14781;
                         readonly mutability: "mutable";
                         readonly name: "shareProceeds";
                         readonly nameLocation: "11282:13:115";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 14796;
+                        readonly scope: 14844;
                         readonly src: "11274:21:115";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6621,7 +6621,7 @@ export declare const HyperdriveCheckpoint: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 14732;
+                            readonly id: 14780;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11274:7:115";
@@ -6633,12 +6633,12 @@ export declare const HyperdriveCheckpoint: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 14735;
+                        readonly id: 14783;
                         readonly mutability: "mutable";
                         readonly name: "governanceFee";
                         readonly nameLocation: "11305:13:115";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 14796;
+                        readonly scope: 14844;
                         readonly src: "11297:21:115";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6647,7 +6647,7 @@ export declare const HyperdriveCheckpoint: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 14734;
+                            readonly id: 14782;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11297:7:115";
@@ -6660,7 +6660,7 @@ export declare const HyperdriveCheckpoint: {
                     }];
                     readonly src: "11273:46:115";
                 };
-                readonly scope: 14797;
+                readonly scope: 14845;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
@@ -6668,50 +6668,50 @@ export declare const HyperdriveCheckpoint: {
             readonly abstract: true;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 14357;
+                    readonly id: 14405;
                     readonly name: "IHyperdriveEvents";
                     readonly nameLocations: readonly ["1006:17:115"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 11551;
+                    readonly referencedDeclaration: 11599;
                     readonly src: "1006:17:115";
                 };
-                readonly id: 14358;
+                readonly id: 14406;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "1006:17:115";
             }, {
                 readonly baseName: {
-                    readonly id: 14359;
+                    readonly id: 14407;
                     readonly name: "HyperdriveBase";
                     readonly nameLocations: readonly ["1029:14:115"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 14333;
+                    readonly referencedDeclaration: 14381;
                     readonly src: "1029:14:115";
                 };
-                readonly id: 14360;
+                readonly id: 14408;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "1029:14:115";
             }, {
                 readonly baseName: {
-                    readonly id: 14361;
+                    readonly id: 14409;
                     readonly name: "HyperdriveLong";
                     readonly nameLocations: readonly ["1049:14:115"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 16633;
+                    readonly referencedDeclaration: 16681;
                     readonly src: "1049:14:115";
                 };
-                readonly id: 14362;
+                readonly id: 14410;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "1049:14:115";
             }, {
                 readonly baseName: {
-                    readonly id: 14363;
+                    readonly id: 14411;
                     readonly name: "HyperdriveShort";
                     readonly nameLocations: readonly ["1069:15:115"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 18103;
+                    readonly referencedDeclaration: 18151;
                     readonly src: "1069:15:115";
                 };
-                readonly id: 14364;
+                readonly id: 14412;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "1069:15:115";
             }];
@@ -6719,18 +6719,18 @@ export declare const HyperdriveCheckpoint: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly documentation: {
-                readonly id: 14356;
+                readonly id: 14404;
                 readonly nodeType: "StructuredDocumentation";
                 readonly src: "654:306:115";
                 readonly text: "@author DELV\n @notice Implements the checkpoint accounting for Hyperdrive.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [14797, 18103, 16633, 15699, 17117, 14333, 18319, 71995, 11551, 12117];
+            readonly linearizedBaseContracts: readonly [14845, 18151, 16681, 15747, 17165, 14381, 18367, 72043, 11599, 12165];
             readonly name: "HyperdriveCheckpoint";
             readonly nameLocation: "978:20:115";
-            readonly scope: 14798;
-            readonly usedErrors: readonly [71940];
-            readonly usedEvents: readonly [11371, 11386, 11405, 11420, 11437, 11456, 11475, 11496, 11509, 11516, 11521, 11526, 11531, 11538, 11543, 11550, 12098, 12107, 12116];
+            readonly scope: 14846;
+            readonly usedErrors: readonly [71988];
+            readonly usedEvents: readonly [11419, 11434, 11453, 11468, 11485, 11504, 11523, 11544, 11557, 11564, 11569, 11574, 11579, 11586, 11591, 11598, 12146, 12155, 12164];
         }];
         readonly license: "Apache-2.0";
     };

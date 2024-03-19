@@ -10,20 +10,20 @@ export declare const Constants: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/libraries/Constants.sol";
-        readonly id: 18601;
+        readonly id: 18649;
         readonly exportedSymbols: {
-            readonly ETH: readonly [18600];
+            readonly ETH: readonly [18648];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:134:122";
         readonly nodes: readonly [{
-            readonly id: 18596;
+            readonly id: 18644;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:122";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 18600;
+            readonly id: 18648;
             readonly nodeType: "VariableDeclaration";
             readonly src: "106:65:122";
             readonly nodes: readonly [];
@@ -31,7 +31,7 @@ export declare const Constants: {
             readonly mutability: "constant";
             readonly name: "ETH";
             readonly nameLocation: "123:3:122";
-            readonly scope: 18601;
+            readonly scope: 18649;
             readonly stateVariable: false;
             readonly storageLocation: "default";
             readonly typeDescriptions: {
@@ -39,7 +39,7 @@ export declare const Constants: {
                 readonly typeString: "address";
             };
             readonly typeName: {
-                readonly id: 18598;
+                readonly id: 18646;
                 readonly name: "address";
                 readonly nodeType: "ElementaryTypeName";
                 readonly src: "106:7:122";
@@ -51,7 +51,7 @@ export declare const Constants: {
             };
             readonly value: {
                 readonly hexValue: "307845656565654565656545654565654565456545656545454565656565456565656565656545456545";
-                readonly id: 18599;
+                readonly id: 18647;
                 readonly isConstant: false;
                 readonly isLValue: false;
                 readonly isPure: true;

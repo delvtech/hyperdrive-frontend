@@ -1,300 +1,300 @@
 export declare const ILido: {
     readonly abi: readonly [{
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "owner";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "spender";
-            readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "value";
-            readonly type: "uint256";
-        }];
-        readonly name: "Approval";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "from";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "to";
-            readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "value";
-            readonly type: "uint256";
-        }];
-        readonly name: "Transfer";
-        readonly type: "event";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "owner";
-            readonly type: "address";
-        }, {
-            readonly internalType: "address";
-            readonly name: "spender";
-            readonly type: "address";
-        }];
+        readonly type: "function";
         readonly name: "allowance";
+        readonly inputs: readonly [{
+            readonly name: "owner";
+            readonly type: "address";
+            readonly internalType: "address";
+        }, {
+            readonly name: "spender";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "approve";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "spender";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "approve";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "balanceOf";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "account";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "balanceOf";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "decimals";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint8";
             readonly name: "";
             readonly type: "uint8";
+            readonly internalType: "uint8";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getBufferedEther";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getPooledEthByShares";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_sharesAmount";
             readonly type: "uint256";
-        }];
-        readonly name: "getPooledEthByShares";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getSharesByPooledEth";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_ethAmount";
             readonly type: "uint256";
-        }];
-        readonly name: "getSharesByPooledEth";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getTotalPooledEther";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getTotalShares";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "name";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "string";
             readonly name: "";
             readonly type: "string";
+            readonly internalType: "string";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "sharesOf";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_account";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "sharesOf";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "submit";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_referral";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "submit";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "payable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "symbol";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "string";
             readonly name: "";
             readonly type: "string";
+            readonly internalType: "string";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "totalSupply";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "transfer";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "to";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "transfer";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "transferFrom";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "from";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "to";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "transferFrom";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "transferShares";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_recipient";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_sharesAmount";
             readonly type: "uint256";
-        }];
-        readonly name: "transferShares";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "transferSharesFrom";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_sender";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "_recipient";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_sharesAmount";
             readonly type: "uint256";
-        }];
-        readonly name: "transferSharesFrom";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
+    }, {
+        readonly type: "event";
+        readonly name: "Approval";
+        readonly inputs: readonly [{
+            readonly name: "owner";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "spender";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "value";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "Transfer";
+        readonly inputs: readonly [{
+            readonly name: "from";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "to";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "value";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
     }];
     readonly bytecode: {
         readonly object: "0x";
@@ -855,36 +855,36 @@ export declare const ILido: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/ILido.sol";
-        readonly id: 11974;
+        readonly id: 12022;
         readonly exportedSymbols: {
-            readonly IERC20: readonly [10319];
-            readonly ILido: readonly [11973];
+            readonly IERC20: readonly [10358];
+            readonly ILido: readonly [12021];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:2877:97";
         readonly nodes: readonly [{
-            readonly id: 11896;
+            readonly id: 11944;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:97";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 11898;
+            readonly id: 11946;
             readonly nodeType: "ImportDirective";
             readonly src: "64:38:97";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IERC20.sol";
             readonly file: "./IERC20.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 11974;
-            readonly sourceUnit: 10320;
+            readonly scope: 12022;
+            readonly sourceUnit: 10359;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 11897;
+                    readonly id: 11945;
                     readonly name: "IERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 10319;
+                    readonly referencedDeclaration: 10358;
                     readonly src: "73:6:97";
                     readonly typeDescriptions: {};
                 };
@@ -892,16 +892,16 @@ export declare const ILido: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 11973;
+            readonly id: 12021;
             readonly nodeType: "ContractDefinition";
             readonly src: "104:2811:97";
             readonly nodes: readonly [{
-                readonly id: 11908;
+                readonly id: 11956;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "362:70:97";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11901;
+                    readonly id: 11949;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "136:221:97";
                     readonly text: "@notice Submits ether to stETH to be staked.\n @param _referral The referral address that should get credit in Lido's\n        referral program.\n @return The amount of stETH shares that were minted.";
@@ -913,16 +913,16 @@ export declare const ILido: {
                 readonly name: "submit";
                 readonly nameLocation: "371:6:97";
                 readonly parameters: {
-                    readonly id: 11904;
+                    readonly id: 11952;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11903;
+                        readonly id: 11951;
                         readonly mutability: "mutable";
                         readonly name: "_referral";
                         readonly nameLocation: "386:9:97";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11908;
+                        readonly scope: 11956;
                         readonly src: "378:17:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -931,7 +931,7 @@ export declare const ILido: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11902;
+                            readonly id: 11950;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "378:7:97";
@@ -946,16 +946,16 @@ export declare const ILido: {
                     readonly src: "377:19:97";
                 };
                 readonly returnParameters: {
-                    readonly id: 11907;
+                    readonly id: 11955;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11906;
+                        readonly id: 11954;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11908;
+                        readonly scope: 11956;
                         readonly src: "423:7:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -964,7 +964,7 @@ export declare const ILido: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11905;
+                            readonly id: 11953;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "423:7:97";
@@ -977,17 +977,17 @@ export declare const ILido: {
                     }];
                     readonly src: "422:9:97";
                 };
-                readonly scope: 11973;
+                readonly scope: 12021;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11918;
+                readonly id: 11966;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "712:116:97";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11909;
+                    readonly id: 11957;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "438:269:97";
                     readonly text: "@notice Transfers stETH shares from the caller to a recipient.\n @param _recipient The recipient of the tokens.\n @param _sharesAmount The amount of stETH shares that will be transferred.\n @return The amount of stETH tokens that were transferred.";
@@ -999,16 +999,16 @@ export declare const ILido: {
                 readonly name: "transferShares";
                 readonly nameLocation: "721:14:97";
                 readonly parameters: {
-                    readonly id: 11914;
+                    readonly id: 11962;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11911;
+                        readonly id: 11959;
                         readonly mutability: "mutable";
                         readonly name: "_recipient";
                         readonly nameLocation: "753:10:97";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11918;
+                        readonly scope: 11966;
                         readonly src: "745:18:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1017,7 +1017,7 @@ export declare const ILido: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11910;
+                            readonly id: 11958;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "745:7:97";
@@ -1030,12 +1030,12 @@ export declare const ILido: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11913;
+                        readonly id: 11961;
                         readonly mutability: "mutable";
                         readonly name: "_sharesAmount";
                         readonly nameLocation: "781:13:97";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11918;
+                        readonly scope: 11966;
                         readonly src: "773:21:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1044,7 +1044,7 @@ export declare const ILido: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11912;
+                            readonly id: 11960;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "773:7:97";
@@ -1058,16 +1058,16 @@ export declare const ILido: {
                     readonly src: "735:65:97";
                 };
                 readonly returnParameters: {
-                    readonly id: 11917;
+                    readonly id: 11965;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11916;
+                        readonly id: 11964;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11918;
+                        readonly scope: 11966;
                         readonly src: "819:7:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1076,7 +1076,7 @@ export declare const ILido: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11915;
+                            readonly id: 11963;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "819:7:97";
@@ -1089,17 +1089,17 @@ export declare const ILido: {
                     }];
                     readonly src: "818:9:97";
                 };
-                readonly scope: 11973;
+                readonly scope: 12021;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11930;
+                readonly id: 11978;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1195:145:97";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11919;
+                    readonly id: 11967;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "834:356:97";
                     readonly text: "@notice Transfers stETH shares from an owner to a recipient. This draws\n         from the spender's allowance.\n @param _sender The owner of the tokens.\n @param _recipient The recipient of the tokens.\n @param _sharesAmount The amount of tokens that will be transferred.\n @return The amount of stETH tokens transferred.";
@@ -1111,16 +1111,16 @@ export declare const ILido: {
                 readonly name: "transferSharesFrom";
                 readonly nameLocation: "1204:18:97";
                 readonly parameters: {
-                    readonly id: 11926;
+                    readonly id: 11974;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11921;
+                        readonly id: 11969;
                         readonly mutability: "mutable";
                         readonly name: "_sender";
                         readonly nameLocation: "1240:7:97";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11930;
+                        readonly scope: 11978;
                         readonly src: "1232:15:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1129,7 +1129,7 @@ export declare const ILido: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11920;
+                            readonly id: 11968;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1232:7:97";
@@ -1142,12 +1142,12 @@ export declare const ILido: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11923;
+                        readonly id: 11971;
                         readonly mutability: "mutable";
                         readonly name: "_recipient";
                         readonly nameLocation: "1265:10:97";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11930;
+                        readonly scope: 11978;
                         readonly src: "1257:18:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1156,7 +1156,7 @@ export declare const ILido: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11922;
+                            readonly id: 11970;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1257:7:97";
@@ -1169,12 +1169,12 @@ export declare const ILido: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11925;
+                        readonly id: 11973;
                         readonly mutability: "mutable";
                         readonly name: "_sharesAmount";
                         readonly nameLocation: "1293:13:97";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11930;
+                        readonly scope: 11978;
                         readonly src: "1285:21:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1183,7 +1183,7 @@ export declare const ILido: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11924;
+                            readonly id: 11972;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1285:7:97";
@@ -1197,16 +1197,16 @@ export declare const ILido: {
                     readonly src: "1222:90:97";
                 };
                 readonly returnParameters: {
-                    readonly id: 11929;
+                    readonly id: 11977;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11928;
+                        readonly id: 11976;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11930;
+                        readonly scope: 11978;
                         readonly src: "1331:7:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1215,7 +1215,7 @@ export declare const ILido: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11927;
+                            readonly id: 11975;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1331:7:97";
@@ -1228,17 +1228,17 @@ export declare const ILido: {
                     }];
                     readonly src: "1330:9:97";
                 };
-                readonly scope: 11973;
+                readonly scope: 12021;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11938;
+                readonly id: 11986;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1604:96:97";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11931;
+                    readonly id: 11979;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1346:253:97";
                     readonly text: "@notice Calculates the amount of stETH shares an amount of stETH tokens\n         are currently worth.\n @param _ethAmount The amount of stETH tokens to convert.\n @return The amount of stETH shares that the stETH tokens are worth.";
@@ -1250,16 +1250,16 @@ export declare const ILido: {
                 readonly name: "getSharesByPooledEth";
                 readonly nameLocation: "1613:20:97";
                 readonly parameters: {
-                    readonly id: 11934;
+                    readonly id: 11982;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11933;
+                        readonly id: 11981;
                         readonly mutability: "mutable";
                         readonly name: "_ethAmount";
                         readonly nameLocation: "1651:10:97";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11938;
+                        readonly scope: 11986;
                         readonly src: "1643:18:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1268,7 +1268,7 @@ export declare const ILido: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11932;
+                            readonly id: 11980;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1643:7:97";
@@ -1282,16 +1282,16 @@ export declare const ILido: {
                     readonly src: "1633:34:97";
                 };
                 readonly returnParameters: {
-                    readonly id: 11937;
+                    readonly id: 11985;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11936;
+                        readonly id: 11984;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11938;
+                        readonly scope: 11986;
                         readonly src: "1691:7:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1300,7 +1300,7 @@ export declare const ILido: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11935;
+                            readonly id: 11983;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1691:7:97";
@@ -1313,17 +1313,17 @@ export declare const ILido: {
                     }];
                     readonly src: "1690:9:97";
                 };
-                readonly scope: 11973;
+                readonly scope: 12021;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11946;
+                readonly id: 11994;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1967:99:97";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11939;
+                    readonly id: 11987;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1706:256:97";
                     readonly text: "@notice Calculates the amount of stETH tokens an amount of stETH shares\n         are currently worth.\n @param _sharesAmount The amount of stETH shares to convert.\n @return The amount of stETH tokens that the stETH shares are worth.";
@@ -1335,16 +1335,16 @@ export declare const ILido: {
                 readonly name: "getPooledEthByShares";
                 readonly nameLocation: "1976:20:97";
                 readonly parameters: {
-                    readonly id: 11942;
+                    readonly id: 11990;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11941;
+                        readonly id: 11989;
                         readonly mutability: "mutable";
                         readonly name: "_sharesAmount";
                         readonly nameLocation: "2014:13:97";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11946;
+                        readonly scope: 11994;
                         readonly src: "2006:21:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1353,7 +1353,7 @@ export declare const ILido: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11940;
+                            readonly id: 11988;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2006:7:97";
@@ -1367,16 +1367,16 @@ export declare const ILido: {
                     readonly src: "1996:37:97";
                 };
                 readonly returnParameters: {
-                    readonly id: 11945;
+                    readonly id: 11993;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11944;
+                        readonly id: 11992;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11946;
+                        readonly scope: 11994;
                         readonly src: "2057:7:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1385,7 +1385,7 @@ export declare const ILido: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11943;
+                            readonly id: 11991;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2057:7:97";
@@ -1398,17 +1398,17 @@ export declare const ILido: {
                     }];
                     readonly src: "2056:9:97";
                 };
-                readonly scope: 11973;
+                readonly scope: 12021;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11952;
+                readonly id: 12000;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2247:60:97";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11947;
+                    readonly id: 11995;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2072:170:97";
                     readonly text: "@notice Gets the total amount of ether that is buffered and waiting\n         to be staked underlying stETH.\n @return The total amount of buffered ether.";
@@ -1420,22 +1420,22 @@ export declare const ILido: {
                 readonly name: "getBufferedEther";
                 readonly nameLocation: "2256:16:97";
                 readonly parameters: {
-                    readonly id: 11948;
+                    readonly id: 11996;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2272:2:97";
                 };
                 readonly returnParameters: {
-                    readonly id: 11951;
+                    readonly id: 11999;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11950;
+                        readonly id: 11998;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11952;
+                        readonly scope: 12000;
                         readonly src: "2298:7:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1444,7 +1444,7 @@ export declare const ILido: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11949;
+                            readonly id: 11997;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2298:7:97";
@@ -1457,17 +1457,17 @@ export declare const ILido: {
                     }];
                     readonly src: "2297:9:97";
                 };
-                readonly scope: 11973;
+                readonly scope: 12021;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11958;
+                readonly id: 12006;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2435:63:97";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11953;
+                    readonly id: 12001;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2313:117:97";
                     readonly text: "@notice Gets the total amount of pooled ether underlying stETH.\n @return The total amount of pooled ether.";
@@ -1479,22 +1479,22 @@ export declare const ILido: {
                 readonly name: "getTotalPooledEther";
                 readonly nameLocation: "2444:19:97";
                 readonly parameters: {
-                    readonly id: 11954;
+                    readonly id: 12002;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2463:2:97";
                 };
                 readonly returnParameters: {
-                    readonly id: 11957;
+                    readonly id: 12005;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11956;
+                        readonly id: 12004;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11958;
+                        readonly scope: 12006;
                         readonly src: "2489:7:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1503,7 +1503,7 @@ export declare const ILido: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11955;
+                            readonly id: 12003;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2489:7:97";
@@ -1516,17 +1516,17 @@ export declare const ILido: {
                     }];
                     readonly src: "2488:9:97";
                 };
-                readonly scope: 11973;
+                readonly scope: 12021;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11964;
+                readonly id: 12012;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2609:58:97";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11959;
+                    readonly id: 12007;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2504:100:97";
                     readonly text: "@notice Gets the total amount of stETH shares.\n @return The total amount of stETH shares.";
@@ -1538,22 +1538,22 @@ export declare const ILido: {
                 readonly name: "getTotalShares";
                 readonly nameLocation: "2618:14:97";
                 readonly parameters: {
-                    readonly id: 11960;
+                    readonly id: 12008;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2632:2:97";
                 };
                 readonly returnParameters: {
-                    readonly id: 11963;
+                    readonly id: 12011;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11962;
+                        readonly id: 12010;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11964;
+                        readonly scope: 12012;
                         readonly src: "2658:7:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1562,7 +1562,7 @@ export declare const ILido: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11961;
+                            readonly id: 12009;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2658:7:97";
@@ -1575,17 +1575,17 @@ export declare const ILido: {
                     }];
                     readonly src: "2657:9:97";
                 };
-                readonly scope: 11973;
+                readonly scope: 12021;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11972;
+                readonly id: 12020;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2845:68:97";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 11965;
+                    readonly id: 12013;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2673:107:97";
                     readonly text: "@notice Gets the amount of shares owned by an account.\n @param _account The owner of the shares.";
@@ -1597,16 +1597,16 @@ export declare const ILido: {
                 readonly name: "sharesOf";
                 readonly nameLocation: "2854:8:97";
                 readonly parameters: {
-                    readonly id: 11968;
+                    readonly id: 12016;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11967;
+                        readonly id: 12015;
                         readonly mutability: "mutable";
                         readonly name: "_account";
                         readonly nameLocation: "2871:8:97";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11972;
+                        readonly scope: 12020;
                         readonly src: "2863:16:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1615,7 +1615,7 @@ export declare const ILido: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 11966;
+                            readonly id: 12014;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2863:7:97";
@@ -1630,16 +1630,16 @@ export declare const ILido: {
                     readonly src: "2862:18:97";
                 };
                 readonly returnParameters: {
-                    readonly id: 11971;
+                    readonly id: 12019;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11970;
+                        readonly id: 12018;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11972;
+                        readonly scope: 12020;
                         readonly src: "2904:7:97";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1648,7 +1648,7 @@ export declare const ILido: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11969;
+                            readonly id: 12017;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2904:7:97";
@@ -1661,7 +1661,7 @@ export declare const ILido: {
                     }];
                     readonly src: "2903:9:97";
                 };
-                readonly scope: 11973;
+                readonly scope: 12021;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -1669,14 +1669,14 @@ export declare const ILido: {
             readonly abstract: false;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 11899;
+                    readonly id: 11947;
                     readonly name: "IERC20";
                     readonly nameLocations: readonly ["123:6:97"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 10319;
+                    readonly referencedDeclaration: 10358;
                     readonly src: "123:6:97";
                 };
-                readonly id: 11900;
+                readonly id: 11948;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "123:6:97";
             }];
@@ -1684,12 +1684,12 @@ export declare const ILido: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [11973, 10319];
+            readonly linearizedBaseContracts: readonly [12021, 10358];
             readonly name: "ILido";
             readonly nameLocation: "114:5:97";
-            readonly scope: 11974;
+            readonly scope: 12022;
             readonly usedErrors: readonly [];
-            readonly usedEvents: readonly [10235, 10244];
+            readonly usedEvents: readonly [10274, 10283];
         }];
         readonly license: "Apache-2.0";
     };

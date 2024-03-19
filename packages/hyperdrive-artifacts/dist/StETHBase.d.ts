@@ -1,523 +1,523 @@
 export declare const StETHBase: {
     readonly abi: readonly [{
-        readonly inputs: readonly [];
-        readonly name: "ReentrancyGuardReentrantCall";
-        readonly type: "error";
-    }, {
-        readonly anonymous: false;
+        readonly type: "event";
+        readonly name: "AddLiquidity";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "provider";
             readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "lpAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "baseAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "lpSharePrice";
-            readonly type: "uint256";
-        }];
-        readonly name: "AddLiquidity";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
+            readonly name: "lpAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "baseAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "vaultShareAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
+            readonly name: "lpSharePrice";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "Approval";
+        readonly inputs: readonly [{
             readonly name: "owner";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "spender";
             readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "value";
-            readonly type: "uint256";
-        }];
-        readonly name: "Approval";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
+            readonly name: "value";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "ApprovalForAll";
+        readonly inputs: readonly [{
             readonly name: "account";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "operator";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
             readonly name: "approved";
             readonly type: "bool";
-        }];
-        readonly name: "ApprovalForAll";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "trader";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "destination";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "uint256";
-            readonly name: "assetId";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "maturityTime";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "baseAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
-            readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "CloseLong";
+        readonly inputs: readonly [{
+            readonly name: "trader";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
+            readonly name: "destination";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "assetId";
+            readonly type: "uint256";
+            readonly indexed: true;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "maturityTime";
+            readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "baseAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "vaultShareAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
             readonly name: "bondAmount";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "CloseLong";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "CloseShort";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "trader";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "destination";
             readonly type: "address";
-        }, {
             readonly indexed: true;
-            readonly internalType: "uint256";
+            readonly internalType: "address";
+        }, {
             readonly name: "assetId";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
+            readonly indexed: true;
             readonly internalType: "uint256";
+        }, {
             readonly name: "maturityTime";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
             readonly name: "basePayment";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "bondAmount";
             readonly type: "uint256";
-        }];
-        readonly name: "CloseShort";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "collector";
-            readonly type: "address";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "CollectGovernanceFee";
+        readonly inputs: readonly [{
+            readonly name: "collector";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
             readonly name: "fees";
             readonly type: "uint256";
-        }];
-        readonly name: "CollectGovernanceFee";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
+            readonly indexed: false;
             readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "CreateCheckpoint";
+        readonly inputs: readonly [{
             readonly name: "checkpointTime";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
+            readonly indexed: true;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "maturedShorts";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "maturedLongs";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "lpSharePrice";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "CreateCheckpoint";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "FeeCollectorUpdated";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "newFeeCollector";
             readonly type: "address";
-        }];
-        readonly name: "FeeCollectorUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "GovernanceUpdated";
+        readonly inputs: readonly [{
             readonly name: "newGovernance";
             readonly type: "address";
-        }];
-        readonly name: "GovernanceUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "Initialize";
+        readonly inputs: readonly [{
             readonly name: "provider";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
             readonly name: "lpAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
             readonly name: "apr";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "Initialize";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "OpenLong";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "trader";
             readonly type: "address";
-        }, {
             readonly indexed: true;
-            readonly internalType: "uint256";
+            readonly internalType: "address";
+        }, {
             readonly name: "assetId";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
+            readonly indexed: true;
             readonly internalType: "uint256";
+        }, {
             readonly name: "maturityTime";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
             readonly name: "bondAmount";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "OpenLong";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "OpenShort";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "trader";
             readonly type: "address";
-        }, {
             readonly indexed: true;
-            readonly internalType: "uint256";
+            readonly internalType: "address";
+        }, {
             readonly name: "assetId";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
+            readonly indexed: true;
             readonly internalType: "uint256";
+        }, {
             readonly name: "maturityTime";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
             readonly name: "baseProceeds";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "bondAmount";
             readonly type: "uint256";
-        }];
-        readonly name: "OpenShort";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: false;
-            readonly internalType: "bool";
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "PauseStatusUpdated";
+        readonly inputs: readonly [{
             readonly name: "isPaused";
             readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
         }];
-        readonly name: "PauseStatusUpdated";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "PauserUpdated";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "newPauser";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
             readonly name: "status";
             readonly type: "bool";
-        }];
-        readonly name: "PauserUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "provider";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "destination";
-            readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "withdrawalShareAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "baseAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
-            readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
         }];
-        readonly name: "RedeemWithdrawalShares";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "RedeemWithdrawalShares";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "provider";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "destination";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
+            readonly name: "withdrawalShareAmount";
+            readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "baseAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "vaultShareAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "RemoveLiquidity";
+        readonly inputs: readonly [{
+            readonly name: "provider";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "destination";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
             readonly name: "lpAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
-            readonly internalType: "bool";
+            readonly internalType: "uint256";
+        }, {
             readonly name: "asBase";
             readonly type: "bool";
-        }, {
             readonly indexed: false;
-            readonly internalType: "uint256";
+            readonly internalType: "bool";
+        }, {
             readonly name: "withdrawalShareAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "lpSharePrice";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "RemoveLiquidity";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "Sweep";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "collector";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "target";
             readonly type: "address";
-        }];
-        readonly name: "Sweep";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "SweepCollectorUpdated";
+        readonly inputs: readonly [{
             readonly name: "newSweepCollector";
             readonly type: "address";
-        }];
-        readonly name: "SweepCollectorUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "TransferSingle";
+        readonly inputs: readonly [{
             readonly name: "operator";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "from";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "to";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
             readonly name: "id";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "value";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "TransferSingle";
-        readonly type: "event";
+        readonly anonymous: false;
+    }, {
+        readonly type: "error";
+        readonly name: "ReentrancyGuardReentrantCall";
+        readonly inputs: readonly [];
     }];
     readonly bytecode: {
         readonly object: "0x";
@@ -1208,40 +1208,40 @@ export declare const StETHBase: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/instances/steth/StETHBase.sol";
-        readonly id: 9951;
+        readonly id: 9990;
         readonly exportedSymbols: {
-            readonly FixedPointMath: readonly [19394];
-            readonly HyperdriveBase: readonly [14333];
-            readonly IHyperdrive: readonly [11028];
-            readonly ILido: readonly [11973];
-            readonly ONE: readonly [18628];
-            readonly StETHBase: readonly [9950];
+            readonly FixedPointMath: readonly [19442];
+            readonly HyperdriveBase: readonly [14381];
+            readonly IHyperdrive: readonly [11076];
+            readonly ILido: readonly [12021];
+            readonly ONE: readonly [18676];
+            readonly StETHBase: readonly [9989];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:5211:72";
         readonly nodes: readonly [{
-            readonly id: 9750;
+            readonly id: 9789;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:72";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 9752;
+            readonly id: 9791;
             readonly nodeType: "ImportDirective";
             readonly src: "64:63:72";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
             readonly file: "../../interfaces/IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9951;
-            readonly sourceUnit: 11029;
+            readonly scope: 9990;
+            readonly sourceUnit: 11077;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 9751;
+                    readonly id: 9790;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11028;
+                    readonly referencedDeclaration: 11076;
                     readonly src: "73:11:72";
                     readonly typeDescriptions: {};
                 };
@@ -1249,22 +1249,22 @@ export declare const StETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 9754;
+            readonly id: 9793;
             readonly nodeType: "ImportDirective";
             readonly src: "128:51:72";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/ILido.sol";
             readonly file: "../../interfaces/ILido.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9951;
-            readonly sourceUnit: 11974;
+            readonly scope: 9990;
+            readonly sourceUnit: 12022;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 9753;
+                    readonly id: 9792;
                     readonly name: "ILido";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11973;
+                    readonly referencedDeclaration: 12021;
                     readonly src: "137:5:72";
                     readonly typeDescriptions: {};
                 };
@@ -1272,22 +1272,22 @@ export declare const StETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 9756;
+            readonly id: 9795;
             readonly nodeType: "ImportDirective";
             readonly src: "180:67:72";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/internal/HyperdriveBase.sol";
             readonly file: "../../internal/HyperdriveBase.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9951;
-            readonly sourceUnit: 14334;
+            readonly scope: 9990;
+            readonly sourceUnit: 14382;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 9755;
+                    readonly id: 9794;
                     readonly name: "HyperdriveBase";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 14333;
+                    readonly referencedDeclaration: 14381;
                     readonly src: "189:14:72";
                     readonly typeDescriptions: {};
                 };
@@ -1295,33 +1295,33 @@ export declare const StETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 9759;
+            readonly id: 9798;
             readonly nodeType: "ImportDirective";
             readonly src: "248:73:72";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/FixedPointMath.sol";
             readonly file: "../../libraries/FixedPointMath.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9951;
-            readonly sourceUnit: 19395;
+            readonly scope: 9990;
+            readonly sourceUnit: 19443;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 9757;
+                    readonly id: 9796;
                     readonly name: "FixedPointMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 19394;
+                    readonly referencedDeclaration: 19442;
                     readonly src: "257:14:72";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }, {
                 readonly foreign: {
-                    readonly id: 9758;
+                    readonly id: 9797;
                     readonly name: "ONE";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 18628;
+                    readonly referencedDeclaration: 18676;
                     readonly src: "273:3:72";
                     readonly typeDescriptions: {};
                 };
@@ -1329,25 +1329,25 @@ export declare const StETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 9950;
+            readonly id: 9989;
             readonly nodeType: "ContractDefinition";
             readonly src: "912:4337:72";
             readonly nodes: readonly [{
-                readonly id: 9765;
+                readonly id: 9804;
                 readonly nodeType: "UsingForDirective";
                 readonly src: "964:33:72";
                 readonly nodes: readonly [];
                 readonly global: false;
                 readonly libraryName: {
-                    readonly id: 9763;
+                    readonly id: 9802;
                     readonly name: "FixedPointMath";
                     readonly nameLocations: readonly ["970:14:72"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 19394;
+                    readonly referencedDeclaration: 19442;
                     readonly src: "970:14:72";
                 };
                 readonly typeName: {
-                    readonly id: 9764;
+                    readonly id: 9803;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "989:7:72";
@@ -1357,13 +1357,13 @@ export declare const StETHBase: {
                     };
                 };
             }, {
-                readonly id: 9769;
+                readonly id: 9808;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1035:30:72";
                 readonly nodes: readonly [];
                 readonly constant: false;
                 readonly documentation: {
-                    readonly id: 9766;
+                    readonly id: 9805;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1003:27:72";
                     readonly text: "@dev The Lido contract.";
@@ -1371,88 +1371,88 @@ export declare const StETHBase: {
                 readonly mutability: "immutable";
                 readonly name: "_lido";
                 readonly nameLocation: "1060:5:72";
-                readonly scope: 9950;
+                readonly scope: 9989;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_ILido_$11973";
+                    readonly typeIdentifier: "t_contract$_ILido_$12021";
                     readonly typeString: "contract ILido";
                 };
                 readonly typeName: {
-                    readonly id: 9768;
+                    readonly id: 9807;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 9767;
+                        readonly id: 9806;
                         readonly name: "ILido";
                         readonly nameLocations: readonly ["1035:5:72"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 11973;
+                        readonly referencedDeclaration: 12021;
                         readonly src: "1035:5:72";
                     };
-                    readonly referencedDeclaration: 11973;
+                    readonly referencedDeclaration: 12021;
                     readonly src: "1035:5:72";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_ILido_$11973";
+                        readonly typeIdentifier: "t_contract$_ILido_$12021";
                         readonly typeString: "contract ILido";
                     };
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 9781;
+                readonly id: 9820;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1178:57:72";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9780;
+                    readonly id: 9819;
                     readonly nodeType: "Block";
                     readonly src: "1204:31:72";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 9778;
+                            readonly id: 9817;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 9776;
+                                readonly id: 9815;
                                 readonly name: "_lido";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9769;
+                                readonly referencedDeclaration: 9808;
                                 readonly src: "1214:5:72";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_ILido_$11973";
+                                    readonly typeIdentifier: "t_contract$_ILido_$12021";
                                     readonly typeString: "contract ILido";
                                 };
                             };
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 9777;
+                                readonly id: 9816;
                                 readonly name: "__lido";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9773;
+                                readonly referencedDeclaration: 9812;
                                 readonly src: "1222:6:72";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_ILido_$11973";
+                                    readonly typeIdentifier: "t_contract$_ILido_$12021";
                                     readonly typeString: "contract ILido";
                                 };
                             };
                             readonly src: "1214:14:72";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_ILido_$11973";
+                                readonly typeIdentifier: "t_contract$_ILido_$12021";
                                 readonly typeString: "contract ILido";
                             };
                         };
-                        readonly id: 9779;
+                        readonly id: 9818;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1214:14:72";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 9770;
+                    readonly id: 9809;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1072:101:72";
                     readonly text: "@notice Instantiates the stETH Hyperdrive base contract.\n @param __lido The Lido contract.";
@@ -1463,38 +1463,38 @@ export declare const StETHBase: {
                 readonly name: "";
                 readonly nameLocation: "-1:-1:-1";
                 readonly parameters: {
-                    readonly id: 9774;
+                    readonly id: 9813;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9773;
+                        readonly id: 9812;
                         readonly mutability: "mutable";
                         readonly name: "__lido";
                         readonly nameLocation: "1196:6:72";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9781;
+                        readonly scope: 9820;
                         readonly src: "1190:12:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_ILido_$11973";
+                            readonly typeIdentifier: "t_contract$_ILido_$12021";
                             readonly typeString: "contract ILido";
                         };
                         readonly typeName: {
-                            readonly id: 9772;
+                            readonly id: 9811;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 9771;
+                                readonly id: 9810;
                                 readonly name: "ILido";
                                 readonly nameLocations: readonly ["1190:5:72"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 11973;
+                                readonly referencedDeclaration: 12021;
                                 readonly src: "1190:5:72";
                             };
-                            readonly referencedDeclaration: 11973;
+                            readonly referencedDeclaration: 12021;
                             readonly src: "1190:5:72";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_ILido_$11973";
+                                readonly typeIdentifier: "t_contract$_ILido_$12021";
                                 readonly typeString: "contract ILido";
                             };
                         };
@@ -1503,22 +1503,22 @@ export declare const StETHBase: {
                     readonly src: "1189:14:72";
                 };
                 readonly returnParameters: {
-                    readonly id: 9775;
+                    readonly id: 9814;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1204:0:72";
                 };
-                readonly scope: 9950;
+                readonly scope: 9989;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9827;
+                readonly id: 9866;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1578:862:72";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9826;
+                    readonly id: 9865;
                     readonly nodeType: "Block";
                     readonly src: "1738:702:72";
                     readonly nodes: readonly [];
@@ -1528,14 +1528,14 @@ export declare const StETHBase: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 9797;
+                            readonly id: 9836;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly expression: {
-                                    readonly id: 9794;
+                                    readonly id: 9833;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -1546,7 +1546,7 @@ export declare const StETHBase: {
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 9795;
+                                readonly id: 9834;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1563,11 +1563,11 @@ export declare const StETHBase: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "<";
                             readonly rightExpression: {
-                                readonly id: 9796;
+                                readonly id: 9835;
                                 readonly name: "_baseAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9784;
+                                readonly referencedDeclaration: 9823;
                                 readonly src: "1818:11:72";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1580,11 +1580,11 @@ export declare const StETHBase: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 9804;
+                        readonly id: 9843;
                         readonly nodeType: "IfStatement";
                         readonly src: "1802:89:72";
                         readonly trueBody: {
-                            readonly id: 9803;
+                            readonly id: 9842;
                             readonly nodeType: "Block";
                             readonly src: "1831:60:72";
                             readonly statements: readonly [{
@@ -1593,18 +1593,18 @@ export declare const StETHBase: {
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 9798;
+                                            readonly id: 9837;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11028;
+                                            readonly referencedDeclaration: 11076;
                                             readonly src: "1852:11:72";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11028_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 9800;
+                                        readonly id: 9839;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1612,14 +1612,14 @@ export declare const StETHBase: {
                                         readonly memberLocation: "1864:14:72";
                                         readonly memberName: "TransferFailed";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10973;
+                                        readonly referencedDeclaration: 11021;
                                         readonly src: "1852:26:72";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 9801;
+                                    readonly id: 9840;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1635,28 +1635,28 @@ export declare const StETHBase: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 9802;
+                                readonly id: 9841;
                                 readonly nodeType: "RevertStatement";
                                 readonly src: "1845:35:72";
                             }];
                         };
                     }, {
-                        readonly id: 9812;
+                        readonly id: 9851;
                         readonly nodeType: "UncheckedBlock";
                         readonly src: "2003:67:72";
                         readonly statements: readonly [{
                             readonly expression: {
-                                readonly id: 9810;
+                                readonly id: 9849;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 9805;
+                                    readonly id: 9844;
                                     readonly name: "refund";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9792;
+                                    readonly referencedDeclaration: 9831;
                                     readonly src: "2027:6:72";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -1670,14 +1670,14 @@ export declare const StETHBase: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
-                                    readonly id: 9809;
+                                    readonly id: 9848;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
                                         readonly expression: {
-                                            readonly id: 9806;
+                                            readonly id: 9845;
                                             readonly name: "msg";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
@@ -1688,7 +1688,7 @@ export declare const StETHBase: {
                                                 readonly typeString: "msg";
                                             };
                                         };
-                                        readonly id: 9807;
+                                        readonly id: 9846;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1705,11 +1705,11 @@ export declare const StETHBase: {
                                     readonly nodeType: "BinaryOperation";
                                     readonly operator: "-";
                                     readonly rightExpression: {
-                                        readonly id: 9808;
+                                        readonly id: 9847;
                                         readonly name: "_baseAmount";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 9784;
+                                        readonly referencedDeclaration: 9823;
                                         readonly src: "2048:11:72";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -1728,23 +1728,23 @@ export declare const StETHBase: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 9811;
+                            readonly id: 9850;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "2027:32:72";
                         }];
                     }, {
                         readonly expression: {
-                            readonly id: 9820;
+                            readonly id: 9859;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 9813;
+                                readonly id: 9852;
                                 readonly name: "sharesMinted";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9790;
+                                readonly referencedDeclaration: 9829;
                                 readonly src: "2329:12:72";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1755,11 +1755,11 @@ export declare const StETHBase: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 9818;
+                                    readonly id: 9857;
                                     readonly name: "_feeCollector";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18173;
+                                    readonly referencedDeclaration: 18221;
                                     readonly src: "2379:13:72";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
@@ -1777,18 +1777,18 @@ export declare const StETHBase: {
                                             readonly typeString: "address";
                                         }];
                                         readonly expression: {
-                                            readonly id: 9814;
+                                            readonly id: 9853;
                                             readonly name: "_lido";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 9769;
+                                            readonly referencedDeclaration: 9808;
                                             readonly src: "2344:5:72";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_ILido_$11973";
+                                                readonly typeIdentifier: "t_contract$_ILido_$12021";
                                                 readonly typeString: "contract ILido";
                                             };
                                         };
-                                        readonly id: 9815;
+                                        readonly id: 9854;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1796,14 +1796,14 @@ export declare const StETHBase: {
                                         readonly memberLocation: "2350:6:72";
                                         readonly memberName: "submit";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 11908;
+                                        readonly referencedDeclaration: 11956;
                                         readonly src: "2344:12:72";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_external_payable$_t_address_$returns$_t_uint256_$";
                                             readonly typeString: "function (address) payable external returns (uint256)";
                                         };
                                     };
-                                    readonly id: 9817;
+                                    readonly id: 9856;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1811,11 +1811,11 @@ export declare const StETHBase: {
                                     readonly names: readonly ["value"];
                                     readonly nodeType: "FunctionCallOptions";
                                     readonly options: readonly [{
-                                        readonly id: 9816;
+                                        readonly id: 9855;
                                         readonly name: "_baseAmount";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 9784;
+                                        readonly referencedDeclaration: 9823;
                                         readonly src: "2365:11:72";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -1828,7 +1828,7 @@ export declare const StETHBase: {
                                         readonly typeString: "function (address) payable external returns (uint256)";
                                     };
                                 };
-                                readonly id: 9819;
+                                readonly id: 9858;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1850,35 +1850,35 @@ export declare const StETHBase: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 9821;
+                        readonly id: 9860;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2329:64:72";
                     }, {
                         readonly expression: {
                             readonly components: readonly [{
-                                readonly id: 9822;
+                                readonly id: 9861;
                                 readonly name: "sharesMinted";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9790;
+                                readonly referencedDeclaration: 9829;
                                 readonly src: "2412:12:72";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 9823;
+                                readonly id: 9862;
                                 readonly name: "refund";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9792;
+                                readonly referencedDeclaration: 9831;
                                 readonly src: "2426:6:72";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }];
-                            readonly id: 9824;
+                            readonly id: 9863;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
@@ -1891,15 +1891,15 @@ export declare const StETHBase: {
                                 readonly typeString: "tuple(uint256,uint256)";
                             };
                         };
-                        readonly functionReturnParameters: 9793;
-                        readonly id: 9825;
+                        readonly functionReturnParameters: 9832;
+                        readonly id: 9864;
                         readonly nodeType: "Return";
                         readonly src: "2404:29:72";
                     }];
                 };
-                readonly baseFunctions: readonly [13364];
+                readonly baseFunctions: readonly [13412];
                 readonly documentation: {
-                    readonly id: 9782;
+                    readonly id: 9821;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1267:306:72";
                     readonly text: "@dev Accepts a deposit from the user in base.\n @param _baseAmount The base amount to deposit.\n @return sharesMinted The shares that were minted in the deposit.\n @return refund The amount of ETH to refund. This should be zero for\n         yield sources that don't accept ETH.";
@@ -1910,22 +1910,22 @@ export declare const StETHBase: {
                 readonly name: "_depositWithBase";
                 readonly nameLocation: "1587:16:72";
                 readonly overrides: {
-                    readonly id: 9788;
+                    readonly id: 9827;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "1682:8:72";
                 };
                 readonly parameters: {
-                    readonly id: 9787;
+                    readonly id: 9826;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9784;
+                        readonly id: 9823;
                         readonly mutability: "mutable";
                         readonly name: "_baseAmount";
                         readonly nameLocation: "1621:11:72";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9827;
+                        readonly scope: 9866;
                         readonly src: "1613:19:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1934,7 +1934,7 @@ export declare const StETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9783;
+                            readonly id: 9822;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1613:7:72";
@@ -1946,12 +1946,12 @@ export declare const StETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9786;
+                        readonly id: 9825;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9827;
+                        readonly scope: 9866;
                         readonly src: "1642:14:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -1960,7 +1960,7 @@ export declare const StETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 9785;
+                            readonly id: 9824;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1642:5:72";
@@ -1974,16 +1974,16 @@ export declare const StETHBase: {
                     readonly src: "1603:69:72";
                 };
                 readonly returnParameters: {
-                    readonly id: 9793;
+                    readonly id: 9832;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9790;
+                        readonly id: 9829;
                         readonly mutability: "mutable";
                         readonly name: "sharesMinted";
                         readonly nameLocation: "1708:12:72";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9827;
+                        readonly scope: 9866;
                         readonly src: "1700:20:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1992,7 +1992,7 @@ export declare const StETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9789;
+                            readonly id: 9828;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1700:7:72";
@@ -2004,12 +2004,12 @@ export declare const StETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9792;
+                        readonly id: 9831;
                         readonly mutability: "mutable";
                         readonly name: "refund";
                         readonly nameLocation: "1730:6:72";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9827;
+                        readonly scope: 9866;
                         readonly src: "1722:14:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2018,7 +2018,7 @@ export declare const StETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9791;
+                            readonly id: 9830;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1722:7:72";
@@ -2031,17 +2031,17 @@ export declare const StETHBase: {
                     }];
                     readonly src: "1699:38:72";
                 };
-                readonly scope: 9950;
+                readonly scope: 9989;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9849;
+                readonly id: 9888;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2558:250:72";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9848;
+                    readonly id: 9887;
                     readonly nodeType: "Block";
                     readonly src: "2674:134:72";
                     readonly nodes: readonly [];
@@ -2049,7 +2049,7 @@ export declare const StETHBase: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly id: 9839;
+                                    readonly id: 9878;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -2060,7 +2060,7 @@ export declare const StETHBase: {
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 9840;
+                                readonly id: 9879;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2075,23 +2075,23 @@ export declare const StETHBase: {
                                 };
                             }, {
                                 readonly arguments: readonly [{
-                                    readonly id: 9843;
+                                    readonly id: 9882;
                                     readonly name: "this";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -28;
                                     readonly src: "2781:4:72";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_StETHBase_$9950";
+                                        readonly typeIdentifier: "t_contract$_StETHBase_$9989";
                                         readonly typeString: "contract StETHBase";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_StETHBase_$9950";
+                                        readonly typeIdentifier: "t_contract$_StETHBase_$9989";
                                         readonly typeString: "contract StETHBase";
                                     }];
-                                    readonly id: 9842;
+                                    readonly id: 9881;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2103,14 +2103,14 @@ export declare const StETHBase: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 9841;
+                                        readonly id: 9880;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "2773:7:72";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 9844;
+                                readonly id: 9883;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2126,11 +2126,11 @@ export declare const StETHBase: {
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 9845;
+                                readonly id: 9884;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9830;
+                                readonly referencedDeclaration: 9869;
                                 readonly src: "2788:12:72";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2149,18 +2149,18 @@ export declare const StETHBase: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 9836;
+                                    readonly id: 9875;
                                     readonly name: "_lido";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9769;
+                                    readonly referencedDeclaration: 9808;
                                     readonly src: "2736:5:72";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ILido_$11973";
+                                        readonly typeIdentifier: "t_contract$_ILido_$12021";
                                         readonly typeString: "contract ILido";
                                     };
                                 };
-                                readonly id: 9838;
+                                readonly id: 9877;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2168,14 +2168,14 @@ export declare const StETHBase: {
                                 readonly memberLocation: "2742:18:72";
                                 readonly memberName: "transferSharesFrom";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 11930;
+                                readonly referencedDeclaration: 11978;
                                 readonly src: "2736:24:72";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (address,address,uint256) external returns (uint256)";
                                 };
                             };
-                            readonly id: 9846;
+                            readonly id: 9885;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2191,14 +2191,14 @@ export declare const StETHBase: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 9847;
+                        readonly id: 9886;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2736:65:72";
                     }];
                 };
-                readonly baseFunctions: readonly [13372];
+                readonly baseFunctions: readonly [13420];
                 readonly documentation: {
-                    readonly id: 9828;
+                    readonly id: 9867;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2446:107:72";
                     readonly text: "@dev Process a deposit in vault shares.\n @param _shareAmount The vault shares amount to deposit.";
@@ -2209,22 +2209,22 @@ export declare const StETHBase: {
                 readonly name: "_depositWithShares";
                 readonly nameLocation: "2567:18:72";
                 readonly overrides: {
-                    readonly id: 9834;
+                    readonly id: 9873;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "2665:8:72";
                 };
                 readonly parameters: {
-                    readonly id: 9833;
+                    readonly id: 9872;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9830;
+                        readonly id: 9869;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "2603:12:72";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9849;
+                        readonly scope: 9888;
                         readonly src: "2595:20:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2233,7 +2233,7 @@ export declare const StETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9829;
+                            readonly id: 9868;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2595:7:72";
@@ -2245,12 +2245,12 @@ export declare const StETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9832;
+                        readonly id: 9871;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9849;
+                        readonly scope: 9888;
                         readonly src: "2625:14:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -2259,7 +2259,7 @@ export declare const StETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 9831;
+                            readonly id: 9870;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2625:5:72";
@@ -2273,22 +2273,22 @@ export declare const StETHBase: {
                     readonly src: "2585:70:72";
                 };
                 readonly returnParameters: {
-                    readonly id: 9835;
+                    readonly id: 9874;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2674:0:72";
                 };
-                readonly scope: 9950;
+                readonly scope: 9989;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9868;
+                readonly id: 9907;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2911:358:72";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9867;
+                    readonly id: 9906;
                     readonly nodeType: "Block";
                     readonly src: "3073:196:72";
                     readonly nodes: readonly [];
@@ -2298,18 +2298,18 @@ export declare const StETHBase: {
                             readonly expression: {
                                 readonly argumentTypes: readonly [];
                                 readonly expression: {
-                                    readonly id: 9862;
+                                    readonly id: 9901;
                                     readonly name: "IHyperdrive";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 11028;
+                                    readonly referencedDeclaration: 11076;
                                     readonly src: "3232:11:72";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11028_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
                                         readonly typeString: "type(contract IHyperdrive)";
                                     };
                                 };
-                                readonly id: 9864;
+                                readonly id: 9903;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2317,14 +2317,14 @@ export declare const StETHBase: {
                                 readonly memberLocation: "3244:16:72";
                                 readonly memberName: "UnsupportedToken";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10994;
+                                readonly referencedDeclaration: 11042;
                                 readonly src: "3232:28:72";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                     readonly typeString: "function () pure";
                                 };
                             };
-                            readonly id: 9865;
+                            readonly id: 9904;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2340,14 +2340,14 @@ export declare const StETHBase: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 9866;
+                        readonly id: 9905;
                         readonly nodeType: "RevertStatement";
                         readonly src: "3225:37:72";
                     }];
                 };
-                readonly baseFunctions: readonly [13384];
+                readonly baseFunctions: readonly [13432];
                 readonly documentation: {
-                    readonly id: 9850;
+                    readonly id: 9889;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2814:92:72";
                     readonly text: "@dev Process a withdrawal in base and send the proceeds to the\n      destination.";
@@ -2358,22 +2358,22 @@ export declare const StETHBase: {
                 readonly name: "_withdrawWithBase";
                 readonly nameLocation: "2920:17:72";
                 readonly overrides: {
-                    readonly id: 9858;
+                    readonly id: 9897;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "3046:8:72";
                 };
                 readonly parameters: {
-                    readonly id: 9857;
+                    readonly id: 9896;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9852;
+                        readonly id: 9891;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9868;
+                        readonly scope: 9907;
                         readonly src: "2947:7:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2382,7 +2382,7 @@ export declare const StETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9851;
+                            readonly id: 9890;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2947:7:72";
@@ -2394,12 +2394,12 @@ export declare const StETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9854;
+                        readonly id: 9893;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9868;
+                        readonly scope: 9907;
                         readonly src: "2974:7:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2408,7 +2408,7 @@ export declare const StETHBase: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 9853;
+                            readonly id: 9892;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2974:7:72";
@@ -2421,12 +2421,12 @@ export declare const StETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9856;
+                        readonly id: 9895;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9868;
+                        readonly scope: 9907;
                         readonly src: "3001:14:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -2435,7 +2435,7 @@ export declare const StETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 9855;
+                            readonly id: 9894;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3001:5:72";
@@ -2449,16 +2449,16 @@ export declare const StETHBase: {
                     readonly src: "2937:94:72";
                 };
                 readonly returnParameters: {
-                    readonly id: 9861;
+                    readonly id: 9900;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9860;
+                        readonly id: 9899;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9868;
+                        readonly scope: 9907;
                         readonly src: "3064:7:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2467,7 +2467,7 @@ export declare const StETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9859;
+                            readonly id: 9898;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3064:7:72";
@@ -2480,39 +2480,39 @@ export declare const StETHBase: {
                     }];
                     readonly src: "3063:9:72";
                 };
-                readonly scope: 9950;
+                readonly scope: 9989;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9887;
+                readonly id: 9926;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3511:269:72";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9886;
+                    readonly id: 9925;
                     readonly nodeType: "Block";
                     readonly src: "3658:122:72";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 9882;
+                                readonly id: 9921;
                                 readonly name: "_destination";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9873;
+                                readonly referencedDeclaration: 9912;
                                 readonly src: "3746:12:72";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 9883;
+                                readonly id: 9922;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9871;
+                                readonly referencedDeclaration: 9910;
                                 readonly src: "3760:12:72";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2528,18 +2528,18 @@ export declare const StETHBase: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 9879;
+                                    readonly id: 9918;
                                     readonly name: "_lido";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9769;
+                                    readonly referencedDeclaration: 9808;
                                     readonly src: "3725:5:72";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ILido_$11973";
+                                        readonly typeIdentifier: "t_contract$_ILido_$12021";
                                         readonly typeString: "contract ILido";
                                     };
                                 };
-                                readonly id: 9881;
+                                readonly id: 9920;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2547,14 +2547,14 @@ export declare const StETHBase: {
                                 readonly memberLocation: "3731:14:72";
                                 readonly memberName: "transferShares";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 11918;
+                                readonly referencedDeclaration: 11966;
                                 readonly src: "3725:20:72";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (address,uint256) external returns (uint256)";
                                 };
                             };
-                            readonly id: 9884;
+                            readonly id: 9923;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2570,14 +2570,14 @@ export declare const StETHBase: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 9885;
+                        readonly id: 9924;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3725:48:72";
                     }];
                 };
-                readonly baseFunctions: readonly [13394];
+                readonly baseFunctions: readonly [13442];
                 readonly documentation: {
-                    readonly id: 9869;
+                    readonly id: 9908;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3275:231:72";
                     readonly text: "@dev Process a withdrawal in vault shares and send the proceeds to the\n      destination.\n @param _shareAmount The amount of vault shares to withdraw.\n @param _destination The destination of the withdrawal.";
@@ -2588,22 +2588,22 @@ export declare const StETHBase: {
                 readonly name: "_withdrawWithShares";
                 readonly nameLocation: "3520:19:72";
                 readonly overrides: {
-                    readonly id: 9877;
+                    readonly id: 9916;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "3649:8:72";
                 };
                 readonly parameters: {
-                    readonly id: 9876;
+                    readonly id: 9915;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9871;
+                        readonly id: 9910;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "3557:12:72";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9887;
+                        readonly scope: 9926;
                         readonly src: "3549:20:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2612,7 +2612,7 @@ export declare const StETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9870;
+                            readonly id: 9909;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3549:7:72";
@@ -2624,12 +2624,12 @@ export declare const StETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9873;
+                        readonly id: 9912;
                         readonly mutability: "mutable";
                         readonly name: "_destination";
                         readonly nameLocation: "3587:12:72";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9887;
+                        readonly scope: 9926;
                         readonly src: "3579:20:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2638,7 +2638,7 @@ export declare const StETHBase: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 9872;
+                            readonly id: 9911;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3579:7:72";
@@ -2651,12 +2651,12 @@ export declare const StETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9875;
+                        readonly id: 9914;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9887;
+                        readonly scope: 9926;
                         readonly src: "3609:14:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -2665,7 +2665,7 @@ export declare const StETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 9874;
+                            readonly id: 9913;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3609:5:72";
@@ -2679,30 +2679,30 @@ export declare const StETHBase: {
                     readonly src: "3539:100:72";
                 };
                 readonly returnParameters: {
-                    readonly id: 9878;
+                    readonly id: 9917;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "3658:0:72";
                 };
-                readonly scope: 9950;
+                readonly scope: 9989;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9893;
+                readonly id: 9932;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3883:55:72";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9892;
+                    readonly id: 9931;
                     readonly nodeType: "Block";
                     readonly src: "3936:2:72";
                     readonly nodes: readonly [];
                     readonly statements: readonly [];
                 };
-                readonly baseFunctions: readonly [13398];
+                readonly baseFunctions: readonly [13446];
                 readonly documentation: {
-                    readonly id: 9888;
+                    readonly id: 9927;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3786:92:72";
                     readonly text: "@dev We override the message value check since this integration is\n      payable.";
@@ -2713,45 +2713,45 @@ export declare const StETHBase: {
                 readonly name: "_checkMessageValue";
                 readonly nameLocation: "3892:18:72";
                 readonly overrides: {
-                    readonly id: 9890;
+                    readonly id: 9929;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "3927:8:72";
                 };
                 readonly parameters: {
-                    readonly id: 9889;
+                    readonly id: 9928;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "3910:2:72";
                 };
                 readonly returnParameters: {
-                    readonly id: 9891;
+                    readonly id: 9930;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "3936:0:72";
                 };
-                readonly scope: 9950;
+                readonly scope: 9989;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9908;
+                readonly id: 9947;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4110:165:72";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9907;
+                    readonly id: 9946;
                     readonly nodeType: "Block";
                     readonly src: "4211:64:72";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 9904;
+                                readonly id: 9943;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9896;
+                                readonly referencedDeclaration: 9935;
                                 readonly src: "4255:12:72";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2764,18 +2764,18 @@ export declare const StETHBase: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 9902;
+                                    readonly id: 9941;
                                     readonly name: "_lido";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9769;
+                                    readonly referencedDeclaration: 9808;
                                     readonly src: "4228:5:72";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ILido_$11973";
+                                        readonly typeIdentifier: "t_contract$_ILido_$12021";
                                         readonly typeString: "contract ILido";
                                     };
                                 };
-                                readonly id: 9903;
+                                readonly id: 9942;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2783,14 +2783,14 @@ export declare const StETHBase: {
                                 readonly memberLocation: "4234:20:72";
                                 readonly memberName: "getPooledEthByShares";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 11946;
+                                readonly referencedDeclaration: 11994;
                                 readonly src: "4228:26:72";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 9905;
+                            readonly id: 9944;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2806,15 +2806,15 @@ export declare const StETHBase: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 9901;
-                        readonly id: 9906;
+                        readonly functionReturnParameters: 9940;
+                        readonly id: 9945;
                         readonly nodeType: "Return";
                         readonly src: "4221:47:72";
                     }];
                 };
-                readonly baseFunctions: readonly [13428];
+                readonly baseFunctions: readonly [13476];
                 readonly documentation: {
-                    readonly id: 9894;
+                    readonly id: 9933;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3944:161:72";
                     readonly text: "@dev Convert an amount of vault shares to an amount of base.\n @param _shareAmount The vault shares amount.\n @return baseAmount The base amount.";
@@ -2825,22 +2825,22 @@ export declare const StETHBase: {
                 readonly name: "_convertToBase";
                 readonly nameLocation: "4119:14:72";
                 readonly overrides: {
-                    readonly id: 9898;
+                    readonly id: 9937;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "4184:8:72";
                 };
                 readonly parameters: {
-                    readonly id: 9897;
+                    readonly id: 9936;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9896;
+                        readonly id: 9935;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "4151:12:72";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9908;
+                        readonly scope: 9947;
                         readonly src: "4143:20:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2849,7 +2849,7 @@ export declare const StETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9895;
+                            readonly id: 9934;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4143:7:72";
@@ -2863,16 +2863,16 @@ export declare const StETHBase: {
                     readonly src: "4133:36:72";
                 };
                 readonly returnParameters: {
-                    readonly id: 9901;
+                    readonly id: 9940;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9900;
+                        readonly id: 9939;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9908;
+                        readonly scope: 9947;
                         readonly src: "4202:7:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2881,7 +2881,7 @@ export declare const StETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9899;
+                            readonly id: 9938;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4202:7:72";
@@ -2894,28 +2894,28 @@ export declare const StETHBase: {
                     }];
                     readonly src: "4201:9:72";
                 };
-                readonly scope: 9950;
+                readonly scope: 9989;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9923;
+                readonly id: 9962;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4447:165:72";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9922;
+                    readonly id: 9961;
                     readonly nodeType: "Block";
                     readonly src: "4549:63:72";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 9919;
+                                readonly id: 9958;
                                 readonly name: "_baseAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9911;
+                                readonly referencedDeclaration: 9950;
                                 readonly src: "4593:11:72";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2928,18 +2928,18 @@ export declare const StETHBase: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 9917;
+                                    readonly id: 9956;
                                     readonly name: "_lido";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9769;
+                                    readonly referencedDeclaration: 9808;
                                     readonly src: "4566:5:72";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ILido_$11973";
+                                        readonly typeIdentifier: "t_contract$_ILido_$12021";
                                         readonly typeString: "contract ILido";
                                     };
                                 };
-                                readonly id: 9918;
+                                readonly id: 9957;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2947,14 +2947,14 @@ export declare const StETHBase: {
                                 readonly memberLocation: "4572:20:72";
                                 readonly memberName: "getSharesByPooledEth";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 11938;
+                                readonly referencedDeclaration: 11986;
                                 readonly src: "4566:26:72";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 9920;
+                            readonly id: 9959;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2970,15 +2970,15 @@ export declare const StETHBase: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 9916;
-                        readonly id: 9921;
+                        readonly functionReturnParameters: 9955;
+                        readonly id: 9960;
                         readonly nodeType: "Return";
                         readonly src: "4559:46:72";
                     }];
                 };
-                readonly baseFunctions: readonly [13436];
+                readonly baseFunctions: readonly [13484];
                 readonly documentation: {
-                    readonly id: 9909;
+                    readonly id: 9948;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4281:161:72";
                     readonly text: "@dev Convert an amount of base to an amount of vault shares.\n @param _baseAmount The base amount.\n @return shareAmount The vault shares amount.";
@@ -2989,22 +2989,22 @@ export declare const StETHBase: {
                 readonly name: "_convertToShares";
                 readonly nameLocation: "4456:16:72";
                 readonly overrides: {
-                    readonly id: 9913;
+                    readonly id: 9952;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "4522:8:72";
                 };
                 readonly parameters: {
-                    readonly id: 9912;
+                    readonly id: 9951;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9911;
+                        readonly id: 9950;
                         readonly mutability: "mutable";
                         readonly name: "_baseAmount";
                         readonly nameLocation: "4490:11:72";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9923;
+                        readonly scope: 9962;
                         readonly src: "4482:19:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3013,7 +3013,7 @@ export declare const StETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9910;
+                            readonly id: 9949;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4482:7:72";
@@ -3027,16 +3027,16 @@ export declare const StETHBase: {
                     readonly src: "4472:35:72";
                 };
                 readonly returnParameters: {
-                    readonly id: 9916;
+                    readonly id: 9955;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9915;
+                        readonly id: 9954;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9923;
+                        readonly scope: 9962;
                         readonly src: "4540:7:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3045,7 +3045,7 @@ export declare const StETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9914;
+                            readonly id: 9953;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4540:7:72";
@@ -3058,24 +3058,24 @@ export declare const StETHBase: {
                     }];
                     readonly src: "4539:9:72";
                 };
-                readonly scope: 9950;
+                readonly scope: 9989;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9933;
+                readonly id: 9972;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4732:191:72";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9932;
+                    readonly id: 9971;
                     readonly nodeType: "Block";
                     readonly src: "4795:128:72";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly hexValue: "30";
-                            readonly id: 9930;
+                            readonly id: 9969;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -3089,15 +3089,15 @@ export declare const StETHBase: {
                             };
                             readonly value: "0";
                         };
-                        readonly functionReturnParameters: 9929;
-                        readonly id: 9931;
+                        readonly functionReturnParameters: 9968;
+                        readonly id: 9970;
                         readonly nodeType: "Return";
                         readonly src: "4908:8:72";
                     }];
                 };
-                readonly baseFunctions: readonly [13442];
+                readonly baseFunctions: readonly [13490];
                 readonly documentation: {
-                    readonly id: 9924;
+                    readonly id: 9963;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4618:109:72";
                     readonly text: "@dev Gets the total amount of base held by the pool.\n @return baseAmount The total amount of base.";
@@ -3108,28 +3108,28 @@ export declare const StETHBase: {
                 readonly name: "_totalBase";
                 readonly nameLocation: "4741:10:72";
                 readonly overrides: {
-                    readonly id: 9926;
+                    readonly id: 9965;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "4768:8:72";
                 };
                 readonly parameters: {
-                    readonly id: 9925;
+                    readonly id: 9964;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "4751:2:72";
                 };
                 readonly returnParameters: {
-                    readonly id: 9929;
+                    readonly id: 9968;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9928;
+                        readonly id: 9967;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9933;
+                        readonly scope: 9972;
                         readonly src: "4786:7:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3138,7 +3138,7 @@ export declare const StETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9927;
+                            readonly id: 9966;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4786:7:72";
@@ -3151,17 +3151,17 @@ export declare const StETHBase: {
                     }];
                     readonly src: "4785:9:72";
                 };
-                readonly scope: 9950;
+                readonly scope: 9989;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9949;
+                readonly id: 9988;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5081:166:72";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9948;
+                    readonly id: 9987;
                     readonly nodeType: "Block";
                     readonly src: "5194:53:72";
                     readonly nodes: readonly [];
@@ -3169,23 +3169,23 @@ export declare const StETHBase: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 9944;
+                                    readonly id: 9983;
                                     readonly name: "this";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -28;
                                     readonly src: "5234:4:72";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_StETHBase_$9950";
+                                        readonly typeIdentifier: "t_contract$_StETHBase_$9989";
                                         readonly typeString: "contract StETHBase";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_StETHBase_$9950";
+                                        readonly typeIdentifier: "t_contract$_StETHBase_$9989";
                                         readonly typeString: "contract StETHBase";
                                     }];
-                                    readonly id: 9943;
+                                    readonly id: 9982;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -3197,14 +3197,14 @@ export declare const StETHBase: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 9942;
+                                        readonly id: 9981;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "5226:7:72";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 9945;
+                                readonly id: 9984;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3226,18 +3226,18 @@ export declare const StETHBase: {
                                     readonly typeString: "address";
                                 }];
                                 readonly expression: {
-                                    readonly id: 9940;
+                                    readonly id: 9979;
                                     readonly name: "_lido";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 9769;
+                                    readonly referencedDeclaration: 9808;
                                     readonly src: "5211:5:72";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ILido_$11973";
+                                        readonly typeIdentifier: "t_contract$_ILido_$12021";
                                         readonly typeString: "contract ILido";
                                     };
                                 };
-                                readonly id: 9941;
+                                readonly id: 9980;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3245,14 +3245,14 @@ export declare const StETHBase: {
                                 readonly memberLocation: "5217:8:72";
                                 readonly memberName: "sharesOf";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 11972;
+                                readonly referencedDeclaration: 12020;
                                 readonly src: "5211:14:72";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_address_$returns$_t_uint256_$";
                                     readonly typeString: "function (address) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 9946;
+                            readonly id: 9985;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3268,15 +3268,15 @@ export declare const StETHBase: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 9939;
-                        readonly id: 9947;
+                        readonly functionReturnParameters: 9978;
+                        readonly id: 9986;
                         readonly nodeType: "Return";
                         readonly src: "5204:36:72";
                     }];
                 };
-                readonly baseFunctions: readonly [13448];
+                readonly baseFunctions: readonly [13496];
                 readonly documentation: {
-                    readonly id: 9934;
+                    readonly id: 9973;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4929:147:72";
                     readonly text: "@dev Gets the total amount of shares held by the pool in the yield\n      source.\n @return shareAmount The total amount of shares.";
@@ -3287,28 +3287,28 @@ export declare const StETHBase: {
                 readonly name: "_totalShares";
                 readonly nameLocation: "5090:12:72";
                 readonly overrides: {
-                    readonly id: 9936;
+                    readonly id: 9975;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "5143:8:72";
                 };
                 readonly parameters: {
-                    readonly id: 9935;
+                    readonly id: 9974;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5102:2:72";
                 };
                 readonly returnParameters: {
-                    readonly id: 9939;
+                    readonly id: 9978;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9938;
+                        readonly id: 9977;
                         readonly mutability: "mutable";
                         readonly name: "shareAmount";
                         readonly nameLocation: "5177:11:72";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9949;
+                        readonly scope: 9988;
                         readonly src: "5169:19:72";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3317,7 +3317,7 @@ export declare const StETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9937;
+                            readonly id: 9976;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5169:7:72";
@@ -3330,7 +3330,7 @@ export declare const StETHBase: {
                     }];
                     readonly src: "5168:21:72";
                 };
-                readonly scope: 9950;
+                readonly scope: 9989;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
@@ -3338,14 +3338,14 @@ export declare const StETHBase: {
             readonly abstract: true;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 9761;
+                    readonly id: 9800;
                     readonly name: "HyperdriveBase";
                     readonly nameLocations: readonly ["943:14:72"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 14333;
+                    readonly referencedDeclaration: 14381;
                     readonly src: "943:14:72";
                 };
-                readonly id: 9762;
+                readonly id: 9801;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "943:14:72";
             }];
@@ -3353,18 +3353,18 @@ export declare const StETHBase: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly documentation: {
-                readonly id: 9760;
+                readonly id: 9799;
                 readonly nodeType: "StructuredDocumentation";
                 readonly src: "323:589:72";
                 readonly text: "@author DELV\n @title StethHyperdrive\n @notice The base contract for the stETH Hyperdrive implementation.\n @dev Lido has it's own notion of shares to account for the accrual of\n      interest on the ether pooled in the Lido protocol. Instead of\n      maintaining a balance of shares, this integration can simply use Lido\n      shares directly.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [9950, 14333, 18319, 71995, 11551, 12117];
+            readonly linearizedBaseContracts: readonly [9989, 14381, 18367, 72043, 11599, 12165];
             readonly name: "StETHBase";
             readonly nameLocation: "930:9:72";
-            readonly scope: 9951;
-            readonly usedErrors: readonly [71940];
-            readonly usedEvents: readonly [11371, 11386, 11405, 11420, 11437, 11456, 11475, 11496, 11509, 11516, 11521, 11526, 11531, 11538, 11543, 11550, 12098, 12107, 12116];
+            readonly scope: 9990;
+            readonly usedErrors: readonly [71988];
+            readonly usedEvents: readonly [11419, 11434, 11453, 11468, 11485, 11504, 11523, 11544, 11557, 11564, 11569, 11574, 11579, 11586, 11591, 11598, 12146, 12155, 12164];
         }];
         readonly license: "Apache-2.0";
     };

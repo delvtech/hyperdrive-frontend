@@ -1,376 +1,376 @@
 export declare const IMultiToken: {
     readonly abi: readonly [{
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "owner";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "spender";
-            readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "value";
-            readonly type: "uint256";
-        }];
-        readonly name: "Approval";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "account";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "operator";
-            readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "approved";
-            readonly type: "bool";
-        }];
-        readonly name: "ApprovalForAll";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "operator";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "from";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "to";
-            readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "id";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "value";
-            readonly type: "uint256";
-        }];
-        readonly name: "TransferSingle";
-        readonly type: "event";
-    }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "PERMIT_TYPEHASH";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "balanceOf";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "tokenId";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "address";
             readonly name: "owner";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "balanceOf";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "batchTransferFrom";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "from";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "to";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256[]";
             readonly name: "ids";
             readonly type: "uint256[]";
-        }, {
             readonly internalType: "uint256[]";
+        }, {
             readonly name: "values";
             readonly type: "uint256[]";
+            readonly internalType: "uint256[]";
         }];
-        readonly name: "batchTransferFrom";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "decimals";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint8";
             readonly name: "";
             readonly type: "uint8";
+            readonly internalType: "uint8";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "domainSeparator";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "isApprovedForAll";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "owner";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "spender";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "isApprovedForAll";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "name";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "tokenId";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "name";
         readonly outputs: readonly [{
-            readonly internalType: "string";
             readonly name: "";
             readonly type: "string";
+            readonly internalType: "string";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "nonces";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "owner";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "nonces";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "perTokenApprovals";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "tokenId";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "address";
             readonly name: "owner";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "spender";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "perTokenApprovals";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "permitForAll";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "owner";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "spender";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "bool";
             readonly name: "_approved";
             readonly type: "bool";
+            readonly internalType: "bool";
         }, {
-            readonly internalType: "uint256";
             readonly name: "deadline";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "uint8";
             readonly name: "v";
             readonly type: "uint8";
+            readonly internalType: "uint8";
         }, {
-            readonly internalType: "bytes32";
             readonly name: "r";
             readonly type: "bytes32";
-        }, {
             readonly internalType: "bytes32";
+        }, {
             readonly name: "s";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
-        readonly name: "permitForAll";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "tokenID";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "address";
-            readonly name: "operator";
-            readonly type: "address";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "amount";
-            readonly type: "uint256";
-        }];
+        readonly type: "function";
         readonly name: "setApproval";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "tokenID";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "address";
             readonly name: "operator";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "setApprovalBridge";
+        readonly inputs: readonly [{
+            readonly name: "tokenID";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
+            readonly name: "operator";
+            readonly type: "address";
             readonly internalType: "address";
+        }, {
+            readonly name: "amount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
             readonly name: "caller";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "setApprovalBridge";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setApprovalForAll";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "operator";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "bool";
             readonly name: "approved";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
-        readonly name: "setApprovalForAll";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "symbol";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "tokenId";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "symbol";
         readonly outputs: readonly [{
-            readonly internalType: "string";
             readonly name: "";
             readonly type: "string";
+            readonly internalType: "string";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "totalSupply";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "tokenId";
             readonly type: "uint256";
-        }];
-        readonly name: "totalSupply";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "transferFrom";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "tokenID";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "address";
             readonly name: "from";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "to";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "transferFrom";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "transferFromBridge";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "tokenID";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "address";
             readonly name: "from";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "to";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "address";
             readonly name: "caller";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "transferFromBridge";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
+    }, {
+        readonly type: "event";
+        readonly name: "Approval";
+        readonly inputs: readonly [{
+            readonly name: "owner";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "spender";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "value";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "ApprovalForAll";
+        readonly inputs: readonly [{
+            readonly name: "account";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "operator";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "approved";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "TransferSingle";
+        readonly inputs: readonly [{
+            readonly name: "operator";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "from";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "to";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "id";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "value";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
     }];
     readonly bytecode: {
         readonly object: "0x";
@@ -1016,39 +1016,39 @@ export declare const IMultiToken: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IMultiToken.sol";
-        readonly id: 11993;
+        readonly id: 12041;
         readonly exportedSymbols: {
-            readonly IMultiToken: readonly [11992];
-            readonly IMultiTokenCore: readonly [12083];
-            readonly IMultiTokenEvents: readonly [12117];
-            readonly IMultiTokenMetadata: readonly [12132];
-            readonly IMultiTokenRead: readonly [12205];
+            readonly IMultiToken: readonly [12040];
+            readonly IMultiTokenCore: readonly [12131];
+            readonly IMultiTokenEvents: readonly [12165];
+            readonly IMultiTokenMetadata: readonly [12180];
+            readonly IMultiTokenRead: readonly [12253];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:383:98";
         readonly nodes: readonly [{
-            readonly id: 11975;
+            readonly id: 12023;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:98";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 11977;
+            readonly id: 12025;
             readonly nodeType: "ImportDirective";
             readonly src: "64:56:98";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IMultiTokenCore.sol";
             readonly file: "./IMultiTokenCore.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 11993;
-            readonly sourceUnit: 12084;
+            readonly scope: 12041;
+            readonly sourceUnit: 12132;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 11976;
+                    readonly id: 12024;
                     readonly name: "IMultiTokenCore";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 12083;
+                    readonly referencedDeclaration: 12131;
                     readonly src: "73:15:98";
                     readonly typeDescriptions: {};
                 };
@@ -1056,22 +1056,22 @@ export declare const IMultiToken: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 11979;
+            readonly id: 12027;
             readonly nodeType: "ImportDirective";
             readonly src: "121:60:98";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IMultiTokenEvents.sol";
             readonly file: "./IMultiTokenEvents.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 11993;
-            readonly sourceUnit: 12118;
+            readonly scope: 12041;
+            readonly sourceUnit: 12166;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 11978;
+                    readonly id: 12026;
                     readonly name: "IMultiTokenEvents";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 12117;
+                    readonly referencedDeclaration: 12165;
                     readonly src: "130:17:98";
                     readonly typeDescriptions: {};
                 };
@@ -1079,22 +1079,22 @@ export declare const IMultiToken: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 11981;
+            readonly id: 12029;
             readonly nodeType: "ImportDirective";
             readonly src: "182:64:98";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IMultiTokenMetadata.sol";
             readonly file: "./IMultiTokenMetadata.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 11993;
-            readonly sourceUnit: 12133;
+            readonly scope: 12041;
+            readonly sourceUnit: 12181;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 11980;
+                    readonly id: 12028;
                     readonly name: "IMultiTokenMetadata";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 12132;
+                    readonly referencedDeclaration: 12180;
                     readonly src: "191:19:98";
                     readonly typeDescriptions: {};
                 };
@@ -1102,22 +1102,22 @@ export declare const IMultiToken: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 11983;
+            readonly id: 12031;
             readonly nodeType: "ImportDirective";
             readonly src: "247:56:98";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IMultiTokenRead.sol";
             readonly file: "./IMultiTokenRead.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 11993;
-            readonly sourceUnit: 12206;
+            readonly scope: 12041;
+            readonly sourceUnit: 12254;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 11982;
+                    readonly id: 12030;
                     readonly name: "IMultiTokenRead";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 12205;
+                    readonly referencedDeclaration: 12253;
                     readonly src: "256:15:98";
                     readonly typeDescriptions: {};
                 };
@@ -1125,57 +1125,57 @@ export declare const IMultiToken: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 11992;
+            readonly id: 12040;
             readonly nodeType: "ContractDefinition";
             readonly src: "305:116:98";
             readonly nodes: readonly [];
             readonly abstract: false;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 11984;
+                    readonly id: 12032;
                     readonly name: "IMultiTokenEvents";
                     readonly nameLocations: readonly ["334:17:98"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 12117;
+                    readonly referencedDeclaration: 12165;
                     readonly src: "334:17:98";
                 };
-                readonly id: 11985;
+                readonly id: 12033;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "334:17:98";
             }, {
                 readonly baseName: {
-                    readonly id: 11986;
+                    readonly id: 12034;
                     readonly name: "IMultiTokenRead";
                     readonly nameLocations: readonly ["357:15:98"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 12205;
+                    readonly referencedDeclaration: 12253;
                     readonly src: "357:15:98";
                 };
-                readonly id: 11987;
+                readonly id: 12035;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "357:15:98";
             }, {
                 readonly baseName: {
-                    readonly id: 11988;
+                    readonly id: 12036;
                     readonly name: "IMultiTokenCore";
                     readonly nameLocations: readonly ["378:15:98"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 12083;
+                    readonly referencedDeclaration: 12131;
                     readonly src: "378:15:98";
                 };
-                readonly id: 11989;
+                readonly id: 12037;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "378:15:98";
             }, {
                 readonly baseName: {
-                    readonly id: 11990;
+                    readonly id: 12038;
                     readonly name: "IMultiTokenMetadata";
                     readonly nameLocations: readonly ["399:19:98"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 12132;
+                    readonly referencedDeclaration: 12180;
                     readonly src: "399:19:98";
                 };
-                readonly id: 11991;
+                readonly id: 12039;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "399:19:98";
             }];
@@ -1183,12 +1183,12 @@ export declare const IMultiToken: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [11992, 12132, 12083, 12205, 12117];
+            readonly linearizedBaseContracts: readonly [12040, 12180, 12131, 12253, 12165];
             readonly name: "IMultiToken";
             readonly nameLocation: "315:11:98";
-            readonly scope: 11993;
+            readonly scope: 12041;
             readonly usedErrors: readonly [];
-            readonly usedEvents: readonly [12098, 12107, 12116];
+            readonly usedEvents: readonly [12146, 12155, 12164];
         }];
         readonly license: "Apache-2.0";
     };

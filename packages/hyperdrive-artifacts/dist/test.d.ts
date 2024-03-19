@@ -1,407 +1,407 @@
 export declare const test: {
     readonly abi: readonly [{
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "";
-            readonly type: "string";
-        }];
-        readonly name: "log";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }];
-        readonly name: "log_address";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256[]";
-            readonly name: "val";
-            readonly type: "uint256[]";
-        }];
-        readonly name: "log_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "int256[]";
-            readonly name: "val";
-            readonly type: "int256[]";
-        }];
-        readonly name: "log_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "address[]";
-            readonly name: "val";
-            readonly type: "address[]";
-        }];
-        readonly name: "log_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "bytes";
-            readonly name: "";
-            readonly type: "bytes";
-        }];
-        readonly name: "log_bytes";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "bytes32";
-            readonly name: "";
-            readonly type: "bytes32";
-        }];
-        readonly name: "log_bytes32";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "int256";
-            readonly name: "";
-            readonly type: "int256";
-        }];
-        readonly name: "log_int";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "address";
-            readonly name: "val";
-            readonly type: "address";
-        }];
-        readonly name: "log_named_address";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256[]";
-            readonly name: "val";
-            readonly type: "uint256[]";
-        }];
-        readonly name: "log_named_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "int256[]";
-            readonly name: "val";
-            readonly type: "int256[]";
-        }];
-        readonly name: "log_named_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "address[]";
-            readonly name: "val";
-            readonly type: "address[]";
-        }];
-        readonly name: "log_named_array";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bytes";
-            readonly name: "val";
-            readonly type: "bytes";
-        }];
-        readonly name: "log_named_bytes";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bytes32";
-            readonly name: "val";
-            readonly type: "bytes32";
-        }];
-        readonly name: "log_named_bytes32";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "int256";
-            readonly name: "val";
-            readonly type: "int256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "decimals";
-            readonly type: "uint256";
-        }];
-        readonly name: "log_named_decimal_int";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "val";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "decimals";
-            readonly type: "uint256";
-        }];
-        readonly name: "log_named_decimal_uint";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "int256";
-            readonly name: "val";
-            readonly type: "int256";
-        }];
-        readonly name: "log_named_int";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "val";
-            readonly type: "string";
-        }];
-        readonly name: "log_named_string";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "key";
-            readonly type: "string";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "val";
-            readonly type: "uint256";
-        }];
-        readonly name: "log_named_uint";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "string";
-            readonly name: "";
-            readonly type: "string";
-        }];
-        readonly name: "log_string";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly name: "log_uint";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "bytes";
-            readonly name: "";
-            readonly type: "bytes";
-        }];
-        readonly name: "logs";
-        readonly type: "event";
-    }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "IS_TEST";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "excludeArtifacts";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "string[]";
             readonly name: "excludedArtifacts_";
             readonly type: "string[]";
+            readonly internalType: "string[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "excludeContracts";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address[]";
             readonly name: "excludedContracts_";
             readonly type: "address[]";
+            readonly internalType: "address[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "excludeSenders";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address[]";
             readonly name: "excludedSenders_";
             readonly type: "address[]";
+            readonly internalType: "address[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "failed";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "targetArtifactSelectors";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "address";
-                readonly name: "addr";
-                readonly type: "address";
-            }, {
-                readonly internalType: "bytes4[]";
-                readonly name: "selectors";
-                readonly type: "bytes4[]";
-            }];
-            readonly internalType: "struct StdInvariant.FuzzSelector[]";
             readonly name: "targetedArtifactSelectors_";
             readonly type: "tuple[]";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "targetArtifacts";
-        readonly outputs: readonly [{
-            readonly internalType: "string[]";
-            readonly name: "targetedArtifacts_";
-            readonly type: "string[]";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "targetContracts";
-        readonly outputs: readonly [{
-            readonly internalType: "address[]";
-            readonly name: "targetedContracts_";
-            readonly type: "address[]";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "targetSelectors";
-        readonly outputs: readonly [{
+            readonly internalType: "struct StdInvariant.FuzzSelector[]";
             readonly components: readonly [{
-                readonly internalType: "address";
                 readonly name: "addr";
                 readonly type: "address";
+                readonly internalType: "address";
             }, {
-                readonly internalType: "bytes4[]";
                 readonly name: "selectors";
                 readonly type: "bytes4[]";
+                readonly internalType: "bytes4[]";
             }];
-            readonly internalType: "struct StdInvariant.FuzzSelector[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "targetArtifacts";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "targetedArtifacts_";
+            readonly type: "string[]";
+            readonly internalType: "string[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "targetContracts";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "targetedContracts_";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "targetSelectors";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
             readonly name: "targetedSelectors_";
             readonly type: "tuple[]";
+            readonly internalType: "struct StdInvariant.FuzzSelector[]";
+            readonly components: readonly [{
+                readonly name: "addr";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "selectors";
+                readonly type: "bytes4[]";
+                readonly internalType: "bytes4[]";
+            }];
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "targetSenders";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address[]";
             readonly name: "targetedSenders_";
             readonly type: "address[]";
+            readonly internalType: "address[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
+    }, {
+        readonly type: "event";
+        readonly name: "log";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_address";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly indexed: false;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_array";
+        readonly inputs: readonly [{
+            readonly name: "val";
+            readonly type: "uint256[]";
+            readonly indexed: false;
+            readonly internalType: "uint256[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_array";
+        readonly inputs: readonly [{
+            readonly name: "val";
+            readonly type: "int256[]";
+            readonly indexed: false;
+            readonly internalType: "int256[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_array";
+        readonly inputs: readonly [{
+            readonly name: "val";
+            readonly type: "address[]";
+            readonly indexed: false;
+            readonly internalType: "address[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_bytes";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_bytes32";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "bytes32";
+            readonly indexed: false;
+            readonly internalType: "bytes32";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_int";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "int256";
+            readonly indexed: false;
+            readonly internalType: "int256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_address";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "address";
+            readonly indexed: false;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_array";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "uint256[]";
+            readonly indexed: false;
+            readonly internalType: "uint256[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_array";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "int256[]";
+            readonly indexed: false;
+            readonly internalType: "int256[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_array";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "address[]";
+            readonly indexed: false;
+            readonly internalType: "address[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_bytes";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_bytes32";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "bytes32";
+            readonly indexed: false;
+            readonly internalType: "bytes32";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_decimal_int";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "int256";
+            readonly indexed: false;
+            readonly internalType: "int256";
+        }, {
+            readonly name: "decimals";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_decimal_uint";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "decimals";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_int";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "int256";
+            readonly indexed: false;
+            readonly internalType: "int256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_string";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_named_uint";
+        readonly inputs: readonly [{
+            readonly name: "key";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "val";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_string";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "log_uint";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "logs";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
+        }];
+        readonly anonymous: false;
     }];
     readonly bytecode: {
         readonly object: "0x";
@@ -957,58 +957,58 @@ export declare const test: {
     };
     readonly ast: {
         readonly absolutePath: "lib/forge-std/src/Test.sol";
-        readonly id: 39598;
+        readonly id: 39646;
         readonly exportedSymbols: {
-            readonly DSTest: readonly [29963];
-            readonly StdAssertions: readonly [31456];
-            readonly StdChains: readonly [32176];
-            readonly StdCheats: readonly [34994];
-            readonly StdInvariant: readonly [35284];
-            readonly StdStorage: readonly [36034];
-            readonly StdStyle: readonly [38698];
-            readonly StdUtils: readonly [39546];
-            readonly Test: readonly [39597];
-            readonly TestBase: readonly [30029];
-            readonly Vm: readonly [41134];
-            readonly console: readonly [49198];
-            readonly console2: readonly [57323];
-            readonly safeconsole: readonly [70561];
-            readonly stdError: readonly [35060];
-            readonly stdJson: readonly [35860];
-            readonly stdMath: readonly [36002];
-            readonly stdStorage: readonly [37487];
+            readonly DSTest: readonly [30011];
+            readonly StdAssertions: readonly [31504];
+            readonly StdChains: readonly [32224];
+            readonly StdCheats: readonly [35042];
+            readonly StdInvariant: readonly [35332];
+            readonly StdStorage: readonly [36082];
+            readonly StdStyle: readonly [38746];
+            readonly StdUtils: readonly [39594];
+            readonly Test: readonly [39645];
+            readonly TestBase: readonly [30077];
+            readonly Vm: readonly [41182];
+            readonly console: readonly [49246];
+            readonly console2: readonly [57371];
+            readonly safeconsole: readonly [70609];
+            readonly stdError: readonly [35108];
+            readonly stdJson: readonly [35908];
+            readonly stdMath: readonly [36050];
+            readonly stdStorage: readonly [37535];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "32:1126:157";
         readonly nodes: readonly [{
-            readonly id: 39548;
+            readonly id: 39596;
             readonly nodeType: "PragmaDirective";
             readonly src: "32:31:157";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.6", ".2", "<", "0.9", ".0"];
         }, {
-            readonly id: 39549;
+            readonly id: 39597;
             readonly nodeType: "PragmaDirective";
             readonly src: "65:33:157";
             readonly nodes: readonly [];
             readonly literals: readonly ["experimental", "ABIEncoderV2"];
         }, {
-            readonly id: 39551;
+            readonly id: 39599;
             readonly nodeType: "ImportDirective";
             readonly src: "160:38:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/console.sol";
             readonly file: "./console.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 49199;
+            readonly scope: 39646;
+            readonly sourceUnit: 49247;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39550;
+                    readonly id: 39598;
                     readonly name: "console";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 49198;
+                    readonly referencedDeclaration: 49246;
                     readonly src: "168:7:157";
                     readonly typeDescriptions: {};
                 };
@@ -1016,22 +1016,22 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39553;
+            readonly id: 39601;
             readonly nodeType: "ImportDirective";
             readonly src: "199:40:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/console2.sol";
             readonly file: "./console2.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 57324;
+            readonly scope: 39646;
+            readonly sourceUnit: 57372;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39552;
+                    readonly id: 39600;
                     readonly name: "console2";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 57323;
+                    readonly referencedDeclaration: 57371;
                     readonly src: "207:8:157";
                     readonly typeDescriptions: {};
                 };
@@ -1039,22 +1039,22 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39555;
+            readonly id: 39603;
             readonly nodeType: "ImportDirective";
             readonly src: "240:46:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/safeconsole.sol";
             readonly file: "./safeconsole.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 70562;
+            readonly scope: 39646;
+            readonly sourceUnit: 70610;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39554;
+                    readonly id: 39602;
                     readonly name: "safeconsole";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 70561;
+                    readonly referencedDeclaration: 70609;
                     readonly src: "248:11:157";
                     readonly typeDescriptions: {};
                 };
@@ -1062,22 +1062,22 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39557;
+            readonly id: 39605;
             readonly nodeType: "ImportDirective";
             readonly src: "287:50:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdAssertions.sol";
             readonly file: "./StdAssertions.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 31457;
+            readonly scope: 39646;
+            readonly sourceUnit: 31505;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39556;
+                    readonly id: 39604;
                     readonly name: "StdAssertions";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 31456;
+                    readonly referencedDeclaration: 31504;
                     readonly src: "295:13:157";
                     readonly typeDescriptions: {};
                 };
@@ -1085,22 +1085,22 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39559;
+            readonly id: 39607;
             readonly nodeType: "ImportDirective";
             readonly src: "338:42:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdChains.sol";
             readonly file: "./StdChains.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 32177;
+            readonly scope: 39646;
+            readonly sourceUnit: 32225;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39558;
+                    readonly id: 39606;
                     readonly name: "StdChains";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 32176;
+                    readonly referencedDeclaration: 32224;
                     readonly src: "346:9:157";
                     readonly typeDescriptions: {};
                 };
@@ -1108,22 +1108,22 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39561;
+            readonly id: 39609;
             readonly nodeType: "ImportDirective";
             readonly src: "381:42:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdCheats.sol";
             readonly file: "./StdCheats.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 34995;
+            readonly scope: 39646;
+            readonly sourceUnit: 35043;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39560;
+                    readonly id: 39608;
                     readonly name: "StdCheats";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 34994;
+                    readonly referencedDeclaration: 35042;
                     readonly src: "389:9:157";
                     readonly typeDescriptions: {};
                 };
@@ -1131,22 +1131,22 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39563;
+            readonly id: 39611;
             readonly nodeType: "ImportDirective";
             readonly src: "424:40:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdError.sol";
             readonly file: "./StdError.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 35061;
+            readonly scope: 39646;
+            readonly sourceUnit: 35109;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39562;
+                    readonly id: 39610;
                     readonly name: "stdError";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 35060;
+                    readonly referencedDeclaration: 35108;
                     readonly src: "432:8:157";
                     readonly typeDescriptions: {};
                 };
@@ -1154,22 +1154,22 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39565;
+            readonly id: 39613;
             readonly nodeType: "ImportDirective";
             readonly src: "465:48:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdInvariant.sol";
             readonly file: "./StdInvariant.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 35285;
+            readonly scope: 39646;
+            readonly sourceUnit: 35333;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39564;
+                    readonly id: 39612;
                     readonly name: "StdInvariant";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 35284;
+                    readonly referencedDeclaration: 35332;
                     readonly src: "473:12:157";
                     readonly typeDescriptions: {};
                 };
@@ -1177,22 +1177,22 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39567;
+            readonly id: 39615;
             readonly nodeType: "ImportDirective";
             readonly src: "514:38:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdJson.sol";
             readonly file: "./StdJson.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 35861;
+            readonly scope: 39646;
+            readonly sourceUnit: 35909;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39566;
+                    readonly id: 39614;
                     readonly name: "stdJson";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 35860;
+                    readonly referencedDeclaration: 35908;
                     readonly src: "522:7:157";
                     readonly typeDescriptions: {};
                 };
@@ -1200,22 +1200,22 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39569;
+            readonly id: 39617;
             readonly nodeType: "ImportDirective";
             readonly src: "553:38:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdMath.sol";
             readonly file: "./StdMath.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 36003;
+            readonly scope: 39646;
+            readonly sourceUnit: 36051;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39568;
+                    readonly id: 39616;
                     readonly name: "stdMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 36002;
+                    readonly referencedDeclaration: 36050;
                     readonly src: "561:7:157";
                     readonly typeDescriptions: {};
                 };
@@ -1223,33 +1223,33 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39572;
+            readonly id: 39620;
             readonly nodeType: "ImportDirective";
             readonly src: "592:56:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdStorage.sol";
             readonly file: "./StdStorage.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 37488;
+            readonly scope: 39646;
+            readonly sourceUnit: 37536;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39570;
+                    readonly id: 39618;
                     readonly name: "StdStorage";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 36034;
+                    readonly referencedDeclaration: 36082;
                     readonly src: "600:10:157";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }, {
                 readonly foreign: {
-                    readonly id: 39571;
+                    readonly id: 39619;
                     readonly name: "stdStorage";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 37487;
+                    readonly referencedDeclaration: 37535;
                     readonly src: "612:10:157";
                     readonly typeDescriptions: {};
                 };
@@ -1257,22 +1257,22 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39574;
+            readonly id: 39622;
             readonly nodeType: "ImportDirective";
             readonly src: "649:40:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdStyle.sol";
             readonly file: "./StdStyle.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 38699;
+            readonly scope: 39646;
+            readonly sourceUnit: 38747;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39573;
+                    readonly id: 39621;
                     readonly name: "StdStyle";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 38698;
+                    readonly referencedDeclaration: 38746;
                     readonly src: "657:8:157";
                     readonly typeDescriptions: {};
                 };
@@ -1280,22 +1280,22 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39576;
+            readonly id: 39624;
             readonly nodeType: "ImportDirective";
             readonly src: "690:40:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdUtils.sol";
             readonly file: "./StdUtils.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 39547;
+            readonly scope: 39646;
+            readonly sourceUnit: 39595;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39575;
+                    readonly id: 39623;
                     readonly name: "StdUtils";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 39546;
+                    readonly referencedDeclaration: 39594;
                     readonly src: "698:8:157";
                     readonly typeDescriptions: {};
                 };
@@ -1303,22 +1303,22 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39578;
+            readonly id: 39626;
             readonly nodeType: "ImportDirective";
             readonly src: "731:28:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/Vm.sol";
             readonly file: "./Vm.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 41135;
+            readonly scope: 39646;
+            readonly sourceUnit: 41183;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39577;
+                    readonly id: 39625;
                     readonly name: "Vm";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 41134;
+                    readonly referencedDeclaration: 41182;
                     readonly src: "739:2:157";
                     readonly typeDescriptions: {};
                 };
@@ -1326,22 +1326,22 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39580;
+            readonly id: 39628;
             readonly nodeType: "ImportDirective";
             readonly src: "781:36:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/Base.sol";
             readonly file: "./Base.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 30039;
+            readonly scope: 39646;
+            readonly sourceUnit: 30087;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39579;
+                    readonly id: 39627;
                     readonly name: "TestBase";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 30029;
+                    readonly referencedDeclaration: 30077;
                     readonly src: "789:8:157";
                     readonly typeDescriptions: {};
                 };
@@ -1349,22 +1349,22 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39582;
+            readonly id: 39630;
             readonly nodeType: "ImportDirective";
             readonly src: "818:40:157";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/lib/ds-test/src/test.sol";
             readonly file: "ds-test/test.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39598;
-            readonly sourceUnit: 29964;
+            readonly scope: 39646;
+            readonly sourceUnit: 30012;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39581;
+                    readonly id: 39629;
                     readonly name: "DSTest";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 29963;
+                    readonly referencedDeclaration: 30011;
                     readonly src: "826:6:157";
                     readonly typeDescriptions: {};
                 };
@@ -1372,93 +1372,93 @@ export declare const test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39597;
+            readonly id: 39645;
             readonly nodeType: "ContractDefinition";
             readonly src: "875:282:157";
             readonly nodes: readonly [];
             readonly abstract: true;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 39583;
+                    readonly id: 39631;
                     readonly name: "TestBase";
                     readonly nameLocations: readonly ["901:8:157"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 30029;
+                    readonly referencedDeclaration: 30077;
                     readonly src: "901:8:157";
                 };
-                readonly id: 39584;
+                readonly id: 39632;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "901:8:157";
             }, {
                 readonly baseName: {
-                    readonly id: 39585;
+                    readonly id: 39633;
                     readonly name: "DSTest";
                     readonly nameLocations: readonly ["911:6:157"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 29963;
+                    readonly referencedDeclaration: 30011;
                     readonly src: "911:6:157";
                 };
-                readonly id: 39586;
+                readonly id: 39634;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "911:6:157";
             }, {
                 readonly baseName: {
-                    readonly id: 39587;
+                    readonly id: 39635;
                     readonly name: "StdAssertions";
                     readonly nameLocations: readonly ["919:13:157"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 31456;
+                    readonly referencedDeclaration: 31504;
                     readonly src: "919:13:157";
                 };
-                readonly id: 39588;
+                readonly id: 39636;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "919:13:157";
             }, {
                 readonly baseName: {
-                    readonly id: 39589;
+                    readonly id: 39637;
                     readonly name: "StdChains";
                     readonly nameLocations: readonly ["934:9:157"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 32176;
+                    readonly referencedDeclaration: 32224;
                     readonly src: "934:9:157";
                 };
-                readonly id: 39590;
+                readonly id: 39638;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "934:9:157";
             }, {
                 readonly baseName: {
-                    readonly id: 39591;
+                    readonly id: 39639;
                     readonly name: "StdCheats";
                     readonly nameLocations: readonly ["945:9:157"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 34994;
+                    readonly referencedDeclaration: 35042;
                     readonly src: "945:9:157";
                 };
-                readonly id: 39592;
+                readonly id: 39640;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "945:9:157";
             }, {
                 readonly baseName: {
-                    readonly id: 39593;
+                    readonly id: 39641;
                     readonly name: "StdInvariant";
                     readonly nameLocations: readonly ["956:12:157"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 35284;
+                    readonly referencedDeclaration: 35332;
                     readonly src: "956:12:157";
                 };
-                readonly id: 39594;
+                readonly id: 39642;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "956:12:157";
             }, {
                 readonly baseName: {
-                    readonly id: 39595;
+                    readonly id: 39643;
                     readonly name: "StdUtils";
                     readonly nameLocations: readonly ["970:8:157"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 39546;
+                    readonly referencedDeclaration: 39594;
                     readonly src: "970:8:157";
                 };
-                readonly id: 39596;
+                readonly id: 39644;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "970:8:157";
             }];
@@ -1466,12 +1466,12 @@ export declare const test: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [39597, 39546, 35284, 34994, 34230, 32176, 31456, 29963, 30029, 30026];
+            readonly linearizedBaseContracts: readonly [39645, 39594, 35332, 35042, 34278, 32224, 31504, 30011, 30077, 30074];
             readonly name: "Test";
             readonly nameLocation: "893:4:157";
-            readonly scope: 39598;
+            readonly scope: 39646;
             readonly usedErrors: readonly [];
-            readonly usedEvents: readonly [27677, 27681, 27685, 27689, 27693, 27697, 27701, 27705, 27711, 27717, 27725, 27733, 27739, 27745, 27751, 27757, 30051, 30056, 30061, 30068, 30075, 30082];
+            readonly usedEvents: readonly [27725, 27729, 27733, 27737, 27741, 27745, 27749, 27753, 27759, 27765, 27773, 27781, 27787, 27793, 27799, 27805, 30099, 30104, 30109, 30116, 30123, 30130];
         }];
         readonly license: "MIT";
     };

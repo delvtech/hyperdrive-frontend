@@ -1,72 +1,72 @@
 export declare const MockAssetId: {
     readonly abi: readonly [{
-        readonly inputs: readonly [];
-        readonly name: "InvalidTimestamp";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "_id";
-            readonly type: "uint256";
-        }];
+        readonly type: "function";
         readonly name: "assetIdToName";
-        readonly outputs: readonly [{
-            readonly internalType: "string";
-            readonly name: "";
-            readonly type: "string";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_id";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
         readonly name: "assetIdToSymbol";
-        readonly outputs: readonly [{
-            readonly internalType: "string";
-            readonly name: "";
-            readonly type: "string";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_id";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "decodeAssetId";
         readonly outputs: readonly [{
-            readonly internalType: "enum AssetId.AssetIdPrefix";
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "decodeAssetId";
+        readonly inputs: readonly [{
+            readonly name: "_id";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint8";
+            readonly internalType: "enum AssetId.AssetIdPrefix";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "encodeAssetId";
         readonly inputs: readonly [{
-            readonly internalType: "enum AssetId.AssetIdPrefix";
             readonly name: "_prefix";
             readonly type: "uint8";
+            readonly internalType: "enum AssetId.AssetIdPrefix";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_timestamp";
             readonly type: "uint256";
-        }];
-        readonly name: "encodeAssetId";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidTimestamp";
+        readonly inputs: readonly [];
     }];
     readonly bytecode: {
         readonly object: "0x608060405234801561001057600080fd5b506106be806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80633c8c28ad146100515780636322c7511461007a5780638a227c39146100aa578063957462ac146100cb575b600080fd5b61006461005f366004610426565b6100de565b6040516100719190610463565b60405180910390f35b61009c610088366004610426565b60f881901c916001600160f81b0390911690565b6040516100719291906104ac565b6100bd6100b83660046104d8565b6100f2565b604051908152602001610071565b6100646100d9366004610426565b610109565b606060006100eb83610116565b9392505050565b6000806100ff848461023e565b9150505b92915050565b606060006100eb83610273565b606060f882901c6001600160f81b038316600061013282610371565b9050600083600381111561014857610148610496565b0361017a576040518060400160405280600d81526020016c048797065726472697665204c5609c1b8152509350610236565b600183600381111561018e5761018e610496565b036101ba57806040516020016101a49190610508565b6040516020818303038152906040529350610236565b60028360038111156101ce576101ce610496565b036101e457806040516020016101a49190610541565b60038360038111156101f8576101f8610496565b03610236576040518060400160405280601b81526020017f48797065726472697665205769746864726177616c205368617265000000000081525093505b505050919050565b60006001600160f81b038211156102685760405163b7d0949760e01b815260040160405180910390fd5b5060f89190911b1790565b606060f882901c6001600160f81b038316600061028f82610371565b905060008360038111156102a5576102a5610496565b036102d7576040518060400160405280600d81526020016c0485950455244524956452d4c5609c1b8152509350610236565b60018360038111156102eb576102eb610496565b0361030157806040516020016101a4919061057b565b600283600381111561031557610315610496565b0361032b57806040516020016101a491906105b3565b600383600381111561033f5761033f610496565b0361023657505060408051808201909152600d81526c485950455244524956452d575360981b60208201529392505050565b60408051604e80825260808201909252606091906000908260208201818036833701905050905060005b8415610418576103ac600a866105f5565b6103b790603061061f565b60f81b8260016103c78487610632565b6103d19190610632565b815181106103e1576103e1610645565b60200101906001600160f81b031916908160001a905350806104028161065b565b91506104119050600a86610674565b945061039b565b918290030190815292915050565b60006020828403121561043857600080fd5b5035919050565b60005b8381101561045a578181015183820152602001610442565b50506000910152565b602081526000825180602084015261048281604085016020870161043f565b601f01601f19169190910160400192915050565b634e487b7160e01b600052602160045260246000fd5b60408101600484106104ce57634e487b7160e01b600052602160045260246000fd5b9281526020015290565b600080604083850312156104eb57600080fd5b8235600481106104fa57600080fd5b946020939093013593505050565b700243cb832b9323934bb32902637b7339d1607d1b81526000825161053481601185016020870161043f565b9190910160110192915050565b710243cb832b9323934bb329029b437b93a1d160751b81526000825161056e81601285016020870161043f565b9190910160120192915050565b6f242ca822a9222924ab2296a627a7239d60811b8152600082516105a681601085016020870161043f565b9190910160100192915050565b70242ca822a9222924ab2296a9a427a92a1d60791b81526000825161053481601185016020870161043f565b634e487b7160e01b600052601260045260246000fd5b600082610604576106046105df565b500690565b634e487b7160e01b600052601160045260246000fd5b8082018082111561010357610103610609565b8181038181111561010357610103610609565b634e487b7160e01b600052603260045260246000fd5b60006001820161066d5761066d610609565b5060010190565b600082610683576106836105df565b50049056fea26469706673582212202cbc116f53fda704166d7fd4830bcc4b12fdba28e8de502890c842257a0563bd64736f6c63430008140033";
@@ -251,36 +251,36 @@ export declare const MockAssetId: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/test/MockAssetId.sol";
-        readonly id: 24061;
+        readonly id: 24109;
         readonly exportedSymbols: {
-            readonly AssetId: readonly [18594];
-            readonly MockAssetId: readonly [24060];
+            readonly AssetId: readonly [18642];
+            readonly MockAssetId: readonly [24108];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:949:133";
         readonly nodes: readonly [{
-            readonly id: 23975;
+            readonly id: 24023;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:133";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 23977;
+            readonly id: 24025;
             readonly nodeType: "ImportDirective";
             readonly src: "64:62:133";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/AssetId.sol";
             readonly file: "contracts/src/libraries/AssetId.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 24061;
-            readonly sourceUnit: 18595;
+            readonly scope: 24109;
+            readonly sourceUnit: 18643;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 23976;
+                    readonly id: 24024;
                     readonly name: "AssetId";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 18594;
+                    readonly referencedDeclaration: 18642;
                     readonly src: "73:7:133";
                     readonly typeDescriptions: {};
                 };
@@ -288,29 +288,29 @@ export declare const MockAssetId: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 24060;
+            readonly id: 24108;
             readonly nodeType: "ContractDefinition";
             readonly src: "128:859:133";
             readonly nodes: readonly [{
-                readonly id: 23998;
+                readonly id: 24046;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "155:219:133";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 23997;
+                    readonly id: 24045;
                     readonly nodeType: "Block";
                     readonly src: "283:91:133";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [23988];
+                        readonly assignments: readonly [24036];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 23988;
+                            readonly id: 24036;
                             readonly mutability: "mutable";
                             readonly name: "id";
                             readonly nameLocation: "301:2:133";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 23997;
+                            readonly scope: 24045;
                             readonly src: "293:10:133";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -319,7 +319,7 @@ export declare const MockAssetId: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 23987;
+                                readonly id: 24035;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "293:7:133";
@@ -330,25 +330,25 @@ export declare const MockAssetId: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 23994;
+                        readonly id: 24042;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 23991;
+                                readonly id: 24039;
                                 readonly name: "_prefix";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23980;
+                                readonly referencedDeclaration: 24028;
                                 readonly src: "328:7:133";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 };
                             }, {
-                                readonly id: 23992;
+                                readonly id: 24040;
                                 readonly name: "_timestamp";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23982;
+                                readonly referencedDeclaration: 24030;
                                 readonly src: "337:10:133";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -357,25 +357,25 @@ export declare const MockAssetId: {
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 }, {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 23989;
+                                    readonly id: 24037;
                                     readonly name: "AssetId";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18594;
+                                    readonly referencedDeclaration: 18642;
                                     readonly src: "306:7:133";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18594_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18642_$";
                                         readonly typeString: "type(library AssetId)";
                                     };
                                 };
-                                readonly id: 23990;
+                                readonly id: 24038;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -383,14 +383,14 @@ export declare const MockAssetId: {
                                 readonly memberLocation: "314:13:133";
                                 readonly memberName: "encodeAssetId";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18364;
+                                readonly referencedDeclaration: 18412;
                                 readonly src: "306:21:133";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_pure$_t_enum$_AssetIdPrefix_$18341_$_t_uint256_$returns$_t_uint256_$";
+                                    readonly typeIdentifier: "t_function_internal_pure$_t_enum$_AssetIdPrefix_$18389_$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (enum AssetId.AssetIdPrefix,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 23993;
+                            readonly id: 24041;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -410,19 +410,19 @@ export declare const MockAssetId: {
                         readonly src: "293:55:133";
                     }, {
                         readonly expression: {
-                            readonly id: 23995;
+                            readonly id: 24043;
                             readonly name: "id";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 23988;
+                            readonly referencedDeclaration: 24036;
                             readonly src: "365:2:133";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 23986;
-                        readonly id: 23996;
+                        readonly functionReturnParameters: 24034;
+                        readonly id: 24044;
                         readonly nodeType: "Return";
                         readonly src: "358:9:133";
                     }];
@@ -434,50 +434,50 @@ export declare const MockAssetId: {
                 readonly name: "encodeAssetId";
                 readonly nameLocation: "164:13:133";
                 readonly parameters: {
-                    readonly id: 23983;
+                    readonly id: 24031;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23980;
+                        readonly id: 24028;
                         readonly mutability: "mutable";
                         readonly name: "_prefix";
                         readonly nameLocation: "209:7:133";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23998;
+                        readonly scope: 24046;
                         readonly src: "187:29:133";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                             readonly typeString: "enum AssetId.AssetIdPrefix";
                         };
                         readonly typeName: {
-                            readonly id: 23979;
+                            readonly id: 24027;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 23978;
+                                readonly id: 24026;
                                 readonly name: "AssetId.AssetIdPrefix";
                                 readonly nameLocations: readonly ["187:7:133", "195:13:133"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 18341;
+                                readonly referencedDeclaration: 18389;
                                 readonly src: "187:21:133";
                             };
-                            readonly referencedDeclaration: 18341;
+                            readonly referencedDeclaration: 18389;
                             readonly src: "187:21:133";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                 readonly typeString: "enum AssetId.AssetIdPrefix";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 23982;
+                        readonly id: 24030;
                         readonly mutability: "mutable";
                         readonly name: "_timestamp";
                         readonly nameLocation: "234:10:133";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23998;
+                        readonly scope: 24046;
                         readonly src: "226:18:133";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -486,7 +486,7 @@ export declare const MockAssetId: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 23981;
+                            readonly id: 24029;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "226:7:133";
@@ -500,16 +500,16 @@ export declare const MockAssetId: {
                     readonly src: "177:73:133";
                 };
                 readonly returnParameters: {
-                    readonly id: 23986;
+                    readonly id: 24034;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23985;
+                        readonly id: 24033;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23998;
+                        readonly scope: 24046;
                         readonly src: "274:7:133";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -518,7 +518,7 @@ export declare const MockAssetId: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 23984;
+                            readonly id: 24032;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "274:7:133";
@@ -531,64 +531,64 @@ export declare const MockAssetId: {
                     }];
                     readonly src: "273:9:133";
                 };
-                readonly scope: 24060;
+                readonly scope: 24108;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 24025;
+                readonly id: 24073;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "380:249:133";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 24024;
+                    readonly id: 24072;
                     readonly nodeType: "Block";
                     readonly src: "485:144:133";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [24012, 24014];
+                        readonly assignments: readonly [24060, 24062];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 24012;
+                            readonly id: 24060;
                             readonly mutability: "mutable";
                             readonly name: "prefix";
                             readonly nameLocation: "518:6:133";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 24024;
+                            readonly scope: 24072;
                             readonly src: "496:28:133";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                 readonly typeString: "enum AssetId.AssetIdPrefix";
                             };
                             readonly typeName: {
-                                readonly id: 24011;
+                                readonly id: 24059;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 24010;
+                                    readonly id: 24058;
                                     readonly name: "AssetId.AssetIdPrefix";
                                     readonly nameLocations: readonly ["496:7:133", "504:13:133"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 18341;
+                                    readonly referencedDeclaration: 18389;
                                     readonly src: "496:21:133";
                                 };
-                                readonly referencedDeclaration: 18341;
+                                readonly referencedDeclaration: 18389;
                                 readonly src: "496:21:133";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 };
                             };
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 24014;
+                            readonly id: 24062;
                             readonly mutability: "mutable";
                             readonly name: "timestamp";
                             readonly nameLocation: "534:9:133";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 24024;
+                            readonly scope: 24072;
                             readonly src: "526:17:133";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -597,7 +597,7 @@ export declare const MockAssetId: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 24013;
+                                readonly id: 24061;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "526:7:133";
@@ -608,14 +608,14 @@ export declare const MockAssetId: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 24019;
+                        readonly id: 24067;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 24017;
+                                readonly id: 24065;
                                 readonly name: "_id";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24000;
+                                readonly referencedDeclaration: 24048;
                                 readonly src: "582:3:133";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -628,18 +628,18 @@ export declare const MockAssetId: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 24015;
+                                    readonly id: 24063;
                                     readonly name: "AssetId";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18594;
+                                    readonly referencedDeclaration: 18642;
                                     readonly src: "547:7:133";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18594_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18642_$";
                                         readonly typeString: "type(library AssetId)";
                                     };
                                 };
-                                readonly id: 24016;
+                                readonly id: 24064;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -647,14 +647,14 @@ export declare const MockAssetId: {
                                 readonly memberLocation: "568:13:133";
                                 readonly memberName: "decodeAssetId";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18377;
+                                readonly referencedDeclaration: 18425;
                                 readonly src: "547:34:133";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_enum$_AssetIdPrefix_$18341_$_t_uint256_$";
+                                    readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_enum$_AssetIdPrefix_$18389_$_t_uint256_$";
                                     readonly typeString: "function (uint256) pure returns (enum AssetId.AssetIdPrefix,uint256)";
                                 };
                             };
-                            readonly id: 24018;
+                            readonly id: 24066;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -666,7 +666,7 @@ export declare const MockAssetId: {
                             readonly src: "547:39:133";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_tuple$_t_enum$_AssetIdPrefix_$18341_$_t_uint256_$";
+                                readonly typeIdentifier: "t_tuple$_t_enum$_AssetIdPrefix_$18389_$_t_uint256_$";
                                 readonly typeString: "tuple(enum AssetId.AssetIdPrefix,uint256)";
                             };
                         };
@@ -675,29 +675,29 @@ export declare const MockAssetId: {
                     }, {
                         readonly expression: {
                             readonly components: readonly [{
-                                readonly id: 24020;
+                                readonly id: 24068;
                                 readonly name: "prefix";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24012;
+                                readonly referencedDeclaration: 24060;
                                 readonly src: "604:6:133";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                    readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                     readonly typeString: "enum AssetId.AssetIdPrefix";
                                 };
                             }, {
-                                readonly id: 24021;
+                                readonly id: 24069;
                                 readonly name: "timestamp";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24014;
+                                readonly referencedDeclaration: 24062;
                                 readonly src: "612:9:133";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }];
-                            readonly id: 24022;
+                            readonly id: 24070;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
@@ -706,12 +706,12 @@ export declare const MockAssetId: {
                             readonly nodeType: "TupleExpression";
                             readonly src: "603:19:133";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_tuple$_t_enum$_AssetIdPrefix_$18341_$_t_uint256_$";
+                                readonly typeIdentifier: "t_tuple$_t_enum$_AssetIdPrefix_$18389_$_t_uint256_$";
                                 readonly typeString: "tuple(enum AssetId.AssetIdPrefix,uint256)";
                             };
                         };
-                        readonly functionReturnParameters: 24007;
-                        readonly id: 24023;
+                        readonly functionReturnParameters: 24055;
+                        readonly id: 24071;
                         readonly nodeType: "Return";
                         readonly src: "596:26:133";
                     }];
@@ -723,16 +723,16 @@ export declare const MockAssetId: {
                 readonly name: "decodeAssetId";
                 readonly nameLocation: "389:13:133";
                 readonly parameters: {
-                    readonly id: 24001;
+                    readonly id: 24049;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24000;
+                        readonly id: 24048;
                         readonly mutability: "mutable";
                         readonly name: "_id";
                         readonly nameLocation: "420:3:133";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24025;
+                        readonly scope: 24073;
                         readonly src: "412:11:133";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -741,7 +741,7 @@ export declare const MockAssetId: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 23999;
+                            readonly id: 24047;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "412:7:133";
@@ -755,50 +755,50 @@ export declare const MockAssetId: {
                     readonly src: "402:27:133";
                 };
                 readonly returnParameters: {
-                    readonly id: 24007;
+                    readonly id: 24055;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24004;
+                        readonly id: 24052;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24025;
+                        readonly scope: 24073;
                         readonly src: "453:21:133";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                            readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                             readonly typeString: "enum AssetId.AssetIdPrefix";
                         };
                         readonly typeName: {
-                            readonly id: 24003;
+                            readonly id: 24051;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 24002;
+                                readonly id: 24050;
                                 readonly name: "AssetId.AssetIdPrefix";
                                 readonly nameLocations: readonly ["453:7:133", "461:13:133"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 18341;
+                                readonly referencedDeclaration: 18389;
                                 readonly src: "453:21:133";
                             };
-                            readonly referencedDeclaration: 18341;
+                            readonly referencedDeclaration: 18389;
                             readonly src: "453:21:133";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18341";
+                                readonly typeIdentifier: "t_enum$_AssetIdPrefix_$18389";
                                 readonly typeString: "enum AssetId.AssetIdPrefix";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 24006;
+                        readonly id: 24054;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24025;
+                        readonly scope: 24073;
                         readonly src: "476:7:133";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -807,7 +807,7 @@ export declare const MockAssetId: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24005;
+                            readonly id: 24053;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "476:7:133";
@@ -820,30 +820,30 @@ export declare const MockAssetId: {
                     }];
                     readonly src: "452:32:133";
                 };
-                readonly scope: 24060;
+                readonly scope: 24108;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 24042;
+                readonly id: 24090;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "635:161:133";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 24041;
+                    readonly id: 24089;
                     readonly nodeType: "Block";
                     readonly src: "709:87:133";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [24033];
+                        readonly assignments: readonly [24081];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 24033;
+                            readonly id: 24081;
                             readonly mutability: "mutable";
                             readonly name: "_name";
                             readonly nameLocation: "733:5:133";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 24041;
+                            readonly scope: 24089;
                             readonly src: "719:19:133";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -852,7 +852,7 @@ export declare const MockAssetId: {
                                 readonly typeString: "string";
                             };
                             readonly typeName: {
-                                readonly id: 24032;
+                                readonly id: 24080;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "719:6:133";
@@ -863,14 +863,14 @@ export declare const MockAssetId: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 24038;
+                        readonly id: 24086;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 24036;
+                                readonly id: 24084;
                                 readonly name: "_id";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24027;
+                                readonly referencedDeclaration: 24075;
                                 readonly src: "763:3:133";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -883,18 +883,18 @@ export declare const MockAssetId: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 24034;
+                                    readonly id: 24082;
                                     readonly name: "AssetId";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18594;
+                                    readonly referencedDeclaration: 18642;
                                     readonly src: "741:7:133";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18594_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18642_$";
                                         readonly typeString: "type(library AssetId)";
                                     };
                                 };
-                                readonly id: 24035;
+                                readonly id: 24083;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -902,14 +902,14 @@ export declare const MockAssetId: {
                                 readonly memberLocation: "749:13:133";
                                 readonly memberName: "assetIdToName";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18455;
+                                readonly referencedDeclaration: 18503;
                                 readonly src: "741:21:133";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_string_memory_ptr_$";
                                     readonly typeString: "function (uint256) pure returns (string memory)";
                                 };
                             };
-                            readonly id: 24037;
+                            readonly id: 24085;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -929,19 +929,19 @@ export declare const MockAssetId: {
                         readonly src: "719:48:133";
                     }, {
                         readonly expression: {
-                            readonly id: 24039;
+                            readonly id: 24087;
                             readonly name: "_name";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 24033;
+                            readonly referencedDeclaration: 24081;
                             readonly src: "784:5:133";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_string_memory_ptr";
                                 readonly typeString: "string memory";
                             };
                         };
-                        readonly functionReturnParameters: 24031;
-                        readonly id: 24040;
+                        readonly functionReturnParameters: 24079;
+                        readonly id: 24088;
                         readonly nodeType: "Return";
                         readonly src: "777:12:133";
                     }];
@@ -953,16 +953,16 @@ export declare const MockAssetId: {
                 readonly name: "assetIdToName";
                 readonly nameLocation: "644:13:133";
                 readonly parameters: {
-                    readonly id: 24028;
+                    readonly id: 24076;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24027;
+                        readonly id: 24075;
                         readonly mutability: "mutable";
                         readonly name: "_id";
                         readonly nameLocation: "666:3:133";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24042;
+                        readonly scope: 24090;
                         readonly src: "658:11:133";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -971,7 +971,7 @@ export declare const MockAssetId: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24026;
+                            readonly id: 24074;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "658:7:133";
@@ -985,16 +985,16 @@ export declare const MockAssetId: {
                     readonly src: "657:13:133";
                 };
                 readonly returnParameters: {
-                    readonly id: 24031;
+                    readonly id: 24079;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24030;
+                        readonly id: 24078;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24042;
+                        readonly scope: 24090;
                         readonly src: "694:13:133";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1003,7 +1003,7 @@ export declare const MockAssetId: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 24029;
+                            readonly id: 24077;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "694:6:133";
@@ -1016,30 +1016,30 @@ export declare const MockAssetId: {
                     }];
                     readonly src: "693:15:133";
                 };
-                readonly scope: 24060;
+                readonly scope: 24108;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 24059;
+                readonly id: 24107;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "802:183:133";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 24058;
+                    readonly id: 24106;
                     readonly nodeType: "Block";
                     readonly src: "892:93:133";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [24050];
+                        readonly assignments: readonly [24098];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 24050;
+                            readonly id: 24098;
                             readonly mutability: "mutable";
                             readonly name: "_symbol";
                             readonly nameLocation: "916:7:133";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 24058;
+                            readonly scope: 24106;
                             readonly src: "902:21:133";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -1048,7 +1048,7 @@ export declare const MockAssetId: {
                                 readonly typeString: "string";
                             };
                             readonly typeName: {
-                                readonly id: 24049;
+                                readonly id: 24097;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "902:6:133";
@@ -1059,14 +1059,14 @@ export declare const MockAssetId: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 24055;
+                        readonly id: 24103;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 24053;
+                                readonly id: 24101;
                                 readonly name: "_id";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 24044;
+                                readonly referencedDeclaration: 24092;
                                 readonly src: "950:3:133";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1079,18 +1079,18 @@ export declare const MockAssetId: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 24051;
+                                    readonly id: 24099;
                                     readonly name: "AssetId";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18594;
+                                    readonly referencedDeclaration: 18642;
                                     readonly src: "926:7:133";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18594_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_AssetId_$18642_$";
                                         readonly typeString: "type(library AssetId)";
                                     };
                                 };
-                                readonly id: 24052;
+                                readonly id: 24100;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1098,14 +1098,14 @@ export declare const MockAssetId: {
                                 readonly memberLocation: "934:15:133";
                                 readonly memberName: "assetIdToSymbol";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 18533;
+                                readonly referencedDeclaration: 18581;
                                 readonly src: "926:23:133";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_uint256_$returns$_t_string_memory_ptr_$";
                                     readonly typeString: "function (uint256) pure returns (string memory)";
                                 };
                             };
-                            readonly id: 24054;
+                            readonly id: 24102;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1125,19 +1125,19 @@ export declare const MockAssetId: {
                         readonly src: "902:52:133";
                     }, {
                         readonly expression: {
-                            readonly id: 24056;
+                            readonly id: 24104;
                             readonly name: "_symbol";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 24050;
+                            readonly referencedDeclaration: 24098;
                             readonly src: "971:7:133";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_string_memory_ptr";
                                 readonly typeString: "string memory";
                             };
                         };
-                        readonly functionReturnParameters: 24048;
-                        readonly id: 24057;
+                        readonly functionReturnParameters: 24096;
+                        readonly id: 24105;
                         readonly nodeType: "Return";
                         readonly src: "964:14:133";
                     }];
@@ -1149,16 +1149,16 @@ export declare const MockAssetId: {
                 readonly name: "assetIdToSymbol";
                 readonly nameLocation: "811:15:133";
                 readonly parameters: {
-                    readonly id: 24045;
+                    readonly id: 24093;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24044;
+                        readonly id: 24092;
                         readonly mutability: "mutable";
                         readonly name: "_id";
                         readonly nameLocation: "844:3:133";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24059;
+                        readonly scope: 24107;
                         readonly src: "836:11:133";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1167,7 +1167,7 @@ export declare const MockAssetId: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 24043;
+                            readonly id: 24091;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "836:7:133";
@@ -1181,16 +1181,16 @@ export declare const MockAssetId: {
                     readonly src: "826:27:133";
                 };
                 readonly returnParameters: {
-                    readonly id: 24048;
+                    readonly id: 24096;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 24047;
+                        readonly id: 24095;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 24059;
+                        readonly scope: 24107;
                         readonly src: "877:13:133";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1199,7 +1199,7 @@ export declare const MockAssetId: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 24046;
+                            readonly id: 24094;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "877:6:133";
@@ -1212,7 +1212,7 @@ export declare const MockAssetId: {
                     }];
                     readonly src: "876:15:133";
                 };
-                readonly scope: 24060;
+                readonly scope: 24108;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -1223,11 +1223,11 @@ export declare const MockAssetId: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [24060];
+            readonly linearizedBaseContracts: readonly [24108];
             readonly name: "MockAssetId";
             readonly nameLocation: "137:11:133";
-            readonly scope: 24061;
-            readonly usedErrors: readonly [10932];
+            readonly scope: 24109;
+            readonly usedErrors: readonly [10980];
             readonly usedEvents: readonly [];
         }];
         readonly license: "Apache-2.0";

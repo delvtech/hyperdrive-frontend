@@ -1,523 +1,523 @@
 export declare const ERC4626Base: {
     readonly abi: readonly [{
-        readonly inputs: readonly [];
-        readonly name: "ReentrancyGuardReentrantCall";
-        readonly type: "error";
-    }, {
-        readonly anonymous: false;
+        readonly type: "event";
+        readonly name: "AddLiquidity";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "provider";
             readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "lpAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "baseAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "lpSharePrice";
-            readonly type: "uint256";
-        }];
-        readonly name: "AddLiquidity";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
+            readonly name: "lpAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "baseAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "vaultShareAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
+            readonly name: "lpSharePrice";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "Approval";
+        readonly inputs: readonly [{
             readonly name: "owner";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "spender";
             readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "value";
-            readonly type: "uint256";
-        }];
-        readonly name: "Approval";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
+            readonly name: "value";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "ApprovalForAll";
+        readonly inputs: readonly [{
             readonly name: "account";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "operator";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
             readonly name: "approved";
             readonly type: "bool";
-        }];
-        readonly name: "ApprovalForAll";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "trader";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "destination";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "uint256";
-            readonly name: "assetId";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "maturityTime";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "baseAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
-            readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "CloseLong";
+        readonly inputs: readonly [{
+            readonly name: "trader";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
+            readonly name: "destination";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "assetId";
+            readonly type: "uint256";
+            readonly indexed: true;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "maturityTime";
+            readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "baseAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "vaultShareAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
             readonly name: "bondAmount";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "CloseLong";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "CloseShort";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "trader";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "destination";
             readonly type: "address";
-        }, {
             readonly indexed: true;
-            readonly internalType: "uint256";
+            readonly internalType: "address";
+        }, {
             readonly name: "assetId";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
+            readonly indexed: true;
             readonly internalType: "uint256";
+        }, {
             readonly name: "maturityTime";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
             readonly name: "basePayment";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "bondAmount";
             readonly type: "uint256";
-        }];
-        readonly name: "CloseShort";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "collector";
-            readonly type: "address";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "CollectGovernanceFee";
+        readonly inputs: readonly [{
+            readonly name: "collector";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
             readonly name: "fees";
             readonly type: "uint256";
-        }];
-        readonly name: "CollectGovernanceFee";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
+            readonly indexed: false;
             readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "CreateCheckpoint";
+        readonly inputs: readonly [{
             readonly name: "checkpointTime";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
+            readonly indexed: true;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "maturedShorts";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "maturedLongs";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "lpSharePrice";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "CreateCheckpoint";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "FeeCollectorUpdated";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "newFeeCollector";
             readonly type: "address";
-        }];
-        readonly name: "FeeCollectorUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "GovernanceUpdated";
+        readonly inputs: readonly [{
             readonly name: "newGovernance";
             readonly type: "address";
-        }];
-        readonly name: "GovernanceUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "Initialize";
+        readonly inputs: readonly [{
             readonly name: "provider";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
             readonly name: "lpAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
             readonly name: "apr";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "Initialize";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "OpenLong";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "trader";
             readonly type: "address";
-        }, {
             readonly indexed: true;
-            readonly internalType: "uint256";
+            readonly internalType: "address";
+        }, {
             readonly name: "assetId";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
+            readonly indexed: true;
             readonly internalType: "uint256";
+        }, {
             readonly name: "maturityTime";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
             readonly name: "bondAmount";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "OpenLong";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "OpenShort";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "trader";
             readonly type: "address";
-        }, {
             readonly indexed: true;
-            readonly internalType: "uint256";
+            readonly internalType: "address";
+        }, {
             readonly name: "assetId";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
+            readonly indexed: true;
             readonly internalType: "uint256";
+        }, {
             readonly name: "maturityTime";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }, {
             readonly name: "baseProceeds";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "bondAmount";
             readonly type: "uint256";
-        }];
-        readonly name: "OpenShort";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: false;
-            readonly internalType: "bool";
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "PauseStatusUpdated";
+        readonly inputs: readonly [{
             readonly name: "isPaused";
             readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
         }];
-        readonly name: "PauseStatusUpdated";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "PauserUpdated";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "newPauser";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
             readonly name: "status";
             readonly type: "bool";
-        }];
-        readonly name: "PauserUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "provider";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "destination";
-            readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "withdrawalShareAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "baseAmount";
-            readonly type: "uint256";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
-            readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "bool";
-            readonly name: "asBase";
-            readonly type: "bool";
         }];
-        readonly name: "RedeemWithdrawalShares";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "RedeemWithdrawalShares";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "provider";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "destination";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
+            readonly name: "withdrawalShareAmount";
+            readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "baseAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "vaultShareAmount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "RemoveLiquidity";
+        readonly inputs: readonly [{
+            readonly name: "provider";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "destination";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
             readonly name: "lpAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
-            readonly internalType: "bool";
+            readonly internalType: "uint256";
+        }, {
             readonly name: "asBase";
             readonly type: "bool";
-        }, {
             readonly indexed: false;
-            readonly internalType: "uint256";
+            readonly internalType: "bool";
+        }, {
             readonly name: "withdrawalShareAmount";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "lpSharePrice";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "RemoveLiquidity";
-        readonly type: "event";
-    }, {
         readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "Sweep";
         readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
             readonly name: "collector";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "target";
             readonly type: "address";
-        }];
-        readonly name: "Sweep";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "SweepCollectorUpdated";
+        readonly inputs: readonly [{
             readonly name: "newSweepCollector";
             readonly type: "address";
-        }];
-        readonly name: "SweepCollectorUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "TransferSingle";
+        readonly inputs: readonly [{
             readonly name: "operator";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "from";
             readonly type: "address";
-        }, {
             readonly indexed: true;
             readonly internalType: "address";
+        }, {
             readonly name: "to";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
             readonly name: "id";
             readonly type: "uint256";
-        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
             readonly name: "value";
             readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
         }];
-        readonly name: "TransferSingle";
-        readonly type: "event";
+        readonly anonymous: false;
+    }, {
+        readonly type: "error";
+        readonly name: "ReentrancyGuardReentrantCall";
+        readonly inputs: readonly [];
     }];
     readonly bytecode: {
         readonly object: "0x";
@@ -1258,43 +1258,43 @@ export declare const ERC4626Base: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/instances/erc4626/ERC4626Base.sol";
-        readonly id: 7984;
+        readonly id: 7991;
         readonly exportedSymbols: {
-            readonly ERC20: readonly [71213];
-            readonly ERC4626Base: readonly [7983];
-            readonly FixedPointMath: readonly [19394];
-            readonly HyperdriveBase: readonly [14333];
-            readonly IERC4626: readonly [10602];
-            readonly IERC4626Hyperdrive: readonly [10613];
-            readonly IHyperdrive: readonly [11028];
-            readonly ONE: readonly [18628];
-            readonly SafeERC20: readonly [71643];
+            readonly ERC20: readonly [71261];
+            readonly ERC4626Base: readonly [7990];
+            readonly FixedPointMath: readonly [19442];
+            readonly HyperdriveBase: readonly [14381];
+            readonly IERC4626: readonly [10641];
+            readonly IERC4626Hyperdrive: readonly [10652];
+            readonly IHyperdrive: readonly [11076];
+            readonly ONE: readonly [18676];
+            readonly SafeERC20: readonly [71691];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:5835:44";
         readonly nodes: readonly [{
-            readonly id: 7724;
+            readonly id: 7731;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:44";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 7726;
+            readonly id: 7733;
             readonly nodeType: "ImportDirective";
             readonly src: "64:59:44";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
             readonly file: "openzeppelin/token/ERC20/ERC20.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 7984;
-            readonly sourceUnit: 71214;
+            readonly scope: 7991;
+            readonly sourceUnit: 71262;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 7725;
+                    readonly id: 7732;
                     readonly name: "ERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 71213;
+                    readonly referencedDeclaration: 71261;
                     readonly src: "73:5:44";
                     readonly typeDescriptions: {};
                 };
@@ -1302,22 +1302,22 @@ export declare const ERC4626Base: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 7728;
+            readonly id: 7735;
             readonly nodeType: "ImportDirective";
             readonly src: "124:73:44";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol";
             readonly file: "openzeppelin/token/ERC20/utils/SafeERC20.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 7984;
-            readonly sourceUnit: 71644;
+            readonly scope: 7991;
+            readonly sourceUnit: 71692;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 7727;
+                    readonly id: 7734;
                     readonly name: "SafeERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 71643;
+                    readonly referencedDeclaration: 71691;
                     readonly src: "133:9:44";
                     readonly typeDescriptions: {};
                 };
@@ -1325,92 +1325,23 @@ export declare const ERC4626Base: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 7730;
+            readonly id: 7737;
             readonly nodeType: "ImportDirective";
             readonly src: "198:57:44";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IERC4626.sol";
             readonly file: "../../interfaces/IERC4626.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 7984;
-            readonly sourceUnit: 10603;
+            readonly scope: 7991;
+            readonly sourceUnit: 10642;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 7729;
+                    readonly id: 7736;
                     readonly name: "IERC4626";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 10602;
+                    readonly referencedDeclaration: 10641;
                     readonly src: "207:8:44";
-                    readonly typeDescriptions: {};
-                };
-                readonly nameLocation: "-1:-1:-1";
-            }];
-            readonly unitAlias: "";
-        }, {
-            readonly id: 7732;
-            readonly nodeType: "ImportDirective";
-            readonly src: "256:63:44";
-            readonly nodes: readonly [];
-            readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
-            readonly file: "../../interfaces/IHyperdrive.sol";
-            readonly nameLocation: "-1:-1:-1";
-            readonly scope: 7984;
-            readonly sourceUnit: 11029;
-            readonly symbolAliases: readonly [{
-                readonly foreign: {
-                    readonly id: 7731;
-                    readonly name: "IHyperdrive";
-                    readonly nodeType: "Identifier";
-                    readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11028;
-                    readonly src: "265:11:44";
-                    readonly typeDescriptions: {};
-                };
-                readonly nameLocation: "-1:-1:-1";
-            }];
-            readonly unitAlias: "";
-        }, {
-            readonly id: 7734;
-            readonly nodeType: "ImportDirective";
-            readonly src: "320:77:44";
-            readonly nodes: readonly [];
-            readonly absolutePath: "contracts/src/interfaces/IERC4626Hyperdrive.sol";
-            readonly file: "../../interfaces/IERC4626Hyperdrive.sol";
-            readonly nameLocation: "-1:-1:-1";
-            readonly scope: 7984;
-            readonly sourceUnit: 10614;
-            readonly symbolAliases: readonly [{
-                readonly foreign: {
-                    readonly id: 7733;
-                    readonly name: "IERC4626Hyperdrive";
-                    readonly nodeType: "Identifier";
-                    readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 10613;
-                    readonly src: "329:18:44";
-                    readonly typeDescriptions: {};
-                };
-                readonly nameLocation: "-1:-1:-1";
-            }];
-            readonly unitAlias: "";
-        }, {
-            readonly id: 7736;
-            readonly nodeType: "ImportDirective";
-            readonly src: "398:67:44";
-            readonly nodes: readonly [];
-            readonly absolutePath: "contracts/src/internal/HyperdriveBase.sol";
-            readonly file: "../../internal/HyperdriveBase.sol";
-            readonly nameLocation: "-1:-1:-1";
-            readonly scope: 7984;
-            readonly sourceUnit: 14334;
-            readonly symbolAliases: readonly [{
-                readonly foreign: {
-                    readonly id: 7735;
-                    readonly name: "HyperdriveBase";
-                    readonly nodeType: "Identifier";
-                    readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 14333;
-                    readonly src: "407:14:44";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
@@ -1419,31 +1350,100 @@ export declare const ERC4626Base: {
         }, {
             readonly id: 7739;
             readonly nodeType: "ImportDirective";
+            readonly src: "256:63:44";
+            readonly nodes: readonly [];
+            readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
+            readonly file: "../../interfaces/IHyperdrive.sol";
+            readonly nameLocation: "-1:-1:-1";
+            readonly scope: 7991;
+            readonly sourceUnit: 11077;
+            readonly symbolAliases: readonly [{
+                readonly foreign: {
+                    readonly id: 7738;
+                    readonly name: "IHyperdrive";
+                    readonly nodeType: "Identifier";
+                    readonly overloadedDeclarations: readonly [];
+                    readonly referencedDeclaration: 11076;
+                    readonly src: "265:11:44";
+                    readonly typeDescriptions: {};
+                };
+                readonly nameLocation: "-1:-1:-1";
+            }];
+            readonly unitAlias: "";
+        }, {
+            readonly id: 7741;
+            readonly nodeType: "ImportDirective";
+            readonly src: "320:77:44";
+            readonly nodes: readonly [];
+            readonly absolutePath: "contracts/src/interfaces/IERC4626Hyperdrive.sol";
+            readonly file: "../../interfaces/IERC4626Hyperdrive.sol";
+            readonly nameLocation: "-1:-1:-1";
+            readonly scope: 7991;
+            readonly sourceUnit: 10653;
+            readonly symbolAliases: readonly [{
+                readonly foreign: {
+                    readonly id: 7740;
+                    readonly name: "IERC4626Hyperdrive";
+                    readonly nodeType: "Identifier";
+                    readonly overloadedDeclarations: readonly [];
+                    readonly referencedDeclaration: 10652;
+                    readonly src: "329:18:44";
+                    readonly typeDescriptions: {};
+                };
+                readonly nameLocation: "-1:-1:-1";
+            }];
+            readonly unitAlias: "";
+        }, {
+            readonly id: 7743;
+            readonly nodeType: "ImportDirective";
+            readonly src: "398:67:44";
+            readonly nodes: readonly [];
+            readonly absolutePath: "contracts/src/internal/HyperdriveBase.sol";
+            readonly file: "../../internal/HyperdriveBase.sol";
+            readonly nameLocation: "-1:-1:-1";
+            readonly scope: 7991;
+            readonly sourceUnit: 14382;
+            readonly symbolAliases: readonly [{
+                readonly foreign: {
+                    readonly id: 7742;
+                    readonly name: "HyperdriveBase";
+                    readonly nodeType: "Identifier";
+                    readonly overloadedDeclarations: readonly [];
+                    readonly referencedDeclaration: 14381;
+                    readonly src: "407:14:44";
+                    readonly typeDescriptions: {};
+                };
+                readonly nameLocation: "-1:-1:-1";
+            }];
+            readonly unitAlias: "";
+        }, {
+            readonly id: 7746;
+            readonly nodeType: "ImportDirective";
             readonly src: "466:73:44";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/FixedPointMath.sol";
             readonly file: "../../libraries/FixedPointMath.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 7984;
-            readonly sourceUnit: 19395;
+            readonly scope: 7991;
+            readonly sourceUnit: 19443;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 7737;
+                    readonly id: 7744;
                     readonly name: "FixedPointMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 19394;
+                    readonly referencedDeclaration: 19442;
                     readonly src: "475:14:44";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }, {
                 readonly foreign: {
-                    readonly id: 7738;
+                    readonly id: 7745;
                     readonly name: "ONE";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 18628;
+                    readonly referencedDeclaration: 18676;
                     readonly src: "491:3:44";
                     readonly typeDescriptions: {};
                 };
@@ -1451,25 +1451,25 @@ export declare const ERC4626Base: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 7983;
+            readonly id: 7990;
             readonly nodeType: "ContractDefinition";
             readonly src: "1071:4802:44";
             readonly nodes: readonly [{
-                readonly id: 7745;
+                readonly id: 7752;
                 readonly nodeType: "UsingForDirective";
                 readonly src: "1125:33:44";
                 readonly nodes: readonly [];
                 readonly global: false;
                 readonly libraryName: {
-                    readonly id: 7743;
+                    readonly id: 7750;
                     readonly name: "FixedPointMath";
                     readonly nameLocations: readonly ["1131:14:44"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 19394;
+                    readonly referencedDeclaration: 19442;
                     readonly src: "1131:14:44";
                 };
                 readonly typeName: {
-                    readonly id: 7744;
+                    readonly id: 7751;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1150:7:44";
@@ -1479,45 +1479,45 @@ export declare const ERC4626Base: {
                     };
                 };
             }, {
-                readonly id: 7749;
+                readonly id: 7756;
                 readonly nodeType: "UsingForDirective";
                 readonly src: "1163:26:44";
                 readonly nodes: readonly [];
                 readonly global: false;
                 readonly libraryName: {
-                    readonly id: 7746;
+                    readonly id: 7753;
                     readonly name: "SafeERC20";
                     readonly nameLocations: readonly ["1169:9:44"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 71643;
+                    readonly referencedDeclaration: 71691;
                     readonly src: "1169:9:44";
                 };
                 readonly typeName: {
-                    readonly id: 7748;
+                    readonly id: 7755;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 7747;
+                        readonly id: 7754;
                         readonly name: "ERC20";
                         readonly nameLocations: readonly ["1183:5:44"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 71213;
+                        readonly referencedDeclaration: 71261;
                         readonly src: "1183:5:44";
                     };
-                    readonly referencedDeclaration: 71213;
+                    readonly referencedDeclaration: 71261;
                     readonly src: "1183:5:44";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_ERC20_$71213";
+                        readonly typeIdentifier: "t_contract$_ERC20_$71261";
                         readonly typeString: "contract ERC20";
                     };
                 };
             }, {
-                readonly id: 7753;
+                readonly id: 7760;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1265:34:44";
                 readonly nodes: readonly [];
                 readonly constant: false;
                 readonly documentation: {
-                    readonly id: 7750;
+                    readonly id: 7757;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1195:65:44";
                     readonly text: "@dev The ERC4626 vault that this pool uses as a yield source.";
@@ -1525,88 +1525,88 @@ export declare const ERC4626Base: {
                 readonly mutability: "immutable";
                 readonly name: "_vault";
                 readonly nameLocation: "1293:6:44";
-                readonly scope: 7983;
+                readonly scope: 7990;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                    readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                     readonly typeString: "contract IERC4626";
                 };
                 readonly typeName: {
-                    readonly id: 7752;
+                    readonly id: 7759;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 7751;
+                        readonly id: 7758;
                         readonly name: "IERC4626";
                         readonly nameLocations: readonly ["1265:8:44"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 10602;
+                        readonly referencedDeclaration: 10641;
                         readonly src: "1265:8:44";
                     };
-                    readonly referencedDeclaration: 10602;
+                    readonly referencedDeclaration: 10641;
                     readonly src: "1265:8:44";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                        readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                         readonly typeString: "contract IERC4626";
                     };
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 7765;
+                readonly id: 7772;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1426:105:44";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 7764;
+                    readonly id: 7771;
                     readonly nodeType: "Block";
                     readonly src: "1456:75:44";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 7762;
+                            readonly id: 7769;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 7760;
+                                readonly id: 7767;
                                 readonly name: "_vault";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 7753;
+                                readonly referencedDeclaration: 7760;
                                 readonly src: "1508:6:44";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                    readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                     readonly typeString: "contract IERC4626";
                                 };
                             };
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 7761;
+                                readonly id: 7768;
                                 readonly name: "__vault";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 7757;
+                                readonly referencedDeclaration: 7764;
                                 readonly src: "1517:7:44";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                    readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                     readonly typeString: "contract IERC4626";
                                 };
                             };
                             readonly src: "1508:16:44";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                 readonly typeString: "contract IERC4626";
                             };
                         };
-                        readonly id: 7763;
+                        readonly id: 7770;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1508:16:44";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 7754;
+                    readonly id: 7761;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1306:115:44";
                     readonly text: "@notice Instantiates the ERC4626 Hyperdrive base contract.\n @param __vault The ERC4626 compatible vault.";
@@ -1617,38 +1617,38 @@ export declare const ERC4626Base: {
                 readonly name: "";
                 readonly nameLocation: "-1:-1:-1";
                 readonly parameters: {
-                    readonly id: 7758;
+                    readonly id: 7765;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7757;
+                        readonly id: 7764;
                         readonly mutability: "mutable";
                         readonly name: "__vault";
                         readonly nameLocation: "1447:7:44";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7765;
+                        readonly scope: 7772;
                         readonly src: "1438:16:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                            readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                             readonly typeString: "contract IERC4626";
                         };
                         readonly typeName: {
-                            readonly id: 7756;
+                            readonly id: 7763;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 7755;
+                                readonly id: 7762;
                                 readonly name: "IERC4626";
                                 readonly nameLocations: readonly ["1438:8:44"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 10602;
+                                readonly referencedDeclaration: 10641;
                                 readonly src: "1438:8:44";
                             };
-                            readonly referencedDeclaration: 10602;
+                            readonly referencedDeclaration: 10641;
                             readonly src: "1438:8:44";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                 readonly typeString: "contract IERC4626";
                             };
                         };
@@ -1657,22 +1657,22 @@ export declare const ERC4626Base: {
                     readonly src: "1437:18:44";
                 };
                 readonly returnParameters: {
-                    readonly id: 7759;
+                    readonly id: 7766;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1456:0:44";
                 };
-                readonly scope: 7983;
+                readonly scope: 7990;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 7826;
+                readonly id: 7833;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1853:833:44";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 7825;
+                    readonly id: 7832;
                     readonly nodeType: "Block";
                     readonly src: "1993:693:44";
                     readonly nodes: readonly [];
@@ -1680,7 +1680,7 @@ export declare const ERC4626Base: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly id: 7785;
+                                    readonly id: 7792;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -1691,7 +1691,7 @@ export declare const ERC4626Base: {
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 7786;
+                                readonly id: 7793;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1706,23 +1706,23 @@ export declare const ERC4626Base: {
                                 };
                             }, {
                                 readonly arguments: readonly [{
-                                    readonly id: 7789;
+                                    readonly id: 7796;
                                     readonly name: "this";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -28;
                                     readonly src: "2140:4:44";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7990";
                                         readonly typeString: "contract ERC4626Base";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7990";
                                         readonly typeString: "contract ERC4626Base";
                                     }];
-                                    readonly id: 7788;
+                                    readonly id: 7795;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1734,14 +1734,14 @@ export declare const ERC4626Base: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 7787;
+                                        readonly id: 7794;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "2132:7:44";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 7790;
+                                readonly id: 7797;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1757,11 +1757,11 @@ export declare const ERC4626Base: {
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 7791;
+                                readonly id: 7798;
                                 readonly name: "_baseAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 7768;
+                                readonly referencedDeclaration: 7775;
                                 readonly src: "2159:11:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1782,23 +1782,23 @@ export declare const ERC4626Base: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 7781;
+                                            readonly id: 7788;
                                             readonly name: "_baseToken";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18126;
+                                            readonly referencedDeclaration: 18174;
                                             readonly src: "2065:10:44";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                                 readonly typeString: "contract IERC20";
                                             };
                                         }];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                                 readonly typeString: "contract IERC20";
                                             }];
-                                            readonly id: 7780;
+                                            readonly id: 7787;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -1810,14 +1810,14 @@ export declare const ERC4626Base: {
                                                 readonly typeString: "type(address)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 7779;
+                                                readonly id: 7786;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "2057:7:44";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 7782;
+                                        readonly id: 7789;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1838,18 +1838,18 @@ export declare const ERC4626Base: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         }];
-                                        readonly id: 7778;
+                                        readonly id: 7785;
                                         readonly name: "ERC20";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 71213;
+                                        readonly referencedDeclaration: 71261;
                                         readonly src: "2051:5:44";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$71213_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$71261_$";
                                             readonly typeString: "type(contract ERC20)";
                                         };
                                     };
-                                    readonly id: 7783;
+                                    readonly id: 7790;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1861,11 +1861,11 @@ export declare const ERC4626Base: {
                                     readonly src: "2051:26:44";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC20_$71213";
+                                        readonly typeIdentifier: "t_contract$_ERC20_$71261";
                                         readonly typeString: "contract ERC20";
                                     };
                                 };
-                                readonly id: 7784;
+                                readonly id: 7791;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1873,14 +1873,14 @@ export declare const ERC4626Base: {
                                 readonly memberLocation: "2078:16:44";
                                 readonly memberName: "safeTransferFrom";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 71430;
+                                readonly referencedDeclaration: 71478;
                                 readonly src: "2051:43:44";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71291_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71291_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71339_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71339_$";
                                     readonly typeString: "function (contract IERC20,address,address,uint256)";
                                 };
                             };
-                            readonly id: 7792;
+                            readonly id: 7799;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1896,30 +1896,30 @@ export declare const ERC4626Base: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 7793;
+                        readonly id: 7800;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2051:129:44";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 7803;
+                                    readonly id: 7810;
                                     readonly name: "_vault";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 7753;
+                                    readonly referencedDeclaration: 7760;
                                     readonly src: "2523:6:44";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                        readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                         readonly typeString: "contract IERC4626";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                        readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                         readonly typeString: "contract IERC4626";
                                     }];
-                                    readonly id: 7802;
+                                    readonly id: 7809;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1931,14 +1931,14 @@ export declare const ERC4626Base: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 7801;
+                                        readonly id: 7808;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "2515:7:44";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 7804;
+                                readonly id: 7811;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1958,17 +1958,17 @@ export declare const ERC4626Base: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 7807;
+                                readonly id: 7814;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 7805;
+                                    readonly id: 7812;
                                     readonly name: "_baseAmount";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 7768;
+                                    readonly referencedDeclaration: 7775;
                                     readonly src: "2544:11:44";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -1979,7 +1979,7 @@ export declare const ERC4626Base: {
                                 readonly operator: "+";
                                 readonly rightExpression: {
                                     readonly hexValue: "31";
-                                    readonly id: 7806;
+                                    readonly id: 7813;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2010,23 +2010,23 @@ export declare const ERC4626Base: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 7797;
+                                            readonly id: 7804;
                                             readonly name: "_baseToken";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 18126;
+                                            readonly referencedDeclaration: 18174;
                                             readonly src: "2476:10:44";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                                 readonly typeString: "contract IERC20";
                                             };
                                         }];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                                 readonly typeString: "contract IERC20";
                                             }];
-                                            readonly id: 7796;
+                                            readonly id: 7803;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -2038,14 +2038,14 @@ export declare const ERC4626Base: {
                                                 readonly typeString: "type(address)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 7795;
+                                                readonly id: 7802;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "2468:7:44";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 7798;
+                                        readonly id: 7805;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2066,18 +2066,18 @@ export declare const ERC4626Base: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         }];
-                                        readonly id: 7794;
+                                        readonly id: 7801;
                                         readonly name: "ERC20";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 71213;
+                                        readonly referencedDeclaration: 71261;
                                         readonly src: "2462:5:44";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$71213_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$71261_$";
                                             readonly typeString: "type(contract ERC20)";
                                         };
                                     };
-                                    readonly id: 7799;
+                                    readonly id: 7806;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2089,11 +2089,11 @@ export declare const ERC4626Base: {
                                     readonly src: "2462:26:44";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC20_$71213";
+                                        readonly typeIdentifier: "t_contract$_ERC20_$71261";
                                         readonly typeString: "contract ERC20";
                                     };
                                 };
-                                readonly id: 7800;
+                                readonly id: 7807;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2101,14 +2101,14 @@ export declare const ERC4626Base: {
                                 readonly memberLocation: "2489:12:44";
                                 readonly memberName: "forceApprove";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 71551;
+                                readonly referencedDeclaration: 71599;
                                 readonly src: "2462:39:44";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71291_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71291_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71339_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71339_$";
                                     readonly typeString: "function (contract IERC20,address,uint256)";
                                 };
                             };
-                            readonly id: 7808;
+                            readonly id: 7815;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2124,19 +2124,19 @@ export declare const ERC4626Base: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 7809;
+                        readonly id: 7816;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2462:107:44";
                     }, {
-                        readonly assignments: readonly [7811];
+                        readonly assignments: readonly [7818];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 7811;
+                            readonly id: 7818;
                             readonly mutability: "mutable";
                             readonly name: "sharesMinted";
                             readonly nameLocation: "2587:12:44";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 7825;
+                            readonly scope: 7832;
                             readonly src: "2579:20:44";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2145,7 +2145,7 @@ export declare const ERC4626Base: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 7810;
+                                readonly id: 7817;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2579:7:44";
@@ -2156,14 +2156,14 @@ export declare const ERC4626Base: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 7820;
+                        readonly id: 7827;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 7814;
+                                readonly id: 7821;
                                 readonly name: "_baseAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 7768;
+                                readonly referencedDeclaration: 7775;
                                 readonly src: "2617:11:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2171,23 +2171,23 @@ export declare const ERC4626Base: {
                                 };
                             }, {
                                 readonly arguments: readonly [{
-                                    readonly id: 7817;
+                                    readonly id: 7824;
                                     readonly name: "this";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -28;
                                     readonly src: "2638:4:44";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7990";
                                         readonly typeString: "contract ERC4626Base";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7990";
                                         readonly typeString: "contract ERC4626Base";
                                     }];
-                                    readonly id: 7816;
+                                    readonly id: 7823;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2199,14 +2199,14 @@ export declare const ERC4626Base: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 7815;
+                                        readonly id: 7822;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "2630:7:44";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 7818;
+                                readonly id: 7825;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2231,18 +2231,18 @@ export declare const ERC4626Base: {
                                     readonly typeString: "address";
                                 }];
                                 readonly expression: {
-                                    readonly id: 7812;
+                                    readonly id: 7819;
                                     readonly name: "_vault";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 7753;
+                                    readonly referencedDeclaration: 7760;
                                     readonly src: "2602:6:44";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                        readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                         readonly typeString: "contract IERC4626";
                                     };
                                 };
-                                readonly id: 7813;
+                                readonly id: 7820;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2250,14 +2250,14 @@ export declare const ERC4626Base: {
                                 readonly memberLocation: "2609:7:44";
                                 readonly memberName: "deposit";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10487;
+                                readonly referencedDeclaration: 10526;
                                 readonly src: "2602:14:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_uint256_$_t_address_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256,address) external returns (uint256)";
                                 };
                             };
-                            readonly id: 7819;
+                            readonly id: 7826;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2278,11 +2278,11 @@ export declare const ERC4626Base: {
                     }, {
                         readonly expression: {
                             readonly components: readonly [{
-                                readonly id: 7821;
+                                readonly id: 7828;
                                 readonly name: "sharesMinted";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 7811;
+                                readonly referencedDeclaration: 7818;
                                 readonly src: "2663:12:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2290,7 +2290,7 @@ export declare const ERC4626Base: {
                                 };
                             }, {
                                 readonly hexValue: "30";
-                                readonly id: 7822;
+                                readonly id: 7829;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2304,7 +2304,7 @@ export declare const ERC4626Base: {
                                 };
                                 readonly value: "0";
                             }];
-                            readonly id: 7823;
+                            readonly id: 7830;
                             readonly isConstant: false;
                             readonly isInlineArray: false;
                             readonly isLValue: false;
@@ -2317,15 +2317,15 @@ export declare const ERC4626Base: {
                                 readonly typeString: "tuple(uint256,int_const 0)";
                             };
                         };
-                        readonly functionReturnParameters: 7777;
-                        readonly id: 7824;
+                        readonly functionReturnParameters: 7784;
+                        readonly id: 7831;
                         readonly nodeType: "Return";
                         readonly src: "2655:24:44";
                     }];
                 };
-                readonly baseFunctions: readonly [13364];
+                readonly baseFunctions: readonly [13412];
                 readonly documentation: {
-                    readonly id: 7766;
+                    readonly id: 7773;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1563:285:44";
                     readonly text: "@dev Accepts a deposit from the user in base.\n @param _baseAmount The base amount to deposit.\n @return The shares that were minted in the deposit.\n @return The amount of ETH to refund. Since this yield source isn't\n         payable, this is always zero.";
@@ -2336,22 +2336,22 @@ export declare const ERC4626Base: {
                 readonly name: "_depositWithBase";
                 readonly nameLocation: "1862:16:44";
                 readonly overrides: {
-                    readonly id: 7772;
+                    readonly id: 7779;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "1957:8:44";
                 };
                 readonly parameters: {
-                    readonly id: 7771;
+                    readonly id: 7778;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7768;
+                        readonly id: 7775;
                         readonly mutability: "mutable";
                         readonly name: "_baseAmount";
                         readonly nameLocation: "1896:11:44";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7826;
+                        readonly scope: 7833;
                         readonly src: "1888:19:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2360,7 +2360,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 7767;
+                            readonly id: 7774;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1888:7:44";
@@ -2372,12 +2372,12 @@ export declare const ERC4626Base: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 7770;
+                        readonly id: 7777;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7826;
+                        readonly scope: 7833;
                         readonly src: "1917:14:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -2386,7 +2386,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 7769;
+                            readonly id: 7776;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1917:5:44";
@@ -2400,16 +2400,16 @@ export declare const ERC4626Base: {
                     readonly src: "1878:69:44";
                 };
                 readonly returnParameters: {
-                    readonly id: 7777;
+                    readonly id: 7784;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7774;
+                        readonly id: 7781;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7826;
+                        readonly scope: 7833;
                         readonly src: "1975:7:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2418,7 +2418,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 7773;
+                            readonly id: 7780;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1975:7:44";
@@ -2430,12 +2430,12 @@ export declare const ERC4626Base: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 7776;
+                        readonly id: 7783;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7826;
+                        readonly scope: 7833;
                         readonly src: "1984:7:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2444,7 +2444,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 7775;
+                            readonly id: 7782;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1984:7:44";
@@ -2457,17 +2457,17 @@ export declare const ERC4626Base: {
                     }];
                     readonly src: "1974:18:44";
                 };
-                readonly scope: 7983;
+                readonly scope: 7990;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 7852;
+                readonly id: 7859;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2804:315:44";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 7851;
+                    readonly id: 7858;
                     readonly nodeType: "Block";
                     readonly src: "2920:199:44";
                     readonly nodes: readonly [];
@@ -2475,7 +2475,7 @@ export declare const ERC4626Base: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly id: 7842;
+                                    readonly id: 7849;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -2486,7 +2486,7 @@ export declare const ERC4626Base: {
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 7843;
+                                readonly id: 7850;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2501,23 +2501,23 @@ export declare const ERC4626Base: {
                                 };
                             }, {
                                 readonly arguments: readonly [{
-                                    readonly id: 7846;
+                                    readonly id: 7853;
                                     readonly name: "this";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -28;
                                     readonly src: "3071:4:44";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7990";
                                         readonly typeString: "contract ERC4626Base";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7990";
                                         readonly typeString: "contract ERC4626Base";
                                     }];
-                                    readonly id: 7845;
+                                    readonly id: 7852;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2529,14 +2529,14 @@ export declare const ERC4626Base: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 7844;
+                                        readonly id: 7851;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "3063:7:44";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 7847;
+                                readonly id: 7854;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2552,11 +2552,11 @@ export declare const ERC4626Base: {
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 7848;
+                                readonly id: 7855;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 7829;
+                                readonly referencedDeclaration: 7836;
                                 readonly src: "3090:12:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2577,23 +2577,23 @@ export declare const ERC4626Base: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 7838;
+                                            readonly id: 7845;
                                             readonly name: "_vault";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 7753;
+                                            readonly referencedDeclaration: 7760;
                                             readonly src: "3000:6:44";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                                readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                                 readonly typeString: "contract IERC4626";
                                             };
                                         }];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                                readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                                 readonly typeString: "contract IERC4626";
                                             }];
-                                            readonly id: 7837;
+                                            readonly id: 7844;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -2605,14 +2605,14 @@ export declare const ERC4626Base: {
                                                 readonly typeString: "type(address)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 7836;
+                                                readonly id: 7843;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "2992:7:44";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 7839;
+                                        readonly id: 7846;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2633,18 +2633,18 @@ export declare const ERC4626Base: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         }];
-                                        readonly id: 7835;
+                                        readonly id: 7842;
                                         readonly name: "ERC20";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 71213;
+                                        readonly referencedDeclaration: 71261;
                                         readonly src: "2986:5:44";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$71213_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$71261_$";
                                             readonly typeString: "type(contract ERC20)";
                                         };
                                     };
-                                    readonly id: 7840;
+                                    readonly id: 7847;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2656,11 +2656,11 @@ export declare const ERC4626Base: {
                                     readonly src: "2986:22:44";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC20_$71213";
+                                        readonly typeIdentifier: "t_contract$_ERC20_$71261";
                                         readonly typeString: "contract ERC20";
                                     };
                                 };
-                                readonly id: 7841;
+                                readonly id: 7848;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2668,14 +2668,14 @@ export declare const ERC4626Base: {
                                 readonly memberLocation: "3009:16:44";
                                 readonly memberName: "safeTransferFrom";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 71430;
+                                readonly referencedDeclaration: 71478;
                                 readonly src: "2986:39:44";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71291_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71291_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71339_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71339_$";
                                     readonly typeString: "function (contract IERC20,address,address,uint256)";
                                 };
                             };
-                            readonly id: 7849;
+                            readonly id: 7856;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2691,14 +2691,14 @@ export declare const ERC4626Base: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 7850;
+                        readonly id: 7857;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2986:126:44";
                     }];
                 };
-                readonly baseFunctions: readonly [13372];
+                readonly baseFunctions: readonly [13420];
                 readonly documentation: {
-                    readonly id: 7827;
+                    readonly id: 7834;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2692:107:44";
                     readonly text: "@dev Process a deposit in vault shares.\n @param _shareAmount The vault shares amount to deposit.";
@@ -2709,22 +2709,22 @@ export declare const ERC4626Base: {
                 readonly name: "_depositWithShares";
                 readonly nameLocation: "2813:18:44";
                 readonly overrides: {
-                    readonly id: 7833;
+                    readonly id: 7840;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "2911:8:44";
                 };
                 readonly parameters: {
-                    readonly id: 7832;
+                    readonly id: 7839;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7829;
+                        readonly id: 7836;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "2849:12:44";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7852;
+                        readonly scope: 7859;
                         readonly src: "2841:20:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2733,7 +2733,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 7828;
+                            readonly id: 7835;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2841:7:44";
@@ -2745,12 +2745,12 @@ export declare const ERC4626Base: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 7831;
+                        readonly id: 7838;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7852;
+                        readonly scope: 7859;
                         readonly src: "2871:14:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -2759,7 +2759,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 7830;
+                            readonly id: 7837;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2871:5:44";
@@ -2773,38 +2773,38 @@ export declare const ERC4626Base: {
                     readonly src: "2831:70:44";
                 };
                 readonly returnParameters: {
-                    readonly id: 7834;
+                    readonly id: 7841;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2920:0:44";
                 };
-                readonly scope: 7983;
+                readonly scope: 7990;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 7880;
+                readonly id: 7887;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3415:460:44";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 7879;
+                    readonly id: 7886;
                     readonly nodeType: "Block";
                     readonly src: "3594:281:44";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 7875;
+                            readonly id: 7882;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 7865;
+                                readonly id: 7872;
                                 readonly name: "amountWithdrawn";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 7863;
+                                readonly referencedDeclaration: 7870;
                                 readonly src: "3715:15:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2815,22 +2815,22 @@ export declare const ERC4626Base: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 7868;
+                                    readonly id: 7875;
                                     readonly name: "_shareAmount";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 7855;
+                                    readonly referencedDeclaration: 7862;
                                     readonly src: "3760:12:44";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 7869;
+                                    readonly id: 7876;
                                     readonly name: "_destination";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 7857;
+                                    readonly referencedDeclaration: 7864;
                                     readonly src: "3786:12:44";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
@@ -2838,23 +2838,23 @@ export declare const ERC4626Base: {
                                     };
                                 }, {
                                     readonly arguments: readonly [{
-                                        readonly id: 7872;
+                                        readonly id: 7879;
                                         readonly name: "this";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
                                         readonly referencedDeclaration: -28;
                                         readonly src: "3820:4:44";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                            readonly typeIdentifier: "t_contract$_ERC4626Base_$7990";
                                             readonly typeString: "contract ERC4626Base";
                                         };
                                     }];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [{
-                                            readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                            readonly typeIdentifier: "t_contract$_ERC4626Base_$7990";
                                             readonly typeString: "contract ERC4626Base";
                                         }];
-                                        readonly id: 7871;
+                                        readonly id: 7878;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -2866,14 +2866,14 @@ export declare const ERC4626Base: {
                                             readonly typeString: "type(address)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 7870;
+                                            readonly id: 7877;
                                             readonly name: "address";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "3812:7:44";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 7873;
+                                    readonly id: 7880;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2901,18 +2901,18 @@ export declare const ERC4626Base: {
                                         readonly typeString: "address";
                                     }];
                                     readonly expression: {
-                                        readonly id: 7866;
+                                        readonly id: 7873;
                                         readonly name: "_vault";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 7753;
+                                        readonly referencedDeclaration: 7760;
                                         readonly src: "3733:6:44";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                            readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                             readonly typeString: "contract IERC4626";
                                         };
                                     };
-                                    readonly id: 7867;
+                                    readonly id: 7874;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2920,14 +2920,14 @@ export declare const ERC4626Base: {
                                     readonly memberLocation: "3740:6:44";
                                     readonly memberName: "redeem";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 10521;
+                                    readonly referencedDeclaration: 10560;
                                     readonly src: "3733:13:44";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_external_nonpayable$_t_uint256_$_t_address_$_t_address_$returns$_t_uint256_$";
                                         readonly typeString: "function (uint256,address,address) external returns (uint256)";
                                     };
                                 };
-                                readonly id: 7874;
+                                readonly id: 7881;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2949,31 +2949,31 @@ export declare const ERC4626Base: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 7876;
+                        readonly id: 7883;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3715:120:44";
                     }, {
                         readonly expression: {
-                            readonly id: 7877;
+                            readonly id: 7884;
                             readonly name: "amountWithdrawn";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 7863;
+                            readonly referencedDeclaration: 7870;
                             readonly src: "3853:15:44";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 7864;
-                        readonly id: 7878;
+                        readonly functionReturnParameters: 7871;
+                        readonly id: 7885;
                         readonly nodeType: "Return";
                         readonly src: "3846:22:44";
                     }];
                 };
-                readonly baseFunctions: readonly [13384];
+                readonly baseFunctions: readonly [13432];
                 readonly documentation: {
-                    readonly id: 7853;
+                    readonly id: 7860;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3125:285:44";
                     readonly text: "@dev Process a withdrawal in base and send the proceeds to the\n      destination.\n @param _shareAmount The amount of vault shares to withdraw.\n @param _destination The destination of the withdrawal.\n @return amountWithdrawn The amount of base withdrawn.";
@@ -2984,22 +2984,22 @@ export declare const ERC4626Base: {
                 readonly name: "_withdrawWithBase";
                 readonly nameLocation: "3424:17:44";
                 readonly overrides: {
-                    readonly id: 7861;
+                    readonly id: 7868;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "3551:8:44";
                 };
                 readonly parameters: {
-                    readonly id: 7860;
+                    readonly id: 7867;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7855;
+                        readonly id: 7862;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "3459:12:44";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7880;
+                        readonly scope: 7887;
                         readonly src: "3451:20:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3008,7 +3008,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 7854;
+                            readonly id: 7861;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3451:7:44";
@@ -3020,12 +3020,12 @@ export declare const ERC4626Base: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 7857;
+                        readonly id: 7864;
                         readonly mutability: "mutable";
                         readonly name: "_destination";
                         readonly nameLocation: "3489:12:44";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7880;
+                        readonly scope: 7887;
                         readonly src: "3481:20:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3034,7 +3034,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 7856;
+                            readonly id: 7863;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3481:7:44";
@@ -3047,12 +3047,12 @@ export declare const ERC4626Base: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 7859;
+                        readonly id: 7866;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7880;
+                        readonly scope: 7887;
                         readonly src: "3511:14:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -3061,7 +3061,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 7858;
+                            readonly id: 7865;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3511:5:44";
@@ -3075,16 +3075,16 @@ export declare const ERC4626Base: {
                     readonly src: "3441:100:44";
                 };
                 readonly returnParameters: {
-                    readonly id: 7864;
+                    readonly id: 7871;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7863;
+                        readonly id: 7870;
                         readonly mutability: "mutable";
                         readonly name: "amountWithdrawn";
                         readonly nameLocation: "3577:15:44";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7880;
+                        readonly scope: 7887;
                         readonly src: "3569:23:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3093,7 +3093,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 7862;
+                            readonly id: 7869;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3569:7:44";
@@ -3106,39 +3106,39 @@ export declare const ERC4626Base: {
                     }];
                     readonly src: "3568:25:44";
                 };
-                readonly scope: 7983;
+                readonly scope: 7990;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 7903;
+                readonly id: 7910;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4117:280:44";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 7902;
+                    readonly id: 7909;
                     readonly nodeType: "Block";
                     readonly src: "4264:133:44";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 7898;
+                                readonly id: 7905;
                                 readonly name: "_destination";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 7885;
+                                readonly referencedDeclaration: 7892;
                                 readonly src: "4363:12:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 7899;
+                                readonly id: 7906;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 7883;
+                                readonly referencedDeclaration: 7890;
                                 readonly src: "4377:12:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -3156,23 +3156,23 @@ export declare const ERC4626Base: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 7894;
+                                            readonly id: 7901;
                                             readonly name: "_vault";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 7753;
+                                            readonly referencedDeclaration: 7760;
                                             readonly src: "4341:6:44";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                                readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                                 readonly typeString: "contract IERC4626";
                                             };
                                         }];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                                readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                                 readonly typeString: "contract IERC4626";
                                             }];
-                                            readonly id: 7893;
+                                            readonly id: 7900;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -3184,14 +3184,14 @@ export declare const ERC4626Base: {
                                                 readonly typeString: "type(address)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 7892;
+                                                readonly id: 7899;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "4333:7:44";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 7895;
+                                        readonly id: 7902;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -3212,18 +3212,18 @@ export declare const ERC4626Base: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         }];
-                                        readonly id: 7891;
+                                        readonly id: 7898;
                                         readonly name: "ERC20";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 71213;
+                                        readonly referencedDeclaration: 71261;
                                         readonly src: "4327:5:44";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$71213_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$71261_$";
                                             readonly typeString: "type(contract ERC20)";
                                         };
                                     };
-                                    readonly id: 7896;
+                                    readonly id: 7903;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3235,11 +3235,11 @@ export declare const ERC4626Base: {
                                     readonly src: "4327:22:44";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC20_$71213";
+                                        readonly typeIdentifier: "t_contract$_ERC20_$71261";
                                         readonly typeString: "contract ERC20";
                                     };
                                 };
-                                readonly id: 7897;
+                                readonly id: 7904;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3247,14 +3247,14 @@ export declare const ERC4626Base: {
                                 readonly memberLocation: "4350:12:44";
                                 readonly memberName: "safeTransfer";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 71403;
+                                readonly referencedDeclaration: 71451;
                                 readonly src: "4327:35:44";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71291_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71291_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71339_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71339_$";
                                     readonly typeString: "function (contract IERC20,address,uint256)";
                                 };
                             };
-                            readonly id: 7900;
+                            readonly id: 7907;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3270,14 +3270,14 @@ export declare const ERC4626Base: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 7901;
+                        readonly id: 7908;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4327:63:44";
                     }];
                 };
-                readonly baseFunctions: readonly [13394];
+                readonly baseFunctions: readonly [13442];
                 readonly documentation: {
-                    readonly id: 7881;
+                    readonly id: 7888;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3881:231:44";
                     readonly text: "@dev Process a withdrawal in vault shares and send the proceeds to the\n      destination.\n @param _shareAmount The amount of vault shares to withdraw.\n @param _destination The destination of the withdrawal.";
@@ -3288,22 +3288,22 @@ export declare const ERC4626Base: {
                 readonly name: "_withdrawWithShares";
                 readonly nameLocation: "4126:19:44";
                 readonly overrides: {
-                    readonly id: 7889;
+                    readonly id: 7896;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "4255:8:44";
                 };
                 readonly parameters: {
-                    readonly id: 7888;
+                    readonly id: 7895;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7883;
+                        readonly id: 7890;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "4163:12:44";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7903;
+                        readonly scope: 7910;
                         readonly src: "4155:20:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3312,7 +3312,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 7882;
+                            readonly id: 7889;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4155:7:44";
@@ -3324,12 +3324,12 @@ export declare const ERC4626Base: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 7885;
+                        readonly id: 7892;
                         readonly mutability: "mutable";
                         readonly name: "_destination";
                         readonly nameLocation: "4193:12:44";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7903;
+                        readonly scope: 7910;
                         readonly src: "4185:20:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3338,7 +3338,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 7884;
+                            readonly id: 7891;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4185:7:44";
@@ -3351,12 +3351,12 @@ export declare const ERC4626Base: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 7887;
+                        readonly id: 7894;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7903;
+                        readonly scope: 7910;
                         readonly src: "4215:14:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -3365,7 +3365,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 7886;
+                            readonly id: 7893;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4215:5:44";
@@ -3379,22 +3379,22 @@ export declare const ERC4626Base: {
                     readonly src: "4145:100:44";
                 };
                 readonly returnParameters: {
-                    readonly id: 7890;
+                    readonly id: 7897;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "4264:0:44";
                 };
-                readonly scope: 7983;
+                readonly scope: 7990;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 7920;
+                readonly id: 7927;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4515:145:44";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 7919;
+                    readonly id: 7926;
                     readonly nodeType: "Block";
                     readonly src: "4568:92:44";
                     readonly nodes: readonly [];
@@ -3404,14 +3404,14 @@ export declare const ERC4626Base: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 7911;
+                            readonly id: 7918;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly expression: {
-                                    readonly id: 7908;
+                                    readonly id: 7915;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -3422,7 +3422,7 @@ export declare const ERC4626Base: {
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 7909;
+                                readonly id: 7916;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3440,7 +3440,7 @@ export declare const ERC4626Base: {
                             readonly operator: "!=";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 7910;
+                                readonly id: 7917;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -3460,11 +3460,11 @@ export declare const ERC4626Base: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 7918;
+                        readonly id: 7925;
                         readonly nodeType: "IfStatement";
                         readonly src: "4578:76:44";
                         readonly trueBody: {
-                            readonly id: 7917;
+                            readonly id: 7924;
                             readonly nodeType: "Block";
                             readonly src: "4598:56:44";
                             readonly statements: readonly [{
@@ -3473,18 +3473,18 @@ export declare const ERC4626Base: {
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 7912;
+                                            readonly id: 7919;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 11028;
+                                            readonly referencedDeclaration: 11076;
                                             readonly src: "4619:11:44";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11028_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$11076_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 7914;
+                                        readonly id: 7921;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -3492,14 +3492,14 @@ export declare const ERC4626Base: {
                                         readonly memberLocation: "4631:10:44";
                                         readonly memberName: "NotPayable";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10947;
+                                        readonly referencedDeclaration: 10995;
                                         readonly src: "4619:22:44";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 7915;
+                                    readonly id: 7922;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3515,16 +3515,16 @@ export declare const ERC4626Base: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 7916;
+                                readonly id: 7923;
                                 readonly nodeType: "RevertStatement";
                                 readonly src: "4612:31:44";
                             }];
                         };
                     }];
                 };
-                readonly baseFunctions: readonly [13398];
+                readonly baseFunctions: readonly [13446];
                 readonly documentation: {
-                    readonly id: 7904;
+                    readonly id: 7911;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4403:107:44";
                     readonly text: "@dev Ensure that ether wasn't sent because ERC4626 vaults don't support\n      deposits of ether.";
@@ -3535,45 +3535,45 @@ export declare const ERC4626Base: {
                 readonly name: "_checkMessageValue";
                 readonly nameLocation: "4524:18:44";
                 readonly overrides: {
-                    readonly id: 7906;
+                    readonly id: 7913;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "4559:8:44";
                 };
                 readonly parameters: {
-                    readonly id: 7905;
+                    readonly id: 7912;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "4542:2:44";
                 };
                 readonly returnParameters: {
-                    readonly id: 7907;
+                    readonly id: 7914;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "4568:0:44";
                 };
-                readonly scope: 7983;
+                readonly scope: 7990;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 7935;
+                readonly id: 7942;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4821:161:44";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 7934;
+                    readonly id: 7941;
                     readonly nodeType: "Block";
                     readonly src: "4922:60:44";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 7931;
+                                readonly id: 7938;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 7923;
+                                readonly referencedDeclaration: 7930;
                                 readonly src: "4962:12:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -3586,18 +3586,18 @@ export declare const ERC4626Base: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 7929;
+                                    readonly id: 7936;
                                     readonly name: "_vault";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 7753;
+                                    readonly referencedDeclaration: 7760;
                                     readonly src: "4939:6:44";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                        readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                         readonly typeString: "contract IERC4626";
                                     };
                                 };
-                                readonly id: 7930;
+                                readonly id: 7937;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3605,14 +3605,14 @@ export declare const ERC4626Base: {
                                 readonly memberLocation: "4946:15:44";
                                 readonly memberName: "convertToAssets";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10537;
+                                readonly referencedDeclaration: 10576;
                                 readonly src: "4939:22:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 7932;
+                            readonly id: 7939;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3628,15 +3628,15 @@ export declare const ERC4626Base: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 7928;
-                        readonly id: 7933;
+                        readonly functionReturnParameters: 7935;
+                        readonly id: 7940;
                         readonly nodeType: "Return";
                         readonly src: "4932:43:44";
                     }];
                 };
-                readonly baseFunctions: readonly [13428];
+                readonly baseFunctions: readonly [13476];
                 readonly documentation: {
-                    readonly id: 7921;
+                    readonly id: 7928;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4666:150:44";
                     readonly text: "@dev Convert an amount of vault shares to an amount of base.\n @param _shareAmount The vault shares amount.\n @return The base amount.";
@@ -3647,22 +3647,22 @@ export declare const ERC4626Base: {
                 readonly name: "_convertToBase";
                 readonly nameLocation: "4830:14:44";
                 readonly overrides: {
-                    readonly id: 7925;
+                    readonly id: 7932;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "4895:8:44";
                 };
                 readonly parameters: {
-                    readonly id: 7924;
+                    readonly id: 7931;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7923;
+                        readonly id: 7930;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
                         readonly nameLocation: "4862:12:44";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7935;
+                        readonly scope: 7942;
                         readonly src: "4854:20:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3671,7 +3671,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 7922;
+                            readonly id: 7929;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4854:7:44";
@@ -3685,16 +3685,16 @@ export declare const ERC4626Base: {
                     readonly src: "4844:36:44";
                 };
                 readonly returnParameters: {
-                    readonly id: 7928;
+                    readonly id: 7935;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7927;
+                        readonly id: 7934;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7935;
+                        readonly scope: 7942;
                         readonly src: "4913:7:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3703,7 +3703,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 7926;
+                            readonly id: 7933;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4913:7:44";
@@ -3716,28 +3716,28 @@ export declare const ERC4626Base: {
                     }];
                     readonly src: "4912:9:44";
                 };
-                readonly scope: 7983;
+                readonly scope: 7990;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 7950;
+                readonly id: 7957;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5142:161:44";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 7949;
+                    readonly id: 7956;
                     readonly nodeType: "Block";
                     readonly src: "5244:59:44";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 7946;
+                                readonly id: 7953;
                                 readonly name: "_baseAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 7938;
+                                readonly referencedDeclaration: 7945;
                                 readonly src: "5284:11:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -3750,18 +3750,18 @@ export declare const ERC4626Base: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 7944;
+                                    readonly id: 7951;
                                     readonly name: "_vault";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 7753;
+                                    readonly referencedDeclaration: 7760;
                                     readonly src: "5261:6:44";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                        readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                         readonly typeString: "contract IERC4626";
                                     };
                                 };
-                                readonly id: 7945;
+                                readonly id: 7952;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3769,14 +3769,14 @@ export declare const ERC4626Base: {
                                 readonly memberLocation: "5268:15:44";
                                 readonly memberName: "convertToShares";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10529;
+                                readonly referencedDeclaration: 10568;
                                 readonly src: "5261:22:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 7947;
+                            readonly id: 7954;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3792,15 +3792,15 @@ export declare const ERC4626Base: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 7943;
-                        readonly id: 7948;
+                        readonly functionReturnParameters: 7950;
+                        readonly id: 7955;
                         readonly nodeType: "Return";
                         readonly src: "5254:42:44";
                     }];
                 };
-                readonly baseFunctions: readonly [13436];
+                readonly baseFunctions: readonly [13484];
                 readonly documentation: {
-                    readonly id: 7936;
+                    readonly id: 7943;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4988:149:44";
                     readonly text: "@dev Convert an amount of base to an amount of vault shares.\n @param _baseAmount The base amount.\n @return The vault shares amount.";
@@ -3811,22 +3811,22 @@ export declare const ERC4626Base: {
                 readonly name: "_convertToShares";
                 readonly nameLocation: "5151:16:44";
                 readonly overrides: {
-                    readonly id: 7940;
+                    readonly id: 7947;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "5217:8:44";
                 };
                 readonly parameters: {
-                    readonly id: 7939;
+                    readonly id: 7946;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7938;
+                        readonly id: 7945;
                         readonly mutability: "mutable";
                         readonly name: "_baseAmount";
                         readonly nameLocation: "5185:11:44";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7950;
+                        readonly scope: 7957;
                         readonly src: "5177:19:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3835,7 +3835,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 7937;
+                            readonly id: 7944;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5177:7:44";
@@ -3849,16 +3849,16 @@ export declare const ERC4626Base: {
                     readonly src: "5167:35:44";
                 };
                 readonly returnParameters: {
-                    readonly id: 7943;
+                    readonly id: 7950;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7942;
+                        readonly id: 7949;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7950;
+                        readonly scope: 7957;
                         readonly src: "5235:7:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3867,7 +3867,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 7941;
+                            readonly id: 7948;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5235:7:44";
@@ -3880,17 +3880,17 @@ export declare const ERC4626Base: {
                     }];
                     readonly src: "5234:9:44";
                 };
-                readonly scope: 7983;
+                readonly scope: 7990;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 7966;
+                readonly id: 7973;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5423:122:44";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 7965;
+                    readonly id: 7972;
                     readonly nodeType: "Block";
                     readonly src: "5486:59:44";
                     readonly nodes: readonly [];
@@ -3898,23 +3898,23 @@ export declare const ERC4626Base: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 7961;
+                                    readonly id: 7968;
                                     readonly name: "this";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -28;
                                     readonly src: "5532:4:44";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7990";
                                         readonly typeString: "contract ERC4626Base";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7990";
                                         readonly typeString: "contract ERC4626Base";
                                     }];
-                                    readonly id: 7960;
+                                    readonly id: 7967;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -3926,14 +3926,14 @@ export declare const ERC4626Base: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 7959;
+                                        readonly id: 7966;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "5524:7:44";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 7962;
+                                readonly id: 7969;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3955,18 +3955,18 @@ export declare const ERC4626Base: {
                                     readonly typeString: "address";
                                 }];
                                 readonly expression: {
-                                    readonly id: 7957;
+                                    readonly id: 7964;
                                     readonly name: "_baseToken";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 18126;
+                                    readonly referencedDeclaration: 18174;
                                     readonly src: "5503:10:44";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC20_$10319";
+                                        readonly typeIdentifier: "t_contract$_IERC20_$10358";
                                         readonly typeString: "contract IERC20";
                                     };
                                 };
-                                readonly id: 7958;
+                                readonly id: 7965;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3974,14 +3974,14 @@ export declare const ERC4626Base: {
                                 readonly memberLocation: "5514:9:44";
                                 readonly memberName: "balanceOf";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10318;
+                                readonly referencedDeclaration: 10357;
                                 readonly src: "5503:20:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_address_$returns$_t_uint256_$";
                                     readonly typeString: "function (address) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 7963;
+                            readonly id: 7970;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3997,15 +3997,15 @@ export declare const ERC4626Base: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 7956;
-                        readonly id: 7964;
+                        readonly functionReturnParameters: 7963;
+                        readonly id: 7971;
                         readonly nodeType: "Return";
                         readonly src: "5496:42:44";
                     }];
                 };
-                readonly baseFunctions: readonly [13442];
+                readonly baseFunctions: readonly [13490];
                 readonly documentation: {
-                    readonly id: 7951;
+                    readonly id: 7958;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "5309:109:44";
                     readonly text: "@dev Gets the total amount of base held by the pool.\n @return baseAmount The total amount of base.";
@@ -4016,28 +4016,28 @@ export declare const ERC4626Base: {
                 readonly name: "_totalBase";
                 readonly nameLocation: "5432:10:44";
                 readonly overrides: {
-                    readonly id: 7953;
+                    readonly id: 7960;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "5459:8:44";
                 };
                 readonly parameters: {
-                    readonly id: 7952;
+                    readonly id: 7959;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5442:2:44";
                 };
                 readonly returnParameters: {
-                    readonly id: 7956;
+                    readonly id: 7963;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7955;
+                        readonly id: 7962;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7966;
+                        readonly scope: 7973;
                         readonly src: "5477:7:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4046,7 +4046,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 7954;
+                            readonly id: 7961;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5477:7:44";
@@ -4059,17 +4059,17 @@ export declare const ERC4626Base: {
                     }];
                     readonly src: "5476:9:44";
                 };
-                readonly scope: 7983;
+                readonly scope: 7990;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 7982;
+                readonly id: 7989;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5703:168:44";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 7981;
+                    readonly id: 7988;
                     readonly nodeType: "Block";
                     readonly src: "5816:55:44";
                     readonly nodes: readonly [];
@@ -4077,23 +4077,23 @@ export declare const ERC4626Base: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 7977;
+                                    readonly id: 7984;
                                     readonly name: "this";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -28;
                                     readonly src: "5858:4:44";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7990";
                                         readonly typeString: "contract ERC4626Base";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7983";
+                                        readonly typeIdentifier: "t_contract$_ERC4626Base_$7990";
                                         readonly typeString: "contract ERC4626Base";
                                     }];
-                                    readonly id: 7976;
+                                    readonly id: 7983;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -4105,14 +4105,14 @@ export declare const ERC4626Base: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 7975;
+                                        readonly id: 7982;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "5850:7:44";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 7978;
+                                readonly id: 7985;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -4134,18 +4134,18 @@ export declare const ERC4626Base: {
                                     readonly typeString: "address";
                                 }];
                                 readonly expression: {
-                                    readonly id: 7973;
+                                    readonly id: 7980;
                                     readonly name: "_vault";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 7753;
+                                    readonly referencedDeclaration: 7760;
                                     readonly src: "5833:6:44";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC4626_$10602";
+                                        readonly typeIdentifier: "t_contract$_IERC4626_$10641";
                                         readonly typeString: "contract IERC4626";
                                     };
                                 };
-                                readonly id: 7974;
+                                readonly id: 7981;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -4153,14 +4153,14 @@ export declare const ERC4626Base: {
                                 readonly memberLocation: "5840:9:44";
                                 readonly memberName: "balanceOf";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10318;
+                                readonly referencedDeclaration: 10357;
                                 readonly src: "5833:16:44";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_address_$returns$_t_uint256_$";
                                     readonly typeString: "function (address) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 7979;
+                            readonly id: 7986;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4176,15 +4176,15 @@ export declare const ERC4626Base: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 7972;
-                        readonly id: 7980;
+                        readonly functionReturnParameters: 7979;
+                        readonly id: 7987;
                         readonly nodeType: "Return";
                         readonly src: "5826:38:44";
                     }];
                 };
-                readonly baseFunctions: readonly [13448];
+                readonly baseFunctions: readonly [13496];
                 readonly documentation: {
-                    readonly id: 7967;
+                    readonly id: 7974;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "5551:147:44";
                     readonly text: "@dev Gets the total amount of shares held by the pool in the yield\n      source.\n @return shareAmount The total amount of shares.";
@@ -4195,28 +4195,28 @@ export declare const ERC4626Base: {
                 readonly name: "_totalShares";
                 readonly nameLocation: "5712:12:44";
                 readonly overrides: {
-                    readonly id: 7969;
+                    readonly id: 7976;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
                     readonly src: "5765:8:44";
                 };
                 readonly parameters: {
-                    readonly id: 7968;
+                    readonly id: 7975;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5724:2:44";
                 };
                 readonly returnParameters: {
-                    readonly id: 7972;
+                    readonly id: 7979;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 7971;
+                        readonly id: 7978;
                         readonly mutability: "mutable";
                         readonly name: "shareAmount";
                         readonly nameLocation: "5799:11:44";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 7982;
+                        readonly scope: 7989;
                         readonly src: "5791:19:44";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4225,7 +4225,7 @@ export declare const ERC4626Base: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 7970;
+                            readonly id: 7977;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5791:7:44";
@@ -4238,7 +4238,7 @@ export declare const ERC4626Base: {
                     }];
                     readonly src: "5790:21:44";
                 };
-                readonly scope: 7983;
+                readonly scope: 7990;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
@@ -4246,14 +4246,14 @@ export declare const ERC4626Base: {
             readonly abstract: true;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 7741;
+                    readonly id: 7748;
                     readonly name: "HyperdriveBase";
                     readonly nameLocations: readonly ["1104:14:44"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 14333;
+                    readonly referencedDeclaration: 14381;
                     readonly src: "1104:14:44";
                 };
-                readonly id: 7742;
+                readonly id: 7749;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "1104:14:44";
             }];
@@ -4261,18 +4261,18 @@ export declare const ERC4626Base: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly documentation: {
-                readonly id: 7740;
+                readonly id: 7747;
                 readonly nodeType: "StructuredDocumentation";
                 readonly src: "541:530:44";
                 readonly text: "@author DELV\n @title ERC4626Base\n @notice The base contract for the ERC4626 Hyperdrive implementation.\n @dev This Hyperdrive implementation is designed to work with standard\n      ERC4626 vaults. Non-standard implementations may not work correctly\n      and should be carefully checked.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [7983, 14333, 18319, 71995, 11551, 12117];
+            readonly linearizedBaseContracts: readonly [7990, 14381, 18367, 72043, 11599, 12165];
             readonly name: "ERC4626Base";
             readonly nameLocation: "1089:11:44";
-            readonly scope: 7984;
-            readonly usedErrors: readonly [71940];
-            readonly usedEvents: readonly [11371, 11386, 11405, 11420, 11437, 11456, 11475, 11496, 11509, 11516, 11521, 11526, 11531, 11538, 11543, 11550, 12098, 12107, 12116];
+            readonly scope: 7991;
+            readonly usedErrors: readonly [71988];
+            readonly usedEvents: readonly [11419, 11434, 11453, 11468, 11485, 11504, 11523, 11544, 11557, 11564, 11569, 11574, 11579, 11586, 11591, 11598, 12146, 12155, 12164];
         }];
         readonly license: "Apache-2.0";
     };
