@@ -1,8 +1,9 @@
 import { ContractWriteOptions } from "@delvtech/evm-client";
-import { ReadWriteContractFactory } from "src/contract/contractFactory";
+import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
+import { ReadWriteModel } from "src/model/ReadWriteModel";
 import { ReadToken } from "src/token/ReadToken";
 
-export interface ReadWriteToken extends ReadToken {
+export interface ReadWriteToken extends ReadToken, ReadWriteModel {
   contractFactory: ReadWriteContractFactory;
 
   /**

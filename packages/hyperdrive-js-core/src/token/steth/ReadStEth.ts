@@ -3,9 +3,9 @@ import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { StEthAbi, stEthAbi } from "src/token/steth/abi";
 
-export interface ReadStEthTokenOptions extends ReadContractModelOptions {}
+export interface ReadStEthOptions extends ReadContractModelOptions {}
 
-export class ReadStEthToken extends ReadErc20 {
+export class ReadStEth extends ReadErc20 {
   stEthContract: CachedReadContract<StEthAbi>;
 
   constructor({
@@ -15,7 +15,7 @@ export class ReadStEthToken extends ReadErc20 {
     network,
     cache,
     namespace,
-  }: ReadStEthTokenOptions) {
+  }: ReadStEthOptions) {
     super({
       address,
       contractFactory,

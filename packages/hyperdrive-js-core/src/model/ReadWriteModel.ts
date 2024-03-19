@@ -2,15 +2,26 @@ import { ContractWriteOptions as BaseContractWriteOptions } from "@delvtech/evm-
 import {
   ContractFactoryOptions,
   ReadWriteContractFactory,
-} from "src/contract/contractFactory";
+} from "src/evm-client/contractFactory";
 import { Prettify } from "src/base/types";
-import { ModelOptionsBase } from "src/model/types";
+import { ReadModel, ReadModelOptions } from "src/model/ReadModel";
 
 /**
  * The base options required for all read-write models.
  */
-export interface ReadWriteModelOptions extends ModelOptionsBase {
+export interface ReadWriteModelOptions extends ReadModelOptions {
   contractFactory: ReadWriteContractFactory;
+}
+
+/**
+ * A base class for read-write models.
+ */
+export class ReadWriteModel extends ReadModel {
+  declare contractFactory: ReadWriteContractFactory;
+
+  constructor(options: ReadWriteModelOptions) {
+    super(options);
+  }
 }
 
 /**

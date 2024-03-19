@@ -9,4 +9,9 @@ export type Prettify<T> = {
 /**
  * A generic constructor type.
  */
-export type Constructor<T> = new (...args: any[]) => T;
+export type Constructor<TInstanceType> = new (...args: any[]) => TInstanceType;
+
+/**
+ * Overwrites properties of `T` with properties of `U`.
+ */
+export type Overwrite<T, U> = Prettify<Omit<T, keyof U> & U>;

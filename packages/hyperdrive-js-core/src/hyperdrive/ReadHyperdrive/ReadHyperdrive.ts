@@ -30,7 +30,7 @@ import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { hyperwasm } from "src/hyperwasm";
-import { getBlockOrThrow } from "src/contract/getBlockOrThrow";
+import { getBlockOrThrow } from "src/evm-client/getBlockOrThrow";
 import { convertSharesToBase } from "src/hyperdrive/utils/convertSharesToBase";
 import { convertBaseToShares } from "src/hyperdrive/utils/convertBaseToShares";
 import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
@@ -42,7 +42,7 @@ import { ReadErc20 } from "src/token/erc20/ReadErc20";
 
 export interface ReadHyperdriveOptions extends ReadContractModelOptions {}
 
-export interface IReadHyperdrive {
+export interface IReadHyperdrive extends ReadModel {
   /**
    * Returns the base token of the pool.
    */
@@ -285,8 +285,11 @@ export interface IReadHyperdrive {
   previewOpenLong(args: {
     amountIn: bigint;
     asBase: boolean;
+    /**
+     * @deprecated
+     */
     // TODO: Remove `decimals` param and just use this.getDecimals() internally
-    decimals: number;
+    decimals?: number;
     options?: ContractReadOptions;
   }): Promise<{
     maturityTime: bigint;
@@ -397,7 +400,7 @@ export interface IReadHyperdrive {
 }
 
 export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
-  protected readonly contract: CachedReadContract<HyperdriveAbi>;
+  readonly contract: CachedReadContract<HyperdriveAbi>;
 
   /**
    * @hidden
@@ -420,7 +423,7 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
   }
 
   /**
-   * @remarks The base `ReadHyperdrive` class supports ERC20 and ETH base
+   * @remarks The base Hyperdrive class supports ERC20 and ETH base
    * tokens. If the address returned by the contract is not the ETH address, it
    * is assumed to be an ERC20 token.
    */
@@ -436,8 +439,8 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
       : new ReadErc20({
           address,
           contractFactory: this.contractFactory,
+          namespace: this.contract.namespace,
           network: this.network,
-          cache: this.contract.cache,
         });
   }
 
@@ -1396,8 +1399,6 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
   async previewOpenLong({
     amountIn,
     asBase,
-    // TODO: Remove in favor of this.getDecimals();
-    decimals,
     options,
   }: Parameters<IReadHyperdrive["previewOpenLong"]>[0]): ReturnType<
     IReadHyperdrive,
@@ -1414,6 +1415,8 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
       blockTimestamp,
       poolConfig.checkpointDuration,
     );
+
+    const decimals = await this.getDecimals();
 
     // calcOpenLong only accepts base, so if the user is depositing shares we
     // need to convert that value to base before we can preview the trade for them

@@ -1,6 +1,45 @@
 // Main Hyperdrive sdk entrypoint for consumers
-export { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
-export { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
+export {
+  ReadHyperdrive,
+  type ReadHyperdriveOptions,
+} from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
+export {
+  ReadWriteHyperdrive,
+  type ReadWriteHyperdriveOptions,
+} from "src/hyperdrive/ReadWriteHyperdrive";
+export {
+  ReadStEthHyperdrive,
+  type ReadStEthHyperdriveOptions,
+} from "src/hyperdrive/steth/ReadStEthHyperdrive";
+export {
+  ReadWriteStEthHyperdrive,
+  type ReadWriteStEthHyperdriveOptions,
+} from "src/hyperdrive/steth/ReadWriteStEthHyperdrive";
+
+// Token
+export type { ReadToken } from "src/token/ReadToken";
+export type { ReadWriteToken } from "src/token/ReadWriteToken";
+export { ReadErc20, type ReadErc20Options } from "src/token/erc20/ReadErc20";
+export {
+  ReadWriteErc20,
+  type ReadWriteErc20Options,
+} from "src/token/erc20/ReadWriteErc20";
+export { ReadEth, type ReadEthOptions } from "src/token/eth/ReadEth";
+export {
+  ReadWriteEth,
+  type ReadWriteEthOptions,
+} from "src/token/eth/ReadWriteEth";
+export { ReadStEth, type ReadStEthOptions } from "src/token/steth/ReadStEth";
+export {
+  ReadWriteStEth,
+  type ReadWriteStEthOptions,
+} from "src/token/steth/ReadWriteStEth";
+
+export type {
+  ContractFactoryOptions,
+  ReadContractFactory,
+  ReadWriteContractFactory,
+} from "src/evm-client/contractFactory";
 
 export type {
   IReadHyperdriveContract,
@@ -30,3 +69,15 @@ export type { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWith
 // Math utils
 export { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
 export { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
+
+// Model
+export {
+  ReadModel,
+  type ReadContractModelOptions,
+  type ReadModelOptions,
+} from "src/model/ReadModel";
+export {
+  ReadWriteModel,
+  type ReadWriteContractModelOptions,
+  type ReadWriteModelOptions,
+} from "src/model/ReadWriteModel";

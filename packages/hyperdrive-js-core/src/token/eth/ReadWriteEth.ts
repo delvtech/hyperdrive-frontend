@@ -1,7 +1,7 @@
 import { ReadWriteModelOptions } from "src/model/ReadWriteModel";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadWriteToken } from "src/token/ReadWriteToken";
-import { ReadWriteContractFactory } from "src/contract/contractFactory";
+import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
 import { MethodNotImplementedError } from "src/errors/MethodNotImplementedError";
 
 export interface ReadWriteEthOptions extends ReadWriteModelOptions {}
@@ -9,9 +9,13 @@ export interface ReadWriteEthOptions extends ReadWriteModelOptions {}
 export class ReadWriteEth extends ReadEth implements ReadWriteToken {
   declare contractFactory: ReadWriteContractFactory;
 
+  constructor(options: ReadWriteEthOptions) {
+    super(options);
+  }
+
   /**
    * This method is not available for the native ETH token.
-   * @throws MethodNotImplementedError
+   * @throws A {@linkcode MethodNotImplementedError}
    */
   async approve(): Promise<`0x${string}`> {
     throw new MethodNotImplementedError({

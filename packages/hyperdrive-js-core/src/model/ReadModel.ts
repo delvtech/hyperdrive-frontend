@@ -2,20 +2,26 @@ import { Network } from "@delvtech/evm-client";
 import {
   ContractFactoryOptions,
   ReadContractFactory,
-} from "src/contract/contractFactory";
+} from "src/evm-client/contractFactory";
 import { Prettify } from "src/base/types";
-import { ModelOptionsBase } from "src/model/types";
 
 /**
  * The base options required for all read models.
  */
-export interface ReadModelOptions extends ModelOptionsBase {
+export interface ReadModelOptions {
   contractFactory: ReadContractFactory;
+  network: Network;
+
+  /**
+   * An arbitrary name for the instance. This is for convenience only (e.g., for
+   * use as a display name or in logging) and has no affect on the model's
+   * behavior.
+   */
+  name?: string;
 }
 
 /**
  * A base class for read-only models.
- * @category Models
  */
 export class ReadModel {
   name: string;
