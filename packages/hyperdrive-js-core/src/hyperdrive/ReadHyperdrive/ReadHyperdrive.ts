@@ -12,14 +12,12 @@ import { sumBigInt } from "src/base/sumBigInt";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { ReturnType } from "src/base/ReturnType";
-import { calculateLiquidity } from "src/pool/calculateLiquidity";
 import { LP_ASSET_ID } from "src/lp/assetId";
 import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import { ClosedLong, Long } from "src/longs/types";
 import { ClosedLpShares } from "src/lp/ClosedLpShares";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
 import { ClosedShort, OpenShort } from "src/shorts/types";
-import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShares";
 import { getCheckpointId } from "src/pool/getCheckpointId";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 import { Checkpoint, CheckpointEvent } from "src/pool/Checkpoint";
@@ -68,15 +66,9 @@ export interface IReadHyperdrive extends ReadModel {
   getSpotRate(options?: ContractReadOptions): Promise<bigint>;
 
   /**
-   * This function retrieves the market liquidity by using the following formula:
-   * marketLiquidity = lpSharePrice * effectiveShareReserves - longsOutstanding
-   *
+   * This function retrieves the available market liquidity
    */
-  getLiquidity(args: {
-    // TODO: Remove `decimals` param and just use this.getDecimals() internally
-    decimals?: number;
-    options?: ContractReadOptions;
-  }): Promise<bigint>;
+  getLiquidity(options?: ContractReadOptions): Promise<bigint>;
 
   /**
    * This  returns the LP APY using the following formula for continuous compounding:
@@ -508,28 +500,18 @@ export class ReadHyperdrive extends ReadModel implements IReadHyperdrive {
     return BigInt(aprString);
   }
 
-  async getLiquidity({
-    decimals = 18,
-    options,
-  }: {
-    decimals?: number;
-    // TODO: Remove `decimals` param and just use this.getDecimals() internally
-    options?: ContractReadOptions;
-  }): ReturnType<IReadHyperdrive, "getLiquidity"> {
-    const { lpSharePrice, shareReserves, longsOutstanding, shareAdjustment } =
-      await this.getPoolInfo(options);
+  async getLiquidity(
+    options?: ContractReadOptions,
+  ): ReturnType<IReadHyperdrive, "getLiquidity"> {
+    const poolConfig = await this.getPoolConfig(options);
+    const poolInfo = await this.getPoolInfo(options);
 
-    const liquidity = calculateLiquidity({
-      lpSharePrice,
-      shareReserves: calculateEffectiveShareReserves({
-        shareReserves,
-        shareAdjustment,
-      }),
-      longsOutstanding,
-      decimals,
-    });
+    const liquidityString = hyperwasm.getIdleShareReservesInBase(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
+    );
 
-    return liquidity;
+    return BigInt(liquidityString);
   }
 
   async getShortAccruedYield({
