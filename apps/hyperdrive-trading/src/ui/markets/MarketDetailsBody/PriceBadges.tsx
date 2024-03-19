@@ -1,22 +1,39 @@
-import { EmptyExtensions, TokenConfig } from "@hyperdrive/appconfig";
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
+import Skeleton from "react-loading-skeleton";
 import { divideBigInt } from "src/base/divideBigInt";
 import { parseUnits } from "src/base/parseUnits";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 
 export function PriceBadges({
-  baseToken,
-  longPrice,
+  hyperdrive,
 }: {
-  baseToken: TokenConfig<EmptyExtensions>;
-  longPrice: bigint;
+  hyperdrive: HyperdriveConfig;
 }): ReactElement {
+  const appConfig = useAppConfig();
+  const { longPrice, longPriceStatus } = useCurrentLongPrice(
+    hyperdrive.address,
+  );
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
+  if (longPriceStatus !== "success") {
+    return (
+      <div className="flex w-full flex-row gap-8">
+        <Skeleton className="h-8 w-64" />
+        <Skeleton className="h-8 w-64" />
+      </div>
+    );
+  }
   return (
     <div className="flex flex-col gap-2 font-dmMono md:flex-row md:gap-4">
       <div className="daisy-badge daisy-badge-neutral daisy-badge-lg py-4 text-md text-neutral-content">
         1 hy{baseToken.symbol} ≈{" "}
         {formatBalance({
-          balance: longPrice,
+          balance: longPrice ?? 0n,
           decimals: baseToken.decimals,
           places: 6,
         })}{" "}
@@ -27,7 +44,7 @@ export function PriceBadges({
         {formatBalance({
           balance: divideBigInt(
             parseUnits("1", 18),
-            longPrice,
+            longPrice ?? 0n,
             baseToken.decimals,
           ),
 
