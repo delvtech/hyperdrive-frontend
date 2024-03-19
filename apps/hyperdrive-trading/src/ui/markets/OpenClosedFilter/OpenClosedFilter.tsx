@@ -18,7 +18,7 @@ export function OpenClosedFilter(): ReactElement {
       })}
     >
       <Link
-        className={classNames("daisy-tab ", {
+        className={classNames("daisy-tab text-md ", {
           "opacity-80 hover:opacity-100": activeOpenOrClosedTab !== "Open",
           "font-bold": activeOpenOrClosedTab === "Open" && isConnected,
           "daisy-link-secondary daisy-tab-disabled cursor-not-allowed":
@@ -33,7 +33,7 @@ export function OpenClosedFilter(): ReactElement {
       </Link>
 
       <Link
-        className={classNames("hover:text-white daisy-tab", {
+        className={classNames("daisy-tab text-md", {
           "opacity-80 hover:opacity-100": activeOpenOrClosedTab !== "Closed",
           "font-bold ": activeOpenOrClosedTab === "Closed" && isConnected,
           "daisy-link-secondary daisy-tab-disabled cursor-not-allowed":

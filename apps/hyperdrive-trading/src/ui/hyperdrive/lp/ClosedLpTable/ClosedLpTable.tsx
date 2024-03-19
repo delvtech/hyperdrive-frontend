@@ -268,7 +268,7 @@ export function ClosedLpTable({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky top-0 bg-base-100 font-normal text-gray-400"
+                  className="sticky top-0 bg-base-100 text-sm font-normal text-gray-400"
                   key={header.id}
                 >
                   {header.isPlaceholder

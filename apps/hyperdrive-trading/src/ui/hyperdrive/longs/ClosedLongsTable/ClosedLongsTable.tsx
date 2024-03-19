@@ -222,7 +222,7 @@ export function ClosedLongsTable({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky font-normal text-neutral-content"
+                  className="sticky text-sm font-normal text-neutral-content"
                   key={header.id}
                 >
                   {header.isPlaceholder
