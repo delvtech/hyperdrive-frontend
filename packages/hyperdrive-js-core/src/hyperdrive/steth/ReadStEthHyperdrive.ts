@@ -62,7 +62,7 @@ export class ReadStEthHyperdrive extends ReadHyperdrive {
    * @param shouldUseSharesAccounting - Whether to use shares accounting.
    * @returns void
    */
-  useSharesAccounting(shouldUseSharesAccounting = true): void {
+  setUseSharesAccounting(shouldUseSharesAccounting = true): void {
     this._useSharesAccounting = shouldUseSharesAccounting;
     this.contract.clearCache();
   }
