@@ -40,7 +40,7 @@ export function AddLiquidityModalButton({
     >
       {({ showModal }) => (
         <button
-          className="daisy-btn daisy-btn-primary"
+          className="daisy-btn daisy-btn-primary rounded-full"
           onClick={() => showModal()}
         >
           + Add liquidity

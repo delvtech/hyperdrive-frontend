@@ -93,7 +93,7 @@ module.exports = {
 
           "--tab-radius": "0.4rem",
           "--rounded-box": "2rem", // border radius rounded-box utility class, used in card and other large boxes
-          "--rounded-btn": "2rem",
+          "--rounded-btn": "0.4rem",
           "--rounded-badge": "0.4rem",
         },
       },
