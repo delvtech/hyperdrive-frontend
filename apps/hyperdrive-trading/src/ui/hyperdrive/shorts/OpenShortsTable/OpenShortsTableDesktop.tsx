@@ -177,7 +177,7 @@ function getColumns(
       header: "",
       id: "go-to-market",
       cell: () => (
-        <button className="daisy-btn daisy-btn-ghost bg-gray-600 hover:bg-gray-700">
+        <button className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700">
           Close Short
         </button>
       ),

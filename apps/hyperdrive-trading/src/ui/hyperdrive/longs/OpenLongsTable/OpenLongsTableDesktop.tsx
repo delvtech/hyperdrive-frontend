@@ -241,7 +241,7 @@ function getColumns({
       id: "go-to-market",
       cell: ({ row }) => (
         <button
-          className="daisy-btn bg-gray-600 hover:bg-gray-700"
+          className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700"
           onClick={() => {
             const modalId = `${row.original.assetId}`;
             (window as any)[modalId].showModal();
