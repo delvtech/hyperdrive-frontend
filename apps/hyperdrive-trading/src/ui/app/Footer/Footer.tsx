@@ -43,7 +43,7 @@ export default function Footer(): ReactElement {
         {/* TODO: Add links to legal pages */}
         <header className={footerTitleClassName}>Legal</header>
         <a className="daisy-link-hover daisy-link" href={termsOfUseUrl}>
-          Terms Of Use
+          Terms of Use
         </a>
         <a className="daisy-link-hover daisy-link" href={privacyPolicyUrl}>
           Privacy Policy
