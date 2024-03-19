@@ -57,7 +57,7 @@ export function OpenShortsTableDesktop({
           />
         );
       })}
-      <table className="daisy-table daisy-table-zebra daisy-table-lg">
+      <table className="daisy-table daisy-table-zebra  daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
@@ -177,7 +177,7 @@ function getColumns(
       header: "",
       id: "go-to-market",
       cell: () => (
-        <button className="daisy-btn daisy-btn-md rounded-full">
+        <button className="daisy-btn daisy-btn-ghost bg-gray-600 hover:bg-gray-700">
           Close Short
         </button>
       ),
