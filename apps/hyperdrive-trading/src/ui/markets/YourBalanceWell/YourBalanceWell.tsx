@@ -71,11 +71,13 @@ function AvailableAsset({
     account,
     spender,
     tokenAddress: token.address,
+    enabled: !isEth,
   });
   const { data: totalSupply } = useReadContract({
     abi: ERC20.abi,
     functionName: "totalSupply",
     address: token.address,
+    query: { enabled: !isEth },
   });
   const isUnlimited = !!totalSupply && !!allowance && allowance > totalSupply;
 
@@ -90,6 +92,7 @@ function AvailableAsset({
     tokenAddress: token.address,
     amount: 0n,
     spender,
+    enabled: !isEth,
   });
   return (
     <div className="flex whitespace-nowrap ">
@@ -106,7 +109,7 @@ function AvailableAsset({
       {isEth ? undefined : (
         <div className="daisy-dropdown daisy-dropdown-end">
           <div tabIndex={0} role="button" className="daisy-btn daisy-btn-sm">
-            <EllipsisVerticalIcon className="h-4" />
+            <EllipsisVerticalIcon className="h-5" />
           </div>
           <ul
             tabIndex={0}
