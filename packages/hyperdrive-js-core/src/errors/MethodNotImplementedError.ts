@@ -1,7 +1,6 @@
 export interface MethodNotImplementedErrorOptions {
   /**
    * The name of the object that the method was not implemented in.
-   * @default "Unknown"
    */
   objectName: string;
   /**

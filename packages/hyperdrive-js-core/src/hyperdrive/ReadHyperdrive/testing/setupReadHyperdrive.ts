@@ -22,7 +22,7 @@ export function setupReadHyperdrive() {
   });
 
   return {
-    // The ReadWriteHyperdrive class doesn't infer that the contract is a Stub
+    // The ReadHyperdrive class doesn't infer that the contract is a Stub
     // so we need to cast it to the correct type.
     contract:
       readHyperdrive.contract as unknown as CachedReadContract<HyperdriveAbi> &
