@@ -65,7 +65,7 @@ export const cloudChainAppConfig: AppConfig = {
   ],
   hyperdrives: [
     {
-      address: "0x5fe8c3f9de1e10d03abfcdf57afb1148b5584f12",
+      address: "0xe9dcbe59a774e5fb53e2064dda89971394c70eeb",
       name: "365d DAI-Maker DSR",
       decimals: 18,
       baseToken: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
@@ -77,16 +77,16 @@ export const cloudChainAppConfig: AppConfig = {
         baseToken: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
         linkerFactory: "0x8d4928532f2DD0E2f31F447d7902197E54DB2302",
         linkerCodeHash:
-          "0xb36944ca91b8aa82a7379308023324088bc57f58f9b278807384b8fa6e9621ff",
+          "0xcfc344a29876bb5d70c21a041d9622124bfe596ad1a4fab50dc505dfe84cd0d2",
         initialVaultSharePrice: 1000000000000000000n,
         minimumShareReserves: 10000000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         positionDuration: 31536000n,
         checkpointDuration: 86400n,
-        sweepCollector: "0x0000000000000000000000000000000000000000",
         timeStretch: 44463125629060298n,
         governance: "0x6043bF4ec8834F918242BaCA0F1F3805F2a2988D",
         feeCollector: "0x6043bF4ec8834F918242BaCA0F1F3805F2a2988D",
+        sweepCollector: "0x6043bF4ec8834F918242BaCA0F1F3805F2a2988D",
         fees: {
           curve: 10000000000000000n,
           flat: 500000000000000n,
@@ -96,7 +96,7 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x26790f3c738934ffd4ba925190e56f0dbc1ec0e5",
+      address: "0xa0d47f5f6e449e967ea53e66096a630fe16f6b3f",
       name: "365d ETH-Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -107,9 +107,8 @@ export const cloudChainAppConfig: AppConfig = {
       poolConfig: {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
         linkerFactory: "0x8d4928532f2DD0E2f31F447d7902197E54DB2302",
-        sweepCollector: "0x0000000000000000000000000000000000000000",
         linkerCodeHash:
-          "0xb36944ca91b8aa82a7379308023324088bc57f58f9b278807384b8fa6e9621ff",
+          "0xcfc344a29876bb5d70c21a041d9622124bfe596ad1a4fab50dc505dfe84cd0d2",
         initialVaultSharePrice: 1000000029965753424n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
@@ -118,6 +117,7 @@ export const cloudChainAppConfig: AppConfig = {
         timeStretch: 31124187940342208n,
         governance: "0x6043bF4ec8834F918242BaCA0F1F3805F2a2988D",
         feeCollector: "0x6043bF4ec8834F918242BaCA0F1F3805F2a2988D",
+        sweepCollector: "0x6043bF4ec8834F918242BaCA0F1F3805F2a2988D",
         fees: {
           curve: 10000000000000000n,
           flat: 500000000000000n,
